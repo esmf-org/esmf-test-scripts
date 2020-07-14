@@ -1,27 +1,22 @@
-import os
 import unittest
 
-from etsumm.environment import env
+from etsumm.core import BaseRunner
 
 
-class TestBase(unittest.TestCase):
-    pass
+class UnitTests(BaseRunner, unittest.TestCase):
+    ntests = 8706
+    results_filename = 'unit_tests_results'
 
 
-class TestUnitTests(TestBase):
+class SystemTests(BaseRunner, unittest.TestCase):
+    ntests = 45
+    results_filename = 'system_tests_results'
 
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.workdir = None
-        for de in os.scandir(env.ESMF_DIR):
-            if de.is_dir() and de.name.startswith('test'):
-                for de2 in os.scandir(de.path):
-                    if de2.is_dir():
-                        self.workdir = de2.path
-        assert self.workdir is not None
 
-    def test_hello(self):
-        self.assertTrue(True)
+class Examples(BaseRunner, unittest.TestCase):
+    ntests = 79
+    results_filename = 'examples_results'
+    results_prefix = 'examples'
 
 
 if __name__ == '__main__':
