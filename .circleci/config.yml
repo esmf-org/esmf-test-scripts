@@ -4,7 +4,7 @@ jobs:
 
   etsumm:
     docker:
-      image: cimg/base:2020.01
+      - image: cimg/base:2020.01
     resource_class: small
     steps:
       - checkout
