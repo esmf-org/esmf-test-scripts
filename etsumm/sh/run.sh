@@ -12,4 +12,5 @@ set -Eeuxo pipefail
 TEST_TARGET=../src/etsumm/run.py
 
 
-pytest --junitxml=/tmp/junit.xml ${TEST_TARGET}
+mkdir -p /tmp/artifacts
+pytest --junitxml=/tmp/artifacts/junit.xml ${TEST_TARGET}

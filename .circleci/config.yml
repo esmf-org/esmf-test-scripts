@@ -1,0 +1,17 @@
+version: 2.1
+
+jobs:
+
+  etsumm:
+    docker:
+      image: cimg/base:2020.01
+    resource_class: small
+    steps:
+      - checkout
+      - run:
+          name: test
+          command: cd etsumm && pytest --junitxml=/tmp/artifacts/junit.xml
+      - store_test_results:
+          path: /tmp/artifacts
+      - store_artifacts:
+          path: /tmp/artifacts
