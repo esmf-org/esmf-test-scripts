@@ -16,6 +16,8 @@ jobs:
           path: /tmp/artifacts
       - store_artifacts:
           path: /tmp/artifacts
+      - store_artifacts:
+          path: etsumm/src/etsumm/test_etsumm/bin
 
 workflows:
 
