@@ -5,7 +5,7 @@ class Environment(object):
 
     def __init__(self):
         self.ESMF_DIR = self.format_path(os.environ.get('ESMF_DIR'))
-        self.ESMF_TESTOUTFILE = self.format_path(os.environ['ESMF_TESTOUTFILE'])
+        self.ESMF_TESTOUTFILE = self.format_path(os.environ.get('ESMF_TESTOUTFILE'))
         self.ESMF_TESTTARGET = os.environ.get('ESMF_TESTTARGET', 'all_tests')
 
     @staticmethod
