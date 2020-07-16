@@ -1,15 +1,29 @@
 import os
+import re
 import unittest
 
 from etsumm.environment import env
-from etsumm.helpers import parse_pass_fail
+from etsumm.helpers import parse_pass_fail, config_value
+from etsumm.regexps import REGEXPS
 
 
 class BaseRunner(object):
-    #tdk:todo: this needs to be computed on the fly
     ntests = None
     results_filename = None
     results_prefix = 'test'
+    config_filename = None
+
+    @property
+    def config(self):
+        return os.path.join(self.workdir, self.config_filename)
+
+    @property
+    def is_exhaustive(self):
+        return config_value(self.config, 'Exhaustive')
+
+    @property
+    def is_multiproc(self):
+        return config_value(self.config, 'Multiprocessor')
 
     @property
     def pass_fail(self):
@@ -18,14 +32,29 @@ class BaseRunner(object):
         pf = parse_pass_fail(lines)
         return pf
 
-    def __init__(self, *args, **kwargs):
-        assert self.ntests is not None
-        assert self.results_filename is not None
+    @property
+    def results(self):
+        return os.path.join(self.workdir, self.results_filename)
 
-        super().__init__(*args, **kwargs)
+    @property
+    def workdir(self):
+        return self.join_workdir()
 
-        self.workdir = self.join_workdir()
-        self.results = os.path.join(self.workdir, self.results_filename)
+    def summarize(self):
+        summ = {'outfile': env.ESMF_TESTOUTFILE}
+        with open(env.ESMF_TESTOUTFILE, 'r') as f:
+            lines = f.readlines()
+            lines.reverse()
+            for ctr, line in enumerate(lines):
+                if ctr > 100:
+                    break
+                test_target = re.match(REGEXPS['test_tags'], line)
+                if test_target is not None:
+                    target = lines[ctr-1]
+                    expr = REGEXPS['unit_tests']
+                    match = re.match(expr, target)
+                    summ[test_target.groups()[0].lower()] = match.groupdict()
+        return summ
 
     def join_workdir(self):
         for de in os.scandir(env.ESMF_DIR):
