@@ -8,7 +8,7 @@ jobs:
     resource_class: small
     steps:
       - checkout
-      - run: pip install pytest
+      - run: pip install pytest sqlalchemy jsonschema
       - run:
           name: test
           command: cd etsumm && pytest --junitxml=/tmp/artifacts/junit.xml
