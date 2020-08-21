@@ -1,0 +1,5 @@
+TFORM	DIRECTORY			   		     HOSTNAME  		PREC SITE  COMPILER COMM UTEST_TYPE UTEST_RUN SYSTEST_RUN SYS_TEST_TYPE CO TAG
+1 cheye  /glade/scratch/himanshu/scripts_dir/daily/bfb_testing/intel cheye 64 default intel impi EX MULTI MULTI THREADED   
+LOG_DIR1   /glade/scratch/himanshu/scripts_dir/daily/bfb_testing/intel/esmf_logs ERROR
+email_title ESMF_Trunk_BFB_Cheyenne_intel_Test
+email_to  himanshu@ucar.edu
