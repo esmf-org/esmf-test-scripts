@@ -22,7 +22,7 @@ send "chk_out_scripts \r"
 
 expect -re $prompt
 
-send "cd /glade/scratch/himanshu/scripts_dir/daily/bfb_testing/intel \r"
+send "cd ~/bfb_testing/intel \r"
 
 expect -re $prompt
 
@@ -38,7 +38,7 @@ expect eof
 
 expect -re $prompt
 
-send " cd /glade/scratch/himanshu/scripts_dir/daily/bfb_testing/intel \r"
+send " cd ~/bfb_testing/intel \r"
 
 expect -re $prompt
 
@@ -52,12 +52,11 @@ expect eof
 
 expect -re $prompt
  
-send "  cd /glade/scratch/himanshu/scripts_dir/daily/bfb_testing/intel/esmf-extended-tests/ESMF_RegridWeightGenCheck \r"
-#send "  cd /glade/work/svasquez/SACADO_test/801bs08/external_demos/ESMF_RegridWeightGenCheck\r"
+send "  cd ~/bfb_testing/intel/esmf-extended-tests/ESMF_RegridWeightGenCheck \r"
 
 expect -re $prompt
 
-send " export ESMFMKFILE=/glade/scratch/himanshu/scripts_dir/daily/bfb_testing/intel/install_dir/lib/libg/Linux.intel.64.intelmpi.default/esmf.mk \r"
+send " export ESMFMKFILE=~/bfb_testing/intel/install_dir/lib/libg/Linux.intel.64.intelmpi.default/esmf.mk \r"
 
 expect -re $prompt
 
@@ -66,8 +65,7 @@ send "gmake dryrun \r"
 
 expect -re $prompt
 
-send " export ESMFMKFILE=/glade/scratch/himanshu/scripts_dir/daily/bfb_testing/intel/install_dir/lib/libO/Linux.intel.64.intelmpi.default/esmf.mk \r"
-#send " export ESMFMKFILE=/gpfs/fs1/work/svasquez/scripts_dir/daily/nuopc_cheyenne/intel/install_dir/lib/libOesmf.mk \r"
+send " export ESMFMKFILE=~/bfb_testing/intel/install_dir/lib/libO/Linux.intel.64.intelmpi.default/esmf.mk \r"
 
 expect -re $prompt
 
@@ -107,7 +105,7 @@ expect {
  
 # 4:15  hours
 set timeout 153000
-send "./local_script  $rfile  \r"
+send "./cheyenne_script  $rfile  \r"
 
 expect {
                 "end of test script"

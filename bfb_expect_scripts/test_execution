@@ -31,8 +31,6 @@ send "cd $ESMF_DIR \r"
 #expect -re $prompt
 
 #set timeout 3700
-#spawn  bsub  -Ip -q small -W 2:00 -n 12 -P UCUB0024 /bin/bash 
-#spawn  bsub  -Ip -q small -W 2:00 -n 12 -P P35071386  /bin/bash 
 #spawn  bsub  -Ip -q small -W 2:00 -n 12 -P SCSG0002  /bin/bash 
 
 set timeout 36000

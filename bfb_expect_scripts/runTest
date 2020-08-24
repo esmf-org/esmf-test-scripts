@@ -3,9 +3,9 @@
 testFile=$1
 
 export PATH=~/bin:$PATH
-############################### Extract script to run on yellowstone  ###########################
- cat  > run_ys << \THE-END-OF-YS
- #!/usr/bin/expect --   
+
+ cat  > input << \THE-END-OF-YS
+#!/usr/bin/expect --   
 set rfile  [lindex $argv 0]
 set results_file  [lindex $argv 1]
 set homedir  [lindex $argv 2]
@@ -29,7 +29,7 @@ send "chk_out_scripts \r"
 
 expect -re $prompt
 
-send "cd /glade/scratch/himanshu/scripts_dir/daily/bfb_testing/intel \r"
+send "cd ~/bfb_testing/intel \r"
 
 expect -re $prompt
 
@@ -45,7 +45,7 @@ expect eof
 
 expect -re $prompt
 
-send " cd /glade/scratch/himanshu/scripts_dir/daily/bfb_testing/intel \r"
+send " cd ~/bfb_testing/intel \r"
 
 expect -re $prompt
 
@@ -59,22 +59,11 @@ expect eof
 
 expect -re $prompt
  
-send "  cd /glade/scratch/himanshu/scripts_dir/daily/bfb_testing/intel/esmf-extended-tests/ESMF_RegridWeightGenCheck \r"
-#send "  cd /glade/work/svasquez/SACADO_test/801bs08/external_demos/ESMF_RegridWeightGenCheck\r"
+send "  cd ~/bfb_testing/intel/esmf-extended-tests/ESMF_RegridWeightGenCheck \r"
 
 expect -re $prompt
 
-send " export ESMFMKFILE=/glade/scratch/himanshu/scripts_dir/daily/bfb_testing/intel/install_dir/lib/libg/Linux.intel.64.intelmpi.default/esmf.mk \r"
-
-expect -re $prompt
-
-set timeout 600
-send "gmake dryrun \r"
-
-expect -re $prompt
-
-send " export ESMFMKFILE=/glade/scratch/himanshu/scripts_dir/daily/bfb_testing/intel/install_dir/lib/libO/Linux.intel.64.intelmpi.default/esmf.mk \r"
-#send " export ESMFMKFILE=/gpfs/fs1/work/svasquez/scripts_dir/daily/nuopc_cheyenne/intel/install_dir/lib/libOesmf.mk \r"
+send " export ESMFMKFILE=~/daily/bfb_testing/intel/install_dir/lib/libg/Linux.intel.64.intelmpi.default/esmf.mk \r"
 
 expect -re $prompt
 
@@ -112,9 +101,8 @@ expect {
             
     
  
-# 4:15  hours
 set timeout 153000
-send "./local_script  $rfile  \r"
+send "./cheyenne_script  $rfile  \r"
 
 expect {
                 "end of test script"
@@ -134,9 +122,9 @@ expect {
 	}
 THE-END-OF-YS
 
-expect run_ys /glade/scratch/himanshu/esmf_test/cronjobs/daily/bfb_testing/intel/$testFile  /glade/scratch/himanshu/esmf_test/cronjobs/daily/bfb_testing/intel/test_results /glade/scratch/himanshu/esmf_test/cronjobs/daily/bfb_testing/intel
+expect run_ys ~/bfb_testing/intel/$testFile  ~/bfb_testing/intel/test_results ~/bfb_testing/intel
 
-export homedir=/glade/scratch/himanshu/esmf_test/cronjobs/daily/bfb_testing/intel
+export homedir=~/bfb_testing/intel
 export RFile=$homedir/$testFile
 
 echo "Continue with sending mail"
@@ -267,7 +255,6 @@ else
 
 fi
 
-#awk '{if ($1 ~/PASS/) printf ("%-16s%-12s%-8s%-25s%13s\n",  $3, $1, $2, $4, $5, $6, $7) ;else  printf ("%-10s%-20s%-10s\n", $2, $1,  $3 )}'  $LOGDIR/summary > $LOGDIR/newsummary
 awk '{if ($1 ~/PASS/ && $2 ~/PASS/ ) printf ("%-16s%-12s%-8s%-25s%10s%15s%15s\n",  $3, $1, $2, $4, $5, $6, $7) ;else  if ($1 ~/FAIL/) printf ("%-10s%-20s%-10s\n", $2, $1,  $3 );else printf ("%-16s%-12s%-8s\n", $3, $1, $2 )}'  $LOGDIR/summary > $LOGDIR/newsummary
 
 cat $LOGDIR/mailHeader $LOGDIR/header $LOGDIR/newsummary > $LOGDIR/sum
@@ -281,17 +268,12 @@ echo " build_ESMF_BOPT_(day)(platform)ESMF_OS ESMF_ABI ESMF_COMPILER ESMF_COMM."
 echo " For example, if the build fails on longs on the 19th of the month with ESMF_BOPT=g, the file " >>  $LOGDIR/newMailMessage
 echo " would be called 'build_g_19longslinux32pgimpiuni'." >>  $LOGDIR/newMailMessage
 
-#mail -s $email_title esmf-test.esrl@noaa.gov <  $LOGDIR/newMailMessage
-#mail -s $email_title  esmf_test@list.woc.noaa.gov  <  $LOGDIR/newMailMessage
-mail -s $email_title  esmf_test@cgd.ucar.edu  <  $LOGDIR/newMailMessage
 cat $LOGDIR/Test_Status >> $LOGDIR/newMailMessage
 cat $LOGDIR/Day_Started >> $LOGDIR/newMailMessage
 echo "Test_Failures:`cat $LOGDIR/Test_Failures`" >> $LOGDIR/newMailMessage
-mail -s ESMF_BFB_Cheyenne_intel himanshu@ucar.edu <  $LOGDIR/newMailMessage
-#mail -s ESMF_BFB_Cheyenne_intel esmf_test@noaa.gov < $LOGDIR/newMailMessage
-#mail -s ESMF_BFB_Cheyenne_intel esmftest@cgd.ucar.edu < $LOGDIR/newMailMessage
+mail -s ESMF_BFB_Cheyenne_intel esmf_test@cgd.ucar.edu <  $LOGDIR/newMailMessage
 cat $LOGDIR/header $LOGDIR/newsummary $LOGDIR/mailMessage >> $LOGDIR/ESMFdailyLog
-#########cat $LOGDIR/header $LOGDIR/newsummary $LOGDIR/mailMessage >> $LOGDIR2/ESMFdailyLog
+
 if [[ $LOGDIR != $LOGDIR2 ]]
 then
         scp $LOGDIR/build* $LOGDIR2/.
