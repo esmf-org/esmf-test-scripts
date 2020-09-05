@@ -1,4 +1,6 @@
+import os
 import re
+import tempfile
 
 import git
 from git import RemoteProgress
@@ -39,3 +41,13 @@ def clone_git_repo(url, dst):
     log("Starting to clone ESMF Test Artifacts repository")
     git.Repo.clone_from(url, dst, multi_options=multi_options)
     log("Finished cloing ESMF Test Artifacts repository")
+
+
+def clone_esmf_artifacts(dstdir):
+    dst = os.path.join(dstdir, env.ESMF_TEST_ARTIFACTS_NAME)
+    clone_git_repo(env.ESMF_TEST_ARTIFACTS_URL, dst)
+
+
+def get_temporary_output_directory():
+    ret = tempfile.mkdtemp(prefix='etsumm_test_')
+    return ret

@@ -1,5 +1,6 @@
 import logging
 import os
+import tempfile
 from pathlib import Path
 
 from etsumm import etlog
@@ -13,11 +14,13 @@ class Environment(object):
 
         self.ESMF_TEST_ARTIFACTS_URL = 'https://github.com/esmf-org/esmf-test-artifacts.git'
         self.ESMF_TEST_ARTIFACTS_NAME = 'esmf-test-artifacts'
+        self.ESMF_TEST_ARTIFACTS_DIR = self.format_path(os.environ.get('ESMF_TEST_ARTIFACTS_DIR', None))
+        self.ESMF_TEST_ARTIFACTS = self.format_path( os.environ.get('ESMF_TEST_ARTIFACTS', None))
 
     @staticmethod
     def format_path(path):
         if path is not None:
-            return Path(os.path.realpath(os.path.expanduser(path.strip())))
+            return os.path.realpath(os.path.expanduser(path.strip()))
         else:
             return None
 

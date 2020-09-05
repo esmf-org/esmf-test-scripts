@@ -15,8 +15,9 @@ def config():
 
 
 def log(msg, level=None, **kwargs):
+    from etsumm.environment import env
     if level is None:
-        from etsumm.environment import env
         level = env.LOGLVL
     logger = logging.getLogger('etsumm')
+    logger.setLevel(env.LOGLVL)
     logger.log(level, msg, **kwargs)

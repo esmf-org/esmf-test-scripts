@@ -12,11 +12,7 @@ from etsumm.db.core import initdb, Result
 from etsumm.environment import env
 import etsumm.run
 #tdk:remove this file
-
-
-def get_temporary_output_directory():
-    ret = tempfile.mkdtemp(prefix='etsumm_test_')
-    return ret
+from etsumm.helpers import get_temporary_output_directory
 
 
 class TestBase(unittest.TestCase):
