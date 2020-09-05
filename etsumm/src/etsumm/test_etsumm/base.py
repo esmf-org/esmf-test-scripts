@@ -16,7 +16,6 @@ import etsumm.run
 
 def get_temporary_output_directory():
     ret = tempfile.mkdtemp(prefix='etsumm_test_')
-    ret = Path(ret)
     return ret
 
 
@@ -37,8 +36,8 @@ class TestBase(unittest.TestCase):
 
     def setUp(self):
         self.testdir = get_temporary_output_directory()
-        os.makedirs(str(self.testdir), exist_ok=True)
+        os.makedirs(self.testdir, exist_ok=True)
 
     def tearDown(self):
         if self.remove_testdir:
-            shutil.rmtree(str(self.testdir))
+            shutil.rmtree(self.testdir)
