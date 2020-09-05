@@ -1,15 +1,18 @@
 import unittest
+from copy import deepcopy
 from unittest import SkipTest
 
+from etsumm.constants import HIERARCHY
 
-class TestExamples(unittest.TestCase):
+
+class TestContainer(unittest.TestCase):
     longMessage = True
     # expected = 48
     ran = 0
     # logs = os.getcwd()
 
-    def setUp(self):
-        print(self._testMethodName + ' ')
+    # def setUp(self):
+    #     print(self._testMethodName + ' ')
 
     def test_all_tests_ran(self):
         raise SkipTest('tdk:implement')
@@ -43,8 +46,15 @@ class TestExamples(unittest.TestCase):
         self.assertEqual(len(problems), 0, msg=msg)
 
     @classmethod
-    def make_test(cls, description, logdata):
+    def add_test(cls, config, name, description, logdata):
+        local_description = deepcopy(description)
+        test_name = 'test "{}"'.format(name)
+        for h in HIERARCHY:
+            test_name += ' {}={}'.format(h, config[h])
+
         def test(self):
             for l in logdata:
-                self.assertNotEqual(l['result'], "FAIL", description)
-        return test
+                local_description['raw'] = l['raw']
+                self.assertNotEqual(l['result'], "FAIL", local_description)
+
+        setattr(cls, test_name, test)

@@ -1,11 +1,16 @@
 import os
 import re
+import unittest
 from collections import OrderedDict
+from copy import deepcopy
 from logging import DEBUG
 from pathlib import Path
 
 import jsonschema
+from xmlrunner import xmlrunner
 
+from etsumm.cases import TestContainer
+from etsumm.constants import HIERARCHY
 from etsumm.environment import env
 from etsumm.etlog import log
 from etsumm.helpers import get_temporary_output_directory, clone_esmf_artifacts
@@ -39,10 +44,18 @@ class Parser(object):
 
     @property
     def results_dir(self):
-        order = ["branch", "platform", "compiler", "optimization", "comm"]
         ret = self.config["artifacts"]
-        for o in order:
+        for o in HIERARCHY:
             ret = os.path.join(ret, self.config[o])
+
+        return ret
+
+    @property
+    def suffix(self):
+        ret = ''
+        for h in HIERARCHY:
+            ret += self.config[h] + '_'
+        ret = ret[0:-1]
         return ret
 
     @property
@@ -60,7 +73,28 @@ class Parser(object):
         assert os.path.exists(self.results_dir)
         assert os.path.exists(self.target_dir)
 
-    def run(self):
+    @classmethod
+    def iter_parsers(cls, artifacts=None):
+        if artifacts is None:
+            artifacts = env.ESMF_TEST_ARTIFACTS
+        for branch in os.scandir(artifacts):
+            if branch.is_dir() and not branch.name.startswith('.'):
+                config = {'artifacts': artifacts, 'branch': branch.name}
+                for platform in os.scandir(branch.path):
+                    if platform.is_dir():
+                        config['platform'] = platform.name
+                        for compiler in os.scandir(platform.path):
+                            if compiler.is_dir():
+                                config['compiler'] = compiler.name
+                                for optimization in os.scandir(compiler.path):
+                                    if optimization.is_dir():
+                                        config['optimization'] = optimization.name
+                                        for comm in os.scandir(optimization.path):
+                                            if comm.is_dir():
+                                                config['comm'] = comm.name
+                                                yield cls(config, 'examples')
+
+    def iter_test_meta(self):
         expr = re.compile(REGEXPS['log_line'])
         for de in os.scandir(self.target_dir):
             if de.name.endswith('.Log'):
@@ -87,8 +121,25 @@ class Parser(object):
                                 append_to = meta[current_test]['lines']
                             if gd['msg'] == current_test:
                                 gd['parsed_line'] = ctr
+                                gd['raw'] = line
                                 append_to.append(gd)
                 yield meta
+
+    @classmethod
+    def iter_test_runners(cls, xmlout, verbosity=1):
+        for parser in cls.iter_parsers():
+            test_cls = deepcopy(TestContainer)
+            for meta in parser.iter_test_meta():
+                for k, v in meta.items():
+                    lines = v.pop('lines')
+                    test_cls.add_test(parser.config, k, v, lines)
+
+            suite = unittest.TestSuite()
+            suite.addTests(
+                unittest.TestLoader().loadTestsFromTestCase(test_cls))
+            runner = xmlrunner.XMLTestRunner(output=xmlout, verbosity=verbosity,
+                                             outsuffix=parser.suffix)
+            yield suite, runner
 
     def finalize(self):
         pass
