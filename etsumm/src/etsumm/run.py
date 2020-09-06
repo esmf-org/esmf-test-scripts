@@ -3,9 +3,9 @@ from etsumm.etlog import log
 from etsumm.parser import Parser
 
 
-def run_artifact_tests(artifacts, xmlout, branch, platform, compiler):
+def run_artifact_tests(artifacts, xmlout, branch, platform, compiler, comm):
     env.ESMF_TEST_ARTIFACTS = artifacts
-    run_filter = {'branch': branch, 'platform': platform, 'compiler': compiler}
+    run_filter = {'branch': branch, 'platform': platform, 'compiler': compiler, 'comm': comm}
     for parser in Parser.iter_parsers():
         checks = []
         for k, v in run_filter.items():

@@ -41,7 +41,7 @@ class TestParser(TestBase):
         self.assertGreaterEqual(ctr, 71)
 
     def test_system_run_tests(self):
-        self.remove_testdir = True
+        self.remove_testdir = False  # tdk
         xmlout = os.path.join(self.testdir, 'meta_test_examples')
         targets_ran = []
         for parser in Parser.iter_parsers():
@@ -49,3 +49,4 @@ class TestParser(TestBase):
                 targets_ran.append(parser.config['test_target'])
                 suite, runner = Parser.create_suite_runner(parser, xmlout)
                 runner.run(suite)
+                pass

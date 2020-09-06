@@ -1,3 +1,5 @@
+import os
+
 import click
 
 from etsumm import etlog
@@ -22,13 +24,30 @@ def etcli():
               help='If provided, run tests for this platform.')
 @click.option('--compiler', required=False, type=str, default=None,
               help='If provided, run tests for this compiler.')
+@click.option('--comm', required=False, type=str, default=None,
+              help='If provided, run tests for this comm.')
 @click.option('--logpath', required=False, type=click.Path(exists=False, dir_okay=False), default=None,
               help='Path to the output log file.')
-def artifact_tests(artifacts, xmlout, branch, platform, compiler, logpath):
+def artifact_tests(artifacts, xmlout, branch, platform, compiler, comm, logpath):
     etlog.log.configure(to_file=logpath, to_stream=True)
     etlog.log('Starting...', logger=LOGGER)
-    run_artifact_tests(artifacts, xmlout, branch, platform, compiler)
+    run_artifact_tests(artifacts, xmlout, branch, platform, compiler, comm)
     etlog.log('Success', logger=LOGGER)
+
+
+@etcli.command(help="Check for any test failures", name="meta-failures")
+@click.option('--xmlout', required=True, type=click.Path(exists=True, dir_okay=True, file_okay=False),
+              help='Path to the directory to store XML test output')
+def meta_failures(xmlout):
+    for de in os.scandir(xmlout):
+        if de.name.endswith('.xml'):
+            with open(de.path, 'r') as f:
+                for line in f.readlines():
+                    if "failures=" in line:
+                        if 'failures="0"' not in line:
+                            raise ValueError("Failure found in: {}".format(de.path))
+                        else:
+                            break
 
 
 if __name__ == '__main__':
