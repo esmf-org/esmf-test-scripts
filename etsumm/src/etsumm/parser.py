@@ -88,7 +88,7 @@ class Parser(object):
                                             for comm in os.scandir(optimization.path):
                                                 if comm.is_dir():
                                                     config['comm'] = comm.name
-                                                    yield config
+                                                    yield deepcopy(config)
 
     def iter_test_meta(self):
         expr = re.compile(REGEXPS['log_line'])

@@ -5,8 +5,11 @@ import tempfile
 import git
 from git import RemoteProgress
 
+from etsumm import constants
 from etsumm.environment import env
 from etsumm.etlog import log
+from etsumm.itester import itr_products_keywords
+from etsumm.parser import Parser
 from etsumm.regexps import REGEXPS
 
 
@@ -51,3 +54,28 @@ def clone_esmf_artifacts(dstdir):
 def get_temporary_output_directory():
     ret = tempfile.mkdtemp(prefix='etsumm_test_')
     return ret
+
+
+def find_combinations():
+    keywords = {'branch': constants.BRANCH, 'compiler': constants.COMPILER, 'comm': constants.COMM, 'platform': constants.PLATFORM}
+    combos = [k for k in itr_products_keywords(keywords)]
+    configs = [config for config in Parser.iter_config()]
+    found = {}
+    order = ['branch', 'platform', 'compiler', 'comm']
+    for combo in combos:
+        # print(combo)
+        combo_red = [combo[h] for h in order]
+        # print('combo_red', combo_red)
+        for config in configs:
+            # print(config)
+            config_red = [config[h] for h in order]
+            # print('config_red', config_red)
+            if combo_red == config_red:
+                found[''.join(combo_red)] = combo
+                break
+    ordered = sorted(found)
+    return [found[o] for o in ordered]
+
+
+def make_config_circleci(config_template, config_out):
+    pass
