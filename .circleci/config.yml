@@ -5,19 +5,16 @@ jobs:
   etsumm:
     docker:
       - image: circleci/python
-    resource_class: small
     steps:
       - checkout
-      - run: pip install pytest sqlalchemy jsonschema
+      - run: pip install pytest sqlalchemy jsonschema unittest-xml-reporting click
       - run:
           name: test
-          command: cd etsumm && pytest --junitxml=/tmp/artifacts/junit.xml
+          command: cd etsumm && pytest --junitxml=/tmp/artifacts/junit.xml 2>&1 | tee /tmp/artifacts/pytest.out
       - store_test_results:
           path: /tmp/artifacts
       - store_artifacts:
           path: /tmp/artifacts
-      - store_artifacts:
-          path: etsumm/src/etsumm/test_etsumm/bin
 
 workflows:
 

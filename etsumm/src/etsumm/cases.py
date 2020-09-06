@@ -11,9 +11,6 @@ class TestContainer(unittest.TestCase):
     ran = 0
     # logs = os.getcwd()
 
-    # def setUp(self):
-    #     print(self._testMethodName + ' ')
-
     def test_all_tests_ran(self):
         raise SkipTest('tdk:implement')
         self.assertEqual(self.expected, self.ran)

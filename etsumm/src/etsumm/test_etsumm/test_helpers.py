@@ -1,4 +1,5 @@
 import os
+from unittest import SkipTest
 
 import pytest
 
@@ -8,9 +9,10 @@ from etsumm.test_etsumm.base import TestBase
 
 
 class TestHelpers(TestBase):
+    should_clone = False
 
-    @pytest.mark.slow
     def test_clone_git_repo(self):
+        raise SkipTest("dev only")
         dst = os.path.join(self.testdir, env.ESMF_TEST_ARTIFACTS_NAME)
         clone_git_repo(env.ESMF_TEST_ARTIFACTS_URL, dst)
         self.assertTrue(os.path.exists(dst))
