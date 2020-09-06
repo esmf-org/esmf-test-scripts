@@ -7,7 +7,7 @@ jobs:
       - image: circleci/python
     steps:
       - checkout
-      - run: pip install pytest sqlalchemy jsonschema unittest-xml-reporting click
+      - run: pip install pytest sqlalchemy jsonschema unittest-xml-reporting click gitpython
       - run:
           name: test
           command: cd etsumm && pytest --junitxml=/tmp/artifacts/junit.xml 2>&1 | tee /tmp/artifacts/pytest.out
