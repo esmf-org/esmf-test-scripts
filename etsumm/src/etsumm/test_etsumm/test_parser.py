@@ -1,15 +1,6 @@
-import logging
 import os
-import unittest
-from copy import deepcopy
-from multiprocessing import Pool
 
-import xmlrunner as xmlrunner
-
-from etsumm import etlog
 from etsumm.environment import env
-from etsumm.etlog import log
-from etsumm.helpers import clone_esmf_artifacts, get_temporary_output_directory
 from etsumm.parser import Parser
 from etsumm.test_etsumm.base import TestBase
 
@@ -43,6 +34,7 @@ class TestParser(TestBase):
     def test_iter_config(self):
         p = self.fixture_parser()
         test_targets = set()
+        ctr = 0
         for ctr, config in enumerate(p.iter_config()):
             test_targets.update([config['test_target']])
         self.assertEqual(len(test_targets), 3)
