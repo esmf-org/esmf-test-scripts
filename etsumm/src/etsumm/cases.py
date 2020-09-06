@@ -9,6 +9,7 @@ class TestContainer(unittest.TestCase):
     longMessage = True
     # expected = 48
     ran = 0
+
     # logs = os.getcwd()
 
     def test_all_tests_ran(self):
@@ -17,6 +18,7 @@ class TestContainer(unittest.TestCase):
 
     def test_logs_have_no_errors(self):
         raise SkipTest('tdk:implement')
+
         def the_pred(de):
             if de.name.endswith('.ESMF_LogFile'):
                 return True

@@ -1,6 +1,5 @@
 import os
 
-from etsumm.environment import env
 from etsumm.etlog import MyLog
 from etsumm.test_etsumm.base import TestBase
 

@@ -1,17 +1,10 @@
 import os
 import shutil
-import subprocess
 import tempfile
 import unittest
-import zipfile
-from pathlib import Path
-
-from jsonschema import ValidationError
 
 from etsumm import etlog
-from etsumm.db.core import initdb, Result
 from etsumm.environment import env
-import etsumm.run
 from etsumm.helpers import get_temporary_output_directory, clone_esmf_artifacts
 
 

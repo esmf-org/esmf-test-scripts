@@ -1,10 +1,8 @@
 import json
 import os
-import re
 
 from jsonschema import validate
-from sqlalchemy import create_engine, MetaData, Column, Integer, String, \
-    ForeignKey, Text, Float, CheckConstraint, UniqueConstraint, JSON, DateTime
+from sqlalchemy import create_engine, MetaData, Column, Integer, ForeignKey, Text, Float, JSON, DateTime
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, relationship
 # connstr = 'sqlite://'
@@ -14,7 +12,6 @@ from sqlalchemy.orm import sessionmaker, relationship
 # connstr = 'sqlite:///{0}'.format(os.environ['LOGP_DBPATH'])
 from sqlalchemy.orm.exc import NoResultFound
 
-from etsumm.db import schema
 from etsumm.db.schema import result_schema
 
 metadata = MetaData()

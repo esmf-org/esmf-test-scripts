@@ -1,9 +1,5 @@
 import logging
 import os
-import tempfile
-from pathlib import Path
-
-from etsumm import etlog
 
 
 class Environment(object):
@@ -28,4 +24,3 @@ class Environment(object):
 
 
 env = Environment()
-

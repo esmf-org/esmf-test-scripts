@@ -77,7 +77,7 @@ class MyLog(object):
         self.__init__()
         try:
             logging.shutdown()
-            logging.captureWarnings(None)
+            logging.captureWarnings(False)
         except:
             pass
 

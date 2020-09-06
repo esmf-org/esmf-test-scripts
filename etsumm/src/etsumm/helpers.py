@@ -20,7 +20,7 @@ def summarize():
                 break
             test_target = re.match(REGEXPS['test_tags'], line)
             if test_target is not None:
-                target = lines[ctr-1]
+                target = lines[ctr - 1]
                 expr = REGEXPS['unit_tests']
                 match = re.match(expr, target)
                 key = test_target.groups()[0].lower()
@@ -33,7 +33,7 @@ def summarize():
 
 class Progress(RemoteProgress):
     def update(self, op_code, cur_count, max_count=None, message=''):
-        print('update(%s, %s, %s, %s)'%(op_code, cur_count, max_count, message))
+        print('update(%s, %s, %s, %s)' % (op_code, cur_count, max_count, message))
 
 
 def clone_git_repo(url, dst):

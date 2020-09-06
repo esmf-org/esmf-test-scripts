@@ -7,33 +7,31 @@ from logging import DEBUG
 from pathlib import Path
 
 import jsonschema
-from xmlrunner import xmlrunner
+import xmlrunner
 
 from etsumm.cases import TestContainer
 from etsumm.constants import HIERARCHY
 from etsumm.environment import env
 from etsumm.etlog import log
-from etsumm.helpers import get_temporary_output_directory, clone_esmf_artifacts
 from etsumm.regexps import REGEXPS
 
 PARSER_CONFIG = {
     "type": "object",
     "properties": {
-        "branch":       {"type": "string"},
-        "platform":     {"type": "string"},
-        "compiler":     {"type": "string"},
+        "branch": {"type": "string"},
+        "platform": {"type": "string"},
+        "compiler": {"type": "string"},
         "optimization": {"type": "string"},
-        "comm":         {"type": "string"},
-        "artifacts":    {"type": "string"},
-        "test_target":  {"type": "string"}
+        "comm": {"type": "string"},
+        "artifacts": {"type": "string"},
+        "test_target": {"type": "string"}
     },
     "required": ["branch", "platform", "compiler", "optimization", "comm",
                  "artifacts", "test_target"]
 }
 
-
-TARGET_META = {'examples':     {'suffix': 'Ex.Log',    'dir': 'examples'},
-               'unit_tests':   {'suffix': 'UTest.Log', 'dir': 'test'},
+TARGET_META = {'examples': {'suffix': 'Ex.Log', 'dir': 'examples'},
+               'unit_tests': {'suffix': 'UTest.Log', 'dir': 'test'},
                'system_tests': {'suffix': 'STest.Log', 'dir': 'test'}}
 
 

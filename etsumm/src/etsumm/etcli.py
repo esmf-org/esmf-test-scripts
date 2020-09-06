@@ -1,11 +1,7 @@
-import logging
-
 import click
 
 from etsumm import etlog
-from etsumm.environment import env
 from etsumm.run import run_artifact_tests
-
 
 LOGGER = 'artifact-tests'
 

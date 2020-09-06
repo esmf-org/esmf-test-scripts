@@ -1,8 +1,6 @@
 import os
 from unittest import SkipTest
 
-import pytest
-
 from etsumm.environment import env
 from etsumm.helpers import clone_git_repo
 from etsumm.test_etsumm.base import TestBase
