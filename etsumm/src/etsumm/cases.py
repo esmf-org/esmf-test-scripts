@@ -48,7 +48,7 @@ class TestContainer(unittest.TestCase):
     @classmethod
     def add_test(cls, config, name, description, logdata):
         local_description = deepcopy(description)
-        test_name = 'test "{}"'.format(name)
+        test_name = 'test {} "{}"'.format(logdata[0]['test_target'], name)
         for h in HIERARCHY:
             test_name += ' {}={}'.format(h, config[h])
 

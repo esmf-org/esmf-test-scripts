@@ -2,6 +2,7 @@ import logging
 import os
 import unittest
 from copy import deepcopy
+from multiprocessing import Pool
 
 import xmlrunner as xmlrunner
 
@@ -18,7 +19,7 @@ class TestParser(TestBase):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-        env.ESMF_TEST_ARTIFACTS = '/tmp/etsumm_test_387pl2p8/esmf-test-artifacts'
+        env.ESMF_TEST_ARTIFACTS = '/home/benkoziol/htmp/esmf-test-artifacts'
         if not os.path.exists(env.ESMF_TEST_ARTIFACTS):
             self.dstdir = get_temporary_output_directory()
             clone_esmf_artifacts(self.dstdir)
@@ -72,6 +73,5 @@ class TestParser(TestBase):
         self.remove_testdir = False #tdk
 
         xmlout = os.path.join(self.testdir, 'meta_test_examples')
-
         for suite, runner in Parser.iter_test_runners(xmlout):
             runner.run(suite)
