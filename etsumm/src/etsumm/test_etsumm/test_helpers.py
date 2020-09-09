@@ -33,7 +33,6 @@ class TestHelpers(TestBase):
 
     def test_make_config_circleci(self):
         targets = find_combinations()
-        print(targets)
         filename = 'config.jinja2'
         ret = self.do_render(targets, filename)
         with open('/tmp/config.yml', 'w') as f:
