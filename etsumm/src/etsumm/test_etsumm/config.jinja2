@@ -58,9 +58,13 @@ jobs:
 workflows:
 
 run-meta-testing:
-triggers:
-- schedule:
-cron: "0 6 * * *"
+  triggers:
+      - schedule:
+          cron: "0 6 * * *"
+          filters:
+            branches:
+              only:
+                - master
 jobs:
 {% for target in targets %}
       - mt-{{ target.branch }}-{{ target.platform }}-{{ target.compiler }}-{{ target.comm }}:
