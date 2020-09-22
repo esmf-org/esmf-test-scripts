@@ -11,8 +11,9 @@ class TestParser(TestBase):
         config = {'branch': 'develop',
                   'platform': 'cheyenne',
                   'compiler': 'gfortran',
+                  'compiler_version': '8.1.0',
                   'optimization': 'g',
-                  'comm': 'mpich3',
+                  'comm': 'openmpi',
                   'artifacts': env.ESMF_TEST_ARTIFACTS,
                   'test_target': 'examples'}
         return config

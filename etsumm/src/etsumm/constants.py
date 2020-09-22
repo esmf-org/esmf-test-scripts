@@ -1,4 +1,4 @@
-HIERARCHY = ["branch", "platform", "compiler", "optimization", "comm"]
+HIERARCHY = ["branch", "platform", "compiler", "compiler_version", "optimization", "comm"]
 
 BRANCH = ["develop"]
 

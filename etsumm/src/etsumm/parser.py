@@ -21,6 +21,7 @@ PARSER_CONFIG = {
         "branch": {"type": "string"},
         "platform": {"type": "string"},
         "compiler": {"type": "string"},
+        "compiler_version": {"type": "string"},
         "optimization": {"type": "string"},
         "comm": {"type": "string"},
         "artifacts": {"type": "string"},
@@ -59,7 +60,8 @@ class Parser(object):
     def initialize(self):
         jsonschema.validate(instance=self.config, schema=PARSER_CONFIG)
         assert os.path.exists(self.config['artifacts'])
-        assert os.path.exists(self.results_dir)
+        if not os.path.exists(self.results_dir):
+            raise RuntimeError("Results directory does not exist: {}".format(self.results_dir))
 
     @classmethod
     def iter_parsers(cls, artifacts=None):
