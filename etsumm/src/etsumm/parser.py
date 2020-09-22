@@ -84,13 +84,16 @@ class Parser(object):
                             for compiler in os.scandir(platform.path):
                                 if compiler.is_dir():
                                     config['compiler'] = compiler.name
-                                    for optimization in os.scandir(compiler.path):
-                                        if optimization.is_dir():
-                                            config['optimization'] = optimization.name
-                                            for comm in os.scandir(optimization.path):
-                                                if comm.is_dir():
-                                                    config['comm'] = comm.name
-                                                    yield deepcopy(config)
+                                    for compiler_version in os.scandir(compiler.path):
+                                        if compiler_version.is_dir():
+                                            config['compiler_version'] = compiler_version.name
+                                            for optimization in os.scandir(compiler_version.path):
+                                                if optimization.is_dir():
+                                                    config['optimization'] = optimization.name
+                                                    for comm in os.scandir(optimization.path):
+                                                        if comm.is_dir():
+                                                            config['comm'] = comm.name
+                                                            yield deepcopy(config)
 
     def iter_test_meta(self):
         expr = re.compile(REGEXPS['log_line'])

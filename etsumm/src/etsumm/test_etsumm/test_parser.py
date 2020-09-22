@@ -37,6 +37,7 @@ class TestParser(TestBase):
         test_targets = set()
         ctr = 0
         for ctr, config in enumerate(p.iter_config()):
+            self.assertIn(config['optimization'], ('g', 'O'))
             test_targets.update([config['test_target']])
         self.assertEqual(len(test_targets), 3)
         self.assertGreaterEqual(ctr, 71)
