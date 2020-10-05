@@ -1,6 +1,7 @@
 import os
 import re
 import tempfile
+from copy import deepcopy
 
 import git
 from git import RemoteProgress
@@ -14,7 +15,7 @@ from etsumm.regexps import REGEXPS
 
 
 def summarize_all_tests(outfile):
-    ret = {}
+    ret = deepcopy(constants.BASE_RESULT_SUMMARY)
     with open(outfile, 'r') as f:
         lines = f.readlines()
         lines.reverse()
@@ -30,7 +31,49 @@ def summarize_all_tests(outfile):
                 counts = match.groupdict()
                 counts = {k: int(v) for k, v in counts.items()}
                 ret[key] = counts
-                ret[key]['src'] = target.strip()
+                ret[key]['msg'] = target.strip()
+                if ret[key]['fail'] == 0:
+                    ret[key]['result'] = 'PASS'
+                else:
+                    ret[key]['result'] = 'FAIL'
+    return ret
+
+
+def full_parse_all_tests(outfile):
+    ret = {}
+    re_testline = re.compile('^ *(?P<result>PASS|FAIL|CRASHED): (?P<msg>.*)$')
+    re_file = re.compile('([A-Za-z0-9_]+\\.(?:F90|C))')
+    re_harness = re.compile('^ *(?:PASS|FAIL|CRASHED): .+: (.+)$')
+    with open(outfile, 'r') as f:
+        for line in f.readlines():
+            match = re.match(re_testline, line)
+            if match is not None:
+                # print(match.groupdict())
+                fs = re.search(re_file, line)
+                if fs is not None:
+                    filename = fs.groups()[0]
+                    # print(filename)
+                    key = match.groupdict()['msg']
+                    found = False
+                    for k, v in ret.items():
+                        if v['filename'] == filename:
+                            key = k
+                            found = True
+                            break
+                    if found:
+                        ret[key]['failures'].append(match.groupdict())
+                    else:
+                        ret[key] = match.groupdict()
+                        ret[key]['filename'] = filename
+                        ret[key]['failures'] = []
+                    ret[key]['is_harness'] = False
+                else:
+                    harness = re.match(re_harness, line).groups()[0]
+                    assert '.' not in harness
+                    assert harness not in ret
+                    ret[harness] = match.groupdict()
+                    ret[harness]['filename'] = None
+                    ret[harness]['is_harness'] = True
     return ret
 
 

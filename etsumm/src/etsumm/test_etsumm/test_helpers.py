@@ -3,7 +3,7 @@ from unittest import SkipTest
 
 from jinja2 import FileSystemLoader, Environment
 
-from etsumm.helpers import find_combinations, summarize_all_tests
+from etsumm.helpers import find_combinations, summarize_all_tests, full_parse_all_tests
 from etsumm.test_etsumm.base import TestBase
 
 
@@ -41,3 +41,15 @@ class TestHelpers(TestBase):
         outfile = os.path.join(self.path_bin, "esmf-make-all_tests-fail.out")
         ret = summarize_all_tests(outfile)
         self.assertEqual(ret['unit tests']['fail'], 1)
+
+    def test_full_parse_all_tests(self):
+        outfile = os.path.join(self.path_bin, "esmf-make-all_tests-fail.out")
+        ret = full_parse_all_tests(outfile)
+        actual_key = 'mpich3/O2: src/Infrastructure/Array/tests/ESMF_ArrayRedistPerfUTest.F90'
+        self.assertEqual(len(ret[actual_key]["failures"]), 6)
+
+        harness_count = 0
+        for k, v in ret.items():
+            if v['is_harness']:
+                harness_count += 1
+        self.assertEqual(harness_count, 2)
