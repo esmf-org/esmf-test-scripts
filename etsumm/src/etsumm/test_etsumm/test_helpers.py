@@ -3,8 +3,7 @@ from unittest import SkipTest
 
 from jinja2 import FileSystemLoader, Environment
 
-from etsumm.environment import env
-from etsumm.helpers import clone_git_repo, find_combinations
+from etsumm.helpers import find_combinations, summarize_all_tests
 from etsumm.test_etsumm.base import TestBase
 
 
@@ -22,9 +21,9 @@ class TestHelpers(TestBase):
 
     def test_clone_git_repo(self):
         raise SkipTest("dev only")
-        dst = os.path.join(self.testdir, env.ESMF_TEST_ARTIFACTS_NAME)
-        clone_git_repo(env.ESMF_TEST_ARTIFACTS_URL, dst)
-        self.assertTrue(os.path.exists(dst))
+        # dst = os.path.join(self.testdir, env.ESMF_TEST_ARTIFACTS_NAME)
+        # clone_git_repo(env.ESMF_TEST_ARTIFACTS_URL, dst)
+        # self.assertTrue(os.path.exists(dst))
 
     def test_find_combinations(self):
         exists = find_combinations()
@@ -37,3 +36,8 @@ class TestHelpers(TestBase):
         ret = self.do_render(targets, filename)
         with open('/tmp/config.yml', 'w') as f:
             f.write(ret)
+
+    def test_summarize_all_tests(self):
+        outfile = os.path.join(self.path_bin, "esmf-make-all_tests-fail.out")
+        ret = summarize_all_tests(outfile)
+        self.assertEqual(ret['unit tests']['fail'], 1)

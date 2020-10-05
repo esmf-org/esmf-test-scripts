@@ -13,9 +13,9 @@ from etsumm.parser import Parser
 from etsumm.regexps import REGEXPS
 
 
-def summarize():
-    summ = {'outfile': env.ESMF_TESTOUTFILE}
-    with open(env.ESMF_TESTOUTFILE, 'r') as f:
+def summarize_all_tests(outfile):
+    ret = {}
+    with open(outfile, 'r') as f:
         lines = f.readlines()
         lines.reverse()
         for ctr, line in enumerate(lines):
@@ -29,9 +29,9 @@ def summarize():
                 key = test_target.groups()[0].lower()
                 counts = match.groupdict()
                 counts = {k: int(v) for k, v in counts.items()}
-                summ[key] = counts
-                summ[key]['src'] = target.strip()
-    return summ
+                ret[key] = counts
+                ret[key]['src'] = target.strip()
+    return ret
 
 
 class Progress(RemoteProgress):
