@@ -24,11 +24,11 @@ PARSER_CONFIG = {
         "compiler_version": {"type": "string"},
         "optimization": {"type": "string"},
         "comm": {"type": "string"},
+        "comm_version": {"type": "string"},
         "artifacts": {"type": "string"},
         "test_target": {"type": "string"}
     },
-    "required": ["branch", "platform", "compiler", "optimization", "comm",
-                 "artifacts", "test_target"]
+    "required": ["branch", "platform", "compiler", "optimization", "comm", "comm_version", "artifacts", "test_target"]
 }
 
 TARGET_META = {'examples': {'suffix': 'Ex.Log', 'dir': 'examples'},
@@ -93,7 +93,10 @@ class Parser(object):
                                                     for comm in os.scandir(optimization.path):
                                                         if comm.is_dir():
                                                             config['comm'] = comm.name
-                                                            yield deepcopy(config)
+                                                            for comm_version in os.scandir(comm.path):
+                                                                if comm_version.is_dir():
+                                                                    config['comm_version'] = comm_version.name
+                                                                    yield deepcopy(config)
 
     def iter_test_meta(self):
         expr = re.compile(REGEXPS['log_line'])
