@@ -1,6 +1,6 @@
 from etsumm.environment import env
 from etsumm.etlog import log
-from etsumm.parser import Parser
+from etsumm.parser import Parser, create_suite_runner
 
 
 def run_artifact_tests(artifacts, xmlout, branch, platform, compiler, comm):
@@ -18,5 +18,5 @@ def run_artifact_tests(artifacts, xmlout, branch, platform, compiler, comm):
             checks.append(check)
         if all(checks):
             log("Running tests with config: {}".format(parser.config), logger='run')
-            suite, runner = Parser.create_suite_runner(parser, xmlout)
+            suite, runner = create_suite_runner(parser, xmlout)
             runner.run(suite)

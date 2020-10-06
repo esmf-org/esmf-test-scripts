@@ -13,6 +13,7 @@ from etsumm.cases import TestContainer
 from etsumm.constants import HIERARCHY
 from etsumm.environment import env
 from etsumm.etlog import log
+from etsumm.helpers import summarize_all_tests, full_parse_all_tests
 from etsumm.regexps import REGEXPS
 
 PARSER_CONFIG = {
@@ -26,9 +27,8 @@ PARSER_CONFIG = {
         "comm": {"type": "string"},
         "comm_version": {"type": "string"},
         "artifacts": {"type": "string"},
-        "test_target": {"type": "string"}
     },
-    "required": ["branch", "platform", "compiler", "optimization", "comm", "comm_version", "artifacts", "test_target"]
+    "required": ["branch", "platform", "compiler", "optimization", "comm", "comm_version", "artifacts"]
 }
 
 TARGET_META = {'examples': {'suffix': 'Ex.Log', 'dir': 'examples'},
@@ -39,6 +39,8 @@ TARGET_META = {'examples': {'suffix': 'Ex.Log', 'dir': 'examples'},
 class Parser(object):
 
     def __init__(self, config, debug=False):
+        assert type(debug) == bool
+
         self.config = config
         self.debug = debug
 
@@ -99,6 +101,7 @@ class Parser(object):
                                                                     yield deepcopy(config)
 
     def iter_test_meta(self):
+        #tdk:todo: move this to a helper function
         expr = re.compile(REGEXPS['log_line'])
         test_target = self.config['test_target']
         # Loop for each test target: examples, unit_tests, system_tests
@@ -135,20 +138,35 @@ class Parser(object):
                                 append_to.append(gd)
                 yield meta
 
-    @classmethod
-    def create_suite_runner(cls, parser, xmlout, verbosity=1):
-        test_cls = deepcopy(TestContainer)
-        for meta in parser.iter_test_meta():
-            for k, v in meta.items():
-                lines = v.pop('lines')
-                test_cls.add_test(parser.config, k, v, lines)
-
-        suite = unittest.TestSuite()
-        suite.addTests(
-            unittest.TestLoader().loadTestsFromTestCase(test_cls))
-        runner = xmlrunner.XMLTestRunner(output=xmlout, verbosity=verbosity,
-                                         outsuffix=parser.suffix)
-        return suite, runner
-
     def finalize(self):
         pass
+
+
+def create_suite_runner(parser, outfile, xmlout, verbosity=1):
+    outfile = Path(outfile)
+    assert outfile.exists()
+    xmlout = Path(xmlout)
+
+    # Add tests to this container
+    test_cls = deepcopy(TestContainer)
+
+    # Create summary tests for the unit test targets
+    basic = summarize_all_tests(str(outfile.absolute()))
+    for v in basic.values():
+        test_cls.add_test(parser.config, v)
+
+    # Create tests for each line in the all_tests out file
+    full = full_parse_all_tests(str(outfile.absolute()))
+    for v in full.values():
+        test_cls.add_test(parser.config, v)
+
+    # test_cls = deepcopy(TestContainer)
+    # for meta in parser.iter_test_meta():
+    #     for k, v in meta.items():
+    #         lines = v.pop('lines')
+    #         test_cls.add_test(parser.config, k, v, lines)
+
+    suite = unittest.TestSuite()
+    suite.addTests(unittest.TestLoader().loadTestsFromTestCase(test_cls))
+    runner = xmlrunner.XMLTestRunner(output=str(xmlout.absolute()), verbosity=verbosity)
+    return suite, runner

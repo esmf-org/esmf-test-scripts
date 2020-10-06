@@ -10,7 +10,6 @@ from etsumm import constants
 from etsumm.environment import env
 from etsumm.etlog import log
 from etsumm.itester import itr_products_keywords
-from etsumm.parser import Parser
 from etsumm.regexps import REGEXPS
 
 
@@ -32,6 +31,7 @@ def summarize_all_tests(outfile):
                 counts = {k: int(v) for k, v in counts.items()}
                 ret[key] = counts
                 ret[key]['msg'] = target.strip()
+                ret[key]['test_name'] = key
                 if ret[key]['fail'] == 0:
                     ret[key]['result'] = 'PASS'
                 else:
@@ -48,15 +48,13 @@ def full_parse_all_tests(outfile):
         for line in f.readlines():
             match = re.match(re_testline, line)
             if match is not None:
-                # print(match.groupdict())
                 fs = re.search(re_file, line)
                 if fs is not None:
                     filename = fs.groups()[0]
-                    # print(filename)
                     key = match.groupdict()['msg']
                     found = False
                     for k, v in ret.items():
-                        if v['filename'] == filename:
+                        if v['test_name'] == filename:
                             key = k
                             found = True
                             break
@@ -64,7 +62,7 @@ def full_parse_all_tests(outfile):
                         ret[key]['failures'].append(match.groupdict())
                     else:
                         ret[key] = match.groupdict()
-                        ret[key]['filename'] = filename
+                        ret[key]['test_name'] = filename
                         ret[key]['failures'] = []
                     ret[key]['is_harness'] = False
                 else:
@@ -72,7 +70,7 @@ def full_parse_all_tests(outfile):
                     assert '.' not in harness
                     assert harness not in ret
                     ret[harness] = match.groupdict()
-                    ret[harness]['filename'] = None
+                    ret[harness]['test_name'] = harness
                     ret[harness]['is_harness'] = True
     return ret
 
@@ -100,19 +98,17 @@ def get_temporary_output_directory():
 
 
 def find_combinations():
+    from etsumm.parser import Parser
+
     keywords = {'branch': constants.BRANCH, 'compiler': constants.COMPILER, 'comm': constants.COMM, 'platform': constants.PLATFORM}
     combos = [k for k in itr_products_keywords(keywords)]
     configs = [config for config in Parser.iter_config()]
     found = {}
     order = ['branch', 'platform', 'compiler', 'comm']
     for combo in combos:
-        # print(combo)
         combo_red = [combo[h] for h in order]
-        # print('combo_red', combo_red)
         for config in configs:
-            # print(config)
             config_red = [config[h] for h in order]
-            # print('config_red', config_red)
             if combo_red == config_red:
                 found[''.join(combo_red)] = combo
                 break

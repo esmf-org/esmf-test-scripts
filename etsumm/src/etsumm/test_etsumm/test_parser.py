@@ -1,7 +1,7 @@
 import os
 
 from etsumm.environment import env
-from etsumm.parser import Parser
+from etsumm.parser import Parser, create_suite_runner
 from etsumm.test_etsumm.base import TestBase
 
 
@@ -14,8 +14,8 @@ class TestParser(TestBase):
                   'compiler_version': '8.1.0',
                   'optimization': 'g',
                   'comm': 'openmpi',
-                  'artifacts': env.ESMF_TEST_ARTIFACTS,
-                  'test_target': 'examples'}
+                  'comm_version': '8.1.0',
+                  'artifacts': env.ESMF_TEST_ARTIFACTS}
         return config
 
     def fixture_parser(self, **kwargs):
@@ -25,7 +25,7 @@ class TestParser(TestBase):
 
     def test_init(self):
         config = self.fixture_config()
-        p = Parser(config, "examples")
+        p = Parser(config, debug=False)
         self.assertIsNotNone(p)
 
     def test_initialize(self):
@@ -42,11 +42,10 @@ class TestParser(TestBase):
         self.assertEqual(len(test_targets), 3)
         self.assertGreaterEqual(ctr, 71)
 
-    def test_system_run_tests(self):
-        xmlout = os.path.join(self.testdir, 'meta_test_examples')
-        targets_ran = []
-        for parser in Parser.iter_parsers():
-            if parser.config['test_target'] not in targets_ran:
-                targets_ran.append(parser.config['test_target'])
-                suite, runner = Parser.create_suite_runner(parser, xmlout)
-                runner.run(suite)
+    def test_create_suite_runner(self):
+        self.remove_testdir = False  # tdk
+        outfile = os.path.join(self.path_bin, "esmf-make-all_tests-fail.out")
+        parser = self.fixture_parser()
+        xmlout = os.path.join(self.testdir, 'meta_test')
+        suite, runner = create_suite_runner(parser, outfile, xmlout)
+        runner.run(suite)
