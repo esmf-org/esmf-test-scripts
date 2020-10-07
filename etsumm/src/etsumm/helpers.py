@@ -1,7 +1,6 @@
 import os
 import re
 import tempfile
-from copy import deepcopy
 
 import git
 from git import RemoteProgress
@@ -13,24 +12,21 @@ from etsumm.itester import itr_products_keywords
 from etsumm.regexps import REGEXPS
 
 
-def summarize_all_tests(outfile):
-    ret = deepcopy(constants.BASE_RESULT_SUMMARY)
+def summarize_test_outfile(outfile):
+    ret = {}
     with open(outfile, 'r') as f:
         lines = f.readlines()
         lines.reverse()
         for ctr, line in enumerate(lines):
             if ctr > 100:
                 break
-            test_target = re.match(REGEXPS['test_tags'], line)
+            test_target = re.match(REGEXPS['unit_tests'], line)
             if test_target is not None:
-                target = lines[ctr - 1]
-                expr = REGEXPS['unit_tests']
-                match = re.match(expr, target)
-                key = test_target.groups()[0].lower()
-                counts = match.groupdict()
-                counts = {k: int(v) for k, v in counts.items()}
+                counts = test_target.groupdict()
+                key = counts['type'].lower()
+                counts = {k: int(v) for k, v in counts.items() if k != "type"}
                 ret[key] = counts
-                ret[key]['msg'] = target.strip()
+                ret[key]['msg'] = line.strip()
                 ret[key]['test_name'] = key
                 if ret[key]['fail'] == 0:
                     ret[key]['result'] = 'PASS'

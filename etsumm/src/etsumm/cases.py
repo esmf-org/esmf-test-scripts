@@ -8,11 +8,13 @@ class TestContainer(unittest.TestCase):
     longMessage = True
 
     @classmethod
-    def add_test(cls, config, meta):
+    def add_test(cls, meta, parser=None):
         test_name = 'test_{}'.format(meta['test_name'])
-        # Make the test name unique
-        for h in HIERARCHY:
-            test_name += ' {}={}'.format(h, config[h])
+
+        if parser is not None:
+            # Make the test name unique
+            for h in HIERARCHY:
+                test_name += ' {}={}'.format(h, parser.config[h])
 
         # Not allowed in test names
         test_name = test_name.replace('.', '_')

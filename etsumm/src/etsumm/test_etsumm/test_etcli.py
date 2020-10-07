@@ -24,3 +24,21 @@ class TestEtcli(TestBase):
                 '--logpath', os.path.join(self.testdir, 'etcli.log')]
         result = runner.invoke(etcli, args=args, catch_exceptions=False)
         self.assertEqual(result.exit_code, 0)
+
+    def test_check_outfile(self):
+        runner = CliRunner()
+        outfile = os.path.join(self.path_bin, "esmf-make-all_tests-fail.out")
+        args = ['check-outfile',
+                '--outfile', outfile,
+                '--logpath', os.path.join(self.testdir, 'log.log')]
+        result = runner.invoke(etcli, args=args, catch_exceptions=False)
+        self.assertEqual(result.exit_code, 0)
+
+    def test_check_outfile_examples(self):
+        runner = CliRunner()
+        outfile = os.path.join(self.path_bin, "run_examples-no-failures.out")
+        args = ['check-outfile',
+                '--outfile', outfile,
+                '--xmlout', os.path.join(self.testdir, "")]
+        result = runner.invoke(etcli, args=args, catch_exceptions=False)
+        self.assertEqual(result.exit_code, 0)

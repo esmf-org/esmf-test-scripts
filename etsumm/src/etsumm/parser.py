@@ -13,7 +13,7 @@ from etsumm.cases import TestContainer
 from etsumm.constants import HIERARCHY
 from etsumm.environment import env
 from etsumm.etlog import log
-from etsumm.helpers import summarize_all_tests, full_parse_all_tests
+from etsumm.helpers import summarize_test_outfile, full_parse_all_tests
 from etsumm.regexps import REGEXPS
 
 PARSER_CONFIG = {
@@ -142,7 +142,7 @@ class Parser(object):
         pass
 
 
-def create_suite_runner(parser, outfile, xmlout, verbosity=1):
+def create_suite_runner(outfile, xmlout, parser=None, verbosity=1):
     outfile = Path(outfile)
     assert outfile.exists()
     xmlout = Path(xmlout)
@@ -151,14 +151,14 @@ def create_suite_runner(parser, outfile, xmlout, verbosity=1):
     test_cls = deepcopy(TestContainer)
 
     # Create summary tests for the unit test targets
-    basic = summarize_all_tests(str(outfile.absolute()))
+    basic = summarize_test_outfile(str(outfile.absolute()))
     for v in basic.values():
-        test_cls.add_test(parser.config, v)
+        test_cls.add_test(v, parser=parser)
 
     # Create tests for each line in the all_tests out file
     full = full_parse_all_tests(str(outfile.absolute()))
     for v in full.values():
-        test_cls.add_test(parser.config, v)
+        test_cls.add_test(v, parser=parser)
 
     # test_cls = deepcopy(TestContainer)
     # for meta in parser.iter_test_meta():

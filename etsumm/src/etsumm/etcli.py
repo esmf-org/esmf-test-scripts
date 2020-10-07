@@ -1,8 +1,10 @@
 import os
+import tempfile
 
 import click
 
 from etsumm import etlog
+from etsumm.parser import create_suite_runner
 from etsumm.run import run_artifact_tests
 
 LOGGER = 'artifact-tests'
@@ -48,6 +50,29 @@ def meta_failures(xmlout):
                             raise ValueError("Failure found in: {}".format(de.path))
                         else:
                             break
+
+
+@etcli.command(help="Test for failures in a test out file", name="check-outfile")
+@click.option('--outfile', required=True, type=click.Path(exists=True, dir_okay=False, file_okay=True),
+              help='Path to the ESMF test target outfile to evaluate')
+@click.option('--xmlout', required=False, type=click.Path(exists=True, dir_okay=True, file_okay=False),
+              help='Path to the directory to store XML test output')
+@click.option('--logpath', required=False, type=click.Path(exists=False, dir_okay=False), default=None,
+              help='Path to the output log file.')
+def check_outfile(outfile, xmlout, logpath):
+    logger = 'check-outfile'
+    etlog.log.configure(to_file=logpath, to_stream=True)
+    etlog.log('Starting...', logger=logger)
+
+    if xmlout is None:
+        xmlout = tempfile.mkdtemp()
+        etlog.log('"xmlout" not provided. Writing to temporary directory: {}'.format(xmlout),
+                  logger=logger)
+
+    suite, runner = create_suite_runner(outfile, xmlout)
+    runner.run(suite)
+
+    etlog.log('Success', logger=logger)
 
 
 if __name__ == '__main__':

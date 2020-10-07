@@ -3,7 +3,7 @@ from unittest import SkipTest
 
 from jinja2 import FileSystemLoader, Environment
 
-from etsumm.helpers import find_combinations, summarize_all_tests, full_parse_all_tests
+from etsumm.helpers import find_combinations, summarize_test_outfile, full_parse_all_tests
 from etsumm.test_etsumm.base import TestBase
 
 
@@ -37,10 +37,15 @@ class TestHelpers(TestBase):
         with open('/tmp/config.yml', 'w') as f:
             f.write(ret)
 
-    def test_summarize_all_tests(self):
+    def test_summarize_test_outfile(self):
         outfile = os.path.join(self.path_bin, "esmf-make-all_tests-fail.out")
-        ret = summarize_all_tests(outfile)
+        ret = summarize_test_outfile(outfile)
         self.assertEqual(ret['unit tests']['fail'], 1)
+
+    def test_summarize_test_outfile_examples_only(self):
+        outfile = os.path.join(self.path_bin, "run_examples-no-failures.out")
+        ret = summarize_test_outfile(outfile)
+        self.assertEqual(ret['examples']['fail'], 0)
 
     def test_full_parse_all_tests(self):
         outfile = os.path.join(self.path_bin, "esmf-make-all_tests-fail.out")
