@@ -4,6 +4,7 @@ import tempfile
 
 import git
 from git import RemoteProgress
+from jinja2 import FileSystemLoader, Environment
 
 from etsumm import constants
 from etsumm.environment import env
@@ -112,5 +113,34 @@ def find_combinations():
     return [found[o] for o in ordered]
 
 
-def make_config_circleci(config_template, config_out):
-    pass
+def do_render(targets, filename, template_folder=None, **extra):
+    if template_folder is None:
+        template_folder = os.path.dirname(os.path.realpath(__file__))
+    file_loader = FileSystemLoader(template_folder)
+    env = Environment(loader=file_loader, trim_blocks=True, lstrip_blocks=True)
+    template = env.get_template(filename)
+    ret = template.render(targets=targets, **extra)
+    return ret
+
+
+def make_config_circleci(config_out):
+    targets = find_combinations()
+    filename = 'config.jinja2'
+    ret = do_render(targets, filename)
+    with open(config_out, 'w') as f:
+        f.write(ret)
+
+
+def collect_artifact_problems():
+    from etsumm.parser import Parser
+    problems = []
+    platforms = set()
+    for config in Parser.iter_config():
+        platforms.update([config['platform']])
+        if config['optimization'] not in ('g', 'O'):
+            problems.append(config)
+        if '.' not in config['comm_version']:
+            problems.append(config)
+    if platforms != set(constants.PLATFORM):
+        problems.append({'platform': set(constants.PLATFORM).difference(platforms)})
+    return problems
