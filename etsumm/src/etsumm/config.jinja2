@@ -1,0 +1,75 @@
+version: 2.1
+
+commands:
+  run-meta-testing:
+    parameters:
+      branch:
+        type: string
+      platform:
+        type: string
+      compiler:
+        type: string
+      comm:
+        type: string
+    steps:
+      - run:
+          name: Checkout Code (esmf-test-scripts)
+          command: git clone --depth 1 https://github.com/esmf-org/esmf-test-scripts.git
+      - run:
+          name: Checkout Code (esmf-test-artifacts)
+          command: git clone --depth 1 --branch ${CIRCLE_BRANCH} https://github.com/esmf-org/esmf-test-artifacts.git
+      - run:
+          name: Install Dependencies
+          command: pip install jsonschema unittest-xml-reporting click gitpython
+      - run: mkdir -p /tmp/artifacts
+      - run:
+          name: Run Meta Testing
+          command: bash esmf-test-artifacts/.circleci/run.sh << parameters.branch >> << parameters.platform >> << parameters.compiler >> << parameters.comm >>
+      - store_test_results:
+          path: /tmp/artifacts/artifact-tests
+      - store_artifacts:
+          path: /tmp/artifacts/etsumm.log
+      - store_artifacts:
+          path: /tmp/artifacts/artifact-tests.out
+      - run:
+          name: Compress XML Test Output
+          command: cd /tmp/artifacts && zip -r artifact-tests.zip artifact-tests
+      - store_artifacts:
+          path: /tmp/artifacts/artifact-tests.zip
+      - run:
+          name: Check for Failures
+          command: bash esmf-test-artifacts/.circleci/check-for-failures.sh
+
+jobs:
+
+{% for target in targets %}
+  mt-{{ target.branch }}-{{ target.platform }}-{{ target.compiler }}-{{ target.comm }}:
+    docker:
+      - image: circleci/python
+        auth:
+          username: $ESMF_DOCKER_USERNAME
+          password: $ESMF_DOCKER_PASSWORD
+    steps:
+      - run-meta-testing:
+          branch: {{ target.branch }}
+          platform: {{  target.platform }}
+          compiler: {{ target.compiler }}
+          comm: {{ target.comm }}
+
+{% endfor %}
+workflows:
+
+  run-meta-testing:
+    triggers:
+      - schedule:
+          cron: "0 6 * * *"
+          filters:
+            branches:
+              only:
+                - master
+    jobs:
+{% for target in targets %}
+      - mt-{{ target.branch }}-{{ target.platform }}-{{ target.compiler }}-{{ target.comm }}:
+          name: {{ target.branch }}-{{ target.platform }}-{{ target.compiler }}-{{ target.comm }}
+{% endfor %}
+{{ '' }}
