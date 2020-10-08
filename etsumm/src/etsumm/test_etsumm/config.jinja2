@@ -47,6 +47,9 @@ jobs:
   mt-{{ target.branch }}-{{ target.platform }}-{{ target.compiler }}-{{ target.comm }}:
     docker:
       - image: circleci/python
+        auth:
+          username: $ESMF_DOCKER_USERNAME
+          password: $ESMF_DOCKER_PASSWORD
     steps:
       - run-meta-testing:
           branch: {{ target.branch }}
