@@ -126,6 +126,14 @@ def do_render(targets, filename, template_folder=None, **extra):
 
 def make_config_circleci(config_out):
     targets = find_combinations()
+
+    # Collect platforms to make sure they are running as expected.
+    platforms = set()
+    for target in targets:
+        platforms.update([target['platform']])
+    for missing in set(constants.PLATFORM).difference(platforms):
+        targets.append({'branch': 'develop', 'platform': missing, 'comm': 'ARTIFACTS', 'compiler': 'MISSING'})
+
     filename = 'config.jinja2'
     ret = do_render(targets, filename)
     with open(config_out, 'w') as f:

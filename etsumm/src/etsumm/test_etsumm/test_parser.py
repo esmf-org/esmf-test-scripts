@@ -40,9 +40,10 @@ class TestParser(TestBase):
         self.assertGreaterEqual(ctr, 23)
 
     def test_iter_config_all(self):
+        """Test for duplicate configurations."""
+
         seen = []
         for config in Parser.iter_config():
-            # print(config)
             found = False
             for s in seen:
                 if s == config:
@@ -50,7 +51,6 @@ class TestParser(TestBase):
                     break
             self.assertFalse(found, config)
             seen.append(config)
-        print(seen)
 
     def test_create_suite_runner(self):
         outfile = os.path.join(self.path_bin, "esmf-make-all_tests-fail.out")
