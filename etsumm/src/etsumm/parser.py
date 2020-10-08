@@ -101,7 +101,8 @@ class Parser(object):
                                                                 yield deepcopy(config)
 
     def iter_test_meta(self):
-        #tdk:todo: move this to a helper function
+        """DEPRECATED! Create test metadata from test log files."""
+
         expr = re.compile(REGEXPS['log_line'])
         test_target = self.config['test_target']
         # Loop for each test target: examples, unit_tests, system_tests
