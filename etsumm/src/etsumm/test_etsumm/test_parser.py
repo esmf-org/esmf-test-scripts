@@ -34,13 +34,23 @@ class TestParser(TestBase):
 
     def test_iter_config(self):
         p = self.fixture_parser()
-        test_targets = set()
         ctr = 0
         for ctr, config in enumerate(p.iter_config()):
             self.assertIn(config['optimization'], ('g', 'O'), msg=config)
-            test_targets.update([config['test_target']])
-        self.assertEqual(len(test_targets), 3)
-        self.assertGreaterEqual(ctr, 71)
+        self.assertGreaterEqual(ctr, 23)
+
+    def test_iter_config_all(self):
+        seen = []
+        for config in Parser.iter_config():
+            # print(config)
+            found = False
+            for s in seen:
+                if s == config:
+                    found = True
+                    break
+            self.assertFalse(found, config)
+            seen.append(config)
+        print(seen)
 
     def test_create_suite_runner(self):
         outfile = os.path.join(self.path_bin, "esmf-make-all_tests-fail.out")

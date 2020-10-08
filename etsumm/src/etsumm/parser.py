@@ -77,30 +77,28 @@ class Parser(object):
         if artifacts is None:
             artifacts = env.ESMF_TEST_ARTIFACTS
         config = {'artifacts': artifacts}
-        for test_target in TARGET_META.keys():
-            config['test_target'] = test_target
-            for branch in os.scandir(artifacts):
-                if branch.is_dir() and not branch.name.startswith('.'):
-                    config['branch'] = branch.name
-                    for platform in os.scandir(branch.path):
-                        if platform.is_dir():
-                            config['platform'] = platform.name
-                            for compiler in os.scandir(platform.path):
-                                if compiler.is_dir():
-                                    config['compiler'] = compiler.name
-                                    for compiler_version in os.scandir(compiler.path):
-                                        if compiler_version.is_dir():
-                                            config['compiler_version'] = compiler_version.name
-                                            for optimization in os.scandir(compiler_version.path):
-                                                if optimization.is_dir():
-                                                    config['optimization'] = optimization.name
-                                                    for comm in os.scandir(optimization.path):
-                                                        if comm.is_dir():
-                                                            config['comm'] = comm.name
-                                                            for comm_version in os.scandir(comm.path):
-                                                                if comm_version.is_dir():
-                                                                    config['comm_version'] = comm_version.name
-                                                                    yield deepcopy(config)
+        for branch in os.scandir(artifacts):
+            if branch.is_dir() and not branch.name.startswith('.'):
+                config['branch'] = branch.name
+                for platform in os.scandir(branch.path):
+                    if platform.is_dir():
+                        config['platform'] = platform.name
+                        for compiler in os.scandir(platform.path):
+                            if compiler.is_dir():
+                                config['compiler'] = compiler.name
+                                for compiler_version in os.scandir(compiler.path):
+                                    if compiler_version.is_dir():
+                                        config['compiler_version'] = compiler_version.name
+                                        for optimization in os.scandir(compiler_version.path):
+                                            if optimization.is_dir():
+                                                config['optimization'] = optimization.name
+                                                for comm in os.scandir(optimization.path):
+                                                    if comm.is_dir():
+                                                        config['comm'] = comm.name
+                                                        for comm_version in os.scandir(comm.path):
+                                                            if comm_version.is_dir():
+                                                                config['comm_version'] = comm_version.name
+                                                                yield deepcopy(config)
 
     def iter_test_meta(self):
         #tdk:todo: move this to a helper function

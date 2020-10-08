@@ -118,8 +118,8 @@ def do_render(targets, filename, template_folder=None, **extra):
     if template_folder is None:
         template_folder = os.path.dirname(os.path.realpath(__file__))
     file_loader = FileSystemLoader(template_folder)
-    env = Environment(loader=file_loader, trim_blocks=True, lstrip_blocks=True)
-    template = env.get_template(filename)
+    e = Environment(loader=file_loader, trim_blocks=True, lstrip_blocks=True)
+    template = e.get_template(filename)
     ret = template.render(targets=targets, **extra)
     return ret
 

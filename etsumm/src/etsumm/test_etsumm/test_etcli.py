@@ -4,6 +4,7 @@ from click.testing import CliRunner
 
 from etsumm.environment import env
 from etsumm.etcli import etcli
+from etsumm.run import run_artifact_tests
 from etsumm.test_etsumm.base import TestBase
 
 
@@ -25,6 +26,12 @@ class TestEtcli(TestBase):
                 '--logpath', os.path.join(self.testdir, 'etcli.log')]
         result = runner.invoke(etcli, args=args, catch_exceptions=False)
         self.assertEqual(result.exit_code, 0)
+
+    def test_run_artifact_tests(self):
+        """Test a full run against the test artifacts."""
+
+        xmlout = os.path.join(self.testdir, "meta_test")
+        run_artifact_tests(env.ESMF_TEST_ARTIFACTS, xmlout, "develop", None, None, None)
 
     def test_check_outfile(self):
         runner = CliRunner()
