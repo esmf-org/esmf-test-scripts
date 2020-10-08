@@ -10,6 +10,7 @@ from etsumm.test_etsumm.base import TestBase
 class TestEtcli(TestBase):
 
     def test(self):
+        self.remove_testdir = False #tdk
         branch = 'develop'
         compiler = 'gfortran'
         platform = 'cheyenne'

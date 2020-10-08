@@ -14,7 +14,7 @@ class TestParser(TestBase):
                   'compiler_version': '8.1.0',
                   'optimization': 'g',
                   'comm': 'openmpi',
-                  'comm_version': '8.1.0',
+                  'comm_version': '3.1.0',
                   'artifacts': env.ESMF_TEST_ARTIFACTS}
         return config
 

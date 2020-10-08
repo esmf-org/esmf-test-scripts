@@ -35,6 +35,8 @@ TARGET_META = {'examples': {'suffix': 'Ex.Log', 'dir': 'examples'},
                'unit_tests': {'suffix': 'UTest.Log', 'dir': 'test'},
                'system_tests': {'suffix': 'STest.Log', 'dir': 'test'}}
 
+OUTFILES = ('run_examples.out', 'run_system_tests.out', 'run_unit_tests.out')
+
 
 class Parser(object):
 
@@ -144,23 +146,35 @@ class Parser(object):
 
 def create_suite_runner(outfile, xmlout, parser=None, verbosity=1):
     outfile = Path(outfile)
-    assert outfile.exists()
     xmlout = Path(xmlout)
 
     # Add tests to this container
     test_cls = deepcopy(TestContainer)
 
-    # Create summary tests for the unit test targets
-    basic = summarize_test_outfile(str(outfile.absolute()))
-    for v in basic.values():
-        test_cls.add_test(v, parser=parser)
+    # Fail fast essentially if the outfile does not exist
+    if not outfile.exists():
+        log("out file does not exist: {}".format(str(outfile)), logger="parser")
+        test_cls.add_outfile_exists_test(outfile)
+        runner, suite = make_suite_runner(test_cls, verbosity, xmlout)
+    # If the outfile exists, parse it for results
+    else:
+        # Create summary tests for the unit test targets
+        basic = summarize_test_outfile(str(outfile.absolute()))
+        for v in basic.values():
+            test_cls.add_test(v, parser=parser)
 
-    # Create tests for each line in the all_tests out file
-    full = full_parse_all_tests(str(outfile.absolute()))
-    for v in full.values():
-        test_cls.add_test(v, parser=parser)
+        # Create tests for each line in the all_tests out file
+        full = full_parse_all_tests(str(outfile.absolute()))
+        for v in full.values():
+            test_cls.add_test(v, parser=parser)
 
+        runner, suite = make_suite_runner(test_cls, verbosity, xmlout)
+
+    return suite, runner
+
+
+def make_suite_runner(test_cls, verbosity, xmlout):
     suite = unittest.TestSuite()
     suite.addTests(unittest.TestLoader().loadTestsFromTestCase(test_cls))
     runner = xmlrunner.XMLTestRunner(output=str(xmlout.absolute()), verbosity=verbosity)
-    return suite, runner
+    return runner, suite

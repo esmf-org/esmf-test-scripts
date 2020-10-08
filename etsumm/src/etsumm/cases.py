@@ -23,3 +23,13 @@ class TestContainer(unittest.TestCase):
             self.assertEqual(meta['result'], "PASS", json.dumps(meta))
 
         setattr(cls, test_name, test)
+
+    @classmethod
+    def add_outfile_exists_test(cls, outfile):
+        test_name = "test {} exists".format(outfile.name)
+        test_name.replace('.', '_')
+
+        def test(self):
+            self.assertTrue(outfile.exists(), str(outfile))
+
+        setattr(cls, test_name, test)

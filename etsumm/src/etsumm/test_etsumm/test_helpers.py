@@ -28,7 +28,7 @@ class TestHelpers(TestBase):
     def test_find_combinations(self):
         exists = find_combinations()
         print(exists)
-        self.assertGreaterEqual(len(exists), 10)
+        self.assertGreaterEqual(len(exists), 5)
 
     def test_make_config_circleci(self):
         targets = find_combinations()
