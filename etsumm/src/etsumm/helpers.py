@@ -4,7 +4,6 @@ import tempfile
 
 import git
 from git import RemoteProgress
-from jinja2 import FileSystemLoader, Environment
 
 from etsumm import constants
 from etsumm.environment import env
@@ -114,6 +113,8 @@ def find_combinations():
 
 
 def do_render(targets, filename, template_folder=None, **extra):
+    from jinja2 import FileSystemLoader, Environment
+
     if template_folder is None:
         template_folder = os.path.dirname(os.path.realpath(__file__))
     file_loader = FileSystemLoader(template_folder)
@@ -133,6 +134,7 @@ def make_config_circleci(config_out):
 
 def collect_artifact_problems():
     from etsumm.parser import Parser
+
     problems = []
     platforms = set()
     for config in Parser.iter_config():
