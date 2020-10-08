@@ -43,9 +43,8 @@ class TestParser(TestBase):
         self.assertGreaterEqual(ctr, 71)
 
     def test_create_suite_runner(self):
-        self.remove_testdir = False  # tdk
         outfile = os.path.join(self.path_bin, "esmf-make-all_tests-fail.out")
         parser = self.fixture_parser()
         xmlout = os.path.join(self.testdir, 'meta_test')
-        suite, runner = create_suite_runner(parser, outfile, xmlout)
+        suite, runner = create_suite_runner(outfile, xmlout, parser=parser)
         runner.run(suite)

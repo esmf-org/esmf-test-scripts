@@ -160,12 +160,6 @@ def create_suite_runner(outfile, xmlout, parser=None, verbosity=1):
     for v in full.values():
         test_cls.add_test(v, parser=parser)
 
-    # test_cls = deepcopy(TestContainer)
-    # for meta in parser.iter_test_meta():
-    #     for k, v in meta.items():
-    #         lines = v.pop('lines')
-    #         test_cls.add_test(parser.config, k, v, lines)
-
     suite = unittest.TestSuite()
     suite.addTests(unittest.TestLoader().loadTestsFromTestCase(test_cls))
     runner = xmlrunner.XMLTestRunner(output=str(xmlout.absolute()), verbosity=verbosity)
