@@ -1,21 +1,26 @@
-Run ESMF pseudo-tests using a test outfile.
+# ESMF Testing Summarization (`etsumm`)
+
+Run ESMF pseudo-testing against ESMF-related test output.
 
 # Installation
 
-See the project [Dockerfile](Dockerfile) for installation. It is recommended that the Docker entrypoint is used. The recipe steps can be easily adapted for a local installation.
+See the project [Dockerfile](Dockerfile).
 
 ## Docker Build
 
 ```
-BRANCH=<GitHub branch, if not provided defaults to master>
-docker build -t etsumm --build-arg BRANCH=${BRANCH} .
+ETSUMM_BRANCH=<GitHub branch, if not provided defaults to master>
+ETSUMM_RUNTESTS="OFF"  # If "ON" run unit tests when building.
+docker build -t etsumm --build-arg   ETSUMM_BRANCH=${ETSUMM_BRANCH} \
+                       --build-arg ETSUMM_RUNTESTS=${ETSUMM_RUNTESTS} .
 ```
 
-## Getting Help from `etcli`
+# `etcli` (ESMF Testing Command Line Interface)
+
+The [etcli.py](src/etsumm/etcli.py) command line interface is the primary entry point for using the test summarization procedures. Any functionality added to `etsumm` should have a subcommand associated with it.
 
 ```
 docker run --rm etsumm --help
-docker run --rm etsumm check-outfile --help
 ```
 
 ## Run ESMF Out File Tests
@@ -35,10 +40,4 @@ Run a test suite against the [ESMF test artifacts](https://github.com/esmf-org/e
 ```
 ESMF_ARTIFACTS=<path to ESMF test artifacts repository containing folder>
 docker run --rm -v ${ESMF_ARTIFACTS}:/opt/mount: etsumm artifact-tests --artifacts /opt/mount/esmf-test-artifacts --xmlout /opt/mount/xml-artifact-tests --branch develop --platform cheyenne --compiler gfortran --comm mpich3
-```
-
-## Run _etsumm_ Project Unit Tests
-
-```
-docker run --rm --entrypoint pytest etsumm src
 ```
