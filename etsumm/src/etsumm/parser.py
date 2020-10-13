@@ -10,7 +10,6 @@ import jsonschema
 import xmlrunner
 
 from etsumm.cases import TestContainer
-from etsumm.constants import HIERARCHY
 from etsumm.environment import env
 from etsumm.etlog import log
 from etsumm.helpers import summarize_test_outfile, full_parse_all_tests
@@ -49,14 +48,14 @@ class Parser(object):
     @property
     def results_dir(self):
         ret = self.config["artifacts"]
-        for o in HIERARCHY:
+        for o in env.CONSTANTS['hierarchy']:
             ret = os.path.join(ret, self.config[o])
         return ret
 
     @property
     def suffix(self):
         ret = ''
-        for h in HIERARCHY:
+        for h in env.CONSTANTS['hierarchy']:
             ret += self.config[h] + '-'
         ret += self.config['test_target']
         return ret

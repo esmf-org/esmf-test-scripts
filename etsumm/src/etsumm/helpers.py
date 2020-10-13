@@ -5,7 +5,6 @@ import tempfile
 import git
 from git import RemoteProgress
 
-from etsumm import constants
 from etsumm.environment import env
 from etsumm.etlog import log
 from etsumm.itester import itr_products_keywords
@@ -96,7 +95,10 @@ def get_temporary_output_directory():
 def find_combinations():
     from etsumm.parser import Parser
 
-    keywords = {'branch': constants.BRANCH, 'compiler': constants.COMPILER, 'comm': constants.COMM, 'platform': constants.PLATFORM}
+    keywords = {'branch':   env.CONSTANTS['branch'],
+                'compiler': env.CONSTANTS['compiler'],
+                'comm':     env.CONSTANTS['comm'],
+                'platform': env.CONSTANTS['platform']}
     combos = [k for k in itr_products_keywords(keywords)]
     configs = [config for config in Parser.iter_config()]
     found = {}
@@ -131,7 +133,7 @@ def make_config_circleci(config_out):
     platforms = set()
     for target in targets:
         platforms.update([target['platform']])
-    for missing in set(constants.PLATFORM).difference(platforms):
+    for missing in set(env.CONSTANTS['platform']).difference(platforms):
         targets.append({'branch': 'develop', 'platform': missing, 'comm': 'ARTIFACTS', 'compiler': 'MISSING'})
 
     filename = 'config.jinja2'
@@ -151,6 +153,6 @@ def collect_artifact_problems():
             problems.append(config)
         if '.' not in config['comm_version']:
             problems.append(config)
-    if platforms != set(constants.PLATFORM):
-        problems.append({'platform': set(constants.PLATFORM).difference(platforms)})
+    if platforms != set(env.CONSTANTS['platform']):
+        problems.append({'platform': set(env.CONSTANTS['platform']).difference(platforms)})
     return problems

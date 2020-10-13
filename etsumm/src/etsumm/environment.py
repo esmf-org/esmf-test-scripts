@@ -1,3 +1,4 @@
+import json
 import logging
 import os
 
@@ -12,6 +13,8 @@ class Environment(object):
         self.ESMF_TEST_ARTIFACTS_NAME = 'esmf-test-artifacts'
         self.ESMF_TEST_ARTIFACTS = self.format_path(os.environ.get('ESMF_TEST_ARTIFACTS', None))
 
+        self.CONSTANTS = self._load_constants_()
+
     @staticmethod
     def format_path(path):
         if path is not None:
@@ -21,6 +24,13 @@ class Environment(object):
 
     def validate(self):
         pass
+
+    @staticmethod
+    def _load_constants_():
+        path = os.path.join(os.path.split(os.path.realpath(__file__))[0], 'constants.json')
+        with open(path, 'r') as f:
+            ret = json.load(f)
+        return ret
 
 
 env = Environment()

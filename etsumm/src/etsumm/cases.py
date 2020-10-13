@@ -1,7 +1,7 @@
 import json
 import unittest
 
-from etsumm.constants import HIERARCHY
+from etsumm.environment import env
 
 
 class TestContainer(unittest.TestCase):
@@ -13,7 +13,7 @@ class TestContainer(unittest.TestCase):
 
         if parser is not None:
             # Make the test name unique
-            for h in HIERARCHY:
+            for h in env.CONSTANTS['hierarchy']:
                 test_name += ' {}={}'.format(h, parser.config[h])
 
         # Not allowed in test names
