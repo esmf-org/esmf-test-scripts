@@ -31,7 +31,7 @@ class TestEtcli(TestBase):
         """Test a full run against the test artifacts."""
 
         xmlout = os.path.join(self.testdir, "meta_test")
-        run_artifact_tests(env.ESMF_TEST_ARTIFACTS, xmlout, "develop", None, None, None)
+        run_artifact_tests(env.ESMF_TEST_ARTIFACTS, xmlout, "develop", "cheyenne", "gfortran", "mpich3")
 
     def test_check_outfile(self):
         runner = CliRunner()
