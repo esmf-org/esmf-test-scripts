@@ -4,6 +4,8 @@ import tempfile
 import click
 
 from etsumm import etlog
+from etsumm.environment import env
+from etsumm.helpers import make_config_circleci
 from etsumm.parser import create_suite_runner
 from etsumm.run import run_artifact_tests
 
@@ -71,6 +73,24 @@ def check_outfile(outfile, xmlout, logpath):
 
     suite, runner = create_suite_runner(outfile, xmlout)
     runner.run(suite)
+
+    etlog.log('Success', logger=logger)
+
+
+@etcli.command(help="Create a CircleCI configuration file", name="make-circleci-config")
+@click.argument('outfile', required=True, type=click.Path(dir_okay=False, file_okay=True))
+@click.argument('artifacts', required=True, type=click.Path(exists=True, file_okay=False))
+@click.option('--logpath', required=False, type=click.Path(exists=False, dir_okay=False), default=None,
+              help='Path to the output log file.')
+def make_circleci_config(outfile, artifacts, logpath):
+    """Write a CircleCI configuration file to the path OUTFILE using the esmf-test-artifacts directory ARTIFACTS."""
+
+    env.ESMF_TEST_ARTIFACTS = artifacts
+    logger = 'make-circleci-config'
+    etlog.log.configure(to_file=logpath, to_stream=True)
+    etlog.log('Starting...', logger=logger)
+
+    make_config_circleci(outfile)
 
     etlog.log('Success', logger=logger)
 

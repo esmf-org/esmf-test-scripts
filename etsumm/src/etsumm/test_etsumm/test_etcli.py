@@ -1,4 +1,5 @@
 import os
+from pathlib import Path
 
 from click.testing import CliRunner
 
@@ -50,3 +51,16 @@ class TestEtcli(TestBase):
                 '--xmlout', os.path.join(self.testdir, "")]
         result = runner.invoke(etcli, args=args, catch_exceptions=False)
         self.assertEqual(result.exit_code, 0)
+
+    def test_create_circleci_config(self):
+        runner = CliRunner()
+        outfile = Path(os.path.join(self.testdir, "config.yml"))
+        args = ['make-circleci-config',
+                str(outfile),
+                env.ESMF_TEST_ARTIFACTS]
+        for _ in range(3):
+            self.assertFalse(outfile.exists())
+            result = runner.invoke(etcli, args=args, catch_exceptions=False)
+            self.assertEqual(result.exit_code, 0)
+            self.assertTrue(outfile.exists())
+            outfile.unlink()

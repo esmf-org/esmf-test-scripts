@@ -11,7 +11,7 @@ See the project [Dockerfile](Dockerfile).
 ```
 ETSUMM_BRANCH=<GitHub branch, if not provided defaults to master>
 ETSUMM_RUNTESTS="OFF"  # If "ON" run unit tests when building.
-docker build -t etsumm --build-arg   ETSUMM_BRANCH=${ETSUMM_BRANCH} \
+docker build -t etsumm --build-arg ETSUMM_BRANCH=${ETSUMM_BRANCH} \
                        --build-arg ETSUMM_RUNTESTS=${ETSUMM_RUNTESTS} .
 ```
 
@@ -40,4 +40,12 @@ Run a test suite against the [ESMF test artifacts](https://github.com/esmf-org/e
 ```
 ESMF_ARTIFACTS=<path to ESMF test artifacts repository containing folder>
 docker run --rm -v ${ESMF_ARTIFACTS}:/opt/mount: etsumm artifact-tests --artifacts /opt/mount/esmf-test-artifacts --xmlout /opt/mount/xml-artifact-tests --branch develop --platform cheyenne --compiler gfortran --comm mpich3
+```
+
+## Create a CircleCI Configuration File
+
+```
+OUTFILE_DIR=</path/to/output/directory>
+ESMF_ARTIFACTS=<path to ESMF test artifacts repository containing folder>
+docker run --rm -v ${ESMF_ARTIFACTS}:/opt/mount/artifacts:ro -v ${OUTFILE_DIR}:/opt/mount/outfile_dir etsumm make-circleci-config /opt/mount/outfile_dir/config.yml /opt/mount/esmf-test-artifacts
 ```
