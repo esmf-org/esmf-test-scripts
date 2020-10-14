@@ -15,6 +15,10 @@ class TestContainer(unittest.TestCase):
             # Make the test name unique
             for h in env.CONSTANTS['hierarchy']:
                 test_name += ' {}={}'.format(h, parser.config[h])
+            # Path to the test artifacts
+            format_values = {h: parser.config[h] for h in env.CONSTANTS['hierarchy']}
+            uri = "https://github.com/esmf-org/esmf-test-artifacts/tree/master/{branch}/{platform}/{compiler}/{compiler_version}/{optimization}/{comm}/{comm_version}".format(**format_values)
+            meta['github_url'] = uri
 
         # Not allowed in test names
         test_name = test_name.replace('.', '_')
