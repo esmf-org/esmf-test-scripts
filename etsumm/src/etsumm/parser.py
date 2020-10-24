@@ -93,12 +93,13 @@ class Parser(object):
                                                 config['optimization'] = optimization.name
                                                 for comm in os.scandir(optimization.path):
                                                     if comm.is_dir():
-                                                        config['comm'] = comm.name
-                                                        for comm_version in os.scandir(comm.path):
-                                                            if comm_version.is_dir():
-                                                                config['comm_version'] = comm_version.name
-                                                                yield deepcopy(config)
-
+                                                        if(comm.name != "mpiuni"):
+                                                            config['comm'] = comm.name
+                                                            for comm_version in os.scandir(comm.path):
+                                                                if comm_version.is_dir():
+                                                                    config['comm_version'] = comm_version.name
+                                                                    yield deepcopy(config)
+                                                        
     def iter_test_meta(self):
         """DEPRECATED! Create test metadata from test log files."""
 
