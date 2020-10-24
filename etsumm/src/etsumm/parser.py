@@ -100,7 +100,9 @@ class Parser(object):
                                                                     config['comm_version'] = comm_version.name
                                                                     yield deepcopy(config)
                                                         else:
+                                                            config['comm'] = ""
                                                             yield deepcopy(config)
+                                                            
                                                         
     def iter_test_meta(self):
         """DEPRECATED! Create test metadata from test log files."""
