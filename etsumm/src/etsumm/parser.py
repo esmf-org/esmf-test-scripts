@@ -99,6 +99,8 @@ class Parser(object):
                                                                 if comm_version.is_dir():
                                                                     config['comm_version'] = comm_version.name
                                                                     yield deepcopy(config)
+                                                        else:
+                                                            yield deepcopy(config)
                                                         
     def iter_test_meta(self):
         """DEPRECATED! Create test metadata from test log files."""
