@@ -100,7 +100,8 @@ class Parser(object):
                                                                     config['comm_version'] = comm_version.name
                                                                     yield deepcopy(config)
                                                         else:
-                                                            config['comm'] = ""
+                                                            config['comm'] = "mpiuni"
+                                                            config['comm_version'] = "" 
                                                             yield deepcopy(config)
                                                             
                                                         
