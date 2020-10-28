@@ -15,7 +15,8 @@
     "bighorn",
     "catania",
     "cheyenne",
-    "stampede"
+    "stampede",
+    "izumi"
   ],
   "compiler": [
     "gfortran",
