@@ -55,8 +55,21 @@ jobs:
           platform: {{  target.platform }}
           compiler: {{ target.compiler }}
           comm: {{ target.comm }}
-
 {% endfor %}
+
+  commit-read:
+    docker:
+      - image: circleci/python
+        auth:
+          username: $ESMF_DOCKER_USERNAME
+          password: $ESMF_DOCKER_PASSWORD
+    steps:
+      - checkout
+      - run:
+          name: Read Commit Log file 
+          command: cd esmf-test-artifacts/develop && python3.7 build_json_data.py
+        
+
 workflows:
 
   run-meta-testing:
@@ -66,3 +79,7 @@ workflows:
           name: {{ target.branch }}-{{ target.platform }}-{{ target.compiler }}-{{ target.comm }}
 {% endfor %}
 {{ '' }}
+
+  run-read-commit:
+    jobs:
+      - commit-read
