@@ -4,7 +4,7 @@ jobs:
 
   etsumm:
     docker:
-      - image: circleci/python3
+      - image: circleci/python
     steps:
       - checkout
       - run:
