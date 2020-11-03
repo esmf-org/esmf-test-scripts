@@ -66,11 +66,8 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Install Dependencies
-          command: pip install requests
-      - run:
           name: Read Commit Log file 
-          command: ls && cd develop && python3.7 build_html.py
+          command: ls && cd develop && python3 build_html.py
       - run:
           name: Push HTML 
           command: bash esmf-test-artifacts/.circleci/html_push.sh
