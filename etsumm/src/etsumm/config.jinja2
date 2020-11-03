@@ -66,6 +66,9 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Install Dependencies
+          command: pip install requests
+      - run:
           name: Read Commit Log file 
           command: ls && cd develop && python3.7 build_html.py
       - run:
