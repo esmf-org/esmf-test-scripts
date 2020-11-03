@@ -10,6 +10,9 @@ jobs:
       - run:
           name: install dependencies
           command: pip3 install pytest sqlalchemy jsonschema unittest-xml-reporting click gitpython jinja2 requests python-dateutil pytest-shutil
+      - run:
+          name: python-dateutil dependencies
+          command: sudo pip3 install python-dateutil
       - run: mkdir -p /tmp/artifacts
       - run:
           name: test
