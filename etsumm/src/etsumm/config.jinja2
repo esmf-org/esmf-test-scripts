@@ -20,7 +20,7 @@ commands:
           command: git clone --depth 1 --branch ${CIRCLE_BRANCH} https://github.com/esmf-org/esmf-test-artifacts.git
       - run:
           name: Install Dependencies
-          command: pip install jsonschema unittest-xml-reporting click gitpython
+          command: pip install jsonschema unittest-xml-reporting click gitpython requests
       - run: mkdir -p /tmp/artifacts
       - run:
           name: Run Meta Testing
