@@ -9,7 +9,7 @@ jobs:
       - checkout
       - run:
           name: install dependencies
-          command: pip install pytest sqlalchemy jsonschema unittest-xml-reporting click gitpython jinja2
+          command: pip install pytest sqlalchemy jsonschema unittest-xml-reporting click gitpython jinja2 requests
       - run: mkdir -p /tmp/artifacts
       - run:
           name: test
