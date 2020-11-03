@@ -9,7 +9,7 @@ jobs:
       - checkout
       - run:
           name: install dependencies
-          command: pip install pytest sqlalchemy jsonschema unittest-xml-reporting click gitpython jinja2 requests py-dateutil pycopy-tempfile pytest-shutil 
+          command: pip install pytest sqlalchemy jsonschema unittest-xml-reporting click gitpython jinja2 requests py-dateutil pytest-shutil 
       - run: mkdir -p /tmp/artifacts
       - run:
           name: test
