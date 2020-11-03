@@ -4,12 +4,12 @@ jobs:
 
   etsumm:
     docker:
-      - image: circleci/python
+      - image: circleci/python3
     steps:
       - checkout
       - run:
           name: install dependencies
-          command: pip install pytest sqlalchemy jsonschema unittest-xml-reporting click gitpython jinja2 requests python-dateutil pytest-shutil
+          command: pip3 install pytest sqlalchemy jsonschema unittest-xml-reporting click gitpython jinja2 requests python-dateutil pytest-shutil
       - run: mkdir -p /tmp/artifacts
       - run:
           name: test
