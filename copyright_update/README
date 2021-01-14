@@ -1,0 +1,12 @@
+Do the following:
+
+find esmf > outfiles
+grep -v "eps" outfiles > no_eps_files
+grep -v "vsd" no_eps_files > no_vsd_files
+grep -v "cdd" no_vsd_files > no_cdd_files
+grep -v "vtk" no_cdd_files >  final_files
+
+
+replace_string -nb -nq -s s/2002\-2009/2002\-2010/g -F final_files
+
+Changed Copyright 2002-2009 to 2002-2010.
