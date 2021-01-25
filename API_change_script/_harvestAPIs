@@ -10,9 +10,9 @@
 # usage: sh _harvestAPIs <dir_of_esmf_with_final_backslash> <tag_of_baseline> <tag_of_new_release>
 
 # parse the input arguments
-ESMF_DIR=$1
-TAG1=$2
-TAG2=$3
+#ESMF_DIR=$1
+#TAG1=$2
+#TAG2=$3
 
 # set up directories and build variables
 HERE=$PWD
