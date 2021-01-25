@@ -29,7 +29,7 @@ cd $HERE
 python -c 'print "starting harvestAPIsFromRefDoc on $TAG1"'
 
 # collect apis from the first tag
-#python -c 'import harvestAPIsFromRefDoc as h; h.harvest_APIs("'$ESMF_DIR'", "APIs-'$TAG1'.out")'
+python -c 'import harvestAPIsFromRefDoc as h; h.harvest_APIs("'$ESMF_DIR'", "APIs-'$TAG1'.out")'
 
 #dryrun
 python -c 'import harvestAPIsFromRefDoc as h; h.harvest_APIs("'$ESMF_DIR'", "'$TAG1'")'
@@ -47,7 +47,7 @@ cd $HERE
 python -c 'print "starting harvestAPIsFromRefDoc on $TAG2"'
 
 # collect apis from the second tag
-#python -c 'import harvestAPIsFromRefDoc as h; h.harvest_APIs("'$ESMF_DIR'", "APIs-'$TAG2'.out")'
+python -c 'import harvestAPIsFromRefDoc as h; h.harvest_APIs("'$ESMF_DIR'", "APIs-'$TAG2'.out")'
 
 #dryrun
 python -c 'import harvestAPIsFromRefDoc as h; h.harvest_APIs("'$ESMF_DIR'", "'$TAG2'")'
@@ -57,7 +57,7 @@ python -c 'print "finishing harvestAPIsFromRefDoc on $TAG2"'
 
 
 # diff the apis from both tags and create a report
-#diff 'APIs-'$TAG1'.out' 'APIs-'$TAG2'.out' > 'diff-'$TAG1'-'$TAG2'.out'
+diff 'APIs-'$TAG1'.out' 'APIs-'$TAG2'.out' > 'diff-'$TAG1'-'$TAG2'.out'
 
 # cleanup
 cd $ESMF_DIR
