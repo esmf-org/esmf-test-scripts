@@ -1,0 +1,16 @@
+#!/bin/bash
+
+
+
+if [[ $1 == "ESMF_RegridWeightGenCheck" ]]; then
+  export ESMF_NUM_PROCS=$5
+  cd $DEMODIR/$1
+  gmake run > $1.out 2>&1
+elif [[ $1 == "ESMF_RegridCheck" ]]; then
+  export ESMF_NUM_PROCS=$5
+  cd $DEMODIR/$1
+  gmake run > $1.out 2>&1
+else
+  cd $DEMODIR/$1
+  $ESMF_MPIRUN -np $5 ./$1 > $DEMODIR/$1/$1.out 2>&1
+fi
