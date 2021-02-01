@@ -24,9 +24,10 @@ with open(inpfile) as file:
         mpidict = machine_list[comp]['versions'][ver]['mpi']
         mpitypes= mpidict.keys()
         for key in mpitypes:
-          cmdstring = "git clone -b ESMF_8_0_2branch git@github.com:esmf-org/esmf {}_{}_{}_{}".format(comp,ver,key,build_type)
-          status= subprocess.check_output(cmdstring,shell=True).strip().decode('utf-8')
           subdir="{}_{}_{}_{}".format(comp,ver,key,build_type)
+          if(not(os.path.isdir(subdir))):
+             cmdstring = "git clone -b ESMF_8_0_2branch git@github.com:esmf-org/esmf {}".format(subdir)
+             status= subprocess.check_output(cmdstring,shell=True).strip().decode('utf-8')
           os.chdir(subdir)
           filename = 'build-{}_{}_{}_{}.bat'.format(comp,ver,key,build_type)
           t_filename = 'test-{}_{}_{}_{}.bat'.format(comp,ver,key,build_type)
