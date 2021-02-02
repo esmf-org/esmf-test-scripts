@@ -27,6 +27,7 @@ def create_header(file_out,scheduler,filename,time,account,machine_name,queue,cp
     file_out.write("#PBS -A {}\n".format(account))
     file_out.write("#PBS -l select=1:ncpus={}:mpiprocs={}\n".format(cpn,cpn))
     file_out.write("#PBS -l walltime={}\n".format(time))
+    file_out.write("cd {}\n".format(os.getcwd()))
 
 def main(argv):
   inpfile = sys.argv[1]
@@ -59,8 +60,9 @@ def main(argv):
             t_filename = 'test-{}_{}_{}_{}.bat'.format(comp,ver,key,build_type)
             fb = open(filename, "w")
             ft = open(t_filename, "w")
-            create_header(fb,scheduler,filename,"1:00:00",account,machine_name,queue,cpn,cluster)
-            create_header(ft,scheduler,t_filename,"2:00:00",account,machine_name,queue,cpn,cluster)
+
+            create_header(fb,scheduler,filename,"0:30:00",account,machine_name,queue,cpn,cluster)
+            create_header(ft,scheduler,t_filename,"0:30:00",account,machine_name,queue,cpn,cluster)
   
             if("unloadmodule" in machine_list[comp]):
               fb.write("\nmodule unload {}\n".format(machine_list[comp]['unloadmodule']))
