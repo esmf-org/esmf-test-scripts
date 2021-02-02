@@ -2,7 +2,7 @@ machine: gaffney
 account: NRLMR03795024
 queue: standard
 scheduler: pbs
-corespernode: 40
+corespernode: 48
 compiler: [intel,gfortran]
 intel:
      versions: 

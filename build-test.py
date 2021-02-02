@@ -101,13 +101,22 @@ def main(argv):
   
             fb.close()
             ft.close()
-            batch_build = "sbatch {}".format(filename)
-            print(batch_build)
-            jobnum= subprocess.check_output(batch_build,shell=True).strip().decode('utf-8').split()[3]
-            # submit the second job to be dependent on the first
-            batch_test = "sbatch --depend=afterok:{} {}".format(jobnum,t_filename)
-            print("Submitting test_batch with command: {}".format(batch_test))
-            jobnum= subprocess.check_output(batch_test,shell=True).strip().decode('utf-8').split()[3]
+            if(scheduler == "slurm"):
+              batch_build = "sbatch {}".format(filename)
+              print(batch_build)
+              jobnum= subprocess.check_output(batch_build,shell=True).strip().decode('utf-8').split()[3]
+              # submit the second job to be dependent on the first
+              batch_test = "sbatch --depend=afterok:{} {}".format(jobnum,t_filename)
+              print("Submitting test_batch with command: {}".format(batch_test))
+              jobnum= subprocess.check_output(batch_test,shell=True).strip().decode('utf-8').split()[3]
+            elif(scheduler == "pbs"):
+              batch_build = "qsub {}".format(filename)
+              print(batch_build)
+              jobnum= subprocess.check_output(batch_build,shell=True).strip().decode('utf-8').split(".")[0]
+              # submit the second job to be dependent on the first
+              batch_test = "qsub -W depend=afterok:{} {}".format(jobnum,t_filename)
+              print("Submitting test_batch with command: {}".format(batch_test))
+              jobnum= subprocess.check_output(batch_test,shell=True).strip().decode('utf-8').split(".")[0]
             os.chdir("..")
   
   
