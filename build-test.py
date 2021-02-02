@@ -49,7 +49,9 @@ def main(argv):
        for ver in machine_list[comp]['versions']:
           mpidict = machine_list[comp]['versions'][ver]['mpi']
           mpitypes= mpidict.keys()
+          print(machine_list[comp]['versions'][ver])
           for key in mpitypes:
+            
             subdir="{}_{}_{}_{}".format(comp,ver,key,build_type)
             if(not(os.path.isdir(subdir))):
                cmdstring = "git clone -b ESMF_8_0_2branch git@github.com:esmf-org/esmf {}".format(subdir)
@@ -68,6 +70,10 @@ def main(argv):
             if("extramodule" in machine_list[comp]):
               fb.write("\nmodule load {}\n".format(machine_list[comp]['extramodule']))
               ft.write("\nmodule load {}\n".format(machine_list[comp]['extramodule']))
+
+            if('extra_env_vars' in machine_list[comp]['versions'][ver]):
+                fb.write("export {}\n".format(machine_list[comp]['versions'][ver]['extra_env_vars']))
+                ft.write("export {}\n".format(machine_list[comp]['versions'][ver]['extra_env_vars']))
 
             mpiver = mpidict[key]
             if(mpiver == "None"):
