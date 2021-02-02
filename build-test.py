@@ -59,8 +59,9 @@ def main(argv):
             create_header(fb,scheduler,filename,"1:00:00",account,machine_name,queue,cpn)
             create_header(ft,scheduler,t_filename,"2:00:00",account,machine_name,queue,cpn)
   
+            if("unloadmodule" in machine_list[comp]):
+              fb.write("\nmodule unload {}\n".format(machine_list[comp]['unloadmodule']))
             if("extramodule" in machine_list[comp]):
-              print("HEY module is ",machine_list[comp]['extramodule'])
               fb.write("\nmodule load {}\n".format(machine_list[comp]['extramodule']))
 
             mpiver = mpidict[key]

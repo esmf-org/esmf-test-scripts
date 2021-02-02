@@ -1,0 +1,25 @@
+machine: gaffney
+account: NRLMR03795024
+queue: standard
+scheduler: pbs
+corespernode: 44
+compiler: [intel,gfortran]
+intel:
+     versions: 
+       2017.5: 
+         module: intel/17.0.5.239          
+         netcdf: netcdf/intel-17.0.1.132/4.4.1.1 
+         mpi:
+           mpich: cray-mpich/7.7.12
+     extramodule: PrgEnv-intel
+     unloadmodule: PrgEnv-cray
+gfortran:
+     versions: 
+       9.2.0: 
+         module: gcc/7.2.0
+         netcdf: netcdf/gcc-7.3.0/4.6.2  
+         mpi:
+           mpich: cray-mpich/7.7.12     
+           mpiuni: None
+     extramodule: PrgEnv-gnu
+     unloadmodule: PrgEnv-cray
