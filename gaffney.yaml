@@ -8,7 +8,7 @@ intel:
      versions: 
        2020.2: 
          module: compiler/intel/2020.2.254 
-         netcdf: 4.7.0
+         netcdf: cse/netcdf/4.7.0
          mpi:
            intelmpi: compiler/intelmpi/2020.2.254
            mpt: mpt/2.20
