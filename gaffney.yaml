@@ -1,0 +1,24 @@
+machine: gaffney
+account: NRLMR03795024
+queue: standard
+scheduler: pbs
+corespernode: 40
+compiler: [intel,gfortran]
+intel:
+     versions: 
+       2020.2: 
+         module: compiler/intel/2020.2.254 
+         netcdf: 4.7.0
+         mpi:
+           intelmpi: compiler/intelmpi/2020.2.254
+           mpt: mpt/2.20
+     extramodule: cseinit-intel
+gfortran:
+     versions: 
+       9.2.0: 
+         module: gcc/9.2.0
+         netcdf: 4.7.2
+         mpi:
+           openmpi: compiler/openmpi/2.1.2
+           mpiuni: None
+     extramodule: cseinit
