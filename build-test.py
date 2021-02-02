@@ -4,13 +4,16 @@ import subprocess
 import sys
 
 
-def create_header(file_out,scheduler,filename,time,account,machine_name,queue,cpn):
+def create_header(file_out,scheduler,filename,time,account,machine_name,queue,cpn,cluster):
   if(scheduler == "slurm"): 
     file_out.write("#!/bin/sh\n")
     file_out.write("#SBATCH -o {}_%j.o\n".format(filename))
     file_out.write("#SBATCH -e {}_%j.e\n".format(filename))
     file_out.write("#SBATCH --account={}\n".format(account))
-    file_out.write("#SBATCH --partition={}\n".format(machine_name))
+    if(cluster == "None"):
+      file_out.write("#SBATCH --partition={}\n".format(machine_name))
+    else:   
+      file_out.write("#SBATCH --cluster={}\n".format(cluster))
     file_out.write("#SBATCH --qos={}\n".format(queue))
     file_out.write("#SBATCH --nodes=1\n")
     file_out.write("#SBATCH --ntasks-per-node={}\n".format(cpn))
@@ -35,15 +38,15 @@ def main(argv):
     queue = machine_list['queue']
     cpn = machine_list['corespernode']
     scheduler = machine_list['scheduler']
-    print(machine_list['compiler'])
     build_types = ['O','g']
+    if("cluster" in machine_list):
+      cluster=machine_list['cluster']
+    else:
+      cluster="None"
     for build_type in build_types:
       for comp in machine_list['compiler']:
   
        for ver in machine_list[comp]['versions']:
-          print(comp, ver, machine_list[comp]['versions'][ver])
-          print(comp, ver, machine_list[comp]['versions'][ver]['module'])
-          print(comp, ver, machine_list[comp]['versions'][ver]['netcdf'])
           mpidict = machine_list[comp]['versions'][ver]['mpi']
           mpitypes= mpidict.keys()
           for key in mpitypes:
@@ -56,15 +59,19 @@ def main(argv):
             t_filename = 'test-{}_{}_{}_{}.bat'.format(comp,ver,key,build_type)
             fb = open(filename, "w")
             ft = open(t_filename, "w")
-            create_header(fb,scheduler,filename,"1:00:00",account,machine_name,queue,cpn)
-            create_header(ft,scheduler,t_filename,"2:00:00",account,machine_name,queue,cpn)
+            create_header(fb,scheduler,filename,"1:00:00",account,machine_name,queue,cpn,cluster)
+            create_header(ft,scheduler,t_filename,"2:00:00",account,machine_name,queue,cpn,cluster)
   
             if("unloadmodule" in machine_list[comp]):
               fb.write("\nmodule unload {}\n".format(machine_list[comp]['unloadmodule']))
+              ft.write("\nmodule unload {}\n".format(machine_list[comp]['unloadmodule']))
             if("extramodule" in machine_list[comp]):
               fb.write("\nmodule load {}\n".format(machine_list[comp]['extramodule']))
+              ft.write("\nmodule load {}\n".format(machine_list[comp]['extramodule']))
 
             mpiver = mpidict[key]
+            if(mpiver == "None"):
+              mpiver = ""
   
             cmdstring = "export ESMF_DIR={}\n".format(os.getcwd())
             fb.write(cmdstring)

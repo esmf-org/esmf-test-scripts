@@ -1,8 +1,9 @@
 machine: gaea
 account: nggps_emc
 queue: normal
+cluster: c4
 scheduler: slurm
-corespernode: 44
+corespernode: 24
 compiler: [intel,gfortran]
 intel:
      versions: 
@@ -10,14 +11,13 @@ intel:
          module: intel/19.0.5.281          
          netcdf: cray-netcdf/4.6.3.2
          mpi:
-           mpich: cray-mpich/7.7.11
+           mpiuni: None
 gfortran:
      versions: 
        9.2.0: 
          module: gcc/8.3.0
          netcdf: cray-netcdf/4.6.3.2
          mpi:
-           mpich: cray-mpich/7.7.11     
-           mpiuni: cray-mpich/7.7.11    
+           mpiuni: None
      extramodule: PrgEnv-gnu
      unloadmodule: PrgEnv-intel
