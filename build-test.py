@@ -35,7 +35,10 @@ def main(argv):
   with open(inpfile) as file:
     machine_list = yaml.load(file, Loader=yaml.FullLoader)
     machine_name = machine_list['machine']
-    partition = machine_list['partition']
+    if("partition" in machine_list):
+      partition = machine_list['partition']
+    else: 
+      partition = "None"
     account = machine_list['account']
     queue = machine_list['queue']
     cpn = machine_list['corespernode']

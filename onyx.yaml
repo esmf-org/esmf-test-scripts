@@ -1,4 +1,4 @@
-machine: gaffney
+machine: onyx
 account: NRLMR03795024
 queue: standard
 scheduler: pbs
@@ -10,16 +10,16 @@ intel:
          module: intel/17.0.5.239          
          netcdf: netcdf/intel-17.0.1.132/4.4.1.1 
          mpi:
-           mpich: cray-mpich/7.7.12
+           mpi: cray-mpich/7.7.12
      extramodule: PrgEnv-intel
      unloadmodule: PrgEnv-cray
 gfortran:
      versions: 
-       9.2.0: 
+       7.2.0: 
          module: gcc/7.2.0
          netcdf: netcdf/gcc-7.3.0/4.6.2  
          mpi:
-           mpich: cray-mpich/7.7.12     
+           mpi: cray-mpich/7.7.12     
            mpiuni: None
      extramodule: PrgEnv-gnu
-     unloadmodule: PrgEnv-cray
+     unloadmodule: "PrgEnv-cray PrgEnv-intel"
