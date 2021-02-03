@@ -26,7 +26,7 @@ def main(argv):
       for cfile in oe_filelist:
         nfile = os.path.basename(re.sub('_{}'.format(jobid), '', cfile))
         print(cfile,nfile)
-        cp_cmd = "cp {} {}/{}/{}".format(cfile,root_path,machine,nfile)
+        cp_cmd = "cp {} {}/{}/{} >& cp_{}".format(cfile,root_path,machine,nfile,jobid)
         print(cp_cmd) 
         os.system(cp_cmd)
       git_cmd = "cd {};git add {};git commit -a -m\'update for {} on {}\';git push origin python".format(root_path,machine,directory,machine)
