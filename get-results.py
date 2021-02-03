@@ -23,7 +23,7 @@ def main(argv):
     print("checked queue, return was {}".format(job_done))
     if(job_done):
       
-      oe_filelist = glob.glob('{}/*{}*'.format(directory,jobid))
+      oe_filelist = glob.glob('{}/{}/*{}*'.format(root_path,directory,jobid))
       for cfile in oe_filelist:
         nfile = os.path.basename(re.sub('_{}'.format(jobid), '', cfile))
         print("copying {} to {}".format(cfile,nfile))
