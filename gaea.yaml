@@ -1,6 +1,7 @@
 machine: gaea
 account: nggps_emc
 queue: normal
+partition: None
 cluster: c4
 scheduler: slurm
 corespernode: 24

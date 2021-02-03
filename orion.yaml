@@ -1,6 +1,7 @@
 machine: orion
 account: da-cpu
 queue: batch
+partition: orion
 scheduler: slurm
 corespernode: 40
 compiler: [gfortran,pgi,intel]

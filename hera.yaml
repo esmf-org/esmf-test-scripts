@@ -1,6 +1,7 @@
 machine: hera
 account: da-cpu
 queue: batch
+partition: hera
 scheduler: slurm
 corespernode: 40
 compiler: [intel,gfortran,pgi]

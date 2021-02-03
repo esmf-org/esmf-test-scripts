@@ -1,0 +1,27 @@
+machine: cheyenne
+account: p48503002
+queue: regular
+partition: None
+scheduler: slurm
+corespernode: 40
+compiler: [gfortran]
+gfortran:
+     versions: 
+       7.4.0: 
+         module: gnu/7.4.0
+         netcdf: netcdf/4.7.3
+         mpi:
+           openmpi: openmpi/4.0.3
+       9.1.0: 
+         module: gnu/9.1.0
+         netcdf: netcdf/4.7.3
+         mpi:
+           openmpi: openmpi/4.0.5
+           mpt: mpt/2.22
+       10.1.0: 
+         module: gnu/10.1.0
+         netcdf: netcdf/4.7.3
+         mpi:
+           openmpi: openmpi/4.0.5
+     unloadmodule: "intel mpt"
+       
