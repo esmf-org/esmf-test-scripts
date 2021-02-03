@@ -46,3 +46,15 @@ compiler_name:
   unloadmodule: This is an optional list of modules that should be unloaded before setting the environment. 
   
 
+Running the script
+
+The script should be run from somewhere with decent disk space, since each individual set of parameters will create two directories (one for
+debug and another for optimized builds). The script requires python3 and is invoked with a single argument, which is the path to the 
+yaml file that should be used for the platform you are runnning on. All build/test directories will be created under your current directory.
+The script has one required module, which is pyyaml. If it is not installed, it can be added using pip3 (make sure the pip you are using 
+corresponds to the python3 version you are using). Install pyyaml under your own account by running "pip3 install --local pyyaml". You may 
+have to search the modules on the machine to find an installation of python3 that also has pip3 installed. With pyyaml installed, the script
+can be invoked as follows--
+
+python3 path-to/build-test.py path-to/my-platform.yaml 
+
