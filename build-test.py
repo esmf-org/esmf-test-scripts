@@ -134,7 +134,9 @@ def main(argv):
               monitor_cmd = \
                 "python3 {}/get-results.py {} {} {} {}".format(mypath,jobnum,subdir,machine_name,scheduler)
               print(monitor_cmd)
-              proc = subprocess.Popen(monitor_cmd, shell=True, stdin=None, stdout=None, stderr=None, close_fds=True)
+#             proc = subprocess.Popen(monitor_cmd, shell=True, stdin=None, stdout=None, stderr=None, close_fds=True)
+              result= subprocess.check_output(monitor_cmd,shell=True)
+              print("HEY! result is {}".format(result))
             elif(scheduler == "pbs"):
               batch_build = "qsub {}".format(filename)
               print(batch_build)
@@ -146,7 +148,8 @@ def main(argv):
               monitor_cmd = \
                 "python3 {}/get-results.py {} {} {} {}".format(mypath,jobnum,subdir,machine_name,scheduler)
               print(monitor_cmd)
-              proc = subprocess.Popen(monitor_cmd, shell=True, stdin=None, stdout=None, stderr=None, close_fds=True)
+#             proc = subprocess.Popen(monitor_cmd, shell=True, stdin=None, stdout=None, stderr=None, close_fds=True)
+              proc = subprocess.Popen(monitor_cmd, shell=True)
             os.chdir("..")
   
   
