@@ -4,10 +4,11 @@ import sys
 import time
 import glob
 import re
-
+import pathlib
 
 def main(argv):
   i = 0
+  root_path = pathlib.Path(__file__).parent.absolute()
   jobid = sys.argv[1]
   directory = sys.argv[2]
   machine = sys.argv[3]
@@ -27,7 +28,7 @@ def main(argv):
         print(cfile,nfile)
         cp_cmd = "cp {} {}/{}".format(cfile,machine,nfile)
         os.system(cp_cmd)
-      git_cmd = "git add {};git commit -a -m\'update for {} on {}\';git push origin python".format(directory,directory,machine)
+      git_cmd = "cd {};git add {};git commit -a -m\'update for {} on {}\';git push origin python".format(root_path,directory,directory,machine)
       os.system(git_cmd)
       break
     time.sleep(30)
