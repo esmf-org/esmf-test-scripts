@@ -27,6 +27,7 @@ def main(argv):
         nfile = os.path.basename(re.sub('_{}'.format(jobid), '', cfile))
         print(cfile,nfile)
         cp_cmd = "cp {} {}/{}".format(cfile,machine,nfile)
+        print(cp_cmd) 
         os.system(cp_cmd)
       git_cmd = "cd {};git add {};git commit -a -m\'update for {} on {}\';git push origin python".format(root_path,directory,directory,machine)
       os.system(git_cmd)
