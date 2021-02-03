@@ -2,6 +2,7 @@ import yaml
 import os
 import subprocess
 import sys
+import pathlib
 
 
 def create_header(file_out,scheduler,filename,time,account,partition,queue,cpn,cluster):
@@ -30,6 +31,7 @@ def create_header(file_out,scheduler,filename,time,account,partition,queue,cpn,c
     file_out.write("cd {}\n".format(os.getcwd()))
 
 def main(argv):
+  mypath=pathlib.Path(__file__).parent.absolute()
   inpfile = sys.argv[1]
   print("reading {}".format(inpfile))
   with open(inpfile) as file:
@@ -129,6 +131,10 @@ def main(argv):
               batch_test = "sbatch --depend=afterok:{} {}".format(jobnum,t_filename)
               print("Submitting test_batch with command: {}".format(batch_test))
               jobnum= subprocess.check_output(batch_test,shell=True).strip().decode('utf-8').split()[3]
+              monitor_cmd = \
+                "python3 {}/get-results.py {} {} {} {}".format(mypath,jobnum,subdir,machine_name,scheduler)
+              print(monitor_cmd)
+              proc = subprocess.Popen(monitor_cmd, shell=True, stdin=None, stdout=None, stderr=None, close_fds=True)
             elif(scheduler == "pbs"):
               batch_build = "qsub {}".format(filename)
               print(batch_build)
@@ -137,6 +143,10 @@ def main(argv):
               batch_test = "qsub -W depend=afterok:{} {}".format(jobnum,t_filename)
               print("Submitting test_batch with command: {}".format(batch_test))
               jobnum= subprocess.check_output(batch_test,shell=True).strip().decode('utf-8').split(".")[0]
+              monitor_cmd = \
+                "python3 {}/get-results.py {} {} {} {}".format(mypath,jobnum,subdir,machine_name,scheduler)
+              print(monitor_cmd)
+              proc = subprocess.Popen(monitor_cmd, shell=True, stdin=None, stdout=None, stderr=None, close_fds=True)
             os.chdir("..")
   
   
