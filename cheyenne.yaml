@@ -22,6 +22,6 @@ gfortran:
          module: gnu/10.1.0
          netcdf: netcdf/4.7.3
          mpi:
-           openmpi: openmpi/4.0.5
+           mpt: mpt/2.22
      unloadmodule: "intel mpt"
        
