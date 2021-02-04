@@ -15,7 +15,6 @@ Copyright (C) 1985-2020 Intel Corporation.  All rights reserved.
 Intel(R) C++ Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.1.2.275 Build 20200623
 Copyright (C) 1985-2020 Intel Corporation.  All rights reserved.
 
-sed: can't read /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/intel_2019.3_mpi_g/test/testg/Unicos.intel.64.mpi.default/unit_tests.config: No such file or directory
 In file included from /usr/include/c++/7/backward/strstream(50),
                  from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/intel_2019.3_mpi_g/src/include/ESMCI_VMKernel.h(27),
                  from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/intel_2019.3_mpi_g/src/include/ESMCI_VM.h(41),
