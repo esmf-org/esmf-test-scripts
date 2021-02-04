@@ -135,11 +135,7 @@ def main(argv):
               print("Submitting test_batch with command: {}".format(batch_test))
               jobnum= subprocess.check_output(batch_test,shell=True).strip().decode('utf-8').split()[3]
               monitor_cmd = "python3 {}/get-results.py {} {} {} {} {}".format(mypath,jobnum,subdir,machine_name,scheduler,script_dir)
-#             print("HEYYYQQQQ, mon cmd is {}".format(monitor_cmd))
               proc = subprocess.Popen(monitor_cmd, shell=True, stdin=None, stdout=None, stderr=None, close_fds=True)
-#             print("HEYYYQQQQ, proc response was {}".format(proc))
-#             result= subprocess.check_output(monitor_cmd,shell=True)
-#             proc = subprocess.Popen(monitor_cmd, shell=True)
             elif(scheduler == "pbs"):
               batch_build = "qsub {}".format(filename)
               print(batch_build)

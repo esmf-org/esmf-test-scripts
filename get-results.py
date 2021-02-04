@@ -21,20 +21,14 @@ def main(argv):
     elapsed_time = current_time - start_time
     i = i+1
     job_done = checkqueue(jobid,scheduler)
-#   print("checked queue, return was {}".format(job_done))
     if(job_done):
       
       oe_filelist = glob.glob('{}/{}/*{}*'.format(script_dir,directory,jobid))
-#     print("looking in {}/{}/*{}*".format(script_dir,directory,jobid))
-#     print("HEYY file list is {}".format(oe_filelist))
       for cfile in oe_filelist:
         nfile = os.path.basename(re.sub('_{}'.format(jobid), '', cfile))
-#       print("copying {} to {}".format(cfile,nfile))
         cp_cmd = "cp {} {}/{}/{} >& cp_{}".format(cfile,root_path,machine,nfile,jobid)
-#       print(cp_cmd) 
         os.system(cp_cmd)
       git_cmd = "cd {};git pull -X theirs;git add {};git commit -a -m\'update for {} on {}\';git push origin python".format(root_path,machine,directory,machine)
-#     print(git_cmd) 
       os.system(git_cmd)
       break
     time.sleep(30)
@@ -48,11 +42,16 @@ def checkqueue(jobid,scheduler):
     if(scheduler == "slurm"):
       queue_query = "squeue -j {}".format(jobid)
     elif(scheduler == "pbs"):
-      queue_query = "qstat -j {}".format(jobid)
+      queue_query = "qstat -H {} | tail -n 1 | awk -F ' +' '{{print $10}}'".format(jobid)
     else:
       sys.exit("unsupported job scheduler")
     try:
       result= subprocess.check_output(queue_query,shell=True)
+      if(scheduler == "pbs"):
+        if(result == "F"): #could check for R and Q to see if it is running or waiting
+          return True
+        else:
+          return False
     except:
       result="done"
       return True
