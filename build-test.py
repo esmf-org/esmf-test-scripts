@@ -36,6 +36,11 @@ def main(argv):
   with open(inpfile) as file:
     machine_list = yaml.load(file, Loader=yaml.FullLoader)
     machine_name = machine_list['machine']
+    if("git-https" in machine_list):
+      https = True
+    else: 
+      https = False
+    account = machine_list['account']
     if("partition" in machine_list):
       partition = machine_list['partition']
     else: 
@@ -61,7 +66,10 @@ def main(argv):
             
             subdir="{}_{}_{}_{}".format(comp,ver,key,build_type)
             if(not(os.path.isdir(subdir))):
-               cmdstring = "git clone -b ESMF_8_0_2branch git@github.com:esmf-org/esmf {}".format(subdir)
+               if(https == True):
+                 cmdstring = "git clone -b ESMF_8_0_2branch https://github.com/esmf-org/esmf {}".format(subdir)
+               else:
+                 cmdstring = "git clone -b ESMF_8_0_2branch git@github.com:esmf-org/esmf {}".format(subdir)
                status= subprocess.check_output(cmdstring,shell=True).strip().decode('utf-8')
             os.chdir(subdir)
             filename = 'build-{}_{}_{}_{}.bat'.format(comp,ver,key,build_type)
