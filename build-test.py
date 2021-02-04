@@ -22,8 +22,7 @@ def create_header(file_out,scheduler,filename,time,account,partition,queue,cpn,c
     file_out.write("#SBATCH --exclusive\n")
   elif(scheduler == "pbs"): 
     file_out.write("#!/bin/sh -l\n")
-    file_out.write("#PBS -o {}_%j.o\n".format(filename))
-    file_out.write("#PBS -e {}_%j.e\n".format(filename))
+    file_out.write("#PBS -N {}\n".format(filename))
     file_out.write("#PBS -q {}\n".format(queue))
     file_out.write("#PBS -A {}\n".format(account))
     file_out.write("#PBS -l select=1:ncpus={}:mpiprocs={}\n".format(cpn,cpn))
