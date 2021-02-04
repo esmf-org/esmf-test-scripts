@@ -24,6 +24,7 @@ def main(argv):
     if(job_done):
       
       oe_filelist = glob.glob('{}/{}/*{}*'.format(os.getcwd(),directory,jobid))
+      print("looking in {}/{}/*{}*".format(os.getcwd(),directory,jobid))
       print("HEYY file list is {}".format(oe_filelist))
       for cfile in oe_filelist:
         nfile = os.path.basename(re.sub('_{}'.format(jobid), '', cfile))
