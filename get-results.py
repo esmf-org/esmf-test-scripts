@@ -27,6 +27,7 @@ def main(argv):
       for cfile in oe_filelist:
         nfile = os.path.basename(re.sub('_{}'.format(jobid), '', cfile))
         cp_cmd = "cp {} {}/{}/{} >& cp_{}".format(cfile,root_path,machine,nfile,jobid)
+        print("cp_cmd is {}".format(cp_cmd))
         os.system(cp_cmd)
       git_cmd = "cd {};git pull -X theirs;git add {};git commit -a -m\'update for {},{} on {}\';git push origin python".format(root_path,machine,directory,nfile,machine)
       os.system(git_cmd)
@@ -46,7 +47,8 @@ def checkqueue(jobid,scheduler):
     else:
       sys.exit("unsupported job scheduler")
     try:
-      result= subprocess.check_output(queue_query,shell=True)
+      result= subprocess.check_output(queue_query,shell=True).strip().decode('utf-8')
+      print("result is {}".format(result))
       if(scheduler == "pbs"):
         if(result == "F"): #could check for R and Q to see if it is running or waiting
           return True
