@@ -45,7 +45,8 @@ def main(argv):
     queue = machine_list['queue']
     cpn = machine_list['corespernode']
     scheduler = machine_list['scheduler']
-    build_types = ['O','g']
+#   build_types = ['O','g']
+    build_types = ['g']
     if("cluster" in machine_list):
       cluster=machine_list['cluster']
     else:
