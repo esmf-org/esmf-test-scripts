@@ -28,7 +28,7 @@ def main(argv):
         nfile = os.path.basename(re.sub('_{}'.format(jobid), '', cfile))
         cp_cmd = "cp {} {}/{}/{} >& cp_{}".format(cfile,root_path,machine,nfile,jobid)
         os.system(cp_cmd)
-      git_cmd = "cd {};git pull -X theirs;git add {};git commit -a -m\'update for {} on {}\';git push origin python".format(root_path,machine,directory,machine)
+      git_cmd = "cd {};git pull -X theirs;git add {};git commit -a -m\'update for {},{} on {}\';git push origin python".format(root_path,machine,directory,nfile,machine)
       os.system(git_cmd)
       break
     time.sleep(30)
