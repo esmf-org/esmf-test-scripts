@@ -129,16 +129,17 @@ def main(argv):
               batch_build = "sbatch {}".format(filename)
               print(batch_build)
               jobnum= subprocess.check_output(batch_build,shell=True).strip().decode('utf-8').split()[3]
+              monitor_cmd = "python3 {}/get-results.py {} {} {} {} {}".format(mypath,jobnum,subdir,machine_name,scheduler,script_dir)
+              proc = subprocess.Popen(monitor_cmd, shell=True, stdin=None, stdout=None, stderr=None, close_fds=True)
               # submit the second job to be dependent on the first
               batch_test = "sbatch --depend=afterok:{} {}".format(jobnum,t_filename)
               print("Submitting test_batch with command: {}".format(batch_test))
               jobnum= subprocess.check_output(batch_test,shell=True).strip().decode('utf-8').split()[3]
-              monitor_cmd = \
-                "python3 {}/get-results.py {} {} {} {} {}".format(mypath,jobnum,subdir,machine_name,scheduler,script_dir)
+              monitor_cmd = "python3 {}/get-results.py {} {} {} {} {}".format(mypath,jobnum,subdir,machine_name,scheduler,script_dir)
+#             print("HEYYYQQQQ, mon cmd is {}".format(monitor_cmd))
               proc = subprocess.Popen(monitor_cmd, shell=True, stdin=None, stdout=None, stderr=None, close_fds=True)
+#             print("HEYYYQQQQ, proc response was {}".format(proc))
 #             result= subprocess.check_output(monitor_cmd,shell=True)
-#             print("HEY! result is {}".format(result))
-              print(monitor_cmd)
 #             proc = subprocess.Popen(monitor_cmd, shell=True)
             elif(scheduler == "pbs"):
               batch_build = "qsub {}".format(filename)
