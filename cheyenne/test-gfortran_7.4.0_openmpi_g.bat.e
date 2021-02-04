@@ -15,7 +15,6 @@ Currently Loaded Modules:
 
 ls: cannot access /glade/u/apps/dav/opt/ncarcompilers/0.5.0/gnu/7.4.0/mpi/../lib*: No such file or directory
 ls: cannot access /glade/u/apps/dav/opt/ncarcompilers/0.5.0/gnu/7.4.0/mpi/../lib*: No such file or directory
-sed: can't read /glade/scratch/mpotts/gfortran_7.4.0_openmpi_g/test/testg/Linux.gfortran.64.openmpi.default/unit_tests.config: No such file or directory
 ls: cannot access /glade/u/apps/dav/opt/ncarcompilers/0.5.0/gnu/7.4.0/mpi/../lib*: No such file or directory
 In file included from /glade/u/apps/dav/opt/gnu/7.4.0/include/c++/7.4.0/backward/strstream:50:0,
                  from /glade/scratch/mpotts/gfortran_7.4.0_openmpi_g/src/include/ESMCI_VMKernel.h:27,
