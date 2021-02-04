@@ -24,6 +24,7 @@ def main(argv):
     if(job_done):
       
       oe_filelist = glob.glob('{}/{}/*{}*'.format(script_dir,directory,jobid))
+      print('{}/{}/*{}*'.format(script_dir,directory,jobid))
       for cfile in oe_filelist:
         if(scheduler == "pbs"):
           nfile = os.path.basename(re.sub('{}'.format(jobid), '', cfile))
