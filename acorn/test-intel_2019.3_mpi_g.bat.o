@@ -11,15 +11,20 @@ Untracked files:
 	build-intel_2019.3_mpi_g.bat
 	build-intel_2019.3_mpi_g.bat.e10036
 	build-intel_2019.3_mpi_g.bat.e10052
+	build-intel_2019.3_mpi_g.bat.e10066
 	build-intel_2019.3_mpi_g.bat.o10036
 	build-intel_2019.3_mpi_g.bat.o10052
+	build-intel_2019.3_mpi_g.bat.o10066
 	cp_10037
+	cp_10053
 	src/prologue/tests/ESMCI_ExceptionsUTest.o
 	test-intel_2019.3_mpi_g.bat
 	test-intel_2019.3_mpi_g.bat.e10037
 	test-intel_2019.3_mpi_g.bat.e10053
+	test-intel_2019.3_mpi_g.bat.e10067
 	test-intel_2019.3_mpi_g.bat.o10037
 	test-intel_2019.3_mpi_g.bat.o10053
+	test-intel_2019.3_mpi_g.bat.o10067
 
 nothing added to commit but untracked files present (use "git add" to track)
 --------------------------------------------------------------
@@ -163,8 +168,8 @@ ESMF_TRACE_STATICLINKLIBS=-lesmftrace_static
 
 
 --------------------------------------------------------------
-Compiling on Thu Feb 4 22:51:41 UTC 2021 on nid001000
-Machine characteristics: Linux nid001000 4.12.14-197.40_9.1.36-cray_shasta_c #1 SMP Fri Jun 26 15:28:45 UTC 2020 (99877ea) x86_64 x86_64 x86_64 GNU/Linux
+Compiling on Thu Feb 4 23:25:08 UTC 2021 on nid001001
+Machine characteristics: Linux nid001001 4.12.14-197.40_9.1.36-cray_shasta_c #1 SMP Fri Jun 26 15:28:45 UTC 2020 (99877ea) x86_64 x86_64 x86_64 GNU/Linux
 ==============================================================
  
 make[1]: Entering directory '/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/intel_2019.3_mpi_g'
