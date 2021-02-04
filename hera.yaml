@@ -27,4 +27,4 @@ pgi:
          module: pgi/18.10 
          netcdf: None
          mpi:
-           intelmpi: impi/2018.4.274
+           intelmpi: impi/2018.0.4

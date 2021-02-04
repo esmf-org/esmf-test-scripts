@@ -45,8 +45,7 @@ def main(argv):
     queue = machine_list['queue']
     cpn = machine_list['corespernode']
     scheduler = machine_list['scheduler']
-#   build_types = ['O','g']
-    build_types = ['g']
+    build_types = ['O','g']
     script_dir=os.getcwd()
     if("cluster" in machine_list):
       cluster=machine_list['cluster']
@@ -71,8 +70,8 @@ def main(argv):
             fb = open(filename, "w")
             ft = open(t_filename, "w")
 
-            create_header(fb,scheduler,filename,"0:30:00",account,partition,queue,cpn,cluster)
-            create_header(ft,scheduler,t_filename,"0:30:00",account,partition,queue,cpn,cluster)
+            create_header(fb,scheduler,filename,"1:00:00",account,partition,queue,cpn,cluster)
+            create_header(ft,scheduler,t_filename,"1:00:00",account,partition,queue,cpn,cluster)
   
             if("unloadmodule" in machine_list[comp]):
               fb.write("\nmodule unload {}\n".format(machine_list[comp]['unloadmodule']))
@@ -118,7 +117,7 @@ def main(argv):
               modulecmd = "module load {} {} {}\nmodule list\n".format(machine_list[comp]['versions'][ver]['module'],mpiver,machine_list[comp]['versions'][ver]['netcdf'])
             fb.write(modulecmd)
             ft.write(modulecmd)
-            cmdstring = "make -j 12\n\n"
+            cmdstring = "make -j {}\n\n".format(cpn)
             fb.write(cmdstring)
             cmdstring = "make all_tests\n\n"
             ft.write(cmdstring)
