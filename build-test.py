@@ -1,5 +1,6 @@
 import yaml
 import os
+import time
 import subprocess
 import sys
 import pathlib
@@ -147,9 +148,15 @@ def main(argv):
               batch_build = "qsub {}".format(filename)
               print(batch_build)
               jobnum= subprocess.check_output(batch_build,shell=True).strip().decode('utf-8').split(".")[0]
+              monitor_cmd = \
+                "python3 {}/get-results.py {} {} {} {} {}".format(mypath,jobnum,subdir,machine_name,scheduler,script_dir)
+              print(monitor_cmd)
+              proc = subprocess.Popen(monitor_cmd, shell=True, stdin=None, stdout=None, stderr=None, close_fds=True)
+              print("Submitting batch_build with command: {}, jobnum is {}".format(batch_build,jobnum))
               # submit the second job to be dependent on the first
               batch_test = "qsub -W depend=afterok:{} {}".format(jobnum,t_filename)
               print("Submitting test_batch with command: {}".format(batch_test))
+              time.sleep(10)
               jobnum= subprocess.check_output(batch_test,shell=True).strip().decode('utf-8').split(".")[0]
               monitor_cmd = \
                 "python3 {}/get-results.py {} {} {} {} {}".format(mypath,jobnum,subdir,machine_name,scheduler,script_dir)
