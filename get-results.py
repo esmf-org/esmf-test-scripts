@@ -25,7 +25,10 @@ def main(argv):
       
       oe_filelist = glob.glob('{}/{}/*{}*'.format(script_dir,directory,jobid))
       for cfile in oe_filelist:
-        nfile = os.path.basename(re.sub('.{}'.format(jobid), '', cfile))
+        if(scheduler == "pbs"):
+          nfile = os.path.basename(re.sub('{}'.format(jobid), '', cfile))
+        else:
+          nfile = os.path.basename(re.sub('_{}'.format(jobid), '', cfile))
         cp_cmd = "cp {} {}/{}/{} >& cp_{}".format(cfile,root_path,machine,nfile,jobid)
         print("cp_cmd is {}".format(cp_cmd))
         os.system(cp_cmd)
