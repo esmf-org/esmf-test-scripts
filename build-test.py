@@ -47,6 +47,7 @@ def main(argv):
     scheduler = machine_list['scheduler']
 #   build_types = ['O','g']
     build_types = ['g']
+    script_dir=os.getcwd()
     if("cluster" in machine_list):
       cluster=machine_list['cluster']
     else:
@@ -133,12 +134,12 @@ def main(argv):
               print("Submitting test_batch with command: {}".format(batch_test))
               jobnum= subprocess.check_output(batch_test,shell=True).strip().decode('utf-8').split()[3]
               monitor_cmd = \
-                "python3 {}/get-results.py {} {} {} {}".format(mypath,jobnum,subdir,machine_name,scheduler)
-#             proc = subprocess.Popen(monitor_cmd, shell=True, stdin=None, stdout=None, stderr=None, close_fds=True)
+                "python3 {}/get-results.py {} {} {} {} {}".format(mypath,jobnum,subdir,machine_name,scheduler,script_dir)
+              proc = subprocess.Popen(monitor_cmd, shell=True, stdin=None, stdout=None, stderr=None, close_fds=True)
 #             result= subprocess.check_output(monitor_cmd,shell=True)
 #             print("HEY! result is {}".format(result))
               print(monitor_cmd)
-              proc = subprocess.Popen(monitor_cmd, shell=True)
+#             proc = subprocess.Popen(monitor_cmd, shell=True)
             elif(scheduler == "pbs"):
               batch_build = "qsub {}".format(filename)
               print(batch_build)
@@ -148,7 +149,7 @@ def main(argv):
               print("Submitting test_batch with command: {}".format(batch_test))
               jobnum= subprocess.check_output(batch_test,shell=True).strip().decode('utf-8').split(".")[0]
               monitor_cmd = \
-                "python3 {}/get-results.py {} {} {} {}".format(mypath,jobnum,subdir,machine_name,scheduler)
+                "python3 {}/get-results.py {} {} {} {} {}".format(mypath,jobnum,subdir,machine_name,scheduler,script_dir)
               print(monitor_cmd)
 #             proc = subprocess.Popen(monitor_cmd, shell=True, stdin=None, stdout=None, stderr=None, close_fds=True)
               proc = subprocess.Popen(monitor_cmd, shell=True)

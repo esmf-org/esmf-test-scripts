@@ -13,6 +13,7 @@ def main(argv):
   directory = sys.argv[2]
   machine = sys.argv[3]
   scheduler = sys.argv[4]
+  script_dir = sys.argv[5]
   start_time = time.time()
   seconds = 14400
   while True:
@@ -23,8 +24,8 @@ def main(argv):
     print("checked queue, return was {}".format(job_done))
     if(job_done):
       
-      oe_filelist = glob.glob('{}/{}/*{}*'.format(os.getcwd(),directory,jobid))
-      print("looking in {}/{}/*{}*".format(os.getcwd(),directory,jobid))
+      oe_filelist = glob.glob('{}/{}/*{}*'.format(script_dir,directory,jobid))
+      print("looking in {}/{}/*{}*".format(script_dir,directory,jobid))
       print("HEYY file list is {}".format(oe_filelist))
       for cfile in oe_filelist:
         nfile = os.path.basename(re.sub('_{}'.format(jobid), '', cfile))
