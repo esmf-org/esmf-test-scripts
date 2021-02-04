@@ -1,6 +1,5 @@
 
 #!/usr/bin/env bash
-set -Eeuxo pipefail
 
 ###################################################################################
 # This script finds all the fortran public subroutines and finds if any unit tests
