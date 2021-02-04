@@ -33,7 +33,7 @@ def main(argv):
         cp_cmd = "cp {} {}/{}/{} >& cp_{}".format(cfile,root_path,machine,nfile,jobid)
 #       print(cp_cmd) 
         os.system(cp_cmd)
-      git_cmd = "cd {};git add {};git commit -a -m\'update for {} on {}\';git push origin python".format(root_path,machine,directory,machine)
+      git_cmd = "cd {};git pull -X theirs;git add {};git commit -a -m\'update for {} on {}\';git push origin python".format(root_path,machine,directory,machine)
 #     print(git_cmd) 
       os.system(git_cmd)
       break
