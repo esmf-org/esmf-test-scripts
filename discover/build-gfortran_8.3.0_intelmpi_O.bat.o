@@ -62,6 +62,12 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  
 --------------------------------------------------------------
  * User set ESMF environment variables *
+ESMF_BOPT=O
+ESMF_COMM=intelmpi
+ESMF_COMPILER=gfortran
+ESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O
+ESMF_TEST_EXHAUSTIVE=ON
+ESMF_TEST_WITHTHREADS=ON
  
 --------------------------------------------------------------
  * ESMF environment variables *
@@ -177,11 +183,16 @@ ESMF_TRACE_STATICLINKLIBS=-lesmftrace_static
 
 
 --------------------------------------------------------------
-Compiling on Fri Feb 5 15:55:36 EST 2021 on borgq122
-Machine characteristics: Linux borgq122 4.4.180-94.100-default #1 SMP Tue Jul 9 19:57:20 UTC 2019 (1569ffb) x86_64 x86_64 x86_64 GNU/Linux
+Compiling on Fri Feb 5 15:55:36 EST 2021 on borgv088
+Machine characteristics: Linux borgv088 4.4.180-94.100-default #1 SMP Tue Jul 9 19:57:20 UTC 2019 (1569ffb) x86_64 x86_64 x86_64 GNU/Linux
 ==============================================================
  
 make[1]: Entering directory '/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O'
+Making directory /gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/lib/libO/Linux.gfortran.64.intelmpi.default for library
+Making directory /gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/src/include for include files
+Making directory /gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/src/etc for Attribute package files
+Making directory /gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/mod/modO/Linux.gfortran.64.intelmpi.default for *.mod files
+Making directory /gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/obj/objO/Linux.gfortran.64.intelmpi.default for build-gfortran_8.3.0_intelmpi_O.bat_42380569.o build-gfortran_8.3.0_intelmpi_O.bat_42380620.o build-gfortran_8.3.0_intelmpi_O.bat_42380640.o files
 cd /gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O ;\
         make ACTION="tree_include tree_etc" tree
 make[2]: Entering directory '/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O'
@@ -1126,7 +1137,7 @@ make[6]: Entering directory '/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.
 dir=`pwd`; cd /gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/mod/modO/Linux.gfortran.64.intelmpi.default; make -f ${dir}/makefile MAKEFILE=${dir}/makefile esmflib
 make[7]: Entering directory '/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/mod/modO/Linux.gfortran.64.intelmpi.default'
 make[8]: Entering directory '/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/mod/modO/Linux.gfortran.64.intelmpi.default'
-make[8]: Nothing to be done for 'libc'.
+mpigxx -c -std=c++11 -O -DNDEBUG -fPIC -DESMF_LOWERCASE_SINGLEUNDERSCORE -m64 -mcmodel=small -pthread  -fopenmp -I/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/src/Infrastructure/stubs/mpiuni -I/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/src/Infrastructure/stubs/mpiuni/../include  -I/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/build_config/Linux.gfortran.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/src/Infrastructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/src/Superstructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/src/Infrastructure/stubs/pthread  -I/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/src/include   -I/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/src/prologue/yaml-cpp/include -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_0_2_beta_snapshot_01"' -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_MOAB=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O -D__SDIR__='"src/Infrastructure/stubs/mpiuni"' -DESMF_CXXSTD=11 /gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/src/Infrastructure/stubs/mpiuni/mpi.c -o /gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/obj/objO/Linux.gfortran.64.intelmpi.default/mpi.o
 make[8]: Leaving directory '/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/mod/modO/Linux.gfortran.64.intelmpi.default'
 make[7]: Leaving directory '/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/mod/modO/Linux.gfortran.64.intelmpi.default'
 make[6]: Leaving directory '/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/src/Infrastructure/stubs/mpiuni'
@@ -1140,6 +1151,9 @@ tree_lib in: /gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/src
 make[6]: Entering directory '/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/src/Infrastructure/Util/src'
 dir=`pwd`; cd /gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/mod/modO/Linux.gfortran.64.intelmpi.default; make -f ${dir}/makefile MAKEFILE=${dir}/makefile esmflib
 make[7]: Entering directory '/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/mod/modO/Linux.gfortran.64.intelmpi.default'
+gcc -E -P -x c -C -nostdinc -I/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/src/include /gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/src/Infrastructure/Util/src/ESMF_FortranWordsize.cppF90 | tr "@^|" "\n#'" | sed -e '/^#pragma GCC/d' > /gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/src/Infrastructure/Util/src/ESMF_FortranWordsize.F90
+gcc -E -P -x c -C -nostdinc -I/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/src/include /gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/src/Infrastructure/Util/src/ESMF_TypeKindGet.cppF90 | tr "@^|" "\n#'" | sed -e '/^#pragma GCC/d' > /gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/src/Infrastructure/Util/src/ESMF_TypeKindGet.F90
+gcc -E -P -x c -C -nostdinc -I/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/src/include /gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/src/Infrastructure/Util/src/ESMF_UtilSort.cppF90 | tr "@^|" "\n#'" | sed -e '/^#pragma GCC/d' > /gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/src/Infrastructure/Util/src/ESMF_UtilSort.F90
 make[8]: Entering directory '/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/mod/modO/Linux.gfortran.64.intelmpi.default'
 mpigxx -c -std=c++11 -O -DNDEBUG -fPIC -DESMF_LOWERCASE_SINGLEUNDERSCORE -m64 -mcmodel=small -pthread  -fopenmp -I/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/src/Infrastructure/Util/src -I/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/src/Infrastructure/Util/src/../include  -I/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/build_config/Linux.gfortran.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/src/Infrastructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/src/Superstructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/src/Infrastructure/stubs/pthread  -I/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/src/include   -I/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/src/prologue/yaml-cpp/include -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_0_2_beta_snapshot_01"' -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_MOAB=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O -D__SDIR__='"src/Infrastructure/Util/src"' -DESMF_CXXSTD=11 /gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/src/Infrastructure/Util/src/ESMCI_Util.C -o /gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/obj/objO/Linux.gfortran.64.intelmpi.default/ESMCI_Util.o
 mpigxx -c -std=c++11 -O -DNDEBUG -fPIC -DESMF_LOWERCASE_SINGLEUNDERSCORE -m64 -mcmodel=small -pthread  -fopenmp -I/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/src/Infrastructure/Util/src -I/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/src/Infrastructure/Util/src/../include  -I/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/build_config/Linux.gfortran.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/src/Infrastructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/src/Superstructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/src/Infrastructure/stubs/pthread  -I/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/src/include   -I/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/src/prologue/yaml-cpp/include -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_0_2_beta_snapshot_01"' -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_MOAB=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O -D__SDIR__='"src/Infrastructure/Util/src"' -DESMF_CXXSTD=11 /gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/src/Infrastructure/Util/src/ESMCI_Fraction.C -o /gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/obj/objO/Linux.gfortran.64.intelmpi.default/ESMCI_Fraction.o
@@ -1149,7 +1163,7 @@ make[8]: Leaving directory '/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0
 make[8]: Entering directory '/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/mod/modO/Linux.gfortran.64.intelmpi.default'
 mpifc -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fopenmp  -I/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/build_config/Linux.gfortran.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/src/Infrastructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/src/Superstructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/mod/modO/Linux.gfortran.64.intelmpi.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/src/include   -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_0_2_beta_snapshot_01"' -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_MOAB=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O /gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/src/Infrastructure/Util/src/ESMF_UtilTypes.F90 -o /gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/obj/objO/Linux.gfortran.64.intelmpi.default/ESMF_UtilTypes.o
 mpifc -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fopenmp  -I/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/build_config/Linux.gfortran.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/src/Infrastructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/src/Superstructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/mod/modO/Linux.gfortran.64.intelmpi.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/src/include   -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_0_2_beta_snapshot_01"' -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_MOAB=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O /gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/src/Infrastructure/Util/src/ESMF_UtilString.F90 -o /gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/obj/objO/Linux.gfortran.64.intelmpi.default/ESMF_UtilString.o
-/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/build/common.mk:3836: recipe for target '/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/obj/objO/Linux.gfortran.64.intelmpi.default/ESMF_UtilTypes.o' failed
+/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/build/common.mk:3836: recipe for target '/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/obj/objO/Linux.gfortran.64.intelmpi.default/ESMF_UtilString.o' failed
 make[8]: Leaving directory '/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/mod/modO/Linux.gfortran.64.intelmpi.default'
 /gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/build/common.mk:2116: recipe for target 'esmflib' failed
 make[7]: Leaving directory '/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/mod/modO/Linux.gfortran.64.intelmpi.default'
@@ -1167,12 +1181,12 @@ make[2]: Leaving directory '/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0
 make[1]: Leaving directory '/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O'
 /gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/build/common.mk:2071: recipe for target 'lib' failed
 ________________________________________________________________
-Job Resource Usage Summary for 42380640 
+Job Resource Usage Summary for 42380620 
 
-  CPU Time Used		: 00:42:00
-  Memory Used		: 48688K
-  Virtual Memory Used	: 218352K
-  Walltime Used		: 00:01:30
+  CPU Time Used		: 00:42:56
+  Memory Used		: 46152K
+  Virtual Memory Used	: 205204K
+  Walltime Used		: 00:01:32
   Estimated SBUs        : .01
 
   Memory Requested	: 125300Mn (n=per node; c=per core)
@@ -1180,7 +1194,7 @@ Job Resource Usage Summary for 42380640
   Walltime Requested	: 01:00:00
 
   Execution Queue	: compute
-  Head Node		: borgq122
+  Head Node		: borgv088
   Charged to		: j1100
 
   Job Stopped		: Fri Feb  5 15:56:55 EST 2021
