@@ -20,11 +20,11 @@ gfortran:
        mpi:
            openmpi: openmpi/4.0.4
            mpiuni: None
-     10.2.0: 
-       module: gcc/10.2.0
-       netcdf: netcdf/4.7.4
-       mpi:
-           openmpi: openmpi/4.0.4
+#    10.2.0: 
+#      module: gcc/10.2.0
+#      netcdf: netcdf/4.7.4
+#      mpi:
+#          openmpi: openmpi/4.0.4
 pgi:
    versions:
      2019: 
