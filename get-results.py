@@ -30,7 +30,7 @@ def main(argv):
           nfile = os.path.basename(re.sub('{}'.format(jobid), '', cfile))
         else:
           nfile = os.path.basename(re.sub('_{}'.format(jobid), '', cfile))
-        cp_cmd = "cp {} {}/{}/{} >& cp_{}".format(cfile,root_path,machine,nfile,jobid)
+        cp_cmd = "cp {} {}/{}/{}".format(cfile,root_path,machine,nfile,jobid)
         print("cp_cmd is {}".format(cp_cmd))
         os.system(cp_cmd)
       file_root = os.path.basename(re.sub('.{}'.format(jobid), '',oe_filelist[0]))

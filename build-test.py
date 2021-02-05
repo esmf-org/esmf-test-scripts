@@ -89,8 +89,9 @@ def main(argv):
               ft.write("\nmodule load {}\n".format(machine_list[comp]['extramodule']))
 
             if('extra_env_vars' in machine_list[comp]['versions'][ver]):
-                fb.write("export {}\n".format(machine_list[comp]['versions'][ver]['extra_env_vars']))
-                ft.write("export {}\n".format(machine_list[comp]['versions'][ver]['extra_env_vars']))
+                for var in machine_list[comp]['versions'][ver]['extra_env_vars']:
+                  fb.write("export {}\n".format(machine_list[comp]['versions'][ver]['extra_env_vars'][var]))
+                  ft.write("export {}\n".format(machine_list[comp]['versions'][ver]['extra_env_vars'][var]))
 
             mpiver = mpidict[key]
             if(mpiver == "None"):
@@ -156,7 +157,6 @@ def main(argv):
               # submit the second job to be dependent on the first
               batch_test = "qsub -W depend=afterok:{} {}".format(jobnum,t_filename)
               print("Submitting test_batch with command: {}".format(batch_test))
-              time.sleep(10)
               jobnum= subprocess.check_output(batch_test,shell=True).strip().decode('utf-8').split(".")[0]
               monitor_cmd = \
                 "python3 {}/get-results.py {} {} {} {} {}".format(mypath,jobnum,subdir,machine_name,scheduler,script_dir)
