@@ -84,6 +84,10 @@ def main(argv):
             if("unloadmodule" in machine_list[comp]):
               fb.write("\nmodule unload {}\n".format(machine_list[comp]['unloadmodule']))
               ft.write("\nmodule unload {}\n".format(machine_list[comp]['unloadmodule']))
+            if("modulepath" in machine_list):
+              modulepath = machine_list['modulepath']
+              fb.write("\nmodule use {}\n".format(machine_list['modulepath']))
+              ft.write("\nmodule use {}\n".format(machine_list['modulepath']))
             if("extramodule" in machine_list[comp]):
               fb.write("\nmodule load {}\n".format(machine_list[comp]['extramodule']))
               ft.write("\nmodule load {}\n".format(machine_list[comp]['extramodule']))
