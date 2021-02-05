@@ -1,7 +1,9 @@
 import yaml
 import os
+import time
 import subprocess
 import sys
+import pathlib
 
 
 def create_header(file_out,scheduler,filename,time,account,partition,queue,cpn,cluster):
@@ -21,8 +23,7 @@ def create_header(file_out,scheduler,filename,time,account,partition,queue,cpn,c
     file_out.write("#SBATCH --exclusive\n")
   elif(scheduler == "pbs"): 
     file_out.write("#!/bin/sh -l\n")
-    file_out.write("#PBS -o {}_%j.o\n".format(filename))
-    file_out.write("#PBS -e {}_%j.e\n".format(filename))
+    file_out.write("#PBS -N {}\n".format(filename))
     file_out.write("#PBS -q {}\n".format(queue))
     file_out.write("#PBS -A {}\n".format(account))
     file_out.write("#PBS -l select=1:ncpus={}:mpiprocs={}\n".format(cpn,cpn))
@@ -30,11 +31,17 @@ def create_header(file_out,scheduler,filename,time,account,partition,queue,cpn,c
     file_out.write("cd {}\n".format(os.getcwd()))
 
 def main(argv):
+  mypath=pathlib.Path(__file__).parent.absolute()
   inpfile = sys.argv[1]
   print("reading {}".format(inpfile))
   with open(inpfile) as file:
     machine_list = yaml.load(file, Loader=yaml.FullLoader)
     machine_name = machine_list['machine']
+    if("git-https" in machine_list):
+      https = True
+    else: 
+      https = False
+    account = machine_list['account']
     if("partition" in machine_list):
       partition = machine_list['partition']
     else: 
@@ -44,6 +51,7 @@ def main(argv):
     cpn = machine_list['corespernode']
     scheduler = machine_list['scheduler']
     build_types = ['O','g']
+    script_dir=os.getcwd()
     if("cluster" in machine_list):
       cluster=machine_list['cluster']
     else:
@@ -59,7 +67,10 @@ def main(argv):
             
             subdir="{}_{}_{}_{}".format(comp,ver,key,build_type)
             if(not(os.path.isdir(subdir))):
-               cmdstring = "git clone -b ESMF_8_0_2branch git@github.com:esmf-org/esmf {}".format(subdir)
+               if(https == True):
+                 cmdstring = "git clone -b ESMF_8_0_2branch https://github.com/esmf-org/esmf {}".format(subdir)
+               else:
+                 cmdstring = "git clone -b ESMF_8_0_2branch git@github.com:esmf-org/esmf {}".format(subdir)
                status= subprocess.check_output(cmdstring,shell=True).strip().decode('utf-8')
             os.chdir(subdir)
             filename = 'build-{}_{}_{}_{}.bat'.format(comp,ver,key,build_type)
@@ -67,8 +78,8 @@ def main(argv):
             fb = open(filename, "w")
             ft = open(t_filename, "w")
 
-            create_header(fb,scheduler,filename,"0:30:00",account,partition,queue,cpn,cluster)
-            create_header(ft,scheduler,t_filename,"0:30:00",account,partition,queue,cpn,cluster)
+            create_header(fb,scheduler,filename,"1:00:00",account,partition,queue,cpn,cluster)
+            create_header(ft,scheduler,t_filename,"1:00:00",account,partition,queue,cpn,cluster)
   
             if("unloadmodule" in machine_list[comp]):
               fb.write("\nmodule unload {}\n".format(machine_list[comp]['unloadmodule']))
@@ -78,8 +89,9 @@ def main(argv):
               ft.write("\nmodule load {}\n".format(machine_list[comp]['extramodule']))
 
             if('extra_env_vars' in machine_list[comp]['versions'][ver]):
-                fb.write("export {}\n".format(machine_list[comp]['versions'][ver]['extra_env_vars']))
-                ft.write("export {}\n".format(machine_list[comp]['versions'][ver]['extra_env_vars']))
+                for var in machine_list[comp]['versions'][ver]['extra_env_vars']:
+                  fb.write("export {}\n".format(machine_list[comp]['versions'][ver]['extra_env_vars'][var]))
+                  ft.write("export {}\n".format(machine_list[comp]['versions'][ver]['extra_env_vars'][var]))
 
             mpiver = mpidict[key]
             if(mpiver == "None"):
@@ -114,7 +126,7 @@ def main(argv):
               modulecmd = "module load {} {} {}\nmodule list\n".format(machine_list[comp]['versions'][ver]['module'],mpiver,machine_list[comp]['versions'][ver]['netcdf'])
             fb.write(modulecmd)
             ft.write(modulecmd)
-            cmdstring = "make -j 12\n\n"
+            cmdstring = "make -j {}\n\n".format(cpn)
             fb.write(cmdstring)
             cmdstring = "make all_tests\n\n"
             ft.write(cmdstring)
@@ -125,18 +137,32 @@ def main(argv):
               batch_build = "sbatch {}".format(filename)
               print(batch_build)
               jobnum= subprocess.check_output(batch_build,shell=True).strip().decode('utf-8').split()[3]
+              monitor_cmd = "python3 {}/get-results.py {} {} {} {} {}".format(mypath,jobnum,subdir,machine_name,scheduler,script_dir)
+              proc = subprocess.Popen(monitor_cmd, shell=True, stdin=None, stdout=None, stderr=None, close_fds=True)
               # submit the second job to be dependent on the first
               batch_test = "sbatch --depend=afterok:{} {}".format(jobnum,t_filename)
               print("Submitting test_batch with command: {}".format(batch_test))
               jobnum= subprocess.check_output(batch_test,shell=True).strip().decode('utf-8').split()[3]
+              monitor_cmd = "python3 {}/get-results.py {} {} {} {} {}".format(mypath,jobnum,subdir,machine_name,scheduler,script_dir)
+              proc = subprocess.Popen(monitor_cmd, shell=True, stdin=None, stdout=None, stderr=None, close_fds=True)
             elif(scheduler == "pbs"):
               batch_build = "qsub {}".format(filename)
               print(batch_build)
               jobnum= subprocess.check_output(batch_build,shell=True).strip().decode('utf-8').split(".")[0]
+              monitor_cmd = \
+                "python3 {}/get-results.py {} {} {} {} {}".format(mypath,jobnum,subdir,machine_name,scheduler,script_dir)
+              print(monitor_cmd)
+              proc = subprocess.Popen(monitor_cmd, shell=True, stdin=None, stdout=None, stderr=None, close_fds=True)
+              print("Submitting batch_build with command: {}, jobnum is {}".format(batch_build,jobnum))
               # submit the second job to be dependent on the first
               batch_test = "qsub -W depend=afterok:{} {}".format(jobnum,t_filename)
               print("Submitting test_batch with command: {}".format(batch_test))
               jobnum= subprocess.check_output(batch_test,shell=True).strip().decode('utf-8').split(".")[0]
+              monitor_cmd = \
+                "python3 {}/get-results.py {} {} {} {} {}".format(mypath,jobnum,subdir,machine_name,scheduler,script_dir)
+              print(monitor_cmd)
+#             proc = subprocess.Popen(monitor_cmd, shell=True, stdin=None, stdout=None, stderr=None, close_fds=True)
+              proc = subprocess.Popen(monitor_cmd, shell=True)
             os.chdir("..")
   
   
