@@ -53,7 +53,6 @@ def checkqueue(jobid,scheduler):
       sys.exit("unsupported job scheduler")
     try:
       result= subprocess.check_output(queue_query,shell=True).strip().decode('utf-8')
-      print("result is {}".format(result))
       if(scheduler == "pbs"):
         if(result == "F"): #could check for R and Q to see if it is running or waiting
           return True
