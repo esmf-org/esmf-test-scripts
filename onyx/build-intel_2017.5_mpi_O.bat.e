@@ -35,9 +35,8 @@ Currently Loaded Modulefiles:
  29) pbs
  30) intel/17.0.5.239
  31) netcdf/intel-17.0.1.132/4.4.1.1
-Cray Fortran : Version 8.6.4  Mon Feb 08, 2021  10:07:00
-Cray C++ : Version 8.6.4  Mon Feb 08, 2021  10:07:00
-cat: available.tmp: No such file or directory
+Cray Fortran : Version 8.6.4  Mon Feb 08, 2021  10:08:37
+Cray C++ : Version 8.6.4  Mon Feb 08, 2021  10:08:37
 cat: available.tmp: No such file or directory
 cat: available.tmp: No such file or directory
 cat: available.tmp: No such file or directory
@@ -48,21 +47,7 @@ cat: available.tmp: No such file or directory
 cat: available.tmp: No such file or directory
 cat: available.tmp: No such file or directory
 /p/work/mpotts/intel_2017.5_mpi_O/scripts/available: line 7: [: /usr/bin/git: unary operator expected
-cat: available.tmp: No such file or directory
-cat: available.tmp: No such file or directory
-cat: available.tmp: No such file or directory
-cat: available.tmp: No such file or directory
-cat: available.tmp: No such file or directory
-cat: available.tmp: No such file or directory
-cat: available.tmp: No such file or directory
 /p/work/mpotts/intel_2017.5_mpi_O/scripts/available: line 7: [: /usr/bin/git: unary operator expected
-cat: available.tmp: No such file or directory
-cat: available.tmp: No such file or directory
-cat: available.tmp: No such file or directory
-cat: available.tmp: No such file or directory
-cat: available.tmp: No such file or directory
-cat: available.tmp: No such file or directory
-cat: available.tmp: No such file or directory
 cat: available.tmp: No such file or directory
 cat: available.tmp: No such file or directory
 cat: available.tmp: No such file or directory
@@ -83,6 +68,31 @@ cat: available.tmp: No such file or directory
 cat: available.tmp: No such file or directory
 cat: available.tmp: No such file or directory
 cat: available.tmp: No such file or directory
+cat: available.tmp: No such file or directory
+cat: available.tmp: No such file or directory
+cat: available.tmp: No such file or directory
+cat: available.tmp: No such file or directory
+cat: available.tmp: No such file or directory
+cat: available.tmp: No such file or directory
+cat: available.tmp: No such file or directory
+cat: available.tmp: No such file or directory
+cat: available.tmp: No such file or directory
+cat: available.tmp: No such file or directory
+cat: available.tmp: No such file or directory
+cat: available.tmp: No such file or directory
+cat: available.tmp: No such file or directory
 /p/work/mpotts/intel_2017.5_mpi_O/scripts/available: line 7: [: /usr/bin/git: unary operator expected
 cat: available.tmp: No such file or directory
 cat: available.tmp: No such file or directory
+cat: available.tmp: No such file or directory
+cat: available.tmp: No such file or directory
+cat: available.tmp: No such file or directory
+cat: available.tmp: No such file or directory
+cat: available.tmp: No such file or directory
+cat: available.tmp: No such file or directory
+make[4]: *** [tree] Terminated
+make[5]: *** [tree_lib] Terminated
+make[2]: *** [tree] Terminated
+make[1]: *** [build_libs] Terminated
+make[3]: *** [tree] Terminated
+make: *** [lib] Terminated
