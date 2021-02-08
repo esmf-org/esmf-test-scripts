@@ -4,7 +4,7 @@ queue: batch
 partition: hera
 scheduler: slurm
 corespernode: 40
-compiler: [intel,gfortran,pgi]
+compiler: [pgi]
 intel:
      versions: 
        18.0.4: 
@@ -26,6 +26,7 @@ gfortran:
            mpiuni: 
              module: None
 pgi:
+     test_time: 2:30:00
      versions: 
        18.10: 
          compiler: pgi/18.10 
