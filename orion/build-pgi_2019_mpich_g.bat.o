@@ -10,6 +10,8 @@ ESMF_8_0_2_beta_snapshot_01
 #	build-pgi_2019_mpich_g.bat
 #	build-pgi_2019_mpich_g.bat_1203012.e
 #	build-pgi_2019_mpich_g.bat_1203012.o
+#	build-pgi_2019_mpich_g.bat_1216595.e
+#	build-pgi_2019_mpich_g.bat_1216595.o
 #	test-pgi_2019_mpich_g.bat
 nothing added to commit but untracked files present (use "git add" to track)
 --------------------------------------------------------------
@@ -162,16 +164,11 @@ ESMF_TRACE_STATICLINKLIBS=-lesmftrace_static
 
 
 --------------------------------------------------------------
-Compiling on Fri Feb 5 10:58:42 CST 2021 on Orion-21-22.HPC.MsState.Edu
-Machine characteristics: Linux Orion-21-22.HPC.MsState.Edu 3.10.0-957.27.2.el7.x86_64 #1 SMP Mon Jul 29 17:46:05 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
+Compiling on Mon Feb 8 10:00:04 CST 2021 on Orion-07-10.HPC.MsState.Edu
+Machine characteristics: Linux Orion-07-10.HPC.MsState.Edu 3.10.0-957.27.2.el7.x86_64 #1 SMP Mon Jul 29 17:46:05 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
 ==============================================================
  
 make[1]: Entering directory `/work/noaa/da/mpotts/pgi_2019_mpich_g'
-Making directory /work/noaa/da/mpotts/pgi_2019_mpich_g/lib/libg/Linux.pgi.64.mpich.default for library
-Making directory /work/noaa/da/mpotts/pgi_2019_mpich_g/src/include for include files
-Making directory /work/noaa/da/mpotts/pgi_2019_mpich_g/src/etc for Attribute package files
-Making directory /work/noaa/da/mpotts/pgi_2019_mpich_g/mod/modg/Linux.pgi.64.mpich.default for *.mod files
-Making directory /work/noaa/da/mpotts/pgi_2019_mpich_g/obj/objg/Linux.pgi.64.mpich.default for build-pgi_2019_mpich_g.bat_1203012.o files
 cd /work/noaa/da/mpotts/pgi_2019_mpich_g ;\
         make ACTION="tree_include tree_etc" tree
 make[2]: Entering directory `/work/noaa/da/mpotts/pgi_2019_mpich_g'
