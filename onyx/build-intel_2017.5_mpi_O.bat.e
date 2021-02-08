@@ -20,66 +20,44 @@ Currently Loaded Modulefiles:
  14) java/jdk1.8.0_152
  15) isvaccel/6.0.0-6.0.7.1_5.56__gf0c05b4.ari
  16) ccm/2.5.4-6.0.7.1_5.41__g394754f.ari
- 17) cce/8.6.4
- 18) craype-network-aries
- 19) craype/2.5.13
- 20) cray-libsci/17.11.1
- 21) pmi/5.0.10-1.0000.11050.0.0.ari
- 22) rca/2.2.18-6.0.7.1_5.61__g2aa4f39.ari
- 23) atp/2.1.1
- 24) perftools-base/6.5.2
- 25) PrgEnv-cray/6.0.4
- 26) cray-mpich/7.6.3
- 27) craype-broadwell
- 28) craype-hugepages2M
- 29) pbs
- 30) intel/17.0.5.239
- 31) netcdf/intel-17.0.1.132/4.4.1.1
-Cray Fortran : Version 8.6.4  Mon Feb 08, 2021  10:41:35
-Cray C++ : Version 8.6.4  Mon Feb 08, 2021  10:41:35
+ 17) cray-mpich/7.6.3
+ 18) pbs
+ 19) intel/17.0.5.239
+ 20) craype-broadwell
+ 21) craype-hugepages2M
+ 22) craype-network-aries
+ 23) craype/2.5.13
+ 24) cray-libsci/17.11.1
+ 25) pmi/5.0.15
+ 26) atp/2.1.1
+ 27) rca/2.2.18-6.0.7.1_5.61__g2aa4f39.ari
+ 28) perftools-base/6.5.2
+ 29) PrgEnv-intel/6.0.4
+ 30) netcdf/intel-17.0.1.132/4.4.1.1
+Intel(R) Fortran Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 17.0.5.239 Build 20170817
+Copyright (C) 1985-2017 Intel Corporation.  All rights reserved.
+
+Intel(R) C++ Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 17.0.5.239 Build 20170817
+Copyright (C) 1985-2017 Intel Corporation.  All rights reserved.
+
 cat: available.tmp: No such file or directory
 cat: available.tmp: No such file or directory
+/p/work/mpotts/intel_2017.5_mpi_O/scripts/available: line 7: [: which:: unary operator expected
 cat: available.tmp: No such file or directory
+/p/work/mpotts/intel_2017.5_mpi_O/scripts/available: line 7: [: which:: unary operator expected
 cat: available.tmp: No such file or directory
+/p/work/mpotts/intel_2017.5_mpi_O/scripts/available: line 7: [: /usr/bin/git: unary operator expected
 cat: available.tmp: No such file or directory
 cat: available.tmp: No such file or directory
 /p/work/mpotts/intel_2017.5_mpi_O/scripts/available: line 7: [: /usr/bin/git: unary operator expected
 cat: available.tmp: No such file or directory
 cat: available.tmp: No such file or directory
-cat: available.tmp: No such file or directory
-cat: available.tmp: No such file or directory
-cat: available.tmp: No such file or directory
-cat: available.tmp: No such file or directory
-cat: available.tmp: No such file or directory
-cat: available.tmp: No such file or directory
-cat: available.tmp: No such file or directory
-cat: available.tmp: No such file or directory
+/p/work/mpotts/intel_2017.5_mpi_O/scripts/available: line 7: [: which:: unary operator expected
 /p/work/mpotts/intel_2017.5_mpi_O/scripts/available: line 7: [: /usr/bin/git: unary operator expected
-/p/work/mpotts/intel_2017.5_mpi_O/scripts/available: line 7: [: /usr/bin/git: unary operator expected
-cat: available.tmp: No such file or directory
-cat: available.tmp: No such file or directory
-cat: available.tmp: No such file or directory
-cat: available.tmp: No such file or directory
-/p/work/mpotts/intel_2017.5_mpi_O/scripts/available: line 7: [: /usr/bin/git: unary operator expected
-cat: available.tmp: No such file or directory
-cat: available.tmp: No such file or directory
-cat: available.tmp: No such file or directory
-cat: available.tmp: No such file or directory
-cat: available.tmp: No such file or directory
-cat: available.tmp: No such file or directory
-cat: available.tmp: No such file or directory
-cat: available.tmp: No such file or directory
-cat: available.tmp: No such file or directory
-cat: available.tmp: No such file or directory
-cat: available.tmp: No such file or directory
-cat: available.tmp: No such file or directory
-cat: available.tmp: No such file or directory
-cat: available.tmp: No such file or directory
-/p/work/mpotts/intel_2017.5_mpi_O/scripts/available: line 7: [: /usr/bin/git: unary operator expected
-cat: available.tmp: No such file or directory
-cat: available.tmp: No such file or directory
 cat: available.tmp: No such file or directory
 /p/work/mpotts/intel_2017.5_mpi_O/scripts/available: line 7: [: /usr/bin/git: unary operator expected
 cat: available.tmp: No such file or directory
 /p/work/mpotts/intel_2017.5_mpi_O/scripts/available: line 7: [: /usr/bin/git: unary operator expected
+cat: available.tmp: No such file or directory
+/p/work/mpotts/intel_2017.5_mpi_O/scripts/available: line 7: [: which:: unary operator expected
 /p/work/mpotts/intel_2017.5_mpi_O/scripts/available: line 7: [: /usr/bin/git: unary operator expected

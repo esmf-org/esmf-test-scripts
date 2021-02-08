@@ -116,7 +116,7 @@ ESMF_BENCHMARK_THRESHOLD_MSEC: 500
  
 --------------------------------------------------------------
  * Other relevant environment variables *
-PATH:    /p/app/unsupported/netcdf/4.4.1.1-intel-17.0.1.132/bin:/opt/intel/compilers_and_libraries_2017.5.239/linux/bin/intel64:/opt/intel/compilers_and_libraries_2017.5.239/linux/mpi/intel64/bin:/opt/intel/debugger_2017/gdb/intel64_mic/bin:/opt/pbs/default/bin:/opt/cray/pe/mpt/7.6.3/gni/bin:/opt/cray/pe/perftools/6.5.2/bin:/opt/cray/pe/papi/5.5.1.3/bin:/opt/cray/rca/2.2.18-6.0.7.1_5.61__g2aa4f39.ari/bin:/opt/cray/pe/pmi/5.0.10-1.0000.11050.0.0.ari/bin:/opt/cray/pe/craype/2.5.13/bin:/opt/cray/pe/cce/8.6.4/binutils/x86_64/x86_64-pc-linux-gnu/bin:/opt/cray/pe/cce/8.6.4/binutils/cross/x86_64-aarch64/aarch64-unknowun-linux-gnu/../bin:/opt/cray/pe/cce/8.6.4/utils/x86_64/bin:/opt/cray/ccm/2.5.4-6.0.7.1_5.41__g394754f.ari/sbin:/opt/cray/ccm/2.5.4-6.0.7.1_5.41__g394754f.ari/bin:/opt/java/jdk1.8.0_152/bin:/opt/cray/cfgutils/bin:/opt/cray/nodehealth/5.6.14-6.0.7.1_8.59__gd6a82f3.ari/bin:/opt/cray/llm/21.3.530-6.0.7.1_5.8__g3b4230e.ari/bin:/opt/cray/sdb/3.3.777-6.0.7.1_6.17__g5ddb0ab.ari/bin:/opt/cray/nodestat/2.3.85-6.0.7.1_5.38__gc6218bb.ari/bin:/opt/cray/alps/6.6.43-6.0.7.1_5.61__ga796da32.ari/sbin:/opt/cray/alps/6.6.43-6.0.7.1_5.61__ga796da32.ari/bin:/opt/cray/pe/modules/3.2.11.4/bin:/usr/local/bin:/usr/bin:/bin:/usr/games:/usr/lib/mit/bin:/pbs/SLB:/usr/local/bin:/p/app/unsupported/local/bin:/usr/local/applic/COTS:/app/mpiutil:/opt/cray/pe/bin:/usr/local/krb5/bin:/usr/local/krb5/openssl/bin:/usr/local/krb5/bin:/usr/local/krb5/openssl/bin:/usr/local/krb5/bin:/usr/local/krb5/openssl/bin
+PATH:    /p/app/unsupported/netcdf/4.4.1.1-intel-17.0.1.132/bin:/opt/cray/pe/perftools/6.5.2/bin:/opt/cray/pe/papi/5.5.1.3/bin:/opt/cray/rca/2.2.18-6.0.7.1_5.61__g2aa4f39.ari/bin:/opt/cray/pe/craype/2.5.13/bin:/opt/intel/compilers_and_libraries_2017.5.239/linux/bin/intel64:/opt/intel/compilers_and_libraries_2017.5.239/linux/mpi/intel64/bin:/opt/intel/debugger_2017/gdb/intel64_mic/bin:/opt/pbs/default/bin:/opt/cray/pe/mpt/7.6.3/gni/bin:/opt/cray/ccm/2.5.4-6.0.7.1_5.41__g394754f.ari/sbin:/opt/cray/ccm/2.5.4-6.0.7.1_5.41__g394754f.ari/bin:/opt/java/jdk1.8.0_152/bin:/opt/cray/cfgutils/bin:/opt/cray/nodehealth/5.6.14-6.0.7.1_8.59__gd6a82f3.ari/bin:/opt/cray/llm/21.3.530-6.0.7.1_5.8__g3b4230e.ari/bin:/opt/cray/sdb/3.3.777-6.0.7.1_6.17__g5ddb0ab.ari/bin:/opt/cray/nodestat/2.3.85-6.0.7.1_5.38__gc6218bb.ari/bin:/opt/cray/alps/6.6.43-6.0.7.1_5.61__ga796da32.ari/sbin:/opt/cray/alps/6.6.43-6.0.7.1_5.61__ga796da32.ari/bin:/opt/cray/pe/modules/3.2.11.4/bin:/usr/local/bin:/usr/bin:/bin:/usr/games:/usr/lib/mit/bin:/pbs/SLB:/usr/local/bin:/p/app/unsupported/local/bin:/usr/local/applic/COTS:/app/mpiutil:/usr/local/krb5/bin:/usr/local/krb5/openssl/bin:/usr/local/krb5/bin:/usr/local/krb5/openssl/bin:/usr/local/krb5/bin:/usr/local/krb5/openssl/bin:/opt/cray/pe/bin
 LD_LIBRARY_PATH: /p/app/unsupported/netcdf/4.4.1.1-intel-17.0.1.132/lib:/p/app/unsupported/hdf4/4.2.12-nonetcdf-intel-17.0.1.132/lib:/p/app/unsupported/hdf5/1.8.18-intel-17.0.1.132/lib:/p/app/unsupported/szip/2.1.1-intel-17.0.1.132/lib:/opt/intel/compilers_and_libraries_2017.5.239/linux/compiler/lib/intel64:/opt/intel/compilers_and_libraries_2017.5.239/linux/compiler/lib/intel64_lin:/opt/intel/compilers_and_libraries_2017.5.239/linux/mpi/intel64/lib:/opt/intel/compilers_and_libraries_2017.5.239/linux/mpi/mic/lib:/opt/intel/compilers_and_libraries_2017.5.239/linux/ipp/lib/intel64:/opt/intel/compilers_and_libraries_2017.5.239/linux/compiler/lib/intel64_lin:/opt/intel/compilers_and_libraries_2017.5.239/linux/mkl/lib/intel64_lin:/opt/intel/compilers_and_libraries_2017.5.239/linux/tbb/lib/intel64/gcc4.7:/opt/intel/debugger_2017/iga/lib:/opt/intel/debugger_2017/libipt/intel64/lib:/opt/intel/compilers_and_libraries_2017.5.239/linux/daal/lib/intel64_lin
  
 --------------------------------------------------------------
@@ -152,10 +152,10 @@ ESMF_CXXCOMPILECPPFLAGS: -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESM
 
 C++ linker flags:
 ESMF_CXXLINKOPTS:  
-ESMF_CXXLINKPATHS: -L/p/work/mpotts/intel_2017.5_mpi_O/lib/libO/Unicos.intel.64.mpi.default  -L
+ESMF_CXXLINKPATHS: -L/p/work/mpotts/intel_2017.5_mpi_O/lib/libO/Unicos.intel.64.mpi.default  -L/opt/intel/compilers_and_libraries_2017.5.239/linux/compiler/lib/intel64_lin/
 ESMF_CXXLINKRPATHS: 
-ESMF_CXXLINKLIBS:    -lrt -ldl
-ESMF_CXXESMFLINKLIBS: -lesmf    -lrt -ldl
+ESMF_CXXLINKLIBS:   -lAtpSigHandler -lAtpSigHCommData -lpthread -lhugetlbfs -lsci_intel_mpi -lsci_intel -limf -lm -ldl -lsci_intel -limf -lm -lpthread -ldl -lhugetlbfs -lrt -lugni -lpmi -limf -lm -lpthread -ldl -lrt -lugni -lpthread -lpmi -limf -lm -ldl -lpmi -lpthread -lalpslli -lpthread -lwlm_detect -lalpsutil -lpthread -lrca -lugni -lpthread -lxpmem -ludreg -limf -lm -lpthread -lifport -lifcore -limf -lsvml -lm -lipgo -lirc -lsvml -lgcc -lgcc_eh -lirc_s -ldl -lrt -ldl
+ESMF_CXXESMFLINKLIBS: -lesmf   -lAtpSigHandler -lAtpSigHCommData -lpthread -lhugetlbfs -lsci_intel_mpi -lsci_intel -limf -lm -ldl -lsci_intel -limf -lm -lpthread -ldl -lhugetlbfs -lrt -lugni -lpmi -limf -lm -lpthread -ldl -lrt -lugni -lpthread -lpmi -limf -lm -ldl -lpmi -lpthread -lalpslli -lpthread -lwlm_detect -lalpsutil -lpthread -lrca -lugni -lpthread -lxpmem -ludreg -limf -lm -lpthread -lifport -lifcore -limf -lsvml -lm -lipgo -lirc -lsvml -lgcc -lgcc_eh -lirc_s -ldl -lrt -ldl
 
 
 ESMF Tracing linker options:
@@ -164,8 +164,8 @@ ESMF_TRACE_STATICLINKLIBS=-lesmftrace_static
 
 
 --------------------------------------------------------------
-Compiling on Mon Feb 8 10:41:42 CST 2021 on batch34
-Machine characteristics: Linux batch34 4.4.103-6.38_4.0.154-cray_ari_s #1 SMP Thu Nov 12 22:18:17 UTC 2020 (0e37142) x86_64 x86_64 x86_64 GNU/Linux
+Compiling on Mon Feb 8 10:45:17 CST 2021 on batch6
+Machine characteristics: Linux batch6 4.4.103-6.38_4.0.154-cray_ari_s #1 SMP Thu Nov 12 22:18:17 UTC 2020 (0e37142) x86_64 x86_64 x86_64 GNU/Linux
 ==============================================================
  
 make[1]: Entering directory '/p/work/mpotts/intel_2017.5_mpi_O'
@@ -3094,6 +3094,6 @@ make[2]: Leaving directory '/p/work/mpotts/intel_2017.5_mpi_O/src/Infrastructure
 make[1]: Leaving directory '/p/work/mpotts/intel_2017.5_mpi_O'
 make[1]: Entering directory '/p/work/mpotts/intel_2017.5_mpi_O'
 make[1]: Leaving directory '/p/work/mpotts/intel_2017.5_mpi_O'
-ESMF library built successfully on Mon Feb 8 10:48:50 CST 2021
+ESMF library built successfully on Mon Feb 8 10:53:01 CST 2021
 To verify, build and run the unit and system tests with: make check
  or the more extensive: make all_tests
