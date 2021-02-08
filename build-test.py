@@ -60,6 +60,7 @@ def main(argv):
       for comp in machine_list['compiler']:
   
        for ver in machine_list[comp]['versions']:
+          print("HEY {}".format(machine_list[comp]['versions'][ver]['mpi']))
           mpidict = machine_list[comp]['versions'][ver]['mpi']
           mpitypes= mpidict.keys()
           print(machine_list[comp]['versions'][ver])
