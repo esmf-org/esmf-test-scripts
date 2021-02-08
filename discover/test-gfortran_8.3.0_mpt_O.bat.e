@@ -1,4 +1,3 @@
-sed: can't read /gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_mpt_O/test/testO/Linux.gfortran.64.mpt.default/unit_tests.config: No such file or directory
 In file included from /gpfsm/dulocal/sles12/other/gcc/8.3.0/include/c++/8.3.0/backward/strstream:50,
                  from /gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_mpt_O/src/include/ESMCI_VMKernel.h:27,
                  from /gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_mpt_O/src/include/ESMCI_VM.h:41,
@@ -227,7 +226,7 @@ In file included from /gpfsm/dulocal/sles12/other/gcc/8.3.0/include/c++/8.3.0/ba
 /gpfsm/dulocal/sles12/other/gcc/8.3.0/include/c++/8.3.0/backward/backward_warning.h:32:2: warning: #warning This file includes at least one deprecated or antiquated header which may be removed without further notice at a future date. Please use a non-deprecated interface with equivalent functionality instead. For a listing of replacement headers and interfaces, consult the file backward_warning.h. To disable this warning use -Wno-deprecated. [-Wcpp]
  #warning \
   ^~~~~~~
-/bin/sh: line 10: 31459 Killed                  mpirun -np 4 ./ESMC_MBMesh_DualUTest > ./ESMC_MBMesh_DualUTest.stdout 2>&1
+/bin/sh: line 10:  7902 Killed                  mpirun -np 4 ./ESMC_MBMesh_DualUTest > ./ESMC_MBMesh_DualUTest.stdout 2>&1
 cat: './PET*MBMesh_DualUTest.Log': No such file or directory
 In file included from /gpfsm/dulocal/sles12/other/gcc/8.3.0/include/c++/8.3.0/backward/strstream:50,
                  from /gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_mpt_O/src/include/ESMCI_VMKernel.h:27,
