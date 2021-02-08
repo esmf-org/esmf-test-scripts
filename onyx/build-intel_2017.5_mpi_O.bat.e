@@ -40,24 +40,3 @@ Copyright (C) 1985-2017 Intel Corporation.  All rights reserved.
 Intel(R) C++ Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 17.0.5.239 Build 20170817
 Copyright (C) 1985-2017 Intel Corporation.  All rights reserved.
 
-cat: available.tmp: No such file or directory
-cat: available.tmp: No such file or directory
-/p/work/mpotts/intel_2017.5_mpi_O/scripts/available: line 7: [: which:: unary operator expected
-cat: available.tmp: No such file or directory
-/p/work/mpotts/intel_2017.5_mpi_O/scripts/available: line 7: [: which:: unary operator expected
-cat: available.tmp: No such file or directory
-/p/work/mpotts/intel_2017.5_mpi_O/scripts/available: line 7: [: /usr/bin/git: unary operator expected
-cat: available.tmp: No such file or directory
-cat: available.tmp: No such file or directory
-/p/work/mpotts/intel_2017.5_mpi_O/scripts/available: line 7: [: /usr/bin/git: unary operator expected
-cat: available.tmp: No such file or directory
-cat: available.tmp: No such file or directory
-/p/work/mpotts/intel_2017.5_mpi_O/scripts/available: line 7: [: which:: unary operator expected
-/p/work/mpotts/intel_2017.5_mpi_O/scripts/available: line 7: [: /usr/bin/git: unary operator expected
-cat: available.tmp: No such file or directory
-/p/work/mpotts/intel_2017.5_mpi_O/scripts/available: line 7: [: /usr/bin/git: unary operator expected
-cat: available.tmp: No such file or directory
-/p/work/mpotts/intel_2017.5_mpi_O/scripts/available: line 7: [: /usr/bin/git: unary operator expected
-cat: available.tmp: No such file or directory
-/p/work/mpotts/intel_2017.5_mpi_O/scripts/available: line 7: [: which:: unary operator expected
-/p/work/mpotts/intel_2017.5_mpi_O/scripts/available: line 7: [: /usr/bin/git: unary operator expected

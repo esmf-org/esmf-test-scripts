@@ -11,14 +11,27 @@ Untracked files:
 	build-intel_2017.5_mpi_O.bat
 	build-intel_2017.5_mpi_O.bat.e5413512
 	build-intel_2017.5_mpi_O.bat.e5413516
+	build-intel_2017.5_mpi_O.bat.e5413555
+	build-intel_2017.5_mpi_O.bat.e5413558
+	build-intel_2017.5_mpi_O.bat.e5413560
 	build-intel_2017.5_mpi_O.bat.o5413512
 	build-intel_2017.5_mpi_O.bat.o5413516
+	build-intel_2017.5_mpi_O.bat.o5413555
+	build-intel_2017.5_mpi_O.bat.o5413558
+	build-intel_2017.5_mpi_O.bat.o5413560
 	build-intel_2017.5_mpi_O.bat_%j.e
 	build-intel_2017.5_mpi_O.bat_%j.o
 	src/Superstructure/PreESMFMod/tests/ESMF_FileRegridUTest.o
+	src/Superstructure/State/tests/ESMF_StateReadWriteUTest.o
 	test-intel_2017.5_mpi_O.bat
 	test-intel_2017.5_mpi_O.bat.e5413513
+	test-intel_2017.5_mpi_O.bat.e5413556
+	test-intel_2017.5_mpi_O.bat.e5413559
+	test-intel_2017.5_mpi_O.bat.e5413561
 	test-intel_2017.5_mpi_O.bat.o5413513
+	test-intel_2017.5_mpi_O.bat.o5413556
+	test-intel_2017.5_mpi_O.bat.o5413559
+	test-intel_2017.5_mpi_O.bat.o5413561
 	test-intel_2017.5_mpi_O.bat_%j.e
 	test-intel_2017.5_mpi_O.bat_%j.o
 
@@ -54,6 +67,7 @@ ESMF_BOPT=O
 ESMF_COMM=mpi
 ESMF_COMPILER=intel
 ESMF_DIR=/p/work/mpotts/intel_2017.5_mpi_O
+ESMF_F90COMPILER=ftn
 ESMF_TEST_EXHAUSTIVE=ON
 ESMF_TEST_WITHTHREADS=ON
  
@@ -164,8 +178,8 @@ ESMF_TRACE_STATICLINKLIBS=-lesmftrace_static
 
 
 --------------------------------------------------------------
-Compiling on Mon Feb 8 10:45:17 CST 2021 on batch6
-Machine characteristics: Linux batch6 4.4.103-6.38_4.0.154-cray_ari_s #1 SMP Thu Nov 12 22:18:17 UTC 2020 (0e37142) x86_64 x86_64 x86_64 GNU/Linux
+Compiling on Mon Feb 8 12:35:27 CST 2021 on batch34
+Machine characteristics: Linux batch34 4.4.103-6.38_4.0.154-cray_ari_s #1 SMP Thu Nov 12 22:18:17 UTC 2020 (0e37142) x86_64 x86_64 x86_64 GNU/Linux
 ==============================================================
  
 make[1]: Entering directory '/p/work/mpotts/intel_2017.5_mpi_O'
@@ -3094,6 +3108,6 @@ make[2]: Leaving directory '/p/work/mpotts/intel_2017.5_mpi_O/src/Infrastructure
 make[1]: Leaving directory '/p/work/mpotts/intel_2017.5_mpi_O'
 make[1]: Entering directory '/p/work/mpotts/intel_2017.5_mpi_O'
 make[1]: Leaving directory '/p/work/mpotts/intel_2017.5_mpi_O'
-ESMF library built successfully on Mon Feb 8 10:53:01 CST 2021
+ESMF library built successfully on Mon Feb 8 12:42:30 CST 2021
 To verify, build and run the unit and system tests with: make check
  or the more extensive: make all_tests
