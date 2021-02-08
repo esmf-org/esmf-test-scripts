@@ -19,6 +19,8 @@ Untracked files:
 	build-gfortran_10.1.0_intelmpi_O.bat_42380583.o
 	build-gfortran_10.1.0_intelmpi_O.bat_42380690.e
 	build-gfortran_10.1.0_intelmpi_O.bat_42380690.o
+	build-gfortran_10.1.0_intelmpi_O.bat_42422471.e
+	build-gfortran_10.1.0_intelmpi_O.bat_42422471.o
 	test-gfortran_10.1.0_intelmpi_O.bat
 
 nothing added to commit but untracked files present (use "git add" to track)
@@ -170,16 +172,11 @@ ESMF_TRACE_STATICLINKLIBS=-lesmftrace_static
 
 
 --------------------------------------------------------------
-Compiling on Fri Feb 5 16:06:39 EST 2021 on borgq122
-Machine characteristics: Linux borgq122 4.4.180-94.100-default #1 SMP Tue Jul 9 19:57:20 UTC 2019 (1569ffb) x86_64 x86_64 x86_64 GNU/Linux
+Compiling on Mon Feb 8 11:48:53 EST 2021 on borgq169
+Machine characteristics: Linux borgq169 4.4.180-94.100-default #1 SMP Tue Jul 9 19:57:20 UTC 2019 (1569ffb) x86_64 x86_64 x86_64 GNU/Linux
 ==============================================================
  
 make[1]: Entering directory '/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_10.1.0_intelmpi_O'
-Making directory /gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_10.1.0_intelmpi_O/lib/libO/Linux.gfortran.64.intelmpi.default for library
-Making directory /gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_10.1.0_intelmpi_O/src/include for include files
-Making directory /gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_10.1.0_intelmpi_O/mod/modO/Linux.gfortran.64.intelmpi.default for *.mod files
-Making directory /gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_10.1.0_intelmpi_O/src/etc for Attribute package files
-Making directory /gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_10.1.0_intelmpi_O/obj/objO/Linux.gfortran.64.intelmpi.default for build-gfortran_10.1.0_intelmpi_O.bat_42380583.o build-gfortran_10.1.0_intelmpi_O.bat_42380690.o files
 cd /gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_10.1.0_intelmpi_O ;\
         make ACTION="tree_include tree_etc" tree
 make[2]: Entering directory '/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_10.1.0_intelmpi_O'
@@ -1083,12 +1080,12 @@ make[2]: Leaving directory '/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_10.1.
 make[1]: Leaving directory '/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_10.1.0_intelmpi_O'
 /gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_10.1.0_intelmpi_O/build/common.mk:2071: recipe for target 'lib' failed
 ________________________________________________________________
-Job Resource Usage Summary for 42380690 
+Job Resource Usage Summary for 42422471 
 
-  CPU Time Used		: 00:24:16
-  Memory Used		: 54020K
-  Virtual Memory Used	: 242340K
-  Walltime Used		: 00:00:52
+  CPU Time Used		: 00:31:16
+  Memory Used		: 37952K
+  Virtual Memory Used	: 198648K
+  Walltime Used		: 00:01:07
   Estimated SBUs        : 0
 
   Memory Requested	: 125300Mn (n=per node; c=per core)
@@ -1096,9 +1093,9 @@ Job Resource Usage Summary for 42380690
   Walltime Requested	: 01:00:00
 
   Execution Queue	: compute
-  Head Node		: borgq122
+  Head Node		: borgq169
   Charged to		: j1100
 
-  Job Stopped		: Fri Feb  5 16:07:18 EST 2021
+  Job Stopped		: Mon Feb  8 11:49:40 EST 2021
 _____________________________________________________________________
 
