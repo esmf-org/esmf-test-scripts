@@ -3,17 +3,17 @@ account: NRLMR03795024
 queue: standard
 scheduler: pbs
 corespernode: 44
-compiler: [intel,gfortran]
+compiler: [intel]
 intel:
      versions: 
        2017.5: 
          compiler: intel/17.0.5.239          
-         netcdf: netcdf/intel-17.0.1.132/4.4.1.1 
+         netcdf: netcdf/intel-17.0.1.132/4.4.1.1
          mpi:
-           mpi: 
-             module: cray-mpich/7.7.12
-       extramodule: PrgEnv-intel
-       unloadmodule: PrgEnv-cray
+           mpi:
+             module: cray-mpich/7.7.12     
+     extramodule: PrgEnv-intel
+     unloadmodule: PrgEnv-cray
 gfortran:
      versions: 
        7.2.0: 
