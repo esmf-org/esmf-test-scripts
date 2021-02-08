@@ -164,8 +164,8 @@ ESMF_TRACE_STATICLINKLIBS=-lesmftrace_static
 
 
 --------------------------------------------------------------
-Compiling on Mon Feb 8 10:38:40 CST 2021 on batch23
-Machine characteristics: Linux batch23 4.4.103-6.38_4.0.154-cray_ari_s #1 SMP Thu Nov 12 22:18:17 UTC 2020 (0e37142) x86_64 x86_64 x86_64 GNU/Linux
+Compiling on Mon Feb 8 10:41:42 CST 2021 on batch34
+Machine characteristics: Linux batch34 4.4.103-6.38_4.0.154-cray_ari_s #1 SMP Thu Nov 12 22:18:17 UTC 2020 (0e37142) x86_64 x86_64 x86_64 GNU/Linux
 ==============================================================
  
 make[1]: Entering directory '/p/work/mpotts/intel_2017.5_mpi_O'
@@ -3094,6 +3094,6 @@ make[2]: Leaving directory '/p/work/mpotts/intel_2017.5_mpi_O/src/Infrastructure
 make[1]: Leaving directory '/p/work/mpotts/intel_2017.5_mpi_O'
 make[1]: Entering directory '/p/work/mpotts/intel_2017.5_mpi_O'
 make[1]: Leaving directory '/p/work/mpotts/intel_2017.5_mpi_O'
-ESMF library built successfully on Mon Feb 8 10:45:35 CST 2021
+ESMF library built successfully on Mon Feb 8 10:48:50 CST 2021
 To verify, build and run the unit and system tests with: make check
  or the more extensive: make all_tests
