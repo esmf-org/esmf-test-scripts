@@ -1,5 +1,5 @@
 machine: discover
-account: j1100
+account: s2326
 queue: allnccs
 partition: compute
 scheduler: slurm
@@ -48,16 +48,3 @@ pgi:
              module: openmpi/4.0.4
            mpich: 
              module: mpich/3.3.2
-#!/bin/bash 
-# Minimal runscript: Cubed-Sphere FV dycore benchmarks 
-# ------------------------------
-#SBATCH --time=0:40:00
-#SBATCH -N 32
-#SBATCH --ntasks-per-node=40
-#SBATCH --job-name=wrf.32n
-#SBATCH --qos=admin
-#SBATCH --constraint=sky
-#SBATCH --partition=scutest
-#SBATCH --account=j1100
-#SBATCH --mail-type=ALL
-
