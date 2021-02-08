@@ -8,23 +8,28 @@ compiler: [intel,gfortran,pgi]
 intel:
      versions: 
        18.0.4: 
-         module: intel/18.0.5.274
+         compiler: intel/18.0.5.274
          netcdf: netcdf/4.7.0
          mpi:
-           intelmpi: impi/2018.4.274
-           mpiuni: None
+           intelmpi: 
+             module: impi/2018.4.274
+           mpiuni: 
+             module: None
 gfortran:
      versions: 
        9.2.0: 
-         module: gnu/9.2.0
+         compiler: gnu/9.2.0
          netcdf: netcdf/4.7.2
          mpi:
-           openmpi: openmpi/3.1.4
-           mpiuni: None
+           openmpi: 
+             module: openmpi/3.1.4
+           mpiuni: 
+             module: None
 pgi:
      versions: 
        18.10: 
-         module: pgi/18.10 
+         compiler: pgi/18.10 
          netcdf: None
          mpi:
-           intelmpi: impi/2018.0.4
+           intelmpi: 
+             module: impi/2018.0.4

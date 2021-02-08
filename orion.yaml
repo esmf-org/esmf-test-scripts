@@ -8,28 +8,33 @@ compiler: [gfortran,pgi,intel]
 intel:
    versions:
      2020: 
-       module: intel/2020.2
+       compiler: intel/2020.2
        netcdf: netcdf/4.7.4
        mpi:
-           intelmpi: impi/2020.2
+           intelmpi: 
+             module: impi/2020.2
 gfortran:
    versions:
      8.3.0: 
-       module: gcc/8.3.0
+       compiler: gcc/8.3.0
        netcdf: netcdf/4.7.4
        mpi:
-           openmpi: openmpi/4.0.4
-           mpiuni: None
-     10.2.0: 
-       module: gcc/10.2.0
-       netcdf: netcdf/4.7.4
-       mpi:
-           openmpi: openmpi/4.0.4
+           openmpi: 
+             module: openmpi/4.0.4
+           mpiuni: 
+             module: None
+#    10.2.0: 
+#      module: gcc/10.2.0
+#      netcdf: netcdf/4.7.4
+#      mpi:
+#          openmpi: openmpi/4.0.4
 pgi:
    versions:
      2019: 
-       module: pgi/2019 
+       compiler: pgi/2019 
        netcdf: netcdf/4.7.4
        mpi:
-           openmpi: openmpi/4.0.4
-           mpich: mpich/3.3.2
+           openmpi: 
+             module: openmpi/4.0.4
+           mpich: 
+             module: mpich/3.3.2
