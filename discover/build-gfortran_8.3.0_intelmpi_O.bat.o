@@ -25,6 +25,8 @@ Untracked files:
 	build-gfortran_8.3.0_intelmpi_O.bat_42380640.o
 	build-gfortran_8.3.0_intelmpi_O.bat_42380686.e
 	build-gfortran_8.3.0_intelmpi_O.bat_42380686.o
+	build-gfortran_8.3.0_intelmpi_O.bat_42422467.e
+	build-gfortran_8.3.0_intelmpi_O.bat_42422467.o
 	test-gfortran_8.3.0_intelmpi_O.bat
 
 nothing added to commit but untracked files present (use "git add" to track)
@@ -186,8 +188,8 @@ ESMF_TRACE_STATICLINKLIBS=-lesmftrace_static
 
 
 --------------------------------------------------------------
-Compiling on Fri Feb 5 16:01:31 EST 2021 on borgu184
-Machine characteristics: Linux borgu184 4.4.180-94.100-default #1 SMP Tue Jul 9 19:57:20 UTC 2019 (1569ffb) x86_64 x86_64 x86_64 GNU/Linux
+Compiling on Mon Feb 8 11:34:02 EST 2021 on borgm056
+Machine characteristics: Linux borgm056 4.4.180-94.100-default #1 SMP Tue Jul 9 19:57:20 UTC 2019 (1569ffb) x86_64 x86_64 x86_64 GNU/Linux
 ==============================================================
  
 make[1]: Entering directory '/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O'
@@ -1126,8 +1128,6 @@ make[8]: Entering directory '/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.
 make[8]: Nothing to be done for 'libc'.
 make[8]: Leaving directory '/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/mod/modO/Linux.gfortran.64.intelmpi.default'
 make[8]: Entering directory '/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/mod/modO/Linux.gfortran.64.intelmpi.default'
-mpifc -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fopenmp  -I/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/build_config/Linux.gfortran.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/src/Infrastructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/src/Superstructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/mod/modO/Linux.gfortran.64.intelmpi.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/src/include   -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_0_2_beta_snapshot_01"' -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_MOAB=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O /gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/src/Infrastructure/Util/src/ESMF_IOUtil.F90 -o /gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/obj/objO/Linux.gfortran.64.intelmpi.default/ESMF_IOUtil.o
-mpifc -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fopenmp  -I/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/build_config/Linux.gfortran.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/src/Infrastructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/src/Superstructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/mod/modO/Linux.gfortran.64.intelmpi.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/src/include   -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_0_2_beta_snapshot_01"' -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_MOAB=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O /gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/src/Infrastructure/Util/src/ESMF_UtilSort.F90 -o /gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/obj/objO/Linux.gfortran.64.intelmpi.default/ESMF_UtilSort.o
 mpifc -c -O -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fopenmp  -I/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/build_config/Linux.gfortran.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/src/Infrastructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/src/Superstructure -I/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/mod/modO/Linux.gfortran.64.intelmpi.default -I/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/src/include   -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_0_2_beta_snapshot_01"' -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_MOAB=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_BOPT_O -DESMF_TESTCOMPTUNNEL -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O /gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/src/Infrastructure/Util/src/ESMF_LogErr.F90 -o /gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/obj/objO/Linux.gfortran.64.intelmpi.default/ESMF_LogErr.o
 /gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/build/common.mk:3836: recipe for target '/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/obj/objO/Linux.gfortran.64.intelmpi.default/ESMF_LogErr.o' failed
 make[8]: Leaving directory '/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/mod/modO/Linux.gfortran.64.intelmpi.default'
@@ -1147,12 +1147,12 @@ make[2]: Leaving directory '/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0
 make[1]: Leaving directory '/gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O'
 /gpfsm/dnb04/projects/p98/mpotts/esmf/gfortran_8.3.0_intelmpi_O/build/common.mk:2071: recipe for target 'lib' failed
 ________________________________________________________________
-Job Resource Usage Summary for 42380686 
+Job Resource Usage Summary for 42422467 
 
-  CPU Time Used		: 00:33:36
-  Memory Used		: 62084K
-  Virtual Memory Used	: 279068K
-  Walltime Used		: 00:01:12
+  CPU Time Used		: 00:46:40
+  Memory Used		: 57796K
+  Virtual Memory Used	: 250928K
+  Walltime Used		: 00:01:40
   Estimated SBUs        : .01
 
   Memory Requested	: 125300Mn (n=per node; c=per core)
@@ -1160,9 +1160,9 @@ Job Resource Usage Summary for 42380686
   Walltime Requested	: 01:00:00
 
   Execution Queue	: compute
-  Head Node		: borgu184
+  Head Node		: borgm056
   Charged to		: j1100
 
-  Job Stopped		: Fri Feb  5 16:02:30 EST 2021
+  Job Stopped		: Mon Feb  8 11:35:20 EST 2021
 _____________________________________________________________________
 

@@ -4,7 +4,7 @@ queue: allnccs
 partition: compute
 scheduler: slurm
 corespernode: 28
-compiler: [gfortran,intel]
+compiler: [gfortran]
 modulepath: /gpfsm/dnb31/mapotts1/spack/share/spack/modules/linux-sles12-x86_64
 intel:
    versions:
