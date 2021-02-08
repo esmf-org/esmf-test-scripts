@@ -1,10 +1,11 @@
 machine: discover
-account: s2326
+#account: s2326
+account: j1100
 queue: allnccs
 partition: compute
 scheduler: slurm
 corespernode: 28
-compiler: [gfortran]
+compiler: [pgi]
 modulepath: /gpfsm/dnb31/mapotts1/spack/share/spack/modules/linux-sles12-x86_64
 intel:
    versions:
@@ -40,11 +41,11 @@ gfortran:
    extramodule: netcdf-fortran/4.4.4-gcc-8.3.0
 pgi:
    versions:
-     2019: 
-       compiler: pgi/2019 
-       netcdf: netcdf/4.7.4
+     2020: 
+       compiler: comp/pgi/20.4
+       netcdf: netcdf4/4.7.4
        mpi:
-           openmpi: 
-             module: openmpi/4.0.4
-           mpich: 
-             module: mpich/3.3.2
+           intelmpi: 
+             module: mpi/impi/20.0.0.166 
+           mpt: 
+             module: mpi/sgi-mpt/2.17
