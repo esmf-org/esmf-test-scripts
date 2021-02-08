@@ -11,7 +11,6 @@ Copyright (C) 1985-2020 Intel Corporation.  All rights reserved.
 Intel(R) C++ Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.1.2.254 Build 20200623
 Copyright (C) 1985-2020 Intel Corporation.  All rights reserved.
 
-sed: can't read /work/noaa/da/mpotts/intel_2020_intelmpi_O/test/testO/Linux.intel.64.intelmpi.default/unit_tests.config: No such file or directory
 In file included from /usr/include/c++/4.8.5/backward/strstream(51),
                  from /work/noaa/da/mpotts/intel_2020_intelmpi_O/src/include/ESMCI_VMKernel.h(27),
                  from /work/noaa/da/mpotts/intel_2020_intelmpi_O/src/include/ESMCI_VM.h(41),
