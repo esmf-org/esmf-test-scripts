@@ -7,19 +7,22 @@ compiler: [intel,gfortran]
 intel:
      versions: 
        2017.5: 
-         module: intel/17.0.5.239          
+         compiler: intel/17.0.5.239          
          netcdf: netcdf/intel-17.0.1.132/4.4.1.1 
          mpi:
-           mpi: cray-mpich/7.7.12
+           mpi: 
+             module: cray-mpich/7.7.12
        extramodule: PrgEnv-intel
        unloadmodule: PrgEnv-cray
 gfortran:
      versions: 
        7.2.0: 
-         module: gcc/7.2.0
+         compiler: gcc/7.2.0
          netcdf: netcdf/gcc-7.3.0/4.6.2  
          mpi:
-           mpi: cray-mpich/7.7.12     
-           mpiuni: None
+           mpi: 
+             module: cray-mpich/7.7.12     
+           mpiuni: 
+             module: None
      extramodule: PrgEnv-gnu
      unloadmodule: "PrgEnv-cray PrgEnv-intel"

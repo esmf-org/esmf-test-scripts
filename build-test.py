@@ -124,10 +124,15 @@ def main(argv):
             cmdstring="export ESMF_TEST_WITHTHREADS='ON'\n"
             fb.write(cmdstring)
             ft.write(cmdstring)
+
+            if("mpi_env_vars" in mpidict[key]):
+              for mpi_var in mpidict[key]['mpi_env_vars']:
+                fb.write("export {}\n".format(mpidict[key]['mpi_env_vars'][mpi_var]))
+                ft.write("export {}\n".format(mpidict[key]['mpi_env_vars'][mpi_var]))
             if(machine_list[comp]['versions'][ver]['netcdf'] == "None" ):
-              modulecmd = "module load {} {} \nmodule list\n".format(machine_list[comp]['versions'][ver]['module'],mpiver)
+              modulecmd = "module load {} {} \nmodule list\n".format(machine_list[comp]['versions'][ver]['compiler'],mpiver['module'])
             else:
-              modulecmd = "module load {} {} {}\nmodule list\n".format(machine_list[comp]['versions'][ver]['module'],mpiver,machine_list[comp]['versions'][ver]['netcdf'])
+              modulecmd = "module load {} {} {}\nmodule list\n".format(machine_list[comp]['versions'][ver]['compiler'],mpiver['module'],machine_list[comp]['versions'][ver]['netcdf'])
             fb.write(modulecmd)
             ft.write(modulecmd)
             cmdstring = "make -j {}\n\n".format(cpn)

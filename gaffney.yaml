@@ -7,18 +7,22 @@ compiler: [intel,gfortran]
 intel:
      versions: 
        2020.2: 
-         module: compiler/intel/18.0.1.163 
+         compiler: compiler/intel/18.0.1.163 
          netcdf: cse/netcdf/4.7.0
          mpi:
-           intelmpi: compiler/intelmpi/18.0.1.163 
-           mpt: mpt/2.20
+           intelmpi: 
+             module: compiler/intelmpi/18.0.1.163 
+           mpt: 
+             module: mpt/2.20
      extramodule: cseinit-intel
 gfortran:
      versions: 
        9.2.0: 
-         module: gcc/9.2.0
+         compiler: gcc/9.2.0
          netcdf: cse/netcdf/4.7.2
          mpi:
-           openmpi: compiler/openmpi/2.1.2
-           mpiuni: None
+           openmpi: 
+             module: compiler/openmpi/2.1.2
+           mpiuni: 
+             module: None
      extramodule: cseinit
