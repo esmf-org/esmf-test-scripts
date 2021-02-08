@@ -35,8 +35,8 @@ Currently Loaded Modulefiles:
  29) pbs
  30) intel/17.0.5.239
  31) netcdf/intel-17.0.1.132/4.4.1.1
-Cray Fortran : Version 8.6.4  Mon Feb 08, 2021  10:14:32
-Cray C++ : Version 8.6.4  Mon Feb 08, 2021  10:14:32
+Cray Fortran : Version 8.6.4  Mon Feb 08, 2021  10:46:40
+Cray C++ : Version 8.6.4  Mon Feb 08, 2021  10:46:40
 CC-2289 crayc++: ERROR in command line
   Invalid characters after option '-s' in command line item '-std=c++11'.
 make[5]: *** [ESMCI_StringSubr.o] Error 1

@@ -10,12 +10,17 @@ Untracked files:
   (use "git add <file>..." to include in what will be committed)
 	build-intel_2017.5_mpi_O.bat
 	build-intel_2017.5_mpi_O.bat.e5413512
+	build-intel_2017.5_mpi_O.bat.e5413516
+	build-intel_2017.5_mpi_O.bat.e5413555
 	build-intel_2017.5_mpi_O.bat.o5413512
+	build-intel_2017.5_mpi_O.bat.o5413516
+	build-intel_2017.5_mpi_O.bat.o5413555
 	build-intel_2017.5_mpi_O.bat_%j.e
 	build-intel_2017.5_mpi_O.bat_%j.o
 	src/Superstructure/PreESMFMod/tests/ESMF_FileRegridUTest.o
-	src/system_tests/ESMF_ArrayRedistMPMD/available.tmp
 	test-intel_2017.5_mpi_O.bat
+	test-intel_2017.5_mpi_O.bat.e5413513
+	test-intel_2017.5_mpi_O.bat.o5413513
 	test-intel_2017.5_mpi_O.bat_%j.e
 	test-intel_2017.5_mpi_O.bat_%j.o
 
@@ -161,8 +166,8 @@ ESMF_TRACE_STATICLINKLIBS=-lesmftrace_static
 
 
 --------------------------------------------------------------
-Compiling on Mon Feb 8 10:14:39 CST 2021 on batch19
-Machine characteristics: Linux batch19 4.4.103-6.38_4.0.154-cray_ari_s #1 SMP Thu Nov 12 22:18:17 UTC 2020 (0e37142) x86_64 x86_64 x86_64 GNU/Linux
+Compiling on Mon Feb 8 10:46:46 CST 2021 on batch24
+Machine characteristics: Linux batch24 4.4.103-6.38_4.0.154-cray_ari_s #1 SMP Thu Nov 12 22:18:17 UTC 2020 (0e37142) x86_64 x86_64 x86_64 GNU/Linux
 ==============================================================
  
 make[1]: Entering directory '/p/work/mpotts/intel_2017.5_mpi_O'
