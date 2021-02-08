@@ -43,7 +43,7 @@ pgi:
    versions:
      2020: 
        compiler: comp/pgi/20.4
-       netcdf: netcdf4/4.7.4
+       netcdf: None
        mpi:
            intelmpi: 
              module: mpi/impi/20.0.0.166 
