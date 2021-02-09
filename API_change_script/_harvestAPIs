@@ -11,13 +11,11 @@
 
 # parse the input arguments
 #ESMF_DIR=$1
-#TAG1=$2
-#TAG2=$3
+TAG1="develop"
+TAG2="ESMF_8_0_1"
 
 # set up directories and build variables
 HERE=$PWD
-export ESMF_DIR=$ESMF_DIR
-export TAG2=$TAG2
 
 # build the first tag and associated documentation
 cd $ESMF_DIR
