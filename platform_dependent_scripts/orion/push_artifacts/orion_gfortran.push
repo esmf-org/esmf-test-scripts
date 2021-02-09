@@ -1,0 +1,154 @@
+#!/bin/bash
+
+cd /home/hpillai/storage/develop
+rm meta_data_orion_gfortran.log
+rm ESMF_Trunk_Orion_gfortran.html
+touch meta_data_orion_gfortran.log
+cat /home/hpillai/esmf_test/gfortran/LOGDIR/Test_Status >> meta_data_orion_gfortran.log
+echo "Test_Failures :" `cat /home/hpillai/esmf_test/gfortran/LOGDIR/Test_Failures` >> meta_data_orion_gfortran.log
+echo "Test_artifacts made at " `date` >> meta_data_orion_gfortran.log
+
+cp /home/hpillai/esmf_test/gfortran/LOGDIR/newMailMessage ESMF_Trunk_Orion_gfortran.html
+sed -i '1i<pre>' ESMF_Trunk_Orion_gfortran.html
+
+cd /home/hpillai/storage/esmf-test-artifacts/
+git pull
+
+cd /home/hpillai/storage/esmf-test-artifacts/develop/orion/gfortran/8.3.0/g/openmpi/4.0.2/
+mkdir apps lib test examples out
+cd /home/hpillai/storage/esmf-test-artifacts/develop/orion/gfortran/8.3.0/O/openmpi/4.0.2/
+mkdir apps lib test examples out
+
+cd /home/hpillai/storage/esmf-test-artifacts/develop/orion/gfortran/8.3.0/g/openmpi/4.0.2/apps/
+touch a.sh
+git rm *.stdout
+git rm *.Log
+cp -rf /home/hpillai/storage/develop/appsg_Linux_gfortran_openmpi/* .
+for h in *.Log; do date >> $h; done
+for i in *.stdout; do date >> $i; done
+rm a.sh
+
+cd /home/hpillai/storage/esmf-test-artifacts/develop/orion/gfortran/8.3.0/O/openmpi/4.0.2/apps/
+touch a.sh
+git rm *.stdout
+git rm *.Log
+cp -rf /home/hpillai/storage/develop/appsO_Linux_gfortran_openmpi/* .
+for h in *.Log; do date >> $h; done
+for i in *.stdout; do date >> $i; done
+rm a.sh
+
+
+cd /home/hpillai/storage/esmf-test-artifacts/develop/orion/gfortran/8.3.0/g/openmpi/4.0.2/lib/
+touch a.sh
+git rm *.mk
+cp -rf /home/hpillai/storage/develop/libg_Linux_gfortran_openmpi/* .
+rm a.sh
+
+cd /home/hpillai/storage/esmf-test-artifacts/develop/orion/gfortran/8.3.0/O/openmpi/4.0.2/lib/
+touch a.sh
+git rm *.mk
+cp -rf /home/hpillai/storage/develop/libO_Linux_gfortran_openmpi/* .
+rm a.sh
+
+
+cd /home/hpillai/storage/esmf-test-artifacts/develop/orion/gfortran/8.3.0/g/openmpi/4.0.2/examples
+touch a.sh
+git rm *.config
+git rm *_results
+git rm *.stdout
+git rm *.Log
+cp -rf /home/hpillai/storage/develop/examplesg_Linux_gfortran_openmpi/* .
+for h in *.Log; do date >> $h; done
+for i in *.stdout; do date >> $i; done
+rm a.sh
+
+cd /home/hpillai/storage/esmf-test-artifacts/develop/orion/gfortran/8.3.0/O/openmpi/4.0.2/examples
+touch a.sh
+git rm *.config
+git rm *_results
+git rm *.stdout
+git rm *.Log
+cp -rf /home/hpillai/storage/develop/examplesO_Linux_gfortran_openmpi/* .
+for h in *.Log; do date >> $h; done
+for i in *.stdout; do date >> $i; done
+rm a.sh
+
+cd /home/hpillai/storage/esmf-test-artifacts/develop/orion/gfortran/8.3.0/g/openmpi/4.0.2/test
+touch a.sh
+git rm *.config
+git rm *_results
+git rm *.stdout
+git rm *.Log
+cp -rf /home/hpillai/storage/develop/testg_Linux_gfortran_openmpi/* .
+for h in *.Log; do date >> $h; done
+for i in *.stdout; do date >> $i; done
+rm a.sh
+
+cd /home/hpillai/storage/esmf-test-artifacts/develop/orion/gfortran/8.3.0/O/openmpi/4.0.2/test
+touch a.sh
+git rm *.config
+git rm *_results
+git rm *.stdout
+git rm *.Log
+cp -rf /home/hpillai/storage/develop/testO_Linux_gfortran_openmpi/* .
+for h in *.Log; do date >> $h; done
+for i in *.stdout; do date >> $i; done
+rm a.sh
+
+cd /home/hpillai/storage/esmf-test-artifacts/develop/orion/gfortran/8.3.0/g/openmpi/4.0.2/out/
+touch a.sh
+git rm *.out
+cp -rf /home/hpillai/storage/develop/g_outputfiles/build_apps_*gfortranopenmpi_g.out build_apps.out
+cp -rf /home/hpillai/storage/develop/g_outputfiles/build_examples_*gfortranopenmpi_g.out build_examples.out
+cp -rf /home/hpillai/storage/develop/g_outputfiles/build_Linux*gfortranopenmpi_g.out build.out
+cp -rf /home/hpillai/storage/develop/g_outputfiles/build_quick_start_*gfortranopenmpi_g.out build_quick_start.out
+cp -rf /home/hpillai/storage/develop/g_outputfiles/build_system_tests_*gfortranopenmpi_g.out build_system_tests.out
+cp -rf /home/hpillai/storage/develop/g_outputfiles/build_unit_tests_*gfortranopenmpi_g.out build_unit_tests.out
+cp -rf /home/hpillai/storage/develop/g_outputfiles/installcheck_*gfortranopenmpi_g.out installcheck.out
+cp -rf /home/hpillai/storage/develop/g_outputfiles/install_Linux*gfortranopenmpi_g.out install.out
+cp -rf /home/hpillai/storage/develop/g_outputfiles/run_examples_*gfortranopenmpi_g.out run_examples.out
+cp -rf /home/hpillai/storage/develop/g_outputfiles/run_system_tests_*gfortranopenmpi_g.out run_system_tests.out
+cp -rf /home/hpillai/storage/develop/g_outputfiles/run_unit_tests_Linux*gfortranopenmpi_g.out run_unit_tests.out
+cp -rf /home/hpillai/storage/develop/g_outputfiles/install_unit_tests_benchmark_*gfortranopenmpi_g.out install_unit_tests_benchmark.out
+cp -rf /home/hpillai/storage/develop/g_outputfiles/run_examples_uni_*gfortranopenmpi_g.out run_examples.out
+cp -rf /home/hpillai/storage/develop/g_outputfiles/run_system_tests_uni_*gfortranopenmpi_g.out run_system_tests.out
+cp -rf /home/hpillai/storage/develop/g_outputfiles/run_unit_tests_uni_*gfortranopenmpi_g.out run_unit_tests.out
+cp -rf /home/hpillai/storage/develop/g_outputfiles/run_unit_tests_benchmark_*gfortranopenmpi_g.out  run_unit_tests_benchmark.out
+for h in *.out; do date >> $h; done
+rm a.sh
+
+cd /home/hpillai/storage/esmf-test-artifacts/develop/orion/gfortran/8.3.0/O/openmpi/4.0.2/out/
+touch a.sh
+git rm *.out
+cp -rf /home/hpillai/storage/develop/O_outputfiles/build_apps_*gfortranopenmpi_O.out build_apps.out
+cp -rf /home/hpillai/storage/develop/O_outputfiles/build_examples_*gfortranopenmpi_O.out build_examples.out
+cp -rf /home/hpillai/storage/develop/O_outputfiles/build_Linux*gfortranopenmpi_O.out build.out
+cp -rf /home/hpillai/storage/develop/O_outputfiles/build_quick_start_*gfortranopenmpi_O.out build_quick_start.out
+cp -rf /home/hpillai/storage/develop/O_outputfiles/build_system_tests_*gfortranopenmpi_O.out build_system_tests.out
+cp -rf /home/hpillai/storage/develop/O_outputfiles/build_unit_tests_*gfortranopenmpi_O.out build_unit_tests.out
+cp -rf /home/hpillai/storage/develop/O_outputfiles/installcheck_*gfortranopenmpi_O.out installcheck.out
+cp -rf /home/hpillai/storage/develop/O_outputfiles/install_Linux*gfortranopenmpi_O.out install.out
+cp -rf /home/hpillai/storage/develop/O_outputfiles/run_examples_*gfortranopenmpi_O.out run_examples.out
+cp -rf /home/hpillai/storage/develop/O_outputfiles/run_system_tests_*gfortranopenmpi_O.out run_system_tests.out
+cp -rf /home/hpillai/storage/develop/O_outputfiles/run_unit_tests_Linux*gfortranopenmpi_O.out run_unit_tests.out
+cp -rf /home/hpillai/storage/develop/O_outputfiles/install_unit_tests_benchmark_*gfortranopenmpi_O.out install_unit_tests_benchmark.out
+cp -rf /home/hpillai/storage/develop/O_outputfiles/run_examples_uni_*gfortranopenmpi_O.out run_examples.out
+cp -rf /home/hpillai/storage/develop/O_outputfiles/run_system_tests_uni_*gfortranopenmpi_O.out run_system_tests.out
+cp -rf /home/hpillai/storage/develop/O_outputfiles/run_unit_tests_uni_*gfortranopenmpi_O.out run_unit_tests.out
+cp -rf /home/hpillai/storage/develop/O_outputfiles/run_unit_tests_benchmark_*gfortranopenmpi_O.out  run_unit_tests_benchmark.out
+for h in *.out; do date >> $h; done
+rm a.sh
+
+cd /home/hpillai/storage/esmf-test-artifacts/develop/orion/gfortran/
+touch a.sh
+git rm *.log
+git rm *.html
+cp -rf /home/hpillai/storage/develop/ESMF_Trunk_Orion_gfortran.html result.html
+cp -rf /home/hpillai/storage/develop/meta_data_orion_gfortran.log summary.log
+git log --since=6.days --grep='Orion GFortran artifacts' > commit.log
+rm a.sh
+
+cd /home/hpillai/storage/esmf-test-artifacts
+git add .
+git commit -a -m " Orion GFortran artifacts pushed at `date` [ci skip]"
+git push origin master
