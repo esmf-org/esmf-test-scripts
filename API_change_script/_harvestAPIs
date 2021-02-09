@@ -11,8 +11,8 @@
 
 # parse the input arguments
 #ESMF_DIR=$1
-TAG1="develop"
-TAG2="ESMF_8_0_1"
+#TAG1="develop"
+#TAG2="ESMF_8_0_1"
 
 # set up directories and build variables
 HERE=$PWD
@@ -37,7 +37,7 @@ python -c 'print "finishing harvestAPIsFromRefDoc on $TAG1"'
 
 # build the second tag and associated documentation
 cd $ESMF_DIR
-git fetch
+git fetch --all --tags
 git checkout tags/$TAG2
 git branch -a
 make distclean
