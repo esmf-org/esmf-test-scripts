@@ -1,3 +1,6 @@
+/sfs/pbs/nid001001/mom_priv/jobs/10185.abqs01.SC: line 18: export: `-i': not a valid identifier
+/sfs/pbs/nid001001/mom_priv/jobs/10185.abqs01.SC: line 18: export: `s/aprun/cray aprun/': not a valid identifier
+/sfs/pbs/nid001001/mom_priv/jobs/10185.abqs01.SC: line 18: export: `scripts/mpirun.unicos': not a valid identifier
 Currently Loaded Modulefiles:
  1) craype/2.7.0(default)                               
  2) craype-x86-rome                                     
@@ -391,10 +394,6 @@ Warning:
 Warning:
  Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
-ESMC_LogErrUTest.C: In function 'int main()':
-ESMC_LogErrUTest.C:57:11: warning: enum constant in boolean context [-Wint-in-bool-context]
-   57 |   flush = ESMF_FALSE;
-      |           ^~~~~~~~~~
 /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 4: mpichversion: command not found
 /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 5: [: =: unary operator expected
 /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 5: [: =: unary operator expected
@@ -416,6 +415,9 @@ In file included from /opt/gcc/9.3.0/snos/include/g++/backward/strstream:50,
 /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 5: [: =: unary operator expected
 Warning:
  Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
 Warning:
  Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
@@ -991,13 +993,94 @@ Warning:
  Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
 Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+ Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
 Warning:
  Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
 Warning:
  Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+In file included from /opt/gcc/9.3.0/snos/include/g++/backward/strstream:50,
+                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_VMKernel.h:27,
+                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_VM.h:41,
+                 from ESMC_BaseUTest.C:23:
+/opt/gcc/9.3.0/snos/include/g++/backward/backward_warning.h:32:2: warning: #warning This file includes at least one deprecated or antiquated header which may be removed without further notice at a future date. Please use a non-deprecated interface with equivalent functionality instead. For a listing of replacement headers and interfaces, consult the file backward_warning.h. To disable this warning use -Wno-deprecated. [-Wcpp]
+   32 | #warning \
+      |  ^~~~~~~
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 4: mpichversion: command not found
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 5: [: =: unary operator expected
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 5: [: =: unary operator expected
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+In file included from /opt/gcc/9.3.0/snos/include/g++/backward/strstream:50,
+                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_VMKernel.h:27,
+                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_VM.h:41,
+                 from ESMC_NlohmannJSONUTest.C:20:
+/opt/gcc/9.3.0/snos/include/g++/backward/backward_warning.h:32:2: warning: #warning This file includes at least one deprecated or antiquated header which may be removed without further notice at a future date. Please use a non-deprecated interface with equivalent functionality instead. For a listing of replacement headers and interfaces, consult the file backward_warning.h. To disable this warning use -Wno-deprecated. [-Wcpp]
+   32 | #warning \
+      |  ^~~~~~~
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 4: mpichversion: command not found
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 5: [: =: unary operator expected
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 5: [: =: unary operator expected
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+In file included from /opt/gcc/9.3.0/snos/include/g++/backward/strstream:50,
+                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_VMKernel.h:27,
+                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_VM.h:41,
+                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Base/tests/../include/ESMCI_Base.h:27,
+                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Base/tests/../include/ESMCI_Info.h:24,
+                 from ESMC_InfoUTest.C:21:
+/opt/gcc/9.3.0/snos/include/g++/backward/backward_warning.h:32:2: warning: #warning This file includes at least one deprecated or antiquated header which may be removed without further notice at a future date. Please use a non-deprecated interface with equivalent functionality instead. For a listing of replacement headers and interfaces, consult the file backward_warning.h. To disable this warning use -Wno-deprecated. [-Wcpp]
+   32 | #warning \
+      |  ^~~~~~~
+In file included from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Base/tests/../include/ESMCI_Info.h:24,
+                 from ESMC_InfoUTest.C:21:
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Base/tests/../include/ESMCI_Base.h: In member function 'void ESMC_Base::ESMC_BaseDeleteInfo()':
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Base/tests/../include/ESMCI_Base.h:140:60: warning: possible problem detected in invocation of delete operator: [-Wdelete-incomplete]
+  140 |     void ESMC_BaseDeleteInfo(void) {if (!infoalias) delete info;}
+      |                                                            ^~~~
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Base/tests/../include/ESMCI_Base.h:140:60: warning: invalid use of incomplete type 'class ESMCI::Info'
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Base/tests/../include/ESMCI_Base.h:70:9: note: forward declaration of 'class ESMCI::Info'
+   70 |   class Info;
+      |         ^~~~
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Base/tests/../include/ESMCI_Base.h:140:60: note: neither the destructor nor the class-specific operator delete will be called, even if they are declared when the class is defined
+  140 |     void ESMC_BaseDeleteInfo(void) {if (!infoalias) delete info;}
+      |                                                            ^~~~
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 4: mpichversion: command not found
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 5: [: =: unary operator expected
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 5: [: =: unary operator expected
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
 Warning:
  Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
@@ -1961,17 +2044,303 @@ Warning:
  Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
 Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
  Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
 In file included from /opt/gcc/9.3.0/snos/include/g++/backward/strstream:50,
                  from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_VMKernel.h:27,
                  from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_VM.h:41,
                  from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_Base.h:27,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_RHandle.h:39,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Field/include/ESMCI_Field.h:42,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/ESMCI_Mesh.h:23,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_GeomRendezvous.h:18,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/Regridding/ESMCI_Interp.h:17,
+                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MBMesh.h:22,
+                 from ESMC_MBMeshUTest.C:24:
+/opt/gcc/9.3.0/snos/include/g++/backward/backward_warning.h:32:2: warning: #warning This file includes at least one deprecated or antiquated header which may be removed without further notice at a future date. Please use a non-deprecated interface with equivalent functionality instead. For a listing of replacement headers and interfaces, consult the file backward_warning.h. To disable this warning use -Wno-deprecated. [-Wcpp]
+   32 | #warning \
+      |  ^~~~~~~
+In file included from ESMC_MBMeshUTest.C:26:
+ESMC_MBTGen.C:909:3: warning: multi-line comment [-Wcomment]
+  909 |   //  3.1                    / -- 15 -- \
+      |   ^
+ESMC_MBTGen.C:912:3: warning: multi-line comment [-Wcomment]
+  912 |   //         |         |         5           \
+      |   ^
+ESMC_MBTGen.C:919:3: warning: multi-line comment [-Wcomment]
+  919 |   //         |            \     \         \
+      |   ^
+ESMC_MBTGen.C:921:3: warning: multi-line comment [-Wcomment]
+  921 |   //         |                \ |          \
+      |   ^
+ESMC_MBTGen.C:1167:3: warning: multi-line comment [-Wcomment]
+ 1167 |   //  3.1                    / -- 15 -- \
+      |   ^
+ESMC_MBTGen.C:1170:3: warning: multi-line comment [-Wcomment]
+ 1170 |   //         |         |         5           \
+      |   ^
+ESMC_MBTGen.C:1177:3: warning: multi-line comment [-Wcomment]
+ 1177 |   //         |            \     \         \
+      |   ^
+ESMC_MBTGen.C:1179:3: warning: multi-line comment [-Wcomment]
+ 1179 |   //         |                \ |          \
+      |   ^
+In file included from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/ESMCI_Mesh.h:15,
+                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/ESMCI_XGridUtil.h:16,
+                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MBMesh_Glue.h:38,
+                 from ESMC_MBMeshUTest.C:25:
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h: In instantiation of 'ESMCI::mesh_obj_iterator<TT, Ref, Ptr, MSet_iterator, obj_iterator>::mesh_obj_iterator(const MSet_iterator&, const MSet_iterator&, const ESMCI::Attr&) [with TT = ESMCI::MeshObj; Ref = const ESMCI::MeshObj&; Ptr = const ESMCI::MeshObj*; MSet_iterator = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>; obj_iterator = ESMCI::_List_iterator<ESMCI::MeshObj, const ESMCI::MeshObj&, const ESMCI::MeshObj*>]':
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:348:46:   required from here
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:74:11: warning: implicitly-declared 'constexpr ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>::_List_iterator(const ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>&)' is deprecated [-Wdeprecated-copy]
+   74 | attr(_attr)
+      |           ^
+In file included from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshObj.h:17,
+                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_DDir.h:16,
+                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MBMesh_Glue.h:37,
+                 from ESMC_MBMeshUTest.C:25:
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:82:7: note: because 'ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>' has user-provided 'ESMCI::_List_iterator<A, B, C>::self& ESMCI::_List_iterator<A, B, C>::operator=(const ESMCI::_List_iterator<A, B, C>&) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]'
+   82 | self &operator=(const _List_iterator &rhs) {
+      |       ^~~~~~~~
+In file included from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/ESMCI_Mesh.h:15,
+                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/ESMCI_XGridUtil.h:16,
+                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MBMesh_Glue.h:38,
+                 from ESMC_MBMeshUTest.C:25:
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:74:11: warning: implicitly-declared 'constexpr ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>::_List_iterator(const ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>&)' is deprecated [-Wdeprecated-copy]
+   74 | attr(_attr)
+      |           ^
+In file included from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshObj.h:17,
+                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_DDir.h:16,
+                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MBMesh_Glue.h:37,
+                 from ESMC_MBMeshUTest.C:25:
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:82:7: note: because 'ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>' has user-provided 'ESMCI::_List_iterator<A, B, C>::self& ESMCI::_List_iterator<A, B, C>::operator=(const ESMCI::_List_iterator<A, B, C>&) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]'
+   82 | self &operator=(const _List_iterator &rhs) {
+      |       ^~~~~~~~
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h: In instantiation of 'ESMCI::_List_iterator<A, B, C>::self ESMCI::_List_iterator<A, B, C>::operator++(int) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]':
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:118:8:   required from 'void ESMCI::mesh_obj_iterator<TT, Ref, Ptr, MSet_iterator, obj_iterator>::next_good_object() [with TT = ESMCI::MeshObj; Ref = const ESMCI::MeshObj&; Ptr = const ESMCI::MeshObj*; MSet_iterator = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>; obj_iterator = ESMCI::_List_iterator<ESMCI::MeshObj, const ESMCI::MeshObj&, const ESMCI::MeshObj*>]'
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:77:3:   required from 'ESMCI::mesh_obj_iterator<TT, Ref, Ptr, MSet_iterator, obj_iterator>::mesh_obj_iterator(const MSet_iterator&, const MSet_iterator&, const ESMCI::Attr&) [with TT = ESMCI::MeshObj; Ref = const ESMCI::MeshObj&; Ptr = const ESMCI::MeshObj*; MSet_iterator = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>; obj_iterator = ESMCI::_List_iterator<ESMCI::MeshObj, const ESMCI::MeshObj&, const ESMCI::MeshObj*>]'
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:348:46:   required from here
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:113:18: warning: implicitly-declared 'constexpr ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>::_List_iterator(const ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>&)' is deprecated [-Wdeprecated-copy]
+  113 |   _List_iterator tmp = *this;
+      |                  ^~~
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:82:7: note: because 'ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>' has user-provided 'ESMCI::_List_iterator<A, B, C>::self& ESMCI::_List_iterator<A, B, C>::operator=(const ESMCI::_List_iterator<A, B, C>&) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]'
+   82 | self &operator=(const _List_iterator &rhs) {
+      |       ^~~~~~~~
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:115:10: warning: implicitly-declared 'constexpr ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>::_List_iterator(const ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>&)' is deprecated [-Wdeprecated-copy]
+  115 |   return tmp;
+      |          ^~~
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:82:7: note: because 'ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>' has user-provided 'ESMCI::_List_iterator<A, B, C>::self& ESMCI::_List_iterator<A, B, C>::operator=(const ESMCI::_List_iterator<A, B, C>&) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]'
+   82 | self &operator=(const _List_iterator &rhs) {
+      |       ^~~~~~~~
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 4: mpichversion: command not found
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 5: [: =: unary operator expected
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 5: [: =: unary operator expected
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+In file included from /opt/gcc/9.3.0/snos/include/g++/backward/strstream:50,
+                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_VMKernel.h:27,
+                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_VM.h:41,
+                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_Base.h:27,
+                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MBMesh.h:22,
+                 from ESMC_MBMeshRegridUTest.C:24:
+/opt/gcc/9.3.0/snos/include/g++/backward/backward_warning.h:32:2: warning: #warning This file includes at least one deprecated or antiquated header which may be removed without further notice at a future date. Please use a non-deprecated interface with equivalent functionality instead. For a listing of replacement headers and interfaces, consult the file backward_warning.h. To disable this warning use -Wno-deprecated. [-Wcpp]
+   32 | #warning \
+      |  ^~~~~~~
+In file included from ESMC_MBMeshRegridUTest.C:26:
+ESMC_MBTGen.C:909:3: warning: multi-line comment [-Wcomment]
+  909 |   //  3.1                    / -- 15 -- \
+      |   ^
+ESMC_MBTGen.C:912:3: warning: multi-line comment [-Wcomment]
+  912 |   //         |         |         5           \
+      |   ^
+ESMC_MBTGen.C:919:3: warning: multi-line comment [-Wcomment]
+  919 |   //         |            \     \         \
+      |   ^
+ESMC_MBTGen.C:921:3: warning: multi-line comment [-Wcomment]
+  921 |   //         |                \ |          \
+      |   ^
+ESMC_MBTGen.C:1167:3: warning: multi-line comment [-Wcomment]
+ 1167 |   //  3.1                    / -- 15 -- \
+      |   ^
+ESMC_MBTGen.C:1170:3: warning: multi-line comment [-Wcomment]
+ 1170 |   //         |         |         5           \
+      |   ^
+ESMC_MBTGen.C:1177:3: warning: multi-line comment [-Wcomment]
+ 1177 |   //         |            \     \         \
+      |   ^
+ESMC_MBTGen.C:1179:3: warning: multi-line comment [-Wcomment]
+ 1179 |   //         |                \ |          \
+      |   ^
+In file included from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/ESMCI_Mesh.h:15,
+                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/ESMCI_XGridUtil.h:16,
+                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MBMesh_Glue.h:38,
+                 from ESMC_MBMeshRegridUTest.C:25:
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h: In instantiation of 'ESMCI::mesh_obj_iterator<TT, Ref, Ptr, MSet_iterator, obj_iterator>::mesh_obj_iterator(const MSet_iterator&, const MSet_iterator&, const ESMCI::Attr&) [with TT = ESMCI::MeshObj; Ref = const ESMCI::MeshObj&; Ptr = const ESMCI::MeshObj*; MSet_iterator = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>; obj_iterator = ESMCI::_List_iterator<ESMCI::MeshObj, const ESMCI::MeshObj&, const ESMCI::MeshObj*>]':
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:348:46:   required from here
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:74:11: warning: implicitly-declared 'constexpr ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>::_List_iterator(const ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>&)' is deprecated [-Wdeprecated-copy]
+   74 | attr(_attr)
+      |           ^
+In file included from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshObj.h:17,
+                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_DDir.h:16,
+                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MBMesh_Glue.h:37,
+                 from ESMC_MBMeshRegridUTest.C:25:
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:82:7: note: because 'ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>' has user-provided 'ESMCI::_List_iterator<A, B, C>::self& ESMCI::_List_iterator<A, B, C>::operator=(const ESMCI::_List_iterator<A, B, C>&) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]'
+   82 | self &operator=(const _List_iterator &rhs) {
+      |       ^~~~~~~~
+In file included from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/ESMCI_Mesh.h:15,
+                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/ESMCI_XGridUtil.h:16,
+                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MBMesh_Glue.h:38,
+                 from ESMC_MBMeshRegridUTest.C:25:
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:74:11: warning: implicitly-declared 'constexpr ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>::_List_iterator(const ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>&)' is deprecated [-Wdeprecated-copy]
+   74 | attr(_attr)
+      |           ^
+In file included from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshObj.h:17,
+                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_DDir.h:16,
+                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MBMesh_Glue.h:37,
+                 from ESMC_MBMeshRegridUTest.C:25:
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:82:7: note: because 'ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>' has user-provided 'ESMCI::_List_iterator<A, B, C>::self& ESMCI::_List_iterator<A, B, C>::operator=(const ESMCI::_List_iterator<A, B, C>&) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]'
+   82 | self &operator=(const _List_iterator &rhs) {
+      |       ^~~~~~~~
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h: In instantiation of 'ESMCI::_List_iterator<A, B, C>::self ESMCI::_List_iterator<A, B, C>::operator++(int) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]':
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:118:8:   required from 'void ESMCI::mesh_obj_iterator<TT, Ref, Ptr, MSet_iterator, obj_iterator>::next_good_object() [with TT = ESMCI::MeshObj; Ref = const ESMCI::MeshObj&; Ptr = const ESMCI::MeshObj*; MSet_iterator = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>; obj_iterator = ESMCI::_List_iterator<ESMCI::MeshObj, const ESMCI::MeshObj&, const ESMCI::MeshObj*>]'
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:77:3:   required from 'ESMCI::mesh_obj_iterator<TT, Ref, Ptr, MSet_iterator, obj_iterator>::mesh_obj_iterator(const MSet_iterator&, const MSet_iterator&, const ESMCI::Attr&) [with TT = ESMCI::MeshObj; Ref = const ESMCI::MeshObj&; Ptr = const ESMCI::MeshObj*; MSet_iterator = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>; obj_iterator = ESMCI::_List_iterator<ESMCI::MeshObj, const ESMCI::MeshObj&, const ESMCI::MeshObj*>]'
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:348:46:   required from here
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:113:18: warning: implicitly-declared 'constexpr ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>::_List_iterator(const ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>&)' is deprecated [-Wdeprecated-copy]
+  113 |   _List_iterator tmp = *this;
+      |                  ^~~
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:82:7: note: because 'ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>' has user-provided 'ESMCI::_List_iterator<A, B, C>::self& ESMCI::_List_iterator<A, B, C>::operator=(const ESMCI::_List_iterator<A, B, C>&) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]'
+   82 | self &operator=(const _List_iterator &rhs) {
+      |       ^~~~~~~~
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:115:10: warning: implicitly-declared 'constexpr ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>::_List_iterator(const ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>&)' is deprecated [-Wdeprecated-copy]
+  115 |   return tmp;
+      |          ^~~
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:82:7: note: because 'ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>' has user-provided 'ESMCI::_List_iterator<A, B, C>::self& ESMCI::_List_iterator<A, B, C>::operator=(const ESMCI::_List_iterator<A, B, C>&) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]'
+   82 | self &operator=(const _List_iterator &rhs) {
+      |       ^~~~~~~~
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 4: mpichversion: command not found
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 5: [: =: unary operator expected
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 5: [: =: unary operator expected
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+In file included from /opt/gcc/9.3.0/snos/include/g++/backward/strstream:50,
+                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_VMKernel.h:27,
+                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_VM.h:41,
+                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_Base.h:27,
+                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/ESMCI_MBMesh.h:22,
+                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Regridding/ESMCI_WMat.h:19,
+                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_Regrid_Nearest.h:16,
+                 from ESMC_MeshTestGenPL.C:25,
+                 from ESMC_MBMesh_ExtrapolateUTest.C:24:
+/opt/gcc/9.3.0/snos/include/g++/backward/backward_warning.h:32:2: warning: #warning This file includes at least one deprecated or antiquated header which may be removed without further notice at a future date. Please use a non-deprecated interface with equivalent functionality instead. For a listing of replacement headers and interfaces, consult the file backward_warning.h. To disable this warning use -Wno-deprecated. [-Wcpp]
+   32 | #warning \
+      |  ^~~~~~~
+In file included from ESMC_MBMesh_ExtrapolateUTest.C:24:
+ESMC_MeshTestGenPL.C: In function 'bool weights_correct_nearest(ESMCI::WMat&, std::vector<double>)':
+ESMC_MeshTestGenPL.C:54:24: warning: comparison of integer expressions of different signedness: 'std::vector<double>::size_type' {aka 'long unsigned int'} and 'int' [-Wsign-compare]
+   54 |     if (weights.size() != ind) correct = false;
+      |         ~~~~~~~~~~~~~~~^~~~~~
+ESMC_MBMesh_ExtrapolateUTest.C: In function 'bool weights_correct_extrapolate(ESMCI::WMat&, std::vector<double>)':
+ESMC_MBMesh_ExtrapolateUTest.C:57:24: warning: comparison of integer expressions of different signedness: 'std::vector<double>::size_type' {aka 'long unsigned int'} and 'int' [-Wsign-compare]
+   57 |     if (weights.size() != ind) correct = false;
+      |         ~~~~~~~~~~~~~~~^~~~~~
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 4: mpichversion: command not found
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 5: [: =: unary operator expected
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 5: [: =: unary operator expected
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+In file included from /opt/gcc/9.3.0/snos/include/g++/backward/strstream:50,
+                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_VMKernel.h:27,
+                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_VM.h:41,
+                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_Base.h:27,
+                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MBMesh.h:22,
+                 from ESMC_MBMesh_UtilUTest.C:25:
+/opt/gcc/9.3.0/snos/include/g++/backward/backward_warning.h:32:2: warning: #warning This file includes at least one deprecated or antiquated header which may be removed without further notice at a future date. Please use a non-deprecated interface with equivalent functionality instead. For a listing of replacement headers and interfaces, consult the file backward_warning.h. To disable this warning use -Wno-deprecated. [-Wcpp]
+   32 | #warning \
+      |  ^~~~~~~
+In file included from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/ESMCI_Mesh.h:15,
+                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/ESMCI_XGridUtil.h:16,
+                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MBMesh_Glue.h:38,
+                 from ESMC_MBMesh_UtilUTest.C:26:
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h: In instantiation of 'ESMCI::mesh_obj_iterator<TT, Ref, Ptr, MSet_iterator, obj_iterator>::mesh_obj_iterator(const MSet_iterator&, const MSet_iterator&, const ESMCI::Attr&) [with TT = ESMCI::MeshObj; Ref = const ESMCI::MeshObj&; Ptr = const ESMCI::MeshObj*; MSet_iterator = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>; obj_iterator = ESMCI::_List_iterator<ESMCI::MeshObj, const ESMCI::MeshObj&, const ESMCI::MeshObj*>]':
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:348:46:   required from here
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:74:11: warning: implicitly-declared 'constexpr ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>::_List_iterator(const ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>&)' is deprecated [-Wdeprecated-copy]
+   74 | attr(_attr)
+      |           ^
+In file included from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshObj.h:17,
+                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_DDir.h:16,
+                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MBMesh_Glue.h:37,
+                 from ESMC_MBMesh_UtilUTest.C:26:
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:82:7: note: because 'ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>' has user-provided 'ESMCI::_List_iterator<A, B, C>::self& ESMCI::_List_iterator<A, B, C>::operator=(const ESMCI::_List_iterator<A, B, C>&) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]'
+   82 | self &operator=(const _List_iterator &rhs) {
+      |       ^~~~~~~~
+In file included from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/ESMCI_Mesh.h:15,
+                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/ESMCI_XGridUtil.h:16,
+                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MBMesh_Glue.h:38,
+                 from ESMC_MBMesh_UtilUTest.C:26:
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:74:11: warning: implicitly-declared 'constexpr ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>::_List_iterator(const ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>&)' is deprecated [-Wdeprecated-copy]
+   74 | attr(_attr)
+      |           ^
+In file included from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshObj.h:17,
+                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_DDir.h:16,
+                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MBMesh_Glue.h:37,
+                 from ESMC_MBMesh_UtilUTest.C:26:
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:82:7: note: because 'ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>' has user-provided 'ESMCI::_List_iterator<A, B, C>::self& ESMCI::_List_iterator<A, B, C>::operator=(const ESMCI::_List_iterator<A, B, C>&) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]'
+   82 | self &operator=(const _List_iterator &rhs) {
+      |       ^~~~~~~~
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h: In instantiation of 'ESMCI::_List_iterator<A, B, C>::self ESMCI::_List_iterator<A, B, C>::operator++(int) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]':
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:118:8:   required from 'void ESMCI::mesh_obj_iterator<TT, Ref, Ptr, MSet_iterator, obj_iterator>::next_good_object() [with TT = ESMCI::MeshObj; Ref = const ESMCI::MeshObj&; Ptr = const ESMCI::MeshObj*; MSet_iterator = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>; obj_iterator = ESMCI::_List_iterator<ESMCI::MeshObj, const ESMCI::MeshObj&, const ESMCI::MeshObj*>]'
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:77:3:   required from 'ESMCI::mesh_obj_iterator<TT, Ref, Ptr, MSet_iterator, obj_iterator>::mesh_obj_iterator(const MSet_iterator&, const MSet_iterator&, const ESMCI::Attr&) [with TT = ESMCI::MeshObj; Ref = const ESMCI::MeshObj&; Ptr = const ESMCI::MeshObj*; MSet_iterator = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>; obj_iterator = ESMCI::_List_iterator<ESMCI::MeshObj, const ESMCI::MeshObj&, const ESMCI::MeshObj*>]'
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:348:46:   required from here
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:113:18: warning: implicitly-declared 'constexpr ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>::_List_iterator(const ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>&)' is deprecated [-Wdeprecated-copy]
+  113 |   _List_iterator tmp = *this;
+      |                  ^~~
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:82:7: note: because 'ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>' has user-provided 'ESMCI::_List_iterator<A, B, C>::self& ESMCI::_List_iterator<A, B, C>::operator=(const ESMCI::_List_iterator<A, B, C>&) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]'
+   82 | self &operator=(const _List_iterator &rhs) {
+      |       ^~~~~~~~
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:115:10: warning: implicitly-declared 'constexpr ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>::_List_iterator(const ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>&)' is deprecated [-Wdeprecated-copy]
+  115 |   return tmp;
+      |          ^~~
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:82:7: note: because 'ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>' has user-provided 'ESMCI::_List_iterator<A, B, C>::self& ESMCI::_List_iterator<A, B, C>::operator=(const ESMCI::_List_iterator<A, B, C>&) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]'
+   82 | self &operator=(const _List_iterator &rhs) {
+      |       ^~~~~~~~
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 4: mpichversion: command not found
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 5: [: =: unary operator expected
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 5: [: =: unary operator expected
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 4: mpichversion: command not found
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 5: [: =: unary operator expected
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 5: [: =: unary operator expected
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+In file included from /opt/gcc/9.3.0/snos/include/g++/backward/strstream:50,
+                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_VMKernel.h:27,
+                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_VM.h:41,
+                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_Base.h:27,
+                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/ESMCI_MBMesh.h:22,
+                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Regridding/ESMCI_WMat.h:19,
+                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Regridding/ESMCI_Search.h:22,
+                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/Regridding/ESMCI_Interp.h:16,
                  from ESMCI_IntegrateUTest.C:19:
 /opt/gcc/9.3.0/snos/include/g++/backward/backward_warning.h:32:2: warning: #warning This file includes at least one deprecated or antiquated header which may be removed without further notice at a future date. Please use a non-deprecated interface with equivalent functionality instead. For a listing of replacement headers and interfaces, consult the file backward_warning.h. To disable this warning use -Wno-deprecated. [-Wcpp]
    32 | #warning \
@@ -2070,1238 +2439,197 @@ Warning:
 Warning:
  Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 4: mpichversion: command not found
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 5: [: =: unary operator expected
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 5: [: =: unary operator expected
 Warning:
  Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
 Warning:
  Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 4: mpichversion: command not found
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 5: [: =: unary operator expected
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 5: [: =: unary operator expected
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+ESMF_MeshUTest.F90:7155:13:
 
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-In file included from /opt/gcc/9.3.0/snos/include/g++/backward/strstream:50,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_VMKernel.h:27,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_VM.h:41,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_Base.h:27,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_RHandle.h:39,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Field/include/ESMCI_Field.h:42,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_Mesh.h:23,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MeshCXX.h:16,
-                 from ESMC_MBMeshTestUtilMesh.C:25,
-                 from ESMC_MBMesh_BilinearUTest.C:25:
-/opt/gcc/9.3.0/snos/include/g++/backward/backward_warning.h:32:2: warning: #warning This file includes at least one deprecated or antiquated header which may be removed without further notice at a future date. Please use a non-deprecated interface with equivalent functionality instead. For a listing of replacement headers and interfaces, consult the file backward_warning.h. To disable this warning use -Wno-deprecated. [-Wcpp]
-   32 | #warning \
-      |  ^~~~~~~
-In file included from ESMC_MBMesh_BilinearUTest.C:26:
-ESMC_MBMeshTestUtilMBMesh.C: In function 'bool weights_correct(ESMCI::IWeights&, std::vector<double>)':
-ESMC_MBMeshTestUtilMBMesh.C:68:24: warning: comparison of integer expressions of different signedness: 'std::vector<double>::size_type' {aka 'long unsigned int'} and 'int' [-Wsign-compare]
-   68 |     if (weights.size() != ind) correct = false;
-      |         ~~~~~~~~~~~~~~~^~~~~~
-In file included from ESMC_MBMesh_BilinearUTest.C:27:
-ESMC_MBMeshTestUtilPL.C: In function 'bool weights_correct_nearest(ESMCI::WMat&, std::vector<double>)':
-ESMC_MBMeshTestUtilPL.C:54:24: warning: comparison of integer expressions of different signedness: 'std::vector<double>::size_type' {aka 'long unsigned int'} and 'int' [-Wsign-compare]
-   54 |     if (weights.size() != ind) correct = false;
-      |         ~~~~~~~~~~~~~~~^~~~~~
-In file included from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_Mesh.h:15,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MeshCXX.h:16,
-                 from ESMC_MBMeshTestUtilMesh.C:25,
-                 from ESMC_MBMesh_BilinearUTest.C:25:
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h: In instantiation of 'ESMCI::mesh_obj_iterator<TT, Ref, Ptr, MSet_iterator, obj_iterator>::mesh_obj_iterator(const MSet_iterator&, const MSet_iterator&, const ESMCI::Attr&) [with TT = ESMCI::MeshObj; Ref = const ESMCI::MeshObj&; Ptr = const ESMCI::MeshObj*; MSet_iterator = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>; obj_iterator = ESMCI::_List_iterator<ESMCI::MeshObj, const ESMCI::MeshObj&, const ESMCI::MeshObj*>]':
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:348:46:   required from here
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:74:11: warning: implicitly-declared 'constexpr ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>::_List_iterator(const ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>&)' is deprecated [-Wdeprecated-copy]
-   74 | attr(_attr)
-      |           ^
-In file included from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshObj.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:15,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_Mesh.h:15,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MeshCXX.h:16,
-                 from ESMC_MBMeshTestUtilMesh.C:25,
-                 from ESMC_MBMesh_BilinearUTest.C:25:
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:82:7: note: because 'ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>' has user-provided 'ESMCI::_List_iterator<A, B, C>::self& ESMCI::_List_iterator<A, B, C>::operator=(const ESMCI::_List_iterator<A, B, C>&) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]'
-   82 | self &operator=(const _List_iterator &rhs) {
-      |       ^~~~~~~~
-In file included from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_Mesh.h:15,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MeshCXX.h:16,
-                 from ESMC_MBMeshTestUtilMesh.C:25,
-                 from ESMC_MBMesh_BilinearUTest.C:25:
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:74:11: warning: implicitly-declared 'constexpr ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>::_List_iterator(const ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>&)' is deprecated [-Wdeprecated-copy]
-   74 | attr(_attr)
-      |           ^
-In file included from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshObj.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:15,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_Mesh.h:15,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MeshCXX.h:16,
-                 from ESMC_MBMeshTestUtilMesh.C:25,
-                 from ESMC_MBMesh_BilinearUTest.C:25:
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:82:7: note: because 'ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>' has user-provided 'ESMCI::_List_iterator<A, B, C>::self& ESMCI::_List_iterator<A, B, C>::operator=(const ESMCI::_List_iterator<A, B, C>&) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]'
-   82 | self &operator=(const _List_iterator &rhs) {
-      |       ^~~~~~~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h: In instantiation of 'ESMCI::_List_iterator<A, B, C>::self ESMCI::_List_iterator<A, B, C>::operator++(int) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]':
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:118:8:   required from 'void ESMCI::mesh_obj_iterator<TT, Ref, Ptr, MSet_iterator, obj_iterator>::next_good_object() [with TT = ESMCI::MeshObj; Ref = const ESMCI::MeshObj&; Ptr = const ESMCI::MeshObj*; MSet_iterator = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>; obj_iterator = ESMCI::_List_iterator<ESMCI::MeshObj, const ESMCI::MeshObj&, const ESMCI::MeshObj*>]'
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:77:3:   required from 'ESMCI::mesh_obj_iterator<TT, Ref, Ptr, MSet_iterator, obj_iterator>::mesh_obj_iterator(const MSet_iterator&, const MSet_iterator&, const ESMCI::Attr&) [with TT = ESMCI::MeshObj; Ref = const ESMCI::MeshObj&; Ptr = const ESMCI::MeshObj*; MSet_iterator = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>; obj_iterator = ESMCI::_List_iterator<ESMCI::MeshObj, const ESMCI::MeshObj&, const ESMCI::MeshObj*>]'
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:348:46:   required from here
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:113:18: warning: implicitly-declared 'constexpr ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>::_List_iterator(const ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>&)' is deprecated [-Wdeprecated-copy]
-  113 |   _List_iterator tmp = *this;
-      |                  ^~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:82:7: note: because 'ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>' has user-provided 'ESMCI::_List_iterator<A, B, C>::self& ESMCI::_List_iterator<A, B, C>::operator=(const ESMCI::_List_iterator<A, B, C>&) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]'
-   82 | self &operator=(const _List_iterator &rhs) {
-      |       ^~~~~~~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:115:10: warning: implicitly-declared 'constexpr ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>::_List_iterator(const ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>&)' is deprecated [-Wdeprecated-copy]
-  115 |   return tmp;
-      |          ^~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:82:7: note: because 'ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>' has user-provided 'ESMCI::_List_iterator<A, B, C>::self& ESMCI::_List_iterator<A, B, C>::operator=(const ESMCI::_List_iterator<A, B, C>&) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]'
-   82 | self &operator=(const _List_iterator &rhs) {
-      |       ^~~~~~~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 4: mpichversion: command not found
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 5: [: =: unary operator expected
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 5: [: =: unary operator expected
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-In file included from /opt/gcc/9.3.0/snos/include/g++/backward/strstream:50,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_VMKernel.h:27,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_VM.h:41,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_Base.h:27,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_RHandle.h:39,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Field/include/ESMCI_Field.h:42,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_Mesh.h:23,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MeshCXX.h:16,
-                 from ESMC_MBMeshTestUtilMesh.C:25,
-                 from ESMC_MBMesh_BilinearParUTest.C:25:
-/opt/gcc/9.3.0/snos/include/g++/backward/backward_warning.h:32:2: warning: #warning This file includes at least one deprecated or antiquated header which may be removed without further notice at a future date. Please use a non-deprecated interface with equivalent functionality instead. For a listing of replacement headers and interfaces, consult the file backward_warning.h. To disable this warning use -Wno-deprecated. [-Wcpp]
-   32 | #warning \
-      |  ^~~~~~~
-In file included from ESMC_MBMesh_BilinearParUTest.C:26:
-ESMC_MBMeshTestUtilMBMesh.C: In function 'bool weights_correct(ESMCI::IWeights&, std::vector<double>)':
-ESMC_MBMeshTestUtilMBMesh.C:68:24: warning: comparison of integer expressions of different signedness: 'std::vector<double>::size_type' {aka 'long unsigned int'} and 'int' [-Wsign-compare]
-   68 |     if (weights.size() != ind) correct = false;
-      |         ~~~~~~~~~~~~~~~^~~~~~
-In file included from ESMC_MBMesh_BilinearParUTest.C:27:
-ESMC_MBMeshTestUtilPL.C: In function 'bool weights_correct_nearest(ESMCI::WMat&, std::vector<double>)':
-ESMC_MBMeshTestUtilPL.C:54:24: warning: comparison of integer expressions of different signedness: 'std::vector<double>::size_type' {aka 'long unsigned int'} and 'int' [-Wsign-compare]
-   54 |     if (weights.size() != ind) correct = false;
-      |         ~~~~~~~~~~~~~~~^~~~~~
-In file included from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_Mesh.h:15,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MeshCXX.h:16,
-                 from ESMC_MBMeshTestUtilMesh.C:25,
-                 from ESMC_MBMesh_BilinearParUTest.C:25:
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h: In instantiation of 'ESMCI::mesh_obj_iterator<TT, Ref, Ptr, MSet_iterator, obj_iterator>::mesh_obj_iterator(const MSet_iterator&, const MSet_iterator&, const ESMCI::Attr&) [with TT = ESMCI::MeshObj; Ref = const ESMCI::MeshObj&; Ptr = const ESMCI::MeshObj*; MSet_iterator = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>; obj_iterator = ESMCI::_List_iterator<ESMCI::MeshObj, const ESMCI::MeshObj&, const ESMCI::MeshObj*>]':
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:348:46:   required from here
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:74:11: warning: implicitly-declared 'constexpr ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>::_List_iterator(const ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>&)' is deprecated [-Wdeprecated-copy]
-   74 | attr(_attr)
-      |           ^
-In file included from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshObj.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:15,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_Mesh.h:15,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MeshCXX.h:16,
-                 from ESMC_MBMeshTestUtilMesh.C:25,
-                 from ESMC_MBMesh_BilinearParUTest.C:25:
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:82:7: note: because 'ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>' has user-provided 'ESMCI::_List_iterator<A, B, C>::self& ESMCI::_List_iterator<A, B, C>::operator=(const ESMCI::_List_iterator<A, B, C>&) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]'
-   82 | self &operator=(const _List_iterator &rhs) {
-      |       ^~~~~~~~
-In file included from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_Mesh.h:15,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MeshCXX.h:16,
-                 from ESMC_MBMeshTestUtilMesh.C:25,
-                 from ESMC_MBMesh_BilinearParUTest.C:25:
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:74:11: warning: implicitly-declared 'constexpr ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>::_List_iterator(const ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>&)' is deprecated [-Wdeprecated-copy]
-   74 | attr(_attr)
-      |           ^
-In file included from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshObj.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:15,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_Mesh.h:15,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MeshCXX.h:16,
-                 from ESMC_MBMeshTestUtilMesh.C:25,
-                 from ESMC_MBMesh_BilinearParUTest.C:25:
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:82:7: note: because 'ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>' has user-provided 'ESMCI::_List_iterator<A, B, C>::self& ESMCI::_List_iterator<A, B, C>::operator=(const ESMCI::_List_iterator<A, B, C>&) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]'
-   82 | self &operator=(const _List_iterator &rhs) {
-      |       ^~~~~~~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h: In instantiation of 'ESMCI::_List_iterator<A, B, C>::self ESMCI::_List_iterator<A, B, C>::operator++(int) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]':
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:118:8:   required from 'void ESMCI::mesh_obj_iterator<TT, Ref, Ptr, MSet_iterator, obj_iterator>::next_good_object() [with TT = ESMCI::MeshObj; Ref = const ESMCI::MeshObj&; Ptr = const ESMCI::MeshObj*; MSet_iterator = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>; obj_iterator = ESMCI::_List_iterator<ESMCI::MeshObj, const ESMCI::MeshObj&, const ESMCI::MeshObj*>]'
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:77:3:   required from 'ESMCI::mesh_obj_iterator<TT, Ref, Ptr, MSet_iterator, obj_iterator>::mesh_obj_iterator(const MSet_iterator&, const MSet_iterator&, const ESMCI::Attr&) [with TT = ESMCI::MeshObj; Ref = const ESMCI::MeshObj&; Ptr = const ESMCI::MeshObj*; MSet_iterator = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>; obj_iterator = ESMCI::_List_iterator<ESMCI::MeshObj, const ESMCI::MeshObj&, const ESMCI::MeshObj*>]'
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:348:46:   required from here
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:113:18: warning: implicitly-declared 'constexpr ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>::_List_iterator(const ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>&)' is deprecated [-Wdeprecated-copy]
-  113 |   _List_iterator tmp = *this;
-      |                  ^~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:82:7: note: because 'ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>' has user-provided 'ESMCI::_List_iterator<A, B, C>::self& ESMCI::_List_iterator<A, B, C>::operator=(const ESMCI::_List_iterator<A, B, C>&) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]'
-   82 | self &operator=(const _List_iterator &rhs) {
-      |       ^~~~~~~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:115:10: warning: implicitly-declared 'constexpr ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>::_List_iterator(const ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>&)' is deprecated [-Wdeprecated-copy]
-  115 |   return tmp;
-      |          ^~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:82:7: note: because 'ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>' has user-provided 'ESMCI::_List_iterator<A, B, C>::self& ESMCI::_List_iterator<A, B, C>::operator=(const ESMCI::_List_iterator<A, B, C>&) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]'
-   82 | self &operator=(const _List_iterator &rhs) {
-      |       ^~~~~~~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 4: mpichversion: command not found
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 5: [: =: unary operator expected
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 5: [: =: unary operator expected
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-In file included from /opt/gcc/9.3.0/snos/include/g++/backward/strstream:50,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_VMKernel.h:27,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_VM.h:41,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/ESMCI_Mesh_Glue.h:31,
-                 from ESMC_MBMesh_BilinearSingleElemUTest.C:24:
-/opt/gcc/9.3.0/snos/include/g++/backward/backward_warning.h:32:2: warning: #warning This file includes at least one deprecated or antiquated header which may be removed without further notice at a future date. Please use a non-deprecated interface with equivalent functionality instead. For a listing of replacement headers and interfaces, consult the file backward_warning.h. To disable this warning use -Wno-deprecated. [-Wcpp]
-   32 | #warning \
-      |  ^~~~~~~
-ESMC_MBMesh_BilinearSingleElemUTest.C:61:3: warning: multi-line comment [-Wcomment]
-   61 |   //           /      \
-      |   ^
-ESMC_MBMesh_BilinearSingleElemUTest.C:165:3: warning: multi-line comment [-Wcomment]
-  165 |   //           /      \
-      |   ^
-ESMC_MBMesh_BilinearSingleElemUTest.C:366:3: warning: multi-line comment [-Wcomment]
-  366 |   //            /  \
-      |   ^
-ESMC_MBMesh_BilinearSingleElemUTest.C:368:3: warning: multi-line comment [-Wcomment]
-  368 |   //         /        \
-      |   ^
-In file included from ESMC_MBMesh_BilinearSingleElemUTest.C:28:
-ESMC_MBMeshTestUtilMBMesh.C: In function 'bool weights_correct(ESMCI::IWeights&, std::vector<double>)':
-ESMC_MBMeshTestUtilMBMesh.C:68:24: warning: comparison of integer expressions of different signedness: 'std::vector<double>::size_type' {aka 'long unsigned int'} and 'int' [-Wsign-compare]
-   68 |     if (weights.size() != ind) correct = false;
-      |         ~~~~~~~~~~~~~~~^~~~~~
-In file included from ESMC_MBMesh_BilinearSingleElemUTest.C:29:
-ESMC_MBMeshTestUtilPL.C: In function 'bool weights_correct_nearest(ESMCI::WMat&, std::vector<double>)':
-ESMC_MBMeshTestUtilPL.C:54:24: warning: comparison of integer expressions of different signedness: 'std::vector<double>::size_type' {aka 'long unsigned int'} and 'int' [-Wsign-compare]
-   54 |     if (weights.size() != ind) correct = false;
-      |         ~~~~~~~~~~~~~~~^~~~~~
-In file included from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/ESMCI_Mesh.h:15,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/ESMCI_Mesh_Glue.h:35,
-                 from ESMC_MBMesh_BilinearSingleElemUTest.C:24:
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h: In instantiation of 'ESMCI::mesh_obj_iterator<TT, Ref, Ptr, MSet_iterator, obj_iterator>::mesh_obj_iterator(const MSet_iterator&, const MSet_iterator&, const ESMCI::Attr&) [with TT = ESMCI::MeshObj; Ref = const ESMCI::MeshObj&; Ptr = const ESMCI::MeshObj*; MSet_iterator = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>; obj_iterator = ESMCI::_List_iterator<ESMCI::MeshObj, const ESMCI::MeshObj&, const ESMCI::MeshObj*>]':
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:348:46:   required from here
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:74:11: warning: implicitly-declared 'constexpr ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>::_List_iterator(const ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>&)' is deprecated [-Wdeprecated-copy]
-   74 | attr(_attr)
-      |           ^
-In file included from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshObj.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:15,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/ESMCI_Mesh.h:15,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/ESMCI_Mesh_Glue.h:35,
-                 from ESMC_MBMesh_BilinearSingleElemUTest.C:24:
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:82:7: note: because 'ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>' has user-provided 'ESMCI::_List_iterator<A, B, C>::self& ESMCI::_List_iterator<A, B, C>::operator=(const ESMCI::_List_iterator<A, B, C>&) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]'
-   82 | self &operator=(const _List_iterator &rhs) {
-      |       ^~~~~~~~
-In file included from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/ESMCI_Mesh.h:15,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/ESMCI_Mesh_Glue.h:35,
-                 from ESMC_MBMesh_BilinearSingleElemUTest.C:24:
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:74:11: warning: implicitly-declared 'constexpr ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>::_List_iterator(const ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>&)' is deprecated [-Wdeprecated-copy]
-   74 | attr(_attr)
-      |           ^
-In file included from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshObj.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:15,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/ESMCI_Mesh.h:15,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/ESMCI_Mesh_Glue.h:35,
-                 from ESMC_MBMesh_BilinearSingleElemUTest.C:24:
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:82:7: note: because 'ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>' has user-provided 'ESMCI::_List_iterator<A, B, C>::self& ESMCI::_List_iterator<A, B, C>::operator=(const ESMCI::_List_iterator<A, B, C>&) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]'
-   82 | self &operator=(const _List_iterator &rhs) {
-      |       ^~~~~~~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h: In instantiation of 'ESMCI::_List_iterator<A, B, C>::self ESMCI::_List_iterator<A, B, C>::operator++(int) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]':
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:118:8:   required from 'void ESMCI::mesh_obj_iterator<TT, Ref, Ptr, MSet_iterator, obj_iterator>::next_good_object() [with TT = ESMCI::MeshObj; Ref = const ESMCI::MeshObj&; Ptr = const ESMCI::MeshObj*; MSet_iterator = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>; obj_iterator = ESMCI::_List_iterator<ESMCI::MeshObj, const ESMCI::MeshObj&, const ESMCI::MeshObj*>]'
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:77:3:   required from 'ESMCI::mesh_obj_iterator<TT, Ref, Ptr, MSet_iterator, obj_iterator>::mesh_obj_iterator(const MSet_iterator&, const MSet_iterator&, const ESMCI::Attr&) [with TT = ESMCI::MeshObj; Ref = const ESMCI::MeshObj&; Ptr = const ESMCI::MeshObj*; MSet_iterator = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>; obj_iterator = ESMCI::_List_iterator<ESMCI::MeshObj, const ESMCI::MeshObj&, const ESMCI::MeshObj*>]'
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:348:46:   required from here
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:113:18: warning: implicitly-declared 'constexpr ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>::_List_iterator(const ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>&)' is deprecated [-Wdeprecated-copy]
-  113 |   _List_iterator tmp = *this;
-      |                  ^~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:82:7: note: because 'ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>' has user-provided 'ESMCI::_List_iterator<A, B, C>::self& ESMCI::_List_iterator<A, B, C>::operator=(const ESMCI::_List_iterator<A, B, C>&) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]'
-   82 | self &operator=(const _List_iterator &rhs) {
-      |       ^~~~~~~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:115:10: warning: implicitly-declared 'constexpr ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>::_List_iterator(const ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>&)' is deprecated [-Wdeprecated-copy]
-  115 |   return tmp;
-      |          ^~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:82:7: note: because 'ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>' has user-provided 'ESMCI::_List_iterator<A, B, C>::self& ESMCI::_List_iterator<A, B, C>::operator=(const ESMCI::_List_iterator<A, B, C>&) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]'
-   82 | self &operator=(const _List_iterator &rhs) {
-      |       ^~~~~~~~
-ESMC_MBMesh_BilinearSingleElemUTest.C: In function 'int main(int, char**)':
-ESMC_MBMesh_BilinearSingleElemUTest.C:597:45: warning: 'cart' may be used uninitialized in this function [-Wmaybe-uninitialized]
-  597 |   mesh_pent_single = create_mesh_pent_single(rc, cart);
-      |                      ~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 4: mpichversion: command not found
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 5: [: =: unary operator expected
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 5: [: =: unary operator expected
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-In file included from /opt/gcc/9.3.0/snos/include/g++/backward/strstream:50,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_VMKernel.h:27,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_VM.h:41,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_Base.h:27,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_RHandle.h:39,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Field/include/ESMCI_Field.h:42,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_Mesh.h:23,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MeshCXX.h:16,
-                 from ESMC_MBMeshTestUtilMesh.C:25,
-                 from ESMC_MBMesh_BilinearEdgeCasesUTest.C:25:
-/opt/gcc/9.3.0/snos/include/g++/backward/backward_warning.h:32:2: warning: #warning This file includes at least one deprecated or antiquated header which may be removed without further notice at a future date. Please use a non-deprecated interface with equivalent functionality instead. For a listing of replacement headers and interfaces, consult the file backward_warning.h. To disable this warning use -Wno-deprecated. [-Wcpp]
-   32 | #warning \
-      |  ^~~~~~~
-ESMC_MBMesh_BilinearEdgeCasesUTest.C:185:3: warning: multi-line comment [-Wcomment]
-  185 |   //            /  \
-      |   ^
-In file included from ESMC_MBMesh_BilinearEdgeCasesUTest.C:26:
-ESMC_MBMeshTestUtilMBMesh.C: In function 'bool weights_correct(ESMCI::IWeights&, std::vector<double>)':
-ESMC_MBMeshTestUtilMBMesh.C:68:24: warning: comparison of integer expressions of different signedness: 'std::vector<double>::size_type' {aka 'long unsigned int'} and 'int' [-Wsign-compare]
-   68 |     if (weights.size() != ind) correct = false;
-      |         ~~~~~~~~~~~~~~~^~~~~~
-In file included from ESMC_MBMesh_BilinearEdgeCasesUTest.C:27:
-ESMC_MBMeshTestUtilPL.C: In function 'bool weights_correct_nearest(ESMCI::WMat&, std::vector<double>)':
-ESMC_MBMeshTestUtilPL.C:54:24: warning: comparison of integer expressions of different signedness: 'std::vector<double>::size_type' {aka 'long unsigned int'} and 'int' [-Wsign-compare]
-   54 |     if (weights.size() != ind) correct = false;
-      |         ~~~~~~~~~~~~~~~^~~~~~
-In file included from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_Mesh.h:15,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MeshCXX.h:16,
-                 from ESMC_MBMeshTestUtilMesh.C:25,
-                 from ESMC_MBMesh_BilinearEdgeCasesUTest.C:25:
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h: In instantiation of 'ESMCI::mesh_obj_iterator<TT, Ref, Ptr, MSet_iterator, obj_iterator>::mesh_obj_iterator(const MSet_iterator&, const MSet_iterator&, const ESMCI::Attr&) [with TT = ESMCI::MeshObj; Ref = const ESMCI::MeshObj&; Ptr = const ESMCI::MeshObj*; MSet_iterator = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>; obj_iterator = ESMCI::_List_iterator<ESMCI::MeshObj, const ESMCI::MeshObj&, const ESMCI::MeshObj*>]':
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:348:46:   required from here
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:74:11: warning: implicitly-declared 'constexpr ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>::_List_iterator(const ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>&)' is deprecated [-Wdeprecated-copy]
-   74 | attr(_attr)
-      |           ^
-In file included from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshObj.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:15,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_Mesh.h:15,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MeshCXX.h:16,
-                 from ESMC_MBMeshTestUtilMesh.C:25,
-                 from ESMC_MBMesh_BilinearEdgeCasesUTest.C:25:
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:82:7: note: because 'ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>' has user-provided 'ESMCI::_List_iterator<A, B, C>::self& ESMCI::_List_iterator<A, B, C>::operator=(const ESMCI::_List_iterator<A, B, C>&) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]'
-   82 | self &operator=(const _List_iterator &rhs) {
-      |       ^~~~~~~~
-In file included from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_Mesh.h:15,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MeshCXX.h:16,
-                 from ESMC_MBMeshTestUtilMesh.C:25,
-                 from ESMC_MBMesh_BilinearEdgeCasesUTest.C:25:
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:74:11: warning: implicitly-declared 'constexpr ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>::_List_iterator(const ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>&)' is deprecated [-Wdeprecated-copy]
-   74 | attr(_attr)
-      |           ^
-In file included from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshObj.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:15,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_Mesh.h:15,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MeshCXX.h:16,
-                 from ESMC_MBMeshTestUtilMesh.C:25,
-                 from ESMC_MBMesh_BilinearEdgeCasesUTest.C:25:
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:82:7: note: because 'ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>' has user-provided 'ESMCI::_List_iterator<A, B, C>::self& ESMCI::_List_iterator<A, B, C>::operator=(const ESMCI::_List_iterator<A, B, C>&) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]'
-   82 | self &operator=(const _List_iterator &rhs) {
-      |       ^~~~~~~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h: In instantiation of 'ESMCI::_List_iterator<A, B, C>::self ESMCI::_List_iterator<A, B, C>::operator++(int) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]':
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:118:8:   required from 'void ESMCI::mesh_obj_iterator<TT, Ref, Ptr, MSet_iterator, obj_iterator>::next_good_object() [with TT = ESMCI::MeshObj; Ref = const ESMCI::MeshObj&; Ptr = const ESMCI::MeshObj*; MSet_iterator = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>; obj_iterator = ESMCI::_List_iterator<ESMCI::MeshObj, const ESMCI::MeshObj&, const ESMCI::MeshObj*>]'
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:77:3:   required from 'ESMCI::mesh_obj_iterator<TT, Ref, Ptr, MSet_iterator, obj_iterator>::mesh_obj_iterator(const MSet_iterator&, const MSet_iterator&, const ESMCI::Attr&) [with TT = ESMCI::MeshObj; Ref = const ESMCI::MeshObj&; Ptr = const ESMCI::MeshObj*; MSet_iterator = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>; obj_iterator = ESMCI::_List_iterator<ESMCI::MeshObj, const ESMCI::MeshObj&, const ESMCI::MeshObj*>]'
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:348:46:   required from here
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:113:18: warning: implicitly-declared 'constexpr ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>::_List_iterator(const ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>&)' is deprecated [-Wdeprecated-copy]
-  113 |   _List_iterator tmp = *this;
-      |                  ^~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:82:7: note: because 'ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>' has user-provided 'ESMCI::_List_iterator<A, B, C>::self& ESMCI::_List_iterator<A, B, C>::operator=(const ESMCI::_List_iterator<A, B, C>&) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]'
-   82 | self &operator=(const _List_iterator &rhs) {
-      |       ^~~~~~~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:115:10: warning: implicitly-declared 'constexpr ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>::_List_iterator(const ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>&)' is deprecated [-Wdeprecated-copy]
-  115 |   return tmp;
-      |          ^~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:82:7: note: because 'ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>' has user-provided 'ESMCI::_List_iterator<A, B, C>::self& ESMCI::_List_iterator<A, B, C>::operator=(const ESMCI::_List_iterator<A, B, C>&) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]'
-   82 | self &operator=(const _List_iterator &rhs) {
-      |       ^~~~~~~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 4: mpichversion: command not found
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 5: [: =: unary operator expected
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 5: [: =: unary operator expected
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-In file included from /opt/gcc/9.3.0/snos/include/g++/backward/strstream:50,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_VMKernel.h:27,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_VM.h:41,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_Base.h:27,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_RHandle.h:39,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Field/include/ESMCI_Field.h:42,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_Mesh.h:23,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MeshCXX.h:16,
-                 from ESMC_MBMeshTestUtilMesh.C:25,
-                 from ESMC_MBMesh_BilinearEdgeCases3DUTest.C:25:
-/opt/gcc/9.3.0/snos/include/g++/backward/backward_warning.h:32:2: warning: #warning This file includes at least one deprecated or antiquated header which may be removed without further notice at a future date. Please use a non-deprecated interface with equivalent functionality instead. For a listing of replacement headers and interfaces, consult the file backward_warning.h. To disable this warning use -Wno-deprecated. [-Wcpp]
-   32 | #warning \
-      |  ^~~~~~~
-In file included from ESMC_MBMesh_BilinearEdgeCases3DUTest.C:26:
-ESMC_MBMeshTestUtilMBMesh.C: In function 'bool weights_correct(ESMCI::IWeights&, std::vector<double>)':
-ESMC_MBMeshTestUtilMBMesh.C:68:24: warning: comparison of integer expressions of different signedness: 'std::vector<double>::size_type' {aka 'long unsigned int'} and 'int' [-Wsign-compare]
-   68 |     if (weights.size() != ind) correct = false;
-      |         ~~~~~~~~~~~~~~~^~~~~~
-In file included from ESMC_MBMesh_BilinearEdgeCases3DUTest.C:27:
-ESMC_MBMeshTestUtilPL.C: In function 'bool weights_correct_nearest(ESMCI::WMat&, std::vector<double>)':
-ESMC_MBMeshTestUtilPL.C:54:24: warning: comparison of integer expressions of different signedness: 'std::vector<double>::size_type' {aka 'long unsigned int'} and 'int' [-Wsign-compare]
-   54 |     if (weights.size() != ind) correct = false;
-      |         ~~~~~~~~~~~~~~~^~~~~~
-In file included from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_Mesh.h:15,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MeshCXX.h:16,
-                 from ESMC_MBMeshTestUtilMesh.C:25,
-                 from ESMC_MBMesh_BilinearEdgeCases3DUTest.C:25:
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h: In instantiation of 'ESMCI::mesh_obj_iterator<TT, Ref, Ptr, MSet_iterator, obj_iterator>::mesh_obj_iterator(const MSet_iterator&, const MSet_iterator&, const ESMCI::Attr&) [with TT = ESMCI::MeshObj; Ref = const ESMCI::MeshObj&; Ptr = const ESMCI::MeshObj*; MSet_iterator = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>; obj_iterator = ESMCI::_List_iterator<ESMCI::MeshObj, const ESMCI::MeshObj&, const ESMCI::MeshObj*>]':
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:348:46:   required from here
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:74:11: warning: implicitly-declared 'constexpr ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>::_List_iterator(const ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>&)' is deprecated [-Wdeprecated-copy]
-   74 | attr(_attr)
-      |           ^
-In file included from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshObj.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:15,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_Mesh.h:15,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MeshCXX.h:16,
-                 from ESMC_MBMeshTestUtilMesh.C:25,
-                 from ESMC_MBMesh_BilinearEdgeCases3DUTest.C:25:
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:82:7: note: because 'ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>' has user-provided 'ESMCI::_List_iterator<A, B, C>::self& ESMCI::_List_iterator<A, B, C>::operator=(const ESMCI::_List_iterator<A, B, C>&) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]'
-   82 | self &operator=(const _List_iterator &rhs) {
-      |       ^~~~~~~~
-In file included from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_Mesh.h:15,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MeshCXX.h:16,
-                 from ESMC_MBMeshTestUtilMesh.C:25,
-                 from ESMC_MBMesh_BilinearEdgeCases3DUTest.C:25:
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:74:11: warning: implicitly-declared 'constexpr ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>::_List_iterator(const ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>&)' is deprecated [-Wdeprecated-copy]
-   74 | attr(_attr)
-      |           ^
-In file included from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshObj.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:15,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_Mesh.h:15,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MeshCXX.h:16,
-                 from ESMC_MBMeshTestUtilMesh.C:25,
-                 from ESMC_MBMesh_BilinearEdgeCases3DUTest.C:25:
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:82:7: note: because 'ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>' has user-provided 'ESMCI::_List_iterator<A, B, C>::self& ESMCI::_List_iterator<A, B, C>::operator=(const ESMCI::_List_iterator<A, B, C>&) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]'
-   82 | self &operator=(const _List_iterator &rhs) {
-      |       ^~~~~~~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h: In instantiation of 'ESMCI::_List_iterator<A, B, C>::self ESMCI::_List_iterator<A, B, C>::operator++(int) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]':
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:118:8:   required from 'void ESMCI::mesh_obj_iterator<TT, Ref, Ptr, MSet_iterator, obj_iterator>::next_good_object() [with TT = ESMCI::MeshObj; Ref = const ESMCI::MeshObj&; Ptr = const ESMCI::MeshObj*; MSet_iterator = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>; obj_iterator = ESMCI::_List_iterator<ESMCI::MeshObj, const ESMCI::MeshObj&, const ESMCI::MeshObj*>]'
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:77:3:   required from 'ESMCI::mesh_obj_iterator<TT, Ref, Ptr, MSet_iterator, obj_iterator>::mesh_obj_iterator(const MSet_iterator&, const MSet_iterator&, const ESMCI::Attr&) [with TT = ESMCI::MeshObj; Ref = const ESMCI::MeshObj&; Ptr = const ESMCI::MeshObj*; MSet_iterator = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>; obj_iterator = ESMCI::_List_iterator<ESMCI::MeshObj, const ESMCI::MeshObj&, const ESMCI::MeshObj*>]'
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:348:46:   required from here
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:113:18: warning: implicitly-declared 'constexpr ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>::_List_iterator(const ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>&)' is deprecated [-Wdeprecated-copy]
-  113 |   _List_iterator tmp = *this;
-      |                  ^~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:82:7: note: because 'ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>' has user-provided 'ESMCI::_List_iterator<A, B, C>::self& ESMCI::_List_iterator<A, B, C>::operator=(const ESMCI::_List_iterator<A, B, C>&) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]'
-   82 | self &operator=(const _List_iterator &rhs) {
-      |       ^~~~~~~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:115:10: warning: implicitly-declared 'constexpr ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>::_List_iterator(const ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>&)' is deprecated [-Wdeprecated-copy]
-  115 |   return tmp;
-      |          ^~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:82:7: note: because 'ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>' has user-provided 'ESMCI::_List_iterator<A, B, C>::self& ESMCI::_List_iterator<A, B, C>::operator=(const ESMCI::_List_iterator<A, B, C>&) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]'
-   82 | self &operator=(const _List_iterator &rhs) {
-      |       ^~~~~~~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 4: mpichversion: command not found
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 5: [: =: unary operator expected
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 5: [: =: unary operator expected
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-In file included from /opt/gcc/9.3.0/snos/include/g++/backward/strstream:50,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_VMKernel.h:27,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_VM.h:41,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_Base.h:27,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_RHandle.h:39,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Field/include/ESMCI_Field.h:42,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/ESMCI_Mesh.h:23,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_GeomRendezvous.h:18,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Regridding/ESMCI_Interp.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MBMesh_Bilinear.h:31,
-                 from ESMC_MBMeshTestUtilMBMesh.C:27,
-                 from ESMC_MBMesh_CreateUTest.C:26:
-/opt/gcc/9.3.0/snos/include/g++/backward/backward_warning.h:32:2: warning: #warning This file includes at least one deprecated or antiquated header which may be removed without further notice at a future date. Please use a non-deprecated interface with equivalent functionality instead. For a listing of replacement headers and interfaces, consult the file backward_warning.h. To disable this warning use -Wno-deprecated. [-Wcpp]
-   32 | #warning \
-      |  ^~~~~~~
-In file included from ESMC_MBMesh_CreateUTest.C:26:
-ESMC_MBMeshTestUtilMBMesh.C: In function 'bool weights_correct(ESMCI::IWeights&, std::vector<double>)':
-ESMC_MBMeshTestUtilMBMesh.C:68:24: warning: comparison of integer expressions of different signedness: 'std::vector<double>::size_type' {aka 'long unsigned int'} and 'int' [-Wsign-compare]
-   68 |     if (weights.size() != ind) correct = false;
-      |         ~~~~~~~~~~~~~~~^~~~~~
-In file included from ESMC_MBMesh_CreateUTest.C:36:
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../src/Moab/LocalDiscretization/moab/ElemEvaluator.hpp: In member function 'moab::EvalSet moab::ElemEvaluator::get_eval_set(moab::EntityType)':
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../src/Moab/LocalDiscretization/moab/ElemEvaluator.hpp:237:69: warning: implicitly-declared 'constexpr moab::EvalSet::EvalSet(const moab::EvalSet&)' is deprecated [-Wdeprecated-copy]
-  237 |       inline EvalSet get_eval_set(EntityType tp) {return evalSets[tp];}
-      |                                                                     ^
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../src/Moab/LocalDiscretization/moab/ElemEvaluator.hpp:72:16: note: because 'moab::EvalSet' has user-provided 'moab::EvalSet& moab::EvalSet::operator=(const moab::EvalSet&)'
-   72 |       EvalSet &operator=(const EvalSet &eval) {
-      |                ^~~~~~~~
-In file included from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_CommRel.h:18,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_CommReg.h:15,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_GeomRendezvous.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Regridding/ESMCI_Interp.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MBMesh_Bilinear.h:31,
-                 from ESMC_MBMeshTestUtilMBMesh.C:27,
-                 from ESMC_MBMesh_CreateUTest.C:26:
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h: In instantiation of 'ESMCI::mesh_obj_iterator<TT, Ref, Ptr, MSet_iterator, obj_iterator>::mesh_obj_iterator(const MSet_iterator&, const MSet_iterator&, const ESMCI::Attr&) [with TT = ESMCI::MeshObj; Ref = const ESMCI::MeshObj&; Ptr = const ESMCI::MeshObj*; MSet_iterator = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>; obj_iterator = ESMCI::_List_iterator<ESMCI::MeshObj, const ESMCI::MeshObj&, const ESMCI::MeshObj*>]':
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:348:46:   required from here
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:74:11: warning: implicitly-declared 'constexpr ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>::_List_iterator(const ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>&)' is deprecated [-Wdeprecated-copy]
-   74 | attr(_attr)
-      |           ^
-In file included from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshObj.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_DDir.h:16,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_Migrator.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Regridding/ESMCI_WMat.h:15,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MBMesh_Bilinear.h:28,
-                 from ESMC_MBMeshTestUtilMBMesh.C:27,
-                 from ESMC_MBMesh_CreateUTest.C:26:
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:82:7: note: because 'ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>' has user-provided 'ESMCI::_List_iterator<A, B, C>::self& ESMCI::_List_iterator<A, B, C>::operator=(const ESMCI::_List_iterator<A, B, C>&) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]'
-   82 | self &operator=(const _List_iterator &rhs) {
-      |       ^~~~~~~~
-In file included from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_CommRel.h:18,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_CommReg.h:15,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_GeomRendezvous.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Regridding/ESMCI_Interp.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MBMesh_Bilinear.h:31,
-                 from ESMC_MBMeshTestUtilMBMesh.C:27,
-                 from ESMC_MBMesh_CreateUTest.C:26:
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:74:11: warning: implicitly-declared 'constexpr ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>::_List_iterator(const ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>&)' is deprecated [-Wdeprecated-copy]
-   74 | attr(_attr)
-      |           ^
-In file included from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshObj.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_DDir.h:16,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_Migrator.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Regridding/ESMCI_WMat.h:15,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MBMesh_Bilinear.h:28,
-                 from ESMC_MBMeshTestUtilMBMesh.C:27,
-                 from ESMC_MBMesh_CreateUTest.C:26:
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:82:7: note: because 'ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>' has user-provided 'ESMCI::_List_iterator<A, B, C>::self& ESMCI::_List_iterator<A, B, C>::operator=(const ESMCI::_List_iterator<A, B, C>&) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]'
-   82 | self &operator=(const _List_iterator &rhs) {
-      |       ^~~~~~~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h: In instantiation of 'ESMCI::_List_iterator<A, B, C>::self ESMCI::_List_iterator<A, B, C>::operator++(int) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]':
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:118:8:   required from 'void ESMCI::mesh_obj_iterator<TT, Ref, Ptr, MSet_iterator, obj_iterator>::next_good_object() [with TT = ESMCI::MeshObj; Ref = const ESMCI::MeshObj&; Ptr = const ESMCI::MeshObj*; MSet_iterator = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>; obj_iterator = ESMCI::_List_iterator<ESMCI::MeshObj, const ESMCI::MeshObj&, const ESMCI::MeshObj*>]'
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:77:3:   required from 'ESMCI::mesh_obj_iterator<TT, Ref, Ptr, MSet_iterator, obj_iterator>::mesh_obj_iterator(const MSet_iterator&, const MSet_iterator&, const ESMCI::Attr&) [with TT = ESMCI::MeshObj; Ref = const ESMCI::MeshObj&; Ptr = const ESMCI::MeshObj*; MSet_iterator = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>; obj_iterator = ESMCI::_List_iterator<ESMCI::MeshObj, const ESMCI::MeshObj&, const ESMCI::MeshObj*>]'
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:348:46:   required from here
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:113:18: warning: implicitly-declared 'constexpr ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>::_List_iterator(const ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>&)' is deprecated [-Wdeprecated-copy]
-  113 |   _List_iterator tmp = *this;
-      |                  ^~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:82:7: note: because 'ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>' has user-provided 'ESMCI::_List_iterator<A, B, C>::self& ESMCI::_List_iterator<A, B, C>::operator=(const ESMCI::_List_iterator<A, B, C>&) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]'
-   82 | self &operator=(const _List_iterator &rhs) {
-      |       ^~~~~~~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:115:10: warning: implicitly-declared 'constexpr ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>::_List_iterator(const ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>&)' is deprecated [-Wdeprecated-copy]
-  115 |   return tmp;
-      |          ^~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:82:7: note: because 'ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>' has user-provided 'ESMCI::_List_iterator<A, B, C>::self& ESMCI::_List_iterator<A, B, C>::operator=(const ESMCI::_List_iterator<A, B, C>&) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]'
-   82 | self &operator=(const _List_iterator &rhs) {
-      |       ^~~~~~~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 4: mpichversion: command not found
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 5: [: =: unary operator expected
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 5: [: =: unary operator expected
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-In file included from /opt/gcc/9.3.0/snos/include/g++/backward/strstream:50,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_VMKernel.h:27,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_VM.h:41,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_Base.h:27,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_RHandle.h:39,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Field/include/ESMCI_Field.h:42,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/ESMCI_Mesh.h:23,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_GeomRendezvous.h:18,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Regridding/ESMCI_Interp.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MBMesh_Bilinear.h:31,
-                 from ESMC_MBMeshTestUtilMBMesh.C:27,
-                 from ESMC_MBMesh_CreateParUTest.C:26:
-/opt/gcc/9.3.0/snos/include/g++/backward/backward_warning.h:32:2: warning: #warning This file includes at least one deprecated or antiquated header which may be removed without further notice at a future date. Please use a non-deprecated interface with equivalent functionality instead. For a listing of replacement headers and interfaces, consult the file backward_warning.h. To disable this warning use -Wno-deprecated. [-Wcpp]
-   32 | #warning \
-      |  ^~~~~~~
-In file included from ESMC_MBMesh_CreateParUTest.C:26:
-ESMC_MBMeshTestUtilMBMesh.C: In function 'bool weights_correct(ESMCI::IWeights&, std::vector<double>)':
-ESMC_MBMeshTestUtilMBMesh.C:68:24: warning: comparison of integer expressions of different signedness: 'std::vector<double>::size_type' {aka 'long unsigned int'} and 'int' [-Wsign-compare]
-   68 |     if (weights.size() != ind) correct = false;
-      |         ~~~~~~~~~~~~~~~^~~~~~
-In file included from ESMC_MBMesh_CreateParUTest.C:36:
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../src/Moab/LocalDiscretization/moab/ElemEvaluator.hpp: In member function 'moab::EvalSet moab::ElemEvaluator::get_eval_set(moab::EntityType)':
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../src/Moab/LocalDiscretization/moab/ElemEvaluator.hpp:237:69: warning: implicitly-declared 'constexpr moab::EvalSet::EvalSet(const moab::EvalSet&)' is deprecated [-Wdeprecated-copy]
-  237 |       inline EvalSet get_eval_set(EntityType tp) {return evalSets[tp];}
-      |                                                                     ^
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../src/Moab/LocalDiscretization/moab/ElemEvaluator.hpp:72:16: note: because 'moab::EvalSet' has user-provided 'moab::EvalSet& moab::EvalSet::operator=(const moab::EvalSet&)'
-   72 |       EvalSet &operator=(const EvalSet &eval) {
-      |                ^~~~~~~~
-In file included from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_CommRel.h:18,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_CommReg.h:15,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_GeomRendezvous.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Regridding/ESMCI_Interp.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MBMesh_Bilinear.h:31,
-                 from ESMC_MBMeshTestUtilMBMesh.C:27,
-                 from ESMC_MBMesh_CreateParUTest.C:26:
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h: In instantiation of 'ESMCI::mesh_obj_iterator<TT, Ref, Ptr, MSet_iterator, obj_iterator>::mesh_obj_iterator(const MSet_iterator&, const MSet_iterator&, const ESMCI::Attr&) [with TT = ESMCI::MeshObj; Ref = const ESMCI::MeshObj&; Ptr = const ESMCI::MeshObj*; MSet_iterator = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>; obj_iterator = ESMCI::_List_iterator<ESMCI::MeshObj, const ESMCI::MeshObj&, const ESMCI::MeshObj*>]':
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:348:46:   required from here
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:74:11: warning: implicitly-declared 'constexpr ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>::_List_iterator(const ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>&)' is deprecated [-Wdeprecated-copy]
-   74 | attr(_attr)
-      |           ^
-In file included from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshObj.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_DDir.h:16,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_Migrator.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Regridding/ESMCI_WMat.h:15,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MBMesh_Bilinear.h:28,
-                 from ESMC_MBMeshTestUtilMBMesh.C:27,
-                 from ESMC_MBMesh_CreateParUTest.C:26:
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:82:7: note: because 'ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>' has user-provided 'ESMCI::_List_iterator<A, B, C>::self& ESMCI::_List_iterator<A, B, C>::operator=(const ESMCI::_List_iterator<A, B, C>&) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]'
-   82 | self &operator=(const _List_iterator &rhs) {
-      |       ^~~~~~~~
-In file included from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_CommRel.h:18,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_CommReg.h:15,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_GeomRendezvous.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Regridding/ESMCI_Interp.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MBMesh_Bilinear.h:31,
-                 from ESMC_MBMeshTestUtilMBMesh.C:27,
-                 from ESMC_MBMesh_CreateParUTest.C:26:
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:74:11: warning: implicitly-declared 'constexpr ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>::_List_iterator(const ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>&)' is deprecated [-Wdeprecated-copy]
-   74 | attr(_attr)
-      |           ^
-In file included from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshObj.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_DDir.h:16,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_Migrator.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Regridding/ESMCI_WMat.h:15,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MBMesh_Bilinear.h:28,
-                 from ESMC_MBMeshTestUtilMBMesh.C:27,
-                 from ESMC_MBMesh_CreateParUTest.C:26:
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:82:7: note: because 'ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>' has user-provided 'ESMCI::_List_iterator<A, B, C>::self& ESMCI::_List_iterator<A, B, C>::operator=(const ESMCI::_List_iterator<A, B, C>&) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]'
-   82 | self &operator=(const _List_iterator &rhs) {
-      |       ^~~~~~~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h: In instantiation of 'ESMCI::_List_iterator<A, B, C>::self ESMCI::_List_iterator<A, B, C>::operator++(int) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]':
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:118:8:   required from 'void ESMCI::mesh_obj_iterator<TT, Ref, Ptr, MSet_iterator, obj_iterator>::next_good_object() [with TT = ESMCI::MeshObj; Ref = const ESMCI::MeshObj&; Ptr = const ESMCI::MeshObj*; MSet_iterator = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>; obj_iterator = ESMCI::_List_iterator<ESMCI::MeshObj, const ESMCI::MeshObj&, const ESMCI::MeshObj*>]'
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:77:3:   required from 'ESMCI::mesh_obj_iterator<TT, Ref, Ptr, MSet_iterator, obj_iterator>::mesh_obj_iterator(const MSet_iterator&, const MSet_iterator&, const ESMCI::Attr&) [with TT = ESMCI::MeshObj; Ref = const ESMCI::MeshObj&; Ptr = const ESMCI::MeshObj*; MSet_iterator = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>; obj_iterator = ESMCI::_List_iterator<ESMCI::MeshObj, const ESMCI::MeshObj&, const ESMCI::MeshObj*>]'
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:348:46:   required from here
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:113:18: warning: implicitly-declared 'constexpr ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>::_List_iterator(const ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>&)' is deprecated [-Wdeprecated-copy]
-  113 |   _List_iterator tmp = *this;
-      |                  ^~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:82:7: note: because 'ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>' has user-provided 'ESMCI::_List_iterator<A, B, C>::self& ESMCI::_List_iterator<A, B, C>::operator=(const ESMCI::_List_iterator<A, B, C>&) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]'
-   82 | self &operator=(const _List_iterator &rhs) {
-      |       ^~~~~~~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:115:10: warning: implicitly-declared 'constexpr ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>::_List_iterator(const ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>&)' is deprecated [-Wdeprecated-copy]
-  115 |   return tmp;
-      |          ^~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:82:7: note: because 'ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>' has user-provided 'ESMCI::_List_iterator<A, B, C>::self& ESMCI::_List_iterator<A, B, C>::operator=(const ESMCI::_List_iterator<A, B, C>&) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]'
-   82 | self &operator=(const _List_iterator &rhs) {
-      |       ^~~~~~~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 4: mpichversion: command not found
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 5: [: =: unary operator expected
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 5: [: =: unary operator expected
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-In file included from ESMC_MBMesh_ExtrapolateUTest.C:24:
-ESMC_MBMeshTestUtilPL.C: In function 'bool weights_correct_nearest(ESMCI::WMat&, std::vector<double>)':
-ESMC_MBMeshTestUtilPL.C:54:24: warning: comparison of integer expressions of different signedness: 'std::vector<double>::size_type' {aka 'long unsigned int'} and 'int' [-Wsign-compare]
-   54 |     if (weights.size() != ind) correct = false;
-      |         ~~~~~~~~~~~~~~~^~~~~~
-ESMC_MBMesh_ExtrapolateUTest.C: In function 'bool weights_correct_extrapolate(ESMCI::WMat&, std::vector<double>)':
-ESMC_MBMesh_ExtrapolateUTest.C:57:24: warning: comparison of integer expressions of different signedness: 'std::vector<double>::size_type' {aka 'long unsigned int'} and 'int' [-Wsign-compare]
-   57 |     if (weights.size() != ind) correct = false;
-      |         ~~~~~~~~~~~~~~~^~~~~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 4: mpichversion: command not found
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 5: [: =: unary operator expected
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 5: [: =: unary operator expected
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-In file included from /opt/gcc/9.3.0/snos/include/g++/backward/strstream:50,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_VMKernel.h:27,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_VM.h:41,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_Base.h:27,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_RHandle.h:39,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Field/include/ESMCI_Field.h:42,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/ESMCI_Mesh.h:23,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_GeomRendezvous.h:18,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Regridding/ESMCI_Interp.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MBMesh_Bilinear.h:31,
-                 from ESMC_MBMeshTestUtilMBMesh.C:27,
-                 from ESMC_MBMesh_RendezvousUTest.C:26:
-/opt/gcc/9.3.0/snos/include/g++/backward/backward_warning.h:32:2: warning: #warning This file includes at least one deprecated or antiquated header which may be removed without further notice at a future date. Please use a non-deprecated interface with equivalent functionality instead. For a listing of replacement headers and interfaces, consult the file backward_warning.h. To disable this warning use -Wno-deprecated. [-Wcpp]
-   32 | #warning \
-      |  ^~~~~~~
-In file included from ESMC_MBMesh_RendezvousUTest.C:26:
-ESMC_MBMeshTestUtilMBMesh.C: In function 'bool weights_correct(ESMCI::IWeights&, std::vector<double>)':
-ESMC_MBMeshTestUtilMBMesh.C:68:24: warning: comparison of integer expressions of different signedness: 'std::vector<double>::size_type' {aka 'long unsigned int'} and 'int' [-Wsign-compare]
-   68 |     if (weights.size() != ind) correct = false;
-      |         ~~~~~~~~~~~~~~~^~~~~~
-In file included from ESMC_MBMesh_RendezvousUTest.C:27:
-ESMC_MBMeshTestUtilPL.C: In function 'bool weights_correct_nearest(ESMCI::WMat&, std::vector<double>)':
-ESMC_MBMeshTestUtilPL.C:54:24: warning: comparison of integer expressions of different signedness: 'std::vector<double>::size_type' {aka 'long unsigned int'} and 'int' [-Wsign-compare]
-   54 |     if (weights.size() != ind) correct = false;
-      |         ~~~~~~~~~~~~~~~^~~~~~
-ESMC_MBMesh_RendezvousUTest.C: In function 'int mesh_print(ESMCI::MBMesh*)':
-ESMC_MBMesh_RendezvousUTest.C:75:33: warning: format '%d' expects argument of type 'int', but argument 3 has type 'size_t' {aka 'long unsigned int'} [-Wformat=]
-   75 |   printf("MESH PET %d - size = %d\n", localPet, elems.size());
-      |                                ~^               ~~~~~~~~~~~~
-      |                                 |                         |
-      |                                 int                       size_t {aka long unsigned int}
-      |                                %ld
-In file included from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_CommRel.h:18,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_CommReg.h:15,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_GeomRendezvous.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Regridding/ESMCI_Interp.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MBMesh_Bilinear.h:31,
-                 from ESMC_MBMeshTestUtilMBMesh.C:27,
-                 from ESMC_MBMesh_RendezvousUTest.C:26:
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h: In instantiation of 'ESMCI::mesh_obj_iterator<TT, Ref, Ptr, MSet_iterator, obj_iterator>::mesh_obj_iterator(const MSet_iterator&, const MSet_iterator&, const ESMCI::Attr&) [with TT = ESMCI::MeshObj; Ref = const ESMCI::MeshObj&; Ptr = const ESMCI::MeshObj*; MSet_iterator = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>; obj_iterator = ESMCI::_List_iterator<ESMCI::MeshObj, const ESMCI::MeshObj&, const ESMCI::MeshObj*>]':
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:348:46:   required from here
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:74:11: warning: implicitly-declared 'constexpr ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>::_List_iterator(const ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>&)' is deprecated [-Wdeprecated-copy]
-   74 | attr(_attr)
-      |           ^
-In file included from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshObj.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_DDir.h:16,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_Migrator.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Regridding/ESMCI_WMat.h:15,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MBMesh_Bilinear.h:28,
-                 from ESMC_MBMeshTestUtilMBMesh.C:27,
-                 from ESMC_MBMesh_RendezvousUTest.C:26:
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:82:7: note: because 'ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>' has user-provided 'ESMCI::_List_iterator<A, B, C>::self& ESMCI::_List_iterator<A, B, C>::operator=(const ESMCI::_List_iterator<A, B, C>&) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]'
-   82 | self &operator=(const _List_iterator &rhs) {
-      |       ^~~~~~~~
-In file included from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_CommRel.h:18,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_CommReg.h:15,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_GeomRendezvous.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Regridding/ESMCI_Interp.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MBMesh_Bilinear.h:31,
-                 from ESMC_MBMeshTestUtilMBMesh.C:27,
-                 from ESMC_MBMesh_RendezvousUTest.C:26:
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:74:11: warning: implicitly-declared 'constexpr ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>::_List_iterator(const ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>&)' is deprecated [-Wdeprecated-copy]
-   74 | attr(_attr)
-      |           ^
-In file included from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshObj.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_DDir.h:16,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_Migrator.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Regridding/ESMCI_WMat.h:15,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MBMesh_Bilinear.h:28,
-                 from ESMC_MBMeshTestUtilMBMesh.C:27,
-                 from ESMC_MBMesh_RendezvousUTest.C:26:
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:82:7: note: because 'ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>' has user-provided 'ESMCI::_List_iterator<A, B, C>::self& ESMCI::_List_iterator<A, B, C>::operator=(const ESMCI::_List_iterator<A, B, C>&) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]'
-   82 | self &operator=(const _List_iterator &rhs) {
-      |       ^~~~~~~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h: In instantiation of 'ESMCI::_List_iterator<A, B, C>::self ESMCI::_List_iterator<A, B, C>::operator++(int) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]':
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:118:8:   required from 'void ESMCI::mesh_obj_iterator<TT, Ref, Ptr, MSet_iterator, obj_iterator>::next_good_object() [with TT = ESMCI::MeshObj; Ref = const ESMCI::MeshObj&; Ptr = const ESMCI::MeshObj*; MSet_iterator = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>; obj_iterator = ESMCI::_List_iterator<ESMCI::MeshObj, const ESMCI::MeshObj&, const ESMCI::MeshObj*>]'
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:77:3:   required from 'ESMCI::mesh_obj_iterator<TT, Ref, Ptr, MSet_iterator, obj_iterator>::mesh_obj_iterator(const MSet_iterator&, const MSet_iterator&, const ESMCI::Attr&) [with TT = ESMCI::MeshObj; Ref = const ESMCI::MeshObj&; Ptr = const ESMCI::MeshObj*; MSet_iterator = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>; obj_iterator = ESMCI::_List_iterator<ESMCI::MeshObj, const ESMCI::MeshObj&, const ESMCI::MeshObj*>]'
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:348:46:   required from here
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:113:18: warning: implicitly-declared 'constexpr ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>::_List_iterator(const ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>&)' is deprecated [-Wdeprecated-copy]
-  113 |   _List_iterator tmp = *this;
-      |                  ^~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:82:7: note: because 'ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>' has user-provided 'ESMCI::_List_iterator<A, B, C>::self& ESMCI::_List_iterator<A, B, C>::operator=(const ESMCI::_List_iterator<A, B, C>&) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]'
-   82 | self &operator=(const _List_iterator &rhs) {
-      |       ^~~~~~~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:115:10: warning: implicitly-declared 'constexpr ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>::_List_iterator(const ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>&)' is deprecated [-Wdeprecated-copy]
-  115 |   return tmp;
-      |          ^~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:82:7: note: because 'ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>' has user-provided 'ESMCI::_List_iterator<A, B, C>::self& ESMCI::_List_iterator<A, B, C>::operator=(const ESMCI::_List_iterator<A, B, C>&) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]'
-   82 | self &operator=(const _List_iterator &rhs) {
-      |       ^~~~~~~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 4: mpichversion: command not found
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 5: [: =: unary operator expected
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 5: [: =: unary operator expected
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-In file included from /opt/gcc/9.3.0/snos/include/g++/backward/strstream:50,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_VMKernel.h:27,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_VM.h:41,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_Base.h:27,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_RHandle.h:39,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Field/include/ESMCI_Field.h:42,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/ESMCI_Mesh.h:23,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_GeomRendezvous.h:18,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Regridding/ESMCI_Interp.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MBMesh_Bilinear.h:31,
-                 from ESMC_MBMeshTestUtilMBMesh.C:27,
-                 from ESMC_MBMesh_RendezvousParUTest.C:25:
-/opt/gcc/9.3.0/snos/include/g++/backward/backward_warning.h:32:2: warning: #warning This file includes at least one deprecated or antiquated header which may be removed without further notice at a future date. Please use a non-deprecated interface with equivalent functionality instead. For a listing of replacement headers and interfaces, consult the file backward_warning.h. To disable this warning use -Wno-deprecated. [-Wcpp]
-   32 | #warning \
-      |  ^~~~~~~
-In file included from ESMC_MBMesh_RendezvousParUTest.C:25:
-ESMC_MBMeshTestUtilMBMesh.C: In function 'bool weights_correct(ESMCI::IWeights&, std::vector<double>)':
-ESMC_MBMeshTestUtilMBMesh.C:68:24: warning: comparison of integer expressions of different signedness: 'std::vector<double>::size_type' {aka 'long unsigned int'} and 'int' [-Wsign-compare]
-   68 |     if (weights.size() != ind) correct = false;
-      |         ~~~~~~~~~~~~~~~^~~~~~
-In file included from ESMC_MBMesh_RendezvousParUTest.C:26:
-ESMC_MBMeshTestUtilPL.C: In function 'bool weights_correct_nearest(ESMCI::WMat&, std::vector<double>)':
-ESMC_MBMeshTestUtilPL.C:54:24: warning: comparison of integer expressions of different signedness: 'std::vector<double>::size_type' {aka 'long unsigned int'} and 'int' [-Wsign-compare]
-   54 |     if (weights.size() != ind) correct = false;
-      |         ~~~~~~~~~~~~~~~^~~~~~
-ESMC_MBMesh_RendezvousParUTest.C: In function 'int mesh_print(ESMCI::MBMesh*)':
-ESMC_MBMesh_RendezvousParUTest.C:74:33: warning: format '%d' expects argument of type 'int', but argument 3 has type 'size_t' {aka 'long unsigned int'} [-Wformat=]
-   74 |   printf("MESH PET %d - size = %d\n", localPet, elems.size());
-      |                                ~^               ~~~~~~~~~~~~
-      |                                 |                         |
-      |                                 int                       size_t {aka long unsigned int}
-      |                                %ld
-In file included from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_CommRel.h:18,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_CommReg.h:15,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_GeomRendezvous.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Regridding/ESMCI_Interp.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MBMesh_Bilinear.h:31,
-                 from ESMC_MBMeshTestUtilMBMesh.C:27,
-                 from ESMC_MBMesh_RendezvousParUTest.C:25:
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h: In instantiation of 'ESMCI::mesh_obj_iterator<TT, Ref, Ptr, MSet_iterator, obj_iterator>::mesh_obj_iterator(const MSet_iterator&, const MSet_iterator&, const ESMCI::Attr&) [with TT = ESMCI::MeshObj; Ref = const ESMCI::MeshObj&; Ptr = const ESMCI::MeshObj*; MSet_iterator = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>; obj_iterator = ESMCI::_List_iterator<ESMCI::MeshObj, const ESMCI::MeshObj&, const ESMCI::MeshObj*>]':
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:348:46:   required from here
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:74:11: warning: implicitly-declared 'constexpr ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>::_List_iterator(const ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>&)' is deprecated [-Wdeprecated-copy]
-   74 | attr(_attr)
-      |           ^
-In file included from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshObj.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_DDir.h:16,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_Migrator.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Regridding/ESMCI_WMat.h:15,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MBMesh_Bilinear.h:28,
-                 from ESMC_MBMeshTestUtilMBMesh.C:27,
-                 from ESMC_MBMesh_RendezvousParUTest.C:25:
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:82:7: note: because 'ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>' has user-provided 'ESMCI::_List_iterator<A, B, C>::self& ESMCI::_List_iterator<A, B, C>::operator=(const ESMCI::_List_iterator<A, B, C>&) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]'
-   82 | self &operator=(const _List_iterator &rhs) {
-      |       ^~~~~~~~
-In file included from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_CommRel.h:18,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_CommReg.h:15,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_GeomRendezvous.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Regridding/ESMCI_Interp.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MBMesh_Bilinear.h:31,
-                 from ESMC_MBMeshTestUtilMBMesh.C:27,
-                 from ESMC_MBMesh_RendezvousParUTest.C:25:
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:74:11: warning: implicitly-declared 'constexpr ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>::_List_iterator(const ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>&)' is deprecated [-Wdeprecated-copy]
-   74 | attr(_attr)
-      |           ^
-In file included from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshObj.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_DDir.h:16,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_Migrator.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Regridding/ESMCI_WMat.h:15,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MBMesh_Bilinear.h:28,
-                 from ESMC_MBMeshTestUtilMBMesh.C:27,
-                 from ESMC_MBMesh_RendezvousParUTest.C:25:
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:82:7: note: because 'ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>' has user-provided 'ESMCI::_List_iterator<A, B, C>::self& ESMCI::_List_iterator<A, B, C>::operator=(const ESMCI::_List_iterator<A, B, C>&) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]'
-   82 | self &operator=(const _List_iterator &rhs) {
-      |       ^~~~~~~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h: In instantiation of 'ESMCI::_List_iterator<A, B, C>::self ESMCI::_List_iterator<A, B, C>::operator++(int) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]':
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:118:8:   required from 'void ESMCI::mesh_obj_iterator<TT, Ref, Ptr, MSet_iterator, obj_iterator>::next_good_object() [with TT = ESMCI::MeshObj; Ref = const ESMCI::MeshObj&; Ptr = const ESMCI::MeshObj*; MSet_iterator = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>; obj_iterator = ESMCI::_List_iterator<ESMCI::MeshObj, const ESMCI::MeshObj&, const ESMCI::MeshObj*>]'
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:77:3:   required from 'ESMCI::mesh_obj_iterator<TT, Ref, Ptr, MSet_iterator, obj_iterator>::mesh_obj_iterator(const MSet_iterator&, const MSet_iterator&, const ESMCI::Attr&) [with TT = ESMCI::MeshObj; Ref = const ESMCI::MeshObj&; Ptr = const ESMCI::MeshObj*; MSet_iterator = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>; obj_iterator = ESMCI::_List_iterator<ESMCI::MeshObj, const ESMCI::MeshObj&, const ESMCI::MeshObj*>]'
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:348:46:   required from here
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:113:18: warning: implicitly-declared 'constexpr ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>::_List_iterator(const ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>&)' is deprecated [-Wdeprecated-copy]
-  113 |   _List_iterator tmp = *this;
-      |                  ^~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:82:7: note: because 'ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>' has user-provided 'ESMCI::_List_iterator<A, B, C>::self& ESMCI::_List_iterator<A, B, C>::operator=(const ESMCI::_List_iterator<A, B, C>&) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]'
-   82 | self &operator=(const _List_iterator &rhs) {
-      |       ^~~~~~~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:115:10: warning: implicitly-declared 'constexpr ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>::_List_iterator(const ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>&)' is deprecated [-Wdeprecated-copy]
-  115 |   return tmp;
-      |          ^~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:82:7: note: because 'ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>' has user-provided 'ESMCI::_List_iterator<A, B, C>::self& ESMCI::_List_iterator<A, B, C>::operator=(const ESMCI::_List_iterator<A, B, C>&) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]'
-   82 | self &operator=(const _List_iterator &rhs) {
-      |       ^~~~~~~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 4: mpichversion: command not found
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 5: [: =: unary operator expected
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 5: [: =: unary operator expected
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-In file included from /opt/gcc/9.3.0/snos/include/g++/backward/strstream:50,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_VMKernel.h:27,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_VM.h:41,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_Base.h:27,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_RHandle.h:39,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Field/include/ESMCI_Field.h:42,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/ESMCI_Mesh.h:23,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_GeomRendezvous.h:18,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Regridding/ESMCI_Interp.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MBMesh_Bilinear.h:31,
-                 from ESMC_MBMeshTestUtilMBMesh.C:27,
-                 from ESMC_MBMesh_SearchUTest.C:26:
-/opt/gcc/9.3.0/snos/include/g++/backward/backward_warning.h:32:2: warning: #warning This file includes at least one deprecated or antiquated header which may be removed without further notice at a future date. Please use a non-deprecated interface with equivalent functionality instead. For a listing of replacement headers and interfaces, consult the file backward_warning.h. To disable this warning use -Wno-deprecated. [-Wcpp]
-   32 | #warning \
-      |  ^~~~~~~
-In file included from ESMC_MBMesh_SearchUTest.C:26:
-ESMC_MBMeshTestUtilMBMesh.C: In function 'bool weights_correct(ESMCI::IWeights&, std::vector<double>)':
-ESMC_MBMeshTestUtilMBMesh.C:68:24: warning: comparison of integer expressions of different signedness: 'std::vector<double>::size_type' {aka 'long unsigned int'} and 'int' [-Wsign-compare]
-   68 |     if (weights.size() != ind) correct = false;
-      |         ~~~~~~~~~~~~~~~^~~~~~
-In file included from ESMC_MBMesh_SearchUTest.C:27:
-ESMC_MBMeshTestUtilPL.C: In function 'bool weights_correct_nearest(ESMCI::WMat&, std::vector<double>)':
-ESMC_MBMeshTestUtilPL.C:54:24: warning: comparison of integer expressions of different signedness: 'std::vector<double>::size_type' {aka 'long unsigned int'} and 'int' [-Wsign-compare]
-   54 |     if (weights.size() != ind) correct = false;
-      |         ~~~~~~~~~~~~~~~^~~~~~
-In file included from ESMC_MBMesh_SearchUTest.C:37:
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../src/Moab/LocalDiscretization/moab/ElemEvaluator.hpp: In member function 'moab::EvalSet moab::ElemEvaluator::get_eval_set(moab::EntityType)':
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../src/Moab/LocalDiscretization/moab/ElemEvaluator.hpp:237:69: warning: implicitly-declared 'constexpr moab::EvalSet::EvalSet(const moab::EvalSet&)' is deprecated [-Wdeprecated-copy]
-  237 |       inline EvalSet get_eval_set(EntityType tp) {return evalSets[tp];}
-      |                                                                     ^
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../src/Moab/LocalDiscretization/moab/ElemEvaluator.hpp:72:16: note: because 'moab::EvalSet' has user-provided 'moab::EvalSet& moab::EvalSet::operator=(const moab::EvalSet&)'
-   72 |       EvalSet &operator=(const EvalSet &eval) {
-      |                ^~~~~~~~
-ESMC_MBMesh_SearchUTest.C: In function 'bool search_gen(ESMCI::MBMesh*, ESMCI::PointList*, std::vector<double*>&, bool)':
-ESMC_MBMesh_SearchUTest.C:179:16: warning: comparison of integer expressions of different signedness: 'int' and 'std::vector<double*>::size_type' {aka 'long unsigned int'} [-Wsign-compare]
-  179 |       if (ind1 >= cv.size()) {rc = ESMC_RC_VAL_OUTOFRANGE; break;}
-      |           ~~~~~^~~~~~~~~~~~
-In file included from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_CommRel.h:18,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_CommReg.h:15,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_GeomRendezvous.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Regridding/ESMCI_Interp.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MBMesh_Bilinear.h:31,
-                 from ESMC_MBMeshTestUtilMBMesh.C:27,
-                 from ESMC_MBMesh_SearchUTest.C:26:
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h: In instantiation of 'ESMCI::mesh_obj_iterator<TT, Ref, Ptr, MSet_iterator, obj_iterator>::mesh_obj_iterator(const MSet_iterator&, const MSet_iterator&, const ESMCI::Attr&) [with TT = ESMCI::MeshObj; Ref = const ESMCI::MeshObj&; Ptr = const ESMCI::MeshObj*; MSet_iterator = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>; obj_iterator = ESMCI::_List_iterator<ESMCI::MeshObj, const ESMCI::MeshObj&, const ESMCI::MeshObj*>]':
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:348:46:   required from here
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:74:11: warning: implicitly-declared 'constexpr ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>::_List_iterator(const ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>&)' is deprecated [-Wdeprecated-copy]
-   74 | attr(_attr)
-      |           ^
-In file included from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshObj.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_DDir.h:16,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_Migrator.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Regridding/ESMCI_WMat.h:15,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MBMesh_Bilinear.h:28,
-                 from ESMC_MBMeshTestUtilMBMesh.C:27,
-                 from ESMC_MBMesh_SearchUTest.C:26:
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:82:7: note: because 'ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>' has user-provided 'ESMCI::_List_iterator<A, B, C>::self& ESMCI::_List_iterator<A, B, C>::operator=(const ESMCI::_List_iterator<A, B, C>&) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]'
-   82 | self &operator=(const _List_iterator &rhs) {
-      |       ^~~~~~~~
-In file included from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_CommRel.h:18,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_CommReg.h:15,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_GeomRendezvous.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Regridding/ESMCI_Interp.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MBMesh_Bilinear.h:31,
-                 from ESMC_MBMeshTestUtilMBMesh.C:27,
-                 from ESMC_MBMesh_SearchUTest.C:26:
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:74:11: warning: implicitly-declared 'constexpr ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>::_List_iterator(const ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>&)' is deprecated [-Wdeprecated-copy]
-   74 | attr(_attr)
-      |           ^
-In file included from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshObj.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_DDir.h:16,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_Migrator.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Regridding/ESMCI_WMat.h:15,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MBMesh_Bilinear.h:28,
-                 from ESMC_MBMeshTestUtilMBMesh.C:27,
-                 from ESMC_MBMesh_SearchUTest.C:26:
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:82:7: note: because 'ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>' has user-provided 'ESMCI::_List_iterator<A, B, C>::self& ESMCI::_List_iterator<A, B, C>::operator=(const ESMCI::_List_iterator<A, B, C>&) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]'
-   82 | self &operator=(const _List_iterator &rhs) {
-      |       ^~~~~~~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h: In instantiation of 'ESMCI::_List_iterator<A, B, C>::self ESMCI::_List_iterator<A, B, C>::operator++(int) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]':
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:118:8:   required from 'void ESMCI::mesh_obj_iterator<TT, Ref, Ptr, MSet_iterator, obj_iterator>::next_good_object() [with TT = ESMCI::MeshObj; Ref = const ESMCI::MeshObj&; Ptr = const ESMCI::MeshObj*; MSet_iterator = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>; obj_iterator = ESMCI::_List_iterator<ESMCI::MeshObj, const ESMCI::MeshObj&, const ESMCI::MeshObj*>]'
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:77:3:   required from 'ESMCI::mesh_obj_iterator<TT, Ref, Ptr, MSet_iterator, obj_iterator>::mesh_obj_iterator(const MSet_iterator&, const MSet_iterator&, const ESMCI::Attr&) [with TT = ESMCI::MeshObj; Ref = const ESMCI::MeshObj&; Ptr = const ESMCI::MeshObj*; MSet_iterator = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>; obj_iterator = ESMCI::_List_iterator<ESMCI::MeshObj, const ESMCI::MeshObj&, const ESMCI::MeshObj*>]'
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:348:46:   required from here
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:113:18: warning: implicitly-declared 'constexpr ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>::_List_iterator(const ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>&)' is deprecated [-Wdeprecated-copy]
-  113 |   _List_iterator tmp = *this;
-      |                  ^~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:82:7: note: because 'ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>' has user-provided 'ESMCI::_List_iterator<A, B, C>::self& ESMCI::_List_iterator<A, B, C>::operator=(const ESMCI::_List_iterator<A, B, C>&) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]'
-   82 | self &operator=(const _List_iterator &rhs) {
-      |       ^~~~~~~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:115:10: warning: implicitly-declared 'constexpr ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>::_List_iterator(const ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>&)' is deprecated [-Wdeprecated-copy]
-  115 |   return tmp;
-      |          ^~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:82:7: note: because 'ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>' has user-provided 'ESMCI::_List_iterator<A, B, C>::self& ESMCI::_List_iterator<A, B, C>::operator=(const ESMCI::_List_iterator<A, B, C>&) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]'
-   82 | self &operator=(const _List_iterator &rhs) {
-      |       ^~~~~~~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 4: mpichversion: command not found
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 5: [: =: unary operator expected
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 5: [: =: unary operator expected
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-In file included from /opt/gcc/9.3.0/snos/include/g++/backward/strstream:50,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_VMKernel.h:27,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_VM.h:41,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_Base.h:27,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_RHandle.h:39,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Field/include/ESMCI_Field.h:42,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/ESMCI_Mesh.h:23,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_GeomRendezvous.h:18,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Regridding/ESMCI_Interp.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MBMesh_Bilinear.h:31,
-                 from ESMC_MBMeshTestUtilMBMesh.C:27,
-                 from ESMC_MBMesh_UtilUTest.C:26:
-/opt/gcc/9.3.0/snos/include/g++/backward/backward_warning.h:32:2: warning: #warning This file includes at least one deprecated or antiquated header which may be removed without further notice at a future date. Please use a non-deprecated interface with equivalent functionality instead. For a listing of replacement headers and interfaces, consult the file backward_warning.h. To disable this warning use -Wno-deprecated. [-Wcpp]
-   32 | #warning \
-      |  ^~~~~~~
-In file included from ESMC_MBMesh_UtilUTest.C:26:
-ESMC_MBMeshTestUtilMBMesh.C: In function 'bool weights_correct(ESMCI::IWeights&, std::vector<double>)':
-ESMC_MBMeshTestUtilMBMesh.C:68:24: warning: comparison of integer expressions of different signedness: 'std::vector<double>::size_type' {aka 'long unsigned int'} and 'int' [-Wsign-compare]
-   68 |     if (weights.size() != ind) correct = false;
-      |         ~~~~~~~~~~~~~~~^~~~~~
-In file included from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_CommRel.h:18,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_CommReg.h:15,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_GeomRendezvous.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Regridding/ESMCI_Interp.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MBMesh_Bilinear.h:31,
-                 from ESMC_MBMeshTestUtilMBMesh.C:27,
-                 from ESMC_MBMesh_UtilUTest.C:26:
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h: In instantiation of 'ESMCI::mesh_obj_iterator<TT, Ref, Ptr, MSet_iterator, obj_iterator>::mesh_obj_iterator(const MSet_iterator&, const MSet_iterator&, const ESMCI::Attr&) [with TT = ESMCI::MeshObj; Ref = const ESMCI::MeshObj&; Ptr = const ESMCI::MeshObj*; MSet_iterator = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>; obj_iterator = ESMCI::_List_iterator<ESMCI::MeshObj, const ESMCI::MeshObj&, const ESMCI::MeshObj*>]':
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:348:46:   required from here
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:74:11: warning: implicitly-declared 'constexpr ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>::_List_iterator(const ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>&)' is deprecated [-Wdeprecated-copy]
-   74 | attr(_attr)
-      |           ^
-In file included from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshObj.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_DDir.h:16,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_Migrator.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Regridding/ESMCI_WMat.h:15,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MBMesh_Bilinear.h:28,
-                 from ESMC_MBMeshTestUtilMBMesh.C:27,
-                 from ESMC_MBMesh_UtilUTest.C:26:
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:82:7: note: because 'ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>' has user-provided 'ESMCI::_List_iterator<A, B, C>::self& ESMCI::_List_iterator<A, B, C>::operator=(const ESMCI::_List_iterator<A, B, C>&) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]'
-   82 | self &operator=(const _List_iterator &rhs) {
-      |       ^~~~~~~~
-In file included from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_CommRel.h:18,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_CommReg.h:15,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_GeomRendezvous.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Regridding/ESMCI_Interp.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MBMesh_Bilinear.h:31,
-                 from ESMC_MBMeshTestUtilMBMesh.C:27,
-                 from ESMC_MBMesh_UtilUTest.C:26:
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:74:11: warning: implicitly-declared 'constexpr ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>::_List_iterator(const ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>&)' is deprecated [-Wdeprecated-copy]
-   74 | attr(_attr)
-      |           ^
-In file included from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshObj.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_DDir.h:16,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_Migrator.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Regridding/ESMCI_WMat.h:15,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MBMesh_Bilinear.h:28,
-                 from ESMC_MBMeshTestUtilMBMesh.C:27,
-                 from ESMC_MBMesh_UtilUTest.C:26:
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:82:7: note: because 'ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>' has user-provided 'ESMCI::_List_iterator<A, B, C>::self& ESMCI::_List_iterator<A, B, C>::operator=(const ESMCI::_List_iterator<A, B, C>&) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]'
-   82 | self &operator=(const _List_iterator &rhs) {
-      |       ^~~~~~~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h: In instantiation of 'ESMCI::_List_iterator<A, B, C>::self ESMCI::_List_iterator<A, B, C>::operator++(int) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]':
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:118:8:   required from 'void ESMCI::mesh_obj_iterator<TT, Ref, Ptr, MSet_iterator, obj_iterator>::next_good_object() [with TT = ESMCI::MeshObj; Ref = const ESMCI::MeshObj&; Ptr = const ESMCI::MeshObj*; MSet_iterator = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>; obj_iterator = ESMCI::_List_iterator<ESMCI::MeshObj, const ESMCI::MeshObj&, const ESMCI::MeshObj*>]'
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:77:3:   required from 'ESMCI::mesh_obj_iterator<TT, Ref, Ptr, MSet_iterator, obj_iterator>::mesh_obj_iterator(const MSet_iterator&, const MSet_iterator&, const ESMCI::Attr&) [with TT = ESMCI::MeshObj; Ref = const ESMCI::MeshObj&; Ptr = const ESMCI::MeshObj*; MSet_iterator = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>; obj_iterator = ESMCI::_List_iterator<ESMCI::MeshObj, const ESMCI::MeshObj&, const ESMCI::MeshObj*>]'
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:348:46:   required from here
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:113:18: warning: implicitly-declared 'constexpr ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>::_List_iterator(const ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>&)' is deprecated [-Wdeprecated-copy]
-  113 |   _List_iterator tmp = *this;
-      |                  ^~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:82:7: note: because 'ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>' has user-provided 'ESMCI::_List_iterator<A, B, C>::self& ESMCI::_List_iterator<A, B, C>::operator=(const ESMCI::_List_iterator<A, B, C>&) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]'
-   82 | self &operator=(const _List_iterator &rhs) {
-      |       ^~~~~~~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:115:10: warning: implicitly-declared 'constexpr ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>::_List_iterator(const ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>&)' is deprecated [-Wdeprecated-copy]
-  115 |   return tmp;
-      |          ^~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:82:7: note: because 'ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>' has user-provided 'ESMCI::_List_iterator<A, B, C>::self& ESMCI::_List_iterator<A, B, C>::operator=(const ESMCI::_List_iterator<A, B, C>&) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]'
-   82 | self &operator=(const _List_iterator &rhs) {
-      |       ^~~~~~~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 4: mpichversion: command not found
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 5: [: =: unary operator expected
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 5: [: =: unary operator expected
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-In file included from /opt/gcc/9.3.0/snos/include/g++/backward/strstream:50,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_VMKernel.h:27,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_VM.h:41,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_Base.h:27,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_RHandle.h:39,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Field/include/ESMCI_Field.h:42,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/ESMCI_Mesh.h:23,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_GeomRendezvous.h:18,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Regridding/ESMCI_Interp.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MBMesh_Bilinear.h:31,
-                 from ESMC_MBMeshTestUtilMBMesh.C:27,
-                 from ESMC_MBMesh_UtilParUTest.C:25:
-/opt/gcc/9.3.0/snos/include/g++/backward/backward_warning.h:32:2: warning: #warning This file includes at least one deprecated or antiquated header which may be removed without further notice at a future date. Please use a non-deprecated interface with equivalent functionality instead. For a listing of replacement headers and interfaces, consult the file backward_warning.h. To disable this warning use -Wno-deprecated. [-Wcpp]
-   32 | #warning \
-      |  ^~~~~~~
-In file included from ESMC_MBMesh_UtilParUTest.C:25:
-ESMC_MBMeshTestUtilMBMesh.C: In function 'bool weights_correct(ESMCI::IWeights&, std::vector<double>)':
-ESMC_MBMeshTestUtilMBMesh.C:68:24: warning: comparison of integer expressions of different signedness: 'std::vector<double>::size_type' {aka 'long unsigned int'} and 'int' [-Wsign-compare]
-   68 |     if (weights.size() != ind) correct = false;
-      |         ~~~~~~~~~~~~~~~^~~~~~
-In file included from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_CommRel.h:18,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_CommReg.h:15,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_GeomRendezvous.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Regridding/ESMCI_Interp.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MBMesh_Bilinear.h:31,
-                 from ESMC_MBMeshTestUtilMBMesh.C:27,
-                 from ESMC_MBMesh_UtilParUTest.C:25:
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h: In instantiation of 'ESMCI::mesh_obj_iterator<TT, Ref, Ptr, MSet_iterator, obj_iterator>::mesh_obj_iterator(const MSet_iterator&, const MSet_iterator&, const ESMCI::Attr&) [with TT = ESMCI::MeshObj; Ref = const ESMCI::MeshObj&; Ptr = const ESMCI::MeshObj*; MSet_iterator = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>; obj_iterator = ESMCI::_List_iterator<ESMCI::MeshObj, const ESMCI::MeshObj&, const ESMCI::MeshObj*>]':
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:348:46:   required from here
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:74:11: warning: implicitly-declared 'constexpr ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>::_List_iterator(const ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>&)' is deprecated [-Wdeprecated-copy]
-   74 | attr(_attr)
-      |           ^
-In file included from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshObj.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_DDir.h:16,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_Migrator.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Regridding/ESMCI_WMat.h:15,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MBMesh_Bilinear.h:28,
-                 from ESMC_MBMeshTestUtilMBMesh.C:27,
-                 from ESMC_MBMesh_UtilParUTest.C:25:
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:82:7: note: because 'ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>' has user-provided 'ESMCI::_List_iterator<A, B, C>::self& ESMCI::_List_iterator<A, B, C>::operator=(const ESMCI::_List_iterator<A, B, C>&) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]'
-   82 | self &operator=(const _List_iterator &rhs) {
-      |       ^~~~~~~~
-In file included from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_CommRel.h:18,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_CommReg.h:15,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_GeomRendezvous.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Regridding/ESMCI_Interp.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MBMesh_Bilinear.h:31,
-                 from ESMC_MBMeshTestUtilMBMesh.C:27,
-                 from ESMC_MBMesh_UtilParUTest.C:25:
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:74:11: warning: implicitly-declared 'constexpr ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>::_List_iterator(const ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>&)' is deprecated [-Wdeprecated-copy]
-   74 | attr(_attr)
-      |           ^
-In file included from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshObj.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_DDir.h:16,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_Migrator.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Regridding/ESMCI_WMat.h:15,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_MBMesh_Bilinear.h:28,
-                 from ESMC_MBMeshTestUtilMBMesh.C:27,
-                 from ESMC_MBMesh_UtilParUTest.C:25:
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:82:7: note: because 'ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>' has user-provided 'ESMCI::_List_iterator<A, B, C>::self& ESMCI::_List_iterator<A, B, C>::operator=(const ESMCI::_List_iterator<A, B, C>&) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]'
-   82 | self &operator=(const _List_iterator &rhs) {
-      |       ^~~~~~~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h: In instantiation of 'ESMCI::_List_iterator<A, B, C>::self ESMCI::_List_iterator<A, B, C>::operator++(int) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]':
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:118:8:   required from 'void ESMCI::mesh_obj_iterator<TT, Ref, Ptr, MSet_iterator, obj_iterator>::next_good_object() [with TT = ESMCI::MeshObj; Ref = const ESMCI::MeshObj&; Ptr = const ESMCI::MeshObj*; MSet_iterator = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>; obj_iterator = ESMCI::_List_iterator<ESMCI::MeshObj, const ESMCI::MeshObj&, const ESMCI::MeshObj*>]'
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:77:3:   required from 'ESMCI::mesh_obj_iterator<TT, Ref, Ptr, MSet_iterator, obj_iterator>::mesh_obj_iterator(const MSet_iterator&, const MSet_iterator&, const ESMCI::Attr&) [with TT = ESMCI::MeshObj; Ref = const ESMCI::MeshObj&; Ptr = const ESMCI::MeshObj*; MSet_iterator = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>; obj_iterator = ESMCI::_List_iterator<ESMCI::MeshObj, const ESMCI::MeshObj&, const ESMCI::MeshObj*>]'
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:348:46:   required from here
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:113:18: warning: implicitly-declared 'constexpr ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>::_List_iterator(const ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>&)' is deprecated [-Wdeprecated-copy]
-  113 |   _List_iterator tmp = *this;
-      |                  ^~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:82:7: note: because 'ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>' has user-provided 'ESMCI::_List_iterator<A, B, C>::self& ESMCI::_List_iterator<A, B, C>::operator=(const ESMCI::_List_iterator<A, B, C>&) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]'
-   82 | self &operator=(const _List_iterator &rhs) {
-      |       ^~~~~~~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:115:10: warning: implicitly-declared 'constexpr ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>::_List_iterator(const ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>&)' is deprecated [-Wdeprecated-copy]
-  115 |   return tmp;
-      |          ^~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:82:7: note: because 'ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>' has user-provided 'ESMCI::_List_iterator<A, B, C>::self& ESMCI::_List_iterator<A, B, C>::operator=(const ESMCI::_List_iterator<A, B, C>&) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]'
-   82 | self &operator=(const _List_iterator &rhs) {
-      |       ^~~~~~~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 4: mpichversion: command not found
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 5: [: =: unary operator expected
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 5: [: =: unary operator expected
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-In file included from ESMC_NearestUTest.C:24:
-ESMC_MBMeshTestUtilPL.C: In function 'bool weights_correct_nearest(ESMCI::WMat&, std::vector<double>)':
-ESMC_MBMeshTestUtilPL.C:54:24: warning: comparison of integer expressions of different signedness: 'std::vector<double>::size_type' {aka 'long unsigned int'} and 'int' [-Wsign-compare]
-   54 |     if (weights.size() != ind) correct = false;
-      |         ~~~~~~~~~~~~~~~^~~~~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 4: mpichversion: command not found
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 5: [: =: unary operator expected
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 5: [: =: unary operator expected
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-ESMF_MeshUTest.F90:658:13:
-
-  658 |          if (nodeCoords(2*i-1) .ne. ownedNodeCoords(2*j-1)) correct=.false.
+ 7155 |          if (nodeCoords(k) .ne. nodeCoordsTst(k)) correct=.false.
       |             1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_MeshUTest.F90:659:13:
+ESMF_MeshUTest.F90:7197:10:
 
-  659 |          if (nodeCoords(2*i) .ne. ownedNodeCoords(2*j)) correct=.false.
+ 7197 |       if (elemArea(i) .ne. elemAreaTst(i)) correct=.false.
+      |          1
+Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
+ESMF_MeshUTest.F90:7205:13:
+
+ 7205 |          if (elemCoords(k) .ne. elemCoordsTst(k)) correct=.false.
       |             1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_MeshUTest.F90:664:9:
+ESMF_MeshUTest.F90:7282:10:
 
-  664 |      if (elemCoords(2*i-1) .ne. ownedElemCoords(2*i-1)) correct=.false.
+ 7282 |       if (elemArea(i) .ne. elemAreaTst(i)) correct=.false.
+      |          1
+Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
+ESMF_MeshUTest.F90:675:13:
+
+  675 |          if (nodeCoords(2*i-1) .ne. ownedNodeCoords(2*j-1)) correct=.false.
+      |             1
+Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
+ESMF_MeshUTest.F90:676:13:
+
+  676 |          if (nodeCoords(2*i) .ne. ownedNodeCoords(2*j)) correct=.false.
+      |             1
+Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
+ESMF_MeshUTest.F90:681:9:
+
+  681 |      if (elemCoords(2*i-1) .ne. ownedElemCoords(2*i-1)) correct=.false.
       |         1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_MeshUTest.F90:665:9:
+ESMF_MeshUTest.F90:682:9:
 
-  665 |      if (elemCoords(2*i) .ne. ownedElemCoords(2*i)) correct=.false.
+  682 |      if (elemCoords(2*i) .ne. ownedElemCoords(2*i)) correct=.false.
       |         1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_MeshUTest.F90:1169:9:
+ESMF_MeshUTest.F90:1189:9:
 
- 1169 |      if (fieldAreaPtr(i) .ne. elemAreas(j)) correct=.false.
+ 1189 |      if (fieldAreaPtr(i) .ne. elemAreas(j)) correct=.false.
       |         1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_MeshUTest.F90:1884:20:
+ESMF_MeshUTest.F90:1899:20:
 
- 1884 |       if (.not. ALL(ownedNodeCoords .eq. &
+ 1899 |       if (.not. ALL(ownedNodeCoords .eq. &
       |                    1
 Warning: Equality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_MeshUTest.F90:1899:21:
+ESMF_MeshUTest.F90:1914:21:
 
- 1899 |        if (.not. ALL(ownedNodeCoords .eq. &
+ 1914 |        if (.not. ALL(ownedNodeCoords .eq. &
       |                     1
 Warning: Equality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_MeshUTest.F90:1908:22:
+ESMF_MeshUTest.F90:1923:22:
 
- 1908 |         if (.not. ALL(ownedNodeCoords .eq. &
+ 1923 |         if (.not. ALL(ownedNodeCoords .eq. &
       |                      1
 Warning: Equality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_MeshUTest.F90:1915:22:
+ESMF_MeshUTest.F90:1930:22:
 
- 1915 |         if (.not. ALL(ownedNodeCoords .eq. &
+ 1930 |         if (.not. ALL(ownedNodeCoords .eq. &
       |                      1
 Warning: Equality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_MeshUTest.F90:1922:22:
+ESMF_MeshUTest.F90:1937:22:
 
- 1922 |         if (.not. ALL(ownedNodeCoords .eq. &
+ 1937 |         if (.not. ALL(ownedNodeCoords .eq. &
       |                      1
 Warning: Equality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_MeshUTest.F90:2538:9:
+ESMF_MeshUTest.F90:2564:9:
 
- 2538 |      if (areaPtr(1) .ne. 7.0) correct=.false.
+ 2564 |      if (areaPtr(1) .ne. 7.0) correct=.false.
       |         1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_MeshUTest.F90:2539:9:
+ESMF_MeshUTest.F90:2565:9:
 
- 2539 |      if (areaPtr(2) .ne. 8.0) correct=.false.
+ 2565 |      if (areaPtr(2) .ne. 8.0) correct=.false.
       |         1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_MeshUTest.F90:2540:9:
+ESMF_MeshUTest.F90:2566:9:
 
- 2540 |      if (areaPtr(3) .ne. 9.0) correct=.false.
+ 2566 |      if (areaPtr(3) .ne. 9.0) correct=.false.
       |         1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_MeshUTest.F90:2541:9:
+ESMF_MeshUTest.F90:2567:9:
 
- 2541 |      if (areaPtr(4) .ne. 10.0) correct=.false.
+ 2567 |      if (areaPtr(4) .ne. 10.0) correct=.false.
       |         1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_MeshUTest.F90:2544:12:
+ESMF_MeshUTest.F90:2570:12:
 
- 2544 |         if (areaPtr(1) .ne. 7.0) correct=.false.
+ 2570 |         if (areaPtr(1) .ne. 7.0) correct=.false.
       |            1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_MeshUTest.F90:2546:12:
+ESMF_MeshUTest.F90:2572:12:
 
- 2546 |         if (areaPtr(1) .ne. 8.0) correct=.false.
+ 2572 |         if (areaPtr(1) .ne. 8.0) correct=.false.
       |            1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_MeshUTest.F90:2548:12:
+ESMF_MeshUTest.F90:2574:12:
 
- 2548 |         if (areaPtr(1) .ne. 9.0) correct=.false.
+ 2574 |         if (areaPtr(1) .ne. 9.0) correct=.false.
       |            1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_MeshUTest.F90:2550:12:
+ESMF_MeshUTest.F90:2576:12:
 
- 2550 |         if (areaPtr(1) .ne. 10.0) correct=.false.
+ 2576 |         if (areaPtr(1) .ne. 10.0) correct=.false.
       |            1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
+ESMF_MeshUTest.F90:2685:9:
+
+ 2685 |      if (areaPtr(1) .ne. 7.0) correct=.false.
+      |         1
+Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
+ESMF_MeshUTest.F90:2686:9:
+
+ 2686 |      if (areaPtr(2) .ne. 8.0) correct=.false.
+      |         1
+Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
+ESMF_MeshUTest.F90:2687:9:
+
+ 2687 |      if (areaPtr(3) .ne. 9.0) correct=.false.
+      |         1
+Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
+ESMF_MeshUTest.F90:2688:9:
+
+ 2688 |      if (areaPtr(4) .ne. 10.0) correct=.false.
+      |         1
+Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
+ESMF_MeshUTest.F90:2691:12:
+
+ 2691 |         if (areaPtr(1) .ne. 7.0) correct=.false.
+      |            1
+Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
+ESMF_MeshUTest.F90:2693:12:
+
+ 2693 |         if (areaPtr(1) .ne. 8.0) correct=.false.
+      |            1
+Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
+ESMF_MeshUTest.F90:2695:12:
+
+ 2695 |         if (areaPtr(1) .ne. 9.0) correct=.false.
+      |            1
+Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
+ESMF_MeshUTest.F90:2697:12:
+
+ 2697 |         if (areaPtr(1) .ne. 10.0) correct=.false.
+      |            1
+Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+In file included from /opt/gcc/9.3.0/snos/include/g++/backward/strstream:50,
+                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_VMKernel.h:27,
+                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_VM.h:41,
+                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_Base.h:27,
+                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/ESMCI_MBMesh.h:22,
+                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Regridding/ESMCI_WMat.h:19,
+                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/tests/../include/ESMCI_Regrid_Nearest.h:16,
+                 from ESMC_MeshTestGenPL.C:25,
+                 from ESMC_NearestUTest.C:24:
+/opt/gcc/9.3.0/snos/include/g++/backward/backward_warning.h:32:2: warning: #warning This file includes at least one deprecated or antiquated header which may be removed without further notice at a future date. Please use a non-deprecated interface with equivalent functionality instead. For a listing of replacement headers and interfaces, consult the file backward_warning.h. To disable this warning use -Wno-deprecated. [-Wcpp]
+   32 | #warning \
+      |  ^~~~~~~
+In file included from ESMC_NearestUTest.C:24:
+ESMC_MeshTestGenPL.C: In function 'bool weights_correct_nearest(ESMCI::WMat&, std::vector<double>)':
+ESMC_MeshTestGenPL.C:54:24: warning: comparison of integer expressions of different signedness: 'std::vector<double>::size_type' {aka 'long unsigned int'} and 'int' [-Wsign-compare]
+   54 |     if (weights.size() != ind) correct = false;
+      |         ~~~~~~~~~~~~~~~^~~~~~
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 4: mpichversion: command not found
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 5: [: =: unary operator expected
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 5: [: =: unary operator expected
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 4: mpichversion: command not found
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 5: [: =: unary operator expected
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 5: [: =: unary operator expected
 Warning:
  Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
@@ -3721,69 +3049,69 @@ Warning:
 Warning:
  Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
-ESMF_FieldCreateGetUTest.F90:7283:23:
+ESMF_FieldCreateGetUTest.F90:7364:23:
 
- 7283 |                     if(farray1(ii,ij,ik,il,im,io,ip) .ne. n ) localrc = ESMF_FAILURE
+ 7364 |                     if(farray1(ii,ij,ik,il,im,io,ip) .ne. n ) localrc = ESMF_FAILURE
       |                       1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_FieldCreateGetUTest.F90:6842:18:
+ESMF_FieldCreateGetUTest.F90:6921:18:
 
- 6842 |                if(farray1(ii,ij) .ne. n ) localrc = ESMF_FAILURE
+ 6921 |                if(farray1(ii,ij) .ne. n ) localrc = ESMF_FAILURE
       |                  1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_FieldCreateGetUTest.F90:6623:19:
+ESMF_FieldCreateGetUTest.F90:6702:19:
 
- 6623 |                 if(farray1(ii,ij,ik) .ne. n ) localrc = ESMF_FAILURE
+ 6702 |                 if(farray1(ii,ij,ik) .ne. n ) localrc = ESMF_FAILURE
       |                   1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_FieldCreateGetUTest.F90:6371:19:
+ESMF_FieldCreateGetUTest.F90:6450:19:
 
- 6371 |                 if(farray1(ii,ij,ik) .ne. n ) localrc = ESMF_FAILURE
+ 6450 |                 if(farray1(ii,ij,ik) .ne. n ) localrc = ESMF_FAILURE
       |                   1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_FieldCreateGetUTest.F90:6132:23:
+ESMF_FieldCreateGetUTest.F90:6211:23:
 
- 6132 |                     if(farray1(ii,ij,ik,il,im,io,ip) .ne. n ) localrc = ESMF_FAILURE
+ 6211 |                     if(farray1(ii,ij,ik,il,im,io,ip) .ne. n ) localrc = ESMF_FAILURE
       |                       1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_FieldCreateGetUTest.F90:5861:19:
+ESMF_FieldCreateGetUTest.F90:5940:19:
 
- 5861 |                 if(farray1(ii,ij,ik) .ne. n ) localrc = ESMF_FAILURE
+ 5940 |                 if(farray1(ii,ij,ik) .ne. n ) localrc = ESMF_FAILURE
       |                   1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_FieldCreateGetUTest.F90:5631:23:
+ESMF_FieldCreateGetUTest.F90:5710:23:
 
- 5631 |                     if(farray1(ii,ij,ik,il,im,io,ip) .ne. n ) localrc = ESMF_FAILURE
+ 5710 |                     if(farray1(ii,ij,ik,il,im,io,ip) .ne. n ) localrc = ESMF_FAILURE
       |                       1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_FieldCreateGetUTest.F90:5389:23:
+ESMF_FieldCreateGetUTest.F90:5468:23:
 
- 5389 |                     if(farray1(ii,ij,ik,il,im,io,ip) .ne. n ) localrc = ESMF_FAILURE
+ 5468 |                     if(farray1(ii,ij,ik,il,im,io,ip) .ne. n ) localrc = ESMF_FAILURE
       |                       1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_FieldCreateGetUTest.F90:5106:23:
+ESMF_FieldCreateGetUTest.F90:5185:23:
 
- 5106 |                     if(farray1(ii,ij,ik,il,im,io,ip) /= n) then
+ 5185 |                     if(farray1(ii,ij,ik,il,im,io,ip) /= n) then
       |                       1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_FieldCreateGetUTest.F90:5149:23:
+ESMF_FieldCreateGetUTest.F90:5228:23:
 
- 5149 |                     if(farray1(ii,ij,ik,il,im,io,ip) .ne. n ) localrc = ESMF_FAILURE
+ 5228 |                     if(farray1(ii,ij,ik,il,im,io,ip) .ne. n ) localrc = ESMF_FAILURE
       |                       1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_FieldCreateGetUTest.F90:4925:23:
+ESMF_FieldCreateGetUTest.F90:4994:23:
 
- 4925 |                     if(farray1(ii,ij,ik,il,im,io,ip) .ne. n ) localrc = ESMF_FAILURE
+ 4994 |                     if(farray1(ii,ij,ik,il,im,io,ip) .ne. n ) localrc = ESMF_FAILURE
       |                       1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_FieldCreateGetUTest.F90:4691:23:
+ESMF_FieldCreateGetUTest.F90:4758:23:
 
- 4691 |                     if(farray1(ii,ij,ik,il,im,io,ip) .ne. n ) localrc = ESMF_FAILURE
+ 4758 |                     if(farray1(ii,ij,ik,il,im,io,ip) .ne. n ) localrc = ESMF_FAILURE
       |                       1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_FieldCreateGetUTest.F90:4467:23:
+ESMF_FieldCreateGetUTest.F90:4534:23:
 
- 4467 |                     if(farray1(ii,ij,ik,il,im,io,ip) .ne. n ) localrc = ESMF_FAILURE
+ 4534 |                     if(farray1(ii,ij,ik,il,im,io,ip) .ne. n ) localrc = ESMF_FAILURE
       |                       1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
 Warning:
@@ -3792,94 +3120,94 @@ Warning:
 Warning:
  Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
-ESMF_FieldRegridCsrvUTest.F90:17676:9:
+ESMF_FieldRegridCsrvUTest.F90:17741:9:
 
-17676 |      if (srcFracPtr(i1) .ne. 0.0) correct=.false.
+17741 |      if (srcFracPtr(i1) .ne. 0.0) correct=.false.
       |         1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_FieldRegridCsrvUTest.F90:17689:9:
+ESMF_FieldRegridCsrvUTest.F90:17754:9:
 
-17689 |      if (dstFracPtr(i1) .ne. 0.0) correct=.false.
+17754 |      if (dstFracPtr(i1) .ne. 0.0) correct=.false.
       |         1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_FieldRegridCsrvUTest.F90:16726:9:
+ESMF_FieldRegridCsrvUTest.F90:16791:9:
 
-16726 |      if (dstFracPtr(i1) .ne. 0.0) then
+16791 |      if (dstFracPtr(i1) .ne. 0.0) then
       |         1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_FieldRegridCsrvUTest.F90:16732:9:
+ESMF_FieldRegridCsrvUTest.F90:16797:9:
 
-16732 |      if (xdstFarrayPtr(i1) .ne. 0.0) then
+16797 |      if (xdstFarrayPtr(i1) .ne. 0.0) then
       |         1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_FieldRegridCsrvUTest.F90:15054:12:
+ESMF_FieldRegridCsrvUTest.F90:15119:12:
 
-15054 |         if (xfptr(i1,i2) .ne. 0.0) then
+15119 |         if (xfptr(i1,i2) .ne. 0.0) then
       |            1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_FieldRegridCsrvUTest.F90:13450:9:
+ESMF_FieldRegridCsrvUTest.F90:13515:9:
 
-13450 |      if (xdstFarrayPtr(i1) .ne. 0.0) then
+13515 |      if (xdstFarrayPtr(i1) .ne. 0.0) then
       |         1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_FieldRegridCsrvUTest.F90:12344:9:
+ESMF_FieldRegridCsrvUTest.F90:12409:9:
 
-12344 |      if (xdstFarrayPtr(i1) .ne. 0.0) then
+12409 |      if (xdstFarrayPtr(i1) .ne. 0.0) then
       |         1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_FieldRegridCsrvUTest.F90:11330:9:
+ESMF_FieldRegridCsrvUTest.F90:11395:9:
 
-11330 |      if (xdstFarrayPtr(i1) .ne. 0.0) then
+11395 |      if (xdstFarrayPtr(i1) .ne. 0.0) then
       |         1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_FieldRegridCsrvUTest.F90:10336:9:
+ESMF_FieldRegridCsrvUTest.F90:10401:9:
 
-10336 |      if (xdstFarrayPtr(i1) .ne. 0.0) then
+10401 |      if (xdstFarrayPtr(i1) .ne. 0.0) then
       |         1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_FieldRegridCsrvUTest.F90:9341:9:
+ESMF_FieldRegridCsrvUTest.F90:9406:9:
 
- 9341 |      if (xdstFarrayPtr(i1) .ne. 0.0) then
+ 9406 |      if (xdstFarrayPtr(i1) .ne. 0.0) then
       |         1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_FieldRegridCsrvUTest.F90:8198:13:
+ESMF_FieldRegridCsrvUTest.F90:8263:13:
 
- 8198 |          if (xfarrayPtr(i1,i2) .ne. 0.0) then
+ 8263 |          if (xfarrayPtr(i1,i2) .ne. 0.0) then
       |             1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_FieldRegridCsrvUTest.F90:7440:9:
+ESMF_FieldRegridCsrvUTest.F90:7505:9:
 
- 7440 |      if (xdstFarrayPtr(i1) .ne. 0.0) then
+ 7505 |      if (xdstFarrayPtr(i1) .ne. 0.0) then
       |         1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_FieldRegridCsrvUTest.F90:5625:12:
+ESMF_FieldRegridCsrvUTest.F90:5690:12:
 
- 5625 |         if (xfarrayPtr(i1,i2) .ne. 0.0) then
+ 5690 |         if (xfarrayPtr(i1,i2) .ne. 0.0) then
       |            1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_FieldRegridCsrvUTest.F90:4773:9:
+ESMF_FieldRegridCsrvUTest.F90:4838:9:
 
- 4773 |      if (xdstFarrayPtr(i1) .ne. 0.0) then
+ 4838 |      if (xdstFarrayPtr(i1) .ne. 0.0) then
       |         1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_FieldRegridCsrvUTest.F90:3665:12:
+ESMF_FieldRegridCsrvUTest.F90:3730:12:
 
- 3665 |         if (xfptr(i1,i2,i3) .ne. 0.0) then
+ 3730 |         if (xfptr(i1,i2,i3) .ne. 0.0) then
       |            1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_FieldRegridCsrvUTest.F90:2805:12:
+ESMF_FieldRegridCsrvUTest.F90:2870:12:
 
- 2805 |         if (xfptr(i1,i2) .ne. 0.0) then
+ 2870 |         if (xfptr(i1,i2) .ne. 0.0) then
       |            1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_FieldRegridCsrvUTest.F90:2031:12:
+ESMF_FieldRegridCsrvUTest.F90:2096:12:
 
- 2031 |         if (xfarrayPtr(i1,i2) .ne. 0.0) then
+ 2096 |         if (xfarrayPtr(i1,i2) .ne. 0.0) then
       |            1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_FieldRegridCsrvUTest.F90:1278:12:
+ESMF_FieldRegridCsrvUTest.F90:1343:12:
 
- 1278 |         if (xfarrayPtr(i1,i2) .ne. 0.0) then
+ 1343 |         if (xfarrayPtr(i1,i2) .ne. 0.0) then
       |            1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
 Warning:
@@ -3969,179 +3297,194 @@ Warning:
 Warning:
  Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
-ESMF_FieldRegridUTest.F90:39939:12:
+ESMF_FieldRegridUTest.F90:43147:12:
 
-39939 |         if (xfarrayPtr(i1,i2) .ne. 0.0) then
+43147 |         if (xfarrayPtr(i1,i2) .ne. 0.0) then
       |            1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_FieldRegridUTest.F90:39457:9:
+ESMF_FieldRegridUTest.F90:42627:12:
 
-39457 |      if (xdstFarrayPtr(i1) .ne. 0.0) then
+42627 |         if (xfarrayPtr(i1,i2) .ne. 0.0) then
+      |            1
+Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
+ESMF_FieldRegridUTest.F90:40492:12:
+
+40492 |         if (xfarrayPtr(i1,i2) .ne. 0.0) then
+      |            1
+Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
+ESMF_FieldRegridUTest.F90:39996:9:
+
+39996 |      if (xdstFarrayPtr(i1) .ne. 0.0) then
       |         1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_FieldRegridUTest.F90:38265:12:
+ESMF_FieldRegridUTest.F90:39580:9:
 
-38265 |         if (xfarrayPtr(i1,i2) .ne. 0.0) then
+39580 |      if (xdstFarrayPtr(i1) .ne. 0.0) then
+      |         1
+Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
+ESMF_FieldRegridUTest.F90:38388:12:
+
+38388 |         if (xfarrayPtr(i1,i2) .ne. 0.0) then
       |            1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_FieldRegridUTest.F90:37847:12:
+ESMF_FieldRegridUTest.F90:37970:12:
 
-37847 |         if (xfarrayPtr(i1,i2) .ne. 0.0) then
+37970 |         if (xfarrayPtr(i1,i2) .ne. 0.0) then
       |            1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_FieldRegridUTest.F90:37443:10:
+ESMF_FieldRegridUTest.F90:37566:10:
 
-37443 |       if (xfarrayPtr1D(i1) .ne. 0.0) then
+37566 |       if (xfarrayPtr1D(i1) .ne. 0.0) then
       |          1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_FieldRegridUTest.F90:35274:12:
+ESMF_FieldRegridUTest.F90:35397:12:
 
-35274 |         if (xfarrayPtr(i1,i2) .ne. 0.0) then
+35397 |         if (xfarrayPtr(i1,i2) .ne. 0.0) then
       |            1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_FieldRegridUTest.F90:34802:12:
+ESMF_FieldRegridUTest.F90:34925:12:
 
-34802 |         if (xfarrayPtr(i1,i2) .ne. 0.0) then
+34925 |         if (xfarrayPtr(i1,i2) .ne. 0.0) then
       |            1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_FieldRegridUTest.F90:33597:32:
+ESMF_FieldRegridUTest.F90:33720:32:
 
-33597 |         farrayPtrXC_R4(i1,i2) = REAL(i1-1)*src_dx
+33720 |         farrayPtrXC_R4(i1,i2) = REAL(i1-1)*src_dx
       |                                1
 Warning: Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion]
-ESMF_FieldRegridUTest.F90:33599:32:
+ESMF_FieldRegridUTest.F90:33722:32:
 
-33599 |         farrayPtrYC_R4(i1,i2) = -90. + (REAL(i2-1)*src_dy + 0.5*src_dy)
+33722 |         farrayPtrYC_R4(i1,i2) = -90. + (REAL(i2-1)*src_dy + 0.5*src_dy)
       |                                1
 Warning: Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion]
-ESMF_FieldRegridUTest.F90:33747:12:
+ESMF_FieldRegridUTest.F90:33870:12:
 
-33747 |         if (xfarrayPtr(i1,i2) .ne. 0.0) then
+33870 |         if (xfarrayPtr(i1,i2) .ne. 0.0) then
       |            1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_FieldRegridUTest.F90:32518:12:
+ESMF_FieldRegridUTest.F90:32641:12:
 
-32518 |         if (xdstPtr(i1,i2) .ne. 0.0) then
+32641 |         if (xdstPtr(i1,i2) .ne. 0.0) then
       |            1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_FieldRegridUTest.F90:28955:12:
+ESMF_FieldRegridUTest.F90:29078:12:
 
-28955 |         if (xdstPtr(i1,i2) .ne. 0.0) then
+29078 |         if (xdstPtr(i1,i2) .ne. 0.0) then
       |            1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_FieldRegridUTest.F90:26835:12:
+ESMF_FieldRegridUTest.F90:26958:12:
 
-26835 |         if (xfarrayPtr(i1,i2,i3) .ne. 0.0) then
+26958 |         if (xfarrayPtr(i1,i2,i3) .ne. 0.0) then
       |            1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_FieldRegridUTest.F90:26327:12:
+ESMF_FieldRegridUTest.F90:26450:12:
 
-26327 |         if (xfarrayPtr(i1,i2,i3) .ne. 0.0) then
+26450 |         if (xfarrayPtr(i1,i2,i3) .ne. 0.0) then
       |            1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_FieldRegridUTest.F90:25820:12:
+ESMF_FieldRegridUTest.F90:25943:12:
 
-25820 |         if (xfarrayPtr(i1,i2,i3) .ne. 0.0) then
+25943 |         if (xfarrayPtr(i1,i2,i3) .ne. 0.0) then
       |            1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_FieldRegridUTest.F90:25320:12:
+ESMF_FieldRegridUTest.F90:25443:12:
 
-25320 |         if (xfarrayPtr(i1,i2,i3) .ne. 0.0) then
+25443 |         if (xfarrayPtr(i1,i2,i3) .ne. 0.0) then
       |            1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_FieldRegridUTest.F90:24604:12:
+ESMF_FieldRegridUTest.F90:24727:12:
 
-24604 |         if (xfarrayPtr(i1,i2) .ne. 0.0) then
+24727 |         if (xfarrayPtr(i1,i2) .ne. 0.0) then
       |            1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_FieldRegridUTest.F90:23881:9:
+ESMF_FieldRegridUTest.F90:24004:9:
 
-23881 |      if (xfarrayPtr1D(i1) .ne. 0.0) then
+24004 |      if (xfarrayPtr1D(i1) .ne. 0.0) then
       |         1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_FieldRegridUTest.F90:21948:12:
+ESMF_FieldRegridUTest.F90:22071:12:
 
-21948 |         if (xfarrayPtr(i1,i2) .ne. 0.0) then
+22071 |         if (xfarrayPtr(i1,i2) .ne. 0.0) then
       |            1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_FieldRegridUTest.F90:20168:13:
+ESMF_FieldRegridUTest.F90:20291:13:
 
-20168 |   dst_minx = 0.5
+20291 |   dst_minx = 0.5
       |             1
 Warning: Change of value in conversion from 'REAL(4)' to 'INTEGER(4)' at (1) [-Wconversion]
-ESMF_FieldRegridUTest.F90:20169:13:
+ESMF_FieldRegridUTest.F90:20292:13:
 
-20169 |   dst_miny = 0.5
+20292 |   dst_miny = 0.5
       |             1
 Warning: Change of value in conversion from 'REAL(4)' to 'INTEGER(4)' at (1) [-Wconversion]
-ESMF_FieldRegridUTest.F90:20171:13:
+ESMF_FieldRegridUTest.F90:20294:13:
 
-20171 |   dst_maxx = 20.5
+20294 |   dst_maxx = 20.5
       |             1
 Warning: Change of value in conversion from 'REAL(4)' to 'INTEGER(4)' at (1) [-Wconversion]
-ESMF_FieldRegridUTest.F90:20172:13:
+ESMF_FieldRegridUTest.F90:20295:13:
 
-20172 |   dst_maxy = 9.5
+20295 |   dst_maxy = 9.5
       |             1
 Warning: Change of value in conversion from 'REAL(4)' to 'INTEGER(4)' at (1) [-Wconversion]
-ESMF_FieldRegridUTest.F90:18071:12:
+ESMF_FieldRegridUTest.F90:18194:12:
 
-18071 |         if (xdstPtr(i1,i2) .ne. 0.0) then
+18194 |         if (xdstPtr(i1,i2) .ne. 0.0) then
       |            1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_FieldRegridUTest.F90:17677:12:
+ESMF_FieldRegridUTest.F90:17800:12:
 
-17677 |         if (xdstPtr(i1,i2) .ne. 0.0) then
+17800 |         if (xdstPtr(i1,i2) .ne. 0.0) then
       |            1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_FieldRegridUTest.F90:17283:12:
+ESMF_FieldRegridUTest.F90:17406:12:
 
-17283 |         if (xdstPtr(i1,i2) .ne. 0.0) then
+17406 |         if (xdstPtr(i1,i2) .ne. 0.0) then
       |            1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_FieldRegridUTest.F90:16385:12:
+ESMF_FieldRegridUTest.F90:16508:12:
 
-16385 |         if (xdstXtraPtr(i1,i2,i3) .ne. 0.0) then
+16508 |         if (xdstXtraPtr(i1,i2,i3) .ne. 0.0) then
       |            1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_FieldRegridUTest.F90:14883:12:
+ESMF_FieldRegridUTest.F90:15006:12:
 
-14883 |         if (xfarrayPtr(i1,i2) .ne. 0.0) then
+15006 |         if (xfarrayPtr(i1,i2) .ne. 0.0) then
       |            1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_FieldRegridUTest.F90:5341:14:
+ESMF_FieldRegridUTest.F90:5464:14:
 
- 5341 |           if (farrayPtr(i1,i2) /= -1000) then
+ 5464 |           if (farrayPtr(i1,i2) /= -1000) then
       |              1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_FieldRegridUTest.F90:4928:14:
+ESMF_FieldRegridUTest.F90:5051:14:
 
- 4928 |           if (farrayPtr(i1,i2) /= -1000) then
+ 5051 |           if (farrayPtr(i1,i2) /= -1000) then
       |              1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_FieldRegridUTest.F90:4936:14:
+ESMF_FieldRegridUTest.F90:5059:14:
 
- 4936 |           if (farrayPtrPatch(i1,i2) /= -1000) then
+ 5059 |           if (farrayPtrPatch(i1,i2) /= -1000) then
       |              1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_FieldRegridUTest.F90:3146:12:
+ESMF_FieldRegridUTest.F90:3269:12:
 
- 3146 |         if (farrayPtr(i1,i2,i3) .ne. 0.0) then
+ 3269 |         if (farrayPtr(i1,i2,i3) .ne. 0.0) then
       |            1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_FieldRegridUTest.F90:2674:12:
+ESMF_FieldRegridUTest.F90:2797:12:
 
- 2674 |         if (farrayPtr(i1,i2,i3) .ne. 0.0) then
+ 2797 |         if (farrayPtr(i1,i2,i3) .ne. 0.0) then
       |            1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_FieldRegridUTest.F90:2200:12:
+ESMF_FieldRegridUTest.F90:2323:12:
 
- 2200 |         if (farrayPtr(i1,i2,i3) .ne. 0.0) then
+ 2323 |         if (farrayPtr(i1,i2,i3) .ne. 0.0) then
       |            1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_FieldRegridUTest.F90:1728:12:
+ESMF_FieldRegridUTest.F90:1851:12:
 
- 1728 |         if (farrayPtr(i1,i2) .ne. 0.0) then
+ 1851 |         if (farrayPtr(i1,i2) .ne. 0.0) then
       |            1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
 Warning:
@@ -4150,59 +3493,59 @@ Warning:
 Warning:
  Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
-ESMF_FieldRegridCSUTest.F90:4928:12:
+ESMF_FieldRegridCSUTest.F90:4938:12:
 
- 4928 |         if (xfarrayPtr(i1,i2) .ne. 0.0) then
+ 4938 |         if (xfarrayPtr(i1,i2) .ne. 0.0) then
       |            1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_FieldRegridCSUTest.F90:4436:12:
+ESMF_FieldRegridCSUTest.F90:4446:12:
 
- 4436 |         if (xfarrayPtr(i1,i2) .ne. 0.0) then
+ 4446 |         if (xfarrayPtr(i1,i2) .ne. 0.0) then
       |            1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_FieldRegridCSUTest.F90:3958:12:
+ESMF_FieldRegridCSUTest.F90:3968:12:
 
- 3958 |         if (xfarrayPtr(i1,i2) .ne. 0.0) then
+ 3968 |         if (xfarrayPtr(i1,i2) .ne. 0.0) then
       |            1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_FieldRegridCSUTest.F90:3513:12:
+ESMF_FieldRegridCSUTest.F90:3523:12:
 
- 3513 |         if (xfarrayPtr(i1,i2) .ne. 0.0) then
+ 3523 |         if (xfarrayPtr(i1,i2) .ne. 0.0) then
       |            1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_FieldRegridCSUTest.F90:3147:12:
+ESMF_FieldRegridCSUTest.F90:3157:12:
 
- 3147 |         if (xfarrayPtr(i1,i2) .ne. 0.0) then
+ 3157 |         if (xfarrayPtr(i1,i2) .ne. 0.0) then
       |            1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_FieldRegridCSUTest.F90:2781:12:
+ESMF_FieldRegridCSUTest.F90:2791:12:
 
- 2781 |         if (xfarrayPtr(i1,i2) .ne. 0.0) then
+ 2791 |         if (xfarrayPtr(i1,i2) .ne. 0.0) then
       |            1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_FieldRegridCSUTest.F90:2338:12:
+ESMF_FieldRegridCSUTest.F90:2348:12:
 
- 2338 |         if (xfarrayPtr(i1,i2) .ne. 0.0) then
+ 2348 |         if (xfarrayPtr(i1,i2) .ne. 0.0) then
       |            1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_FieldRegridCSUTest.F90:1847:12:
+ESMF_FieldRegridCSUTest.F90:1857:12:
 
- 1847 |         if (xfarrayPtr(i1,i2) .ne. 0.0) then
+ 1857 |         if (xfarrayPtr(i1,i2) .ne. 0.0) then
       |            1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_FieldRegridCSUTest.F90:1449:12:
+ESMF_FieldRegridCSUTest.F90:1459:12:
 
- 1449 |         if (xfarrayPtr(i1,i2) .ne. 0.0) then
+ 1459 |         if (xfarrayPtr(i1,i2) .ne. 0.0) then
       |            1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_FieldRegridCSUTest.F90:1051:12:
+ESMF_FieldRegridCSUTest.F90:1061:12:
 
- 1051 |         if (xfarrayPtr(i1,i2) .ne. 0.0) then
+ 1061 |         if (xfarrayPtr(i1,i2) .ne. 0.0) then
       |            1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_FieldRegridCSUTest.F90:655:12:
+ESMF_FieldRegridCSUTest.F90:665:12:
 
-  655 |         if (xfarrayPtr(i1,i2) .ne. 0.0) then
+  665 |         if (xfarrayPtr(i1,i2) .ne. 0.0) then
       |            1
 Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
 Warning:
@@ -4460,41 +3803,11 @@ Warning:
  Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
 Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
  Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
 /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 4: mpichversion: command not found
 /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 5: [: =: unary operator expected
 /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 5: [: =: unary operator expected
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
 Warning:
  Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
@@ -4658,7 +3971,97 @@ Warning:
  Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
 Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
  Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
 Warning:
  Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
@@ -4732,36 +4135,25 @@ Warning:
 Warning:
  Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+ESMF_AttributeArrayUTest.F90:961:7:
 
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-ESMF_AttributeArrayUTest.F90:983:7:
-
-  983 |  .and.(inR8==outR8) &
+  961 |  .and.(inR8==outR8) &
       |       1
 Warning: Equality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_AttributeArrayUTest.F90:1012:40:
+ESMF_AttributeArrayUTest.F90:990:40:
 
- 1012 |  call ESMF_Test((rc==ESMF_SUCCESS).and.(defaultR8==dfltoutR8), &
+  990 |  call ESMF_Test((rc==ESMF_SUCCESS).and.(defaultR8==dfltoutR8), &
       |                                        1
 Warning: Equality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_AttributeArrayUTest.F90:1076:12:
+ESMF_AttributeArrayUTest.F90:1044:12:
 
- 1076 |  .and. all (inR8l==outR8l) &
+ 1044 |  .and. all (inR8l==outR8l) &
       |            1
 Warning: Equality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_AttributeArrayUTest.F90:1105:45:
+ESMF_AttributeArrayUTest.F90:1073:45:
 
- 1105 |  call ESMF_Test((rc==ESMF_SUCCESS).and. all (defaultR8l==dfltoutR8l), &
+ 1073 |  call ESMF_Test((rc==ESMF_SUCCESS).and. all (defaultR8l==dfltoutR8l), &
       |                                             1
-Warning: Equality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_AttributeArrayUTest.F90:1117:6:
-
- 1117 |  all (dfltOutR8l==defaultR8lWrong(1:size(DfltOutR8l))), &
-      |      1
 Warning: Equality comparison for REAL(8) at (1) [-Wcompare-reals]
 Warning:
  Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
@@ -4769,30 +4161,25 @@ Warning:
 Warning:
  Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
-ESMF_AttributeABundleUTest.F90:987:7:
+ESMF_AttributeABundleUTest.F90:965:7:
 
-  987 |  .and.(inR8==outR8) &
+  965 |  .and.(inR8==outR8) &
       |       1
 Warning: Equality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_AttributeABundleUTest.F90:1016:40:
+ESMF_AttributeABundleUTest.F90:994:40:
 
- 1016 |  call ESMF_Test((rc==ESMF_SUCCESS).and.(defaultR8==dfltoutR8), &
+  994 |  call ESMF_Test((rc==ESMF_SUCCESS).and.(defaultR8==dfltoutR8), &
       |                                        1
 Warning: Equality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_AttributeABundleUTest.F90:1080:12:
+ESMF_AttributeABundleUTest.F90:1048:12:
 
- 1080 |  .and. all (inR8l==outR8l) &
+ 1048 |  .and. all (inR8l==outR8l) &
       |            1
 Warning: Equality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_AttributeABundleUTest.F90:1109:45:
+ESMF_AttributeABundleUTest.F90:1077:45:
 
- 1109 |  call ESMF_Test((rc==ESMF_SUCCESS).and. all (defaultR8l==dfltoutR8l), &
+ 1077 |  call ESMF_Test((rc==ESMF_SUCCESS).and. all (defaultR8l==dfltoutR8l), &
       |                                             1
-Warning: Equality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_AttributeABundleUTest.F90:1121:6:
-
- 1121 |  all (dfltOutR8l==defaultR8lWrong(1:size(DfltOutR8l))), &
-      |      1
 Warning: Equality comparison for REAL(8) at (1) [-Wcompare-reals]
 Warning:
  Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
@@ -4800,30 +4187,25 @@ Warning:
 Warning:
  Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
-ESMF_AttributeCplCompUTest.F90:989:7:
+ESMF_AttributeCplCompUTest.F90:967:7:
 
-  989 |  .and.(inR8==outR8) &
+  967 |  .and.(inR8==outR8) &
       |       1
 Warning: Equality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_AttributeCplCompUTest.F90:1018:40:
+ESMF_AttributeCplCompUTest.F90:996:40:
 
- 1018 |  call ESMF_Test((rc==ESMF_SUCCESS).and.(defaultR8==dfltoutR8), &
+  996 |  call ESMF_Test((rc==ESMF_SUCCESS).and.(defaultR8==dfltoutR8), &
       |                                        1
 Warning: Equality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_AttributeCplCompUTest.F90:1082:12:
+ESMF_AttributeCplCompUTest.F90:1050:12:
 
- 1082 |  .and. all (inR8l==outR8l) &
+ 1050 |  .and. all (inR8l==outR8l) &
       |            1
 Warning: Equality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_AttributeCplCompUTest.F90:1111:45:
+ESMF_AttributeCplCompUTest.F90:1079:45:
 
- 1111 |  call ESMF_Test((rc==ESMF_SUCCESS).and. all (defaultR8l==dfltoutR8l), &
+ 1079 |  call ESMF_Test((rc==ESMF_SUCCESS).and. all (defaultR8l==dfltoutR8l), &
       |                                             1
-Warning: Equality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_AttributeCplCompUTest.F90:1123:6:
-
- 1123 |  all (dfltOutR8l==defaultR8lWrong(1:size(DfltOutR8l))), &
-      |      1
 Warning: Equality comparison for REAL(8) at (1) [-Wcompare-reals]
 Warning:
  Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
@@ -4831,30 +4213,25 @@ Warning:
 Warning:
  Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
-ESMF_AttributeDistGridUTest.F90:978:7:
+ESMF_AttributeDistGridUTest.F90:956:7:
 
-  978 |  .and.(inR8==outR8) &
+  956 |  .and.(inR8==outR8) &
       |       1
 Warning: Equality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_AttributeDistGridUTest.F90:1007:40:
+ESMF_AttributeDistGridUTest.F90:985:40:
 
- 1007 |  call ESMF_Test((rc==ESMF_SUCCESS).and.(defaultR8==dfltoutR8), &
+  985 |  call ESMF_Test((rc==ESMF_SUCCESS).and.(defaultR8==dfltoutR8), &
       |                                        1
 Warning: Equality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_AttributeDistGridUTest.F90:1071:12:
+ESMF_AttributeDistGridUTest.F90:1039:12:
 
- 1071 |  .and. all (inR8l==outR8l) &
+ 1039 |  .and. all (inR8l==outR8l) &
       |            1
 Warning: Equality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_AttributeDistGridUTest.F90:1100:45:
+ESMF_AttributeDistGridUTest.F90:1068:45:
 
- 1100 |  call ESMF_Test((rc==ESMF_SUCCESS).and. all (defaultR8l==dfltoutR8l), &
+ 1068 |  call ESMF_Test((rc==ESMF_SUCCESS).and. all (defaultR8l==dfltoutR8l), &
       |                                             1
-Warning: Equality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_AttributeDistGridUTest.F90:1112:6:
-
- 1112 |  all (dfltOutR8l==defaultR8lWrong(1:size(DfltOutR8l))), &
-      |      1
 Warning: Equality comparison for REAL(8) at (1) [-Wcompare-reals]
 Warning:
  Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
@@ -4862,30 +4239,25 @@ Warning:
 Warning:
  Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
-ESMF_AttributeFBundleUTest.F90:987:7:
+ESMF_AttributeFBundleUTest.F90:965:7:
 
-  987 |  .and.(inR8==outR8) &
+  965 |  .and.(inR8==outR8) &
       |       1
 Warning: Equality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_AttributeFBundleUTest.F90:1016:40:
+ESMF_AttributeFBundleUTest.F90:994:40:
 
- 1016 |  call ESMF_Test((rc==ESMF_SUCCESS).and.(defaultR8==dfltoutR8), &
+  994 |  call ESMF_Test((rc==ESMF_SUCCESS).and.(defaultR8==dfltoutR8), &
       |                                        1
 Warning: Equality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_AttributeFBundleUTest.F90:1080:12:
+ESMF_AttributeFBundleUTest.F90:1048:12:
 
- 1080 |  .and. all (inR8l==outR8l) &
+ 1048 |  .and. all (inR8l==outR8l) &
       |            1
 Warning: Equality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_AttributeFBundleUTest.F90:1109:45:
+ESMF_AttributeFBundleUTest.F90:1077:45:
 
- 1109 |  call ESMF_Test((rc==ESMF_SUCCESS).and. all (defaultR8l==dfltoutR8l), &
+ 1077 |  call ESMF_Test((rc==ESMF_SUCCESS).and. all (defaultR8l==dfltoutR8l), &
       |                                             1
-Warning: Equality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_AttributeFBundleUTest.F90:1121:6:
-
- 1121 |  all (dfltOutR8l==defaultR8lWrong(1:size(DfltOutR8l))), &
-      |      1
 Warning: Equality comparison for REAL(8) at (1) [-Wcompare-reals]
 Warning:
  Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
@@ -4893,30 +4265,25 @@ Warning:
 Warning:
  Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
-ESMF_AttributeFieldUTest.F90:984:7:
+ESMF_AttributeFieldUTest.F90:962:7:
 
-  984 |  .and.(inR8==outR8) &
+  962 |  .and.(inR8==outR8) &
       |       1
 Warning: Equality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_AttributeFieldUTest.F90:1013:40:
+ESMF_AttributeFieldUTest.F90:991:40:
 
- 1013 |  call ESMF_Test((rc==ESMF_SUCCESS).and.(defaultR8==dfltoutR8), &
+  991 |  call ESMF_Test((rc==ESMF_SUCCESS).and.(defaultR8==dfltoutR8), &
       |                                        1
 Warning: Equality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_AttributeFieldUTest.F90:1077:12:
+ESMF_AttributeFieldUTest.F90:1045:12:
 
- 1077 |  .and. all (inR8l==outR8l) &
+ 1045 |  .and. all (inR8l==outR8l) &
       |            1
 Warning: Equality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_AttributeFieldUTest.F90:1106:45:
+ESMF_AttributeFieldUTest.F90:1074:45:
 
- 1106 |  call ESMF_Test((rc==ESMF_SUCCESS).and. all (defaultR8l==dfltoutR8l), &
+ 1074 |  call ESMF_Test((rc==ESMF_SUCCESS).and. all (defaultR8l==dfltoutR8l), &
       |                                             1
-Warning: Equality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_AttributeFieldUTest.F90:1118:6:
-
- 1118 |  all (dfltOutR8l==defaultR8lWrong(1:size(DfltOutR8l))), &
-      |      1
 Warning: Equality comparison for REAL(8) at (1) [-Wcompare-reals]
 Warning:
  Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
@@ -4924,30 +4291,25 @@ Warning:
 Warning:
  Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
-ESMF_AttributeGridCompUTest.F90:989:7:
+ESMF_AttributeGridCompUTest.F90:967:7:
 
-  989 |  .and.(inR8==outR8) &
+  967 |  .and.(inR8==outR8) &
       |       1
 Warning: Equality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_AttributeGridCompUTest.F90:1018:40:
+ESMF_AttributeGridCompUTest.F90:996:40:
 
- 1018 |  call ESMF_Test((rc==ESMF_SUCCESS).and.(defaultR8==dfltoutR8), &
+  996 |  call ESMF_Test((rc==ESMF_SUCCESS).and.(defaultR8==dfltoutR8), &
       |                                        1
 Warning: Equality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_AttributeGridCompUTest.F90:1082:12:
+ESMF_AttributeGridCompUTest.F90:1050:12:
 
- 1082 |  .and. all (inR8l==outR8l) &
+ 1050 |  .and. all (inR8l==outR8l) &
       |            1
 Warning: Equality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_AttributeGridCompUTest.F90:1111:45:
+ESMF_AttributeGridCompUTest.F90:1079:45:
 
- 1111 |  call ESMF_Test((rc==ESMF_SUCCESS).and. all (defaultR8l==dfltoutR8l), &
+ 1079 |  call ESMF_Test((rc==ESMF_SUCCESS).and. all (defaultR8l==dfltoutR8l), &
       |                                             1
-Warning: Equality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_AttributeGridCompUTest.F90:1123:6:
-
- 1123 |  all (dfltOutR8l==defaultR8lWrong(1:size(DfltOutR8l))), &
-      |      1
 Warning: Equality comparison for REAL(8) at (1) [-Wcompare-reals]
 Warning:
  Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
@@ -4955,30 +4317,25 @@ Warning:
 Warning:
  Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
-ESMF_AttributeGridUTest.F90:980:7:
+ESMF_AttributeGridUTest.F90:958:7:
 
-  980 |  .and.(inR8==outR8) &
+  958 |  .and.(inR8==outR8) &
       |       1
 Warning: Equality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_AttributeGridUTest.F90:1009:40:
+ESMF_AttributeGridUTest.F90:987:40:
 
- 1009 |  call ESMF_Test((rc==ESMF_SUCCESS).and.(defaultR8==dfltoutR8), &
+  987 |  call ESMF_Test((rc==ESMF_SUCCESS).and.(defaultR8==dfltoutR8), &
       |                                        1
 Warning: Equality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_AttributeGridUTest.F90:1073:12:
+ESMF_AttributeGridUTest.F90:1041:12:
 
- 1073 |  .and. all (inR8l==outR8l) &
+ 1041 |  .and. all (inR8l==outR8l) &
       |            1
 Warning: Equality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_AttributeGridUTest.F90:1102:45:
+ESMF_AttributeGridUTest.F90:1070:45:
 
- 1102 |  call ESMF_Test((rc==ESMF_SUCCESS).and. all (defaultR8l==dfltoutR8l), &
+ 1070 |  call ESMF_Test((rc==ESMF_SUCCESS).and. all (defaultR8l==dfltoutR8l), &
       |                                             1
-Warning: Equality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_AttributeGridUTest.F90:1114:6:
-
- 1114 |  all (dfltOutR8l==defaultR8lWrong(1:size(DfltOutR8l))), &
-      |      1
 Warning: Equality comparison for REAL(8) at (1) [-Wcompare-reals]
 Warning:
  Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
@@ -4986,30 +4343,25 @@ Warning:
 Warning:
  Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
-ESMF_AttributeLocStreamUTest.F90:976:7:
+ESMF_AttributeLocStreamUTest.F90:954:7:
 
-  976 |  .and.(inR8==outR8) &
+  954 |  .and.(inR8==outR8) &
       |       1
 Warning: Equality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_AttributeLocStreamUTest.F90:1005:40:
+ESMF_AttributeLocStreamUTest.F90:983:40:
 
- 1005 |  call ESMF_Test((rc==ESMF_SUCCESS).and.(defaultR8==dfltoutR8), &
+  983 |  call ESMF_Test((rc==ESMF_SUCCESS).and.(defaultR8==dfltoutR8), &
       |                                        1
 Warning: Equality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_AttributeLocStreamUTest.F90:1069:12:
+ESMF_AttributeLocStreamUTest.F90:1037:12:
 
- 1069 |  .and. all (inR8l==outR8l) &
+ 1037 |  .and. all (inR8l==outR8l) &
       |            1
 Warning: Equality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_AttributeLocStreamUTest.F90:1098:45:
+ESMF_AttributeLocStreamUTest.F90:1066:45:
 
- 1098 |  call ESMF_Test((rc==ESMF_SUCCESS).and. all (defaultR8l==dfltoutR8l), &
+ 1066 |  call ESMF_Test((rc==ESMF_SUCCESS).and. all (defaultR8l==dfltoutR8l), &
       |                                             1
-Warning: Equality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_AttributeLocStreamUTest.F90:1110:6:
-
- 1110 |  all (dfltOutR8l==defaultR8lWrong(1:size(DfltOutR8l))), &
-      |      1
 Warning: Equality comparison for REAL(8) at (1) [-Wcompare-reals]
 Warning:
  Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
@@ -5017,30 +4369,25 @@ Warning:
 Warning:
  Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
-ESMF_AttributeSciCompUTest.F90:989:7:
+ESMF_AttributeSciCompUTest.F90:967:7:
 
-  989 |  .and.(inR8==outR8) &
+  967 |  .and.(inR8==outR8) &
       |       1
 Warning: Equality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_AttributeSciCompUTest.F90:1018:40:
+ESMF_AttributeSciCompUTest.F90:996:40:
 
- 1018 |  call ESMF_Test((rc==ESMF_SUCCESS).and.(defaultR8==dfltoutR8), &
+  996 |  call ESMF_Test((rc==ESMF_SUCCESS).and.(defaultR8==dfltoutR8), &
       |                                        1
 Warning: Equality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_AttributeSciCompUTest.F90:1082:12:
+ESMF_AttributeSciCompUTest.F90:1050:12:
 
- 1082 |  .and. all (inR8l==outR8l) &
+ 1050 |  .and. all (inR8l==outR8l) &
       |            1
 Warning: Equality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_AttributeSciCompUTest.F90:1111:45:
+ESMF_AttributeSciCompUTest.F90:1079:45:
 
- 1111 |  call ESMF_Test((rc==ESMF_SUCCESS).and. all (defaultR8l==dfltoutR8l), &
+ 1079 |  call ESMF_Test((rc==ESMF_SUCCESS).and. all (defaultR8l==dfltoutR8l), &
       |                                             1
-Warning: Equality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_AttributeSciCompUTest.F90:1123:6:
-
- 1123 |  all (dfltOutR8l==defaultR8lWrong(1:size(DfltOutR8l))), &
-      |      1
 Warning: Equality comparison for REAL(8) at (1) [-Wcompare-reals]
 Warning:
  Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
@@ -5048,31 +4395,26 @@ Warning:
 Warning:
  Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
-ESMF_AttributeStateUTest.F90:994:7:
+ESMF_AttributeStateUTest.F90:972:7:
 
-  994 |  .and.(inR8==outR8) &
+  972 |  .and.(inR8==outR8) &
       |       1
 Warning: Equality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_AttributeStateUTest.F90:1023:40:
+ESMF_AttributeStateUTest.F90:1001:40:
 
- 1023 |  call ESMF_Test((rc==ESMF_SUCCESS).and.(defaultR8==dfltoutR8), &
+ 1001 |  call ESMF_Test((rc==ESMF_SUCCESS).and.(defaultR8==dfltoutR8), &
       |                                        1
 Warning: Equality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_AttributeStateUTest.F90:1087:12:
+ESMF_AttributeStateUTest.F90:1055:12:
 
- 1087 |  .and. all (inR8l==outR8l) &
+ 1055 |  .and. all (inR8l==outR8l) &
       |            1
 Warning: Equality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_AttributeStateUTest.F90:1116:45:
+ESMF_AttributeStateUTest.F90:1084:45:
 
- 1116 |  call ESMF_Test((rc==ESMF_SUCCESS).and. all (defaultR8l==dfltoutR8l), &
+ 1084 |  call ESMF_Test((rc==ESMF_SUCCESS).and. all (defaultR8l==dfltoutR8l), &
       |                                             1
 Warning: Equality comparison for REAL(8) at (1) [-Wcompare-reals]
-ESMF_AttributeStateUTest.F90:1128:6:
-
- 1128 |  all (dfltOutR8l==defaultR8lWrong(1:size(DfltOutR8l))), &
-      |      1
-Warning: Equality comparison for REAL(8) at (1) [-Wcompare-reals]
 Warning:
  Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
@@ -5115,54 +4457,11 @@ Warning:
 Warning:
  Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+ESMF_AttributeUtilUTest.F90:88:0:
 
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
+   88 |   name_key = "AttributeName"
+      | 
+Warning: '.name_key' may be used uninitialized in this function [-Wmaybe-uninitialized]
 Warning:
  Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
@@ -5442,6 +4741,12 @@ Warning:
 /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 4: mpichversion: command not found
 /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 5: [: =: unary operator expected
 /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 5: [: =: unary operator expected
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
 Warning:
  Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
@@ -6277,7 +5582,6 @@ Warning:
  Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
 cat: './PET*TraceUTest.Log': No such file or directory
-mv: cannot stat './traceout': No such file or directory
 Warning:
  Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
@@ -6366,6 +5670,7 @@ Warning:
 Warning:
  Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
+cat: './PET*BaseUTest.Log': No such file or directory
 Warning:
  Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
@@ -6373,6 +5678,46 @@ Warning:
  Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
 cat: './PET*BaseUTest.Log': No such file or directory
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+cat: './PET*NlohmannJSONUTest.Log': No such file or directory
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+cat: './PET*InfoUTest.Log': No such file or directory
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+cat: './PET*InfoUTest.Log': No such file or directory
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+cat: './PET*InfoArrayUTest.Log': No such file or directory
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
 Warning:
  Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
@@ -7226,6 +6571,47 @@ Warning:
 Warning:
  Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+cat: './PET*MBMeshUTest.Log': No such file or directory
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+cat: './PET*MBMeshRegridUTest.Log': No such file or directory
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+cat: './PET*MBMesh_ExtrapolateUTest.Log': No such file or directory
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+cat: './PET*MBMesh_UtilUTest.Log': No such file or directory
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+cat: './PET*MeshMOABUTest.Log': No such file or directory
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
 cat: './PET*IntegrateUTest.Log': No such file or directory
 Warning:
  Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
@@ -7240,112 +6626,7 @@ Warning:
 Warning:
  Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
-cat: './PET*MeshMOABUTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*Proj4UTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
 cat: './PET*MeshVTKUTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*MBMesh_BilinearUTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*MBMesh_BilinearParUTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*MBMesh_BilinearSingleElemUTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*MBMesh_BilinearEdgeCasesUTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*MBMesh_BilinearEdgeCases3DUTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*MBMesh_CreateUTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*MBMesh_CreateParUTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*MBMesh_DualUTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*MBMesh_ExtrapolateUTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*MBMesh_SearchUTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*MBMesh_UtilUTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*MBMesh_UtilParUTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*NearestUTest.Log': No such file or directory
 Warning:
  Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
@@ -7360,6 +6641,20 @@ Warning:
  Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
 cat: './PET*MeshUTest.Log': No such file or directory
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+cat: './PET*NearestUTest.Log': No such file or directory
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+cat: './PET*Proj4UTest.Log': No such file or directory
 Warning:
  Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
@@ -8005,30 +7300,6 @@ Warning:
 Warning:
  Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
 cat: './PET*StateUTest.Log': No such file or directory
 Warning:
  Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
@@ -8037,13 +7308,6 @@ Warning:
  Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
 cat: './PET*StateCreateUTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*StateReconcileUTest.Log': No such file or directory
 Warning:
  Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
@@ -8204,14 +7468,102 @@ Warning:
 Warning:
  Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
-cat: './PET*AttributeAutoLinkUTest.Log': No such file or directory
 Warning:
  Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
 Warning:
  Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
-cat: './PET*AttInternalGridUTest.Log': No such file or directory
+cat: './PET*InfoGetInterfaceArrayUTest.Log': No such file or directory
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+cat: './PET*InfoSyncUTest.Log': No such file or directory
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+cat: './PET*InfoDescribeUTest.Log': No such file or directory
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+cat: './PET*InfoCacheUTest.Log': No such file or directory
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+cat: './PET*StateReconcileUTest.Log': No such file or directory
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+cat: './PET*StateReconcileProxyUTest.Log': No such file or directory
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
 Warning:
  Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
@@ -8379,20 +7731,6 @@ Warning:
 Warning:
  Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
-cat: './PET*AttributeUpdateCIMRespPartyUTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*AttributeUpdateClosedLoopTreesUTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
 cat: './PET*AttributeUpdateComponentUTest.Log': No such file or directory
 Warning:
  Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
@@ -8428,48 +7766,7 @@ Warning:
 Warning:
  Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
-cat: './PET*AttributeWriteInternalUTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*AttributeXMLUTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*AttReadCplCompUTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*AttReadGridCompUTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*AttReadFieldUTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*AttributeJSONUTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
+cat: './PET*AttributeUtilUTest.Log': No such file or directory
 Warning:
  Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
@@ -9053,6 +8350,12 @@ Warning:
 Warning:
  Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
 cat: './PET*NUOPC_UTest.Log': No such file or directory
 Warning:
  Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
@@ -9114,12 +8417,14 @@ Warning:
 Warning:
  Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
+f951: Warning: Nonexistent include directory '/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/system_tests/ESMF_CompInFortranAndC' [-Wmissing-include-dirs]
 Warning:
  Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
 Warning:
  Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
+f951: Warning: Nonexistent include directory '/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/system_tests/ESMF_CompInFortranAndC' [-Wmissing-include-dirs]
 Warning:
  Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
@@ -9223,198 +8528,6 @@ Warning:
  Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
 Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
  Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
 Warning:
@@ -9424,54 +8537,6 @@ Warning:
  Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
 Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
  Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
 Warning:
@@ -9515,6251 +8580,6 @@ Warning:
 
 Warning:
  Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-ESMF_FieldRedistSTest.F90:282:13:
-
-  282 |         if ((srcdata(i,j) .ne. resdata(i,j)) .OR. &
-      |             1
-Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-ESMF_FieldRedistBlk2BlkSTest.F90:283:13:
-
-  283 |         if ((srcdata(i,j) .ne. resdata(i,j)) .OR. &
-      |             1
-Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-ESMF_FieldRedistBlk2ArbSTest.F90:250:13:
-
-  250 |         if ((srcdata(i,j) .ne. resdata(i,j)) .OR. &
-      |             1
-Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-ESMF_FieldRedistArb2ArbSTest.F90:262:13:
-
-  262 |         if ((srcdata(i) .ne. resdata(i)) .OR. &
-      |             1
-Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-ESMF_FieldBundleRedistBlk2BlkSTest.F90:324:13:
-
-  324 |         if ((srcdata(i,j) .ne. resdata(i,j)) .OR. &
-      |             1
-Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-ESMF_FieldBundleRedistBlk2ArbSTest.F90:269:13:
-
-  269 |         if ((srcdata(i,j) .ne. resdata(i,j)) .OR. &
-      |             1
-Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-ESMF_FieldBundleRedistArb2ArbSTest.F90:291:13:
-
-  291 |         if ((srcdata(i) .ne. resdata(i)) .OR. &
-      |             1
-Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-user_modelC.F90:194:16:
-
-  194 |             if (ftrptr1(i,j) /= solution) count = count+1
-      |                1
-Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-user_modelC.F90:194:16:
-
-  194 |             if (ftrptr1(i,j) /= solution) count = count+1
-      |                1
-Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-ioComp.F90:132:9:
-
-  132 |     pi = 3.14159d0
-      |         1
-Warning: Change of value in conversion from 'REAL(8)' to 'REAL(4)' at (1) [-Wconversion]
-ioComp.F90:194:47:
-
-  194 |         if (abs(result-farrayDstPtr(i,j))>real(1.d-5,ESMF_KIND_R4)) then
-      |                                               1
-Warning: Change of value in conversion from 'REAL(8)' to 'REAL(4)' at (1) [-Wconversion]
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*CompCreateSTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*CompFortranAndCSTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*RecursiveComponentSTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*ArrayScatterGatherSTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*AttributeSTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*AttributeCIMSTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*ComplianceCheckerSTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*ArraySparseMatMulSTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*ArrayRedistSTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*ArrayRedist3DSTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*ArrayBundleSparseMatMulSTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*ArrayBundleRedistSTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*FieldSparseMatMulSTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*ConcurrentCompSTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*FieldConCompSTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*FieldBundleSMMSTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*FieldBundleSMMPackedSTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*FieldRedistSTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*FieldRedistBlk2BlkSTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*FieldRedistBlk2ArbSTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*FieldRedistArb2ArbSTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*FieldBundleLSRedistArb2ArbSTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*FieldBundleLSRedistArb2ArbUngrdDimSTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*FieldBundleRedistBlk2BlkSTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*FieldBundleRedistBlk2ArbSTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*FieldBundleRedistArb2ArbSTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*FieldRegridSTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*FieldRegridDisjointSTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*FieldRegridOverlapSTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*FieldRegridMeshSTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*FieldRegridMeshToMeshSTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*FieldLSRedistArb2ArbSTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*FieldLSRedistArb2ArbUngrdDimSTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*FieldLSSMMSTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*FieldMeshSMMSTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*TransferGridSTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*TransferMeshSTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*SequentialEnsembleSTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*ConcurrentEnsembleSTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*ArrayRedistOpenMPSTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*ArrayRedistOpenACCSTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*ArraySharedDeSSISTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*DirectCouplingSTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*XGridConcurrentSTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*XGridSerialSTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*TraceSTest.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-ESMF_ConfigOverviewEx.F90:165:7:
-
-  165 |     if(radius .ne. 6.37E6)then
-      |       1
-Warning: Inequality comparison for REAL(4) at (1) [-Wcompare-reals]
-ESMF_ConfigOverviewEx.F90:286:10:
-
-  286 |       if (param_1 .ne. 3.1415 .or. i_n .ne. 25) then
-      |          1
-Warning: Inequality comparison for REAL(4) at (1) [-Wcompare-reals]
-ESMF_ConfigOverviewEx.F90:381:35:
-
-  381 |       if(table(1,3) .ne. 263.0 .or. table(6,1) .ne. 400)then
-      |                                   1
-Warning: Inequality comparison for REAL(4) at (1) [-Wcompare-reals]
-ESMF_ConfigOverviewEx.F90:381:9:
-
-  381 |       if(table(1,3) .ne. 263.0 .or. table(6,1) .ne. 400)then
-      |         1
-Warning: Inequality comparison for REAL(4) at (1) [-Wcompare-reals]
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-ESMF_RHandleBitForBitEx.F90:462:8:
-
-  462 |     if (farrayPtr(1) /= sumA) &
-      |        1
-Warning: Inequality comparison for REAL(4) at (1) [-Wcompare-reals]
-ESMF_RHandleBitForBitEx.F90:551:8:
-
-  551 |     if (farrayPtr(1) /= sumA) &
-      |        1
-Warning: Inequality comparison for REAL(4) at (1) [-Wcompare-reals]
-ESMF_RHandleBitForBitEx.F90:647:8:
-
-  647 |     if (farrayPtr(1) /= sumA) &
-      |        1
-Warning: Inequality comparison for REAL(4) at (1) [-Wcompare-reals]
-ESMF_RHandleBitForBitEx.F90:741:8:
-
-  741 |     if (farrayPtr(1) /= sumB) &
-      |        1
-Warning: Inequality comparison for REAL(4) at (1) [-Wcompare-reals]
-ESMF_RHandleBitForBitEx.F90:834:8:
-
-  834 |     if (farrayPtr(1) /= sumA) &
-      |        1
-Warning: Inequality comparison for REAL(4) at (1) [-Wcompare-reals]
-ESMF_RHandleBitForBitEx.F90:924:8:
-
-  924 |     if (farrayPtr(1) /= sumB) &
-      |        1
-Warning: Inequality comparison for REAL(4) at (1) [-Wcompare-reals]
-ESMF_RHandleBitForBitEx.F90:1014:8:
-
- 1014 |     if (farrayPtr(1) /= sumA) &
-      |        1
-Warning: Inequality comparison for REAL(4) at (1) [-Wcompare-reals]
-ESMF_RHandleBitForBitEx.F90:1061:8:
-
- 1061 |     if (farrayPtr(1) /= sumA) &
-      |        1
-Warning: Inequality comparison for REAL(4) at (1) [-Wcompare-reals]
-ESMF_RHandleBitForBitEx.F90:1111:8:
-
- 1111 |     if (farrayPtr(1) /= sumB) &
-      |        1
-Warning: Inequality comparison for REAL(4) at (1) [-Wcompare-reals]
-ESMF_RHandleBitForBitEx.F90:1207:8:
-
- 1207 |     if (farrayPtr(1) /= sumC) &
-      |        1
-Warning: Inequality comparison for REAL(4) at (1) [-Wcompare-reals]
-ESMF_RHandleBitForBitEx.F90:1277:8:
-
- 1277 |     if (farrayPtr(1) /= sumD) &
-      |        1
-Warning: Inequality comparison for REAL(4) at (1) [-Wcompare-reals]
-ESMF_RHandleBitForBitEx.F90:1343:8:
-
- 1343 |     if (farrayPtr(1) /= sumE) &
-      |        1
-Warning: Inequality comparison for REAL(4) at (1) [-Wcompare-reals]
-ESMF_RHandleBitForBitEx.F90:1483:10:
-
- 1483 |       if (farrayPtr(1) /= sumCompare) then
-      |          1
-Warning: Inequality comparison for REAL(4) at (1) [-Wcompare-reals]
-ESMF_RHandleBitForBitEx.F90:1539:8:
-
- 1539 |     if (farrayPtr(1) /= sumC) &
-      |        1
-Warning: Inequality comparison for REAL(4) at (1) [-Wcompare-reals]
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-ESMF_RHandleDynamicMaskingEx.F90:215:15:
-
-  215 |     matchR4 = (val1 .eq. val2)
-      |               1
-Warning: Equality comparison for REAL(4) at (1) [-Wcompare-reals]
-ESMF_RHandleDynamicMaskingEx.F90:204:15:
-
-  204 |     matchR8 = (val1 .eq. val2)
-      |               1
-Warning: Equality comparison for REAL(8) at (1) [-Wcompare-reals]
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-ESMF_DistGridEx.F90:17:23:
-
-   17 | program ESMF_DistGridEx
-      |                       1
-Warning: Integer division truncated to constant '0' at (1) [-Winteger-division]
-ESMF_DistGridEx.F90:17:23: Warning: Integer division truncated to constant '1' at (1) [-Winteger-division]
-ESMF_DistGridEx.F90:17:23: Warning: Integer division truncated to constant '2' at (1) [-Winteger-division]
-ESMF_DistGridEx.F90:17:23: Warning: Integer division truncated to constant '0' at (1) [-Winteger-division]
-ESMF_DistGridEx.F90:17:23: Warning: Integer division truncated to constant '1' at (1) [-Winteger-division]
-ESMF_DistGridEx.F90:17:23: Warning: Integer division truncated to constant '2' at (1) [-Winteger-division]
-ESMF_DistGridEx.F90:17:23: Warning: Integer division truncated to constant '0' at (1) [-Winteger-division]
-ESMF_DistGridEx.F90:17:23: Warning: Integer division truncated to constant '1' at (1) [-Winteger-division]
-ESMF_DistGridEx.F90:17:23: Warning: Integer division truncated to constant '2' at (1) [-Winteger-division]
-ESMF_DistGridEx.F90:17:23: Warning: Integer division truncated to constant '0' at (1) [-Winteger-division]
-ESMF_DistGridEx.F90:17:23: Warning: Integer division truncated to constant '1' at (1) [-Winteger-division]
-ESMF_DistGridEx.F90:17:23: Warning: Integer division truncated to constant '2' at (1) [-Winteger-division]
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-In file included from /opt/gcc/9.3.0/snos/include/g++/backward/strstream:50,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_VMKernel.h:27,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_VM.h:41,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_Base.h:27,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_RHandle.h:39,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Field/include/ESMCI_Field.h:42,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/examples/../include/ESMCI_Mesh.h:23,
-                 from ESMC_DCatEx.C:20:
-/opt/gcc/9.3.0/snos/include/g++/backward/backward_warning.h:32:2: warning: #warning This file includes at least one deprecated or antiquated header which may be removed without further notice at a future date. Please use a non-deprecated interface with equivalent functionality instead. For a listing of replacement headers and interfaces, consult the file backward_warning.h. To disable this warning use -Wno-deprecated. [-Wcpp]
-   32 | #warning \
-      |  ^~~~~~~
-In file included from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/examples/../include/ESMCI_Mesh.h:15,
-                 from ESMC_DCatEx.C:20:
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h: In instantiation of 'ESMCI::mesh_obj_iterator<TT, Ref, Ptr, MSet_iterator, obj_iterator>::mesh_obj_iterator(const MSet_iterator&, const MSet_iterator&, const ESMCI::Attr&) [with TT = ESMCI::MeshObj; Ref = const ESMCI::MeshObj&; Ptr = const ESMCI::MeshObj*; MSet_iterator = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>; obj_iterator = ESMCI::_List_iterator<ESMCI::MeshObj, const ESMCI::MeshObj&, const ESMCI::MeshObj*>]':
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:348:46:   required from here
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:74:11: warning: implicitly-declared 'constexpr ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>::_List_iterator(const ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>&)' is deprecated [-Wdeprecated-copy]
-   74 | attr(_attr)
-      |           ^
-In file included from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshObj.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:15,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/examples/../include/ESMCI_Mesh.h:15,
-                 from ESMC_DCatEx.C:20:
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:82:7: note: because 'ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>' has user-provided 'ESMCI::_List_iterator<A, B, C>::self& ESMCI::_List_iterator<A, B, C>::operator=(const ESMCI::_List_iterator<A, B, C>&) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]'
-   82 | self &operator=(const _List_iterator &rhs) {
-      |       ^~~~~~~~
-In file included from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/examples/../include/ESMCI_Mesh.h:15,
-                 from ESMC_DCatEx.C:20:
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:74:11: warning: implicitly-declared 'constexpr ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>::_List_iterator(const ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>&)' is deprecated [-Wdeprecated-copy]
-   74 | attr(_attr)
-      |           ^
-In file included from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshObj.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:15,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/examples/../include/ESMCI_Mesh.h:15,
-                 from ESMC_DCatEx.C:20:
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:82:7: note: because 'ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>' has user-provided 'ESMCI::_List_iterator<A, B, C>::self& ESMCI::_List_iterator<A, B, C>::operator=(const ESMCI::_List_iterator<A, B, C>&) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]'
-   82 | self &operator=(const _List_iterator &rhs) {
-      |       ^~~~~~~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h: In instantiation of 'ESMCI::_List_iterator<A, B, C>::self ESMCI::_List_iterator<A, B, C>::operator++(int) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]':
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:118:8:   required from 'void ESMCI::mesh_obj_iterator<TT, Ref, Ptr, MSet_iterator, obj_iterator>::next_good_object() [with TT = ESMCI::MeshObj; Ref = const ESMCI::MeshObj&; Ptr = const ESMCI::MeshObj*; MSet_iterator = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>; obj_iterator = ESMCI::_List_iterator<ESMCI::MeshObj, const ESMCI::MeshObj&, const ESMCI::MeshObj*>]'
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:77:3:   required from 'ESMCI::mesh_obj_iterator<TT, Ref, Ptr, MSet_iterator, obj_iterator>::mesh_obj_iterator(const MSet_iterator&, const MSet_iterator&, const ESMCI::Attr&) [with TT = ESMCI::MeshObj; Ref = const ESMCI::MeshObj&; Ptr = const ESMCI::MeshObj*; MSet_iterator = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>; obj_iterator = ESMCI::_List_iterator<ESMCI::MeshObj, const ESMCI::MeshObj&, const ESMCI::MeshObj*>]'
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:348:46:   required from here
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:113:18: warning: implicitly-declared 'constexpr ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>::_List_iterator(const ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>&)' is deprecated [-Wdeprecated-copy]
-  113 |   _List_iterator tmp = *this;
-      |                  ^~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:82:7: note: because 'ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>' has user-provided 'ESMCI::_List_iterator<A, B, C>::self& ESMCI::_List_iterator<A, B, C>::operator=(const ESMCI::_List_iterator<A, B, C>&) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]'
-   82 | self &operator=(const _List_iterator &rhs) {
-      |       ^~~~~~~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:115:10: warning: implicitly-declared 'constexpr ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>::_List_iterator(const ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>&)' is deprecated [-Wdeprecated-copy]
-  115 |   return tmp;
-      |          ^~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:82:7: note: because 'ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>' has user-provided 'ESMCI::_List_iterator<A, B, C>::self& ESMCI::_List_iterator<A, B, C>::operator=(const ESMCI::_List_iterator<A, B, C>&) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]'
-   82 | self &operator=(const _List_iterator &rhs) {
-      |       ^~~~~~~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 4: mpichversion: command not found
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 5: [: =: unary operator expected
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 5: [: =: unary operator expected
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-In file included from /opt/gcc/9.3.0/snos/include/g++/backward/strstream:50,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_VMKernel.h:27,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_VM.h:41,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_Base.h:27,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/include/ESMCI_RHandle.h:39,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Field/include/ESMCI_Field.h:42,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/examples/../include/ESMCI_Mesh.h:23,
-                 from ESMC_RefineEx.C:13:
-/opt/gcc/9.3.0/snos/include/g++/backward/backward_warning.h:32:2: warning: #warning This file includes at least one deprecated or antiquated header which may be removed without further notice at a future date. Please use a non-deprecated interface with equivalent functionality instead. For a listing of replacement headers and interfaces, consult the file backward_warning.h. To disable this warning use -Wno-deprecated. [-Wcpp]
-   32 | #warning \
-      |  ^~~~~~~
-ESMC_RefineEx.C: In function 'int main(int, char**)':
-ESMC_RefineEx.C:290:24: warning: comparison of integer expressions of different signedness: 'ESMCI::UInt' {aka 'unsigned int'} and 'const int' [-Wsign-compare]
-  290 |     for (UInt i = 0; i < nref; i++) {
-      |                      ~~^~~~~~
-In file included from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/examples/../include/ESMCI_Mesh.h:15,
-                 from ESMC_RefineEx.C:13:
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h: In instantiation of 'ESMCI::mesh_obj_iterator<TT, Ref, Ptr, MSet_iterator, obj_iterator>::mesh_obj_iterator(const MSet_iterator&, const MSet_iterator&, const ESMCI::Attr&) [with TT = ESMCI::MeshObj; Ref = const ESMCI::MeshObj&; Ptr = const ESMCI::MeshObj*; MSet_iterator = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>; obj_iterator = ESMCI::_List_iterator<ESMCI::MeshObj, const ESMCI::MeshObj&, const ESMCI::MeshObj*>]':
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:348:46:   required from here
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:74:11: warning: implicitly-declared 'constexpr ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>::_List_iterator(const ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>&)' is deprecated [-Wdeprecated-copy]
-   74 | attr(_attr)
-      |           ^
-In file included from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshObj.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:15,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/examples/../include/ESMCI_Mesh.h:15,
-                 from ESMC_RefineEx.C:13:
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:82:7: note: because 'ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>' has user-provided 'ESMCI::_List_iterator<A, B, C>::self& ESMCI::_List_iterator<A, B, C>::operator=(const ESMCI::_List_iterator<A, B, C>&) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]'
-   82 | self &operator=(const _List_iterator &rhs) {
-      |       ^~~~~~~~
-In file included from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/examples/../include/ESMCI_Mesh.h:15,
-                 from ESMC_RefineEx.C:13:
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:74:11: warning: implicitly-declared 'constexpr ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>::_List_iterator(const ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>&)' is deprecated [-Wdeprecated-copy]
-   74 | attr(_attr)
-      |           ^
-In file included from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshObj.h:17,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:15,
-                 from /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/examples/../include/ESMCI_Mesh.h:15,
-                 from ESMC_RefineEx.C:13:
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:82:7: note: because 'ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>' has user-provided 'ESMCI::_List_iterator<A, B, C>::self& ESMCI::_List_iterator<A, B, C>::operator=(const ESMCI::_List_iterator<A, B, C>&) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]'
-   82 | self &operator=(const _List_iterator &rhs) {
-      |       ^~~~~~~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h: In instantiation of 'ESMCI::_List_iterator<A, B, C>::self ESMCI::_List_iterator<A, B, C>::operator++(int) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]':
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:118:8:   required from 'void ESMCI::mesh_obj_iterator<TT, Ref, Ptr, MSet_iterator, obj_iterator>::next_good_object() [with TT = ESMCI::MeshObj; Ref = const ESMCI::MeshObj&; Ptr = const ESMCI::MeshObj*; MSet_iterator = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>; obj_iterator = ESMCI::_List_iterator<ESMCI::MeshObj, const ESMCI::MeshObj&, const ESMCI::MeshObj*>]'
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:77:3:   required from 'ESMCI::mesh_obj_iterator<TT, Ref, Ptr, MSet_iterator, obj_iterator>::mesh_obj_iterator(const MSet_iterator&, const MSet_iterator&, const ESMCI::Attr&) [with TT = ESMCI::MeshObj; Ref = const ESMCI::MeshObj&; Ptr = const ESMCI::MeshObj*; MSet_iterator = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>; obj_iterator = ESMCI::_List_iterator<ESMCI::MeshObj, const ESMCI::MeshObj&, const ESMCI::MeshObj*>]'
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_MeshDB.h:348:46:   required from here
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:113:18: warning: implicitly-declared 'constexpr ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>::_List_iterator(const ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>&)' is deprecated [-Wdeprecated-copy]
-  113 |   _List_iterator tmp = *this;
-      |                  ^~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:82:7: note: because 'ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>' has user-provided 'ESMCI::_List_iterator<A, B, C>::self& ESMCI::_List_iterator<A, B, C>::operator=(const ESMCI::_List_iterator<A, B, C>&) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]'
-   82 | self &operator=(const _List_iterator &rhs) {
-      |       ^~~~~~~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:115:10: warning: implicitly-declared 'constexpr ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>::_List_iterator(const ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>&)' is deprecated [-Wdeprecated-copy]
-  115 |   return tmp;
-      |          ^~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/Infrastructure/Mesh/include/Legacy/ESMCI_List.h:82:7: note: because 'ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>' has user-provided 'ESMCI::_List_iterator<A, B, C>::self& ESMCI::_List_iterator<A, B, C>::operator=(const ESMCI::_List_iterator<A, B, C>&) [with TT = ESMCI::Kernel; Ref = const ESMCI::Kernel&; Ptr = const ESMCI::Kernel*; ESMCI::_List_iterator<A, B, C>::self = ESMCI::_List_iterator<ESMCI::Kernel, const ESMCI::Kernel&, const ESMCI::Kernel*>]'
-   82 | self &operator=(const _List_iterator &rhs) {
-      |       ^~~~~~~~
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 4: mpichversion: command not found
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 5: [: =: unary operator expected
-/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 5: [: =: unary operator expected
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-ESMF_FieldRepDimEx.F90:213:11:
-
-  213 |         if(farray1(ii,ij,ik) .ne. n ) rc = ESMF_FAILURE
-      |           1
-Warning: Inequality comparison for REAL(8) at (1) [-Wcompare-reals]
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-ESMF_InternalStateEx.F90:117:40:
-
-  117 |   if ((datap%testValue .ne. 4567) .or. (datap%testScaling .ne. 0.5)) then
-      |                                        1
-Warning: Inequality comparison for REAL(4) at (1) [-Wcompare-reals]
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-ESMF_InternalStateModEx.F90:147:8:
-
-  147 |     if (data%testScaling .ne. 0.5) match = .false.  ! test scalar data
-      |        1
-Warning: Inequality comparison for REAL(4) at (1) [-Wcompare-reals]
-ESMF_InternalStateModEx.F90:149:10:
-
-  149 |       if (data%testArray(i) .ne. real(i)) match = .false. ! test array data
-      |          1
-Warning: Inequality comparison for REAL(4) at (1) [-Wcompare-reals]
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*LogErrEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*VMDefaultBasicsEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*VMGetMPICommunicatorEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*VMUserMpiEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*VMUserMpiCommEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*VMUserMpiCommMultiEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*VMComponentEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*VMSendVMRecvEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*VMNonBlockingEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*VMScatterVMGatherEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*VMAllFullReduceEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*VMHigherRankDataEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*TraceEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*TraceUserEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*TimeEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*TimeIntervalEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*CalendarEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*ClockEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*AlarmEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*DELayoutEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*ConfigOverviewEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*ArraySpecEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*RHandleBitForBitEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*RHandleFromRHandleEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*RHandleFromFileEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*RHandleReusabilityEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*RHandleDynamicMaskingEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*DistGridEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*ArrayFarrayEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*ArrayFarrayHaloEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*ArrayLarrayEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*ArrayEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*ArrayScatterGatherEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*ArrayHaloEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*ArrayArbHaloEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*ArrayRedistEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*ArraySparseMatMulEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*ArrayScatterGatherArbEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*ArrayCommNBEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*ArrayBundleEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*ArrayBundleHaloEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*GridUsageEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*GridCreateRegFromDGEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*MeshEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*LocStreamEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*XGridEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*XGridSparseMatEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*FieldCreateEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*FieldEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*FieldRegridEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*FieldRegridMaskEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*FieldSphereRegridEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*FieldMeshRegridEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*FieldRepDimEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*FieldArbGridEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*FieldCommEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*FieldRedistEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*FieldSMMEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*FieldHaloEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*FieldBundleCreateEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*FieldBundleRedistEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*FieldBundleSMMEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*FieldBundleHaloEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*StateEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*StateReconcileEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*StateReadWriteEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*AppMainEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*CplEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*GCompEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*SCompEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*InternalStateEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*InternalStateModEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*CompTunnelEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*AttachMethodsEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*AttributeEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*AttributePackageEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*AttributeCustPackEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*AttributeUpdateEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*AttributeCIMEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*AttributeInternalInfoEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*AttReadCustCplCompEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*AttReadGridCompEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*AttReadFieldEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-cat: './PET*WebServicesEx*.Log': No such file or directory
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
 Warning:
  Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
@@ -15767,17 +8587,23 @@ Warning:
 Warning:
  Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
-cat: './PET*NUOPCBasicModelEx*.Log': No such file or directory
 Warning:
  Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
 Warning:
  Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
-cat: './PET*NUOPCAtmModelEx*.Log': No such file or directory
 Warning:
  Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
 Warning:
  Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
+/usr/bin/ld: user_coupler.o: in function `__user_coupler_MOD_user_init':
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/system_tests/ESMF_ArrayRedistMPMD/user_coupler.F90:117: undefined reference to `__esmf_statereconcile2mod_MOD_esmf_statereconcile'
+/usr/bin/ld: /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/src/system_tests/ESMF_ArrayRedistMPMD/user_coupler.F90:119: undefined reference to `__esmf_statereconcile2mod_MOD_esmf_statereconcile'
+collect2: error: ld returned 1 exit status
+make[3]: *** [/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/build/common.mk:2553: /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/test/testg/Linux.gfortran.64.mpich3.default/ESMF_ArrayRedistSTestA] Error 1
+make[2]: *** [/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/build/common.mk:3657: tree] Error 1
+make[1]: *** [/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/build/common.mk:2493: build_system_tests] Error 2
+make: *** [/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/build/common.mk:2355: all_tests] Error 2
