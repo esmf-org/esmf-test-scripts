@@ -102,6 +102,11 @@ def main(argv):
                   fb.write("export {}\n".format(machine_list[comp]['versions'][ver]['extra_env_vars'][var]))
                   ft.write("export {}\n".format(machine_list[comp]['versions'][ver]['extra_env_vars'][var]))
 
+            if('extra_commands' in machine_list[comp]['versions'][ver]):
+                for cmd in machine_list[comp]['versions'][ver]['extra_commands']:
+                  fb.write("export {}\n".format(machine_list[comp]['versions'][ver]['extra_commands'][cmd]))
+                  ft.write("export {}\n".format(machine_list[comp]['versions'][ver]['extra_commands'][cmd]))
+
             mpiver = mpidict[key]
             if(mpiver == "None"):
               mpiver = ""
