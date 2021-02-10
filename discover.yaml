@@ -1,10 +1,11 @@
 machine: discover
+#account: s2326
 account: j1100
 queue: allnccs
 partition: compute
 scheduler: slurm
 corespernode: 28
-compiler: [gfortran]
+compiler: [pgi]
 modulepath: /gpfsm/dnb31/mapotts1/spack/share/spack/modules/linux-sles12-x86_64
 intel:
    versions:
@@ -40,24 +41,11 @@ gfortran:
    extramodule: netcdf-fortran/4.4.4-gcc-8.3.0
 pgi:
    versions:
-     2019: 
-       compiler: pgi/2019 
-       netcdf: netcdf/4.7.4
+     2020: 
+       compiler: comp/pgi/20.4
+       netcdf: None
        mpi:
-           openmpi: 
-             module: openmpi/4.0.4
-           mpich: 
-             module: mpich/3.3.2
-#!/bin/bash 
-# Minimal runscript: Cubed-Sphere FV dycore benchmarks 
-# ------------------------------
-#SBATCH --time=0:40:00
-#SBATCH -N 32
-#SBATCH --ntasks-per-node=40
-#SBATCH --job-name=wrf.32n
-#SBATCH --qos=admin
-#SBATCH --constraint=sky
-#SBATCH --partition=scutest
-#SBATCH --account=j1100
-#SBATCH --mail-type=ALL
-
+           intelmpi: 
+             module: mpi/impi/20.0.0.166 
+           mpt: 
+             module: mpi/sgi-mpt/2.17

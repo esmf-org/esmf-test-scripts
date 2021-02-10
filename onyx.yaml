@@ -3,7 +3,7 @@ account: NRLMR03795024
 queue: standard
 scheduler: pbs
 corespernode: 44
-compiler: [intel]
+compiler: [gfortran]
 intel:
      versions: 
        2017.5: 
@@ -12,9 +12,12 @@ intel:
          mpi:
            mpi:
              module: cray-mpich/7.7.12     
+             mpi_env_vars:
+               var1: ESMF_F90COMPILER=ftn
      extramodule: PrgEnv-intel
-     unloadmodule: PrgEnv-cray
+     unloadmodule: "PrgEnv-cray PrgEnv-gnu"
 gfortran:
+     test_time: 2:00:00
      versions: 
        7.2.0: 
          compiler: gcc/7.2.0
@@ -22,6 +25,8 @@ gfortran:
          mpi:
            mpi:
              module: cray-mpich/7.7.12     
+             mpi_env_vars:
+               var1: ESMF_F90COMPILER=ftn
            mpiuni: 
              module: None
      extramodule: PrgEnv-gnu

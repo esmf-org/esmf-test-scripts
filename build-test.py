@@ -80,7 +80,11 @@ def main(argv):
             ft = open(t_filename, "w")
 
             create_header(fb,scheduler,filename,"1:00:00",account,partition,queue,cpn,cluster)
-            create_header(ft,scheduler,t_filename,"1:00:00",account,partition,queue,cpn,cluster)
+            if('test_time' in machine_list[comp]):
+              test_time = machine_list[comp]['test_time']
+            else:
+              test_time = "1:00:00"
+            create_header(ft,scheduler,t_filename,test_time,account,partition,queue,cpn,cluster)
   
             if("unloadmodule" in machine_list[comp]):
               fb.write("\nmodule unload {}\n".format(machine_list[comp]['unloadmodule']))

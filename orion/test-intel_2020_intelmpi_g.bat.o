@@ -10,9 +10,13 @@ ESMF_8_0_2_beta_snapshot_01
 #	build-intel_2020_intelmpi_g.bat
 #	build-intel_2020_intelmpi_g.bat_1203018.e
 #	build-intel_2020_intelmpi_g.bat_1203018.o
+#	build-intel_2020_intelmpi_g.bat_1216597.e
+#	build-intel_2020_intelmpi_g.bat_1216597.o
 #	test-intel_2020_intelmpi_g.bat
 #	test-intel_2020_intelmpi_g.bat_1203019.e
 #	test-intel_2020_intelmpi_g.bat_1203019.o
+#	test-intel_2020_intelmpi_g.bat_1216598.e
+#	test-intel_2020_intelmpi_g.bat_1216598.o
 nothing added to commit but untracked files present (use "git add" to track)
 --------------------------------------------------------------
  
@@ -166,12 +170,11 @@ ESMF_TRACE_STATICLINKLIBS=-lesmftrace_static
 
 
 --------------------------------------------------------------
-Compiling on Fri Feb 5 11:05:46 CST 2021 on Orion-06-66.HPC.MsState.Edu
-Machine characteristics: Linux Orion-06-66.HPC.MsState.Edu 3.10.0-957.27.2.el7.x86_64 #1 SMP Mon Jul 29 17:46:05 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
+Compiling on Mon Feb 8 10:06:06 CST 2021 on Orion-12-35.HPC.MsState.Edu
+Machine characteristics: Linux Orion-12-35.HPC.MsState.Edu 3.10.0-957.27.2.el7.x86_64 #1 SMP Mon Jul 29 17:46:05 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
 ==============================================================
  
 make[1]: Entering directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g'
-Making directory /work/noaa/da/mpotts/intel_2020_intelmpi_g/test/testg/Linux.intel.64.intelmpi.default for test output
 make[2]: Entering directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g'
 make[2]: Leaving directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g'
 make config_unit_tests 
@@ -1279,98 +1282,75 @@ make[6]: Entering directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/Supe
 make[6]: Leaving directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/Superstructure/AttributeAPI/interface'
 tree_build_unit_tests in: /work/noaa/da/mpotts/intel_2020_intelmpi_g/src/Superstructure/AttributeAPI/tests
 make[6]: Entering directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/Superstructure/AttributeAPI/tests'
-gcc -E -P -x c -C -nostdinc -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/include ESMF_AttributeAutoLinkUTest.cppF90 | tr "@^|" "\n#'" | sed -e '/^#pragma GCC/d' > ./ESMF_AttributeAutoLinkUTest.F90
 mpiifort -c -g -traceback -check arg_temp_created,bounds,format,output_conversion,stack,uninit -fPIC -assume realloc_lhs -m64 -mcmodel=small -threads  -qopenmp  -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/build_config/Linux.intel.default -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/Superstructure -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/mod/modg/Linux.intel.64.intelmpi.default -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/include   -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_0_2_beta_snapshot_01"' -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_MOAB=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/work/noaa/da/mpotts/intel_2020_intelmpi_g ESMF_AttributeAutoLinkUTest.F90 -o ESMF_AttributeAutoLinkUTest.o
 mpiifort   -m64 -mcmodel=small -threads -Wl,--no-as-needed  -qopenmp -L/work/noaa/da/mpotts/intel_2020_intelmpi_g/lib/libg/Linux.intel.64.intelmpi.default   -Wl,-rpath,/work/noaa/da/mpotts/intel_2020_intelmpi_g/lib/libg/Linux.intel.64.intelmpi.default  -o /work/noaa/da/mpotts/intel_2020_intelmpi_g/test/testg/Linux.intel.64.intelmpi.default/ESMF_AttributeAutoLinkUTest   ESMF_AttributeAutoLinkUTest.o -lesmf  -cxxlib -lrt -ldl
 rm -rf -f *.o *.mod
 mpiifort -c -g -traceback -check arg_temp_created,bounds,format,output_conversion,stack,uninit -fPIC -assume realloc_lhs -m64 -mcmodel=small -threads  -qopenmp  -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/build_config/Linux.intel.default -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/Superstructure -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/mod/modg/Linux.intel.64.intelmpi.default -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/include   -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_0_2_beta_snapshot_01"' -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_MOAB=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/work/noaa/da/mpotts/intel_2020_intelmpi_g ESMF_AttInternalGridUTest.F90 -o ESMF_AttInternalGridUTest.o
 mpiifort   -m64 -mcmodel=small -threads -Wl,--no-as-needed  -qopenmp -L/work/noaa/da/mpotts/intel_2020_intelmpi_g/lib/libg/Linux.intel.64.intelmpi.default   -Wl,-rpath,/work/noaa/da/mpotts/intel_2020_intelmpi_g/lib/libg/Linux.intel.64.intelmpi.default  -o /work/noaa/da/mpotts/intel_2020_intelmpi_g/test/testg/Linux.intel.64.intelmpi.default/ESMF_AttInternalGridUTest   ESMF_AttInternalGridUTest.o -lesmf  -cxxlib -lrt -ldl
 rm -rf -f *.o *.mod
-gcc -E -P -x c -C -nostdinc -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/include ESMF_AttPackABundleUTest.cppF90 | tr "@^|" "\n#'" | sed -e '/^#pragma GCC/d' > ./ESMF_AttPackABundleUTest.F90
 mpiifort -c -g -traceback -check arg_temp_created,bounds,format,output_conversion,stack,uninit -fPIC -assume realloc_lhs -m64 -mcmodel=small -threads  -qopenmp  -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/build_config/Linux.intel.default -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/Superstructure -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/mod/modg/Linux.intel.64.intelmpi.default -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/include   -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_0_2_beta_snapshot_01"' -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_MOAB=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/work/noaa/da/mpotts/intel_2020_intelmpi_g ESMF_AttPackABundleUTest.F90 -o ESMF_AttPackABundleUTest.o
 mpiifort   -m64 -mcmodel=small -threads -Wl,--no-as-needed  -qopenmp -L/work/noaa/da/mpotts/intel_2020_intelmpi_g/lib/libg/Linux.intel.64.intelmpi.default   -Wl,-rpath,/work/noaa/da/mpotts/intel_2020_intelmpi_g/lib/libg/Linux.intel.64.intelmpi.default  -o /work/noaa/da/mpotts/intel_2020_intelmpi_g/test/testg/Linux.intel.64.intelmpi.default/ESMF_AttPackABundleUTest   ESMF_AttPackABundleUTest.o -lesmf  -cxxlib -lrt -ldl
 rm -rf -f *.o *.mod
-gcc -E -P -x c -C -nostdinc -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/include ESMF_AttPackArrayUTest.cppF90 | tr "@^|" "\n#'" | sed -e '/^#pragma GCC/d' > ./ESMF_AttPackArrayUTest.F90
 mpiifort -c -g -traceback -check arg_temp_created,bounds,format,output_conversion,stack,uninit -fPIC -assume realloc_lhs -m64 -mcmodel=small -threads  -qopenmp  -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/build_config/Linux.intel.default -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/Superstructure -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/mod/modg/Linux.intel.64.intelmpi.default -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/include   -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_0_2_beta_snapshot_01"' -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_MOAB=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/work/noaa/da/mpotts/intel_2020_intelmpi_g ESMF_AttPackArrayUTest.F90 -o ESMF_AttPackArrayUTest.o
 mpiifort   -m64 -mcmodel=small -threads -Wl,--no-as-needed  -qopenmp -L/work/noaa/da/mpotts/intel_2020_intelmpi_g/lib/libg/Linux.intel.64.intelmpi.default   -Wl,-rpath,/work/noaa/da/mpotts/intel_2020_intelmpi_g/lib/libg/Linux.intel.64.intelmpi.default  -o /work/noaa/da/mpotts/intel_2020_intelmpi_g/test/testg/Linux.intel.64.intelmpi.default/ESMF_AttPackArrayUTest   ESMF_AttPackArrayUTest.o -lesmf  -cxxlib -lrt -ldl
 rm -rf -f *.o *.mod
-gcc -E -P -x c -C -nostdinc -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/include ESMF_AttPackCplCompUTest.cppF90 | tr "@^|" "\n#'" | sed -e '/^#pragma GCC/d' > ./ESMF_AttPackCplCompUTest.F90
 mpiifort -c -g -traceback -check arg_temp_created,bounds,format,output_conversion,stack,uninit -fPIC -assume realloc_lhs -m64 -mcmodel=small -threads  -qopenmp  -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/build_config/Linux.intel.default -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/Superstructure -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/mod/modg/Linux.intel.64.intelmpi.default -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/include   -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_0_2_beta_snapshot_01"' -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_MOAB=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/work/noaa/da/mpotts/intel_2020_intelmpi_g ESMF_AttPackCplCompUTest.F90 -o ESMF_AttPackCplCompUTest.o
 mpiifort   -m64 -mcmodel=small -threads -Wl,--no-as-needed  -qopenmp -L/work/noaa/da/mpotts/intel_2020_intelmpi_g/lib/libg/Linux.intel.64.intelmpi.default   -Wl,-rpath,/work/noaa/da/mpotts/intel_2020_intelmpi_g/lib/libg/Linux.intel.64.intelmpi.default  -o /work/noaa/da/mpotts/intel_2020_intelmpi_g/test/testg/Linux.intel.64.intelmpi.default/ESMF_AttPackCplCompUTest   ESMF_AttPackCplCompUTest.o -lesmf  -cxxlib -lrt -ldl
 rm -rf -f *.o *.mod
-gcc -E -P -x c -C -nostdinc -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/include ESMF_AttPackDistGridUTest.cppF90 | tr "@^|" "\n#'" | sed -e '/^#pragma GCC/d' > ./ESMF_AttPackDistGridUTest.F90
 mpiifort -c -g -traceback -check arg_temp_created,bounds,format,output_conversion,stack,uninit -fPIC -assume realloc_lhs -m64 -mcmodel=small -threads  -qopenmp  -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/build_config/Linux.intel.default -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/Superstructure -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/mod/modg/Linux.intel.64.intelmpi.default -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/include   -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_0_2_beta_snapshot_01"' -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_MOAB=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/work/noaa/da/mpotts/intel_2020_intelmpi_g ESMF_AttPackDistGridUTest.F90 -o ESMF_AttPackDistGridUTest.o
 mpiifort   -m64 -mcmodel=small -threads -Wl,--no-as-needed  -qopenmp -L/work/noaa/da/mpotts/intel_2020_intelmpi_g/lib/libg/Linux.intel.64.intelmpi.default   -Wl,-rpath,/work/noaa/da/mpotts/intel_2020_intelmpi_g/lib/libg/Linux.intel.64.intelmpi.default  -o /work/noaa/da/mpotts/intel_2020_intelmpi_g/test/testg/Linux.intel.64.intelmpi.default/ESMF_AttPackDistGridUTest   ESMF_AttPackDistGridUTest.o -lesmf  -cxxlib -lrt -ldl
 rm -rf -f *.o *.mod
-gcc -E -P -x c -C -nostdinc -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/include ESMF_AttPackFBundleUTest.cppF90 | tr "@^|" "\n#'" | sed -e '/^#pragma GCC/d' > ./ESMF_AttPackFBundleUTest.F90
 mpiifort -c -g -traceback -check arg_temp_created,bounds,format,output_conversion,stack,uninit -fPIC -assume realloc_lhs -m64 -mcmodel=small -threads  -qopenmp  -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/build_config/Linux.intel.default -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/Superstructure -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/mod/modg/Linux.intel.64.intelmpi.default -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/include   -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_0_2_beta_snapshot_01"' -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_MOAB=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/work/noaa/da/mpotts/intel_2020_intelmpi_g ESMF_AttPackFBundleUTest.F90 -o ESMF_AttPackFBundleUTest.o
 mpiifort   -m64 -mcmodel=small -threads -Wl,--no-as-needed  -qopenmp -L/work/noaa/da/mpotts/intel_2020_intelmpi_g/lib/libg/Linux.intel.64.intelmpi.default   -Wl,-rpath,/work/noaa/da/mpotts/intel_2020_intelmpi_g/lib/libg/Linux.intel.64.intelmpi.default  -o /work/noaa/da/mpotts/intel_2020_intelmpi_g/test/testg/Linux.intel.64.intelmpi.default/ESMF_AttPackFBundleUTest   ESMF_AttPackFBundleUTest.o -lesmf  -cxxlib -lrt -ldl
 rm -rf -f *.o *.mod
-gcc -E -P -x c -C -nostdinc -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/include ESMF_AttPackFieldUTest.cppF90 | tr "@^|" "\n#'" | sed -e '/^#pragma GCC/d' > ./ESMF_AttPackFieldUTest.F90
 mpiifort -c -g -traceback -check arg_temp_created,bounds,format,output_conversion,stack,uninit -fPIC -assume realloc_lhs -m64 -mcmodel=small -threads  -qopenmp  -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/build_config/Linux.intel.default -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/Superstructure -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/mod/modg/Linux.intel.64.intelmpi.default -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/include   -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_0_2_beta_snapshot_01"' -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_MOAB=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/work/noaa/da/mpotts/intel_2020_intelmpi_g ESMF_AttPackFieldUTest.F90 -o ESMF_AttPackFieldUTest.o
 mpiifort   -m64 -mcmodel=small -threads -Wl,--no-as-needed  -qopenmp -L/work/noaa/da/mpotts/intel_2020_intelmpi_g/lib/libg/Linux.intel.64.intelmpi.default   -Wl,-rpath,/work/noaa/da/mpotts/intel_2020_intelmpi_g/lib/libg/Linux.intel.64.intelmpi.default  -o /work/noaa/da/mpotts/intel_2020_intelmpi_g/test/testg/Linux.intel.64.intelmpi.default/ESMF_AttPackFieldUTest   ESMF_AttPackFieldUTest.o -lesmf  -cxxlib -lrt -ldl
 rm -rf -f *.o *.mod
-gcc -E -P -x c -C -nostdinc -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/include ESMF_AttPackGridCompUTest.cppF90 | tr "@^|" "\n#'" | sed -e '/^#pragma GCC/d' > ./ESMF_AttPackGridCompUTest.F90
 mpiifort -c -g -traceback -check arg_temp_created,bounds,format,output_conversion,stack,uninit -fPIC -assume realloc_lhs -m64 -mcmodel=small -threads  -qopenmp  -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/build_config/Linux.intel.default -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/Superstructure -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/mod/modg/Linux.intel.64.intelmpi.default -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/include   -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_0_2_beta_snapshot_01"' -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_MOAB=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/work/noaa/da/mpotts/intel_2020_intelmpi_g ESMF_AttPackGridCompUTest.F90 -o ESMF_AttPackGridCompUTest.o
 mpiifort   -m64 -mcmodel=small -threads -Wl,--no-as-needed  -qopenmp -L/work/noaa/da/mpotts/intel_2020_intelmpi_g/lib/libg/Linux.intel.64.intelmpi.default   -Wl,-rpath,/work/noaa/da/mpotts/intel_2020_intelmpi_g/lib/libg/Linux.intel.64.intelmpi.default  -o /work/noaa/da/mpotts/intel_2020_intelmpi_g/test/testg/Linux.intel.64.intelmpi.default/ESMF_AttPackGridCompUTest   ESMF_AttPackGridCompUTest.o -lesmf  -cxxlib -lrt -ldl
 rm -rf -f *.o *.mod
-gcc -E -P -x c -C -nostdinc -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/include ESMF_AttPackGridUTest.cppF90 | tr "@^|" "\n#'" | sed -e '/^#pragma GCC/d' > ./ESMF_AttPackGridUTest.F90
 mpiifort -c -g -traceback -check arg_temp_created,bounds,format,output_conversion,stack,uninit -fPIC -assume realloc_lhs -m64 -mcmodel=small -threads  -qopenmp  -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/build_config/Linux.intel.default -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/Superstructure -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/mod/modg/Linux.intel.64.intelmpi.default -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/include   -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_0_2_beta_snapshot_01"' -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_MOAB=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/work/noaa/da/mpotts/intel_2020_intelmpi_g ESMF_AttPackGridUTest.F90 -o ESMF_AttPackGridUTest.o
 mpiifort   -m64 -mcmodel=small -threads -Wl,--no-as-needed  -qopenmp -L/work/noaa/da/mpotts/intel_2020_intelmpi_g/lib/libg/Linux.intel.64.intelmpi.default   -Wl,-rpath,/work/noaa/da/mpotts/intel_2020_intelmpi_g/lib/libg/Linux.intel.64.intelmpi.default  -o /work/noaa/da/mpotts/intel_2020_intelmpi_g/test/testg/Linux.intel.64.intelmpi.default/ESMF_AttPackGridUTest   ESMF_AttPackGridUTest.o -lesmf  -cxxlib -lrt -ldl
 rm -rf -f *.o *.mod
-gcc -E -P -x c -C -nostdinc -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/include ESMF_AttPackLocStreamUTest.cppF90 | tr "@^|" "\n#'" | sed -e '/^#pragma GCC/d' > ./ESMF_AttPackLocStreamUTest.F90
 mpiifort -c -g -traceback -check arg_temp_created,bounds,format,output_conversion,stack,uninit -fPIC -assume realloc_lhs -m64 -mcmodel=small -threads  -qopenmp  -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/build_config/Linux.intel.default -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/Superstructure -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/mod/modg/Linux.intel.64.intelmpi.default -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/include   -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_0_2_beta_snapshot_01"' -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_MOAB=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/work/noaa/da/mpotts/intel_2020_intelmpi_g ESMF_AttPackLocStreamUTest.F90 -o ESMF_AttPackLocStreamUTest.o
 mpiifort   -m64 -mcmodel=small -threads -Wl,--no-as-needed  -qopenmp -L/work/noaa/da/mpotts/intel_2020_intelmpi_g/lib/libg/Linux.intel.64.intelmpi.default   -Wl,-rpath,/work/noaa/da/mpotts/intel_2020_intelmpi_g/lib/libg/Linux.intel.64.intelmpi.default  -o /work/noaa/da/mpotts/intel_2020_intelmpi_g/test/testg/Linux.intel.64.intelmpi.default/ESMF_AttPackLocStreamUTest   ESMF_AttPackLocStreamUTest.o -lesmf  -cxxlib -lrt -ldl
 rm -rf -f *.o *.mod
-gcc -E -P -x c -C -nostdinc -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/include ESMF_AttPackSciCompUTest.cppF90 | tr "@^|" "\n#'" | sed -e '/^#pragma GCC/d' > ./ESMF_AttPackSciCompUTest.F90
 mpiifort -c -g -traceback -check arg_temp_created,bounds,format,output_conversion,stack,uninit -fPIC -assume realloc_lhs -m64 -mcmodel=small -threads  -qopenmp  -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/build_config/Linux.intel.default -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/Superstructure -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/mod/modg/Linux.intel.64.intelmpi.default -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/include   -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_0_2_beta_snapshot_01"' -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_MOAB=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/work/noaa/da/mpotts/intel_2020_intelmpi_g ESMF_AttPackSciCompUTest.F90 -o ESMF_AttPackSciCompUTest.o
 mpiifort   -m64 -mcmodel=small -threads -Wl,--no-as-needed  -qopenmp -L/work/noaa/da/mpotts/intel_2020_intelmpi_g/lib/libg/Linux.intel.64.intelmpi.default   -Wl,-rpath,/work/noaa/da/mpotts/intel_2020_intelmpi_g/lib/libg/Linux.intel.64.intelmpi.default  -o /work/noaa/da/mpotts/intel_2020_intelmpi_g/test/testg/Linux.intel.64.intelmpi.default/ESMF_AttPackSciCompUTest   ESMF_AttPackSciCompUTest.o -lesmf  -cxxlib -lrt -ldl
 rm -rf -f *.o *.mod
-gcc -E -P -x c -C -nostdinc -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/include ESMF_AttPackStateUTest.cppF90 | tr "@^|" "\n#'" | sed -e '/^#pragma GCC/d' > ./ESMF_AttPackStateUTest.F90
 mpiifort -c -g -traceback -check arg_temp_created,bounds,format,output_conversion,stack,uninit -fPIC -assume realloc_lhs -m64 -mcmodel=small -threads  -qopenmp  -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/build_config/Linux.intel.default -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/Superstructure -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/mod/modg/Linux.intel.64.intelmpi.default -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/include   -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_0_2_beta_snapshot_01"' -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_MOAB=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/work/noaa/da/mpotts/intel_2020_intelmpi_g ESMF_AttPackStateUTest.F90 -o ESMF_AttPackStateUTest.o
 mpiifort   -m64 -mcmodel=small -threads -Wl,--no-as-needed  -qopenmp -L/work/noaa/da/mpotts/intel_2020_intelmpi_g/lib/libg/Linux.intel.64.intelmpi.default   -Wl,-rpath,/work/noaa/da/mpotts/intel_2020_intelmpi_g/lib/libg/Linux.intel.64.intelmpi.default  -o /work/noaa/da/mpotts/intel_2020_intelmpi_g/test/testg/Linux.intel.64.intelmpi.default/ESMF_AttPackStateUTest   ESMF_AttPackStateUTest.o -lesmf  -cxxlib -lrt -ldl
 rm -rf -f *.o *.mod
-gcc -E -P -x c -C -nostdinc -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/include ESMF_AttributeArrayUTest.cppF90 | tr "@^|" "\n#'" | sed -e '/^#pragma GCC/d' > ./ESMF_AttributeArrayUTest.F90
 mpiifort -c -g -traceback -check arg_temp_created,bounds,format,output_conversion,stack,uninit -fPIC -assume realloc_lhs -m64 -mcmodel=small -threads  -qopenmp  -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/build_config/Linux.intel.default -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/Superstructure -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/mod/modg/Linux.intel.64.intelmpi.default -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/include   -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_0_2_beta_snapshot_01"' -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_MOAB=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/work/noaa/da/mpotts/intel_2020_intelmpi_g ESMF_AttributeArrayUTest.F90 -o ESMF_AttributeArrayUTest.o
 mpiifort   -m64 -mcmodel=small -threads -Wl,--no-as-needed  -qopenmp -L/work/noaa/da/mpotts/intel_2020_intelmpi_g/lib/libg/Linux.intel.64.intelmpi.default   -Wl,-rpath,/work/noaa/da/mpotts/intel_2020_intelmpi_g/lib/libg/Linux.intel.64.intelmpi.default  -o /work/noaa/da/mpotts/intel_2020_intelmpi_g/test/testg/Linux.intel.64.intelmpi.default/ESMF_AttributeArrayUTest   ESMF_AttributeArrayUTest.o -lesmf  -cxxlib -lrt -ldl
 rm -rf -f *.o *.mod
-gcc -E -P -x c -C -nostdinc -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/include ESMF_AttributeABundleUTest.cppF90 | tr "@^|" "\n#'" | sed -e '/^#pragma GCC/d' > ./ESMF_AttributeABundleUTest.F90
 mpiifort -c -g -traceback -check arg_temp_created,bounds,format,output_conversion,stack,uninit -fPIC -assume realloc_lhs -m64 -mcmodel=small -threads  -qopenmp  -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/build_config/Linux.intel.default -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/Superstructure -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/mod/modg/Linux.intel.64.intelmpi.default -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/include   -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_0_2_beta_snapshot_01"' -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_MOAB=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/work/noaa/da/mpotts/intel_2020_intelmpi_g ESMF_AttributeABundleUTest.F90 -o ESMF_AttributeABundleUTest.o
 mpiifort   -m64 -mcmodel=small -threads -Wl,--no-as-needed  -qopenmp -L/work/noaa/da/mpotts/intel_2020_intelmpi_g/lib/libg/Linux.intel.64.intelmpi.default   -Wl,-rpath,/work/noaa/da/mpotts/intel_2020_intelmpi_g/lib/libg/Linux.intel.64.intelmpi.default  -o /work/noaa/da/mpotts/intel_2020_intelmpi_g/test/testg/Linux.intel.64.intelmpi.default/ESMF_AttributeABundleUTest   ESMF_AttributeABundleUTest.o -lesmf  -cxxlib -lrt -ldl
 rm -rf -f *.o *.mod
-gcc -E -P -x c -C -nostdinc -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/include ESMF_AttributeCplCompUTest.cppF90 | tr "@^|" "\n#'" | sed -e '/^#pragma GCC/d' > ./ESMF_AttributeCplCompUTest.F90
 mpiifort -c -g -traceback -check arg_temp_created,bounds,format,output_conversion,stack,uninit -fPIC -assume realloc_lhs -m64 -mcmodel=small -threads  -qopenmp  -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/build_config/Linux.intel.default -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/Superstructure -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/mod/modg/Linux.intel.64.intelmpi.default -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/include   -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_0_2_beta_snapshot_01"' -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_MOAB=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/work/noaa/da/mpotts/intel_2020_intelmpi_g ESMF_AttributeCplCompUTest.F90 -o ESMF_AttributeCplCompUTest.o
 mpiifort   -m64 -mcmodel=small -threads -Wl,--no-as-needed  -qopenmp -L/work/noaa/da/mpotts/intel_2020_intelmpi_g/lib/libg/Linux.intel.64.intelmpi.default   -Wl,-rpath,/work/noaa/da/mpotts/intel_2020_intelmpi_g/lib/libg/Linux.intel.64.intelmpi.default  -o /work/noaa/da/mpotts/intel_2020_intelmpi_g/test/testg/Linux.intel.64.intelmpi.default/ESMF_AttributeCplCompUTest   ESMF_AttributeCplCompUTest.o -lesmf  -cxxlib -lrt -ldl
 rm -rf -f *.o *.mod
-gcc -E -P -x c -C -nostdinc -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/include ESMF_AttributeDistGridUTest.cppF90 | tr "@^|" "\n#'" | sed -e '/^#pragma GCC/d' > ./ESMF_AttributeDistGridUTest.F90
 mpiifort -c -g -traceback -check arg_temp_created,bounds,format,output_conversion,stack,uninit -fPIC -assume realloc_lhs -m64 -mcmodel=small -threads  -qopenmp  -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/build_config/Linux.intel.default -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/Superstructure -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/mod/modg/Linux.intel.64.intelmpi.default -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/include   -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_0_2_beta_snapshot_01"' -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_MOAB=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/work/noaa/da/mpotts/intel_2020_intelmpi_g ESMF_AttributeDistGridUTest.F90 -o ESMF_AttributeDistGridUTest.o
 mpiifort   -m64 -mcmodel=small -threads -Wl,--no-as-needed  -qopenmp -L/work/noaa/da/mpotts/intel_2020_intelmpi_g/lib/libg/Linux.intel.64.intelmpi.default   -Wl,-rpath,/work/noaa/da/mpotts/intel_2020_intelmpi_g/lib/libg/Linux.intel.64.intelmpi.default  -o /work/noaa/da/mpotts/intel_2020_intelmpi_g/test/testg/Linux.intel.64.intelmpi.default/ESMF_AttributeDistGridUTest   ESMF_AttributeDistGridUTest.o -lesmf  -cxxlib -lrt -ldl
 rm -rf -f *.o *.mod
-gcc -E -P -x c -C -nostdinc -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/include ESMF_AttributeFBundleUTest.cppF90 | tr "@^|" "\n#'" | sed -e '/^#pragma GCC/d' > ./ESMF_AttributeFBundleUTest.F90
 mpiifort -c -g -traceback -check arg_temp_created,bounds,format,output_conversion,stack,uninit -fPIC -assume realloc_lhs -m64 -mcmodel=small -threads  -qopenmp  -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/build_config/Linux.intel.default -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/Superstructure -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/mod/modg/Linux.intel.64.intelmpi.default -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/include   -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_0_2_beta_snapshot_01"' -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_MOAB=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/work/noaa/da/mpotts/intel_2020_intelmpi_g ESMF_AttributeFBundleUTest.F90 -o ESMF_AttributeFBundleUTest.o
 mpiifort   -m64 -mcmodel=small -threads -Wl,--no-as-needed  -qopenmp -L/work/noaa/da/mpotts/intel_2020_intelmpi_g/lib/libg/Linux.intel.64.intelmpi.default   -Wl,-rpath,/work/noaa/da/mpotts/intel_2020_intelmpi_g/lib/libg/Linux.intel.64.intelmpi.default  -o /work/noaa/da/mpotts/intel_2020_intelmpi_g/test/testg/Linux.intel.64.intelmpi.default/ESMF_AttributeFBundleUTest   ESMF_AttributeFBundleUTest.o -lesmf  -cxxlib -lrt -ldl
 rm -rf -f *.o *.mod
-gcc -E -P -x c -C -nostdinc -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/include ESMF_AttributeFieldUTest.cppF90 | tr "@^|" "\n#'" | sed -e '/^#pragma GCC/d' > ./ESMF_AttributeFieldUTest.F90
 mpiifort -c -g -traceback -check arg_temp_created,bounds,format,output_conversion,stack,uninit -fPIC -assume realloc_lhs -m64 -mcmodel=small -threads  -qopenmp  -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/build_config/Linux.intel.default -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/Superstructure -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/mod/modg/Linux.intel.64.intelmpi.default -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/include   -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_0_2_beta_snapshot_01"' -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_MOAB=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/work/noaa/da/mpotts/intel_2020_intelmpi_g ESMF_AttributeFieldUTest.F90 -o ESMF_AttributeFieldUTest.o
 mpiifort   -m64 -mcmodel=small -threads -Wl,--no-as-needed  -qopenmp -L/work/noaa/da/mpotts/intel_2020_intelmpi_g/lib/libg/Linux.intel.64.intelmpi.default   -Wl,-rpath,/work/noaa/da/mpotts/intel_2020_intelmpi_g/lib/libg/Linux.intel.64.intelmpi.default  -o /work/noaa/da/mpotts/intel_2020_intelmpi_g/test/testg/Linux.intel.64.intelmpi.default/ESMF_AttributeFieldUTest   ESMF_AttributeFieldUTest.o -lesmf  -cxxlib -lrt -ldl
 rm -rf -f *.o *.mod
-gcc -E -P -x c -C -nostdinc -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/include ESMF_AttributeGridCompUTest.cppF90 | tr "@^|" "\n#'" | sed -e '/^#pragma GCC/d' > ./ESMF_AttributeGridCompUTest.F90
 mpiifort -c -g -traceback -check arg_temp_created,bounds,format,output_conversion,stack,uninit -fPIC -assume realloc_lhs -m64 -mcmodel=small -threads  -qopenmp  -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/build_config/Linux.intel.default -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/Superstructure -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/mod/modg/Linux.intel.64.intelmpi.default -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/include   -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_0_2_beta_snapshot_01"' -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_MOAB=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/work/noaa/da/mpotts/intel_2020_intelmpi_g ESMF_AttributeGridCompUTest.F90 -o ESMF_AttributeGridCompUTest.o
 mpiifort   -m64 -mcmodel=small -threads -Wl,--no-as-needed  -qopenmp -L/work/noaa/da/mpotts/intel_2020_intelmpi_g/lib/libg/Linux.intel.64.intelmpi.default   -Wl,-rpath,/work/noaa/da/mpotts/intel_2020_intelmpi_g/lib/libg/Linux.intel.64.intelmpi.default  -o /work/noaa/da/mpotts/intel_2020_intelmpi_g/test/testg/Linux.intel.64.intelmpi.default/ESMF_AttributeGridCompUTest   ESMF_AttributeGridCompUTest.o -lesmf  -cxxlib -lrt -ldl
 rm -rf -f *.o *.mod
-gcc -E -P -x c -C -nostdinc -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/include ESMF_AttributeGridUTest.cppF90 | tr "@^|" "\n#'" | sed -e '/^#pragma GCC/d' > ./ESMF_AttributeGridUTest.F90
 mpiifort -c -g -traceback -check arg_temp_created,bounds,format,output_conversion,stack,uninit -fPIC -assume realloc_lhs -m64 -mcmodel=small -threads  -qopenmp  -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/build_config/Linux.intel.default -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/Superstructure -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/mod/modg/Linux.intel.64.intelmpi.default -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/include   -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_0_2_beta_snapshot_01"' -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_MOAB=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/work/noaa/da/mpotts/intel_2020_intelmpi_g ESMF_AttributeGridUTest.F90 -o ESMF_AttributeGridUTest.o
 mpiifort   -m64 -mcmodel=small -threads -Wl,--no-as-needed  -qopenmp -L/work/noaa/da/mpotts/intel_2020_intelmpi_g/lib/libg/Linux.intel.64.intelmpi.default   -Wl,-rpath,/work/noaa/da/mpotts/intel_2020_intelmpi_g/lib/libg/Linux.intel.64.intelmpi.default  -o /work/noaa/da/mpotts/intel_2020_intelmpi_g/test/testg/Linux.intel.64.intelmpi.default/ESMF_AttributeGridUTest   ESMF_AttributeGridUTest.o -lesmf  -cxxlib -lrt -ldl
 rm -rf -f *.o *.mod
-gcc -E -P -x c -C -nostdinc -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/include ESMF_AttributeLocStreamUTest.cppF90 | tr "@^|" "\n#'" | sed -e '/^#pragma GCC/d' > ./ESMF_AttributeLocStreamUTest.F90
 mpiifort -c -g -traceback -check arg_temp_created,bounds,format,output_conversion,stack,uninit -fPIC -assume realloc_lhs -m64 -mcmodel=small -threads  -qopenmp  -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/build_config/Linux.intel.default -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/Superstructure -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/mod/modg/Linux.intel.64.intelmpi.default -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/include   -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_0_2_beta_snapshot_01"' -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_MOAB=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/work/noaa/da/mpotts/intel_2020_intelmpi_g ESMF_AttributeLocStreamUTest.F90 -o ESMF_AttributeLocStreamUTest.o
 mpiifort   -m64 -mcmodel=small -threads -Wl,--no-as-needed  -qopenmp -L/work/noaa/da/mpotts/intel_2020_intelmpi_g/lib/libg/Linux.intel.64.intelmpi.default   -Wl,-rpath,/work/noaa/da/mpotts/intel_2020_intelmpi_g/lib/libg/Linux.intel.64.intelmpi.default  -o /work/noaa/da/mpotts/intel_2020_intelmpi_g/test/testg/Linux.intel.64.intelmpi.default/ESMF_AttributeLocStreamUTest   ESMF_AttributeLocStreamUTest.o -lesmf  -cxxlib -lrt -ldl
 rm -rf -f *.o *.mod
-gcc -E -P -x c -C -nostdinc -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/include ESMF_AttributeSciCompUTest.cppF90 | tr "@^|" "\n#'" | sed -e '/^#pragma GCC/d' > ./ESMF_AttributeSciCompUTest.F90
 mpiifort -c -g -traceback -check arg_temp_created,bounds,format,output_conversion,stack,uninit -fPIC -assume realloc_lhs -m64 -mcmodel=small -threads  -qopenmp  -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/build_config/Linux.intel.default -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/Superstructure -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/mod/modg/Linux.intel.64.intelmpi.default -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/include   -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_0_2_beta_snapshot_01"' -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_MOAB=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/work/noaa/da/mpotts/intel_2020_intelmpi_g ESMF_AttributeSciCompUTest.F90 -o ESMF_AttributeSciCompUTest.o
 mpiifort   -m64 -mcmodel=small -threads -Wl,--no-as-needed  -qopenmp -L/work/noaa/da/mpotts/intel_2020_intelmpi_g/lib/libg/Linux.intel.64.intelmpi.default   -Wl,-rpath,/work/noaa/da/mpotts/intel_2020_intelmpi_g/lib/libg/Linux.intel.64.intelmpi.default  -o /work/noaa/da/mpotts/intel_2020_intelmpi_g/test/testg/Linux.intel.64.intelmpi.default/ESMF_AttributeSciCompUTest   ESMF_AttributeSciCompUTest.o -lesmf  -cxxlib -lrt -ldl
 rm -rf -f *.o *.mod
-gcc -E -P -x c -C -nostdinc -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/include ESMF_AttributeStateUTest.cppF90 | tr "@^|" "\n#'" | sed -e '/^#pragma GCC/d' > ./ESMF_AttributeStateUTest.F90
 mpiifort -c -g -traceback -check arg_temp_created,bounds,format,output_conversion,stack,uninit -fPIC -assume realloc_lhs -m64 -mcmodel=small -threads  -qopenmp  -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/build_config/Linux.intel.default -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/Superstructure -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/mod/modg/Linux.intel.64.intelmpi.default -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/include   -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_0_2_beta_snapshot_01"' -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_MOAB=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/work/noaa/da/mpotts/intel_2020_intelmpi_g ESMF_AttributeStateUTest.F90 -o ESMF_AttributeStateUTest.o
 mpiifort   -m64 -mcmodel=small -threads -Wl,--no-as-needed  -qopenmp -L/work/noaa/da/mpotts/intel_2020_intelmpi_g/lib/libg/Linux.intel.64.intelmpi.default   -Wl,-rpath,/work/noaa/da/mpotts/intel_2020_intelmpi_g/lib/libg/Linux.intel.64.intelmpi.default  -o /work/noaa/da/mpotts/intel_2020_intelmpi_g/test/testg/Linux.intel.64.intelmpi.default/ESMF_AttributeStateUTest   ESMF_AttributeStateUTest.o -lesmf  -cxxlib -lrt -ldl
 rm -rf -f *.o *.mod
@@ -3841,12 +3821,7 @@ rm -rf -f *.o *.mod
 make[3]: Leaving directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_ArrayRedist'
 tree_build_system_tests in: /work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_ArrayRedistMPMD
 make[3]: Entering directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_ArrayRedistMPMD'
-mpiifort -c -g -traceback -check arg_temp_created,bounds,format,output_conversion,stack,uninit -fPIC -assume realloc_lhs -m64 -mcmodel=small -threads  -qopenmp  -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/build_config/Linux.intel.default -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/Superstructure -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/mod/modg/Linux.intel.64.intelmpi.default -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/include   -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_0_2_beta_snapshot_01"' -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_MOAB=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/work/noaa/da/mpotts/intel_2020_intelmpi_g user_model1.F90 -o user_model1.o
-mpiifort -c -g -traceback -check arg_temp_created,bounds,format,output_conversion,stack,uninit -fPIC -assume realloc_lhs -m64 -mcmodel=small -threads  -qopenmp  -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/build_config/Linux.intel.default -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/Superstructure -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/mod/modg/Linux.intel.64.intelmpi.default -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/include   -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_0_2_beta_snapshot_01"' -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_MOAB=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/work/noaa/da/mpotts/intel_2020_intelmpi_g user_coupler.F90 -o user_coupler.o
-mpiifort -c -g -traceback -check arg_temp_created,bounds,format,output_conversion,stack,uninit -fPIC -assume realloc_lhs -m64 -mcmodel=small -threads  -qopenmp  -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/build_config/Linux.intel.default -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/Superstructure -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/mod/modg/Linux.intel.64.intelmpi.default -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/include   -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_0_2_beta_snapshot_01"' -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_MOAB=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/work/noaa/da/mpotts/intel_2020_intelmpi_g ESMF_ArrayRedistSTestA.F90 -o ESMF_ArrayRedistSTestA.o
 mpiifort   -m64 -mcmodel=small -threads -Wl,--no-as-needed  -qopenmp -L/work/noaa/da/mpotts/intel_2020_intelmpi_g/lib/libg/Linux.intel.64.intelmpi.default   -Wl,-rpath,/work/noaa/da/mpotts/intel_2020_intelmpi_g/lib/libg/Linux.intel.64.intelmpi.default  -o /work/noaa/da/mpotts/intel_2020_intelmpi_g/test/testg/Linux.intel.64.intelmpi.default/ESMF_ArrayRedistSTestA user_model1.o user_coupler.o ESMF_ArrayRedistSTestA.o -lesmf  -cxxlib -lrt -ldl
-mpiifort -c -g -traceback -check arg_temp_created,bounds,format,output_conversion,stack,uninit -fPIC -assume realloc_lhs -m64 -mcmodel=small -threads  -qopenmp  -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/build_config/Linux.intel.default -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/Superstructure -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/mod/modg/Linux.intel.64.intelmpi.default -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/include   -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_0_2_beta_snapshot_01"' -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_MOAB=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/work/noaa/da/mpotts/intel_2020_intelmpi_g user_model2.F90 -o user_model2.o
-mpiifort -c -g -traceback -check arg_temp_created,bounds,format,output_conversion,stack,uninit -fPIC -assume realloc_lhs -m64 -mcmodel=small -threads  -qopenmp  -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/build_config/Linux.intel.default -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/Infrastructure -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/Superstructure -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/mod/modg/Linux.intel.64.intelmpi.default -I/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/include   -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_0_2_beta_snapshot_01"' -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_MOAB=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=intelmpi -DESMF_DIR=/work/noaa/da/mpotts/intel_2020_intelmpi_g ESMF_ArrayRedistSTestB.F90 -o ESMF_ArrayRedistSTestB.o
 mpiifort   -m64 -mcmodel=small -threads -Wl,--no-as-needed  -qopenmp -L/work/noaa/da/mpotts/intel_2020_intelmpi_g/lib/libg/Linux.intel.64.intelmpi.default   -Wl,-rpath,/work/noaa/da/mpotts/intel_2020_intelmpi_g/lib/libg/Linux.intel.64.intelmpi.default  -o /work/noaa/da/mpotts/intel_2020_intelmpi_g/test/testg/Linux.intel.64.intelmpi.default/ESMF_ArrayRedistSTestB user_model2.o user_coupler.o ESMF_ArrayRedistSTestB.o -lesmf  -cxxlib -lrt -ldl
 make[3]: Leaving directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_ArrayRedistMPMD'
 tree_build_system_tests in: /work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_ArrayRedistSharedObj
@@ -4694,7 +4669,6 @@ The stdout files for the system_tests can be found at:
 Found 46 multi-processor system tests, 46 passed and 0 failed.
 
 make[2]: Leaving directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g'
-Making directory /work/noaa/da/mpotts/intel_2020_intelmpi_g/examples/examplesg/Linux.intel.64.intelmpi.default for examples output
 make config_examples
 make[2]: Entering directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g'
 make[2]: Leaving directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g'
@@ -6915,3 +6889,244 @@ tree_run_examples in: /work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_test
 make[5]: Entering directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_FieldBundleLSRedistArb2Arb'
 make[5]: Leaving directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_FieldBundleLSRedistArb2Arb'
 tree_run_examples in: /work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_FieldBundleLSRedistArb2ArbUngrdDim
+make[5]: Entering directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_FieldBundleLSRedistArb2ArbUngrdDim'
+make[5]: Leaving directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_FieldBundleLSRedistArb2ArbUngrdDim'
+tree_run_examples in: /work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_FieldBundleRedistBlk2Blk
+make[5]: Entering directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_FieldBundleRedistBlk2Blk'
+make[5]: Leaving directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_FieldBundleRedistBlk2Blk'
+tree_run_examples in: /work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_FieldBundleRedistBlk2Arb
+make[5]: Entering directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_FieldBundleRedistBlk2Arb'
+make[5]: Leaving directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_FieldBundleRedistBlk2Arb'
+tree_run_examples in: /work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_FieldBundleRedistArb2Arb
+make[5]: Entering directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_FieldBundleRedistArb2Arb'
+make[5]: Leaving directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_FieldBundleRedistArb2Arb'
+tree_run_examples in: /work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_FieldRegrid
+make[5]: Entering directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_FieldRegrid'
+make[5]: Leaving directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_FieldRegrid'
+tree_run_examples in: /work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_FieldRegridDisjoint
+make[5]: Entering directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_FieldRegridDisjoint'
+make[5]: Leaving directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_FieldRegridDisjoint'
+tree_run_examples in: /work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_FieldRegridOverlap
+make[5]: Entering directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_FieldRegridOverlap'
+make[5]: Leaving directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_FieldRegridOverlap'
+tree_run_examples in: /work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_FieldRegridMesh
+make[5]: Entering directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_FieldRegridMesh'
+make[5]: Leaving directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_FieldRegridMesh'
+tree_run_examples in: /work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_FieldRegridMeshToMesh
+make[5]: Entering directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_FieldRegridMeshToMesh'
+make[5]: Leaving directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_FieldRegridMeshToMesh'
+tree_run_examples in: /work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_FieldLSRedistArb2Arb
+make[5]: Entering directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_FieldLSRedistArb2Arb'
+make[5]: Leaving directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_FieldLSRedistArb2Arb'
+tree_run_examples in: /work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_FieldLSRedistArb2ArbUngrdDim
+make[5]: Entering directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_FieldLSRedistArb2ArbUngrdDim'
+make[5]: Leaving directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_FieldLSRedistArb2ArbUngrdDim'
+tree_run_examples in: /work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_FieldLSSMM
+make[5]: Entering directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_FieldLSSMM'
+make[5]: Leaving directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_FieldLSSMM'
+tree_run_examples in: /work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_FieldMeshSMM
+make[5]: Entering directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_FieldMeshSMM'
+make[5]: Leaving directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_FieldMeshSMM'
+tree_run_examples in: /work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_TransferGrid
+make[5]: Entering directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_TransferGrid'
+make[5]: Leaving directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_TransferGrid'
+tree_run_examples in: /work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_TransferMesh
+make[5]: Entering directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_TransferMesh'
+make[5]: Leaving directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_TransferMesh'
+tree_run_examples in: /work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_SequentialEnsemble
+make[5]: Entering directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_SequentialEnsemble'
+make[5]: Leaving directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_SequentialEnsemble'
+tree_run_examples in: /work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_ConcurrentEnsemble
+make[5]: Entering directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_ConcurrentEnsemble'
+make[5]: Leaving directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_ConcurrentEnsemble'
+tree_run_examples in: /work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_ArrayRedistOpenMP
+make[5]: Entering directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_ArrayRedistOpenMP'
+make[5]: Leaving directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_ArrayRedistOpenMP'
+tree_run_examples in: /work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_ArrayRedistOpenACC
+make[5]: Entering directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_ArrayRedistOpenACC'
+make[5]: Leaving directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_ArrayRedistOpenACC'
+tree_run_examples in: /work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_ArraySharedDeSSI
+make[5]: Entering directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_ArraySharedDeSSI'
+make[5]: Leaving directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_ArraySharedDeSSI'
+tree_run_examples in: /work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_DirectCoupling
+make[5]: Entering directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_DirectCoupling'
+make[5]: Leaving directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_DirectCoupling'
+tree_run_examples in: /work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_XGridConcurrent
+make[5]: Entering directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_XGridConcurrent'
+make[5]: Leaving directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_XGridConcurrent'
+tree_run_examples in: /work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_XGridSerial
+make[5]: Entering directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_XGridSerial'
+make[5]: Leaving directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_XGridSerial'
+tree_run_examples in: /work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_Trace
+make[5]: Entering directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_Trace'
+make[5]: Leaving directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests/ESMF_Trace'
+make[4]: Leaving directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/system_tests'
+tree_run_examples in: /work/noaa/da/mpotts/intel_2020_intelmpi_g/src/apps
+make[4]: Entering directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/apps'
+tree_run_examples in: /work/noaa/da/mpotts/intel_2020_intelmpi_g/src/apps/ESMF_Info
+make[5]: Entering directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/apps/ESMF_Info'
+make[5]: Leaving directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/apps/ESMF_Info'
+tree_run_examples in: /work/noaa/da/mpotts/intel_2020_intelmpi_g/src/apps/ESMF_InfoC
+make[5]: Entering directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/apps/ESMF_InfoC'
+make[5]: Leaving directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/apps/ESMF_InfoC'
+tree_run_examples in: /work/noaa/da/mpotts/intel_2020_intelmpi_g/src/apps/ESMF_RegridWeightGen
+make[5]: Entering directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/apps/ESMF_RegridWeightGen'
+make[5]: Leaving directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/apps/ESMF_RegridWeightGen'
+tree_run_examples in: /work/noaa/da/mpotts/intel_2020_intelmpi_g/src/apps/ESMF_WebServController
+make[5]: Entering directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/apps/ESMF_WebServController'
+make[5]: Leaving directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/apps/ESMF_WebServController'
+tree_run_examples in: /work/noaa/da/mpotts/intel_2020_intelmpi_g/src/apps/ESMF_Scrip2Unstruct
+make[5]: Entering directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/apps/ESMF_Scrip2Unstruct'
+make[5]: Leaving directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/apps/ESMF_Scrip2Unstruct'
+tree_run_examples in: /work/noaa/da/mpotts/intel_2020_intelmpi_g/src/apps/ESMF_Regrid
+make[5]: Entering directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/apps/ESMF_Regrid'
+make[5]: Leaving directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/apps/ESMF_Regrid'
+make[4]: Leaving directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/apps'
+tree_run_examples in: /work/noaa/da/mpotts/intel_2020_intelmpi_g/src/addon
+make[4]: Entering directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/addon'
+tree_run_examples in: /work/noaa/da/mpotts/intel_2020_intelmpi_g/src/addon/NUOPC
+make[5]: Entering directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/addon/NUOPC'
+tree_run_examples in: /work/noaa/da/mpotts/intel_2020_intelmpi_g/src/addon/NUOPC/src
+make[6]: Entering directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/addon/NUOPC/src'
+make[6]: Leaving directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/addon/NUOPC/src'
+tree_run_examples in: /work/noaa/da/mpotts/intel_2020_intelmpi_g/src/addon/NUOPC/tests
+make[6]: Entering directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/addon/NUOPC/tests'
+make[6]: Leaving directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/addon/NUOPC/tests'
+tree_run_examples in: /work/noaa/da/mpotts/intel_2020_intelmpi_g/src/addon/NUOPC/doc
+make[6]: Entering directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/addon/NUOPC/doc'
+make[6]: Leaving directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/addon/NUOPC/doc'
+tree_run_examples in: /work/noaa/da/mpotts/intel_2020_intelmpi_g/src/addon/NUOPC/examples
+make[6]: Entering directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/addon/NUOPC/examples'
+make EXNAME=NUOPCBasicModel NP=4 exfrun
+make[7]: Entering directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/addon/NUOPC/examples'
+mpirun -np 4 ./ESMF_NUOPCBasicModelEx > ./ESMF_NUOPCBasicModelEx.stdout 2>&1
+make[7]: Leaving directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/addon/NUOPC/examples'
+make EXNAME=NUOPCAtmModel NP=4 exfrun
+make[7]: Entering directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/addon/NUOPC/examples'
+mpirun -np 4 ./ESMF_NUOPCAtmModelEx > ./ESMF_NUOPCAtmModelEx.stdout 2>&1
+make[7]: Leaving directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/addon/NUOPC/examples'
+make[6]: Leaving directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/addon/NUOPC/examples'
+make[5]: Leaving directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/addon/NUOPC'
+make[4]: Leaving directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src/addon'
+make[3]: Leaving directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g/src'
+make[2]: Leaving directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g'
+make check_examples
+make[2]: Entering directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g'
+
+
+The following examples passed:
+
+
+PASS: intelmpi/g: src/Infrastructure/Array/examples/ESMF_ArrayArbHaloEx.F90
+PASS: intelmpi/g: src/Infrastructure/Array/examples/ESMF_ArrayCommNBEx.F90
+PASS: intelmpi/g: src/Infrastructure/Array/examples/ESMF_ArrayEx.F90
+PASS: intelmpi/g: src/Infrastructure/Array/examples/ESMF_ArrayFarrayEx.F90
+PASS: intelmpi/g: src/Infrastructure/Array/examples/ESMF_ArrayFarrayHaloEx.F90
+PASS: intelmpi/g: src/Infrastructure/Array/examples/ESMF_ArrayHaloEx.F90
+PASS: intelmpi/g: src/Infrastructure/Array/examples/ESMF_ArrayLarrayEx.F90
+PASS: intelmpi/g: src/Infrastructure/Array/examples/ESMF_ArrayRedistEx.F90
+PASS: intelmpi/g: src/Infrastructure/Array/examples/ESMF_ArrayScatterGatherArbEx.F90
+PASS: intelmpi/g: src/Infrastructure/Array/examples/ESMF_ArrayScatterGatherEx.F90
+PASS: intelmpi/g: src/Infrastructure/Array/examples/ESMF_ArraySparseMatMulEx.F90
+PASS: intelmpi/g: src/Infrastructure/ArrayBundle/examples/ESMF_ArrayBundleEx.F90
+PASS: intelmpi/g: src/Infrastructure/ArrayBundle/examples/ESMF_ArrayBundleHaloEx.F90
+PASS: intelmpi/g: src/Infrastructure/ArraySpec/examples/ESMF_ArraySpecEx.F90
+PASS: intelmpi/g: src/Infrastructure/Config/examples/ESMF_ConfigOverviewEx.F90
+PASS: intelmpi/g: src/Infrastructure/DELayout/examples/ESMF_DELayoutEx.F90
+PASS: intelmpi/g: src/Infrastructure/DistGrid/examples/ESMF_DistGridEx.F90
+PASS: intelmpi/g: src/Infrastructure/Field/examples/ESMF_FieldArbGridEx.F90
+PASS: intelmpi/g: src/Infrastructure/Field/examples/ESMF_FieldCommEx.F90
+PASS: intelmpi/g: src/Infrastructure/Field/examples/ESMF_FieldCreateEx.F90
+PASS: intelmpi/g: src/Infrastructure/Field/examples/ESMF_FieldEx.F90
+PASS: intelmpi/g: src/Infrastructure/Field/examples/ESMF_FieldHaloEx.F90
+PASS: intelmpi/g: src/Infrastructure/Field/examples/ESMF_FieldMeshRegridEx.F90
+PASS: intelmpi/g: src/Infrastructure/Field/examples/ESMF_FieldRedistEx.F90
+PASS: intelmpi/g: src/Infrastructure/Field/examples/ESMF_FieldRegridEx.F90
+PASS: intelmpi/g: src/Infrastructure/Field/examples/ESMF_FieldRegridMaskEx.F90
+PASS: intelmpi/g: src/Infrastructure/Field/examples/ESMF_FieldRepDimEx.F90
+PASS: intelmpi/g: src/Infrastructure/Field/examples/ESMF_FieldSMMEx.F90
+PASS: intelmpi/g: src/Infrastructure/Field/examples/ESMF_FieldSphereRegridEx.F90
+PASS: intelmpi/g: src/Infrastructure/FieldBundle/examples/ESMF_FieldBundleCreateEx.F90
+PASS: intelmpi/g: src/Infrastructure/FieldBundle/examples/ESMF_FieldBundleHaloEx.F90
+PASS: intelmpi/g: src/Infrastructure/FieldBundle/examples/ESMF_FieldBundleRedistEx.F90
+PASS: intelmpi/g: src/Infrastructure/FieldBundle/examples/ESMF_FieldBundleSMMEx.F90
+PASS: intelmpi/g: src/Infrastructure/Grid/examples/ESMF_GridCreateRegFromDGEx.F90
+PASS: intelmpi/g: src/Infrastructure/Grid/examples/ESMF_GridUsageEx.F90
+PASS: intelmpi/g: src/Infrastructure/LocStream/examples/ESMF_LocStreamEx.F90
+PASS: intelmpi/g: src/Infrastructure/LogErr/examples/ESMF_LogErrEx.F90
+PASS: intelmpi/g: src/Infrastructure/Mesh/examples/ESMF_MeshEx.F90
+PASS: intelmpi/g: src/Infrastructure/Route/examples/ESMF_RHandleBitForBitEx.F90
+PASS: intelmpi/g: src/Infrastructure/Route/examples/ESMF_RHandleDynamicMaskingEx.F90
+PASS: intelmpi/g: src/Infrastructure/Route/examples/ESMF_RHandleFromFileEx.F90
+PASS: intelmpi/g: src/Infrastructure/Route/examples/ESMF_RHandleFromRHandleEx.F90
+PASS: intelmpi/g: src/Infrastructure/Route/examples/ESMF_RHandleReusabilityEx.F90
+PASS: intelmpi/g: src/Infrastructure/TimeMgr/examples/ESMF_AlarmEx.F90
+PASS: intelmpi/g: src/Infrastructure/TimeMgr/examples/ESMF_CalendarEx.F90
+PASS: intelmpi/g: src/Infrastructure/TimeMgr/examples/ESMF_ClockEx.F90
+PASS: intelmpi/g: src/Infrastructure/TimeMgr/examples/ESMF_TimeEx.F90
+PASS: intelmpi/g: src/Infrastructure/TimeMgr/examples/ESMF_TimeIntervalEx.F90
+PASS: intelmpi/g: src/Infrastructure/Trace/examples/ESMF_TraceEx.F90
+PASS: intelmpi/g: src/Infrastructure/Trace/examples/ESMF_TraceUserEx.F90
+PASS: intelmpi/g: src/Infrastructure/VM/examples/ESMF_VMAllFullReduceEx.F90
+PASS: intelmpi/g: src/Infrastructure/VM/examples/ESMF_VMComponentEx.F90
+PASS: intelmpi/g: src/Infrastructure/VM/examples/ESMF_VMDefaultBasicsEx.F90
+PASS: intelmpi/g: src/Infrastructure/VM/examples/ESMF_VMGetMPICommunicatorEx.F90
+PASS: intelmpi/g: src/Infrastructure/VM/examples/ESMF_VMHigherRankDataEx.F90
+PASS: intelmpi/g: src/Infrastructure/VM/examples/ESMF_VMNonBlockingEx.F90
+PASS: intelmpi/g: src/Infrastructure/VM/examples/ESMF_VMScatterVMGatherEx.F90
+PASS: intelmpi/g: src/Infrastructure/VM/examples/ESMF_VMSendVMRecvEx.F90
+PASS: intelmpi/g: src/Infrastructure/VM/examples/ESMF_VMUserMpiCommEx.F90
+PASS: intelmpi/g: src/Infrastructure/VM/examples/ESMF_VMUserMpiCommMultiEx.F90
+PASS: intelmpi/g: src/Infrastructure/VM/examples/ESMF_VMUserMpiEx.F90
+PASS: intelmpi/g: src/Infrastructure/XGrid/examples/ESMF_XGridEx.F90
+PASS: intelmpi/g: src/Infrastructure/XGrid/examples/ESMF_XGridSparseMatEx.F90
+PASS: intelmpi/g: src/Superstructure/AttachMethods/examples/ESMF_AttachMethodsEx.F90
+PASS: intelmpi/g: src/Superstructure/AttributeAPI/examples/ESMF_AttReadCustCplCompEx.F90
+PASS: intelmpi/g: src/Superstructure/AttributeAPI/examples/ESMF_AttReadFieldEx.F90
+PASS: intelmpi/g: src/Superstructure/AttributeAPI/examples/ESMF_AttReadGridCompEx.F90
+PASS: intelmpi/g: src/Superstructure/AttributeAPI/examples/ESMF_AttributeCIMEx.F90
+PASS: intelmpi/g: src/Superstructure/AttributeAPI/examples/ESMF_AttributeCustPackEx.F90
+PASS: intelmpi/g: src/Superstructure/AttributeAPI/examples/ESMF_AttributeEx.F90
+PASS: intelmpi/g: src/Superstructure/AttributeAPI/examples/ESMF_AttributeInternalInfoEx.F90
+PASS: intelmpi/g: src/Superstructure/AttributeAPI/examples/ESMF_AttributePackageEx.F90
+PASS: intelmpi/g: src/Superstructure/AttributeAPI/examples/ESMF_AttributeUpdateEx.F90
+PASS: intelmpi/g: src/Superstructure/Component/examples/ESMF_AppMainEx.F90
+PASS: intelmpi/g: src/Superstructure/Component/examples/ESMF_CompTunnelEx.F90
+PASS: intelmpi/g: src/Superstructure/Component/examples/ESMF_CplEx.F90
+PASS: intelmpi/g: src/Superstructure/Component/examples/ESMF_GCompEx.F90
+PASS: intelmpi/g: src/Superstructure/Component/examples/ESMF_InternalStateEx.F90
+PASS: intelmpi/g: src/Superstructure/Component/examples/ESMF_InternalStateModEx.F90
+PASS: intelmpi/g: src/Superstructure/Component/examples/ESMF_SCompEx.F90
+PASS: intelmpi/g: src/Superstructure/State/examples/ESMF_StateEx.F90
+PASS: intelmpi/g: src/Superstructure/State/examples/ESMF_StateReadWriteEx.F90
+PASS: intelmpi/g: src/Superstructure/State/examples/ESMF_StateReconcileEx.F90
+PASS: intelmpi/g: src/Superstructure/WebServices/examples/ESMF_WebServicesEx.F90
+PASS: intelmpi/g: src/addon/NUOPC/examples/ESMF_NUOPCAtmModelEx.F90
+PASS: intelmpi/g: src/addon/NUOPC/examples/ESMF_NUOPCBasicModelEx.F90
+
+
+
+
+The stdout files for the examples can be found at:
+/work/noaa/da/mpotts/intel_2020_intelmpi_g/examples/examplesg/Linux.intel.64.intelmpi.default
+
+
+Found 86 multi-processor examples, 86 passed and 0 failed.
+
+make[2]: Leaving directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g'
+
+
+SYSTEM TESTS SUMMARY
+Found 46 multi-processor system tests, 46 passed and 0 failed.
+
+
+
+EXAMPLES SUMMARY
+Found 86 multi-processor examples, 86 passed and 0 failed.
+
+
+
+UNIT TESTS SUMMARY
+Found 3478 non-exhaustive multi-processor unit tests, 3478 passed and 0 failed.
+
+make[1]: Leaving directory `/work/noaa/da/mpotts/intel_2020_intelmpi_g'
