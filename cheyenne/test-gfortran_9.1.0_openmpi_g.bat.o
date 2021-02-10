@@ -10,14 +10,15 @@ ESMF_8_0_2_beta_snapshot_01
 #	build-gfortran_9.1.0_openmpi_g.bat
 #	build-gfortran_9.1.0_openmpi_g.bat_6474864.e
 #	build-gfortran_9.1.0_openmpi_g.bat_6474864.o
-#	src/system_tests/ESMF_TransferMesh/user_coupler.mod0
-#	src/system_tests/ESMF_TransferMesh/user_model1.mod
-#	src/system_tests/ESMF_TransferMesh/user_model1.o
-#	src/system_tests/ESMF_TransferMesh/user_model2.mod
-#	src/system_tests/ESMF_TransferMesh/user_model2.o
+#	build-gfortran_9.1.0_openmpi_g.bat_6487846.e
+#	build-gfortran_9.1.0_openmpi_g.bat_6487846.o
+#	cp_6474864
+#	cp_6474865
 #	test-gfortran_9.1.0_openmpi_g.bat
 #	test-gfortran_9.1.0_openmpi_g.bat_6474865.e
 #	test-gfortran_9.1.0_openmpi_g.bat_6474865.o
+#	test-gfortran_9.1.0_openmpi_g.bat_6487847.e
+#	test-gfortran_9.1.0_openmpi_g.bat_6487847.o
 nothing added to commit but untracked files present (use "git add" to track)
 --------------------------------------------------------------
  
@@ -177,8 +178,8 @@ ESMF_TRACE_STATICLINKLIBS=-lesmftrace_static
 
 
 --------------------------------------------------------------
-Compiling on Wed Feb 3 19:31:32 MST 2021 on casper13
-Machine characteristics: Linux casper13 3.10.0-1127.18.2.el7.x86_64 #1 SMP Sun Jul 26 15:27:06 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
+Compiling on Mon Feb 8 18:48:14 MST 2021 on casper17
+Machine characteristics: Linux casper17 3.10.0-1127.18.2.el7.x86_64 #1 SMP Sun Jul 26 15:27:06 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
 ==============================================================
  
 make[1]: Entering directory `/glade/scratch/mpotts/gfortran_9.1.0_openmpi_g'
@@ -4139,6 +4140,8 @@ rm -rf -f *.o *.mod
 make[3]: Leaving directory `/glade/scratch/mpotts/gfortran_9.1.0_openmpi_g/src/system_tests/ESMF_TransferGrid'
 tree_build_system_tests in: /glade/scratch/mpotts/gfortran_9.1.0_openmpi_g/src/system_tests/ESMF_TransferMesh
 make[3]: Entering directory `/glade/scratch/mpotts/gfortran_9.1.0_openmpi_g/src/system_tests/ESMF_TransferMesh'
+mpifort -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=array-temps,bounds,do,mem,recursion -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fopenmp  -I/glade/scratch/mpotts/gfortran_9.1.0_openmpi_g/build_config/Linux.gfortran.default -I/glade/scratch/mpotts/gfortran_9.1.0_openmpi_g/src/Infrastructure -I/glade/scratch/mpotts/gfortran_9.1.0_openmpi_g/src/Superstructure -I/glade/scratch/mpotts/gfortran_9.1.0_openmpi_g/mod/modg/Linux.gfortran.64.openmpi.default -I/glade/scratch/mpotts/gfortran_9.1.0_openmpi_g/src/include   -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_0_2_beta_snapshot_01"' -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_MOAB=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/glade/scratch/mpotts/gfortran_9.1.0_openmpi_g user_model1.F90 -o user_model1.o
+mpifort -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=array-temps,bounds,do,mem,recursion -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fopenmp  -I/glade/scratch/mpotts/gfortran_9.1.0_openmpi_g/build_config/Linux.gfortran.default -I/glade/scratch/mpotts/gfortran_9.1.0_openmpi_g/src/Infrastructure -I/glade/scratch/mpotts/gfortran_9.1.0_openmpi_g/src/Superstructure -I/glade/scratch/mpotts/gfortran_9.1.0_openmpi_g/mod/modg/Linux.gfortran.64.openmpi.default -I/glade/scratch/mpotts/gfortran_9.1.0_openmpi_g/src/include   -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_0_2_beta_snapshot_01"' -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_MOAB=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/glade/scratch/mpotts/gfortran_9.1.0_openmpi_g user_model2.F90 -o user_model2.o
 mpifort -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=array-temps,bounds,do,mem,recursion -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fopenmp  -I/glade/scratch/mpotts/gfortran_9.1.0_openmpi_g/build_config/Linux.gfortran.default -I/glade/scratch/mpotts/gfortran_9.1.0_openmpi_g/src/Infrastructure -I/glade/scratch/mpotts/gfortran_9.1.0_openmpi_g/src/Superstructure -I/glade/scratch/mpotts/gfortran_9.1.0_openmpi_g/mod/modg/Linux.gfortran.64.openmpi.default -I/glade/scratch/mpotts/gfortran_9.1.0_openmpi_g/src/include   -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_0_2_beta_snapshot_01"' -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_MOAB=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/glade/scratch/mpotts/gfortran_9.1.0_openmpi_g user_coupler.F90 -o user_coupler.o
 mpifort -c -g -Wall -Wextra -Wconversion -Wno-unused -Wno-unused-dummy-argument -fbacktrace -fimplicit-none -fcheck=array-temps,bounds,do,mem,recursion -fPIC  -m64 -mcmodel=small -pthread -ffree-line-length-none  -fopenmp  -I/glade/scratch/mpotts/gfortran_9.1.0_openmpi_g/build_config/Linux.gfortran.default -I/glade/scratch/mpotts/gfortran_9.1.0_openmpi_g/src/Infrastructure -I/glade/scratch/mpotts/gfortran_9.1.0_openmpi_g/src/Superstructure -I/glade/scratch/mpotts/gfortran_9.1.0_openmpi_g/mod/modg/Linux.gfortran.64.openmpi.default -I/glade/scratch/mpotts/gfortran_9.1.0_openmpi_g/src/include   -DESMF_NO_INTEGER_1_BYTE -DESMF_NO_INTEGER_2_BYTE -DESMFVERSIONGIT='"ESMF_8_0_2_beta_snapshot_01"' -DESMF_LAPACK=1 -DESMF_LAPACK_INTERNAL=1 -DESMF_MOAB=1 -DESMF_NO_ACC_SOFTWARE_STACK=1 -DESMF_YAMLCPP=1 -DESMF_YAML=1 -DESMF_PIO=1 -DESMF_MPIIO -DESMF_NO_OPENACC -DESMF_BOPT_g -DESMF_TESTCOMPTUNNEL -DSx86_64_small=1 -DESMF_OS_Linux=1 -DESMF_COMM=openmpi -DESMF_DIR=/glade/scratch/mpotts/gfortran_9.1.0_openmpi_g ESMF_TransferMeshSTest.F90 -o ESMF_TransferMeshSTest.o
 make chkdir_tests
