@@ -1,3 +1,6 @@
+/sfs/pbs/nid001003/mom_priv/jobs/10184.abqs01.SC: line 18: export: `-i': not a valid identifier
+/sfs/pbs/nid001003/mom_priv/jobs/10184.abqs01.SC: line 18: export: `s/aprun/cray aprun/': not a valid identifier
+/sfs/pbs/nid001003/mom_priv/jobs/10184.abqs01.SC: line 18: export: `scripts/mpirun.unicos': not a valid identifier
 Currently Loaded Modulefiles:
  1) craype/2.7.0(default)                               
  2) craype-x86-rome                                     
@@ -29,6 +32,162 @@ Warning:
 /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 4: mpichversion: command not found
 /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 5: [: =: unary operator expected
 /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_g/scripts/libs.mpich3f90: line 5: [: =: unary operator expected
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
+Warning:
+ Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
+
 Warning:
  Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
