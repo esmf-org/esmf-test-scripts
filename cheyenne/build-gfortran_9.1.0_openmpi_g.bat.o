@@ -10,12 +10,13 @@ ESMF_8_0_2_beta_snapshot_01
 #	build-gfortran_9.1.0_openmpi_g.bat
 #	build-gfortran_9.1.0_openmpi_g.bat_6474864.e
 #	build-gfortran_9.1.0_openmpi_g.bat_6474864.o
-#	src/system_tests/ESMF_TransferMesh/user_coupler.mod0
-#	src/system_tests/ESMF_TransferMesh/user_model1.mod
-#	src/system_tests/ESMF_TransferMesh/user_model1.o
-#	src/system_tests/ESMF_TransferMesh/user_model2.mod
-#	src/system_tests/ESMF_TransferMesh/user_model2.o
+#	build-gfortran_9.1.0_openmpi_g.bat_6487846.e
+#	build-gfortran_9.1.0_openmpi_g.bat_6487846.o
+#	cp_6474864
+#	cp_6474865
 #	test-gfortran_9.1.0_openmpi_g.bat
+#	test-gfortran_9.1.0_openmpi_g.bat_6474865.e
+#	test-gfortran_9.1.0_openmpi_g.bat_6474865.o
 nothing added to commit but untracked files present (use "git add" to track)
 --------------------------------------------------------------
  
@@ -175,8 +176,8 @@ ESMF_TRACE_STATICLINKLIBS=-lesmftrace_static
 
 
 --------------------------------------------------------------
-Compiling on Wed Feb 3 19:27:30 MST 2021 on casper13
-Machine characteristics: Linux casper13 3.10.0-1127.18.2.el7.x86_64 #1 SMP Sun Jul 26 15:27:06 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
+Compiling on Mon Feb 8 18:26:12 MST 2021 on casper17
+Machine characteristics: Linux casper17 3.10.0-1127.18.2.el7.x86_64 #1 SMP Sun Jul 26 15:27:06 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
 ==============================================================
  
 make[1]: Entering directory `/glade/scratch/mpotts/gfortran_9.1.0_openmpi_g'
@@ -3122,6 +3123,6 @@ make[2]: Leaving directory `/glade/scratch/mpotts/gfortran_9.1.0_openmpi_g/src/I
 make[1]: Leaving directory `/glade/scratch/mpotts/gfortran_9.1.0_openmpi_g'
 make[1]: Entering directory `/glade/scratch/mpotts/gfortran_9.1.0_openmpi_g'
 make[1]: Leaving directory `/glade/scratch/mpotts/gfortran_9.1.0_openmpi_g'
-ESMF library built successfully on Wed Feb 3 19:31:30 MST 2021
+ESMF library built successfully on Mon Feb 8 18:30:28 MST 2021
 To verify, build and run the unit and system tests with: make check
  or the more extensive: make all_tests

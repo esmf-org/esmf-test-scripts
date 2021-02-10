@@ -69,9 +69,9 @@ def main(argv):
             subdir="{}_{}_{}_{}".format(comp,ver,key,build_type)
             if(not(os.path.isdir(subdir))):
                if(https == True):
-                 cmdstring = "git clone -b ESMF_8_0_2branch https://github.com/esmf-org/esmf {}".format(subdir)
+                 cmdstring = "git clone -b ESMF_8_1_0_beta_snapshot_43 https://github.com/esmf-org/esmf {}".format(subdir)
                else:
-                 cmdstring = "git clone -b ESMF_8_0_2branch git@github.com:esmf-org/esmf {}".format(subdir)
+                 cmdstring = "git clone -b ESMF_8_1_0_beta_snapshot_43 git@github.com:esmf-org/esmf {}".format(subdir)
                status= subprocess.check_output(cmdstring,shell=True).strip().decode('utf-8')
             os.chdir(subdir)
             filename = 'build-{}_{}_{}_{}.bat'.format(comp,ver,key,build_type)
