@@ -1,3 +1,6 @@
+/sfs/pbs/nid001004/mom_priv/jobs/10181.abqs01.SC: line 18: export: `-i': not a valid identifier
+/sfs/pbs/nid001004/mom_priv/jobs/10181.abqs01.SC: line 18: export: `s/aprun/cray aprun/': not a valid identifier
+/sfs/pbs/nid001004/mom_priv/jobs/10181.abqs01.SC: line 18: export: `scripts/mpirun.unicos': not a valid identifier
 Currently Loaded Modulefiles:
  1) craype/2.7.0(default)                               
  2) craype-x86-rome                                     
@@ -41,7 +44,6 @@ Warning:
 Warning:
  Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
-sed: can't read /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/gfortran_9.3.0_mpich3_O/test/testO/Linux.gfortran.64.mpich3.default/unit_tests.config: No such file or directory
 Warning:
  Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
@@ -7063,22 +7065,7 @@ Warning:
  Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
 Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
  Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
-
-Warning:
- Headers from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
 Warning:
  Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
