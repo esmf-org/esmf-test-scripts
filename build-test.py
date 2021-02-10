@@ -104,8 +104,8 @@ def main(argv):
 
             if('extra_commands' in machine_list[comp]['versions'][ver]):
                 for cmd in machine_list[comp]['versions'][ver]['extra_commands']:
-                  fb.write("export {}\n".format(machine_list[comp]['versions'][ver]['extra_commands'][cmd]))
-                  ft.write("export {}\n".format(machine_list[comp]['versions'][ver]['extra_commands'][cmd]))
+                  fb.write("{}\n".format(machine_list[comp]['versions'][ver]['extra_commands'][cmd]))
+                  ft.write("{}\n".format(machine_list[comp]['versions'][ver]['extra_commands'][cmd]))
 
             mpiver = mpidict[key]
             if(mpiver == "None"):
