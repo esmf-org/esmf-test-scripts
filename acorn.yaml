@@ -23,7 +23,7 @@ intel:
             var7: ESMF_CXXCOMPILECPPFLAGS=-fPIC
             var8: ESMF_CXXLINKOPTS=-fPIC
          extra_commands: 
-            cmd1: "sed -i 's/aprun/cray aprun/' scripts/mpirun.unicos"
+            cmd1: "sed -i 's/^aprun/cray aprun/' scripts/mpirun.unicos"
             cmd2: "sed -i 's/lmpi++/lfmpich/' build_config/Linux.intel.default/build_rules.mk"
      extramodule: cpe-intel 
      unloadmodule: "cpe-cray cce"
