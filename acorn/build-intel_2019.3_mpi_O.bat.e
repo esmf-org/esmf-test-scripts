@@ -32,10 +32,3 @@ Warning:
 Warning:
  Headers and libraries from cray-netcdf will be ignored because depends on PE_HDF5 which is unavailable..
 
-/usr/lib64/gcc/x86_64-suse-linux/7/../../../../x86_64-suse-linux/bin/ld: wrappers.o: relocation R_X86_64_32 against `_ZN17_INTERNALed436f8fSt8__ioinitE' can not be used when making a shared object; recompile with -fPIC
-/usr/lib64/gcc/x86_64-suse-linux/7/../../../../x86_64-suse-linux/bin/ld: wrappers_io.o: relocation R_X86_64_PC32 against symbol `c_esmftrace_isinitialized' can not be used when making a shared object; recompile with -fPIC
-/usr/lib64/gcc/x86_64-suse-linux/7/../../../../x86_64-suse-linux/bin/ld: wrappers_mpi.o: relocation R_X86_64_PC32 against symbol `c_esmftrace_isinitialized' can not be used when making a shared object; recompile with -fPIC
-/usr/lib64/gcc/x86_64-suse-linux/7/../../../../x86_64-suse-linux/bin/ld: final link failed: nonrepresentable section on output
-make[2]: *** [makefile:35: tracelib_preload] Error 1
-make[1]: *** [/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/intel_2019.3_mpi_O/build/common.mk:2091: build_tracelibs] Error 2
-make: *** [/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/intel_2019.3_mpi_O/build/common.mk:2072: lib] Error 2

@@ -16,7 +16,9 @@ Untracked files:
   (use "git add <file>..." to include in what will be committed)
 	build-intel_2019.3_mpi_O.bat
 	build-intel_2019.3_mpi_O.bat.e10195
+	build-intel_2019.3_mpi_O.bat.e10199
 	build-intel_2019.3_mpi_O.bat.o10195
+	build-intel_2019.3_mpi_O.bat.o10199
 	src/prologue/tests/ESMCI_ExceptionsUTest.o
 	test-intel_2019.3_mpi_O.bat
 
@@ -177,7 +179,7 @@ ESMF_TRACE_STATICLINKLIBS=-lesmftrace_static
 
 
 --------------------------------------------------------------
-Compiling on Wed Feb 10 21:32:56 UTC 2021 on nid001000
+Compiling on Wed Feb 10 21:54:03 UTC 2021 on nid001000
 Machine characteristics: Linux nid001000 4.12.14-197.40_9.1.36-cray_shasta_c #1 SMP Fri Jun 26 15:28:45 UTC 2020 (99877ea) x86_64 x86_64 x86_64 GNU/Linux
 ==============================================================
  
@@ -3116,5 +3118,14 @@ cd /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/intel_2019.3_mpi_O/src/Infrastructure
 make tracelib_preload
 make[2]: Entering directory '/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/intel_2019.3_mpi_O/src/Infrastructure/Trace/preload'
 CC  -pthread -shared  -qopenmp -o /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/intel_2019.3_mpi_O/lib/libO/Linux.intel.64.mpi.default/libesmftrace_preload.so preload.o preload_io.o preload_mpi.o wrappers.o wrappers_io.o wrappers_mpi.o -fPIC  -m64 -mcmodel=small -pthread -Wl,--no-as-needed  -qopenmp -L/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/intel_2019.3_mpi_O/lib/libO/Linux.intel.64.mpi.default  -L/opt/intel/compilers_and_libraries_2020.3.275/linux/compiler/lib/intel64_lin/ -Wl,-rpath,/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/intel_2019.3_mpi_O/lib/libO/Linux.intel.64.mpi.default  -Wl,-rpath,/opt/intel/compilers_and_libraries_2020.3.275/linux/compiler/lib/intel64_lin/  -lmpi  -lsci_intel_mpi_mp -lsci_intel_mp -ldl -lxpmem -ldsmml -limf -lm -lpthread -lifport -lifcoremt -limf -lsvml -lm -lipgo -liomp5 -lintlc -lpthread -lsvml -lgcc -lgcc_s -lirc_s -ldl -lrt -ldl 
+make ESMF_PRELOADDIR=/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/intel_2019.3_mpi_O/lib/libO/Linux.intel.64.mpi.default build_preload_script
+make[3]: Entering directory '/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/intel_2019.3_mpi_O/src/Infrastructure/Trace/preload'
+chmod 755 /lfs/h1/emc/nceplibs/noscrub/Mark.Potts/intel_2019.3_mpi_O/lib/libO/Linux.intel.64.mpi.default/preload.sh
+make[3]: Leaving directory '/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/intel_2019.3_mpi_O/src/Infrastructure/Trace/preload'
 make[2]: Leaving directory '/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/intel_2019.3_mpi_O/src/Infrastructure/Trace/preload'
 make[1]: Leaving directory '/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/intel_2019.3_mpi_O'
+make[1]: Entering directory '/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/intel_2019.3_mpi_O'
+make[1]: Leaving directory '/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/intel_2019.3_mpi_O'
+ESMF library built successfully on Wed Feb 10 21:56:36 UTC 2021
+To verify, build and run the unit and system tests with: make check
+ or the more extensive: make all_tests
