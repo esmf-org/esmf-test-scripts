@@ -174,6 +174,9 @@ In file included from /work/noaa/da/mpotts/pgi_2019_openmpi_g/src/Infrastructure
 /work/noaa/da/mpotts/pgi_2019_openmpi_g/build_config/Linux.pgi.default/ESMC_Conf.h:78:28: error: operator '<' has no left operand
  #if (ESMF_PGIVERSION_MAJOR < 17) || ((ESMF_PGIVERSION_MAJOR == 17) && (ESMF_PGIVERSION_MINOR < 9))
                             ^
+make[8]: *** [/work/noaa/da/mpotts/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/ESMCI_Fraction.o] Error 1
+make[8]: *** Waiting for unfinished jobs....
+make[8]: *** [/work/noaa/da/mpotts/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/ESMCI_Util.o] Error 1
 In file included from /work/noaa/da/mpotts/pgi_2019_openmpi_g/src/Infrastructure/Util/src/../include/ESMC_Util.h:23:0,
                  from /work/noaa/da/mpotts/pgi_2019_openmpi_g/src/Infrastructure/Util/src/../include/ESMCI_CoordSys.h:20,
                  from /work/noaa/da/mpotts/pgi_2019_openmpi_g/src/Infrastructure/Util/src/ESMCI_CoordSys.C:29:
@@ -224,9 +227,6 @@ In file included from /work/noaa/da/mpotts/pgi_2019_openmpi_g/src/Infrastructure
 /work/noaa/da/mpotts/pgi_2019_openmpi_g/build_config/Linux.pgi.default/ESMF_Conf.inc:99:28: error: operator '<' has no left operand
  #if (ESMF_PGIVERSION_MAJOR < 17) || ((ESMF_PGIVERSION_MAJOR == 17) && (ESMF_PGIVERSION_MINOR < 9))
                             ^
-make[8]: *** [/work/noaa/da/mpotts/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/ESMCI_Fraction.o] Error 1
-make[8]: *** Waiting for unfinished jobs....
-make[8]: *** [/work/noaa/da/mpotts/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/ESMCI_Util.o] Error 1
 make[8]: *** [/work/noaa/da/mpotts/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/ESMCI_F90Interface.o] Error 1
 make[8]: *** [/work/noaa/da/mpotts/pgi_2019_openmpi_g/obj/objg/Linux.pgi.64.openmpi.default/ESMCI_CoordSys.o] Error 1
 make[7]: *** [esmflib] Error 2
