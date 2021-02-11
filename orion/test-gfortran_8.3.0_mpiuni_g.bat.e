@@ -16,37 +16,6 @@ Currently Loaded Modules:
 
  
 
-In file included from ESMCI_StringSubr.C:27:0:
-ESMCI_StringSubr.C:103:14: warning: unused parameter ‘str1’ [-Wunused-parameter]
-   void FTN_X(c_5strings)(char *str1, char *str2, char *str3, char *str4,
-              ^
-/work/noaa/da/mpotts/gfortran_8.3.0_mpiuni_g/build_config/Linux.gfortran.default/ESMC_Conf.h:22:21: note: in definition of macro ‘FTN_X’
- #define FTN_X(func) func##_
-                     ^
-ESMCI_StringSubr.C:103:14: warning: unused parameter ‘str2’ [-Wunused-parameter]
-   void FTN_X(c_5strings)(char *str1, char *str2, char *str3, char *str4,
-              ^
-/work/noaa/da/mpotts/gfortran_8.3.0_mpiuni_g/build_config/Linux.gfortran.default/ESMC_Conf.h:22:21: note: in definition of macro ‘FTN_X’
- #define FTN_X(func) func##_
-                     ^
-ESMCI_StringSubr.C:103:14: warning: unused parameter ‘str3’ [-Wunused-parameter]
-   void FTN_X(c_5strings)(char *str1, char *str2, char *str3, char *str4,
-              ^
-/work/noaa/da/mpotts/gfortran_8.3.0_mpiuni_g/build_config/Linux.gfortran.default/ESMC_Conf.h:22:21: note: in definition of macro ‘FTN_X’
- #define FTN_X(func) func##_
-                     ^
-ESMCI_StringSubr.C:103:14: warning: unused parameter ‘str4’ [-Wunused-parameter]
-   void FTN_X(c_5strings)(char *str1, char *str2, char *str3, char *str4,
-              ^
-/work/noaa/da/mpotts/gfortran_8.3.0_mpiuni_g/build_config/Linux.gfortran.default/ESMC_Conf.h:22:21: note: in definition of macro ‘FTN_X’
- #define FTN_X(func) func##_
-                     ^
-ESMCI_StringSubr.C:103:14: warning: unused parameter ‘str5’ [-Wunused-parameter]
-   void FTN_X(c_5strings)(char *str1, char *str2, char *str3, char *str4,
-              ^
-/work/noaa/da/mpotts/gfortran_8.3.0_mpiuni_g/build_config/Linux.gfortran.default/ESMC_Conf.h:22:21: note: in definition of macro ‘FTN_X’
- #define FTN_X(func) func##_
-                     ^
 ESMF_StringUTest.F90:17.8:
 
     use ESMF
