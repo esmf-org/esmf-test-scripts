@@ -95,6 +95,38 @@ In file included from /work/noaa/da/mpotts/pgi_2019_openmpi_O/src/Infrastructure
  #if (ESMF_PGIVERSION_MAJOR < 17) || ((ESMF_PGIVERSION_MAJOR == 17) && (ESMF_PGIVERSION_MINOR < 9))
                             ^
 In file included from /work/noaa/da/mpotts/pgi_2019_openmpi_O/src/Infrastructure/Util/src/../include/ESMCI_Macros.h:25:0,
+                 from /work/noaa/da/mpotts/pgi_2019_openmpi_O/src/Infrastructure/Util/src/ESMCI_Util.C:37:
+/work/noaa/da/mpotts/pgi_2019_openmpi_O/build_config/Linux.pgi.default/ESMF_Conf.inc:23:28: error: operator '<' has no left operand
+ #if (ESMF_PGIVERSION_MAJOR < 8)
+                            ^
+/work/noaa/da/mpotts/pgi_2019_openmpi_O/build_config/Linux.pgi.default/ESMF_Conf.inc:35:28: error: operator '<' has no left operand
+ #if (ESMF_PGIVERSION_MAJOR < 11)
+                            ^
+/work/noaa/da/mpotts/pgi_2019_openmpi_O/build_config/Linux.pgi.default/ESMF_Conf.inc:39:28: error: operator '==' has no left operand
+ #if (ESMF_PGIVERSION_MAJOR == 11) && (ESMF_PGIVERSION_MINOR < 2)
+                            ^
+/work/noaa/da/mpotts/pgi_2019_openmpi_O/build_config/Linux.pgi.default/ESMF_Conf.inc:48:28: error: operator '<' has no left operand
+ #if (ESMF_PGIVERSION_MAJOR < 12)
+                            ^
+/work/noaa/da/mpotts/pgi_2019_openmpi_O/build_config/Linux.pgi.default/ESMF_Conf.inc:58:28: error: operator '<' has no left operand
+ #if (ESMF_PGIVERSION_MAJOR < 8)
+                            ^
+/work/noaa/da/mpotts/pgi_2019_openmpi_O/build_config/Linux.pgi.default/ESMF_Conf.inc:68:28: error: operator '<' has no left operand
+ #if (ESMF_PGIVERSION_MAJOR < 8)
+                            ^
+/work/noaa/da/mpotts/pgi_2019_openmpi_O/build_config/Linux.pgi.default/ESMF_Conf.inc:77:49: error: operator '<' has no left operand
+ #if defined(ESMF_PIO) && (ESMF_PGIVERSION_MAJOR < 8)
+                                                 ^
+/work/noaa/da/mpotts/pgi_2019_openmpi_O/build_config/Linux.pgi.default/ESMF_Conf.inc:80:28: error: operator '<' has no left operand
+ #if (ESMF_PGIVERSION_MAJOR < 10) || ((ESMF_PGIVERSION_MAJOR == 10) && (ESMF_PGIVERSION_MINOR == 0))
+                            ^
+/work/noaa/da/mpotts/pgi_2019_openmpi_O/build_config/Linux.pgi.default/ESMF_Conf.inc:89:28: error: operator '<' has no left operand
+ #if (ESMF_PGIVERSION_MAJOR < 15) || ((ESMF_PGIVERSION_MAJOR == 15) && (ESMF_PGIVERSION_MINOR < 7))
+                            ^
+/work/noaa/da/mpotts/pgi_2019_openmpi_O/build_config/Linux.pgi.default/ESMF_Conf.inc:99:28: error: operator '<' has no left operand
+ #if (ESMF_PGIVERSION_MAJOR < 17) || ((ESMF_PGIVERSION_MAJOR == 17) && (ESMF_PGIVERSION_MINOR < 9))
+                            ^
+In file included from /work/noaa/da/mpotts/pgi_2019_openmpi_O/src/Infrastructure/Util/src/../include/ESMCI_Macros.h:25:0,
                  from /work/noaa/da/mpotts/pgi_2019_openmpi_O/src/Infrastructure/Util/src/ESMCI_F90Interface.C:17:
 /work/noaa/da/mpotts/pgi_2019_openmpi_O/build_config/Linux.pgi.default/ESMF_Conf.inc:23:28: error: operator '<' has no left operand
  #if (ESMF_PGIVERSION_MAJOR < 8)
@@ -140,38 +172,6 @@ In file included from /work/noaa/da/mpotts/pgi_2019_openmpi_O/src/Infrastructure
  #if (ESMF_PGIVERSION_MAJOR < 17)
                             ^
 /work/noaa/da/mpotts/pgi_2019_openmpi_O/build_config/Linux.pgi.default/ESMC_Conf.h:78:28: error: operator '<' has no left operand
- #if (ESMF_PGIVERSION_MAJOR < 17) || ((ESMF_PGIVERSION_MAJOR == 17) && (ESMF_PGIVERSION_MINOR < 9))
-                            ^
-In file included from /work/noaa/da/mpotts/pgi_2019_openmpi_O/src/Infrastructure/Util/src/../include/ESMCI_Macros.h:25:0,
-                 from /work/noaa/da/mpotts/pgi_2019_openmpi_O/src/Infrastructure/Util/src/ESMCI_Util.C:37:
-/work/noaa/da/mpotts/pgi_2019_openmpi_O/build_config/Linux.pgi.default/ESMF_Conf.inc:23:28: error: operator '<' has no left operand
- #if (ESMF_PGIVERSION_MAJOR < 8)
-                            ^
-/work/noaa/da/mpotts/pgi_2019_openmpi_O/build_config/Linux.pgi.default/ESMF_Conf.inc:35:28: error: operator '<' has no left operand
- #if (ESMF_PGIVERSION_MAJOR < 11)
-                            ^
-/work/noaa/da/mpotts/pgi_2019_openmpi_O/build_config/Linux.pgi.default/ESMF_Conf.inc:39:28: error: operator '==' has no left operand
- #if (ESMF_PGIVERSION_MAJOR == 11) && (ESMF_PGIVERSION_MINOR < 2)
-                            ^
-/work/noaa/da/mpotts/pgi_2019_openmpi_O/build_config/Linux.pgi.default/ESMF_Conf.inc:48:28: error: operator '<' has no left operand
- #if (ESMF_PGIVERSION_MAJOR < 12)
-                            ^
-/work/noaa/da/mpotts/pgi_2019_openmpi_O/build_config/Linux.pgi.default/ESMF_Conf.inc:58:28: error: operator '<' has no left operand
- #if (ESMF_PGIVERSION_MAJOR < 8)
-                            ^
-/work/noaa/da/mpotts/pgi_2019_openmpi_O/build_config/Linux.pgi.default/ESMF_Conf.inc:68:28: error: operator '<' has no left operand
- #if (ESMF_PGIVERSION_MAJOR < 8)
-                            ^
-/work/noaa/da/mpotts/pgi_2019_openmpi_O/build_config/Linux.pgi.default/ESMF_Conf.inc:77:49: error: operator '<' has no left operand
- #if defined(ESMF_PIO) && (ESMF_PGIVERSION_MAJOR < 8)
-                                                 ^
-/work/noaa/da/mpotts/pgi_2019_openmpi_O/build_config/Linux.pgi.default/ESMF_Conf.inc:80:28: error: operator '<' has no left operand
- #if (ESMF_PGIVERSION_MAJOR < 10) || ((ESMF_PGIVERSION_MAJOR == 10) && (ESMF_PGIVERSION_MINOR == 0))
-                            ^
-/work/noaa/da/mpotts/pgi_2019_openmpi_O/build_config/Linux.pgi.default/ESMF_Conf.inc:89:28: error: operator '<' has no left operand
- #if (ESMF_PGIVERSION_MAJOR < 15) || ((ESMF_PGIVERSION_MAJOR == 15) && (ESMF_PGIVERSION_MINOR < 7))
-                            ^
-/work/noaa/da/mpotts/pgi_2019_openmpi_O/build_config/Linux.pgi.default/ESMF_Conf.inc:99:28: error: operator '<' has no left operand
  #if (ESMF_PGIVERSION_MAJOR < 17) || ((ESMF_PGIVERSION_MAJOR == 17) && (ESMF_PGIVERSION_MINOR < 9))
                             ^
 In file included from /work/noaa/da/mpotts/pgi_2019_openmpi_O/src/Infrastructure/Util/src/../include/ESMC_Util.h:23:0,

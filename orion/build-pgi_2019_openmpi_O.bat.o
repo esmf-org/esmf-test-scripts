@@ -12,6 +12,8 @@ ESMF_8_0_2_beta_snapshot_01
 #	build-pgi_2019_openmpi_O.bat_1202985.o
 #	build-pgi_2019_openmpi_O.bat_1216583.e
 #	build-pgi_2019_openmpi_O.bat_1216583.o
+#	build-pgi_2019_openmpi_O.bat_1237571.e
+#	build-pgi_2019_openmpi_O.bat_1237571.o
 #	test-pgi_2019_openmpi_O.bat
 nothing added to commit but untracked files present (use "git add" to track)
 --------------------------------------------------------------
@@ -163,8 +165,8 @@ ESMF_TRACE_STATICLINKLIBS=-lesmftrace_static
 
 
 --------------------------------------------------------------
-Compiling on Mon Feb 8 10:00:03 CST 2021 on Orion-17-29.HPC.MsState.Edu
-Machine characteristics: Linux Orion-17-29.HPC.MsState.Edu 3.10.0-957.27.2.el7.x86_64 #1 SMP Mon Jul 29 17:46:05 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
+Compiling on Thu Feb 11 09:30:35 CST 2021 on Orion-23-32.HPC.MsState.Edu
+Machine characteristics: Linux Orion-23-32.HPC.MsState.Edu 3.10.0-957.27.2.el7.x86_64 #1 SMP Mon Jul 29 17:46:05 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
 ==============================================================
  
 make[1]: Entering directory `/work/noaa/da/mpotts/pgi_2019_openmpi_O'
