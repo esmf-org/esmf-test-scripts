@@ -84,6 +84,8 @@ def copy_artifacts(build_dir,artifacts_root,machine_name,mpiversion,oe_filelist,
   esmfmkfile = glob.glob('{}/lib/lib{}/*/esmf.mk'.format(build_dir,build_type))
   build_time = datetime.datetime.fromtimestamp(os.path.getmtime(esmfmkfile[0]))
   summary_file = open('{}/summary.dat'.format(outpath),"w")
+  summary_file.write('\n===================================================================\n')
+  summary_file.write('Build for = {}, mpi version {} on {}\n'.format(build_basename,mpiversion,machine_name))
   summary_file.write('Build time = {}\n'.format(build_time))
   summary_file.write('git hash = {}\n\n'.format(build_hash))
   unit_results = re.sub(' FAIL','\tFAIL',unit_results)
@@ -91,7 +93,8 @@ def copy_artifacts(build_dir,artifacts_root,machine_name,mpiversion,oe_filelist,
   example_results = re.sub(' FAIL',' \tFAIL',example_results)
   summary_file.write('unit test results   \t{}\n'.format(unit_results))
   summary_file.write('system test results \t{}\n'.format(system_results))
-  summary_file.write('example est results \t{}\n'.format(example_results))
+  summary_file.write('example est results \t{}\n\n'.format(example_results))
+  summary_file.write('\n===================================================================\n')
   summary_file.close()
 # return
   for afile in example_artifacts:
