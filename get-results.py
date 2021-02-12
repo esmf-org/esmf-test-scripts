@@ -61,7 +61,7 @@ def copy_artifacts(build_dir,artifacts_root,machine_name,mpiversion,oe_filelist,
     os.system(cp_cmd)
   if(build_stage):
 #   print('just the build stage')
-    git_cmd = "cd {};git pull -X theirs;git add develop/{};git commit -a -m\'update for {} on {}\';git push origin python".format(artifacts_root,machine_name,build_basename,machine_name)
+    git_cmd = "cd {};git pull -X theirs --no-edit;git add develop/{};git commit -a -m\'update for {} on {}\';git push origin python".format(artifacts_root,machine_name,build_basename,machine_name)
     os.system(git_cmd)
     return
   example_artifacts = glob.glob('{}/examples/examples{}/*/*.Log'.format(build_dir,build_type))
