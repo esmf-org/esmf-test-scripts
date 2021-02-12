@@ -1,0 +1,37 @@
+machine: koehr
+account: NRLMR03795024 
+queue: standard
+scheduler: pbs
+corespernode: 48
+compiler: [intel,gfortran]
+intel:
+     versions: 
+       2020.2: 
+         compiler: compiler/intel/2020.2.254
+         netcdf: cse/netcdf/4.7.4
+         mpi:
+           intelmpi: 
+             module: compiler/intelmpi/2020.2.254
+           openmpi: 
+             module: compiler/openmpi/2.1.2
+           mpt: 
+             module: mpt/2.20
+     extramodule: cseinit
+     unloadmodule: mpt/2.20
+gfortran:
+     versions: 
+       7.3.0: 
+         compiler: gcc/7.3.0
+         netcdf: cse/netcdf/4.7.4
+         mpi:
+           mpt: 
+             module: mpt/2.20
+     extramodule: cseinit
+     versions: 
+       10.1.0: 
+         compiler: gcc/10.1.1
+         netcdf: cse/netcdf/4.7.4
+         mpi:
+           mpt: 
+             module: mpt/2.20
+     extramodule: cseinit
