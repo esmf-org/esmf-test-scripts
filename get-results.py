@@ -1,48 +1,11 @@
 import os
 import subprocess
+import datetime
 import sys
 import time
 import glob
 import re
 import pathlib
-
-def main(argv):
-  i = 0
-  root_path = pathlib.Path(__file__).parent.absolute()
-  jobid = sys.argv[1]
-  directory = sys.argv[2]
-  machine = sys.argv[3]
-  scheduler = sys.argv[4]
-  script_dir = sys.argv[5]
-  start_time = time.time()
-  seconds = 14400
-  while True:
-    current_time = time.time()
-    elapsed_time = current_time - start_time
-    i = i+1
-    job_done = checkqueue(jobid,scheduler)
-    if(job_done):
-      
-      oe_filelist = glob.glob('{}/{}/*{}*'.format(script_dir,directory,jobid))
-      print('{}/{}/*{}*'.format(script_dir,directory,jobid))
-      for cfile in oe_filelist:
-        if(scheduler == "pbs"):
-          nfile = os.path.basename(re.sub('{}'.format(jobid), '', cfile))
-        else:
-          nfile = os.path.basename(re.sub('_{}'.format(jobid), '', cfile))
-        cp_cmd = "cp {} {}/{}/{}".format(cfile,root_path,machine,nfile,jobid)
-        print("cp_cmd is {}".format(cp_cmd))
-        os.system(cp_cmd)
-      file_root = os.path.basename(re.sub('.{}'.format(jobid), '',oe_filelist[0]))
-      git_cmd = "cd {};git pull -X theirs;git add {};git commit -a -m\'update for {} on {}\';git push origin python".format(root_path,machine,nfile,machine)
-      os.system(git_cmd)
-      break
-    time.sleep(30)
-
-    if elapsed_time > seconds:
-       print("Finished iterating in: " + str(int(elapsed_time))  + " seconds")
-       break
-
 
 def checkqueue(jobid,scheduler):
     if(scheduler == "slurm"):
@@ -62,6 +25,116 @@ def checkqueue(jobid,scheduler):
       result="done"
       return True
     return False
+
+def copy_artifacts(build_dir,artifacts_root,machine_name,mpiversion,oe_filelist,jobid,scheduler):
+
+  build_basename = os.path.basename(build_dir)
+  [compiler, version, mpiflavor, build_type] = build_basename.split("_")
+  #get the full path for placment of artifacts
+  if(mpiversion != "None"):
+    outpath = "{}/develop/{}/{}/{}/{}/{}/{}".format(artifacts_root,machine_name,compiler,version,build_type,mpiflavor,mpiversion)
+  else:
+    outpath = "{}/develop/{}/{}/{}/{}/{}".format(artifacts_root,machine_name,compiler,version,build_type,mpiflavor)
+  #Make directories, if they aren't already there
+  cmd = 'mkdir -p {}/examples'.format(outpath)
+  os.system(cmd)
+  cmd = 'mkdir -p {}/apps'.format(outpath)
+  os.system(cmd)
+  cmd = 'mkdir -p {}/test'.format(outpath)
+  os.system(cmd)
+  cmd = 'mkdir -p {}/lib'.format(outpath)
+  os.system(cmd)
+  cmd = 'mkdir -p {}/out'.format(outpath)
+  os.system(cmd)
+  #copy/rename the stdout/stderr files to artifacts out directory
+  build_stage = False
+  if(oe_filelist == []):
+    return
+  for cfile in oe_filelist:
+    if(scheduler == "pbs"):
+      nfile = os.path.basename(re.sub('{}'.format(jobid), '', cfile))
+    else:
+      nfile = os.path.basename(re.sub('_{}'.format(jobid), '', cfile))
+    if(nfile.find("build") != -1): # this is just the build job, so no test artifacts yet
+      build_stage = True
+    cp_cmd = 'cp {} {}/out/{}'.format(cfile,outpath,nfile)
+    os.system(cp_cmd)
+  if(build_stage):
+#   print('just the build stage')
+    git_cmd = "cd {};git pull -X theirs;git add develop/{};git commit -a -m\'update for {} on {}\';git push origin python".format(artifacts_root,machine_name,build_basename,machine_name)
+    os.system(git_cmd)
+    return
+  example_artifacts = glob.glob('{}/examples/examples{}/*/*.Log'.format(build_dir,build_type))
+  example_artifacts.extend(glob.glob('{}/examples/examples{}/*/*.stdout'.format(build_dir,build_type)))
+# get information from example results file to accumulate
+  ex_result_file =glob.glob('{}/examples/examples{}/*/*results'.format(build_dir,build_type))
+  example_results= subprocess.check_output('cat {}'.format(ex_result_file[0]),shell=True).strip().decode('utf-8')
+
+# get information from test results files to accumulate
+  test_artifacts = glob.glob('{}/test/test{}/*/*.Log'.format(build_dir,build_type))
+  test_artifacts.extend(glob.glob('{}/test/test{}/*/*.stdout'.format(build_dir,build_type)))
+  test_result_files =glob.glob('{}/test/test{}/*/*results'.format(build_dir,build_type))
+  test_results= subprocess.check_output('cat {} {}'.format(test_result_files[0],test_result_files[1]),shell=True).strip().decode('utf-8')
+  [system_results, unit_results] = test_results.split("\n")
+
+  cwd = os.getcwd()
+  os.chdir(build_dir)
+  build_hash = subprocess.check_output('git log --pretty=format:\'%h\' -n 1',shell=True).strip().decode('utf-8')
+  os.chdir(cwd)
+  esmfmkfile = glob.glob('{}/lib/lib{}/*/esmf.mk'.format(build_dir,build_type))
+  build_time = datetime.datetime.fromtimestamp(os.path.getmtime(esmfmkfile[0]))
+  summary_file = open('{}/summary.dat'.format(outpath),"w")
+  summary_file.write('Build time = {}\n'.format(build_time))
+  summary_file.write('git hash = {}\n\n'.format(build_hash))
+  unit_results = re.sub(' FAIL','\tFAIL',unit_results)
+  system_results = re.sub(' FAIL',' \tFAIL',system_results)
+  example_results = re.sub(' FAIL',' \tFAIL',example_results)
+  summary_file.write('unit test results   \t{}\n'.format(unit_results))
+  summary_file.write('system test results \t{}\n'.format(system_results))
+  summary_file.write('example est results \t{}\n'.format(example_results))
+  summary_file.close()
+# return
+  for afile in example_artifacts:
+    cmd = 'cp {} {}/examples'.format(afile,outpath)
+    os.system(cmd)
+  for afile in test_artifacts:
+    cmd = 'cp {} {}/test'.format(afile,outpath)
+    os.system(cmd)
+  for afile in esmfmkfile:
+    cmd = 'cp {} {}/lib'.format(afile,outpath)
+    os.system(cmd)
+
+  git_cmd = "cd {};git pull -X theirs;git add develop/{};git commit -a -m\'update for {} on {}\';git push origin python".format(artifacts_root,machine_name,build_basename,machine_name)
+  os.system(git_cmd)
+  return
+
+def main(argv):
+  root_path = pathlib.Path(__file__).parent.absolute()
+  jobid = sys.argv[1]
+  build_basename = sys.argv[2]
+  machine_name = sys.argv[3]
+  scheduler = sys.argv[4]
+  test_root_dir = sys.argv[5]
+  artifacts_root = sys.argv[6]
+  mpiver = sys.argv[7]
+  start_time = time.time()
+  seconds = 14400
+  build_dir = '{}/{}'.format(test_root_dir,build_basename)
+  while True:
+    current_time = time.time()
+    elapsed_time = current_time - start_time
+    job_done = checkqueue(jobid,scheduler)
+    if(job_done):
+      oe_filelist = glob.glob('{}/{}/*{}*'.format(test_root_dir,build_basename,jobid))
+      copy_artifacts(build_dir,artifacts_root,machine_name,mpiver,oe_filelist,jobid,scheduler)
+      break
+    time.sleep(30)
+
+    if elapsed_time > seconds:
+       print("Finished iterating in: " + str(int(elapsed_time))  + " seconds")
+       break
+
+
 
 if __name__ == "__main__":
     main(sys.argv[1:])

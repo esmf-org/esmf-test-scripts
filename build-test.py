@@ -33,6 +33,7 @@ def create_header(file_out,scheduler,filename,time,account,partition,queue,cpn,c
 def main(argv):
   mypath=pathlib.Path(__file__).parent.absolute()
   inpfile = sys.argv[1]
+  artifacts_root = sys.argv[2]
   print("reading {}".format(inpfile))
   with open(inpfile) as file:
     machine_list = yaml.load(file, Loader=yaml.FullLoader)
@@ -74,12 +75,18 @@ def main(argv):
                  cmdstring = "git clone -b ESMF_8_1_0_beta_snapshot_43 git@github.com:esmf-org/esmf {}".format(subdir)
                status= subprocess.check_output(cmdstring,shell=True).strip().decode('utf-8')
             os.chdir(subdir)
+            os.system("rm -rf obj mod lib examples test")
             filename = 'build-{}_{}_{}_{}.bat'.format(comp,ver,key,build_type)
             t_filename = 'test-{}_{}_{}_{}.bat'.format(comp,ver,key,build_type)
             fb = open(filename, "w")
             ft = open(t_filename, "w")
 
-            create_header(fb,scheduler,filename,"1:00:00",account,partition,queue,cpn,cluster)
+            if('build_time' in machine_list[comp]):
+              build_time = machine_list[comp]['build_time']
+            else:
+              build_time = "1:00:00"
+            create_header(fb,scheduler,filename,build_time,account,partition,queue,cpn,cluster)
+
             if('test_time' in machine_list[comp]):
               test_time = machine_list[comp]['test_time']
             else:
@@ -107,9 +114,9 @@ def main(argv):
                   fb.write("{}\n".format(machine_list[comp]['versions'][ver]['extra_commands'][cmd]))
                   ft.write("{}\n".format(machine_list[comp]['versions'][ver]['extra_commands'][cmd]))
 
-            mpiver = mpidict[key]
-            if(mpiver == "None"):
-              mpiver = ""
+            mpiflavor = mpidict[key]
+            if(mpiflavor == "None"):
+              mpiflavor = ""
   
             cmdstring = "export ESMF_DIR={}\n".format(os.getcwd())
             fb.write(cmdstring)
@@ -140,9 +147,14 @@ def main(argv):
                 fb.write("export {}\n".format(mpidict[key]['mpi_env_vars'][mpi_var]))
                 ft.write("export {}\n".format(mpidict[key]['mpi_env_vars'][mpi_var]))
             if(machine_list[comp]['versions'][ver]['netcdf'] == "None" ):
-              modulecmd = "module load {} {} \nmodule list\n".format(machine_list[comp]['versions'][ver]['compiler'],mpiver['module'])
+              modulecmd = "module load {} {} \nmodule list\n".format(machine_list[comp]['versions'][ver]['compiler'],mpiflavor['module'])
             else:
-              modulecmd = "module load {} {} {}\nmodule list\n".format(machine_list[comp]['versions'][ver]['compiler'],mpiver['module'],machine_list[comp]['versions'][ver]['netcdf'])
+              modulecmd = "module load {} {} {}\nmodule list\n".format(machine_list[comp]['versions'][ver]['compiler'],mpiflavor['module'],machine_list[comp]['versions'][ver]['netcdf'])
+            mpimodule = mpiflavor['module']
+            if(mpimodule == "None"):
+              mpiver = "None"
+            else:
+              mpiver = mpiflavor['module'].split('/')[-1]
             fb.write(modulecmd)
             ft.write(modulecmd)
             cmdstring = "make -j {}\n\n".format(cpn)
@@ -156,20 +168,20 @@ def main(argv):
               batch_build = "sbatch {}".format(filename)
               print(batch_build)
               jobnum= subprocess.check_output(batch_build,shell=True).strip().decode('utf-8').split()[3]
-              monitor_cmd = "python3 {}/get-results.py {} {} {} {} {}".format(mypath,jobnum,subdir,machine_name,scheduler,script_dir)
+              monitor_cmd = "python3 {}/get-results.py {} {} {} {} {} {} {}".format(mypath,jobnum,subdir,machine_name,scheduler,script_dir,artifacts_root,mpiver)
               proc = subprocess.Popen(monitor_cmd, shell=True, stdin=None, stdout=None, stderr=None, close_fds=True)
               # submit the second job to be dependent on the first
               batch_test = "sbatch --depend=afterok:{} {}".format(jobnum,t_filename)
               print("Submitting test_batch with command: {}".format(batch_test))
               jobnum= subprocess.check_output(batch_test,shell=True).strip().decode('utf-8').split()[3]
-              monitor_cmd = "python3 {}/get-results.py {} {} {} {} {}".format(mypath,jobnum,subdir,machine_name,scheduler,script_dir)
+              monitor_cmd = "python3 {}/get-results.py {} {} {} {} {} {} {}".format(mypath,jobnum,subdir,machine_name,scheduler,script_dir,artifacts_root,mpiver)
               proc = subprocess.Popen(monitor_cmd, shell=True, stdin=None, stdout=None, stderr=None, close_fds=True)
             elif(scheduler == "pbs"):
               batch_build = "qsub {}".format(filename)
               print(batch_build)
               jobnum= subprocess.check_output(batch_build,shell=True).strip().decode('utf-8').split(".")[0]
               monitor_cmd = \
-                "python3 {}/get-results.py {} {} {} {} {}".format(mypath,jobnum,subdir,machine_name,scheduler,script_dir)
+                   "python3 {}/get-results.py {} {} {} {} {} {} {}".format(mypath,jobnum,subdir,machine_name,scheduler,script_dir,artifacts_root,mpiver)
               print(monitor_cmd)
               proc = subprocess.Popen(monitor_cmd, shell=True, stdin=None, stdout=None, stderr=None, close_fds=True)
               print("Submitting batch_build with command: {}, jobnum is {}".format(batch_build,jobnum))
@@ -178,9 +190,8 @@ def main(argv):
               print("Submitting test_batch with command: {}".format(batch_test))
               jobnum= subprocess.check_output(batch_test,shell=True).strip().decode('utf-8').split(".")[0]
               monitor_cmd = \
-                "python3 {}/get-results.py {} {} {} {} {}".format(mypath,jobnum,subdir,machine_name,scheduler,script_dir)
+                   "python3 {}/get-results.py {} {} {} {} {} {} {}".format(mypath,jobnum,subdir,machine_name,scheduler,script_dir,artifacts_root,mpiver)
               print(monitor_cmd)
-#             proc = subprocess.Popen(monitor_cmd, shell=True, stdin=None, stdout=None, stderr=None, close_fds=True)
               proc = subprocess.Popen(monitor_cmd, shell=True)
             os.chdir("..")
   
