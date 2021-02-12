@@ -56,5 +56,5 @@ corresponds to the python3 version you are using). Install pyyaml under your own
 have to search the modules on the machine to find an installation of python3 that also has pip3 installed. With pyyaml installed, the script
 can be invoked as follows--
 
-python3 path-to/build-test.py path-to/my-platform.yaml 
+python3 path-to/build-test.py path-to/my-platform.yaml full-path-to/esmf-test-artifacts 
 
