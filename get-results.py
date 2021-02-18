@@ -9,7 +9,7 @@ import pathlib
 
 def checkqueue(jobid,scheduler):
     if(scheduler == "slurm"):
-      queue_query = "sacct -j {} | /bin/grep COMPLETED | head -n 1 | awk -F ' ' '{{print $6}}'".format(jobid)
+      queue_query = "sacct -j {} | head -n 3 | tail -n 1 | awk -F ' ' '{{print $6}}'".format(jobid)
     elif(scheduler == "pbs"):
       queue_query = "qstat -H {} | tail -n 1 | awk -F ' +' '{{print $10}}'".format(jobid)
     else:
@@ -22,7 +22,7 @@ def checkqueue(jobid,scheduler):
         else:
           return False
       if(scheduler == "slurm"):
-        if(result == "COMPLETED"): #could check for R and Q to see if it is running or waiting
+        if((result == "COMPLETED") or (result == "FAILED") or (result == "CANCELLED")): #could check for R and Q to see if it is running or waiting
           return True
         else:
           return False

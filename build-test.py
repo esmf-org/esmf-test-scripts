@@ -78,7 +78,6 @@ def main(argv):
                status= subprocess.check_output(cmdstring,shell=True).strip().decode('utf-8')
             os.chdir(subdir)
             os.system("rm -rf *.e *.o *bat.e* *bat.o*")
-            os.system("make clean ")
             os.system("git checkout develop")
             os.system("git pull origin develop")
             filename = 'build-{}_{}_{}_{}.bat'.format(comp,ver,key,build_type)
@@ -162,7 +161,7 @@ def main(argv):
               mpiver = mpiflavor['module'].split('/')[-1]
             fb.write(modulecmd)
             ft.write(modulecmd)
-            cmdstring = "make -j {}\n\n".format(cpn)
+            cmdstring = "make -j {} clean\nmake -j {}\n\n".format(cpn,cpn)
             fb.write(cmdstring)
             cmdstring = "make all_tests\n\n"
             ft.write(cmdstring)
