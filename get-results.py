@@ -112,7 +112,7 @@ def copy_artifacts(build_dir,artifacts_root,machine_name,mpiversion,oe_filelist,
     cmd = 'cp {} {}/lib'.format(afile,outpath)
     os.system(cmd)
 
-  git_cmd = "cd {};git pull -X theirs;git add develop/{};git commit -a -m\'update for {} on {}\';git push origin python".format(artifacts_root,machine_name,build_basename,machine_name)
+  git_cmd = "cd {};git pull -X theirs --no-edit;git add develop/{};git commit -a -m\'update for {} on {}\';git push origin python".format(artifacts_root,machine_name,build_basename,machine_name)
   os.system(git_cmd)
   return
 
