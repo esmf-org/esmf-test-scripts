@@ -4,7 +4,7 @@ queue: batch
 partition: orion
 scheduler: slurm
 corespernode: 40
-compiler: [intel,gfortran,pgi]
+compiler: [gfortran,pgi,intel]
 intel:
    versions:
      2020: 
