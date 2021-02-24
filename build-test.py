@@ -51,6 +51,11 @@ def main(argv):
     queue = machine_list['queue']
     cpn = machine_list['corespernode']
     scheduler = machine_list['scheduler']
+    if("branch" in machine_list):
+      branch = machine_list['branch']
+    else: 
+      branch = "develop"
+    account = machine_list['account']
     build_types = ['O','g']
     script_dir=os.getcwd()
     if("cluster" in machine_list):
@@ -71,15 +76,15 @@ def main(argv):
             if(not(os.path.isdir(subdir))):
                if(https == True):
 #                cmdstring = "git clone -b ESMF_8_1_0_beta_snapshot_43 https://github.com/esmf-org/esmf {}".format(subdir)
-                 cmdstring = "git clone -b develop https://github.com/esmf-org/esmf {}".format(subdir)
+                 cmdstring = "git clone -b release/8.1.0 https://github.com/esmf-org/esmf {}".format(subdir)
                else:
 #                cmdstring = "git clone -b ESMF_8_1_0_beta_snapshot_43 git@github.com:esmf-org/esmf {}".format(subdir)
-                 cmdstring = "git clone -b develop git@github.com:esmf-org/esmf {}".format(subdir)
+                 cmdstring = "git clone -b release/8.1.0 git@github.com:esmf-org/esmf {}".format(subdir)
                status= subprocess.check_output(cmdstring,shell=True).strip().decode('utf-8')
             os.chdir(subdir)
             os.system("rm -rf *.e *.o *bat.e* *bat.o*")
-            os.system("git checkout develop")
-            os.system("git pull origin develop")
+            os.system("git checkout release/8.1.0")
+            os.system("git pull origin release/8.1.0")
             filename = 'build-{}_{}_{}_{}.bat'.format(comp,ver,key,build_type)
             t_filename = 'test-{}_{}_{}_{}.bat'.format(comp,ver,key,build_type)
             fb = open(filename, "w")
@@ -96,7 +101,8 @@ def main(argv):
             else:
               test_time = "1:00:00"
             create_header(ft,scheduler,t_filename,test_time,account,partition,queue,cpn,cluster)
-  
+            fb.write("set -x") 
+            ft.write("set -x")
             if("unloadmodule" in machine_list[comp]):
               fb.write("\nmodule unload {}\n".format(machine_list[comp]['unloadmodule']))
               ft.write("\nmodule unload {}\n".format(machine_list[comp]['unloadmodule']))
@@ -152,8 +158,10 @@ def main(argv):
                 ft.write("export {}\n".format(mpidict[key]['mpi_env_vars'][mpi_var]))
             if(machine_list[comp]['versions'][ver]['netcdf'] == "None" ):
               modulecmd = "module load {} {} \nmodule list\n".format(machine_list[comp]['versions'][ver]['compiler'],mpiflavor['module'])
+              esmfnetcdf = "\n"
             else:
               modulecmd = "module load {} {} {}\nmodule list\n".format(machine_list[comp]['versions'][ver]['compiler'],mpiflavor['module'],machine_list[comp]['versions'][ver]['netcdf'])
+              esmfnetcdf = "export ESMF_NETCDF=nc-config\n"
             mpimodule = mpiflavor['module']
             if(mpimodule == "None"):
               mpiver = "None"
@@ -161,6 +169,8 @@ def main(argv):
               mpiver = mpiflavor['module'].split('/')[-1]
             fb.write(modulecmd)
             ft.write(modulecmd)
+            fb.write(esmfnetcdf)
+            ft.write(esmfnetcdf)
             cmdstring = "make -j {} clean\nmake -j {}\n\n".format(cpn,cpn)
             fb.write(cmdstring)
             cmdstring = "make all_tests\n\n"
@@ -172,20 +182,22 @@ def main(argv):
               batch_build = "sbatch {}".format(filename)
               print(batch_build)
               jobnum= subprocess.check_output(batch_build,shell=True).strip().decode('utf-8').split()[3]
-              monitor_cmd = "python3 {}/get-results.py {} {} {} {} {} {} {}".format(mypath,jobnum,subdir,machine_name,scheduler,script_dir,artifacts_root,mpiver)
+              monitor_cmd = "python3 {}/get-results.py {} {} {} {} {} {} {} {}".format(mypath,jobnum,subdir,machine_name,scheduler,script_dir,artifacts_root,mpiver,branch)
+              print(monitor_cmd)
               proc = subprocess.Popen(monitor_cmd, shell=True, stdin=None, stdout=None, stderr=None, close_fds=True)
               # submit the second job to be dependent on the first
               batch_test = "sbatch --depend=afterok:{} {}".format(jobnum,t_filename)
               print("Submitting test_batch with command: {}".format(batch_test))
               jobnum= subprocess.check_output(batch_test,shell=True).strip().decode('utf-8').split()[3]
-              monitor_cmd = "python3 {}/get-results.py {} {} {} {} {} {} {}".format(mypath,jobnum,subdir,machine_name,scheduler,script_dir,artifacts_root,mpiver)
+              monitor_cmd = "python3 {}/get-results.py {} {} {} {} {} {} {} {}".format(mypath,jobnum,subdir,machine_name,scheduler,script_dir,artifacts_root,mpiver,branch)
+              print(monitor_cmd)
               proc = subprocess.Popen(monitor_cmd, shell=True, stdin=None, stdout=None, stderr=None, close_fds=True)
             elif(scheduler == "pbs"):
               batch_build = "qsub {}".format(filename)
               print(batch_build)
               jobnum= subprocess.check_output(batch_build,shell=True).strip().decode('utf-8').split(".")[0]
               monitor_cmd = \
-                   "python3 {}/get-results.py {} {} {} {} {} {} {}".format(mypath,jobnum,subdir,machine_name,scheduler,script_dir,artifacts_root,mpiver)
+                   "python3 {}/get-results.py {} {} {} {} {} {} {} {}".format(mypath,jobnum,subdir,machine_name,scheduler,script_dir,artifacts_root,mpiver,branch)
               print(monitor_cmd)
               proc = subprocess.Popen(monitor_cmd, shell=True, stdin=None, stdout=None, stderr=None, close_fds=True)
               print("Submitting batch_build with command: {}, jobnum is {}".format(batch_build,jobnum))
@@ -194,7 +206,7 @@ def main(argv):
               print("Submitting test_batch with command: {}".format(batch_test))
               jobnum= subprocess.check_output(batch_test,shell=True).strip().decode('utf-8').split(".")[0]
               monitor_cmd = \
-                   "python3 {}/get-results.py {} {} {} {} {} {} {}".format(mypath,jobnum,subdir,machine_name,scheduler,script_dir,artifacts_root,mpiver)
+                   "python3 {}/get-results.py {} {} {} {} {} {} {} {}".format(mypath,jobnum,subdir,machine_name,scheduler,script_dir,artifacts_root,mpiver,branch)
               print(monitor_cmd)
               proc = subprocess.Popen(monitor_cmd, shell=True)
             os.chdir("..")
