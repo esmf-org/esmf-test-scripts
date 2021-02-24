@@ -9,7 +9,7 @@ import pathlib
 
 def checkqueue(jobid,scheduler):
     if(scheduler == "slurm"):
-      queue_query = "squeue -j {}".format(jobid)
+      queue_query = "sacct -j {} | head -n 3 | tail -n 1 | awk -F ' ' '{{print $6}}'".format(jobid)
     elif(scheduler == "pbs"):
       queue_query = "qstat -H {} | tail -n 1 | awk -F ' +' '{{print $10}}'".format(jobid)
     else:
@@ -18,6 +18,11 @@ def checkqueue(jobid,scheduler):
       result= subprocess.check_output(queue_query,shell=True).strip().decode('utf-8')
       if(scheduler == "pbs"):
         if(result == "F"): #could check for R and Q to see if it is running or waiting
+          return True
+        else:
+          return False
+      if(scheduler == "slurm"):
+        if((result == "COMPLETED") or (result == "FAILED") or (result == "CANCELLED")): #could check for R and Q to see if it is running or waiting
           return True
         else:
           return False
@@ -61,7 +66,7 @@ def copy_artifacts(build_dir,artifacts_root,machine_name,mpiversion,oe_filelist,
     os.system(cp_cmd)
   if(build_stage):
 #   print('just the build stage')
-    git_cmd = "cd {};git pull -X theirs;git add develop/{};git commit -a -m\'update for {} on {}\';git push origin python".format(artifacts_root,machine_name,build_basename,machine_name)
+    git_cmd = "cd {};git pull -X theirs --no-edit;git add develop/{};git commit -a -m\'update for {} on {}\';git push origin python".format(artifacts_root,machine_name,build_basename,machine_name)
     os.system(git_cmd)
     return
   example_artifacts = glob.glob('{}/examples/examples{}/*/*.Log'.format(build_dir,build_type))
@@ -107,7 +112,7 @@ def copy_artifacts(build_dir,artifacts_root,machine_name,mpiversion,oe_filelist,
     cmd = 'cp {} {}/lib'.format(afile,outpath)
     os.system(cmd)
 
-  git_cmd = "cd {};git pull -X theirs;git add develop/{};git commit -a -m\'update for {} on {}\';git push origin python".format(artifacts_root,machine_name,build_basename,machine_name)
+  git_cmd = "cd {};git pull -X theirs --no-edit;git add develop/{};git commit -a -m\'update for {} on {}\';git push origin python".format(artifacts_root,machine_name,build_basename,machine_name)
   os.system(git_cmd)
   return
 
