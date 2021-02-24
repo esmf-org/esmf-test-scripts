@@ -137,11 +137,11 @@ def main(argv):
             fb.write(cmdstring)
             ft.write(cmdstring)
   
-            cmdstring="export ESMF_TEST_EXHAUSTIVE='ON'\n"
+            cmdstring="export ESMF_TESTEXHAUSTIVE='ON'\n"
             fb.write(cmdstring)
             ft.write(cmdstring)
   
-            cmdstring="export ESMF_TEST_WITHTHREADS='ON'\n"
+            cmdstring="export ESMF_TESTWITHTHREADS='ON'\n"
             fb.write(cmdstring)
             ft.write(cmdstring)
 
