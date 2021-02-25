@@ -57,7 +57,7 @@ python -c 'print "starting harvestAPIsFromRefDoc on $TAG2"'
 python -c 'import harvestAPIsFromRefDoc as h; h.harvest_APIs("'$ESMF_DIR'", "APIs-'$name'.out")'
 
 #dryrun
-python -c 'import harvestAPIsFromRefDoc as h; h.harvest_APIs("'$ESMF_DIR'", "'$TAG2'")'
+python -c 'import harvestAPIsFromRefDoc as h; h.harvest_APIs("'$ESMF_DIR'", "'$name'")'
 
 
 python -c 'print "finishing harvestAPIsFromRefDoc on $TAG2"'
