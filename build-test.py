@@ -9,8 +9,7 @@ import pathlib
 def create_header(file_out,scheduler,filename,time,account,partition,queue,cpn,cluster):
   if(scheduler == "slurm"): 
     file_out.write("#!/bin/sh -l\n")
-    file_out.write("#SBATCH -o {}_%j.o\n".format(filename))
-    file_out.write("#SBATCH -e {}_%j.e\n".format(filename))
+    file_out.write("#SBATCH --output {}_%j.o\n".format(filename))
     file_out.write("#SBATCH --account={}\n".format(account))
     if(partition != "None"):
       file_out.write("#SBATCH --partition={}\n".format(partition))
@@ -24,6 +23,7 @@ def create_header(file_out,scheduler,filename,time,account,partition,queue,cpn,c
   elif(scheduler == "pbs"): 
     file_out.write("#!/bin/sh -l\n")
     file_out.write("#PBS -N {}\n".format(filename))
+    file_out.write("#PBS -j oe\n")
     file_out.write("#PBS -q {}\n".format(queue))
     file_out.write("#PBS -A {}\n".format(account))
     file_out.write("#PBS -l select=1:ncpus={}:mpiprocs={}\n".format(cpn,cpn))
@@ -101,8 +101,8 @@ def main(argv):
             else:
               test_time = "1:00:00"
             create_header(ft,scheduler,t_filename,test_time,account,partition,queue,cpn,cluster)
-            fb.write("set -x") 
-            ft.write("set -x")
+            fb.write("set -x\n") 
+            ft.write("set -x\n")
             if("unloadmodule" in machine_list[comp]):
               fb.write("\nmodule unload {}\n".format(machine_list[comp]['unloadmodule']))
               ft.write("\nmodule unload {}\n".format(machine_list[comp]['unloadmodule']))
@@ -124,9 +124,6 @@ def main(argv):
                   fb.write("{}\n".format(machine_list[comp]['versions'][ver]['extra_commands'][cmd]))
                   ft.write("{}\n".format(machine_list[comp]['versions'][ver]['extra_commands'][cmd]))
 
-            mpiflavor = mpidict[key]
-            if(mpiflavor == "None"):
-              mpiflavor = ""
   
             cmdstring = "export ESMF_DIR={}\n".format(os.getcwd())
             fb.write(cmdstring)
@@ -152,6 +149,13 @@ def main(argv):
             fb.write(cmdstring)
             ft.write(cmdstring)
 
+            mpiflavor = mpidict[key]
+            if(mpiflavor['module'] == "None"):
+              mpiflavor['module'] = ""
+              cmdstring = "export ESMF_MPIRUN={}/src/Infrastructure/stubs/mpiuni/mpirun\n".format(os.getcwd())
+              fb.write(cmdstring)
+              ft.write(cmdstring)
+
             if("mpi_env_vars" in mpidict[key]):
               for mpi_var in mpidict[key]['mpi_env_vars']:
                 fb.write("export {}\n".format(mpidict[key]['mpi_env_vars'][mpi_var]))
@@ -163,7 +167,7 @@ def main(argv):
               modulecmd = "module load {} {} {}\nmodule list\n".format(machine_list[comp]['versions'][ver]['compiler'],mpiflavor['module'],machine_list[comp]['versions'][ver]['netcdf'])
               esmfnetcdf = "export ESMF_NETCDF=nc-config\n"
             mpimodule = mpiflavor['module']
-            if(mpimodule == "None"):
+            if(mpimodule == ""):
               mpiver = "None"
             else:
               mpiver = mpiflavor['module'].split('/')[-1]
