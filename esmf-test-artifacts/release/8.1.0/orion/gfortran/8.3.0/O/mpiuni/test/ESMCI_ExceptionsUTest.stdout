@@ -1,7 +1,0 @@
-Beginning Test, file ESMCI_ExceptionsUTest.C, line 55
-NUMBER_OF_PROCESSORS 1
-PASS Bare throw Test, ESMCI_ExceptionsUTest.C, line 68
-PASS ClassNoDestructor throw Test, ESMCI_ExceptionsUTest.C, line 81
-PASS ClassWithDestructor throw Test, ESMCI_ExceptionsUTest.C, line 94
-Ending Test, file ESMCI_ExceptionsUTest.C, line 98
- PET 0 Test Elapsed Time  1.071000 msec.
