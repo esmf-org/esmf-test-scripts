@@ -9,7 +9,6 @@ import pathlib
 def create_header(file_out,scheduler,filename,time,account,partition,queue,cpn,cluster):
   if(scheduler == "slurm"): 
     file_out.write("#!/bin/sh -l\n")
-    file_out.write("#SBATCH --output {}_%j.o\n".format(filename))
     file_out.write("#SBATCH --account={}\n".format(account))
     if(partition != "None"):
       file_out.write("#SBATCH --partition={}\n".format(partition))
@@ -20,6 +19,8 @@ def create_header(file_out,scheduler,filename,time,account,partition,queue,cpn,c
     file_out.write("#SBATCH --ntasks-per-node={}\n".format(cpn))
     file_out.write("#SBATCH --time={}\n".format(time))
     file_out.write("#SBATCH --exclusive\n")
+    file_out.write("#SBATCH --output {}_%j.o\n".format(filename))
+    file_out.write("export JOBID=$SLURM_JOBID\n")
   elif(scheduler == "pbs"): 
     file_out.write("#!/bin/sh -l\n")
     file_out.write("#PBS -N {}\n".format(filename))
@@ -28,6 +29,7 @@ def create_header(file_out,scheduler,filename,time,account,partition,queue,cpn,c
     file_out.write("#PBS -A {}\n".format(account))
     file_out.write("#PBS -l select=1:ncpus={}:mpiprocs={}\n".format(cpn,cpn))
     file_out.write("#PBS -l walltime={}\n".format(time))
+    file_out.write("export JOBID=$PBS_JOBID\n")
     file_out.write("cd {}\n".format(os.getcwd()))
 
 def main(argv):
@@ -82,7 +84,7 @@ def main(argv):
                  cmdstring = "git clone -b {} git@github.com:esmf-org/esmf {}".format(branch,subdir)
                status= subprocess.check_output(cmdstring,shell=True).strip().decode('utf-8')
             os.chdir(subdir)
-            os.system("rm -rf *.e *.o *bat.e* *bat.o*")
+            os.system("rm -rf *.e *.o *bat.e* *bat.o* *.log")
             os.system("git remote update; git checkout {}".format(branch))
             os.system("git pull origin {}".format(branch))
             filename = 'build-{}_{}_{}_{}.bat'.format(comp,ver,key,build_type)
@@ -175,9 +177,9 @@ def main(argv):
             ft.write(modulecmd)
             fb.write(esmfnetcdf)
             ft.write(esmfnetcdf)
-            cmdstring = "make -j {} clean\nmake -j {}\n\n".format(cpn,cpn)
+            cmdstring = "make -j {} clean |& tee clean_$JOBID.log \nmake -j {} |& tee build_$JOBID.log\n\n".format(cpn,cpn)
             fb.write(cmdstring)
-            cmdstring = "make all_tests\n\n"
+            cmdstring = "make install |& tee install_$JOBID.log \nmake all_tests |& tee test_$JOBID.log \n\n"
             ft.write(cmdstring)
   
             fb.close()

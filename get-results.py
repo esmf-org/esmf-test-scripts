@@ -53,6 +53,7 @@ def copy_artifacts(build_dir,artifacts_root,machine_name,mpiversion,oe_filelist,
   os.system(cmd)
   #copy/rename the stdout/stderr files to artifacts out directory
   build_stage = False
+  print("oe filelist is {}".format(oe_filelist))
   if(oe_filelist == []):
     return
   for cfile in oe_filelist:
@@ -60,6 +61,7 @@ def copy_artifacts(build_dir,artifacts_root,machine_name,mpiversion,oe_filelist,
       nfile = os.path.basename(re.sub('{}'.format(jobid), '', cfile))
     else:
       nfile = os.path.basename(re.sub('_{}'.format(jobid), '', cfile))
+    print("nfile is {}".format(nfile))
     if(nfile.find("build") != -1): # this is just the build job, so no test artifacts yet
       build_stage = True
     cp_cmd = 'cp {} {}/out/{}'.format(cfile,outpath,nfile)
@@ -134,7 +136,8 @@ def main(argv):
     elapsed_time = current_time - start_time
     job_done = checkqueue(jobid,scheduler)
     if(job_done):
-      oe_filelist = glob.glob('{}/{}/*{}*'.format(test_root_dir,build_basename,jobid))
+#     oe_filelist = glob.glob('{}/{}/*{}*'.format(test_root_dir,build_basename,jobid))
+      oe_filelist = glob.glob('{}/{}/*_{}.log'.format(test_root_dir,build_basename,jobid))
       copy_artifacts(build_dir,artifacts_root,machine_name,mpiver,oe_filelist,jobid,scheduler,branch)
       break
     time.sleep(30)

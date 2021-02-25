@@ -4,7 +4,7 @@ queue: batch
 partition: orion
 scheduler: slurm
 corespernode: 40
-compiler: [gfortran,pgi,intel]
+compiler: [intel,gfortran,pgi]
 branch: release/8.1.0
 intel:
    versions:
@@ -18,10 +18,10 @@ gfortran:
    versions:
      8.3.0: 
        compiler: gcc/8.3.0
-       netcdf: netcdf/4.7.4
+       netcdf: netcdf/4.7.2
        mpi:
            openmpi: 
-             module: openmpi/4.0.4
+             module: openmpi/4.0.2
            mpiuni: 
              module: None
 #    10.2.0: 
