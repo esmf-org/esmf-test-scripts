@@ -1,0 +1,85 @@
+  Beginning Test, file ESMF_LocStreamUTest.F90, line 78
+  NUMBER_OF_PROCESSORS           1
+  PASS  Testing LocStream IsCreated for uncreated object, ESMF_LocStreamUTest.F90, line 99
+  PASS  Testing LocStream IsCreated for uncreated object, ESMF_LocStreamUTest.F90, line 107
+  PASS  Create test LocStream for IsCreated, ESMF_LocStreamUTest.F90, line 115
+  PASS  Testing LocStream IsCreated for created object, ESMF_LocStreamUTest.F90, line 123
+  PASS  Testing LocStream IsCreated for created object, ESMF_LocStreamUTest.F90, line 131
+  PASS  Destroy test LocStream for IsCreated, ESMF_LocStreamUTest.F90, line 139
+  PASS  Testing LocStream IsCreated for destroyed object, ESMF_LocStreamUTest.F90, line 147
+  PASS  Testing LocStream IsCreated for destroyed object, ESMF_LocStreamUTest.F90, line 155
+  PASS  Testing LocStream Validate, ESMF_LocStreamUTest.F90, line 187
+  PASS  Test ESMF_LocStreamCreate from Regular distribution, ESMF_LocStreamUTest.F90, line 335
+  PASS  LocStream equality before assignment Test, ESMF_LocStreamUTest.F90, line 343
+  PASS  LocStream assignment and equality Test, ESMF_LocStreamUTest.F90, line 352
+  PASS  LocStreamDestroy Test, ESMF_LocStreamUTest.F90, line 359
+  PASS  LocStream equality after destroy Test, ESMF_LocStreamUTest.F90, line 367
+  PASS  LocStream non-equality after destroy Test, ESMF_LocStreamUTest.F90, line 375
+  PASS  Double LocStreamDestroy through alias Test, ESMF_LocStreamUTest.F90, line 382
+  PASS  Test ESMF_LocStreamCreate from Irregular distribution, ESMF_LocStreamUTest.F90, line 534
+  PASS  Testing LocStream Create from localCount and indexflag=ESMF_INDEX_DELOCAL, ESMF_LocStreamUTest.F90, line 571
+  PASS  Testing LocStream Create from localCount and indexflag=ESMF_INDEX_GLOBAL, ESMF_LocStreamUTest.F90, line 607
+  PASS  Testing LocStream Create defaults and LocStream Get, ESMF_LocStreamUTest.F90, line 650
+  PASS  Test keyCount and keyNames response to ESMF_LocStreamAddKey, ESMF_LocStreamUTest.F90, line 706
+  PASS  Test ESMF_LocStreamGetKey getting an I4 pointer and bounds, ESMF_LocStreamUTest.F90, line 767
+  PASS  Test ESMF_LocStreamGetKey getting an R4 pointer and bounds, ESMF_LocStreamUTest.F90, line 828
+  PASS  Test ESMF_LocStreamGetKey getting an R8 pointer and bounds, ESMF_LocStreamUTest.F90, line 890
+  PASS  Test getting keyUnits and keyLongName, ESMF_LocStreamUTest.F90, line 934
+ ESMF_LocStreamUTest: serialization buffer size =        8324
+  PASS  Test LocStream Serialize/Deserialize, ESMF_LocStreamUTest.F90, line 1017
+ LocStream Print Starts ====>
+ Name =     'LocStream048'
+ KeyCount =           2
+ Keys:
+    A1 - LN1    U1
+     arr(           1 )=    6.9356929787884718E-310
+     arr(           2 )=    6.9356929787884718E-310
+     arr(           3 )=    6.0134700169990685E-154
+     arr(           4 )=    6.0134700169990685E-154
+     arr(           5 )=    6.0134700169990685E-154
+     arr(           6 )=    6.0134700169990685E-154
+     arr(           7 )=    6.0134700169990685E-154
+     arr(           8 )=    6.0134700169990685E-154
+     arr(           9 )=    6.0134700169990685E-154
+     arr(          10 )=    6.0134700169990685E-154
+     arr(          11 )=    6.0134700169990685E-154
+     arr(          12 )=    6.0134700169990685E-154
+     arr(          13 )=    6.0134700169990685E-154
+     arr(          14 )=    6.0134700169990685E-154
+     arr(          15 )=    6.0134700169990685E-154
+     arr(          16 )=    6.0134700169990685E-154
+     arr(          17 )=    6.0134700170052437E-154
+     arr(          18 )=    6.0134700169990685E-154
+     arr(          19 )=    6.0134700169990685E-154
+     arr(          20 )=    6.0134700169990685E-154
+    A2 - LN2    U2
+     arr(           1 )=    6.9356929787884718E-310
+     arr(           2 )=    6.9356929787884718E-310
+     arr(           3 )=    0.0000000000000000     
+     arr(           4 )=    0.0000000000000000     
+     arr(           5 )=    6.0134700169990685E-154
+     arr(           6 )=    6.0134700169990685E-154
+     arr(           7 )=    6.0134700169990685E-154
+     arr(           8 )=    6.0134700169990685E-154
+     arr(           9 )=    6.0134700169990685E-154
+     arr(          10 )=    6.0134700169990685E-154
+     arr(          11 )=    6.0134700169990685E-154
+     arr(          12 )=    6.0134700169990685E-154
+     arr(          13 )=    6.0134700169990685E-154
+     arr(          14 )=    6.0134700169990685E-154
+     arr(          15 )=    6.0134700169990685E-154
+     arr(          16 )=    6.0134700169990685E-154
+     arr(          17 )=    6.0134700169990685E-154
+     arr(          18 )=    6.0134700169990685E-154
+     arr(          19 )=    6.0134700169990685E-154
+     arr(          20 )=    6.0134700169990685E-154
+ LocStream Print Ends   ====>
+  PASS  Test Print, ESMF_LocStreamUTest.F90, line 1050
+  PASS  Test ESMF_LocStreamCreate from Regular distribution, ESMF_LocStreamUTest.F90, line 1202
+  PASS  Test ESMF_LocStreamCreate from Irregular distribution, ESMF_LocStreamUTest.F90, line 1355
+  PASS  Test ESMF_LocStream Create From Background Mesh, ESMF_LocStreamUTest.F90, line 1667
+  PASS  Test ESMF_LocStream Create From Background Grid, ESMF_LocStreamUTest.F90, line 1683
+  PASS  Test ESMF_LocStream Create From Background Grid non-default Align, ESMF_LocStreamUTest.F90, line 1698
+  PASS  Test ESMF_LocStream Create From Background Grid on Sphere, ESMF_LocStreamUTest.F90, line 1714
+  Ending Test, file ESMF_LocStreamUTest.F90, line 1724
+  PET           0  Test Elapsed Time    8.4430000000000014       msec.

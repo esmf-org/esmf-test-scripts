@@ -1,0 +1,112 @@
+20210224 202510.357 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210224 202510.357 INFO             PET0 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210224 202510.357 INFO             PET0 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210224 202510.357 INFO             PET0 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210224 202510.357 INFO             PET0 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210224 202510.357 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210224 202510.357 INFO             PET0 Running with ESMF Version   : ESMF_8_1_0_beta_snapshot_47-4-g0d177ef
+20210224 202510.357 INFO             PET0 ESMF library build date/time: "Feb 24 2021" "20:16:38"
+20210224 202510.357 INFO             PET0 ESMF library build location : /work/noaa/da/mpotts/gfortran_8.3.0_mpiuni_O
+20210224 202510.357 INFO             PET0 ESMF_COMM                   : mpiuni
+20210224 202510.358 INFO             PET0 ESMF_MOAB                   : enabled
+20210224 202510.358 INFO             PET0 ESMF_LAPACK                 : enabled
+20210224 202510.358 INFO             PET0 ESMF_NETCDF                 : enabled
+20210224 202510.358 INFO             PET0 ESMF_PNETCDF                : disabled
+20210224 202510.358 INFO             PET0 ESMF_PIO                    : disabled
+20210224 202510.358 INFO             PET0 ESMF_YAMLCPP                : enabled
+20210224 202510.358 INFO             PET0  Beginning Test, file ESMF_TimeUTest.F90, line 96
+20210224 202510.358 INFO             PET0  NUMBER_OF_PROCESSORS           1
+20210224 202510.358 INFO             PET0  PASS  Set Time Initialization Test, ESMF_TimeUTest.F90, line 126
+20210224 202510.358 INFO             PET0  PASS  Get Time Test 1, ESMF_TimeUTest.F90, line 138
+20210224 202510.358 ERROR            PET0 ESMF_Time.F90:1731 ESMF_TimeEQ() Object Set or SetDefault method not called  - Object not Initialized
+20210224 202510.358 INFO             PET0  PASS  Compare initialized and uninitialized Times Test 1, ESMF_TimeUTest.F90, line 169
+20210224 202510.358 ERROR            PET0 ESMF_Time.F90:1765 ESMF_TimeNE() Object Set or SetDefault method not called  - Object not Initialized
+20210224 202510.358 INFO             PET0  PASS  Compare initialized and uninitialized Times Test 2, ESMF_TimeUTest.F90, line 179
+20210224 202510.358 ERROR            PET0 ESMF_Time.F90:1800 ESMF_TimeLT() Object Set or SetDefault method not called  - Object not Initialized
+20210224 202510.358 INFO             PET0  PASS  Compare initialized and uninitialized Times Test 3, ESMF_TimeUTest.F90, line 189
+20210224 202510.358 ERROR            PET0 ESMF_Time.F90:1835 ESMF_TimeLE() Object Set or SetDefault method not called  - Object not Initialized
+20210224 202510.358 INFO             PET0  PASS  Compare initialized and uninitialized Times Test 4, ESMF_TimeUTest.F90, line 199
+20210224 202510.358 ERROR            PET0 ESMF_Time.F90:1870 ESMF_TimeGT() Object Set or SetDefault method not called  - Object not Initialized
+20210224 202510.358 INFO             PET0  PASS  Compare initialized and uninitialized Times Test 5, ESMF_TimeUTest.F90, line 209
+20210224 202510.358 ERROR            PET0 ESMF_Time.F90:1906 ESMF_TimeGE() Object Set or SetDefault method not called  - Object not Initialized
+20210224 202510.358 INFO             PET0  PASS  Compare initialized and uninitialized Times Test 6, ESMF_TimeUTest.F90, line 219
+20210224 202510.358 INFO             PET0  PASS  Get String Time Test 2, ESMF_TimeUTest.F90, line 233
+20210224 202510.358 INFO             PET0  PASS  Get String Time Test 3, ESMF_TimeUTest.F90, line 249
+20210224 202510.358 INFO             PET0  PASS  Set End Time Initialization Test, ESMF_TimeUTest.F90, line 261
+20210224 202510.358 INFO             PET0  PASS  Time Is Same CalendarTest, ESMF_TimeUTest.F90, line 271
+20210224 202510.358 INFO             PET0  PASS  Time Get day of the year test, ESMF_TimeUTest.F90, line 281
+20210224 202510.359 INFO             PET0  PASS  Time Get floating point day of the year test, ESMF_TimeUTest.F90, line 291
+20210224 202510.359 INFO             PET0  PASS  Time Get day of the week test, ESMF_TimeUTest.F90, line 302
+20210224 202510.359 INFO             PET0  PASS  Time Get middle of the month test, ESMF_TimeUTest.F90, line 314
+20210224 202510.359 INFO             PET0  PASS  Set Julian Time Initialization Test, ESMF_TimeUTest.F90, line 325
+20210224 202510.359 INFO             PET0  PASS  Time Is Same Julian CalendarTest, ESMF_TimeUTest.F90, line 335
+20210224 202510.359 INFO             PET0  PASS  Julian Time Get day of the year test, ESMF_TimeUTest.F90, line 345
+20210224 202510.359 INFO             PET0  PASS  Time Get day of the week test, ESMF_TimeUTest.F90, line 355
+20210224 202510.359 INFO             PET0  PASS  Julian Time Get middle of the month test, ESMF_TimeUTest.F90, line 367
+20210224 202510.359 INFO             PET0  PASS  Set Time Initialization Test, ESMF_TimeUTest.F90, line 378
+20210224 202510.359 INFO             PET0  PASS  Assign one time to another test, ESMF_TimeUTest.F90, line 391
+20210224 202510.359 INFO             PET0  PASS  Time == operator Test, ESMF_TimeUTest.F90, line 402
+20210224 202510.359 INFO             PET0  PASS  Time == operator Test, ESMF_TimeUTest.F90, line 412
+20210224 202510.359 INFO             PET0  PASS  Time /= operator Test, ESMF_TimeUTest.F90, line 422
+20210224 202510.359 INFO             PET0  PASS  Time /= operator Test, ESMF_TimeUTest.F90, line 432
+20210224 202510.359 INFO             PET0  PASS  Time > operator Test, ESMF_TimeUTest.F90, line 442
+20210224 202510.359 INFO             PET0  PASS  Time > operator Test, ESMF_TimeUTest.F90, line 452
+20210224 202510.359 INFO             PET0  PASS  Time > operator Test, ESMF_TimeUTest.F90, line 462
+20210224 202510.359 INFO             PET0  PASS  Time <= operator Test, ESMF_TimeUTest.F90, line 472
+20210224 202510.359 INFO             PET0  PASS  Time <= operator Test, ESMF_TimeUTest.F90, line 482
+20210224 202510.359 INFO             PET0  PASS  Time <= operator Test, ESMF_TimeUTest.F90, line 492
+20210224 202510.359 INFO             PET0  PASS  Time > operator Test, ESMF_TimeUTest.F90, line 502
+20210224 202510.359 INFO             PET0  PASS  Time < operator Test, ESMF_TimeUTest.F90, line 512
+20210224 202510.359 INFO             PET0  PASS  Time < operator Test, ESMF_TimeUTest.F90, line 522
+20210224 202510.359 INFO             PET0  PASS  Time >= operator Test, ESMF_TimeUTest.F90, line 532
+20210224 202510.359 INFO             PET0  PASS  Time >= operator Test, ESMF_TimeUTest.F90, line 542
+20210224 202510.359 INFO             PET0  PASS  Time >= operator Test, ESMF_TimeUTest.F90, line 552
+20210224 202510.359 INFO             PET0  PASS  Set End Time Initialization Test, ESMF_TimeUTest.F90, line 563
+20210224 202510.359 INFO             PET0  PASS  Set Time Initialization Test w/Defaults 1, ESMF_TimeUTest.F90, line 578
+20210224 202510.359 INFO             PET0  PASS  Set Time Initialization Test w/Defaults 2, ESMF_TimeUTest.F90, line 591
+20210224 202510.359 INFO             PET0  PASS  Set Time Initialization Test w/Defaults 3, ESMF_TimeUTest.F90, line 604
+20210224 202510.359 INFO             PET0  PASS  Set Time Initialization Test w/Defaults 4, ESMF_TimeUTest.F90, line 617
+20210224 202510.359 INFO             PET0  PASS  Set Time Initialization Test w/Defaults 5, ESMF_TimeUTest.F90, line 630
+20210224 202510.359 INFO             PET0  PASS  Set Time Initialization Test w/Defaults 6, ESMF_TimeUTest.F90, line 646
+20210224 202510.359 INFO             PET0  PASS  Set Time Initialization Test w/ESMF_CALKIND_NOCALENDAR, ESMF_TimeUTest.F90, line 661
+20210224 202510.359 INFO             PET0  PASS  Time Is Same CalendarTest, ESMF_TimeUTest.F90, line 670
+20210224 202510.359 ERROR            PET0 ESMCI_Time.C:303 ESMCI::Time::set() Input argument out of range  - ; month-of-the-year mm=0 (must be >=1).
+20210224 202510.359 ERROR            PET0 ESMF_Time.F90:1375 ESMF_TimeSetDefault() Input argument out of range  - Internal subroutine call returned Error
+20210224 202510.359 INFO             PET0  PASS  Set End Time with mm=0 Initialization Test, ESMF_TimeUTest.F90, line 680
+20210224 202510.359 ERROR            PET0 ESMCI_Time.C:315 ESMCI::Time::set() Input argument out of range  - ; day-of-the-month dd=0 (must be >=1).
+20210224 202510.359 ERROR            PET0 ESMF_Time.F90:1375 ESMF_TimeSetDefault() Input argument out of range  - Internal subroutine call returned Error
+20210224 202510.359 INFO             PET0  PASS  Set End Time with dd=0 Initialization Test, ESMF_TimeUTest.F90, line 690
+20210224 202510.359 INFO             PET0  PASS  Test driving No-Leap calendar with seconds only, ESMF_TimeUTest.F90, line 702
+20210224 202510.359 INFO             PET0  PASS  Test driving 360-Day calendar with seconds only, ESMF_TimeUTest.F90, line 714
+20210224 202510.359 INFO             PET0  PASS  Set Millisecond Time Initialization Test, ESMF_TimeUTest.F90, line 727
+20210224 202510.359 INFO             PET0  PASS  Set Microsecond Time Initialization Test, ESMF_TimeUTest.F90, line 738
+20210224 202510.359 INFO             PET0  PASS  Set Rational Fraction Time Initialization Test 1, ESMF_TimeUTest.F90, line 749
+20210224 202510.360 INFO             PET0  PASS  Set Rational Fraction Time Initialization Test 2, ESMF_TimeUTest.F90, line 760
+20210224 202510.360 INFO             PET0  PASS  Set Millisecond Time Interval Initialization Test, ESMF_TimeUTest.F90, line 770
+20210224 202510.360 INFO             PET0  PASS  Set Rational Fraction Time Interval Initialization Test, ESMF_TimeUTest.F90, line 780
+20210224 202510.360 INFO             PET0  PASS  Difference between two fractional Times Test 2, ESMF_TimeUTest.F90, line 793
+20210224 202510.360 INFO             PET0  PASS  Difference between two fractional Times Test 2, ESMF_TimeUTest.F90, line 808
+20210224 202510.360 INFO             PET0  PASS  Adding fractional Time and Timeinterval Test, ESMF_TimeUTest.F90, line 823
+20210224 202510.360 INFO             PET0  PASS  Subtracting fractional Time and Timeinterval Test, ESMF_TimeUTest.F90, line 839
+20210224 202510.360 INFO             PET0  PASS  Fractional time1 > time2 Test, ESMF_TimeUTest.F90, line 849
+20210224 202510.360 INFO             PET0  PASS  Fractional time4 > time5 Test, ESMF_TimeUTest.F90, line 859
+20210224 202510.360 INFO             PET0  PASS  Fractional time2 < time3 Test, ESMF_TimeUTest.F90, line 869
+20210224 202510.360 INFO             PET0  PASS  Fractional time2 < time5 Test, ESMF_TimeUTest.F90, line 879
+20210224 202510.360 INFO             PET0  PASS  Fractional time3 == time3 Test, ESMF_TimeUTest.F90, line 889
+20210224 202510.361 INFO             PET0  PASS  Fractional time1 /= time2 Test, ESMF_TimeUTest.F90, line 899
+20210224 202510.361 INFO             PET0  PASS  Fractional time1 >= time2 Test, ESMF_TimeUTest.F90, line 909
+20210224 202510.361 INFO             PET0  PASS  Fractional time1 <= time3 Test, ESMF_TimeUTest.F90, line 919
+20210224 202510.361 INFO             PET0  PASS  Set/Get Real (s_r8) Time on Julian Day calendar Test, ESMF_TimeUTest.F90, line 938
+20210224 202510.361 INFO             PET0  PASS  Set/Get Real (m_r8) Time on Julian Day calendar Test, ESMF_TimeUTest.F90, line 956
+20210224 202510.361 INFO             PET0  PASS  Set/Get Real (R8) Time on Julian Day calendar Test, ESMF_TimeUTest.F90, line 985
+20210224 202510.361 INFO             PET0  PASS  Set/Get Real (R8) Time on Modified Julian Day calendar Test, ESMF_TimeUTest.F90, line 1016
+20210224 202510.361 INFO             PET0  PASS  Adding Time and real fractional days Timeinterval Test, ESMF_TimeUTest.F90, line 1035
+20210224 202510.361 INFO             PET0  PASS  Test subtracting two times, resulting in a real fractional days Timeinterval, ESMF_TimeUTest.F90, line 1049
+20210224 202510.361 INFO             PET0  PASS  Subtracting real fractional Time and real fractional days Timeinterval Test, ESMF_TimeUTest.F90, line 1070
+20210224 202510.361 INFO             PET0  PASS  Test subtracting two times, producing equal Timeinterval used in previous test, ESMF_TimeUTest.F90, line 1087
+20210224 202510.361 INFO             PET0  PASS  Time Is Leap Year Test 1, ESMF_TimeUTest.F90, line 1100
+20210224 202510.361 INFO             PET0  PASS  Time Is Leap Year Test 2, ESMF_TimeUTest.F90, line 1112
+20210224 202510.361 INFO             PET0  PASS  Time Is Leap Year Test 3, ESMF_TimeUTest.F90, line 1123
+20210224 202510.361 INFO             PET0  PASS  Time Is Leap Year Test 4, ESMF_TimeUTest.F90, line 1135
+20210224 202510.361 INFO             PET0  Ending Test, file ESMF_TimeUTest.F90, line 1154
+20210224 202510.361 INFO             PET0 Finalizing ESMF

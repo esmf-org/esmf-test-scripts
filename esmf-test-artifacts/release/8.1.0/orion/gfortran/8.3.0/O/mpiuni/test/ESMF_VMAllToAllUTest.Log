@@ -1,0 +1,32 @@
+20210224 202431.679 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210224 202431.679 INFO             PET0 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210224 202431.679 INFO             PET0 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210224 202431.679 INFO             PET0 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210224 202431.679 INFO             PET0 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210224 202431.679 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210224 202431.679 INFO             PET0 Running with ESMF Version   : ESMF_8_1_0_beta_snapshot_47-4-g0d177ef
+20210224 202431.679 INFO             PET0 ESMF library build date/time: "Feb 24 2021" "20:16:38"
+20210224 202431.679 INFO             PET0 ESMF library build location : /work/noaa/da/mpotts/gfortran_8.3.0_mpiuni_O
+20210224 202431.679 INFO             PET0 ESMF_COMM                   : mpiuni
+20210224 202431.680 INFO             PET0 ESMF_MOAB                   : enabled
+20210224 202431.680 INFO             PET0 ESMF_LAPACK                 : enabled
+20210224 202431.680 INFO             PET0 ESMF_NETCDF                 : enabled
+20210224 202431.680 INFO             PET0 ESMF_PNETCDF                : disabled
+20210224 202431.680 INFO             PET0 ESMF_PIO                    : disabled
+20210224 202431.680 INFO             PET0 ESMF_YAMLCPP                : enabled
+20210224 202431.680 INFO             PET0  Beginning Test, file ESMF_VMAllToAllUTest.F90, line 72
+20210224 202431.680 INFO             PET0  NUMBER_OF_PROCESSORS           1
+20210224 202431.680 INFO             PET0  PASS  AllToAll Test iarray1 -> iarray2, ESMF_VMAllToAllUTest.F90, line 127
+20210224 202431.680 INFO             PET0  PASS  Verify iarray2 data after alltoall, ESMF_VMAllToAllUTest.F90, line 141
+20210224 202431.680 INFO             PET0  PASS  AllToAll Test iarray2 -> iarray3, ESMF_VMAllToAllUTest.F90, line 151
+20210224 202431.680 INFO             PET0  PASS  Verify iarray3 data against iarray1 after alltoallv, ESMF_VMAllToAllUTest.F90, line 165
+20210224 202431.680 INFO             PET0  PASS  AllToAll Test r4array1 -> r4array2, ESMF_VMAllToAllUTest.F90, line 177
+20210224 202431.680 INFO             PET0  PASS  Verify r4array2 data after alltoall, ESMF_VMAllToAllUTest.F90, line 191
+20210224 202431.680 INFO             PET0  PASS  AllToAll Test r4array2 -> r4array3, ESMF_VMAllToAllUTest.F90, line 201
+20210224 202431.680 INFO             PET0  PASS  Verify r4array3 data against r4array1 after alltoallv, ESMF_VMAllToAllUTest.F90, line 215
+20210224 202431.680 INFO             PET0  PASS  AllToAll Test r8array1 -> r8array2, ESMF_VMAllToAllUTest.F90, line 227
+20210224 202431.680 INFO             PET0  PASS  Verify r8array2 data after alltoall, ESMF_VMAllToAllUTest.F90, line 241
+20210224 202431.680 INFO             PET0  PASS  AllToAll Test r8array2 -> r8array3, ESMF_VMAllToAllUTest.F90, line 251
+20210224 202431.680 INFO             PET0  PASS  Verify r8array3 data against r8array1 after alltoallv, ESMF_VMAllToAllUTest.F90, line 265
+20210224 202431.680 INFO             PET0  Ending Test, file ESMF_VMAllToAllUTest.F90, line 267
+20210224 202431.680 INFO             PET0 Finalizing ESMF

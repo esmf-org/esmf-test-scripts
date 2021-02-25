@@ -1,0 +1,179 @@
+20210224 202708.380 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210224 202708.380 INFO             PET0 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210224 202708.380 INFO             PET0 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210224 202708.380 INFO             PET0 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210224 202708.380 INFO             PET0 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210224 202708.380 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210224 202708.380 INFO             PET0 Running with ESMF Version   : ESMF_8_1_0_beta_snapshot_47-4-g0d177ef
+20210224 202708.380 INFO             PET0 ESMF library build date/time: "Feb 24 2021" "20:16:38"
+20210224 202708.380 INFO             PET0 ESMF library build location : /work/noaa/da/mpotts/gfortran_8.3.0_mpiuni_O
+20210224 202708.380 INFO             PET0 ESMF_COMM                   : mpiuni
+20210224 202708.380 INFO             PET0 ESMF_MOAB                   : enabled
+20210224 202708.380 INFO             PET0 ESMF_LAPACK                 : enabled
+20210224 202708.380 INFO             PET0 ESMF_NETCDF                 : enabled
+20210224 202708.380 INFO             PET0 ESMF_PNETCDF                : disabled
+20210224 202708.380 INFO             PET0 ESMF_PIO                    : disabled
+20210224 202708.380 INFO             PET0 ESMF_YAMLCPP                : enabled
+20210224 202708.380 INFO             PET0  Beginning Test, file ESMF_FieldBundleUTest.F90, line 101
+20210224 202708.380 INFO             PET0  NUMBER_OF_PROCESSORS           1
+20210224 202708.380 INFO             PET0  PASS  Testing FieldBundle IsCreated for uncreated object, ESMF_FieldBundleUTest.F90, line 116
+20210224 202708.380 INFO             PET0  PASS  Testing FieldBundle IsCreated for uncreated object, ESMF_FieldBundleUTest.F90, line 124
+20210224 202708.381 INFO             PET0  PASS  Create test FieldBundle for IsCreated, ESMF_FieldBundleUTest.F90, line 132
+20210224 202708.381 INFO             PET0  PASS  Testing FieldBundle IsCreated for created object, ESMF_FieldBundleUTest.F90, line 140
+20210224 202708.381 INFO             PET0  PASS  Testing FieldBundle IsCreated for created object, ESMF_FieldBundleUTest.F90, line 148
+20210224 202708.381 INFO             PET0  PASS  Destroy test FieldBundle for IsCreated, ESMF_FieldBundleUTest.F90, line 156
+20210224 202708.381 INFO             PET0  PASS  Testing FieldBundle IsCreated for destroyed object, ESMF_FieldBundleUTest.F90, line 164
+20210224 202708.381 INFO             PET0  PASS  Testing FieldBundle IsCreated for destroyed object, ESMF_FieldBundleUTest.F90, line 172
+20210224 202708.381 INFO             PET0  PASS  Creating Empty FieldBundle Test, ESMF_FieldBundleUTest.F90, line 181
+20210224 202708.381 INFO             PET0  PASS  FieldBundle equality before assignment Test, ESMF_FieldBundleUTest.F90, line 189
+20210224 202708.381 INFO             PET0  PASS  FieldBundle assignment and equality Test, ESMF_FieldBundleUTest.F90, line 198
+20210224 202708.381 INFO             PET0  PASS  FieldBundleDestroy Test, ESMF_FieldBundleUTest.F90, line 209
+20210224 202708.381 INFO             PET0  PASS  FieldBundle equality after destroy Test, ESMF_FieldBundleUTest.F90, line 217
+20210224 202708.381 INFO             PET0  PASS  FieldBundle non-equality after destroy Test, ESMF_FieldBundleUTest.F90, line 225
+20210224 202708.381 INFO             PET0  PASS  Double FieldBundleDestroy through alias Test, ESMF_FieldBundleUTest.F90, line 232
+20210224 202708.381 INFO             PET0  PASS  Test of creating a FieldBundle on fields built on LocStreams, ESMF_FieldBundleUTest.F90, line 331
+20210224 202708.381 INFO             PET0  PASS  Make sure FieldBundleCreate works when fields created on different Location Streams, ESMF_FieldBundleUTest.F90, line 379
+20210224 202708.381 INFO             PET0  PASS  Test of creating a LocStream FieldBundle, ESMF_FieldBundleUTest.F90, line 427
+20210224 202708.382 INFO             PET0  PASS  Test of creating a FieldBundle on fields built on the same Mesh, ESMF_FieldBundleUTest.F90, line 689
+20210224 202708.382 INFO             PET0  PASS  Make sure FieldBundleCreate works when fields created on different Meshes, ESMF_FieldBundleUTest.F90, line 1170
+20210224 202708.383 INFO             PET0  PASS  Test of creating a Mesh FieldBundle, ESMF_FieldBundleUTest.F90, line 1431
+20210224 202708.383 ERROR            PET0 ESMF_FieldBundle.F90:11012 ? Object being used after deletion  - Bad Object
+20210224 202708.383 INFO             PET0  PASS  Destroy of destroyed FieldBundle Test, ESMF_FieldBundleUTest.F90, line 1441
+20210224 202708.383 ERROR            PET0 ESMF_FieldBundle.F90:11012 ? Object being used before creation  - Bad Object
+20210224 202708.383 INFO             PET0  PASS  Destroy of non-created FieldBundle Test, ESMF_FieldBundleUTest.F90, line 1449
+20210224 202708.383 ERROR            PET0 ESMF_FieldBundle.F90:11221 ? Object being used after deletion  - Bad Object
+20210224 202708.383 INFO             PET0  PASS  Getting name of deleted FieldBundle Test, ESMF_FieldBundleUTest.F90, line 1457
+20210224 202708.383 ERROR            PET0 ESMF_FieldBundle.F90:11221 ? Object being used before creation  - Bad Object
+20210224 202708.383 INFO             PET0  PASS  Getting name of non-create FieldBundle Test, ESMF_FieldBundleUTest.F90, line 1465
+20210224 202708.383 ERROR            PET0 src/Superstructure/AttributeAPI/interface/ESMF_Attribute.F90:43027 ESMF_AttributeGetCountFieldBundl Object being used after deletion  - Bad Object
+20210224 202708.383 INFO             PET0  PASS  Getting Attribute Count from a deleted FieldBundle Test, ESMF_FieldBundleUTest.F90, line 1473
+20210224 202708.383 ERROR            PET0 src/Superstructure/AttributeAPI/interface/ESMF_Attribute.F90:43027 ESMF_AttributeGetCountFieldBundl Object being used before creation  - Bad Object
+20210224 202708.383 INFO             PET0  PASS  Getting Attribute Count from a non-created FieldBundle Test, ESMF_FieldBundleUTest.F90, line 1481
+20210224 202708.383 ERROR            PET0 ESMF_FieldBundle.F90:11606 ? Object being used after deletion  - Bad Object
+20210224 202708.383 INFO             PET0  PASS  Getting a third Field by index from a deleted FieldBundle Test, ESMF_FieldBundleUTest.F90, line 1489
+20210224 202708.383 ERROR            PET0 ESMF_FieldBundle.F90:11606 ? Object being used before creation  - Bad Object
+20210224 202708.383 INFO             PET0  PASS  Getting a third Field by index from a non-create FieldBundle Test, ESMF_FieldBundleUTest.F90, line 1497
+20210224 202708.383 ERROR            PET0 ESMF_FieldBundle.F90:17403 ? Object being used after deletion  - Bad Object
+20210224 202708.383 INFO             PET0  PASS  Validating a deleted FieldBundle Test, ESMF_FieldBundleUTest.F90, line 1505
+20210224 202708.383 ERROR            PET0 ESMF_FieldBundle.F90:17403 ? Object being used before creation  - Bad Object
+20210224 202708.383 INFO             PET0  PASS  Validating a non-created FieldBundle Test, ESMF_FieldBundleUTest.F90, line 1514
+20210224 202708.383 ERROR            PET0 ESMF_FieldBundle.F90:11221 ? Object being used before creation  - Bad Object
+20210224 202708.383 INFO             PET0  PASS  Getting name of uninitalized FieldBundle Test, ESMF_FieldBundleUTest.F90, line 1523
+20210224 202708.383 ERROR            PET0 ESMF_FieldBundle.F90:11221 ? Object being used before creation  - Bad Object
+20210224 202708.383 INFO             PET0  PASS  Getting Field count from an uninitialized FieldBundle Test, ESMF_FieldBundleUTest.F90, line 1532
+20210224 202708.383 ERROR            PET0 ESMF_FieldBundle.F90:11221 ? Object being used before creation  - Bad Object
+20210224 202708.383 INFO             PET0  PASS  Getting Field names from an uninitialized FieldBundle Test, ESMF_FieldBundleUTest.F90, line 1542
+20210224 202708.383 INFO             PET0  PASS  Creating FieldBundle with 3 No Data Fields Test, ESMF_FieldBundleUTest.F90, line 1558
+20210224 202708.383 INFO             PET0  PASS  Getting Field names from a FieldBundle Test, ESMF_FieldBundleUTest.F90, line 1566
+20210224 202708.384 INFO             PET0  PASS  Verifying Field count from a FieldBundle Test, ESMF_FieldBundleUTest.F90, line 1578
+20210224 202708.384 ERROR            PET0 ESMF_FieldBundle.F90:704 ? Object being used after deletion  - Bad Object
+20210224 202708.384 INFO             PET0  PASS  Adding an uninitialized Field to an uncreated FieldBundle Test, ESMF_FieldBundleUTest.F90, line 1585
+20210224 202708.384 INFO             PET0  PASS  Creating Empty FieldBundle Test, ESMF_FieldBundleUTest.F90, line 1593
+20210224 202708.384 INFO             PET0  PASS  Create a Grid Test, ESMF_FieldBundleUTest.F90, line 1603
+20210224 202708.384 INFO             PET0  PASS  Create a Field Test, ESMF_FieldBundleUTest.F90, line 1612
+20210224 202708.384 INFO             PET0  PASS  Getting Field names from a FieldBundle Test, ESMF_FieldBundleUTest.F90, line 1621
+20210224 202708.384 INFO             PET0  PASS  Verifying Field count from a FieldBundle Test, ESMF_FieldBundleUTest.F90, line 1629
+20210224 202708.384 INFO             PET0  PASS  Adding a field to an Empty FieldBundle, ESMF_FieldBundleUTest.F90, line 1638
+20210224 202708.384 INFO             PET0  PASS  Getting Field names from a FieldBundle Test, ESMF_FieldBundleUTest.F90, line 1646
+20210224 202708.384 INFO             PET0  PASS  Verifying Field count from a FieldBundle Test, ESMF_FieldBundleUTest.F90, line 1654
+20210224 202708.384 INFO             PET0  PASS  Verifying Field name from a FieldBundle Test, ESMF_FieldBundleUTest.F90, line 1663
+20210224 202708.384 INFO             PET0  PASS  Creating a FieldBundle that has already been created Test, ESMF_FieldBundleUTest.F90, line 1677
+20210224 202708.384 INFO             PET0  PASS  Getting Field count from an empty FieldBundle Test, ESMF_FieldBundleUTest.F90, line 1688
+20210224 202708.384 INFO             PET0  PASS  Adding a Field to an Empty FieldBundle Test, ESMF_FieldBundleUTest.F90, line 1697
+20210224 202708.384 INFO             PET0  PASS  Getting Field count from a FieldBundle Test, ESMF_FieldBundleUTest.F90, line 1706
+20210224 202708.384 INFO             PET0  PASS  Adding multiple Fields to a FieldBundle Test, ESMF_FieldBundleUTest.F90, line 1720
+20210224 202708.384 INFO             PET0  PASS  Getting Field count from a FieldBundle Test, ESMF_FieldBundleUTest.F90, line 1729
+20210224 202708.384 INFO             PET0  PASS  Getting first Field by name from a FieldBundle Test, ESMF_FieldBundleUTest.F90, line 1738
+20210224 202708.384 INFO             PET0  PASS  Getting first Field from a FieldBundle Test continued, ESMF_FieldBundleUTest.F90, line 1746
+20210224 202708.384 INFO             PET0  PASS  Getting a second Field by index from a FieldBundle Test, ESMF_FieldBundleUTest.F90, line 1754
+20210224 202708.384 INFO             PET0  PASS  Getting a second Field from a FieldBundle Test continued, ESMF_FieldBundleUTest.F90, line 1761
+20210224 202708.384 INFO             PET0  PASS  Getting a third Field by index from a FieldBundle Test, ESMF_FieldBundleUTest.F90, line 1769
+20210224 202708.384 INFO             PET0  PASS  Getting a third Field from a FieldBundle Test continued, ESMF_FieldBundleUTest.F90, line 1778
+20210224 202708.384 ERROR            PET0 ESMF_FieldBundle.F90:11622 ESMF_FieldBundleGetIndex() Invalid object  - fieldIndex must be between 1 and fieldCount in the FieldBundle
+20210224 202708.384 INFO             PET0  PASS  Getting a non-existent Field from a FieldBundle Test, ESMF_FieldBundleUTest.F90, line 1790
+20210224 202708.384 INFO             PET0  PASS  Adding an integer attribute to a FieldBundle Test, ESMF_FieldBundleUTest.F90, line 1799
+20210224 202708.385 INFO             PET0  PASS  Getting an integer attribute from a FieldBundle Test, ESMF_FieldBundleUTest.F90, line 1810
+20210224 202708.385 INFO             PET0  PASS  Getting an attribute info from a FieldBundle Test, ESMF_FieldBundleUTest.F90, line 1819
+20210224 202708.385 INFO             PET0  PASS  Getting Attribute Count from a FieldBundle Test, ESMF_FieldBundleUTest.F90, line 1827
+20210224 202708.385 INFO             PET0  PASS  Verify Attribute count from a FieldBundle, ESMF_FieldBundleUTest.F90, line 1835
+20210224 202708.385 INFO             PET0  PASS  Getting a third Field by index from a FieldBundle Test, ESMF_FieldBundleUTest.F90, line 1843
+20210224 202708.385 INFO             PET0  PASS  Printing a FieldBundle Test, ESMF_FieldBundleUTest.F90, line 1862
+20210224 202708.385 INFO             PET0  PASS  Validating a FieldBundle Test, ESMF_FieldBundleUTest.F90, line 1871
+20210224 202708.385 ERROR            PET0 ESMF_FieldBundle.F90:11622 ESMF_FieldBundleGetIndex() Invalid object  - fieldIndex must be between 1 and fieldCount in the FieldBundle
+20210224 202708.385 INFO             PET0  PASS  Getting a zeroth non-existent Field from a FieldBundle Test, ESMF_FieldBundleUTest.F90, line 1880
+20210224 202708.385 ERROR            PET0 ESMCI_Container_F.C:168 ESMCI::Container::get() Invalid argument  - key does not exist
+20210224 202708.385 ERROR            PET0 ESMCI_Container_F.C:448 c_esmc_containergetfield() Invalid argument  - Internal subroutine call returned Error
+20210224 202708.385 ERROR            PET0 ESMF_Container.F90:636 ESMF_ContainerGetField() Invalid argument  - Internal subroutine call returned Error
+20210224 202708.385 ERROR            PET0 ESMF_FieldBundle.F90:11454 ESMF_FieldBundleGetItem() Invalid argument  - Internal subroutine call returned Error
+20210224 202708.385 INFO             PET0  PASS  Getting wrong Field name from a FieldBundle Test, ESMF_FieldBundleUTest.F90, line 1889
+20210224 202708.385 INFO             PET0  PASS  Query FieldBundle Name Test, ESMF_FieldBundleUTest.F90, line 1899
+20210224 202708.385 INFO             PET0  PASS  FieldBundle Destroy Test, ESMF_FieldBundleUTest.F90, line 1911
+20210224 202708.385 ERROR            PET0 ESMF_FieldBundle.F90:11012 ? Object being used after deletion  - Bad Object
+20210224 202708.385 INFO             PET0  PASS  Destroying a Destroyed FieldBundle Test, ESMF_FieldBundleUTest.F90, line 1921
+20210224 202708.385 INFO             PET0  PASS  Destroying a Field, ESMF_FieldBundleUTest.F90, line 1930
+20210224 202708.385 INFO             PET0  PASS  Destroying a Field, ESMF_FieldBundleUTest.F90, line 1938
+20210224 202708.385 INFO             PET0  PASS  Destroying a Field, ESMF_FieldBundleUTest.F90, line 1946
+20210224 202708.385 INFO             PET0  PASS  Destroying a Field, ESMF_FieldBundleUTest.F90, line 1954
+20210224 202708.385 INFO             PET0  PASS  Destroying a Grid, ESMF_FieldBundleUTest.F90, line 1962
+20210224 202708.385 INFO             PET0  PASS  Creating a Grid, ESMF_FieldBundleUTest.F90, line 1974
+20210224 202708.386 INFO             PET0  PASS  Creating a list of Fields, ESMF_FieldBundleUTest.F90, line 1983
+20210224 202708.386 INFO             PET0  PASS  Get Field names, ESMF_FieldBundleUTest.F90, line 1992
+20210224 202708.386 INFO             PET0  PASS  Get Field names, ESMF_FieldBundleUTest.F90, line 2001
+20210224 202708.386 INFO             PET0  PASS  Creating another list of Fields, ESMF_FieldBundleUTest.F90, line 2010
+20210224 202708.386 INFO             PET0  PASS  Creating a FieldBundle, ESMF_FieldBundleUTest.F90, line 2017
+20210224 202708.386 INFO             PET0  PASS  Add a list of Fields to FieldBundle, ESMF_FieldBundleUTest.F90, line 2024
+20210224 202708.386 INFO             PET0  PASS  Add a field to FieldBundle, ESMF_FieldBundleUTest.F90, line 2031
+20210224 202708.386 INFO             PET0  PASS  Remove a Field from FieldBundle, ESMF_FieldBundleUTest.F90, line 2038
+20210224 202708.386 ERROR            PET0 ESMCI_Container_F.C:311 ESMCI::Container::remove() Invalid argument  - key does not exist
+20210224 202708.386 ERROR            PET0 ESMCI_Container_F.C:807 c_esmc_containerremove() Invalid argument  - Internal subroutine call returned Error
+20210224 202708.386 ERROR            PET0 ESMF_Container.F90:985 ESMF_ContainerRemove() Invalid argument  - Internal subroutine call returned Error
+20210224 202708.386 ERROR            PET0 ESMF_FieldBundle.F90:16050 ESMF_FieldBundleRemove() Invalid argument  - Internal subroutine call returned Error
+20210224 202708.386 INFO             PET0  PASS  Remove a non-existant Field from FieldBundle, ESMF_FieldBundleUTest.F90, line 2045
+20210224 202708.386 INFO             PET0  PASS  Remove a non-existant Field from FieldBundle, ESMF_FieldBundleUTest.F90, line 2052
+20210224 202708.386 INFO             PET0  PASS  Replace a non-existant Field from FieldBundle, ESMF_FieldBundleUTest.F90, line 2059
+20210224 202708.386 ERROR            PET0 ESMCI_Container_F.C:358 ESMCI::Container::replace() Invalid argument  - key does not exist
+20210224 202708.386 ERROR            PET0 ESMCI_Container_F.C:855 c_esmc_containerreplace() Invalid argument  - Internal subroutine call returned Error
+20210224 202708.386 ERROR            PET0 ESMF_Container.F90:1088 ESMF_ContainerReplaceFieldList() Invalid argument  - Internal subroutine call returned Error
+20210224 202708.386 ERROR            PET0 ESMF_FieldBundle.F90:16144 ESMF_FieldBundleReplace() Invalid argument  - Internal subroutine call returned Error
+20210224 202708.386 INFO             PET0  PASS  Replace Field from FieldBundle, ESMF_FieldBundleUTest.F90, line 2066
+20210224 202708.386 ERROR            PET0 ESMCI_Container_F.C:358 ESMCI::Container::replace() Invalid argument  - key does not exist
+20210224 202708.386 ERROR            PET0 ESMCI_Container_F.C:855 c_esmc_containerreplace() Invalid argument  - Internal subroutine call returned Error
+20210224 202708.386 ERROR            PET0 ESMF_Container.F90:1088 ESMF_ContainerReplaceFieldList() Invalid argument  - Internal subroutine call returned Error
+20210224 202708.386 ERROR            PET0 ESMF_FieldBundle.F90:16144 ESMF_FieldBundleReplace() Invalid argument  - Internal subroutine call returned Error
+20210224 202708.387 INFO             PET0  PASS  Replace non-existant Field from FieldBundle, ESMF_FieldBundleUTest.F90, line 2073
+20210224 202708.387 ERROR            PET0 ESMCI_Container_F.C:358 ESMCI::Container::replace() Invalid argument  - key does not exist
+20210224 202708.387 ERROR            PET0 ESMCI_Container_F.C:855 c_esmc_containerreplace() Invalid argument  - Internal subroutine call returned Error
+20210224 202708.387 ERROR            PET0 ESMF_Container.F90:1088 ESMF_ContainerReplaceFieldList() Invalid argument  - Internal subroutine call returned Error
+20210224 202708.387 ERROR            PET0 ESMF_FieldBundle.F90:16144 ESMF_FieldBundleReplace() Invalid argument  - Internal subroutine call returned Error
+20210224 202708.387 INFO             PET0  PASS  Replace non-existant Field from FieldBundle, ESMF_FieldBundleUTest.F90, line 2081
+20210224 202708.387 INFO             PET0  PASS  Replace non-existant Field from FieldBundle, ESMF_FieldBundleUTest.F90, line 2088
+20210224 202708.387 INFO             PET0  PASS  Replace non-existant Field from FieldBundle, ESMF_FieldBundleUTest.F90, line 2095
+20210224 202708.387 INFO             PET0  PASS  Add multi Field to FieldBundle, ESMF_FieldBundleUTest.F90, line 2102
+20210224 202708.387 INFO             PET0  PASS  Replace a non-unique Field from FieldBundle, ESMF_FieldBundleUTest.F90, line 2109
+20210224 202708.387 INFO             PET0  PASS  Remove a non-unique Field from FieldBundle with multiflag turned on, ESMF_FieldBundleUTest.F90, line 2116
+20210224 202708.387 ERROR            PET0 ESMCI_Container_F.C:168 ESMCI::Container::get() Invalid argument  - key does not exist
+20210224 202708.387 ERROR            PET0 ESMCI_Container_F.C:448 c_esmc_containergetfield() Invalid argument  - Internal subroutine call returned Error
+20210224 202708.387 ERROR            PET0 ESMF_Container.F90:636 ESMF_ContainerGetField() Invalid argument  - Internal subroutine call returned Error
+20210224 202708.387 ERROR            PET0 ESMF_FieldBundle.F90:11454 ESMF_FieldBundleGetItem() Invalid argument  - Internal subroutine call returned Error
+20210224 202708.387 INFO             PET0  PASS  Get a non-existant Field from FieldBundle, ESMF_FieldBundleUTest.F90, line 2123
+20210224 202708.387 INFO             PET0  PASS  Destroy FieldBundle, ESMF_FieldBundleUTest.F90, line 2130
+20210224 202708.387 INFO             PET0  PASS  Destroy Fields and Grid, ESMF_FieldBundleUTest.F90, line 2141
+20210224 202708.387 INFO             PET0  PASS  Creating a FieldBundle, ESMF_FieldBundleUTest.F90, line 2148
+20210224 202708.387 INFO             PET0  PASS  Creating a Field, ESMF_FieldBundleUTest.F90, line 2155
+20210224 202708.387 INFO             PET0  PASS  Creating a Field, ESMF_FieldBundleUTest.F90, line 2162
+20210224 202708.387 INFO             PET0  PASS  Adding a Field to a FieldBundle, ESMF_FieldBundleUTest.F90, line 2169
+20210224 202708.387 INFO             PET0  PASS  Adding a Field to a FieldBundle, ESMF_FieldBundleUTest.F90, line 2176
+20210224 202708.387 INFO             PET0  PASS  Getting Fields from a FieldBundle, ESMF_FieldBundleUTest.F90, line 2184
+20210224 202708.387 INFO             PET0  PASS  Getting Fields from a FieldBundle, ESMF_FieldBundleUTest.F90, line 2192
+20210224 202708.387 INFO             PET0  PASS  Getting Names from Fields, ESMF_FieldBundleUTest.F90, line 2205
+20210224 202708.387 INFO             PET0  PASS  Comparing two modes of BundleGet, ESMF_FieldBundleUTest.F90, line 2216
+20210224 202708.387 INFO             PET0  PASS  Adding a Field to a FieldBundle, ESMF_FieldBundleUTest.F90, line 2223
+20210224 202708.387 INFO             PET0  PASS  Getting Fields from a FieldBundle, ESMF_FieldBundleUTest.F90, line 2231
+20210224 202708.387 INFO             PET0  PASS  Getting Fields from a FieldBundle, ESMF_FieldBundleUTest.F90, line 2239
+20210224 202708.387 INFO             PET0  PASS  Getting Names from Fields, ESMF_FieldBundleUTest.F90, line 2253
+20210224 202708.387 INFO             PET0  PASS  Comparing two modes of BundleGet, ESMF_FieldBundleUTest.F90, line 2266
+20210224 202708.387 INFO             PET0  PASS  Test serialization, inquire only, ESMF_FieldBundleUTest.F90, line 2284
+20210224 202708.387 INFO             PET0  PASS  Test serialization for real, ESMF_FieldBundleUTest.F90, line 2299
+20210224 202708.387 INFO             PET0  PASS  Destroy FieldBundle, ESMF_FieldBundleUTest.F90, line 2310
+20210224 202708.387 INFO             PET0  Ending Test, file ESMF_FieldBundleUTest.F90, line 2416
+20210224 202708.387 INFO             PET0 Finalizing ESMF

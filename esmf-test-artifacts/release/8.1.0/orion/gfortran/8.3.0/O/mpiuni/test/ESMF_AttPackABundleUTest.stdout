@@ -1,0 +1,74 @@
+  Beginning Test, file ESMF_AttPackABundleUTest.F90, line 88
+  NUMBER_OF_PROCESSORS           1
+  PASS  Creating a custom Attribute package on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 145
+  PASS  Add to a custom Attribute package on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 170
+  PASS  Setting an ESMF_I4 Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 183
+  PASS  Getting an ESMF_I4 Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 192
+  PASS  Setting an ESMF_I4 list Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 201
+  PASS  Getting an ESMF_I4 list Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 211
+  PASS  Setting an ESMF_I8 Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 220
+  PASS  Getting an ESMF_I8 Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 229
+  PASS  Setting an ESMF_I8 list Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 238
+  PASS  Getting an ESMF_I8 list Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 248
+  PASS  Setting an ESMF_R4 Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 257
+  PASS  Getting an ESMF_R4 Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 266
+  PASS  Setting an ESMF_R4 list Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 275
+  PASS  Getting an ESMF_R4 list Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 285
+  PASS  Setting an ESMF_R8name Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 294
+  PASS  Getting an ESMF_R8 Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 303
+  PASS  Setting an ESMF_R8 list Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 312
+  PASS  Getting an ESMF_R8 list Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 322
+  PASS  Setting a logical Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 331
+  PASS  Getting a logical Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 340
+  PASS  Setting a logical list Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 349
+  PASS  Getting a logical list Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 359
+  PASS  Setting a character Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 368
+  PASS  Getting a character Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 377
+  PASS  Setting a character list Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 386
+  PASS  Getting a character list Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 396
+  PASS  Removing an Char list Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 404
+  PASS  Test for getting the Attribute count of an Attpack on mobj, count =           11, ESMF_AttPackABundleUTest.F90, line 416
+  PASS  Test for getting the Attribute count using an Attpack object on mobj, count =           11, ESMF_AttPackABundleUTest.F90, line 428
+  PASS  Test for getting the Attpack count of an Attpack on mobj, count =            0, ESMF_AttPackABundleUTest.F90, line 442
+  PASS  Test for getting the Attpack count using an Attpack object on mobj, count =            0, ESMF_AttPackABundleUTest.F90, line 456
+  PASS  Adding multiple Attributes to a nested Attribute package on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 487
+  PASS  Add a duplicate attpack. Ensure mappig is identical after adding., ESMF_AttPackABundleUTest.F90, line 503
+  PASS  Removing an Attribute in a nested Attribute package on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 514
+  PASS  Removing an Attribute in a nested Attribute package on mobj Test, again, ESMF_AttPackABundleUTest.F90, line 523
+  PASS  Getting a default Attribute character list in a nested Attribute package on mobj test2, ESMF_AttPackABundleUTest.F90, line 534
+  PASS  Get a nested AttPack on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 547
+  PASS  Getting a char list Attribute in a nested Attribute package on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 559
+  PASS  Setting an ESMF_R8 list Attribute using a nested AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 568
+  PASS  Getting an ESMF_R8 list Attribute using a nested AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 578
+  PASS  Setting a logical Attribute using a nested AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 587
+  PASS  Getting a logical Attribute using a nested AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 597
+  PASS  Setting a character Attribute using a nested AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 606
+  PASS  Getting a character Attribute using a nested AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 616
+  PASS  Removing an Char list Attribute using a nested AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 625
+  PASS  Test for the presence of a nested AttPack2 on mobj, ESMF_AttPackABundleUTest.F90, line 636
+  PASS  Getting a character Attribute in a nested AttPack with ESMF_ATTNEST_OFF on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 646
+  PASS  Test for the presence of a nested AttPack on mobj, ESMF_AttPackABundleUTest.F90, line 657
+  PASS  Test for the presence of a nested AttPack using index on mobj, ESMF_AttPackABundleUTest.F90, line 668
+  PASS  Test for getting the count of Attributes in a  nested Attpack, count =           11, ESMF_AttPackABundleUTest.F90, line 686
+  PASS  Test for getting the count of Attpacks in a  nested Attpack, count =            1, ESMF_AttPackABundleUTest.F90, line 699
+  PASS  Test for getting the count of Attributes in a  nested Attpack, count =           10, ESMF_AttPackABundleUTest.F90, line 712
+  PASS  Test for getting the count of Attpacks in a  nested Attpack, count =            0, ESMF_AttPackABundleUTest.F90, line 725
+  PASS  Test for getting the count of Attributes in a  nested Attpack with ATTNEST_OFF, count =           11, ESMF_AttPackABundleUTest.F90, line 743
+  PASS  Test for getting the count of Attributes in a nested Attpack with ATTNEST_ON, count =           21, ESMF_AttPackABundleUTest.F90, line 757
+  PASS  Get all Attributes in an AttPack object by index with ATTNEST_ON Test, count =           21 , convention = customconvention_top, purpose = custompurpose_top, ESMF_AttPackABundleUTest.F90, line 774
+  PASS  Test for getting an Attribute in a nested Attpack by  index too large with ATTNESTFLAG_OFF, ESMF_AttPackABundleUTest.F90, line 787
+  PASS  Test for getting an Attribute in a nested Attpack by  index too large with ATTNESTFLAG_ON, ESMF_AttPackABundleUTest.F90, line 800
+  PASS  Creating a custom Attribute package on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 818
+  PASS  Getting a nonexistent Attribute from an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 836
+  PASS  Getting an unset char Attribute in an Attribute package with defaultValue on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 848
+  PASS  Setting an Attribute in an Attribute package to empty string on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 857
+  PASS  Setting an Attribute in an Attribute package on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 868
+  PASS  Setting a char list Attribute in an Attribute package on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 879
+  PASS  Getting a char list Attribute in an Attribute package on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 889
+  PASS  Removeing an Attribute in an Attribute package on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 897
+  PASS  Getting a default Attribute character list in an Attribute package on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 911
+  PASS  Test for the presence of an AttPack object on mobj, ESMF_AttPackABundleUTest.F90, line 921
+  PASS  Removing the entire Attribute package from an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 929
+  PASS  Removing the entire Attribute package from an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 937
+  Ending Test, file ESMF_AttPackABundleUTest.F90, line 948
+  PET           0  Test Elapsed Time    5.1680000000000010       msec.

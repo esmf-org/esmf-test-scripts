@@ -1,0 +1,38 @@
+  Beginning Test, file ESMF_IO_PIOUTest.F90, line 83
+  NUMBER_OF_PROCESSORS           1
+  PASS  Checking sizeof(iosystem_desc_t) vs PIO_SIZE_IOSYSTEM_DESC, ESMF_IO_PIOUTest.F90, line 119
+  PASS  Checking sizeof(file_desc_t) vs PIO_SIZE_FILE_DESC, ESMF_IO_PIOUTest.F90, line 137
+  PASS  Checking sizeof(io_desc_t) vs PIO_SIZE_IO_DESC, ESMF_IO_PIOUTest.F90, line 155
+  PASS  Checking sizeof(var_desc_t) vs PIO_SIZE_VAR_DESC, ESMF_IO_PIOUTest.F90, line 173
+  PASS  Initialize a PIO instance, ESMF_IO_PIOUTest.F90, line 196
+  PASS  Create PIO NETCDF file: pio_file1f_netcdf.dat, ESMF_IO_PIOUTest.F90, line 223
+  PASS  Create a PIO NETCDF mapping, ESMF_IO_PIOUTest.F90, line 245
+  PASS  PIO NETCDF define dimension, ESMF_IO_PIOUTest.F90, line 263
+  PASS  PIO NETCDF define variable, ESMF_IO_PIOUTest.F90, line 282
+  PASS  PIO NETCDF ending define mode, ESMF_IO_PIOUTest.F90, line 297
+  PASS  PIO NETCDF setframe test, ESMF_IO_PIOUTest.F90, line 312
+  PASS  Write data to PIO NETCDF file, ESMF_IO_PIOUTest.F90, line 336
+  PASS  PIO NETCDF closefile after write test, ESMF_IO_PIOUTest.F90, line 351
+  PASS  Open PIO NETCDF file for read: pio_file1f_netcdf.dat, ESMF_IO_PIOUTest.F90, line 371
+  PASS  PIO NETCDF setframe for read test, ESMF_IO_PIOUTest.F90, line 386
+  PASS  Read data from PIO NETCDF file, ESMF_IO_PIOUTest.F90, line 407
+  PASS  Compare written data with data read back, ESMF_IO_PIOUTest.F90, line 430
+  PASS  Free PIO NETCDF decomposition, ESMF_IO_PIOUTest.F90, line 448
+  PASS  Close PIO NETCDF file after read, ESMF_IO_PIOUTest.F90, line 465
+  PASS  Create PNETCDF PIO file: pio_file1f_pnetcdf.dat, ESMF_IO_PIOUTest.F90, line 493
+  PASS  Create a PIO PNETCDF mapping, ESMF_IO_PIOUTest.F90, line 515
+  PASS  PIO PNETCDF define dimension, ESMF_IO_PIOUTest.F90, line 533
+  PASS  PIO PNETCDF define variable, ESMF_IO_PIOUTest.F90, line 552
+  PASS  PIO PNETCDF ending define mode, ESMF_IO_PIOUTest.F90, line 567
+  PASS  PIO PNETCDF setframe test, ESMF_IO_PIOUTest.F90, line 582
+  PASS  Write data to PIO file, ESMF_IO_PIOUTest.F90, line 606
+  PASS  PIO PNETCDF closefile after write test, ESMF_IO_PIOUTest.F90, line 621
+  PASS  Open PNETCDF PIO file for read: pio_file1f_pnetcdf.dat, ESMF_IO_PIOUTest.F90, line 641
+  PASS  PIO PNETCDF setframe for read test, ESMF_IO_PIOUTest.F90, line 656
+  PASS  Read data from PIO PNETCDF file, ESMF_IO_PIOUTest.F90, line 677
+  PASS  Compare written data with data read back, ESMF_IO_PIOUTest.F90, line 700
+  PASS  Free PIO PNETCDF decomposition, ESMF_IO_PIOUTest.F90, line 718
+  PASS  Close PIO PNETCDF file after read, ESMF_IO_PIOUTest.F90, line 735
+  PASS  Finalize PIO instance, ESMF_IO_PIOUTest.F90, line 755
+  Ending Test, file ESMF_IO_PIOUTest.F90, line 764
+  PET           0  Test Elapsed Time   0.39299999999999924       msec.

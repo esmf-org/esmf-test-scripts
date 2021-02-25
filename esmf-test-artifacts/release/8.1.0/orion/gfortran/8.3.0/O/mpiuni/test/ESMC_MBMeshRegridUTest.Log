@@ -1,0 +1,68 @@
+20210224 202557.193 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210224 202557.193 INFO             PET0 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210224 202557.193 INFO             PET0 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210224 202557.193 INFO             PET0 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210224 202557.193 INFO             PET0 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210224 202557.193 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210224 202557.193 INFO             PET0 Running with ESMF Version   : ESMF_8_1_0_beta_snapshot_47-4-g0d177ef
+20210224 202557.193 INFO             PET0 ESMF library build date/time: "Feb 24 2021" "20:16:38"
+20210224 202557.193 INFO             PET0 ESMF library build location : /work/noaa/da/mpotts/gfortran_8.3.0_mpiuni_O
+20210224 202557.193 INFO             PET0 ESMF_COMM                   : mpiuni
+20210224 202557.194 INFO             PET0 ESMF_MOAB                   : enabled
+20210224 202557.194 INFO             PET0 ESMF_LAPACK                 : enabled
+20210224 202557.194 INFO             PET0 ESMF_NETCDF                 : enabled
+20210224 202557.194 INFO             PET0 ESMF_PNETCDF                : disabled
+20210224 202557.194 INFO             PET0 ESMF_PIO                    : disabled
+20210224 202557.194 INFO             PET0 ESMF_YAMLCPP                : enabled
+20210224 202557.194 INFO             PET0 Beginning Test, file ESMC_MBMeshRegridUTest.C, line 60
+20210224 202557.195 INFO             PET0 NUMBER_OF_PROCESSORS 1
+20210224 202557.195 INFO             PET0 PASS MBMesh - regrid_rendezvous_center - quad_2d_cart, ESMC_MBMeshRegridUTest.C, line 143
+20210224 202557.195 INFO             PET0 PASS MBMesh - regrid_rendezvous_center - quad_2d_sph, ESMC_MBMeshRegridUTest.C, line 143
+20210224 202557.195 INFO             PET0 PASS MBMesh - regrid_rendezvous_center - tri_2d_cart, ESMC_MBMeshRegridUTest.C, line 143
+20210224 202557.195 INFO             PET0 PASS MBMesh - regrid_rendezvous_center - tri_2d_sph, ESMC_MBMeshRegridUTest.C, line 143
+20210224 202557.196 INFO             PET0 PASS MBMesh - regrid_rendezvous_center - hex_3d_cart, ESMC_MBMeshRegridUTest.C, line 143
+20210224 202557.196 INFO             PET0 PASS MBMesh - regrid_rendezvous_center - hex_3d_sph, ESMC_MBMeshRegridUTest.C, line 143
+20210224 202557.196 INFO             PET0 PASS MBMesh - regrid_rendezvous_center - mix_2d_cart, ESMC_MBMeshRegridUTest.C, line 143
+20210224 202557.196 INFO             PET0 PASS MBMesh - regrid_rendezvous_center - mix_2d_sph, ESMC_MBMeshRegridUTest.C, line 143
+20210224 202557.196 INFO             PET0 PASS MBMesh - regrid_rendezvous_corner - quad_2d_cart, ESMC_MBMeshRegridUTest.C, line 143
+20210224 202557.196 INFO             PET0 PASS MBMesh - regrid_rendezvous_corner - quad_2d_sph, ESMC_MBMeshRegridUTest.C, line 143
+20210224 202557.196 INFO             PET0 PASS MBMesh - regrid_rendezvous_corner - tri_2d_cart, ESMC_MBMeshRegridUTest.C, line 143
+20210224 202557.196 INFO             PET0 PASS MBMesh - regrid_rendezvous_corner - tri_2d_sph, ESMC_MBMeshRegridUTest.C, line 143
+20210224 202557.196 INFO             PET0 PASS MBMesh - regrid_rendezvous_corner - hex_3d_cart, ESMC_MBMeshRegridUTest.C, line 143
+20210224 202557.196 INFO             PET0 PASS MBMesh - regrid_rendezvous_corner - hex_3d_sph, ESMC_MBMeshRegridUTest.C, line 143
+20210224 202557.196 INFO             PET0 PASS MBMesh - regrid_rendezvous_corner - mix_2d_cart, ESMC_MBMeshRegridUTest.C, line 143
+20210224 202557.196 INFO             PET0 PASS MBMesh - regrid_rendezvous_corner - mix_2d_sph, ESMC_MBMeshRegridUTest.C, line 143
+20210224 202557.196 INFO             PET0 PASS MBMesh - regrid_search_center - quad_2d_cart, ESMC_MBMeshRegridUTest.C, line 143
+20210224 202557.196 INFO             PET0 PASS MBMesh - regrid_search_center - quad_2d_sph, ESMC_MBMeshRegridUTest.C, line 143
+20210224 202557.196 INFO             PET0 PASS MBMesh - regrid_search_center - tri_2d_cart, ESMC_MBMeshRegridUTest.C, line 143
+20210224 202557.196 INFO             PET0 PASS MBMesh - regrid_search_center - tri_2d_sph, ESMC_MBMeshRegridUTest.C, line 143
+20210224 202557.196 INFO             PET0 PASS MBMesh - regrid_search_center - hex_3d_cart, ESMC_MBMeshRegridUTest.C, line 143
+20210224 202557.196 INFO             PET0 PASS MBMesh - regrid_search_center - hex_3d_sph, ESMC_MBMeshRegridUTest.C, line 143
+20210224 202557.197 INFO             PET0 PASS MBMesh - regrid_search_center - mix_2d_cart, ESMC_MBMeshRegridUTest.C, line 143
+20210224 202557.197 INFO             PET0 PASS MBMesh - regrid_search_center - mix_2d_sph, ESMC_MBMeshRegridUTest.C, line 143
+20210224 202557.197 INFO             PET0 PASS MBMesh - regrid_search_corner - quad_2d_cart, ESMC_MBMeshRegridUTest.C, line 143
+20210224 202557.197 INFO             PET0 PASS MBMesh - regrid_search_corner - quad_2d_sph, ESMC_MBMeshRegridUTest.C, line 143
+20210224 202557.197 INFO             PET0 PASS MBMesh - regrid_search_corner - tri_2d_cart, ESMC_MBMeshRegridUTest.C, line 143
+20210224 202557.197 INFO             PET0 PASS MBMesh - regrid_search_corner - tri_2d_sph, ESMC_MBMeshRegridUTest.C, line 143
+20210224 202557.197 INFO             PET0 PASS MBMesh - regrid_search_corner - hex_3d_cart, ESMC_MBMeshRegridUTest.C, line 143
+20210224 202557.197 INFO             PET0 PASS MBMesh - regrid_search_corner - hex_3d_sph, ESMC_MBMeshRegridUTest.C, line 143
+20210224 202557.197 INFO             PET0 PASS MBMesh - regrid_search_corner - mix_2d_cart, ESMC_MBMeshRegridUTest.C, line 143
+20210224 202557.197 INFO             PET0 PASS MBMesh - regrid_search_corner - mix_2d_sph, ESMC_MBMeshRegridUTest.C, line 143
+20210224 202557.197 INFO             PET0 PASS MBMesh - regrid_bilinear_center - quad_2d_cart, ESMC_MBMeshRegridUTest.C, line 143
+20210224 202557.197 INFO             PET0 PASS MBMesh - regrid_bilinear_center - quad_2d_sph, ESMC_MBMeshRegridUTest.C, line 143
+20210224 202557.197 INFO             PET0 PASS MBMesh - regrid_bilinear_center - tri_2d_cart, ESMC_MBMeshRegridUTest.C, line 143
+20210224 202557.198 INFO             PET0 PASS MBMesh - regrid_bilinear_center - tri_2d_sph, ESMC_MBMeshRegridUTest.C, line 143
+20210224 202557.198 INFO             PET0 PASS MBMesh - regrid_bilinear_center - hex_3d_cart, ESMC_MBMeshRegridUTest.C, line 143
+20210224 202557.198 INFO             PET0 PASS MBMesh - regrid_bilinear_center - hex_3d_sph, ESMC_MBMeshRegridUTest.C, line 143
+20210224 202557.198 INFO             PET0 PASS MBMesh - regrid_bilinear_center - mix_2d_cart, ESMC_MBMeshRegridUTest.C, line 143
+20210224 202557.198 INFO             PET0 PASS MBMesh - regrid_bilinear_center - mix_2d_sph, ESMC_MBMeshRegridUTest.C, line 143
+20210224 202557.198 INFO             PET0 PASS MBMesh - regrid_bilinear_corner - quad_2d_cart, ESMC_MBMeshRegridUTest.C, line 143
+20210224 202557.198 INFO             PET0 PASS MBMesh - regrid_bilinear_corner - quad_2d_sph, ESMC_MBMeshRegridUTest.C, line 143
+20210224 202557.198 INFO             PET0 PASS MBMesh - regrid_bilinear_corner - tri_2d_cart, ESMC_MBMeshRegridUTest.C, line 143
+20210224 202557.198 INFO             PET0 PASS MBMesh - regrid_bilinear_corner - tri_2d_sph, ESMC_MBMeshRegridUTest.C, line 143
+20210224 202557.198 INFO             PET0 PASS MBMesh - regrid_bilinear_corner - hex_3d_cart, ESMC_MBMeshRegridUTest.C, line 143
+20210224 202557.200 INFO             PET0 PASS MBMesh - regrid_bilinear_corner - hex_3d_sph, ESMC_MBMeshRegridUTest.C, line 143
+20210224 202557.200 INFO             PET0 PASS MBMesh - regrid_bilinear_corner - mix_2d_cart, ESMC_MBMeshRegridUTest.C, line 143
+20210224 202557.200 INFO             PET0 PASS MBMesh - regrid_bilinear_corner - mix_2d_sph, ESMC_MBMeshRegridUTest.C, line 143
+20210224 202557.200 INFO             PET0 Ending Test, file ESMC_MBMeshRegridUTest.C, line 201
+20210224 202557.200 INFO             PET0 Finalizing ESMF

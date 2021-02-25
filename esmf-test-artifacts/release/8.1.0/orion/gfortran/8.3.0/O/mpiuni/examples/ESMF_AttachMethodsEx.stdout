@@ -1,0 +1,3 @@
+ dummy output from attached method 
+  PASS  Example ESMF_AttachMethodsEx, ESMF_AttachMethodsEx.F90, line 205
+ PASS: ESMF_AttachMethodsEx.F90

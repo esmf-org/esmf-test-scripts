@@ -1,0 +1,53 @@
+ ESMF_LogWrite(): ESMF_Log not open -- cannot ESMF_LogWrite().  Log message = !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  Beginning Test, file ESMF_MeshUTest.F90, line 106
+  NUMBER_OF_PROCESSORS           1
+  PASS  Testing Mesh IsCreated for uncreated object, ESMF_MeshUTest.F90, line 126
+  PASS  Testing Mesh IsCreated for uncreated object, ESMF_MeshUTest.F90, line 134
+  PASS  Create test Mesh for IsCreated, ESMF_MeshUTest.F90, line 143
+  PASS  Testing Mesh IsCreated for created object, ESMF_MeshUTest.F90, line 151
+  PASS  Testing Mesh IsCreated for created object, ESMF_MeshUTest.F90, line 159
+  PASS  Testing MeshGet, accessing name, ESMF_MeshUTest.F90, line 167
+  PASS  Destroy test Mesh for IsCreated, ESMF_MeshUTest.F90, line 176
+  PASS  Testing Mesh IsCreated for destroyed object, ESMF_MeshUTest.F90, line 184
+  PASS  Testing Mesh IsCreated for destroyed object, ESMF_MeshUTest.F90, line 192
+  PASS  Test creating a small 2x2 2D QUAD Mesh in 3 steps on 1 proc, ESMF_MeshUTest.F90, line 335
+  PASS  Mesh equality before assignment Test, ESMF_MeshUTest.F90, line 353
+  PASS  Mesh assignment and equality Test, ESMF_MeshUTest.F90, line 372
+  PASS  MeshDestroy Test, ESMF_MeshUTest.F90, line 390
+  PASS  Mesh equality after destroy Test, ESMF_MeshUTest.F90, line 409
+  PASS  Mesh non-equality after destroy Test, ESMF_MeshUTest.F90, line 428
+  PASS  Test creating a small 2x2 2D QUAD Mesh in 1 step on 4 procs and MeshGet, ESMF_MeshUTest.F90, line 730
+  PASS  Test ESMF_MeshFreeMemory(), ESMF_MeshUTest.F90, line 771
+  PASS  Test error checking, ESMF_MeshUTest.F90, line 898
+ ESMF_MeshUTest: serialization buffer size =        9482
+ ESMF_MeshUTest: serialized buffer size =        4461
+  PASS  Test Mesh Serialize/Deserialize, ESMF_MeshUTest.F90, line 980
+  PASS  Test Mesh Find Point, ESMF_MeshUTest.F90, line 1062
+  PASS  Test setting and getting area of Mesh, ESMF_MeshUTest.F90, line 1211
+  PASS  Test Mesh Create Redist, ESMF_MeshUTest.F90, line 1314
+  PASS  Test Mesh Create Redist: Different Location Node Element, ESMF_MeshUTest.F90, line 1423
+  PASS  Test Mesh Create Redist with just element distgrid, ESMF_MeshUTest.F90, line 1503
+  PASS  Test Mesh Create Redist with just node distgrid, ESMF_MeshUTest.F90, line 1602
+  PASS  Test Mesh Create Redist with just node distgrid and >4 sided elements, ESMF_MeshUTest.F90, line 1684
+  PASS  Test Mesh Create Redist with no distgrids, ESMF_MeshUTest.F90, line 1730
+  PASS  Test Mesh Create Redist: >1 localDECount Distgrid, ESMF_MeshUTest.F90, line 1845
+  PASS  Test Mesh Create >1 localDECount Distgrid, ESMF_MeshUTest.F90, line 1860
+  PASS  Test Mesh Create with coordSys ESMF_COORDSYS_SPH_DEG, ESMF_MeshUTest.F90, line 1951
+  PASS  Mesh Create with a pentagon and hexagon element, ESMF_MeshUTest.F90, line 1994
+  PASS  Mesh Create Dual with a pentagon and hexagon element, ESMF_MeshUTest.F90, line 2026
+  PASS  Mesh Create and then Redist with a pentagon and hexagon element, ESMF_MeshUTest.F90, line 2098
+  PASS  Mesh Create Dual, ESMF_MeshUTest.F90, line 2135
+  PASS  Mesh Create with a multipart element, ESMF_MeshUTest.F90, line 2163
+  PASS  Mesh create easy elems, ESMF_MeshUTest.F90, line 2179
+  PASS  Mesh create easy elems 1 type, ESMF_MeshUTest.F90, line 2194
+  PASS  Test Mesh Empty Create, ESMF_MeshUTest.F90, line 2353
+  PASS  Test creating a MOAB Mesh, ESMF_MeshUTest.F90, line 2483
+  PASS  Test get of element mask and area info, ESMF_MeshUTest.F90, line 2592
+  PASS  Test MOAB get of element mask and area info, ESMF_MeshUTest.F90, line 2716
+  PASS  Test Mesh Create from Grid with 1 width DE, ESMF_MeshUTest.F90, line 2732
+  PASS  Test MOAB Mesh Create from Grid, ESMF_MeshUTest.F90, line 2755
+  PASS  Mesh get/set of creation info (elementConn, etc.), ESMF_MeshUTest.F90, line 2769
+  PASS  Mesh set of >4 sided, ESMF_MeshUTest.F90, line 2783
+  PASS  MOAB Mesh Create with a pentagon and hexagon element, ESMF_MeshUTest.F90, line 2819
+  Ending Test, file ESMF_MeshUTest.F90, line 2834
+  PET           0  Test Elapsed Time    24.340000000000000       msec.

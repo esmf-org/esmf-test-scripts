@@ -1,0 +1,17 @@
+ System Test FieldRedistArb2Arb.
+ Create section finished
+ Initial data, before Redistribution:
+ Init section finished
+ Array contents after Transpose:
+ Array contents after second Redistribution, should match original:
+ Run section finished
+ -----------------------------------------------------------------
+ -----------------------------------------------------------------
+ Result from PET number            0
+ -----------------------------------------------------------------
+ -----------------------------------------------------------------
+ Array contents matched correctly!! PET =            0
+ Finalize section finished
+ All Destroy routines done
+ System Test FieldRedistArb2Arb complete.
+  PASS  System Test FieldRedistArb2Arb: Field Redistribute, ESMF_FieldRedistArb2ArbSTest.F90, line 333

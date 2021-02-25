@@ -1,0 +1,13 @@
+  Beginning Test, file ESMF_TraceClkMonoUTest.F90, line 63
+  NUMBER_OF_PROCESSORS           1
+  PASS  Test trace user region enter, ESMF_TraceClkMonoUTest.F90, line 79
+  PASS  Test trace user region exit, ESMF_TraceClkMonoUTest.F90, line 87
+  PASS  Test trace memory usage, ESMF_TraceClkMonoUTest.F90, line 95
+  PASS  Close trace, ESMF_TraceClkMonoUTest.F90, line 106
+  PASS  Verify trace metadata exists, ESMF_TraceClkMonoUTest.F90, line 134
+  PASS  Read trace metadata file, ESMF_TraceClkMonoUTest.F90, line 153
+  PASS  Validate trace metadata header, ESMF_TraceClkMonoUTest.F90, line 162
+ Attempt to open trace file: traceout/esmf_stream_0000
+  PASS  Verify trace stream file exists, ESMF_TraceClkMonoUTest.F90, line 181
+  Ending Test, file ESMF_TraceClkMonoUTest.F90, line 187
+  PET           0  Test Elapsed Time    4989.1850000000004       msec.

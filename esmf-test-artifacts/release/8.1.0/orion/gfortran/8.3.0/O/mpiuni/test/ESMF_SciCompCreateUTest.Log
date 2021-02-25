@@ -1,0 +1,44 @@
+20210224 202712.820 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210224 202712.820 INFO             PET0 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210224 202712.820 INFO             PET0 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210224 202712.820 INFO             PET0 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210224 202712.820 INFO             PET0 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210224 202712.820 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210224 202712.820 INFO             PET0 Running with ESMF Version   : ESMF_8_1_0_beta_snapshot_47-4-g0d177ef
+20210224 202712.820 INFO             PET0 ESMF library build date/time: "Feb 24 2021" "20:16:38"
+20210224 202712.820 INFO             PET0 ESMF library build location : /work/noaa/da/mpotts/gfortran_8.3.0_mpiuni_O
+20210224 202712.820 INFO             PET0 ESMF_COMM                   : mpiuni
+20210224 202712.820 INFO             PET0 ESMF_MOAB                   : enabled
+20210224 202712.820 INFO             PET0 ESMF_LAPACK                 : enabled
+20210224 202712.820 INFO             PET0 ESMF_NETCDF                 : enabled
+20210224 202712.820 INFO             PET0 ESMF_PNETCDF                : disabled
+20210224 202712.820 INFO             PET0 ESMF_PIO                    : disabled
+20210224 202712.820 INFO             PET0 ESMF_YAMLCPP                : enabled
+20210224 202712.820 INFO             PET0  Beginning Test, file ESMF_SciCompCreateUTest.F90, line 59
+20210224 202712.820 INFO             PET0  NUMBER_OF_PROCESSORS           1
+20210224 202712.821 INFO             PET0  PASS  Testing SciComp IsCreated for uncreated object, ESMF_SciCompCreateUTest.F90, line 67
+20210224 202712.821 INFO             PET0  PASS  Testing SciComp IsCreated for uncreated object, ESMF_SciCompCreateUTest.F90, line 74
+20210224 202712.821 INFO             PET0  PASS  Creating a Science Component Test, ESMF_SciCompCreateUTest.F90, line 82
+20210224 202712.821 INFO             PET0  PASS  Testing SciComp IsCreated for created object, ESMF_SciCompCreateUTest.F90, line 89
+20210224 202712.821 INFO             PET0  PASS  Testing SciComp IsCreated for created object, ESMF_SciCompCreateUTest.F90, line 96
+20210224 202712.821 INFO             PET0  PASS  SciComp equality before assignment Test, ESMF_SciCompCreateUTest.F90, line 103
+20210224 202712.821 INFO             PET0  PASS  SciComp assignment and equality Test, ESMF_SciCompCreateUTest.F90, line 112
+20210224 202712.821 INFO             PET0  PASS  SciCompDestroy Test, ESMF_SciCompCreateUTest.F90, line 119
+20210224 202712.821 INFO             PET0  PASS  Testing SciComp IsCreated for destroyed object, ESMF_SciCompCreateUTest.F90, line 126
+20210224 202712.821 INFO             PET0  PASS  Testing SciComp IsCreated for destroyed object, ESMF_SciCompCreateUTest.F90, line 133
+20210224 202712.821 INFO             PET0  PASS  SciComp equality after destroy Test, ESMF_SciCompCreateUTest.F90, line 141
+20210224 202712.821 INFO             PET0  PASS  SciComp non-equality after destroy Test, ESMF_SciCompCreateUTest.F90, line 149
+20210224 202712.821 INFO             PET0  PASS  Double SciCompDestroy through alias Test, ESMF_SciCompCreateUTest.F90, line 156
+20210224 202712.821 ERROR            PET0 ESMF_SciComp.F90:474 ESMF_SciCompGet Object being used after deletion  - Bad Object
+20210224 202712.821 INFO             PET0  PASS  Getting a Component name Test, ESMF_SciCompCreateUTest.F90, line 169
+20210224 202712.821 INFO             PET0  PASS  Creating a Component Test, ESMF_SciCompCreateUTest.F90, line 179
+20210224 202712.821 INFO             PET0  PASS  SciCompDestroy Test, ESMF_SciCompCreateUTest.F90, line 187
+20210224 202712.821 INFO             PET0  PASS  Creating a Component Test, ESMF_SciCompCreateUTest.F90, line 198
+20210224 202712.821 INFO             PET0  PASS  Validating a Component Test, ESMF_SciCompCreateUTest.F90, line 209
+20210224 202712.821 INFO             PET0  PASS  Getting a Component name Test, ESMF_SciCompCreateUTest.F90, line 220
+20210224 202712.821 INFO             PET0  PASS  Verifying the correct Component name was returned Test, ESMF_SciCompCreateUTest.F90, line 231
+20210224 202712.821 INFO             PET0  PASS  Setting  a Science Component name Test, ESMF_SciCompCreateUTest.F90, line 241
+20210224 202712.821 INFO             PET0  PASS  Printing a Component Test, ESMF_SciCompCreateUTest.F90, line 252
+20210224 202712.821 INFO             PET0  PASS  Destroying a Component Test, ESMF_SciCompCreateUTest.F90, line 263
+20210224 202712.821 INFO             PET0  Ending Test, file ESMF_SciCompCreateUTest.F90, line 267
+20210224 202712.821 INFO             PET0 Finalizing ESMF

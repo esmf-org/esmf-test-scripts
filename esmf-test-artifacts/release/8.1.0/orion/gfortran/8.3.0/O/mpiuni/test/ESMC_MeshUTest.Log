@@ -1,0 +1,39 @@
+20210224 202558.387 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210224 202558.387 INFO             PET0 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210224 202558.387 INFO             PET0 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210224 202558.387 INFO             PET0 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210224 202558.387 INFO             PET0 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210224 202558.387 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210224 202558.387 INFO             PET0 Running with ESMF Version   : ESMF_8_1_0_beta_snapshot_47-4-g0d177ef
+20210224 202558.387 INFO             PET0 ESMF library build date/time: "Feb 24 2021" "20:16:38"
+20210224 202558.387 INFO             PET0 ESMF library build location : /work/noaa/da/mpotts/gfortran_8.3.0_mpiuni_O
+20210224 202558.387 INFO             PET0 ESMF_COMM                   : mpiuni
+20210224 202558.388 INFO             PET0 ESMF_MOAB                   : enabled
+20210224 202558.388 INFO             PET0 ESMF_LAPACK                 : enabled
+20210224 202558.388 INFO             PET0 ESMF_NETCDF                 : enabled
+20210224 202558.388 INFO             PET0 ESMF_PNETCDF                : disabled
+20210224 202558.388 INFO             PET0 ESMF_PIO                    : disabled
+20210224 202558.388 INFO             PET0 ESMF_YAMLCPP                : enabled
+20210224 202558.388 INFO             PET0 Beginning Test, file ESMC_MeshUTest.C, line 53
+20210224 202558.388 INFO             PET0 NUMBER_OF_PROCESSORS 1
+20210224 202558.389 INFO             PET0 PASS MeshCreate, ESMC_MeshUTest.C, line 121
+20210224 202558.389 INFO             PET0 PASS MeshAddNodes, ESMC_MeshUTest.C, line 129
+20210224 202558.389 INFO             PET0 PASS MeshAddElements, ESMC_MeshUTest.C, line 138
+20210224 202558.389 INFO             PET0 PASS MeshGetLocalNodeCount, ESMC_MeshUTest.C, line 148
+20210224 202558.389 INFO             PET0 PASS MeshGetLocalElementCount, ESMC_MeshUTest.C, line 159
+20210224 202558.389 INFO             PET0 PASS MeshGetOwnedNodeCount, ESMC_MeshUTest.C, line 170
+20210224 202558.389 INFO             PET0 PASS MeshGetOwnedNodeCount_OutputCorrect, ESMC_MeshUTest.C, line 179
+20210224 202558.389 INFO             PET0 PASS MeshGetOwnedElementCount, ESMC_MeshUTest.C, line 189
+20210224 202558.389 INFO             PET0 PASS MeshGetCoord, ESMC_MeshUTest.C, line 201
+20210224 202558.389 INFO             PET0 PASS MeshGetConnectivity, ESMC_MeshUTest.C, line 225
+20210224 202558.389 INFO             PET0 PASS MeshVerifyCoord, ESMC_MeshUTest.C, line 245
+20210224 202558.389 INFO             PET0 PASS MeshGetElemCoord, ESMC_MeshUTest.C, line 257
+20210224 202558.389 INFO             PET0 PASS MeshVerifyElemCoord, ESMC_MeshUTest.C, line 282
+20210224 202558.390 INFO             PET0 PASS MeshWrite, ESMC_MeshUTest.C, line 291
+20210224 202558.390 INFO             PET0 PASS MeshFreeMemory, ESMC_MeshUTest.C, line 301
+20210224 202558.390 INFO             PET0 PASS MeshDestroy, ESMC_MeshUTest.C, line 310
+20210224 202558.417 INFO             PET0 PASS MeshCreateFromFile_SCRIP, ESMC_MeshUTest.C, line 321
+20210224 202558.420 WARNING          PET0 ESMF_IOScrip.F90:4699 ESMF_EsmfGetElement Variable centerCoords in data/ne4np4-esmf.nc does not exist
+20210224 202558.424 INFO             PET0 PASS MeshCreateFromFile_ESMFMESH, ESMC_MeshUTest.C, line 336
+20210224 202558.424 INFO             PET0 Ending Test, file ESMC_MeshUTest.C, line 345
+20210224 202558.424 INFO             PET0 Finalizing ESMF

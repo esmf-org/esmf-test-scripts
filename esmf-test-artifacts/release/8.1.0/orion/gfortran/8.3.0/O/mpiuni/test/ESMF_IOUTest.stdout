@@ -1,0 +1,6 @@
+  Beginning Test, file ESMF_IOUTest.F90, line 57
+  NUMBER_OF_PROCESSORS           1
+  PASS  ESMF_OutputWeightFile, ESMF_IOUTest.F90, line 84
+  PASS  call ESMF_OutputWeightFile with empty factor list on four PETs, ESMF_IOUTest.F90, line 194
+  Ending Test, file ESMF_IOUTest.F90, line 201
+  PET           0  Test Elapsed Time   0.31699999999999956       msec.

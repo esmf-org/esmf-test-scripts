@@ -1,0 +1,6 @@
+  Beginning Test, file ESMF_InfoCacheUTest.F90, line 60
+  NUMBER_OF_PROCESSORS           1
+  PASS  Initialize + Destroy, ESMF_InfoCacheUTest.F90, line 82
+  PASS  Update for State, ESMF_InfoCacheUTest.F90, line 164
+  Ending Test, file ESMF_InfoCacheUTest.F90, line 194
+  PET           0  Test Elapsed Time    3.8289999999999988       msec.

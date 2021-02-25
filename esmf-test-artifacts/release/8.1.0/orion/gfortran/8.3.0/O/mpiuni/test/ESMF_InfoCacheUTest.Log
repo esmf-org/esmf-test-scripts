@@ -1,0 +1,182 @@
+20210224 202715.505 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210224 202715.505 INFO             PET0 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210224 202715.505 INFO             PET0 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210224 202715.505 INFO             PET0 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210224 202715.505 INFO             PET0 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210224 202715.505 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210224 202715.505 INFO             PET0 Running with ESMF Version   : ESMF_8_1_0_beta_snapshot_47-4-g0d177ef
+20210224 202715.505 INFO             PET0 ESMF library build date/time: "Feb 24 2021" "20:16:38"
+20210224 202715.505 INFO             PET0 ESMF library build location : /work/noaa/da/mpotts/gfortran_8.3.0_mpiuni_O
+20210224 202715.505 INFO             PET0 ESMF_COMM                   : mpiuni
+20210224 202715.505 INFO             PET0 ESMF_MOAB                   : enabled
+20210224 202715.505 INFO             PET0 ESMF_LAPACK                 : enabled
+20210224 202715.505 INFO             PET0 ESMF_NETCDF                 : enabled
+20210224 202715.505 INFO             PET0 ESMF_PNETCDF                : disabled
+20210224 202715.505 INFO             PET0 ESMF_PIO                    : disabled
+20210224 202715.505 INFO             PET0 ESMF_YAMLCPP                : enabled
+20210224 202715.505 INFO             PET0  Beginning Test, file ESMF_InfoCacheUTest.F90, line 60
+20210224 202715.505 INFO             PET0  NUMBER_OF_PROCESSORS           1
+20210224 202715.505 INFO             PET0  PASS  Initialize + Destroy, ESMF_InfoCacheUTest.F90, line 82
+20210224 202715.509 INFO             PET0 idesc dump=
+20210224 202715.509 INFO             PET0 {
+  "11-State011": {
+    "base_id": 11,
+    "base_is_valid": true,
+    "base_name": "State011",
+    "esmf_type": "State",
+    "info": {},
+    "is_geom": false,
+    "members": {
+      "10-FieldBundle010": {
+        "base_id": 10,
+        "base_is_valid": true,
+        "base_name": "FieldBundle010",
+        "esmf_type": "FieldBundle",
+        "info": {},
+        "is_geom": false,
+        "is_packed": false,
+        "members": {
+          "4-Field004": {
+            "base_id": 4,
+            "base_is_valid": true,
+            "base_name": "Field004",
+            "esmf_type": "Field",
+            "info": {
+              "_esmf_state_reconcile": {
+                "geom_type": "Grid",
+                "integer_vmid": -1,
+                "should_serialize_geom": true
+              }
+            },
+            "is_geom": false,
+            "members": {
+              "2-Grid002": {
+                "base_id": 2,
+                "base_is_valid": true,
+                "base_name": "Grid002",
+                "esmf_type": "Grid",
+                "info": {},
+                "is_geom": true,
+                "members": null,
+                "vmid_int": null
+              }
+            },
+            "vmid_int": null
+          },
+          "7-Field007": {
+            "base_id": 7,
+            "base_is_valid": true,
+            "base_name": "Field007",
+            "esmf_type": "Field",
+            "info": {
+              "_esmf_state_reconcile": {
+                "field_archetype_base_name": "Field004",
+                "field_archetype_id": 4,
+                "field_archetype_integer_vmid": -1,
+                "geom_type": "",
+                "integer_vmid": -1,
+                "should_serialize_geom": false
+              }
+            },
+            "is_geom": false,
+            "members": {
+              "2-Grid002": {
+                "base_id": 2,
+                "base_is_valid": true,
+                "base_name": "Grid002",
+                "esmf_type": "Grid",
+                "info": {},
+                "is_geom": true,
+                "members": null,
+                "vmid_int": null
+              }
+            },
+            "vmid_int": null
+          },
+          "9-Field009": {
+            "base_id": 9,
+            "base_is_valid": true,
+            "base_name": "Field009",
+            "esmf_type": "Field",
+            "info": {},
+            "is_geom": false,
+            "members": null,
+            "vmid_int": null
+          }
+        },
+        "vmid_int": null
+      },
+      "4-Field004": {
+        "base_id": 4,
+        "base_is_valid": true,
+        "base_name": "Field004",
+        "esmf_type": "Field",
+        "info": {
+          "_esmf_state_reconcile": {
+            "geom_type": "Grid",
+            "integer_vmid": -1,
+            "should_serialize_geom": true
+          }
+        },
+        "is_geom": false,
+        "members": {
+          "2-Grid002": {
+            "base_id": 2,
+            "base_is_valid": true,
+            "base_name": "Grid002",
+            "esmf_type": "Grid",
+            "info": {},
+            "is_geom": true,
+            "members": null,
+            "vmid_int": null
+          }
+        },
+        "vmid_int": null
+      },
+      "7-Field007": {
+        "base_id": 7,
+        "base_is_valid": true,
+        "base_name": "Field007",
+        "esmf_type": "Field",
+        "info": {
+          "_esmf_state_reconcile": {
+            "field_archetype_base_name": "Field004",
+            "field_archetype_id": 4,
+            "field_archetype_integer_vmid": -1,
+            "geom_type": "",
+            "integer_vmid": -1,
+            "should_serialize_geom": false
+          }
+        },
+        "is_geom": false,
+        "members": {
+          "2-Grid002": {
+            "base_id": 2,
+            "base_is_valid": true,
+            "base_name": "Grid002",
+            "esmf_type": "Grid",
+            "info": {},
+            "is_geom": true,
+            "members": null,
+            "vmid_int": null
+          }
+        },
+        "vmid_int": null
+      },
+      "9-Field009": {
+        "base_id": 9,
+        "base_is_valid": true,
+        "base_name": "Field009",
+        "esmf_type": "Field",
+        "info": {},
+        "is_geom": false,
+        "members": null,
+        "vmid_int": null
+      }
+    },
+    "vmid_int": null
+  }
+}
+20210224 202715.509 INFO             PET0  PASS  Update for State, ESMF_InfoCacheUTest.F90, line 164
+20210224 202715.509 INFO             PET0  Ending Test, file ESMF_InfoCacheUTest.F90, line 194
+20210224 202715.509 INFO             PET0 Finalizing ESMF

@@ -1,0 +1,28 @@
+20210224 202601.234 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210224 202601.234 INFO             PET0 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210224 202601.234 INFO             PET0 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210224 202601.234 INFO             PET0 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210224 202601.234 INFO             PET0 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210224 202601.234 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210224 202601.234 INFO             PET0 Running with ESMF Version   : ESMF_8_1_0_beta_snapshot_47-4-g0d177ef
+20210224 202601.234 INFO             PET0 ESMF library build date/time: "Feb 24 2021" "20:16:38"
+20210224 202601.234 INFO             PET0 ESMF library build location : /work/noaa/da/mpotts/gfortran_8.3.0_mpiuni_O
+20210224 202601.234 INFO             PET0 ESMF_COMM                   : mpiuni
+20210224 202601.235 INFO             PET0 ESMF_MOAB                   : enabled
+20210224 202601.235 INFO             PET0 ESMF_LAPACK                 : enabled
+20210224 202601.235 INFO             PET0 ESMF_NETCDF                 : enabled
+20210224 202601.235 INFO             PET0 ESMF_PNETCDF                : disabled
+20210224 202601.235 INFO             PET0 ESMF_PIO                    : disabled
+20210224 202601.235 INFO             PET0 ESMF_YAMLCPP                : enabled
+20210224 202601.235 INFO             PET0 Beginning Test, file ESMC_LocStreamUTest.C, line 53
+20210224 202601.236 INFO             PET0 NUMBER_OF_PROCESSORS 1
+20210224 202601.236 INFO             PET0 PASS LocStreamCreateLocal, ESMC_LocStreamUTest.C, line 62
+20210224 202601.236 INFO             PET0 PASS LocStreamAddKeyAlloc, ESMC_LocStreamUTest.C, line 70
+20210224 202601.236 INFO             PET0 PASS LocStreamGetKeyPtr, ESMC_LocStreamUTest.C, line 89
+20210224 202601.236 INFO             PET0 PASS LocStreamGetKeyPtr, ESMC_LocStreamUTest.C, line 99
+20210224 202601.236 INFO             PET0 PASS LocStreamGetBounds, ESMC_LocStreamUTest.C, line 107
+20210224 202601.236 INFO             PET0 PASS Create ESMC_Field object on LocStream, ESMC_LocStreamUTest.C, line 116
+20210224 202601.236 INFO             PET0 PASS Destroy ESMC_Field object from LocStream, ESMC_LocStreamUTest.C, line 124
+20210224 202601.236 INFO             PET0 PASS Destroy ESMC_LocStream object, ESMC_LocStreamUTest.C, line 132
+20210224 202601.236 INFO             PET0 Ending Test, file ESMC_LocStreamUTest.C, line 136
+20210224 202601.236 INFO             PET0 Finalizing ESMF

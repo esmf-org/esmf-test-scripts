@@ -83,7 +83,7 @@ def main(argv):
                status= subprocess.check_output(cmdstring,shell=True).strip().decode('utf-8')
             os.chdir(subdir)
             os.system("rm -rf *.e *.o *bat.e* *bat.o*")
-            os.system("git checkout {}".format(branch))
+            os.system("git remote update; git checkout {}".format(branch))
             os.system("git pull origin {}".format(branch))
             filename = 'build-{}_{}_{}_{}.bat'.format(comp,ver,key,build_type)
             t_filename = 'test-{}_{}_{}_{}.bat'.format(comp,ver,key,build_type)

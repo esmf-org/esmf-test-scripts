@@ -1,0 +1,42 @@
+Beginning Test, file ESMC_VMUTest.C, line 44
+NUMBER_OF_PROCESSORS 1
+PASS VMGetGlobal, ESMC_VMUTest.C, line 59
+PASS VMGetCurrent, ESMC_VMUTest.C, line 68
+PASS VMGet, ESMC_VMUTest.C, line 78
+PASS VMBarrier, ESMC_VMUTest.C, line 90
+localPet= 0 , petCount= 1, peCount= 1, pthreadsEnabledFlag= 1, openMPEnabledFlag= 1 
+--- ESMCI::VM::print() start ---
+--- ESMCI::VMId::print() start ---
+  vmKeyWidth = 1
+  vmKey=0x80000000
+  localID = 0
+--- ESMCI::VMId::print() end ---
+PASS VMPrint, ESMC_VMUTest.C, line 99
+PASS VMReduceI4, ESMC_VMUTest.C, line 124
+PASS VMReduceI8, ESMC_VMUTest.C, line 150
+PASS VMReduceR4, ESMC_VMUTest.C, line 176
+PASS VMReduceR8, ESMC_VMUTest.C, line 202
+PASS VMBroadcastI4, ESMC_VMUTest.C, line 227
+PASS VMBroadcastI8, ESMC_VMUTest.C, line 252
+PASS VMBroadcastR4, ESMC_VMUTest.C, line 277
+PASS VMBroadcastR8, ESMC_VMUTest.C, line 302
+PASS VMBroadcastLogical, ESMC_VMUTest.C, line 327
+Ending Test, file ESMC_VMUTest.C, line 358
+--- VMK::print() start ---
+vm located at: 0x183c8a0
+npets = 1, mypet=0
+  pth_mutex =		 0x1864150
+  pth_finish_count =	 (nil)
+MPI_Comm_size: 1
+MPI_Comm_rank in local MPI communicator: 0
+MPI_Comm_rank in MPI_COMM_WORLD: 0
+MPI thread level support: 2
+mpi_mutex_flag: 1
+mpionly: 0
+nothreadsflag: 1
+  lpid[0]=0, tid[0]=0, vas[0]=0, ncpet[0]=1, nadevs[0]=0, cid[0][0]=0
+ncores = 1
+  cpuid[0]=0, ssiid[0]=0
+--- VMK::print() end ---
+--- ESMCI::VM::print() end ---
+ PET 0 Test Elapsed Time  0.961000 msec.

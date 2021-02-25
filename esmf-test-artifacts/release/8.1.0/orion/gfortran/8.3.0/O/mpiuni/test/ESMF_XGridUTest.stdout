@@ -1,0 +1,89 @@
+  Beginning Test, file ESMF_XGridUTest.F90, line 54
+  NUMBER_OF_PROCESSORS           1
+  PASS  Testing XGrid IsCreated for uncreated object, ESMF_XGridUTest.F90, line 64
+  PASS  Testing XGrid IsCreated for uncreated object, ESMF_XGridUTest.F90, line 72
+  PASS  Create test XGrid for IsCreated, ESMF_XGridUTest.F90, line 82
+  PASS  Testing XGrid IsCreated for created object, ESMF_XGridUTest.F90, line 90
+  PASS  Testing XGrid IsCreated for created object, ESMF_XGridUTest.F90, line 98
+  PASS  Destroy test XGrid for IsCreated, ESMF_XGridUTest.F90, line 106
+  PASS  Testing XGrid IsCreated for destroyed object, ESMF_XGridUTest.F90, line 114
+  PASS  Testing XGrid IsCreated for destroyed object, ESMF_XGridUTest.F90, line 122
+ Starting test3
+  PASS  XGrid equality before assignment Test, ESMF_XGridUTest.F90, line 394
+  PASS  XGrid assignment and equality Test, ESMF_XGridUTest.F90, line 403
+  PASS  XGridDestroy Test, ESMF_XGridUTest.F90, line 487
+  PASS  XGrid equality after destroy Test, ESMF_XGridUTest.F90, line 495
+  PASS  XGrid non-equality after destroy Test, ESMF_XGridUTest.F90, line 503
+  PASS  Creating an XGrid with area/centroid, sparseMatA2X, ESMF_XGridUTest.F90, line 132
+ Starting test4
+  xgrid flux and area:    47.500000000000000        23.750000000000000        23.750000000000000     
+ dst flux and area:    47.500000000000000        23.750000000000000        64.000000000000000     
+  xgrid flux and area:    47.500000000000000        23.750000000000000        23.750000000000000     
+ dst flux and area:    47.500000000000000        23.750000000000000        64.000000000000000     
+  xgrid flux and area:    47.500000000000000        23.750000000000000        23.750000000000000     
+ dst flux and area:    47.500000000000000        23.750000000000000        64.000000000000000     
+  xgrid flux and area:    47.160000076293954        23.580000038146977        23.580000038146977     
+ dst flux and area:    47.160000076293954        23.580000038146977        64.000000000000000     
+  xgrid flux and area:    45.759999980926523        22.879999990463261        22.879999990463261     
+ dst flux and area:    45.759999980926523        22.879999990463261        81.000000000000000     
+  xgrid flux and area:    45.759999980926523        22.879999990463261        22.879999990463261     
+ dst flux and area:    45.759999980926537        22.879999990463261        64.000000000000000     
+  xgrid flux and area:    10.500000000000000        5.2500000000000000        5.2500000000000000     
+ dst flux and area:    10.500000000000000        5.2500000000000000        9.0000000000000000     
+  PASS  Creating an XGrid from 2 adjacent Grids, ESMF_XGridUTest.F90, line 141
+ Starting test5
+  xgrid flux and area:    1.5408683194320587E-002   7.7043415971602943E-003   7.7043415971602943E-003
+ dst flux and area:    1.5408683194320578E-002   7.7043415971602891E-003   1.9432714478542050E-002
+  xgrid flux and area:    1.5226283838438121E-002   7.6131419192190606E-003   7.6131419192190606E-003
+ dst flux and area:    1.5226283838438118E-002   7.6131419192190615E-003   1.9432714478542050E-002
+  xgrid flux and area:    1.4565941475802051E-002   7.2829707379010265E-003   7.2829707379010265E-003
+ dst flux and area:    1.4565941475802051E-002   7.2829707379010265E-003   1.9432714478542050E-002
+  xgrid flux and area:    1.2705828266588079E-002   6.3529141332949179E-003   6.3529141332949179E-003
+ dst flux and area:    1.2705828266587485E-002   6.3529141332946248E-003   2.4572723072717073E-002
+  xgrid flux and area:    1.2705828266592036E-002   6.3529141332947237E-003   6.3529141332947237E-003
+ dst flux and area:    4.8643423822634594E-003   2.4321711911304239E-003   2.4321711911305722E-003
+ dst flux and area using frac2:    4.8643423822634594E-003   2.4321711911304239E-003   2.4321711911305722E-003
+ dst flux and area:    7.8414858843283003E-003   3.9207429421641623E-003   4.8700435897306082E-003
+ dst flux and area using frac2:    7.8414858843283003E-003   3.9207429421641623E-003   4.8700435897306082E-003
+  PASS  Creating an XGrid in 2D with Grid merging, ESMF_XGridUTest.F90, line 150
+ Starting test6
+  xgrid flux and area:    1.5408683194320587E-002   7.7043415971602943E-003   7.7043415971602943E-003
+  xgrid flux and area:    1.5226283838438121E-002   7.6131419192190606E-003   7.6131419192190606E-003
+  xgrid flux and area:    1.4565941475802051E-002   7.2829707379010265E-003   7.2829707379010265E-003
+  xgrid flux and area:    1.2705828266588079E-002   6.3529141332949179E-003   6.3529141332949179E-003
+  xgrid flux and area:    1.2705828266592036E-002   6.3529141332947237E-003   6.3529141332947237E-003
+  PASS  Creating an XGrid in 2D with Mesh merging, ESMF_XGridUTest.F90, line 159
+ Starting test7
+  xgrid flux and area:    1.4638248850918733E-002   7.7043415971602943E-003   7.7043415971602943E-003
+ dst flux and area:    1.4638248850918733E-002   7.3191244254593689E-003   1.8461078522958942E-002
+  PASS  Creating an XGrid in 2D with user supplied area, ESMF_XGridUTest.F90, line 168
+ Starting test8
+  PASS  Creating an XGrid with Mesh easy element create interface, ESMF_XGridUTest.F90, line 177
+
+ === Second Order Conservative Mesh to Mesh via XGrid ===
+ Conservation:
+ Rel Error =    0.0000000000000000     
+ SRC mass =    2.8814750159936679E-003
+ DST mass =    2.8814750159936679E-003
+  
+ Interpolation:
+ Max Error =    1.1819179421287188E-002
+ Min Error =    2.0488142613933670E-003
+ Avg Error =    7.2436497703566470E-003
+  
+  PASS  Test 2nd order on an XGrid between Meshes, ESMF_XGridUTest.F90, line 185
+ Using XGrid
+
+ === Second Order with Cubed Sphere Grid via XGrid ===
+ Conservation:
+ Rel Error =    5.3293892197352801E-015
+ SRC mass =    22.665311182735682     
+ DST mass =    22.665311182735802     
+  
+ Interpolation:
+ Max Error =    9.2968257467884730E-003
+ Min Error =    5.1297058143002910E-008
+  
+  PASS  Test 2nd order on an XGrid with a cubed sphere Grid, ESMF_XGridUTest.F90, line 193
+  Ending Test, file ESMF_XGridUTest.F90, line 196
+  PET           0  Test Elapsed Time    4139.8249999999998       msec.

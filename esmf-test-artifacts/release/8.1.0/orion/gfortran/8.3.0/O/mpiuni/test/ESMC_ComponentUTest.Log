@@ -1,0 +1,66 @@
+20210224 202713.393 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210224 202713.394 INFO             PET0 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210224 202713.394 INFO             PET0 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210224 202713.394 INFO             PET0 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210224 202713.394 INFO             PET0 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210224 202713.394 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210224 202713.394 INFO             PET0 Running with ESMF Version   : ESMF_8_1_0_beta_snapshot_47-4-g0d177ef
+20210224 202713.394 INFO             PET0 ESMF library build date/time: "Feb 24 2021" "20:16:38"
+20210224 202713.394 INFO             PET0 ESMF library build location : /work/noaa/da/mpotts/gfortran_8.3.0_mpiuni_O
+20210224 202713.394 INFO             PET0 ESMF_COMM                   : mpiuni
+20210224 202713.394 INFO             PET0 ESMF_MOAB                   : enabled
+20210224 202713.394 INFO             PET0 ESMF_LAPACK                 : enabled
+20210224 202713.394 INFO             PET0 ESMF_NETCDF                 : enabled
+20210224 202713.394 INFO             PET0 ESMF_PNETCDF                : disabled
+20210224 202713.394 INFO             PET0 ESMF_PIO                    : disabled
+20210224 202713.394 INFO             PET0 ESMF_YAMLCPP                : enabled
+20210224 202713.394 INFO             PET0 Beginning Test, file ESMC_ComponentUTest.C, line 192
+20210224 202713.395 INFO             PET0 NUMBER_OF_PROCESSORS 1
+20210224 202713.395 INFO             PET0 PASS Create ESMC_Calendar object, ESMC_ComponentUTest.C, line 203
+20210224 202713.395 INFO             PET0 PASS Set Start Time, ESMC_ComponentUTest.C, line 215
+20210224 202713.395 INFO             PET0 PASS Set Stop Time, ESMC_ComponentUTest.C, line 224
+20210224 202713.395 INFO             PET0 PASS Set a TimeInterval, ESMC_ComponentUTest.C, line 232
+20210224 202713.395 INFO             PET0 PASS Create ESMC_Clock object, ESMC_ComponentUTest.C, line 241
+20210224 202713.395 INFO             PET0 PASS Create ESMC_State object, ESMC_ComponentUTest.C, line 249
+20210224 202713.395 INFO             PET0 PASS Create ESMC_State object, ESMC_ComponentUTest.C, line 257
+20210224 202713.396 INFO             PET0 PASS Create ESMC_GridComp object, ESMC_ComponentUTest.C, line 268
+20210224 202713.396 INFO             PET0 PASS Print ESMC_GridComp object, ESMC_ComponentUTest.C, line 276
+20210224 202713.396 ERROR            PET0 ESMCI_FTable.C:816 c_esmc_ftablecallentrypointvm Value cannot be a NULL pointer  - No VM was started for this Component - missing SetServices() call?
+20210224 202713.396 ERROR            PET0 ESMF_Comp.F90:1219 ESMF_CompExecute Value cannot be a NULL pointer  - Internal subroutine call returned Error
+20210224 202713.396 ERROR            PET0 ESMF_GridComp.F90:1419 ESMF_GridCompInitialize Value cannot be a NULL pointer  - Internal subroutine call returned Error
+20210224 202713.396 ERROR            PET0 ESMCI_Comp.C:1151 ESMCI::GridComp::initialize() Value cannot be a NULL pointer  - Internal subroutine call returned Error
+20210224 202713.396 ERROR            PET0 ESMC_Comp.C:173 ESMC_GridCompInitialize() Value cannot be a NULL pointer  - Internal subroutine call returned Error
+20210224 202713.396 INFO             PET0 PASS ESMC_GridCompInitialize() before callingESMC_GridCompSetServices(), ESMC_ComponentUTest.C, line 285
+20210224 202713.396 INFO             PET0 PASS ESMC_GridCompSetServices() using myRegistrationInC(), ESMC_ComponentUTest.C, line 293
+20210224 202713.396 INFO             PET0 PASS ESMC_GridCompInitialize() w/ myRegistrationInC() methods, ESMC_ComponentUTest.C, line 301
+20210224 202713.396 INFO             PET0 PASS ESMC_GridCompRun() w/ myRegistrationInC() methods, ESMC_ComponentUTest.C, line 309
+20210224 202713.396 INFO             PET0 PASS ESMC_GridCompFinalize() w/ myRegistrationInC() methods, ESMC_ComponentUTest.C, line 317
+20210224 202713.396 INFO             PET0 PASS Destroy ESMC_GridComp object, ESMC_ComponentUTest.C, line 325
+20210224 202713.397 INFO             PET0 PASS Create ESMC_GridComp object, ESMC_ComponentUTest.C, line 334
+20210224 202713.397 INFO             PET0 PASS ESMC_GridCompSetServices() using my_RegistrationInFortran(), ESMC_ComponentUTest.C, line 342
+20210224 202713.397 INFO             PET0 PASS ESMC_GridCompInitialize() w/ my_RegistrationInFortran() meths, ESMC_ComponentUTest.C, line 350
+20210224 202713.397 INFO             PET0 PASS ESMC_GridCompRun() w/ my_RegistrationInFortran() meths, ESMC_ComponentUTest.C, line 358
+20210224 202713.397 INFO             PET0 PASS ESMC_GridCompFinalize() w/ my_RegistrationInFortran() meths, ESMC_ComponentUTest.C, line 366
+20210224 202713.397 INFO             PET0 PASS Destroy ESMC_GridComp object, ESMC_ComponentUTest.C, line 374
+20210224 202713.397 INFO             PET0 PASS Create ESMC_CplComp object, ESMC_ComponentUTest.C, line 385
+20210224 202713.397 INFO             PET0 PASS Print ESMC_CplComp object, ESMC_ComponentUTest.C, line 393
+20210224 202713.397 INFO             PET0 PASS ESMC_CplCompSetServices() using myCplRegistrationInC(), ESMC_ComponentUTest.C, line 401
+20210224 202713.398 INFO             PET0 PASS ESMC_CplCompInitialize() w/ myCplRegistrationInC() methods, ESMC_ComponentUTest.C, line 410
+20210224 202713.398 INFO             PET0 PASS ESMC_CplCompRun() w/ myCplRegistrationInC() methods, ESMC_ComponentUTest.C, line 418
+20210224 202713.398 INFO             PET0 PASS ESMC_CplCompFinalize() w/ myCplRegistrationInC() methods, ESMC_ComponentUTest.C, line 426
+20210224 202713.398 INFO             PET0 PASS Destroy ESMC_CplComp object, ESMC_ComponentUTest.C, line 434
+20210224 202713.398 INFO             PET0 PASS Create ESMC_CplComp object, ESMC_ComponentUTest.C, line 443
+20210224 202713.398 INFO             PET0 PASS ESMC_CplCompSetServices() using my_RegistrationInFortran(), ESMC_ComponentUTest.C, line 452
+20210224 202713.398 INFO             PET0 PASS ESMC_CplCompInitialize() w/ my_RegistrationInFortran() meths, ESMC_ComponentUTest.C, line 461
+20210224 202713.398 INFO             PET0 PASS ESMC_CplCompRun() w/ my_RegistrationInFortran() meths, ESMC_ComponentUTest.C, line 469
+20210224 202713.398 INFO             PET0 PASS ESMC_CplCompFinalize() w/ my_RegistrationInFortran() meths, ESMC_ComponentUTest.C, line 477
+20210224 202713.398 INFO             PET0 PASS Destroy ESMC_CplComp object, ESMC_ComponentUTest.C, line 485
+20210224 202713.398 INFO             PET0 PASS Create ESMC_SciComp object, ESMC_ComponentUTest.C, line 496
+20210224 202713.398 INFO             PET0 PASS Print ESMC_SciComp object, ESMC_ComponentUTest.C, line 504
+20210224 202713.398 INFO             PET0 PASS Destroy ESMC_SciComp object, ESMC_ComponentUTest.C, line 512
+20210224 202713.398 INFO             PET0 PASS Destroy ESMC_Clock object, ESMC_ComponentUTest.C, line 523
+20210224 202713.398 INFO             PET0 PASS Destroy ESMC_Calendar object, ESMC_ComponentUTest.C, line 531
+20210224 202713.399 INFO             PET0 PASS Destroy ESMC_State object, ESMC_ComponentUTest.C, line 539
+20210224 202713.399 INFO             PET0 PASS Destroy ESMC_State object, ESMC_ComponentUTest.C, line 547
+20210224 202713.399 INFO             PET0 Ending Test, file ESMC_ComponentUTest.C, line 551
+20210224 202713.399 INFO             PET0 Finalizing ESMF

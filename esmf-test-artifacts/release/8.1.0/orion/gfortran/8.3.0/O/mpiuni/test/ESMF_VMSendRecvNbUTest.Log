@@ -1,0 +1,43 @@
+20210224 202430.545 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210224 202430.545 INFO             PET0 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210224 202430.545 INFO             PET0 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210224 202430.545 INFO             PET0 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210224 202430.545 INFO             PET0 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210224 202430.545 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210224 202430.545 INFO             PET0 Running with ESMF Version   : ESMF_8_1_0_beta_snapshot_47-4-g0d177ef
+20210224 202430.545 INFO             PET0 ESMF library build date/time: "Feb 24 2021" "20:16:38"
+20210224 202430.545 INFO             PET0 ESMF library build location : /work/noaa/da/mpotts/gfortran_8.3.0_mpiuni_O
+20210224 202430.545 INFO             PET0 ESMF_COMM                   : mpiuni
+20210224 202430.546 INFO             PET0 ESMF_MOAB                   : enabled
+20210224 202430.546 INFO             PET0 ESMF_LAPACK                 : enabled
+20210224 202430.546 INFO             PET0 ESMF_NETCDF                 : enabled
+20210224 202430.546 INFO             PET0 ESMF_PNETCDF                : disabled
+20210224 202430.546 INFO             PET0 ESMF_PIO                    : disabled
+20210224 202430.546 INFO             PET0 ESMF_YAMLCPP                : enabled
+20210224 202430.546 INFO             PET0  Beginning Test, file ESMF_VMSendRecvNbUTest.F90, line 85
+20210224 202430.546 INFO             PET0  NUMBER_OF_PROCESSORS           1
+20210224 202430.546 INFO             PET0  First round: src=           0  dst=           0
+20210224 202430.546 INFO             PET0  PASS  SendRecvNb local I4 data Test, ESMF_VMSendRecvNbUTest.F90, line 170
+20210224 202430.546 INFO             PET0  PASS  SendRecvNb local R4 data Test, ESMF_VMSendRecvNbUTest.F90, line 181
+20210224 202430.546 INFO             PET0  PASS  SendRecvNb local R8 data Test, ESMF_VMSendRecvNbUTest.F90, line 192
+20210224 202430.546 INFO             PET0  PASS  SendRecvNb local LOGICAL data Test, ESMF_VMSendRecvNbUTest.F90, line 203
+20210224 202430.546 INFO             PET0  PASS  Waiting for I4 SendRecvNb, ESMF_VMSendRecvNbUTest.F90, line 214
+20210224 202430.546 INFO             PET0  PASS  Verify local I4 data after receive Test, ESMF_VMSendRecvNbUTest.F90, line 225
+20210224 202430.546 INFO             PET0  PASS  Waiting for R4 SendRecvNb, ESMF_VMSendRecvNbUTest.F90, line 235
+20210224 202430.546 INFO             PET0  PASS  Verify local R4 data after receive Test, ESMF_VMSendRecvNbUTest.F90, line 247
+20210224 202430.546 INFO             PET0  PASS  Waiting for R8 SendRecvNb, ESMF_VMSendRecvNbUTest.F90, line 257
+20210224 202430.546 INFO             PET0  PASS  Verify local R8 data after receive Test, ESMF_VMSendRecvNbUTest.F90, line 269
+20210224 202430.546 INFO             PET0  PASS  Waiting for LOGICAL SendRecvNb, ESMF_VMSendRecvNbUTest.F90, line 279
+20210224 202430.546 INFO             PET0  PASS  Verify local LOGICAL data after receive Test, ESMF_VMSendRecvNbUTest.F90, line 300
+20210224 202430.546 INFO             PET0  Second round: src=           0  dst=           0
+20210224 202430.546 INFO             PET0  PASS  SendRecvNb local I4 data Test, ESMF_VMSendRecvNbUTest.F90, line 343
+20210224 202430.546 INFO             PET0  PASS  SendRecvNb local R4 data Test, ESMF_VMSendRecvNbUTest.F90, line 354
+20210224 202430.546 INFO             PET0  PASS  SendRecvNb local R8 data Test, ESMF_VMSendRecvNbUTest.F90, line 365
+20210224 202430.546 INFO             PET0  PASS  SendRecvNb local LOGICAL data Test, ESMF_VMSendRecvNbUTest.F90, line 376
+20210224 202430.546 INFO             PET0  PASS  Waiting for all queued non-blocking comms in VM, ESMF_VMSendRecvNbUTest.F90, line 387
+20210224 202430.546 INFO             PET0  PASS  Verify local I4 data after receive Test, ESMF_VMSendRecvNbUTest.F90, line 401
+20210224 202430.546 INFO             PET0  PASS  Verify local R4 data after receive Test, ESMF_VMSendRecvNbUTest.F90, line 415
+20210224 202430.546 INFO             PET0  PASS  Verify local R8 data after receive Test, ESMF_VMSendRecvNbUTest.F90, line 429
+20210224 202430.546 INFO             PET0  PASS  Verify local LOGICAL data after receive Test, ESMF_VMSendRecvNbUTest.F90, line 452
+20210224 202430.546 INFO             PET0  Ending Test, file ESMF_VMSendRecvNbUTest.F90, line 469
+20210224 202430.546 INFO             PET0 Finalizing ESMF

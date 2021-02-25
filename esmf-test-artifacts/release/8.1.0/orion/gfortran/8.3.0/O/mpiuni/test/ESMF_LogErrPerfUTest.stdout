@@ -1,0 +1,9 @@
+  Beginning Test, file ESMF_LogErrPerfUTest.F90, line 55
+  NUMBER_OF_PROCESSORS           1
+  PASS  Performance of ESMF_LogFoundError() 1000x Test, ESMF_LogErrPerfUTest.F90, line 64
+  PASS  Performance of ESMF_LogFoundError() 10000x Test, ESMF_LogErrPerfUTest.F90, line 72
+  PASS  Performance of ESMF_LogFoundError() 100000x Test, ESMF_LogErrPerfUTest.F90, line 80
+  PASS  Performance of ESMF_LogFoundError() 1000000x Test, ESMF_LogErrPerfUTest.F90, line 88
+  PASS  Threshold check for ESMF_LogFoundError() 1000000x Test, ESMF_LogErrPerfUTest.F90, line 99
+  Ending Test, file ESMF_LogErrPerfUTest.F90, line 103
+  PET           0  Test Elapsed Time    5.1309999999999985       msec.

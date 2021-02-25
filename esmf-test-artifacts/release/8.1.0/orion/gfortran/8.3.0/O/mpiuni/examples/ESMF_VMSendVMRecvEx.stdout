@@ -1,0 +1,12 @@
+ localData for PET            0 :            1
+ localData for PET            0 :            2
+ localData for PET            0 :            3
+ localData for PET            0 :            4
+ localData for PET            0 :            5
+ localData for PET            0 :            6
+ localData for PET            0 :            7
+ localData for PET            0 :            8
+ localData for PET            0 :            9
+ localData for PET            0 :           10
+  PASS  Example ESMF_VMSendVMRecvEx, ESMF_VMSendVMRecvEx.F90, line 120
+ PASS: ESMF_VMSendVMRecvEx.F90

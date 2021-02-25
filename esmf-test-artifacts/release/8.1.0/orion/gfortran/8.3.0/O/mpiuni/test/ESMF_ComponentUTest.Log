@@ -1,0 +1,44 @@
+20210224 202712.075 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210224 202712.075 INFO             PET0 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210224 202712.075 INFO             PET0 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210224 202712.075 INFO             PET0 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210224 202712.075 INFO             PET0 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210224 202712.075 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210224 202712.075 INFO             PET0 Running with ESMF Version   : ESMF_8_1_0_beta_snapshot_47-4-g0d177ef
+20210224 202712.075 INFO             PET0 ESMF library build date/time: "Feb 24 2021" "20:16:38"
+20210224 202712.075 INFO             PET0 ESMF library build location : /work/noaa/da/mpotts/gfortran_8.3.0_mpiuni_O
+20210224 202712.075 INFO             PET0 ESMF_COMM                   : mpiuni
+20210224 202712.076 INFO             PET0 ESMF_MOAB                   : enabled
+20210224 202712.076 INFO             PET0 ESMF_LAPACK                 : enabled
+20210224 202712.076 INFO             PET0 ESMF_NETCDF                 : enabled
+20210224 202712.076 INFO             PET0 ESMF_PNETCDF                : disabled
+20210224 202712.076 INFO             PET0 ESMF_PIO                    : disabled
+20210224 202712.076 INFO             PET0 ESMF_YAMLCPP                : enabled
+20210224 202712.076 INFO             PET0  Beginning Test, file ESMF_ComponentUTest.F90, line 48
+20210224 202712.076 INFO             PET0  NUMBER_OF_PROCESSORS           1
+20210224 202712.077 INFO             PET0  PASS  Creating a Gridded Component, ESMF_ComponentUTest.F90, line 58
+20210224 202712.077 INFO             PET0  PASS  Printing a Gridded Component, ESMF_ComponentUTest.F90, line 66
+20210224 202712.077 INFO             PET0  PASS  Destroying a Gridded Component, ESMF_ComponentUTest.F90, line 74
+20210224 202712.077 ERROR            PET0 ESMF_GridComp.F90:1562 ESMF_GridCompIsPetLocal Object being used after deletion  - Bad Object
+20210224 202712.077 INFO             PET0  PASS  Query run status of a deleted Gridded Component, ESMF_ComponentUTest.F90, line 84
+20210224 202712.077 INFO             PET0  PASS  Query run status of a deleted Gridded Component, ESMF_ComponentUTest.F90, line 91
+20210224 202712.078 INFO             PET0  PASS  Creating a Gridded Component, ESMF_ComponentUTest.F90, line 101
+20210224 202712.078 INFO             PET0  PASS  Query run status of a Gridded Component, ESMF_ComponentUTest.F90, line 109
+20210224 202712.078 INFO             PET0  PASS  Query run status of a deleted Gridded Component, ESMF_ComponentUTest.F90, line 116
+20210224 202712.078 ERROR            PET0 ESMF_Comp.F90:759 ESMF_CompConstruct Value unrecognized or out of range  - Conflict between petlist and global pet count
+20210224 202712.078 ERROR            PET0 ESMF_GridComp.F90:568 ESMF_GridCompCreate Value unrecognized or out of range  - Internal subroutine call returned Error
+20210224 202712.078 INFO             PET0  PASS  Creating a Gridded Component with wrong petList, ESMF_ComponentUTest.F90, line 126
+20210224 202712.078 ERROR            PET0 ESMF_Comp.F90:759 ESMF_CompConstruct Value unrecognized or out of range  - Conflict between petlist and global pet count
+20210224 202712.078 ERROR            PET0 ESMF_GridComp.F90:568 ESMF_GridCompCreate Value unrecognized or out of range  - Internal subroutine call returned Error
+20210224 202712.078 INFO             PET0  PASS  Creating a Gridded Component with negative number in petList, ESMF_ComponentUTest.F90, line 136
+20210224 202712.078 ERROR            PET0 ESMF_GridComp.F90:1562 ESMF_GridCompIsPetLocal Object being used before creation  - Bad Object
+20210224 202712.078 INFO             PET0  PASS  Query run status of a Gridded Component, ESMF_ComponentUTest.F90, line 147
+20210224 202712.078 ERROR            PET0 ESMF_GridComp.F90:659 ESMF_GridCompDestroy Object being used before creation  - Bad Object
+20210224 202712.078 INFO             PET0  PASS  Destroying a Gridded Component, ESMF_ComponentUTest.F90, line 158
+20210224 202712.078 INFO             PET0  PASS  Printing a Gridded Component, ESMF_ComponentUTest.F90, line 166
+20210224 202712.078 INFO             PET0  PASS  Destroying a Gridded Component, ESMF_ComponentUTest.F90, line 174
+20210224 202712.078 INFO             PET0  PASS  Creating a Gridded Component, ESMF_ComponentUTest.F90, line 184
+20210224 202712.078 INFO             PET0  PASS  Printing a Gridded Component, ESMF_ComponentUTest.F90, line 192
+20210224 202712.078 INFO             PET0  PASS  Destroying a Gridded Component, ESMF_ComponentUTest.F90, line 200
+20210224 202712.078 INFO             PET0  Ending Test, file ESMF_ComponentUTest.F90, line 204
+20210224 202712.078 INFO             PET0 Finalizing ESMF

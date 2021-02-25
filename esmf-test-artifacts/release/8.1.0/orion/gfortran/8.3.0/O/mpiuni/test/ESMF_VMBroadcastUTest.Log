@@ -1,0 +1,42 @@
+20210224 202431.477 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210224 202431.477 INFO             PET0 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210224 202431.477 INFO             PET0 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210224 202431.477 INFO             PET0 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210224 202431.477 INFO             PET0 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210224 202431.477 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210224 202431.477 INFO             PET0 Running with ESMF Version   : ESMF_8_1_0_beta_snapshot_47-4-g0d177ef
+20210224 202431.477 INFO             PET0 ESMF library build date/time: "Feb 24 2021" "20:16:38"
+20210224 202431.477 INFO             PET0 ESMF library build location : /work/noaa/da/mpotts/gfortran_8.3.0_mpiuni_O
+20210224 202431.477 INFO             PET0 ESMF_COMM                   : mpiuni
+20210224 202431.477 INFO             PET0 ESMF_MOAB                   : enabled
+20210224 202431.477 INFO             PET0 ESMF_LAPACK                 : enabled
+20210224 202431.477 INFO             PET0 ESMF_NETCDF                 : enabled
+20210224 202431.477 INFO             PET0 ESMF_PNETCDF                : disabled
+20210224 202431.477 INFO             PET0 ESMF_PIO                    : disabled
+20210224 202431.477 INFO             PET0 ESMF_YAMLCPP                : enabled
+20210224 202431.478 INFO             PET0  Beginning Test, file ESMF_VMBroadcastUTest.F90, line 84
+20210224 202431.478 INFO             PET0  NUMBER_OF_PROCESSORS           1
+20210224 202431.478 INFO             PET0  PASS  Broadcasting 1D integer data Test, ESMF_VMBroadcastUTest.F90, line 158
+20210224 202431.478 INFO             PET0  PASS  Verify local data after broadcast Test, ESMF_VMBroadcastUTest.F90, line 169
+20210224 202431.478 INFO             PET0  PASS  Broadcasting 2D integer data Test, ESMF_VMBroadcastUTest.F90, line 180
+20210224 202431.478 INFO             PET0  PASS  Verify local data after broadcast Test, ESMF_VMBroadcastUTest.F90, line 193
+20210224 202431.478 INFO             PET0  PASS  Broadcasting 3D integer data Test, ESMF_VMBroadcastUTest.F90, line 204
+20210224 202431.478 INFO             PET0  PASS  Verify local data after broadcast Test, ESMF_VMBroadcastUTest.F90, line 220
+20210224 202431.478 INFO             PET0  PASS  Broadcasting 1D real R4 data Test, ESMF_VMBroadcastUTest.F90, line 231
+20210224 202431.478 INFO             PET0  PASS  Verify local data after broadcast Test, ESMF_VMBroadcastUTest.F90, line 242
+20210224 202431.478 INFO             PET0  PASS  Broadcasting 1D real R8 data Test, ESMF_VMBroadcastUTest.F90, line 253
+20210224 202431.478 INFO             PET0  PASS  Verify local data after broadcast Test, ESMF_VMBroadcastUTest.F90, line 264
+20210224 202431.478 INFO             PET0  PASS  Broadcasting 1D logical data Test, ESMF_VMBroadcastUTest.F90, line 275
+20210224 202431.478 INFO             PET0  PASS  Verify local data after broadcast Test, ESMF_VMBroadcastUTest.F90, line 286
+20210224 202431.478 INFO             PET0  PASS  Creating VMId array Test, ESMF_VMBroadcastUTest.F90, line 298
+20210224 202431.478 INFO             PET0  PASS  Inserting dummy data into VMId array Test, ESMF_VMBroadcastUTest.F90, line 315
+20210224 202431.478 INFO             PET0  PASS  Creating VMId solutions array Test, ESMF_VMBroadcastUTest.F90, line 324
+20210224 202431.478 INFO             PET0  PASS  Inserting dummy data into VMId solution array Test, ESMF_VMBroadcastUTest.F90, line 337
+20210224 202431.478 INFO             PET0  PASS  Broadcasting VMId data Test, ESMF_VMBroadcastUTest.F90, line 347
+20210224 202431.478 INFO             PET0  PASS  ID/Key extraction VMId data after broadcast Test, ESMF_VMBroadcastUTest.F90, line 366
+20210224 202431.478 INFO             PET0  PASS  Verify VMId data after broadcast Test, ESMF_VMBroadcastUTest.F90, line 374
+20210224 202431.478 INFO             PET0  PASS  Verify VMId data after broadcast Test, ESMF_VMBroadcastUTest.F90, line 387
+20210224 202431.478 INFO             PET0  PASS  Releasing VMId array Test, ESMF_VMBroadcastUTest.F90, line 395
+20210224 202431.478 INFO             PET0  PASS  Releasing VMId solution array Test, ESMF_VMBroadcastUTest.F90, line 405
+20210224 202431.478 INFO             PET0  Ending Test, file ESMF_VMBroadcastUTest.F90, line 422
+20210224 202431.478 INFO             PET0 Finalizing ESMF

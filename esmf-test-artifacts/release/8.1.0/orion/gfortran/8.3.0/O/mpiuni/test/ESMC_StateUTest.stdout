@@ -1,0 +1,59 @@
+Beginning Test, file ESMC_StateUTest.C, line 53
+NUMBER_OF_PROCESSORS 1
+PASS StateCreate Unit test, ESMC_StateUTest.C, line 66
+PASS ArraySpecSet, ESMC_StateUTest.C, line 75
+PASS Set up minIndex, ESMC_StateUTest.C, line 85
+PASS Set up maxIndex, ESMC_StateUTest.C, line 96
+PASS Create 5 x 10 ESMC_DistGrid object, ESMC_StateUTest.C, line 104
+PASS Create ESMC_Array object, ESMC_StateUTest.C, line 112
+PASS Retrieve the name of an ESMC_Array object, ESMC_StateUTest.C, line 120
+PASS Verify array object name retrieved, ESMC_StateUTest.C, line 128
+PASS Initialize data an ESMC_Array object, ESMC_StateUTest.C, line 136
+--- ESMCI::Array::print start ---
+ Base name    = array1
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+{}PASS Print ESMC_Array object, ESMC_StateUTest.C, line 144
+PASS Add an Array to a State object, ESMC_StateUTest.C, line 151
+PASS Get an array from a state, based on its name, ESMC_StateUTest.C, line 159
+PASS Compare array stored into and array retrieved from a state, ESMC_StateUTest.C, line 167
+PASS Destroy ESMC_DistGrid object, ESMC_StateUTest.C, line 175
+PASS Destroy ESMC_Array object, ESMC_StateUTest.C, line 183
+PASS StateDestroy Unit test, ESMC_StateUTest.C, line 193
+Ending Test, file ESMC_StateUTest.C, line 200
+Array typekind/rank: Integer*4 / 2 
+~ lower class' values ~
+DistGrid dimCount = 2
+deCount = 1
+localDeCount = 1
+~ local data in LocalArray for DE 0 ~
+LocalArrayPrint: Array at address 0xf463e0:
+            rank = 2, typekind = 3, base_addr = 0xf46710
+            dim[0] = 5  dim[1] = 10  
+  Integer, *4, Dim 2, Data values:
+( 1, 1) =  0
+( 2, 1) =  0
+( 3, 1) =  0
+( 4, 1) =  0
+( 5, 1) =  0
+( 1, 2) =  0
+( 2, 2) =  0
+( 3, 2) =  0
+( 4, 2) =  0
+( 5, 2) =  0
+  skipping to end ...
+( 1, 9) =  0
+( 2, 9) =  0
+( 3, 9) =  0
+( 4, 9) =  0
+( 5, 9) =  0
+( 1,10) =  0
+( 2,10) =  0
+( 3,10) =  0
+( 4,10) =  0
+( 5,10) =  0
+dim 1: [0]: [1 [1 [1, 5] 5] 5]
+dim 2: [1]: [1 [1 [1, 10] 10] 10]
+--- ESMCI::Array::print end ---
+ PET 0 Test Elapsed Time  1.410000 msec.

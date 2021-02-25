@@ -1,0 +1,37 @@
+20210224 202553.612 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210224 202553.612 INFO             PET0 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210224 202553.612 INFO             PET0 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210224 202553.612 INFO             PET0 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210224 202553.612 INFO             PET0 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210224 202553.612 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210224 202553.612 INFO             PET0 Running with ESMF Version   : ESMF_8_1_0_beta_snapshot_47-4-g0d177ef
+20210224 202553.612 INFO             PET0 ESMF library build date/time: "Feb 24 2021" "20:16:38"
+20210224 202553.612 INFO             PET0 ESMF library build location : /work/noaa/da/mpotts/gfortran_8.3.0_mpiuni_O
+20210224 202553.612 INFO             PET0 ESMF_COMM                   : mpiuni
+20210224 202553.612 INFO             PET0 ESMF_MOAB                   : enabled
+20210224 202553.612 INFO             PET0 ESMF_LAPACK                 : enabled
+20210224 202553.612 INFO             PET0 ESMF_NETCDF                 : enabled
+20210224 202553.612 INFO             PET0 ESMF_PNETCDF                : disabled
+20210224 202553.612 INFO             PET0 ESMF_PIO                    : disabled
+20210224 202553.612 INFO             PET0 ESMF_YAMLCPP                : enabled
+20210224 202553.613 INFO             PET0  Beginning Test, file ESMF_GridItemUTest.F90, line 71
+20210224 202553.613 INFO             PET0  NUMBER_OF_PROCESSORS           1
+20210224 202553.613 INFO             PET0  PASS  Test Grid Item isPresent, ESMF_GridItemUTest.F90, line 127
+20210224 202553.613 INFO             PET0  PASS  Test ESMF_GridMatch() on Grids with the same item values, ESMF_GridItemUTest.F90, line 220
+20210224 202553.613 INFO             PET0  PASS  Test ESMF_GridMatch() on Grids with different item values, ESMF_GridItemUTest.F90, line 313
+20210224 202553.614 INFO             PET0  PASS  Set/Get Item from Array, ESMF_GridItemUTest.F90, line 368
+20210224 202553.614 INFO             PET0  PASS  Add Item from Array check distgridToArrayMap matching, ESMF_GridItemUTest.F90, line 414
+20210224 202553.614 INFO             PET0  PASS  Get fortran pointer from item array, ESMF_GridItemUTest.F90, line 469
+20210224 202553.614 ERROR            PET0 ESMCI_Grid.C:1208 ESMCI::Grid::addItemArray() Wrong argument specified  - - Invalid item type
+20210224 202553.614 ERROR            PET0 ESMCI_Grid_F.C:1048 c_esmc_gridadditem() Wrong argument specified  - Internal subroutine call returned Error
+20210224 202553.614 ERROR            PET0 ESMF_Grid.F90:1757 ESMF_GridAddItem Wrong argument specified  - Internal subroutine call returned Error
+20210224 202553.614 ERROR            PET0 ESMCI_Grid.C:1225 ESMCI::Grid::addItemArray() Wrong argument specified  - - Mask item must be integer
+20210224 202553.614 ERROR            PET0 ESMCI_Grid_F.C:1048 c_esmc_gridadditem() Wrong argument specified  - Internal subroutine call returned Error
+20210224 202553.614 ERROR            PET0 ESMF_Grid.F90:1757 ESMF_GridAddItem Wrong argument specified  - Internal subroutine call returned Error
+20210224 202553.614 INFO             PET0  PASS  Test item value and type error checking, ESMF_GridItemUTest.F90, line 505
+20210224 202553.614 INFO             PET0  PASS  Test ESMF_GridGetItem getting bounds from grid item, ESMF_GridItemUTest.F90, line 574
+20210224 202553.614 INFO             PET0  PASS  Test ESMF_GridGetItem getting R8 pointer, ESMF_GridItemUTest.F90, line 635
+20210224 202553.614 INFO             PET0  PASS  Test ESMF_GridGetItem getting R4 pointer, ESMF_GridItemUTest.F90, line 695
+20210224 202553.615 INFO             PET0  PASS  Test Adding and Getting each grid item, ESMF_GridItemUTest.F90, line 777
+20210224 202553.615 INFO             PET0  Ending Test, file ESMF_GridItemUTest.F90, line 787
+20210224 202553.615 INFO             PET0 Finalizing ESMF

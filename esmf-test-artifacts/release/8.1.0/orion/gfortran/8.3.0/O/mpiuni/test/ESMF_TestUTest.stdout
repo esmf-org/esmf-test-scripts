@@ -1,0 +1,9 @@
+  Beginning Test, file ESMF_TestUTest.F90, line 52
+  NUMBER_OF_PROCESSORS           1
+  PASS  Use of ESMF_Test(), true, ESMF_TestUTest.F90, line 60
+  PASS  Compare identical files, ESMF_TestUTest.F90, line 108
+  PASS  Compare non-identical files, ESMF_TestUTest.F90, line 115
+  PASS  Compare non-identical files with exception list (non-match), ESMF_TestUTest.F90, line 123
+  PASS  Compare non-identical files with exception list (matching), ESMF_TestUTest.F90, line 131
+  Ending Test, file ESMF_TestUTest.F90, line 141
+  PET           0  Test Elapsed Time    3.4660000000000002       msec.

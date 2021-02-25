@@ -1,0 +1,48 @@
+Beginning Test, file ESMC_ConfigUTest.C, line 44
+NUMBER_OF_PROCESSORS 1
+PASS ESMC_Initialize Unit test, ESMC_ConfigUTest.C, line 52
+PASS ConfigCreate Unit test, ESMC_ConfigUTest.C, line 61
+PASS ConfigLoadFile Unit test, ESMC_ConfigUTest.C, line 70
+PASS ConfigDestroy Unit test, ESMC_ConfigUTest.C, line 79
+PASS ConfigCreate Unit test, ESMC_ConfigUTest.C, line 88
+PASS ConfigLoadFile Unit test - optional arg, ESMC_ConfigUTest.C, line 99
+PASS ConfigValidate Unit test, ESMC_ConfigUTest.C, line 108
+PASS ConfigGetDim Unit test, ESMC_ConfigUTest.C, line 117
+PASS ConfigCreate Unit test, ESMC_ConfigUTest.C, line 128
+PASS ConfigLoadFile Unit test, ESMC_ConfigUTest.C, line 141
+PASS ConfigCreateFromSection Empty Unit test, ESMC_ConfigUTest.C, line 152
+PASS ConfigPrint Empty Section Unit test, ESMC_ConfigUTest.C, line 161
+PASS ConfigDestroy from Empty Section Unit test, ESMC_ConfigUTest.C, line 170
+PASS ConfigCreateFromSection Unit test, ESMC_ConfigUTest.C, line 181
+PASS ConfigPrint Section Unit test, ESMC_ConfigUTest.C, line 190
+PASS ConfigDestroy from Section Unit test, ESMC_ConfigUTest.C, line 199
+PASS ConfigCreateFromSection with Table Unit test, ESMC_ConfigUTest.C, line 210
+PASS ConfigPrint Section with Table Unit test, ESMC_ConfigUTest.C, line 219
+PASS ConfigFindLabel in Section with Table Unit test, ESMC_ConfigUTest.C, line 230
+PASS ConfigFindLabel in Section presence Unit test, ESMC_ConfigUTest.C, line 238
+PASS ConfigFindNextLabel in Section with Table Unit test, ESMC_ConfigUTest.C, line 249
+PASS ConfigFindNextLabel in Section presence Unit test, ESMC_ConfigUTest.C, line 257
+PASS ConfigDestroy from Section with Table Unit test, ESMC_ConfigUTest.C, line 266
+PASS ConfigFindLabel Unit test, ESMC_ConfigUTest.C, line 278
+PASS ConfigFindLabel presence Unit test, ESMC_ConfigUTest.C, line 286
+PASS ConfigNextLine Unit test, ESMC_ConfigUTest.C, line 296
+PASS ConfigGetLen Unit test - no optional arguments, ESMC_ConfigUTest.C, line 308
+PASS ConfigFindLabel of non-present label Unit test, ESMC_ConfigUTest.C, line 319
+PASS ConfigFindLabel presence Unit test, ESMC_ConfigUTest.C, line 327
+PASS ConfigDestroy Unit test, ESMC_ConfigUTest.C, line 337
+Ending Test, file ESMC_ConfigUTest.C, line 341
+ PET 0 Test Elapsed Time  4.727000 msec.
+section_token:  'This is a section example'
+number_bins: 5
+lower_radius:       0.1    1.0    1.8    3.0   6.0
+upper_radius:       1.0    1.8    3.0    6.0  10.0
+effective_radius:  0.73    1.4    2.4    4.5   8.0
+fraction:           0.1   0.25   0.25   0.25  0.25
+section_table_token: 'This example deals with sections including a table'
+section_data_num: 9
+section_data_values:  0.71   1.37   2.63   5.00   9.50   18.1   34.5   65.5  125.0
+section_table::
+0.1 0.2 0.3 0.4 0.5
+1.1 1.2 1.3 1.4 1.5
+2.1 2.2 2.3 2.4 2.5
+::

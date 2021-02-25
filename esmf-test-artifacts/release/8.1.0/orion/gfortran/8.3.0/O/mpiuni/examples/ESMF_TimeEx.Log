@@ -1,0 +1,19 @@
+20210224 203356.675 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210224 203356.675 INFO             PET0 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210224 203356.675 INFO             PET0 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210224 203356.675 INFO             PET0 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210224 203356.675 INFO             PET0 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210224 203356.675 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210224 203356.675 INFO             PET0 Running with ESMF Version   : ESMF_8_1_0_beta_snapshot_47-4-g0d177ef
+20210224 203356.675 INFO             PET0 ESMF library build date/time: "Feb 24 2021" "20:16:38"
+20210224 203356.675 INFO             PET0 ESMF library build location : /work/noaa/da/mpotts/gfortran_8.3.0_mpiuni_O
+20210224 203356.675 INFO             PET0 ESMF_COMM                   : mpiuni
+20210224 203356.676 INFO             PET0 ESMF_MOAB                   : enabled
+20210224 203356.676 INFO             PET0 ESMF_LAPACK                 : enabled
+20210224 203356.676 INFO             PET0 ESMF_NETCDF                 : enabled
+20210224 203356.676 INFO             PET0 ESMF_PNETCDF                : disabled
+20210224 203356.676 INFO             PET0 ESMF_PIO                    : disabled
+20210224 203356.676 INFO             PET0 ESMF_YAMLCPP                : enabled
+20210224 203356.676 INFO             PET0  NUMBER_OF_PROCESSORS           1
+20210224 203356.676 INFO             PET0  PASS  Example ESMF_TimeEx, ESMF_TimeEx.F90, line 141
+20210224 203356.676 INFO             PET0 Finalizing ESMF

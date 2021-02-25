@@ -1,0 +1,34 @@
+20210224 202420.835 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210224 202420.835 INFO             PET0 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210224 202420.835 INFO             PET0 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210224 202420.835 INFO             PET0 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210224 202420.835 INFO             PET0 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210224 202420.835 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210224 202420.835 INFO             PET0 Running with ESMF Version   : ESMF_8_1_0_beta_snapshot_47-4-g0d177ef
+20210224 202420.835 INFO             PET0 ESMF library build date/time: "Feb 24 2021" "20:16:38"
+20210224 202420.835 INFO             PET0 ESMF library build location : /work/noaa/da/mpotts/gfortran_8.3.0_mpiuni_O
+20210224 202420.835 INFO             PET0 ESMF_COMM                   : mpiuni
+20210224 202420.836 INFO             PET0 ESMF_MOAB                   : enabled
+20210224 202420.836 INFO             PET0 ESMF_LAPACK                 : enabled
+20210224 202420.836 INFO             PET0 ESMF_NETCDF                 : enabled
+20210224 202420.836 INFO             PET0 ESMF_PNETCDF                : disabled
+20210224 202420.836 INFO             PET0 ESMF_PIO                    : disabled
+20210224 202420.836 INFO             PET0 ESMF_YAMLCPP                : enabled
+20210224 202420.836 INFO             PET0  Beginning Test, file ESMF_TypeKindGetUTest.F90, line 74
+20210224 202420.836 INFO             PET0  NUMBER_OF_PROCESSORS           1
+20210224 202420.836 INFO             PET0  PASS   Getting ESMF_TypeKind parameter of default integer, ESMF_TypeKindGetUTest.F90, line 84
+20210224 202420.836 INFO             PET0  PASS  Dummy test to keep number of tests correct, ESMF_TypeKindGetUTest.F90, line 98
+20210224 202420.836 INFO             PET0  PASS  Dummy test to keep number of tests correct, ESMF_TypeKindGetUTest.F90, line 109
+20210224 202420.836 INFO             PET0  PASS  Dummy test to keep number of tests correct, ESMF_TypeKindGetUTest.F90, line 122
+20210224 202420.836 INFO             PET0  PASS  Dummy test to keep number of tests correct, ESMF_TypeKindGetUTest.F90, line 133
+20210224 202420.836 INFO             PET0  PASS   Getting ESMF_TypeKind parameter of ESMF_KIND_I4 integer, ESMF_TypeKindGetUTest.F90, line 142
+20210224 202420.836 INFO             PET0  PASS  Checking ESMF_TypeKind parameter for ESMF_KIND_I4 integer, ESMF_TypeKindGetUTest.F90, line 148
+20210224 202420.836 INFO             PET0  PASS  Getting ESMF_TypeKind parameter of ESMF_KIND_I8 integer, ESMF_TypeKindGetUTest.F90, line 156
+20210224 202420.836 INFO             PET0  PASS  Checking ESMF_TypeKind parameter for ESMF_KIND_I8 integer, ESMF_TypeKindGetUTest.F90, line 162
+20210224 202420.836 INFO             PET0  PASS  Getting ESMF_TypeKind parameter of  real, ESMF_TypeKindGetUTest.F90, line 174
+20210224 202420.836 INFO             PET0  PASS  Getting ESMF_TypeKind parameter of ESMF_KIND_R4 real, ESMF_TypeKindGetUTest.F90, line 184
+20210224 202420.836 INFO             PET0  PASS  Checking ESMF_TypeKind parameter for ESMF_KIND_R4 real, ESMF_TypeKindGetUTest.F90, line 190
+20210224 202420.836 INFO             PET0  PASS  Getting ESMF_TypeKind parameter of ESMF_KIND_R8 real, ESMF_TypeKindGetUTest.F90, line 198
+20210224 202420.836 INFO             PET0  PASS  Checking ESMF_TypeKind parameter for ESMF_KIND_R8 real, ESMF_TypeKindGetUTest.F90, line 204
+20210224 202420.836 INFO             PET0  Ending Test, file ESMF_TypeKindGetUTest.F90, line 206
+20210224 202420.836 INFO             PET0 Finalizing ESMF

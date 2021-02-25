@@ -1,0 +1,25 @@
+20210224 202705.857 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210224 202705.857 INFO             PET0 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210224 202705.857 INFO             PET0 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210224 202705.857 INFO             PET0 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210224 202705.857 INFO             PET0 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210224 202705.857 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210224 202705.857 INFO             PET0 Running with ESMF Version   : ESMF_8_1_0_beta_snapshot_47-4-g0d177ef
+20210224 202705.857 INFO             PET0 ESMF library build date/time: "Feb 24 2021" "20:16:38"
+20210224 202705.857 INFO             PET0 ESMF library build location : /work/noaa/da/mpotts/gfortran_8.3.0_mpiuni_O
+20210224 202705.857 INFO             PET0 ESMF_COMM                   : mpiuni
+20210224 202705.858 INFO             PET0 ESMF_MOAB                   : enabled
+20210224 202705.858 INFO             PET0 ESMF_LAPACK                 : enabled
+20210224 202705.858 INFO             PET0 ESMF_NETCDF                 : enabled
+20210224 202705.858 INFO             PET0 ESMF_PNETCDF                : disabled
+20210224 202705.858 INFO             PET0 ESMF_PIO                    : disabled
+20210224 202705.858 INFO             PET0 ESMF_YAMLCPP                : enabled
+20210224 202705.858 INFO             PET0  Beginning Test, file ESMF_FieldSMMFromFileUTest.F90, line 288
+20210224 202705.858 INFO             PET0  NUMBER_OF_PROCESSORS           1
+20210224 202706.070 INFO             PET0  PASS  ESMF_FieldSMMFromFile Unit Test, ESMF_FieldSMMFromFileUTest.F90, line 301
+20210224 202706.073 ERROR            PET0 ESMF_IOScrip.F90:191 ESMF_OutputWeightFile Library needed by ESMF not present  - Internal subroutine call returned Error
+20210224 202706.073 ERROR            PET0 ESMF_IOScrip.F90:136 ESMF_SparseMatrixWrite Library needed by ESMF not present  - Internal subroutine call returned Error
+20210224 202706.073 ERROR            PET0 ESMF_FieldSMMFromFileUTest.F90:184 Library needed by ESMF not present  - Passing error in return code
+20210224 202706.073 INFO             PET0  PASS  ESMF_FieldRegridStoreFromFile Unit Test, ESMF_FieldSMMFromFileUTest.F90, line 319
+20210224 202706.073 INFO             PET0  Ending Test, file ESMF_FieldSMMFromFileUTest.F90, line 323
+20210224 202706.073 INFO             PET0 Finalizing ESMF

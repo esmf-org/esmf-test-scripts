@@ -1,0 +1,12 @@
+Beginning Test, file ESMC_LocStreamUTest.C, line 53
+NUMBER_OF_PROCESSORS 1
+PASS LocStreamCreateLocal, ESMC_LocStreamUTest.C, line 62
+PASS LocStreamAddKeyAlloc, ESMC_LocStreamUTest.C, line 70
+PASS LocStreamGetKeyPtr, ESMC_LocStreamUTest.C, line 89
+PASS LocStreamGetKeyPtr, ESMC_LocStreamUTest.C, line 99
+PASS LocStreamGetBounds, ESMC_LocStreamUTest.C, line 107
+PASS Create ESMC_Field object on LocStream, ESMC_LocStreamUTest.C, line 116
+PASS Destroy ESMC_Field object from LocStream, ESMC_LocStreamUTest.C, line 124
+PASS Destroy ESMC_LocStream object, ESMC_LocStreamUTest.C, line 132
+Ending Test, file ESMC_LocStreamUTest.C, line 136
+ PET 0 Test Elapsed Time  1.279000 msec.

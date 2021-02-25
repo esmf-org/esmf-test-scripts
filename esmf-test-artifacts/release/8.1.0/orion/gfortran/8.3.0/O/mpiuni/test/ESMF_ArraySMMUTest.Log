@@ -1,0 +1,543 @@
+20210224 202545.099 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210224 202545.099 INFO             PET0 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210224 202545.099 INFO             PET0 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210224 202545.099 INFO             PET0 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210224 202545.099 INFO             PET0 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210224 202545.099 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210224 202545.099 INFO             PET0 Running with ESMF Version   : ESMF_8_1_0_beta_snapshot_47-4-g0d177ef
+20210224 202545.099 INFO             PET0 ESMF library build date/time: "Feb 24 2021" "20:16:38"
+20210224 202545.099 INFO             PET0 ESMF library build location : /work/noaa/da/mpotts/gfortran_8.3.0_mpiuni_O
+20210224 202545.099 INFO             PET0 ESMF_COMM                   : mpiuni
+20210224 202545.100 INFO             PET0 ESMF_MOAB                   : enabled
+20210224 202545.100 INFO             PET0 ESMF_LAPACK                 : enabled
+20210224 202545.100 INFO             PET0 ESMF_NETCDF                 : enabled
+20210224 202545.100 INFO             PET0 ESMF_PNETCDF                : disabled
+20210224 202545.100 INFO             PET0 ESMF_PIO                    : disabled
+20210224 202545.100 INFO             PET0 ESMF_YAMLCPP                : enabled
+20210224 202545.100 INFO             PET0  Beginning Test, file ESMF_ArraySMMUTest.F90, line 707
+20210224 202545.100 INFO             PET0  NUMBER_OF_PROCESSORS           1
+20210224 202545.103 INFO             PET0 Correct result verified in dstArray on DE 0
+20210224 202545.103 INFO             PET0 Correct result verified in dstArray on DE 1
+20210224 202545.103 INFO             PET0 Correct result verified in dstArray on DE 2
+20210224 202545.103 INFO             PET0 Correct result verified in dstArray on DE 3
+20210224 202545.103 INFO             PET0  Correct transpose results verified in result(           1 ,           1 ).
+20210224 202545.103 INFO             PET0  Correct transpose results verified in result(           2 ,           1 ).
+20210224 202545.103 INFO             PET0  Correct transpose results verified in result(           3 ,           1 ).
+20210224 202545.103 INFO             PET0  Correct transpose results verified in result(           4 ,           1 ).
+20210224 202545.103 INFO             PET0  Correct transpose results verified in result(           1 ,           2 ).
+20210224 202545.103 INFO             PET0  Correct transpose results verified in result(           2 ,           2 ).
+20210224 202545.103 INFO             PET0  Correct transpose results verified in result(           3 ,           2 ).
+20210224 202545.103 INFO             PET0  Correct transpose results verified in result(           4 ,           2 ).
+20210224 202545.103 INFO             PET0  Correct transpose results verified in result(           1 ,           3 ).
+20210224 202545.103 INFO             PET0  Correct transpose results verified in result(           2 ,           3 ).
+20210224 202545.103 INFO             PET0  Correct transpose results verified in result(           3 ,           3 ).
+20210224 202545.103 INFO             PET0  Correct transpose results verified in result(           4 ,           3 ).
+20210224 202545.103 INFO             PET0  Correct transpose results verified in result(           1 ,           4 ).
+20210224 202545.103 INFO             PET0  Correct transpose results verified in result(           2 ,           4 ).
+20210224 202545.103 INFO             PET0  Correct transpose results verified in result(           3 ,           4 ).
+20210224 202545.103 INFO             PET0  Correct transpose results verified in result(           4 ,           4 ).
+20210224 202545.103 INFO             PET0  Correct transpose results verified in result(           1 ,           5 ).
+20210224 202545.103 INFO             PET0  Correct transpose results verified in result(           2 ,           5 ).
+20210224 202545.103 INFO             PET0  Correct transpose results verified in result(           3 ,           5 ).
+20210224 202545.103 INFO             PET0  Correct transpose results verified in result(           4 ,           5 ).
+20210224 202545.103 INFO             PET0  Correct transpose results verified in result(           1 ,           6 ).
+20210224 202545.103 INFO             PET0  Correct transpose results verified in result(           2 ,           6 ).
+20210224 202545.103 INFO             PET0  Correct transpose results verified in result(           3 ,           6 ).
+20210224 202545.103 INFO             PET0  Correct transpose results verified in result(           4 ,           6 ).
+20210224 202545.103 INFO             PET0  PASS  src 1 DE/PET -> dst default 4DEs ASMM Test, ESMF_ArraySMMUTest.F90, line 722
+20210224 202545.105 INFO             PET0 Correct result verified in dstArray on DE 0
+20210224 202545.105 INFO             PET0 Correct result verified in dstArray on DE 1
+20210224 202545.105 INFO             PET0 Correct result verified in dstArray on DE 2
+20210224 202545.105 INFO             PET0 Correct result verified in dstArray on DE 3
+20210224 202545.105 INFO             PET0  Correct transpose results verified in result(           1 ,           1 ).
+20210224 202545.105 INFO             PET0  Correct transpose results verified in result(           2 ,           1 ).
+20210224 202545.105 INFO             PET0  Correct transpose results verified in result(           3 ,           1 ).
+20210224 202545.105 INFO             PET0  Correct transpose results verified in result(           4 ,           1 ).
+20210224 202545.105 INFO             PET0  Correct transpose results verified in result(           1 ,           2 ).
+20210224 202545.105 INFO             PET0  Correct transpose results verified in result(           2 ,           2 ).
+20210224 202545.105 INFO             PET0  Correct transpose results verified in result(           3 ,           2 ).
+20210224 202545.105 INFO             PET0  Correct transpose results verified in result(           4 ,           2 ).
+20210224 202545.105 INFO             PET0  Correct transpose results verified in result(           1 ,           3 ).
+20210224 202545.105 INFO             PET0  Correct transpose results verified in result(           2 ,           3 ).
+20210224 202545.105 INFO             PET0  Correct transpose results verified in result(           3 ,           3 ).
+20210224 202545.105 INFO             PET0  Correct transpose results verified in result(           4 ,           3 ).
+20210224 202545.105 INFO             PET0  Correct transpose results verified in result(           1 ,           4 ).
+20210224 202545.105 INFO             PET0  Correct transpose results verified in result(           2 ,           4 ).
+20210224 202545.105 INFO             PET0  Correct transpose results verified in result(           3 ,           4 ).
+20210224 202545.105 INFO             PET0  Correct transpose results verified in result(           4 ,           4 ).
+20210224 202545.105 INFO             PET0  Correct transpose results verified in result(           1 ,           5 ).
+20210224 202545.105 INFO             PET0  Correct transpose results verified in result(           2 ,           5 ).
+20210224 202545.105 INFO             PET0  Correct transpose results verified in result(           3 ,           5 ).
+20210224 202545.105 INFO             PET0  Correct transpose results verified in result(           4 ,           5 ).
+20210224 202545.105 INFO             PET0  Correct transpose results verified in result(           1 ,           6 ).
+20210224 202545.105 INFO             PET0  Correct transpose results verified in result(           2 ,           6 ).
+20210224 202545.105 INFO             PET0  Correct transpose results verified in result(           3 ,           6 ).
+20210224 202545.105 INFO             PET0  Correct transpose results verified in result(           4 ,           6 ).
+20210224 202545.105 INFO             PET0  PASS  src 1 DE/PET -> dst default 4DEs, vectorLength=4 ASMM Test, ESMF_ArraySMMUTest.F90, line 732
+20210224 202545.106 INFO             PET0 Correct result verified in dstArray on DE 0
+20210224 202545.106 INFO             PET0 Correct result verified in dstArray on DE 1
+20210224 202545.106 INFO             PET0 Correct result verified in dstArray on DE 2
+20210224 202545.106 INFO             PET0 Correct result verified in dstArray on DE 3
+20210224 202545.106 INFO             PET0  Correct transpose results verified in result(           1 ,           1 ).
+20210224 202545.106 INFO             PET0  Correct transpose results verified in result(           2 ,           1 ).
+20210224 202545.106 INFO             PET0  Correct transpose results verified in result(           3 ,           1 ).
+20210224 202545.106 INFO             PET0  Correct transpose results verified in result(           4 ,           1 ).
+20210224 202545.106 INFO             PET0  Correct transpose results verified in result(           1 ,           2 ).
+20210224 202545.106 INFO             PET0  Correct transpose results verified in result(           2 ,           2 ).
+20210224 202545.106 INFO             PET0  Correct transpose results verified in result(           3 ,           2 ).
+20210224 202545.106 INFO             PET0  Correct transpose results verified in result(           4 ,           2 ).
+20210224 202545.106 INFO             PET0  Correct transpose results verified in result(           1 ,           3 ).
+20210224 202545.106 INFO             PET0  Correct transpose results verified in result(           2 ,           3 ).
+20210224 202545.106 INFO             PET0  Correct transpose results verified in result(           3 ,           3 ).
+20210224 202545.106 INFO             PET0  Correct transpose results verified in result(           4 ,           3 ).
+20210224 202545.106 INFO             PET0  Correct transpose results verified in result(           1 ,           4 ).
+20210224 202545.106 INFO             PET0  Correct transpose results verified in result(           2 ,           4 ).
+20210224 202545.106 INFO             PET0  Correct transpose results verified in result(           3 ,           4 ).
+20210224 202545.106 INFO             PET0  Correct transpose results verified in result(           4 ,           4 ).
+20210224 202545.106 INFO             PET0  Correct transpose results verified in result(           1 ,           5 ).
+20210224 202545.106 INFO             PET0  Correct transpose results verified in result(           2 ,           5 ).
+20210224 202545.106 INFO             PET0  Correct transpose results verified in result(           3 ,           5 ).
+20210224 202545.106 INFO             PET0  Correct transpose results verified in result(           4 ,           5 ).
+20210224 202545.106 INFO             PET0  Correct transpose results verified in result(           1 ,           6 ).
+20210224 202545.106 INFO             PET0  Correct transpose results verified in result(           2 ,           6 ).
+20210224 202545.106 INFO             PET0  Correct transpose results verified in result(           3 ,           6 ).
+20210224 202545.106 INFO             PET0  Correct transpose results verified in result(           4 ,           6 ).
+20210224 202545.107 INFO             PET0  PASS  src 1 DE/PET -> dst default 4DEs, ESMF_TERMORDER_SRCSEQ ASMM Test, ESMF_ArraySMMUTest.F90, line 743
+20210224 202545.107 INFO             PET0 Correct result verified in dstArray on DE 0
+20210224 202545.107 INFO             PET0 Correct result verified in dstArray on DE 1
+20210224 202545.107 INFO             PET0 Correct result verified in dstArray on DE 2
+20210224 202545.107 INFO             PET0 Correct result verified in dstArray on DE 3
+20210224 202545.107 INFO             PET0  Correct transpose results verified in result(           1 ,           1 ).
+20210224 202545.107 INFO             PET0  Correct transpose results verified in result(           2 ,           1 ).
+20210224 202545.107 INFO             PET0  Correct transpose results verified in result(           3 ,           1 ).
+20210224 202545.107 INFO             PET0  Correct transpose results verified in result(           4 ,           1 ).
+20210224 202545.107 INFO             PET0  Correct transpose results verified in result(           1 ,           2 ).
+20210224 202545.107 INFO             PET0  Correct transpose results verified in result(           2 ,           2 ).
+20210224 202545.107 INFO             PET0  Correct transpose results verified in result(           3 ,           2 ).
+20210224 202545.107 INFO             PET0  Correct transpose results verified in result(           4 ,           2 ).
+20210224 202545.107 INFO             PET0  Correct transpose results verified in result(           1 ,           3 ).
+20210224 202545.107 INFO             PET0  Correct transpose results verified in result(           2 ,           3 ).
+20210224 202545.107 INFO             PET0  Correct transpose results verified in result(           3 ,           3 ).
+20210224 202545.107 INFO             PET0  Correct transpose results verified in result(           4 ,           3 ).
+20210224 202545.107 INFO             PET0  Correct transpose results verified in result(           1 ,           4 ).
+20210224 202545.107 INFO             PET0  Correct transpose results verified in result(           2 ,           4 ).
+20210224 202545.107 INFO             PET0  Correct transpose results verified in result(           3 ,           4 ).
+20210224 202545.107 INFO             PET0  Correct transpose results verified in result(           4 ,           4 ).
+20210224 202545.107 INFO             PET0  Correct transpose results verified in result(           1 ,           5 ).
+20210224 202545.107 INFO             PET0  Correct transpose results verified in result(           2 ,           5 ).
+20210224 202545.107 INFO             PET0  Correct transpose results verified in result(           3 ,           5 ).
+20210224 202545.107 INFO             PET0  Correct transpose results verified in result(           4 ,           5 ).
+20210224 202545.107 INFO             PET0  Correct transpose results verified in result(           1 ,           6 ).
+20210224 202545.107 INFO             PET0  Correct transpose results verified in result(           2 ,           6 ).
+20210224 202545.107 INFO             PET0  Correct transpose results verified in result(           3 ,           6 ).
+20210224 202545.107 INFO             PET0  Correct transpose results verified in result(           4 ,           6 ).
+20210224 202545.107 INFO             PET0  PASS  src 1 DE/PET -> dst default 4DEs, vectorLength=4, ESMF_TERMORDER_SRCSEQ ASMM Test, ESMF_ArraySMMUTest.F90, line 754
+20210224 202545.108 INFO             PET0 Correct result verified in dstArray on DE 0
+20210224 202545.108 INFO             PET0 Correct result verified in dstArray on DE 1
+20210224 202545.108 INFO             PET0 Correct result verified in dstArray on DE 2
+20210224 202545.108 INFO             PET0 Correct result verified in dstArray on DE 3
+20210224 202545.108 INFO             PET0  Correct transpose results verified in result(           1 ,           1 ).
+20210224 202545.108 INFO             PET0  Correct transpose results verified in result(           2 ,           1 ).
+20210224 202545.108 INFO             PET0  Correct transpose results verified in result(           3 ,           1 ).
+20210224 202545.108 INFO             PET0  Correct transpose results verified in result(           4 ,           1 ).
+20210224 202545.108 INFO             PET0  Correct transpose results verified in result(           1 ,           2 ).
+20210224 202545.108 INFO             PET0  Correct transpose results verified in result(           2 ,           2 ).
+20210224 202545.108 INFO             PET0  Correct transpose results verified in result(           3 ,           2 ).
+20210224 202545.108 INFO             PET0  Correct transpose results verified in result(           4 ,           2 ).
+20210224 202545.108 INFO             PET0  Correct transpose results verified in result(           1 ,           3 ).
+20210224 202545.108 INFO             PET0  Correct transpose results verified in result(           2 ,           3 ).
+20210224 202545.108 INFO             PET0  Correct transpose results verified in result(           3 ,           3 ).
+20210224 202545.108 INFO             PET0  Correct transpose results verified in result(           4 ,           3 ).
+20210224 202545.108 INFO             PET0  Correct transpose results verified in result(           1 ,           4 ).
+20210224 202545.108 INFO             PET0  Correct transpose results verified in result(           2 ,           4 ).
+20210224 202545.108 INFO             PET0  Correct transpose results verified in result(           3 ,           4 ).
+20210224 202545.108 INFO             PET0  Correct transpose results verified in result(           4 ,           4 ).
+20210224 202545.108 INFO             PET0  Correct transpose results verified in result(           1 ,           5 ).
+20210224 202545.108 INFO             PET0  Correct transpose results verified in result(           2 ,           5 ).
+20210224 202545.108 INFO             PET0  Correct transpose results verified in result(           3 ,           5 ).
+20210224 202545.108 INFO             PET0  Correct transpose results verified in result(           4 ,           5 ).
+20210224 202545.108 INFO             PET0  Correct transpose results verified in result(           1 ,           6 ).
+20210224 202545.108 INFO             PET0  Correct transpose results verified in result(           2 ,           6 ).
+20210224 202545.108 INFO             PET0  Correct transpose results verified in result(           3 ,           6 ).
+20210224 202545.108 INFO             PET0  Correct transpose results verified in result(           4 ,           6 ).
+20210224 202545.108 INFO             PET0  PASS  src 1 DE/PET -> dst default 4DEs, vectorLength=4, ESMF_TERMORDER_SRCSEQ ASMM Test, ESMF_ArraySMMUTest.F90, line 765
+20210224 202545.109 INFO             PET0 Correct result verified in dstArray on DE 0
+20210224 202545.109 INFO             PET0 Correct result verified in dstArray on DE 1
+20210224 202545.109 INFO             PET0 Correct result verified in dstArray on DE 2
+20210224 202545.109 INFO             PET0 Correct result verified in dstArray on DE 3
+20210224 202545.109 INFO             PET0  Correct transpose results verified in result(           1 ,           1 ).
+20210224 202545.109 INFO             PET0  Correct transpose results verified in result(           2 ,           1 ).
+20210224 202545.109 INFO             PET0  Correct transpose results verified in result(           3 ,           1 ).
+20210224 202545.109 INFO             PET0  Correct transpose results verified in result(           4 ,           1 ).
+20210224 202545.109 INFO             PET0  Correct transpose results verified in result(           1 ,           2 ).
+20210224 202545.109 INFO             PET0  Correct transpose results verified in result(           2 ,           2 ).
+20210224 202545.109 INFO             PET0  Correct transpose results verified in result(           3 ,           2 ).
+20210224 202545.109 INFO             PET0  Correct transpose results verified in result(           4 ,           2 ).
+20210224 202545.109 INFO             PET0  Correct transpose results verified in result(           1 ,           3 ).
+20210224 202545.109 INFO             PET0  Correct transpose results verified in result(           2 ,           3 ).
+20210224 202545.109 INFO             PET0  Correct transpose results verified in result(           3 ,           3 ).
+20210224 202545.109 INFO             PET0  Correct transpose results verified in result(           4 ,           3 ).
+20210224 202545.109 INFO             PET0  Correct transpose results verified in result(           1 ,           4 ).
+20210224 202545.109 INFO             PET0  Correct transpose results verified in result(           2 ,           4 ).
+20210224 202545.109 INFO             PET0  Correct transpose results verified in result(           3 ,           4 ).
+20210224 202545.109 INFO             PET0  Correct transpose results verified in result(           4 ,           4 ).
+20210224 202545.109 INFO             PET0  Correct transpose results verified in result(           1 ,           5 ).
+20210224 202545.109 INFO             PET0  Correct transpose results verified in result(           2 ,           5 ).
+20210224 202545.109 INFO             PET0  Correct transpose results verified in result(           3 ,           5 ).
+20210224 202545.109 INFO             PET0  Correct transpose results verified in result(           4 ,           5 ).
+20210224 202545.109 INFO             PET0  Correct transpose results verified in result(           1 ,           6 ).
+20210224 202545.109 INFO             PET0  Correct transpose results verified in result(           2 ,           6 ).
+20210224 202545.109 INFO             PET0  Correct transpose results verified in result(           3 ,           6 ).
+20210224 202545.109 INFO             PET0  Correct transpose results verified in result(           4 ,           6 ).
+20210224 202545.109 INFO             PET0  PASS  src 1 DE/PET -> dst default 4DEs, testUnmatched ASMM Test, ESMF_ArraySMMUTest.F90, line 775
+20210224 202545.110 INFO             PET0 Correct result verified in dstArray on DE 0
+20210224 202545.110 INFO             PET0 Correct result verified in dstArray on DE 1
+20210224 202545.110 INFO             PET0 Correct result verified in dstArray on DE 2
+20210224 202545.110 INFO             PET0 Correct result verified in dstArray on DE 3
+20210224 202545.110 INFO             PET0  Correct transpose results verified in result(           1 ,           1 ).
+20210224 202545.110 INFO             PET0  Correct transpose results verified in result(           2 ,           1 ).
+20210224 202545.110 INFO             PET0  Correct transpose results verified in result(           3 ,           1 ).
+20210224 202545.110 INFO             PET0  Correct transpose results verified in result(           4 ,           1 ).
+20210224 202545.110 INFO             PET0  Correct transpose results verified in result(           1 ,           2 ).
+20210224 202545.110 INFO             PET0  Correct transpose results verified in result(           2 ,           2 ).
+20210224 202545.110 INFO             PET0  Correct transpose results verified in result(           3 ,           2 ).
+20210224 202545.110 INFO             PET0  Correct transpose results verified in result(           4 ,           2 ).
+20210224 202545.110 INFO             PET0  Correct transpose results verified in result(           1 ,           3 ).
+20210224 202545.110 INFO             PET0  Correct transpose results verified in result(           2 ,           3 ).
+20210224 202545.110 INFO             PET0  Correct transpose results verified in result(           3 ,           3 ).
+20210224 202545.110 INFO             PET0  Correct transpose results verified in result(           4 ,           3 ).
+20210224 202545.110 INFO             PET0  Correct transpose results verified in result(           1 ,           4 ).
+20210224 202545.110 INFO             PET0  Correct transpose results verified in result(           2 ,           4 ).
+20210224 202545.110 INFO             PET0  Correct transpose results verified in result(           3 ,           4 ).
+20210224 202545.110 INFO             PET0  Correct transpose results verified in result(           4 ,           4 ).
+20210224 202545.110 INFO             PET0  Correct transpose results verified in result(           1 ,           5 ).
+20210224 202545.110 INFO             PET0  Correct transpose results verified in result(           2 ,           5 ).
+20210224 202545.110 INFO             PET0  Correct transpose results verified in result(           3 ,           5 ).
+20210224 202545.110 INFO             PET0  Correct transpose results verified in result(           4 ,           5 ).
+20210224 202545.110 INFO             PET0  Correct transpose results verified in result(           1 ,           6 ).
+20210224 202545.110 INFO             PET0  Correct transpose results verified in result(           2 ,           6 ).
+20210224 202545.110 INFO             PET0  Correct transpose results verified in result(           3 ,           6 ).
+20210224 202545.110 INFO             PET0  Correct transpose results verified in result(           4 ,           6 ).
+20210224 202545.110 INFO             PET0  PASS  src 1 DE/PET -> dst default 4DEs ASMM Test w/ tuning parameters, ESMF_ArraySMMUTest.F90, line 786
+20210224 202545.110 INFO             PET0 Correct result verified in dstArray on DE 0
+20210224 202545.110 INFO             PET0 Correct result verified in dstArray on DE 1
+20210224 202545.110 INFO             PET0 Correct result verified in dstArray on DE 2
+20210224 202545.110 INFO             PET0 Correct result verified in dstArray on DE 3
+20210224 202545.110 INFO             PET0  Correct transpose results verified in result(           1 ,           1 ).
+20210224 202545.110 INFO             PET0  Correct transpose results verified in result(           2 ,           1 ).
+20210224 202545.111 INFO             PET0  Correct transpose results verified in result(           3 ,           1 ).
+20210224 202545.111 INFO             PET0  Correct transpose results verified in result(           4 ,           1 ).
+20210224 202545.111 INFO             PET0  Correct transpose results verified in result(           1 ,           2 ).
+20210224 202545.111 INFO             PET0  Correct transpose results verified in result(           2 ,           2 ).
+20210224 202545.111 INFO             PET0  Correct transpose results verified in result(           3 ,           2 ).
+20210224 202545.111 INFO             PET0  Correct transpose results verified in result(           4 ,           2 ).
+20210224 202545.111 INFO             PET0  Correct transpose results verified in result(           1 ,           3 ).
+20210224 202545.111 INFO             PET0  Correct transpose results verified in result(           2 ,           3 ).
+20210224 202545.111 INFO             PET0  Correct transpose results verified in result(           3 ,           3 ).
+20210224 202545.111 INFO             PET0  Correct transpose results verified in result(           4 ,           3 ).
+20210224 202545.111 INFO             PET0  Correct transpose results verified in result(           1 ,           4 ).
+20210224 202545.111 INFO             PET0  Correct transpose results verified in result(           2 ,           4 ).
+20210224 202545.111 INFO             PET0  Correct transpose results verified in result(           3 ,           4 ).
+20210224 202545.111 INFO             PET0  Correct transpose results verified in result(           4 ,           4 ).
+20210224 202545.111 INFO             PET0  Correct transpose results verified in result(           1 ,           5 ).
+20210224 202545.111 INFO             PET0  Correct transpose results verified in result(           2 ,           5 ).
+20210224 202545.111 INFO             PET0  Correct transpose results verified in result(           3 ,           5 ).
+20210224 202545.111 INFO             PET0  Correct transpose results verified in result(           4 ,           5 ).
+20210224 202545.111 INFO             PET0  Correct transpose results verified in result(           1 ,           6 ).
+20210224 202545.111 INFO             PET0  Correct transpose results verified in result(           2 ,           6 ).
+20210224 202545.111 INFO             PET0  Correct transpose results verified in result(           3 ,           6 ).
+20210224 202545.111 INFO             PET0  Correct transpose results verified in result(           4 ,           6 ).
+20210224 202545.111 INFO             PET0  PASS  src 1 DE/PET -> dst default 4DEs ASMM Test w/ tuning parameters, testUnmatched, ESMF_ArraySMMUTest.F90, line 797
+20210224 202545.112 INFO             PET0 Correct result verified in dstArray on DE 0
+20210224 202545.112 INFO             PET0 Correct result verified in dstArray on DE 1
+20210224 202545.112 INFO             PET0 Correct result verified in dstArray on DE 2
+20210224 202545.112 INFO             PET0 Correct result verified in dstArray on DE 3
+20210224 202545.112 INFO             PET0  Correct transpose results verified in result(           1 ,           1 ).
+20210224 202545.112 INFO             PET0  Correct transpose results verified in result(           2 ,           1 ).
+20210224 202545.112 INFO             PET0  Correct transpose results verified in result(           3 ,           1 ).
+20210224 202545.112 INFO             PET0  Correct transpose results verified in result(           4 ,           1 ).
+20210224 202545.112 INFO             PET0  Correct transpose results verified in result(           1 ,           2 ).
+20210224 202545.112 INFO             PET0  Correct transpose results verified in result(           2 ,           2 ).
+20210224 202545.112 INFO             PET0  Correct transpose results verified in result(           3 ,           2 ).
+20210224 202545.112 INFO             PET0  Correct transpose results verified in result(           4 ,           2 ).
+20210224 202545.112 INFO             PET0  Correct transpose results verified in result(           1 ,           3 ).
+20210224 202545.112 INFO             PET0  Correct transpose results verified in result(           2 ,           3 ).
+20210224 202545.112 INFO             PET0  Correct transpose results verified in result(           3 ,           3 ).
+20210224 202545.112 INFO             PET0  Correct transpose results verified in result(           4 ,           3 ).
+20210224 202545.112 INFO             PET0  Correct transpose results verified in result(           1 ,           4 ).
+20210224 202545.112 INFO             PET0  Correct transpose results verified in result(           2 ,           4 ).
+20210224 202545.112 INFO             PET0  Correct transpose results verified in result(           3 ,           4 ).
+20210224 202545.112 INFO             PET0  Correct transpose results verified in result(           4 ,           4 ).
+20210224 202545.112 INFO             PET0  Correct transpose results verified in result(           1 ,           5 ).
+20210224 202545.112 INFO             PET0  Correct transpose results verified in result(           2 ,           5 ).
+20210224 202545.112 INFO             PET0  Correct transpose results verified in result(           3 ,           5 ).
+20210224 202545.112 INFO             PET0  Correct transpose results verified in result(           4 ,           5 ).
+20210224 202545.112 INFO             PET0  Correct transpose results verified in result(           1 ,           6 ).
+20210224 202545.112 INFO             PET0  Correct transpose results verified in result(           2 ,           6 ).
+20210224 202545.112 INFO             PET0  Correct transpose results verified in result(           3 ,           6 ).
+20210224 202545.112 INFO             PET0  Correct transpose results verified in result(           4 ,           6 ).
+20210224 202545.112 INFO             PET0  PASS  src 1 DE/PET -> dst all 4 DEs on PET 0 ASMM Test, ESMF_ArraySMMUTest.F90, line 807
+20210224 202545.114 INFO             PET0 Correct result verified in dstArray on DE 0
+20210224 202545.114 INFO             PET0 Correct result verified in dstArray on DE 1
+20210224 202545.114 INFO             PET0 Correct result verified in dstArray on DE 2
+20210224 202545.114 INFO             PET0 Correct result verified in dstArray on DE 3
+20210224 202545.114 INFO             PET0  Correct transpose results verified in result(           1 ,           1 ).
+20210224 202545.114 INFO             PET0  Correct transpose results verified in result(           2 ,           1 ).
+20210224 202545.114 INFO             PET0  Correct transpose results verified in result(           3 ,           1 ).
+20210224 202545.114 INFO             PET0  Correct transpose results verified in result(           4 ,           1 ).
+20210224 202545.114 INFO             PET0  Correct transpose results verified in result(           1 ,           2 ).
+20210224 202545.114 INFO             PET0  Correct transpose results verified in result(           2 ,           2 ).
+20210224 202545.114 INFO             PET0  Correct transpose results verified in result(           3 ,           2 ).
+20210224 202545.114 INFO             PET0  Correct transpose results verified in result(           4 ,           2 ).
+20210224 202545.114 INFO             PET0  Correct transpose results verified in result(           1 ,           3 ).
+20210224 202545.114 INFO             PET0  Correct transpose results verified in result(           2 ,           3 ).
+20210224 202545.114 INFO             PET0  Correct transpose results verified in result(           3 ,           3 ).
+20210224 202545.114 INFO             PET0  Correct transpose results verified in result(           4 ,           3 ).
+20210224 202545.114 INFO             PET0  Correct transpose results verified in result(           1 ,           4 ).
+20210224 202545.114 INFO             PET0  Correct transpose results verified in result(           2 ,           4 ).
+20210224 202545.114 INFO             PET0  Correct transpose results verified in result(           3 ,           4 ).
+20210224 202545.114 INFO             PET0  Correct transpose results verified in result(           4 ,           4 ).
+20210224 202545.114 INFO             PET0  Correct transpose results verified in result(           1 ,           5 ).
+20210224 202545.114 INFO             PET0  Correct transpose results verified in result(           2 ,           5 ).
+20210224 202545.114 INFO             PET0  Correct transpose results verified in result(           3 ,           5 ).
+20210224 202545.114 INFO             PET0  Correct transpose results verified in result(           4 ,           5 ).
+20210224 202545.114 INFO             PET0  Correct transpose results verified in result(           1 ,           6 ).
+20210224 202545.114 INFO             PET0  Correct transpose results verified in result(           2 ,           6 ).
+20210224 202545.114 INFO             PET0  Correct transpose results verified in result(           3 ,           6 ).
+20210224 202545.114 INFO             PET0  Correct transpose results verified in result(           4 ,           6 ).
+20210224 202545.114 INFO             PET0  PASS  src 2 DEs/PET -> dst default 4DEs ASMM Test, ESMF_ArraySMMUTest.F90, line 817
+20210224 202545.116 INFO             PET0 Correct result verified in dstArray on DE 0
+20210224 202545.116 INFO             PET0 Correct result verified in dstArray on DE 1
+20210224 202545.116 INFO             PET0 Correct result verified in dstArray on DE 2
+20210224 202545.116 INFO             PET0 Correct result verified in dstArray on DE 3
+20210224 202545.116 INFO             PET0  Correct transpose results verified in result(           1 ,           1 ).
+20210224 202545.116 INFO             PET0  Correct transpose results verified in result(           2 ,           1 ).
+20210224 202545.116 INFO             PET0  Correct transpose results verified in result(           3 ,           1 ).
+20210224 202545.116 INFO             PET0  Correct transpose results verified in result(           4 ,           1 ).
+20210224 202545.116 INFO             PET0  Correct transpose results verified in result(           1 ,           2 ).
+20210224 202545.116 INFO             PET0  Correct transpose results verified in result(           2 ,           2 ).
+20210224 202545.116 INFO             PET0  Correct transpose results verified in result(           3 ,           2 ).
+20210224 202545.116 INFO             PET0  Correct transpose results verified in result(           4 ,           2 ).
+20210224 202545.116 INFO             PET0  Correct transpose results verified in result(           1 ,           3 ).
+20210224 202545.116 INFO             PET0  Correct transpose results verified in result(           2 ,           3 ).
+20210224 202545.116 INFO             PET0  Correct transpose results verified in result(           3 ,           3 ).
+20210224 202545.116 INFO             PET0  Correct transpose results verified in result(           4 ,           3 ).
+20210224 202545.116 INFO             PET0  Correct transpose results verified in result(           1 ,           4 ).
+20210224 202545.116 INFO             PET0  Correct transpose results verified in result(           2 ,           4 ).
+20210224 202545.116 INFO             PET0  Correct transpose results verified in result(           3 ,           4 ).
+20210224 202545.116 INFO             PET0  Correct transpose results verified in result(           4 ,           4 ).
+20210224 202545.116 INFO             PET0  Correct transpose results verified in result(           1 ,           5 ).
+20210224 202545.116 INFO             PET0  Correct transpose results verified in result(           2 ,           5 ).
+20210224 202545.116 INFO             PET0  Correct transpose results verified in result(           3 ,           5 ).
+20210224 202545.116 INFO             PET0  Correct transpose results verified in result(           4 ,           5 ).
+20210224 202545.116 INFO             PET0  Correct transpose results verified in result(           1 ,           6 ).
+20210224 202545.116 INFO             PET0  Correct transpose results verified in result(           2 ,           6 ).
+20210224 202545.116 INFO             PET0  Correct transpose results verified in result(           3 ,           6 ).
+20210224 202545.116 INFO             PET0  Correct transpose results verified in result(           4 ,           6 ).
+20210224 202545.116 INFO             PET0  PASS  src 2 DEs/PET -> dst default 4DEs, testUnmatched ASMM Test, ESMF_ArraySMMUTest.F90, line 827
+20210224 202545.118 INFO             PET0 Correct result verified in dstArray on DE 0
+20210224 202545.118 INFO             PET0 Correct result verified in dstArray on DE 1
+20210224 202545.118 INFO             PET0 Correct result verified in dstArray on DE 2
+20210224 202545.118 INFO             PET0 Correct result verified in dstArray on DE 3
+20210224 202545.118 INFO             PET0  Correct transpose results verified in result(           1 ,           1 ).
+20210224 202545.118 INFO             PET0  Correct transpose results verified in result(           2 ,           1 ).
+20210224 202545.118 INFO             PET0  Correct transpose results verified in result(           3 ,           1 ).
+20210224 202545.118 INFO             PET0  Correct transpose results verified in result(           4 ,           1 ).
+20210224 202545.118 INFO             PET0  Correct transpose results verified in result(           1 ,           2 ).
+20210224 202545.118 INFO             PET0  Correct transpose results verified in result(           2 ,           2 ).
+20210224 202545.118 INFO             PET0  Correct transpose results verified in result(           3 ,           2 ).
+20210224 202545.118 INFO             PET0  Correct transpose results verified in result(           4 ,           2 ).
+20210224 202545.118 INFO             PET0  Correct transpose results verified in result(           1 ,           3 ).
+20210224 202545.118 INFO             PET0  Correct transpose results verified in result(           2 ,           3 ).
+20210224 202545.118 INFO             PET0  Correct transpose results verified in result(           3 ,           3 ).
+20210224 202545.118 INFO             PET0  Correct transpose results verified in result(           4 ,           3 ).
+20210224 202545.119 INFO             PET0  Correct transpose results verified in result(           1 ,           4 ).
+20210224 202545.119 INFO             PET0  Correct transpose results verified in result(           2 ,           4 ).
+20210224 202545.119 INFO             PET0  Correct transpose results verified in result(           3 ,           4 ).
+20210224 202545.119 INFO             PET0  Correct transpose results verified in result(           4 ,           4 ).
+20210224 202545.119 INFO             PET0  Correct transpose results verified in result(           1 ,           5 ).
+20210224 202545.119 INFO             PET0  Correct transpose results verified in result(           2 ,           5 ).
+20210224 202545.119 INFO             PET0  Correct transpose results verified in result(           3 ,           5 ).
+20210224 202545.119 INFO             PET0  Correct transpose results verified in result(           4 ,           5 ).
+20210224 202545.119 INFO             PET0  Correct transpose results verified in result(           1 ,           6 ).
+20210224 202545.119 INFO             PET0  Correct transpose results verified in result(           2 ,           6 ).
+20210224 202545.119 INFO             PET0  Correct transpose results verified in result(           3 ,           6 ).
+20210224 202545.119 INFO             PET0  Correct transpose results verified in result(           4 ,           6 ).
+20210224 202545.119 INFO             PET0  PASS  src 2 DEs/PET -> dst skipping PETs ASMM Test, ESMF_ArraySMMUTest.F90, line 842
+20210224 202545.122 INFO             PET0 Correct result verified in dstArray on DE 0
+20210224 202545.122 INFO             PET0 Correct result verified in dstArray on DE 1
+20210224 202545.122 INFO             PET0 Correct result verified in dstArray on DE 2
+20210224 202545.122 INFO             PET0 Correct result verified in dstArray on DE 3
+20210224 202545.122 INFO             PET0  Correct transpose results verified in result(           1 ,           1 ).
+20210224 202545.122 INFO             PET0  Correct transpose results verified in result(           2 ,           1 ).
+20210224 202545.122 INFO             PET0  Correct transpose results verified in result(           3 ,           1 ).
+20210224 202545.122 INFO             PET0  Correct transpose results verified in result(           4 ,           1 ).
+20210224 202545.122 INFO             PET0  Correct transpose results verified in result(           1 ,           2 ).
+20210224 202545.122 INFO             PET0  Correct transpose results verified in result(           2 ,           2 ).
+20210224 202545.122 INFO             PET0  Correct transpose results verified in result(           3 ,           2 ).
+20210224 202545.122 INFO             PET0  Correct transpose results verified in result(           4 ,           2 ).
+20210224 202545.122 INFO             PET0  Correct transpose results verified in result(           1 ,           3 ).
+20210224 202545.122 INFO             PET0  Correct transpose results verified in result(           2 ,           3 ).
+20210224 202545.122 INFO             PET0  Correct transpose results verified in result(           3 ,           3 ).
+20210224 202545.122 INFO             PET0  Correct transpose results verified in result(           4 ,           3 ).
+20210224 202545.122 INFO             PET0  Correct transpose results verified in result(           1 ,           4 ).
+20210224 202545.122 INFO             PET0  Correct transpose results verified in result(           2 ,           4 ).
+20210224 202545.122 INFO             PET0  Correct transpose results verified in result(           3 ,           4 ).
+20210224 202545.122 INFO             PET0  Correct transpose results verified in result(           4 ,           4 ).
+20210224 202545.122 INFO             PET0  Correct transpose results verified in result(           1 ,           5 ).
+20210224 202545.122 INFO             PET0  Correct transpose results verified in result(           2 ,           5 ).
+20210224 202545.122 INFO             PET0  Correct transpose results verified in result(           3 ,           5 ).
+20210224 202545.122 INFO             PET0  Correct transpose results verified in result(           4 ,           5 ).
+20210224 202545.122 INFO             PET0  Correct transpose results verified in result(           1 ,           6 ).
+20210224 202545.122 INFO             PET0  Correct transpose results verified in result(           2 ,           6 ).
+20210224 202545.122 INFO             PET0  Correct transpose results verified in result(           3 ,           6 ).
+20210224 202545.122 INFO             PET0  Correct transpose results verified in result(           4 ,           6 ).
+20210224 202545.122 INFO             PET0  PASS  src more than one DE/PET (irregular) -> dst default 4DEs ASMM Test, ESMF_ArraySMMUTest.F90, line 852
+20210224 202545.126 INFO             PET0 Correct result verified in dstArray on DE 0
+20210224 202545.126 INFO             PET0 Correct result verified in dstArray on DE 1
+20210224 202545.126 INFO             PET0 Correct result verified in dstArray on DE 2
+20210224 202545.126 INFO             PET0 Correct result verified in dstArray on DE 3
+20210224 202545.126 INFO             PET0  Correct transpose results verified in result(           1 ,           1 ).
+20210224 202545.126 INFO             PET0  Correct transpose results verified in result(           2 ,           1 ).
+20210224 202545.126 INFO             PET0  Correct transpose results verified in result(           3 ,           1 ).
+20210224 202545.126 INFO             PET0  Correct transpose results verified in result(           4 ,           1 ).
+20210224 202545.126 INFO             PET0  Correct transpose results verified in result(           1 ,           2 ).
+20210224 202545.126 INFO             PET0  Correct transpose results verified in result(           2 ,           2 ).
+20210224 202545.126 INFO             PET0  Correct transpose results verified in result(           3 ,           2 ).
+20210224 202545.126 INFO             PET0  Correct transpose results verified in result(           4 ,           2 ).
+20210224 202545.126 INFO             PET0  Correct transpose results verified in result(           1 ,           3 ).
+20210224 202545.126 INFO             PET0  Correct transpose results verified in result(           2 ,           3 ).
+20210224 202545.126 INFO             PET0  Correct transpose results verified in result(           3 ,           3 ).
+20210224 202545.126 INFO             PET0  Correct transpose results verified in result(           4 ,           3 ).
+20210224 202545.126 INFO             PET0  Correct transpose results verified in result(           1 ,           4 ).
+20210224 202545.126 INFO             PET0  Correct transpose results verified in result(           2 ,           4 ).
+20210224 202545.126 INFO             PET0  Correct transpose results verified in result(           3 ,           4 ).
+20210224 202545.126 INFO             PET0  Correct transpose results verified in result(           4 ,           4 ).
+20210224 202545.126 INFO             PET0  Correct transpose results verified in result(           1 ,           5 ).
+20210224 202545.126 INFO             PET0  Correct transpose results verified in result(           2 ,           5 ).
+20210224 202545.126 INFO             PET0  Correct transpose results verified in result(           3 ,           5 ).
+20210224 202545.126 INFO             PET0  Correct transpose results verified in result(           4 ,           5 ).
+20210224 202545.126 INFO             PET0  Correct transpose results verified in result(           1 ,           6 ).
+20210224 202545.126 INFO             PET0  Correct transpose results verified in result(           2 ,           6 ).
+20210224 202545.126 INFO             PET0  Correct transpose results verified in result(           3 ,           6 ).
+20210224 202545.126 INFO             PET0  Correct transpose results verified in result(           4 ,           6 ).
+20210224 202545.126 INFO             PET0  PASS  src more than one DE/PET (irregular) -> dst all 4 DEs on PET 0 ASMM Test, ESMF_ArraySMMUTest.F90, line 862
+20210224 202545.129 INFO             PET0 Correct result verified in dstArray on DE 0
+20210224 202545.129 INFO             PET0 Correct result verified in dstArray on DE 1
+20210224 202545.129 INFO             PET0 Correct result verified in dstArray on DE 2
+20210224 202545.129 INFO             PET0 Correct result verified in dstArray on DE 3
+20210224 202545.129 INFO             PET0  Correct transpose results verified in result(           1 ,           1 ).
+20210224 202545.129 INFO             PET0  Correct transpose results verified in result(           2 ,           1 ).
+20210224 202545.129 INFO             PET0  Correct transpose results verified in result(           3 ,           1 ).
+20210224 202545.129 INFO             PET0  Correct transpose results verified in result(           4 ,           1 ).
+20210224 202545.129 INFO             PET0  Correct transpose results verified in result(           1 ,           2 ).
+20210224 202545.129 INFO             PET0  Correct transpose results verified in result(           2 ,           2 ).
+20210224 202545.129 INFO             PET0  Correct transpose results verified in result(           3 ,           2 ).
+20210224 202545.129 INFO             PET0  Correct transpose results verified in result(           4 ,           2 ).
+20210224 202545.129 INFO             PET0  Correct transpose results verified in result(           1 ,           3 ).
+20210224 202545.129 INFO             PET0  Correct transpose results verified in result(           2 ,           3 ).
+20210224 202545.129 INFO             PET0  Correct transpose results verified in result(           3 ,           3 ).
+20210224 202545.129 INFO             PET0  Correct transpose results verified in result(           4 ,           3 ).
+20210224 202545.129 INFO             PET0  Correct transpose results verified in result(           1 ,           4 ).
+20210224 202545.129 INFO             PET0  Correct transpose results verified in result(           2 ,           4 ).
+20210224 202545.129 INFO             PET0  Correct transpose results verified in result(           3 ,           4 ).
+20210224 202545.129 INFO             PET0  Correct transpose results verified in result(           4 ,           4 ).
+20210224 202545.129 INFO             PET0  Correct transpose results verified in result(           1 ,           5 ).
+20210224 202545.129 INFO             PET0  Correct transpose results verified in result(           2 ,           5 ).
+20210224 202545.129 INFO             PET0  Correct transpose results verified in result(           3 ,           5 ).
+20210224 202545.129 INFO             PET0  Correct transpose results verified in result(           4 ,           5 ).
+20210224 202545.129 INFO             PET0  Correct transpose results verified in result(           1 ,           6 ).
+20210224 202545.129 INFO             PET0  Correct transpose results verified in result(           2 ,           6 ).
+20210224 202545.129 INFO             PET0  Correct transpose results verified in result(           3 ,           6 ).
+20210224 202545.129 INFO             PET0  Correct transpose results verified in result(           4 ,           6 ).
+20210224 202545.129 INFO             PET0  PASS  src some PETs with 0 DEs -> dst default 4DEs ASMM Test, ESMF_ArraySMMUTest.F90, line 872
+20210224 202545.132 INFO             PET0 Correct result verified in dstArray on DE 0
+20210224 202545.132 INFO             PET0 Correct result verified in dstArray on DE 1
+20210224 202545.132 INFO             PET0 Correct result verified in dstArray on DE 2
+20210224 202545.132 INFO             PET0 Correct result verified in dstArray on DE 3
+20210224 202545.132 INFO             PET0  Correct transpose results verified in result(           1 ,           1 ).
+20210224 202545.132 INFO             PET0  Correct transpose results verified in result(           2 ,           1 ).
+20210224 202545.132 INFO             PET0  Correct transpose results verified in result(           3 ,           1 ).
+20210224 202545.132 INFO             PET0  Correct transpose results verified in result(           4 ,           1 ).
+20210224 202545.132 INFO             PET0  Correct transpose results verified in result(           1 ,           2 ).
+20210224 202545.132 INFO             PET0  Correct transpose results verified in result(           2 ,           2 ).
+20210224 202545.132 INFO             PET0  Correct transpose results verified in result(           3 ,           2 ).
+20210224 202545.132 INFO             PET0  Correct transpose results verified in result(           4 ,           2 ).
+20210224 202545.132 INFO             PET0  Correct transpose results verified in result(           1 ,           3 ).
+20210224 202545.132 INFO             PET0  Correct transpose results verified in result(           2 ,           3 ).
+20210224 202545.132 INFO             PET0  Correct transpose results verified in result(           3 ,           3 ).
+20210224 202545.132 INFO             PET0  Correct transpose results verified in result(           4 ,           3 ).
+20210224 202545.132 INFO             PET0  Correct transpose results verified in result(           1 ,           4 ).
+20210224 202545.132 INFO             PET0  Correct transpose results verified in result(           2 ,           4 ).
+20210224 202545.132 INFO             PET0  Correct transpose results verified in result(           3 ,           4 ).
+20210224 202545.132 INFO             PET0  Correct transpose results verified in result(           4 ,           4 ).
+20210224 202545.132 INFO             PET0  Correct transpose results verified in result(           1 ,           5 ).
+20210224 202545.132 INFO             PET0  Correct transpose results verified in result(           2 ,           5 ).
+20210224 202545.132 INFO             PET0  Correct transpose results verified in result(           3 ,           5 ).
+20210224 202545.132 INFO             PET0  Correct transpose results verified in result(           4 ,           5 ).
+20210224 202545.132 INFO             PET0  Correct transpose results verified in result(           1 ,           6 ).
+20210224 202545.132 INFO             PET0  Correct transpose results verified in result(           2 ,           6 ).
+20210224 202545.132 INFO             PET0  Correct transpose results verified in result(           3 ,           6 ).
+20210224 202545.132 INFO             PET0  Correct transpose results verified in result(           4 ,           6 ).
+20210224 202545.132 INFO             PET0  PASS  src some PETs with 0 DEs -> dst skipping PETs ASMM Test, ESMF_ArraySMMUTest.F90, line 882
+20210224 202545.132 INFO             PET0 Correct result verified in dstArray on DE 0
+20210224 202545.132 INFO             PET0 Correct result verified in dstArray on DE 1
+20210224 202545.132 INFO             PET0 Correct result verified in dstArray on DE 2
+20210224 202545.132 INFO             PET0 Correct result verified in dstArray on DE 3
+20210224 202545.133 INFO             PET0  Correct transpose results verified in result(           1 ,           1 ).
+20210224 202545.133 INFO             PET0  Correct transpose results verified in result(           2 ,           1 ).
+20210224 202545.133 INFO             PET0  Correct transpose results verified in result(           3 ,           1 ).
+20210224 202545.133 INFO             PET0  Correct transpose results verified in result(           4 ,           1 ).
+20210224 202545.133 INFO             PET0  Correct transpose results verified in result(           1 ,           2 ).
+20210224 202545.133 INFO             PET0  Correct transpose results verified in result(           2 ,           2 ).
+20210224 202545.133 INFO             PET0  Correct transpose results verified in result(           3 ,           2 ).
+20210224 202545.133 INFO             PET0  Correct transpose results verified in result(           4 ,           2 ).
+20210224 202545.133 INFO             PET0  Correct transpose results verified in result(           1 ,           3 ).
+20210224 202545.133 INFO             PET0  Correct transpose results verified in result(           2 ,           3 ).
+20210224 202545.133 INFO             PET0  Correct transpose results verified in result(           3 ,           3 ).
+20210224 202545.133 INFO             PET0  Correct transpose results verified in result(           4 ,           3 ).
+20210224 202545.133 INFO             PET0  Correct transpose results verified in result(           1 ,           4 ).
+20210224 202545.133 INFO             PET0  Correct transpose results verified in result(           2 ,           4 ).
+20210224 202545.133 INFO             PET0  Correct transpose results verified in result(           3 ,           4 ).
+20210224 202545.133 INFO             PET0  Correct transpose results verified in result(           4 ,           4 ).
+20210224 202545.133 INFO             PET0  Correct transpose results verified in result(           1 ,           5 ).
+20210224 202545.133 INFO             PET0  Correct transpose results verified in result(           2 ,           5 ).
+20210224 202545.133 INFO             PET0  Correct transpose results verified in result(           3 ,           5 ).
+20210224 202545.133 INFO             PET0  Correct transpose results verified in result(           4 ,           5 ).
+20210224 202545.133 INFO             PET0  Correct transpose results verified in result(           1 ,           6 ).
+20210224 202545.133 INFO             PET0  Correct transpose results verified in result(           2 ,           6 ).
+20210224 202545.133 INFO             PET0  Correct transpose results verified in result(           3 ,           6 ).
+20210224 202545.133 INFO             PET0  Correct transpose results verified in result(           4 ,           6 ).
+20210224 202545.133 INFO             PET0  PASS  src some PETs with 0 DEs -> dst skipping PETs w/ tuning parameters ASMM Test, ESMF_ArraySMMUTest.F90, line 893
+20210224 202545.133 DEBUG            PET0 service: 0  PTHREAD_STACK_MIN: 16384 bytes  stack_size: 20971520 bytes
+20210224 202545.134 INFO             PET0 Correct result verified in dstArray on DE 0
+20210224 202545.134 INFO             PET0 Correct result verified in dstArray on DE 1
+20210224 202545.134 INFO             PET0 Correct result verified in dstArray on DE 2
+20210224 202545.134 INFO             PET0 Correct result verified in dstArray on DE 3
+20210224 202545.135 INFO             PET0  Correct transpose results verified in result(           1 ,           1 ).
+20210224 202545.135 INFO             PET0  Correct transpose results verified in result(           2 ,           1 ).
+20210224 202545.135 INFO             PET0  Correct transpose results verified in result(           3 ,           1 ).
+20210224 202545.135 INFO             PET0  Correct transpose results verified in result(           4 ,           1 ).
+20210224 202545.135 INFO             PET0  Correct transpose results verified in result(           1 ,           2 ).
+20210224 202545.135 INFO             PET0  Correct transpose results verified in result(           2 ,           2 ).
+20210224 202545.135 INFO             PET0  Correct transpose results verified in result(           3 ,           2 ).
+20210224 202545.135 INFO             PET0  Correct transpose results verified in result(           4 ,           2 ).
+20210224 202545.135 INFO             PET0  Correct transpose results verified in result(           1 ,           3 ).
+20210224 202545.135 INFO             PET0  Correct transpose results verified in result(           2 ,           3 ).
+20210224 202545.135 INFO             PET0  Correct transpose results verified in result(           3 ,           3 ).
+20210224 202545.135 INFO             PET0  Correct transpose results verified in result(           4 ,           3 ).
+20210224 202545.135 INFO             PET0  Correct transpose results verified in result(           1 ,           4 ).
+20210224 202545.135 INFO             PET0  Correct transpose results verified in result(           2 ,           4 ).
+20210224 202545.135 INFO             PET0  Correct transpose results verified in result(           3 ,           4 ).
+20210224 202545.135 INFO             PET0  Correct transpose results verified in result(           4 ,           4 ).
+20210224 202545.135 INFO             PET0  Correct transpose results verified in result(           1 ,           5 ).
+20210224 202545.135 INFO             PET0  Correct transpose results verified in result(           2 ,           5 ).
+20210224 202545.135 INFO             PET0  Correct transpose results verified in result(           3 ,           5 ).
+20210224 202545.135 INFO             PET0  Correct transpose results verified in result(           4 ,           5 ).
+20210224 202545.135 INFO             PET0  Correct transpose results verified in result(           1 ,           6 ).
+20210224 202545.135 INFO             PET0  Correct transpose results verified in result(           2 ,           6 ).
+20210224 202545.135 INFO             PET0  Correct transpose results verified in result(           3 ,           6 ).
+20210224 202545.135 INFO             PET0  Correct transpose results verified in result(           4 ,           6 ).
+20210224 202545.135 INFO             PET0  PASS  ComponentizedSMMSuite: src 1 DE/PET -> dst default 4DEs ASMM Test, ESMF_ArraySMMUTest.F90, line 116
+20210224 202545.135 INFO             PET0  Ending Test, file ESMF_ArraySMMUTest.F90, line 919
+20210224 202545.135 INFO             PET0 Finalizing ESMF

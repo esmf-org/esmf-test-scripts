@@ -1,0 +1,44 @@
+20210224 202534.736 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210224 202534.736 INFO             PET0 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210224 202534.736 INFO             PET0 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210224 202534.736 INFO             PET0 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210224 202534.736 INFO             PET0 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210224 202534.736 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210224 202534.736 INFO             PET0 Running with ESMF Version   : ESMF_8_1_0_beta_snapshot_47-4-g0d177ef
+20210224 202534.736 INFO             PET0 ESMF library build date/time: "Feb 24 2021" "20:16:38"
+20210224 202534.736 INFO             PET0 ESMF library build location : /work/noaa/da/mpotts/gfortran_8.3.0_mpiuni_O
+20210224 202534.736 INFO             PET0 ESMF_COMM                   : mpiuni
+20210224 202534.737 INFO             PET0 ESMF_MOAB                   : enabled
+20210224 202534.737 INFO             PET0 ESMF_LAPACK                 : enabled
+20210224 202534.737 INFO             PET0 ESMF_NETCDF                 : enabled
+20210224 202534.737 INFO             PET0 ESMF_PNETCDF                : disabled
+20210224 202534.737 INFO             PET0 ESMF_PIO                    : disabled
+20210224 202534.737 INFO             PET0 ESMF_YAMLCPP                : enabled
+20210224 202534.737 INFO             PET0  Beginning Test, file ESMF_ArraySpecUTest.F90, line 64
+20210224 202534.737 INFO             PET0  NUMBER_OF_PROCESSORS           1
+20210224 202534.737 ERROR            PET0 ESMF_ArraySpec.F90:397 ESMF_ArraySpecPrint Object Set or SetDefault method not called  - Object not Initialized
+20210224 202534.737 INFO             PET0  PASS  Test ESMF_ArraySpecPrint() before setting arrayspec, ESMF_ArraySpecUTest.F90, line 72
+20210224 202534.737 ERROR            PET0 ESMF_ArraySpec.F90:347 ESMF_ArraySpecGet Object Set or SetDefault method not called  - Object not Initialized
+20210224 202534.737 INFO             PET0  PASS  Test ESMF_ArraySpecGet() before setting arrayspec, ESMF_ArraySpecUTest.F90, line 79
+20210224 202534.737 INFO             PET0  PASS  Test ESMF_ArraySpecSet(), ESMF_ArraySpecUTest.F90, line 86
+20210224 202534.737 INFO             PET0  PASS  Test ESMF_ArraySpecPrint(), ESMF_ArraySpecUTest.F90, line 93
+20210224 202534.737 INFO             PET0  PASS  Test ESMF_ArraySpecGet(), ESMF_ArraySpecUTest.F90, line 100
+20210224 202534.737 INFO             PET0  PASS  Validate ESMF_ArraySpecGet() results, ESMF_ArraySpecUTest.F90, line 107
+20210224 202534.737 INFO             PET0  PASS  Test ESMF_ArraySpec assignment and (==) operator, ESMF_ArraySpecUTest.F90, line 116
+20210224 202534.737 INFO             PET0  PASS  Test ESMF_ArraySpec (/=) operator, ESMF_ArraySpecUTest.F90, line 123
+20210224 202534.737 INFO             PET0  PASS  Test re-setting ArraySpec with ESMF_ArraySpecSet(), ESMF_ArraySpecUTest.F90, line 132
+20210224 202534.737 INFO             PET0  PASS  Test re-set ArraySpec with ESMF_ArraySpecPrint(), ESMF_ArraySpecUTest.F90, line 139
+20210224 202534.737 INFO             PET0  PASS  Test re-set ArraySpec with ESMF_ArraySpecGet(), ESMF_ArraySpecUTest.F90, line 146
+20210224 202534.737 INFO             PET0  PASS  Validate re-set ArraySpec with ESMF_ArraySpecGet() results, ESMF_ArraySpecUTest.F90, line 153
+20210224 202534.737 INFO             PET0  PASS  Test ESMF_ArraySpec (==) operator, ESMF_ArraySpecUTest.F90, line 160
+20210224 202534.737 INFO             PET0  PASS  Test ESMF_ArraySpec (/=) operator, ESMF_ArraySpecUTest.F90, line 167
+20210224 202534.737 ERROR            PET0 ESMF_ArraySpec.F90:462 ESMF_ArraySpecSet Invalid object  - bad value for rank
+20210224 202534.737 INFO             PET0  PASS  Test re-setting ArraySpec invalid rank with ESMF_ArraySpecSet(), ESMF_ArraySpecUTest.F90, line 174
+20210224 202534.737 ERROR            PET0 ESMF_ArraySpec.F90:397 ESMF_ArraySpecPrint Object Set or SetDefault method not called  - Object not Initialized
+20210224 202534.737 INFO             PET0  PASS  Test re-set invalid ArraySpec with ESMF_ArraySpecPrint(), ESMF_ArraySpecUTest.F90, line 181
+20210224 202534.737 ERROR            PET0 ESMF_ArraySpec.F90:267 ESMF_ArraySpecEQ() Object Set or SetDefault method not called  - Object not Initialized
+20210224 202534.737 INFO             PET0  PASS  Test ESMF_ArraySpec (==) operator, ESMF_ArraySpecUTest.F90, line 188
+20210224 202534.737 ERROR            PET0 ESMF_ArraySpec.F90:267 ESMF_ArraySpecEQ() Object Set or SetDefault method not called  - Object not Initialized
+20210224 202534.737 INFO             PET0  PASS  Test ESMF_ArraySpec (/=) operator, ESMF_ArraySpecUTest.F90, line 195
+20210224 202534.737 INFO             PET0  Ending Test, file ESMF_ArraySpecUTest.F90, line 200
+20210224 202534.737 INFO             PET0 Finalizing ESMF
