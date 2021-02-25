@@ -23,6 +23,8 @@ export TAG2=$TAG2
 cd $ESMF_DIR
 git fetch --all
 git checkout $TAG1
+#git fetch --all --tags
+#git checkout tags/$TAG2
 git branch -a
 make doc
 cd $HERE
@@ -39,8 +41,9 @@ python -c 'print "finishing harvestAPIsFromRefDoc on $TAG1"'
 
 # build the second tag and associated documentation
 cd $ESMF_DIR
-git fetch --all --tags
-git checkout tags/$TAG2
+git fetch --all
+#git fetch --all --tags
+git checkout $TAG2
 #git checkout tags/$TAG2
 git branch -a
 make distclean
