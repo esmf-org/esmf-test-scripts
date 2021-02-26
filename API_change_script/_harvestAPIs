@@ -62,6 +62,7 @@ python -c 'import harvestAPIsFromRefDoc as h; h.harvest_APIs("'$ESMF_DIR'", "'$T
 
 python -c 'print "finishing harvestAPIsFromRefDoc on $TAG2"'
 
+cd $HERE
 
 # diff the apis from both tags and create a report
 diff 'APIs-'$name'.out' 'APIs-'$TAG2'.out' > 'diff-'$name'-'$TAG2'.out'
