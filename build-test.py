@@ -116,6 +116,36 @@ def main(argv):
               fb.write("\nmodule load {}\n".format(machine_list[comp]['extramodule']))
               ft.write("\nmodule load {}\n".format(machine_list[comp]['extramodule']))
 
+            mpiflavor = mpidict[key]
+            if(mpiflavor['module'] == "None"):
+              mpiflavor['module'] = ""
+              cmdstring = "export ESMF_MPIRUN={}/src/Infrastructure/stubs/mpiuni/mpirun\n".format(os.getcwd())
+              fb.write(cmdstring)
+              ft.write(cmdstring)
+
+            if("mpi_env_vars" in mpidict[key]):
+              for mpi_var in mpidict[key]['mpi_env_vars']:
+                fb.write("export {}\n".format(mpidict[key]['mpi_env_vars'][mpi_var]))
+                ft.write("export {}\n".format(mpidict[key]['mpi_env_vars'][mpi_var]))
+            if(machine_list[comp]['versions'][ver]['netcdf'] == "None" ):
+              modulecmd = "module load {} {} \nmodule list\n".format(machine_list[comp]['versions'][ver]['compiler'],mpiflavor['module'])
+              esmfnetcdf = "\n"
+            else:
+              modulecmd = "module load {} {} {}\nmodule list\n".format(machine_list[comp]['versions'][ver]['compiler'],mpiflavor['module'],machine_list[comp]['versions'][ver]['netcdf'])
+              esmfnetcdf = "export ESMF_NETCDF=nc-config\n"
+            fb.write(modulecmd)
+            ft.write(modulecmd)
+            fb.write(esmfnetcdf)
+            ft.write(esmfnetcdf)
+            if("hdf5" in machine_list[comp]['versions'][ver]):
+              modulecmd = "module load {} \nmodule list\n".format(machine_list[comp]['versions'][ver]['hdf5'])
+            fb.write(modulecmd)
+            ft.write(modulecmd)
+
+            if("extramodule" in machine_list[comp]):
+              fb.write("\nmodule load {}\n".format(machine_list[comp]['extramodule']))
+              ft.write("\nmodule load {}\n".format(machine_list[comp]['extramodule']))
+
             if('extra_env_vars' in machine_list[comp]['versions'][ver]):
                 for var in machine_list[comp]['versions'][ver]['extra_env_vars']:
                   fb.write("export {}\n".format(machine_list[comp]['versions'][ver]['extra_env_vars'][var]))
@@ -126,7 +156,6 @@ def main(argv):
                   fb.write("{}\n".format(machine_list[comp]['versions'][ver]['extra_commands'][cmd]))
                   ft.write("{}\n".format(machine_list[comp]['versions'][ver]['extra_commands'][cmd]))
 
-  
             cmdstring = "export ESMF_DIR={}\n".format(os.getcwd())
             fb.write(cmdstring)
             ft.write(cmdstring)
@@ -151,39 +180,21 @@ def main(argv):
             fb.write(cmdstring)
             ft.write(cmdstring)
 
-            mpiflavor = mpidict[key]
-            if(mpiflavor['module'] == "None"):
-              mpiflavor['module'] = ""
-              cmdstring = "export ESMF_MPIRUN={}/src/Infrastructure/stubs/mpiuni/mpirun\n".format(os.getcwd())
-              fb.write(cmdstring)
-              ft.write(cmdstring)
-
-            if("mpi_env_vars" in mpidict[key]):
-              for mpi_var in mpidict[key]['mpi_env_vars']:
-                fb.write("export {}\n".format(mpidict[key]['mpi_env_vars'][mpi_var]))
-                ft.write("export {}\n".format(mpidict[key]['mpi_env_vars'][mpi_var]))
-            if(machine_list[comp]['versions'][ver]['netcdf'] == "None" ):
-              modulecmd = "module load {} {} \nmodule list\n".format(machine_list[comp]['versions'][ver]['compiler'],mpiflavor['module'])
-              esmfnetcdf = "\n"
-            else:
-              modulecmd = "module load {} {} {}\nmodule list\n".format(machine_list[comp]['versions'][ver]['compiler'],mpiflavor['module'],machine_list[comp]['versions'][ver]['netcdf'])
-              esmfnetcdf = "export ESMF_NETCDF=nc-config\n"
-            mpimodule = mpiflavor['module']
-            if(mpimodule == ""):
-              mpiver = "None"
-            else:
-              mpiver = mpiflavor['module'].split('/')[-1]
-            fb.write(modulecmd)
-            ft.write(modulecmd)
-            fb.write(esmfnetcdf)
-            ft.write(esmfnetcdf)
             cmdstring = "make -j {} clean |& tee clean_$JOBID.log \nmake -j {} |& tee build_$JOBID.log\n\n".format(cpn,cpn)
             fb.write(cmdstring)
+
             cmdstring = "make install |& tee install_$JOBID.log \nmake all_tests |& tee test_$JOBID.log \n\n"
             ft.write(cmdstring)
   
             fb.close()
             ft.close()
+
+            mpimodule = mpiflavor['module']
+            if(mpimodule == ""):
+              mpiver = "None"
+            else:
+              mpiver = mpiflavor['module'].split('/')[-1]
+  
             if(scheduler == "slurm"):
               batch_build = "sbatch {}".format(filename)
               print(batch_build)
