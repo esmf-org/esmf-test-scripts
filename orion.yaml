@@ -24,6 +24,8 @@ gfortran:
              module: openmpi/4.0.2
            mpiuni: 
              module: None
+       extra_env_vars: 
+         var1: LD_PRELOAD=/apps/gcc-8/gcc-8.3.0/lib64/libstdc++.so
 #    10.2.0: 
 #      module: gcc/10.2.0
 #      netcdf: netcdf/4.7.4
