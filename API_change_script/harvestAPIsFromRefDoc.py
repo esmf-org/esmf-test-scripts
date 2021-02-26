@@ -9,7 +9,7 @@
 def gather_source_files(esmfdir):
     import os
 
-    DIR = 'doc/ESMF_refdoc'
+    DIR = '/doc/ESMF_refdoc'
     REFDOCDIR = esmfdir + DIR
 
     if not os.path.exists(REFDOCDIR):
