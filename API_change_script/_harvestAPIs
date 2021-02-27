@@ -23,7 +23,7 @@ export name="`echo $TAG2 | sed 's#/#_#'`"
 cd $ESMF_DIR
 git fetch --all
 git fetch --all --tags
-git checkout tags/$TAG1 -b Branch_Tag
+git checkout tags/$TAG1 -b $Branch_Tag
 #git checkout tags/$TAG1
 git branch -a
 make doc
