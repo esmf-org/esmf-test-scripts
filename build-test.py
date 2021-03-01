@@ -31,6 +31,9 @@ def create_header(file_out,scheduler,filename,time,account,partition,queue,cpn,c
     file_out.write("#PBS -l walltime={}\n".format(time))
     file_out.write("export JOBID=$PBS_JOBID\n")
     file_out.write("cd {}\n".format(os.getcwd()))
+  elif(scheduler == "None"): 
+    file_out.write("#!/bin/bash -l\n")
+    file_out.write("export JOBID=12345\n")
 
 def main(argv):
   mypath=pathlib.Path(__file__).parent.absolute()
@@ -44,20 +47,25 @@ def main(argv):
       https = True
     else: 
       https = False
-    account = machine_list['account']
+    if("account" in machine_list):
+      account = machine_list['account']
+    else: 
+      account = "None"
     if("partition" in machine_list):
       partition = machine_list['partition']
     else: 
       partition = "None"
-    account = machine_list['account']
-    queue = machine_list['queue']
+    if("queue" in machine_list):
+      queue = machine_list['queue']
+    else: 
+      queue = "None"
     cpn = machine_list['corespernode']
     scheduler = machine_list['scheduler']
     if("branch" in machine_list):
       branch = machine_list['branch']
     else: 
       branch = "develop"
-    account = machine_list['account']
+
     build_types = ['O','g']
     script_dir=os.getcwd()
     if("cluster" in machine_list):
@@ -141,6 +149,10 @@ def main(argv):
               modulecmd = "module load {} \nmodule list\n".format(machine_list[comp]['versions'][ver]['hdf5'])
             fb.write(modulecmd)
             ft.write(modulecmd)
+            if("netcdf-fortran" in machine_list[comp]['versions'][ver]):
+              modulecmd = "module load {} \nmodule list\n".format(machine_list[comp]['versions'][ver]['netcdf-fortran'])
+            fb.write(modulecmd)
+            ft.write(modulecmd)
 
             if("extramodule" in machine_list[comp]):
               fb.write("\nmodule load {}\n".format(machine_list[comp]['extramodule']))
@@ -213,11 +225,11 @@ def main(argv):
               batch_build = "qsub {}".format(filename)
               print(batch_build)
               jobnum= subprocess.check_output(batch_build,shell=True).strip().decode('utf-8').split(".")[0]
+              print("Submitting batch_build with command: {}, jobnum is {}".format(batch_build,jobnum))
               monitor_cmd = \
                    "python3 {}/get-results.py {} {} {} {} {} {} {} {}".format(mypath,jobnum,subdir,machine_name,scheduler,script_dir,artifacts_root,mpiver,branch)
               print(monitor_cmd)
               proc = subprocess.Popen(monitor_cmd, shell=True, stdin=None, stdout=None, stderr=None, close_fds=True)
-              print("Submitting batch_build with command: {}, jobnum is {}".format(batch_build,jobnum))
               # submit the second job to be dependent on the first
               batch_test = "qsub -W depend=afterok:{} {}".format(jobnum,t_filename)
               print("Submitting test_batch with command: {}".format(batch_test))
@@ -226,6 +238,19 @@ def main(argv):
                    "python3 {}/get-results.py {} {} {} {} {} {} {} {}".format(mypath,jobnum,subdir,machine_name,scheduler,script_dir,artifacts_root,mpiver,branch)
               print(monitor_cmd)
               proc = subprocess.Popen(monitor_cmd, shell=True)
+            elif(scheduler == "None"):
+              os.system("chmod +x {}".format(filename))
+              os.system("./{}".format(filename))
+              jobnum = 12345
+              monitor_cmd = \
+                   "python3 {}/get-results.py {} {} {} {} {} {} {} {}".format(mypath,jobnum,subdir,machine_name,scheduler,script_dir,artifacts_root,mpiver,branch)
+              os.system("{}".format(monitor_cmd))
+              os.system("chmod +x {}".format(t_filename))
+              os.system("./{}".format(t_filename))
+              monitor_cmd = \
+                   "python3 {}/get-results.py {} {} {} {} {} {} {} {}".format(mypath,jobnum,subdir,machine_name,scheduler,script_dir,artifacts_root,mpiver,branch)
+              os.system("{}".format(monitor_cmd))
+              
             os.chdir("..")
   
   

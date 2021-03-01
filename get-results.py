@@ -12,6 +12,8 @@ def checkqueue(jobid,scheduler):
       queue_query = "sacct -j {} | head -n 3 | tail -n 1 | awk -F ' ' '{{print $6}}'".format(jobid)
     elif(scheduler == "pbs"):
       queue_query = "qstat -H {} | tail -n 1 | awk -F ' +' '{{print $10}}'".format(jobid)
+    elif(scheduler == "None"):
+      return True
     else:
       sys.exit("unsupported job scheduler")
     try:
