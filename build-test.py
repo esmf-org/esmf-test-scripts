@@ -33,7 +33,7 @@ def create_header(file_out,scheduler,filename,time,account,partition,queue,cpn,c
     file_out.write("cd {}\n".format(os.getcwd()))
   elif(scheduler == "None"): 
     file_out.write("#!/bin/bash -l\n")
-    file_out.write("export JOBID=12345\n")
+    file_out.write("export JOBID=$1\n")
 
 def main(argv):
   mypath=pathlib.Path(__file__).parent.absolute()
@@ -240,13 +240,14 @@ def main(argv):
               proc = subprocess.Popen(monitor_cmd, shell=True)
             elif(scheduler == "None"):
               os.system("chmod +x {}".format(filename))
-              os.system("./{}".format(filename))
               jobnum = 12345
+              os.system("./{} {}".format(filename,jobnum))
               monitor_cmd = \
                    "python3 {}/get-results.py {} {} {} {} {} {} {} {}".format(mypath,jobnum,subdir,machine_name,scheduler,script_dir,artifacts_root,mpiver,branch)
+              jobnum = 12346
               os.system("{}".format(monitor_cmd))
               os.system("chmod +x {}".format(t_filename))
-              os.system("./{}".format(t_filename))
+              os.system("./{} {}".format(t_filename,jobnum))
               monitor_cmd = \
                    "python3 {}/get-results.py {} {} {} {} {} {} {} {}".format(mypath,jobnum,subdir,machine_name,scheduler,script_dir,artifacts_root,mpiver,branch)
               os.system("{}".format(monitor_cmd))
