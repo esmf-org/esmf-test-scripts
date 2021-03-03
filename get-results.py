@@ -70,7 +70,7 @@ def copy_artifacts(build_dir,artifacts_root,machine_name,mpiversion,oe_filelist,
     os.system(cp_cmd)
   if(build_stage):
 #   print('just the build stage')
-    git_cmd = "cd {};git pull -X theirs --no-edit origin master;git add {}/{};git commit -a -m\'update for build {} on {} [ci skip]\';git push origin master".format(artifacts_root,branch,machine_name,build_basename,machine_name)
+    git_cmd = "cd {};git pull -X theirs --no-edit origin main;git add {}/{};git commit -a -m\'update for build {} on {} [ci skip]\';git push origin main".format(artifacts_root,branch,machine_name,build_basename,machine_name)
     os.system(git_cmd)
     return
   example_artifacts = glob.glob('{}/examples/examples{}/*/*.Log'.format(build_dir,build_type))
@@ -116,7 +116,7 @@ def copy_artifacts(build_dir,artifacts_root,machine_name,mpiversion,oe_filelist,
     cmd = 'cp {} {}/lib'.format(afile,outpath)
     os.system(cmd)
 
-  git_cmd = "cd {};git pull -X theirs --no-edit origin master;git add {}/{};git commit -a -m\'update for test {} on {} [ci skip]\';git push origin master".format(artifacts_root,branch,machine_name,build_basename,machine_name)
+  git_cmd = "cd {};git pull -X theirs --no-edit origin main;git add {}/{};git commit -a -m\'update for test {} on {} [ci skip]\';git push origin main".format(artifacts_root,branch,machine_name,build_basename,machine_name)
   os.system(git_cmd)
   return
 
