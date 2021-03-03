@@ -5,6 +5,7 @@ git-https: True
 scheduler: pbs
 corespernode: 128
 compiler: [intel]
+branch: release/8.1.0
 intel:
      versions: 
        2019.3: 

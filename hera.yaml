@@ -4,7 +4,8 @@ queue: batch
 partition: hera
 scheduler: slurm
 corespernode: 40
-compiler: [pgi]
+compiler:[intel,gfortran,pgi]
+branch: release/8.1.0
 intel:
      versions: 
        18.0.4: 
@@ -20,13 +21,21 @@ gfortran:
        9.2.0: 
          compiler: gnu/9.2.0
          netcdf: netcdf/4.7.2
+         hdf5: hdf5/1.10.5
          mpi:
            openmpi: 
              module: openmpi/3.1.4
            mpiuni: 
              module: None
+         extra_env_vars: 
+            var1: ESMF_NETCDF=split
+            var2: ESMF_NETCDF_INCLUDE=$NETCDF/include
+            var3: ESMF_NETCDF_LIBPATH=$NETCDF/lib
+            var4: ESMF_NETCDF_LIBS="-lnetcdff -lnetcdf -lhdf5_hl -lhdf5 $HDF5ExtraLibs"
+            var5: ESMF_NETCDF=nc-config
 pgi:
-     test_time: 2:30:00
+     test_time: "2:30:00"
+     build_time: "2:00:00"
      versions: 
        18.10: 
          compiler: pgi/18.10 

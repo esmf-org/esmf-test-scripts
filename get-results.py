@@ -12,6 +12,8 @@ def checkqueue(jobid,scheduler):
       queue_query = "sacct -j {} | head -n 3 | tail -n 1 | awk -F ' ' '{{print $6}}'".format(jobid)
     elif(scheduler == "pbs"):
       queue_query = "qstat -H {} | tail -n 1 | awk -F ' +' '{{print $10}}'".format(jobid)
+    elif(scheduler == "None"):
+      return True
     else:
       sys.exit("unsupported job scheduler")
     try:
@@ -31,15 +33,15 @@ def checkqueue(jobid,scheduler):
       return True
     return False
 
-def copy_artifacts(build_dir,artifacts_root,machine_name,mpiversion,oe_filelist,jobid,scheduler):
+def copy_artifacts(build_dir,artifacts_root,machine_name,mpiversion,oe_filelist,jobid,scheduler,branch):
 
   build_basename = os.path.basename(build_dir)
   [compiler, version, mpiflavor, build_type] = build_basename.split("_")
   #get the full path for placment of artifacts
   if(mpiversion != "None"):
-    outpath = "{}/develop/{}/{}/{}/{}/{}/{}".format(artifacts_root,machine_name,compiler,version,build_type,mpiflavor,mpiversion)
+    outpath = "{}/{}/{}/{}/{}/{}/{}/{}".format(artifacts_root,branch,machine_name,compiler,version,build_type,mpiflavor,mpiversion)
   else:
-    outpath = "{}/develop/{}/{}/{}/{}/{}".format(artifacts_root,machine_name,compiler,version,build_type,mpiflavor)
+    outpath = "{}/{}/{}/{}/{}/{}/{}".format(artifacts_root,branch,machine_name,compiler,version,build_type,mpiflavor)
   #Make directories, if they aren't already there
   cmd = 'mkdir -p {}/examples'.format(outpath)
   os.system(cmd)
@@ -53,6 +55,7 @@ def copy_artifacts(build_dir,artifacts_root,machine_name,mpiversion,oe_filelist,
   os.system(cmd)
   #copy/rename the stdout/stderr files to artifacts out directory
   build_stage = False
+  print("oe filelist is {}".format(oe_filelist))
   if(oe_filelist == []):
     return
   for cfile in oe_filelist:
@@ -60,13 +63,14 @@ def copy_artifacts(build_dir,artifacts_root,machine_name,mpiversion,oe_filelist,
       nfile = os.path.basename(re.sub('{}'.format(jobid), '', cfile))
     else:
       nfile = os.path.basename(re.sub('_{}'.format(jobid), '', cfile))
+    print("nfile is {}".format(nfile))
     if(nfile.find("build") != -1): # this is just the build job, so no test artifacts yet
       build_stage = True
     cp_cmd = 'cp {} {}/out/{}'.format(cfile,outpath,nfile)
     os.system(cp_cmd)
   if(build_stage):
 #   print('just the build stage')
-    git_cmd = "cd {};git pull -X theirs --no-edit;git add develop/{};git commit -a -m\'update for {} on {}\';git push origin python".format(artifacts_root,machine_name,build_basename,machine_name)
+    git_cmd = "cd {};git pull -X theirs --no-edit;git add {}/{};git commit -a -m\'update for build {} on {} [ci skip]\';git push origin master".format(artifacts_root,branch,machine_name,build_basename,machine_name)
     os.system(git_cmd)
     return
   example_artifacts = glob.glob('{}/examples/examples{}/*/*.Log'.format(build_dir,build_type))
@@ -112,7 +116,7 @@ def copy_artifacts(build_dir,artifacts_root,machine_name,mpiversion,oe_filelist,
     cmd = 'cp {} {}/lib'.format(afile,outpath)
     os.system(cmd)
 
-  git_cmd = "cd {};git pull -X theirs;git add develop/{};git commit -a -m\'update for {} on {}\';git push origin python".format(artifacts_root,machine_name,build_basename,machine_name)
+  git_cmd = "cd {};git pull -X theirs --no-edit;git add {}/{};git commit -a -m\'update for test {} on {} [ci skip]\';git push origin master".format(artifacts_root,branch,machine_name,build_basename,machine_name)
   os.system(git_cmd)
   return
 
@@ -125,6 +129,7 @@ def main(argv):
   test_root_dir = sys.argv[5]
   artifacts_root = sys.argv[6]
   mpiver = sys.argv[7]
+  branch = sys.argv[8]
   start_time = time.time()
   seconds = 14400
   build_dir = '{}/{}'.format(test_root_dir,build_basename)
@@ -133,8 +138,9 @@ def main(argv):
     elapsed_time = current_time - start_time
     job_done = checkqueue(jobid,scheduler)
     if(job_done):
-      oe_filelist = glob.glob('{}/{}/*{}*'.format(test_root_dir,build_basename,jobid))
-      copy_artifacts(build_dir,artifacts_root,machine_name,mpiver,oe_filelist,jobid,scheduler)
+#     oe_filelist = glob.glob('{}/{}/*{}*'.format(test_root_dir,build_basename,jobid))
+      oe_filelist = glob.glob('{}/{}/*_{}.log'.format(test_root_dir,build_basename,jobid))
+      copy_artifacts(build_dir,artifacts_root,machine_name,mpiver,oe_filelist,jobid,scheduler,branch)
       break
     time.sleep(30)
 
