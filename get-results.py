@@ -43,15 +43,15 @@ def copy_artifacts(build_dir,artifacts_root,machine_name,mpiversion,oe_filelist,
   else:
     outpath = "{}/{}/{}/{}/{}/{}/{}".format(artifacts_root,branch,machine_name,compiler,version,build_type,mpiflavor)
   #Make directories, if they aren't already there
-  cmd = 'mkdir -p {}/examples'.format(outpath)
+  cmd = 'mkdir -p {}/examples; git rm {}/examples/*;git rm {}/*'.format(outpath,outpath,outpath)
   os.system(cmd)
-  cmd = 'mkdir -p {}/apps'.format(outpath)
+  cmd = 'mkdir -p {}/apps;git rm {}/apps/*'.format(outpath,outpath)
   os.system(cmd)
-  cmd = 'mkdir -p {}/test'.format(outpath)
+  cmd = 'mkdir -p {}/test;git rm {}/test/*'.format(outpath,outpath)
   os.system(cmd)
-  cmd = 'mkdir -p {}/lib'.format(outpath)
+  cmd = 'mkdir -p {}/lib;git rm {}/lib/*'.format(outpath,outpath)
   os.system(cmd)
-  cmd = 'mkdir -p {}/out'.format(outpath)
+  cmd = 'mkdir -p {}/out;git rm {}/out/*'.format(outpath,outpath)
   os.system(cmd)
   #copy/rename the stdout/stderr files to artifacts out directory
   build_stage = False
@@ -70,7 +70,7 @@ def copy_artifacts(build_dir,artifacts_root,machine_name,mpiversion,oe_filelist,
     os.system(cp_cmd)
   if(build_stage):
 #   print('just the build stage')
-    git_cmd = "cd {};git pull -X theirs --no-edit origin master;git add {}/{};git commit -a -m\'update for build {} on {} [ci skip]\';git push origin master".format(artifacts_root,branch,machine_name,build_basename,machine_name)
+    git_cmd = "cd {};git pull -X theirs --no-edit origin main;git add {}/{};git commit -a -m\'update for build {} on {} [ci skip]\';git push origin main".format(artifacts_root,branch,machine_name,build_basename,machine_name)
     os.system(git_cmd)
     return
   example_artifacts = glob.glob('{}/examples/examples{}/*/*.Log'.format(build_dir,build_type))
@@ -88,7 +88,7 @@ def copy_artifacts(build_dir,artifacts_root,machine_name,mpiversion,oe_filelist,
 
   cwd = os.getcwd()
   os.chdir(build_dir)
-  build_hash = subprocess.check_output('git log --pretty=format:\'%h\' -n 1',shell=True).strip().decode('utf-8')
+  build_hash = subprocess.check_output('git describe --tags',shell=True).strip().decode('utf-8')
   os.chdir(cwd)
   esmfmkfile = glob.glob('{}/lib/lib{}/*/esmf.mk'.format(build_dir,build_type))
   build_time = datetime.datetime.fromtimestamp(os.path.getmtime(esmfmkfile[0]))
@@ -116,7 +116,7 @@ def copy_artifacts(build_dir,artifacts_root,machine_name,mpiversion,oe_filelist,
     cmd = 'cp {} {}/lib'.format(afile,outpath)
     os.system(cmd)
 
-  git_cmd = "cd {};git pull -X theirs --no-edit origin master;git add {}/{};git commit -a -m\'update for test {} on {} [ci skip]\';git push origin master".format(artifacts_root,branch,machine_name,build_basename,machine_name)
+  git_cmd = "cd {};git pull -X theirs --no-edit origin main;git add {}/{};git commit -a -m\'update for test {} on {} [ci skip]\';git push origin main".format(artifacts_root,branch,machine_name,build_basename,machine_name)
   os.system(git_cmd)
   return
 
