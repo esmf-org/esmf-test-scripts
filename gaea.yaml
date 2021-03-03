@@ -5,10 +5,10 @@ partition: None
 cluster: c4
 scheduler: slurm
 corespernode: 24
-compiler: [intel]
+compiler: [gfortran]
 intel:
      versions: 
-       2017.5: 
+       2019.5: 
          compiler: intel/19.0.5.281          
          netcdf: cray-netcdf/4.6.3.2
          mpi:
