@@ -1,6 +1,6 @@
 machine: discover
-#account: s2326
-account: j1100
+account: s2326
+#account: j1100
 queue: allnccs
 partition: compute
 scheduler: slurm
