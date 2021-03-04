@@ -102,6 +102,7 @@ def copy_artifacts(build_dir,artifacts_root,machine_name,mpiversion,oe_filelist,
   build_hash = subprocess.check_output('git describe --tags',shell=True).strip().decode('utf-8')
   os.chdir(cwd)
   esmfmkfile = glob.glob('{}/lib/lib{}/*/esmf.mk'.format(build_dir,build_type))
+  print("esmfmkfile is {}".format(esmfmkfile))
   build_time = datetime.datetime.fromtimestamp(os.path.getmtime(esmfmkfile[0]))
   summary_file = open('{}/summary.dat'.format(outpath),"w")
   summary_file.write('\n===================================================================\n')
