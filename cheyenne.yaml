@@ -7,21 +7,21 @@ corespernode: 36
 compiler: [gfortran]
 branch: release/8.1.0
 gfortran:
-     versions: 
-       7.4.0: 
-         compiler: gnu/7.4.0
-         netcdf: netcdf/4.7.3
-         mpi:
-           openmpi: 
-             module: openmpi/4.0.3
-       9.1.0: 
-         compiler: gnu/9.1.0
-         netcdf: netcdf/4.7.3
-         mpi:
-           openmpi: 
-             module: openmpi/4.0.5
-           mpt: 
-             module: mpt/2.22
+#    versions: 
+#      7.4.0: 
+#        compiler: gnu/7.4.0
+#        netcdf: netcdf/4.7.3
+#        mpi:
+#          openmpi: 
+#            module: openmpi/4.0.3
+#      9.1.0: 
+#        compiler: gnu/9.1.0
+#        netcdf: netcdf/4.7.3
+#        mpi:
+#          openmpi: 
+#            module: openmpi/4.0.5
+#          mpt: 
+#            module: mpt/2.22
        10.1.0: 
          compiler: gnu/10.1.0
          netcdf: netcdf/4.7.3
