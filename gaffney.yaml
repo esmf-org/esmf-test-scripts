@@ -10,7 +10,8 @@ intel:
          compiler: compiler/intel/18.0.1.163 
          netcdf: cse/netcdf/4.7.0
          mpi:
-#          intelmpi: compiler/intelmpi/18.0.1.163 
+           intelmpi: 
+             module: compiler/intelmpi/18.0.1.163 
            mpt: 
              module: mpt/2.20
      extramodule: cseinit-intel
