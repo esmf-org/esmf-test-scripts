@@ -137,6 +137,7 @@ def main(argv):
               for mpi_var in mpidict[key]['mpi_env_vars']:
                 fb.write("export {}\n".format(mpidict[key]['mpi_env_vars'][mpi_var]))
                 ft.write("export {}\n".format(mpidict[key]['mpi_env_vars'][mpi_var]))
+
             if(machine_list[comp]['versions'][ver]['netcdf'] == "None" ):
               modulecmd = "module load {} {} \nmodule list\n".format(machine_list[comp]['versions'][ver]['compiler'],mpiflavor['module'])
               esmfnetcdf = "\n"
@@ -147,18 +148,19 @@ def main(argv):
             ft.write(modulecmd)
             fb.write(esmfnetcdf)
             ft.write(esmfnetcdf)
+
             if("hdf5" in machine_list[comp]['versions'][ver]):
               modulecmd = "module load {} \nmodule list\n".format(machine_list[comp]['versions'][ver]['hdf5'])
-            fb.write(modulecmd)
-            ft.write(modulecmd)
+              fb.write(modulecmd)
+              ft.write(modulecmd)
             if("netcdf-fortran" in machine_list[comp]['versions'][ver]):
               modulecmd = "module load {} \nmodule list\n".format(machine_list[comp]['versions'][ver]['netcdf-fortran'])
-            fb.write(modulecmd)
-            ft.write(modulecmd)
+              fb.write(modulecmd)
+              ft.write(modulecmd)
 
-            if("extramodule" in machine_list[comp]):
-              fb.write("\nmodule load {}\n".format(machine_list[comp]['extramodule']))
-              ft.write("\nmodule load {}\n".format(machine_list[comp]['extramodule']))
+#           if("extramodule" in machine_list[comp]):
+#             fb.write("\nmodule load {}\n".format(machine_list[comp]['extramodule']))
+#             ft.write("\nmodule load {}\n".format(machine_list[comp]['extramodule']))
 
             if('extra_env_vars' in machine_list[comp]['versions'][ver]):
                 for var in machine_list[comp]['versions'][ver]['extra_env_vars']:
