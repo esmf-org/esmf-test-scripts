@@ -7,7 +7,7 @@ corespernode: 36
 compiler: [gfortran]
 branch: release/8.1.0
 gfortran:
-#    versions: 
+    versions: 
 #      7.4.0: 
 #        compiler: gnu/7.4.0
 #        netcdf: netcdf/4.7.3
@@ -29,8 +29,8 @@ gfortran:
            openmpi: 
              module: openmpi/4.0.5
            mpt: 
-             module: mpt/2.22
+             module: mpt/2.23
          extra_env_vars: 
            var1: ESMF_F90COMPILEOPTS="-fallow-argument-mismatch -fallow-invalid-boz"
-     unloadmodule: "intel mpt"
+    unloadmodule: "intel mpt"
        
