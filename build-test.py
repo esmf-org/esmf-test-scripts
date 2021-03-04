@@ -9,8 +9,6 @@ import pathlib
 def create_header(file_out,scheduler,filename,time,account,partition,queue,cpn,cluster):
   if(scheduler == "slurm"): 
     file_out.write("#!/bin/sh -l\n")
-    file_out.write("#SBATCH -o {}_%j.o\n".format(filename))
-    file_out.write("#SBATCH -e {}_%j.e\n".format(filename))
     file_out.write("#SBATCH --account={}\n".format(account))
     if(partition != "None"):
       file_out.write("#SBATCH --partition={}\n".format(partition))
@@ -21,14 +19,21 @@ def create_header(file_out,scheduler,filename,time,account,partition,queue,cpn,c
     file_out.write("#SBATCH --ntasks-per-node={}\n".format(cpn))
     file_out.write("#SBATCH --time={}\n".format(time))
     file_out.write("#SBATCH --exclusive\n")
+    file_out.write("#SBATCH --output {}_%j.o\n".format(filename))
+    file_out.write("export JOBID=$SLURM_JOBID\n")
   elif(scheduler == "pbs"): 
     file_out.write("#!/bin/sh -l\n")
     file_out.write("#PBS -N {}\n".format(filename))
+    file_out.write("#PBS -j oe\n")
     file_out.write("#PBS -q {}\n".format(queue))
     file_out.write("#PBS -A {}\n".format(account))
     file_out.write("#PBS -l select=1:ncpus={}:mpiprocs={}\n".format(cpn,cpn))
     file_out.write("#PBS -l walltime={}\n".format(time))
+    file_out.write("export JOBID=$PBS_JOBID\n")
     file_out.write("cd {}\n".format(os.getcwd()))
+  elif(scheduler == "None"): 
+    file_out.write("#!/bin/bash -l\n")
+    file_out.write("export JOBID=$1\n")
 
 def main(argv):
   mypath=pathlib.Path(__file__).parent.absolute()
@@ -42,15 +47,25 @@ def main(argv):
       https = True
     else: 
       https = False
-    account = machine_list['account']
+    if("account" in machine_list):
+      account = machine_list['account']
+    else: 
+      account = "None"
     if("partition" in machine_list):
       partition = machine_list['partition']
     else: 
       partition = "None"
-    account = machine_list['account']
-    queue = machine_list['queue']
+    if("queue" in machine_list):
+      queue = machine_list['queue']
+    else: 
+      queue = "None"
     cpn = machine_list['corespernode']
     scheduler = machine_list['scheduler']
+    if("branch" in machine_list):
+      branch = machine_list['branch']
+    else: 
+      branch = "develop"
+
     build_types = ['O','g']
     script_dir=os.getcwd()
     if("cluster" in machine_list):
@@ -71,15 +86,15 @@ def main(argv):
             if(not(os.path.isdir(subdir))):
                if(https == True):
 #                cmdstring = "git clone -b ESMF_8_1_0_beta_snapshot_43 https://github.com/esmf-org/esmf {}".format(subdir)
-                 cmdstring = "git clone -b develop https://github.com/esmf-org/esmf {}".format(subdir)
+                 cmdstring = "git clone -b {} https://github.com/esmf-org/esmf {}".format(branch,subdir)
                else:
 #                cmdstring = "git clone -b ESMF_8_1_0_beta_snapshot_43 git@github.com:esmf-org/esmf {}".format(subdir)
-                 cmdstring = "git clone -b develop git@github.com:esmf-org/esmf {}".format(subdir)
+                 cmdstring = "git clone -b {} git@github.com:esmf-org/esmf {}".format(branch,subdir)
                status= subprocess.check_output(cmdstring,shell=True).strip().decode('utf-8')
             os.chdir(subdir)
-            os.system("rm -rf *.e *.o *bat.e* *bat.o*")
-            os.system("git checkout develop")
-            os.system("git pull origin develop")
+            os.system("rm -rf *.e *.o *bat.e* *bat.o* *.log")
+            os.system("git remote update; git checkout {}".format(branch))
+            os.system("git pull origin {}".format(branch))
             filename = 'build-{}_{}_{}_{}.bat'.format(comp,ver,key,build_type)
             t_filename = 'test-{}_{}_{}_{}.bat'.format(comp,ver,key,build_type)
             fb = open(filename, "w")
@@ -96,7 +111,8 @@ def main(argv):
             else:
               test_time = "1:00:00"
             create_header(ft,scheduler,t_filename,test_time,account,partition,queue,cpn,cluster)
-  
+            fb.write("set -x\n") 
+            ft.write("set -x\n")
             if("unloadmodule" in machine_list[comp]):
               fb.write("\nmodule unload {}\n".format(machine_list[comp]['unloadmodule']))
               ft.write("\nmodule unload {}\n".format(machine_list[comp]['unloadmodule']))
@@ -104,6 +120,40 @@ def main(argv):
               modulepath = machine_list['modulepath']
               fb.write("\nmodule use {}\n".format(machine_list['modulepath']))
               ft.write("\nmodule use {}\n".format(machine_list['modulepath']))
+            if("extramodule" in machine_list[comp]):
+              fb.write("\nmodule load {}\n".format(machine_list[comp]['extramodule']))
+              ft.write("\nmodule load {}\n".format(machine_list[comp]['extramodule']))
+
+            mpiflavor = mpidict[key]
+            if(mpiflavor['module'] == "None"):
+              mpiflavor['module'] = ""
+              cmdstring = "export ESMF_MPIRUN={}/src/Infrastructure/stubs/mpiuni/mpirun\n".format(os.getcwd())
+              fb.write(cmdstring)
+              ft.write(cmdstring)
+
+            if("mpi_env_vars" in mpidict[key]):
+              for mpi_var in mpidict[key]['mpi_env_vars']:
+                fb.write("export {}\n".format(mpidict[key]['mpi_env_vars'][mpi_var]))
+                ft.write("export {}\n".format(mpidict[key]['mpi_env_vars'][mpi_var]))
+            if(machine_list[comp]['versions'][ver]['netcdf'] == "None" ):
+              modulecmd = "module load {} {} \nmodule list\n".format(machine_list[comp]['versions'][ver]['compiler'],mpiflavor['module'])
+              esmfnetcdf = "\n"
+            else:
+              modulecmd = "module load {} {} {}\nmodule list\n".format(machine_list[comp]['versions'][ver]['compiler'],mpiflavor['module'],machine_list[comp]['versions'][ver]['netcdf'])
+              esmfnetcdf = "export ESMF_NETCDF=nc-config\n"
+            fb.write(modulecmd)
+            ft.write(modulecmd)
+            fb.write(esmfnetcdf)
+            ft.write(esmfnetcdf)
+            if("hdf5" in machine_list[comp]['versions'][ver]):
+              modulecmd = "module load {} \nmodule list\n".format(machine_list[comp]['versions'][ver]['hdf5'])
+            fb.write(modulecmd)
+            ft.write(modulecmd)
+            if("netcdf-fortran" in machine_list[comp]['versions'][ver]):
+              modulecmd = "module load {} \nmodule list\n".format(machine_list[comp]['versions'][ver]['netcdf-fortran'])
+            fb.write(modulecmd)
+            ft.write(modulecmd)
+
             if("extramodule" in machine_list[comp]):
               fb.write("\nmodule load {}\n".format(machine_list[comp]['extramodule']))
               ft.write("\nmodule load {}\n".format(machine_list[comp]['extramodule']))
@@ -118,10 +168,6 @@ def main(argv):
                   fb.write("{}\n".format(machine_list[comp]['versions'][ver]['extra_commands'][cmd]))
                   ft.write("{}\n".format(machine_list[comp]['versions'][ver]['extra_commands'][cmd]))
 
-            mpiflavor = mpidict[key]
-            if(mpiflavor == "None"):
-              mpiflavor = ""
-  
             cmdstring = "export ESMF_DIR={}\n".format(os.getcwd())
             fb.write(cmdstring)
             ft.write(cmdstring)
@@ -138,65 +184,74 @@ def main(argv):
             fb.write(cmdstring)
             ft.write(cmdstring)
   
-            cmdstring="export ESMF_TEST_EXHAUSTIVE='ON'\n"
+            cmdstring="export ESMF_TESTEXHAUSTIVE='ON'\n"
             fb.write(cmdstring)
             ft.write(cmdstring)
   
-            cmdstring="export ESMF_TEST_WITHTHREADS='ON'\n"
+            cmdstring="export ESMF_TESTWITHTHREADS='ON'\n"
             fb.write(cmdstring)
             ft.write(cmdstring)
 
-            if("mpi_env_vars" in mpidict[key]):
-              for mpi_var in mpidict[key]['mpi_env_vars']:
-                fb.write("export {}\n".format(mpidict[key]['mpi_env_vars'][mpi_var]))
-                ft.write("export {}\n".format(mpidict[key]['mpi_env_vars'][mpi_var]))
-            if(machine_list[comp]['versions'][ver]['netcdf'] == "None" ):
-              modulecmd = "module load {} {} \nmodule list\n".format(machine_list[comp]['versions'][ver]['compiler'],mpiflavor['module'])
-            else:
-              modulecmd = "module load {} {} {}\nmodule list\n".format(machine_list[comp]['versions'][ver]['compiler'],mpiflavor['module'],machine_list[comp]['versions'][ver]['netcdf'])
-            mpimodule = mpiflavor['module']
-            if(mpimodule == "None"):
-              mpiver = "None"
-            else:
-              mpiver = mpiflavor['module'].split('/')[-1]
-            fb.write(modulecmd)
-            ft.write(modulecmd)
-            cmdstring = "make -j {} clean\nmake -j {}\n\n".format(cpn,cpn)
+            cmdstring = "make -j {} clean |& tee clean_$JOBID.log \nmake -j {} |& tee build_$JOBID.log\n\n".format(cpn,cpn)
             fb.write(cmdstring)
-            cmdstring = "make all_tests\n\n"
+
+            cmdstring = "make install |& tee install_$JOBID.log \nmake all_tests |& tee test_$JOBID.log \n\n"
             ft.write(cmdstring)
   
             fb.close()
             ft.close()
+
+            mpimodule = mpiflavor['module']
+            if(mpimodule == ""):
+              mpiver = "None"
+            else:
+              mpiver = mpiflavor['module'].split('/')[-1]
+  
             if(scheduler == "slurm"):
               batch_build = "sbatch {}".format(filename)
               print(batch_build)
               jobnum= subprocess.check_output(batch_build,shell=True).strip().decode('utf-8').split()[3]
-              monitor_cmd = "python3 {}/get-results.py {} {} {} {} {} {} {}".format(mypath,jobnum,subdir,machine_name,scheduler,script_dir,artifacts_root,mpiver)
+              monitor_cmd = "python3 {}/get-results.py {} {} {} {} {} {} {} {}".format(mypath,jobnum,subdir,machine_name,scheduler,script_dir,artifacts_root,mpiver,branch)
+              print(monitor_cmd)
               proc = subprocess.Popen(monitor_cmd, shell=True, stdin=None, stdout=None, stderr=None, close_fds=True)
               # submit the second job to be dependent on the first
               batch_test = "sbatch --depend=afterok:{} {}".format(jobnum,t_filename)
               print("Submitting test_batch with command: {}".format(batch_test))
               jobnum= subprocess.check_output(batch_test,shell=True).strip().decode('utf-8').split()[3]
-              monitor_cmd = "python3 {}/get-results.py {} {} {} {} {} {} {}".format(mypath,jobnum,subdir,machine_name,scheduler,script_dir,artifacts_root,mpiver)
+              monitor_cmd = "python3 {}/get-results.py {} {} {} {} {} {} {} {}".format(mypath,jobnum,subdir,machine_name,scheduler,script_dir,artifacts_root,mpiver,branch)
+              print(monitor_cmd)
               proc = subprocess.Popen(monitor_cmd, shell=True, stdin=None, stdout=None, stderr=None, close_fds=True)
             elif(scheduler == "pbs"):
               batch_build = "qsub {}".format(filename)
               print(batch_build)
               jobnum= subprocess.check_output(batch_build,shell=True).strip().decode('utf-8').split(".")[0]
+              print("Submitting batch_build with command: {}, jobnum is {}".format(batch_build,jobnum))
               monitor_cmd = \
-                   "python3 {}/get-results.py {} {} {} {} {} {} {}".format(mypath,jobnum,subdir,machine_name,scheduler,script_dir,artifacts_root,mpiver)
+                   "python3 {}/get-results.py {} {} {} {} {} {} {} {}".format(mypath,jobnum,subdir,machine_name,scheduler,script_dir,artifacts_root,mpiver,branch)
               print(monitor_cmd)
               proc = subprocess.Popen(monitor_cmd, shell=True, stdin=None, stdout=None, stderr=None, close_fds=True)
-              print("Submitting batch_build with command: {}, jobnum is {}".format(batch_build,jobnum))
               # submit the second job to be dependent on the first
               batch_test = "qsub -W depend=afterok:{} {}".format(jobnum,t_filename)
               print("Submitting test_batch with command: {}".format(batch_test))
               jobnum= subprocess.check_output(batch_test,shell=True).strip().decode('utf-8').split(".")[0]
               monitor_cmd = \
-                   "python3 {}/get-results.py {} {} {} {} {} {} {}".format(mypath,jobnum,subdir,machine_name,scheduler,script_dir,artifacts_root,mpiver)
+                   "python3 {}/get-results.py {} {} {} {} {} {} {} {}".format(mypath,jobnum,subdir,machine_name,scheduler,script_dir,artifacts_root,mpiver,branch)
               print(monitor_cmd)
               proc = subprocess.Popen(monitor_cmd, shell=True)
+            elif(scheduler == "None"):
+              os.system("chmod +x {}".format(filename))
+              jobnum = 12345
+              os.system("./{} {}".format(filename,jobnum))
+              monitor_cmd = \
+                   "python3 {}/get-results.py {} {} {} {} {} {} {} {}".format(mypath,jobnum,subdir,machine_name,scheduler,script_dir,artifacts_root,mpiver,branch)
+              jobnum = 12346
+              os.system("{}".format(monitor_cmd))
+              os.system("chmod +x {}".format(t_filename))
+              os.system("./{} {}".format(t_filename,jobnum))
+              monitor_cmd = \
+                   "python3 {}/get-results.py {} {} {} {} {} {} {} {}".format(mypath,jobnum,subdir,machine_name,scheduler,script_dir,artifacts_root,mpiver,branch)
+              os.system("{}".format(monitor_cmd))
+              
             os.chdir("..")
   
   
