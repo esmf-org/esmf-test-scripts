@@ -196,10 +196,10 @@ def main(argv):
             fb.write(cmdstring)
             ft.write(cmdstring)
 
-            cmdstring = "make -j {} clean |& tee clean_$JOBID.log \nmake -j {} |& tee build_$JOBID.log\n\n".format(cpn,cpn)
+            cmdstring = "make -j {} clean 2>&1 tee clean_$JOBID.log \nmake -j {} 2>&1 tee build_$JOBID.log\n\n".format(cpn,cpn)
             fb.write(cmdstring)
 
-            cmdstring = "make install |& tee install_$JOBID.log \nmake all_tests |& tee test_$JOBID.log \n\n"
+            cmdstring = "make install 2>&1 tee install_$JOBID.log \nmake all_tests 2>&1 tee test_$JOBID.log \n\n"
             ft.write(cmdstring)
   
             fb.close()
