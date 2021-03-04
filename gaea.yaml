@@ -5,7 +5,7 @@ partition: None
 cluster: c4
 scheduler: slurm
 corespernode: 24
-compiler: [intel]
+compiler: [intel,gfortran]
 branch: release/8.1.0
 intel:
      versions: 
@@ -22,6 +22,7 @@ intel:
            var2: ESMF_NETCDF_LIBS="-lnetcdff -lnetcdf"
 
 gfortran:
+     test_time: 2:00:00
      versions: 
        8.3.0: 
          compiler: gcc/8.3.0
