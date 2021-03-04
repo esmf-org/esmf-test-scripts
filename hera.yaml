@@ -4,7 +4,8 @@ queue: batch
 partition: hera
 scheduler: slurm
 corespernode: 40
-compiler:[intel,gfortran,pgi]
+#compiler: [intel,gfortran,pgi]
+compiler: [gfortran]
 branch: release/8.1.0
 intel:
      versions: 
