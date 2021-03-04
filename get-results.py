@@ -24,7 +24,7 @@ def checkqueue(jobid,scheduler):
         else:
           return False
       if(scheduler == "slurm"):
-        if((result == "COMPLETED") or (result == "FAILED") or (result == "CANCELLED")): #could check for R and Q to see if it is running or waiting
+        if((result == "COMPLETED") or (result == "TIMEOUT") or (result == "FAILED") or (result == "CANCELLED")): #could check for R and Q to see if it is running or waiting
           return True
         else:
           return False
@@ -43,15 +43,15 @@ def copy_artifacts(build_dir,artifacts_root,machine_name,mpiversion,oe_filelist,
   else:
     outpath = "{}/{}/{}/{}/{}/{}/{}".format(artifacts_root,branch,machine_name,compiler,version,build_type,mpiflavor)
   #Make directories, if they aren't already there
-  cmd = 'mkdir -p {}/examples; git rm {}/examples/*;git rm {}/*'.format(outpath,outpath,outpath)
+  cmd = 'mkdir -p {}/examples; rm {}/examples/*; rm {}/*'.format(outpath,outpath,outpath)
   os.system(cmd)
-  cmd = 'mkdir -p {}/apps;git rm {}/apps/*'.format(outpath,outpath)
+  cmd = 'mkdir -p {}/apps; rm {}/apps/*'.format(outpath,outpath)
   os.system(cmd)
-  cmd = 'mkdir -p {}/test;git rm {}/test/*'.format(outpath,outpath)
+  cmd = 'mkdir -p {}/test; rm {}/test/*'.format(outpath,outpath)
   os.system(cmd)
-  cmd = 'mkdir -p {}/lib;git rm {}/lib/*'.format(outpath,outpath)
+  cmd = 'mkdir -p {}/lib; rm {}/lib/*'.format(outpath,outpath)
   os.system(cmd)
-  cmd = 'mkdir -p {}/out;git rm {}/out/*'.format(outpath,outpath)
+  cmd = 'mkdir -p {}/out; rm {}/out/*'.format(outpath,outpath)
   os.system(cmd)
   #copy/rename the stdout/stderr files to artifacts out directory
   build_stage = False
@@ -69,25 +69,33 @@ def copy_artifacts(build_dir,artifacts_root,machine_name,mpiversion,oe_filelist,
     cp_cmd = 'cp {} {}/out/{}'.format(cfile,outpath,nfile)
     os.system(cp_cmd)
   if(build_stage):
-#   print('just the build stage')
+    print('just the build stage')
     git_cmd = "cd {};git pull -X theirs --no-edit origin main;git add {}/{};git commit -a -m\'update for build {} on {} [ci skip]\';git push origin main".format(artifacts_root,branch,machine_name,build_basename,machine_name)
     os.system(git_cmd)
     # pull and push again to make sure it gets updated
     git_cmd = "cd {};git pull -X theirs --no-edit origin main;git push origin main".format(artifacts_root,branch,machine_name,build_basename,machine_name)
     os.system(git_cmd)
     return
+  print("globbing examples")
   example_artifacts = glob.glob('{}/examples/examples{}/*/*.Log'.format(build_dir,build_type))
   example_artifacts.extend(glob.glob('{}/examples/examples{}/*/*.stdout'.format(build_dir,build_type)))
 # get information from example results file to accumulate
   ex_result_file =glob.glob('{}/examples/examples{}/*/*results'.format(build_dir,build_type))
-  example_results= subprocess.check_output('cat {}'.format(ex_result_file[0]),shell=True).strip().decode('utf-8')
-
+  if(len(ex_result_file) > 0):
+    example_results= subprocess.check_output('cat {}'.format(ex_result_file[0]),shell=True).strip().decode('utf-8')
+  else:
+    example_results="No examples ran"
 # get information from test results files to accumulate
   test_artifacts = glob.glob('{}/test/test{}/*/*.Log'.format(build_dir,build_type))
   test_artifacts.extend(glob.glob('{}/test/test{}/*/*.stdout'.format(build_dir,build_type)))
-  test_result_files =glob.glob('{}/test/test{}/*/*results'.format(build_dir,build_type))
-  test_results= subprocess.check_output('cat {} {}'.format(test_result_files[0],test_result_files[1]),shell=True).strip().decode('utf-8')
-  [system_results, unit_results] = test_results.split("\n")
+  try:
+    unit_results= subprocess.check_output('cat {}/test/test{}/*/unit_tests_results'.format(build_dir,build_type),shell=True).strip().decode('utf-8')
+  except:
+    unit_results="unit tests did not complete"
+  try:
+    system_results= subprocess.check_output('cat {}/test/test{}/*/system_tests_results'.format(build_dir,build_type),shell=True).strip().decode('utf-8')
+  except:
+    system_results="system tests did not complete"
 
   cwd = os.getcwd()
   os.chdir(build_dir)
@@ -105,7 +113,7 @@ def copy_artifacts(build_dir,artifacts_root,machine_name,mpiversion,oe_filelist,
   example_results = re.sub(' FAIL',' \tFAIL',example_results)
   summary_file.write('unit test results   \t{}\n'.format(unit_results))
   summary_file.write('system test results \t{}\n'.format(system_results))
-  summary_file.write('example est results \t{}\n\n'.format(example_results))
+  summary_file.write('example test results \t{}\n\n'.format(example_results))
   summary_file.write('\n===================================================================\n')
   summary_file.close()
 # return
@@ -119,6 +127,7 @@ def copy_artifacts(build_dir,artifacts_root,machine_name,mpiversion,oe_filelist,
     cmd = 'cp {} {}/lib'.format(afile,outpath)
     os.system(cmd)
 
+  print("trying git command from {}".format(artifacts_root))
   git_cmd = "cd {};git pull -X theirs --no-edit origin main;git add {}/{};git commit -a -m\'update for test {} on {} [ci skip]\';git push origin main".format(artifacts_root,branch,machine_name,build_basename,machine_name)
   os.system(git_cmd)
   # pull and push again to make sure it gets updated
