@@ -59,10 +59,7 @@ def copy_artifacts(build_dir,artifacts_root,machine_name,mpiversion,oe_filelist,
   if(oe_filelist == []):
     return
   for cfile in oe_filelist:
-    if(scheduler == "pbs"):
-      nfile = os.path.basename(re.sub('{}'.format(jobid), '', cfile))
-    else:
-      nfile = os.path.basename(re.sub('_{}'.format(jobid), '', cfile))
+    nfile = os.path.basename(re.sub('_{}'.format(jobid), '', cfile))
     print("nfile is {}".format(nfile))
     if(nfile.find("build") != -1): # this is just the build job, so no test artifacts yet
       build_stage = True
