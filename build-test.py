@@ -29,9 +29,7 @@ def create_header(file_out,scheduler,filename,time,account,partition,queue,cpn,c
     file_out.write("#PBS -A {}\n".format(account))
     file_out.write("#PBS -l select=1:ncpus={}:mpiprocs={}\n".format(cpn,cpn))
     file_out.write("#PBS -l walltime={}\n".format(time))
-    file_out.write("IFS='\.'\n")
-    file_out.write("read -a strarr <<< \"$PBS_JOBID\"\n")
-    file_out.write("JOBID=${strarr[0]}\n")
+    file_out.write("JOBID=\"`echo $PBS_JOBID | cut -d. -f1`\"\n\n")
     file_out.write("cd {}\n".format(os.getcwd()))
   elif(scheduler == "None"): 
     file_out.write("#!{} -l\n".format(bash))
@@ -143,13 +141,15 @@ def main(argv):
                 ft.write("export {}\n".format(mpidict[key]['mpi_env_vars'][mpi_var]))
 
             if(machine_list[comp]['versions'][ver]['netcdf'] == "None" ):
-              modulecmd = "module load {} {} \nmodule list\n".format(machine_list[comp]['versions'][ver]['compiler'],mpiflavor['module'])
+              modulecmd_b = "module load {} {} \nmodule list >& module-build.log\n".format(machine_list[comp]['versions'][ver]['compiler'],mpiflavor['module'])
+              modulecmd_t = "module load {} {} \nmodule list >& module-test.log\n".format(machine_list[comp]['versions'][ver]['compiler'],mpiflavor['module'])
               esmfnetcdf = "\n"
             else:
-              modulecmd = "module load {} {} {}\nmodule list\n".format(machine_list[comp]['versions'][ver]['compiler'],mpiflavor['module'],machine_list[comp]['versions'][ver]['netcdf'])
+              modulecmd_b = "module load {} {} {}\nmodule list >& module-build.log\n".format(machine_list[comp]['versions'][ver]['compiler'],mpiflavor['module'],machine_list[comp]['versions'][ver]['netcdf'])
+              modulecmd_t = "module load {} {} {}\nmodule list >& module-test.log\n".format(machine_list[comp]['versions'][ver]['compiler'],mpiflavor['module'],machine_list[comp]['versions'][ver]['netcdf'])
               esmfnetcdf = "export ESMF_NETCDF=nc-config\n"
-            fb.write(modulecmd)
-            ft.write(modulecmd)
+            fb.write(modulecmd_b)
+            ft.write(modulecmd_t)
             fb.write(esmfnetcdf)
             ft.write(esmfnetcdf)
 

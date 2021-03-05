@@ -9,8 +9,8 @@ intel:
      versions: 
        2018.1: 
          compiler: compiler/intel/18.0.1.163 
-         netcdf: cse/netcdf/4.7.0
-         netcdf-fortran: cse/netcdf-fortran/4.5.3
+         netcdf: cse/netcdf/latest
+         netcdf-fortran: cse/netcdf_fortran/latest
          mpi:
            intelmpi: 
              module: compiler/intelmpi/18.0.1.163 
