@@ -29,7 +29,9 @@ def create_header(file_out,scheduler,filename,time,account,partition,queue,cpn,c
     file_out.write("#PBS -A {}\n".format(account))
     file_out.write("#PBS -l select=1:ncpus={}:mpiprocs={}\n".format(cpn,cpn))
     file_out.write("#PBS -l walltime={}\n".format(time))
-    file_out.write("export JOBID=$PBS_JOBID\n")
+    file_out.write("IFS='\.'\n")
+    file_out.write("read -a strarr <<< \"$PBS_JOBID\"\n")
+    file_out.write("JOBID=${strarr[0]}\n")
     file_out.write("cd {}\n".format(os.getcwd()))
   elif(scheduler == "None"): 
     file_out.write("#!/bin/bash -l\n")
@@ -135,6 +137,7 @@ def main(argv):
               for mpi_var in mpidict[key]['mpi_env_vars']:
                 fb.write("export {}\n".format(mpidict[key]['mpi_env_vars'][mpi_var]))
                 ft.write("export {}\n".format(mpidict[key]['mpi_env_vars'][mpi_var]))
+
             if(machine_list[comp]['versions'][ver]['netcdf'] == "None" ):
               modulecmd = "module load {} {} \nmodule list\n".format(machine_list[comp]['versions'][ver]['compiler'],mpiflavor['module'])
               esmfnetcdf = "\n"
@@ -145,18 +148,19 @@ def main(argv):
             ft.write(modulecmd)
             fb.write(esmfnetcdf)
             ft.write(esmfnetcdf)
+
             if("hdf5" in machine_list[comp]['versions'][ver]):
               modulecmd = "module load {} \nmodule list\n".format(machine_list[comp]['versions'][ver]['hdf5'])
-            fb.write(modulecmd)
-            ft.write(modulecmd)
+              fb.write(modulecmd)
+              ft.write(modulecmd)
             if("netcdf-fortran" in machine_list[comp]['versions'][ver]):
               modulecmd = "module load {} \nmodule list\n".format(machine_list[comp]['versions'][ver]['netcdf-fortran'])
-            fb.write(modulecmd)
-            ft.write(modulecmd)
+              fb.write(modulecmd)
+              ft.write(modulecmd)
 
-            if("extramodule" in machine_list[comp]):
-              fb.write("\nmodule load {}\n".format(machine_list[comp]['extramodule']))
-              ft.write("\nmodule load {}\n".format(machine_list[comp]['extramodule']))
+#           if("extramodule" in machine_list[comp]):
+#             fb.write("\nmodule load {}\n".format(machine_list[comp]['extramodule']))
+#             ft.write("\nmodule load {}\n".format(machine_list[comp]['extramodule']))
 
             if('extra_env_vars' in machine_list[comp]['versions'][ver]):
                 for var in machine_list[comp]['versions'][ver]['extra_env_vars']:
