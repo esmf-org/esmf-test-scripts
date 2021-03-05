@@ -1,0 +1,680 @@
+  Beginning Test, file ESMF_AttributeFBundleUTest.F90, line 180
+  Beginning Test, file ESMF_AttributeFBundleUTest.F90, line 180
+  NUMBER_OF_PROCESSORS           4
+  NUMBER_OF_PROCESSORS           4
+  Beginning Test, file ESMF_AttributeFBundleUTest.F90, line 180
+  NUMBER_OF_PROCESSORS           4
+  Beginning Test, file ESMF_AttributeFBundleUTest.F90, line 180
+  NUMBER_OF_PROCESSORS           4
+  PASS  Adding an empty value character Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 208
+  PASS  Adding an empty value character Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 208
+  PASS  Adding an empty value character Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 208
+  PASS  Adding an empty value character Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 208
+  PASS  Getting an empty value character Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 217
+  PASS  Getting an empty value character Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 217
+  PASS  Getting an empty value character Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 217
+  PASS  Adding an empty value character Attribute to mobj Test 2, ESMF_AttributeFBundleUTest.F90, line 229
+  PASS  Getting an empty value character Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 217
+  PASS  Adding an empty value character Attribute to mobj Test 2, ESMF_AttributeFBundleUTest.F90, line 229
+  PASS  Adding an empty value character Attribute to mobj Test 2, ESMF_AttributeFBundleUTest.F90, line 229
+  PASS  Adding an empty value character Attribute to mobj Test 2, ESMF_AttributeFBundleUTest.F90, line 229
+  PASS  Getting an empty value character Attribute from mobj Test 2, ESMF_AttributeFBundleUTest.F90, line 238
+  PASS  Getting an empty value character Attribute from mobj Test 2, ESMF_AttributeFBundleUTest.F90, line 238
+  PASS  Getting an empty value character Attribute from mobj Test 2, ESMF_AttributeFBundleUTest.F90, line 238
+  PASS  Getting an empty value character Attribute from mobj Test 2, ESMF_AttributeFBundleUTest.F90, line 238
+  PASS  Adding a long value character Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 255
+  PASS  Adding a long value character Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 255
+  PASS  Adding a long value character Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 255
+  PASS  Adding a long value character Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 255
+  PASS  Use all ASCII characters as Attribute names on an Array Test, ESMF_AttributeFBundleUTest.F90, line 285
+  PASS  Use all ASCII characters as Attribute names on an Array Test, ESMF_AttributeFBundleUTest.F90, line 285
+  PASS  Use all ASCII characters as Attribute names on an Array Test, ESMF_AttributeFBundleUTest.F90, line 285
+  PASS  Use all ASCII characters as Attribute names on an Array Test, ESMF_AttributeFBundleUTest.F90, line 285
+  PASS  Getting a nonexistent Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 297
+  PASS  Getting a nonexistent Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 297
+  PASS  Getting a nonexistent Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 297
+  PASS  Getting a nonexistent Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 297
+  PASS  Adding an ESMF_I4 Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 309
+  PASS  Adding an ESMF_I4 Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 309
+  PASS  Adding an ESMF_I4 Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 309
+  PASS  Adding an ESMF_I4 Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 309
+  PASS  Getting an ESMF_I4 Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 321
+  PASS  Getting an ESMF_I4 Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 321
+  PASS  Getting an ESMF_I4 Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 321
+  PASS  Getting an ESMF_I4 Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 321
+  PASS  Removing an ESMF_I4 Attribute on mobj Test, ESMF_AttributeFBundleUTest.F90, line 329
+  PASS  Removing an ESMF_I4 Attribute on mobj Test, ESMF_AttributeFBundleUTest.F90, line 329
+  PASS  Removing an ESMF_I4 Attribute on mobj Test, ESMF_AttributeFBundleUTest.F90, line 329
+  PASS  Removing an ESMF_I4 Attribute on mobj Test, ESMF_AttributeFBundleUTest.F90, line 329
+  PASS  Removing an ESMF_I4 Attribute on mobj Test, again, ESMF_AttributeFBundleUTest.F90, line 338
+  PASS  Removing an ESMF_I4 Attribute on mobj Test, again, ESMF_AttributeFBundleUTest.F90, line 338
+  PASS  Removing an ESMF_I4 Attribute on mobj Test, again, ESMF_AttributeFBundleUTest.F90, line 338
+  PASS  Removing an ESMF_I4 Attribute on mobj Test, again, ESMF_AttributeFBundleUTest.F90, line 338
+  PASS  Getting a default ESMF_I4 Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 349
+  PASS  Getting a default ESMF_I4 Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 349
+  PASS  Getting a default ESMF_I4 Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 349
+  PASS  Getting a default ESMF_I4 Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 349
+  PASS  Getting an ESMF_I4 Attribute isPresent flag from mobj Test, ESMF_AttributeFBundleUTest.F90, line 360
+  PASS  Getting an ESMF_I4 Attribute isPresent flag from mobj Test, ESMF_AttributeFBundleUTest.F90, line 360
+  PASS  Getting an ESMF_I4 Attribute isPresent flag from mobj Test, ESMF_AttributeFBundleUTest.F90, line 360
+  PASS  Getting an ESMF_I4 Attribute isPresent flag from mobj Test, ESMF_AttributeFBundleUTest.F90, line 360
+  PASS  Getting an ESMF_I4 Attribute error from mobj Test, ESMF_AttributeFBundleUTest.F90, line 368
+  PASS  Getting an ESMF_I4 Attribute error from mobj Test, ESMF_AttributeFBundleUTest.F90, line 368
+  PASS  Getting an ESMF_I4 Attribute error from mobj Test, ESMF_AttributeFBundleUTest.F90, line 368
+  PASS  Getting an ESMF_I4 Attribute error from mobj Test, ESMF_AttributeFBundleUTest.F90, line 368
+  PASS  Adding a constant I4 Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 379
+  PASS  Adding a constant I4 Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 379
+  PASS  Adding a constant I4 Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 379
+  PASS  Adding a constant I4 Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 379
+  PASS  Getting a constant I4 Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 388
+  PASS  Getting a constant I4 Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 388
+  PASS  Getting a constant I4 Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 388
+  PASS  Getting a constant I4 Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 388
+  PASS  Adding an ESMF_I4l Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 401
+  PASS  Adding an ESMF_I4l Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 401
+  PASS  Adding an ESMF_I4l Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 401
+  PASS  Adding an ESMF_I4l Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 401
+  PASS  Getting an ESMF_I4l Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 413
+  PASS  Getting an ESMF_I4l Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 413
+  PASS  Getting an ESMF_I4l Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 413
+  PASS  Getting an ESMF_I4l Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 413
+  PASS  Removing an ESMF_I4l Attribute on mobj Test, ESMF_AttributeFBundleUTest.F90, line 421
+  PASS  Removing an ESMF_I4l Attribute on mobj Test, ESMF_AttributeFBundleUTest.F90, line 421
+  PASS  Removing an ESMF_I4l Attribute on mobj Test, ESMF_AttributeFBundleUTest.F90, line 421
+  PASS  Removing an ESMF_I4l Attribute on mobj Test, ESMF_AttributeFBundleUTest.F90, line 421
+  PASS  Removing an ESMF_I4l Attribute on mobj Test, again, ESMF_AttributeFBundleUTest.F90, line 430
+  PASS  Removing an ESMF_I4l Attribute on mobj Test, again, ESMF_AttributeFBundleUTest.F90, line 430
+  PASS  Removing an ESMF_I4l Attribute on mobj Test, again, ESMF_AttributeFBundleUTest.F90, line 430
+  PASS  Removing an ESMF_I4l Attribute on mobj Test, again, ESMF_AttributeFBundleUTest.F90, line 430
+  PASS  Getting a default ESMF_I4l Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 441
+  PASS  Getting a default ESMF_I4l Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 441
+  PASS  Getting a default ESMF_I4l Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 441
+  PASS  Getting a default ESMF_I4l Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 441
+  PASS  Getting a wrong sized default Attribute I4 list from mobj test, ESMF_AttributeFBundleUTest.F90, line 451
+  PASS  Getting a wrong sized default Attribute I4 list from mobj test, ESMF_AttributeFBundleUTest.F90, line 451
+  PASS  Getting a wrong sized default Attribute I4 list from mobj test, ESMF_AttributeFBundleUTest.F90, line 451
+  PASS  Getting a wrong sized default Attribute I4 list from mobj test, ESMF_AttributeFBundleUTest.F90, line 451
+  PASS  Getting an ESMF_I4l Attribute isPresent flag and itemCount from mobj Test, ESMF_AttributeFBundleUTest.F90, line 464
+  PASS  Getting an ESMF_I4l Attribute isPresent flag and itemCount from mobj Test, ESMF_AttributeFBundleUTest.F90, line 464
+  PASS  Getting an ESMF_I4l Attribute isPresent flag and itemCount from mobj Test, ESMF_AttributeFBundleUTest.F90, line 464
+  PASS  Getting an ESMF_I4l Attribute isPresent flag and itemCount from mobj Test, ESMF_AttributeFBundleUTest.F90, line 464
+  PASS  Getting an ESMF_I4l Attribute isPresent flag from mobj Test, ESMF_AttributeFBundleUTest.F90, line 475
+  PASS  Getting an ESMF_I4l Attribute isPresent flag from mobj Test, ESMF_AttributeFBundleUTest.F90, line 475
+  PASS  Getting an ESMF_I4l Attribute isPresent flag from mobj Test, ESMF_AttributeFBundleUTest.F90, line 475
+  PASS  Getting an ESMF_I4l Attribute isPresent flag from mobj Test, ESMF_AttributeFBundleUTest.F90, line 475
+  PASS  Getting an ESMF_I4l Attribute itemCount from mobj Test, ESMF_AttributeFBundleUTest.F90, line 487
+  PASS  Getting an ESMF_I4l Attribute itemCount from mobj Test, ESMF_AttributeFBundleUTest.F90, line 487
+  PASS  Getting an ESMF_I4l Attribute itemCount from mobj Test, ESMF_AttributeFBundleUTest.F90, line 487
+  PASS  Getting an ESMF_I4l Attribute itemCount from mobj Test, ESMF_AttributeFBundleUTest.F90, line 487
+  PASS  Getting an ESMF_I4l Attribute error from mobj Test, ESMF_AttributeFBundleUTest.F90, line 496
+  PASS  Getting an ESMF_I4l Attribute error from mobj Test, ESMF_AttributeFBundleUTest.F90, line 496
+  PASS  Getting an ESMF_I4l Attribute error from mobj Test, ESMF_AttributeFBundleUTest.F90, line 496
+  PASS  Getting an ESMF_I4l Attribute error from mobj Test, ESMF_AttributeFBundleUTest.F90, line 496
+  PASS  Adding a constant I4 list Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 508
+  PASS  Adding a constant I4 list Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 508
+  PASS  Adding a constant I4 list Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 508
+  PASS  Adding a constant I4 list Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 508
+  PASS  Getting a constant I4 list Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 518
+  PASS  Getting a constant I4 list Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 518
+  PASS  Getting a constant I4 list Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 518
+  PASS  Getting a constant I4 list Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 518
+  PASS  Adding an ESMF_I8 Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 530
+  PASS  Adding an ESMF_I8 Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 530
+  PASS  Adding an ESMF_I8 Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 530
+  PASS  Adding an ESMF_I8 Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 530
+  PASS  Getting an ESMF_I8 Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 542
+  PASS  Getting an ESMF_I8 Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 542
+  PASS  Getting an ESMF_I8 Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 542
+  PASS  Getting an ESMF_I8 Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 542
+  PASS  Removing an ESMF_I8 Attribute on mobj Test, ESMF_AttributeFBundleUTest.F90, line 550
+  PASS  Removing an ESMF_I8 Attribute on mobj Test, ESMF_AttributeFBundleUTest.F90, line 550
+  PASS  Removing an ESMF_I8 Attribute on mobj Test, ESMF_AttributeFBundleUTest.F90, line 550
+  PASS  Removing an ESMF_I8 Attribute on mobj Test, ESMF_AttributeFBundleUTest.F90, line 550
+  PASS  Removing an ESMF_I8 Attribute on mobj Test, again, ESMF_AttributeFBundleUTest.F90, line 559
+  PASS  Removing an ESMF_I8 Attribute on mobj Test, again, ESMF_AttributeFBundleUTest.F90, line 559
+  PASS  Removing an ESMF_I8 Attribute on mobj Test, again, ESMF_AttributeFBundleUTest.F90, line 559
+  PASS  Removing an ESMF_I8 Attribute on mobj Test, again, ESMF_AttributeFBundleUTest.F90, line 559
+  PASS  Getting a default ESMF_I8 Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 570
+  PASS  Getting a default ESMF_I8 Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 570
+  PASS  Getting a default ESMF_I8 Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 570
+  PASS  Getting a default ESMF_I8 Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 570
+  PASS  Getting an ESMF_I8 Attribute isPresent flag from mobj Test, ESMF_AttributeFBundleUTest.F90, line 581
+  PASS  Getting an ESMF_I8 Attribute isPresent flag from mobj Test, ESMF_AttributeFBundleUTest.F90, line 581
+  PASS  Getting an ESMF_I8 Attribute isPresent flag from mobj Test, ESMF_AttributeFBundleUTest.F90, line 581
+  PASS  Getting an ESMF_I8 Attribute isPresent flag from mobj Test, ESMF_AttributeFBundleUTest.F90, line 581
+  PASS  Getting an ESMF_I8 Attribute error from mobj Test, ESMF_AttributeFBundleUTest.F90, line 589
+  PASS  Getting an ESMF_I8 Attribute error from mobj Test, ESMF_AttributeFBundleUTest.F90, line 589
+  PASS  Getting an ESMF_I8 Attribute error from mobj Test, ESMF_AttributeFBundleUTest.F90, line 589
+  PASS  Getting an ESMF_I8 Attribute error from mobj Test, ESMF_AttributeFBundleUTest.F90, line 589
+  PASS  Adding a constant I8 Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 600
+  PASS  Adding a constant I8 Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 600
+  PASS  Adding a constant I8 Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 600
+  PASS  Adding a constant I8 Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 600
+  PASS  Adding an ESMF_I8l Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 613
+  PASS  Adding an ESMF_I8l Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 613
+  PASS  Adding an ESMF_I8l Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 613
+  PASS  Adding an ESMF_I8l Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 613
+  PASS  Getting an ESMF_I8l Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 625
+  PASS  Getting an ESMF_I8l Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 625
+  PASS  Getting an ESMF_I8l Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 625
+  PASS  Getting an ESMF_I8l Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 625
+  PASS  Removing an ESMF_I8l Attribute on mobj Test, ESMF_AttributeFBundleUTest.F90, line 633
+  PASS  Removing an ESMF_I8l Attribute on mobj Test, ESMF_AttributeFBundleUTest.F90, line 633
+  PASS  Removing an ESMF_I8l Attribute on mobj Test, ESMF_AttributeFBundleUTest.F90, line 633
+  PASS  Removing an ESMF_I8l Attribute on mobj Test, ESMF_AttributeFBundleUTest.F90, line 633
+  PASS  Removing an ESMF_I8l Attribute on mobj Test, again, ESMF_AttributeFBundleUTest.F90, line 642
+  PASS  Removing an ESMF_I8l Attribute on mobj Test, again, ESMF_AttributeFBundleUTest.F90, line 642
+  PASS  Removing an ESMF_I8l Attribute on mobj Test, again, ESMF_AttributeFBundleUTest.F90, line 642
+  PASS  Removing an ESMF_I8l Attribute on mobj Test, again, ESMF_AttributeFBundleUTest.F90, line 642
+  PASS  Getting a default ESMF_I8l Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 653
+  PASS  Getting a default ESMF_I8l Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 653
+  PASS  Getting a default ESMF_I8l Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 653
+  PASS  Getting a default ESMF_I8l Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 653
+  PASS  Getting a wrong sized default Attribute I8 list from mobj test, ESMF_AttributeFBundleUTest.F90, line 663
+  PASS  Getting a wrong sized default Attribute I8 list from mobj test, ESMF_AttributeFBundleUTest.F90, line 663
+  PASS  Getting a wrong sized default Attribute I8 list from mobj test, ESMF_AttributeFBundleUTest.F90, line 663
+  PASS  Getting a wrong sized default Attribute I8 list from mobj test, ESMF_AttributeFBundleUTest.F90, line 663
+  PASS  Getting an ESMF_I8l Attribute isPresent flag and itemCount from mobj Test, ESMF_AttributeFBundleUTest.F90, line 676
+  PASS  Getting an ESMF_I8l Attribute isPresent flag and itemCount from mobj Test, ESMF_AttributeFBundleUTest.F90, line 676
+  PASS  Getting an ESMF_I8l Attribute isPresent flag and itemCount from mobj Test, ESMF_AttributeFBundleUTest.F90, line 676
+  PASS  Getting an ESMF_I8l Attribute isPresent flag and itemCount from mobj Test, ESMF_AttributeFBundleUTest.F90, line 676
+  PASS  Getting an ESMF_I8l Attribute isPresent flag from mobj Test, ESMF_AttributeFBundleUTest.F90, line 687
+  PASS  Getting an ESMF_I8l Attribute isPresent flag from mobj Test, ESMF_AttributeFBundleUTest.F90, line 687
+  PASS  Getting an ESMF_I8l Attribute isPresent flag from mobj Test, ESMF_AttributeFBundleUTest.F90, line 687
+  PASS  Getting an ESMF_I8l Attribute isPresent flag from mobj Test, ESMF_AttributeFBundleUTest.F90, line 687
+  PASS  Getting an ESMF_I8l Attribute itemCount from mobj Test, ESMF_AttributeFBundleUTest.F90, line 699
+  PASS  Getting an ESMF_I8l Attribute itemCount from mobj Test, ESMF_AttributeFBundleUTest.F90, line 699
+  PASS  Getting an ESMF_I8l Attribute itemCount from mobj Test, ESMF_AttributeFBundleUTest.F90, line 699
+  PASS  Getting an ESMF_I8l Attribute itemCount from mobj Test, ESMF_AttributeFBundleUTest.F90, line 699
+  PASS  Getting an ESMF_I8l Attribute error from mobj Test, ESMF_AttributeFBundleUTest.F90, line 708
+  PASS  Getting an ESMF_I8l Attribute error from mobj Test, ESMF_AttributeFBundleUTest.F90, line 708
+  PASS  Getting an ESMF_I8l Attribute error from mobj Test, ESMF_AttributeFBundleUTest.F90, line 708
+  PASS  Getting an ESMF_I8l Attribute error from mobj Test, ESMF_AttributeFBundleUTest.F90, line 708
+  PASS  Adding a constant I8 list Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 720
+  PASS  Adding a constant I8 list Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 720
+  PASS  Adding a constant I8 list Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 720
+  PASS  Adding a constant I8 list Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 720
+  PASS  Adding an ESMF_R4 Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 732
+  PASS  Adding an ESMF_R4 Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 732
+  PASS  Adding an ESMF_R4 Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 732
+  PASS  Adding an ESMF_R4 Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 732
+  PASS  Getting an ESMF_R4 Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 744
+  PASS  Getting an ESMF_R4 Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 744
+  PASS  Getting an ESMF_R4 Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 744
+  PASS  Getting an ESMF_R4 Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 744
+  PASS  Removing an ESMF_R4 Attribute on mobj Test, ESMF_AttributeFBundleUTest.F90, line 752
+  PASS  Removing an ESMF_R4 Attribute on mobj Test, ESMF_AttributeFBundleUTest.F90, line 752
+  PASS  Removing an ESMF_R4 Attribute on mobj Test, ESMF_AttributeFBundleUTest.F90, line 752
+  PASS  Removing an ESMF_R4 Attribute on mobj Test, ESMF_AttributeFBundleUTest.F90, line 752
+  PASS  Removing an ESMF_R4 Attribute on mobj Test, again, ESMF_AttributeFBundleUTest.F90, line 761
+  PASS  Removing an ESMF_R4 Attribute on mobj Test, again, ESMF_AttributeFBundleUTest.F90, line 761
+  PASS  Removing an ESMF_R4 Attribute on mobj Test, again, ESMF_AttributeFBundleUTest.F90, line 761
+  PASS  Removing an ESMF_R4 Attribute on mobj Test, again, ESMF_AttributeFBundleUTest.F90, line 761
+  PASS  Getting a default ESMF_R4 Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 772
+  PASS  Getting a default ESMF_R4 Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 772
+  PASS  Getting a default ESMF_R4 Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 772
+  PASS  Getting a default ESMF_R4 Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 772
+  PASS  Getting an ESMF_R4 Attribute isPresent flag from mobj Test, ESMF_AttributeFBundleUTest.F90, line 783
+  PASS  Getting an ESMF_R4 Attribute isPresent flag from mobj Test, ESMF_AttributeFBundleUTest.F90, line 783
+  PASS  Getting an ESMF_R4 Attribute isPresent flag from mobj Test, ESMF_AttributeFBundleUTest.F90, line 783
+  PASS  Getting an ESMF_R4 Attribute isPresent flag from mobj Test, ESMF_AttributeFBundleUTest.F90, line 783
+  PASS  Getting an ESMF_R4 Attribute error from mobj Test, ESMF_AttributeFBundleUTest.F90, line 791
+  PASS  Getting an ESMF_R4 Attribute error from mobj Test, ESMF_AttributeFBundleUTest.F90, line 791
+  PASS  Getting an ESMF_R4 Attribute error from mobj Test, ESMF_AttributeFBundleUTest.F90, line 791
+  PASS  Getting an ESMF_R4 Attribute error from mobj Test, ESMF_AttributeFBundleUTest.F90, line 791
+  PASS  Adding a constant R4 Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 802
+  PASS  Adding a constant R4 Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 802
+  PASS  Adding a constant R4 Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 802
+  PASS  Adding a constant R4 Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 802
+  PASS  Getting a constant R4 Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 811
+  PASS  Getting a constant R4 Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 811
+  PASS  Getting a constant R4 Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 811
+  PASS  Getting a constant R4 Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 811
+  PASS  Adding an ESMF_R4l Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 824
+  PASS  Adding an ESMF_R4l Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 824
+  PASS  Adding an ESMF_R4l Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 824
+  PASS  Adding an ESMF_R4l Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 824
+  PASS  Getting an ESMF_R4l Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 836
+  PASS  Getting an ESMF_R4l Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 836
+  PASS  Getting an ESMF_R4l Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 836
+  PASS  Getting an ESMF_R4l Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 836
+  PASS  Removing an ESMF_R4l Attribute on mobj Test, ESMF_AttributeFBundleUTest.F90, line 844
+  PASS  Removing an ESMF_R4l Attribute on mobj Test, ESMF_AttributeFBundleUTest.F90, line 844
+  PASS  Removing an ESMF_R4l Attribute on mobj Test, ESMF_AttributeFBundleUTest.F90, line 844
+  PASS  Removing an ESMF_R4l Attribute on mobj Test, ESMF_AttributeFBundleUTest.F90, line 844
+  PASS  Removing an ESMF_R4l Attribute on mobj Test, again, ESMF_AttributeFBundleUTest.F90, line 853
+  PASS  Removing an ESMF_R4l Attribute on mobj Test, again, ESMF_AttributeFBundleUTest.F90, line 853
+  PASS  Removing an ESMF_R4l Attribute on mobj Test, again, ESMF_AttributeFBundleUTest.F90, line 853
+  PASS  Removing an ESMF_R4l Attribute on mobj Test, again, ESMF_AttributeFBundleUTest.F90, line 853
+  PASS  Getting a default ESMF_R4l Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 864
+  PASS  Getting a default ESMF_R4l Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 864
+  PASS  Getting a default ESMF_R4l Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 864
+  PASS  Getting a default ESMF_R4l Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 864
+  PASS  Getting a wrong sized default Attribute R4 list from mobj test, ESMF_AttributeFBundleUTest.F90, line 874
+  PASS  Getting a wrong sized default Attribute R4 list from mobj test, ESMF_AttributeFBundleUTest.F90, line 874
+  PASS  Getting a wrong sized default Attribute R4 list from mobj test, ESMF_AttributeFBundleUTest.F90, line 874
+  PASS  Getting a wrong sized default Attribute R4 list from mobj test, ESMF_AttributeFBundleUTest.F90, line 874
+  PASS  Getting an ESMF_R4l Attribute isPresent flag and itemCount from mobj Test, ESMF_AttributeFBundleUTest.F90, line 887
+  PASS  Getting an ESMF_R4l Attribute isPresent flag and itemCount from mobj Test, ESMF_AttributeFBundleUTest.F90, line 887
+  PASS  Getting an ESMF_R4l Attribute isPresent flag and itemCount from mobj Test, ESMF_AttributeFBundleUTest.F90, line 887
+  PASS  Getting an ESMF_R4l Attribute isPresent flag and itemCount from mobj Test, ESMF_AttributeFBundleUTest.F90, line 887
+  PASS  Getting an ESMF_R4l Attribute isPresent flag from mobj Test, ESMF_AttributeFBundleUTest.F90, line 898
+  PASS  Getting an ESMF_R4l Attribute isPresent flag from mobj Test, ESMF_AttributeFBundleUTest.F90, line 898
+  PASS  Getting an ESMF_R4l Attribute isPresent flag from mobj Test, ESMF_AttributeFBundleUTest.F90, line 898
+  PASS  Getting an ESMF_R4l Attribute isPresent flag from mobj Test, ESMF_AttributeFBundleUTest.F90, line 898
+  PASS  Getting an ESMF_R4l Attribute itemCount from mobj Test, ESMF_AttributeFBundleUTest.F90, line 910
+  PASS  Getting an ESMF_R4l Attribute itemCount from mobj Test, ESMF_AttributeFBundleUTest.F90, line 910
+  PASS  Getting an ESMF_R4l Attribute itemCount from mobj Test, ESMF_AttributeFBundleUTest.F90, line 910
+  PASS  Getting an ESMF_R4l Attribute itemCount from mobj Test, ESMF_AttributeFBundleUTest.F90, line 910
+  PASS  Getting an ESMF_R4l Attribute error from mobj Test, ESMF_AttributeFBundleUTest.F90, line 919
+  PASS  Getting an ESMF_R4l Attribute error from mobj Test, ESMF_AttributeFBundleUTest.F90, line 919
+  PASS  Getting an ESMF_R4l Attribute error from mobj Test, ESMF_AttributeFBundleUTest.F90, line 919
+  PASS  Getting an ESMF_R4l Attribute error from mobj Test, ESMF_AttributeFBundleUTest.F90, line 919
+  PASS  Adding a constant R4 list Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 931
+  PASS  Adding a constant R4 list Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 931
+  PASS  Adding a constant R4 list Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 931
+  PASS  Adding a constant R4 list Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 931
+  PASS  Getting a constant R4 list Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 941
+  PASS  Getting a constant R4 list Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 941
+  PASS  Getting a constant R4 list Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 941
+  PASS  Getting a constant R4 list Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 941
+  PASS  Adding an ESMF_R8 Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 955
+  PASS  Adding an ESMF_R8 Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 955
+  PASS  Adding an ESMF_R8 Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 955
+  PASS  Adding an ESMF_R8 Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 955
+  PASS  Getting an ESMF_R8 Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 967
+  PASS  Getting an ESMF_R8 Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 967
+  PASS  Getting an ESMF_R8 Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 967
+  PASS  Getting an ESMF_R8 Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 967
+  PASS  Removing an ESMF_R8 Attribute on mobj Test, ESMF_AttributeFBundleUTest.F90, line 975
+  PASS  Removing an ESMF_R8 Attribute on mobj Test, ESMF_AttributeFBundleUTest.F90, line 975
+  PASS  Removing an ESMF_R8 Attribute on mobj Test, ESMF_AttributeFBundleUTest.F90, line 975
+  PASS  Removing an ESMF_R8 Attribute on mobj Test, ESMF_AttributeFBundleUTest.F90, line 975
+  PASS  Removing an ESMF_R8 Attribute on mobj Test, again, ESMF_AttributeFBundleUTest.F90, line 984
+  PASS  Removing an ESMF_R8 Attribute on mobj Test, again, ESMF_AttributeFBundleUTest.F90, line 984
+  PASS  Removing an ESMF_R8 Attribute on mobj Test, again, ESMF_AttributeFBundleUTest.F90, line 984
+  PASS  Removing an ESMF_R8 Attribute on mobj Test, again, ESMF_AttributeFBundleUTest.F90, line 984
+  PASS  Getting a default ESMF_R8 Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 995
+  PASS  Getting a default ESMF_R8 Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 995
+  PASS  Getting a default ESMF_R8 Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 995
+  PASS  Getting a default ESMF_R8 Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 995
+  PASS  Getting an ESMF_R8 Attribute isPresent flag from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1006
+  PASS  Getting an ESMF_R8 Attribute isPresent flag from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1006
+  PASS  Getting an ESMF_R8 Attribute isPresent flag from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1006
+  PASS  Getting an ESMF_R8 Attribute isPresent flag from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1006
+  PASS  Getting an ESMF_R8 Attribute error from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1014
+  PASS  Getting an ESMF_R8 Attribute error from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1014
+  PASS  Getting an ESMF_R8 Attribute error from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1014
+  PASS  Getting an ESMF_R8 Attribute error from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1014
+  PASS  Adding a constant R8 Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 1025
+  PASS  Adding a constant R8 Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 1025
+  PASS  Adding a constant R8 Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 1025
+  PASS  Adding a constant R8 Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 1025
+  PASS  Adding an ESMF_R8l Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 1038
+  PASS  Adding an ESMF_R8l Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 1038
+  PASS  Adding an ESMF_R8l Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 1038
+  PASS  Adding an ESMF_R8l Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 1038
+  PASS  Getting an ESMF_R8l Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1050
+  PASS  Getting an ESMF_R8l Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1050
+  PASS  Getting an ESMF_R8l Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1050
+  PASS  Getting an ESMF_R8l Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1050
+  PASS  Removing an ESMF_R8l Attribute on mobj Test, ESMF_AttributeFBundleUTest.F90, line 1058
+  PASS  Removing an ESMF_R8l Attribute on mobj Test, ESMF_AttributeFBundleUTest.F90, line 1058
+  PASS  Removing an ESMF_R8l Attribute on mobj Test, ESMF_AttributeFBundleUTest.F90, line 1058
+  PASS  Removing an ESMF_R8l Attribute on mobj Test, ESMF_AttributeFBundleUTest.F90, line 1058
+  PASS  Removing an ESMF_R8l Attribute on mobj Test, again, ESMF_AttributeFBundleUTest.F90, line 1067
+  PASS  Removing an ESMF_R8l Attribute on mobj Test, again, ESMF_AttributeFBundleUTest.F90, line 1067
+  PASS  Removing an ESMF_R8l Attribute on mobj Test, again, ESMF_AttributeFBundleUTest.F90, line 1067
+  PASS  Removing an ESMF_R8l Attribute on mobj Test, again, ESMF_AttributeFBundleUTest.F90, line 1067
+  PASS  Getting a default ESMF_R8l Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1078
+  PASS  Getting a default ESMF_R8l Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1078
+  PASS  Getting a default ESMF_R8l Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1078
+  PASS  Getting a default ESMF_R8l Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1078
+  PASS  Getting a wrong sized default Attribute R8 list from mobj test, ESMF_AttributeFBundleUTest.F90, line 1088
+  PASS  Getting a wrong sized default Attribute R8 list from mobj test, ESMF_AttributeFBundleUTest.F90, line 1088
+  PASS  Getting a wrong sized default Attribute R8 list from mobj test, ESMF_AttributeFBundleUTest.F90, line 1088
+  PASS  Getting a wrong sized default Attribute R8 list from mobj test, ESMF_AttributeFBundleUTest.F90, line 1088
+  PASS  Getting an ESMF_R8l Attribute isPresent flag and itemCount from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1101
+  PASS  Getting an ESMF_R8l Attribute isPresent flag and itemCount from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1101
+  PASS  Getting an ESMF_R8l Attribute isPresent flag and itemCount from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1101
+  PASS  Getting an ESMF_R8l Attribute isPresent flag and itemCount from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1101
+  PASS  Getting an ESMF_R8l Attribute isPresent flag from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1112
+  PASS  Getting an ESMF_R8l Attribute isPresent flag from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1112
+  PASS  Getting an ESMF_R8l Attribute isPresent flag from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1112
+  PASS  Getting an ESMF_R8l Attribute isPresent flag from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1112
+  PASS  Getting an ESMF_R8l Attribute itemCount from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1124
+  PASS  Getting an ESMF_R8l Attribute itemCount from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1124
+  PASS  Getting an ESMF_R8l Attribute itemCount from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1124
+  PASS  Getting an ESMF_R8l Attribute itemCount from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1124
+  PASS  Getting an ESMF_R8l Attribute error from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1133
+  PASS  Getting an ESMF_R8l Attribute error from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1133
+  PASS  Getting an ESMF_R8l Attribute error from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1133
+  PASS  Getting an ESMF_R8l Attribute error from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1133
+  PASS  Adding a constant R8 list Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 1145
+  PASS  Adding a constant R8 list Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 1145
+  PASS  Adding a constant R8 list Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 1145
+  PASS  Adding a constant R8 list Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 1145
+  PASS  Adding a char Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 1158
+  PASS  Adding a char Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 1158
+  PASS  Adding a char Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 1158
+  PASS  Adding a char Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 1158
+  PASS  Getting a char Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1170
+  PASS  Getting a char Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1170
+  PASS  Getting a char Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1170
+  PASS  Getting a char Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1170
+  PASS  Removing a char Attribute on mobj Test, ESMF_AttributeFBundleUTest.F90, line 1178
+  PASS  Removing a char Attribute on mobj Test, ESMF_AttributeFBundleUTest.F90, line 1178
+  PASS  Removing a char Attribute on mobj Test, ESMF_AttributeFBundleUTest.F90, line 1178
+  PASS  Removing a char Attribute on mobj Test, ESMF_AttributeFBundleUTest.F90, line 1178
+  PASS  Removing a char Attribute on mobj Test, again, ESMF_AttributeFBundleUTest.F90, line 1187
+  PASS  Removing a char Attribute on mobj Test, again, ESMF_AttributeFBundleUTest.F90, line 1187
+  PASS  Removing a char Attribute on mobj Test, again, ESMF_AttributeFBundleUTest.F90, line 1187
+  PASS  Removing a char Attribute on mobj Test, again, ESMF_AttributeFBundleUTest.F90, line 1187
+  PASS  Getting a default char Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1198
+  PASS  Getting a default char Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1198
+  PASS  Getting a default char Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1198
+  PASS  Getting a default char Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1198
+  PASS  Getting a char Attribute isPresent flag from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1209
+  PASS  Getting a char Attribute isPresent flag from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1209
+  PASS  Getting a char Attribute isPresent flag from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1209
+  PASS  Getting a char Attribute isPresent flag from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1209
+  PASS  Getting a char Attribute error from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1216
+  PASS  Getting a char Attribute error from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1216
+  PASS  Getting a char Attribute error from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1216
+  PASS  Getting a char Attribute error from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1216
+  PASS  Adding a constant character Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 1227
+  PASS  Adding a constant character Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 1227
+  PASS  Adding a constant character Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 1227
+  PASS  Adding a constant character Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 1227
+  PASS  Getting a constant character Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1236
+  PASS  Getting a constant character Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1236
+  PASS  Getting a constant character Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1236
+  PASS  Getting a constant character Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1236
+  PASS  Setting an Attribute char list on mobj test, ESMF_AttributeFBundleUTest.F90, line 1261
+  PASS  Setting an Attribute char list on mobj test, ESMF_AttributeFBundleUTest.F90, line 1261
+  PASS  Setting an Attribute char list on mobj test, ESMF_AttributeFBundleUTest.F90, line 1261
+  PASS  Setting an Attribute char list on mobj test, ESMF_AttributeFBundleUTest.F90, line 1261
+  PASS  Getting an Attribute char list from mobj test, ESMF_AttributeFBundleUTest.F90, line 1273
+  PASS  Getting an Attribute char list from mobj test, ESMF_AttributeFBundleUTest.F90, line 1273
+  PASS  Getting an Attribute char list from mobj test, ESMF_AttributeFBundleUTest.F90, line 1273
+  PASS  Getting an Attribute char list from mobj test, ESMF_AttributeFBundleUTest.F90, line 1273
+  PASS  Removing a Character list Attribute on mobj Test, ESMF_AttributeFBundleUTest.F90, line 1281
+  PASS  Removing a Character list Attribute on mobj Test, ESMF_AttributeFBundleUTest.F90, line 1281
+  PASS  Removing a Character list Attribute on mobj Test, ESMF_AttributeFBundleUTest.F90, line 1281
+  PASS  Removing a Character list Attribute on mobj Test, ESMF_AttributeFBundleUTest.F90, line 1281
+  PASS  Removing a Character list Attribute on mobj Test, again, ESMF_AttributeFBundleUTest.F90, line 1289
+  PASS  Removing a Character list Attribute on mobj Test, again, ESMF_AttributeFBundleUTest.F90, line 1289
+  PASS  Removing a Character list Attribute on mobj Test, again, ESMF_AttributeFBundleUTest.F90, line 1289
+  PASS  Removing a Character list Attribute on mobj Test, again, ESMF_AttributeFBundleUTest.F90, line 1289
+  PASS  Getting a default Attribute char list from mobj test, ESMF_AttributeFBundleUTest.F90, line 1299
+  PASS  Getting a default Attribute char list from mobj test, ESMF_AttributeFBundleUTest.F90, line 1299
+  PASS  Getting a default Attribute char list from mobj test, ESMF_AttributeFBundleUTest.F90, line 1299
+  PASS  Getting a default Attribute char list from mobj test, ESMF_AttributeFBundleUTest.F90, line 1299
+  PASS  Getting a wrong sized default Attribute char list from mobj test, ESMF_AttributeFBundleUTest.F90, line 1308
+  PASS  Getting a wrong sized default Attribute char list from mobj test, ESMF_AttributeFBundleUTest.F90, line 1308
+  PASS  Getting a wrong sized default Attribute char list from mobj test, ESMF_AttributeFBundleUTest.F90, line 1308
+  PASS  Getting a wrong sized default Attribute char list from mobj test, ESMF_AttributeFBundleUTest.F90, line 1308
+  PASS  Getting an Attribute char list isPresent flag and itemCount from mobj test, ESMF_AttributeFBundleUTest.F90, line 1321
+  PASS  Getting an Attribute char list isPresent flag and itemCount from mobj test, ESMF_AttributeFBundleUTest.F90, line 1321
+  PASS  Getting an Attribute char list isPresent flag and itemCount from mobj test, ESMF_AttributeFBundleUTest.F90, line 1321
+  PASS  Getting an Attribute char list isPresent flag and itemCount from mobj test, ESMF_AttributeFBundleUTest.F90, line 1321
+  PASS  Getting an Attribute char list isPresent flag from mobj test, ESMF_AttributeFBundleUTest.F90, line 1332
+  PASS  Getting an Attribute char list isPresent flag from mobj test, ESMF_AttributeFBundleUTest.F90, line 1332
+  PASS  Getting an Attribute char list isPresent flag from mobj test, ESMF_AttributeFBundleUTest.F90, line 1332
+  PASS  Getting an Attribute char list isPresent flag from mobj test, ESMF_AttributeFBundleUTest.F90, line 1332
+  PASS  Getting an Attribute char list itemCount from mobj test, ESMF_AttributeFBundleUTest.F90, line 1344
+  PASS  Getting an Attribute char list itemCount from mobj test, ESMF_AttributeFBundleUTest.F90, line 1344
+  PASS  Getting an Attribute char list itemCount from mobj test, ESMF_AttributeFBundleUTest.F90, line 1344
+  PASS  Getting an Attribute char list itemCount from mobj test, ESMF_AttributeFBundleUTest.F90, line 1344
+  PASS  Getting an Attribute char list error from mobj test, ESMF_AttributeFBundleUTest.F90, line 1353
+  PASS  Getting an Attribute char list error from mobj test, ESMF_AttributeFBundleUTest.F90, line 1353
+  PASS  Getting an Attribute char list error from mobj test, ESMF_AttributeFBundleUTest.F90, line 1353
+  PASS  Getting an Attribute char list error from mobj test, ESMF_AttributeFBundleUTest.F90, line 1353
+  PASS  Adding a constant character list Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 1365
+  PASS  Adding a constant character list Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 1365
+  PASS  Adding a constant character list Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 1365
+  PASS  Adding a constant character list Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 1365
+  PASS  Getting a constant character list Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1376
+  PASS  Getting a constant character list Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1376
+  PASS  Getting a constant character list Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1376
+  PASS  Getting a constant character list Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1376
+  PASS  Setting Grid Attribute (type Fortran logical scalar), ESMF_AttributeFBundleUTest.F90, line 1390
+  PASS  Setting Grid Attribute (type Fortran logical scalar), ESMF_AttributeFBundleUTest.F90, line 1390
+  PASS  Setting Grid Attribute (type Fortran logical scalar), ESMF_AttributeFBundleUTest.F90, line 1390
+  PASS  Setting Grid Attribute (type Fortran logical scalar), ESMF_AttributeFBundleUTest.F90, line 1390
+  PASS  Getting Grid Attribute (type Fortran logical scalar), ESMF_AttributeFBundleUTest.F90, line 1403
+  PASS  Getting Grid Attribute (type Fortran logical scalar), ESMF_AttributeFBundleUTest.F90, line 1403
+  PASS  Getting Grid Attribute (type Fortran logical scalar), ESMF_AttributeFBundleUTest.F90, line 1403
+  PASS  Getting Grid Attribute (type Fortran logical scalar), ESMF_AttributeFBundleUTest.F90, line 1403
+  PASS  Removing a logical Attribute on mobj Test, ESMF_AttributeFBundleUTest.F90, line 1411
+  PASS  Removing a logical Attribute on mobj Test, ESMF_AttributeFBundleUTest.F90, line 1411
+  PASS  Removing a logical Attribute on mobj Test, ESMF_AttributeFBundleUTest.F90, line 1411
+  PASS  Removing a logical Attribute on mobj Test, ESMF_AttributeFBundleUTest.F90, line 1411
+  PASS  Removing a logical Attribute on mobj Test, again, ESMF_AttributeFBundleUTest.F90, line 1420
+  PASS  Removing a logical Attribute on mobj Test, again, ESMF_AttributeFBundleUTest.F90, line 1420
+  PASS  Removing a logical Attribute on mobj Test, again, ESMF_AttributeFBundleUTest.F90, line 1420
+  PASS  Removing a logical Attribute on mobj Test, again, ESMF_AttributeFBundleUTest.F90, line 1420
+  PASS  Getting Grid default Attribute (type Fortran logical scalar), ESMF_AttributeFBundleUTest.F90, line 1432
+  PASS  Getting Grid default Attribute (type Fortran logical scalar), ESMF_AttributeFBundleUTest.F90, line 1432
+  PASS  Getting Grid default Attribute (type Fortran logical scalar), ESMF_AttributeFBundleUTest.F90, line 1432
+  PASS  Getting Grid default Attribute (type Fortran logical scalar), ESMF_AttributeFBundleUTest.F90, line 1432
+  PASS  Getting a logical Attribute isPresent flag on mobj test, ESMF_AttributeFBundleUTest.F90, line 1443
+  PASS  Getting a logical Attribute isPresent flag on mobj test, ESMF_AttributeFBundleUTest.F90, line 1443
+  PASS  Getting a logical Attribute isPresent flag on mobj test, ESMF_AttributeFBundleUTest.F90, line 1443
+  PASS  Getting a logical Attribute isPresent flag on mobj test, ESMF_AttributeFBundleUTest.F90, line 1443
+  PASS  Getting a logical Attribute error on mobj test, ESMF_AttributeFBundleUTest.F90, line 1451
+  PASS  Getting a logical Attribute error on mobj test, ESMF_AttributeFBundleUTest.F90, line 1451
+  PASS  Getting a logical Attribute error on mobj test, ESMF_AttributeFBundleUTest.F90, line 1451
+  PASS  Getting a logical Attribute error on mobj test, ESMF_AttributeFBundleUTest.F90, line 1451
+  PASS  Adding a constant Logical Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 1462
+  PASS  Adding a constant Logical Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 1462
+  PASS  Adding a constant Logical Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 1462
+  PASS  Adding a constant Logical Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 1462
+  PASS  Getting a constant Logical Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1471
+  PASS  Getting a constant Logical Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1471
+  PASS  Getting a constant Logical Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1471
+  PASS  Getting a constant Logical Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1471
+  PASS  Setting Grid Attribute (type Fortran logical grid), ESMF_AttributeFBundleUTest.F90, line 1486
+  PASS  Setting Grid Attribute (type Fortran logical grid), ESMF_AttributeFBundleUTest.F90, line 1486
+  PASS  Setting Grid Attribute (type Fortran logical grid), ESMF_AttributeFBundleUTest.F90, line 1486
+  PASS  Setting Grid Attribute (type Fortran logical grid), ESMF_AttributeFBundleUTest.F90, line 1486
+  PASS  Getting Grid Attribute (type Fortran logical grid), ESMF_AttributeFBundleUTest.F90, line 1500
+  PASS  Getting Grid Attribute (type Fortran logical grid), ESMF_AttributeFBundleUTest.F90, line 1500
+  PASS  Getting Grid Attribute (type Fortran logical grid), ESMF_AttributeFBundleUTest.F90, line 1500
+  PASS  Getting Grid Attribute (type Fortran logical grid), ESMF_AttributeFBundleUTest.F90, line 1500
+  PASS  Removing a logical list Attribute on mobj Test, ESMF_AttributeFBundleUTest.F90, line 1508
+  PASS  Removing a logical list Attribute on mobj Test, ESMF_AttributeFBundleUTest.F90, line 1508
+  PASS  Removing a logical list Attribute on mobj Test, ESMF_AttributeFBundleUTest.F90, line 1508
+  PASS  Removing a logical list Attribute on mobj Test, ESMF_AttributeFBundleUTest.F90, line 1508
+  PASS  Removing a logical list Attribute on mobj Test, again, ESMF_AttributeFBundleUTest.F90, line 1517
+  PASS  Removing a logical list Attribute on mobj Test, again, ESMF_AttributeFBundleUTest.F90, line 1517
+  PASS  Removing a logical list Attribute on mobj Test, again, ESMF_AttributeFBundleUTest.F90, line 1517
+  PASS  Removing a logical list Attribute on mobj Test, again, ESMF_AttributeFBundleUTest.F90, line 1517
+  PASS  Getting Grid default Attribute (type Fortran logical grid), ESMF_AttributeFBundleUTest.F90, line 1529
+  PASS  Getting Grid default Attribute (type Fortran logical grid), ESMF_AttributeFBundleUTest.F90, line 1529
+  PASS  Getting Grid default Attribute (type Fortran logical grid), ESMF_AttributeFBundleUTest.F90, line 1529
+  PASS  Getting Grid default Attribute (type Fortran logical grid), ESMF_AttributeFBundleUTest.F90, line 1529
+  PASS  Getting a wrong sized default Attribute logical list from mobj test, ESMF_AttributeFBundleUTest.F90, line 1539
+  PASS  Getting a wrong sized default Attribute logical list from mobj test, ESMF_AttributeFBundleUTest.F90, line 1539
+  PASS  Getting a wrong sized default Attribute logical list from mobj test, ESMF_AttributeFBundleUTest.F90, line 1539
+  PASS  Getting a wrong sized default Attribute logical list from mobj test, ESMF_AttributeFBundleUTest.F90, line 1539
+  PASS  Getting a logical list Attribute isPresent flag and itemCount on mobj test, ESMF_AttributeFBundleUTest.F90, line 1552
+  PASS  Getting a logical list Attribute isPresent flag and itemCount on mobj test, ESMF_AttributeFBundleUTest.F90, line 1552
+  PASS  Getting a logical list Attribute isPresent flag and itemCount on mobj test, ESMF_AttributeFBundleUTest.F90, line 1552
+  PASS  Getting a logical list Attribute isPresent flag and itemCount on mobj test, ESMF_AttributeFBundleUTest.F90, line 1552
+  PASS  Getting a logical list Attribute isPresent flag on mobj test, ESMF_AttributeFBundleUTest.F90, line 1563
+  PASS  Getting a logical list Attribute isPresent flag on mobj test, ESMF_AttributeFBundleUTest.F90, line 1563
+  PASS  Getting a logical list Attribute isPresent flag on mobj test, ESMF_AttributeFBundleUTest.F90, line 1563
+  PASS  Getting a logical list Attribute isPresent flag on mobj test, ESMF_AttributeFBundleUTest.F90, line 1563
+  PASS  Getting a logical list Attribute itemCount on mobj test, ESMF_AttributeFBundleUTest.F90, line 1575
+  PASS  Getting a logical list Attribute itemCount on mobj test, ESMF_AttributeFBundleUTest.F90, line 1575
+  PASS  Getting a logical list Attribute itemCount on mobj test, ESMF_AttributeFBundleUTest.F90, line 1575
+  PASS  Getting a logical list Attribute itemCount on mobj test, ESMF_AttributeFBundleUTest.F90, line 1575
+  PASS  Getting a logical list Attribute error on mobj test, ESMF_AttributeFBundleUTest.F90, line 1585
+  PASS  Getting a logical list Attribute error on mobj test, ESMF_AttributeFBundleUTest.F90, line 1585
+  PASS  Getting a logical list Attribute error on mobj test, ESMF_AttributeFBundleUTest.F90, line 1585
+  PASS  Getting a logical list Attribute error on mobj test, ESMF_AttributeFBundleUTest.F90, line 1585
+  PASS  Adding a constant Logical list Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 1597
+  PASS  Adding a constant Logical list Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 1597
+  PASS  Adding a constant Logical list Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 1597
+  PASS  Adding a constant Logical list Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 1597
+  PASS  Getting a constant Logical list Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1608
+  PASS  Getting a constant Logical list Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1608
+  PASS  Getting a constant Logical list Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1608
+  PASS  Getting a constant Logical list Attribute from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1608
+  PASS  Adding an ESMF_I4l Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 1625
+  PASS  Adding an ESMF_I4l Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 1625
+  PASS  Adding an ESMF_I4l Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 1625
+  PASS  Adding an ESMF_I4l Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 1625
+  PASS  Getting an ESMF_I4l Attribute from mobj Test with short valueList, ESMF_AttributeFBundleUTest.F90, line 1635
+  PASS  Getting an ESMF_I4l Attribute from mobj Test with short valueList, ESMF_AttributeFBundleUTest.F90, line 1635
+  PASS  Getting an ESMF_I4l Attribute from mobj Test with short valueList, ESMF_AttributeFBundleUTest.F90, line 1635
+  PASS  Getting an ESMF_I4l Attribute from mobj Test with short valueList, ESMF_AttributeFBundleUTest.F90, line 1635
+  PASS  Getting an ESMF_I4l Attribute from mobj Test with long valueList, ESMF_AttributeFBundleUTest.F90, line 1645
+  PASS  Getting an ESMF_I4l Attribute from mobj Test with long valueList, ESMF_AttributeFBundleUTest.F90, line 1645
+  PASS  Getting an ESMF_I4l Attribute from mobj Test with long valueList, ESMF_AttributeFBundleUTest.F90, line 1645
+  PASS  Getting an ESMF_I4l Attribute from mobj Test with long valueList, ESMF_AttributeFBundleUTest.F90, line 1645
+  PASS  Adding an ESMF_I8l Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 1658
+  PASS  Adding an ESMF_I8l Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 1658
+  PASS  Adding an ESMF_I8l Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 1658
+  PASS  Adding an ESMF_I8l Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 1658
+  PASS  Getting an ESMF_I8l Attribute from mobj Test with short valueList, ESMF_AttributeFBundleUTest.F90, line 1668
+  PASS  Getting an ESMF_I8l Attribute from mobj Test with short valueList, ESMF_AttributeFBundleUTest.F90, line 1668
+  PASS  Getting an ESMF_I8l Attribute from mobj Test with short valueList, ESMF_AttributeFBundleUTest.F90, line 1668
+  PASS  Getting an ESMF_I8l Attribute from mobj Test with short valueList, ESMF_AttributeFBundleUTest.F90, line 1668
+  PASS  Getting an ESMF_I8l Attribute from mobj Test with long valueList, ESMF_AttributeFBundleUTest.F90, line 1678
+  PASS  Getting an ESMF_I8l Attribute from mobj Test with long valueList, ESMF_AttributeFBundleUTest.F90, line 1678
+  PASS  Getting an ESMF_I8l Attribute from mobj Test with long valueList, ESMF_AttributeFBundleUTest.F90, line 1678
+  PASS  Getting an ESMF_I8l Attribute from mobj Test with long valueList, ESMF_AttributeFBundleUTest.F90, line 1678
+  PASS  Adding an ESMF_R4l Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 1691
+  PASS  Adding an ESMF_R4l Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 1691
+  PASS  Adding an ESMF_R4l Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 1691
+  PASS  Adding an ESMF_R4l Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 1691
+  PASS  Getting an ESMF_R4l Attribute from mobj Test with short valueList, ESMF_AttributeFBundleUTest.F90, line 1701
+  PASS  Getting an ESMF_R4l Attribute from mobj Test with short valueList, ESMF_AttributeFBundleUTest.F90, line 1701
+  PASS  Getting an ESMF_R4l Attribute from mobj Test with short valueList, ESMF_AttributeFBundleUTest.F90, line 1701
+  PASS  Getting an ESMF_R4l Attribute from mobj Test with short valueList, ESMF_AttributeFBundleUTest.F90, line 1701
+  PASS  Getting an ESMF_R4l Attribute from mobj Test with long valueList, ESMF_AttributeFBundleUTest.F90, line 1711
+  PASS  Getting an ESMF_R4l Attribute from mobj Test with long valueList, ESMF_AttributeFBundleUTest.F90, line 1711
+  PASS  Getting an ESMF_R4l Attribute from mobj Test with long valueList, ESMF_AttributeFBundleUTest.F90, line 1711
+  PASS  Getting an ESMF_R4l Attribute from mobj Test with long valueList, ESMF_AttributeFBundleUTest.F90, line 1711
+  PASS  Adding an ESMF_R8l Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 1724
+  PASS  Adding an ESMF_R8l Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 1724
+  PASS  Adding an ESMF_R8l Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 1724
+  PASS  Adding an ESMF_R8l Attribute to mobj Test, ESMF_AttributeFBundleUTest.F90, line 1724
+  PASS  Getting an ESMF_R8l Attribute from mobj Test with short valueList, ESMF_AttributeFBundleUTest.F90, line 1734
+  PASS  Getting an ESMF_R8l Attribute from mobj Test with short valueList, ESMF_AttributeFBundleUTest.F90, line 1734
+  PASS  Getting an ESMF_R8l Attribute from mobj Test with short valueList, ESMF_AttributeFBundleUTest.F90, line 1734
+  PASS  Getting an ESMF_R8l Attribute from mobj Test with short valueList, ESMF_AttributeFBundleUTest.F90, line 1734
+  PASS  Getting an ESMF_R8l Attribute from mobj Test with long valueList, ESMF_AttributeFBundleUTest.F90, line 1744
+  PASS  Getting an ESMF_R8l Attribute from mobj Test with long valueList, ESMF_AttributeFBundleUTest.F90, line 1744
+  PASS  Getting an ESMF_R8l Attribute from mobj Test with long valueList, ESMF_AttributeFBundleUTest.F90, line 1744
+  PASS  Getting an ESMF_R8l Attribute from mobj Test with long valueList, ESMF_AttributeFBundleUTest.F90, line 1744
+  PASS  Setting an Attribute char list on mobj test, ESMF_AttributeFBundleUTest.F90, line 1756
+  PASS  Setting an Attribute char list on mobj test, ESMF_AttributeFBundleUTest.F90, line 1756
+  PASS  Setting an Attribute char list on mobj test, ESMF_AttributeFBundleUTest.F90, line 1756
+  PASS  Setting an Attribute char list on mobj test, ESMF_AttributeFBundleUTest.F90, line 1756
+  PASS  Getting an Attribute char list from mobj test with short valueList, ESMF_AttributeFBundleUTest.F90, line 1766
+  PASS  Getting an Attribute char list from mobj test with short valueList, ESMF_AttributeFBundleUTest.F90, line 1766
+  PASS  Getting an Attribute char list from mobj test with short valueList, ESMF_AttributeFBundleUTest.F90, line 1766
+  PASS  Getting an Attribute char list from mobj test with short valueList, ESMF_AttributeFBundleUTest.F90, line 1766
+  PASS  Getting a default Attribute char list from mobj test with long valueList, ESMF_AttributeFBundleUTest.F90, line 1776
+  PASS  Getting a default Attribute char list from mobj test with long valueList, ESMF_AttributeFBundleUTest.F90, line 1776
+  PASS  Getting a default Attribute char list from mobj test with long valueList, ESMF_AttributeFBundleUTest.F90, line 1776
+  PASS  Getting a default Attribute char list from mobj test with long valueList, ESMF_AttributeFBundleUTest.F90, line 1776
+  PASS  Setting an Attribute logical list on mobj test, ESMF_AttributeFBundleUTest.F90, line 1788
+  PASS  Setting an Attribute logical list on mobj test, ESMF_AttributeFBundleUTest.F90, line 1788
+  PASS  Setting an Attribute logical list on mobj test, ESMF_AttributeFBundleUTest.F90, line 1788
+  PASS  Setting an Attribute logical list on mobj test, ESMF_AttributeFBundleUTest.F90, line 1788
+  PASS  Getting an logical list Attribute from mobj Test with short valueList, ESMF_AttributeFBundleUTest.F90, line 1798
+  PASS  Getting an logical list Attribute from mobj Test with short valueList, ESMF_AttributeFBundleUTest.F90, line 1798
+  PASS  Getting an logical list Attribute from mobj Test with short valueList, ESMF_AttributeFBundleUTest.F90, line 1798
+  PASS  Getting an logical list Attribute from mobj Test with short valueList, ESMF_AttributeFBundleUTest.F90, line 1798
+  PASS  Getting an logical list Attribute from mobj Test with long valueList, ESMF_AttributeFBundleUTest.F90, line 1808
+  PASS  Getting an logical list Attribute from mobj Test with long valueList, ESMF_AttributeFBundleUTest.F90, line 1808
+  PASS  Getting an logical list Attribute from mobj Test with long valueList, ESMF_AttributeFBundleUTest.F90, line 1808
+  PASS  Getting an logical list Attribute from mobj Test with long valueList, ESMF_AttributeFBundleUTest.F90, line 1808
+  PASS  Getting the Attribute count from a mobj Test, ESMF_AttributeFBundleUTest.F90, line 1829
+  PASS  Getting the Attribute count from a mobj Test, ESMF_AttributeFBundleUTest.F90, line 1829
+  PASS  Getting the Attribute count from a mobj Test, ESMF_AttributeFBundleUTest.F90, line 1829
+  PASS  Getting the Attribute count from a mobj Test, ESMF_AttributeFBundleUTest.F90, line 1829
+  PASS  Getting Attribute info by name from a mobj Test, ESMF_AttributeFBundleUTest.F90, line 1842
+  PASS  Getting Attribute info by name from a mobj Test, ESMF_AttributeFBundleUTest.F90, line 1842
+  PASS  Getting Attribute info by name from a mobj Test, ESMF_AttributeFBundleUTest.F90, line 1842
+  PASS  Getting Attribute info by name from a mobj Test, ESMF_AttributeFBundleUTest.F90, line 1842
+  PASS  Getting Attribute info by name with isPresent flag, itemCount, and typekind from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1860
+  PASS  Getting Attribute info by name with isPresent flag, itemCount, and typekind from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1860
+  PASS  Getting Attribute info by name with isPresent flag, itemCount, and typekind from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1860
+  PASS  Getting Attribute info by name with isPresent flag, itemCount, and typekind from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1860
+  PASS  Getting Attribute info by name with typekind and itemCount from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1875
+  PASS  Getting Attribute info by name with typekind and itemCount from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1875
+  PASS  Getting Attribute info by name with typekind and itemCount from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1875
+  PASS  Getting Attribute info by name with typekind and itemCount from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1875
+  PASS  Getting Attribute info by name with typekind from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1888
+  PASS  Getting Attribute info by name with typekind from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1888
+  PASS  Getting Attribute info by name with typekind from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1888
+  PASS  Getting Attribute info by name with typekind from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1888
+  PASS  Getting Attribute info by name with no args, will fail, from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1896
+  PASS  Getting Attribute info by name with no args, will fail, from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1896
+  PASS  Getting Attribute info by name with no args, will fail, from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1896
+  PASS  Getting Attribute info by name with no args, will fail, from mobj Test, ESMF_AttributeFBundleUTest.F90, line 1896
+  PASS  Getting Attribute info by num from a mobj Test, ESMF_AttributeFBundleUTest.F90, line 1910
+  PASS  Getting Attribute info by num from a mobj Test, ESMF_AttributeFBundleUTest.F90, line 1910
+  PASS  Getting Attribute info by num from a mobj Test, ESMF_AttributeFBundleUTest.F90, line 1910
+  PASS  Getting Attribute info by num from a mobj Test, ESMF_AttributeFBundleUTest.F90, line 1910
+  PASS  Setting a constant character Attribute on mobj Test, ESMF_AttributeFBundleUTest.F90, line 1934
+  PASS  Setting a constant character Attribute on mobj Test, ESMF_AttributeFBundleUTest.F90, line 1934
+  PASS  Setting a constant character Attribute on mobj Test, ESMF_AttributeFBundleUTest.F90, line 1934
+  PASS  Setting a constant character Attribute on mobj Test, ESMF_AttributeFBundleUTest.F90, line 1934
+  PASS  Copying mdesc Attribute hierarchy ALIAS Test, ESMF_AttributeFBundleUTest.F90, line 1943
+  PASS  Copying mdesc Attribute hierarchy ALIAS Test, ESMF_AttributeFBundleUTest.F90, line 1943
+  PASS  Copying mdesc Attribute hierarchy ALIAS Test, ESMF_AttributeFBundleUTest.F90, line 1943
+  PASS  Copying mdesc Attribute hierarchy ALIAS Test, ESMF_AttributeFBundleUTest.F90, line 1943
+  PASS  Getting a constant character Attribute from the alias mobj Test, ESMF_AttributeFBundleUTest.F90, line 1952
+  PASS  Getting a constant character Attribute from the alias mobj Test, ESMF_AttributeFBundleUTest.F90, line 1952
+  PASS  Getting a constant character Attribute from the alias mobj Test, ESMF_AttributeFBundleUTest.F90, line 1952
+ imacharA
+ imacharA
+  PASS  Getting a constant character Attribute from the alias mobj Test, ESMF_AttributeFBundleUTest.F90, line 1952
+ imacharA
+ imacharA
+  PASS  Setting a constant character Attribute on mobj Test, ESMF_AttributeFBundleUTest.F90, line 1965
+  PASS  Setting a constant character Attribute on mobj Test, ESMF_AttributeFBundleUTest.F90, line 1965
+  PASS  Setting a constant character Attribute on mobj Test, ESMF_AttributeFBundleUTest.F90, line 1965
+  PASS  Setting a constant character Attribute on mobj Test, ESMF_AttributeFBundleUTest.F90, line 1965
+  PASS  Getting the .Attribute count from a mobj Test, ESMF_AttributeFBundleUTest.F90, line 1974
+  PASS  Getting the .Attribute count from a mobj Test, ESMF_AttributeFBundleUTest.F90, line 1974
+  PASS  Getting the .Attribute count from a mobj Test, ESMF_AttributeFBundleUTest.F90, line 1974
+  PASS  Getting the .Attribute count from a mobj Test, ESMF_AttributeFBundleUTest.F90, line 1974
+ count =            2
+ count =            2
+ count =            2
+ count =            2
+  PASS  Getting a constant character Attribute from the alias mobj Test, ESMF_AttributeFBundleUTest.F90, line 1985
+  PASS  Getting a constant character Attribute from the alias mobj Test, ESMF_AttributeFBundleUTest.F90, line 1985
+  PASS  Getting a constant character Attribute from the alias mobj Test, ESMF_AttributeFBundleUTest.F90, line 1985
+ imacharA                                                                                                                                                                                                                                                        
+ imacharA                                                                                                                                                                                                                                                        
+  PASS  Copying mdesc Attribute hierarchy VALUE ONE LEVEL Test, ESMF_AttributeFBundleUTest.F90, line 1995
+  PASS  Getting a constant character Attribute from the alias mobj Test, ESMF_AttributeFBundleUTest.F90, line 1985
+ imacharA                                                                                                                                                                                                                                                        
+  PASS  Copying mdesc Attribute hierarchy VALUE ONE LEVEL Test, ESMF_AttributeFBundleUTest.F90, line 1995
+ imacharA                                                                                                                                                                                                                                                        
+  PASS  Copying mdesc Attribute hierarchy VALUE ONE LEVEL Test, ESMF_AttributeFBundleUTest.F90, line 1995
+  PASS  Copying mdesc Attribute hierarchy HYBRID Test, ESMF_AttributeFBundleUTest.F90, line 2003
+  PASS  Copying mdesc Attribute hierarchy VALUE ONE LEVEL Test, ESMF_AttributeFBundleUTest.F90, line 1995
+  PASS  Copying mdesc Attribute hierarchy HYBRID Test, ESMF_AttributeFBundleUTest.F90, line 2003
+  PASS  Copy mdesc Attribute by reference to self Test, ESMF_AttributeFBundleUTest.F90, line 2012
+  PASS  Copying mdesc Attribute hierarchy HYBRID Test, ESMF_AttributeFBundleUTest.F90, line 2003
+  PASS  Copy mdesc Attribute by reference to self Test, ESMF_AttributeFBundleUTest.F90, line 2012
+  PASS  Copying mdesc Attribute hierarchy HYBRID Test, ESMF_AttributeFBundleUTest.F90, line 2003
+  PASS  Copy mdesc Attribute by reference to self Test, ESMF_AttributeFBundleUTest.F90, line 2012
+  PASS  Copy mdesc Attribute by reference to self Test, ESMF_AttributeFBundleUTest.F90, line 2012
+  Ending Test, file ESMF_AttributeFBundleUTest.F90, line 2028
+  Ending Test, file ESMF_AttributeFBundleUTest.F90, line 2028
+  Ending Test, file ESMF_AttributeFBundleUTest.F90, line 2028
+  Ending Test, file ESMF_AttributeFBundleUTest.F90, line 2028
+  PET           1  Test Elapsed Time    124.06699999999998       msec.
+  PET           2  Test Elapsed Time    132.36199999999999       msec.
+  PET           3  Test Elapsed Time    124.25000000000000       msec.
+  PET           0  Test Elapsed Time    105.34699999999999       msec.

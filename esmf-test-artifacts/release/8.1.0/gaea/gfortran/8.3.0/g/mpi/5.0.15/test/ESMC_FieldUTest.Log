@@ -1,0 +1,53 @@
+20210305 103837.782 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103837.782 INFO             PET0 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 103837.782 INFO             PET0 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 103837.782 INFO             PET0 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 103837.783 INFO             PET0 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 103837.783 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103837.783 INFO             PET0 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 103837.783 INFO             PET0 ESMF library build date/time: "Mar  5 2021" "09:44:18"
+20210305 103837.783 INFO             PET0 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g
+20210305 103837.783 INFO             PET0 ESMF_COMM                   : mpi
+20210305 103837.784 INFO             PET0 ESMF_MOAB                   : enabled
+20210305 103837.784 INFO             PET0 ESMF_LAPACK                 : enabled
+20210305 103837.784 INFO             PET0 ESMF_NETCDF                 : enabled
+20210305 103837.784 INFO             PET0 ESMF_PNETCDF                : disabled
+20210305 103837.784 INFO             PET0 ESMF_PIO                    : enabled
+20210305 103837.784 INFO             PET0 ESMF_YAMLCPP                : enabled
+20210305 103837.801 INFO             PET0 Beginning Test, file ESMC_FieldUTest.C, line 76
+20210305 103837.801 INFO             PET0 NUMBER_OF_PROCESSORS 1
+20210305 103837.803 INFO             PET0 PASS MeshCreate, ESMC_FieldUTest.C, line 88
+20210305 103837.807 INFO             PET0 PASS MeshVTKHeader, ESMC_FieldUTest.C, line 97
+20210305 103837.822 INFO             PET0 PASS MeshVTKBody, ESMC_FieldUTest.C, line 116
+20210305 103837.823 INFO             PET0 PASS MeshAddNodes, ESMC_FieldUTest.C, line 136
+20210305 103837.833 INFO             PET0 PASS MeshAddElements, ESMC_FieldUTest.C, line 146
+20210305 103837.833 INFO             PET0 PASS ArraySpecSet, ESMC_FieldUTest.C, line 154
+20210305 103837.833 INFO             PET0 PASS Set up gridToFieldMap, ESMC_FieldUTest.C, line 164
+20210305 103837.833 INFO             PET0 PASS Set up ungriddedLBound, ESMC_FieldUTest.C, line 175
+20210305 103837.833 INFO             PET0 PASS Set up ungriddedUBound, ESMC_FieldUTest.C, line 186
+20210305 103837.911 INFO             PET0 PASS Create ESMC_Field object, ESMC_FieldUTest.C, line 195
+20210305 103837.934 INFO             PET0 PASS Create ESMC_Field object, ESMC_FieldUTest.C, line 205
+20210305 103837.935 INFO             PET0 PASS Get an ESMC_Mesh object from ESMC_Field object, ESMC_FieldUTest.C, line 213
+20210305 103837.935 INFO             PET0 PASS Get an ESMC_Array object from ESMC_Field object, ESMC_FieldUTest.C, line 221
+20210305 103837.935 INFO             PET0 PASS Get a void * C pointer to data from ESMC_Field object, ESMC_FieldUTest.C, line 229
+20210305 103837.937 INFO             PET0 PASS Print an ESMC_Field object, ESMC_FieldUTest.C, line 237
+20210305 103837.938 INFO             PET0 PASS Destroy ESMC_Field object, ESMC_FieldUTest.C, line 245
+20210305 103837.938 INFO             PET0 PASS Get an ESMC_Mesh object from ESMC_Field object, ESMC_FieldUTest.C, line 253
+20210305 103837.938 INFO             PET0 PASS Get an ESMC_Array object from ESMC_Field object, ESMC_FieldUTest.C, line 261
+20210305 103837.938 INFO             PET0 PASS Get a void * C pointer to data from ESMC_Field object, ESMC_FieldUTest.C, line 269
+20210305 103837.939 INFO             PET0 PASS Print an ESMC_Field object, ESMC_FieldUTest.C, line 277
+20210305 103837.939 INFO             PET0 PASS Destroy ESMC_Field object, ESMC_FieldUTest.C, line 285
+20210305 103837.940 INFO             PET0 PASS Destroy ESMC_Mesh object, ESMC_FieldUTest.C, line 293
+20210305 103837.948 INFO             PET0 PASS Create ESMC_Field object from grid and arrayspec, ESMC_FieldUTest.C, line 307
+20210305 103837.948 INFO             PET0 PASS Create ESMC_Field object from grid and arrayspec with null optional arguments, ESMC_FieldUTest.C, line 315
+20210305 103837.948 INFO             PET0 PASS LocStreamCreateLocal, ESMC_FieldUTest.C, line 326
+20210305 103837.948 INFO             PET0 PASS LocStreamAddKeyAlloc, ESMC_FieldUTest.C, line 335
+20210305 103837.948 INFO             PET0 PASS LocStreamGetKeyPtr, ESMC_FieldUTest.C, line 343
+20210305 103837.948 INFO             PET0 PASS LocStreamAddKeyAlloc, ESMC_FieldUTest.C, line 366
+20210305 103837.948 INFO             PET0 PASS LocStreamGetKeyPtr, ESMC_FieldUTest.C, line 374
+20210305 103837.948 INFO             PET0 PASS LocStreamAddKeyAlloc, ESMC_FieldUTest.C, line 398
+20210305 103837.948 INFO             PET0 PASS LocStreamGetKeyPtr, ESMC_FieldUTest.C, line 406
+20210305 103837.949 INFO             PET0 PASS Create ESMC_Field object on LocStream using TypeKind, ESMC_FieldUTest.C, line 430
+20210305 103837.949 INFO             PET0 PASS Get a void * C pointer to data from ESMC_Field object, ESMC_FieldUTest.C, line 438
+20210305 103837.949 INFO             PET0 Ending Test, file ESMC_FieldUTest.C, line 499
+20210305 103837.949 INFO             PET0 Finalizing ESMF

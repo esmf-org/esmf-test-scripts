@@ -1,0 +1,54 @@
+  Beginning Test, file ESMF_ArraySMMFromFileUTest.F90, line 105
+  Beginning Test, file ESMF_ArraySMMFromFileUTest.F90, line 105
+  NUMBER_OF_PROCESSORS           4
+  Beginning Test, file ESMF_ArraySMMFromFileUTest.F90, line 105
+  NUMBER_OF_PROCESSORS           4
+  Beginning Test, file ESMF_ArraySMMFromFileUTest.F90, line 105
+  NUMBER_OF_PROCESSORS           4
+  NUMBER_OF_PROCESSORS           4
+  PASS  ESMF_ArraySMMFromFile Unit Test, ESMF_ArraySMMFromFileUTest.F90, line 121
+  PASS  ESMF_ArraySMMFromFile Unit Test, ESMF_ArraySMMFromFileUTest.F90, line 121
+  PASS  ESMF_ArraySMMFromFile Unit Test, ESMF_ArraySMMFromFileUTest.F90, line 121
+ test_smm_from_file_weights.nc - ESMF Offline Regridding Weight Generator
+  
+ Grid 1 min:    1.0005929367551678          Grid 1 max:    2.9994070632448326     
+ Grid 2 min:    1.0005929367551678          Grid 2 max:    2.9994070632448326     
+  
+ Maximum negative weight =    0.0000000000000000     
+ Maximum positive weight =    1.0000000000000000     
+  
+ Mean relative error     =    0.0000000000000000     
+ Maximum relative error  =    0.0000000000000000     
+ Least squares error     =    0.0000000000000000     
+  
+ Grid 1 area = 0.000000000000000
+ Grid 2 area = 0.000000000000000
+ Conservation error = 0.000000000000000
+  PASS  ESMF_ArraySMMFromFile Unit Test, ESMF_ArraySMMFromFileUTest.F90, line 121
+  PASS  ESMF_FieldSMMFromFile Unit Test, ESMF_ArraySMMFromFileUTest.F90, line 138
+  PASS  ESMF_FieldSMMFromFile Unit Test, ESMF_ArraySMMFromFileUTest.F90, line 138
+  Ending Test, file ESMF_ArraySMMFromFileUTest.F90, line 143
+  PASS  ESMF_FieldSMMFromFile Unit Test, ESMF_ArraySMMFromFileUTest.F90, line 138
+  Ending Test, file ESMF_ArraySMMFromFileUTest.F90, line 143
+  Ending Test, file ESMF_ArraySMMFromFileUTest.F90, line 143
+ test_smm_from_file_weights.nc - ESMF Offline Regridding Weight Generator
+  
+ Grid 1 min:    1.0005929367551678          Grid 1 max:    2.9994070632448326     
+ Grid 2 min:    1.0005929367551678          Grid 2 max:    2.9994070632448326     
+  
+ Maximum negative weight =    0.0000000000000000     
+ Maximum positive weight =    1.0000000000000000     
+  
+ Mean relative error     =    0.0000000000000000     
+ Maximum relative error  =    0.0000000000000000     
+ Least squares error     =    0.0000000000000000     
+  
+ Grid 1 area = 0.000000000000000
+ Grid 2 area = 0.000000000000000
+ Conservation error = 0.000000000000000
+  PASS  ESMF_FieldSMMFromFile Unit Test, ESMF_ArraySMMFromFileUTest.F90, line 138
+  Ending Test, file ESMF_ArraySMMFromFileUTest.F90, line 143
+  PET           0  Test Elapsed Time    792.40499999999986       msec.
+  PET           2  Test Elapsed Time    808.04799999999989       msec.
+  PET           1  Test Elapsed Time    804.05799999999999       msec.
+  PET           3  Test Elapsed Time    806.94799999999987       msec.

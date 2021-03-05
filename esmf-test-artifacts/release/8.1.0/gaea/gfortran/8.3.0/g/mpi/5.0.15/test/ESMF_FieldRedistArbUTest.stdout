@@ -1,0 +1,52 @@
+  Beginning Test, file ESMF_FieldRedistArbUTest.F90, line 71
+  NUMBER_OF_PROCESSORS           4
+  Beginning Test, file ESMF_FieldRedistArbUTest.F90, line 71
+  NUMBER_OF_PROCESSORS           4
+  Beginning Test, file ESMF_FieldRedistArbUTest.F90, line 71
+  NUMBER_OF_PROCESSORS           4
+  Beginning Test, file ESMF_FieldRedistArbUTest.F90, line 71
+  NUMBER_OF_PROCESSORS           4
+           0  2D Source field computational bound           1        6666        6666
+           1  2D Source field computational bound           1        6666        6666
+           2  2D Source field computational bound           1        3333        3333
+  PASS  Create a 2D src Field on a 2D arb grid, ESMF_FieldRedistArbUTest.F90, line 174
+           3  2D Source field computational bound           1        3335        3335
+  PASS  Create a 2D src Field on a 2D arb grid, ESMF_FieldRedistArbUTest.F90, line 174
+  PASS  Create a 2D src Field on a 2D arb grid, ESMF_FieldRedistArbUTest.F90, line 174
+  PASS  Create a 2D src Field on a 2D arb grid, ESMF_FieldRedistArbUTest.F90, line 174
+           2  3D Source field computational bound           1           1        3333           4        3333           4
+           3  3D Source field computational bound           1           1        3335           4        3335           4
+  PASS  Create a 3D Field on a 3D arb grid, ESMF_FieldRedistArbUTest.F90, line 213
+  PASS  Create a 3D Field on a 3D arb grid, ESMF_FieldRedistArbUTest.F90, line 213
+           1  3D Source field computational bound           1           1        6666           4        6666           4
+           0  3D Source field computational bound           1           1        6666           4        6666           4
+  PASS  Create a 3D Field on a 3D arb grid, ESMF_FieldRedistArbUTest.F90, line 213
+  PASS  Create a 3D Field on a 3D arb grid, ESMF_FieldRedistArbUTest.F90, line 213
+  PASS  Create a 2D dest Field on a 2D destination arb grid, ESMF_FieldRedistArbUTest.F90, line 268
+  PASS  Create a 2D dest Field on a 2D destination arb grid, ESMF_FieldRedistArbUTest.F90, line 268
+  PASS  Create a 2D dest Field on a 2D destination arb grid, ESMF_FieldRedistArbUTest.F90, line 268
+  PASS  Create a 2D dest Field on a 2D destination arb grid, ESMF_FieldRedistArbUTest.F90, line 268
+  PASS  Create a 3D dest Field on a 3D destination arb grid, ESMF_FieldRedistArbUTest.F90, line 293
+  PASS  Create a 3D dest Field on a 3D destination arb grid, ESMF_FieldRedistArbUTest.F90, line 293
+  PASS  Create a 3D dest Field on a 3D destination arb grid, ESMF_FieldRedistArbUTest.F90, line 293
+  PASS  Create a 3D dest Field on a 3D destination arb grid, ESMF_FieldRedistArbUTest.F90, line 293
+           2  2D Destination field computational bound           1        5000        5000
+           3  2D Destination field computational bound           1        5000        5000
+           0  2D Destination field computational bound           1        5000        5000
+           1  2D Destination field computational bound           1        5000        5000
+           2  total incorrect results            0
+  PASS  Redist the 2D src field to the 2D dest field, ESMF_FieldRedistArbUTest.F90, line 333
+           3  total incorrect results            0
+  PASS  Redist the 2D src field to the 2D dest field, ESMF_FieldRedistArbUTest.F90, line 333
+           0  total incorrect results            0
+  PASS  Redist the 2D src field to the 2D dest field, ESMF_FieldRedistArbUTest.F90, line 333
+           1  total incorrect results            0
+  PASS  Redist the 2D src field to the 2D dest field, ESMF_FieldRedistArbUTest.F90, line 333
+  Ending Test, file ESMF_FieldRedistArbUTest.F90, line 392
+  Ending Test, file ESMF_FieldRedistArbUTest.F90, line 392
+  Ending Test, file ESMF_FieldRedistArbUTest.F90, line 392
+  Ending Test, file ESMF_FieldRedistArbUTest.F90, line 392
+  PET           0  Test Elapsed Time    148.54300000000001       msec.
+  PET           1  Test Elapsed Time    153.66000000000000       msec.
+  PET           3  Test Elapsed Time    153.55899999999997       msec.
+  PET           2  Test Elapsed Time    153.36799999999999       msec.

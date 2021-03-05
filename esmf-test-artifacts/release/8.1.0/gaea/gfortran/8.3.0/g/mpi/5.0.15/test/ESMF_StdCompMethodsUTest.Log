@@ -1,0 +1,280 @@
+20210305 104151.741 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 104151.741 INFO             PET0 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 104151.741 INFO             PET0 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 104151.741 INFO             PET0 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 104151.741 INFO             PET0 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 104151.741 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 104151.741 INFO             PET0 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 104151.741 INFO             PET0 ESMF library build date/time: "Mar  5 2021" "09:44:18"
+20210305 104151.741 INFO             PET0 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g
+20210305 104151.741 INFO             PET0 ESMF_COMM                   : mpi
+20210305 104151.742 INFO             PET0 ESMF_MOAB                   : enabled
+20210305 104151.742 INFO             PET0 ESMF_LAPACK                 : enabled
+20210305 104151.742 INFO             PET0 ESMF_NETCDF                 : enabled
+20210305 104151.742 INFO             PET0 ESMF_PNETCDF                : disabled
+20210305 104151.742 INFO             PET0 ESMF_PIO                    : enabled
+20210305 104151.742 INFO             PET0 ESMF_YAMLCPP                : enabled
+20210305 104151.744 INFO             PET0  Beginning Test, file ESMF_StdCompMethodsUTest.F90, line 353
+20210305 104151.744 INFO             PET0  NUMBER_OF_PROCESSORS           4
+20210305 104151.757 INFO             PET0  PASS  Gridded Component Create() Test, ESMF_StdCompMethodsUTest.F90, line 368
+20210305 104151.761 INFO             PET0  PASS  Gridded Component SetVM() Test, ESMF_StdCompMethodsUTest.F90, line 375
+20210305 104151.761 DEBUG            PET0 service: 0  PTHREAD_STACK_MIN: 16384 bytes  stack_size: 1073741824 bytes
+20210305 104151.762 INFO             PET0  PASS  Gridded Component SetServices() Test, ESMF_StdCompMethodsUTest.F90, line 382
+20210305 104151.763 INFO             PET0  PASS  Gridded Component Initialize() Test, ESMF_StdCompMethodsUTest.F90, line 389
+20210305 104151.763 ERROR            PET0 ESMF_GridComp.F90:1397 ESMF_GridCompInitialize Arguments are incompatible  - 'timeout' argument is only allowed for connected dual components
+20210305 104151.763 INFO             PET0  PASS  Gridded Component Initialize() Test - with timeout, ESMF_StdCompMethodsUTest.F90, line 396
+20210305 104151.763 INFO             PET0  PASS  Gridded Component Run() Test, ESMF_StdCompMethodsUTest.F90, line 403
+20210305 104151.763 ERROR            PET0 ESMF_GridComp.F90:1881 ESMF_GridCompRun Arguments are incompatible  - 'timeout' argument is only allowed for connected dual components
+20210305 104151.763 INFO             PET0  PASS  Gridded Component Run() Test - with timeout, ESMF_StdCompMethodsUTest.F90, line 410
+20210305 104151.763 INFO             PET0  PASS  Gridded Component Finalize() Test, ESMF_StdCompMethodsUTest.F90, line 417
+20210305 104151.763 ERROR            PET0 ESMF_GridComp.F90:810 ESMF_GridCompFinalize Arguments are incompatible  - 'timeout' argument is only allowed for connected dual components
+20210305 104151.763 INFO             PET0  PASS  Gridded Component Finalize() Test - with timeout, ESMF_StdCompMethodsUTest.F90, line 424
+20210305 104151.763 INFO             PET0  PASS  Gridded Component WriteRestart() Test, ESMF_StdCompMethodsUTest.F90, line 431
+20210305 104151.763 ERROR            PET0 ESMF_GridComp.F90:3576 ESMF_GridCompWriteRestart Arguments are incompatible  - 'timeout' argument is only allowed for connected dual components
+20210305 104151.763 INFO             PET0  PASS  Gridded Component WriteRestart() Test - with timeout, ESMF_StdCompMethodsUTest.F90, line 438
+20210305 104151.763 INFO             PET0  PASS  Gridded Component ReadRestart() Test, ESMF_StdCompMethodsUTest.F90, line 445
+20210305 104151.763 ERROR            PET0 ESMF_GridComp.F90:1741 ESMF_GridCompReadRestart Arguments are incompatible  - 'timeout' argument is only allowed for connected dual components
+20210305 104151.763 INFO             PET0  PASS  Gridded Component ReadRestart() Test - with timeout, ESMF_StdCompMethodsUTest.F90, line 452
+20210305 104151.763 INFO             PET0  PASS  Gridded Component Destroy() Test, ESMF_StdCompMethodsUTest.F90, line 459
+20210305 104151.763 INFO             PET0  PASS  Coupler Component Create() Test, ESMF_StdCompMethodsUTest.F90, line 469
+20210305 104151.764 INFO             PET0  PASS  Coupler Component SetVM() Test, ESMF_StdCompMethodsUTest.F90, line 476
+20210305 104151.764 DEBUG            PET0 service: 0  PTHREAD_STACK_MIN: 16384 bytes  stack_size: 1073741824 bytes
+20210305 104151.764 INFO             PET0  PASS  Coupler Component SetServices() Test, ESMF_StdCompMethodsUTest.F90, line 483
+20210305 104151.764 INFO             PET0  PASS  Coupler Component Initialize() Test, ESMF_StdCompMethodsUTest.F90, line 490
+20210305 104151.764 ERROR            PET0 ESMF_CplComp.F90:1150 ESMF_CplCompInitialize Arguments are incompatible  - 'timeout' argument is only allowed for connected dual components
+20210305 104151.764 INFO             PET0  PASS  Coupler Component Initialize() Test - with timeout, ESMF_StdCompMethodsUTest.F90, line 497
+20210305 104151.764 INFO             PET0  PASS  Coupler Component Run() Test, ESMF_StdCompMethodsUTest.F90, line 504
+20210305 104151.765 ERROR            PET0 ESMF_CplComp.F90:1633 ESMF_CplCompRun Arguments are incompatible  - 'timeout' argument is only allowed for connected dual components
+20210305 104151.765 INFO             PET0  PASS  Coupler Component Run() Test - with timeout, ESMF_StdCompMethodsUTest.F90, line 511
+20210305 104151.765 INFO             PET0  PASS  Coupler Component Finalize() Test, ESMF_StdCompMethodsUTest.F90, line 518
+20210305 104151.765 ERROR            PET0 ESMF_CplComp.F90:697 ESMF_CplCompFinalize Arguments are incompatible  - 'timeout' argument is only allowed for connected dual components
+20210305 104151.765 INFO             PET0  PASS  Coupler Component Finalize() Test - with timeout, ESMF_StdCompMethodsUTest.F90, line 525
+20210305 104151.765 INFO             PET0  PASS  Coupler Component WriteRestart() Test, ESMF_StdCompMethodsUTest.F90, line 532
+20210305 104151.765 ERROR            PET0 ESMF_CplComp.F90:3199 ESMF_CplCompWriteRestart Arguments are incompatible  - 'timeout' argument is only allowed for connected dual components
+20210305 104151.765 INFO             PET0  PASS  Coupler Component WriteRestart() Test - with timeout, ESMF_StdCompMethodsUTest.F90, line 539
+20210305 104151.765 INFO             PET0  PASS  Coupler Component ReadRestart() Test, ESMF_StdCompMethodsUTest.F90, line 546
+20210305 104151.765 ERROR            PET0 ESMF_CplComp.F90:1493 ESMF_CplCompReadRestart Arguments are incompatible  - 'timeout' argument is only allowed for connected dual components
+20210305 104151.765 INFO             PET0  PASS  Coupler Component ReadRestart() Test - with timeout, ESMF_StdCompMethodsUTest.F90, line 553
+20210305 104151.765 INFO             PET0  PASS  Coupler Component Destroy() Test, ESMF_StdCompMethodsUTest.F90, line 560
+20210305 104151.765 INFO             PET0  PASS  Coupler Component Create() Test, ESMF_StdCompMethodsUTest.F90, line 570
+20210305 104151.765 INFO             PET0  PASS  Coupler Component SetVM() Test, ESMF_StdCompMethodsUTest.F90, line 577
+20210305 104151.765 DEBUG            PET0 service: 0  PTHREAD_STACK_MIN: 16384 bytes  stack_size: 1073741824 bytes
+20210305 104151.765 INFO             PET0  PASS  Coupler Component SetServices() Test, ESMF_StdCompMethodsUTest.F90, line 584
+20210305 104151.765 INFO             PET0  PASS  Coupler Component Initialize() Test, ESMF_StdCompMethodsUTest.F90, line 591
+20210305 104151.765 INFO             PET0  PASS  Coupler Component Run() Test, ESMF_StdCompMethodsUTest.F90, line 598
+20210305 104151.765 INFO             PET0  PASS  Coupler Component Finalize() Test, ESMF_StdCompMethodsUTest.F90, line 605
+20210305 104151.765 INFO             PET0  PASS  Coupler Component WriteRestart() Test, ESMF_StdCompMethodsUTest.F90, line 612
+20210305 104151.765 INFO             PET0  PASS  Coupler Component ReadRestart() Test, ESMF_StdCompMethodsUTest.F90, line 619
+20210305 104151.765 INFO             PET0  PASS  Coupler Component Destroy() Test, ESMF_StdCompMethodsUTest.F90, line 626
+20210305 104151.765 INFO             PET0  Ending Test, file ESMF_StdCompMethodsUTest.F90, line 629
+20210305 104151.765 INFO             PET0 Finalizing ESMF
+20210305 104151.741 INFO             PET1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 104151.741 INFO             PET1 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 104151.741 INFO             PET1 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 104151.741 INFO             PET1 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 104151.741 INFO             PET1 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 104151.741 INFO             PET1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 104151.741 INFO             PET1 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 104151.741 INFO             PET1 ESMF library build date/time: "Mar  5 2021" "09:44:18"
+20210305 104151.741 INFO             PET1 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g
+20210305 104151.741 INFO             PET1 ESMF_COMM                   : mpi
+20210305 104151.742 INFO             PET1 ESMF_MOAB                   : enabled
+20210305 104151.742 INFO             PET1 ESMF_LAPACK                 : enabled
+20210305 104151.742 INFO             PET1 ESMF_NETCDF                 : enabled
+20210305 104151.742 INFO             PET1 ESMF_PNETCDF                : disabled
+20210305 104151.742 INFO             PET1 ESMF_PIO                    : enabled
+20210305 104151.742 INFO             PET1 ESMF_YAMLCPP                : enabled
+20210305 104151.744 INFO             PET1  Beginning Test, file ESMF_StdCompMethodsUTest.F90, line 353
+20210305 104151.744 INFO             PET1  NUMBER_OF_PROCESSORS           4
+20210305 104151.757 INFO             PET1  PASS  Gridded Component Create() Test, ESMF_StdCompMethodsUTest.F90, line 368
+20210305 104151.761 INFO             PET1  PASS  Gridded Component SetVM() Test, ESMF_StdCompMethodsUTest.F90, line 375
+20210305 104151.761 DEBUG            PET1 service: 0  PTHREAD_STACK_MIN: 16384 bytes  stack_size: 1073741824 bytes
+20210305 104151.762 INFO             PET1  PASS  Gridded Component SetServices() Test, ESMF_StdCompMethodsUTest.F90, line 382
+20210305 104151.763 INFO             PET1  PASS  Gridded Component Initialize() Test, ESMF_StdCompMethodsUTest.F90, line 389
+20210305 104151.763 ERROR            PET1 ESMF_GridComp.F90:1397 ESMF_GridCompInitialize Arguments are incompatible  - 'timeout' argument is only allowed for connected dual components
+20210305 104151.763 INFO             PET1  PASS  Gridded Component Initialize() Test - with timeout, ESMF_StdCompMethodsUTest.F90, line 396
+20210305 104151.763 INFO             PET1  PASS  Gridded Component Run() Test, ESMF_StdCompMethodsUTest.F90, line 403
+20210305 104151.763 ERROR            PET1 ESMF_GridComp.F90:1881 ESMF_GridCompRun Arguments are incompatible  - 'timeout' argument is only allowed for connected dual components
+20210305 104151.763 INFO             PET1  PASS  Gridded Component Run() Test - with timeout, ESMF_StdCompMethodsUTest.F90, line 410
+20210305 104151.763 INFO             PET1  PASS  Gridded Component Finalize() Test, ESMF_StdCompMethodsUTest.F90, line 417
+20210305 104151.763 ERROR            PET1 ESMF_GridComp.F90:810 ESMF_GridCompFinalize Arguments are incompatible  - 'timeout' argument is only allowed for connected dual components
+20210305 104151.763 INFO             PET1  PASS  Gridded Component Finalize() Test - with timeout, ESMF_StdCompMethodsUTest.F90, line 424
+20210305 104151.763 INFO             PET1  PASS  Gridded Component WriteRestart() Test, ESMF_StdCompMethodsUTest.F90, line 431
+20210305 104151.763 ERROR            PET1 ESMF_GridComp.F90:3576 ESMF_GridCompWriteRestart Arguments are incompatible  - 'timeout' argument is only allowed for connected dual components
+20210305 104151.763 INFO             PET1  PASS  Gridded Component WriteRestart() Test - with timeout, ESMF_StdCompMethodsUTest.F90, line 438
+20210305 104151.763 INFO             PET1  PASS  Gridded Component ReadRestart() Test, ESMF_StdCompMethodsUTest.F90, line 445
+20210305 104151.763 ERROR            PET1 ESMF_GridComp.F90:1741 ESMF_GridCompReadRestart Arguments are incompatible  - 'timeout' argument is only allowed for connected dual components
+20210305 104151.763 INFO             PET1  PASS  Gridded Component ReadRestart() Test - with timeout, ESMF_StdCompMethodsUTest.F90, line 452
+20210305 104151.763 INFO             PET1  PASS  Gridded Component Destroy() Test, ESMF_StdCompMethodsUTest.F90, line 459
+20210305 104151.763 INFO             PET1  PASS  Coupler Component Create() Test, ESMF_StdCompMethodsUTest.F90, line 469
+20210305 104151.764 INFO             PET1  PASS  Coupler Component SetVM() Test, ESMF_StdCompMethodsUTest.F90, line 476
+20210305 104151.764 DEBUG            PET1 service: 0  PTHREAD_STACK_MIN: 16384 bytes  stack_size: 1073741824 bytes
+20210305 104151.764 INFO             PET1  PASS  Coupler Component SetServices() Test, ESMF_StdCompMethodsUTest.F90, line 483
+20210305 104151.764 INFO             PET1  PASS  Coupler Component Initialize() Test, ESMF_StdCompMethodsUTest.F90, line 490
+20210305 104151.764 ERROR            PET1 ESMF_CplComp.F90:1150 ESMF_CplCompInitialize Arguments are incompatible  - 'timeout' argument is only allowed for connected dual components
+20210305 104151.764 INFO             PET1  PASS  Coupler Component Initialize() Test - with timeout, ESMF_StdCompMethodsUTest.F90, line 497
+20210305 104151.764 INFO             PET1  PASS  Coupler Component Run() Test, ESMF_StdCompMethodsUTest.F90, line 504
+20210305 104151.765 ERROR            PET1 ESMF_CplComp.F90:1633 ESMF_CplCompRun Arguments are incompatible  - 'timeout' argument is only allowed for connected dual components
+20210305 104151.765 INFO             PET1  PASS  Coupler Component Run() Test - with timeout, ESMF_StdCompMethodsUTest.F90, line 511
+20210305 104151.765 INFO             PET1  PASS  Coupler Component Finalize() Test, ESMF_StdCompMethodsUTest.F90, line 518
+20210305 104151.765 ERROR            PET1 ESMF_CplComp.F90:697 ESMF_CplCompFinalize Arguments are incompatible  - 'timeout' argument is only allowed for connected dual components
+20210305 104151.765 INFO             PET1  PASS  Coupler Component Finalize() Test - with timeout, ESMF_StdCompMethodsUTest.F90, line 525
+20210305 104151.765 INFO             PET1  PASS  Coupler Component WriteRestart() Test, ESMF_StdCompMethodsUTest.F90, line 532
+20210305 104151.765 ERROR            PET1 ESMF_CplComp.F90:3199 ESMF_CplCompWriteRestart Arguments are incompatible  - 'timeout' argument is only allowed for connected dual components
+20210305 104151.765 INFO             PET1  PASS  Coupler Component WriteRestart() Test - with timeout, ESMF_StdCompMethodsUTest.F90, line 539
+20210305 104151.765 INFO             PET1  PASS  Coupler Component ReadRestart() Test, ESMF_StdCompMethodsUTest.F90, line 546
+20210305 104151.765 ERROR            PET1 ESMF_CplComp.F90:1493 ESMF_CplCompReadRestart Arguments are incompatible  - 'timeout' argument is only allowed for connected dual components
+20210305 104151.765 INFO             PET1  PASS  Coupler Component ReadRestart() Test - with timeout, ESMF_StdCompMethodsUTest.F90, line 553
+20210305 104151.765 INFO             PET1  PASS  Coupler Component Destroy() Test, ESMF_StdCompMethodsUTest.F90, line 560
+20210305 104151.765 INFO             PET1  PASS  Coupler Component Create() Test, ESMF_StdCompMethodsUTest.F90, line 570
+20210305 104151.765 INFO             PET1  PASS  Coupler Component SetVM() Test, ESMF_StdCompMethodsUTest.F90, line 577
+20210305 104151.765 DEBUG            PET1 service: 0  PTHREAD_STACK_MIN: 16384 bytes  stack_size: 1073741824 bytes
+20210305 104151.765 INFO             PET1  PASS  Coupler Component SetServices() Test, ESMF_StdCompMethodsUTest.F90, line 584
+20210305 104151.765 INFO             PET1  PASS  Coupler Component Initialize() Test, ESMF_StdCompMethodsUTest.F90, line 591
+20210305 104151.765 INFO             PET1  PASS  Coupler Component Run() Test, ESMF_StdCompMethodsUTest.F90, line 598
+20210305 104151.765 INFO             PET1  PASS  Coupler Component Finalize() Test, ESMF_StdCompMethodsUTest.F90, line 605
+20210305 104151.765 INFO             PET1  PASS  Coupler Component WriteRestart() Test, ESMF_StdCompMethodsUTest.F90, line 612
+20210305 104151.765 INFO             PET1  PASS  Coupler Component ReadRestart() Test, ESMF_StdCompMethodsUTest.F90, line 619
+20210305 104151.765 INFO             PET1  PASS  Coupler Component Destroy() Test, ESMF_StdCompMethodsUTest.F90, line 626
+20210305 104151.765 INFO             PET1  Ending Test, file ESMF_StdCompMethodsUTest.F90, line 629
+20210305 104151.765 INFO             PET1 Finalizing ESMF
+20210305 104151.741 INFO             PET2 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 104151.741 INFO             PET2 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 104151.741 INFO             PET2 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 104151.741 INFO             PET2 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 104151.741 INFO             PET2 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 104151.741 INFO             PET2 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 104151.741 INFO             PET2 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 104151.741 INFO             PET2 ESMF library build date/time: "Mar  5 2021" "09:44:18"
+20210305 104151.741 INFO             PET2 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g
+20210305 104151.741 INFO             PET2 ESMF_COMM                   : mpi
+20210305 104151.742 INFO             PET2 ESMF_MOAB                   : enabled
+20210305 104151.742 INFO             PET2 ESMF_LAPACK                 : enabled
+20210305 104151.742 INFO             PET2 ESMF_NETCDF                 : enabled
+20210305 104151.742 INFO             PET2 ESMF_PNETCDF                : disabled
+20210305 104151.742 INFO             PET2 ESMF_PIO                    : enabled
+20210305 104151.742 INFO             PET2 ESMF_YAMLCPP                : enabled
+20210305 104151.744 INFO             PET2  Beginning Test, file ESMF_StdCompMethodsUTest.F90, line 353
+20210305 104151.744 INFO             PET2  NUMBER_OF_PROCESSORS           4
+20210305 104151.757 INFO             PET2  PASS  Gridded Component Create() Test, ESMF_StdCompMethodsUTest.F90, line 368
+20210305 104151.761 INFO             PET2  PASS  Gridded Component SetVM() Test, ESMF_StdCompMethodsUTest.F90, line 375
+20210305 104151.761 DEBUG            PET2 service: 0  PTHREAD_STACK_MIN: 16384 bytes  stack_size: 1073741824 bytes
+20210305 104151.762 INFO             PET2  PASS  Gridded Component SetServices() Test, ESMF_StdCompMethodsUTest.F90, line 382
+20210305 104151.763 INFO             PET2  PASS  Gridded Component Initialize() Test, ESMF_StdCompMethodsUTest.F90, line 389
+20210305 104151.763 ERROR            PET2 ESMF_GridComp.F90:1397 ESMF_GridCompInitialize Arguments are incompatible  - 'timeout' argument is only allowed for connected dual components
+20210305 104151.763 INFO             PET2  PASS  Gridded Component Initialize() Test - with timeout, ESMF_StdCompMethodsUTest.F90, line 396
+20210305 104151.763 INFO             PET2  PASS  Gridded Component Run() Test, ESMF_StdCompMethodsUTest.F90, line 403
+20210305 104151.763 ERROR            PET2 ESMF_GridComp.F90:1881 ESMF_GridCompRun Arguments are incompatible  - 'timeout' argument is only allowed for connected dual components
+20210305 104151.763 INFO             PET2  PASS  Gridded Component Run() Test - with timeout, ESMF_StdCompMethodsUTest.F90, line 410
+20210305 104151.763 INFO             PET2  PASS  Gridded Component Finalize() Test, ESMF_StdCompMethodsUTest.F90, line 417
+20210305 104151.763 ERROR            PET2 ESMF_GridComp.F90:810 ESMF_GridCompFinalize Arguments are incompatible  - 'timeout' argument is only allowed for connected dual components
+20210305 104151.763 INFO             PET2  PASS  Gridded Component Finalize() Test - with timeout, ESMF_StdCompMethodsUTest.F90, line 424
+20210305 104151.763 INFO             PET2  PASS  Gridded Component WriteRestart() Test, ESMF_StdCompMethodsUTest.F90, line 431
+20210305 104151.763 ERROR            PET2 ESMF_GridComp.F90:3576 ESMF_GridCompWriteRestart Arguments are incompatible  - 'timeout' argument is only allowed for connected dual components
+20210305 104151.763 INFO             PET2  PASS  Gridded Component WriteRestart() Test - with timeout, ESMF_StdCompMethodsUTest.F90, line 438
+20210305 104151.763 INFO             PET2  PASS  Gridded Component ReadRestart() Test, ESMF_StdCompMethodsUTest.F90, line 445
+20210305 104151.763 ERROR            PET2 ESMF_GridComp.F90:1741 ESMF_GridCompReadRestart Arguments are incompatible  - 'timeout' argument is only allowed for connected dual components
+20210305 104151.763 INFO             PET2  PASS  Gridded Component ReadRestart() Test - with timeout, ESMF_StdCompMethodsUTest.F90, line 452
+20210305 104151.763 INFO             PET2  PASS  Gridded Component Destroy() Test, ESMF_StdCompMethodsUTest.F90, line 459
+20210305 104151.763 INFO             PET2  PASS  Coupler Component Create() Test, ESMF_StdCompMethodsUTest.F90, line 469
+20210305 104151.764 INFO             PET2  PASS  Coupler Component SetVM() Test, ESMF_StdCompMethodsUTest.F90, line 476
+20210305 104151.764 DEBUG            PET2 service: 0  PTHREAD_STACK_MIN: 16384 bytes  stack_size: 1073741824 bytes
+20210305 104151.764 INFO             PET2  PASS  Coupler Component SetServices() Test, ESMF_StdCompMethodsUTest.F90, line 483
+20210305 104151.764 INFO             PET2  PASS  Coupler Component Initialize() Test, ESMF_StdCompMethodsUTest.F90, line 490
+20210305 104151.764 ERROR            PET2 ESMF_CplComp.F90:1150 ESMF_CplCompInitialize Arguments are incompatible  - 'timeout' argument is only allowed for connected dual components
+20210305 104151.764 INFO             PET2  PASS  Coupler Component Initialize() Test - with timeout, ESMF_StdCompMethodsUTest.F90, line 497
+20210305 104151.764 INFO             PET2  PASS  Coupler Component Run() Test, ESMF_StdCompMethodsUTest.F90, line 504
+20210305 104151.765 ERROR            PET2 ESMF_CplComp.F90:1633 ESMF_CplCompRun Arguments are incompatible  - 'timeout' argument is only allowed for connected dual components
+20210305 104151.765 INFO             PET2  PASS  Coupler Component Run() Test - with timeout, ESMF_StdCompMethodsUTest.F90, line 511
+20210305 104151.765 INFO             PET2  PASS  Coupler Component Finalize() Test, ESMF_StdCompMethodsUTest.F90, line 518
+20210305 104151.765 ERROR            PET2 ESMF_CplComp.F90:697 ESMF_CplCompFinalize Arguments are incompatible  - 'timeout' argument is only allowed for connected dual components
+20210305 104151.765 INFO             PET2  PASS  Coupler Component Finalize() Test - with timeout, ESMF_StdCompMethodsUTest.F90, line 525
+20210305 104151.765 INFO             PET2  PASS  Coupler Component WriteRestart() Test, ESMF_StdCompMethodsUTest.F90, line 532
+20210305 104151.765 ERROR            PET2 ESMF_CplComp.F90:3199 ESMF_CplCompWriteRestart Arguments are incompatible  - 'timeout' argument is only allowed for connected dual components
+20210305 104151.765 INFO             PET2  PASS  Coupler Component WriteRestart() Test - with timeout, ESMF_StdCompMethodsUTest.F90, line 539
+20210305 104151.765 INFO             PET2  PASS  Coupler Component ReadRestart() Test, ESMF_StdCompMethodsUTest.F90, line 546
+20210305 104151.765 ERROR            PET2 ESMF_CplComp.F90:1493 ESMF_CplCompReadRestart Arguments are incompatible  - 'timeout' argument is only allowed for connected dual components
+20210305 104151.765 INFO             PET2  PASS  Coupler Component ReadRestart() Test - with timeout, ESMF_StdCompMethodsUTest.F90, line 553
+20210305 104151.765 INFO             PET2  PASS  Coupler Component Destroy() Test, ESMF_StdCompMethodsUTest.F90, line 560
+20210305 104151.765 INFO             PET2  PASS  Coupler Component Create() Test, ESMF_StdCompMethodsUTest.F90, line 570
+20210305 104151.765 INFO             PET2  PASS  Coupler Component SetVM() Test, ESMF_StdCompMethodsUTest.F90, line 577
+20210305 104151.765 DEBUG            PET2 service: 0  PTHREAD_STACK_MIN: 16384 bytes  stack_size: 1073741824 bytes
+20210305 104151.765 INFO             PET2  PASS  Coupler Component SetServices() Test, ESMF_StdCompMethodsUTest.F90, line 584
+20210305 104151.765 INFO             PET2  PASS  Coupler Component Initialize() Test, ESMF_StdCompMethodsUTest.F90, line 591
+20210305 104151.765 INFO             PET2  PASS  Coupler Component Run() Test, ESMF_StdCompMethodsUTest.F90, line 598
+20210305 104151.765 INFO             PET2  PASS  Coupler Component Finalize() Test, ESMF_StdCompMethodsUTest.F90, line 605
+20210305 104151.765 INFO             PET2  PASS  Coupler Component WriteRestart() Test, ESMF_StdCompMethodsUTest.F90, line 612
+20210305 104151.765 INFO             PET2  PASS  Coupler Component ReadRestart() Test, ESMF_StdCompMethodsUTest.F90, line 619
+20210305 104151.765 INFO             PET2  PASS  Coupler Component Destroy() Test, ESMF_StdCompMethodsUTest.F90, line 626
+20210305 104151.765 INFO             PET2  Ending Test, file ESMF_StdCompMethodsUTest.F90, line 629
+20210305 104151.766 INFO             PET2 Finalizing ESMF
+20210305 104151.741 INFO             PET3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 104151.741 INFO             PET3 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 104151.741 INFO             PET3 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 104151.741 INFO             PET3 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 104151.741 INFO             PET3 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 104151.741 INFO             PET3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 104151.741 INFO             PET3 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 104151.741 INFO             PET3 ESMF library build date/time: "Mar  5 2021" "09:44:18"
+20210305 104151.741 INFO             PET3 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g
+20210305 104151.741 INFO             PET3 ESMF_COMM                   : mpi
+20210305 104151.742 INFO             PET3 ESMF_MOAB                   : enabled
+20210305 104151.742 INFO             PET3 ESMF_LAPACK                 : enabled
+20210305 104151.742 INFO             PET3 ESMF_NETCDF                 : enabled
+20210305 104151.742 INFO             PET3 ESMF_PNETCDF                : disabled
+20210305 104151.742 INFO             PET3 ESMF_PIO                    : enabled
+20210305 104151.742 INFO             PET3 ESMF_YAMLCPP                : enabled
+20210305 104151.744 INFO             PET3  Beginning Test, file ESMF_StdCompMethodsUTest.F90, line 353
+20210305 104151.744 INFO             PET3  NUMBER_OF_PROCESSORS           4
+20210305 104151.757 INFO             PET3  PASS  Gridded Component Create() Test, ESMF_StdCompMethodsUTest.F90, line 368
+20210305 104151.761 INFO             PET3  PASS  Gridded Component SetVM() Test, ESMF_StdCompMethodsUTest.F90, line 375
+20210305 104151.761 DEBUG            PET3 service: 0  PTHREAD_STACK_MIN: 16384 bytes  stack_size: 1073741824 bytes
+20210305 104151.762 INFO             PET3  PASS  Gridded Component SetServices() Test, ESMF_StdCompMethodsUTest.F90, line 382
+20210305 104151.763 INFO             PET3  PASS  Gridded Component Initialize() Test, ESMF_StdCompMethodsUTest.F90, line 389
+20210305 104151.763 ERROR            PET3 ESMF_GridComp.F90:1397 ESMF_GridCompInitialize Arguments are incompatible  - 'timeout' argument is only allowed for connected dual components
+20210305 104151.763 INFO             PET3  PASS  Gridded Component Initialize() Test - with timeout, ESMF_StdCompMethodsUTest.F90, line 396
+20210305 104151.763 INFO             PET3  PASS  Gridded Component Run() Test, ESMF_StdCompMethodsUTest.F90, line 403
+20210305 104151.763 ERROR            PET3 ESMF_GridComp.F90:1881 ESMF_GridCompRun Arguments are incompatible  - 'timeout' argument is only allowed for connected dual components
+20210305 104151.763 INFO             PET3  PASS  Gridded Component Run() Test - with timeout, ESMF_StdCompMethodsUTest.F90, line 410
+20210305 104151.763 INFO             PET3  PASS  Gridded Component Finalize() Test, ESMF_StdCompMethodsUTest.F90, line 417
+20210305 104151.763 ERROR            PET3 ESMF_GridComp.F90:810 ESMF_GridCompFinalize Arguments are incompatible  - 'timeout' argument is only allowed for connected dual components
+20210305 104151.763 INFO             PET3  PASS  Gridded Component Finalize() Test - with timeout, ESMF_StdCompMethodsUTest.F90, line 424
+20210305 104151.763 INFO             PET3  PASS  Gridded Component WriteRestart() Test, ESMF_StdCompMethodsUTest.F90, line 431
+20210305 104151.763 ERROR            PET3 ESMF_GridComp.F90:3576 ESMF_GridCompWriteRestart Arguments are incompatible  - 'timeout' argument is only allowed for connected dual components
+20210305 104151.763 INFO             PET3  PASS  Gridded Component WriteRestart() Test - with timeout, ESMF_StdCompMethodsUTest.F90, line 438
+20210305 104151.763 INFO             PET3  PASS  Gridded Component ReadRestart() Test, ESMF_StdCompMethodsUTest.F90, line 445
+20210305 104151.763 ERROR            PET3 ESMF_GridComp.F90:1741 ESMF_GridCompReadRestart Arguments are incompatible  - 'timeout' argument is only allowed for connected dual components
+20210305 104151.763 INFO             PET3  PASS  Gridded Component ReadRestart() Test - with timeout, ESMF_StdCompMethodsUTest.F90, line 452
+20210305 104151.763 INFO             PET3  PASS  Gridded Component Destroy() Test, ESMF_StdCompMethodsUTest.F90, line 459
+20210305 104151.763 INFO             PET3  PASS  Coupler Component Create() Test, ESMF_StdCompMethodsUTest.F90, line 469
+20210305 104151.764 INFO             PET3  PASS  Coupler Component SetVM() Test, ESMF_StdCompMethodsUTest.F90, line 476
+20210305 104151.764 DEBUG            PET3 service: 0  PTHREAD_STACK_MIN: 16384 bytes  stack_size: 1073741824 bytes
+20210305 104151.764 INFO             PET3  PASS  Coupler Component SetServices() Test, ESMF_StdCompMethodsUTest.F90, line 483
+20210305 104151.764 INFO             PET3  PASS  Coupler Component Initialize() Test, ESMF_StdCompMethodsUTest.F90, line 490
+20210305 104151.764 ERROR            PET3 ESMF_CplComp.F90:1150 ESMF_CplCompInitialize Arguments are incompatible  - 'timeout' argument is only allowed for connected dual components
+20210305 104151.764 INFO             PET3  PASS  Coupler Component Initialize() Test - with timeout, ESMF_StdCompMethodsUTest.F90, line 497
+20210305 104151.764 INFO             PET3  PASS  Coupler Component Run() Test, ESMF_StdCompMethodsUTest.F90, line 504
+20210305 104151.764 ERROR            PET3 ESMF_CplComp.F90:1633 ESMF_CplCompRun Arguments are incompatible  - 'timeout' argument is only allowed for connected dual components
+20210305 104151.765 INFO             PET3  PASS  Coupler Component Run() Test - with timeout, ESMF_StdCompMethodsUTest.F90, line 511
+20210305 104151.765 INFO             PET3  PASS  Coupler Component Finalize() Test, ESMF_StdCompMethodsUTest.F90, line 518
+20210305 104151.765 ERROR            PET3 ESMF_CplComp.F90:697 ESMF_CplCompFinalize Arguments are incompatible  - 'timeout' argument is only allowed for connected dual components
+20210305 104151.765 INFO             PET3  PASS  Coupler Component Finalize() Test - with timeout, ESMF_StdCompMethodsUTest.F90, line 525
+20210305 104151.765 INFO             PET3  PASS  Coupler Component WriteRestart() Test, ESMF_StdCompMethodsUTest.F90, line 532
+20210305 104151.765 ERROR            PET3 ESMF_CplComp.F90:3199 ESMF_CplCompWriteRestart Arguments are incompatible  - 'timeout' argument is only allowed for connected dual components
+20210305 104151.765 INFO             PET3  PASS  Coupler Component WriteRestart() Test - with timeout, ESMF_StdCompMethodsUTest.F90, line 539
+20210305 104151.765 INFO             PET3  PASS  Coupler Component ReadRestart() Test, ESMF_StdCompMethodsUTest.F90, line 546
+20210305 104151.765 ERROR            PET3 ESMF_CplComp.F90:1493 ESMF_CplCompReadRestart Arguments are incompatible  - 'timeout' argument is only allowed for connected dual components
+20210305 104151.765 INFO             PET3  PASS  Coupler Component ReadRestart() Test - with timeout, ESMF_StdCompMethodsUTest.F90, line 553
+20210305 104151.765 INFO             PET3  PASS  Coupler Component Destroy() Test, ESMF_StdCompMethodsUTest.F90, line 560
+20210305 104151.765 INFO             PET3  PASS  Coupler Component Create() Test, ESMF_StdCompMethodsUTest.F90, line 570
+20210305 104151.765 INFO             PET3  PASS  Coupler Component SetVM() Test, ESMF_StdCompMethodsUTest.F90, line 577
+20210305 104151.765 DEBUG            PET3 service: 0  PTHREAD_STACK_MIN: 16384 bytes  stack_size: 1073741824 bytes
+20210305 104151.765 INFO             PET3  PASS  Coupler Component SetServices() Test, ESMF_StdCompMethodsUTest.F90, line 584
+20210305 104151.765 INFO             PET3  PASS  Coupler Component Initialize() Test, ESMF_StdCompMethodsUTest.F90, line 591
+20210305 104151.765 INFO             PET3  PASS  Coupler Component Run() Test, ESMF_StdCompMethodsUTest.F90, line 598
+20210305 104151.765 INFO             PET3  PASS  Coupler Component Finalize() Test, ESMF_StdCompMethodsUTest.F90, line 605
+20210305 104151.765 INFO             PET3  PASS  Coupler Component WriteRestart() Test, ESMF_StdCompMethodsUTest.F90, line 612
+20210305 104151.765 INFO             PET3  PASS  Coupler Component ReadRestart() Test, ESMF_StdCompMethodsUTest.F90, line 619
+20210305 104151.765 INFO             PET3  PASS  Coupler Component Destroy() Test, ESMF_StdCompMethodsUTest.F90, line 626
+20210305 104151.765 INFO             PET3  Ending Test, file ESMF_StdCompMethodsUTest.F90, line 629
+20210305 104151.765 INFO             PET3 Finalizing ESMF

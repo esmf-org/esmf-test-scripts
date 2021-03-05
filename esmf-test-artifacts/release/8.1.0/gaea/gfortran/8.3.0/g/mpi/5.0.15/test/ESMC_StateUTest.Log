@@ -1,0 +1,144 @@
+20210305 104135.627 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 104135.628 INFO             PET0 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 104135.628 INFO             PET0 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 104135.628 INFO             PET0 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 104135.628 INFO             PET0 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 104135.628 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 104135.628 INFO             PET0 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 104135.628 INFO             PET0 ESMF library build date/time: "Mar  5 2021" "09:44:18"
+20210305 104135.628 INFO             PET0 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g
+20210305 104135.628 INFO             PET0 ESMF_COMM                   : mpi
+20210305 104135.628 INFO             PET0 ESMF_MOAB                   : enabled
+20210305 104135.628 INFO             PET0 ESMF_LAPACK                 : enabled
+20210305 104135.628 INFO             PET0 ESMF_NETCDF                 : enabled
+20210305 104135.628 INFO             PET0 ESMF_PNETCDF                : disabled
+20210305 104135.628 INFO             PET0 ESMF_PIO                    : enabled
+20210305 104135.628 INFO             PET0 ESMF_YAMLCPP                : enabled
+20210305 104135.628 INFO             PET0 Beginning Test, file ESMC_StateUTest.C, line 53
+20210305 104135.628 INFO             PET0 NUMBER_OF_PROCESSORS 4
+20210305 104135.628 INFO             PET0 PASS StateCreate Unit test, ESMC_StateUTest.C, line 66
+20210305 104135.628 INFO             PET0 PASS ArraySpecSet, ESMC_StateUTest.C, line 75
+20210305 104135.628 INFO             PET0 PASS Set up minIndex, ESMC_StateUTest.C, line 85
+20210305 104135.628 INFO             PET0 PASS Set up maxIndex, ESMC_StateUTest.C, line 96
+20210305 104135.628 INFO             PET0 PASS Create 5 x 10 ESMC_DistGrid object, ESMC_StateUTest.C, line 104
+20210305 104135.628 INFO             PET0 PASS Create ESMC_Array object, ESMC_StateUTest.C, line 112
+20210305 104135.628 INFO             PET0 PASS Retrieve the name of an ESMC_Array object, ESMC_StateUTest.C, line 120
+20210305 104135.628 INFO             PET0 PASS Verify array object name retrieved, ESMC_StateUTest.C, line 128
+20210305 104135.629 INFO             PET0 PASS Initialize data an ESMC_Array object, ESMC_StateUTest.C, line 136
+20210305 104135.629 INFO             PET0 PASS Print ESMC_Array object, ESMC_StateUTest.C, line 144
+20210305 104135.629 INFO             PET0 PASS Add an Array to a State object, ESMC_StateUTest.C, line 151
+20210305 104135.629 INFO             PET0 PASS Get an array from a state, based on its name, ESMC_StateUTest.C, line 159
+20210305 104135.629 INFO             PET0 PASS Compare array stored into and array retrieved from a state, ESMC_StateUTest.C, line 167
+20210305 104135.629 INFO             PET0 PASS Destroy ESMC_DistGrid object, ESMC_StateUTest.C, line 175
+20210305 104135.629 INFO             PET0 PASS Destroy ESMC_Array object, ESMC_StateUTest.C, line 183
+20210305 104135.629 INFO             PET0 PASS StateDestroy Unit test, ESMC_StateUTest.C, line 193
+20210305 104135.629 INFO             PET0 Ending Test, file ESMC_StateUTest.C, line 200
+20210305 104135.629 INFO             PET0 Finalizing ESMF
+20210305 104135.624 INFO             PET1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 104135.624 INFO             PET1 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 104135.624 INFO             PET1 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 104135.624 INFO             PET1 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 104135.624 INFO             PET1 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 104135.624 INFO             PET1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 104135.624 INFO             PET1 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 104135.624 INFO             PET1 ESMF library build date/time: "Mar  5 2021" "09:44:18"
+20210305 104135.624 INFO             PET1 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g
+20210305 104135.624 INFO             PET1 ESMF_COMM                   : mpi
+20210305 104135.625 INFO             PET1 ESMF_MOAB                   : enabled
+20210305 104135.625 INFO             PET1 ESMF_LAPACK                 : enabled
+20210305 104135.625 INFO             PET1 ESMF_NETCDF                 : enabled
+20210305 104135.625 INFO             PET1 ESMF_PNETCDF                : disabled
+20210305 104135.625 INFO             PET1 ESMF_PIO                    : enabled
+20210305 104135.625 INFO             PET1 ESMF_YAMLCPP                : enabled
+20210305 104135.625 INFO             PET1 Beginning Test, file ESMC_StateUTest.C, line 53
+20210305 104135.625 INFO             PET1 NUMBER_OF_PROCESSORS 4
+20210305 104135.625 INFO             PET1 PASS StateCreate Unit test, ESMC_StateUTest.C, line 66
+20210305 104135.625 INFO             PET1 PASS ArraySpecSet, ESMC_StateUTest.C, line 75
+20210305 104135.625 INFO             PET1 PASS Set up minIndex, ESMC_StateUTest.C, line 85
+20210305 104135.625 INFO             PET1 PASS Set up maxIndex, ESMC_StateUTest.C, line 96
+20210305 104135.625 INFO             PET1 PASS Create 5 x 10 ESMC_DistGrid object, ESMC_StateUTest.C, line 104
+20210305 104135.626 INFO             PET1 PASS Create ESMC_Array object, ESMC_StateUTest.C, line 112
+20210305 104135.626 INFO             PET1 PASS Retrieve the name of an ESMC_Array object, ESMC_StateUTest.C, line 120
+20210305 104135.626 INFO             PET1 PASS Verify array object name retrieved, ESMC_StateUTest.C, line 128
+20210305 104135.626 INFO             PET1 PASS Initialize data an ESMC_Array object, ESMC_StateUTest.C, line 136
+20210305 104135.626 INFO             PET1 PASS Print ESMC_Array object, ESMC_StateUTest.C, line 144
+20210305 104135.626 INFO             PET1 PASS Add an Array to a State object, ESMC_StateUTest.C, line 151
+20210305 104135.626 INFO             PET1 PASS Get an array from a state, based on its name, ESMC_StateUTest.C, line 159
+20210305 104135.626 INFO             PET1 PASS Compare array stored into and array retrieved from a state, ESMC_StateUTest.C, line 167
+20210305 104135.626 INFO             PET1 PASS Destroy ESMC_DistGrid object, ESMC_StateUTest.C, line 175
+20210305 104135.626 INFO             PET1 PASS Destroy ESMC_Array object, ESMC_StateUTest.C, line 183
+20210305 104135.626 INFO             PET1 PASS StateDestroy Unit test, ESMC_StateUTest.C, line 193
+20210305 104135.626 INFO             PET1 Ending Test, file ESMC_StateUTest.C, line 200
+20210305 104135.626 INFO             PET1 Finalizing ESMF
+20210305 104135.629 INFO             PET2 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 104135.629 INFO             PET2 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 104135.629 INFO             PET2 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 104135.629 INFO             PET2 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 104135.629 INFO             PET2 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 104135.629 INFO             PET2 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 104135.629 INFO             PET2 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 104135.629 INFO             PET2 ESMF library build date/time: "Mar  5 2021" "09:44:18"
+20210305 104135.629 INFO             PET2 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g
+20210305 104135.629 INFO             PET2 ESMF_COMM                   : mpi
+20210305 104135.630 INFO             PET2 ESMF_MOAB                   : enabled
+20210305 104135.630 INFO             PET2 ESMF_LAPACK                 : enabled
+20210305 104135.630 INFO             PET2 ESMF_NETCDF                 : enabled
+20210305 104135.630 INFO             PET2 ESMF_PNETCDF                : disabled
+20210305 104135.630 INFO             PET2 ESMF_PIO                    : enabled
+20210305 104135.630 INFO             PET2 ESMF_YAMLCPP                : enabled
+20210305 104135.630 INFO             PET2 Beginning Test, file ESMC_StateUTest.C, line 53
+20210305 104135.630 INFO             PET2 NUMBER_OF_PROCESSORS 4
+20210305 104135.630 INFO             PET2 PASS StateCreate Unit test, ESMC_StateUTest.C, line 66
+20210305 104135.630 INFO             PET2 PASS ArraySpecSet, ESMC_StateUTest.C, line 75
+20210305 104135.630 INFO             PET2 PASS Set up minIndex, ESMC_StateUTest.C, line 85
+20210305 104135.630 INFO             PET2 PASS Set up maxIndex, ESMC_StateUTest.C, line 96
+20210305 104135.630 INFO             PET2 PASS Create 5 x 10 ESMC_DistGrid object, ESMC_StateUTest.C, line 104
+20210305 104135.630 INFO             PET2 PASS Create ESMC_Array object, ESMC_StateUTest.C, line 112
+20210305 104135.630 INFO             PET2 PASS Retrieve the name of an ESMC_Array object, ESMC_StateUTest.C, line 120
+20210305 104135.630 INFO             PET2 PASS Verify array object name retrieved, ESMC_StateUTest.C, line 128
+20210305 104135.630 INFO             PET2 PASS Initialize data an ESMC_Array object, ESMC_StateUTest.C, line 136
+20210305 104135.630 INFO             PET2 PASS Print ESMC_Array object, ESMC_StateUTest.C, line 144
+20210305 104135.630 INFO             PET2 PASS Add an Array to a State object, ESMC_StateUTest.C, line 151
+20210305 104135.630 INFO             PET2 PASS Get an array from a state, based on its name, ESMC_StateUTest.C, line 159
+20210305 104135.630 INFO             PET2 PASS Compare array stored into and array retrieved from a state, ESMC_StateUTest.C, line 167
+20210305 104135.630 INFO             PET2 PASS Destroy ESMC_DistGrid object, ESMC_StateUTest.C, line 175
+20210305 104135.630 INFO             PET2 PASS Destroy ESMC_Array object, ESMC_StateUTest.C, line 183
+20210305 104135.630 INFO             PET2 PASS StateDestroy Unit test, ESMC_StateUTest.C, line 193
+20210305 104135.630 INFO             PET2 Ending Test, file ESMC_StateUTest.C, line 200
+20210305 104135.630 INFO             PET2 Finalizing ESMF
+20210305 104135.637 INFO             PET3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 104135.637 INFO             PET3 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 104135.637 INFO             PET3 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 104135.637 INFO             PET3 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 104135.637 INFO             PET3 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 104135.637 INFO             PET3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 104135.637 INFO             PET3 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 104135.637 INFO             PET3 ESMF library build date/time: "Mar  5 2021" "09:44:18"
+20210305 104135.637 INFO             PET3 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g
+20210305 104135.637 INFO             PET3 ESMF_COMM                   : mpi
+20210305 104135.638 INFO             PET3 ESMF_MOAB                   : enabled
+20210305 104135.638 INFO             PET3 ESMF_LAPACK                 : enabled
+20210305 104135.638 INFO             PET3 ESMF_NETCDF                 : enabled
+20210305 104135.638 INFO             PET3 ESMF_PNETCDF                : disabled
+20210305 104135.638 INFO             PET3 ESMF_PIO                    : enabled
+20210305 104135.638 INFO             PET3 ESMF_YAMLCPP                : enabled
+20210305 104135.638 INFO             PET3 Beginning Test, file ESMC_StateUTest.C, line 53
+20210305 104135.638 INFO             PET3 NUMBER_OF_PROCESSORS 4
+20210305 104135.638 INFO             PET3 PASS StateCreate Unit test, ESMC_StateUTest.C, line 66
+20210305 104135.638 INFO             PET3 PASS ArraySpecSet, ESMC_StateUTest.C, line 75
+20210305 104135.638 INFO             PET3 PASS Set up minIndex, ESMC_StateUTest.C, line 85
+20210305 104135.638 INFO             PET3 PASS Set up maxIndex, ESMC_StateUTest.C, line 96
+20210305 104135.638 INFO             PET3 PASS Create 5 x 10 ESMC_DistGrid object, ESMC_StateUTest.C, line 104
+20210305 104135.638 INFO             PET3 PASS Create ESMC_Array object, ESMC_StateUTest.C, line 112
+20210305 104135.638 INFO             PET3 PASS Retrieve the name of an ESMC_Array object, ESMC_StateUTest.C, line 120
+20210305 104135.638 INFO             PET3 PASS Verify array object name retrieved, ESMC_StateUTest.C, line 128
+20210305 104135.638 INFO             PET3 PASS Initialize data an ESMC_Array object, ESMC_StateUTest.C, line 136
+20210305 104135.639 INFO             PET3 PASS Print ESMC_Array object, ESMC_StateUTest.C, line 144
+20210305 104135.639 INFO             PET3 PASS Add an Array to a State object, ESMC_StateUTest.C, line 151
+20210305 104135.639 INFO             PET3 PASS Get an array from a state, based on its name, ESMC_StateUTest.C, line 159
+20210305 104135.639 INFO             PET3 PASS Compare array stored into and array retrieved from a state, ESMC_StateUTest.C, line 167
+20210305 104135.639 INFO             PET3 PASS Destroy ESMC_DistGrid object, ESMC_StateUTest.C, line 175
+20210305 104135.639 INFO             PET3 PASS Destroy ESMC_Array object, ESMC_StateUTest.C, line 183
+20210305 104135.639 INFO             PET3 PASS StateDestroy Unit test, ESMC_StateUTest.C, line 193
+20210305 104135.639 INFO             PET3 Ending Test, file ESMC_StateUTest.C, line 200
+20210305 104135.639 INFO             PET3 Finalizing ESMF

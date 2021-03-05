@@ -1,0 +1,222 @@
+20210305 103731.097 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103731.097 INFO             PET0 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 103731.097 INFO             PET0 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 103731.097 INFO             PET0 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 103731.097 INFO             PET0 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 103731.097 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103731.097 INFO             PET0 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 103731.097 INFO             PET0 ESMF library build date/time: "Mar  5 2021" "09:44:18"
+20210305 103731.097 INFO             PET0 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g
+20210305 103731.097 INFO             PET0 ESMF_COMM                   : mpi
+20210305 103731.097 INFO             PET0 ESMF_MOAB                   : enabled
+20210305 103731.097 INFO             PET0 ESMF_LAPACK                 : enabled
+20210305 103731.097 INFO             PET0 ESMF_NETCDF                 : enabled
+20210305 103731.097 INFO             PET0 ESMF_PNETCDF                : disabled
+20210305 103731.097 INFO             PET0 ESMF_PIO                    : enabled
+20210305 103731.097 INFO             PET0 ESMF_YAMLCPP                : enabled
+20210305 103731.097 INFO             PET0 Beginning Test, file ESMC_MeshVTKUTest.C, line 63
+20210305 103731.097 INFO             PET0 NUMBER_OF_PROCESSORS 6
+20210305 103731.097 INFO             PET0 PASS MeshCreate, ESMC_MeshVTKUTest.C, line 80
+20210305 103731.099 INFO             PET0 PASS MeshVTKHeader, ESMC_MeshVTKUTest.C, line 89
+20210305 103731.101 INFO             PET0 PASS MeshVTKHeader, ESMC_MeshVTKUTest.C, line 110
+20210305 103731.115 INFO             PET0 PASS MeshVTKBody, ESMC_MeshVTKUTest.C, line 129
+20210305 103731.115 ERROR            PET0 ESMC_Mesh.C:352 ESMC_MeshGetLocalNodeCount() Value unrecognized or out of range  - - Mesh must have had its nodes added to get local node count
+20210305 103731.115 INFO             PET0 PASS MeshGetLocalNodeCount before MeshAddNodes, ESMC_MeshVTKUTest.C, line 163
+20210305 103731.115 INFO             PET0 PASS MeshAddNodes, ESMC_MeshVTKUTest.C, line 172
+20210305 103731.115 INFO             PET0 PASS MeshGetLocalNodeCount, ESMC_MeshVTKUTest.C, line 192
+20210305 103731.115 ERROR            PET0 ESMC_Mesh.C:417 ESMC_MeshGetLocalElementCount() Value unrecognized or out of range  - - Mesh must have had its elements added to get local element count
+20210305 103731.115 INFO             PET0 PASS MeshGetLocalElementCount before MeshAddElements, ESMC_MeshVTKUTest.C, line 206
+20210305 103731.143 INFO             PET0 PASS MeshAddElements, ESMC_MeshVTKUTest.C, line 215
+20210305 103731.143 INFO             PET0 PASS MeshGetLocalElementCount, ESMC_MeshVTKUTest.C, line 235
+20210305 103731.143 INFO             PET0 PASS MeshGetOwnedElementCount, ESMC_MeshVTKUTest.C, line 256
+20210305 103731.143 INFO             PET0 PASS MeshGetOwnedNodeCount, ESMC_MeshVTKUTest.C, line 277
+20210305 103731.163 INFO             PET0 PASS MeshWrite, ESMC_MeshVTKUTest.C, line 297
+20210305 103731.163 INFO             PET0 PASS MeshFreeMemory, ESMC_MeshVTKUTest.C, line 307
+20210305 103731.163 INFO             PET0 PASS MeshDestroy, ESMC_MeshVTKUTest.C, line 316
+20210305 103731.163 INFO             PET0 Ending Test, file ESMC_MeshVTKUTest.C, line 329
+20210305 103731.163 INFO             PET0 Finalizing ESMF
+20210305 103731.095 INFO             PET1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103731.095 INFO             PET1 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 103731.095 INFO             PET1 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 103731.095 INFO             PET1 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 103731.095 INFO             PET1 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 103731.095 INFO             PET1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103731.095 INFO             PET1 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 103731.095 INFO             PET1 ESMF library build date/time: "Mar  5 2021" "09:44:18"
+20210305 103731.095 INFO             PET1 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g
+20210305 103731.095 INFO             PET1 ESMF_COMM                   : mpi
+20210305 103731.096 INFO             PET1 ESMF_MOAB                   : enabled
+20210305 103731.096 INFO             PET1 ESMF_LAPACK                 : enabled
+20210305 103731.096 INFO             PET1 ESMF_NETCDF                 : enabled
+20210305 103731.096 INFO             PET1 ESMF_PNETCDF                : disabled
+20210305 103731.096 INFO             PET1 ESMF_PIO                    : enabled
+20210305 103731.096 INFO             PET1 ESMF_YAMLCPP                : enabled
+20210305 103731.096 INFO             PET1 Beginning Test, file ESMC_MeshVTKUTest.C, line 63
+20210305 103731.096 INFO             PET1 NUMBER_OF_PROCESSORS 6
+20210305 103731.096 INFO             PET1 PASS MeshCreate, ESMC_MeshVTKUTest.C, line 80
+20210305 103731.098 INFO             PET1 PASS MeshVTKHeader, ESMC_MeshVTKUTest.C, line 89
+20210305 103731.099 INFO             PET1 PASS MeshVTKHeader, ESMC_MeshVTKUTest.C, line 110
+20210305 103731.113 INFO             PET1 PASS MeshVTKBody, ESMC_MeshVTKUTest.C, line 129
+20210305 103731.113 ERROR            PET1 ESMC_Mesh.C:352 ESMC_MeshGetLocalNodeCount() Value unrecognized or out of range  - - Mesh must have had its nodes added to get local node count
+20210305 103731.113 INFO             PET1 PASS MeshGetLocalNodeCount before MeshAddNodes, ESMC_MeshVTKUTest.C, line 163
+20210305 103731.114 INFO             PET1 PASS MeshAddNodes, ESMC_MeshVTKUTest.C, line 172
+20210305 103731.114 INFO             PET1 PASS MeshGetLocalNodeCount, ESMC_MeshVTKUTest.C, line 192
+20210305 103731.114 ERROR            PET1 ESMC_Mesh.C:417 ESMC_MeshGetLocalElementCount() Value unrecognized or out of range  - - Mesh must have had its elements added to get local element count
+20210305 103731.114 INFO             PET1 PASS MeshGetLocalElementCount before MeshAddElements, ESMC_MeshVTKUTest.C, line 206
+20210305 103731.143 INFO             PET1 PASS MeshAddElements, ESMC_MeshVTKUTest.C, line 215
+20210305 103731.143 INFO             PET1 PASS MeshGetLocalElementCount, ESMC_MeshVTKUTest.C, line 235
+20210305 103731.143 INFO             PET1 PASS MeshGetOwnedElementCount, ESMC_MeshVTKUTest.C, line 256
+20210305 103731.143 INFO             PET1 PASS MeshGetOwnedNodeCount, ESMC_MeshVTKUTest.C, line 277
+20210305 103731.171 INFO             PET1 PASS MeshWrite, ESMC_MeshVTKUTest.C, line 297
+20210305 103731.171 INFO             PET1 PASS MeshFreeMemory, ESMC_MeshVTKUTest.C, line 307
+20210305 103731.171 INFO             PET1 PASS MeshDestroy, ESMC_MeshVTKUTest.C, line 316
+20210305 103731.171 INFO             PET1 Ending Test, file ESMC_MeshVTKUTest.C, line 329
+20210305 103731.171 INFO             PET1 Finalizing ESMF
+20210305 103731.098 INFO             PET2 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103731.098 INFO             PET2 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 103731.098 INFO             PET2 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 103731.098 INFO             PET2 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 103731.098 INFO             PET2 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 103731.098 INFO             PET2 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103731.098 INFO             PET2 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 103731.098 INFO             PET2 ESMF library build date/time: "Mar  5 2021" "09:44:18"
+20210305 103731.098 INFO             PET2 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g
+20210305 103731.098 INFO             PET2 ESMF_COMM                   : mpi
+20210305 103731.099 INFO             PET2 ESMF_MOAB                   : enabled
+20210305 103731.099 INFO             PET2 ESMF_LAPACK                 : enabled
+20210305 103731.099 INFO             PET2 ESMF_NETCDF                 : enabled
+20210305 103731.099 INFO             PET2 ESMF_PNETCDF                : disabled
+20210305 103731.099 INFO             PET2 ESMF_PIO                    : enabled
+20210305 103731.099 INFO             PET2 ESMF_YAMLCPP                : enabled
+20210305 103731.099 INFO             PET2 Beginning Test, file ESMC_MeshVTKUTest.C, line 63
+20210305 103731.099 INFO             PET2 NUMBER_OF_PROCESSORS 6
+20210305 103731.099 INFO             PET2 PASS MeshCreate, ESMC_MeshVTKUTest.C, line 80
+20210305 103731.101 INFO             PET2 PASS MeshVTKHeader, ESMC_MeshVTKUTest.C, line 89
+20210305 103731.102 INFO             PET2 PASS MeshVTKHeader, ESMC_MeshVTKUTest.C, line 110
+20210305 103731.116 INFO             PET2 PASS MeshVTKBody, ESMC_MeshVTKUTest.C, line 129
+20210305 103731.116 ERROR            PET2 ESMC_Mesh.C:352 ESMC_MeshGetLocalNodeCount() Value unrecognized or out of range  - - Mesh must have had its nodes added to get local node count
+20210305 103731.116 INFO             PET2 PASS MeshGetLocalNodeCount before MeshAddNodes, ESMC_MeshVTKUTest.C, line 163
+20210305 103731.116 INFO             PET2 PASS MeshAddNodes, ESMC_MeshVTKUTest.C, line 172
+20210305 103731.116 INFO             PET2 PASS MeshGetLocalNodeCount, ESMC_MeshVTKUTest.C, line 192
+20210305 103731.116 ERROR            PET2 ESMC_Mesh.C:417 ESMC_MeshGetLocalElementCount() Value unrecognized or out of range  - - Mesh must have had its elements added to get local element count
+20210305 103731.117 INFO             PET2 PASS MeshGetLocalElementCount before MeshAddElements, ESMC_MeshVTKUTest.C, line 206
+20210305 103731.143 INFO             PET2 PASS MeshAddElements, ESMC_MeshVTKUTest.C, line 215
+20210305 103731.143 INFO             PET2 PASS MeshGetLocalElementCount, ESMC_MeshVTKUTest.C, line 235
+20210305 103731.143 INFO             PET2 PASS MeshGetOwnedElementCount, ESMC_MeshVTKUTest.C, line 256
+20210305 103731.143 INFO             PET2 PASS MeshGetOwnedNodeCount, ESMC_MeshVTKUTest.C, line 277
+20210305 103731.168 INFO             PET2 PASS MeshWrite, ESMC_MeshVTKUTest.C, line 297
+20210305 103731.168 INFO             PET2 PASS MeshFreeMemory, ESMC_MeshVTKUTest.C, line 307
+20210305 103731.168 INFO             PET2 PASS MeshDestroy, ESMC_MeshVTKUTest.C, line 316
+20210305 103731.168 INFO             PET2 Ending Test, file ESMC_MeshVTKUTest.C, line 329
+20210305 103731.168 INFO             PET2 Finalizing ESMF
+20210305 103731.096 INFO             PET3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103731.096 INFO             PET3 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 103731.096 INFO             PET3 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 103731.096 INFO             PET3 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 103731.096 INFO             PET3 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 103731.096 INFO             PET3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103731.096 INFO             PET3 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 103731.096 INFO             PET3 ESMF library build date/time: "Mar  5 2021" "09:44:18"
+20210305 103731.096 INFO             PET3 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g
+20210305 103731.096 INFO             PET3 ESMF_COMM                   : mpi
+20210305 103731.096 INFO             PET3 ESMF_MOAB                   : enabled
+20210305 103731.096 INFO             PET3 ESMF_LAPACK                 : enabled
+20210305 103731.096 INFO             PET3 ESMF_NETCDF                 : enabled
+20210305 103731.096 INFO             PET3 ESMF_PNETCDF                : disabled
+20210305 103731.096 INFO             PET3 ESMF_PIO                    : enabled
+20210305 103731.096 INFO             PET3 ESMF_YAMLCPP                : enabled
+20210305 103731.096 INFO             PET3 Beginning Test, file ESMC_MeshVTKUTest.C, line 63
+20210305 103731.096 INFO             PET3 NUMBER_OF_PROCESSORS 6
+20210305 103731.097 INFO             PET3 PASS MeshCreate, ESMC_MeshVTKUTest.C, line 80
+20210305 103731.098 INFO             PET3 PASS MeshVTKHeader, ESMC_MeshVTKUTest.C, line 89
+20210305 103731.100 INFO             PET3 PASS MeshVTKHeader, ESMC_MeshVTKUTest.C, line 110
+20210305 103731.113 INFO             PET3 PASS MeshVTKBody, ESMC_MeshVTKUTest.C, line 129
+20210305 103731.113 ERROR            PET3 ESMC_Mesh.C:352 ESMC_MeshGetLocalNodeCount() Value unrecognized or out of range  - - Mesh must have had its nodes added to get local node count
+20210305 103731.113 INFO             PET3 PASS MeshGetLocalNodeCount before MeshAddNodes, ESMC_MeshVTKUTest.C, line 163
+20210305 103731.114 INFO             PET3 PASS MeshAddNodes, ESMC_MeshVTKUTest.C, line 172
+20210305 103731.114 INFO             PET3 PASS MeshGetLocalNodeCount, ESMC_MeshVTKUTest.C, line 192
+20210305 103731.114 ERROR            PET3 ESMC_Mesh.C:417 ESMC_MeshGetLocalElementCount() Value unrecognized or out of range  - - Mesh must have had its elements added to get local element count
+20210305 103731.114 INFO             PET3 PASS MeshGetLocalElementCount before MeshAddElements, ESMC_MeshVTKUTest.C, line 206
+20210305 103731.143 INFO             PET3 PASS MeshAddElements, ESMC_MeshVTKUTest.C, line 215
+20210305 103731.143 INFO             PET3 PASS MeshGetLocalElementCount, ESMC_MeshVTKUTest.C, line 235
+20210305 103731.143 INFO             PET3 PASS MeshGetOwnedElementCount, ESMC_MeshVTKUTest.C, line 256
+20210305 103731.143 INFO             PET3 PASS MeshGetOwnedNodeCount, ESMC_MeshVTKUTest.C, line 277
+20210305 103731.156 INFO             PET3 PASS MeshWrite, ESMC_MeshVTKUTest.C, line 297
+20210305 103731.156 INFO             PET3 PASS MeshFreeMemory, ESMC_MeshVTKUTest.C, line 307
+20210305 103731.156 INFO             PET3 PASS MeshDestroy, ESMC_MeshVTKUTest.C, line 316
+20210305 103731.156 INFO             PET3 Ending Test, file ESMC_MeshVTKUTest.C, line 329
+20210305 103731.156 INFO             PET3 Finalizing ESMF
+20210305 103731.115 INFO             PET4 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103731.115 INFO             PET4 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 103731.115 INFO             PET4 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 103731.115 INFO             PET4 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 103731.115 INFO             PET4 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 103731.115 INFO             PET4 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103731.115 INFO             PET4 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 103731.115 INFO             PET4 ESMF library build date/time: "Mar  5 2021" "09:44:18"
+20210305 103731.115 INFO             PET4 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g
+20210305 103731.115 INFO             PET4 ESMF_COMM                   : mpi
+20210305 103731.115 INFO             PET4 ESMF_MOAB                   : enabled
+20210305 103731.115 INFO             PET4 ESMF_LAPACK                 : enabled
+20210305 103731.115 INFO             PET4 ESMF_NETCDF                 : enabled
+20210305 103731.115 INFO             PET4 ESMF_PNETCDF                : disabled
+20210305 103731.115 INFO             PET4 ESMF_PIO                    : enabled
+20210305 103731.115 INFO             PET4 ESMF_YAMLCPP                : enabled
+20210305 103731.115 INFO             PET4 Beginning Test, file ESMC_MeshVTKUTest.C, line 63
+20210305 103731.115 INFO             PET4 NUMBER_OF_PROCESSORS 6
+20210305 103731.115 INFO             PET4 PASS MeshCreate, ESMC_MeshVTKUTest.C, line 80
+20210305 103731.118 INFO             PET4 PASS MeshVTKHeader, ESMC_MeshVTKUTest.C, line 89
+20210305 103731.120 INFO             PET4 PASS MeshVTKHeader, ESMC_MeshVTKUTest.C, line 110
+20210305 103731.135 INFO             PET4 PASS MeshVTKBody, ESMC_MeshVTKUTest.C, line 129
+20210305 103731.136 ERROR            PET4 ESMC_Mesh.C:352 ESMC_MeshGetLocalNodeCount() Value unrecognized or out of range  - - Mesh must have had its nodes added to get local node count
+20210305 103731.136 INFO             PET4 PASS MeshGetLocalNodeCount before MeshAddNodes, ESMC_MeshVTKUTest.C, line 163
+20210305 103731.136 INFO             PET4 PASS MeshAddNodes, ESMC_MeshVTKUTest.C, line 172
+20210305 103731.136 INFO             PET4 PASS MeshGetLocalNodeCount, ESMC_MeshVTKUTest.C, line 192
+20210305 103731.136 ERROR            PET4 ESMC_Mesh.C:417 ESMC_MeshGetLocalElementCount() Value unrecognized or out of range  - - Mesh must have had its elements added to get local element count
+20210305 103731.136 INFO             PET4 PASS MeshGetLocalElementCount before MeshAddElements, ESMC_MeshVTKUTest.C, line 206
+20210305 103731.143 INFO             PET4 PASS MeshAddElements, ESMC_MeshVTKUTest.C, line 215
+20210305 103731.143 INFO             PET4 PASS MeshGetLocalElementCount, ESMC_MeshVTKUTest.C, line 235
+20210305 103731.143 INFO             PET4 PASS MeshGetOwnedElementCount, ESMC_MeshVTKUTest.C, line 256
+20210305 103731.143 INFO             PET4 PASS MeshGetOwnedNodeCount, ESMC_MeshVTKUTest.C, line 277
+20210305 103731.166 INFO             PET4 PASS MeshWrite, ESMC_MeshVTKUTest.C, line 297
+20210305 103731.166 INFO             PET4 PASS MeshFreeMemory, ESMC_MeshVTKUTest.C, line 307
+20210305 103731.166 INFO             PET4 PASS MeshDestroy, ESMC_MeshVTKUTest.C, line 316
+20210305 103731.166 INFO             PET4 Ending Test, file ESMC_MeshVTKUTest.C, line 329
+20210305 103731.166 INFO             PET4 Finalizing ESMF
+20210305 103731.096 INFO             PET5 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103731.096 INFO             PET5 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 103731.096 INFO             PET5 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 103731.096 INFO             PET5 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 103731.096 INFO             PET5 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 103731.096 INFO             PET5 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103731.096 INFO             PET5 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 103731.096 INFO             PET5 ESMF library build date/time: "Mar  5 2021" "09:44:18"
+20210305 103731.096 INFO             PET5 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g
+20210305 103731.096 INFO             PET5 ESMF_COMM                   : mpi
+20210305 103731.097 INFO             PET5 ESMF_MOAB                   : enabled
+20210305 103731.097 INFO             PET5 ESMF_LAPACK                 : enabled
+20210305 103731.097 INFO             PET5 ESMF_NETCDF                 : enabled
+20210305 103731.097 INFO             PET5 ESMF_PNETCDF                : disabled
+20210305 103731.097 INFO             PET5 ESMF_PIO                    : enabled
+20210305 103731.097 INFO             PET5 ESMF_YAMLCPP                : enabled
+20210305 103731.097 INFO             PET5 Beginning Test, file ESMC_MeshVTKUTest.C, line 63
+20210305 103731.097 INFO             PET5 NUMBER_OF_PROCESSORS 6
+20210305 103731.097 INFO             PET5 PASS MeshCreate, ESMC_MeshVTKUTest.C, line 80
+20210305 103731.099 INFO             PET5 PASS MeshVTKHeader, ESMC_MeshVTKUTest.C, line 89
+20210305 103731.102 INFO             PET5 PASS MeshVTKHeader, ESMC_MeshVTKUTest.C, line 110
+20210305 103731.118 INFO             PET5 PASS MeshVTKBody, ESMC_MeshVTKUTest.C, line 129
+20210305 103731.118 ERROR            PET5 ESMC_Mesh.C:352 ESMC_MeshGetLocalNodeCount() Value unrecognized or out of range  - - Mesh must have had its nodes added to get local node count
+20210305 103731.118 INFO             PET5 PASS MeshGetLocalNodeCount before MeshAddNodes, ESMC_MeshVTKUTest.C, line 163
+20210305 103731.119 INFO             PET5 PASS MeshAddNodes, ESMC_MeshVTKUTest.C, line 172
+20210305 103731.119 INFO             PET5 PASS MeshGetLocalNodeCount, ESMC_MeshVTKUTest.C, line 192
+20210305 103731.119 ERROR            PET5 ESMC_Mesh.C:417 ESMC_MeshGetLocalElementCount() Value unrecognized or out of range  - - Mesh must have had its elements added to get local element count
+20210305 103731.119 INFO             PET5 PASS MeshGetLocalElementCount before MeshAddElements, ESMC_MeshVTKUTest.C, line 206
+20210305 103731.143 INFO             PET5 PASS MeshAddElements, ESMC_MeshVTKUTest.C, line 215
+20210305 103731.143 INFO             PET5 PASS MeshGetLocalElementCount, ESMC_MeshVTKUTest.C, line 235
+20210305 103731.143 INFO             PET5 PASS MeshGetOwnedElementCount, ESMC_MeshVTKUTest.C, line 256
+20210305 103731.143 INFO             PET5 PASS MeshGetOwnedNodeCount, ESMC_MeshVTKUTest.C, line 277
+20210305 103731.174 INFO             PET5 PASS MeshWrite, ESMC_MeshVTKUTest.C, line 297
+20210305 103731.175 INFO             PET5 PASS MeshFreeMemory, ESMC_MeshVTKUTest.C, line 307
+20210305 103731.175 INFO             PET5 PASS MeshDestroy, ESMC_MeshVTKUTest.C, line 316
+20210305 103731.175 INFO             PET5 Ending Test, file ESMC_MeshVTKUTest.C, line 329
+20210305 103731.175 INFO             PET5 Finalizing ESMF

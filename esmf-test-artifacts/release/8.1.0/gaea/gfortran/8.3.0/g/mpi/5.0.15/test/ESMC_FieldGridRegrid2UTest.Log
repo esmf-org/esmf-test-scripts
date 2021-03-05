@@ -1,0 +1,44 @@
+20210305 103847.799 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103847.800 INFO             PET0 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 103847.800 INFO             PET0 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 103847.800 INFO             PET0 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 103847.800 INFO             PET0 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 103847.800 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103847.800 INFO             PET0 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 103847.800 INFO             PET0 ESMF library build date/time: "Mar  5 2021" "09:44:18"
+20210305 103847.800 INFO             PET0 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g
+20210305 103847.800 INFO             PET0 ESMF_COMM                   : mpi
+20210305 103847.801 INFO             PET0 ESMF_MOAB                   : enabled
+20210305 103847.801 INFO             PET0 ESMF_LAPACK                 : enabled
+20210305 103847.801 INFO             PET0 ESMF_NETCDF                 : enabled
+20210305 103847.801 INFO             PET0 ESMF_PNETCDF                : disabled
+20210305 103847.801 INFO             PET0 ESMF_PIO                    : enabled
+20210305 103847.801 INFO             PET0 ESMF_YAMLCPP                : enabled
+20210305 103847.817 INFO             PET0 Beginning Test, file ESMC_FieldGridRegrid2UTest.C, line 70
+20210305 103847.817 INFO             PET0 NUMBER_OF_PROCESSORS 1
+20210305 103847.862 INFO             PET0 PASS GridCreate, ESMC_FieldGridRegrid2UTest.C, line 119
+20210305 103847.868 INFO             PET0 PASS GridAddCoord, ESMC_FieldGridRegrid2UTest.C, line 134
+20210305 103847.868 INFO             PET0 PASS GridAddItem, ESMC_FieldGridRegrid2UTest.C, line 144
+20210305 103847.868 INFO             PET0 PASS GridGetItem - mask, ESMC_FieldGridRegrid2UTest.C, line 155
+20210305 103847.869 INFO             PET0 PASS GridGetCoord - X, ESMC_FieldGridRegrid2UTest.C, line 182
+20210305 103847.869 INFO             PET0 PASS GridGetCoord - Y, ESMC_FieldGridRegrid2UTest.C, line 202
+20210305 103847.870 INFO             PET0 PASS MeshCreate, ESMC_FieldGridRegrid2UTest.C, line 296
+20210305 103847.871 INFO             PET0 PASS MeshAddNodes, ESMC_FieldGridRegrid2UTest.C, line 304
+20210305 103847.874 INFO             PET0 PASS MeshAddElements, ESMC_FieldGridRegrid2UTest.C, line 318
+20210305 103847.874 INFO             PET0 PASS MeshGetLocalNodeCount, ESMC_FieldGridRegrid2UTest.C, line 328
+20210305 103847.874 INFO             PET0 PASS MeshGetLocalElementCount, ESMC_FieldGridRegrid2UTest.C, line 339
+20210305 103847.922 INFO             PET0 PASS Create ESMC_Field object from a Grid via TypeKind, ESMC_FieldGridRegrid2UTest.C, line 363
+20210305 103847.924 INFO             PET0 PASS Create ESMC_Field object from a Mesh via TypeKind, ESMC_FieldGridRegrid2UTest.C, line 372
+20210305 103847.924 INFO             PET0 PASS Get a void * C pointer to data from ESMC_Field object, ESMC_FieldGridRegrid2UTest.C, line 385
+20210305 103847.924 INFO             PET0 PASS Get a void * C pointer to data from ESMC_Field object, ESMC_FieldGridRegrid2UTest.C, line 400
+20210305 103847.924 INFO             PET0 PASS Create an InterArray for maskValues in ESMC_FieldRegridStore(), ESMC_FieldGridRegrid2UTest.C, line 420
+20210305 103847.939 INFO             PET0 PASS Create an ESMC_RouteHandle via ESMC_FieldRegridStore(), ESMC_FieldGridRegrid2UTest.C, line 447
+20210305 103847.940 INFO             PET0 PASS Execute ESMC_FieldRegrid(), ESMC_FieldGridRegrid2UTest.C, line 455
+20210305 103848.471 INFO             PET0 PASS Release an ESMC_RouteHandle via ESMC_FieldRegridRelease(), ESMC_FieldGridRegrid2UTest.C, line 463
+20210305 103848.471 INFO             PET0 PASS Regridding Validation, ESMC_FieldGridRegrid2UTest.C, line 500
+20210305 103848.487 INFO             PET0 PASS Destroy ESMC_Field object, ESMC_FieldGridRegrid2UTest.C, line 512
+20210305 103848.487 INFO             PET0 PASS Destroy ESMC_Field object, ESMC_FieldGridRegrid2UTest.C, line 520
+20210305 103848.487 INFO             PET0 PASS Destroy ESMC_Grid object, ESMC_FieldGridRegrid2UTest.C, line 528
+20210305 103848.487 INFO             PET0 PASS Destroy ESMC_Mesh object, ESMC_FieldGridRegrid2UTest.C, line 536
+20210305 103848.487 INFO             PET0 Ending Test, file ESMC_FieldGridRegrid2UTest.C, line 542
+20210305 103848.487 INFO             PET0 Finalizing ESMF

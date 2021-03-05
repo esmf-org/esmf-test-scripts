@@ -1,0 +1,40 @@
+  Beginning Test, file ESMF_FieldSMMUTest.F90, line 59
+  Beginning Test, file ESMF_FieldSMMUTest.F90, line 59
+  NUMBER_OF_PROCESSORS           4
+  Beginning Test, file ESMF_FieldSMMUTest.F90, line 59
+  NUMBER_OF_PROCESSORS           4
+  Beginning Test, file ESMF_FieldSMMUTest.F90, line 59
+  NUMBER_OF_PROCESSORS           4
+  NUMBER_OF_PROCESSORS           4
+  PASS  FieldSMM basic test, ESMF_FieldSMMUTest.F90, line 72
+  PASS  FieldSMM basic test, ESMF_FieldSMMUTest.F90, line 72
+  PASS  FieldSMM basic test, ESMF_FieldSMMUTest.F90, line 72
+  PASS  FieldSMM basic test, ESMF_FieldSMMUTest.F90, line 72
+  PASS  FieldSMM basic test with varying ungridded bounds, ESMF_FieldSMMUTest.F90, line 79
+  PASS  FieldSMM basic test with varying ungridded bounds, ESMF_FieldSMMUTest.F90, line 79
+  PASS  FieldSMM basic test with varying ungridded bounds, ESMF_FieldSMMUTest.F90, line 79
+  PASS  FieldSMM basic test with varying ungridded bounds, ESMF_FieldSMMUTest.F90, line 79
+  PASS  FieldSMM basic test using lpe for dst, ESMF_FieldSMMUTest.F90, line 86
+  PASS  FieldSMM basic test using lpe for dst, ESMF_FieldSMMUTest.F90, line 86
+  PASS  FieldSMM basic test using lpe for dst, ESMF_FieldSMMUTest.F90, line 86
+  PASS  FieldSMM basic test using lpe for dst, ESMF_FieldSMMUTest.F90, line 86
+  PASS  FieldSMM basic test using lpe for both src and dst, ESMF_FieldSMMUTest.F90, line 93
+  PASS  FieldSMM basic test using lpe for both src and dst, ESMF_FieldSMMUTest.F90, line 93
+  PASS  FieldSMM basic test using lpe for both src and dst, ESMF_FieldSMMUTest.F90, line 93
+  PASS  FieldSMM basic test using lpe for both src and dst, ESMF_FieldSMMUTest.F90, line 93
+  PASS  FieldSMM basic test using lpe for both src and dst, ESMF_FieldSMMUTest.F90, line 100
+  PASS  FieldSMM basic test using lpe for both src and dst, ESMF_FieldSMMUTest.F90, line 100
+  PASS  FieldSMM basic test using lpe for both src and dst, ESMF_FieldSMMUTest.F90, line 100
+  PASS  FieldSMM basic test using lpe for both src and dst, ESMF_FieldSMMUTest.F90, line 100
+  PASS  FieldSMM basic test using lpe for both src and dst, with halos, ESMF_FieldSMMUTest.F90, line 107
+  Ending Test, file ESMF_FieldSMMUTest.F90, line 109
+  PASS  FieldSMM basic test using lpe for both src and dst, with halos, ESMF_FieldSMMUTest.F90, line 107
+  Ending Test, file ESMF_FieldSMMUTest.F90, line 109
+  PASS  FieldSMM basic test using lpe for both src and dst, with halos, ESMF_FieldSMMUTest.F90, line 107
+  Ending Test, file ESMF_FieldSMMUTest.F90, line 109
+  PASS  FieldSMM basic test using lpe for both src and dst, with halos, ESMF_FieldSMMUTest.F90, line 107
+  Ending Test, file ESMF_FieldSMMUTest.F90, line 109
+  PET           0  Test Elapsed Time    14.529000000000000       msec.
+  PET           1  Test Elapsed Time    17.740999999999993       msec.
+  PET           2  Test Elapsed Time    18.180000000000003       msec.
+  PET           3  Test Elapsed Time    18.250999999999998       msec.

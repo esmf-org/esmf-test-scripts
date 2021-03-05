@@ -1,0 +1,12 @@
+
+===================================================================
+Build for = gfortran_8.3.0_mpi_g, mpi version 5.0.15 on gaea
+Build time = 2021-03-05 09:46:05
+git hash = ESMF_8_1_0_beta_snapshot_47-22-gffbbe5951e
+
+unit test results   	PASS 8894	FAIL 2
+system test results 	PASS 48 	FAIL 0
+example test results 	PASS 79 	FAIL 0
+
+
+===================================================================

@@ -1,0 +1,308 @@
+  Beginning Test, file ESMF_AttPackStateUTest.F90, line 85
+  Beginning Test, file ESMF_AttPackStateUTest.F90, line 85
+  NUMBER_OF_PROCESSORS           4
+  Beginning Test, file ESMF_AttPackStateUTest.F90, line 85
+  NUMBER_OF_PROCESSORS           4
+  Beginning Test, file ESMF_AttPackStateUTest.F90, line 85
+  NUMBER_OF_PROCESSORS           4
+  NUMBER_OF_PROCESSORS           4
+  PASS  Creating a custom Attribute package on a State Test, ESMF_AttPackStateUTest.F90, line 137
+  PASS  Creating a custom Attribute package on a State Test, ESMF_AttPackStateUTest.F90, line 137
+  PASS  Creating a custom Attribute package on a State Test, ESMF_AttPackStateUTest.F90, line 137
+  PASS  Creating a custom Attribute package on a State Test, ESMF_AttPackStateUTest.F90, line 137
+  PASS  Add to a custom Attribute package on a State Test, ESMF_AttPackStateUTest.F90, line 162
+  PASS  Add to a custom Attribute package on a State Test, ESMF_AttPackStateUTest.F90, line 162
+  PASS  Add to a custom Attribute package on a State Test, ESMF_AttPackStateUTest.F90, line 162
+  PASS  Add to a custom Attribute package on a State Test, ESMF_AttPackStateUTest.F90, line 162
+  PASS  Setting an ESMF_I4 Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 175
+  PASS  Setting an ESMF_I4 Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 175
+  PASS  Setting an ESMF_I4 Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 175
+  PASS  Setting an ESMF_I4 Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 175
+  PASS  Getting an ESMF_I4 Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 184
+  PASS  Getting an ESMF_I4 Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 184
+  PASS  Getting an ESMF_I4 Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 184
+  PASS  Getting an ESMF_I4 Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 184
+  PASS  Setting an ESMF_I4 list Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 193
+  PASS  Setting an ESMF_I4 list Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 193
+  PASS  Setting an ESMF_I4 list Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 193
+  PASS  Setting an ESMF_I4 list Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 193
+  PASS  Getting an ESMF_I4 list Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 203
+  PASS  Getting an ESMF_I4 list Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 203
+  PASS  Getting an ESMF_I4 list Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 203
+  PASS  Getting an ESMF_I4 list Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 203
+  PASS  Setting an ESMF_I8 Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 212
+  PASS  Setting an ESMF_I8 Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 212
+  PASS  Setting an ESMF_I8 Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 212
+  PASS  Setting an ESMF_I8 Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 212
+  PASS  Getting an ESMF_I8 Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 221
+  PASS  Getting an ESMF_I8 Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 221
+  PASS  Getting an ESMF_I8 Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 221
+  PASS  Getting an ESMF_I8 Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 221
+  PASS  Setting an ESMF_I8 list Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 230
+  PASS  Setting an ESMF_I8 list Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 230
+  PASS  Setting an ESMF_I8 list Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 230
+  PASS  Setting an ESMF_I8 list Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 230
+  PASS  Getting an ESMF_I8 list Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 240
+  PASS  Getting an ESMF_I8 list Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 240
+  PASS  Getting an ESMF_I8 list Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 240
+  PASS  Getting an ESMF_I8 list Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 240
+  PASS  Setting an ESMF_R4 Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 249
+  PASS  Setting an ESMF_R4 Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 249
+  PASS  Setting an ESMF_R4 Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 249
+  PASS  Setting an ESMF_R4 Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 249
+  PASS  Getting an ESMF_R4 Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 258
+  PASS  Getting an ESMF_R4 Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 258
+  PASS  Getting an ESMF_R4 Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 258
+  PASS  Getting an ESMF_R4 Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 258
+  PASS  Setting an ESMF_R4 list Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 267
+  PASS  Setting an ESMF_R4 list Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 267
+  PASS  Setting an ESMF_R4 list Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 267
+  PASS  Setting an ESMF_R4 list Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 267
+  PASS  Getting an ESMF_R4 list Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 277
+  PASS  Getting an ESMF_R4 list Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 277
+  PASS  Getting an ESMF_R4 list Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 277
+  PASS  Getting an ESMF_R4 list Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 277
+  PASS  Setting an ESMF_R8name Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 286
+  PASS  Setting an ESMF_R8name Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 286
+  PASS  Setting an ESMF_R8name Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 286
+  PASS  Setting an ESMF_R8name Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 286
+  PASS  Getting an ESMF_R8 Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 295
+  PASS  Getting an ESMF_R8 Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 295
+  PASS  Getting an ESMF_R8 Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 295
+  PASS  Getting an ESMF_R8 Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 295
+  PASS  Setting an ESMF_R8 list Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 304
+  PASS  Setting an ESMF_R8 list Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 304
+  PASS  Setting an ESMF_R8 list Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 304
+  PASS  Setting an ESMF_R8 list Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 304
+  PASS  Getting an ESMF_R8 list Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 314
+  PASS  Getting an ESMF_R8 list Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 314
+  PASS  Getting an ESMF_R8 list Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 314
+  PASS  Setting a logical Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 323
+  PASS  Getting an ESMF_R8 list Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 314
+  PASS  Setting a logical Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 323
+  PASS  Setting a logical Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 323
+  PASS  Setting a logical Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 323
+  PASS  Getting a logical Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 332
+  PASS  Getting a logical Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 332
+  PASS  Getting a logical Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 332
+  PASS  Getting a logical Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 332
+  PASS  Setting a logical list Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 341
+  PASS  Setting a logical list Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 341
+  PASS  Setting a logical list Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 341
+  PASS  Setting a logical list Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 341
+  PASS  Getting a logical list Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 351
+  PASS  Getting a logical list Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 351
+  PASS  Getting a logical list Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 351
+  PASS  Getting a logical list Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 351
+  PASS  Setting a character Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 360
+  PASS  Setting a character Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 360
+  PASS  Setting a character Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 360
+  PASS  Setting a character Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 360
+  PASS  Getting a character Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 369
+  PASS  Getting a character Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 369
+  PASS  Getting a character Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 369
+  PASS  Getting a character Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 369
+  PASS  Setting a character list Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 378
+  PASS  Setting a character list Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 378
+  PASS  Setting a character list Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 378
+  PASS  Setting a character list Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 378
+  PASS  Getting a character list Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 388
+  PASS  Getting a character list Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 388
+  PASS  Getting a character list Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 388
+  PASS  Getting a character list Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 388
+  PASS  Removing an Char list Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 396
+  PASS  Removing an Char list Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 396
+  PASS  Removing an Char list Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 396
+  PASS  Removing an Char list Attribute using an AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 396
+  PASS  Test for getting the Attribute count of an Attpack on mobj, count =           11, ESMF_AttPackStateUTest.F90, line 408
+  PASS  Test for getting the Attribute count of an Attpack on mobj, count =           11, ESMF_AttPackStateUTest.F90, line 408
+  PASS  Test for getting the Attribute count of an Attpack on mobj, count =           11, ESMF_AttPackStateUTest.F90, line 408
+  PASS  Test for getting the Attribute count of an Attpack on mobj, count =           11, ESMF_AttPackStateUTest.F90, line 408
+  PASS  Test for getting the Attribute count using an Attpack object on mobj, count =           11, ESMF_AttPackStateUTest.F90, line 420
+  PASS  Test for getting the Attribute count using an Attpack object on mobj, count =           11, ESMF_AttPackStateUTest.F90, line 420
+  PASS  Test for getting the Attribute count using an Attpack object on mobj, count =           11, ESMF_AttPackStateUTest.F90, line 420
+  PASS  Test for getting the Attribute count using an Attpack object on mobj, count =           11, ESMF_AttPackStateUTest.F90, line 420
+  PASS  Test for getting the Attpack count of an Attpack on mobj, count =            0, ESMF_AttPackStateUTest.F90, line 434
+  PASS  Test for getting the Attpack count of an Attpack on mobj, count =            0, ESMF_AttPackStateUTest.F90, line 434
+  PASS  Test for getting the Attpack count of an Attpack on mobj, count =            0, ESMF_AttPackStateUTest.F90, line 434
+  PASS  Test for getting the Attpack count of an Attpack on mobj, count =            0, ESMF_AttPackStateUTest.F90, line 434
+  PASS  Test for getting the Attpack count using an Attpack object on mobj, count =            0, ESMF_AttPackStateUTest.F90, line 448
+  PASS  Test for getting the Attpack count using an Attpack object on mobj, count =            0, ESMF_AttPackStateUTest.F90, line 448
+  PASS  Test for getting the Attpack count using an Attpack object on mobj, count =            0, ESMF_AttPackStateUTest.F90, line 448
+  PASS  Test for getting the Attpack count using an Attpack object on mobj, count =            0, ESMF_AttPackStateUTest.F90, line 448
+  PASS  Adding multiple Attributes to a nested Attribute package on a State Test, ESMF_AttPackStateUTest.F90, line 479
+  PASS  Adding multiple Attributes to a nested Attribute package on a State Test, ESMF_AttPackStateUTest.F90, line 479
+  PASS  Adding multiple Attributes to a nested Attribute package on a State Test, ESMF_AttPackStateUTest.F90, line 479
+  PASS  Adding multiple Attributes to a nested Attribute package on a State Test, ESMF_AttPackStateUTest.F90, line 479
+  PASS  Add a duplicate attpack. Ensure mappig is identical after adding., ESMF_AttPackStateUTest.F90, line 495
+  PASS  Add a duplicate attpack. Ensure mappig is identical after adding., ESMF_AttPackStateUTest.F90, line 495
+  PASS  Add a duplicate attpack. Ensure mappig is identical after adding., ESMF_AttPackStateUTest.F90, line 495
+  PASS  Add a duplicate attpack. Ensure mappig is identical after adding., ESMF_AttPackStateUTest.F90, line 495
+  PASS  Removing an Attribute in a nested Attribute package on a State Test, ESMF_AttPackStateUTest.F90, line 506
+  PASS  Removing an Attribute in a nested Attribute package on a State Test, ESMF_AttPackStateUTest.F90, line 506
+  PASS  Removing an Attribute in a nested Attribute package on a State Test, ESMF_AttPackStateUTest.F90, line 506
+  PASS  Removing an Attribute in a nested Attribute package on a State Test, ESMF_AttPackStateUTest.F90, line 506
+  PASS  Removing an Attribute in a nested Attribute package on mobj Test, again, ESMF_AttPackStateUTest.F90, line 515
+  PASS  Removing an Attribute in a nested Attribute package on mobj Test, again, ESMF_AttPackStateUTest.F90, line 515
+  PASS  Removing an Attribute in a nested Attribute package on mobj Test, again, ESMF_AttPackStateUTest.F90, line 515
+  PASS  Removing an Attribute in a nested Attribute package on mobj Test, again, ESMF_AttPackStateUTest.F90, line 515
+  PASS  Getting a default Attribute character list in a nested Attribute package on mobj test2, ESMF_AttPackStateUTest.F90, line 526
+  PASS  Getting a default Attribute character list in a nested Attribute package on mobj test2, ESMF_AttPackStateUTest.F90, line 526
+  PASS  Getting a default Attribute character list in a nested Attribute package on mobj test2, ESMF_AttPackStateUTest.F90, line 526
+  PASS  Getting a default Attribute character list in a nested Attribute package on mobj test2, ESMF_AttPackStateUTest.F90, line 526
+  PASS  Get a nested AttPack on a State Test, ESMF_AttPackStateUTest.F90, line 539
+  PASS  Get a nested AttPack on a State Test, ESMF_AttPackStateUTest.F90, line 539
+  PASS  Get a nested AttPack on a State Test, ESMF_AttPackStateUTest.F90, line 539
+  PASS  Get a nested AttPack on a State Test, ESMF_AttPackStateUTest.F90, line 539
+  PASS  Getting a char list Attribute in a nested Attribute package on a State Test, ESMF_AttPackStateUTest.F90, line 551
+  PASS  Getting a char list Attribute in a nested Attribute package on a State Test, ESMF_AttPackStateUTest.F90, line 551
+  PASS  Getting a char list Attribute in a nested Attribute package on a State Test, ESMF_AttPackStateUTest.F90, line 551
+  PASS  Getting a char list Attribute in a nested Attribute package on a State Test, ESMF_AttPackStateUTest.F90, line 551
+  PASS  Setting an ESMF_R8 list Attribute using a nested AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 560
+  PASS  Setting an ESMF_R8 list Attribute using a nested AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 560
+  PASS  Setting an ESMF_R8 list Attribute using a nested AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 560
+  PASS  Setting an ESMF_R8 list Attribute using a nested AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 560
+  PASS  Getting an ESMF_R8 list Attribute using a nested AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 570
+  PASS  Getting an ESMF_R8 list Attribute using a nested AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 570
+  PASS  Getting an ESMF_R8 list Attribute using a nested AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 570
+  PASS  Getting an ESMF_R8 list Attribute using a nested AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 570
+  PASS  Setting a logical Attribute using a nested AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 579
+  PASS  Setting a logical Attribute using a nested AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 579
+  PASS  Setting a logical Attribute using a nested AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 579
+  PASS  Setting a logical Attribute using a nested AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 579
+  PASS  Getting a logical Attribute using a nested AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 589
+  PASS  Getting a logical Attribute using a nested AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 589
+  PASS  Getting a logical Attribute using a nested AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 589
+  PASS  Getting a logical Attribute using a nested AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 589
+  PASS  Setting a character Attribute using a nested AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 598
+  PASS  Setting a character Attribute using a nested AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 598
+  PASS  Setting a character Attribute using a nested AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 598
+  PASS  Setting a character Attribute using a nested AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 598
+  PASS  Getting a character Attribute using a nested AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 608
+  PASS  Getting a character Attribute using a nested AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 608
+  PASS  Getting a character Attribute using a nested AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 608
+  PASS  Getting a character Attribute using a nested AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 608
+  PASS  Removing an Char list Attribute using a nested AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 617
+  PASS  Removing an Char list Attribute using a nested AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 617
+  PASS  Removing an Char list Attribute using a nested AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 617
+  PASS  Removing an Char list Attribute using a nested AttPack object on a State Test, ESMF_AttPackStateUTest.F90, line 617
+  PASS  Test for the presence of a nested AttPack2 on mobj, ESMF_AttPackStateUTest.F90, line 628
+  PASS  Test for the presence of a nested AttPack2 on mobj, ESMF_AttPackStateUTest.F90, line 628
+  PASS  Test for the presence of a nested AttPack2 on mobj, ESMF_AttPackStateUTest.F90, line 628
+  PASS  Test for the presence of a nested AttPack2 on mobj, ESMF_AttPackStateUTest.F90, line 628
+  PASS  Getting a character Attribute in a nested AttPack with ESMF_ATTNEST_OFF on a State Test, ESMF_AttPackStateUTest.F90, line 638
+  PASS  Getting a character Attribute in a nested AttPack with ESMF_ATTNEST_OFF on a State Test, ESMF_AttPackStateUTest.F90, line 638
+  PASS  Getting a character Attribute in a nested AttPack with ESMF_ATTNEST_OFF on a State Test, ESMF_AttPackStateUTest.F90, line 638
+  PASS  Getting a character Attribute in a nested AttPack with ESMF_ATTNEST_OFF on a State Test, ESMF_AttPackStateUTest.F90, line 638
+  PASS  Test for the presence of a nested AttPack on mobj, ESMF_AttPackStateUTest.F90, line 649
+  PASS  Test for the presence of a nested AttPack on mobj, ESMF_AttPackStateUTest.F90, line 649
+  PASS  Test for the presence of a nested AttPack on mobj, ESMF_AttPackStateUTest.F90, line 649
+  PASS  Test for the presence of a nested AttPack on mobj, ESMF_AttPackStateUTest.F90, line 649
+  PASS  Test for the presence of a nested AttPack using index on mobj, ESMF_AttPackStateUTest.F90, line 660
+  PASS  Test for the presence of a nested AttPack using index on mobj, ESMF_AttPackStateUTest.F90, line 660
+  PASS  Test for the presence of a nested AttPack using index on mobj, ESMF_AttPackStateUTest.F90, line 660
+  PASS  Test for the presence of a nested AttPack using index on mobj, ESMF_AttPackStateUTest.F90, line 660
+  PASS  Test for getting the count of Attributes in a  nested Attpack, count =           11, ESMF_AttPackStateUTest.F90, line 678
+  PASS  Test for getting the count of Attributes in a  nested Attpack, count =           11, ESMF_AttPackStateUTest.F90, line 678
+  PASS  Test for getting the count of Attributes in a  nested Attpack, count =           11, ESMF_AttPackStateUTest.F90, line 678
+  PASS  Test for getting the count of Attributes in a  nested Attpack, count =           11, ESMF_AttPackStateUTest.F90, line 678
+  PASS  Test for getting the count of Attpacks in a  nested Attpack, count =            1, ESMF_AttPackStateUTest.F90, line 691
+  PASS  Test for getting the count of Attpacks in a  nested Attpack, count =            1, ESMF_AttPackStateUTest.F90, line 691
+  PASS  Test for getting the count of Attpacks in a  nested Attpack, count =            1, ESMF_AttPackStateUTest.F90, line 691
+  PASS  Test for getting the count of Attpacks in a  nested Attpack, count =            1, ESMF_AttPackStateUTest.F90, line 691
+  PASS  Test for getting the count of Attributes in a  nested Attpack, count =           10, ESMF_AttPackStateUTest.F90, line 704
+  PASS  Test for getting the count of Attributes in a  nested Attpack, count =           10, ESMF_AttPackStateUTest.F90, line 704
+  PASS  Test for getting the count of Attributes in a  nested Attpack, count =           10, ESMF_AttPackStateUTest.F90, line 704
+  PASS  Test for getting the count of Attributes in a  nested Attpack, count =           10, ESMF_AttPackStateUTest.F90, line 704
+  PASS  Test for getting the count of Attpacks in a  nested Attpack, count =            0, ESMF_AttPackStateUTest.F90, line 717
+  PASS  Test for getting the count of Attpacks in a  nested Attpack, count =            0, ESMF_AttPackStateUTest.F90, line 717
+  PASS  Test for getting the count of Attpacks in a  nested Attpack, count =            0, ESMF_AttPackStateUTest.F90, line 717
+  PASS  Test for getting the count of Attpacks in a  nested Attpack, count =            0, ESMF_AttPackStateUTest.F90, line 717
+  PASS  Test for getting the count of Attributes in a  nested Attpack with ATTNEST_OFF, count =           11, ESMF_AttPackStateUTest.F90, line 735
+  PASS  Test for getting the count of Attributes in a  nested Attpack with ATTNEST_OFF, count =           11, ESMF_AttPackStateUTest.F90, line 735
+  PASS  Test for getting the count of Attributes in a  nested Attpack with ATTNEST_OFF, count =           11, ESMF_AttPackStateUTest.F90, line 735
+  PASS  Test for getting the count of Attributes in a  nested Attpack with ATTNEST_OFF, count =           11, ESMF_AttPackStateUTest.F90, line 735
+  PASS  Test for getting the count of Attributes in a nested Attpack with ATTNEST_ON, count =           21, ESMF_AttPackStateUTest.F90, line 749
+  PASS  Test for getting the count of Attributes in a nested Attpack with ATTNEST_ON, count =           21, ESMF_AttPackStateUTest.F90, line 749
+  PASS  Test for getting the count of Attributes in a nested Attpack with ATTNEST_ON, count =           21, ESMF_AttPackStateUTest.F90, line 749
+  PASS  Test for getting the count of Attributes in a nested Attpack with ATTNEST_ON, count =           21, ESMF_AttPackStateUTest.F90, line 749
+  PASS  Get all Attributes in an AttPack object by index with ATTNEST_ON Test, count =           21 , convention = customconvention_top, purpose = custompurpose_top, ESMF_AttPackStateUTest.F90, line 766
+  PASS  Get all Attributes in an AttPack object by index with ATTNEST_ON Test, count =           21 , convention = customconvention_top, purpose = custompurpose_top, ESMF_AttPackStateUTest.F90, line 766
+  PASS  Get all Attributes in an AttPack object by index with ATTNEST_ON Test, count =           21 , convention = customconvention_top, purpose = custompurpose_top, ESMF_AttPackStateUTest.F90, line 766
+  PASS  Get all Attributes in an AttPack object by index with ATTNEST_ON Test, count =           21 , convention = customconvention_top, purpose = custompurpose_top, ESMF_AttPackStateUTest.F90, line 766
+  PASS  Test for getting an Attribute in a nested Attpack by  index too large with ATTNESTFLAG_OFF, ESMF_AttPackStateUTest.F90, line 779
+  PASS  Test for getting an Attribute in a nested Attpack by  index too large with ATTNESTFLAG_OFF, ESMF_AttPackStateUTest.F90, line 779
+  PASS  Test for getting an Attribute in a nested Attpack by  index too large with ATTNESTFLAG_OFF, ESMF_AttPackStateUTest.F90, line 779
+  PASS  Test for getting an Attribute in a nested Attpack by  index too large with ATTNESTFLAG_OFF, ESMF_AttPackStateUTest.F90, line 779
+  PASS  Test for getting an Attribute in a nested Attpack by  index too large with ATTNESTFLAG_ON, ESMF_AttPackStateUTest.F90, line 792
+  PASS  Test for getting an Attribute in a nested Attpack by  index too large with ATTNESTFLAG_ON, ESMF_AttPackStateUTest.F90, line 792
+  PASS  Test for getting an Attribute in a nested Attpack by  index too large with ATTNESTFLAG_ON, ESMF_AttPackStateUTest.F90, line 792
+  PASS  Test for getting an Attribute in a nested Attpack by  index too large with ATTNESTFLAG_ON, ESMF_AttPackStateUTest.F90, line 792
+  PASS  Creating a custom Attribute package on a State Test, ESMF_AttPackStateUTest.F90, line 810
+  PASS  Creating a custom Attribute package on a State Test, ESMF_AttPackStateUTest.F90, line 810
+  PASS  Creating a custom Attribute package on a State Test, ESMF_AttPackStateUTest.F90, line 810
+  PASS  Creating a custom Attribute package on a State Test, ESMF_AttPackStateUTest.F90, line 810
+  PASS  Getting a nonexistent Attribute from a State Test, ESMF_AttPackStateUTest.F90, line 828
+  PASS  Getting a nonexistent Attribute from a State Test, ESMF_AttPackStateUTest.F90, line 828
+  PASS  Getting a nonexistent Attribute from a State Test, ESMF_AttPackStateUTest.F90, line 828
+  PASS  Getting a nonexistent Attribute from a State Test, ESMF_AttPackStateUTest.F90, line 828
+  PASS  Getting an unset char Attribute in an Attribute package with defaultValue on a State Test, ESMF_AttPackStateUTest.F90, line 840
+  PASS  Getting an unset char Attribute in an Attribute package with defaultValue on a State Test, ESMF_AttPackStateUTest.F90, line 840
+  PASS  Getting an unset char Attribute in an Attribute package with defaultValue on a State Test, ESMF_AttPackStateUTest.F90, line 840
+  PASS  Setting an Attribute in an Attribute package to empty string on a State Test, ESMF_AttPackStateUTest.F90, line 849
+  PASS  Getting an unset char Attribute in an Attribute package with defaultValue on a State Test, ESMF_AttPackStateUTest.F90, line 840
+  PASS  Setting an Attribute in an Attribute package to empty string on a State Test, ESMF_AttPackStateUTest.F90, line 849
+  PASS  Setting an Attribute in an Attribute package to empty string on a State Test, ESMF_AttPackStateUTest.F90, line 849
+  PASS  Setting an Attribute in an Attribute package on a State Test, ESMF_AttPackStateUTest.F90, line 860
+  PASS  Setting an Attribute in an Attribute package to empty string on a State Test, ESMF_AttPackStateUTest.F90, line 849
+  PASS  Setting an Attribute in an Attribute package on a State Test, ESMF_AttPackStateUTest.F90, line 860
+  PASS  Setting an Attribute in an Attribute package on a State Test, ESMF_AttPackStateUTest.F90, line 860
+  PASS  Setting an Attribute in an Attribute package on a State Test, ESMF_AttPackStateUTest.F90, line 860
+  PASS  Setting a char list Attribute in an Attribute package on a State Test, ESMF_AttPackStateUTest.F90, line 871
+  PASS  Setting a char list Attribute in an Attribute package on a State Test, ESMF_AttPackStateUTest.F90, line 871
+  PASS  Setting a char list Attribute in an Attribute package on a State Test, ESMF_AttPackStateUTest.F90, line 871
+  PASS  Setting a char list Attribute in an Attribute package on a State Test, ESMF_AttPackStateUTest.F90, line 871
+  PASS  Getting a char list Attribute in an Attribute package on a State Test, ESMF_AttPackStateUTest.F90, line 881
+  PASS  Getting a char list Attribute in an Attribute package on a State Test, ESMF_AttPackStateUTest.F90, line 881
+  PASS  Getting a char list Attribute in an Attribute package on a State Test, ESMF_AttPackStateUTest.F90, line 881
+  PASS  Getting a char list Attribute in an Attribute package on a State Test, ESMF_AttPackStateUTest.F90, line 881
+  PASS  Removeing an Attribute in an Attribute package on a State Test, ESMF_AttPackStateUTest.F90, line 889
+  PASS  Removeing an Attribute in an Attribute package on a State Test, ESMF_AttPackStateUTest.F90, line 889
+  PASS  Removeing an Attribute in an Attribute package on a State Test, ESMF_AttPackStateUTest.F90, line 889
+  PASS  Removeing an Attribute in an Attribute package on a State Test, ESMF_AttPackStateUTest.F90, line 889
+  PASS  Getting a default Attribute character list in an Attribute package on a State Test, ESMF_AttPackStateUTest.F90, line 903
+  PASS  Getting a default Attribute character list in an Attribute package on a State Test, ESMF_AttPackStateUTest.F90, line 903
+  PASS  Getting a default Attribute character list in an Attribute package on a State Test, ESMF_AttPackStateUTest.F90, line 903
+  PASS  Getting a default Attribute character list in an Attribute package on a State Test, ESMF_AttPackStateUTest.F90, line 903
+  PASS  Test for the presence of an AttPack object on mobj, ESMF_AttPackStateUTest.F90, line 913
+  PASS  Test for the presence of an AttPack object on mobj, ESMF_AttPackStateUTest.F90, line 913
+  PASS  Test for the presence of an AttPack object on mobj, ESMF_AttPackStateUTest.F90, line 913
+  PASS  Test for the presence of an AttPack object on mobj, ESMF_AttPackStateUTest.F90, line 913
+  PASS  Removing the entire Attribute package from a State Test, ESMF_AttPackStateUTest.F90, line 921
+  PASS  Removing the entire Attribute package from a State Test, ESMF_AttPackStateUTest.F90, line 921
+  PASS  Removing the entire Attribute package from a State Test, ESMF_AttPackStateUTest.F90, line 921
+  PASS  Removing the entire Attribute package from a State Test, ESMF_AttPackStateUTest.F90, line 921
+  PASS  Removing the entire Attribute package from a State Test, ESMF_AttPackStateUTest.F90, line 929
+  PASS  Removing the entire Attribute package from a State Test, ESMF_AttPackStateUTest.F90, line 929
+  PASS  Removing the entire Attribute package from a State Test, ESMF_AttPackStateUTest.F90, line 929
+  PASS  Removing the entire Attribute package from a State Test, ESMF_AttPackStateUTest.F90, line 929
+  PASS  Creating a standard Attribute package on a State Test, ESMF_AttPackStateUTest.F90, line 947
+  PASS  Creating a standard Attribute package on a State Test, ESMF_AttPackStateUTest.F90, line 947
+  PASS  Creating a standard Attribute package on a State Test, ESMF_AttPackStateUTest.F90, line 947
+  PASS  Creating a standard Attribute package on a State Test, ESMF_AttPackStateUTest.F90, line 947
+  PASS  Test for getting the count of Attributes in a nested Attpack, count =            0, ESMF_AttPackStateUTest.F90, line 961
+  PASS  Test for getting the count of Attributes in a nested Attpack, count =            0, ESMF_AttPackStateUTest.F90, line 961
+  PASS  Test for getting the count of Attributes in a nested Attpack, count =            0, ESMF_AttPackStateUTest.F90, line 961
+  PASS  Get all Attributes in an AttPack object by index Test, count =            0 , convention = ESMF, purpose = General, ESMF_AttPackStateUTest.F90, line 978
+  PASS  Test for getting the count of Attributes in a nested Attpack, count =            0, ESMF_AttPackStateUTest.F90, line 961
+  PASS  Get all Attributes in an AttPack object by index Test, count =            0 , convention = ESMF, purpose = General, ESMF_AttPackStateUTest.F90, line 978
+  PASS  Get all Attributes in an AttPack object by index Test, count =            0 , convention = ESMF, purpose = General, ESMF_AttPackStateUTest.F90, line 978
+  PASS  Get all Attributes in an AttPack object by index Test, count =            0 , convention = ESMF, purpose = General, ESMF_AttPackStateUTest.F90, line 978
+  Ending Test, file ESMF_AttPackStateUTest.F90, line 986
+  Ending Test, file ESMF_AttPackStateUTest.F90, line 986
+  Ending Test, file ESMF_AttPackStateUTest.F90, line 986
+  Ending Test, file ESMF_AttPackStateUTest.F90, line 986
+  PET           2  Test Elapsed Time    100.47999999999999       msec.
+  PET           3  Test Elapsed Time    100.46400000000000       msec.
+  PET           0  Test Elapsed Time    89.014999999999986       msec.
+  PET           1  Test Elapsed Time    100.51599999999999       msec.

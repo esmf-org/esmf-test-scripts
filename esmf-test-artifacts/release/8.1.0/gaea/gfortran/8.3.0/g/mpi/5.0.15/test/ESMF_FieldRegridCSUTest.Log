@@ -1,0 +1,140 @@
+20210305 103930.954 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103930.954 INFO             PET0 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 103930.954 INFO             PET0 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 103930.954 INFO             PET0 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 103930.954 INFO             PET0 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 103930.954 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103930.954 INFO             PET0 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 103930.954 INFO             PET0 ESMF library build date/time: "Mar  5 2021" "09:44:18"
+20210305 103930.954 INFO             PET0 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g
+20210305 103930.954 INFO             PET0 ESMF_COMM                   : mpi
+20210305 103930.955 INFO             PET0 ESMF_MOAB                   : enabled
+20210305 103930.955 INFO             PET0 ESMF_LAPACK                 : enabled
+20210305 103930.955 INFO             PET0 ESMF_NETCDF                 : enabled
+20210305 103930.955 INFO             PET0 ESMF_PNETCDF                : disabled
+20210305 103930.955 INFO             PET0 ESMF_PIO                    : enabled
+20210305 103930.955 INFO             PET0 ESMF_YAMLCPP                : enabled
+20210305 103930.957 INFO             PET0  Beginning Test, file ESMF_FieldRegridCSUTest.F90, line 60
+20210305 103930.957 INFO             PET0  NUMBER_OF_PROCESSORS           4
+20210305 103931.129 INFO             PET0  PASS  Bilinear regrid a cubed sphere Grid with regular decomposition, ESMF_FieldRegridCSUTest.F90, line 80
+20210305 103931.248 INFO             PET0  PASS  Bilinear regrid a cubed sphere Grid with irregular decomposition, ESMF_FieldRegridCSUTest.F90, line 96
+20210305 103931.474 INFO             PET0  PASS  Bilinear regrid a cubed sphere Grid with ESMF_COORDSYS_SPH_RAD, ESMF_FieldRegridCSUTest.F90, line 112
+20210305 103932.976 INFO             PET0  PASS  Patch regrid a cubed sphere Grid, ESMF_FieldRegridCSUTest.F90, line 129
+20210305 103933.212 INFO             PET0  PASS  Nearest neighbor regrid a cubed sphere Grid, ESMF_FieldRegridCSUTest.F90, line 148
+20210305 103933.586 INFO             PET0  PASS  Conservative regrid a cubed sphere Grid with regular decomposition, ESMF_FieldRegridCSUTest.F90, line 164
+20210305 103933.817 INFO             PET0  PASS  Conservative regrid a cubed sphere Grid with irregular decomposition, ESMF_FieldRegridCSUTest.F90, line 180
+20210305 103934.237 INFO             PET0  PASS  Bilinear regrid a cubed sphere Mesh, ESMF_FieldRegridCSUTest.F90, line 196
+20210305 103936.073 INFO             PET0  PASS  Patch regrid a cubed sphere Mesh, ESMF_FieldRegridCSUTest.F90, line 212
+20210305 103936.354 INFO             PET0  PASS  Nearest neighbor regrid a cubed sphere Mesh, ESMF_FieldRegridCSUTest.F90, line 231
+20210305 103936.959 INFO             PET0  PASS  Conservative regrid a cubed sphere Mesh, ESMF_FieldRegridCSUTest.F90, line 246
+20210305 103937.783 INFO             PET0  PASS  Bilinear regrid a regularly decomposed cubed sphere Grid defined in GRIDSPEC Mosaic file, ESMF_FieldRegridCSUTest.F90, line 262
+20210305 103938.122 INFO             PET0  PASS  Bilinear regrid an irregularly decomposed cubed sphere Grid defined in GRIDSPEC Mosaic file, ESMF_FieldRegridCSUTest.F90, line 282
+20210305 103939.380 INFO             PET0  PASS  Conservative regrid a regularly decomposed cubed sphere Grid defined in a GRIDSPEC Mosaic file, ESMF_FieldRegridCSUTest.F90, line 302
+20210305 103940.225 INFO             PET0  PASS  Conservative regrid a irregularly decomposed cubed sphere Grid defined in a GRIDSPEC Mosaic file, ESMF_FieldRegridCSUTest.F90, line 323
+20210305 103940.225 INFO             PET0  Ending Test, file ESMF_FieldRegridCSUTest.F90, line 332
+20210305 103940.225 INFO             PET0 Finalizing ESMF
+20210305 103930.956 INFO             PET1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103930.956 INFO             PET1 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 103930.956 INFO             PET1 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 103930.956 INFO             PET1 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 103930.956 INFO             PET1 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 103930.956 INFO             PET1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103930.956 INFO             PET1 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 103930.956 INFO             PET1 ESMF library build date/time: "Mar  5 2021" "09:44:18"
+20210305 103930.956 INFO             PET1 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g
+20210305 103930.956 INFO             PET1 ESMF_COMM                   : mpi
+20210305 103930.957 INFO             PET1 ESMF_MOAB                   : enabled
+20210305 103930.957 INFO             PET1 ESMF_LAPACK                 : enabled
+20210305 103930.957 INFO             PET1 ESMF_NETCDF                 : enabled
+20210305 103930.957 INFO             PET1 ESMF_PNETCDF                : disabled
+20210305 103930.957 INFO             PET1 ESMF_PIO                    : enabled
+20210305 103930.957 INFO             PET1 ESMF_YAMLCPP                : enabled
+20210305 103930.957 INFO             PET1  Beginning Test, file ESMF_FieldRegridCSUTest.F90, line 60
+20210305 103930.957 INFO             PET1  NUMBER_OF_PROCESSORS           4
+20210305 103931.129 INFO             PET1  PASS  Bilinear regrid a cubed sphere Grid with regular decomposition, ESMF_FieldRegridCSUTest.F90, line 80
+20210305 103931.248 INFO             PET1  PASS  Bilinear regrid a cubed sphere Grid with irregular decomposition, ESMF_FieldRegridCSUTest.F90, line 96
+20210305 103931.474 INFO             PET1  PASS  Bilinear regrid a cubed sphere Grid with ESMF_COORDSYS_SPH_RAD, ESMF_FieldRegridCSUTest.F90, line 112
+20210305 103932.976 INFO             PET1  PASS  Patch regrid a cubed sphere Grid, ESMF_FieldRegridCSUTest.F90, line 129
+20210305 103933.212 INFO             PET1  PASS  Nearest neighbor regrid a cubed sphere Grid, ESMF_FieldRegridCSUTest.F90, line 148
+20210305 103933.586 INFO             PET1  PASS  Conservative regrid a cubed sphere Grid with regular decomposition, ESMF_FieldRegridCSUTest.F90, line 164
+20210305 103933.817 INFO             PET1  PASS  Conservative regrid a cubed sphere Grid with irregular decomposition, ESMF_FieldRegridCSUTest.F90, line 180
+20210305 103934.237 INFO             PET1  PASS  Bilinear regrid a cubed sphere Mesh, ESMF_FieldRegridCSUTest.F90, line 196
+20210305 103936.073 INFO             PET1  PASS  Patch regrid a cubed sphere Mesh, ESMF_FieldRegridCSUTest.F90, line 212
+20210305 103936.354 INFO             PET1  PASS  Nearest neighbor regrid a cubed sphere Mesh, ESMF_FieldRegridCSUTest.F90, line 231
+20210305 103936.959 INFO             PET1  PASS  Conservative regrid a cubed sphere Mesh, ESMF_FieldRegridCSUTest.F90, line 246
+20210305 103937.783 INFO             PET1  PASS  Bilinear regrid a regularly decomposed cubed sphere Grid defined in GRIDSPEC Mosaic file, ESMF_FieldRegridCSUTest.F90, line 262
+20210305 103938.122 INFO             PET1  PASS  Bilinear regrid an irregularly decomposed cubed sphere Grid defined in GRIDSPEC Mosaic file, ESMF_FieldRegridCSUTest.F90, line 282
+20210305 103939.380 INFO             PET1  PASS  Conservative regrid a regularly decomposed cubed sphere Grid defined in a GRIDSPEC Mosaic file, ESMF_FieldRegridCSUTest.F90, line 302
+20210305 103940.225 INFO             PET1  PASS  Conservative regrid a irregularly decomposed cubed sphere Grid defined in a GRIDSPEC Mosaic file, ESMF_FieldRegridCSUTest.F90, line 323
+20210305 103940.225 INFO             PET1  Ending Test, file ESMF_FieldRegridCSUTest.F90, line 332
+20210305 103940.225 INFO             PET1 Finalizing ESMF
+20210305 103930.950 INFO             PET2 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103930.950 INFO             PET2 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 103930.950 INFO             PET2 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 103930.950 INFO             PET2 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 103930.950 INFO             PET2 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 103930.950 INFO             PET2 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103930.950 INFO             PET2 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 103930.950 INFO             PET2 ESMF library build date/time: "Mar  5 2021" "09:44:18"
+20210305 103930.950 INFO             PET2 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g
+20210305 103930.950 INFO             PET2 ESMF_COMM                   : mpi
+20210305 103930.950 INFO             PET2 ESMF_MOAB                   : enabled
+20210305 103930.950 INFO             PET2 ESMF_LAPACK                 : enabled
+20210305 103930.950 INFO             PET2 ESMF_NETCDF                 : enabled
+20210305 103930.950 INFO             PET2 ESMF_PNETCDF                : disabled
+20210305 103930.950 INFO             PET2 ESMF_PIO                    : enabled
+20210305 103930.950 INFO             PET2 ESMF_YAMLCPP                : enabled
+20210305 103930.957 INFO             PET2  Beginning Test, file ESMF_FieldRegridCSUTest.F90, line 60
+20210305 103930.957 INFO             PET2  NUMBER_OF_PROCESSORS           4
+20210305 103931.129 INFO             PET2  PASS  Bilinear regrid a cubed sphere Grid with regular decomposition, ESMF_FieldRegridCSUTest.F90, line 80
+20210305 103931.248 INFO             PET2  PASS  Bilinear regrid a cubed sphere Grid with irregular decomposition, ESMF_FieldRegridCSUTest.F90, line 96
+20210305 103931.474 INFO             PET2  PASS  Bilinear regrid a cubed sphere Grid with ESMF_COORDSYS_SPH_RAD, ESMF_FieldRegridCSUTest.F90, line 112
+20210305 103932.976 INFO             PET2  PASS  Patch regrid a cubed sphere Grid, ESMF_FieldRegridCSUTest.F90, line 129
+20210305 103933.212 INFO             PET2  PASS  Nearest neighbor regrid a cubed sphere Grid, ESMF_FieldRegridCSUTest.F90, line 148
+20210305 103933.586 INFO             PET2  PASS  Conservative regrid a cubed sphere Grid with regular decomposition, ESMF_FieldRegridCSUTest.F90, line 164
+20210305 103933.817 INFO             PET2  PASS  Conservative regrid a cubed sphere Grid with irregular decomposition, ESMF_FieldRegridCSUTest.F90, line 180
+20210305 103934.236 INFO             PET2  PASS  Bilinear regrid a cubed sphere Mesh, ESMF_FieldRegridCSUTest.F90, line 196
+20210305 103936.071 INFO             PET2  PASS  Patch regrid a cubed sphere Mesh, ESMF_FieldRegridCSUTest.F90, line 212
+20210305 103936.353 INFO             PET2  PASS  Nearest neighbor regrid a cubed sphere Mesh, ESMF_FieldRegridCSUTest.F90, line 231
+20210305 103936.957 INFO             PET2  PASS  Conservative regrid a cubed sphere Mesh, ESMF_FieldRegridCSUTest.F90, line 246
+20210305 103937.783 INFO             PET2  PASS  Bilinear regrid a regularly decomposed cubed sphere Grid defined in GRIDSPEC Mosaic file, ESMF_FieldRegridCSUTest.F90, line 262
+20210305 103938.122 INFO             PET2  PASS  Bilinear regrid an irregularly decomposed cubed sphere Grid defined in GRIDSPEC Mosaic file, ESMF_FieldRegridCSUTest.F90, line 282
+20210305 103939.380 INFO             PET2  PASS  Conservative regrid a regularly decomposed cubed sphere Grid defined in a GRIDSPEC Mosaic file, ESMF_FieldRegridCSUTest.F90, line 302
+20210305 103940.225 INFO             PET2  PASS  Conservative regrid a irregularly decomposed cubed sphere Grid defined in a GRIDSPEC Mosaic file, ESMF_FieldRegridCSUTest.F90, line 323
+20210305 103940.225 INFO             PET2  Ending Test, file ESMF_FieldRegridCSUTest.F90, line 332
+20210305 103940.225 INFO             PET2 Finalizing ESMF
+20210305 103930.952 INFO             PET3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103930.952 INFO             PET3 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 103930.952 INFO             PET3 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 103930.952 INFO             PET3 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 103930.952 INFO             PET3 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 103930.952 INFO             PET3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103930.952 INFO             PET3 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 103930.952 INFO             PET3 ESMF library build date/time: "Mar  5 2021" "09:44:18"
+20210305 103930.952 INFO             PET3 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g
+20210305 103930.952 INFO             PET3 ESMF_COMM                   : mpi
+20210305 103930.953 INFO             PET3 ESMF_MOAB                   : enabled
+20210305 103930.953 INFO             PET3 ESMF_LAPACK                 : enabled
+20210305 103930.953 INFO             PET3 ESMF_NETCDF                 : enabled
+20210305 103930.953 INFO             PET3 ESMF_PNETCDF                : disabled
+20210305 103930.953 INFO             PET3 ESMF_PIO                    : enabled
+20210305 103930.953 INFO             PET3 ESMF_YAMLCPP                : enabled
+20210305 103930.957 INFO             PET3  Beginning Test, file ESMF_FieldRegridCSUTest.F90, line 60
+20210305 103930.957 INFO             PET3  NUMBER_OF_PROCESSORS           4
+20210305 103931.129 INFO             PET3  PASS  Bilinear regrid a cubed sphere Grid with regular decomposition, ESMF_FieldRegridCSUTest.F90, line 80
+20210305 103931.248 INFO             PET3  PASS  Bilinear regrid a cubed sphere Grid with irregular decomposition, ESMF_FieldRegridCSUTest.F90, line 96
+20210305 103931.474 INFO             PET3  PASS  Bilinear regrid a cubed sphere Grid with ESMF_COORDSYS_SPH_RAD, ESMF_FieldRegridCSUTest.F90, line 112
+20210305 103932.976 INFO             PET3  PASS  Patch regrid a cubed sphere Grid, ESMF_FieldRegridCSUTest.F90, line 129
+20210305 103933.212 INFO             PET3  PASS  Nearest neighbor regrid a cubed sphere Grid, ESMF_FieldRegridCSUTest.F90, line 148
+20210305 103933.586 INFO             PET3  PASS  Conservative regrid a cubed sphere Grid with regular decomposition, ESMF_FieldRegridCSUTest.F90, line 164
+20210305 103933.817 INFO             PET3  PASS  Conservative regrid a cubed sphere Grid with irregular decomposition, ESMF_FieldRegridCSUTest.F90, line 180
+20210305 103934.236 INFO             PET3  PASS  Bilinear regrid a cubed sphere Mesh, ESMF_FieldRegridCSUTest.F90, line 196
+20210305 103936.071 INFO             PET3  PASS  Patch regrid a cubed sphere Mesh, ESMF_FieldRegridCSUTest.F90, line 212
+20210305 103936.353 INFO             PET3  PASS  Nearest neighbor regrid a cubed sphere Mesh, ESMF_FieldRegridCSUTest.F90, line 231
+20210305 103936.957 INFO             PET3  PASS  Conservative regrid a cubed sphere Mesh, ESMF_FieldRegridCSUTest.F90, line 246
+20210305 103937.783 INFO             PET3  PASS  Bilinear regrid a regularly decomposed cubed sphere Grid defined in GRIDSPEC Mosaic file, ESMF_FieldRegridCSUTest.F90, line 262
+20210305 103938.122 INFO             PET3  PASS  Bilinear regrid an irregularly decomposed cubed sphere Grid defined in GRIDSPEC Mosaic file, ESMF_FieldRegridCSUTest.F90, line 282
+20210305 103939.380 INFO             PET3  PASS  Conservative regrid a regularly decomposed cubed sphere Grid defined in a GRIDSPEC Mosaic file, ESMF_FieldRegridCSUTest.F90, line 302
+20210305 103940.225 INFO             PET3  PASS  Conservative regrid a irregularly decomposed cubed sphere Grid defined in a GRIDSPEC Mosaic file, ESMF_FieldRegridCSUTest.F90, line 323
+20210305 103940.225 INFO             PET3  Ending Test, file ESMF_FieldRegridCSUTest.F90, line 332
+20210305 103940.225 INFO             PET3 Finalizing ESMF

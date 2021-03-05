@@ -1,0 +1,472 @@
+20210305 104329.056 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 104329.056 INFO             PET0 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 104329.056 INFO             PET0 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 104329.056 INFO             PET0 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 104329.056 INFO             PET0 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 104329.056 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 104329.056 INFO             PET0 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 104329.056 INFO             PET0 ESMF library build date/time: "Mar  5 2021" "09:44:18"
+20210305 104329.056 INFO             PET0 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g
+20210305 104329.056 INFO             PET0 ESMF_COMM                   : mpi
+20210305 104329.056 INFO             PET0 ESMF_MOAB                   : enabled
+20210305 104329.056 INFO             PET0 ESMF_LAPACK                 : enabled
+20210305 104329.056 INFO             PET0 ESMF_NETCDF                 : enabled
+20210305 104329.056 INFO             PET0 ESMF_PNETCDF                : disabled
+20210305 104329.056 INFO             PET0 ESMF_PIO                    : enabled
+20210305 104329.056 INFO             PET0 ESMF_YAMLCPP                : enabled
+20210305 104329.056 INFO             PET0  Beginning Test, file ESMF_AttPackABundleUTest.F90, line 88
+20210305 104329.056 INFO             PET0  NUMBER_OF_PROCESSORS           4
+20210305 104329.132 INFO             PET0  PASS  Creating a custom Attribute package on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 145
+20210305 104329.133 INFO             PET0  PASS  Add to a custom Attribute package on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 170
+20210305 104329.133 INFO             PET0  PASS  Setting an ESMF_I4 Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 183
+20210305 104329.133 INFO             PET0  PASS  Getting an ESMF_I4 Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 192
+20210305 104329.133 INFO             PET0  PASS  Setting an ESMF_I4 list Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 201
+20210305 104329.133 INFO             PET0  PASS  Getting an ESMF_I4 list Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 211
+20210305 104329.133 INFO             PET0  PASS  Setting an ESMF_I8 Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 220
+20210305 104329.133 INFO             PET0  PASS  Getting an ESMF_I8 Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 229
+20210305 104329.133 INFO             PET0  PASS  Setting an ESMF_I8 list Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 238
+20210305 104329.133 INFO             PET0  PASS  Getting an ESMF_I8 list Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 248
+20210305 104329.133 INFO             PET0  PASS  Setting an ESMF_R4 Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 257
+20210305 104329.133 INFO             PET0  PASS  Getting an ESMF_R4 Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 266
+20210305 104329.133 INFO             PET0  PASS  Setting an ESMF_R4 list Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 275
+20210305 104329.133 INFO             PET0  PASS  Getting an ESMF_R4 list Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 285
+20210305 104329.133 INFO             PET0  PASS  Setting an ESMF_R8name Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 294
+20210305 104329.133 INFO             PET0  PASS  Getting an ESMF_R8 Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 303
+20210305 104329.133 INFO             PET0  PASS  Setting an ESMF_R8 list Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 312
+20210305 104329.133 INFO             PET0  PASS  Getting an ESMF_R8 list Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 322
+20210305 104329.133 INFO             PET0  PASS  Setting a logical Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 331
+20210305 104329.134 INFO             PET0  PASS  Getting a logical Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 340
+20210305 104329.134 INFO             PET0  PASS  Setting a logical list Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 349
+20210305 104329.134 INFO             PET0  PASS  Getting a logical list Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 359
+20210305 104329.134 INFO             PET0  PASS  Setting a character Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 368
+20210305 104329.134 INFO             PET0  PASS  Getting a character Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 377
+20210305 104329.134 INFO             PET0  PASS  Setting a character list Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 386
+20210305 104329.134 INFO             PET0  PASS  Getting a character list Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 396
+20210305 104329.134 INFO             PET0  PASS  Removing an Char list Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 404
+20210305 104329.134 INFO             PET0  PASS  Test for getting the Attribute count of an Attpack on mobj, count =           11, ESMF_AttPackABundleUTest.F90, line 416
+20210305 104329.134 INFO             PET0  PASS  Test for getting the Attribute count using an Attpack object on mobj, count =           11, ESMF_AttPackABundleUTest.F90, line 428
+20210305 104329.134 INFO             PET0  PASS  Test for getting the Attpack count of an Attpack on mobj, count =            0, ESMF_AttPackABundleUTest.F90, line 442
+20210305 104329.134 INFO             PET0  PASS  Test for getting the Attpack count using an Attpack object on mobj, count =            0, ESMF_AttPackABundleUTest.F90, line 456
+20210305 104329.135 INFO             PET0  PASS  Adding multiple Attributes to a nested Attribute package on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 487
+20210305 104329.135 INFO             PET0  PASS  Add a duplicate attpack. Ensure mappig is identical after adding., ESMF_AttPackABundleUTest.F90, line 503
+20210305 104329.135 INFO             PET0  PASS  Removing an Attribute in a nested Attribute package on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 514
+20210305 104329.135 ERROR            PET0 ESMCI_Info.C:668 Info::erase() Not found  - [json.exception.out_of_range.403] key 'Character_namelist2' not found
+20210305 104329.135 ERROR            PET0 ESMCI_Info.C:688 Info::erase() Not found  - Internal subroutine call returned Error
+20210305 104329.135 ERROR            PET0 ESMC_InfoCDef.C:243 ESMC_InfoErase() Not found  - Internal subroutine call returned Error
+20210305 104329.135 ERROR            PET0 ESMF_Info.F90:3054 ESMF_InfoRemove() Not found  - Internal subroutine call returned Error
+20210305 104329.135 ERROR            PET0 src/Superstructure/AttributeAPI/interface/ESMF_Attribute.F90:45171 ESMF_AttributeRemoveAttPackArray Not found  - Internal subroutine call returned Error
+20210305 104329.135 INFO             PET0  PASS  Removing an Attribute in a nested Attribute package on mobj Test, again, ESMF_AttPackABundleUTest.F90, line 523
+20210305 104329.136 INFO             PET0  PASS  Getting a default Attribute character list in a nested Attribute package on mobj test2, ESMF_AttPackABundleUTest.F90, line 534
+20210305 104329.136 INFO             PET0  PASS  Get a nested AttPack on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 547
+20210305 104329.136 INFO             PET0  PASS  Getting a char list Attribute in a nested Attribute package on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 559
+20210305 104329.136 INFO             PET0  PASS  Setting an ESMF_R8 list Attribute using a nested AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 568
+20210305 104329.136 INFO             PET0  PASS  Getting an ESMF_R8 list Attribute using a nested AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 578
+20210305 104329.136 INFO             PET0  PASS  Setting a logical Attribute using a nested AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 587
+20210305 104329.136 INFO             PET0  PASS  Getting a logical Attribute using a nested AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 597
+20210305 104329.136 INFO             PET0  PASS  Setting a character Attribute using a nested AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 606
+20210305 104329.137 INFO             PET0  PASS  Getting a character Attribute using a nested AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 616
+20210305 104329.137 INFO             PET0  PASS  Removing an Char list Attribute using a nested AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 625
+20210305 104329.137 INFO             PET0  PASS  Test for the presence of a nested AttPack2 on mobj, ESMF_AttPackABundleUTest.F90, line 636
+20210305 104329.137 ERROR            PET0 /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Base/src/ESMCI_Info.C:830 Info::get(): Key not found (JSON trace will follow): /customconvention/custompurpose/ESMF_Character
+20210305 104329.137 ERROR            PET0 ESMCI_Info.C:832 Info::get() Attribute not set  - [json.exception.out_of_range.403] key 'customconvention' not found
+20210305 104329.137 ERROR            PET0 ESMCI_Info.C:836 Info::get() Attribute not set  - Internal subroutine call returned Error
+20210305 104329.137 ERROR            PET0 ESMC_InfoCDef.C:601 ESMC_InfoGetCH() Attribute not set  - Internal subroutine call returned Error
+20210305 104329.137 ERROR            PET0 ESMF_Info.F90:1681 ESMF_InfoGetCH() Attribute not set  - Internal subroutine call returned Error
+20210305 104329.137 ERROR            PET0 src/Superstructure/AttributeAPI/interface/ESMF_Attribute.F90:21235 ESMF_AttributeGetAttPackArrayBun Attribute not set  - Internal subroutine call returned Error
+20210305 104329.137 INFO             PET0  PASS  Getting a character Attribute in a nested AttPack with ESMF_ATTNEST_OFF on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 646
+20210305 104329.137 INFO             PET0  PASS  Test for the presence of a nested AttPack on mobj, ESMF_AttPackABundleUTest.F90, line 657
+20210305 104329.137 INFO             PET0  PASS  Test for the presence of a nested AttPack using index on mobj, ESMF_AttPackABundleUTest.F90, line 668
+20210305 104329.137 INFO             PET0  PASS  Test for getting the count of Attributes in a  nested Attpack, count =           11, ESMF_AttPackABundleUTest.F90, line 686
+20210305 104329.137 INFO             PET0  PASS  Test for getting the count of Attpacks in a  nested Attpack, count =            1, ESMF_AttPackABundleUTest.F90, line 699
+20210305 104329.138 INFO             PET0  PASS  Test for getting the count of Attributes in a  nested Attpack, count =           10, ESMF_AttPackABundleUTest.F90, line 712
+20210305 104329.138 INFO             PET0  PASS  Test for getting the count of Attpacks in a  nested Attpack, count =            0, ESMF_AttPackABundleUTest.F90, line 725
+20210305 104329.138 INFO             PET0  PASS  Test for getting the count of Attributes in a  nested Attpack with ATTNEST_OFF, count =           11, ESMF_AttPackABundleUTest.F90, line 743
+20210305 104329.138 INFO             PET0  PASS  Test for getting the count of Attributes in a nested Attpack with ATTNEST_ON, count =           21, ESMF_AttPackABundleUTest.F90, line 757
+20210305 104329.140 INFO             PET0  PASS  Get all Attributes in an AttPack object by index with ATTNEST_ON Test, count =           21 , convention = customconvention_top, purpose = custompurpose_top, ESMF_AttPackABundleUTest.F90, line 774
+20210305 104329.140 ERROR            PET0 ESMCI_Info.C:315 find_by_index() Not found  - Internal subroutine call returned Error
+20210305 104329.141 ERROR            PET0 ESMCI_Info.C:1079 Info::inquire() Not found  - Internal subroutine call returned Error
+20210305 104329.141 ERROR            PET0 ESMC_InfoCDef.C:262 ESMC_InfoInquire() Not found  - Internal subroutine call returned Error
+20210305 104329.141 ERROR            PET0 ESMF_Info.F90:2740 ESMF_InfoInquire() Not found  - Internal subroutine call returned Error
+20210305 104329.141 ERROR            PET0 src/Superstructure/AttributeAPI/interface/ESMF_Attribute.F90:40907 ESMF_AttributeGetInfoByNumArrayB Not found  - Internal subroutine call returned Error
+20210305 104329.141 INFO             PET0  PASS  Test for getting an Attribute in a nested Attpack by  index too large with ATTNESTFLAG_OFF, ESMF_AttPackABundleUTest.F90, line 787
+20210305 104329.141 INFO             PET0  PASS  Test for getting an Attribute in a nested Attpack by  index too large with ATTNESTFLAG_ON, ESMF_AttPackABundleUTest.F90, line 800
+20210305 104329.141 INFO             PET0  PASS  Creating a custom Attribute package on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 818
+20210305 104329.141 ERROR            PET0 /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Base/src/ESMCI_Info.C:830 Info::get(): Key not found (JSON trace will follow): /customconvention2/custompurpose2/NotHere
+20210305 104329.141 ERROR            PET0 ESMCI_Info.C:832 Info::get() Attribute not set  - [json.exception.out_of_range.403] key 'customconvention2' not found
+20210305 104329.141 ERROR            PET0 ESMCI_Info.C:836 Info::get() Attribute not set  - Internal subroutine call returned Error
+20210305 104329.141 ERROR            PET0 ESMC_InfoCDefGeneric.C:100 ESMC_InfoGetI4() Attribute not set  - Internal subroutine call returned Error
+20210305 104329.141 ERROR            PET0 ESMF_Info.F90:1572 ESMF_InfoGetI4() Attribute not set  - Internal subroutine call returned Error
+20210305 104329.141 ERROR            PET0 src/Superstructure/AttributeAPI/interface/ESMF_Attribute.F90:21010 ESMF_AttributeGetObjArrayBundleI Attribute not set  - Internal subroutine call returned Error
+20210305 104329.141 INFO             PET0  PASS  Getting a nonexistent Attribute from an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 836
+20210305 104329.141 INFO             PET0  PASS  Getting an unset char Attribute in an Attribute package with defaultValue on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 848
+20210305 104329.141 INFO             PET0  PASS  Setting an Attribute in an Attribute package to empty string on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 857
+20210305 104329.141 INFO             PET0  PASS  Setting an Attribute in an Attribute package on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 868
+20210305 104329.141 INFO             PET0  PASS  Setting a char list Attribute in an Attribute package on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 879
+20210305 104329.141 INFO             PET0  PASS  Getting a char list Attribute in an Attribute package on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 889
+20210305 104329.142 INFO             PET0  PASS  Removeing an Attribute in an Attribute package on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 897
+20210305 104329.142 INFO             PET0  PASS  Getting a default Attribute character list in an Attribute package on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 911
+20210305 104329.142 ERROR            PET0 /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Base/src/ESMCI_Info.C:830 Info::get(): Key not found (JSON trace will follow): /customconvention/custompurpose/NotHere
+20210305 104329.142 ERROR            PET0 ESMCI_Info.C:832 Info::get() Attribute not set  - [json.exception.out_of_range.403] key 'customconvention' not found
+20210305 104329.142 ERROR            PET0 ESMCI_Info.C:836 Info::get() Attribute not set  - Internal subroutine call returned Error
+20210305 104329.142 ERROR            PET0 ESMC_InfoCDefGeneric.C:100 ESMC_InfoGetI4() Attribute not set  - Internal subroutine call returned Error
+20210305 104329.142 ERROR            PET0 ESMF_Info.F90:1572 ESMF_InfoGetI4() Attribute not set  - Internal subroutine call returned Error
+20210305 104329.142 ERROR            PET0 src/Superstructure/AttributeAPI/interface/ESMF_Attribute.F90:20937 ESMF_AttributeGetAttPackArrayBun Attribute not set  - Internal subroutine call returned Error
+20210305 104329.142 INFO             PET0  PASS  Test for the presence of an AttPack object on mobj, ESMF_AttPackABundleUTest.F90, line 921
+20210305 104329.142 INFO             PET0  PASS  Removing the entire Attribute package from an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 929
+20210305 104329.142 INFO             PET0  PASS  Removing the entire Attribute package from an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 937
+20210305 104329.142 INFO             PET0  Ending Test, file ESMF_AttPackABundleUTest.F90, line 948
+20210305 104329.142 INFO             PET0 Finalizing ESMF
+20210305 104329.050 INFO             PET1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 104329.050 INFO             PET1 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 104329.050 INFO             PET1 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 104329.050 INFO             PET1 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 104329.050 INFO             PET1 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 104329.050 INFO             PET1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 104329.050 INFO             PET1 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 104329.050 INFO             PET1 ESMF library build date/time: "Mar  5 2021" "09:44:18"
+20210305 104329.050 INFO             PET1 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g
+20210305 104329.050 INFO             PET1 ESMF_COMM                   : mpi
+20210305 104329.050 INFO             PET1 ESMF_MOAB                   : enabled
+20210305 104329.050 INFO             PET1 ESMF_LAPACK                 : enabled
+20210305 104329.050 INFO             PET1 ESMF_NETCDF                 : enabled
+20210305 104329.050 INFO             PET1 ESMF_PNETCDF                : disabled
+20210305 104329.050 INFO             PET1 ESMF_PIO                    : enabled
+20210305 104329.050 INFO             PET1 ESMF_YAMLCPP                : enabled
+20210305 104329.056 INFO             PET1  Beginning Test, file ESMF_AttPackABundleUTest.F90, line 88
+20210305 104329.056 INFO             PET1  NUMBER_OF_PROCESSORS           4
+20210305 104329.133 INFO             PET1  PASS  Creating a custom Attribute package on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 145
+20210305 104329.134 INFO             PET1  PASS  Add to a custom Attribute package on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 170
+20210305 104329.134 INFO             PET1  PASS  Setting an ESMF_I4 Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 183
+20210305 104329.134 INFO             PET1  PASS  Getting an ESMF_I4 Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 192
+20210305 104329.134 INFO             PET1  PASS  Setting an ESMF_I4 list Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 201
+20210305 104329.134 INFO             PET1  PASS  Getting an ESMF_I4 list Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 211
+20210305 104329.134 INFO             PET1  PASS  Setting an ESMF_I8 Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 220
+20210305 104329.134 INFO             PET1  PASS  Getting an ESMF_I8 Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 229
+20210305 104329.134 INFO             PET1  PASS  Setting an ESMF_I8 list Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 238
+20210305 104329.134 INFO             PET1  PASS  Getting an ESMF_I8 list Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 248
+20210305 104329.134 INFO             PET1  PASS  Setting an ESMF_R4 Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 257
+20210305 104329.134 INFO             PET1  PASS  Getting an ESMF_R4 Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 266
+20210305 104329.134 INFO             PET1  PASS  Setting an ESMF_R4 list Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 275
+20210305 104329.134 INFO             PET1  PASS  Getting an ESMF_R4 list Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 285
+20210305 104329.134 INFO             PET1  PASS  Setting an ESMF_R8name Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 294
+20210305 104329.134 INFO             PET1  PASS  Getting an ESMF_R8 Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 303
+20210305 104329.134 INFO             PET1  PASS  Setting an ESMF_R8 list Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 312
+20210305 104329.134 INFO             PET1  PASS  Getting an ESMF_R8 list Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 322
+20210305 104329.134 INFO             PET1  PASS  Setting a logical Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 331
+20210305 104329.134 INFO             PET1  PASS  Getting a logical Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 340
+20210305 104329.134 INFO             PET1  PASS  Setting a logical list Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 349
+20210305 104329.134 INFO             PET1  PASS  Getting a logical list Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 359
+20210305 104329.134 INFO             PET1  PASS  Setting a character Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 368
+20210305 104329.134 INFO             PET1  PASS  Getting a character Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 377
+20210305 104329.134 INFO             PET1  PASS  Setting a character list Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 386
+20210305 104329.134 INFO             PET1  PASS  Getting a character list Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 396
+20210305 104329.134 INFO             PET1  PASS  Removing an Char list Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 404
+20210305 104329.134 INFO             PET1  PASS  Test for getting the Attribute count of an Attpack on mobj, count =           11, ESMF_AttPackABundleUTest.F90, line 416
+20210305 104329.135 INFO             PET1  PASS  Test for getting the Attribute count using an Attpack object on mobj, count =           11, ESMF_AttPackABundleUTest.F90, line 428
+20210305 104329.135 INFO             PET1  PASS  Test for getting the Attpack count of an Attpack on mobj, count =            0, ESMF_AttPackABundleUTest.F90, line 442
+20210305 104329.135 INFO             PET1  PASS  Test for getting the Attpack count using an Attpack object on mobj, count =            0, ESMF_AttPackABundleUTest.F90, line 456
+20210305 104329.135 INFO             PET1  PASS  Adding multiple Attributes to a nested Attribute package on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 487
+20210305 104329.136 INFO             PET1  PASS  Add a duplicate attpack. Ensure mappig is identical after adding., ESMF_AttPackABundleUTest.F90, line 503
+20210305 104329.136 INFO             PET1  PASS  Removing an Attribute in a nested Attribute package on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 514
+20210305 104329.136 ERROR            PET1 ESMCI_Info.C:668 Info::erase() Not found  - [json.exception.out_of_range.403] key 'Character_namelist2' not found
+20210305 104329.136 ERROR            PET1 ESMCI_Info.C:688 Info::erase() Not found  - Internal subroutine call returned Error
+20210305 104329.136 ERROR            PET1 ESMC_InfoCDef.C:243 ESMC_InfoErase() Not found  - Internal subroutine call returned Error
+20210305 104329.136 ERROR            PET1 ESMF_Info.F90:3054 ESMF_InfoRemove() Not found  - Internal subroutine call returned Error
+20210305 104329.136 ERROR            PET1 src/Superstructure/AttributeAPI/interface/ESMF_Attribute.F90:45171 ESMF_AttributeRemoveAttPackArray Not found  - Internal subroutine call returned Error
+20210305 104329.136 INFO             PET1  PASS  Removing an Attribute in a nested Attribute package on mobj Test, again, ESMF_AttPackABundleUTest.F90, line 523
+20210305 104329.136 INFO             PET1  PASS  Getting a default Attribute character list in a nested Attribute package on mobj test2, ESMF_AttPackABundleUTest.F90, line 534
+20210305 104329.136 INFO             PET1  PASS  Get a nested AttPack on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 547
+20210305 104329.136 INFO             PET1  PASS  Getting a char list Attribute in a nested Attribute package on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 559
+20210305 104329.137 INFO             PET1  PASS  Setting an ESMF_R8 list Attribute using a nested AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 568
+20210305 104329.137 INFO             PET1  PASS  Getting an ESMF_R8 list Attribute using a nested AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 578
+20210305 104329.137 INFO             PET1  PASS  Setting a logical Attribute using a nested AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 587
+20210305 104329.137 INFO             PET1  PASS  Getting a logical Attribute using a nested AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 597
+20210305 104329.137 INFO             PET1  PASS  Setting a character Attribute using a nested AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 606
+20210305 104329.137 INFO             PET1  PASS  Getting a character Attribute using a nested AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 616
+20210305 104329.137 INFO             PET1  PASS  Removing an Char list Attribute using a nested AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 625
+20210305 104329.137 INFO             PET1  PASS  Test for the presence of a nested AttPack2 on mobj, ESMF_AttPackABundleUTest.F90, line 636
+20210305 104329.137 ERROR            PET1 /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Base/src/ESMCI_Info.C:830 Info::get(): Key not found (JSON trace will follow): /customconvention/custompurpose/ESMF_Character
+20210305 104329.137 ERROR            PET1 ESMCI_Info.C:832 Info::get() Attribute not set  - [json.exception.out_of_range.403] key 'customconvention' not found
+20210305 104329.137 ERROR            PET1 ESMCI_Info.C:836 Info::get() Attribute not set  - Internal subroutine call returned Error
+20210305 104329.137 ERROR            PET1 ESMC_InfoCDef.C:601 ESMC_InfoGetCH() Attribute not set  - Internal subroutine call returned Error
+20210305 104329.137 ERROR            PET1 ESMF_Info.F90:1681 ESMF_InfoGetCH() Attribute not set  - Internal subroutine call returned Error
+20210305 104329.137 ERROR            PET1 src/Superstructure/AttributeAPI/interface/ESMF_Attribute.F90:21235 ESMF_AttributeGetAttPackArrayBun Attribute not set  - Internal subroutine call returned Error
+20210305 104329.137 INFO             PET1  PASS  Getting a character Attribute in a nested AttPack with ESMF_ATTNEST_OFF on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 646
+20210305 104329.138 INFO             PET1  PASS  Test for the presence of a nested AttPack on mobj, ESMF_AttPackABundleUTest.F90, line 657
+20210305 104329.138 INFO             PET1  PASS  Test for the presence of a nested AttPack using index on mobj, ESMF_AttPackABundleUTest.F90, line 668
+20210305 104329.138 INFO             PET1  PASS  Test for getting the count of Attributes in a  nested Attpack, count =           11, ESMF_AttPackABundleUTest.F90, line 686
+20210305 104329.138 INFO             PET1  PASS  Test for getting the count of Attpacks in a  nested Attpack, count =            1, ESMF_AttPackABundleUTest.F90, line 699
+20210305 104329.138 INFO             PET1  PASS  Test for getting the count of Attributes in a  nested Attpack, count =           10, ESMF_AttPackABundleUTest.F90, line 712
+20210305 104329.138 INFO             PET1  PASS  Test for getting the count of Attpacks in a  nested Attpack, count =            0, ESMF_AttPackABundleUTest.F90, line 725
+20210305 104329.138 INFO             PET1  PASS  Test for getting the count of Attributes in a  nested Attpack with ATTNEST_OFF, count =           11, ESMF_AttPackABundleUTest.F90, line 743
+20210305 104329.138 INFO             PET1  PASS  Test for getting the count of Attributes in a nested Attpack with ATTNEST_ON, count =           21, ESMF_AttPackABundleUTest.F90, line 757
+20210305 104329.141 INFO             PET1  PASS  Get all Attributes in an AttPack object by index with ATTNEST_ON Test, count =           21 , convention = customconvention_top, purpose = custompurpose_top, ESMF_AttPackABundleUTest.F90, line 774
+20210305 104329.141 ERROR            PET1 ESMCI_Info.C:315 find_by_index() Not found  - Internal subroutine call returned Error
+20210305 104329.141 ERROR            PET1 ESMCI_Info.C:1079 Info::inquire() Not found  - Internal subroutine call returned Error
+20210305 104329.141 ERROR            PET1 ESMC_InfoCDef.C:262 ESMC_InfoInquire() Not found  - Internal subroutine call returned Error
+20210305 104329.141 ERROR            PET1 ESMF_Info.F90:2740 ESMF_InfoInquire() Not found  - Internal subroutine call returned Error
+20210305 104329.141 ERROR            PET1 src/Superstructure/AttributeAPI/interface/ESMF_Attribute.F90:40907 ESMF_AttributeGetInfoByNumArrayB Not found  - Internal subroutine call returned Error
+20210305 104329.141 INFO             PET1  PASS  Test for getting an Attribute in a nested Attpack by  index too large with ATTNESTFLAG_OFF, ESMF_AttPackABundleUTest.F90, line 787
+20210305 104329.141 INFO             PET1  PASS  Test for getting an Attribute in a nested Attpack by  index too large with ATTNESTFLAG_ON, ESMF_AttPackABundleUTest.F90, line 800
+20210305 104329.142 INFO             PET1  PASS  Creating a custom Attribute package on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 818
+20210305 104329.142 ERROR            PET1 /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Base/src/ESMCI_Info.C:830 Info::get(): Key not found (JSON trace will follow): /customconvention2/custompurpose2/NotHere
+20210305 104329.142 ERROR            PET1 ESMCI_Info.C:832 Info::get() Attribute not set  - [json.exception.out_of_range.403] key 'customconvention2' not found
+20210305 104329.142 ERROR            PET1 ESMCI_Info.C:836 Info::get() Attribute not set  - Internal subroutine call returned Error
+20210305 104329.142 ERROR            PET1 ESMC_InfoCDefGeneric.C:100 ESMC_InfoGetI4() Attribute not set  - Internal subroutine call returned Error
+20210305 104329.142 ERROR            PET1 ESMF_Info.F90:1572 ESMF_InfoGetI4() Attribute not set  - Internal subroutine call returned Error
+20210305 104329.142 ERROR            PET1 src/Superstructure/AttributeAPI/interface/ESMF_Attribute.F90:21010 ESMF_AttributeGetObjArrayBundleI Attribute not set  - Internal subroutine call returned Error
+20210305 104329.142 INFO             PET1  PASS  Getting a nonexistent Attribute from an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 836
+20210305 104329.142 INFO             PET1  PASS  Getting an unset char Attribute in an Attribute package with defaultValue on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 848
+20210305 104329.142 INFO             PET1  PASS  Setting an Attribute in an Attribute package to empty string on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 857
+20210305 104329.142 INFO             PET1  PASS  Setting an Attribute in an Attribute package on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 868
+20210305 104329.142 INFO             PET1  PASS  Setting a char list Attribute in an Attribute package on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 879
+20210305 104329.142 INFO             PET1  PASS  Getting a char list Attribute in an Attribute package on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 889
+20210305 104329.142 INFO             PET1  PASS  Removeing an Attribute in an Attribute package on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 897
+20210305 104329.142 INFO             PET1  PASS  Getting a default Attribute character list in an Attribute package on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 911
+20210305 104329.142 ERROR            PET1 /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Base/src/ESMCI_Info.C:830 Info::get(): Key not found (JSON trace will follow): /customconvention/custompurpose/NotHere
+20210305 104329.142 ERROR            PET1 ESMCI_Info.C:832 Info::get() Attribute not set  - [json.exception.out_of_range.403] key 'customconvention' not found
+20210305 104329.142 ERROR            PET1 ESMCI_Info.C:836 Info::get() Attribute not set  - Internal subroutine call returned Error
+20210305 104329.142 ERROR            PET1 ESMC_InfoCDefGeneric.C:100 ESMC_InfoGetI4() Attribute not set  - Internal subroutine call returned Error
+20210305 104329.142 ERROR            PET1 ESMF_Info.F90:1572 ESMF_InfoGetI4() Attribute not set  - Internal subroutine call returned Error
+20210305 104329.142 ERROR            PET1 src/Superstructure/AttributeAPI/interface/ESMF_Attribute.F90:20937 ESMF_AttributeGetAttPackArrayBun Attribute not set  - Internal subroutine call returned Error
+20210305 104329.142 INFO             PET1  PASS  Test for the presence of an AttPack object on mobj, ESMF_AttPackABundleUTest.F90, line 921
+20210305 104329.143 INFO             PET1  PASS  Removing the entire Attribute package from an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 929
+20210305 104329.143 INFO             PET1  PASS  Removing the entire Attribute package from an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 937
+20210305 104329.143 INFO             PET1  Ending Test, file ESMF_AttPackABundleUTest.F90, line 948
+20210305 104329.143 INFO             PET1 Finalizing ESMF
+20210305 104329.053 INFO             PET2 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 104329.053 INFO             PET2 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 104329.053 INFO             PET2 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 104329.053 INFO             PET2 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 104329.053 INFO             PET2 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 104329.053 INFO             PET2 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 104329.053 INFO             PET2 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 104329.053 INFO             PET2 ESMF library build date/time: "Mar  5 2021" "09:44:18"
+20210305 104329.053 INFO             PET2 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g
+20210305 104329.053 INFO             PET2 ESMF_COMM                   : mpi
+20210305 104329.054 INFO             PET2 ESMF_MOAB                   : enabled
+20210305 104329.054 INFO             PET2 ESMF_LAPACK                 : enabled
+20210305 104329.054 INFO             PET2 ESMF_NETCDF                 : enabled
+20210305 104329.054 INFO             PET2 ESMF_PNETCDF                : disabled
+20210305 104329.054 INFO             PET2 ESMF_PIO                    : enabled
+20210305 104329.054 INFO             PET2 ESMF_YAMLCPP                : enabled
+20210305 104329.056 INFO             PET2  Beginning Test, file ESMF_AttPackABundleUTest.F90, line 88
+20210305 104329.056 INFO             PET2  NUMBER_OF_PROCESSORS           4
+20210305 104329.132 INFO             PET2  PASS  Creating a custom Attribute package on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 145
+20210305 104329.132 INFO             PET2  PASS  Add to a custom Attribute package on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 170
+20210305 104329.133 INFO             PET2  PASS  Setting an ESMF_I4 Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 183
+20210305 104329.133 INFO             PET2  PASS  Getting an ESMF_I4 Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 192
+20210305 104329.133 INFO             PET2  PASS  Setting an ESMF_I4 list Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 201
+20210305 104329.133 INFO             PET2  PASS  Getting an ESMF_I4 list Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 211
+20210305 104329.133 INFO             PET2  PASS  Setting an ESMF_I8 Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 220
+20210305 104329.133 INFO             PET2  PASS  Getting an ESMF_I8 Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 229
+20210305 104329.133 INFO             PET2  PASS  Setting an ESMF_I8 list Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 238
+20210305 104329.133 INFO             PET2  PASS  Getting an ESMF_I8 list Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 248
+20210305 104329.133 INFO             PET2  PASS  Setting an ESMF_R4 Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 257
+20210305 104329.133 INFO             PET2  PASS  Getting an ESMF_R4 Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 266
+20210305 104329.133 INFO             PET2  PASS  Setting an ESMF_R4 list Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 275
+20210305 104329.133 INFO             PET2  PASS  Getting an ESMF_R4 list Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 285
+20210305 104329.133 INFO             PET2  PASS  Setting an ESMF_R8name Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 294
+20210305 104329.133 INFO             PET2  PASS  Getting an ESMF_R8 Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 303
+20210305 104329.133 INFO             PET2  PASS  Setting an ESMF_R8 list Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 312
+20210305 104329.133 INFO             PET2  PASS  Getting an ESMF_R8 list Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 322
+20210305 104329.133 INFO             PET2  PASS  Setting a logical Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 331
+20210305 104329.134 INFO             PET2  PASS  Getting a logical Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 340
+20210305 104329.134 INFO             PET2  PASS  Setting a logical list Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 349
+20210305 104329.134 INFO             PET2  PASS  Getting a logical list Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 359
+20210305 104329.134 INFO             PET2  PASS  Setting a character Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 368
+20210305 104329.134 INFO             PET2  PASS  Getting a character Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 377
+20210305 104329.134 INFO             PET2  PASS  Setting a character list Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 386
+20210305 104329.134 INFO             PET2  PASS  Getting a character list Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 396
+20210305 104329.134 INFO             PET2  PASS  Removing an Char list Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 404
+20210305 104329.134 INFO             PET2  PASS  Test for getting the Attribute count of an Attpack on mobj, count =           11, ESMF_AttPackABundleUTest.F90, line 416
+20210305 104329.134 INFO             PET2  PASS  Test for getting the Attribute count using an Attpack object on mobj, count =           11, ESMF_AttPackABundleUTest.F90, line 428
+20210305 104329.134 INFO             PET2  PASS  Test for getting the Attpack count of an Attpack on mobj, count =            0, ESMF_AttPackABundleUTest.F90, line 442
+20210305 104329.134 INFO             PET2  PASS  Test for getting the Attpack count using an Attpack object on mobj, count =            0, ESMF_AttPackABundleUTest.F90, line 456
+20210305 104329.135 INFO             PET2  PASS  Adding multiple Attributes to a nested Attribute package on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 487
+20210305 104329.135 INFO             PET2  PASS  Add a duplicate attpack. Ensure mappig is identical after adding., ESMF_AttPackABundleUTest.F90, line 503
+20210305 104329.135 INFO             PET2  PASS  Removing an Attribute in a nested Attribute package on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 514
+20210305 104329.135 ERROR            PET2 ESMCI_Info.C:668 Info::erase() Not found  - [json.exception.out_of_range.403] key 'Character_namelist2' not found
+20210305 104329.135 ERROR            PET2 ESMCI_Info.C:688 Info::erase() Not found  - Internal subroutine call returned Error
+20210305 104329.135 ERROR            PET2 ESMC_InfoCDef.C:243 ESMC_InfoErase() Not found  - Internal subroutine call returned Error
+20210305 104329.135 ERROR            PET2 ESMF_Info.F90:3054 ESMF_InfoRemove() Not found  - Internal subroutine call returned Error
+20210305 104329.135 ERROR            PET2 src/Superstructure/AttributeAPI/interface/ESMF_Attribute.F90:45171 ESMF_AttributeRemoveAttPackArray Not found  - Internal subroutine call returned Error
+20210305 104329.135 INFO             PET2  PASS  Removing an Attribute in a nested Attribute package on mobj Test, again, ESMF_AttPackABundleUTest.F90, line 523
+20210305 104329.136 INFO             PET2  PASS  Getting a default Attribute character list in a nested Attribute package on mobj test2, ESMF_AttPackABundleUTest.F90, line 534
+20210305 104329.136 INFO             PET2  PASS  Get a nested AttPack on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 547
+20210305 104329.136 INFO             PET2  PASS  Getting a char list Attribute in a nested Attribute package on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 559
+20210305 104329.136 INFO             PET2  PASS  Setting an ESMF_R8 list Attribute using a nested AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 568
+20210305 104329.136 INFO             PET2  PASS  Getting an ESMF_R8 list Attribute using a nested AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 578
+20210305 104329.136 INFO             PET2  PASS  Setting a logical Attribute using a nested AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 587
+20210305 104329.136 INFO             PET2  PASS  Getting a logical Attribute using a nested AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 597
+20210305 104329.136 INFO             PET2  PASS  Setting a character Attribute using a nested AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 606
+20210305 104329.137 INFO             PET2  PASS  Getting a character Attribute using a nested AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 616
+20210305 104329.137 INFO             PET2  PASS  Removing an Char list Attribute using a nested AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 625
+20210305 104329.137 INFO             PET2  PASS  Test for the presence of a nested AttPack2 on mobj, ESMF_AttPackABundleUTest.F90, line 636
+20210305 104329.137 ERROR            PET2 /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Base/src/ESMCI_Info.C:830 Info::get(): Key not found (JSON trace will follow): /customconvention/custompurpose/ESMF_Character
+20210305 104329.137 ERROR            PET2 ESMCI_Info.C:832 Info::get() Attribute not set  - [json.exception.out_of_range.403] key 'customconvention' not found
+20210305 104329.137 ERROR            PET2 ESMCI_Info.C:836 Info::get() Attribute not set  - Internal subroutine call returned Error
+20210305 104329.137 ERROR            PET2 ESMC_InfoCDef.C:601 ESMC_InfoGetCH() Attribute not set  - Internal subroutine call returned Error
+20210305 104329.137 ERROR            PET2 ESMF_Info.F90:1681 ESMF_InfoGetCH() Attribute not set  - Internal subroutine call returned Error
+20210305 104329.137 ERROR            PET2 src/Superstructure/AttributeAPI/interface/ESMF_Attribute.F90:21235 ESMF_AttributeGetAttPackArrayBun Attribute not set  - Internal subroutine call returned Error
+20210305 104329.137 INFO             PET2  PASS  Getting a character Attribute in a nested AttPack with ESMF_ATTNEST_OFF on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 646
+20210305 104329.137 INFO             PET2  PASS  Test for the presence of a nested AttPack on mobj, ESMF_AttPackABundleUTest.F90, line 657
+20210305 104329.137 INFO             PET2  PASS  Test for the presence of a nested AttPack using index on mobj, ESMF_AttPackABundleUTest.F90, line 668
+20210305 104329.137 INFO             PET2  PASS  Test for getting the count of Attributes in a  nested Attpack, count =           11, ESMF_AttPackABundleUTest.F90, line 686
+20210305 104329.137 INFO             PET2  PASS  Test for getting the count of Attpacks in a  nested Attpack, count =            1, ESMF_AttPackABundleUTest.F90, line 699
+20210305 104329.138 INFO             PET2  PASS  Test for getting the count of Attributes in a  nested Attpack, count =           10, ESMF_AttPackABundleUTest.F90, line 712
+20210305 104329.138 INFO             PET2  PASS  Test for getting the count of Attpacks in a  nested Attpack, count =            0, ESMF_AttPackABundleUTest.F90, line 725
+20210305 104329.138 INFO             PET2  PASS  Test for getting the count of Attributes in a  nested Attpack with ATTNEST_OFF, count =           11, ESMF_AttPackABundleUTest.F90, line 743
+20210305 104329.138 INFO             PET2  PASS  Test for getting the count of Attributes in a nested Attpack with ATTNEST_ON, count =           21, ESMF_AttPackABundleUTest.F90, line 757
+20210305 104329.140 INFO             PET2  PASS  Get all Attributes in an AttPack object by index with ATTNEST_ON Test, count =           21 , convention = customconvention_top, purpose = custompurpose_top, ESMF_AttPackABundleUTest.F90, line 774
+20210305 104329.140 ERROR            PET2 ESMCI_Info.C:315 find_by_index() Not found  - Internal subroutine call returned Error
+20210305 104329.141 ERROR            PET2 ESMCI_Info.C:1079 Info::inquire() Not found  - Internal subroutine call returned Error
+20210305 104329.141 ERROR            PET2 ESMC_InfoCDef.C:262 ESMC_InfoInquire() Not found  - Internal subroutine call returned Error
+20210305 104329.141 ERROR            PET2 ESMF_Info.F90:2740 ESMF_InfoInquire() Not found  - Internal subroutine call returned Error
+20210305 104329.141 ERROR            PET2 src/Superstructure/AttributeAPI/interface/ESMF_Attribute.F90:40907 ESMF_AttributeGetInfoByNumArrayB Not found  - Internal subroutine call returned Error
+20210305 104329.141 INFO             PET2  PASS  Test for getting an Attribute in a nested Attpack by  index too large with ATTNESTFLAG_OFF, ESMF_AttPackABundleUTest.F90, line 787
+20210305 104329.141 INFO             PET2  PASS  Test for getting an Attribute in a nested Attpack by  index too large with ATTNESTFLAG_ON, ESMF_AttPackABundleUTest.F90, line 800
+20210305 104329.141 INFO             PET2  PASS  Creating a custom Attribute package on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 818
+20210305 104329.141 ERROR            PET2 /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Base/src/ESMCI_Info.C:830 Info::get(): Key not found (JSON trace will follow): /customconvention2/custompurpose2/NotHere
+20210305 104329.141 ERROR            PET2 ESMCI_Info.C:832 Info::get() Attribute not set  - [json.exception.out_of_range.403] key 'customconvention2' not found
+20210305 104329.141 ERROR            PET2 ESMCI_Info.C:836 Info::get() Attribute not set  - Internal subroutine call returned Error
+20210305 104329.141 ERROR            PET2 ESMC_InfoCDefGeneric.C:100 ESMC_InfoGetI4() Attribute not set  - Internal subroutine call returned Error
+20210305 104329.141 ERROR            PET2 ESMF_Info.F90:1572 ESMF_InfoGetI4() Attribute not set  - Internal subroutine call returned Error
+20210305 104329.141 ERROR            PET2 src/Superstructure/AttributeAPI/interface/ESMF_Attribute.F90:21010 ESMF_AttributeGetObjArrayBundleI Attribute not set  - Internal subroutine call returned Error
+20210305 104329.141 INFO             PET2  PASS  Getting a nonexistent Attribute from an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 836
+20210305 104329.141 INFO             PET2  PASS  Getting an unset char Attribute in an Attribute package with defaultValue on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 848
+20210305 104329.141 INFO             PET2  PASS  Setting an Attribute in an Attribute package to empty string on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 857
+20210305 104329.141 INFO             PET2  PASS  Setting an Attribute in an Attribute package on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 868
+20210305 104329.141 INFO             PET2  PASS  Setting a char list Attribute in an Attribute package on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 879
+20210305 104329.141 INFO             PET2  PASS  Getting a char list Attribute in an Attribute package on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 889
+20210305 104329.141 INFO             PET2  PASS  Removeing an Attribute in an Attribute package on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 897
+20210305 104329.142 INFO             PET2  PASS  Getting a default Attribute character list in an Attribute package on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 911
+20210305 104329.142 ERROR            PET2 /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Base/src/ESMCI_Info.C:830 Info::get(): Key not found (JSON trace will follow): /customconvention/custompurpose/NotHere
+20210305 104329.142 ERROR            PET2 ESMCI_Info.C:832 Info::get() Attribute not set  - [json.exception.out_of_range.403] key 'customconvention' not found
+20210305 104329.142 ERROR            PET2 ESMCI_Info.C:836 Info::get() Attribute not set  - Internal subroutine call returned Error
+20210305 104329.142 ERROR            PET2 ESMC_InfoCDefGeneric.C:100 ESMC_InfoGetI4() Attribute not set  - Internal subroutine call returned Error
+20210305 104329.142 ERROR            PET2 ESMF_Info.F90:1572 ESMF_InfoGetI4() Attribute not set  - Internal subroutine call returned Error
+20210305 104329.142 ERROR            PET2 src/Superstructure/AttributeAPI/interface/ESMF_Attribute.F90:20937 ESMF_AttributeGetAttPackArrayBun Attribute not set  - Internal subroutine call returned Error
+20210305 104329.142 INFO             PET2  PASS  Test for the presence of an AttPack object on mobj, ESMF_AttPackABundleUTest.F90, line 921
+20210305 104329.142 INFO             PET2  PASS  Removing the entire Attribute package from an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 929
+20210305 104329.142 INFO             PET2  PASS  Removing the entire Attribute package from an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 937
+20210305 104329.142 INFO             PET2  Ending Test, file ESMF_AttPackABundleUTest.F90, line 948
+20210305 104329.142 INFO             PET2 Finalizing ESMF
+20210305 104329.051 INFO             PET3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 104329.051 INFO             PET3 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 104329.051 INFO             PET3 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 104329.051 INFO             PET3 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 104329.051 INFO             PET3 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 104329.051 INFO             PET3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 104329.051 INFO             PET3 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 104329.051 INFO             PET3 ESMF library build date/time: "Mar  5 2021" "09:44:18"
+20210305 104329.051 INFO             PET3 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g
+20210305 104329.051 INFO             PET3 ESMF_COMM                   : mpi
+20210305 104329.051 INFO             PET3 ESMF_MOAB                   : enabled
+20210305 104329.051 INFO             PET3 ESMF_LAPACK                 : enabled
+20210305 104329.051 INFO             PET3 ESMF_NETCDF                 : enabled
+20210305 104329.051 INFO             PET3 ESMF_PNETCDF                : disabled
+20210305 104329.051 INFO             PET3 ESMF_PIO                    : enabled
+20210305 104329.051 INFO             PET3 ESMF_YAMLCPP                : enabled
+20210305 104329.056 INFO             PET3  Beginning Test, file ESMF_AttPackABundleUTest.F90, line 88
+20210305 104329.056 INFO             PET3  NUMBER_OF_PROCESSORS           4
+20210305 104329.132 INFO             PET3  PASS  Creating a custom Attribute package on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 145
+20210305 104329.132 INFO             PET3  PASS  Add to a custom Attribute package on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 170
+20210305 104329.133 INFO             PET3  PASS  Setting an ESMF_I4 Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 183
+20210305 104329.133 INFO             PET3  PASS  Getting an ESMF_I4 Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 192
+20210305 104329.133 INFO             PET3  PASS  Setting an ESMF_I4 list Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 201
+20210305 104329.133 INFO             PET3  PASS  Getting an ESMF_I4 list Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 211
+20210305 104329.133 INFO             PET3  PASS  Setting an ESMF_I8 Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 220
+20210305 104329.133 INFO             PET3  PASS  Getting an ESMF_I8 Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 229
+20210305 104329.133 INFO             PET3  PASS  Setting an ESMF_I8 list Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 238
+20210305 104329.133 INFO             PET3  PASS  Getting an ESMF_I8 list Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 248
+20210305 104329.133 INFO             PET3  PASS  Setting an ESMF_R4 Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 257
+20210305 104329.133 INFO             PET3  PASS  Getting an ESMF_R4 Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 266
+20210305 104329.133 INFO             PET3  PASS  Setting an ESMF_R4 list Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 275
+20210305 104329.133 INFO             PET3  PASS  Getting an ESMF_R4 list Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 285
+20210305 104329.133 INFO             PET3  PASS  Setting an ESMF_R8name Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 294
+20210305 104329.133 INFO             PET3  PASS  Getting an ESMF_R8 Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 303
+20210305 104329.133 INFO             PET3  PASS  Setting an ESMF_R8 list Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 312
+20210305 104329.133 INFO             PET3  PASS  Getting an ESMF_R8 list Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 322
+20210305 104329.133 INFO             PET3  PASS  Setting a logical Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 331
+20210305 104329.133 INFO             PET3  PASS  Getting a logical Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 340
+20210305 104329.133 INFO             PET3  PASS  Setting a logical list Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 349
+20210305 104329.133 INFO             PET3  PASS  Getting a logical list Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 359
+20210305 104329.133 INFO             PET3  PASS  Setting a character Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 368
+20210305 104329.133 INFO             PET3  PASS  Getting a character Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 377
+20210305 104329.133 INFO             PET3  PASS  Setting a character list Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 386
+20210305 104329.133 INFO             PET3  PASS  Getting a character list Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 396
+20210305 104329.134 INFO             PET3  PASS  Removing an Char list Attribute using an AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 404
+20210305 104329.134 INFO             PET3  PASS  Test for getting the Attribute count of an Attpack on mobj, count =           11, ESMF_AttPackABundleUTest.F90, line 416
+20210305 104329.134 INFO             PET3  PASS  Test for getting the Attribute count using an Attpack object on mobj, count =           11, ESMF_AttPackABundleUTest.F90, line 428
+20210305 104329.134 INFO             PET3  PASS  Test for getting the Attpack count of an Attpack on mobj, count =            0, ESMF_AttPackABundleUTest.F90, line 442
+20210305 104329.134 INFO             PET3  PASS  Test for getting the Attpack count using an Attpack object on mobj, count =            0, ESMF_AttPackABundleUTest.F90, line 456
+20210305 104329.134 INFO             PET3  PASS  Adding multiple Attributes to a nested Attribute package on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 487
+20210305 104329.135 INFO             PET3  PASS  Add a duplicate attpack. Ensure mappig is identical after adding., ESMF_AttPackABundleUTest.F90, line 503
+20210305 104329.135 INFO             PET3  PASS  Removing an Attribute in a nested Attribute package on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 514
+20210305 104329.135 ERROR            PET3 ESMCI_Info.C:668 Info::erase() Not found  - [json.exception.out_of_range.403] key 'Character_namelist2' not found
+20210305 104329.135 ERROR            PET3 ESMCI_Info.C:688 Info::erase() Not found  - Internal subroutine call returned Error
+20210305 104329.135 ERROR            PET3 ESMC_InfoCDef.C:243 ESMC_InfoErase() Not found  - Internal subroutine call returned Error
+20210305 104329.135 ERROR            PET3 ESMF_Info.F90:3054 ESMF_InfoRemove() Not found  - Internal subroutine call returned Error
+20210305 104329.135 ERROR            PET3 src/Superstructure/AttributeAPI/interface/ESMF_Attribute.F90:45171 ESMF_AttributeRemoveAttPackArray Not found  - Internal subroutine call returned Error
+20210305 104329.135 INFO             PET3  PASS  Removing an Attribute in a nested Attribute package on mobj Test, again, ESMF_AttPackABundleUTest.F90, line 523
+20210305 104329.135 INFO             PET3  PASS  Getting a default Attribute character list in a nested Attribute package on mobj test2, ESMF_AttPackABundleUTest.F90, line 534
+20210305 104329.135 INFO             PET3  PASS  Get a nested AttPack on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 547
+20210305 104329.136 INFO             PET3  PASS  Getting a char list Attribute in a nested Attribute package on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 559
+20210305 104329.136 INFO             PET3  PASS  Setting an ESMF_R8 list Attribute using a nested AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 568
+20210305 104329.136 INFO             PET3  PASS  Getting an ESMF_R8 list Attribute using a nested AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 578
+20210305 104329.136 INFO             PET3  PASS  Setting a logical Attribute using a nested AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 587
+20210305 104329.136 INFO             PET3  PASS  Getting a logical Attribute using a nested AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 597
+20210305 104329.136 INFO             PET3  PASS  Setting a character Attribute using a nested AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 606
+20210305 104329.136 INFO             PET3  PASS  Getting a character Attribute using a nested AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 616
+20210305 104329.136 INFO             PET3  PASS  Removing an Char list Attribute using a nested AttPack object on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 625
+20210305 104329.137 INFO             PET3  PASS  Test for the presence of a nested AttPack2 on mobj, ESMF_AttPackABundleUTest.F90, line 636
+20210305 104329.137 ERROR            PET3 /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Base/src/ESMCI_Info.C:830 Info::get(): Key not found (JSON trace will follow): /customconvention/custompurpose/ESMF_Character
+20210305 104329.137 ERROR            PET3 ESMCI_Info.C:832 Info::get() Attribute not set  - [json.exception.out_of_range.403] key 'customconvention' not found
+20210305 104329.137 ERROR            PET3 ESMCI_Info.C:836 Info::get() Attribute not set  - Internal subroutine call returned Error
+20210305 104329.137 ERROR            PET3 ESMC_InfoCDef.C:601 ESMC_InfoGetCH() Attribute not set  - Internal subroutine call returned Error
+20210305 104329.137 ERROR            PET3 ESMF_Info.F90:1681 ESMF_InfoGetCH() Attribute not set  - Internal subroutine call returned Error
+20210305 104329.137 ERROR            PET3 src/Superstructure/AttributeAPI/interface/ESMF_Attribute.F90:21235 ESMF_AttributeGetAttPackArrayBun Attribute not set  - Internal subroutine call returned Error
+20210305 104329.137 INFO             PET3  PASS  Getting a character Attribute in a nested AttPack with ESMF_ATTNEST_OFF on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 646
+20210305 104329.137 INFO             PET3  PASS  Test for the presence of a nested AttPack on mobj, ESMF_AttPackABundleUTest.F90, line 657
+20210305 104329.137 INFO             PET3  PASS  Test for the presence of a nested AttPack using index on mobj, ESMF_AttPackABundleUTest.F90, line 668
+20210305 104329.137 INFO             PET3  PASS  Test for getting the count of Attributes in a  nested Attpack, count =           11, ESMF_AttPackABundleUTest.F90, line 686
+20210305 104329.137 INFO             PET3  PASS  Test for getting the count of Attpacks in a  nested Attpack, count =            1, ESMF_AttPackABundleUTest.F90, line 699
+20210305 104329.137 INFO             PET3  PASS  Test for getting the count of Attributes in a  nested Attpack, count =           10, ESMF_AttPackABundleUTest.F90, line 712
+20210305 104329.138 INFO             PET3  PASS  Test for getting the count of Attpacks in a  nested Attpack, count =            0, ESMF_AttPackABundleUTest.F90, line 725
+20210305 104329.138 INFO             PET3  PASS  Test for getting the count of Attributes in a  nested Attpack with ATTNEST_OFF, count =           11, ESMF_AttPackABundleUTest.F90, line 743
+20210305 104329.138 INFO             PET3  PASS  Test for getting the count of Attributes in a nested Attpack with ATTNEST_ON, count =           21, ESMF_AttPackABundleUTest.F90, line 757
+20210305 104329.140 INFO             PET3  PASS  Get all Attributes in an AttPack object by index with ATTNEST_ON Test, count =           21 , convention = customconvention_top, purpose = custompurpose_top, ESMF_AttPackABundleUTest.F90, line 774
+20210305 104329.140 ERROR            PET3 ESMCI_Info.C:315 find_by_index() Not found  - Internal subroutine call returned Error
+20210305 104329.140 ERROR            PET3 ESMCI_Info.C:1079 Info::inquire() Not found  - Internal subroutine call returned Error
+20210305 104329.140 ERROR            PET3 ESMC_InfoCDef.C:262 ESMC_InfoInquire() Not found  - Internal subroutine call returned Error
+20210305 104329.140 ERROR            PET3 ESMF_Info.F90:2740 ESMF_InfoInquire() Not found  - Internal subroutine call returned Error
+20210305 104329.140 ERROR            PET3 src/Superstructure/AttributeAPI/interface/ESMF_Attribute.F90:40907 ESMF_AttributeGetInfoByNumArrayB Not found  - Internal subroutine call returned Error
+20210305 104329.140 INFO             PET3  PASS  Test for getting an Attribute in a nested Attpack by  index too large with ATTNESTFLAG_OFF, ESMF_AttPackABundleUTest.F90, line 787
+20210305 104329.141 INFO             PET3  PASS  Test for getting an Attribute in a nested Attpack by  index too large with ATTNESTFLAG_ON, ESMF_AttPackABundleUTest.F90, line 800
+20210305 104329.141 INFO             PET3  PASS  Creating a custom Attribute package on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 818
+20210305 104329.141 ERROR            PET3 /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Base/src/ESMCI_Info.C:830 Info::get(): Key not found (JSON trace will follow): /customconvention2/custompurpose2/NotHere
+20210305 104329.141 ERROR            PET3 ESMCI_Info.C:832 Info::get() Attribute not set  - [json.exception.out_of_range.403] key 'customconvention2' not found
+20210305 104329.141 ERROR            PET3 ESMCI_Info.C:836 Info::get() Attribute not set  - Internal subroutine call returned Error
+20210305 104329.141 ERROR            PET3 ESMC_InfoCDefGeneric.C:100 ESMC_InfoGetI4() Attribute not set  - Internal subroutine call returned Error
+20210305 104329.141 ERROR            PET3 ESMF_Info.F90:1572 ESMF_InfoGetI4() Attribute not set  - Internal subroutine call returned Error
+20210305 104329.141 ERROR            PET3 src/Superstructure/AttributeAPI/interface/ESMF_Attribute.F90:21010 ESMF_AttributeGetObjArrayBundleI Attribute not set  - Internal subroutine call returned Error
+20210305 104329.141 INFO             PET3  PASS  Getting a nonexistent Attribute from an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 836
+20210305 104329.141 INFO             PET3  PASS  Getting an unset char Attribute in an Attribute package with defaultValue on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 848
+20210305 104329.141 INFO             PET3  PASS  Setting an Attribute in an Attribute package to empty string on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 857
+20210305 104329.141 INFO             PET3  PASS  Setting an Attribute in an Attribute package on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 868
+20210305 104329.141 INFO             PET3  PASS  Setting a char list Attribute in an Attribute package on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 879
+20210305 104329.141 INFO             PET3  PASS  Getting a char list Attribute in an Attribute package on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 889
+20210305 104329.141 INFO             PET3  PASS  Removeing an Attribute in an Attribute package on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 897
+20210305 104329.141 INFO             PET3  PASS  Getting a default Attribute character list in an Attribute package on an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 911
+20210305 104329.142 ERROR            PET3 /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Base/src/ESMCI_Info.C:830 Info::get(): Key not found (JSON trace will follow): /customconvention/custompurpose/NotHere
+20210305 104329.142 ERROR            PET3 ESMCI_Info.C:832 Info::get() Attribute not set  - [json.exception.out_of_range.403] key 'customconvention' not found
+20210305 104329.142 ERROR            PET3 ESMCI_Info.C:836 Info::get() Attribute not set  - Internal subroutine call returned Error
+20210305 104329.142 ERROR            PET3 ESMC_InfoCDefGeneric.C:100 ESMC_InfoGetI4() Attribute not set  - Internal subroutine call returned Error
+20210305 104329.142 ERROR            PET3 ESMF_Info.F90:1572 ESMF_InfoGetI4() Attribute not set  - Internal subroutine call returned Error
+20210305 104329.142 ERROR            PET3 src/Superstructure/AttributeAPI/interface/ESMF_Attribute.F90:20937 ESMF_AttributeGetAttPackArrayBun Attribute not set  - Internal subroutine call returned Error
+20210305 104329.142 INFO             PET3  PASS  Test for the presence of an AttPack object on mobj, ESMF_AttPackABundleUTest.F90, line 921
+20210305 104329.142 INFO             PET3  PASS  Removing the entire Attribute package from an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 929
+20210305 104329.142 INFO             PET3  PASS  Removing the entire Attribute package from an ArrayBundle Test, ESMF_AttPackABundleUTest.F90, line 937
+20210305 104329.142 INFO             PET3  Ending Test, file ESMF_AttPackABundleUTest.F90, line 948
+20210305 104329.142 INFO             PET3 Finalizing ESMF

@@ -1,0 +1,40 @@
+ sumA =   0.700000048    
+ sumB =   0.699999988    
+ sumC =   0.900000036    
+ sumD =   0.900000036    
+ sumE =   0.899999976    
+ result SRCSEQ#1 =   0.700000048      expect:   0.700000048    
+ result SRCSEQ#2 =   0.700000048      expect:   0.700000048    
+ result SRCPET#1 =   0.700000048      expect:   0.700000048    
+ result SRCPET#2 =   0.699999988      expect:   0.699999988    
+ result SRCPET#3 =   0.700000048      expect:   0.700000048    
+ result SRCPET#4 =   0.699999988      expect:   0.699999988    
+ result SRCPET#5 =   0.700000048      expect:   0.700000048    
+ result SRCPET#6 =   0.700000048      expect:   0.700000048    
+ result SRCPET#7 =   0.699999988      expect:   0.699999988    
+ result SRCPET#8 =   0.900000036      expect:   0.900000036    
+ result SRCPET#9 =   0.900000036      expect:   0.900000036    
+ result SRCPET#10 =   0.899999976      expect:   0.899999976    
+ SMM parameters determined via auto-tuning -> dump to file
+ result SRCPET#11 =   0.899999976    
+ SMM parameters successfully read from file
+  srcTermProcessing=           8  pipelineDepth=           4  ==>> sumCompare=  0.899999976    
+ result SRCPET#11 =   0.899999976      expect:   0.899999976    
+ SMM parameters successfully read from file
+  srcTermProcessing=           8  pipelineDepth=           4  ==>> sumCompare=  0.899999976    
+ result SRCPET#11 =   0.899999976      expect:   0.899999976    
+ SMM parameters successfully read from file
+  srcTermProcessing=           8  pipelineDepth=           4  ==>> sumCompare=  0.899999976    
+ result SRCPET#11 =   0.899999976      expect:   0.899999976    
+ SMM parameters successfully read from file
+  srcTermProcessing=           8  pipelineDepth=           4  ==>> sumCompare=  0.899999976    
+ result SRCPET#11 =   0.899999976      expect:   0.899999976    
+ result SRCSEQ#3 =   0.900000036      expect:   0.900000036    
+  PASS  Example ESMF_RHandleBitForBitEx, ESMF_RHandleBitForBitEx.F90, line 1557
+  PASS  Example ESMF_RHandleBitForBitEx, ESMF_RHandleBitForBitEx.F90, line 1557
+  PASS  Example ESMF_RHandleBitForBitEx, ESMF_RHandleBitForBitEx.F90, line 1557
+  PASS  Example ESMF_RHandleBitForBitEx, ESMF_RHandleBitForBitEx.F90, line 1557
+ PASS: ESMF_RHandleBitForBitEx.F90
+ PASS: ESMF_RHandleBitForBitEx.F90
+ PASS: ESMF_RHandleBitForBitEx.F90
+ PASS: ESMF_RHandleBitForBitEx.F90

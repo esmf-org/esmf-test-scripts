@@ -1,0 +1,98 @@
+  Beginning Test, file ESMF_FileRegridUTest.F90, line 63
+  Beginning Test, file ESMF_FileRegridUTest.F90, line 63
+  NUMBER_OF_PROCESSORS           4
+  Beginning Test, file ESMF_FileRegridUTest.F90, line 63
+  NUMBER_OF_PROCESSORS           4
+  Beginning Test, file ESMF_FileRegridUTest.F90, line 63
+  NUMBER_OF_PROCESSORS           4
+  NUMBER_OF_PROCESSORS           4
+ Starting weight generation with these inputs: 
+   Source File: data/BT42_ugrid.nc
+   Destination File: data/BT42_ugrid_dual.nc
+   Source variable names: nodedata
+   Destination variable names: nodedata
+   Source File is in UGRID format with mesh name mesh
+   Source Grid is a global grid
+   Destination File is in UGRID format with mesh name mesh
+   Destination Grid is a global grid
+   Regrid Method: bilinear
+   Pole option: ALL
+
+  PASS  FileRegrid bilinear Test using UGRID, ESMF_FileRegridUTest.F90, line 91
+  PASS  FileRegrid bilinear Test using UGRID, ESMF_FileRegridUTest.F90, line 91
+  PASS  FileRegridCheck bilinear Test using UGRID, ESMF_FileRegridUTest.F90, line 105
+  PASS  FileRegridCheck bilinear Test using UGRID, ESMF_FileRegridUTest.F90, line 105
+  PASS  FileRegrid bilinear Test using UGRID, ESMF_FileRegridUTest.F90, line 91
+  PASS  FileRegridCheck bilinear Test using UGRID, ESMF_FileRegridUTest.F90, line 105
+  PASS  FileRegrid bilinear Test using UGRID, ESMF_FileRegridUTest.F90, line 91
+  
+ Variable Name           = nodedata
+  
+ Value min:    1.0023919096530998          Value max:    3.9976080903468993     
+ Mean relative error     =    2.8067638164245510E-004
+ Maximum relative error  =    1.7939074934945195E-003
+  
+  PASS  FileRegridCheck bilinear Test using UGRID, ESMF_FileRegridUTest.F90, line 105
+ Starting weight generation with these inputs: 
+   Source File: data/BT42_ugrid.nc
+   Destination File: data/BT42_ugrid_dual.nc
+   Source variable names: nodedata
+   Destination variable names: nodedata
+   Source File is in UGRID format with mesh name mesh
+   Source Grid is a global grid
+   Destination File is in UGRID format with mesh name mesh
+   Destination Grid is a global grid
+   Regrid Method: nearest source to destination
+   Pole option: ALL
+
+  PASS  FileRegrid neareststod Test using UGRID files with data on node, ESMF_FileRegridUTest.F90, line 124
+  PASS  FileRegrid neareststod Test using UGRID files with data on node, ESMF_FileRegridUTest.F90, line 124
+  PASS  FileRegridCheck neareststod Test using UGRID with data no node, ESMF_FileRegridUTest.F90, line 138
+  PASS  FileRegrid neareststod Test using UGRID files with data on node, ESMF_FileRegridUTest.F90, line 124
+  PASS  FileRegridCheck neareststod Test using UGRID with data no node, ESMF_FileRegridUTest.F90, line 138
+  PASS  FileRegridCheck neareststod Test using UGRID with data no node, ESMF_FileRegridUTest.F90, line 138
+  PASS  FileRegrid neareststod Test using UGRID files with data on node, ESMF_FileRegridUTest.F90, line 124
+  
+ Variable Name           = nodedata
+  
+ Value min:    1.0035720254011622          Value max:    3.9964279734075623     
+ Mean relative error     =    9.7870791282081739E-003
+ Maximum relative error  =    3.1088765627171312E-002
+  
+  PASS  FileRegridCheck neareststod Test using UGRID with data no node, ESMF_FileRegridUTest.F90, line 138
+ Starting weight generation with these inputs: 
+   Source File: data/BT42_ugrid.nc
+   Destination File: data/BT42_ugrid_dual.nc
+   Source variable names: elmtdata
+   Destination variable names: elmtdata
+   Source File is in UGRID format with mesh name mesh
+   Source Grid is a global grid
+   Destination File is in UGRID format with mesh name mesh
+   Destination Grid is a global grid
+   Regrid Method: conservative
+   Pole option: NONE
+   Ignore unmapped destination points
+
+  PASS  FileRegrid conserve using UGRID files with data on element, ESMF_FileRegridUTest.F90, line 159
+  PASS  FileRegrid conserve using UGRID files with data on element, ESMF_FileRegridUTest.F90, line 159
+  PASS  FileRegridCheck conserve Test using UGRID with data on element, ESMF_FileRegridUTest.F90, line 173
+  PASS  FileRegridCheck conserve Test using UGRID with data on element, ESMF_FileRegridUTest.F90, line 173
+  Ending Test, file ESMF_FileRegridUTest.F90, line 182
+  Ending Test, file ESMF_FileRegridUTest.F90, line 182
+  PASS  FileRegrid conserve using UGRID files with data on element, ESMF_FileRegridUTest.F90, line 159
+  PASS  FileRegridCheck conserve Test using UGRID with data on element, ESMF_FileRegridUTest.F90, line 173
+  Ending Test, file ESMF_FileRegridUTest.F90, line 182
+  PASS  FileRegrid conserve using UGRID files with data on element, ESMF_FileRegridUTest.F90, line 159
+  
+ Variable Name           = elmtdata
+  
+ Value min:    1.0029967176656227          Value max:    3.9970032811445382     
+ Mean relative error     =   0.23408647471594224     
+ Maximum relative error  =   0.64937454120036175     
+  
+  PASS  FileRegridCheck conserve Test using UGRID with data on element, ESMF_FileRegridUTest.F90, line 173
+  Ending Test, file ESMF_FileRegridUTest.F90, line 182
+  PET           1  Test Elapsed Time    1017.6620000000000       msec.
+  PET           2  Test Elapsed Time    1018.1639999999999       msec.
+  PET           3  Test Elapsed Time    1016.7750000000000       msec.
+  PET           0  Test Elapsed Time    905.79399999999998       msec.

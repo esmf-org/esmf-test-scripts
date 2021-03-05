@@ -1,0 +1,20 @@
+Beginning Test, file ESMCI_TestUTest.C, line 32
+NUMBER_OF_PROCESSORS 4
+PASS Use of ESMC_Test(), true, ESMCI_TestUTest.C, line 39
+Ending Test, file ESMCI_TestUTest.C, line 43
+Beginning Test, file ESMCI_TestUTest.C, line 32
+NUMBER_OF_PROCESSORS 4
+PASS Use of ESMC_Test(), true, ESMCI_TestUTest.C, line 39
+Ending Test, file ESMCI_TestUTest.C, line 43
+Beginning Test, file ESMCI_TestUTest.C, line 32
+NUMBER_OF_PROCESSORS 4
+PASS Use of ESMC_Test(), true, ESMCI_TestUTest.C, line 39
+Ending Test, file ESMCI_TestUTest.C, line 43
+Beginning Test, file ESMCI_TestUTest.C, line 32
+NUMBER_OF_PROCESSORS 4
+PASS Use of ESMC_Test(), true, ESMCI_TestUTest.C, line 39
+Ending Test, file ESMCI_TestUTest.C, line 43
+ PET 1 Test Elapsed Time  21.767000 msec.
+ PET 2 Test Elapsed Time  21.980000 msec.
+ PET 3 Test Elapsed Time  24.021000 msec.
+ PET 0 Test Elapsed Time  32.606000 msec.

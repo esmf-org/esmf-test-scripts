@@ -1,0 +1,752 @@
+20210305 103335.771 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103335.771 INFO             PET0 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 103335.771 INFO             PET0 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 103335.771 INFO             PET0 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 103335.771 INFO             PET0 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 103335.771 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103335.771 INFO             PET0 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 103335.771 INFO             PET0 ESMF library build date/time: "Mar  5 2021" "09:44:18"
+20210305 103335.771 INFO             PET0 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g
+20210305 103335.771 INFO             PET0 ESMF_COMM                   : mpi
+20210305 103335.771 INFO             PET0 ESMF_MOAB                   : enabled
+20210305 103335.771 INFO             PET0 ESMF_LAPACK                 : enabled
+20210305 103335.771 INFO             PET0 ESMF_NETCDF                 : enabled
+20210305 103335.771 INFO             PET0 ESMF_PNETCDF                : disabled
+20210305 103335.771 INFO             PET0 ESMF_PIO                    : enabled
+20210305 103335.771 INFO             PET0 ESMF_YAMLCPP                : enabled
+20210305 103335.772 INFO             PET0  Beginning Test, file ESMF_LogErrUTest.F90, line 119
+20210305 103335.772 INFO             PET0  NUMBER_OF_PROCESSORS           4
+20210305 103335.772 INFO             PET0  PASS  Pre-initialize LogWrite Test, ESMF_LogErrUTest.F90, line 137
+20210305 103335.781 INFO             PET0  PASS  Open Log Test, ESMF_LogErrUTest.F90, line 145
+20210305 103335.782 INFO             PET0  PASS  Open ESMF_LOGKIND_SINGLE Log Test, ESMF_LogErrUTest.F90, line 155
+20210305 103335.782 INFO             PET0  PASS  Write to Single Log Test with prefixes, ESMF_LogErrUTest.F90, line 164
+20210305 103335.782 INFO             PET0  PASS  Get default noPrefix Test, ESMF_LogErrUTest.F90, line 174
+20210305 103335.782 INFO             PET0  PASS  Set noPrefix Test, ESMF_LogErrUTest.F90, line 183
+20210305 103335.782 INFO             PET0  PASS  Get non-default noPrefix Test, ESMF_LogErrUTest.F90, line 193
+20210305 103335.782 INFO             PET0  PASS  Write to Single Log Test without timestamp, ESMF_LogErrUTest.F90, line 202
+20210305 103335.782 INFO             PET0  PASS  Open ESMF_LOGKIND_NONE Log of opened file Test, ESMF_LogErrUTest.F90, line 211
+20210305 103335.783 INFO             PET0  PASS  Log Close Test, ESMF_LogErrUTest.F90, line 219
+20210305 103335.783 INFO             PET0  PASS  Open ESMF_LOGKIND_NONE Log Test, ESMF_LogErrUTest.F90, line 228
+20210305 103335.783 INFO             PET0  PASS  Use of separate log Test, ESMF_LogErrUTest.F90, line 237
+20210305 103335.784 INFO             PET0  PASS  Close Log Test, ESMF_LogErrUTest.F90, line 245
+20210305 103335.784 INFO             PET0  PASS  ESMF_LogFoundNetCDFError Unit Test - No NetCDF error, ESMF_LogErrUTest.F90, line 268
+20210305 103335.784 ERROR            PET0 what:2 my_method  - message from a user (strerr=Operation not permitted, ncerrToCheck=1)
+20210305 103335.784 INFO             PET0  PASS  ESMF_LogFoundNetCDFError Unit Test - Found NetCDF error, ESMF_LogErrUTest.F90, line 298
+20210305 103335.784 INFO             PET0  PASS  Close Log File of never opened file Test, ESMF_LogErrUTest.F90, line 311
+20210305 103335.784 INFO             PET0  PASS   LogFlush of unopened log Test, ESMF_LogErrUTest.F90, line 319
+20210305 103335.784 INFO             PET0 Log Write 2
+20210305 103335.784 INFO             PET0  PASS  Use of default log Test, ESMF_LogErrUTest.F90, line 327
+20210305 103335.784 JSON             PET0 {   "comp" :{     "event": "start_phase",     "phaseLabel": "IPDv01p2",     "phase": "0",   }}
+20210305 103335.784 INFO             PET0  PASS  JSON output Test, ESMF_LogErrUTest.F90, line 335
+20210305 103335.784 ERROR            PET0 Failure  - hello
+20210305 103335.784 INFO             PET0  PASS  Error Msg Found Error Test, ESMF_LogErrUTest.F90, line 343
+20210305 103335.784 INFO             PET0  PASS   Verify rcToReturn Value Test, ESMF_LogErrUTest.F90, line 350
+20210305 103335.784 INFO             PET0  PASS  LogGet trace flag default flag, ESMF_LogErrUTest.F90, line 360
+20210305 103335.784 TRACE            PET0  ESMF_LogSet() !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103335.784 TRACE            PET0  ESMF_LogSet() !!!        TRACING IS ENABLED         !!!
+20210305 103335.784 TRACE            PET0  ESMF_LogSet() !!! MAY CAUSE SLOWDOWN IN PERFORMANCE !!!
+20210305 103335.784 TRACE            PET0  ESMF_LogSet() !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103335.784 INFO             PET0  PASS  LogSet trace flag set to .true., ESMF_LogErrUTest.F90, line 368
+20210305 103335.784 INFO             PET0  PASS  LogGet trace flag set to .true., ESMF_LogErrUTest.F90, line 377
+20210305 103335.784 TRACE            PET0 ESMF_LogErrUTest.F90:384 called: ESMF_LogFoundError()
+20210305 103335.784 INFO             PET0  PASS  Error Msg Found Error Test, ESMF_LogErrUTest.F90, line 386
+20210305 103335.784 TRACE            PET0 ESMF_LogErrUTest.F90:401 called: ESMF_LogFoundAllocError()
+20210305 103335.784 ERROR            PET0 ESMF_LogErrUTest.F90:401 Unable to allocate memory
+20210305 103335.784 INFO             PET0  PASS  Log Found Alloc Error Test, ESMF_LogErrUTest.F90, line 403
+20210305 103335.784 INFO             PET0  PASS   Verify rcToReturn Value Test, ESMF_LogErrUTest.F90, line 410
+20210305 103335.784 TRACE            PET0 ESMF_LogErrUTest.F90:418 called: ESMF_LogFoundAllocError()
+20210305 103335.784 ERROR            PET0 ESMF_LogErrUTest.F90:418 Unable to allocate memory  - hello (status =    1)
+20210305 103335.784 INFO             PET0  PASS  Error Msg Found Alloc Error Test, ESMF_LogErrUTest.F90, line 420
+20210305 103335.784 INFO             PET0  PASS   Verify rcToReturn Value Test, ESMF_LogErrUTest.F90, line 427
+20210305 103335.784 TRACE            PET0 ESMF_LogErrUTest.F90:435 called: ESMF_LogFoundAllocError()
+20210305 103335.784 INFO             PET0  PASS  Error Msg Found Error Test, ESMF_LogErrUTest.F90, line 437
+20210305 103335.784 TRACE            PET0 ESMF_LogErrUTest.F90:444 called: ESMF_LogFoundAllocError()
+20210305 103335.784 ERROR            PET0 ESMF_LogErrUTest.F90:444 Unable to allocate memory
+20210305 103335.784 INFO             PET0  PASS  Log Found Alloc Error Test, ESMF_LogErrUTest.F90, line 446
+20210305 103335.784 INFO             PET0  PASS   Verify rcToReturn Value Test, ESMF_LogErrUTest.F90, line 453
+20210305 103335.784 TRACE            PET0 ESMF_LogErrUTest.F90:462 called: ESMF_LogFoundAllocError()
+20210305 103335.784 INFO             PET0  PASS  Log Found Alloc Error Test, ESMF_LogErrUTest.F90, line 464
+20210305 103335.784 INFO             PET0  PASS   Verify rcToReturn Value Test, ESMF_LogErrUTest.F90, line 472
+20210305 103335.784 TRACE            PET0 ESMF_LogErrUTest.F90:480 called: ESMF_LogFoundDeallocError()
+20210305 103335.784 ERROR            PET0 ESMF_LogErrUTest.F90:480 Unable to deallocate memory
+20210305 103335.784 INFO             PET0  PASS  Log Found Dealloc Error Test, ESMF_LogErrUTest.F90, line 482
+20210305 103335.784 INFO             PET0  PASS   Verify rcToReturn Value Test, ESMF_LogErrUTest.F90, line 489
+20210305 103335.784 TRACE            PET0 ESMF_LogErrUTest.F90:497 called: ESMF_LogFoundDeallocError()
+20210305 103335.784 ERROR            PET0 ESMF_LogErrUTest.F90:497 Unable to deallocate memory  - hello
+20210305 103335.784 INFO             PET0  PASS  Error Msg Found Dealloc Error Test, ESMF_LogErrUTest.F90, line 499
+20210305 103335.785 INFO             PET0  PASS   Verify rcToReturn Value Test, ESMF_LogErrUTest.F90, line 506
+20210305 103335.785 TRACE            PET0 ESMF_LogErrUTest.F90:514 called: ESMF_LogFoundDeallocError()
+20210305 103335.785 INFO             PET0  PASS  Error Msg Found Error Test, ESMF_LogErrUTest.F90, line 516
+20210305 103335.785 TRACE            PET0 ESMF_LogErrUTest.F90:523 called: ESMF_LogFoundDeallocError()
+20210305 103335.785 ERROR            PET0 ESMF_LogErrUTest.F90:523 Unable to deallocate memory
+20210305 103335.785 INFO             PET0  PASS  Log Found Dealloc Error Test, ESMF_LogErrUTest.F90, line 525
+20210305 103335.785 INFO             PET0  PASS   Verify rcToReturn Value Test, ESMF_LogErrUTest.F90, line 532
+20210305 103335.785 TRACE            PET0 ESMF_LogErrUTest.F90:541 called: ESMF_LogFoundDeallocError()
+20210305 103335.785 INFO             PET0  PASS  Log Found Dealloc Error Test, ESMF_LogErrUTest.F90, line 543
+20210305 103335.785 INFO             PET0  PASS   Verify rcToReturn Value Test, ESMF_LogErrUTest.F90, line 551
+20210305 103335.785 TRACE            PET0  ESMF_LogSet() !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103335.785 TRACE            PET0  ESMF_LogSet() !!!       TRACING is disabled         !!!
+20210305 103335.785 TRACE            PET0  ESMF_LogSet() !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103335.785 INFO             PET0  PASS  LogSet trace flag set to .true., ESMF_LogErrUTest.F90, line 564
+20210305 103335.785 INFO             PET0  PASS  LogGet trace flag set to .false., ESMF_LogErrUTest.F90, line 573
+20210305 103335.785 INFO             PET0  PASS  LogGet flush immediate flag get, ESMF_LogErrUTest.F90, line 581
+20210305 103335.785 INFO             PET0  PASS  LogSet flush immediate flag set to .true., ESMF_LogErrUTest.F90, line 589
+20210305 103335.785 INFO             PET0  PASS  LogSet flush immediate flag restore, ESMF_LogErrUTest.F90, line 597
+20210305 103335.785 INFO             PET0  PASS  Log Found Error Test, ESMF_LogErrUTest.F90, line 606
+20210305 103335.785 INFO             PET0  PASS   Verify rcToReturn Value Test, ESMF_LogErrUTest.F90, line 614
+20210305 103335.785 ERROR            PET0 Failure
+20210305 103335.785 INFO             PET0  PASS  Log Found Error Test, ESMF_LogErrUTest.F90, line 623
+20210305 103335.785 INFO             PET0  PASS   Verify rcToReturn Value Test, ESMF_LogErrUTest.F90, line 630
+20210305 103335.785 INFO             PET0  PASS  LogGet get default Log file name, ESMF_LogErrUTest.F90, line 639
+20210305 103335.785 ERROR            PET0 ESMF_LogErr.F90:1645 ESMF_LogGet() String too long, must be less than ESMF_MAXSTR  - fileName argument string too short
+20210305 103335.785 INFO             PET0  PASS  LogGet get default Log file name with short string, ESMF_LogErrUTest.F90, line 649
+20210305 103335.785 INFO             PET0  PASS   LogFlush of unopened log Test, ESMF_LogErrUTest.F90, line 657
+20210305 103335.785 INFO             PET0  PASS  Write without opening log file Test, ESMF_LogErrUTest.F90, line 665
+20210305 103335.786 INFO             PET0  PASS  Open Log Test, ESMF_LogErrUTest.F90, line 674
+20210305 103335.786 INFO             PET0  PASS  Open Already Open Log Test, ESMF_LogErrUTest.F90, line 683
+20210305 103335.786 INFO             PET0  PASS  LogGet get Log file name, ESMF_LogErrUTest.F90, line 692
+20210305 103335.786 INFO             PET0  PASS  Check returned Log file name, ESMF_LogErrUTest.F90, line 702
+20210305 103338.000 INFO             PET0  PASS  Write to log file Test, ESMF_LogErrUTest.F90, line 760
+20210305 103338.000 INFO             PET0  PASS   LogFlush Test, ESMF_LogErrUTest.F90, line 768
+20210305 103338.000 INFO             PET0  PASS  Close Log Test, ESMF_LogErrUTest.F90, line 776
+20210305 103338.000 INFO             PET0  PASS  Close a closed Log Test, ESMF_LogErrUTest.F90, line 784
+20210305 103338.001 INFO             PET0  PASS  Open Log file with Fortran IO Test, ESMF_LogErrUTest.F90, line 794
+20210305 103338.001 INFO             PET0  PASS  Verify random string Test, ESMF_LogErrUTest.F90, line 816
+20210305 103338.001 INFO             PET0  PASS  Verify Date and Time in Log File Test, ESMF_LogErrUTest.F90, line 837
+20210305 103338.001 INFO             PET0  PASS  Verify Message Type in Log File Test, ESMF_LogErrUTest.F90, line 849
+20210305 103338.001 INFO             PET0  PASS  Verify PET number in Log File Test, ESMF_LogErrUTest.F90, line 857
+20210305 103338.001 INFO             PET0  PASS   LogFlush of unopened log Test, ESMF_LogErrUTest.F90, line 866
+20210305 103338.001 INFO             PET0  PASS   LogFlush of default log Test, ESMF_LogErrUTest.F90, line 874
+20210305 103338.001 INFO             PET0  PASS   LogSet with logmsgList set to info only Test, ESMF_LogErrUTest.F90, line 884
+20210305 103338.006 INFO             PET0  PASS   Creating a log file with message filtering, ESMF_LogErrUTest.F90, line 933
+20210305 103338.007 INFO             PET0  PASS   Search log for INFO messages, ESMF_LogErrUTest.F90, line 945
+20210305 103338.008 INFO             PET0  PASS   Search log for WARNING messages, ESMF_LogErrUTest.F90, line 957
+20210305 103338.008 INFO             PET0  PASS   Search log for ERROR messages, ESMF_LogErrUTest.F90, line 969
+20210305 103338.008 INFO             PET0  PASS   LogSet with logmsgList set for warnings and info Test, ESMF_LogErrUTest.F90, line 979
+20210305 103338.008 INFO             PET0  PASS   LogSet with logmsgList set for errors and info Test, ESMF_LogErrUTest.F90, line 989
+20210305 103338.008 INFO             PET0  PASS   LogSet with logmsgList set for ALL types Test, ESMF_LogErrUTest.F90, line 999
+20210305 103338.008 ERROR            PET0 ALL set, should be in log
+20210305 103338.008 INFO             PET0  PASS   LogWrite ERROR when ALL set Test, ESMF_LogErrUTest.F90, line 1009
+20210305 103338.008 WARNING          PET0 ALL set, should be in log
+20210305 103338.008 INFO             PET0  PASS   LogWrite WARNING when ALL set Test, ESMF_LogErrUTest.F90, line 1019
+20210305 103338.008 INFO             PET0 ALL set, should be in log
+20210305 103338.008 INFO             PET0  PASS   LogWrite INFO when ALL set Test, ESMF_LogErrUTest.F90, line 1029
+20210305 103338.008 TRACE            PET0 ALL set, should be in log
+20210305 103338.008 INFO             PET0  PASS   LogWrite TRACE when ALL set Test, ESMF_LogErrUTest.F90, line 1039
+20210305 103338.008 INFO             PET0  PASS   LogSet with logmsgList set for NONE Test, ESMF_LogErrUTest.F90, line 1054
+20210305 103338.008 INFO             PET0  PASS   LogSet with logmsgList set for NOTRACE Test, ESMF_LogErrUTest.F90, line 1064
+20210305 103338.008 ERROR            PET0 NOTRACE set, should be in log
+20210305 103338.008 INFO             PET0  PASS   LogWrite ERROR when NOTRACE set Test, ESMF_LogErrUTest.F90, line 1074
+20210305 103338.008 WARNING          PET0 NOTRACE set, should be in log
+20210305 103338.008 INFO             PET0  PASS   LogWrite WARNING when NOTRACE set Test, ESMF_LogErrUTest.F90, line 1084
+20210305 103338.008 INFO             PET0 NOTRACE set, should be in log
+20210305 103338.008 INFO             PET0  PASS   LogWrite INFO when NOTRACE set Test, ESMF_LogErrUTest.F90, line 1094
+20210305 103338.008 INFO             PET0  PASS   LogWrite when NOTRACE set Test, ESMF_LogErrUTest.F90, line 1104
+20210305 103338.008 INFO             PET0  PASS   LogSet with logmsgAbort Test, ESMF_LogErrUTest.F90, line 1113
+20210305 103338.008 INFO             PET0  PASS   LogGet with logmsgAbort Test, ESMF_LogErrUTest.F90, line 1122
+20210305 103338.008 INFO             PET0  PASS   LogGet with logmsgAbort set association Test, ESMF_LogErrUTest.F90, line 1130
+20210305 103338.008 INFO             PET0  PASS   LogGet with logmsgAbort Test, ESMF_LogErrUTest.F90, line 1138
+20210305 103338.008 INFO             PET0  PASS   LogGet with logmsgAbort Test, ESMF_LogErrUTest.F90, line 1147
+20210305 103338.008 INFO             PET0  PASS   LogSet with logmsgAbort Test, ESMF_LogErrUTest.F90, line 1155
+20210305 103338.008 INFO             PET0  PASS   LogGet with logmsgAbort cleared Test, ESMF_LogErrUTest.F90, line 1165
+20210305 103338.008 INFO             PET0  PASS   LogGet with logmsgAbort cleared association Test, ESMF_LogErrUTest.F90, line 1173
+20210305 103338.009 INFO             PET0  PASS   LogGet with logmsgAbort cleared size Test, ESMF_LogErrUTest.F90, line 1181
+20210305 103338.027 INFO             PET0  PASS  Opening Log for assignment Test, ESMF_LogErrUTest.F90, line 1191
+20210305 103338.027 INFO             PET0  PASS  Log assignment (and write via alias) Test, ESMF_LogErrUTest.F90, line 1201
+20210305 103338.027 INFO             PET0  PASS  Log equality with same log Test, ESMF_LogErrUTest.F90, line 1209
+20210305 103338.027 INFO             PET0  PASS  Log equality with different log Test, ESMF_LogErrUTest.F90, line 1217
+20210305 103338.028 INFO             PET0  PASS  Log inequality with same log Test, ESMF_LogErrUTest.F90, line 1225
+20210305 103338.028 INFO             PET0  PASS  Log inequality with different log Test, ESMF_LogErrUTest.F90, line 1233
+20210305 103338.028 INFO             PET0  PASS  Closing log via alias Test, ESMF_LogErrUTest.F90, line 1241
+20210305 103338.028 INFO             PET0  PASS  Opening unclosed default log Test, ESMF_LogErrUTest.F90, line 1249
+20210305 103338.028 INFO             PET0           2.270192  PASS  Set highResTimestampFlag test, ESMF_LogErrUTest.F90, line 1257
+20210305 103338.028 INFO             PET0           2.270230  PASS  Test highResTimestampFlag set test, ESMF_LogErrUTest.F90, line 1265
+20210305 103338.028 INFO             PET0           2.270242  High res timestamps set, and should be in the log
+20210305 103338.028 INFO             PET0           2.270259  PASS  Writing with high res timestamp set Test, ESMF_LogErrUTest.F90, line 1275
+20210305 103338.028 INFO             PET0  PASS  Clear highResTimestampFlag test, ESMF_LogErrUTest.F90, line 1283
+20210305 103338.028 INFO             PET0  PASS  Test highResTimestampFlag clear test, ESMF_LogErrUTest.F90, line 1291
+20210305 103338.028 INFO             PET0  High res timestamps cleared, and should be NOT be in the log
+20210305 103338.028 INFO             PET0  PASS  Writing with high res timestamp cleared Test, ESMF_LogErrUTest.F90, line 1301
+20210305 103338.028 INFO             PET0  PASS  Open Log with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1327
+20210305 103338.029 INFO             PET0  PASS  Write non-ERROR messages with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1337
+20210305 103338.029 INFO             PET0  PASS  Close (non-existant) ESMF_LOGKIND_MULTI_ON_ERROR log test, ESMF_LogErrUTest.F90, line 1346
+20210305 103338.029 INFO             PET0  PASS  Test for non-existant ESMF_LOGKIND_MULTI_ON_ERROR log test, ESMF_LogErrUTest.F90, line 1361
+20210305 103338.029 INFO             PET0  PASS  Open log with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1372
+20210305 103338.029 INFO             PET0  PASS  Write non-ERROR message with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1382
+20210305 103338.038 INFO             PET0  PASS  Write ERROR message with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1392
+20210305 103338.038 INFO             PET0  PASS  Write non-ERROR message with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1402
+20210305 103338.041 INFO             PET0  PASS  Close ESMF_LOGKIND_MULTI_ON_ERROR log test, ESMF_LogErrUTest.F90, line 1411
+20210305 103338.042 INFO             PET0  PASS  Test for existant ESMF_LOGKIND_MULTI_ON_ERROR log test, ESMF_LogErrUTest.F90, line 1428
+20210305 103338.060 ERROR            PET0 ESMCI_TestError.C:33 c_error() C Error
+20210305 103338.060 INFO             PET0  PASS  Write ERROR message from C with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1467
+20210305 103338.060 INFO             PET0 PASS  Close default log test, ESMF_LogErrUTest.F90, line xxx
+20210305 103338.060 INFO             PET0 PASS  Open default log with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line xxx
+20210305 103338.060 INFO             PET0 PASS  Write non-ERROR message with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line xxx
+20210305 103338.060 INFO             PET0 INFO test Msg
+20210305 103338.060 INFO             PET0  PASS  Write non-ERROR message with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1495
+20210305 103338.060 INFO             PET0  Ending Test, file ESMF_LogErrUTest.F90, line 1500
+20210305 103338.060 INFO             PET0 Finalizing ESMF
+20210305 103335.772 INFO             PET1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103335.772 INFO             PET1 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 103335.772 INFO             PET1 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 103335.772 INFO             PET1 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 103335.772 INFO             PET1 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 103335.772 INFO             PET1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103335.772 INFO             PET1 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 103335.772 INFO             PET1 ESMF library build date/time: "Mar  5 2021" "09:44:18"
+20210305 103335.772 INFO             PET1 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g
+20210305 103335.772 INFO             PET1 ESMF_COMM                   : mpi
+20210305 103335.772 INFO             PET1 ESMF_MOAB                   : enabled
+20210305 103335.772 INFO             PET1 ESMF_LAPACK                 : enabled
+20210305 103335.772 INFO             PET1 ESMF_NETCDF                 : enabled
+20210305 103335.772 INFO             PET1 ESMF_PNETCDF                : disabled
+20210305 103335.772 INFO             PET1 ESMF_PIO                    : enabled
+20210305 103335.772 INFO             PET1 ESMF_YAMLCPP                : enabled
+20210305 103335.772 INFO             PET1  Beginning Test, file ESMF_LogErrUTest.F90, line 119
+20210305 103335.772 INFO             PET1  NUMBER_OF_PROCESSORS           4
+20210305 103335.772 INFO             PET1  PASS  Pre-initialize LogWrite Test, ESMF_LogErrUTest.F90, line 137
+20210305 103335.774 INFO             PET1  PASS  Open Log Test, ESMF_LogErrUTest.F90, line 145
+20210305 103335.775 INFO             PET1  PASS  Open ESMF_LOGKIND_SINGLE Log Test, ESMF_LogErrUTest.F90, line 155
+20210305 103335.775 INFO             PET1  PASS  Write to Single Log Test with prefixes, ESMF_LogErrUTest.F90, line 164
+20210305 103335.775 INFO             PET1  PASS  Get default noPrefix Test, ESMF_LogErrUTest.F90, line 174
+20210305 103335.775 INFO             PET1  PASS  Set noPrefix Test, ESMF_LogErrUTest.F90, line 183
+20210305 103335.776 INFO             PET1  PASS  Get non-default noPrefix Test, ESMF_LogErrUTest.F90, line 193
+20210305 103335.776 INFO             PET1  PASS  Write to Single Log Test without timestamp, ESMF_LogErrUTest.F90, line 202
+20210305 103335.776 INFO             PET1  PASS  Open ESMF_LOGKIND_NONE Log of opened file Test, ESMF_LogErrUTest.F90, line 211
+20210305 103335.776 INFO             PET1  PASS  Log Close Test, ESMF_LogErrUTest.F90, line 219
+20210305 103335.776 INFO             PET1  PASS  Open ESMF_LOGKIND_NONE Log Test, ESMF_LogErrUTest.F90, line 228
+20210305 103335.776 INFO             PET1  PASS  Use of separate log Test, ESMF_LogErrUTest.F90, line 237
+20210305 103335.777 INFO             PET1  PASS  Close Log Test, ESMF_LogErrUTest.F90, line 245
+20210305 103335.777 INFO             PET1  PASS  ESMF_LogFoundNetCDFError Unit Test - No NetCDF error, ESMF_LogErrUTest.F90, line 268
+20210305 103335.777 ERROR            PET1 what:2 my_method  - message from a user (strerr=Operation not permitted, ncerrToCheck=1)
+20210305 103335.777 INFO             PET1  PASS  ESMF_LogFoundNetCDFError Unit Test - Found NetCDF error, ESMF_LogErrUTest.F90, line 298
+20210305 103335.777 INFO             PET1  PASS  Close Log File of never opened file Test, ESMF_LogErrUTest.F90, line 311
+20210305 103335.777 INFO             PET1  PASS   LogFlush of unopened log Test, ESMF_LogErrUTest.F90, line 319
+20210305 103335.777 INFO             PET1 Log Write 2
+20210305 103335.777 INFO             PET1  PASS  Use of default log Test, ESMF_LogErrUTest.F90, line 327
+20210305 103335.777 JSON             PET1 {   "comp" :{     "event": "start_phase",     "phaseLabel": "IPDv01p2",     "phase": "0",   }}
+20210305 103335.777 INFO             PET1  PASS  JSON output Test, ESMF_LogErrUTest.F90, line 335
+20210305 103335.777 ERROR            PET1 Failure  - hello
+20210305 103335.777 INFO             PET1  PASS  Error Msg Found Error Test, ESMF_LogErrUTest.F90, line 343
+20210305 103335.777 INFO             PET1  PASS   Verify rcToReturn Value Test, ESMF_LogErrUTest.F90, line 350
+20210305 103335.777 INFO             PET1  PASS  LogGet trace flag default flag, ESMF_LogErrUTest.F90, line 360
+20210305 103335.777 TRACE            PET1  ESMF_LogSet() !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103335.777 TRACE            PET1  ESMF_LogSet() !!!        TRACING IS ENABLED         !!!
+20210305 103335.777 TRACE            PET1  ESMF_LogSet() !!! MAY CAUSE SLOWDOWN IN PERFORMANCE !!!
+20210305 103335.777 TRACE            PET1  ESMF_LogSet() !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103335.777 INFO             PET1  PASS  LogSet trace flag set to .true., ESMF_LogErrUTest.F90, line 368
+20210305 103335.777 INFO             PET1  PASS  LogGet trace flag set to .true., ESMF_LogErrUTest.F90, line 377
+20210305 103335.777 TRACE            PET1 ESMF_LogErrUTest.F90:384 called: ESMF_LogFoundError()
+20210305 103335.777 INFO             PET1  PASS  Error Msg Found Error Test, ESMF_LogErrUTest.F90, line 386
+20210305 103335.777 TRACE            PET1 ESMF_LogErrUTest.F90:401 called: ESMF_LogFoundAllocError()
+20210305 103335.777 ERROR            PET1 ESMF_LogErrUTest.F90:401 Unable to allocate memory
+20210305 103335.777 INFO             PET1  PASS  Log Found Alloc Error Test, ESMF_LogErrUTest.F90, line 403
+20210305 103335.777 INFO             PET1  PASS   Verify rcToReturn Value Test, ESMF_LogErrUTest.F90, line 410
+20210305 103335.777 TRACE            PET1 ESMF_LogErrUTest.F90:418 called: ESMF_LogFoundAllocError()
+20210305 103335.777 ERROR            PET1 ESMF_LogErrUTest.F90:418 Unable to allocate memory  - hello (status =    1)
+20210305 103335.777 INFO             PET1  PASS  Error Msg Found Alloc Error Test, ESMF_LogErrUTest.F90, line 420
+20210305 103335.777 INFO             PET1  PASS   Verify rcToReturn Value Test, ESMF_LogErrUTest.F90, line 427
+20210305 103335.777 TRACE            PET1 ESMF_LogErrUTest.F90:435 called: ESMF_LogFoundAllocError()
+20210305 103335.777 INFO             PET1  PASS  Error Msg Found Error Test, ESMF_LogErrUTest.F90, line 437
+20210305 103335.777 TRACE            PET1 ESMF_LogErrUTest.F90:444 called: ESMF_LogFoundAllocError()
+20210305 103335.777 ERROR            PET1 ESMF_LogErrUTest.F90:444 Unable to allocate memory
+20210305 103335.777 INFO             PET1  PASS  Log Found Alloc Error Test, ESMF_LogErrUTest.F90, line 446
+20210305 103335.777 INFO             PET1  PASS   Verify rcToReturn Value Test, ESMF_LogErrUTest.F90, line 453
+20210305 103335.777 TRACE            PET1 ESMF_LogErrUTest.F90:462 called: ESMF_LogFoundAllocError()
+20210305 103335.777 INFO             PET1  PASS  Log Found Alloc Error Test, ESMF_LogErrUTest.F90, line 464
+20210305 103335.777 INFO             PET1  PASS   Verify rcToReturn Value Test, ESMF_LogErrUTest.F90, line 472
+20210305 103335.777 TRACE            PET1 ESMF_LogErrUTest.F90:480 called: ESMF_LogFoundDeallocError()
+20210305 103335.777 ERROR            PET1 ESMF_LogErrUTest.F90:480 Unable to deallocate memory
+20210305 103335.777 INFO             PET1  PASS  Log Found Dealloc Error Test, ESMF_LogErrUTest.F90, line 482
+20210305 103335.777 INFO             PET1  PASS   Verify rcToReturn Value Test, ESMF_LogErrUTest.F90, line 489
+20210305 103335.777 TRACE            PET1 ESMF_LogErrUTest.F90:497 called: ESMF_LogFoundDeallocError()
+20210305 103335.777 ERROR            PET1 ESMF_LogErrUTest.F90:497 Unable to deallocate memory  - hello
+20210305 103335.777 INFO             PET1  PASS  Error Msg Found Dealloc Error Test, ESMF_LogErrUTest.F90, line 499
+20210305 103335.777 INFO             PET1  PASS   Verify rcToReturn Value Test, ESMF_LogErrUTest.F90, line 506
+20210305 103335.778 TRACE            PET1 ESMF_LogErrUTest.F90:514 called: ESMF_LogFoundDeallocError()
+20210305 103335.778 INFO             PET1  PASS  Error Msg Found Error Test, ESMF_LogErrUTest.F90, line 516
+20210305 103335.778 TRACE            PET1 ESMF_LogErrUTest.F90:523 called: ESMF_LogFoundDeallocError()
+20210305 103335.778 ERROR            PET1 ESMF_LogErrUTest.F90:523 Unable to deallocate memory
+20210305 103335.778 INFO             PET1  PASS  Log Found Dealloc Error Test, ESMF_LogErrUTest.F90, line 525
+20210305 103335.778 INFO             PET1  PASS   Verify rcToReturn Value Test, ESMF_LogErrUTest.F90, line 532
+20210305 103335.778 TRACE            PET1 ESMF_LogErrUTest.F90:541 called: ESMF_LogFoundDeallocError()
+20210305 103335.778 INFO             PET1  PASS  Log Found Dealloc Error Test, ESMF_LogErrUTest.F90, line 543
+20210305 103335.778 INFO             PET1  PASS   Verify rcToReturn Value Test, ESMF_LogErrUTest.F90, line 551
+20210305 103335.778 TRACE            PET1  ESMF_LogSet() !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103335.778 TRACE            PET1  ESMF_LogSet() !!!       TRACING is disabled         !!!
+20210305 103335.778 TRACE            PET1  ESMF_LogSet() !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103335.778 INFO             PET1  PASS  LogSet trace flag set to .true., ESMF_LogErrUTest.F90, line 564
+20210305 103335.778 INFO             PET1  PASS  LogGet trace flag set to .false., ESMF_LogErrUTest.F90, line 573
+20210305 103335.778 INFO             PET1  PASS  LogGet flush immediate flag get, ESMF_LogErrUTest.F90, line 581
+20210305 103335.778 INFO             PET1  PASS  LogSet flush immediate flag set to .true., ESMF_LogErrUTest.F90, line 589
+20210305 103335.778 INFO             PET1  PASS  LogSet flush immediate flag restore, ESMF_LogErrUTest.F90, line 597
+20210305 103335.778 INFO             PET1  PASS  Log Found Error Test, ESMF_LogErrUTest.F90, line 606
+20210305 103335.778 INFO             PET1  PASS   Verify rcToReturn Value Test, ESMF_LogErrUTest.F90, line 614
+20210305 103335.778 ERROR            PET1 Failure
+20210305 103335.778 INFO             PET1  PASS  Log Found Error Test, ESMF_LogErrUTest.F90, line 623
+20210305 103335.778 INFO             PET1  PASS   Verify rcToReturn Value Test, ESMF_LogErrUTest.F90, line 630
+20210305 103335.778 INFO             PET1  PASS  LogGet get default Log file name, ESMF_LogErrUTest.F90, line 639
+20210305 103335.778 ERROR            PET1 ESMF_LogErr.F90:1645 ESMF_LogGet() String too long, must be less than ESMF_MAXSTR  - fileName argument string too short
+20210305 103335.778 INFO             PET1  PASS  LogGet get default Log file name with short string, ESMF_LogErrUTest.F90, line 649
+20210305 103335.778 INFO             PET1  PASS   LogFlush of unopened log Test, ESMF_LogErrUTest.F90, line 657
+20210305 103335.778 INFO             PET1  PASS  Write without opening log file Test, ESMF_LogErrUTest.F90, line 665
+20210305 103335.792 INFO             PET1  PASS  Open Log Test, ESMF_LogErrUTest.F90, line 674
+20210305 103335.792 INFO             PET1  PASS  Open Already Open Log Test, ESMF_LogErrUTest.F90, line 683
+20210305 103335.792 INFO             PET1  PASS  LogGet get Log file name, ESMF_LogErrUTest.F90, line 692
+20210305 103335.792 INFO             PET1  PASS  Check returned Log file name, ESMF_LogErrUTest.F90, line 702
+20210305 103338.000 INFO             PET1  PASS  Write to log file Test, ESMF_LogErrUTest.F90, line 760
+20210305 103338.000 INFO             PET1  PASS   LogFlush Test, ESMF_LogErrUTest.F90, line 768
+20210305 103338.000 INFO             PET1  PASS  Close Log Test, ESMF_LogErrUTest.F90, line 776
+20210305 103338.000 INFO             PET1  PASS  Close a closed Log Test, ESMF_LogErrUTest.F90, line 784
+20210305 103338.001 INFO             PET1  PASS  Open Log file with Fortran IO Test, ESMF_LogErrUTest.F90, line 794
+20210305 103338.001 INFO             PET1  PASS  Verify random string Test, ESMF_LogErrUTest.F90, line 816
+20210305 103338.001 INFO             PET1  PASS  Verify Date and Time in Log File Test, ESMF_LogErrUTest.F90, line 837
+20210305 103338.001 INFO             PET1  PASS  Verify Message Type in Log File Test, ESMF_LogErrUTest.F90, line 849
+20210305 103338.001 INFO             PET1  PASS  Verify PET number in Log File Test, ESMF_LogErrUTest.F90, line 857
+20210305 103338.001 INFO             PET1  PASS   LogFlush of unopened log Test, ESMF_LogErrUTest.F90, line 866
+20210305 103338.001 INFO             PET1  PASS   LogFlush of default log Test, ESMF_LogErrUTest.F90, line 874
+20210305 103338.001 INFO             PET1  PASS   LogSet with logmsgList set to info only Test, ESMF_LogErrUTest.F90, line 884
+20210305 103338.019 INFO             PET1  PASS   Creating a log file with message filtering, ESMF_LogErrUTest.F90, line 933
+20210305 103338.020 INFO             PET1  PASS   Search log for INFO messages, ESMF_LogErrUTest.F90, line 945
+20210305 103338.021 INFO             PET1  PASS   Search log for WARNING messages, ESMF_LogErrUTest.F90, line 957
+20210305 103338.021 INFO             PET1  PASS   Search log for ERROR messages, ESMF_LogErrUTest.F90, line 969
+20210305 103338.021 INFO             PET1  PASS   LogSet with logmsgList set for warnings and info Test, ESMF_LogErrUTest.F90, line 979
+20210305 103338.021 INFO             PET1  PASS   LogSet with logmsgList set for errors and info Test, ESMF_LogErrUTest.F90, line 989
+20210305 103338.021 INFO             PET1  PASS   LogSet with logmsgList set for ALL types Test, ESMF_LogErrUTest.F90, line 999
+20210305 103338.021 ERROR            PET1 ALL set, should be in log
+20210305 103338.021 INFO             PET1  PASS   LogWrite ERROR when ALL set Test, ESMF_LogErrUTest.F90, line 1009
+20210305 103338.021 WARNING          PET1 ALL set, should be in log
+20210305 103338.021 INFO             PET1  PASS   LogWrite WARNING when ALL set Test, ESMF_LogErrUTest.F90, line 1019
+20210305 103338.021 INFO             PET1 ALL set, should be in log
+20210305 103338.021 INFO             PET1  PASS   LogWrite INFO when ALL set Test, ESMF_LogErrUTest.F90, line 1029
+20210305 103338.021 TRACE            PET1 ALL set, should be in log
+20210305 103338.021 INFO             PET1  PASS   LogWrite TRACE when ALL set Test, ESMF_LogErrUTest.F90, line 1039
+20210305 103338.021 INFO             PET1  PASS   LogSet with logmsgList set for NONE Test, ESMF_LogErrUTest.F90, line 1054
+20210305 103338.021 INFO             PET1  PASS   LogSet with logmsgList set for NOTRACE Test, ESMF_LogErrUTest.F90, line 1064
+20210305 103338.021 ERROR            PET1 NOTRACE set, should be in log
+20210305 103338.021 INFO             PET1  PASS   LogWrite ERROR when NOTRACE set Test, ESMF_LogErrUTest.F90, line 1074
+20210305 103338.021 WARNING          PET1 NOTRACE set, should be in log
+20210305 103338.021 INFO             PET1  PASS   LogWrite WARNING when NOTRACE set Test, ESMF_LogErrUTest.F90, line 1084
+20210305 103338.021 INFO             PET1 NOTRACE set, should be in log
+20210305 103338.021 INFO             PET1  PASS   LogWrite INFO when NOTRACE set Test, ESMF_LogErrUTest.F90, line 1094
+20210305 103338.021 INFO             PET1  PASS   LogWrite when NOTRACE set Test, ESMF_LogErrUTest.F90, line 1104
+20210305 103338.021 INFO             PET1  PASS   LogSet with logmsgAbort Test, ESMF_LogErrUTest.F90, line 1113
+20210305 103338.021 INFO             PET1  PASS   LogGet with logmsgAbort Test, ESMF_LogErrUTest.F90, line 1122
+20210305 103338.021 INFO             PET1  PASS   LogGet with logmsgAbort set association Test, ESMF_LogErrUTest.F90, line 1130
+20210305 103338.021 INFO             PET1  PASS   LogGet with logmsgAbort Test, ESMF_LogErrUTest.F90, line 1138
+20210305 103338.021 INFO             PET1  PASS   LogGet with logmsgAbort Test, ESMF_LogErrUTest.F90, line 1147
+20210305 103338.021 INFO             PET1  PASS   LogSet with logmsgAbort Test, ESMF_LogErrUTest.F90, line 1155
+20210305 103338.021 INFO             PET1  PASS   LogGet with logmsgAbort cleared Test, ESMF_LogErrUTest.F90, line 1165
+20210305 103338.021 INFO             PET1  PASS   LogGet with logmsgAbort cleared association Test, ESMF_LogErrUTest.F90, line 1173
+20210305 103338.021 INFO             PET1  PASS   LogGet with logmsgAbort cleared size Test, ESMF_LogErrUTest.F90, line 1181
+20210305 103338.025 INFO             PET1  PASS  Opening Log for assignment Test, ESMF_LogErrUTest.F90, line 1191
+20210305 103338.025 INFO             PET1  PASS  Log assignment (and write via alias) Test, ESMF_LogErrUTest.F90, line 1201
+20210305 103338.025 INFO             PET1  PASS  Log equality with same log Test, ESMF_LogErrUTest.F90, line 1209
+20210305 103338.025 INFO             PET1  PASS  Log equality with different log Test, ESMF_LogErrUTest.F90, line 1217
+20210305 103338.025 INFO             PET1  PASS  Log inequality with same log Test, ESMF_LogErrUTest.F90, line 1225
+20210305 103338.025 INFO             PET1  PASS  Log inequality with different log Test, ESMF_LogErrUTest.F90, line 1233
+20210305 103338.025 INFO             PET1  PASS  Closing log via alias Test, ESMF_LogErrUTest.F90, line 1241
+20210305 103338.025 INFO             PET1  PASS  Opening unclosed default log Test, ESMF_LogErrUTest.F90, line 1249
+20210305 103338.025 INFO             PET1           2.267595  PASS  Set highResTimestampFlag test, ESMF_LogErrUTest.F90, line 1257
+20210305 103338.025 INFO             PET1           2.267630  PASS  Test highResTimestampFlag set test, ESMF_LogErrUTest.F90, line 1265
+20210305 103338.025 INFO             PET1           2.267642  High res timestamps set, and should be in the log
+20210305 103338.025 INFO             PET1           2.267675  PASS  Writing with high res timestamp set Test, ESMF_LogErrUTest.F90, line 1275
+20210305 103338.026 INFO             PET1  PASS  Clear highResTimestampFlag test, ESMF_LogErrUTest.F90, line 1283
+20210305 103338.026 INFO             PET1  PASS  Test highResTimestampFlag clear test, ESMF_LogErrUTest.F90, line 1291
+20210305 103338.026 INFO             PET1  High res timestamps cleared, and should be NOT be in the log
+20210305 103338.026 INFO             PET1  PASS  Writing with high res timestamp cleared Test, ESMF_LogErrUTest.F90, line 1301
+20210305 103338.026 INFO             PET1  PASS  Open Log with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1327
+20210305 103338.026 INFO             PET1  PASS  Write non-ERROR messages with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1337
+20210305 103338.026 INFO             PET1  PASS  Close (non-existant) ESMF_LOGKIND_MULTI_ON_ERROR log test, ESMF_LogErrUTest.F90, line 1346
+20210305 103338.026 INFO             PET1  PASS  Test for non-existant ESMF_LOGKIND_MULTI_ON_ERROR log test, ESMF_LogErrUTest.F90, line 1361
+20210305 103338.026 INFO             PET1  PASS  Open log with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1372
+20210305 103338.026 INFO             PET1  PASS  Write non-ERROR message with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1382
+20210305 103338.033 INFO             PET1  PASS  Write ERROR message with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1392
+20210305 103338.033 INFO             PET1  PASS  Write non-ERROR message with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1402
+20210305 103338.033 INFO             PET1  PASS  Close ESMF_LOGKIND_MULTI_ON_ERROR log test, ESMF_LogErrUTest.F90, line 1411
+20210305 103338.034 INFO             PET1  PASS  Test for existant ESMF_LOGKIND_MULTI_ON_ERROR log test, ESMF_LogErrUTest.F90, line 1428
+20210305 103338.042 ERROR            PET1 ESMCI_TestError.C:33 c_error() C Error
+20210305 103338.043 INFO             PET1  PASS  Write ERROR message from C with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1467
+20210305 103338.043 INFO             PET1 PASS  Close default log test, ESMF_LogErrUTest.F90, line xxx
+20210305 103338.043 INFO             PET1 PASS  Open default log with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line xxx
+20210305 103338.043 INFO             PET1 PASS  Write non-ERROR message with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line xxx
+20210305 103338.043 INFO             PET1 INFO test Msg
+20210305 103338.043 INFO             PET1  PASS  Write non-ERROR message with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1495
+20210305 103338.043 INFO             PET1  Ending Test, file ESMF_LogErrUTest.F90, line 1500
+20210305 103338.043 INFO             PET1 Finalizing ESMF
+20210305 103335.769 INFO             PET2 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103335.769 INFO             PET2 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 103335.769 INFO             PET2 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 103335.769 INFO             PET2 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 103335.769 INFO             PET2 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 103335.769 INFO             PET2 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103335.769 INFO             PET2 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 103335.769 INFO             PET2 ESMF library build date/time: "Mar  5 2021" "09:44:18"
+20210305 103335.769 INFO             PET2 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g
+20210305 103335.769 INFO             PET2 ESMF_COMM                   : mpi
+20210305 103335.770 INFO             PET2 ESMF_MOAB                   : enabled
+20210305 103335.770 INFO             PET2 ESMF_LAPACK                 : enabled
+20210305 103335.770 INFO             PET2 ESMF_NETCDF                 : enabled
+20210305 103335.770 INFO             PET2 ESMF_PNETCDF                : disabled
+20210305 103335.770 INFO             PET2 ESMF_PIO                    : enabled
+20210305 103335.770 INFO             PET2 ESMF_YAMLCPP                : enabled
+20210305 103335.772 INFO             PET2  Beginning Test, file ESMF_LogErrUTest.F90, line 119
+20210305 103335.772 INFO             PET2  NUMBER_OF_PROCESSORS           4
+20210305 103335.772 INFO             PET2  PASS  Pre-initialize LogWrite Test, ESMF_LogErrUTest.F90, line 137
+20210305 103335.779 INFO             PET2  PASS  Open Log Test, ESMF_LogErrUTest.F90, line 145
+20210305 103335.789 INFO             PET2  PASS  Open ESMF_LOGKIND_SINGLE Log Test, ESMF_LogErrUTest.F90, line 155
+20210305 103335.789 INFO             PET2  PASS  Write to Single Log Test with prefixes, ESMF_LogErrUTest.F90, line 164
+20210305 103335.789 INFO             PET2  PASS  Get default noPrefix Test, ESMF_LogErrUTest.F90, line 174
+20210305 103335.789 INFO             PET2  PASS  Set noPrefix Test, ESMF_LogErrUTest.F90, line 183
+20210305 103335.789 INFO             PET2  PASS  Get non-default noPrefix Test, ESMF_LogErrUTest.F90, line 193
+20210305 103335.789 INFO             PET2  PASS  Write to Single Log Test without timestamp, ESMF_LogErrUTest.F90, line 202
+20210305 103335.789 INFO             PET2  PASS  Open ESMF_LOGKIND_NONE Log of opened file Test, ESMF_LogErrUTest.F90, line 211
+20210305 103335.790 INFO             PET2  PASS  Log Close Test, ESMF_LogErrUTest.F90, line 219
+20210305 103335.790 INFO             PET2  PASS  Open ESMF_LOGKIND_NONE Log Test, ESMF_LogErrUTest.F90, line 228
+20210305 103335.790 INFO             PET2  PASS  Use of separate log Test, ESMF_LogErrUTest.F90, line 237
+20210305 103335.790 INFO             PET2  PASS  Close Log Test, ESMF_LogErrUTest.F90, line 245
+20210305 103335.790 INFO             PET2  PASS  ESMF_LogFoundNetCDFError Unit Test - No NetCDF error, ESMF_LogErrUTest.F90, line 268
+20210305 103335.790 ERROR            PET2 what:2 my_method  - message from a user (strerr=Operation not permitted, ncerrToCheck=1)
+20210305 103335.790 INFO             PET2  PASS  ESMF_LogFoundNetCDFError Unit Test - Found NetCDF error, ESMF_LogErrUTest.F90, line 298
+20210305 103335.790 INFO             PET2  PASS  Close Log File of never opened file Test, ESMF_LogErrUTest.F90, line 311
+20210305 103335.790 INFO             PET2  PASS   LogFlush of unopened log Test, ESMF_LogErrUTest.F90, line 319
+20210305 103335.790 INFO             PET2 Log Write 2
+20210305 103335.790 INFO             PET2  PASS  Use of default log Test, ESMF_LogErrUTest.F90, line 327
+20210305 103335.790 JSON             PET2 {   "comp" :{     "event": "start_phase",     "phaseLabel": "IPDv01p2",     "phase": "0",   }}
+20210305 103335.790 INFO             PET2  PASS  JSON output Test, ESMF_LogErrUTest.F90, line 335
+20210305 103335.790 ERROR            PET2 Failure  - hello
+20210305 103335.791 INFO             PET2  PASS  Error Msg Found Error Test, ESMF_LogErrUTest.F90, line 343
+20210305 103335.791 INFO             PET2  PASS   Verify rcToReturn Value Test, ESMF_LogErrUTest.F90, line 350
+20210305 103335.791 INFO             PET2  PASS  LogGet trace flag default flag, ESMF_LogErrUTest.F90, line 360
+20210305 103335.791 TRACE            PET2  ESMF_LogSet() !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103335.791 TRACE            PET2  ESMF_LogSet() !!!        TRACING IS ENABLED         !!!
+20210305 103335.791 TRACE            PET2  ESMF_LogSet() !!! MAY CAUSE SLOWDOWN IN PERFORMANCE !!!
+20210305 103335.791 TRACE            PET2  ESMF_LogSet() !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103335.791 INFO             PET2  PASS  LogSet trace flag set to .true., ESMF_LogErrUTest.F90, line 368
+20210305 103335.791 INFO             PET2  PASS  LogGet trace flag set to .true., ESMF_LogErrUTest.F90, line 377
+20210305 103335.791 TRACE            PET2 ESMF_LogErrUTest.F90:384 called: ESMF_LogFoundError()
+20210305 103335.791 INFO             PET2  PASS  Error Msg Found Error Test, ESMF_LogErrUTest.F90, line 386
+20210305 103335.791 TRACE            PET2 ESMF_LogErrUTest.F90:401 called: ESMF_LogFoundAllocError()
+20210305 103335.791 ERROR            PET2 ESMF_LogErrUTest.F90:401 Unable to allocate memory
+20210305 103335.791 INFO             PET2  PASS  Log Found Alloc Error Test, ESMF_LogErrUTest.F90, line 403
+20210305 103335.791 INFO             PET2  PASS   Verify rcToReturn Value Test, ESMF_LogErrUTest.F90, line 410
+20210305 103335.791 TRACE            PET2 ESMF_LogErrUTest.F90:418 called: ESMF_LogFoundAllocError()
+20210305 103335.791 ERROR            PET2 ESMF_LogErrUTest.F90:418 Unable to allocate memory  - hello (status =    1)
+20210305 103335.791 INFO             PET2  PASS  Error Msg Found Alloc Error Test, ESMF_LogErrUTest.F90, line 420
+20210305 103335.791 INFO             PET2  PASS   Verify rcToReturn Value Test, ESMF_LogErrUTest.F90, line 427
+20210305 103335.791 TRACE            PET2 ESMF_LogErrUTest.F90:435 called: ESMF_LogFoundAllocError()
+20210305 103335.791 INFO             PET2  PASS  Error Msg Found Error Test, ESMF_LogErrUTest.F90, line 437
+20210305 103335.791 TRACE            PET2 ESMF_LogErrUTest.F90:444 called: ESMF_LogFoundAllocError()
+20210305 103335.791 ERROR            PET2 ESMF_LogErrUTest.F90:444 Unable to allocate memory
+20210305 103335.791 INFO             PET2  PASS  Log Found Alloc Error Test, ESMF_LogErrUTest.F90, line 446
+20210305 103335.791 INFO             PET2  PASS   Verify rcToReturn Value Test, ESMF_LogErrUTest.F90, line 453
+20210305 103335.791 TRACE            PET2 ESMF_LogErrUTest.F90:462 called: ESMF_LogFoundAllocError()
+20210305 103335.791 INFO             PET2  PASS  Log Found Alloc Error Test, ESMF_LogErrUTest.F90, line 464
+20210305 103335.791 INFO             PET2  PASS   Verify rcToReturn Value Test, ESMF_LogErrUTest.F90, line 472
+20210305 103335.791 TRACE            PET2 ESMF_LogErrUTest.F90:480 called: ESMF_LogFoundDeallocError()
+20210305 103335.791 ERROR            PET2 ESMF_LogErrUTest.F90:480 Unable to deallocate memory
+20210305 103335.791 INFO             PET2  PASS  Log Found Dealloc Error Test, ESMF_LogErrUTest.F90, line 482
+20210305 103335.791 INFO             PET2  PASS   Verify rcToReturn Value Test, ESMF_LogErrUTest.F90, line 489
+20210305 103335.791 TRACE            PET2 ESMF_LogErrUTest.F90:497 called: ESMF_LogFoundDeallocError()
+20210305 103335.791 ERROR            PET2 ESMF_LogErrUTest.F90:497 Unable to deallocate memory  - hello
+20210305 103335.791 INFO             PET2  PASS  Error Msg Found Dealloc Error Test, ESMF_LogErrUTest.F90, line 499
+20210305 103335.791 INFO             PET2  PASS   Verify rcToReturn Value Test, ESMF_LogErrUTest.F90, line 506
+20210305 103335.791 TRACE            PET2 ESMF_LogErrUTest.F90:514 called: ESMF_LogFoundDeallocError()
+20210305 103335.791 INFO             PET2  PASS  Error Msg Found Error Test, ESMF_LogErrUTest.F90, line 516
+20210305 103335.791 TRACE            PET2 ESMF_LogErrUTest.F90:523 called: ESMF_LogFoundDeallocError()
+20210305 103335.791 ERROR            PET2 ESMF_LogErrUTest.F90:523 Unable to deallocate memory
+20210305 103335.791 INFO             PET2  PASS  Log Found Dealloc Error Test, ESMF_LogErrUTest.F90, line 525
+20210305 103335.791 INFO             PET2  PASS   Verify rcToReturn Value Test, ESMF_LogErrUTest.F90, line 532
+20210305 103335.791 TRACE            PET2 ESMF_LogErrUTest.F90:541 called: ESMF_LogFoundDeallocError()
+20210305 103335.791 INFO             PET2  PASS  Log Found Dealloc Error Test, ESMF_LogErrUTest.F90, line 543
+20210305 103335.791 INFO             PET2  PASS   Verify rcToReturn Value Test, ESMF_LogErrUTest.F90, line 551
+20210305 103335.791 TRACE            PET2  ESMF_LogSet() !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103335.792 TRACE            PET2  ESMF_LogSet() !!!       TRACING is disabled         !!!
+20210305 103335.792 TRACE            PET2  ESMF_LogSet() !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103335.792 INFO             PET2  PASS  LogSet trace flag set to .true., ESMF_LogErrUTest.F90, line 564
+20210305 103335.792 INFO             PET2  PASS  LogGet trace flag set to .false., ESMF_LogErrUTest.F90, line 573
+20210305 103335.792 INFO             PET2  PASS  LogGet flush immediate flag get, ESMF_LogErrUTest.F90, line 581
+20210305 103335.792 INFO             PET2  PASS  LogSet flush immediate flag set to .true., ESMF_LogErrUTest.F90, line 589
+20210305 103335.792 INFO             PET2  PASS  LogSet flush immediate flag restore, ESMF_LogErrUTest.F90, line 597
+20210305 103335.792 INFO             PET2  PASS  Log Found Error Test, ESMF_LogErrUTest.F90, line 606
+20210305 103335.792 INFO             PET2  PASS   Verify rcToReturn Value Test, ESMF_LogErrUTest.F90, line 614
+20210305 103335.792 ERROR            PET2 Failure
+20210305 103335.792 INFO             PET2  PASS  Log Found Error Test, ESMF_LogErrUTest.F90, line 623
+20210305 103335.792 INFO             PET2  PASS   Verify rcToReturn Value Test, ESMF_LogErrUTest.F90, line 630
+20210305 103335.792 INFO             PET2  PASS  LogGet get default Log file name, ESMF_LogErrUTest.F90, line 639
+20210305 103335.792 ERROR            PET2 ESMF_LogErr.F90:1645 ESMF_LogGet() String too long, must be less than ESMF_MAXSTR  - fileName argument string too short
+20210305 103335.792 INFO             PET2  PASS  LogGet get default Log file name with short string, ESMF_LogErrUTest.F90, line 649
+20210305 103335.792 INFO             PET2  PASS   LogFlush of unopened log Test, ESMF_LogErrUTest.F90, line 657
+20210305 103335.792 INFO             PET2  PASS  Write without opening log file Test, ESMF_LogErrUTest.F90, line 665
+20210305 103335.793 INFO             PET2  PASS  Open Log Test, ESMF_LogErrUTest.F90, line 674
+20210305 103335.793 INFO             PET2  PASS  Open Already Open Log Test, ESMF_LogErrUTest.F90, line 683
+20210305 103335.793 INFO             PET2  PASS  LogGet get Log file name, ESMF_LogErrUTest.F90, line 692
+20210305 103335.793 INFO             PET2  PASS  Check returned Log file name, ESMF_LogErrUTest.F90, line 702
+20210305 103338.000 INFO             PET2  PASS  Write to log file Test, ESMF_LogErrUTest.F90, line 760
+20210305 103338.000 INFO             PET2  PASS   LogFlush Test, ESMF_LogErrUTest.F90, line 768
+20210305 103338.000 INFO             PET2  PASS  Close Log Test, ESMF_LogErrUTest.F90, line 776
+20210305 103338.000 INFO             PET2  PASS  Close a closed Log Test, ESMF_LogErrUTest.F90, line 784
+20210305 103338.001 INFO             PET2  PASS  Open Log file with Fortran IO Test, ESMF_LogErrUTest.F90, line 794
+20210305 103338.001 INFO             PET2  PASS  Verify random string Test, ESMF_LogErrUTest.F90, line 816
+20210305 103338.001 INFO             PET2  PASS  Verify Date and Time in Log File Test, ESMF_LogErrUTest.F90, line 837
+20210305 103338.001 INFO             PET2  PASS  Verify Message Type in Log File Test, ESMF_LogErrUTest.F90, line 849
+20210305 103338.001 INFO             PET2  PASS  Verify PET number in Log File Test, ESMF_LogErrUTest.F90, line 857
+20210305 103338.001 INFO             PET2  PASS   LogFlush of unopened log Test, ESMF_LogErrUTest.F90, line 866
+20210305 103338.001 INFO             PET2  PASS   LogFlush of default log Test, ESMF_LogErrUTest.F90, line 874
+20210305 103338.001 INFO             PET2  PASS   LogSet with logmsgList set to info only Test, ESMF_LogErrUTest.F90, line 884
+20210305 103338.007 INFO             PET2  PASS   Creating a log file with message filtering, ESMF_LogErrUTest.F90, line 933
+20210305 103338.008 INFO             PET2  PASS   Search log for INFO messages, ESMF_LogErrUTest.F90, line 945
+20210305 103338.008 INFO             PET2  PASS   Search log for WARNING messages, ESMF_LogErrUTest.F90, line 957
+20210305 103338.008 INFO             PET2  PASS   Search log for ERROR messages, ESMF_LogErrUTest.F90, line 969
+20210305 103338.008 INFO             PET2  PASS   LogSet with logmsgList set for warnings and info Test, ESMF_LogErrUTest.F90, line 979
+20210305 103338.008 INFO             PET2  PASS   LogSet with logmsgList set for errors and info Test, ESMF_LogErrUTest.F90, line 989
+20210305 103338.009 INFO             PET2  PASS   LogSet with logmsgList set for ALL types Test, ESMF_LogErrUTest.F90, line 999
+20210305 103338.009 ERROR            PET2 ALL set, should be in log
+20210305 103338.009 INFO             PET2  PASS   LogWrite ERROR when ALL set Test, ESMF_LogErrUTest.F90, line 1009
+20210305 103338.009 WARNING          PET2 ALL set, should be in log
+20210305 103338.009 INFO             PET2  PASS   LogWrite WARNING when ALL set Test, ESMF_LogErrUTest.F90, line 1019
+20210305 103338.009 INFO             PET2 ALL set, should be in log
+20210305 103338.009 INFO             PET2  PASS   LogWrite INFO when ALL set Test, ESMF_LogErrUTest.F90, line 1029
+20210305 103338.009 TRACE            PET2 ALL set, should be in log
+20210305 103338.009 INFO             PET2  PASS   LogWrite TRACE when ALL set Test, ESMF_LogErrUTest.F90, line 1039
+20210305 103338.009 INFO             PET2  PASS   LogSet with logmsgList set for NONE Test, ESMF_LogErrUTest.F90, line 1054
+20210305 103338.009 INFO             PET2  PASS   LogSet with logmsgList set for NOTRACE Test, ESMF_LogErrUTest.F90, line 1064
+20210305 103338.009 ERROR            PET2 NOTRACE set, should be in log
+20210305 103338.009 INFO             PET2  PASS   LogWrite ERROR when NOTRACE set Test, ESMF_LogErrUTest.F90, line 1074
+20210305 103338.009 WARNING          PET2 NOTRACE set, should be in log
+20210305 103338.009 INFO             PET2  PASS   LogWrite WARNING when NOTRACE set Test, ESMF_LogErrUTest.F90, line 1084
+20210305 103338.009 INFO             PET2 NOTRACE set, should be in log
+20210305 103338.009 INFO             PET2  PASS   LogWrite INFO when NOTRACE set Test, ESMF_LogErrUTest.F90, line 1094
+20210305 103338.009 INFO             PET2  PASS   LogWrite when NOTRACE set Test, ESMF_LogErrUTest.F90, line 1104
+20210305 103338.009 INFO             PET2  PASS   LogSet with logmsgAbort Test, ESMF_LogErrUTest.F90, line 1113
+20210305 103338.009 INFO             PET2  PASS   LogGet with logmsgAbort Test, ESMF_LogErrUTest.F90, line 1122
+20210305 103338.009 INFO             PET2  PASS   LogGet with logmsgAbort set association Test, ESMF_LogErrUTest.F90, line 1130
+20210305 103338.009 INFO             PET2  PASS   LogGet with logmsgAbort Test, ESMF_LogErrUTest.F90, line 1138
+20210305 103338.009 INFO             PET2  PASS   LogGet with logmsgAbort Test, ESMF_LogErrUTest.F90, line 1147
+20210305 103338.009 INFO             PET2  PASS   LogSet with logmsgAbort Test, ESMF_LogErrUTest.F90, line 1155
+20210305 103338.009 INFO             PET2  PASS   LogGet with logmsgAbort cleared Test, ESMF_LogErrUTest.F90, line 1165
+20210305 103338.009 INFO             PET2  PASS   LogGet with logmsgAbort cleared association Test, ESMF_LogErrUTest.F90, line 1173
+20210305 103338.009 INFO             PET2  PASS   LogGet with logmsgAbort cleared size Test, ESMF_LogErrUTest.F90, line 1181
+20210305 103338.016 INFO             PET2  PASS  Opening Log for assignment Test, ESMF_LogErrUTest.F90, line 1191
+20210305 103338.016 INFO             PET2  PASS  Log assignment (and write via alias) Test, ESMF_LogErrUTest.F90, line 1201
+20210305 103338.016 INFO             PET2  PASS  Log equality with same log Test, ESMF_LogErrUTest.F90, line 1209
+20210305 103338.016 INFO             PET2  PASS  Log equality with different log Test, ESMF_LogErrUTest.F90, line 1217
+20210305 103338.016 INFO             PET2  PASS  Log inequality with same log Test, ESMF_LogErrUTest.F90, line 1225
+20210305 103338.016 INFO             PET2  PASS  Log inequality with different log Test, ESMF_LogErrUTest.F90, line 1233
+20210305 103338.016 INFO             PET2  PASS  Closing log via alias Test, ESMF_LogErrUTest.F90, line 1241
+20210305 103338.016 INFO             PET2  PASS  Opening unclosed default log Test, ESMF_LogErrUTest.F90, line 1249
+20210305 103338.016 INFO             PET2           2.258619  PASS  Set highResTimestampFlag test, ESMF_LogErrUTest.F90, line 1257
+20210305 103338.016 INFO             PET2           2.258682  PASS  Test highResTimestampFlag set test, ESMF_LogErrUTest.F90, line 1265
+20210305 103338.016 INFO             PET2           2.258694  High res timestamps set, and should be in the log
+20210305 103338.016 INFO             PET2           2.258710  PASS  Writing with high res timestamp set Test, ESMF_LogErrUTest.F90, line 1275
+20210305 103338.016 INFO             PET2  PASS  Clear highResTimestampFlag test, ESMF_LogErrUTest.F90, line 1283
+20210305 103338.016 INFO             PET2  PASS  Test highResTimestampFlag clear test, ESMF_LogErrUTest.F90, line 1291
+20210305 103338.016 INFO             PET2  High res timestamps cleared, and should be NOT be in the log
+20210305 103338.016 INFO             PET2  PASS  Writing with high res timestamp cleared Test, ESMF_LogErrUTest.F90, line 1301
+20210305 103338.017 INFO             PET2  PASS  Open Log with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1327
+20210305 103338.017 INFO             PET2  PASS  Write non-ERROR messages with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1337
+20210305 103338.017 INFO             PET2  PASS  Close (non-existant) ESMF_LOGKIND_MULTI_ON_ERROR log test, ESMF_LogErrUTest.F90, line 1346
+20210305 103338.019 INFO             PET2  PASS  Test for non-existant ESMF_LOGKIND_MULTI_ON_ERROR log test, ESMF_LogErrUTest.F90, line 1361
+20210305 103338.019 INFO             PET2  PASS  Open log with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1372
+20210305 103338.019 INFO             PET2  PASS  Write non-ERROR message with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1382
+20210305 103338.039 INFO             PET2  PASS  Write ERROR message with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1392
+20210305 103338.039 INFO             PET2  PASS  Write non-ERROR message with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1402
+20210305 103338.040 INFO             PET2  PASS  Close ESMF_LOGKIND_MULTI_ON_ERROR log test, ESMF_LogErrUTest.F90, line 1411
+20210305 103338.041 INFO             PET2  PASS  Test for existant ESMF_LOGKIND_MULTI_ON_ERROR log test, ESMF_LogErrUTest.F90, line 1428
+20210305 103338.049 ERROR            PET2 ESMCI_TestError.C:33 c_error() C Error
+20210305 103338.049 INFO             PET2  PASS  Write ERROR message from C with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1467
+20210305 103338.049 INFO             PET2 PASS  Close default log test, ESMF_LogErrUTest.F90, line xxx
+20210305 103338.049 INFO             PET2 PASS  Open default log with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line xxx
+20210305 103338.049 INFO             PET2 PASS  Write non-ERROR message with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line xxx
+20210305 103338.049 INFO             PET2 INFO test Msg
+20210305 103338.049 INFO             PET2  PASS  Write non-ERROR message with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1495
+20210305 103338.049 INFO             PET2  Ending Test, file ESMF_LogErrUTest.F90, line 1500
+20210305 103338.049 INFO             PET2 Finalizing ESMF
+20210305 103335.763 INFO             PET3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103335.763 INFO             PET3 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 103335.763 INFO             PET3 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 103335.763 INFO             PET3 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 103335.763 INFO             PET3 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 103335.763 INFO             PET3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103335.763 INFO             PET3 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 103335.763 INFO             PET3 ESMF library build date/time: "Mar  5 2021" "09:44:18"
+20210305 103335.763 INFO             PET3 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g
+20210305 103335.763 INFO             PET3 ESMF_COMM                   : mpi
+20210305 103335.764 INFO             PET3 ESMF_MOAB                   : enabled
+20210305 103335.764 INFO             PET3 ESMF_LAPACK                 : enabled
+20210305 103335.764 INFO             PET3 ESMF_NETCDF                 : enabled
+20210305 103335.764 INFO             PET3 ESMF_PNETCDF                : disabled
+20210305 103335.764 INFO             PET3 ESMF_PIO                    : enabled
+20210305 103335.764 INFO             PET3 ESMF_YAMLCPP                : enabled
+20210305 103335.772 INFO             PET3  Beginning Test, file ESMF_LogErrUTest.F90, line 119
+20210305 103335.772 INFO             PET3  NUMBER_OF_PROCESSORS           4
+20210305 103335.772 INFO             PET3  PASS  Pre-initialize LogWrite Test, ESMF_LogErrUTest.F90, line 137
+20210305 103335.780 INFO             PET3  PASS  Open Log Test, ESMF_LogErrUTest.F90, line 145
+20210305 103335.782 INFO             PET3  PASS  Open ESMF_LOGKIND_SINGLE Log Test, ESMF_LogErrUTest.F90, line 155
+20210305 103335.782 INFO             PET3  PASS  Write to Single Log Test with prefixes, ESMF_LogErrUTest.F90, line 164
+20210305 103335.782 INFO             PET3  PASS  Get default noPrefix Test, ESMF_LogErrUTest.F90, line 174
+20210305 103335.782 INFO             PET3  PASS  Set noPrefix Test, ESMF_LogErrUTest.F90, line 183
+20210305 103335.782 INFO             PET3  PASS  Get non-default noPrefix Test, ESMF_LogErrUTest.F90, line 193
+20210305 103335.782 INFO             PET3  PASS  Write to Single Log Test without timestamp, ESMF_LogErrUTest.F90, line 202
+20210305 103335.782 INFO             PET3  PASS  Open ESMF_LOGKIND_NONE Log of opened file Test, ESMF_LogErrUTest.F90, line 211
+20210305 103335.782 INFO             PET3  PASS  Log Close Test, ESMF_LogErrUTest.F90, line 219
+20210305 103335.782 INFO             PET3  PASS  Open ESMF_LOGKIND_NONE Log Test, ESMF_LogErrUTest.F90, line 228
+20210305 103335.782 INFO             PET3  PASS  Use of separate log Test, ESMF_LogErrUTest.F90, line 237
+20210305 103335.783 INFO             PET3  PASS  Close Log Test, ESMF_LogErrUTest.F90, line 245
+20210305 103335.783 INFO             PET3  PASS  ESMF_LogFoundNetCDFError Unit Test - No NetCDF error, ESMF_LogErrUTest.F90, line 268
+20210305 103335.783 ERROR            PET3 what:2 my_method  - message from a user (strerr=Operation not permitted, ncerrToCheck=1)
+20210305 103335.783 INFO             PET3  PASS  ESMF_LogFoundNetCDFError Unit Test - Found NetCDF error, ESMF_LogErrUTest.F90, line 298
+20210305 103335.783 INFO             PET3  PASS  Close Log File of never opened file Test, ESMF_LogErrUTest.F90, line 311
+20210305 103335.783 INFO             PET3  PASS   LogFlush of unopened log Test, ESMF_LogErrUTest.F90, line 319
+20210305 103335.783 INFO             PET3 Log Write 2
+20210305 103335.783 INFO             PET3  PASS  Use of default log Test, ESMF_LogErrUTest.F90, line 327
+20210305 103335.783 JSON             PET3 {   "comp" :{     "event": "start_phase",     "phaseLabel": "IPDv01p2",     "phase": "0",   }}
+20210305 103335.783 INFO             PET3  PASS  JSON output Test, ESMF_LogErrUTest.F90, line 335
+20210305 103335.783 ERROR            PET3 Failure  - hello
+20210305 103335.783 INFO             PET3  PASS  Error Msg Found Error Test, ESMF_LogErrUTest.F90, line 343
+20210305 103335.783 INFO             PET3  PASS   Verify rcToReturn Value Test, ESMF_LogErrUTest.F90, line 350
+20210305 103335.783 INFO             PET3  PASS  LogGet trace flag default flag, ESMF_LogErrUTest.F90, line 360
+20210305 103335.783 TRACE            PET3  ESMF_LogSet() !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103335.783 TRACE            PET3  ESMF_LogSet() !!!        TRACING IS ENABLED         !!!
+20210305 103335.783 TRACE            PET3  ESMF_LogSet() !!! MAY CAUSE SLOWDOWN IN PERFORMANCE !!!
+20210305 103335.783 TRACE            PET3  ESMF_LogSet() !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103335.783 INFO             PET3  PASS  LogSet trace flag set to .true., ESMF_LogErrUTest.F90, line 368
+20210305 103335.783 INFO             PET3  PASS  LogGet trace flag set to .true., ESMF_LogErrUTest.F90, line 377
+20210305 103335.783 TRACE            PET3 ESMF_LogErrUTest.F90:384 called: ESMF_LogFoundError()
+20210305 103335.783 INFO             PET3  PASS  Error Msg Found Error Test, ESMF_LogErrUTest.F90, line 386
+20210305 103335.783 TRACE            PET3 ESMF_LogErrUTest.F90:401 called: ESMF_LogFoundAllocError()
+20210305 103335.783 ERROR            PET3 ESMF_LogErrUTest.F90:401 Unable to allocate memory
+20210305 103335.783 INFO             PET3  PASS  Log Found Alloc Error Test, ESMF_LogErrUTest.F90, line 403
+20210305 103335.783 INFO             PET3  PASS   Verify rcToReturn Value Test, ESMF_LogErrUTest.F90, line 410
+20210305 103335.783 TRACE            PET3 ESMF_LogErrUTest.F90:418 called: ESMF_LogFoundAllocError()
+20210305 103335.783 ERROR            PET3 ESMF_LogErrUTest.F90:418 Unable to allocate memory  - hello (status =    1)
+20210305 103335.783 INFO             PET3  PASS  Error Msg Found Alloc Error Test, ESMF_LogErrUTest.F90, line 420
+20210305 103335.783 INFO             PET3  PASS   Verify rcToReturn Value Test, ESMF_LogErrUTest.F90, line 427
+20210305 103335.783 TRACE            PET3 ESMF_LogErrUTest.F90:435 called: ESMF_LogFoundAllocError()
+20210305 103335.783 INFO             PET3  PASS  Error Msg Found Error Test, ESMF_LogErrUTest.F90, line 437
+20210305 103335.783 TRACE            PET3 ESMF_LogErrUTest.F90:444 called: ESMF_LogFoundAllocError()
+20210305 103335.783 ERROR            PET3 ESMF_LogErrUTest.F90:444 Unable to allocate memory
+20210305 103335.783 INFO             PET3  PASS  Log Found Alloc Error Test, ESMF_LogErrUTest.F90, line 446
+20210305 103335.783 INFO             PET3  PASS   Verify rcToReturn Value Test, ESMF_LogErrUTest.F90, line 453
+20210305 103335.783 TRACE            PET3 ESMF_LogErrUTest.F90:462 called: ESMF_LogFoundAllocError()
+20210305 103335.783 INFO             PET3  PASS  Log Found Alloc Error Test, ESMF_LogErrUTest.F90, line 464
+20210305 103335.783 INFO             PET3  PASS   Verify rcToReturn Value Test, ESMF_LogErrUTest.F90, line 472
+20210305 103335.783 TRACE            PET3 ESMF_LogErrUTest.F90:480 called: ESMF_LogFoundDeallocError()
+20210305 103335.784 ERROR            PET3 ESMF_LogErrUTest.F90:480 Unable to deallocate memory
+20210305 103335.784 INFO             PET3  PASS  Log Found Dealloc Error Test, ESMF_LogErrUTest.F90, line 482
+20210305 103335.784 INFO             PET3  PASS   Verify rcToReturn Value Test, ESMF_LogErrUTest.F90, line 489
+20210305 103335.784 TRACE            PET3 ESMF_LogErrUTest.F90:497 called: ESMF_LogFoundDeallocError()
+20210305 103335.784 ERROR            PET3 ESMF_LogErrUTest.F90:497 Unable to deallocate memory  - hello
+20210305 103335.784 INFO             PET3  PASS  Error Msg Found Dealloc Error Test, ESMF_LogErrUTest.F90, line 499
+20210305 103335.784 INFO             PET3  PASS   Verify rcToReturn Value Test, ESMF_LogErrUTest.F90, line 506
+20210305 103335.784 TRACE            PET3 ESMF_LogErrUTest.F90:514 called: ESMF_LogFoundDeallocError()
+20210305 103335.784 INFO             PET3  PASS  Error Msg Found Error Test, ESMF_LogErrUTest.F90, line 516
+20210305 103335.784 TRACE            PET3 ESMF_LogErrUTest.F90:523 called: ESMF_LogFoundDeallocError()
+20210305 103335.784 ERROR            PET3 ESMF_LogErrUTest.F90:523 Unable to deallocate memory
+20210305 103335.784 INFO             PET3  PASS  Log Found Dealloc Error Test, ESMF_LogErrUTest.F90, line 525
+20210305 103335.784 INFO             PET3  PASS   Verify rcToReturn Value Test, ESMF_LogErrUTest.F90, line 532
+20210305 103335.784 TRACE            PET3 ESMF_LogErrUTest.F90:541 called: ESMF_LogFoundDeallocError()
+20210305 103335.784 INFO             PET3  PASS  Log Found Dealloc Error Test, ESMF_LogErrUTest.F90, line 543
+20210305 103335.784 INFO             PET3  PASS   Verify rcToReturn Value Test, ESMF_LogErrUTest.F90, line 551
+20210305 103335.784 TRACE            PET3  ESMF_LogSet() !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103335.784 TRACE            PET3  ESMF_LogSet() !!!       TRACING is disabled         !!!
+20210305 103335.784 TRACE            PET3  ESMF_LogSet() !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103335.784 INFO             PET3  PASS  LogSet trace flag set to .true., ESMF_LogErrUTest.F90, line 564
+20210305 103335.784 INFO             PET3  PASS  LogGet trace flag set to .false., ESMF_LogErrUTest.F90, line 573
+20210305 103335.784 INFO             PET3  PASS  LogGet flush immediate flag get, ESMF_LogErrUTest.F90, line 581
+20210305 103335.784 INFO             PET3  PASS  LogSet flush immediate flag set to .true., ESMF_LogErrUTest.F90, line 589
+20210305 103335.784 INFO             PET3  PASS  LogSet flush immediate flag restore, ESMF_LogErrUTest.F90, line 597
+20210305 103335.784 INFO             PET3  PASS  Log Found Error Test, ESMF_LogErrUTest.F90, line 606
+20210305 103335.784 INFO             PET3  PASS   Verify rcToReturn Value Test, ESMF_LogErrUTest.F90, line 614
+20210305 103335.784 ERROR            PET3 Failure
+20210305 103335.784 INFO             PET3  PASS  Log Found Error Test, ESMF_LogErrUTest.F90, line 623
+20210305 103335.784 INFO             PET3  PASS   Verify rcToReturn Value Test, ESMF_LogErrUTest.F90, line 630
+20210305 103335.784 INFO             PET3  PASS  LogGet get default Log file name, ESMF_LogErrUTest.F90, line 639
+20210305 103335.784 ERROR            PET3 ESMF_LogErr.F90:1645 ESMF_LogGet() String too long, must be less than ESMF_MAXSTR  - fileName argument string too short
+20210305 103335.784 INFO             PET3  PASS  LogGet get default Log file name with short string, ESMF_LogErrUTest.F90, line 649
+20210305 103335.784 INFO             PET3  PASS   LogFlush of unopened log Test, ESMF_LogErrUTest.F90, line 657
+20210305 103335.784 INFO             PET3  PASS  Write without opening log file Test, ESMF_LogErrUTest.F90, line 665
+20210305 103335.785 INFO             PET3  PASS  Open Log Test, ESMF_LogErrUTest.F90, line 674
+20210305 103335.785 INFO             PET3  PASS  Open Already Open Log Test, ESMF_LogErrUTest.F90, line 683
+20210305 103335.785 INFO             PET3  PASS  LogGet get Log file name, ESMF_LogErrUTest.F90, line 692
+20210305 103335.785 INFO             PET3  PASS  Check returned Log file name, ESMF_LogErrUTest.F90, line 702
+20210305 103338.000 INFO             PET3  PASS  Write to log file Test, ESMF_LogErrUTest.F90, line 760
+20210305 103338.000 INFO             PET3  PASS   LogFlush Test, ESMF_LogErrUTest.F90, line 768
+20210305 103338.000 INFO             PET3  PASS  Close Log Test, ESMF_LogErrUTest.F90, line 776
+20210305 103338.000 INFO             PET3  PASS  Close a closed Log Test, ESMF_LogErrUTest.F90, line 784
+20210305 103338.001 INFO             PET3  PASS  Open Log file with Fortran IO Test, ESMF_LogErrUTest.F90, line 794
+20210305 103338.001 INFO             PET3  PASS  Verify random string Test, ESMF_LogErrUTest.F90, line 816
+20210305 103338.001 INFO             PET3  PASS  Verify Date and Time in Log File Test, ESMF_LogErrUTest.F90, line 837
+20210305 103338.001 INFO             PET3  PASS  Verify Message Type in Log File Test, ESMF_LogErrUTest.F90, line 849
+20210305 103338.001 INFO             PET3  PASS  Verify PET number in Log File Test, ESMF_LogErrUTest.F90, line 857
+20210305 103338.001 INFO             PET3  PASS   LogFlush of unopened log Test, ESMF_LogErrUTest.F90, line 866
+20210305 103338.001 INFO             PET3  PASS   LogFlush of default log Test, ESMF_LogErrUTest.F90, line 874
+20210305 103338.001 INFO             PET3  PASS   LogSet with logmsgList set to info only Test, ESMF_LogErrUTest.F90, line 884
+20210305 103338.007 INFO             PET3  PASS   Creating a log file with message filtering, ESMF_LogErrUTest.F90, line 933
+20210305 103338.008 INFO             PET3  PASS   Search log for INFO messages, ESMF_LogErrUTest.F90, line 945
+20210305 103338.008 INFO             PET3  PASS   Search log for WARNING messages, ESMF_LogErrUTest.F90, line 957
+20210305 103338.008 INFO             PET3  PASS   Search log for ERROR messages, ESMF_LogErrUTest.F90, line 969
+20210305 103338.008 INFO             PET3  PASS   LogSet with logmsgList set for warnings and info Test, ESMF_LogErrUTest.F90, line 979
+20210305 103338.008 INFO             PET3  PASS   LogSet with logmsgList set for errors and info Test, ESMF_LogErrUTest.F90, line 989
+20210305 103338.008 INFO             PET3  PASS   LogSet with logmsgList set for ALL types Test, ESMF_LogErrUTest.F90, line 999
+20210305 103338.008 ERROR            PET3 ALL set, should be in log
+20210305 103338.008 INFO             PET3  PASS   LogWrite ERROR when ALL set Test, ESMF_LogErrUTest.F90, line 1009
+20210305 103338.008 WARNING          PET3 ALL set, should be in log
+20210305 103338.008 INFO             PET3  PASS   LogWrite WARNING when ALL set Test, ESMF_LogErrUTest.F90, line 1019
+20210305 103338.008 INFO             PET3 ALL set, should be in log
+20210305 103338.008 INFO             PET3  PASS   LogWrite INFO when ALL set Test, ESMF_LogErrUTest.F90, line 1029
+20210305 103338.008 TRACE            PET3 ALL set, should be in log
+20210305 103338.008 INFO             PET3  PASS   LogWrite TRACE when ALL set Test, ESMF_LogErrUTest.F90, line 1039
+20210305 103338.008 INFO             PET3  PASS   LogSet with logmsgList set for NONE Test, ESMF_LogErrUTest.F90, line 1054
+20210305 103338.008 INFO             PET3  PASS   LogSet with logmsgList set for NOTRACE Test, ESMF_LogErrUTest.F90, line 1064
+20210305 103338.008 ERROR            PET3 NOTRACE set, should be in log
+20210305 103338.008 INFO             PET3  PASS   LogWrite ERROR when NOTRACE set Test, ESMF_LogErrUTest.F90, line 1074
+20210305 103338.008 WARNING          PET3 NOTRACE set, should be in log
+20210305 103338.008 INFO             PET3  PASS   LogWrite WARNING when NOTRACE set Test, ESMF_LogErrUTest.F90, line 1084
+20210305 103338.008 INFO             PET3 NOTRACE set, should be in log
+20210305 103338.008 INFO             PET3  PASS   LogWrite INFO when NOTRACE set Test, ESMF_LogErrUTest.F90, line 1094
+20210305 103338.008 INFO             PET3  PASS   LogWrite when NOTRACE set Test, ESMF_LogErrUTest.F90, line 1104
+20210305 103338.008 INFO             PET3  PASS   LogSet with logmsgAbort Test, ESMF_LogErrUTest.F90, line 1113
+20210305 103338.008 INFO             PET3  PASS   LogGet with logmsgAbort Test, ESMF_LogErrUTest.F90, line 1122
+20210305 103338.008 INFO             PET3  PASS   LogGet with logmsgAbort set association Test, ESMF_LogErrUTest.F90, line 1130
+20210305 103338.008 INFO             PET3  PASS   LogGet with logmsgAbort Test, ESMF_LogErrUTest.F90, line 1138
+20210305 103338.009 INFO             PET3  PASS   LogGet with logmsgAbort Test, ESMF_LogErrUTest.F90, line 1147
+20210305 103338.009 INFO             PET3  PASS   LogSet with logmsgAbort Test, ESMF_LogErrUTest.F90, line 1155
+20210305 103338.009 INFO             PET3  PASS   LogGet with logmsgAbort cleared Test, ESMF_LogErrUTest.F90, line 1165
+20210305 103338.009 INFO             PET3  PASS   LogGet with logmsgAbort cleared association Test, ESMF_LogErrUTest.F90, line 1173
+20210305 103338.009 INFO             PET3  PASS   LogGet with logmsgAbort cleared size Test, ESMF_LogErrUTest.F90, line 1181
+20210305 103338.036 INFO             PET3  PASS  Opening Log for assignment Test, ESMF_LogErrUTest.F90, line 1191
+20210305 103338.036 INFO             PET3  PASS  Log assignment (and write via alias) Test, ESMF_LogErrUTest.F90, line 1201
+20210305 103338.036 INFO             PET3  PASS  Log equality with same log Test, ESMF_LogErrUTest.F90, line 1209
+20210305 103338.036 INFO             PET3  PASS  Log equality with different log Test, ESMF_LogErrUTest.F90, line 1217
+20210305 103338.036 INFO             PET3  PASS  Log inequality with same log Test, ESMF_LogErrUTest.F90, line 1225
+20210305 103338.036 INFO             PET3  PASS  Log inequality with different log Test, ESMF_LogErrUTest.F90, line 1233
+20210305 103338.038 INFO             PET3  PASS  Closing log via alias Test, ESMF_LogErrUTest.F90, line 1241
+20210305 103338.038 INFO             PET3  PASS  Opening unclosed default log Test, ESMF_LogErrUTest.F90, line 1249
+20210305 103338.038 INFO             PET3           2.279785  PASS  Set highResTimestampFlag test, ESMF_LogErrUTest.F90, line 1257
+20210305 103338.038 INFO             PET3           2.279823  PASS  Test highResTimestampFlag set test, ESMF_LogErrUTest.F90, line 1265
+20210305 103338.038 INFO             PET3           2.279835  High res timestamps set, and should be in the log
+20210305 103338.038 INFO             PET3           2.279851  PASS  Writing with high res timestamp set Test, ESMF_LogErrUTest.F90, line 1275
+20210305 103338.038 INFO             PET3  PASS  Clear highResTimestampFlag test, ESMF_LogErrUTest.F90, line 1283
+20210305 103338.038 INFO             PET3  PASS  Test highResTimestampFlag clear test, ESMF_LogErrUTest.F90, line 1291
+20210305 103338.038 INFO             PET3  High res timestamps cleared, and should be NOT be in the log
+20210305 103338.038 INFO             PET3  PASS  Writing with high res timestamp cleared Test, ESMF_LogErrUTest.F90, line 1301
+20210305 103338.038 INFO             PET3  PASS  Open Log with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1327
+20210305 103338.038 INFO             PET3  PASS  Write non-ERROR messages with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1337
+20210305 103338.038 INFO             PET3  PASS  Close (non-existant) ESMF_LOGKIND_MULTI_ON_ERROR log test, ESMF_LogErrUTest.F90, line 1346
+20210305 103338.039 INFO             PET3  PASS  Test for non-existant ESMF_LOGKIND_MULTI_ON_ERROR log test, ESMF_LogErrUTest.F90, line 1361
+20210305 103338.039 INFO             PET3  PASS  Open log with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1372
+20210305 103338.039 INFO             PET3  PASS  Write non-ERROR message with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1382
+20210305 103338.053 INFO             PET3  PASS  Write ERROR message with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1392
+20210305 103338.053 INFO             PET3  PASS  Write non-ERROR message with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1402
+20210305 103338.053 INFO             PET3  PASS  Close ESMF_LOGKIND_MULTI_ON_ERROR log test, ESMF_LogErrUTest.F90, line 1411
+20210305 103338.054 INFO             PET3  PASS  Test for existant ESMF_LOGKIND_MULTI_ON_ERROR log test, ESMF_LogErrUTest.F90, line 1428
+20210305 103338.061 ERROR            PET3 ESMCI_TestError.C:33 c_error() C Error
+20210305 103338.061 INFO             PET3  PASS  Write ERROR message from C with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1467
+20210305 103338.061 INFO             PET3 PASS  Close default log test, ESMF_LogErrUTest.F90, line xxx
+20210305 103338.061 INFO             PET3 PASS  Open default log with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line xxx
+20210305 103338.061 INFO             PET3 PASS  Write non-ERROR message with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line xxx
+20210305 103338.061 INFO             PET3 INFO test Msg
+20210305 103338.061 INFO             PET3  PASS  Write non-ERROR message with ESMF_LOGKIND_MULTI_ON_ERROR test, ESMF_LogErrUTest.F90, line 1495
+20210305 103338.061 INFO             PET3  Ending Test, file ESMF_LogErrUTest.F90, line 1500
+20210305 103338.061 INFO             PET3 Finalizing ESMF

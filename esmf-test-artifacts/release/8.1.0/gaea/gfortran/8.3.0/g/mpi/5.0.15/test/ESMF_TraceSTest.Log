@@ -1,0 +1,242 @@
+20210305 110012.275 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 110012.275 INFO             PET0 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 110012.275 INFO             PET0 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 110012.275 INFO             PET0 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 110012.275 INFO             PET0 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 110012.275 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 110012.275 INFO             PET0 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 110012.275 INFO             PET0 ESMF library build date/time: "Mar  5 2021" "09:44:18"
+20210305 110012.275 INFO             PET0 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g
+20210305 110012.275 INFO             PET0 ESMF_COMM                   : mpi
+20210305 110012.275 INFO             PET0 ESMF_MOAB                   : enabled
+20210305 110012.275 INFO             PET0 ESMF_LAPACK                 : enabled
+20210305 110012.275 INFO             PET0 ESMF_NETCDF                 : enabled
+20210305 110012.275 INFO             PET0 ESMF_PNETCDF                : disabled
+20210305 110012.275 INFO             PET0 ESMF_PIO                    : enabled
+20210305 110012.275 INFO             PET0 ESMF_YAMLCPP                : enabled
+20210305 110012.276 INFO             PET0 ESMF Tracing Enabled
+20210305 110012.276 INFO             PET0 ESMF Profiling Enabled
+20210305 110012.276 INFO             PET0 ESMF Trace/Profile clock: REALTIME
+20210305 110012.303 WARNING          PET0 ESMF Tracing/Profiling could not load dynamic instrumentation functions.
+20210305 110012.381 INFO             PET0 **************** Region Timings *******************
+20210305 110012.381 INFO             PET0 Region                            Count  Total (s)   Self (s)    Mean (s)    Min (s)     Max (s)
+20210305 110012.381 INFO             PET0   [user model 1] Init 1           1      0.0008      0.0008      0.0008      0.0008      0.0008
+20210305 110012.381 INFO             PET0   [user model 1] Run 1            1      0.0000      0.0000      0.0000      0.0000      0.0000
+20210305 110012.381 INFO             PET0   [user one-way coupler] Init 1   1      0.0000      0.0000      0.0000      0.0000      0.0000
+20210305 110012.381 INFO             PET0   [user model 1] Final 1          1      0.0000      0.0000      0.0000      0.0000      0.0000
+20210305 110012.381 INFO             PET0   [user one-way coupler] Run 1    1      0.0000      0.0000      0.0000      0.0000      0.0000
+20210305 110012.381 INFO             PET0   [user one-way coupler] Final 1  1      0.0000      0.0000      0.0000      0.0000      0.0000
+20210305 110017.480 INFO             PET0  NUMBER_OF_PROCESSORS           8
+20210305 110017.480 INFO             PET0  PASS  System Test ESMF_TraceSTest, ESMF_TraceSTest.F90, line 430
+20210305 110017.480 INFO             PET0 Finalizing ESMF
+20210305 110012.276 INFO             PET1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 110012.276 INFO             PET1 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 110012.276 INFO             PET1 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 110012.276 INFO             PET1 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 110012.276 INFO             PET1 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 110012.276 INFO             PET1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 110012.276 INFO             PET1 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 110012.276 INFO             PET1 ESMF library build date/time: "Mar  5 2021" "09:44:18"
+20210305 110012.276 INFO             PET1 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g
+20210305 110012.276 INFO             PET1 ESMF_COMM                   : mpi
+20210305 110012.276 INFO             PET1 ESMF_MOAB                   : enabled
+20210305 110012.276 INFO             PET1 ESMF_LAPACK                 : enabled
+20210305 110012.276 INFO             PET1 ESMF_NETCDF                 : enabled
+20210305 110012.276 INFO             PET1 ESMF_PNETCDF                : disabled
+20210305 110012.276 INFO             PET1 ESMF_PIO                    : enabled
+20210305 110012.276 INFO             PET1 ESMF_YAMLCPP                : enabled
+20210305 110012.276 INFO             PET1 ESMF Tracing Enabled
+20210305 110012.276 INFO             PET1 ESMF Profiling Enabled
+20210305 110012.276 INFO             PET1 ESMF Trace/Profile clock: REALTIME
+20210305 110012.284 WARNING          PET1 ESMF Tracing/Profiling could not load dynamic instrumentation functions.
+20210305 110012.381 INFO             PET1 **************** Region Timings *******************
+20210305 110012.381 INFO             PET1 Region                            Count  Total (s)   Self (s)    Mean (s)    Min (s)     Max (s)
+20210305 110012.381 INFO             PET1   [user model 1] Init 1           1      0.0008      0.0008      0.0008      0.0008      0.0008
+20210305 110012.381 INFO             PET1   [user model 1] Run 1            1      0.0000      0.0000      0.0000      0.0000      0.0000
+20210305 110012.381 INFO             PET1   [user one-way coupler] Init 1   1      0.0000      0.0000      0.0000      0.0000      0.0000
+20210305 110012.381 INFO             PET1   [user model 1] Final 1          1      0.0000      0.0000      0.0000      0.0000      0.0000
+20210305 110012.381 INFO             PET1   [user one-way coupler] Run 1    1      0.0000      0.0000      0.0000      0.0000      0.0000
+20210305 110012.381 INFO             PET1   [user one-way coupler] Final 1  1      0.0000      0.0000      0.0000      0.0000      0.0000
+20210305 110017.480 INFO             PET1  NUMBER_OF_PROCESSORS           8
+20210305 110017.480 INFO             PET1  PASS  System Test ESMF_TraceSTest, ESMF_TraceSTest.F90, line 430
+20210305 110017.480 INFO             PET1 Finalizing ESMF
+20210305 110012.275 INFO             PET2 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 110012.276 INFO             PET2 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 110012.276 INFO             PET2 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 110012.276 INFO             PET2 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 110012.276 INFO             PET2 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 110012.276 INFO             PET2 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 110012.276 INFO             PET2 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 110012.276 INFO             PET2 ESMF library build date/time: "Mar  5 2021" "09:44:18"
+20210305 110012.276 INFO             PET2 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g
+20210305 110012.276 INFO             PET2 ESMF_COMM                   : mpi
+20210305 110012.276 INFO             PET2 ESMF_MOAB                   : enabled
+20210305 110012.276 INFO             PET2 ESMF_LAPACK                 : enabled
+20210305 110012.276 INFO             PET2 ESMF_NETCDF                 : enabled
+20210305 110012.276 INFO             PET2 ESMF_PNETCDF                : disabled
+20210305 110012.276 INFO             PET2 ESMF_PIO                    : enabled
+20210305 110012.276 INFO             PET2 ESMF_YAMLCPP                : enabled
+20210305 110012.276 INFO             PET2 ESMF Tracing Enabled
+20210305 110012.276 INFO             PET2 ESMF Profiling Enabled
+20210305 110012.276 INFO             PET2 ESMF Trace/Profile clock: REALTIME
+20210305 110012.281 WARNING          PET2 ESMF Tracing/Profiling could not load dynamic instrumentation functions.
+20210305 110012.381 INFO             PET2 **************** Region Timings *******************
+20210305 110012.381 INFO             PET2 Region                            Count  Total (s)   Self (s)    Mean (s)    Min (s)     Max (s)
+20210305 110012.381 INFO             PET2   [user model 1] Init 1           1      0.0008      0.0008      0.0008      0.0008      0.0008
+20210305 110012.381 INFO             PET2   [user model 1] Run 1            1      0.0000      0.0000      0.0000      0.0000      0.0000
+20210305 110012.381 INFO             PET2   [user one-way coupler] Init 1   1      0.0000      0.0000      0.0000      0.0000      0.0000
+20210305 110012.381 INFO             PET2   [user model 1] Final 1          1      0.0000      0.0000      0.0000      0.0000      0.0000
+20210305 110012.381 INFO             PET2   [user one-way coupler] Run 1    1      0.0000      0.0000      0.0000      0.0000      0.0000
+20210305 110012.381 INFO             PET2   [user one-way coupler] Final 1  1      0.0000      0.0000      0.0000      0.0000      0.0000
+20210305 110017.480 INFO             PET2  NUMBER_OF_PROCESSORS           8
+20210305 110017.480 INFO             PET2  PASS  System Test ESMF_TraceSTest, ESMF_TraceSTest.F90, line 430
+20210305 110017.480 INFO             PET2 Finalizing ESMF
+20210305 110012.278 INFO             PET3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 110012.278 INFO             PET3 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 110012.278 INFO             PET3 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 110012.278 INFO             PET3 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 110012.278 INFO             PET3 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 110012.278 INFO             PET3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 110012.278 INFO             PET3 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 110012.278 INFO             PET3 ESMF library build date/time: "Mar  5 2021" "09:44:18"
+20210305 110012.278 INFO             PET3 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g
+20210305 110012.278 INFO             PET3 ESMF_COMM                   : mpi
+20210305 110012.278 INFO             PET3 ESMF_MOAB                   : enabled
+20210305 110012.278 INFO             PET3 ESMF_LAPACK                 : enabled
+20210305 110012.278 INFO             PET3 ESMF_NETCDF                 : enabled
+20210305 110012.278 INFO             PET3 ESMF_PNETCDF                : disabled
+20210305 110012.278 INFO             PET3 ESMF_PIO                    : enabled
+20210305 110012.278 INFO             PET3 ESMF_YAMLCPP                : enabled
+20210305 110012.278 INFO             PET3 ESMF Tracing Enabled
+20210305 110012.278 INFO             PET3 ESMF Profiling Enabled
+20210305 110012.278 INFO             PET3 ESMF Trace/Profile clock: REALTIME
+20210305 110012.285 WARNING          PET3 ESMF Tracing/Profiling could not load dynamic instrumentation functions.
+20210305 110012.381 INFO             PET3 **************** Region Timings *******************
+20210305 110012.381 INFO             PET3 Region                            Count  Total (s)   Self (s)    Mean (s)    Min (s)     Max (s)
+20210305 110012.381 INFO             PET3   [user model 1] Init 1           1      0.0008      0.0008      0.0008      0.0008      0.0008
+20210305 110012.381 INFO             PET3   [user model 1] Run 1            1      0.0000      0.0000      0.0000      0.0000      0.0000
+20210305 110012.381 INFO             PET3   [user one-way coupler] Init 1   1      0.0000      0.0000      0.0000      0.0000      0.0000
+20210305 110012.381 INFO             PET3   [user model 1] Final 1          1      0.0000      0.0000      0.0000      0.0000      0.0000
+20210305 110012.381 INFO             PET3   [user one-way coupler] Run 1    1      0.0000      0.0000      0.0000      0.0000      0.0000
+20210305 110012.381 INFO             PET3   [user one-way coupler] Final 1  1      0.0000      0.0000      0.0000      0.0000      0.0000
+20210305 110017.480 INFO             PET3  NUMBER_OF_PROCESSORS           8
+20210305 110017.480 INFO             PET3  PASS  System Test ESMF_TraceSTest, ESMF_TraceSTest.F90, line 430
+20210305 110017.480 INFO             PET3 Finalizing ESMF
+20210305 110012.279 INFO             PET4 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 110012.279 INFO             PET4 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 110012.279 INFO             PET4 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 110012.279 INFO             PET4 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 110012.279 INFO             PET4 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 110012.279 INFO             PET4 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 110012.279 INFO             PET4 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 110012.279 INFO             PET4 ESMF library build date/time: "Mar  5 2021" "09:44:18"
+20210305 110012.279 INFO             PET4 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g
+20210305 110012.279 INFO             PET4 ESMF_COMM                   : mpi
+20210305 110012.279 INFO             PET4 ESMF_MOAB                   : enabled
+20210305 110012.279 INFO             PET4 ESMF_LAPACK                 : enabled
+20210305 110012.279 INFO             PET4 ESMF_NETCDF                 : enabled
+20210305 110012.279 INFO             PET4 ESMF_PNETCDF                : disabled
+20210305 110012.279 INFO             PET4 ESMF_PIO                    : enabled
+20210305 110012.279 INFO             PET4 ESMF_YAMLCPP                : enabled
+20210305 110012.279 INFO             PET4 ESMF Tracing Enabled
+20210305 110012.279 INFO             PET4 ESMF Profiling Enabled
+20210305 110012.279 INFO             PET4 ESMF Trace/Profile clock: REALTIME
+20210305 110012.284 WARNING          PET4 ESMF Tracing/Profiling could not load dynamic instrumentation functions.
+20210305 110012.381 INFO             PET4 **************** Region Timings *******************
+20210305 110012.381 INFO             PET4 Region                            Count  Total (s)   Self (s)    Mean (s)    Min (s)     Max (s)
+20210305 110012.381 INFO             PET4   [user model 2] Init 1           1      0.0004      0.0004      0.0004      0.0004      0.0004
+20210305 110012.381 INFO             PET4   [user model 2] Final 1          1      0.0000      0.0000      0.0000      0.0000      0.0000
+20210305 110012.381 INFO             PET4   [user one-way coupler] Init 1   1      0.0000      0.0000      0.0000      0.0000      0.0000
+20210305 110012.381 INFO             PET4   [user model 2] Run 1            1      0.0000      0.0000      0.0000      0.0000      0.0000
+20210305 110012.381 INFO             PET4   [user one-way coupler] Run 1    1      0.0000      0.0000      0.0000      0.0000      0.0000
+20210305 110012.381 INFO             PET4   [user one-way coupler] Final 1  1      0.0000      0.0000      0.0000      0.0000      0.0000
+20210305 110017.480 INFO             PET4  NUMBER_OF_PROCESSORS           8
+20210305 110017.480 INFO             PET4  PASS  System Test ESMF_TraceSTest, ESMF_TraceSTest.F90, line 430
+20210305 110017.480 INFO             PET4 Finalizing ESMF
+20210305 110012.276 INFO             PET5 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 110012.276 INFO             PET5 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 110012.276 INFO             PET5 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 110012.276 INFO             PET5 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 110012.276 INFO             PET5 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 110012.276 INFO             PET5 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 110012.276 INFO             PET5 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 110012.276 INFO             PET5 ESMF library build date/time: "Mar  5 2021" "09:44:18"
+20210305 110012.276 INFO             PET5 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g
+20210305 110012.276 INFO             PET5 ESMF_COMM                   : mpi
+20210305 110012.277 INFO             PET5 ESMF_MOAB                   : enabled
+20210305 110012.277 INFO             PET5 ESMF_LAPACK                 : enabled
+20210305 110012.277 INFO             PET5 ESMF_NETCDF                 : enabled
+20210305 110012.277 INFO             PET5 ESMF_PNETCDF                : disabled
+20210305 110012.277 INFO             PET5 ESMF_PIO                    : enabled
+20210305 110012.277 INFO             PET5 ESMF_YAMLCPP                : enabled
+20210305 110012.277 INFO             PET5 ESMF Tracing Enabled
+20210305 110012.277 INFO             PET5 ESMF Profiling Enabled
+20210305 110012.277 INFO             PET5 ESMF Trace/Profile clock: REALTIME
+20210305 110012.285 WARNING          PET5 ESMF Tracing/Profiling could not load dynamic instrumentation functions.
+20210305 110012.381 INFO             PET5 **************** Region Timings *******************
+20210305 110012.381 INFO             PET5 Region                            Count  Total (s)   Self (s)    Mean (s)    Min (s)     Max (s)
+20210305 110012.381 INFO             PET5   [user model 2] Init 1           1      0.0004      0.0004      0.0004      0.0004      0.0004
+20210305 110012.381 INFO             PET5   [user model 2] Run 1            1      0.0000      0.0000      0.0000      0.0000      0.0000
+20210305 110012.381 INFO             PET5   [user model 2] Final 1          1      0.0000      0.0000      0.0000      0.0000      0.0000
+20210305 110012.381 INFO             PET5   [user one-way coupler] Init 1   1      0.0000      0.0000      0.0000      0.0000      0.0000
+20210305 110012.381 INFO             PET5   [user one-way coupler] Run 1    1      0.0000      0.0000      0.0000      0.0000      0.0000
+20210305 110012.381 INFO             PET5   [user one-way coupler] Final 1  1      0.0000      0.0000      0.0000      0.0000      0.0000
+20210305 110017.480 INFO             PET5  NUMBER_OF_PROCESSORS           8
+20210305 110017.480 INFO             PET5  PASS  System Test ESMF_TraceSTest, ESMF_TraceSTest.F90, line 430
+20210305 110017.480 INFO             PET5 Finalizing ESMF
+20210305 110012.279 INFO             PET6 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 110012.279 INFO             PET6 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 110012.279 INFO             PET6 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 110012.279 INFO             PET6 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 110012.279 INFO             PET6 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 110012.279 INFO             PET6 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 110012.279 INFO             PET6 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 110012.279 INFO             PET6 ESMF library build date/time: "Mar  5 2021" "09:44:18"
+20210305 110012.279 INFO             PET6 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g
+20210305 110012.279 INFO             PET6 ESMF_COMM                   : mpi
+20210305 110012.279 INFO             PET6 ESMF_MOAB                   : enabled
+20210305 110012.279 INFO             PET6 ESMF_LAPACK                 : enabled
+20210305 110012.279 INFO             PET6 ESMF_NETCDF                 : enabled
+20210305 110012.279 INFO             PET6 ESMF_PNETCDF                : disabled
+20210305 110012.279 INFO             PET6 ESMF_PIO                    : enabled
+20210305 110012.279 INFO             PET6 ESMF_YAMLCPP                : enabled
+20210305 110012.279 INFO             PET6 ESMF Tracing Enabled
+20210305 110012.279 INFO             PET6 ESMF Profiling Enabled
+20210305 110012.279 INFO             PET6 ESMF Trace/Profile clock: REALTIME
+20210305 110012.281 WARNING          PET6 ESMF Tracing/Profiling could not load dynamic instrumentation functions.
+20210305 110012.454 INFO             PET6 **************** Region Timings *******************
+20210305 110012.454 INFO             PET6 Region                            Count  Total (s)   Self (s)    Mean (s)    Min (s)     Max (s)
+20210305 110012.454 INFO             PET6   [user one-way coupler] Init 1   1      0.0000      0.0000      0.0000      0.0000      0.0000
+20210305 110012.454 INFO             PET6   [user one-way coupler] Final 1  1      0.0000      0.0000      0.0000      0.0000      0.0000
+20210305 110012.454 INFO             PET6   [user one-way coupler] Run 1    1      0.0000      0.0000      0.0000      0.0000      0.0000
+20210305 110017.480 INFO             PET6  NUMBER_OF_PROCESSORS           8
+20210305 110017.480 INFO             PET6  PASS  System Test ESMF_TraceSTest, ESMF_TraceSTest.F90, line 430
+20210305 110017.480 INFO             PET6 Finalizing ESMF
+20210305 110012.279 INFO             PET7 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 110012.279 INFO             PET7 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 110012.279 INFO             PET7 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 110012.279 INFO             PET7 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 110012.279 INFO             PET7 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 110012.279 INFO             PET7 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 110012.279 INFO             PET7 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 110012.279 INFO             PET7 ESMF library build date/time: "Mar  5 2021" "09:44:18"
+20210305 110012.279 INFO             PET7 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g
+20210305 110012.279 INFO             PET7 ESMF_COMM                   : mpi
+20210305 110012.279 INFO             PET7 ESMF_MOAB                   : enabled
+20210305 110012.279 INFO             PET7 ESMF_LAPACK                 : enabled
+20210305 110012.279 INFO             PET7 ESMF_NETCDF                 : enabled
+20210305 110012.279 INFO             PET7 ESMF_PNETCDF                : disabled
+20210305 110012.279 INFO             PET7 ESMF_PIO                    : enabled
+20210305 110012.279 INFO             PET7 ESMF_YAMLCPP                : enabled
+20210305 110012.279 INFO             PET7 ESMF Tracing Enabled
+20210305 110012.279 INFO             PET7 ESMF Profiling Enabled
+20210305 110012.279 INFO             PET7 ESMF Trace/Profile clock: REALTIME
+20210305 110012.286 WARNING          PET7 ESMF Tracing/Profiling could not load dynamic instrumentation functions.
+20210305 110012.454 INFO             PET7 **************** Region Timings *******************
+20210305 110012.454 INFO             PET7 Region                            Count  Total (s)   Self (s)    Mean (s)    Min (s)     Max (s)
+20210305 110012.454 INFO             PET7   [user one-way coupler] Init 1   1      0.0000      0.0000      0.0000      0.0000      0.0000
+20210305 110012.454 INFO             PET7   [user one-way coupler] Final 1  1      0.0000      0.0000      0.0000      0.0000      0.0000
+20210305 110012.454 INFO             PET7   [user one-way coupler] Run 1    1      0.0000      0.0000      0.0000      0.0000      0.0000
+20210305 110017.480 INFO             PET7  NUMBER_OF_PROCESSORS           8
+20210305 110017.480 INFO             PET7  PASS  System Test ESMF_TraceSTest, ESMF_TraceSTest.F90, line 430
+20210305 110017.480 INFO             PET7 Finalizing ESMF

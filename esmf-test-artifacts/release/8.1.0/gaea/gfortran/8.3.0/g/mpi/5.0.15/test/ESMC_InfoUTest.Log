@@ -1,0 +1,348 @@
+20210305 103504.311 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103504.311 INFO             PET0 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 103504.311 INFO             PET0 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 103504.311 INFO             PET0 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 103504.311 INFO             PET0 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 103504.311 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103504.311 INFO             PET0 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 103504.311 INFO             PET0 ESMF library build date/time: "Mar  5 2021" "09:44:18"
+20210305 103504.311 INFO             PET0 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g
+20210305 103504.311 INFO             PET0 ESMF_COMM                   : mpi
+20210305 103504.312 INFO             PET0 ESMF_MOAB                   : enabled
+20210305 103504.312 INFO             PET0 ESMF_LAPACK                 : enabled
+20210305 103504.312 INFO             PET0 ESMF_NETCDF                 : enabled
+20210305 103504.312 INFO             PET0 ESMF_PNETCDF                : disabled
+20210305 103504.312 INFO             PET0 ESMF_PIO                    : enabled
+20210305 103504.312 INFO             PET0 ESMF_YAMLCPP                : enabled
+20210305 103504.312 INFO             PET0 Beginning Test, file ESMC_InfoUTest.C, line 1418
+20210305 103504.312 INFO             PET0 NUMBER_OF_PROCESSORS 4
+20210305 103504.312 INFO             PET0 PASS testConstructor, ESMC_InfoUTest.C, line 1425
+20210305 103504.385 ERROR            PET0 ESMCI_Info.C:686 Info::erase() Not found  - [json.exception.out_of_range.403] key 'nothing' not found
+20210305 103504.385 ERROR            PET0 ESMCI_Info.C:688 Info::erase() Not found  - Internal subroutine call returned Error
+20210305 103504.386 ERROR            PET0 ESMCI_Info.C:686 Info::erase() Not found  - [json.exception.out_of_range.403] key 'underground' not found
+20210305 103504.386 ERROR            PET0 ESMCI_Info.C:688 Info::erase() Not found  - Internal subroutine call returned Error
+20210305 103504.386 INFO             PET0 PASS testErase, ESMC_InfoUTest.C, line 1432
+20210305 103504.386 INFO             PET0 PASS testSetGet, ESMC_InfoUTest.C, line 1439
+20210305 103504.386 ERROR            PET0 ESMCI_Info.C:911 Info::getPointer() Not found  - [json.exception.out_of_range.403] key 'theKey' not found
+20210305 103504.386 ERROR            PET0 ESMCI_Info.C:913 Info::getPointer() Not found  - Internal subroutine call returned Error
+20210305 103504.386 ERROR            PET0 ESMCI_Info.C:1277 Info::set(<json>) Cannot set value  - Error/Return Code 540 (ESMC_RC_CANNOT_SET) - Key '/theKey2' already in map and force=false.
+20210305 103504.386 ERROR            PET0 ESMCI_Info.C:1280 Info::set(<json>) Cannot set value  - Internal subroutine call returned Error
+20210305 103504.386 ERROR            PET0 ESMCI_Info.C:1322 Info::set(<json>) Cannot set value  - Internal subroutine call returned Error
+20210305 103504.386 ERROR            PET0 ESMCI_Info.C:1325 Info::set(<json>) Cannot set value  - Internal subroutine call returned Error
+20210305 103504.386 ERROR            PET0 ESMCI_Info.C:1373 Info::set(<scalar>) Cannot set value  - Internal subroutine call returned Error
+20210305 103504.386 ERROR            PET0 ESMCI_Info.C:707 Info::formatKey() Invalid argument  - Error/Return Code 506 (ESMC_RC_ARG_BAD) - Triple forward slashes not allowed in key names
+20210305 103504.386 ERROR            PET0 ESMCI_Info.C:1322 Info::set(<json>) Invalid argument  - Internal subroutine call returned Error
+20210305 103504.386 ERROR            PET0 ESMCI_Info.C:1325 Info::set(<json>) Invalid argument  - Internal subroutine call returned Error
+20210305 103504.386 ERROR            PET0 ESMCI_Info.C:1373 Info::set(<scalar>) Invalid argument  - Internal subroutine call returned Error
+20210305 103504.386 INFO             PET0 PASS testSetGetErrorHandling, ESMC_InfoUTest.C, line 1446
+20210305 103504.386 INFO             PET0 PASS testUpdate, ESMC_InfoUTest.C, line 1453
+20210305 103504.387 INFO             PET0 PASS testHasKey, ESMC_InfoUTest.C, line 1460
+20210305 103504.387 ERROR            PET0 /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Base/src/ESMCI_Info.C:830 Info::get(): Key not found (JSON trace will follow): blah
+20210305 103504.387 ERROR            PET0 ESMCI_Info.C:832 Info::get() Attribute not set  - [json.exception.out_of_range.403] key 'blah' not found
+20210305 103504.387 ERROR            PET0 ESMCI_Info.C:836 Info::get() Attribute not set  - Internal subroutine call returned Error
+20210305 103504.387 INFO             PET0 PASS testGet, ESMC_InfoUTest.C, line 1467
+20210305 103504.399 INFO             PET0 PASS testbroadcastInfo, ESMC_InfoUTest.C, line 1474
+20210305 103504.399 ERROR            PET0 ESMCI_Info.C:715 Info::formatKey() Invalid argument  - [json.exception.parse_error.108] parse error: escape character '~' must be followed with '0' or '1'
+20210305 103504.399 ERROR            PET0 ESMCI_Info.C:944 Info::hasKey() Invalid argument  - Internal subroutine call returned Error
+20210305 103504.399 INFO             PET0 PASS testFormatKey, ESMC_InfoUTest.C, line 1481
+20210305 103504.399 INFO             PET0 PASS testDumpLength, ESMC_InfoUTest.C, line 1488
+20210305 103504.399 INFO             PET0 PASS testSerializeDeserialize, ESMC_InfoUTest.C, line 1495
+20210305 103504.400 INFO             PET0 PASS testSerializeDeserialize2, ESMC_InfoUTest.C, line 1502
+20210305 103504.400 ERROR            PET0 ESMCI_Info.C:773 Info::get() Input argument out of range  - Error/Return Code 516 (ESMC_RC_ARG_OUTOFRANGE) - vector::_M_range_check: __n (which is 1000) >= this->size() (which is 25)
+20210305 103504.400 ERROR            PET0 ESMCI_Info.C:836 Info::get() Input argument out of range  - Internal subroutine call returned Error
+20210305 103504.400 ERROR            PET0 ESMCI_Info.C:1289 Info::set(<json>) Not found  - [json.exception.out_of_range.403] key 'not_there' not found
+20210305 103504.400 ERROR            PET0 ESMCI_Info.C:1322 Info::set(<json>) Not found  - Internal subroutine call returned Error
+20210305 103504.400 ERROR            PET0 ESMCI_Info.C:1325 Info::set(<json>) Not found  - Internal subroutine call returned Error
+20210305 103504.400 ERROR            PET0 ESMCI_Info.C:1373 Info::set(<scalar>) Not found  - Internal subroutine call returned Error
+20210305 103504.400 INFO             PET0 PASS testSetGetIndex, ESMC_InfoUTest.C, line 1509
+20210305 103504.400 INFO             PET0 PASS test_get_attpack_count, ESMC_InfoUTest.C, line 1516
+20210305 103504.400 INFO             PET0 PASS test_update_json_attribute_count_map, ESMC_InfoUTest.C, line 1523
+20210305 103504.400 INFO             PET0 PASS testInquire, ESMC_InfoUTest.C, line 1530
+20210305 103504.401 INFO             PET0 PASS testInquire32Bit, ESMC_InfoUTest.C, line 1537
+20210305 103504.401 INFO             PET0 PASS test_update_json_pointer, ESMC_InfoUTest.C, line 1544
+20210305 103504.401 ERROR            PET0 ESMCI_Info.C:802 Info::get() Invalid argument  - Error/Return Code 506 (ESMC_RC_ARG_BAD) - 'index' only supported for JSON strings, arrays, or objects. JSON type is: number
+20210305 103504.401 ERROR            PET0 ESMCI_Info.C:836 Info::get() Invalid argument  - Internal subroutine call returned Error
+20210305 103504.401 ERROR            PET0 ESMCI_Info.C:778 Info::get() Input argument out of range  - Error/Return Code 516 (ESMC_RC_ARG_OUTOFRANGE) - 'index' greater than object count
+20210305 103504.401 ERROR            PET0 ESMCI_Info.C:836 Info::get() Input argument out of range  - Internal subroutine call returned Error
+20210305 103504.401 INFO             PET0 PASS testGetObjectIndex, ESMC_InfoUTest.C, line 1551
+20210305 103504.401 INFO             PET0 PASS testGetInfoObject, ESMC_InfoUTest.C, line 1558
+20210305 103504.401 ERROR            PET0 ESMCI_Info.C:315 find_by_index() Not found  - Internal subroutine call returned Error
+20210305 103504.401 INFO             PET0 PASS test_find_by_index, ESMC_InfoUTest.C, line 1565
+20210305 103504.401 ERROR            PET0 ESMCI_Info.C:363 handleJSONTypeCheck() Invalid argument  - Error/Return Code 506 (ESMC_RC_ARG_BAD) - Types not equivalent. The key is: float
+20210305 103504.401 ERROR            PET0 ESMCI_Info.C:814 Info::get() Invalid argument  - Internal subroutine call returned Error
+20210305 103504.401 ERROR            PET0 ESMCI_Info.C:836 Info::get() Invalid argument  - Internal subroutine call returned Error
+20210305 103504.401 ERROR            PET0 ESMCI_Info.C:363 handleJSONTypeCheck() Invalid argument  - Error/Return Code 506 (ESMC_RC_ARG_BAD) - Types not equivalent. The key is: float-array
+20210305 103504.401 ERROR            PET0 ESMCI_Info.C:770 Info::get() Invalid argument  - Internal subroutine call returned Error
+20210305 103504.401 ERROR            PET0 ESMCI_Info.C:836 Info::get() Invalid argument  - Internal subroutine call returned Error
+20210305 103504.401 INFO             PET0 PASS test_implicit_conversion, ESMC_InfoUTest.C, line 1572
+20210305 103504.401 ERROR            PET0 ESMCI_Info.C:727 check_overflow(<template>) Invalid argument  - Error/Return Code 506 (ESMC_RC_ARG_BAD) - Overflow error during type conversion.
+20210305 103504.401 ERROR            PET0 ESMCI_Info.C:811 Info::get() Invalid argument  - Internal subroutine call returned Error
+20210305 103504.401 ERROR            PET0 ESMCI_Info.C:836 Info::get() Invalid argument  - Internal subroutine call returned Error
+20210305 103504.401 INFO             PET0 PASS test_bit_overflow, ESMC_InfoUTest.C, line 1579
+20210305 103504.402 INFO             PET0 PASS test_isNull, ESMC_InfoUTest.C, line 1586
+20210305 103504.402 INFO             PET0 PASS test_update_for_attribute, ESMC_InfoUTest.C, line 1593
+20210305 103504.402 INFO             PET0 PASS test_set_32bit_type_storage, ESMC_InfoUTest.C, line 1600
+20210305 103504.402 INFO             PET0 PASS test_dump_and_parse_with_type_storage, ESMC_InfoUTest.C, line 1607
+20210305 103504.402 INFO             PET0 Ending Test, file ESMC_InfoUTest.C, line 1611
+20210305 103504.402 INFO             PET0 Finalizing ESMF
+20210305 103504.324 INFO             PET1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103504.324 INFO             PET1 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 103504.324 INFO             PET1 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 103504.324 INFO             PET1 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 103504.324 INFO             PET1 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 103504.324 INFO             PET1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103504.324 INFO             PET1 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 103504.324 INFO             PET1 ESMF library build date/time: "Mar  5 2021" "09:44:18"
+20210305 103504.324 INFO             PET1 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g
+20210305 103504.324 INFO             PET1 ESMF_COMM                   : mpi
+20210305 103504.325 INFO             PET1 ESMF_MOAB                   : enabled
+20210305 103504.325 INFO             PET1 ESMF_LAPACK                 : enabled
+20210305 103504.325 INFO             PET1 ESMF_NETCDF                 : enabled
+20210305 103504.325 INFO             PET1 ESMF_PNETCDF                : disabled
+20210305 103504.325 INFO             PET1 ESMF_PIO                    : enabled
+20210305 103504.325 INFO             PET1 ESMF_YAMLCPP                : enabled
+20210305 103504.325 INFO             PET1 Beginning Test, file ESMC_InfoUTest.C, line 1418
+20210305 103504.325 INFO             PET1 NUMBER_OF_PROCESSORS 4
+20210305 103504.325 INFO             PET1 PASS testConstructor, ESMC_InfoUTest.C, line 1425
+20210305 103504.398 ERROR            PET1 ESMCI_Info.C:686 Info::erase() Not found  - [json.exception.out_of_range.403] key 'nothing' not found
+20210305 103504.398 ERROR            PET1 ESMCI_Info.C:688 Info::erase() Not found  - Internal subroutine call returned Error
+20210305 103504.398 ERROR            PET1 ESMCI_Info.C:686 Info::erase() Not found  - [json.exception.out_of_range.403] key 'underground' not found
+20210305 103504.398 ERROR            PET1 ESMCI_Info.C:688 Info::erase() Not found  - Internal subroutine call returned Error
+20210305 103504.398 INFO             PET1 PASS testErase, ESMC_InfoUTest.C, line 1432
+20210305 103504.398 INFO             PET1 PASS testSetGet, ESMC_InfoUTest.C, line 1439
+20210305 103504.398 ERROR            PET1 ESMCI_Info.C:911 Info::getPointer() Not found  - [json.exception.out_of_range.403] key 'theKey' not found
+20210305 103504.398 ERROR            PET1 ESMCI_Info.C:913 Info::getPointer() Not found  - Internal subroutine call returned Error
+20210305 103504.398 ERROR            PET1 ESMCI_Info.C:1277 Info::set(<json>) Cannot set value  - Error/Return Code 540 (ESMC_RC_CANNOT_SET) - Key '/theKey2' already in map and force=false.
+20210305 103504.398 ERROR            PET1 ESMCI_Info.C:1280 Info::set(<json>) Cannot set value  - Internal subroutine call returned Error
+20210305 103504.398 ERROR            PET1 ESMCI_Info.C:1322 Info::set(<json>) Cannot set value  - Internal subroutine call returned Error
+20210305 103504.398 ERROR            PET1 ESMCI_Info.C:1325 Info::set(<json>) Cannot set value  - Internal subroutine call returned Error
+20210305 103504.398 ERROR            PET1 ESMCI_Info.C:1373 Info::set(<scalar>) Cannot set value  - Internal subroutine call returned Error
+20210305 103504.398 ERROR            PET1 ESMCI_Info.C:707 Info::formatKey() Invalid argument  - Error/Return Code 506 (ESMC_RC_ARG_BAD) - Triple forward slashes not allowed in key names
+20210305 103504.398 ERROR            PET1 ESMCI_Info.C:1322 Info::set(<json>) Invalid argument  - Internal subroutine call returned Error
+20210305 103504.398 ERROR            PET1 ESMCI_Info.C:1325 Info::set(<json>) Invalid argument  - Internal subroutine call returned Error
+20210305 103504.398 ERROR            PET1 ESMCI_Info.C:1373 Info::set(<scalar>) Invalid argument  - Internal subroutine call returned Error
+20210305 103504.398 INFO             PET1 PASS testSetGetErrorHandling, ESMC_InfoUTest.C, line 1446
+20210305 103504.399 INFO             PET1 PASS testUpdate, ESMC_InfoUTest.C, line 1453
+20210305 103504.399 INFO             PET1 PASS testHasKey, ESMC_InfoUTest.C, line 1460
+20210305 103504.399 ERROR            PET1 /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Base/src/ESMCI_Info.C:830 Info::get(): Key not found (JSON trace will follow): blah
+20210305 103504.399 ERROR            PET1 ESMCI_Info.C:832 Info::get() Attribute not set  - [json.exception.out_of_range.403] key 'blah' not found
+20210305 103504.399 ERROR            PET1 ESMCI_Info.C:836 Info::get() Attribute not set  - Internal subroutine call returned Error
+20210305 103504.399 INFO             PET1 PASS testGet, ESMC_InfoUTest.C, line 1467
+20210305 103504.399 INFO             PET1 PASS testbroadcastInfo, ESMC_InfoUTest.C, line 1474
+20210305 103504.399 ERROR            PET1 ESMCI_Info.C:715 Info::formatKey() Invalid argument  - [json.exception.parse_error.108] parse error: escape character '~' must be followed with '0' or '1'
+20210305 103504.399 ERROR            PET1 ESMCI_Info.C:944 Info::hasKey() Invalid argument  - Internal subroutine call returned Error
+20210305 103504.399 INFO             PET1 PASS testFormatKey, ESMC_InfoUTest.C, line 1481
+20210305 103504.399 INFO             PET1 PASS testDumpLength, ESMC_InfoUTest.C, line 1488
+20210305 103504.399 INFO             PET1 PASS testSerializeDeserialize, ESMC_InfoUTest.C, line 1495
+20210305 103504.400 INFO             PET1 PASS testSerializeDeserialize2, ESMC_InfoUTest.C, line 1502
+20210305 103504.400 ERROR            PET1 ESMCI_Info.C:773 Info::get() Input argument out of range  - Error/Return Code 516 (ESMC_RC_ARG_OUTOFRANGE) - vector::_M_range_check: __n (which is 1000) >= this->size() (which is 25)
+20210305 103504.400 ERROR            PET1 ESMCI_Info.C:836 Info::get() Input argument out of range  - Internal subroutine call returned Error
+20210305 103504.400 ERROR            PET1 ESMCI_Info.C:1289 Info::set(<json>) Not found  - [json.exception.out_of_range.403] key 'not_there' not found
+20210305 103504.400 ERROR            PET1 ESMCI_Info.C:1322 Info::set(<json>) Not found  - Internal subroutine call returned Error
+20210305 103504.400 ERROR            PET1 ESMCI_Info.C:1325 Info::set(<json>) Not found  - Internal subroutine call returned Error
+20210305 103504.400 ERROR            PET1 ESMCI_Info.C:1373 Info::set(<scalar>) Not found  - Internal subroutine call returned Error
+20210305 103504.400 INFO             PET1 PASS testSetGetIndex, ESMC_InfoUTest.C, line 1509
+20210305 103504.400 INFO             PET1 PASS test_get_attpack_count, ESMC_InfoUTest.C, line 1516
+20210305 103504.400 INFO             PET1 PASS test_update_json_attribute_count_map, ESMC_InfoUTest.C, line 1523
+20210305 103504.400 INFO             PET1 PASS testInquire, ESMC_InfoUTest.C, line 1530
+20210305 103504.401 INFO             PET1 PASS testInquire32Bit, ESMC_InfoUTest.C, line 1537
+20210305 103504.401 INFO             PET1 PASS test_update_json_pointer, ESMC_InfoUTest.C, line 1544
+20210305 103504.401 ERROR            PET1 ESMCI_Info.C:802 Info::get() Invalid argument  - Error/Return Code 506 (ESMC_RC_ARG_BAD) - 'index' only supported for JSON strings, arrays, or objects. JSON type is: number
+20210305 103504.401 ERROR            PET1 ESMCI_Info.C:836 Info::get() Invalid argument  - Internal subroutine call returned Error
+20210305 103504.401 ERROR            PET1 ESMCI_Info.C:778 Info::get() Input argument out of range  - Error/Return Code 516 (ESMC_RC_ARG_OUTOFRANGE) - 'index' greater than object count
+20210305 103504.401 ERROR            PET1 ESMCI_Info.C:836 Info::get() Input argument out of range  - Internal subroutine call returned Error
+20210305 103504.401 INFO             PET1 PASS testGetObjectIndex, ESMC_InfoUTest.C, line 1551
+20210305 103504.401 INFO             PET1 PASS testGetInfoObject, ESMC_InfoUTest.C, line 1558
+20210305 103504.401 ERROR            PET1 ESMCI_Info.C:315 find_by_index() Not found  - Internal subroutine call returned Error
+20210305 103504.401 INFO             PET1 PASS test_find_by_index, ESMC_InfoUTest.C, line 1565
+20210305 103504.401 ERROR            PET1 ESMCI_Info.C:363 handleJSONTypeCheck() Invalid argument  - Error/Return Code 506 (ESMC_RC_ARG_BAD) - Types not equivalent. The key is: float
+20210305 103504.401 ERROR            PET1 ESMCI_Info.C:814 Info::get() Invalid argument  - Internal subroutine call returned Error
+20210305 103504.401 ERROR            PET1 ESMCI_Info.C:836 Info::get() Invalid argument  - Internal subroutine call returned Error
+20210305 103504.401 ERROR            PET1 ESMCI_Info.C:363 handleJSONTypeCheck() Invalid argument  - Error/Return Code 506 (ESMC_RC_ARG_BAD) - Types not equivalent. The key is: float-array
+20210305 103504.401 ERROR            PET1 ESMCI_Info.C:770 Info::get() Invalid argument  - Internal subroutine call returned Error
+20210305 103504.401 ERROR            PET1 ESMCI_Info.C:836 Info::get() Invalid argument  - Internal subroutine call returned Error
+20210305 103504.401 INFO             PET1 PASS test_implicit_conversion, ESMC_InfoUTest.C, line 1572
+20210305 103504.401 ERROR            PET1 ESMCI_Info.C:727 check_overflow(<template>) Invalid argument  - Error/Return Code 506 (ESMC_RC_ARG_BAD) - Overflow error during type conversion.
+20210305 103504.401 ERROR            PET1 ESMCI_Info.C:811 Info::get() Invalid argument  - Internal subroutine call returned Error
+20210305 103504.401 ERROR            PET1 ESMCI_Info.C:836 Info::get() Invalid argument  - Internal subroutine call returned Error
+20210305 103504.401 INFO             PET1 PASS test_bit_overflow, ESMC_InfoUTest.C, line 1579
+20210305 103504.401 INFO             PET1 PASS test_isNull, ESMC_InfoUTest.C, line 1586
+20210305 103504.402 INFO             PET1 PASS test_update_for_attribute, ESMC_InfoUTest.C, line 1593
+20210305 103504.402 INFO             PET1 PASS test_set_32bit_type_storage, ESMC_InfoUTest.C, line 1600
+20210305 103504.402 INFO             PET1 PASS test_dump_and_parse_with_type_storage, ESMC_InfoUTest.C, line 1607
+20210305 103504.402 INFO             PET1 Ending Test, file ESMC_InfoUTest.C, line 1611
+20210305 103504.402 INFO             PET1 Finalizing ESMF
+20210305 103504.312 INFO             PET2 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103504.312 INFO             PET2 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 103504.312 INFO             PET2 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 103504.312 INFO             PET2 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 103504.312 INFO             PET2 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 103504.312 INFO             PET2 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103504.312 INFO             PET2 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 103504.312 INFO             PET2 ESMF library build date/time: "Mar  5 2021" "09:44:18"
+20210305 103504.312 INFO             PET2 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g
+20210305 103504.312 INFO             PET2 ESMF_COMM                   : mpi
+20210305 103504.312 INFO             PET2 ESMF_MOAB                   : enabled
+20210305 103504.312 INFO             PET2 ESMF_LAPACK                 : enabled
+20210305 103504.312 INFO             PET2 ESMF_NETCDF                 : enabled
+20210305 103504.312 INFO             PET2 ESMF_PNETCDF                : disabled
+20210305 103504.312 INFO             PET2 ESMF_PIO                    : enabled
+20210305 103504.312 INFO             PET2 ESMF_YAMLCPP                : enabled
+20210305 103504.312 INFO             PET2 Beginning Test, file ESMC_InfoUTest.C, line 1418
+20210305 103504.312 INFO             PET2 NUMBER_OF_PROCESSORS 4
+20210305 103504.312 INFO             PET2 PASS testConstructor, ESMC_InfoUTest.C, line 1425
+20210305 103504.385 ERROR            PET2 ESMCI_Info.C:686 Info::erase() Not found  - [json.exception.out_of_range.403] key 'nothing' not found
+20210305 103504.385 ERROR            PET2 ESMCI_Info.C:688 Info::erase() Not found  - Internal subroutine call returned Error
+20210305 103504.385 ERROR            PET2 ESMCI_Info.C:686 Info::erase() Not found  - [json.exception.out_of_range.403] key 'underground' not found
+20210305 103504.385 ERROR            PET2 ESMCI_Info.C:688 Info::erase() Not found  - Internal subroutine call returned Error
+20210305 103504.385 INFO             PET2 PASS testErase, ESMC_InfoUTest.C, line 1432
+20210305 103504.386 INFO             PET2 PASS testSetGet, ESMC_InfoUTest.C, line 1439
+20210305 103504.386 ERROR            PET2 ESMCI_Info.C:911 Info::getPointer() Not found  - [json.exception.out_of_range.403] key 'theKey' not found
+20210305 103504.386 ERROR            PET2 ESMCI_Info.C:913 Info::getPointer() Not found  - Internal subroutine call returned Error
+20210305 103504.386 ERROR            PET2 ESMCI_Info.C:1277 Info::set(<json>) Cannot set value  - Error/Return Code 540 (ESMC_RC_CANNOT_SET) - Key '/theKey2' already in map and force=false.
+20210305 103504.386 ERROR            PET2 ESMCI_Info.C:1280 Info::set(<json>) Cannot set value  - Internal subroutine call returned Error
+20210305 103504.386 ERROR            PET2 ESMCI_Info.C:1322 Info::set(<json>) Cannot set value  - Internal subroutine call returned Error
+20210305 103504.386 ERROR            PET2 ESMCI_Info.C:1325 Info::set(<json>) Cannot set value  - Internal subroutine call returned Error
+20210305 103504.386 ERROR            PET2 ESMCI_Info.C:1373 Info::set(<scalar>) Cannot set value  - Internal subroutine call returned Error
+20210305 103504.386 ERROR            PET2 ESMCI_Info.C:707 Info::formatKey() Invalid argument  - Error/Return Code 506 (ESMC_RC_ARG_BAD) - Triple forward slashes not allowed in key names
+20210305 103504.386 ERROR            PET2 ESMCI_Info.C:1322 Info::set(<json>) Invalid argument  - Internal subroutine call returned Error
+20210305 103504.386 ERROR            PET2 ESMCI_Info.C:1325 Info::set(<json>) Invalid argument  - Internal subroutine call returned Error
+20210305 103504.386 ERROR            PET2 ESMCI_Info.C:1373 Info::set(<scalar>) Invalid argument  - Internal subroutine call returned Error
+20210305 103504.386 INFO             PET2 PASS testSetGetErrorHandling, ESMC_InfoUTest.C, line 1446
+20210305 103504.386 INFO             PET2 PASS testUpdate, ESMC_InfoUTest.C, line 1453
+20210305 103504.387 INFO             PET2 PASS testHasKey, ESMC_InfoUTest.C, line 1460
+20210305 103504.387 ERROR            PET2 /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Base/src/ESMCI_Info.C:830 Info::get(): Key not found (JSON trace will follow): blah
+20210305 103504.387 ERROR            PET2 ESMCI_Info.C:832 Info::get() Attribute not set  - [json.exception.out_of_range.403] key 'blah' not found
+20210305 103504.387 ERROR            PET2 ESMCI_Info.C:836 Info::get() Attribute not set  - Internal subroutine call returned Error
+20210305 103504.387 INFO             PET2 PASS testGet, ESMC_InfoUTest.C, line 1467
+20210305 103504.399 INFO             PET2 PASS testbroadcastInfo, ESMC_InfoUTest.C, line 1474
+20210305 103504.399 ERROR            PET2 ESMCI_Info.C:715 Info::formatKey() Invalid argument  - [json.exception.parse_error.108] parse error: escape character '~' must be followed with '0' or '1'
+20210305 103504.399 ERROR            PET2 ESMCI_Info.C:944 Info::hasKey() Invalid argument  - Internal subroutine call returned Error
+20210305 103504.399 INFO             PET2 PASS testFormatKey, ESMC_InfoUTest.C, line 1481
+20210305 103504.399 INFO             PET2 PASS testDumpLength, ESMC_InfoUTest.C, line 1488
+20210305 103504.399 INFO             PET2 PASS testSerializeDeserialize, ESMC_InfoUTest.C, line 1495
+20210305 103504.400 INFO             PET2 PASS testSerializeDeserialize2, ESMC_InfoUTest.C, line 1502
+20210305 103504.400 ERROR            PET2 ESMCI_Info.C:773 Info::get() Input argument out of range  - Error/Return Code 516 (ESMC_RC_ARG_OUTOFRANGE) - vector::_M_range_check: __n (which is 1000) >= this->size() (which is 25)
+20210305 103504.400 ERROR            PET2 ESMCI_Info.C:836 Info::get() Input argument out of range  - Internal subroutine call returned Error
+20210305 103504.400 ERROR            PET2 ESMCI_Info.C:1289 Info::set(<json>) Not found  - [json.exception.out_of_range.403] key 'not_there' not found
+20210305 103504.400 ERROR            PET2 ESMCI_Info.C:1322 Info::set(<json>) Not found  - Internal subroutine call returned Error
+20210305 103504.400 ERROR            PET2 ESMCI_Info.C:1325 Info::set(<json>) Not found  - Internal subroutine call returned Error
+20210305 103504.400 ERROR            PET2 ESMCI_Info.C:1373 Info::set(<scalar>) Not found  - Internal subroutine call returned Error
+20210305 103504.400 INFO             PET2 PASS testSetGetIndex, ESMC_InfoUTest.C, line 1509
+20210305 103504.400 INFO             PET2 PASS test_get_attpack_count, ESMC_InfoUTest.C, line 1516
+20210305 103504.400 INFO             PET2 PASS test_update_json_attribute_count_map, ESMC_InfoUTest.C, line 1523
+20210305 103504.400 INFO             PET2 PASS testInquire, ESMC_InfoUTest.C, line 1530
+20210305 103504.401 INFO             PET2 PASS testInquire32Bit, ESMC_InfoUTest.C, line 1537
+20210305 103504.401 INFO             PET2 PASS test_update_json_pointer, ESMC_InfoUTest.C, line 1544
+20210305 103504.401 ERROR            PET2 ESMCI_Info.C:802 Info::get() Invalid argument  - Error/Return Code 506 (ESMC_RC_ARG_BAD) - 'index' only supported for JSON strings, arrays, or objects. JSON type is: number
+20210305 103504.401 ERROR            PET2 ESMCI_Info.C:836 Info::get() Invalid argument  - Internal subroutine call returned Error
+20210305 103504.401 ERROR            PET2 ESMCI_Info.C:778 Info::get() Input argument out of range  - Error/Return Code 516 (ESMC_RC_ARG_OUTOFRANGE) - 'index' greater than object count
+20210305 103504.401 ERROR            PET2 ESMCI_Info.C:836 Info::get() Input argument out of range  - Internal subroutine call returned Error
+20210305 103504.401 INFO             PET2 PASS testGetObjectIndex, ESMC_InfoUTest.C, line 1551
+20210305 103504.401 INFO             PET2 PASS testGetInfoObject, ESMC_InfoUTest.C, line 1558
+20210305 103504.401 ERROR            PET2 ESMCI_Info.C:315 find_by_index() Not found  - Internal subroutine call returned Error
+20210305 103504.401 INFO             PET2 PASS test_find_by_index, ESMC_InfoUTest.C, line 1565
+20210305 103504.401 ERROR            PET2 ESMCI_Info.C:363 handleJSONTypeCheck() Invalid argument  - Error/Return Code 506 (ESMC_RC_ARG_BAD) - Types not equivalent. The key is: float
+20210305 103504.401 ERROR            PET2 ESMCI_Info.C:814 Info::get() Invalid argument  - Internal subroutine call returned Error
+20210305 103504.401 ERROR            PET2 ESMCI_Info.C:836 Info::get() Invalid argument  - Internal subroutine call returned Error
+20210305 103504.401 ERROR            PET2 ESMCI_Info.C:363 handleJSONTypeCheck() Invalid argument  - Error/Return Code 506 (ESMC_RC_ARG_BAD) - Types not equivalent. The key is: float-array
+20210305 103504.401 ERROR            PET2 ESMCI_Info.C:770 Info::get() Invalid argument  - Internal subroutine call returned Error
+20210305 103504.401 ERROR            PET2 ESMCI_Info.C:836 Info::get() Invalid argument  - Internal subroutine call returned Error
+20210305 103504.401 INFO             PET2 PASS test_implicit_conversion, ESMC_InfoUTest.C, line 1572
+20210305 103504.401 ERROR            PET2 ESMCI_Info.C:727 check_overflow(<template>) Invalid argument  - Error/Return Code 506 (ESMC_RC_ARG_BAD) - Overflow error during type conversion.
+20210305 103504.401 ERROR            PET2 ESMCI_Info.C:811 Info::get() Invalid argument  - Internal subroutine call returned Error
+20210305 103504.401 ERROR            PET2 ESMCI_Info.C:836 Info::get() Invalid argument  - Internal subroutine call returned Error
+20210305 103504.401 INFO             PET2 PASS test_bit_overflow, ESMC_InfoUTest.C, line 1579
+20210305 103504.402 INFO             PET2 PASS test_isNull, ESMC_InfoUTest.C, line 1586
+20210305 103504.402 INFO             PET2 PASS test_update_for_attribute, ESMC_InfoUTest.C, line 1593
+20210305 103504.402 INFO             PET2 PASS test_set_32bit_type_storage, ESMC_InfoUTest.C, line 1600
+20210305 103504.402 INFO             PET2 PASS test_dump_and_parse_with_type_storage, ESMC_InfoUTest.C, line 1607
+20210305 103504.402 INFO             PET2 Ending Test, file ESMC_InfoUTest.C, line 1611
+20210305 103504.402 INFO             PET2 Finalizing ESMF
+20210305 103504.315 INFO             PET3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103504.315 INFO             PET3 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 103504.315 INFO             PET3 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 103504.315 INFO             PET3 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 103504.315 INFO             PET3 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 103504.315 INFO             PET3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103504.315 INFO             PET3 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 103504.315 INFO             PET3 ESMF library build date/time: "Mar  5 2021" "09:44:18"
+20210305 103504.315 INFO             PET3 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g
+20210305 103504.315 INFO             PET3 ESMF_COMM                   : mpi
+20210305 103504.315 INFO             PET3 ESMF_MOAB                   : enabled
+20210305 103504.315 INFO             PET3 ESMF_LAPACK                 : enabled
+20210305 103504.315 INFO             PET3 ESMF_NETCDF                 : enabled
+20210305 103504.315 INFO             PET3 ESMF_PNETCDF                : disabled
+20210305 103504.315 INFO             PET3 ESMF_PIO                    : enabled
+20210305 103504.315 INFO             PET3 ESMF_YAMLCPP                : enabled
+20210305 103504.315 INFO             PET3 Beginning Test, file ESMC_InfoUTest.C, line 1418
+20210305 103504.316 INFO             PET3 NUMBER_OF_PROCESSORS 4
+20210305 103504.316 INFO             PET3 PASS testConstructor, ESMC_InfoUTest.C, line 1425
+20210305 103504.388 ERROR            PET3 ESMCI_Info.C:686 Info::erase() Not found  - [json.exception.out_of_range.403] key 'nothing' not found
+20210305 103504.388 ERROR            PET3 ESMCI_Info.C:688 Info::erase() Not found  - Internal subroutine call returned Error
+20210305 103504.388 ERROR            PET3 ESMCI_Info.C:686 Info::erase() Not found  - [json.exception.out_of_range.403] key 'underground' not found
+20210305 103504.388 ERROR            PET3 ESMCI_Info.C:688 Info::erase() Not found  - Internal subroutine call returned Error
+20210305 103504.388 INFO             PET3 PASS testErase, ESMC_InfoUTest.C, line 1432
+20210305 103504.389 INFO             PET3 PASS testSetGet, ESMC_InfoUTest.C, line 1439
+20210305 103504.389 ERROR            PET3 ESMCI_Info.C:911 Info::getPointer() Not found  - [json.exception.out_of_range.403] key 'theKey' not found
+20210305 103504.389 ERROR            PET3 ESMCI_Info.C:913 Info::getPointer() Not found  - Internal subroutine call returned Error
+20210305 103504.389 ERROR            PET3 ESMCI_Info.C:1277 Info::set(<json>) Cannot set value  - Error/Return Code 540 (ESMC_RC_CANNOT_SET) - Key '/theKey2' already in map and force=false.
+20210305 103504.389 ERROR            PET3 ESMCI_Info.C:1280 Info::set(<json>) Cannot set value  - Internal subroutine call returned Error
+20210305 103504.389 ERROR            PET3 ESMCI_Info.C:1322 Info::set(<json>) Cannot set value  - Internal subroutine call returned Error
+20210305 103504.389 ERROR            PET3 ESMCI_Info.C:1325 Info::set(<json>) Cannot set value  - Internal subroutine call returned Error
+20210305 103504.389 ERROR            PET3 ESMCI_Info.C:1373 Info::set(<scalar>) Cannot set value  - Internal subroutine call returned Error
+20210305 103504.389 ERROR            PET3 ESMCI_Info.C:707 Info::formatKey() Invalid argument  - Error/Return Code 506 (ESMC_RC_ARG_BAD) - Triple forward slashes not allowed in key names
+20210305 103504.389 ERROR            PET3 ESMCI_Info.C:1322 Info::set(<json>) Invalid argument  - Internal subroutine call returned Error
+20210305 103504.389 ERROR            PET3 ESMCI_Info.C:1325 Info::set(<json>) Invalid argument  - Internal subroutine call returned Error
+20210305 103504.389 ERROR            PET3 ESMCI_Info.C:1373 Info::set(<scalar>) Invalid argument  - Internal subroutine call returned Error
+20210305 103504.389 INFO             PET3 PASS testSetGetErrorHandling, ESMC_InfoUTest.C, line 1446
+20210305 103504.389 INFO             PET3 PASS testUpdate, ESMC_InfoUTest.C, line 1453
+20210305 103504.389 INFO             PET3 PASS testHasKey, ESMC_InfoUTest.C, line 1460
+20210305 103504.389 ERROR            PET3 /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Base/src/ESMCI_Info.C:830 Info::get(): Key not found (JSON trace will follow): blah
+20210305 103504.389 ERROR            PET3 ESMCI_Info.C:832 Info::get() Attribute not set  - [json.exception.out_of_range.403] key 'blah' not found
+20210305 103504.389 ERROR            PET3 ESMCI_Info.C:836 Info::get() Attribute not set  - Internal subroutine call returned Error
+20210305 103504.389 INFO             PET3 PASS testGet, ESMC_InfoUTest.C, line 1467
+20210305 103504.399 INFO             PET3 PASS testbroadcastInfo, ESMC_InfoUTest.C, line 1474
+20210305 103504.399 ERROR            PET3 ESMCI_Info.C:715 Info::formatKey() Invalid argument  - [json.exception.parse_error.108] parse error: escape character '~' must be followed with '0' or '1'
+20210305 103504.399 ERROR            PET3 ESMCI_Info.C:944 Info::hasKey() Invalid argument  - Internal subroutine call returned Error
+20210305 103504.399 INFO             PET3 PASS testFormatKey, ESMC_InfoUTest.C, line 1481
+20210305 103504.399 INFO             PET3 PASS testDumpLength, ESMC_InfoUTest.C, line 1488
+20210305 103504.399 INFO             PET3 PASS testSerializeDeserialize, ESMC_InfoUTest.C, line 1495
+20210305 103504.400 INFO             PET3 PASS testSerializeDeserialize2, ESMC_InfoUTest.C, line 1502
+20210305 103504.400 ERROR            PET3 ESMCI_Info.C:773 Info::get() Input argument out of range  - Error/Return Code 516 (ESMC_RC_ARG_OUTOFRANGE) - vector::_M_range_check: __n (which is 1000) >= this->size() (which is 25)
+20210305 103504.400 ERROR            PET3 ESMCI_Info.C:836 Info::get() Input argument out of range  - Internal subroutine call returned Error
+20210305 103504.400 ERROR            PET3 ESMCI_Info.C:1289 Info::set(<json>) Not found  - [json.exception.out_of_range.403] key 'not_there' not found
+20210305 103504.400 ERROR            PET3 ESMCI_Info.C:1322 Info::set(<json>) Not found  - Internal subroutine call returned Error
+20210305 103504.400 ERROR            PET3 ESMCI_Info.C:1325 Info::set(<json>) Not found  - Internal subroutine call returned Error
+20210305 103504.400 ERROR            PET3 ESMCI_Info.C:1373 Info::set(<scalar>) Not found  - Internal subroutine call returned Error
+20210305 103504.400 INFO             PET3 PASS testSetGetIndex, ESMC_InfoUTest.C, line 1509
+20210305 103504.400 INFO             PET3 PASS test_get_attpack_count, ESMC_InfoUTest.C, line 1516
+20210305 103504.400 INFO             PET3 PASS test_update_json_attribute_count_map, ESMC_InfoUTest.C, line 1523
+20210305 103504.400 INFO             PET3 PASS testInquire, ESMC_InfoUTest.C, line 1530
+20210305 103504.401 INFO             PET3 PASS testInquire32Bit, ESMC_InfoUTest.C, line 1537
+20210305 103504.401 INFO             PET3 PASS test_update_json_pointer, ESMC_InfoUTest.C, line 1544
+20210305 103504.401 ERROR            PET3 ESMCI_Info.C:802 Info::get() Invalid argument  - Error/Return Code 506 (ESMC_RC_ARG_BAD) - 'index' only supported for JSON strings, arrays, or objects. JSON type is: number
+20210305 103504.401 ERROR            PET3 ESMCI_Info.C:836 Info::get() Invalid argument  - Internal subroutine call returned Error
+20210305 103504.401 ERROR            PET3 ESMCI_Info.C:778 Info::get() Input argument out of range  - Error/Return Code 516 (ESMC_RC_ARG_OUTOFRANGE) - 'index' greater than object count
+20210305 103504.401 ERROR            PET3 ESMCI_Info.C:836 Info::get() Input argument out of range  - Internal subroutine call returned Error
+20210305 103504.401 INFO             PET3 PASS testGetObjectIndex, ESMC_InfoUTest.C, line 1551
+20210305 103504.401 INFO             PET3 PASS testGetInfoObject, ESMC_InfoUTest.C, line 1558
+20210305 103504.401 ERROR            PET3 ESMCI_Info.C:315 find_by_index() Not found  - Internal subroutine call returned Error
+20210305 103504.401 INFO             PET3 PASS test_find_by_index, ESMC_InfoUTest.C, line 1565
+20210305 103504.401 ERROR            PET3 ESMCI_Info.C:363 handleJSONTypeCheck() Invalid argument  - Error/Return Code 506 (ESMC_RC_ARG_BAD) - Types not equivalent. The key is: float
+20210305 103504.401 ERROR            PET3 ESMCI_Info.C:814 Info::get() Invalid argument  - Internal subroutine call returned Error
+20210305 103504.401 ERROR            PET3 ESMCI_Info.C:836 Info::get() Invalid argument  - Internal subroutine call returned Error
+20210305 103504.401 ERROR            PET3 ESMCI_Info.C:363 handleJSONTypeCheck() Invalid argument  - Error/Return Code 506 (ESMC_RC_ARG_BAD) - Types not equivalent. The key is: float-array
+20210305 103504.401 ERROR            PET3 ESMCI_Info.C:770 Info::get() Invalid argument  - Internal subroutine call returned Error
+20210305 103504.401 ERROR            PET3 ESMCI_Info.C:836 Info::get() Invalid argument  - Internal subroutine call returned Error
+20210305 103504.401 INFO             PET3 PASS test_implicit_conversion, ESMC_InfoUTest.C, line 1572
+20210305 103504.401 ERROR            PET3 ESMCI_Info.C:727 check_overflow(<template>) Invalid argument  - Error/Return Code 506 (ESMC_RC_ARG_BAD) - Overflow error during type conversion.
+20210305 103504.401 ERROR            PET3 ESMCI_Info.C:811 Info::get() Invalid argument  - Internal subroutine call returned Error
+20210305 103504.401 ERROR            PET3 ESMCI_Info.C:836 Info::get() Invalid argument  - Internal subroutine call returned Error
+20210305 103504.401 INFO             PET3 PASS test_bit_overflow, ESMC_InfoUTest.C, line 1579
+20210305 103504.402 INFO             PET3 PASS test_isNull, ESMC_InfoUTest.C, line 1586
+20210305 103504.402 INFO             PET3 PASS test_update_for_attribute, ESMC_InfoUTest.C, line 1593
+20210305 103504.402 INFO             PET3 PASS test_set_32bit_type_storage, ESMC_InfoUTest.C, line 1600
+20210305 103504.402 INFO             PET3 PASS test_dump_and_parse_with_type_storage, ESMC_InfoUTest.C, line 1607
+20210305 103504.402 INFO             PET3 Ending Test, file ESMC_InfoUTest.C, line 1611
+20210305 103504.402 INFO             PET3 Finalizing ESMF

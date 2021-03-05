@@ -1,0 +1,20 @@
+20210305 103726.926 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103726.926 INFO             PET0 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 103726.926 INFO             PET0 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 103726.927 INFO             PET0 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 103726.927 INFO             PET0 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 103726.927 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103726.927 INFO             PET0 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 103726.927 INFO             PET0 ESMF library build date/time: "Mar  5 2021" "09:44:18"
+20210305 103726.927 INFO             PET0 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g
+20210305 103726.927 INFO             PET0 ESMF_COMM                   : mpi
+20210305 103726.928 INFO             PET0 ESMF_MOAB                   : enabled
+20210305 103726.928 INFO             PET0 ESMF_LAPACK                 : enabled
+20210305 103726.928 INFO             PET0 ESMF_NETCDF                 : enabled
+20210305 103726.928 INFO             PET0 ESMF_PNETCDF                : disabled
+20210305 103726.928 INFO             PET0 ESMF_PIO                    : enabled
+20210305 103726.928 INFO             PET0 ESMF_YAMLCPP                : enabled
+20210305 103726.937 INFO             PET0 Beginning Test, file ESMCI_IntegrateUTest.C, line 191
+20210305 103726.937 INFO             PET0 NUMBER_OF_PROCESSORS 1
+20210305 103726.937 INFO             PET0 Ending Test, file ESMCI_IntegrateUTest.C, line 203
+20210305 103726.937 INFO             PET0 Finalizing ESMF

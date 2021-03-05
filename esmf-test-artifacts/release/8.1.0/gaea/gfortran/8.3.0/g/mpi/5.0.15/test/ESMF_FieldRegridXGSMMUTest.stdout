@@ -1,0 +1,1282 @@
+  Beginning Test, file ESMF_FieldRegridXGSMMUTest.F90, line 51
+  NUMBER_OF_PROCESSORS           2
+  Beginning Test, file ESMF_FieldRegridXGSMMUTest.F90, line 51
+  NUMBER_OF_PROCESSORS           2
+--- ESMCI::DistGrid::print start ---
+indexTK: Integer*4
+dimCount = 1
+tileCount = 1
+elementCountPTile: 12 
+regDecomp = NO
+tileListPDe: 1 1 
+elementCountPDe: 7 5 
+contigFlagPDimPDe (dims separated by / ):
+ for DE 0: 1 / 
+ for DE 1: 1 / 
+(min,max)IndexPDimPDe (dims separated by / ):
+ for DE 0: (1, 7) / 
+ for DE 1: (8, 12) / 
+indexListPDimPLocalDe (dims separated by / ):
+ for localDE 0 - DE 1:  (8, 9, 10, 11, 12) /
+diffCollocationCount = 1
+collocationPDim:	1
+arbSeqIndexListPCollPLocalDe:
+ for collocation 1, localDE 0 - DE 1 -  elementCountPCollPLocalDe 5: (7, 8, 9, 11, 12)
+connectionCount = 0
+~ lower class' values ~
+deCount = 2
+Member on this PET appears to be an actual member.
+DistGrid-VM: localPet = 1, CurrentVM: localPet = 1
+DistGrid-VM: petCount = 2, CurrentVM: petCount = 2
+--- ESMCI::DistGrid::print end ---
+--- ESMCI::DistGrid::print start ---
+indexTK: Integer*4
+dimCount = 1
+tileCount = 1
+elementCountPTile: 12 
+regDecomp = NO
+tileListPDe: 1 1 
+elementCountPDe: 7 5 
+contigFlagPDimPDe (dims separated by / ):
+ for DE 0: 1 / 
+ for DE 1: 1 / 
+(min,max)IndexPDimPDe (dims separated by / ):
+ for DE 0: (1, 7) / 
+ for DE 1: (8, 12) / 
+indexListPDimPLocalDe (dims separated by / ):
+ for localDE 0 - DE 0:  (1, 2, 3, 4, 5, 6, 7) /
+diffCollocationCount = 1
+collocationPDim:	1
+arbSeqIndexListPCollPLocalDe:
+ for collocation 1, localDE 0 - DE 0 -  elementCountPCollPLocalDe 7: (1, 2, 3, 4, 5, 6, 10)
+connectionCount = 0
+~ lower class' values ~
+deCount = 2
+Member on this PET appears to be an actual member.
+DistGrid-VM: localPet = 0, CurrentVM: localPet = 0
+DistGrid-VM: petCount = 2, CurrentVM: petCount = 2
+--- ESMCI::DistGrid::print end ---
+--- ESMCI::DistGrid::print start ---
+indexTK: Integer*4
+dimCount = 1
+tileCount = 1
+elementCountPTile: 9 
+regDecomp = NO
+tileListPDe: 1 1 
+elementCountPDe: 6 3 
+contigFlagPDimPDe (dims separated by / ):
+ for DE 0: 1 / 
+ for DE 1: 1 / 
+(min,max)IndexPDimPDe (dims separated by / ):
+ for DE 0: (1, 6) / 
+ for DE 1: (7, 9) / 
+indexListPDimPLocalDe (dims separated by / ):
+ for localDE 0 - DE 1:  (7, 8, 9) /
+diffCollocationCount = 1
+collocationPDim:	1
+arbSeqIndexListPCollPLocalDe:
+ for collocation 1, localDE 0 - DE 1 -  elementCountPCollPLocalDe 3: (7, 4, 8)
+connectionCount = 0
+~ lower class' values ~
+deCount = 2
+Member on this PET appears to be an actual member.
+DistGrid-VM: localPet = 1, CurrentVM: localPet = 1
+DistGrid-VM: petCount = 2, CurrentVM: petCount = 2
+--- ESMCI::DistGrid::print end ---
+--- ESMCI::DistGrid::print start ---
+indexTK: Integer*4
+dimCount = 1
+tileCount = 1
+elementCountPTile: 9 
+regDecomp = NO
+tileListPDe: 1 1 
+elementCountPDe: 6 3 
+contigFlagPDimPDe (dims separated by / ):
+ for DE 0: 1 / 
+ for DE 1: 1 / 
+(min,max)IndexPDimPDe (dims separated by / ):
+ for DE 0: (1, 6) / 
+ for DE 1: (7, 9) / 
+indexListPDimPLocalDe (dims separated by / ):
+ for localDE 0 - DE 0:  (1, 2, 3, 4, 5, 6) /
+diffCollocationCount = 1
+collocationPDim:	1
+arbSeqIndexListPCollPLocalDe:
+ for collocation 1, localDE 0 - DE 0 -  elementCountPCollPLocalDe 6: (1, 2, 2, 2, 3, 3)
+connectionCount = 0
+~ lower class' values ~
+deCount = 2
+Member on this PET appears to be an actual member.
+DistGrid-VM: localPet = 0, CurrentVM: localPet = 0
+DistGrid-VM: petCount = 2, CurrentVM: petCount = 2
+--- ESMCI::DistGrid::print end ---
+--- ESMCI::DistGrid::print start ---
+indexTK: Integer*4
+dimCount = 1
+tileCount = 1
+elementCountPTile: 3 
+regDecomp = NO
+tileListPDe: 1 1 
+elementCountPDe: 1 2 
+contigFlagPDimPDe (dims separated by / ):
+ for DE 0: 1 / 
+ for DE 1: 1 / 
+(min,max)IndexPDimPDe (dims separated by / ):
+ for DE 0: (1, 1) / 
+ for DE 1: (2, 3) / 
+indexListPDimPLocalDe (dims separated by / ):
+ for localDE 0 - DE 1:  (2, 3) /
+diffCollocationCount = 1
+collocationPDim:	1
+arbSeqIndexListPCollPLocalDe:
+ for collocation 1, localDE 0 - DE 1 -  elementCountPCollPLocalDe 2: (11, 2)
+connectionCount = 0
+~ lower class' values ~
+deCount = 2
+Member on this PET appears to be an actual member.
+DistGrid-VM: localPet = 1, CurrentVM: localPet = 1
+DistGrid-VM: petCount = 2, CurrentVM: petCount = 2
+--- ESMCI::DistGrid::print end ---
+--- ESMCI::DistGrid::print start ---
+indexTK: Integer*4
+dimCount = 1
+tileCount = 1
+elementCountPTile: 3 
+regDecomp = NO
+tileListPDe: 1 1 
+elementCountPDe: 1 2 
+contigFlagPDimPDe (dims separated by / ):
+ for DE 0: 1 / 
+ for DE 1: 1 / 
+(min,max)IndexPDimPDe (dims separated by / ):
+ for DE 0: (1, 1) / 
+ for DE 1: (2, 3) / 
+indexListPDimPLocalDe (dims separated by / ):
+ for localDE 0 - DE 0:  (1) /
+diffCollocationCount = 1
+collocationPDim:	1
+arbSeqIndexListPCollPLocalDe:
+ for collocation 1, localDE 0 - DE 0 -  elementCountPCollPLocalDe 1: (10)
+connectionCount = 0
+~ lower class' values ~
+deCount = 2
+Member on this PET appears to be an actual member.
+DistGrid-VM: localPet = 0, CurrentVM: localPet = 0
+DistGrid-VM: petCount = 2, CurrentVM: petCount = 2
+--- ESMCI::DistGrid::print end ---
+ Field Print Starts ====>
+ Field Print Starts ====>
+ Field base status = Ready
+ Field base status = Ready
+   Name = 'Field030'
+   Name = 'Field030'
+ Base name    = Field030
+ Base name    = Field030
+ Status: Base = Ready,  object = Ready
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+ Proxy        = no
+ Root Info (Attributes):
+{} Field status =            4
+{} Field status =            4
+ gridrank =            1
+ gridrank =            1
+--- ESMCI::Array::print start ---
+ Base name    = Array031
+--- ESMCI::Array::print start ---
+ Base name    = Array031
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+ Root Info (Attributes):
+{}Array typekind/rank: Real*8 / 1 
+~ lower class' values ~
+DistGrid dimCount = 1
+deCount = 2
+localDeCount = 1
+~ local data in LocalArray for DE 1 ~
+LocalArrayPrint: Array at address 0x326b2b0:
+            rank = 1, typekind = 6, base_addr = 0x32697b0
+            dim[0] = 5  
+  Real, *8, Dim 1, Data values:
+( 1) =  0
+( 2) =  0
+( 3) =  0
+( 4) =  0
+( 5) =  0
+dim 1: [0]: [1 [1 [1, 5] 5] 5]
+--- ESMCI::Array::print end ---
+{}Array typekind/rank: Real*8 / 1 
+~ lower class' values ~
+DistGrid dimCount = 1
+deCount = 2
+localDeCount = 1
+~ local data in LocalArray for DE 0 ~
+LocalArrayPrint: Array at address 0x326bc40:
+            rank = 1, typekind = 6, base_addr = 0x326bf70
+            dim[0] = 7  
+  Real, *8, Dim 1, Data values:
+( 1) =  0
+( 2) =  0
+( 3) =  0
+( 4) =  0
+( 5) =  0
+( 6) =  0
+( 7) =  0
+dim 1: [0]: [1 [1 [1, 7] 7] 7]
+--- ESMCI::Array::print end ---
+ arrayrank =            1
+ arrayrank =            1
+ gridToFieldMap ungriddedLBound ungriddedUBound totalLWidth totalUWidth
+ gridToFieldMap ungriddedLBound ungriddedUBound totalLWidth totalUWidth
+           1          -1          -1                0           0
+           1          -1          -1                0           0
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+ Field Print Ends   ====>
+ Field Print Ends   ====>
+  PASS  Create xgrid and regrid through xgrid, const src flux, ESMF_FieldRegridXGSMMUTest.F90, line 60
+  PASS  Create xgrid and regrid through xgrid, const src flux, ESMF_FieldRegridXGSMMUTest.F90, line 60
+           7           1           7
+           5           1           7
+--- ESMCI::DistGrid::print start ---
+indexTK: Integer*4
+dimCount = 1
+tileCount = 1
+elementCountPTile: 12 
+regDecomp = NO
+tileListPDe: 1 1 
+elementCountPDe: 7 5 
+contigFlagPDimPDe (dims separated by / ):
+ for DE 0: 1 / 
+ for DE 1: 1 / 
+(min,max)IndexPDimPDe (dims separated by / ):
+ for DE 0: (1, 7) / 
+ for DE 1: (8, 12) / 
+indexListPDimPLocalDe (dims separated by / ):
+ for localDE 0 - DE 1:  (8, 9, 10, 11, 12) /
+diffCollocationCount = 1
+collocationPDim:	1
+arbSeqIndexListPCollPLocalDe:
+ for collocation 1, localDE 0 - DE 1 -  elementCountPCollPLocalDe 5: (7, 8, 9, 11, 12)
+connectionCount = 0
+~ lower class' values ~
+deCount = 2
+Member on this PET appears to be an actual member.
+DistGrid-VM: localPet = 1, CurrentVM: localPet = 1
+DistGrid-VM: petCount = 2, CurrentVM: petCount = 2
+--- ESMCI::DistGrid::print end ---
+--- ESMCI::DistGrid::print start ---
+indexTK: Integer*4
+dimCount = 1
+tileCount = 1
+elementCountPTile: 12 
+regDecomp = NO
+tileListPDe: 1 1 
+elementCountPDe: 7 5 
+contigFlagPDimPDe (dims separated by / ):
+ for DE 0: 1 / 
+ for DE 1: 1 / 
+(min,max)IndexPDimPDe (dims separated by / ):
+ for DE 0: (1, 7) / 
+ for DE 1: (8, 12) / 
+indexListPDimPLocalDe (dims separated by / ):
+ for localDE 0 - DE 0:  (1, 2, 3, 4, 5, 6, 7) /
+diffCollocationCount = 1
+collocationPDim:	1
+arbSeqIndexListPCollPLocalDe:
+ for collocation 1, localDE 0 - DE 0 -  elementCountPCollPLocalDe 7: (1, 2, 3, 4, 5, 6, 10)
+connectionCount = 0
+~ lower class' values ~
+deCount = 2
+Member on this PET appears to be an actual member.
+DistGrid-VM: localPet = 0, CurrentVM: localPet = 0
+DistGrid-VM: petCount = 2, CurrentVM: petCount = 2
+--- ESMCI::DistGrid::print end ---
+--- ESMCI::DistGrid::print start ---
+indexTK: Integer*4
+dimCount = 1
+tileCount = 1
+elementCountPTile: 9 
+regDecomp = NO
+tileListPDe: 1 1 
+elementCountPDe: 6 3 
+contigFlagPDimPDe (dims separated by / ):
+ for DE 0: 1 / 
+ for DE 1: 1 / 
+(min,max)IndexPDimPDe (dims separated by / ):
+ for DE 0: (1, 6) / 
+ for DE 1: (7, 9) / 
+indexListPDimPLocalDe (dims separated by / ):
+ for localDE 0 - DE 1:  (7, 8, 9) /
+diffCollocationCount = 1
+collocationPDim:	1
+arbSeqIndexListPCollPLocalDe:
+ for collocation 1, localDE 0 - DE 1 -  elementCountPCollPLocalDe 3: (7, 4, 8)
+connectionCount = 0
+~ lower class' values ~
+deCount = 2
+Member on this PET appears to be an actual member.
+DistGrid-VM: localPet = 1, CurrentVM: localPet = 1
+DistGrid-VM: petCount = 2, CurrentVM: petCount = 2
+--- ESMCI::DistGrid::print end ---
+--- ESMCI::DistGrid::print start ---
+indexTK: Integer*4
+dimCount = 1
+tileCount = 1
+elementCountPTile: 9 
+regDecomp = NO
+tileListPDe: 1 1 
+elementCountPDe: 6 3 
+contigFlagPDimPDe (dims separated by / ):
+ for DE 0: 1 / 
+ for DE 1: 1 / 
+(min,max)IndexPDimPDe (dims separated by / ):
+ for DE 0: (1, 6) / 
+ for DE 1: (7, 9) / 
+indexListPDimPLocalDe (dims separated by / ):
+ for localDE 0 - DE 0:  (1, 2, 3, 4, 5, 6) /
+diffCollocationCount = 1
+collocationPDim:	1
+arbSeqIndexListPCollPLocalDe:
+ for collocation 1, localDE 0 - DE 0 -  elementCountPCollPLocalDe 6: (1, 2, 2, 2, 3, 3)
+connectionCount = 0
+~ lower class' values ~
+deCount = 2
+Member on this PET appears to be an actual member.
+DistGrid-VM: localPet = 0, CurrentVM: localPet = 0
+DistGrid-VM: petCount = 2, CurrentVM: petCount = 2
+--- ESMCI::DistGrid::print end ---
+--- ESMCI::DistGrid::print start ---
+indexTK: Integer*4
+dimCount = 1
+tileCount = 1
+elementCountPTile: 3 
+regDecomp = NO
+tileListPDe: 1 1 
+elementCountPDe: 1 2 
+contigFlagPDimPDe (dims separated by / ):
+ for DE 0: 1 / 
+ for DE 1: 1 / 
+(min,max)IndexPDimPDe (dims separated by / ):
+ for DE 0: (1, 1) / 
+ for DE 1: (2, 3) / 
+indexListPDimPLocalDe (dims separated by / ):
+ for localDE 0 - DE 1:  (2, 3) /
+diffCollocationCount = 1
+collocationPDim:	1
+arbSeqIndexListPCollPLocalDe:
+ for collocation 1, localDE 0 - DE 1 -  elementCountPCollPLocalDe 2: (11, 2)
+connectionCount = 0
+~ lower class' values ~
+deCount = 2
+Member on this PET appears to be an actual member.
+DistGrid-VM: localPet = 1, CurrentVM: localPet = 1
+DistGrid-VM: petCount = 2, CurrentVM: petCount = 2
+--- ESMCI::DistGrid::print end ---
+--- ESMCI::DistGrid::print start ---
+indexTK: Integer*4
+dimCount = 1
+tileCount = 1
+elementCountPTile: 3 
+regDecomp = NO
+tileListPDe: 1 1 
+elementCountPDe: 1 2 
+contigFlagPDimPDe (dims separated by / ):
+ for DE 0: 1 / 
+ for DE 1: 1 / 
+(min,max)IndexPDimPDe (dims separated by / ):
+ for DE 0: (1, 1) / 
+ for DE 1: (2, 3) / 
+indexListPDimPLocalDe (dims separated by / ):
+ for localDE 0 - DE 0:  (1) /
+diffCollocationCount = 1
+collocationPDim:	1
+arbSeqIndexListPCollPLocalDe:
+ for collocation 1, localDE 0 - DE 0 -  elementCountPCollPLocalDe 1: (10)
+connectionCount = 0
+~ lower class' values ~
+deCount = 2
+Member on this PET appears to be an actual member.
+DistGrid-VM: localPet = 0, CurrentVM: localPet = 0
+DistGrid-VM: petCount = 2, CurrentVM: petCount = 2
+--- ESMCI::DistGrid::print end ---
+ Field Print Starts ====>
+ Field base status = Ready
+   Name = 'Field068'
+ Base name    = Field068
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+ Field Print Starts ====>
+ Field base status = Ready
+   Name = 'Field068'
+ Base name    = Field068
+{} Field status =            4
+ gridrank =            1
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+--- ESMCI::Array::print start ---
+ Base name    = Array069
+ Status: Base = Ready,  object = Ready
+ Root Info (Attributes):
+ Proxy        = no
+ Root Info (Attributes):
+{} Field status =            4
+ gridrank =            1
+--- ESMCI::Array::print start ---
+ Base name    = Array069
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+{}Array typekind/rank: Real*8 / 1 
+~ lower class' values ~
+DistGrid dimCount = 1
+deCount = 2
+localDeCount = 1
+~ local data in LocalArray for DE 1 ~
+LocalArrayPrint: Array at address 0x326b2b0:
+            rank = 1, typekind = 6, base_addr = 0x3354e80
+            dim[0] = 5  
+  Real, *8, Dim 1, Data values:
+( 1) =  0
+( 2) =  0
+( 3) =  0
+( 4) =  0
+( 5) =  0
+dim 1: [0]: [1 [1 [1, 5] 5] 5]
+--- ESMCI::Array::print end ---
+ arrayrank =            1
+ gridToFieldMap ungriddedLBound ungriddedUBound totalLWidth totalUWidth
+           1          -1          -1                0           0
+{}Array typekind/rank: Real*8 / 1 
+~ lower class' values ~
+DistGrid dimCount = 1
+deCount = 2
+localDeCount = 1
+~ local data in LocalArray for DE 0 ~
+LocalArrayPrint: Array at address 0x326bc40:
+            rank = 1, typekind = 6, base_addr = 0x3356860
+            dim[0] = 7  
+  Real, *8, Dim 1, Data values:
+( 1) =  0
+( 2) =  0
+( 3) =  0
+( 4) =  0
+( 5) =  0
+( 6) =  0
+( 7) =  0
+dim 1: [0]: [1 [1 [1, 7] 7] 7]
+--- ESMCI::Array::print end ---
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+ Field Print Ends   ====>
+ arrayrank =            1
+ gridToFieldMap ungriddedLBound ungriddedUBound totalLWidth totalUWidth
+           1          -1          -1                0           0
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+ Field Print Ends   ====>
+ - before SMM from A -> X
+           1           5   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+ - before SMM from A -> X
+           1           7   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+ - SMM from A -> X
+ - SMM from A -> X
+   1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        0.0000000000000000     
+   1.0000000000000000        1.0000000000000000        1.0000000000000000        0.0000000000000000        0.0000000000000000     
+ - SMM from A -> X
+ - SMM from A -> X
+   1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        2.0000000000000000     
+   1.0000000000000000        1.0000000000000000        1.0000000000000000        2.0000000000000000        2.0000000000000000     
+ - after SMM from A -> X
+   1.0000000000000000        1.0000000000000000        1.0000000000000000        2.0000000000000000        2.0000000000000000     
+ - after SMM from A -> X
+   1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        2.0000000000000000     
+ - B before SMM from X -> B
+ - B before SMM from X -> B
+   0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000     
+ - B after SMM from X -> B
+ - B after SMM from X -> B
+   1.0000000074505806        1.0000000298023224     
+   1.6666666790843010        1.6666667163372040     
+  PASS  Create xgrid and regrid through xgrid, variable src flux, ESMF_FieldRegridXGSMMUTest.F90, line 67
+  PASS  Create xgrid and regrid through xgrid, variable src flux, ESMF_FieldRegridXGSMMUTest.F90, line 67
+           1 weights:            8 -   1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000     
+           1 indices:            2 -           8
+           3 ->           3
+           4 ->           4
+          13 ->           7
+          14 ->           8
+          23 ->          11
+          24 ->          12
+          33 ->          15
+          34 ->          16
+           0 weights:            8 -   1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000     
+           0 indices:            2 -           8
+           1 ->           1
+           2 ->           2
+          11 ->           5
+          12 ->           6
+          21 ->           9
+          22 ->          10
+          31 ->          13
+          32 ->          14
+          16          16
+          16          16
+           0 flux on xgrid:    2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000     
+           1 flux on xgrid:    2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000     
+  PASS  Regrid then create xgrid and regrid through xgrid, half overlap, ESMF_FieldRegridXGSMMUTest.F90, line 74
+  PASS  Regrid then create xgrid and regrid through xgrid, half overlap, ESMF_FieldRegridXGSMMUTest.F90, line 74
+           1 weights:           32 -   1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000       0.99999999999999911        1.0000000000000000        1.0000000000000000       0.99999999999999933       0.99999999999999867       0.99999999999999911        1.0000000000000000       0.99999999999999889       0.99999999999999956       0.99999999999999911       0.99999999999999845       0.99999999999999778        1.0000000000000000       0.99999999999999778       0.99999999999999889        1.0000000000000000       0.99999999999999822       0.99999999999999889        1.0000000000000000        1.0000000000000000       0.99999999999999911       0.99999999999999978       0.99999999999999822        1.0000000000000000        1.0000000000000000       0.99999999999999867        1.0000000000000000        1.0000000000000000     
+           0 weights:           32 -   1.0000000000000000       0.99999999999999956        1.0000000000000000       0.99999999999999933        1.0000000000000000       0.99999999999999845        1.0000000000000000        1.0000000000000000        1.0000000000000000       0.99999999999999978       0.99999999999999956        1.0000000000000000       0.99999999999999845        1.0000000000000000       0.99999999999999956        1.0000000000000000        1.0000000000000000       0.99999999999999978       0.99999999999999867        1.0000000000000000       0.99999999999999956        1.0000000000000000       0.99999999999999956       0.99999999999999933        1.0000000000000000       0.99999999999999911        1.0000000000000000       0.99999999999999933       0.99999999999999978        1.0000000000000000       0.99999999999999778       0.99999999999999822     
+           0 indices:            2 -          32
+           1 indices:            2 -          32
+           1 ->           1
+           5 ->           6
+          64          64
+           1 ->           1
+           1 ->           2
+          64          64
+           0 flux on xgrid:    2.0000000000000000        1.9999999999999991        2.0000000000000000        1.9999999999999987        2.0000000000000000        1.9999999999999969        2.0000000000000000        2.0000000000000000        2.0000000000000000        1.9999999999999996        1.9999999999999991        2.0000000000000000        1.9999999999999969        2.0000000000000000        1.9999999999999991        2.0000000000000000        2.0000000000000000        1.9999999999999996        1.9999999999999973        2.0000000000000000        1.9999999999999991        2.0000000000000000        1.9999999999999991        1.9999999999999987        2.0000000000000000        1.9999999999999982        2.0000000000000000        1.9999999999999987        1.9999999999999996        2.0000000000000000        1.9999999999999956        1.9999999999999964     
+           1 flux on xgrid:    2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000        1.9999999999999982        2.0000000000000000        2.0000000000000000        1.9999999999999987        1.9999999999999973        1.9999999999999982        2.0000000000000000        1.9999999999999978        1.9999999999999991        1.9999999999999982        1.9999999999999969        1.9999999999999956        2.0000000000000000        1.9999999999999956        1.9999999999999978        2.0000000000000000        1.9999999999999964        1.9999999999999978        2.0000000000000000        2.0000000000000000        1.9999999999999982        1.9999999999999996        1.9999999999999964        2.0000000000000000        2.0000000000000000        1.9999999999999973        2.0000000000000000        2.0000000000000000     
+  PASS  Regrid then create xgrid and regrid through xgrid, check containment, ESMF_FieldRegridXGSMMUTest.F90, line 81
+  PASS  Regrid then create xgrid and regrid through xgrid, check containment, ESMF_FieldRegridXGSMMUTest.F90, line 81
+           1 weights:         3828
+           1 indices:         3828
+           0 weights:         3741
+           0 indices:         3741
+        7569        7569
+        7569        7569
+           0 src idx range:            1          74
+           1 src idx range:            4          78
+           0 dst idx range:            1        6360
+           1 dst idx range:           41        6400
+  PASS  Regrid then create xgrid and regrid through xgrid, check clipping, ESMF_FieldRegridXGSMMUTest.F90, line 88
+  PASS  Regrid then create xgrid and regrid through xgrid, check clipping, ESMF_FieldRegridXGSMMUTest.F90, line 88
+           1          32 -   1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000     
+           1           2 -          32
+           5 ->           5
+           6 ->           6
+           7 ->           7
+           8 ->           8
+          15 ->          13
+           0          32 -   1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000        1.0000000000000000     
+           0           2 -          32
+           1 ->           1
+           2 ->           2
+          16 ->          14
+          17 ->          15
+          18 ->          16
+          25 ->          21
+          26 ->          22
+          27 ->          23
+          28 ->          24
+          35 ->          29
+          36 ->          30
+          37 ->          31
+          38 ->          32
+          45 ->          37
+          46 ->          38
+          47 ->          39
+          48 ->          40
+          55 ->          45
+           3 ->           3
+           4 ->           4
+          11 ->           9
+          12 ->          10
+          13 ->          11
+          14 ->          12
+          21 ->          17
+          22 ->          18
+          23 ->          19
+          24 ->          20
+          31 ->          25
+          32 ->          26
+          33 ->          27
+          34 ->          28
+          56 ->          46
+          57 ->          47
+          58 ->          48
+          65 ->          53
+          66 ->          54
+          67 ->          55
+          68 ->          56
+          75 ->          61
+          76 ->          62
+          77 ->          63
+          41 ->          33
+          42 ->          34
+          43 ->          35
+          44 ->          36
+          51 ->          41
+          52 ->          42
+          78 ->          64
+          53 ->          43
+          54 ->          44
+          61 ->          49
+          62 ->          50
+          63 ->          51
+          64 ->          52
+          71 ->          57
+          72 ->          58
+          73 ->          59
+          74 ->          60
+          78          64
+          78          64
+--- ESMCI::DistGrid::print start ---
+indexTK: Integer*4
+dimCount = 1
+tileCount = 1
+elementCountPTile: 64 
+regDecomp = NO
+tileListPDe: 1 1 
+elementCountPDe: 32 32 
+contigFlagPDimPDe (dims separated by / ):
+ for DE 0: 1 / 
+ for DE 1: 1 / 
+(min,max)IndexPDimPDe (dims separated by / ):
+ for DE 0: (1, 32) / 
+ for DE 1: (33, 64) / 
+indexListPDimPLocalDe (dims separated by / ):
+ for localDE 0 - DE 0:  (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32) /
+diffCollocationCount = 1
+collocationPDim:	1
+arbSeqIndexListPCollPLocalDe:
+ for collocation 1, localDE 0 - DE 0 -  elementCountPCollPLocalDe 32: (1, 2, 3, 4, 9, 10, 11, 12, 17, 18, 19, 20, 25, 26, 27, 28, 33, 34, 35, 36, 41, 42, 43, 44, 49, 50, 51, 52, 57, 58, 59, 60)
+connectionCount = 0
+~ lower class' values ~
+deCount = 2
+Member on this PET appears to be an actual member.
+DistGrid-VM: localPet = 0, CurrentVM: localPet = 0
+DistGrid-VM: petCount = 2, CurrentVM: petCount = 2
+--- ESMCI::DistGrid::print end ---
+--- ESMCI::DistGrid::print start ---
+indexTK: Integer*4
+dimCount = 1
+tileCount = 1
+elementCountPTile: 64 
+regDecomp = NO
+tileListPDe: 1 1 
+elementCountPDe: 32 32 
+contigFlagPDimPDe (dims separated by / ):
+ for DE 0: 1 / 
+ for DE 1: 1 / 
+(min,max)IndexPDimPDe (dims separated by / ):
+ for DE 0: (1, 32) / 
+ for DE 1: (33, 64) / 
+indexListPDimPLocalDe (dims separated by / ):
+ for localDE 0 - DE 1:  (33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64) /
+diffCollocationCount = 1
+collocationPDim:	1
+arbSeqIndexListPCollPLocalDe:
+ for collocation 1, localDE 0 - DE 1 -  elementCountPCollPLocalDe 32: (5, 6, 7, 8, 13, 14, 15, 16, 21, 22, 23, 24, 29, 30, 31, 32, 37, 38, 39, 40, 45, 46, 47, 48, 53, 54, 55, 56, 61, 62, 63, 64)
+connectionCount = 0
+~ lower class' values ~
+deCount = 2
+Member on this PET appears to be an actual member.
+DistGrid-VM: localPet = 1, CurrentVM: localPet = 1
+DistGrid-VM: petCount = 2, CurrentVM: petCount = 2
+--- ESMCI::DistGrid::print end ---
+           0   2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000     
+           1   2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000        2.0000000000000000     
+  PASS  Regrid then create xgrid and regrid through xgrid, exact cut, ESMF_FieldRegridXGSMMUTest.F90, line 95
+  PASS  Regrid then create xgrid and regrid through xgrid, exact cut, ESMF_FieldRegridXGSMMUTest.F90, line 95
+           1         254 -   1.0000000000000000       0.33333365770114914       0.66666634229885147       0.99999999999999944        9.9341061726329168E-007  0.99999900658938479       0.66666700457284700       0.33333299542715139       0.99999999999999867       0.33333398883789001       0.66666601116210833       0.66666732445033927       0.33333267554966012       0.22222255618992129       0.44444453133637196       0.11111110151127047       0.22222181096243537       0.66666722291227598       0.33333277708772191        6.6227399457392983E-007  0.66666656063661889        3.3113662229228276E-007  0.33333244595276462       0.44444497285256984       0.22222211467364042       0.22222203172023453       0.11111088075355664       0.66666732445071775       0.33333267554928203       0.22222277694791764       0.44444431057829048       0.11111121189001705       0.22222170058377227       0.99999999999999889       0.33333365770128293       0.66666634229871968       0.99999999999999734        9.9341061689360013E-007  0.99999900658938345       0.66666700457271633       0.33333299542728573       0.99999999999999967       0.33333398883802418       0.66666601116197466       0.33333473090623500       0.66666526909376322       0.11111148201500011       0.22222277504562779       0.22222217568641514       0.44444356725295786       0.33333452783117529       0.66666547216882377        3.3113745325939284E-007  0.33333419669039416        6.6227316244263935E-007  0.66666480989899068       0.22222299580408172       0.11111126125637827       0.44444400876849988       0.22222173417104008       0.33333473090699239       0.66666526909300661       0.11111159239427740       0.22222266466618351       0.22222239644388339       0.44444334649565831       0.99999999999999944       0.33333365648711655       0.66666634056665375        1.1545034081862504E-009   1.7317525867160335E-009   1.0000000000000000        9.9341061470543493E-007  0.99999900658938556       0.66666700298587356       0.33333299427309654        1.7317549539189244E-009   1.1545016892462004E-009  0.99999999999999845       0.33333398770254352       0.66666600942988485        1.1545214641579445E-009   1.7317790261376778E-009   1.7151577979143266E-006  0.99999828484220110        2.6826141778947044E-007   7.3901983680774374E-007  0.33333338944039831       0.66666560327834790        1.4105476070268572E-006  0.99999858945239184        4.9343465817321553E-013   1.4105421216726641E-006   9.9341012245961952E-007  0.99999759604726479        7.3902026948440372E-007   2.6826073417970472E-007  0.66666626555190811       0.33333272716708623        1.7151589323361385E-006  0.99999828484106490        2.6826185256276212E-007   7.3901919410511784E-007  0.33333372057670602       0.66666527214224580       0.66666942116203709       0.33333057883796285       0.22222295049093022       0.44444552300471846       0.11111070721115371       0.22222081929319790       0.66666901502255815       0.33333098497744101        6.6227486709898595E-007  0.66666835274103531        3.3113574949305716E-007  0.33333065384834876       0.44444596452159763       0.22222250897371421       0.22222104005031312       0.11111048645437428       0.66666942116355044       0.33333057883644962       0.22222317124946853       0.44444530224584550       0.11111081758935794       0.22222070891533083        1.0000000000000000       0.33333365770239537       0.66666634229760457        1.0000000000000000        9.9341061515810712E-007  0.99999900658938401       0.66666700457160277       0.33333299542839701        1.0000000000000000       0.33333398883913712       0.66666601116086288       0.33333672411222959       0.66666327588777030       0.11111184182369568       0.22222369772338096       0.22222181587905590       0.44444264457386695       0.33333621644552436       0.66666378355447453        3.3113822291307954E-007  0.33333588529898017        6.6227239256347396E-007  0.66666312129040517       0.22222391848244855       0.11111162106420709       0.44444308608879457       0.22222137436454745       0.33333672411412391       0.66666327588587926       0.1111119522           0         254 -   1.0000000000000000       0.66666673552411004       0.33333326447588946        1.0000000000000000       0.33333349213252084       0.66666650786747883        1.0000000000000000        4.9670530852804461E-007  0.99999950329469312       0.66666700457284811       0.33333299542715106       0.66666722291151148       0.33333277708848807       0.44444479348669741       0.22222229403957014       0.22222194203736795       0.11111097043636434       0.66666732445049126       0.33333267554950907       0.22222244581075978       0.44444464171548154       0.11111104632180580       0.22222186615195297       0.66666722291189928       0.33333277708810050        3.3113699737312262E-007  0.66666689177414618        1.6556831101246306E-007  0.33333261152054589       0.44444497285267054       0.22222211467361394       0.22222203172013288       0.11111088075358143        1.0000000000000000       0.66666673552397615       0.33333326447602318        1.0000000000000000       0.33333349213265440       0.66666650786734649       0.99999999999999922        4.9670530823966440E-007  0.99999950329469223       0.66666700457271300       0.33333299542728589       0.33333452782964468       0.66666547217035532       0.22222290612105358       0.11111135093952247       0.44444382940278976       0.22222191353663445       0.33333473090653892       0.66666526909346080       0.11111142682528945       0.22222283023523368       0.22222206530749813       0.44444367763197912       0.33333452783042022       0.66666547216958016        1.6556872675894158E-007  0.33333436226017982        3.3113658123868025E-007  0.66666514103451169       0.22222299580428298       0.11111126125632863       0.44444400876829809       0.22222173417109128        1.0000000000000000       0.66666673378632579       0.33333326332182966        1.7317587604948524E-009   1.1545057850007665E-009  0.99999999999999978       0.33333349098463366       0.66666650613526646        1.1545117764007714E-009   1.7317666441989721E-009  0.99999999999999978        4.9670530859506630E-007  0.99999950329469134       0.66666700289171399       0.33333299427309515        1.7317543384240599E-009   1.1545019955041554E-009   1.4105453098149105E-006  0.99999858945469100        7.3902020206168999E-007   2.6826098216453822E-007  0.66666599650323943       0.33333299621557611        1.7151582530497030E-006  0.99999828484174846        2.6826123672725400E-007   7.3901988330693473E-007  0.33333322387195213       0.66666576884692874        1.4105464729156385E-006  0.99999858945352693        2.4671710464208426E-013   1.4105439575468305E-006   4.9670506190294822E-007  0.99999809275073526        7.3902057057201544E-007   2.6826065848282863E-007  0.66666626555161013       0.33333272716716206       0.66666901501949416       0.33333098498050517       0.44444578515555389       0.22222268833999012       0.22222095036762068       0.11111057613683555       0.66666942116264261       0.33333057883735734       0.22222284011151477       0.44444563338392423       0.11111065202194112       0.22222087448262010       0.66666901502104481       0.33333098497895414        3.3113743268634597E-007  0.66666868388058576        1.6556787449659602E-007  0.33333081941410586       0.44444596452200325       0.22222250897361293       0.22222104004991086       0.11111048645447498       0.99999999999999944       0.66666673552286138       0.33333326447713696        1.0000000000000000       0.33333349213376784       0.66666650786623238       0.99999999999999889        4.9670530711307332E-007  0.99999950329469200       0.66666700457160055       0.33333299542839823       0.33333621644169642       0.66666378355830513       0.22222382879927571       0.11111171074767009       0.44444290672323139       0.22222155372982330       0.33333672411298648       0.66666327588701135       0.11111178663374867       0.22222375291306523       0.22222170550037504       0.44444275495281027       0.33333621644363298       0.66666378355636569        1.6556911147339618E-007  0.33333605087073703        3.3113619676524520E-007  0.66666345242395342       0.22222391840348040       0.22222358734317679       0.22222203663601281       0.44444242381733079        1.0000000000000000       0.33333365540673837       0.66666633883522575        2.3077513031775246E-009   3.4616219063620989E-009   1.0000000000000000        9.9341061651565551E-007  0.99999900658938323       0.66666700110886823       0.33333299312140763        3.4616265960060047E-009   2.3077478379216135E-009   1.0000000000000000       0.33333398650553941       0.66666600769842965        2.3077873588948683E-009   3.4616747012136125E-009   3.4301915955990093E-006  0.99999656980840601        5.3651199432875028E-007   1.4779974561292945E-006  0.33333312119160174       0.66666486429894734        2.8210029490614664E-006  0.99999717899704921        9.8687223493311446E-013   2.8209919762481331E-006   9.9340962990177179E-007  0.99999618559740766        1.4779983215601745E-006   5.3651062729463636E-007  0.66666552657207701       0.33333245891897523        3.4301938675548842E-006  0.99999656980613361        5.3651286379638804E-007   1.4779961721181011E-006  0.33333345232747402       0.66666453316348750       0.66667124868807148       0.33332875131192785       0.22222325510915156       0.44444633527545135       0.11111040259493823       0.22222000702046202       0.66667053799229092       0.33332946200771119        6.6227547220420001E-007  0.66666987570516656        3.3113514424049621E-007  0.33332913088421762       0.44444677679283578       0.22222281359117674       0.22222022777707423       0.11111018183891445       0.66667124869072103       0.33332875130927758       0.22222347586814201       0.44444611451586979       0.11111051297268731       0.22221989664330088        1.0000000000000000       0.33333365770462331       0.66666634229537547        1.0000000000000000        9.9341061528646014E-007  0.99999900658938379       0.66666700456937644       0.33333299543062456        1.0000000000000000       0.33333398884136389       0.66666601115863799       0.33333888272247109       0.66666111727752830       0.11111225682316822       0.22222473074434659       0.22222140088203260       0.44444161155045314       0.33333807051972258       0.66666192948027903        3.3113915801653059E-007  0.33333773936725247        6.6227146031069742E-007  0.66666126722213181       0.22222495150414004       0.11111203606270370       0.44444205306465701       0.22222095936849925       0.33333888272549694       0.66666111727450239       0.11111236720351642       0.22222462036332652       0.22222162163842732       0.44444139079473077     
+           1           2 -         254
+           5 ->           8
+           5 ->           9
+           6 ->           9
+           6 ->          10
+           6 ->          11
+           7 ->          11
+           7 ->          12
+           8 ->          12
+           8 ->          13
+           8 ->          14
+           9 ->          14
+           5 ->          22
+          15 ->          22
+           5 ->          23
+           6 ->          23
+          15 ->          23
+          16 ->          23
+           6 ->          24
+          16 ->          24
+           6 ->          25
+           7 ->          25
+          16 ->          25
+          17 ->          25
+           7 ->          26
+           8 ->          26
+          17 ->          26
+          18 ->          26
+           8 ->          27
+          18 ->          27
+           8 ->          28
+           9 ->          28
+          18 ->          28
+          19 ->          28
+          15 ->          36
+          15 ->          37
+          16 ->          37
+          16 ->          38
+          16 ->          39
+          17 ->          39
+          17 ->          40
+          18 ->          40
+          18 ->          41
+          18 ->          42
+          19 ->          42
+          15 ->          50
+          25 ->          50
+          15 ->          51
+          16 ->          51
+          25 ->          51
+          26 ->          51
+          16 ->          52
+          26 ->          52
+          16 ->          53
+          17 ->          53
+8295270       0.11111162106408104       0.44444308608829336       0.22222137436467326        1.0000000000000000       0.66666673206003468       0.33333326217013731        3.4616342538809030E-009   2.3077560598864406E-009   1.0000000000000000       0.33333348981914340       0.66666650440382502        2.3077680625387457E-009   3.4616500546890499E-009   1.0000000000000000        4.9670530836128828E-007  0.99999950329469101       0.66666700112773258       0.33333299312140763        3.4616253594997462E-009   2.3077484467058139E-009   2.8209983562815365E-006  0.99999717900164398        1.4779981874363382E-006   5.3651112283267899E-007  0.66666525752347294       0.33333272796721697        3.4301925029732886E-006  0.99999656980749663        5.3651163198287217E-007   1.4779975485360599E-006  0.33333295562333742       0.66666502986748066        2.8210006815575688E-006  0.99999717899931984        4.9343566692621618E-013   2.8209956477498043E-006   4.9670481521011694E-007  0.99999668229904393        1.4779989242449950E-006   5.3651047548284569E-007  0.66666552657147293       0.33333245891912505       0.66667053798692644       0.33332946201307301       0.44444659742668841       0.22222299295772757       0.22222013809448138       0.11111027152110185       0.66667124868913308       0.33332875131086642       0.22222314472952651       0.44444644565470637       0.11111034740593230       0.22222006220983265       0.66667053798964038       0.33332946201035957        3.3113773639489918E-007  0.66667020684660905        1.6556757211212403E-007  0.33332929644808157       0.44444677679354100       0.22222281359100046       0.22222022777636852       0.11111018183909205       0.99999999999999867       0.66666673552063671       0.33333326447936473       0.99999999999999922       0.33333349213599495       0.66666650786400683       0.99999999999999889        4.9670530759139144E-007  0.99999950329469134       0.66666700456937356       0.33333299543062561       0.33333807051359660       0.66666192948640468       0.22222486182077536       0.11111212574653094       0.44444187369928262       0.22222113873341201       0.33333888272368212       0.66666111727631616       0.11111220163295975       0.22222478593413736       0.22222129050361303       0.44444172192928927       0.33333807051669839       0.66666192948330172        1.6556957873152362E-007  0.33333790494106580        3.3113572951738319E-007  0.66666159835362437       0.22222495150494345       0.11111203606250179       0.44444205306384993       0.22222095936870193     
+           0           2 -         254
+           1 ->           1
+           1 ->           2
+           2 ->           2
+           2 ->           3
+           2 ->           4
+           3 ->           4
+           3 ->           5
+           3 ->           6
+           4 ->           6
+           4 ->           7
+           5 ->           7
+           1 ->          15
+          11 ->          15
+           1 ->          16
+           2 ->          16
+          11 ->          16
+          12 ->          16
+           2 ->          17
+          12 ->          17
+           2 ->          18
+           3 ->          18
+          12 ->          18
+          13 ->          18
+           3 ->          19
+          13 ->          19
+           3 ->          20
+           4 ->          20
+          13 ->          20
+          14 ->          20
+           4 ->          21
+           5 ->          21
+          14 ->          21
+          15 ->          21
+          11 ->          29
+          11 ->          30
+          12 ->          30
+          12 ->          31
+          12 ->          32
+          13 ->          32
+          13 ->          33
+          13 ->          34
+          14 ->          34
+          14 ->          35
+          15 ->          35
+          11 ->          43
+          21 ->          43
+          11 ->          44
+          12 ->          44
+          21 ->          44
+          22 ->          44
+          12 ->          45
+          22 ->          45
+          12 ->          46
+          13 ->          46
+          26 ->          53
+          27 ->          53
+          17 ->          54
+          18 ->          54
+          27 ->          54
+          28 ->          54
+          18 ->          55
+          28 ->          55
+          18 ->          56
+          19 ->          56
+          28 ->          56
+          29 ->          56
+          25 ->          64
+          25 ->          65
+          26 ->          65
+          35 ->          65
+          36 ->          65
+          26 ->          66
+          26 ->          67
+          27 ->          67
+          27 ->          68
+          28 ->          68
+          37 ->          68
+          38 ->          68
+          28 ->          69
+          28 ->          70
+          29 ->          70
+          38 ->          70
+          39 ->          70
+          25 ->          78
+          35 ->          78
+          25 ->          79
+          26 ->          79
+          35 ->          79
+          36 ->          79
+          26 ->          80
+          36 ->          80
+          26 ->          81
+          27 ->          81
+          36 ->          81
+          37 ->          81
+          27 ->          82
+          28 ->          82
+          37 ->          82
+          38 ->          82
+          28 ->          83
+          38 ->          83
+          28 ->          84
+          29 ->          84
+          38 ->          84
+          39 ->          84
+          35 ->          92
+          45 ->          92
+          35 ->          93
+          36 ->          93
+          45 ->          93
+          46 ->          93
+          36 ->          94
+          46 ->          94
+          36 ->          95
+          37 ->          95
+          46 ->          95
+          47 ->          95
+          37 ->          96
+          38 ->          96
+          47 ->          96
+          48 ->          96
+          38 ->          97
+          48 ->          97
+          38 ->          98
+          22 ->          46
+          23 ->          46
+          13 ->          47
+          23 ->          47
+          13 ->          48
+          14 ->          48
+          23 ->          48
+          24 ->          48
+          14 ->          49
+          15 ->          49
+          24 ->          49
+          25 ->          49
+          21 ->          57
+          21 ->          58
+          22 ->          58
+          31 ->          58
+          32 ->          58
+          22 ->          59
+          22 ->          60
+          23 ->          60
+          32 ->          60
+          33 ->          60
+          23 ->          61
+          23 ->          62
+          24 ->          62
+          24 ->          63
+          25 ->          63
+          34 ->          63
+          35 ->          63
+          21 ->          71
+          31 ->          71
+          21 ->          72
+          22 ->          72
+          31 ->          72
+          32 ->          72
+          22 ->          73
+          32 ->          73
+          22 ->          74
+          23 ->          74
+          32 ->          74
+          33 ->          74
+          23 ->          75
+          33 ->          75
+          23 ->          76
+          24 ->          76
+          33 ->          76
+          34 ->          76
+          24 ->          77
+          25 ->          77
+          34 ->          77
+          35 ->          77
+          31 ->          85
+          41 ->          85
+          31 ->          86
+          32 ->          86
+          41 ->          86
+          42 ->          86
+          32 ->          87
+          42 ->          87
+          32 ->          88
+          33 ->          88
+          42 ->          88
+          43 ->          88
+          33 ->          89
+          43 ->          89
+          33 ->          90
+          34 ->          90
+          43 ->          90
+          39 ->          98
+          48 ->          98
+          49 ->          98
+          45 ->         106
+          45 ->         107
+          46 ->         107
+          46 ->         108
+          46 ->         109
+          47 ->         109
+          47 ->         110
+          48 ->         110
+          48 ->         111
+          48 ->         112
+          49 ->         112
+          45 ->         120
+          55 ->         120
+          45 ->         121
+          46 ->         121
+          55 ->         121
+          56 ->         121
+          46 ->         122
+          56 ->         122
+          44 ->          90
+          34 ->          91
+          35 ->          91
+          44 ->          91
+          45 ->          91
+          41 ->          99
+          41 ->         100
+          42 ->         100
+          42 ->         101
+          42 ->         102
+          43 ->         102
+          43 ->         103
+          43 ->         104
+          46 ->         123
+          47 ->         123
+          56 ->         123
+          57 ->         123
+          47 ->         124
+          48 ->         124
+          44 ->         104
+          44 ->         105
+          45 ->         105
+          41 ->         113
+          51 ->         113
+          57 ->         124
+          58 ->         124
+          48 ->         125
+          58 ->         125
+          48 ->         126
+          41 ->         114
+          42 ->         114
+          51 ->         114
+          52 ->         114
+          49 ->         126
+          58 ->         126
+          59 ->         126
+          55 ->         134
+          42 ->         115
+          52 ->         115
+          42 ->         116
+          43 ->         116
+          55 ->         135
+          56 ->         135
+          65 ->         135
+          66 ->         135
+          52 ->         116
+          53 ->         116
+          43 ->         117
+          53 ->         117
+          56 ->         136
+          56 ->         137
+          57 ->         137
+          57 ->         138
+          43 ->         118
+          44 ->         118
+          53 ->         118
+          54 ->         118
+          58 ->         138
+          67 ->         138
+          68 ->         138
+          58 ->         139
+          44 ->         119
+          45 ->         119
+          54 ->         119
+          55 ->         119
+          58 ->         140
+          59 ->         140
+          68 ->         140
+          69 ->         140
+          51 ->         127
+          51 ->         128
+          52 ->         128
+          61 ->         128
+          55 ->         148
+          65 ->         148
+          55 ->         149
+          56 ->         149
+          62 ->         128
+          52 ->         129
+          52 ->         130
+          53 ->         130
+          65 ->         149
+          66 ->         149
+          56 ->         150
+          66 ->         150
+          62 ->         130
+          63 ->         130
+          53 ->         131
+          53 ->         132
+          56 ->         151
+          57 ->         151
+          66 ->         151
+          67 ->         151
+          57 ->         152
+          54 ->         132
+          54 ->         133
+          55 ->         133
+          64 ->         133
+          58 ->         152
+          67 ->         152
+          68 ->         152
+          58 ->         153
+          65 ->         133
+          51 ->         141
+          61 ->         141
+          51 ->         142
+          68 ->         153
+          58 ->         154
+          59 ->         154
+          68 ->         154
+          52 ->         142
+          61 ->         142
+          62 ->         142
+          52 ->         143
+          69 ->         154
+          65 ->         162
+          75 ->         162
+          65 ->         163
+          62 ->         143
+          52 ->         144
+          53 ->         144
+          62 ->         144
+          66 ->         163
+          75 ->         163
+          76 ->         163
+          66 ->         164
+          63 ->         144
+          53 ->         145
+          63 ->         145
+          53 ->         146
+          54 ->         146
+          76 ->         164
+          66 ->         165
+          67 ->         165
+          76 ->         165
+          63 ->         146
+          64 ->         146
+          54 ->         147
+          55 ->         147
+          77 ->         165
+          67 ->         166
+          68 ->         166
+          77 ->         166
+          64 ->         147
+          65 ->         147
+          61 ->         155
+          71 ->         155
+          78 ->         166
+          68 ->         167
+          78 ->         167
+          68 ->         168
+          61 ->         156
+          62 ->         156
+          71 ->         156
+          72 ->         156
+          69 ->         168
+          78 ->         168
+          79 ->         168
+          75 ->         176
+          62 ->         157
+          72 ->         157
+          62 ->         158
+          63 ->         158
+          75 ->         177
+          76 ->         177
+          76 ->         178
+          76 ->         179
+          72 ->         158
+          73 ->         158
+          63 ->         159
+          73 ->         159
+          77 ->         179
+          77 ->         180
+          78 ->         180
+          78 ->         181
+          63 ->         160
+          64 ->         160
+          73 ->         160
+          74 ->         160
+          78 ->         182
+          79 ->         182
+          75 ->         190
+          85 ->         190
+          75 ->         191
+          64 ->         161
+          65 ->         161
+          74 ->         161
+          75 ->         161
+          76 ->         191
+          85 ->         191
+          86 ->         191
+          76 ->         192
+          71 ->         169
+          71 ->         170
+          72 ->         170
+          72 ->         171
+          86 ->         192
+          76 ->         193
+          77 ->         193
+          86 ->         193
+          72 ->         172
+          73 ->         172
+          73 ->         173
+          73 ->         174
+          87 ->         193
+          77 ->         194
+          78 ->         194
+          87 ->         194
+          74 ->         174
+          74 ->         175
+          75 ->         175
+          71 ->         183
+          88 ->         194
+          78 ->         195
+          88 ->         195
+          78 ->         196
+          81 ->         183
+          71 ->         184
+          72 ->         184
+          81 ->         184
+          79 ->         196
+          88 ->         196
+          89 ->         196
+          82 ->         184
+          72 ->         185
+          82 ->         185
+          72 ->         186
+          73 ->         186
+          82 ->         186
+          83 ->         186
+          73 ->         187
+          83 ->         187
+          73 ->         188
+          74 ->         188
+          83 ->         188
+          84 ->         188
+          74 ->         189
+          75 ->         189
+          84 ->         189
+          85 ->         189
+          89         196
+          89         196
+--- ESMCI::DistGrid::print start ---
+indexTK: Integer*4
+dimCount = 1
+tileCount = 1
+elementCountPTile: 196 
+regDecomp = NO
+tileListPDe: 1 1 
+elementCountPDe: 98 98 
+contigFlagPDimPDe (dims separated by / ):
+ for DE 0: 1 / 
+ for DE 1: 1 / 
+(min,max)IndexPDimPDe (dims separated by / ):
+ for DE 0: (1, 98) / 
+ for DE 1: (99, 196) / 
+indexListPDimPLocalDe (dims separated by / ):
+ for localDE 0 - DE 0:  (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98) /
+diffCollocationCount = 1
+collocationPDim:	1
+arbSeqIndexListPCollPLocalDe:
+ for collocation 1, localDE 0 - DE 0 -  elementCountPCollPLocalDe 98: (1, 2, 3, 4, 5, 6, 7, 15, 16, 17, 18, 19, 20, 21, 29, 30, 31, 32, 33, 34, 35, 43, 44, 45, 46, 47, 48, 49, 57, 58, 59, 60, 61, 62, 63, 71, 72, 73, 74, 75, 76, 77, 85, 86, 87, 88, 89, 90, 91, 99, 100, 101, 102, 103, 104, 105, 113, 114, 115, 116, 117, 118, 119, 127, 128, 129, 130, 131, 132, 133, 141, 142, 143, 144, 145, 146, 147, 155, 156, 157, 158, 159, 160, 161, 169, 170, 171, 172, 173, 174, 175, 183, 184, 185, 186, 187, 188, 189)
+connectionCount = 0
+~ lower class' values ~
+deCount = 2
+Member on this PET appears to be an actual member.
+DistGrid-VM: localPet = 0, CurrentVM: localPet = 0
+DistGrid-VM: petCount = 2, CurrentVM: petCount = 2
+--- ESMCI::DistGrid::print end ---
+--- ESMCI::DistGrid::print start ---
+indexTK: Integer*4
+dimCount = 1
+tileCount = 1
+elementCountPTile: 196 
+regDecomp = NO
+tileListPDe: 1 1 
+elementCountPDe: 98 98 
+contigFlagPDimPDe (dims separated by / ):
+ for DE 0: 1 / 
+ for DE 1: 1 / 
+(min,max)IndexPDimPDe (dims separated by / ):
+ for DE 0: (1, 98) / 
+ for DE 1: (99, 196) / 
+indexListPDimPLocalDe (dims separated by / ):
+ for localDE 0 - DE 1:  (99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196) /
+diffCollocationCount = 1
+collocationPDim:	1
+arbSeqIndexListPCollPLocalDe:
+ for collocation 1, localDE 0 - DE 1 -  elementCountPCollPLocalDe 98: (8, 9, 10, 11, 12, 13, 14, 22, 23, 24, 25, 26, 27, 28, 36, 37, 38, 39, 40, 41, 42, 50, 51, 52, 53, 54, 55, 56, 64, 65, 66, 67, 68, 69, 70, 78, 79, 80, 81, 82, 83, 84, 92, 93, 94, 95, 96, 97, 98, 106, 107, 108, 109, 110, 111, 112, 120, 121, 122, 123, 124, 125, 126, 134, 135, 136, 137, 138, 139, 140, 148, 149, 150, 151, 152, 153, 154, 162, 163, 164, 165, 166, 167, 168, 176, 177, 178, 179, 180, 181, 182, 190, 191, 192, 193, 194, 195, 196)
+connectionCount = 0
+~ lower class' values ~
+deCount = 2
+Member on this PET appears to be an actual member.
+DistGrid-VM: localPet = 1, CurrentVM: localPet = 1
+DistGrid-VM: petCount = 2, CurrentVM: petCount = 2
+--- ESMCI::DistGrid::print end ---
+           0   2.0000000000000000        1.9999999999999991        2.0000000000000000        1.9999999999999993        2.0000000000000000        2.0000000000000031        1.9999999999999982        1.9999999999999991        1.9999999999999998        2.0000000000000009        2.0000000000000000        1.9999999999999996        2.0000000000000009        1.9999999999999976        2.0000000000000000        1.9999999999999987        2.0000000000000000        2.0000000000000018        1.9999999999999984        2.0000000000000009        1.9999999999999978        2.0000000000000000        2.0000000000000009        1.9999999999999996        2.0000000000000009        2.0000000000000009        1.9999999999999991        2.0000000000000018        2.0000000000000000        1.9999999999888400        1.9999999999999996        2.0000000000123572        1.9999999999999996        1.9999999999999998        2.0000000001021307        2.0000000000000018        1.9999999999999996        2.0000000000000031        2.0000000000000018        1.9999999999999998        2.0000000000000027        2.0000000000000027        1.9999999999999987        2.0000000000000004        2.0000000000000000        2.0000000000000004        1.9999999999999978        1.9999999999999978        2.0000000000000040        1.9999999999999989        1.9999999999999967        2.0000000000000000        2.0000000000000004        1.9999999999999978        1.9999999999999982        1.9999999999999976        2.0000000000000031        2.0000000000000009        1.9999999999999956        1.9999999999999984        1.9999999999999973        1.9999999999999973        2.0000000000000009        2.0000000000000000        1.9999999999991247        2.0000000000000000        1.9999999999847733        2.0000000000000000        1.9999999999999987        2.0000000000370282        2.0000000000000004        2.0000000000000004        1.9999999999999991        1.9999999999999973        2.0000000000000027        2.0000000000000004        1.9999999999999956        1.9999999999999989        1.9999999999999984        1.9999999999999991        1.9999999999999956        2.0000000000000000        1.9999999999999982        2.0000000000000040        1.9999999999999973        2.0000000000000027        1.9999999999999984        2.0000000000000036        1.9999999999999978        1.9999999999999978        1.9999999999999982        2.0000000000000027        2.0000000000000018        1.9999999999999964        1.9999999999999987        2.0000000000000000        1.9999999999999969        1.9999999999999942     
+           1   2.0000000000000000        2.0000000000000013        1.9999999999999989        2.0000000000000040        1.9999999999999969        1.9999999999999973        1.9999999999999967        1.9999999999999987        1.9999999999999980        1.9999999999999958        2.0000000000000009        2.0000000000000027        1.9999999999999996        1.9999999999999951        1.9999999999999978        2.0000000000000053        1.9999999999999947        2.0000000000000009        2.0000000000000040        1.9999999999999993        1.9999999999999978        1.9999999999999964        2.0000000000000018        1.9999999999999982        2.0000000000000009        1.9999999999999998        1.9999999999999980        2.0000000000000053        1.9999999999999989        1.9999999998800526        2.0000000000000000        2.0000000000000004        2.0000000002904534        1.9999999999999969        2.0000000000374576        1.9999999999999980        2.0000000000000013        1.9999999999999978        2.0000000000000049        1.9999999999999960        1.9999999999999944        1.9999999999999969        2.0000000000000000        2.0000000000000004        1.9999999999999982        2.0000000000000013        1.9999999999999984        2.0000000000000000        2.0000000000000053        2.0000000000000000        2.0000000000000000        2.0000000000000000        1.9999999999999984        1.9999999999999996        2.0000000000000000        2.0000000000000000        1.9999999999999998        1.9999999999999989        1.9999999999999978        2.0000000000000018        1.9999999999999953        2.0000000000000062        2.0000000000000018        2.0000000000000000        2.0000000000226748        2.0000000000000000        1.9999999999999996        1.9999999999993006        2.0000000000000000        1.9999999999468623        2.0000000000000031        1.9999999999999989        1.9999999999999964        2.0000000000000013        2.0000000000000022        2.0000000000000022        1.9999999999999949        1.9999999999999987        2.0000000000000062        2.0000000000000044        2.0000000000000013        2.0000000000000022        1.9999999999999973        2.0000000000000000        2.0000000000000000        1.9999999999999976        2.0000000000000000        1.9999999999999982        2.0000000000000018        2.0000000000000000        2.0000000000000036        1.9999999999999987        2.0000000000000013        2.0000000000000031        2.0000000000000053        2.0000000000000000        1.9999999999999987        2.0000000000000018     
+  PASS  Regrid then create xgrid and regrid through xgrid, overlapping cut, ESMF_FieldRegridXGSMMUTest.F90, line 102
+  Ending Test, file ESMF_FieldRegridXGSMMUTest.F90, line 112
+  PASS  Regrid then create xgrid and regrid through xgrid, overlapping cut, ESMF_FieldRegridXGSMMUTest.F90, line 102
+  Ending Test, file ESMF_FieldRegridXGSMMUTest.F90, line 112
+  PET           0  Test Elapsed Time    312.12600000000003       msec.
+  PET           1  Test Elapsed Time    318.35500000000002       msec.

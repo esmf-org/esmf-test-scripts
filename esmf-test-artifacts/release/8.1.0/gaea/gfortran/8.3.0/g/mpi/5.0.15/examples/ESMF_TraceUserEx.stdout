@@ -1,0 +1,14 @@
+ --------------------------------------- 
+ Start of ESMF_TraceUser Example
+ --------------------------------------- 
+  PASS  Example ESMF_TraceUserEx, ESMF_TraceUserEx.F90, line 125
+  PASS  Example ESMF_TraceUserEx, ESMF_TraceUserEx.F90, line 125
+  PASS  Example ESMF_TraceUserEx, ESMF_TraceUserEx.F90, line 125
+  PASS  Example ESMF_TraceUserEx, ESMF_TraceUserEx.F90, line 125
+ PASS: ESMF_TraceUserEx.F90
+ PASS: ESMF_TraceUserEx.F90
+ PASS: ESMF_TraceUserEx.F90
+ --------------------------------------- 
+ End of ESMF_TraceUser Example
+ --------------------------------------- 
+ PASS: ESMF_TraceUserEx.F90

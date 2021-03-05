@@ -1,0 +1,36 @@
+  Beginning Test, file ESMF_LogErrPerfUTest.F90, line 55
+  Beginning Test, file ESMF_LogErrPerfUTest.F90, line 55
+  Beginning Test, file ESMF_LogErrPerfUTest.F90, line 55
+  Beginning Test, file ESMF_LogErrPerfUTest.F90, line 55
+  NUMBER_OF_PROCESSORS           4
+  NUMBER_OF_PROCESSORS           4
+  NUMBER_OF_PROCESSORS           4
+  NUMBER_OF_PROCESSORS           4
+  PASS  Performance of ESMF_LogFoundError() 1000x Test, ESMF_LogErrPerfUTest.F90, line 64
+  PASS  Performance of ESMF_LogFoundError() 1000x Test, ESMF_LogErrPerfUTest.F90, line 64
+  PASS  Performance of ESMF_LogFoundError() 1000x Test, ESMF_LogErrPerfUTest.F90, line 64
+  PASS  Performance of ESMF_LogFoundError() 1000x Test, ESMF_LogErrPerfUTest.F90, line 64
+  PASS  Performance of ESMF_LogFoundError() 10000x Test, ESMF_LogErrPerfUTest.F90, line 72
+  PASS  Performance of ESMF_LogFoundError() 10000x Test, ESMF_LogErrPerfUTest.F90, line 72
+  PASS  Performance of ESMF_LogFoundError() 10000x Test, ESMF_LogErrPerfUTest.F90, line 72
+  PASS  Performance of ESMF_LogFoundError() 10000x Test, ESMF_LogErrPerfUTest.F90, line 72
+  PASS  Performance of ESMF_LogFoundError() 100000x Test, ESMF_LogErrPerfUTest.F90, line 80
+  PASS  Performance of ESMF_LogFoundError() 100000x Test, ESMF_LogErrPerfUTest.F90, line 80
+  PASS  Performance of ESMF_LogFoundError() 100000x Test, ESMF_LogErrPerfUTest.F90, line 80
+  PASS  Performance of ESMF_LogFoundError() 100000x Test, ESMF_LogErrPerfUTest.F90, line 80
+  PASS  Performance of ESMF_LogFoundError() 1000000x Test, ESMF_LogErrPerfUTest.F90, line 88
+  PASS  Threshold check for ESMF_LogFoundError() 1000000x Test, ESMF_LogErrPerfUTest.F90, line 99
+  PASS  Performance of ESMF_LogFoundError() 1000000x Test, ESMF_LogErrPerfUTest.F90, line 88
+  PASS  Threshold check for ESMF_LogFoundError() 1000000x Test, ESMF_LogErrPerfUTest.F90, line 99
+  PASS  Performance of ESMF_LogFoundError() 1000000x Test, ESMF_LogErrPerfUTest.F90, line 88
+  PASS  Threshold check for ESMF_LogFoundError() 1000000x Test, ESMF_LogErrPerfUTest.F90, line 99
+  PASS  Performance of ESMF_LogFoundError() 1000000x Test, ESMF_LogErrPerfUTest.F90, line 88
+  PASS  Threshold check for ESMF_LogFoundError() 1000000x Test, ESMF_LogErrPerfUTest.F90, line 99
+  Ending Test, file ESMF_LogErrPerfUTest.F90, line 103
+  Ending Test, file ESMF_LogErrPerfUTest.F90, line 103
+  Ending Test, file ESMF_LogErrPerfUTest.F90, line 103
+  Ending Test, file ESMF_LogErrPerfUTest.F90, line 103
+  PET           1  Test Elapsed Time    68.029000000000011       msec.
+  PET           3  Test Elapsed Time    68.042999999999992       msec.
+  PET           2  Test Elapsed Time    67.959999999999994       msec.
+  PET           0  Test Elapsed Time    19.362000000000005       msec.

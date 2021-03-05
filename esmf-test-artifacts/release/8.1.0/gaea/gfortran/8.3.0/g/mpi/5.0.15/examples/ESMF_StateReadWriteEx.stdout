@@ -1,0 +1,278 @@
+  PASS  Example ESMF_StateReadWriteEx, ESMF_StateReadWriteEx.F90, line 185
+  PASS  Example ESMF_StateReadWriteEx, ESMF_StateReadWriteEx.F90, line 185
+  PASS  Example ESMF_StateReadWriteEx, ESMF_StateReadWriteEx.F90, line 185
+ ESMF_StatePrint: (pet 0):
+  State name: Ocean Import
+     status: Import State, object count: 7
+     reconcile needed: T
+ Base name    = Ocean Import
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+{}     object: 1,name: Q
+            type: Array
+     object: 2,name: TEMP
+            type: Array
+     object: 3,name: lat
+            type: Array
+     object: 4,name: lon
+            type: Array
+     object: 5,name: p
+            type: Array
+     object: 6,name: rh
+            type: Array
+     object: 7,name: time
+            type: Array
+--- ESMCI::Array::print start ---
+ Base name    = lat
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+{
+  "long_name": "latitude",
+  "units": "degrees_north"
+}Array typekind/rank: Integer*4 / 1 
+~ lower class' values ~
+DistGrid dimCount = 1
+deCount = 4
+localDeCount = 1
+~ local data in LocalArray for DE 0 ~
+LocalArrayPrint: Array at address 0x32767b0:
+            rank = 1, typekind = 3, base_addr = 0x3275600
+            dim[0] = 10  
+  Integer, *4, Dim 1, Data values:
+(-2) =  0
+(-1) =  10
+( 0) =  20
+( 1) =  30
+( 2) =  40
+( 3) =  50
+( 4) =  60
+( 5) =  70
+( 6) =  80
+( 7) =  90
+dim 1: [0]: [-2 [1 [1, 3] 3] 7]
+--- ESMCI::Array::print end ---
+--- ESMCI::Array::print start ---
+ Base name    = lon
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+{
+  "long_name": "longitude",
+  "units": "degrees_east"
+}Array typekind/rank: Integer*4 / 1 
+~ lower class' values ~
+DistGrid dimCount = 1
+deCount = 4
+localDeCount = 1
+~ local data in LocalArray for DE 0 ~
+LocalArrayPrint: Array at address 0x3278bc0:
+            rank = 1, typekind = 3, base_addr = 0x3278ef0
+            dim[0] = 5  
+  Integer, *4, Dim 1, Data values:
+( 0) =  -140
+( 1) =  -118
+( 2) =  -96
+( 3) =  -84
+( 4) =  -52
+dim 1: [0]: [0 [1 [1, 2] 2] 4]
+--- ESMCI::Array::print end ---
+--- ESMCI::Array::print start ---
+ Base name    = time
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+{
+  "units": "seconds since 1992-1-1 00:00:00"
+}Array typekind/rank: Integer*4 / 1 
+~ lower class' values ~
+DistGrid dimCount = 1
+deCount = 4
+localDeCount = 1
+~ local data in LocalArray for DE 0 ~
+LocalArrayPrint: Array at address 0x327ad40:
+            rank = 1, typekind = 3, base_addr = 0x327b070
+            dim[0] = 2  
+  Integer, *4, Dim 1, Data values:
+( 1) =  123456789
+( 2) =  987654321
+dim 1: [0]: [1 [1 [1, 1] 1] 2]
+--- ESMCI::Array::print end ---
+--- ESMCI::Array::print start ---
+ Base name    = Q
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+{
+  "long_name": "specific_humidity",
+  "time_op": "average",
+  "units": "kg/kg"
+}Array typekind/rank: Real*4 / 3 
+~ lower class' values ~
+DistGrid dimCount = 3
+deCount = 4
+localDeCount = 1
+~ local data in LocalArray for DE 0 ~
+LocalArrayPrint: Array at address 0x327d550:
+            rank = 3, typekind = 5, base_addr = 0x327d880
+            dim[0] = 2  dim[1] = 10  dim[2] = 5  
+  Real, *4, Dim 3, Data values:
+( 1, 1, 1) =  1.23457
+( 2, 1, 1) =  1.23457
+( 1, 2, 1) =  1.23457
+( 2, 2, 1) =  1.23457
+( 1, 3, 1) =  1.23457
+( 2, 3, 1) =  1.23457
+( 1, 4, 1) =  1.23457
+( 2, 4, 1) =  1.23457
+( 1, 5, 1) =  1.23458
+( 2, 5, 1) =  1.23458
+  skipping to end ...
+( 1, 6, 5) =  1.23466
+( 2, 6, 5) =  1.23466
+( 1, 7, 5) =  1.23466
+( 2, 7, 5) =  1.23466
+( 1, 8, 5) =  1.23466
+( 2, 8, 5) =  1.23466
+( 1, 9, 5) =  1.23466
+( 2, 9, 5) =  1.23466
+( 1,10, 5) =  1.23467
+( 2,10, 5) =  1.23467
+dim 1: [0]: [1 [1 [1, 1] 1] 2]
+dim 2: [1]: [1 [1 [1, 10] 10] 10]
+dim 3: [2]: [1 [1 [1, 5] 5] 5]
+--- ESMCI::Array::print end ---
+--- ESMCI::Array::print start ---
+ Base name    = TEMP
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+{
+  "long_name": "temperature",
+  "time_op": "average",
+  "units": "K"
+}Array typekind/rank: Real*4 / 3 
+~ lower class' values ~
+DistGrid dimCount = 3
+deCount = 4
+localDeCount = 1
+~ local data in LocalArray for DE 0 ~
+LocalArrayPrint: Array at address 0x327fc80:
+            rank = 3, typekind = 5, base_addr = 0x327ffb0
+            dim[0] = 2  dim[1] = 10  dim[2] = 5  
+  Real, *4, Dim 3, Data values:
+( 1, 1, 1) =  7.65432
+( 2, 1, 1) =  7.65432
+( 1, 2, 1) =  7.65432
+( 2, 2, 1) =  7.65432
+( 1, 3, 1) =  7.65432
+( 2, 3, 1) =  7.65432
+( 1, 4, 1) =  7.65431
+( 2, 4, 1) =  7.65431
+( 1, 5, 1) =  7.65431
+( 2, 5, 1) =  7.65431
+  skipping to end ...
+( 1, 6, 5) =  7.65423
+( 2, 6, 5) =  7.65423
+( 1, 7, 5) =  7.65423
+( 2, 7, 5) =  7.65423
+( 1, 8, 5) =  7.65423
+( 2, 8, 5) =  7.65423
+( 1, 9, 5) =  7.65422
+( 2, 9, 5) =  7.65422
+( 1,10, 5) =  7.65422
+( 2,10, 5) =  7.65422
+dim 1: [0]: [1 [1 [1, 1] 1] 2]
+dim 2: [1]: [1 [1 [1, 10] 10] 10]
+dim 3: [2]: [1 [1 [1, 5] 5] 5]
+--- ESMCI::Array::print end ---
+--- ESMCI::Array::print start ---
+ Base name    = p
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+{
+  "_FillValue": -9999.0
+}Array typekind/rank: Real*8 / 3 
+~ lower class' values ~
+DistGrid dimCount = 3
+deCount = 4
+localDeCount = 1
+~ local data in LocalArray for DE 0 ~
+LocalArrayPrint: Array at address 0x3282730:
+            rank = 3, typekind = 6, base_addr = 0x3282a60
+            dim[0] = 2  dim[1] = 10  dim[2] = 5  
+  Real, *8, Dim 3, Data values:
+( 1, 1, 1) =  -9999
+( 2, 1, 1) =  -9999
+( 1, 2, 1) =  -9999
+( 2, 2, 1) =  -9999
+( 1, 3, 1) =  -9999
+( 2, 3, 1) =  -9999
+( 1, 4, 1) =  -9999
+( 2, 4, 1) =  -9999
+( 1, 5, 1) =  -9999
+( 2, 5, 1) =  -9999
+  skipping to end ...
+( 1, 6, 5) =  -9999
+( 2, 6, 5) =  -9999
+( 1, 7, 5) =  -9999
+( 2, 7, 5) =  -9999
+( 1, 8, 5) =  -9999
+( 2, 8, 5) =  -9999
+( 1, 9, 5) =  -9999
+( 2, 9, 5) =  -9999
+( 1,10, 5) =  -9999
+( 2,10, 5) =  -9999
+dim 1: [0]: [1 [1 [1, 1] 1] 2]
+dim 2: [1]: [1 [1 [1, 10] 10] 10]
+dim 3: [2]: [1 [1 [1, 5] 5] 5]
+--- ESMCI::Array::print end ---
+--- ESMCI::Array::print start ---
+ Base name    = rh
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+{
+  "_FillValue": -1
+}Array typekind/rank: Integer*4 / 3 
+~ lower class' values ~
+DistGrid dimCount = 3
+deCount = 4
+localDeCount = 1
+~ local data in LocalArray for DE 0 ~
+LocalArrayPrint: Array at address 0x32850c0:
+            rank = 3, typekind = 3, base_addr = 0x32853f0
+            dim[0] = 2  dim[1] = 10  dim[2] = 5  
+  Integer, *4, Dim 3, Data values:
+( 1, 1, 1) =  -1
+( 2, 1, 1) =  -1
+( 1, 2, 1) =  -1
+( 2, 2, 1) =  -1
+( 1, 3, 1) =  -1
+( 2, 3, 1) =  -1
+( 1, 4, 1) =  -1
+( 2, 4, 1) =  -1
+( 1, 5, 1) =  -1
+( 2, 5, 1) =  -1
+  skipping to end ...
+( 1, 6, 5) =  -1
+( 2, 6, 5) =  -1
+( 1, 7, 5) =  -1
+( 2, 7, 5) =  -1
+( 1, 8, 5) =  -1
+( 2, 8, 5) =  -1
+( 1, 9, 5) =  -1
+( 2, 9, 5) =  -1
+( 1,10, 5) =  -1
+( 2,10, 5) =  -1
+dim 1: [0]: [1 [1 [1, 1] 1] 2]
+dim 2: [1]: [1 [1 [1, 10] 10] 10]
+dim 3: [2]: [1 [1 [1, 5] 5] 5]
+--- ESMCI::Array::print end ---
+  PASS  Example ESMF_StateReadWriteEx, ESMF_StateReadWriteEx.F90, line 185
+ PASS: ESMF_StateReadWriteEx.F90
+ PASS: ESMF_StateReadWriteEx.F90
+ PASS: ESMF_StateReadWriteEx.F90
+ PASS: ESMF_StateReadWriteEx.F90

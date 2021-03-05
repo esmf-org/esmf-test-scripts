@@ -1,0 +1,600 @@
+20210305 104118.919 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 104118.919 INFO             PET0 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 104118.919 INFO             PET0 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 104118.919 INFO             PET0 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 104118.919 INFO             PET0 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 104118.919 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 104118.919 INFO             PET0 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 104118.919 INFO             PET0 ESMF library build date/time: "Mar  5 2021" "09:44:18"
+20210305 104118.919 INFO             PET0 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g
+20210305 104118.919 INFO             PET0 ESMF_COMM                   : mpi
+20210305 104118.920 INFO             PET0 ESMF_MOAB                   : enabled
+20210305 104118.920 INFO             PET0 ESMF_LAPACK                 : enabled
+20210305 104118.920 INFO             PET0 ESMF_NETCDF                 : enabled
+20210305 104118.920 INFO             PET0 ESMF_PNETCDF                : disabled
+20210305 104118.920 INFO             PET0 ESMF_PIO                    : enabled
+20210305 104118.920 INFO             PET0 ESMF_YAMLCPP                : enabled
+20210305 104118.932 INFO             PET0  Beginning Test, file ESMF_ContainerUTest.F90, line 95
+20210305 104118.932 INFO             PET0  NUMBER_OF_PROCESSORS           4
+20210305 104118.932 INFO             PET0  PASS  Container Create Test, ESMF_ContainerUTest.F90, line 104
+20210305 104118.933 INFO             PET0  PASS  Container Add Field Test, ESMF_ContainerUTest.F90, line 121
+20210305 104118.933 ERROR            PET0 ESMCI_Container_F.C:102 ESMCI::Container::add() Invalid argument  - key already exists
+20210305 104119.007 ERROR            PET0 ESMCI_Container_F.C:75 c_esmc_containeradd() Invalid argument  - Internal subroutine call returned Error
+20210305 104119.007 ERROR            PET0 ESMF_Container.F90:337 ESMF_ContainerAddFieldList() Invalid argument  - Internal subroutine call returned Error
+20210305 104119.007 INFO             PET0  PASS  Container Add Field 2nd time strict Test, ESMF_ContainerUTest.F90, line 128
+20210305 104119.007 INFO             PET0  PASS  Container Add Field 2nd time relaxed Test, ESMF_ContainerUTest.F90, line 136
+20210305 104119.007 INFO             PET0  PASS  Container turn garbage feature ON Test, ESMF_ContainerUTest.F90, line 143
+20210305 104119.007 INFO             PET0  PASS  Container clear garbage Test, ESMF_ContainerUTest.F90, line 150
+20210305 104119.007 INFO             PET0  PASS  Container Add Field again relaxed - with garbage ON Test, ESMF_ContainerUTest.F90, line 158
+20210305 104119.007 INFO             PET0  PASS  Container garbage Get Test, ESMF_ContainerUTest.F90, line 166
+20210305 104119.007 INFO             PET0  PASS  Verify garbageList Test, ESMF_ContainerUTest.F90, line 172
+20210305 104119.007 INFO             PET0  PASS  Container turn garbage feature OFF Test, ESMF_ContainerUTest.F90, line 188
+20210305 104119.007 INFO             PET0  PASS  Container clear garbage Test, ESMF_ContainerUTest.F90, line 195
+20210305 104119.007 INFO             PET0  PASS  Container Print Test, ESMF_ContainerUTest.F90, line 202
+20210305 104119.007 INFO             PET0  PASS  Container Get item Test, ESMF_ContainerUTest.F90, line 209
+20210305 104119.007 INFO             PET0  PASS  Verify Container Get item Test, ESMF_ContainerUTest.F90, line 220
+20210305 104119.007 INFO             PET0  PASS  Container Get isPresent Test, ESMF_ContainerUTest.F90, line 228
+20210305 104119.007 INFO             PET0  PASS  Verify Container Get isPresent Test, ESMF_ContainerUTest.F90, line 234
+20210305 104119.007 INFO             PET0  PASS  Container Remove item Test, ESMF_ContainerUTest.F90, line 247
+20210305 104119.007 INFO             PET0  PASS  Container garbage Get Test, ESMF_ContainerUTest.F90, line 255
+20210305 104119.007 INFO             PET0  PASS  Verify garbageList Test, ESMF_ContainerUTest.F90, line 261
+20210305 104119.007 ERROR            PET0 ESMCI_Container_F.C:311 ESMCI::Container::remove() Invalid argument  - key does not exist
+20210305 104119.007 ERROR            PET0 ESMCI_Container_F.C:807 c_esmc_containerremove() Invalid argument  - Internal subroutine call returned Error
+20210305 104119.007 ERROR            PET0 ESMF_Container.F90:985 ESMF_ContainerRemove() Invalid argument  - Internal subroutine call returned Error
+20210305 104119.007 INFO             PET0  PASS  Container Remove item 2nd time strict Test, ESMF_ContainerUTest.F90, line 283
+20210305 104119.007 INFO             PET0  PASS  Container Remove item 2nd time relaxed Test, ESMF_ContainerUTest.F90, line 291
+20210305 104119.007 INFO             PET0  PASS  Container Print Test, ESMF_ContainerUTest.F90, line 298
+20210305 104119.007 INFO             PET0  PASS  Container Get isPresent Test, ESMF_ContainerUTest.F90, line 306
+20210305 104119.007 INFO             PET0  PASS  Verify Container Get isPresent Test, ESMF_ContainerUTest.F90, line 312
+20210305 104119.007 INFO             PET0  PASS  Container Get count Test, ESMF_ContainerUTest.F90, line 319
+20210305 104119.008 INFO             PET0  PASS  Verify Container Get fieldCountOut Test, ESMF_ContainerUTest.F90, line 325
+20210305 104119.008 ERROR            PET0 ESMCI_Container_F.C:358 ESMCI::Container::replace() Invalid argument  - key does not exist
+20210305 104119.008 ERROR            PET0 ESMCI_Container_F.C:855 c_esmc_containerreplace() Invalid argument  - Internal subroutine call returned Error
+20210305 104119.008 ERROR            PET0 ESMF_Container.F90:1088 ESMF_ContainerReplaceFieldList() Invalid argument  - Internal subroutine call returned Error
+20210305 104119.008 INFO             PET0  PASS  Container Replace Field with one not present strict Test, ESMF_ContainerUTest.F90, line 332
+20210305 104119.008 INFO             PET0  PASS  Container Replace Field with one not present relaxed Test, ESMF_ContainerUTest.F90, line 340
+20210305 104119.008 INFO             PET0  PASS  Container AddReplace Field Test, ESMF_ContainerUTest.F90, line 347
+20210305 104119.008 INFO             PET0  PASS  Container Replace Field with all present strict Test, ESMF_ContainerUTest.F90, line 354
+20210305 104119.008 INFO             PET0  PASS  Container Print Test, ESMF_ContainerUTest.F90, line 361
+20210305 104119.008 INFO             PET0  PASS  Container Get fieldList Test, ESMF_ContainerUTest.F90, line 369
+20210305 104119.008 INFO             PET0  PASS  Verify Container Get fieldListOut (associated) Test, ESMF_ContainerUTest.F90, line 375
+20210305 104119.008 INFO             PET0  PASS  Verify Container Get fieldListOut (size) Test, ESMF_ContainerUTest.F90, line 382
+20210305 104119.008 INFO             PET0  PASS  Verify Container Get fieldListOut (item) Test, ESMF_ContainerUTest.F90, line 398
+20210305 104119.008 INFO             PET0  PASS  Container Get fieldList w/ ESMF_ITEMORDER_ABC Test, ESMF_ContainerUTest.F90, line 408
+20210305 104119.008 INFO             PET0  PASS  Verify Container Get fieldListOut (associated) w/ ESMF_ITEMORDER_ABC Test, ESMF_ContainerUTest.F90, line 414
+20210305 104119.008 INFO             PET0  PASS  Verify Container Get fieldListOut (size) w/ ESMF_ITEMORDER_ABC Test, ESMF_ContainerUTest.F90, line 421
+20210305 104119.008 INFO             PET0  PASS  Verify Container Get fieldListOut (item) w/ ESMF_ITEMORDER_ABC Test, ESMF_ContainerUTest.F90, line 437
+20210305 104119.008 INFO             PET0  PASS  Container Get fieldList w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerUTest.F90, line 447
+20210305 104119.008 INFO             PET0  PASS  Verify Container Get fieldListOut (associated) w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerUTest.F90, line 453
+20210305 104119.008 INFO             PET0  PASS  Verify Container Get fieldListOut (size) w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerUTest.F90, line 460
+20210305 104119.008 INFO             PET0  PASS  Verify Container Get fieldListOut (item) w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerUTest.F90, line 485
+20210305 104119.008 INFO             PET0  PASS  Container Destroy Test, ESMF_ContainerUTest.F90, line 507
+20210305 104119.008 INFO             PET0  PASS  Container Create Test, ESMF_ContainerUTest.F90, line 518
+20210305 104119.008 INFO             PET0  PASS  Container Add Field Test, ESMF_ContainerUTest.F90, line 529
+20210305 104119.008 INFO             PET0  PASS  Container Get item Test, ESMF_ContainerUTest.F90, line 536
+20210305 104119.008 ERROR            PET0 ESMCI_Container_F.C:102 ESMCI::Container::add() Invalid argument  - key already exists
+20210305 104119.008 ERROR            PET0 ESMCI_Container_F.C:75 c_esmc_containeradd() Invalid argument  - Internal subroutine call returned Error
+20210305 104119.008 ERROR            PET0 ESMF_Container.F90:337 ESMF_ContainerAddFieldList() Invalid argument  - Internal subroutine call returned Error
+20210305 104119.008 INFO             PET0  PASS  Container Add same Field without multiflag Test, ESMF_ContainerUTest.F90, line 543
+20210305 104119.008 INFO             PET0  PASS  Container Add same Field with multiflag Test, ESMF_ContainerUTest.F90, line 550
+20210305 104119.008 ERROR            PET0 ESMCI_Container_F.C:174 ESMCI::Container::get() Invalid argument  - key is not unique
+20210305 104119.008 ERROR            PET0 ESMCI_Container_F.C:448 c_esmc_containergetfield() Invalid argument  - Internal subroutine call returned Error
+20210305 104119.008 ERROR            PET0 ESMF_Container.F90:636 ESMF_ContainerGetField() Invalid argument  - Internal subroutine call returned Error
+20210305 104119.008 INFO             PET0  PASS  Container Get item from multiple item container Test, ESMF_ContainerUTest.F90, line 557
+20210305 104119.008 INFO             PET0  PASS  Container Get isPresent from multiple item container Test, ESMF_ContainerUTest.F90, line 565
+20210305 104119.008 INFO             PET0  PASS  Container Remove item from multiple item container relaxed Test, ESMF_ContainerUTest.F90, line 573
+20210305 104119.008 ERROR            PET0 ESMCI_Container_F.C:321 ESMCI::Container::remove() Invalid argument  - key is not unique
+20210305 104119.008 ERROR            PET0 ESMCI_Container_F.C:807 c_esmc_containerremove() Invalid argument  - Internal subroutine call returned Error
+20210305 104119.008 ERROR            PET0 ESMF_Container.F90:985 ESMF_ContainerRemove() Invalid argument  - Internal subroutine call returned Error
+20210305 104119.008 INFO             PET0  PASS  Container Remove item from multiple item container Test, ESMF_ContainerUTest.F90, line 580
+20210305 104119.008 INFO             PET0  PASS  Container Remove item from multiple item container multi Test, ESMF_ContainerUTest.F90, line 588
+20210305 104119.008 INFO             PET0  PASS  Container Add Field after multi Remove Test, ESMF_ContainerUTest.F90, line 595
+20210305 104119.008 INFO             PET0  PASS  Container Add same Field two more times with multiflag Test, ESMF_ContainerUTest.F90, line 603
+20210305 104119.008 INFO             PET0  PASS  Container Replace Field in multiple item container relaxed Test, ESMF_ContainerUTest.F90, line 611
+20210305 104119.008 ERROR            PET0 ESMCI_Container_F.C:370 ESMCI::Container::replace() Invalid argument  - key is not unique
+20210305 104119.008 ERROR            PET0 ESMCI_Container_F.C:855 c_esmc_containerreplace() Invalid argument  - Internal subroutine call returned Error
+20210305 104119.008 ERROR            PET0 ESMF_Container.F90:1088 ESMF_ContainerReplaceFieldList() Invalid argument  - Internal subroutine call returned Error
+20210305 104119.008 INFO             PET0  PASS  Container Replace Field in multiple item container strict Test, ESMF_ContainerUTest.F90, line 618
+20210305 104119.008 INFO             PET0  PASS  Verify Container itemCount Test, ESMF_ContainerUTest.F90, line 633
+20210305 104119.008 INFO             PET0  PASS  Verify Container itemCount with itemName Test, ESMF_ContainerUTest.F90, line 642
+20210305 104119.008 INFO             PET0  PASS  Container Get fieldList for itemName Test, ESMF_ContainerUTest.F90, line 651
+20210305 104119.008 INFO             PET0  PASS  Verify Container Get fieldListOut (associated) Test, ESMF_ContainerUTest.F90, line 657
+20210305 104119.009 INFO             PET0  PASS  Verify Container Get fieldListOut (size) Test, ESMF_ContainerUTest.F90, line 664
+20210305 104119.009 INFO             PET0  PASS  Verify Container Get fieldListOut (item) Test, ESMF_ContainerUTest.F90, line 680
+20210305 104119.009 INFO             PET0  PASS  Container Get fieldList for itemName w/ ESMF_ITEMORDER_ABC Test, ESMF_ContainerUTest.F90, line 690
+20210305 104119.009 INFO             PET0  PASS  Verify Container Get fieldListOut (associated) w/ ESMF_ITEMORDER_ABC Test, ESMF_ContainerUTest.F90, line 696
+20210305 104119.009 INFO             PET0  PASS  Verify Container Get fieldListOut (size) Test, ESMF_ContainerUTest.F90, line 703
+20210305 104119.009 INFO             PET0  PASS  Verify Container Get fieldListOut (item) w/ ESMF_ITEMORDER_ABC Test, ESMF_ContainerUTest.F90, line 719
+20210305 104119.009 INFO             PET0  PASS  Container Get fieldList for itemName w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerUTest.F90, line 729
+20210305 104119.009 INFO             PET0  PASS  Verify Container Get fieldListOut (associated) w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerUTest.F90, line 735
+20210305 104119.009 INFO             PET0  PASS  Verify Container Get fieldListOut (size) Test, ESMF_ContainerUTest.F90, line 742
+20210305 104119.009 INFO             PET0  PASS  Verify Container Get fieldListOut (item) w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerUTest.F90, line 758
+20210305 104119.009 INFO             PET0  PASS  Container Replace Field in multiple item container multi Test, ESMF_ContainerUTest.F90, line 766
+20210305 104119.009 INFO             PET0  PASS  Verify Container itemCount Test, ESMF_ContainerUTest.F90, line 774
+20210305 104119.009 INFO             PET0  PASS  Container Get fieldList Test, ESMF_ContainerUTest.F90, line 783
+20210305 104119.009 INFO             PET0  PASS  Verify Container Get fieldListOut (associated) Test, ESMF_ContainerUTest.F90, line 789
+20210305 104119.009 INFO             PET0  PASS  Verify Container Get fieldListOut (size) Test, ESMF_ContainerUTest.F90, line 796
+20210305 104119.009 INFO             PET0  PASS  Verify Container Get fieldListOut (item) Test, ESMF_ContainerUTest.F90, line 814
+20210305 104119.009 INFO             PET0  PASS  Container Get fieldList w/ ESMF_ITEMORDER_ABC Test, ESMF_ContainerUTest.F90, line 823
+20210305 104119.009 INFO             PET0  PASS  Verify Container Get fieldListOut (associated) w/ ESMF_ITEMORDER_ABC Test, ESMF_ContainerUTest.F90, line 829
+20210305 104119.009 INFO             PET0  PASS  Verify Container Get fieldListOut (size) w/ ESMF_ITEMORDER_ABC Test, ESMF_ContainerUTest.F90, line 836
+20210305 104119.009 INFO             PET0  PASS  Verify Container Get fieldListOut (item) w/ ESMF_ITEMORDER_ABC Test, ESMF_ContainerUTest.F90, line 854
+20210305 104119.009 INFO             PET0  PASS  Container Get fieldList w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerUTest.F90, line 864
+20210305 104119.009 INFO             PET0  PASS  Verify Container Get fieldListOut (associated) w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerUTest.F90, line 870
+20210305 104119.009 INFO             PET0  PASS  Verify Container Get fieldListOut (size) w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerUTest.F90, line 877
+20210305 104119.009 INFO             PET0  PASS  Verify Container Get fieldListOut (item) w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerUTest.F90, line 895
+20210305 104119.009 INFO             PET0  PASS  Container Destroy Test, ESMF_ContainerUTest.F90, line 904
+20210305 104119.009 INFO             PET0  PASS  Container Create UDT Test, ESMF_ContainerUTest.F90, line 926
+20210305 104119.009 INFO             PET0  PASS  Container turn garbage feature ON UDT Test, ESMF_ContainerUTest.F90, line 933
+20210305 104119.009 INFO             PET0  PASS  Container Add UDT (user derived type) Test, ESMF_ContainerUTest.F90, line 948
+20210305 104119.009 INFO             PET0  PASS  Container Add 2nd UDT Test, ESMF_ContainerUTest.F90, line 964
+20210305 104119.009 INFO             PET0  PASS  Container Remove item UDT Test, ESMF_ContainerUTest.F90, line 971
+20210305 104119.009 INFO             PET0  PASS  Container Get item UDT Test, ESMF_ContainerUTest.F90, line 979
+20210305 104119.009 INFO             PET0  PASS  Verify Container Get item - string - UDT Test, ESMF_ContainerUTest.F90, line 985
+20210305 104119.009 INFO             PET0  PASS  Verify Container Get item - index - UDT Test, ESMF_ContainerUTest.F90, line 991
+20210305 104119.009 INFO             PET0  PASS  Verify Container Get item - field - UDT Test, ESMF_ContainerUTest.F90, line 997
+20210305 104119.009 INFO             PET0  PASS  Container Replace UDT Test, ESMF_ContainerUTest.F90, line 1013
+20210305 104119.009 INFO             PET0  PASS  Container Get item UDT 2nd Test, ESMF_ContainerUTest.F90, line 1021
+20210305 104119.009 INFO             PET0  PASS  Verify Container Get item - string - UDT 2nd Test, ESMF_ContainerUTest.F90, line 1027
+20210305 104119.009 INFO             PET0  PASS  Verify Container Get item - index - UDT 2nd Test, ESMF_ContainerUTest.F90, line 1033
+20210305 104119.009 INFO             PET0  PASS  Verify Container Get item - field - UDT 2nd Test, ESMF_ContainerUTest.F90, line 1039
+20210305 104119.009 INFO             PET0  PASS  Container Print UDT Test, ESMF_ContainerUTest.F90, line 1046
+20210305 104119.009 INFO             PET0  PASS  Container garbage Get UDT before Clear() Test, ESMF_ContainerUTest.F90, line 1053
+20210305 104119.009 INFO             PET0  PASS  Container Get UDT before Clear() Test, ESMF_ContainerUTest.F90, line 1062
+20210305 104119.009 INFO             PET0  PASS  Container Clear UDT Test, ESMF_ContainerUTest.F90, line 1071
+20210305 104119.009 INFO             PET0  PASS  Container garbage Get UDT after Clear() Test, ESMF_ContainerUTest.F90, line 1078
+20210305 104119.009 INFO             PET0  PASS  Container Get UDT after Clear() Test, ESMF_ContainerUTest.F90, line 1087
+20210305 104119.009 INFO             PET0  PASS  Container garbage collection UDT Test, ESMF_ContainerUTest.F90, line 1109
+20210305 104119.009 INFO             PET0  PASS  Container Destroy UDT Test, ESMF_ContainerUTest.F90, line 1116
+20210305 104119.009 INFO             PET0  Ending Test, file ESMF_ContainerUTest.F90, line 1119
+20210305 104119.009 INFO             PET0 Finalizing ESMF
+20210305 104118.932 INFO             PET1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 104118.932 INFO             PET1 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 104118.932 INFO             PET1 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 104118.932 INFO             PET1 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 104118.932 INFO             PET1 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 104118.932 INFO             PET1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 104118.932 INFO             PET1 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 104118.932 INFO             PET1 ESMF library build date/time: "Mar  5 2021" "09:44:18"
+20210305 104118.932 INFO             PET1 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g
+20210305 104118.932 INFO             PET1 ESMF_COMM                   : mpi
+20210305 104118.932 INFO             PET1 ESMF_MOAB                   : enabled
+20210305 104118.932 INFO             PET1 ESMF_LAPACK                 : enabled
+20210305 104118.932 INFO             PET1 ESMF_NETCDF                 : enabled
+20210305 104118.932 INFO             PET1 ESMF_PNETCDF                : disabled
+20210305 104118.932 INFO             PET1 ESMF_PIO                    : enabled
+20210305 104118.932 INFO             PET1 ESMF_YAMLCPP                : enabled
+20210305 104118.932 INFO             PET1  Beginning Test, file ESMF_ContainerUTest.F90, line 95
+20210305 104118.932 INFO             PET1  NUMBER_OF_PROCESSORS           4
+20210305 104118.932 INFO             PET1  PASS  Container Create Test, ESMF_ContainerUTest.F90, line 104
+20210305 104118.933 INFO             PET1  PASS  Container Add Field Test, ESMF_ContainerUTest.F90, line 121
+20210305 104118.933 ERROR            PET1 ESMCI_Container_F.C:102 ESMCI::Container::add() Invalid argument  - key already exists
+20210305 104119.007 ERROR            PET1 ESMCI_Container_F.C:75 c_esmc_containeradd() Invalid argument  - Internal subroutine call returned Error
+20210305 104119.007 ERROR            PET1 ESMF_Container.F90:337 ESMF_ContainerAddFieldList() Invalid argument  - Internal subroutine call returned Error
+20210305 104119.007 INFO             PET1  PASS  Container Add Field 2nd time strict Test, ESMF_ContainerUTest.F90, line 128
+20210305 104119.007 INFO             PET1  PASS  Container Add Field 2nd time relaxed Test, ESMF_ContainerUTest.F90, line 136
+20210305 104119.007 INFO             PET1  PASS  Container turn garbage feature ON Test, ESMF_ContainerUTest.F90, line 143
+20210305 104119.007 INFO             PET1  PASS  Container clear garbage Test, ESMF_ContainerUTest.F90, line 150
+20210305 104119.007 INFO             PET1  PASS  Container Add Field again relaxed - with garbage ON Test, ESMF_ContainerUTest.F90, line 158
+20210305 104119.007 INFO             PET1  PASS  Container garbage Get Test, ESMF_ContainerUTest.F90, line 166
+20210305 104119.007 INFO             PET1  PASS  Verify garbageList Test, ESMF_ContainerUTest.F90, line 172
+20210305 104119.007 INFO             PET1  PASS  Container turn garbage feature OFF Test, ESMF_ContainerUTest.F90, line 188
+20210305 104119.007 INFO             PET1  PASS  Container clear garbage Test, ESMF_ContainerUTest.F90, line 195
+20210305 104119.007 INFO             PET1  PASS  Container Print Test, ESMF_ContainerUTest.F90, line 202
+20210305 104119.007 INFO             PET1  PASS  Container Get item Test, ESMF_ContainerUTest.F90, line 209
+20210305 104119.007 INFO             PET1  PASS  Verify Container Get item Test, ESMF_ContainerUTest.F90, line 220
+20210305 104119.007 INFO             PET1  PASS  Container Get isPresent Test, ESMF_ContainerUTest.F90, line 228
+20210305 104119.007 INFO             PET1  PASS  Verify Container Get isPresent Test, ESMF_ContainerUTest.F90, line 234
+20210305 104119.007 INFO             PET1  PASS  Container Remove item Test, ESMF_ContainerUTest.F90, line 247
+20210305 104119.007 INFO             PET1  PASS  Container garbage Get Test, ESMF_ContainerUTest.F90, line 255
+20210305 104119.007 INFO             PET1  PASS  Verify garbageList Test, ESMF_ContainerUTest.F90, line 261
+20210305 104119.008 ERROR            PET1 ESMCI_Container_F.C:311 ESMCI::Container::remove() Invalid argument  - key does not exist
+20210305 104119.008 ERROR            PET1 ESMCI_Container_F.C:807 c_esmc_containerremove() Invalid argument  - Internal subroutine call returned Error
+20210305 104119.008 ERROR            PET1 ESMF_Container.F90:985 ESMF_ContainerRemove() Invalid argument  - Internal subroutine call returned Error
+20210305 104119.008 INFO             PET1  PASS  Container Remove item 2nd time strict Test, ESMF_ContainerUTest.F90, line 283
+20210305 104119.008 INFO             PET1  PASS  Container Remove item 2nd time relaxed Test, ESMF_ContainerUTest.F90, line 291
+20210305 104119.008 INFO             PET1  PASS  Container Print Test, ESMF_ContainerUTest.F90, line 298
+20210305 104119.008 INFO             PET1  PASS  Container Get isPresent Test, ESMF_ContainerUTest.F90, line 306
+20210305 104119.008 INFO             PET1  PASS  Verify Container Get isPresent Test, ESMF_ContainerUTest.F90, line 312
+20210305 104119.008 INFO             PET1  PASS  Container Get count Test, ESMF_ContainerUTest.F90, line 319
+20210305 104119.008 INFO             PET1  PASS  Verify Container Get fieldCountOut Test, ESMF_ContainerUTest.F90, line 325
+20210305 104119.008 ERROR            PET1 ESMCI_Container_F.C:358 ESMCI::Container::replace() Invalid argument  - key does not exist
+20210305 104119.008 ERROR            PET1 ESMCI_Container_F.C:855 c_esmc_containerreplace() Invalid argument  - Internal subroutine call returned Error
+20210305 104119.008 ERROR            PET1 ESMF_Container.F90:1088 ESMF_ContainerReplaceFieldList() Invalid argument  - Internal subroutine call returned Error
+20210305 104119.008 INFO             PET1  PASS  Container Replace Field with one not present strict Test, ESMF_ContainerUTest.F90, line 332
+20210305 104119.008 INFO             PET1  PASS  Container Replace Field with one not present relaxed Test, ESMF_ContainerUTest.F90, line 340
+20210305 104119.008 INFO             PET1  PASS  Container AddReplace Field Test, ESMF_ContainerUTest.F90, line 347
+20210305 104119.008 INFO             PET1  PASS  Container Replace Field with all present strict Test, ESMF_ContainerUTest.F90, line 354
+20210305 104119.008 INFO             PET1  PASS  Container Print Test, ESMF_ContainerUTest.F90, line 361
+20210305 104119.008 INFO             PET1  PASS  Container Get fieldList Test, ESMF_ContainerUTest.F90, line 369
+20210305 104119.008 INFO             PET1  PASS  Verify Container Get fieldListOut (associated) Test, ESMF_ContainerUTest.F90, line 375
+20210305 104119.008 INFO             PET1  PASS  Verify Container Get fieldListOut (size) Test, ESMF_ContainerUTest.F90, line 382
+20210305 104119.008 INFO             PET1  PASS  Verify Container Get fieldListOut (item) Test, ESMF_ContainerUTest.F90, line 398
+20210305 104119.008 INFO             PET1  PASS  Container Get fieldList w/ ESMF_ITEMORDER_ABC Test, ESMF_ContainerUTest.F90, line 408
+20210305 104119.008 INFO             PET1  PASS  Verify Container Get fieldListOut (associated) w/ ESMF_ITEMORDER_ABC Test, ESMF_ContainerUTest.F90, line 414
+20210305 104119.008 INFO             PET1  PASS  Verify Container Get fieldListOut (size) w/ ESMF_ITEMORDER_ABC Test, ESMF_ContainerUTest.F90, line 421
+20210305 104119.008 INFO             PET1  PASS  Verify Container Get fieldListOut (item) w/ ESMF_ITEMORDER_ABC Test, ESMF_ContainerUTest.F90, line 437
+20210305 104119.008 INFO             PET1  PASS  Container Get fieldList w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerUTest.F90, line 447
+20210305 104119.008 INFO             PET1  PASS  Verify Container Get fieldListOut (associated) w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerUTest.F90, line 453
+20210305 104119.008 INFO             PET1  PASS  Verify Container Get fieldListOut (size) w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerUTest.F90, line 460
+20210305 104119.008 INFO             PET1  PASS  Verify Container Get fieldListOut (item) w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerUTest.F90, line 485
+20210305 104119.008 INFO             PET1  PASS  Container Destroy Test, ESMF_ContainerUTest.F90, line 507
+20210305 104119.008 INFO             PET1  PASS  Container Create Test, ESMF_ContainerUTest.F90, line 518
+20210305 104119.008 INFO             PET1  PASS  Container Add Field Test, ESMF_ContainerUTest.F90, line 529
+20210305 104119.008 INFO             PET1  PASS  Container Get item Test, ESMF_ContainerUTest.F90, line 536
+20210305 104119.008 ERROR            PET1 ESMCI_Container_F.C:102 ESMCI::Container::add() Invalid argument  - key already exists
+20210305 104119.008 ERROR            PET1 ESMCI_Container_F.C:75 c_esmc_containeradd() Invalid argument  - Internal subroutine call returned Error
+20210305 104119.008 ERROR            PET1 ESMF_Container.F90:337 ESMF_ContainerAddFieldList() Invalid argument  - Internal subroutine call returned Error
+20210305 104119.008 INFO             PET1  PASS  Container Add same Field without multiflag Test, ESMF_ContainerUTest.F90, line 543
+20210305 104119.008 INFO             PET1  PASS  Container Add same Field with multiflag Test, ESMF_ContainerUTest.F90, line 550
+20210305 104119.008 ERROR            PET1 ESMCI_Container_F.C:174 ESMCI::Container::get() Invalid argument  - key is not unique
+20210305 104119.008 ERROR            PET1 ESMCI_Container_F.C:448 c_esmc_containergetfield() Invalid argument  - Internal subroutine call returned Error
+20210305 104119.008 ERROR            PET1 ESMF_Container.F90:636 ESMF_ContainerGetField() Invalid argument  - Internal subroutine call returned Error
+20210305 104119.008 INFO             PET1  PASS  Container Get item from multiple item container Test, ESMF_ContainerUTest.F90, line 557
+20210305 104119.008 INFO             PET1  PASS  Container Get isPresent from multiple item container Test, ESMF_ContainerUTest.F90, line 565
+20210305 104119.008 INFO             PET1  PASS  Container Remove item from multiple item container relaxed Test, ESMF_ContainerUTest.F90, line 573
+20210305 104119.008 ERROR            PET1 ESMCI_Container_F.C:321 ESMCI::Container::remove() Invalid argument  - key is not unique
+20210305 104119.008 ERROR            PET1 ESMCI_Container_F.C:807 c_esmc_containerremove() Invalid argument  - Internal subroutine call returned Error
+20210305 104119.008 ERROR            PET1 ESMF_Container.F90:985 ESMF_ContainerRemove() Invalid argument  - Internal subroutine call returned Error
+20210305 104119.008 INFO             PET1  PASS  Container Remove item from multiple item container Test, ESMF_ContainerUTest.F90, line 580
+20210305 104119.009 INFO             PET1  PASS  Container Remove item from multiple item container multi Test, ESMF_ContainerUTest.F90, line 588
+20210305 104119.009 INFO             PET1  PASS  Container Add Field after multi Remove Test, ESMF_ContainerUTest.F90, line 595
+20210305 104119.009 INFO             PET1  PASS  Container Add same Field two more times with multiflag Test, ESMF_ContainerUTest.F90, line 603
+20210305 104119.009 INFO             PET1  PASS  Container Replace Field in multiple item container relaxed Test, ESMF_ContainerUTest.F90, line 611
+20210305 104119.009 ERROR            PET1 ESMCI_Container_F.C:370 ESMCI::Container::replace() Invalid argument  - key is not unique
+20210305 104119.009 ERROR            PET1 ESMCI_Container_F.C:855 c_esmc_containerreplace() Invalid argument  - Internal subroutine call returned Error
+20210305 104119.009 ERROR            PET1 ESMF_Container.F90:1088 ESMF_ContainerReplaceFieldList() Invalid argument  - Internal subroutine call returned Error
+20210305 104119.009 INFO             PET1  PASS  Container Replace Field in multiple item container strict Test, ESMF_ContainerUTest.F90, line 618
+20210305 104119.009 INFO             PET1  PASS  Verify Container itemCount Test, ESMF_ContainerUTest.F90, line 633
+20210305 104119.009 INFO             PET1  PASS  Verify Container itemCount with itemName Test, ESMF_ContainerUTest.F90, line 642
+20210305 104119.009 INFO             PET1  PASS  Container Get fieldList for itemName Test, ESMF_ContainerUTest.F90, line 651
+20210305 104119.009 INFO             PET1  PASS  Verify Container Get fieldListOut (associated) Test, ESMF_ContainerUTest.F90, line 657
+20210305 104119.009 INFO             PET1  PASS  Verify Container Get fieldListOut (size) Test, ESMF_ContainerUTest.F90, line 664
+20210305 104119.009 INFO             PET1  PASS  Verify Container Get fieldListOut (item) Test, ESMF_ContainerUTest.F90, line 680
+20210305 104119.009 INFO             PET1  PASS  Container Get fieldList for itemName w/ ESMF_ITEMORDER_ABC Test, ESMF_ContainerUTest.F90, line 690
+20210305 104119.009 INFO             PET1  PASS  Verify Container Get fieldListOut (associated) w/ ESMF_ITEMORDER_ABC Test, ESMF_ContainerUTest.F90, line 696
+20210305 104119.009 INFO             PET1  PASS  Verify Container Get fieldListOut (size) Test, ESMF_ContainerUTest.F90, line 703
+20210305 104119.009 INFO             PET1  PASS  Verify Container Get fieldListOut (item) w/ ESMF_ITEMORDER_ABC Test, ESMF_ContainerUTest.F90, line 719
+20210305 104119.009 INFO             PET1  PASS  Container Get fieldList for itemName w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerUTest.F90, line 729
+20210305 104119.009 INFO             PET1  PASS  Verify Container Get fieldListOut (associated) w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerUTest.F90, line 735
+20210305 104119.009 INFO             PET1  PASS  Verify Container Get fieldListOut (size) Test, ESMF_ContainerUTest.F90, line 742
+20210305 104119.009 INFO             PET1  PASS  Verify Container Get fieldListOut (item) w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerUTest.F90, line 758
+20210305 104119.009 INFO             PET1  PASS  Container Replace Field in multiple item container multi Test, ESMF_ContainerUTest.F90, line 766
+20210305 104119.009 INFO             PET1  PASS  Verify Container itemCount Test, ESMF_ContainerUTest.F90, line 774
+20210305 104119.009 INFO             PET1  PASS  Container Get fieldList Test, ESMF_ContainerUTest.F90, line 783
+20210305 104119.009 INFO             PET1  PASS  Verify Container Get fieldListOut (associated) Test, ESMF_ContainerUTest.F90, line 789
+20210305 104119.009 INFO             PET1  PASS  Verify Container Get fieldListOut (size) Test, ESMF_ContainerUTest.F90, line 796
+20210305 104119.009 INFO             PET1  PASS  Verify Container Get fieldListOut (item) Test, ESMF_ContainerUTest.F90, line 814
+20210305 104119.009 INFO             PET1  PASS  Container Get fieldList w/ ESMF_ITEMORDER_ABC Test, ESMF_ContainerUTest.F90, line 823
+20210305 104119.009 INFO             PET1  PASS  Verify Container Get fieldListOut (associated) w/ ESMF_ITEMORDER_ABC Test, ESMF_ContainerUTest.F90, line 829
+20210305 104119.009 INFO             PET1  PASS  Verify Container Get fieldListOut (size) w/ ESMF_ITEMORDER_ABC Test, ESMF_ContainerUTest.F90, line 836
+20210305 104119.009 INFO             PET1  PASS  Verify Container Get fieldListOut (item) w/ ESMF_ITEMORDER_ABC Test, ESMF_ContainerUTest.F90, line 854
+20210305 104119.009 INFO             PET1  PASS  Container Get fieldList w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerUTest.F90, line 864
+20210305 104119.009 INFO             PET1  PASS  Verify Container Get fieldListOut (associated) w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerUTest.F90, line 870
+20210305 104119.009 INFO             PET1  PASS  Verify Container Get fieldListOut (size) w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerUTest.F90, line 877
+20210305 104119.009 INFO             PET1  PASS  Verify Container Get fieldListOut (item) w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerUTest.F90, line 895
+20210305 104119.009 INFO             PET1  PASS  Container Destroy Test, ESMF_ContainerUTest.F90, line 904
+20210305 104119.009 INFO             PET1  PASS  Container Create UDT Test, ESMF_ContainerUTest.F90, line 926
+20210305 104119.009 INFO             PET1  PASS  Container turn garbage feature ON UDT Test, ESMF_ContainerUTest.F90, line 933
+20210305 104119.009 INFO             PET1  PASS  Container Add UDT (user derived type) Test, ESMF_ContainerUTest.F90, line 948
+20210305 104119.009 INFO             PET1  PASS  Container Add 2nd UDT Test, ESMF_ContainerUTest.F90, line 964
+20210305 104119.009 INFO             PET1  PASS  Container Remove item UDT Test, ESMF_ContainerUTest.F90, line 971
+20210305 104119.009 INFO             PET1  PASS  Container Get item UDT Test, ESMF_ContainerUTest.F90, line 979
+20210305 104119.009 INFO             PET1  PASS  Verify Container Get item - string - UDT Test, ESMF_ContainerUTest.F90, line 985
+20210305 104119.009 INFO             PET1  PASS  Verify Container Get item - index - UDT Test, ESMF_ContainerUTest.F90, line 991
+20210305 104119.009 INFO             PET1  PASS  Verify Container Get item - field - UDT Test, ESMF_ContainerUTest.F90, line 997
+20210305 104119.009 INFO             PET1  PASS  Container Replace UDT Test, ESMF_ContainerUTest.F90, line 1013
+20210305 104119.009 INFO             PET1  PASS  Container Get item UDT 2nd Test, ESMF_ContainerUTest.F90, line 1021
+20210305 104119.009 INFO             PET1  PASS  Verify Container Get item - string - UDT 2nd Test, ESMF_ContainerUTest.F90, line 1027
+20210305 104119.009 INFO             PET1  PASS  Verify Container Get item - index - UDT 2nd Test, ESMF_ContainerUTest.F90, line 1033
+20210305 104119.009 INFO             PET1  PASS  Verify Container Get item - field - UDT 2nd Test, ESMF_ContainerUTest.F90, line 1039
+20210305 104119.009 INFO             PET1  PASS  Container Print UDT Test, ESMF_ContainerUTest.F90, line 1046
+20210305 104119.009 INFO             PET1  PASS  Container garbage Get UDT before Clear() Test, ESMF_ContainerUTest.F90, line 1053
+20210305 104119.009 INFO             PET1  PASS  Container Get UDT before Clear() Test, ESMF_ContainerUTest.F90, line 1062
+20210305 104119.009 INFO             PET1  PASS  Container Clear UDT Test, ESMF_ContainerUTest.F90, line 1071
+20210305 104119.009 INFO             PET1  PASS  Container garbage Get UDT after Clear() Test, ESMF_ContainerUTest.F90, line 1078
+20210305 104119.009 INFO             PET1  PASS  Container Get UDT after Clear() Test, ESMF_ContainerUTest.F90, line 1087
+20210305 104119.009 INFO             PET1  PASS  Container garbage collection UDT Test, ESMF_ContainerUTest.F90, line 1109
+20210305 104119.009 INFO             PET1  PASS  Container Destroy UDT Test, ESMF_ContainerUTest.F90, line 1116
+20210305 104119.009 INFO             PET1  Ending Test, file ESMF_ContainerUTest.F90, line 1119
+20210305 104119.010 INFO             PET1 Finalizing ESMF
+20210305 104118.920 INFO             PET2 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 104118.920 INFO             PET2 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 104118.920 INFO             PET2 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 104118.920 INFO             PET2 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 104118.920 INFO             PET2 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 104118.920 INFO             PET2 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 104118.920 INFO             PET2 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 104118.920 INFO             PET2 ESMF library build date/time: "Mar  5 2021" "09:44:18"
+20210305 104118.920 INFO             PET2 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g
+20210305 104118.920 INFO             PET2 ESMF_COMM                   : mpi
+20210305 104118.920 INFO             PET2 ESMF_MOAB                   : enabled
+20210305 104118.920 INFO             PET2 ESMF_LAPACK                 : enabled
+20210305 104118.920 INFO             PET2 ESMF_NETCDF                 : enabled
+20210305 104118.920 INFO             PET2 ESMF_PNETCDF                : disabled
+20210305 104118.920 INFO             PET2 ESMF_PIO                    : enabled
+20210305 104118.920 INFO             PET2 ESMF_YAMLCPP                : enabled
+20210305 104118.932 INFO             PET2  Beginning Test, file ESMF_ContainerUTest.F90, line 95
+20210305 104118.932 INFO             PET2  NUMBER_OF_PROCESSORS           4
+20210305 104118.932 INFO             PET2  PASS  Container Create Test, ESMF_ContainerUTest.F90, line 104
+20210305 104118.933 INFO             PET2  PASS  Container Add Field Test, ESMF_ContainerUTest.F90, line 121
+20210305 104118.933 ERROR            PET2 ESMCI_Container_F.C:102 ESMCI::Container::add() Invalid argument  - key already exists
+20210305 104119.007 ERROR            PET2 ESMCI_Container_F.C:75 c_esmc_containeradd() Invalid argument  - Internal subroutine call returned Error
+20210305 104119.007 ERROR            PET2 ESMF_Container.F90:337 ESMF_ContainerAddFieldList() Invalid argument  - Internal subroutine call returned Error
+20210305 104119.007 INFO             PET2  PASS  Container Add Field 2nd time strict Test, ESMF_ContainerUTest.F90, line 128
+20210305 104119.007 INFO             PET2  PASS  Container Add Field 2nd time relaxed Test, ESMF_ContainerUTest.F90, line 136
+20210305 104119.007 INFO             PET2  PASS  Container turn garbage feature ON Test, ESMF_ContainerUTest.F90, line 143
+20210305 104119.007 INFO             PET2  PASS  Container clear garbage Test, ESMF_ContainerUTest.F90, line 150
+20210305 104119.007 INFO             PET2  PASS  Container Add Field again relaxed - with garbage ON Test, ESMF_ContainerUTest.F90, line 158
+20210305 104119.007 INFO             PET2  PASS  Container garbage Get Test, ESMF_ContainerUTest.F90, line 166
+20210305 104119.007 INFO             PET2  PASS  Verify garbageList Test, ESMF_ContainerUTest.F90, line 172
+20210305 104119.007 INFO             PET2  PASS  Container turn garbage feature OFF Test, ESMF_ContainerUTest.F90, line 188
+20210305 104119.007 INFO             PET2  PASS  Container clear garbage Test, ESMF_ContainerUTest.F90, line 195
+20210305 104119.007 INFO             PET2  PASS  Container Print Test, ESMF_ContainerUTest.F90, line 202
+20210305 104119.007 INFO             PET2  PASS  Container Get item Test, ESMF_ContainerUTest.F90, line 209
+20210305 104119.007 INFO             PET2  PASS  Verify Container Get item Test, ESMF_ContainerUTest.F90, line 220
+20210305 104119.007 INFO             PET2  PASS  Container Get isPresent Test, ESMF_ContainerUTest.F90, line 228
+20210305 104119.007 INFO             PET2  PASS  Verify Container Get isPresent Test, ESMF_ContainerUTest.F90, line 234
+20210305 104119.007 INFO             PET2  PASS  Container Remove item Test, ESMF_ContainerUTest.F90, line 247
+20210305 104119.007 INFO             PET2  PASS  Container garbage Get Test, ESMF_ContainerUTest.F90, line 255
+20210305 104119.007 INFO             PET2  PASS  Verify garbageList Test, ESMF_ContainerUTest.F90, line 261
+20210305 104119.007 ERROR            PET2 ESMCI_Container_F.C:311 ESMCI::Container::remove() Invalid argument  - key does not exist
+20210305 104119.007 ERROR            PET2 ESMCI_Container_F.C:807 c_esmc_containerremove() Invalid argument  - Internal subroutine call returned Error
+20210305 104119.007 ERROR            PET2 ESMF_Container.F90:985 ESMF_ContainerRemove() Invalid argument  - Internal subroutine call returned Error
+20210305 104119.007 INFO             PET2  PASS  Container Remove item 2nd time strict Test, ESMF_ContainerUTest.F90, line 283
+20210305 104119.007 INFO             PET2  PASS  Container Remove item 2nd time relaxed Test, ESMF_ContainerUTest.F90, line 291
+20210305 104119.007 INFO             PET2  PASS  Container Print Test, ESMF_ContainerUTest.F90, line 298
+20210305 104119.007 INFO             PET2  PASS  Container Get isPresent Test, ESMF_ContainerUTest.F90, line 306
+20210305 104119.007 INFO             PET2  PASS  Verify Container Get isPresent Test, ESMF_ContainerUTest.F90, line 312
+20210305 104119.007 INFO             PET2  PASS  Container Get count Test, ESMF_ContainerUTest.F90, line 319
+20210305 104119.007 INFO             PET2  PASS  Verify Container Get fieldCountOut Test, ESMF_ContainerUTest.F90, line 325
+20210305 104119.007 ERROR            PET2 ESMCI_Container_F.C:358 ESMCI::Container::replace() Invalid argument  - key does not exist
+20210305 104119.007 ERROR            PET2 ESMCI_Container_F.C:855 c_esmc_containerreplace() Invalid argument  - Internal subroutine call returned Error
+20210305 104119.007 ERROR            PET2 ESMF_Container.F90:1088 ESMF_ContainerReplaceFieldList() Invalid argument  - Internal subroutine call returned Error
+20210305 104119.007 INFO             PET2  PASS  Container Replace Field with one not present strict Test, ESMF_ContainerUTest.F90, line 332
+20210305 104119.007 INFO             PET2  PASS  Container Replace Field with one not present relaxed Test, ESMF_ContainerUTest.F90, line 340
+20210305 104119.007 INFO             PET2  PASS  Container AddReplace Field Test, ESMF_ContainerUTest.F90, line 347
+20210305 104119.008 INFO             PET2  PASS  Container Replace Field with all present strict Test, ESMF_ContainerUTest.F90, line 354
+20210305 104119.008 INFO             PET2  PASS  Container Print Test, ESMF_ContainerUTest.F90, line 361
+20210305 104119.008 INFO             PET2  PASS  Container Get fieldList Test, ESMF_ContainerUTest.F90, line 369
+20210305 104119.008 INFO             PET2  PASS  Verify Container Get fieldListOut (associated) Test, ESMF_ContainerUTest.F90, line 375
+20210305 104119.008 INFO             PET2  PASS  Verify Container Get fieldListOut (size) Test, ESMF_ContainerUTest.F90, line 382
+20210305 104119.008 INFO             PET2  PASS  Verify Container Get fieldListOut (item) Test, ESMF_ContainerUTest.F90, line 398
+20210305 104119.008 INFO             PET2  PASS  Container Get fieldList w/ ESMF_ITEMORDER_ABC Test, ESMF_ContainerUTest.F90, line 408
+20210305 104119.008 INFO             PET2  PASS  Verify Container Get fieldListOut (associated) w/ ESMF_ITEMORDER_ABC Test, ESMF_ContainerUTest.F90, line 414
+20210305 104119.008 INFO             PET2  PASS  Verify Container Get fieldListOut (size) w/ ESMF_ITEMORDER_ABC Test, ESMF_ContainerUTest.F90, line 421
+20210305 104119.008 INFO             PET2  PASS  Verify Container Get fieldListOut (item) w/ ESMF_ITEMORDER_ABC Test, ESMF_ContainerUTest.F90, line 437
+20210305 104119.008 INFO             PET2  PASS  Container Get fieldList w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerUTest.F90, line 447
+20210305 104119.008 INFO             PET2  PASS  Verify Container Get fieldListOut (associated) w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerUTest.F90, line 453
+20210305 104119.008 INFO             PET2  PASS  Verify Container Get fieldListOut (size) w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerUTest.F90, line 460
+20210305 104119.008 INFO             PET2  PASS  Verify Container Get fieldListOut (item) w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerUTest.F90, line 485
+20210305 104119.008 INFO             PET2  PASS  Container Destroy Test, ESMF_ContainerUTest.F90, line 507
+20210305 104119.008 INFO             PET2  PASS  Container Create Test, ESMF_ContainerUTest.F90, line 518
+20210305 104119.008 INFO             PET2  PASS  Container Add Field Test, ESMF_ContainerUTest.F90, line 529
+20210305 104119.008 INFO             PET2  PASS  Container Get item Test, ESMF_ContainerUTest.F90, line 536
+20210305 104119.008 ERROR            PET2 ESMCI_Container_F.C:102 ESMCI::Container::add() Invalid argument  - key already exists
+20210305 104119.008 ERROR            PET2 ESMCI_Container_F.C:75 c_esmc_containeradd() Invalid argument  - Internal subroutine call returned Error
+20210305 104119.008 ERROR            PET2 ESMF_Container.F90:337 ESMF_ContainerAddFieldList() Invalid argument  - Internal subroutine call returned Error
+20210305 104119.008 INFO             PET2  PASS  Container Add same Field without multiflag Test, ESMF_ContainerUTest.F90, line 543
+20210305 104119.008 INFO             PET2  PASS  Container Add same Field with multiflag Test, ESMF_ContainerUTest.F90, line 550
+20210305 104119.008 ERROR            PET2 ESMCI_Container_F.C:174 ESMCI::Container::get() Invalid argument  - key is not unique
+20210305 104119.008 ERROR            PET2 ESMCI_Container_F.C:448 c_esmc_containergetfield() Invalid argument  - Internal subroutine call returned Error
+20210305 104119.008 ERROR            PET2 ESMF_Container.F90:636 ESMF_ContainerGetField() Invalid argument  - Internal subroutine call returned Error
+20210305 104119.008 INFO             PET2  PASS  Container Get item from multiple item container Test, ESMF_ContainerUTest.F90, line 557
+20210305 104119.008 INFO             PET2  PASS  Container Get isPresent from multiple item container Test, ESMF_ContainerUTest.F90, line 565
+20210305 104119.008 INFO             PET2  PASS  Container Remove item from multiple item container relaxed Test, ESMF_ContainerUTest.F90, line 573
+20210305 104119.008 ERROR            PET2 ESMCI_Container_F.C:321 ESMCI::Container::remove() Invalid argument  - key is not unique
+20210305 104119.008 ERROR            PET2 ESMCI_Container_F.C:807 c_esmc_containerremove() Invalid argument  - Internal subroutine call returned Error
+20210305 104119.008 ERROR            PET2 ESMF_Container.F90:985 ESMF_ContainerRemove() Invalid argument  - Internal subroutine call returned Error
+20210305 104119.008 INFO             PET2  PASS  Container Remove item from multiple item container Test, ESMF_ContainerUTest.F90, line 580
+20210305 104119.008 INFO             PET2  PASS  Container Remove item from multiple item container multi Test, ESMF_ContainerUTest.F90, line 588
+20210305 104119.008 INFO             PET2  PASS  Container Add Field after multi Remove Test, ESMF_ContainerUTest.F90, line 595
+20210305 104119.008 INFO             PET2  PASS  Container Add same Field two more times with multiflag Test, ESMF_ContainerUTest.F90, line 603
+20210305 104119.008 INFO             PET2  PASS  Container Replace Field in multiple item container relaxed Test, ESMF_ContainerUTest.F90, line 611
+20210305 104119.008 ERROR            PET2 ESMCI_Container_F.C:370 ESMCI::Container::replace() Invalid argument  - key is not unique
+20210305 104119.008 ERROR            PET2 ESMCI_Container_F.C:855 c_esmc_containerreplace() Invalid argument  - Internal subroutine call returned Error
+20210305 104119.008 ERROR            PET2 ESMF_Container.F90:1088 ESMF_ContainerReplaceFieldList() Invalid argument  - Internal subroutine call returned Error
+20210305 104119.008 INFO             PET2  PASS  Container Replace Field in multiple item container strict Test, ESMF_ContainerUTest.F90, line 618
+20210305 104119.008 INFO             PET2  PASS  Verify Container itemCount Test, ESMF_ContainerUTest.F90, line 633
+20210305 104119.008 INFO             PET2  PASS  Verify Container itemCount with itemName Test, ESMF_ContainerUTest.F90, line 642
+20210305 104119.008 INFO             PET2  PASS  Container Get fieldList for itemName Test, ESMF_ContainerUTest.F90, line 651
+20210305 104119.008 INFO             PET2  PASS  Verify Container Get fieldListOut (associated) Test, ESMF_ContainerUTest.F90, line 657
+20210305 104119.008 INFO             PET2  PASS  Verify Container Get fieldListOut (size) Test, ESMF_ContainerUTest.F90, line 664
+20210305 104119.008 INFO             PET2  PASS  Verify Container Get fieldListOut (item) Test, ESMF_ContainerUTest.F90, line 680
+20210305 104119.008 INFO             PET2  PASS  Container Get fieldList for itemName w/ ESMF_ITEMORDER_ABC Test, ESMF_ContainerUTest.F90, line 690
+20210305 104119.008 INFO             PET2  PASS  Verify Container Get fieldListOut (associated) w/ ESMF_ITEMORDER_ABC Test, ESMF_ContainerUTest.F90, line 696
+20210305 104119.008 INFO             PET2  PASS  Verify Container Get fieldListOut (size) Test, ESMF_ContainerUTest.F90, line 703
+20210305 104119.008 INFO             PET2  PASS  Verify Container Get fieldListOut (item) w/ ESMF_ITEMORDER_ABC Test, ESMF_ContainerUTest.F90, line 719
+20210305 104119.008 INFO             PET2  PASS  Container Get fieldList for itemName w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerUTest.F90, line 729
+20210305 104119.008 INFO             PET2  PASS  Verify Container Get fieldListOut (associated) w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerUTest.F90, line 735
+20210305 104119.008 INFO             PET2  PASS  Verify Container Get fieldListOut (size) Test, ESMF_ContainerUTest.F90, line 742
+20210305 104119.008 INFO             PET2  PASS  Verify Container Get fieldListOut (item) w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerUTest.F90, line 758
+20210305 104119.009 INFO             PET2  PASS  Container Replace Field in multiple item container multi Test, ESMF_ContainerUTest.F90, line 766
+20210305 104119.009 INFO             PET2  PASS  Verify Container itemCount Test, ESMF_ContainerUTest.F90, line 774
+20210305 104119.009 INFO             PET2  PASS  Container Get fieldList Test, ESMF_ContainerUTest.F90, line 783
+20210305 104119.009 INFO             PET2  PASS  Verify Container Get fieldListOut (associated) Test, ESMF_ContainerUTest.F90, line 789
+20210305 104119.009 INFO             PET2  PASS  Verify Container Get fieldListOut (size) Test, ESMF_ContainerUTest.F90, line 796
+20210305 104119.009 INFO             PET2  PASS  Verify Container Get fieldListOut (item) Test, ESMF_ContainerUTest.F90, line 814
+20210305 104119.009 INFO             PET2  PASS  Container Get fieldList w/ ESMF_ITEMORDER_ABC Test, ESMF_ContainerUTest.F90, line 823
+20210305 104119.009 INFO             PET2  PASS  Verify Container Get fieldListOut (associated) w/ ESMF_ITEMORDER_ABC Test, ESMF_ContainerUTest.F90, line 829
+20210305 104119.009 INFO             PET2  PASS  Verify Container Get fieldListOut (size) w/ ESMF_ITEMORDER_ABC Test, ESMF_ContainerUTest.F90, line 836
+20210305 104119.009 INFO             PET2  PASS  Verify Container Get fieldListOut (item) w/ ESMF_ITEMORDER_ABC Test, ESMF_ContainerUTest.F90, line 854
+20210305 104119.009 INFO             PET2  PASS  Container Get fieldList w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerUTest.F90, line 864
+20210305 104119.009 INFO             PET2  PASS  Verify Container Get fieldListOut (associated) w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerUTest.F90, line 870
+20210305 104119.009 INFO             PET2  PASS  Verify Container Get fieldListOut (size) w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerUTest.F90, line 877
+20210305 104119.009 INFO             PET2  PASS  Verify Container Get fieldListOut (item) w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerUTest.F90, line 895
+20210305 104119.009 INFO             PET2  PASS  Container Destroy Test, ESMF_ContainerUTest.F90, line 904
+20210305 104119.009 INFO             PET2  PASS  Container Create UDT Test, ESMF_ContainerUTest.F90, line 926
+20210305 104119.009 INFO             PET2  PASS  Container turn garbage feature ON UDT Test, ESMF_ContainerUTest.F90, line 933
+20210305 104119.009 INFO             PET2  PASS  Container Add UDT (user derived type) Test, ESMF_ContainerUTest.F90, line 948
+20210305 104119.009 INFO             PET2  PASS  Container Add 2nd UDT Test, ESMF_ContainerUTest.F90, line 964
+20210305 104119.009 INFO             PET2  PASS  Container Remove item UDT Test, ESMF_ContainerUTest.F90, line 971
+20210305 104119.009 INFO             PET2  PASS  Container Get item UDT Test, ESMF_ContainerUTest.F90, line 979
+20210305 104119.009 INFO             PET2  PASS  Verify Container Get item - string - UDT Test, ESMF_ContainerUTest.F90, line 985
+20210305 104119.009 INFO             PET2  PASS  Verify Container Get item - index - UDT Test, ESMF_ContainerUTest.F90, line 991
+20210305 104119.009 INFO             PET2  PASS  Verify Container Get item - field - UDT Test, ESMF_ContainerUTest.F90, line 997
+20210305 104119.009 INFO             PET2  PASS  Container Replace UDT Test, ESMF_ContainerUTest.F90, line 1013
+20210305 104119.009 INFO             PET2  PASS  Container Get item UDT 2nd Test, ESMF_ContainerUTest.F90, line 1021
+20210305 104119.009 INFO             PET2  PASS  Verify Container Get item - string - UDT 2nd Test, ESMF_ContainerUTest.F90, line 1027
+20210305 104119.009 INFO             PET2  PASS  Verify Container Get item - index - UDT 2nd Test, ESMF_ContainerUTest.F90, line 1033
+20210305 104119.009 INFO             PET2  PASS  Verify Container Get item - field - UDT 2nd Test, ESMF_ContainerUTest.F90, line 1039
+20210305 104119.009 INFO             PET2  PASS  Container Print UDT Test, ESMF_ContainerUTest.F90, line 1046
+20210305 104119.009 INFO             PET2  PASS  Container garbage Get UDT before Clear() Test, ESMF_ContainerUTest.F90, line 1053
+20210305 104119.009 INFO             PET2  PASS  Container Get UDT before Clear() Test, ESMF_ContainerUTest.F90, line 1062
+20210305 104119.009 INFO             PET2  PASS  Container Clear UDT Test, ESMF_ContainerUTest.F90, line 1071
+20210305 104119.009 INFO             PET2  PASS  Container garbage Get UDT after Clear() Test, ESMF_ContainerUTest.F90, line 1078
+20210305 104119.009 INFO             PET2  PASS  Container Get UDT after Clear() Test, ESMF_ContainerUTest.F90, line 1087
+20210305 104119.009 INFO             PET2  PASS  Container garbage collection UDT Test, ESMF_ContainerUTest.F90, line 1109
+20210305 104119.009 INFO             PET2  PASS  Container Destroy UDT Test, ESMF_ContainerUTest.F90, line 1116
+20210305 104119.009 INFO             PET2  Ending Test, file ESMF_ContainerUTest.F90, line 1119
+20210305 104119.009 INFO             PET2 Finalizing ESMF
+20210305 104118.925 INFO             PET3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 104118.925 INFO             PET3 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 104118.925 INFO             PET3 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 104118.925 INFO             PET3 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 104118.925 INFO             PET3 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 104118.925 INFO             PET3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 104118.925 INFO             PET3 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 104118.925 INFO             PET3 ESMF library build date/time: "Mar  5 2021" "09:44:18"
+20210305 104118.925 INFO             PET3 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g
+20210305 104118.925 INFO             PET3 ESMF_COMM                   : mpi
+20210305 104118.925 INFO             PET3 ESMF_MOAB                   : enabled
+20210305 104118.925 INFO             PET3 ESMF_LAPACK                 : enabled
+20210305 104118.925 INFO             PET3 ESMF_NETCDF                 : enabled
+20210305 104118.925 INFO             PET3 ESMF_PNETCDF                : disabled
+20210305 104118.925 INFO             PET3 ESMF_PIO                    : enabled
+20210305 104118.925 INFO             PET3 ESMF_YAMLCPP                : enabled
+20210305 104118.932 INFO             PET3  Beginning Test, file ESMF_ContainerUTest.F90, line 95
+20210305 104118.932 INFO             PET3  NUMBER_OF_PROCESSORS           4
+20210305 104118.932 INFO             PET3  PASS  Container Create Test, ESMF_ContainerUTest.F90, line 104
+20210305 104118.933 INFO             PET3  PASS  Container Add Field Test, ESMF_ContainerUTest.F90, line 121
+20210305 104118.933 ERROR            PET3 ESMCI_Container_F.C:102 ESMCI::Container::add() Invalid argument  - key already exists
+20210305 104119.007 ERROR            PET3 ESMCI_Container_F.C:75 c_esmc_containeradd() Invalid argument  - Internal subroutine call returned Error
+20210305 104119.007 ERROR            PET3 ESMF_Container.F90:337 ESMF_ContainerAddFieldList() Invalid argument  - Internal subroutine call returned Error
+20210305 104119.007 INFO             PET3  PASS  Container Add Field 2nd time strict Test, ESMF_ContainerUTest.F90, line 128
+20210305 104119.007 INFO             PET3  PASS  Container Add Field 2nd time relaxed Test, ESMF_ContainerUTest.F90, line 136
+20210305 104119.007 INFO             PET3  PASS  Container turn garbage feature ON Test, ESMF_ContainerUTest.F90, line 143
+20210305 104119.007 INFO             PET3  PASS  Container clear garbage Test, ESMF_ContainerUTest.F90, line 150
+20210305 104119.007 INFO             PET3  PASS  Container Add Field again relaxed - with garbage ON Test, ESMF_ContainerUTest.F90, line 158
+20210305 104119.007 INFO             PET3  PASS  Container garbage Get Test, ESMF_ContainerUTest.F90, line 166
+20210305 104119.007 INFO             PET3  PASS  Verify garbageList Test, ESMF_ContainerUTest.F90, line 172
+20210305 104119.007 INFO             PET3  PASS  Container turn garbage feature OFF Test, ESMF_ContainerUTest.F90, line 188
+20210305 104119.007 INFO             PET3  PASS  Container clear garbage Test, ESMF_ContainerUTest.F90, line 195
+20210305 104119.007 INFO             PET3  PASS  Container Print Test, ESMF_ContainerUTest.F90, line 202
+20210305 104119.007 INFO             PET3  PASS  Container Get item Test, ESMF_ContainerUTest.F90, line 209
+20210305 104119.007 INFO             PET3  PASS  Verify Container Get item Test, ESMF_ContainerUTest.F90, line 220
+20210305 104119.007 INFO             PET3  PASS  Container Get isPresent Test, ESMF_ContainerUTest.F90, line 228
+20210305 104119.007 INFO             PET3  PASS  Verify Container Get isPresent Test, ESMF_ContainerUTest.F90, line 234
+20210305 104119.007 INFO             PET3  PASS  Container Remove item Test, ESMF_ContainerUTest.F90, line 247
+20210305 104119.007 INFO             PET3  PASS  Container garbage Get Test, ESMF_ContainerUTest.F90, line 255
+20210305 104119.007 INFO             PET3  PASS  Verify garbageList Test, ESMF_ContainerUTest.F90, line 261
+20210305 104119.007 ERROR            PET3 ESMCI_Container_F.C:311 ESMCI::Container::remove() Invalid argument  - key does not exist
+20210305 104119.007 ERROR            PET3 ESMCI_Container_F.C:807 c_esmc_containerremove() Invalid argument  - Internal subroutine call returned Error
+20210305 104119.007 ERROR            PET3 ESMF_Container.F90:985 ESMF_ContainerRemove() Invalid argument  - Internal subroutine call returned Error
+20210305 104119.007 INFO             PET3  PASS  Container Remove item 2nd time strict Test, ESMF_ContainerUTest.F90, line 283
+20210305 104119.007 INFO             PET3  PASS  Container Remove item 2nd time relaxed Test, ESMF_ContainerUTest.F90, line 291
+20210305 104119.007 INFO             PET3  PASS  Container Print Test, ESMF_ContainerUTest.F90, line 298
+20210305 104119.007 INFO             PET3  PASS  Container Get isPresent Test, ESMF_ContainerUTest.F90, line 306
+20210305 104119.007 INFO             PET3  PASS  Verify Container Get isPresent Test, ESMF_ContainerUTest.F90, line 312
+20210305 104119.007 INFO             PET3  PASS  Container Get count Test, ESMF_ContainerUTest.F90, line 319
+20210305 104119.007 INFO             PET3  PASS  Verify Container Get fieldCountOut Test, ESMF_ContainerUTest.F90, line 325
+20210305 104119.007 ERROR            PET3 ESMCI_Container_F.C:358 ESMCI::Container::replace() Invalid argument  - key does not exist
+20210305 104119.007 ERROR            PET3 ESMCI_Container_F.C:855 c_esmc_containerreplace() Invalid argument  - Internal subroutine call returned Error
+20210305 104119.007 ERROR            PET3 ESMF_Container.F90:1088 ESMF_ContainerReplaceFieldList() Invalid argument  - Internal subroutine call returned Error
+20210305 104119.007 INFO             PET3  PASS  Container Replace Field with one not present strict Test, ESMF_ContainerUTest.F90, line 332
+20210305 104119.007 INFO             PET3  PASS  Container Replace Field with one not present relaxed Test, ESMF_ContainerUTest.F90, line 340
+20210305 104119.007 INFO             PET3  PASS  Container AddReplace Field Test, ESMF_ContainerUTest.F90, line 347
+20210305 104119.007 INFO             PET3  PASS  Container Replace Field with all present strict Test, ESMF_ContainerUTest.F90, line 354
+20210305 104119.008 INFO             PET3  PASS  Container Print Test, ESMF_ContainerUTest.F90, line 361
+20210305 104119.008 INFO             PET3  PASS  Container Get fieldList Test, ESMF_ContainerUTest.F90, line 369
+20210305 104119.008 INFO             PET3  PASS  Verify Container Get fieldListOut (associated) Test, ESMF_ContainerUTest.F90, line 375
+20210305 104119.008 INFO             PET3  PASS  Verify Container Get fieldListOut (size) Test, ESMF_ContainerUTest.F90, line 382
+20210305 104119.008 INFO             PET3  PASS  Verify Container Get fieldListOut (item) Test, ESMF_ContainerUTest.F90, line 398
+20210305 104119.008 INFO             PET3  PASS  Container Get fieldList w/ ESMF_ITEMORDER_ABC Test, ESMF_ContainerUTest.F90, line 408
+20210305 104119.008 INFO             PET3  PASS  Verify Container Get fieldListOut (associated) w/ ESMF_ITEMORDER_ABC Test, ESMF_ContainerUTest.F90, line 414
+20210305 104119.008 INFO             PET3  PASS  Verify Container Get fieldListOut (size) w/ ESMF_ITEMORDER_ABC Test, ESMF_ContainerUTest.F90, line 421
+20210305 104119.008 INFO             PET3  PASS  Verify Container Get fieldListOut (item) w/ ESMF_ITEMORDER_ABC Test, ESMF_ContainerUTest.F90, line 437
+20210305 104119.008 INFO             PET3  PASS  Container Get fieldList w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerUTest.F90, line 447
+20210305 104119.008 INFO             PET3  PASS  Verify Container Get fieldListOut (associated) w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerUTest.F90, line 453
+20210305 104119.008 INFO             PET3  PASS  Verify Container Get fieldListOut (size) w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerUTest.F90, line 460
+20210305 104119.008 INFO             PET3  PASS  Verify Container Get fieldListOut (item) w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerUTest.F90, line 485
+20210305 104119.008 INFO             PET3  PASS  Container Destroy Test, ESMF_ContainerUTest.F90, line 507
+20210305 104119.008 INFO             PET3  PASS  Container Create Test, ESMF_ContainerUTest.F90, line 518
+20210305 104119.008 INFO             PET3  PASS  Container Add Field Test, ESMF_ContainerUTest.F90, line 529
+20210305 104119.008 INFO             PET3  PASS  Container Get item Test, ESMF_ContainerUTest.F90, line 536
+20210305 104119.008 ERROR            PET3 ESMCI_Container_F.C:102 ESMCI::Container::add() Invalid argument  - key already exists
+20210305 104119.008 ERROR            PET3 ESMCI_Container_F.C:75 c_esmc_containeradd() Invalid argument  - Internal subroutine call returned Error
+20210305 104119.008 ERROR            PET3 ESMF_Container.F90:337 ESMF_ContainerAddFieldList() Invalid argument  - Internal subroutine call returned Error
+20210305 104119.008 INFO             PET3  PASS  Container Add same Field without multiflag Test, ESMF_ContainerUTest.F90, line 543
+20210305 104119.008 INFO             PET3  PASS  Container Add same Field with multiflag Test, ESMF_ContainerUTest.F90, line 550
+20210305 104119.008 ERROR            PET3 ESMCI_Container_F.C:174 ESMCI::Container::get() Invalid argument  - key is not unique
+20210305 104119.008 ERROR            PET3 ESMCI_Container_F.C:448 c_esmc_containergetfield() Invalid argument  - Internal subroutine call returned Error
+20210305 104119.008 ERROR            PET3 ESMF_Container.F90:636 ESMF_ContainerGetField() Invalid argument  - Internal subroutine call returned Error
+20210305 104119.008 INFO             PET3  PASS  Container Get item from multiple item container Test, ESMF_ContainerUTest.F90, line 557
+20210305 104119.008 INFO             PET3  PASS  Container Get isPresent from multiple item container Test, ESMF_ContainerUTest.F90, line 565
+20210305 104119.008 INFO             PET3  PASS  Container Remove item from multiple item container relaxed Test, ESMF_ContainerUTest.F90, line 573
+20210305 104119.008 ERROR            PET3 ESMCI_Container_F.C:321 ESMCI::Container::remove() Invalid argument  - key is not unique
+20210305 104119.008 ERROR            PET3 ESMCI_Container_F.C:807 c_esmc_containerremove() Invalid argument  - Internal subroutine call returned Error
+20210305 104119.008 ERROR            PET3 ESMF_Container.F90:985 ESMF_ContainerRemove() Invalid argument  - Internal subroutine call returned Error
+20210305 104119.008 INFO             PET3  PASS  Container Remove item from multiple item container Test, ESMF_ContainerUTest.F90, line 580
+20210305 104119.008 INFO             PET3  PASS  Container Remove item from multiple item container multi Test, ESMF_ContainerUTest.F90, line 588
+20210305 104119.008 INFO             PET3  PASS  Container Add Field after multi Remove Test, ESMF_ContainerUTest.F90, line 595
+20210305 104119.008 INFO             PET3  PASS  Container Add same Field two more times with multiflag Test, ESMF_ContainerUTest.F90, line 603
+20210305 104119.008 INFO             PET3  PASS  Container Replace Field in multiple item container relaxed Test, ESMF_ContainerUTest.F90, line 611
+20210305 104119.008 ERROR            PET3 ESMCI_Container_F.C:370 ESMCI::Container::replace() Invalid argument  - key is not unique
+20210305 104119.008 ERROR            PET3 ESMCI_Container_F.C:855 c_esmc_containerreplace() Invalid argument  - Internal subroutine call returned Error
+20210305 104119.008 ERROR            PET3 ESMF_Container.F90:1088 ESMF_ContainerReplaceFieldList() Invalid argument  - Internal subroutine call returned Error
+20210305 104119.008 INFO             PET3  PASS  Container Replace Field in multiple item container strict Test, ESMF_ContainerUTest.F90, line 618
+20210305 104119.008 INFO             PET3  PASS  Verify Container itemCount Test, ESMF_ContainerUTest.F90, line 633
+20210305 104119.008 INFO             PET3  PASS  Verify Container itemCount with itemName Test, ESMF_ContainerUTest.F90, line 642
+20210305 104119.008 INFO             PET3  PASS  Container Get fieldList for itemName Test, ESMF_ContainerUTest.F90, line 651
+20210305 104119.008 INFO             PET3  PASS  Verify Container Get fieldListOut (associated) Test, ESMF_ContainerUTest.F90, line 657
+20210305 104119.008 INFO             PET3  PASS  Verify Container Get fieldListOut (size) Test, ESMF_ContainerUTest.F90, line 664
+20210305 104119.008 INFO             PET3  PASS  Verify Container Get fieldListOut (item) Test, ESMF_ContainerUTest.F90, line 680
+20210305 104119.008 INFO             PET3  PASS  Container Get fieldList for itemName w/ ESMF_ITEMORDER_ABC Test, ESMF_ContainerUTest.F90, line 690
+20210305 104119.008 INFO             PET3  PASS  Verify Container Get fieldListOut (associated) w/ ESMF_ITEMORDER_ABC Test, ESMF_ContainerUTest.F90, line 696
+20210305 104119.008 INFO             PET3  PASS  Verify Container Get fieldListOut (size) Test, ESMF_ContainerUTest.F90, line 703
+20210305 104119.008 INFO             PET3  PASS  Verify Container Get fieldListOut (item) w/ ESMF_ITEMORDER_ABC Test, ESMF_ContainerUTest.F90, line 719
+20210305 104119.008 INFO             PET3  PASS  Container Get fieldList for itemName w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerUTest.F90, line 729
+20210305 104119.008 INFO             PET3  PASS  Verify Container Get fieldListOut (associated) w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerUTest.F90, line 735
+20210305 104119.008 INFO             PET3  PASS  Verify Container Get fieldListOut (size) Test, ESMF_ContainerUTest.F90, line 742
+20210305 104119.008 INFO             PET3  PASS  Verify Container Get fieldListOut (item) w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerUTest.F90, line 758
+20210305 104119.009 INFO             PET3  PASS  Container Replace Field in multiple item container multi Test, ESMF_ContainerUTest.F90, line 766
+20210305 104119.009 INFO             PET3  PASS  Verify Container itemCount Test, ESMF_ContainerUTest.F90, line 774
+20210305 104119.009 INFO             PET3  PASS  Container Get fieldList Test, ESMF_ContainerUTest.F90, line 783
+20210305 104119.009 INFO             PET3  PASS  Verify Container Get fieldListOut (associated) Test, ESMF_ContainerUTest.F90, line 789
+20210305 104119.009 INFO             PET3  PASS  Verify Container Get fieldListOut (size) Test, ESMF_ContainerUTest.F90, line 796
+20210305 104119.009 INFO             PET3  PASS  Verify Container Get fieldListOut (item) Test, ESMF_ContainerUTest.F90, line 814
+20210305 104119.009 INFO             PET3  PASS  Container Get fieldList w/ ESMF_ITEMORDER_ABC Test, ESMF_ContainerUTest.F90, line 823
+20210305 104119.009 INFO             PET3  PASS  Verify Container Get fieldListOut (associated) w/ ESMF_ITEMORDER_ABC Test, ESMF_ContainerUTest.F90, line 829
+20210305 104119.009 INFO             PET3  PASS  Verify Container Get fieldListOut (size) w/ ESMF_ITEMORDER_ABC Test, ESMF_ContainerUTest.F90, line 836
+20210305 104119.009 INFO             PET3  PASS  Verify Container Get fieldListOut (item) w/ ESMF_ITEMORDER_ABC Test, ESMF_ContainerUTest.F90, line 854
+20210305 104119.009 INFO             PET3  PASS  Container Get fieldList w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerUTest.F90, line 864
+20210305 104119.009 INFO             PET3  PASS  Verify Container Get fieldListOut (associated) w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerUTest.F90, line 870
+20210305 104119.009 INFO             PET3  PASS  Verify Container Get fieldListOut (size) w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerUTest.F90, line 877
+20210305 104119.009 INFO             PET3  PASS  Verify Container Get fieldListOut (item) w/ ESMF_ITEMORDER_ADDORDER Test, ESMF_ContainerUTest.F90, line 895
+20210305 104119.009 INFO             PET3  PASS  Container Destroy Test, ESMF_ContainerUTest.F90, line 904
+20210305 104119.009 INFO             PET3  PASS  Container Create UDT Test, ESMF_ContainerUTest.F90, line 926
+20210305 104119.009 INFO             PET3  PASS  Container turn garbage feature ON UDT Test, ESMF_ContainerUTest.F90, line 933
+20210305 104119.009 INFO             PET3  PASS  Container Add UDT (user derived type) Test, ESMF_ContainerUTest.F90, line 948
+20210305 104119.009 INFO             PET3  PASS  Container Add 2nd UDT Test, ESMF_ContainerUTest.F90, line 964
+20210305 104119.009 INFO             PET3  PASS  Container Remove item UDT Test, ESMF_ContainerUTest.F90, line 971
+20210305 104119.009 INFO             PET3  PASS  Container Get item UDT Test, ESMF_ContainerUTest.F90, line 979
+20210305 104119.009 INFO             PET3  PASS  Verify Container Get item - string - UDT Test, ESMF_ContainerUTest.F90, line 985
+20210305 104119.009 INFO             PET3  PASS  Verify Container Get item - index - UDT Test, ESMF_ContainerUTest.F90, line 991
+20210305 104119.009 INFO             PET3  PASS  Verify Container Get item - field - UDT Test, ESMF_ContainerUTest.F90, line 997
+20210305 104119.009 INFO             PET3  PASS  Container Replace UDT Test, ESMF_ContainerUTest.F90, line 1013
+20210305 104119.009 INFO             PET3  PASS  Container Get item UDT 2nd Test, ESMF_ContainerUTest.F90, line 1021
+20210305 104119.009 INFO             PET3  PASS  Verify Container Get item - string - UDT 2nd Test, ESMF_ContainerUTest.F90, line 1027
+20210305 104119.009 INFO             PET3  PASS  Verify Container Get item - index - UDT 2nd Test, ESMF_ContainerUTest.F90, line 1033
+20210305 104119.009 INFO             PET3  PASS  Verify Container Get item - field - UDT 2nd Test, ESMF_ContainerUTest.F90, line 1039
+20210305 104119.009 INFO             PET3  PASS  Container Print UDT Test, ESMF_ContainerUTest.F90, line 1046
+20210305 104119.009 INFO             PET3  PASS  Container garbage Get UDT before Clear() Test, ESMF_ContainerUTest.F90, line 1053
+20210305 104119.009 INFO             PET3  PASS  Container Get UDT before Clear() Test, ESMF_ContainerUTest.F90, line 1062
+20210305 104119.009 INFO             PET3  PASS  Container Clear UDT Test, ESMF_ContainerUTest.F90, line 1071
+20210305 104119.009 INFO             PET3  PASS  Container garbage Get UDT after Clear() Test, ESMF_ContainerUTest.F90, line 1078
+20210305 104119.009 INFO             PET3  PASS  Container Get UDT after Clear() Test, ESMF_ContainerUTest.F90, line 1087
+20210305 104119.009 INFO             PET3  PASS  Container garbage collection UDT Test, ESMF_ContainerUTest.F90, line 1109
+20210305 104119.009 INFO             PET3  PASS  Container Destroy UDT Test, ESMF_ContainerUTest.F90, line 1116
+20210305 104119.009 INFO             PET3  Ending Test, file ESMF_ContainerUTest.F90, line 1119
+20210305 104119.009 INFO             PET3 Finalizing ESMF

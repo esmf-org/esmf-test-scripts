@@ -1,0 +1,20 @@
+  Beginning Test, file ESMF_VMAccUTest.F90, line 52
+  NUMBER_OF_PROCESSORS           4
+  Beginning Test, file ESMF_VMAccUTest.F90, line 52
+  NUMBER_OF_PROCESSORS           4
+  Beginning Test, file ESMF_VMAccUTest.F90, line 52
+  NUMBER_OF_PROCESSORS           4
+  Beginning Test, file ESMF_VMAccUTest.F90, line 52
+  NUMBER_OF_PROCESSORS           4
+  PASS  Test getting the number of accelerator devices, ESMF_VMAccUTest.F90, line 72
+  PASS  Test getting the number of accelerator devices, ESMF_VMAccUTest.F90, line 72
+  PASS  Test getting the number of accelerator devices, ESMF_VMAccUTest.F90, line 72
+  Ending Test, file ESMF_VMAccUTest.F90, line 76
+  PASS  Test getting the number of accelerator devices, ESMF_VMAccUTest.F90, line 72
+  Ending Test, file ESMF_VMAccUTest.F90, line 76
+  Ending Test, file ESMF_VMAccUTest.F90, line 76
+  Ending Test, file ESMF_VMAccUTest.F90, line 76
+  PET           1  Test Elapsed Time    45.349000000000004       msec.
+  PET           2  Test Elapsed Time    45.323000000000000       msec.
+  PET           3  Test Elapsed Time    45.311999999999998       msec.
+  PET           0  Test Elapsed Time    3.2900000000000014       msec.
