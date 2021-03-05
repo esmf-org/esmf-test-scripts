@@ -1,0 +1,1172 @@
+make ACTION=tree_clean tree
+make[1]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src
+make[2]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/prologue
+make[3]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/prologue'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/prologue/tests
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/prologue/tests'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_StringUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_WordsizeUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_F90ArrayPtrUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_LAPACKUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_FeatureUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMCI_ExceptionsUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMCI_FeatureUTest *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/prologue/tests'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/prologue/yaml-cpp
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/prologue/yaml-cpp'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/prologue/yaml-cpp/src
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/prologue/yaml-cpp/src'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/prologue/yaml-cpp/src'
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/prologue/yaml-cpp'
+make[3]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/prologue'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/test_harness
+make[3]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/test_harness'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/test_harness/src
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/test_harness/src'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_TestHarnessUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMC_TestHarnessLatexPPUTest *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/test_harness/src'
+make[3]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/test_harness'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure
+make[3]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/stubs
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/stubs'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/stubs/mpiuni
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/stubs/mpiuni'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/stubs/mpiuni'
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/stubs'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Util
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Util'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Util/src
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Util/src'
+rm -rf ESMF_FortranWordsize.F90 ESMF_TypeKindGet.F90 ESMF_UtilSort.F90 ../doc/ESMF_FortranWordsize_fapi.tex ../doc/ESMF_TypeKindGet_fapi.tex ../doc/ESMF_UtilSort_fapi.tex *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Util/src'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Util/interface
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Util/interface'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Util/interface'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Util/tests
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Util/tests'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_UtilUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_FortranWordsizeUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_TypeKindGetUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_InitMacrosUTest  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Util/tests'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Util/examples
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Util/examples'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Util/examples'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Util/doc
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Util/doc'
+rm -rf ESMCI_Util_ccapi.tex ESMCI_Fraction_ccapi.tex ESMCI_F90Interface_ccapi.tex ESMCI_CoordSys_ccapi.tex ESMF_chapi.tex ESMC_Util_chapi.tex ESMC_ReturnCodes_chapi.tex ESMC_Macros_chapi.tex ESMCI_Util_chapi.tex ESMC_Interface_chapi.tex ESMCI_Macros_chapi.tex ESMCI_Fraction_chapi.tex ESMCI_F90Interface_chapi.tex ESMCI_CoordSys_chapi.tex ESMCI_Arg_chapi.tex ESMC_CoordSys_chapi.tex ESMC_Arg_chapi.tex ESMF_Macros_chapi.tex ESMF_LogMacros_chapi.tex ESMF_LogErr_chapi.tex ESMF_LogConstants_chapi.tex ESMF_InitMacros_chapi.tex ESMF_ErrReturnCodes_chapi.tex  ESMF_UtilTypes_fapi.tex ESMF_UtilString_fapi.tex ESMF_UtilCubedSphere_fapi.tex ESMF_StaggerLocType_fapi.tex ESMF_LogErr_fapi.tex ESMF_IOUtil_fapi.tex ESMF_InitMacros_fapi.tex ESMF_AttPackType_fapi.tex   ESMF_UtilSort_fapi.tex ESMF_TypeKindGet_fapi.tex ESMF_FortranWordsize_fapi.tex ESMC_Util_ccapi.tex ESMCI_Util_F_ccapi.tex ESMC_Interface_ccapi.tex ESMCI_Fraction_F_ccapi.tex ESMCI_F90Interface_F_ccapi.tex  ESMF_Util_fapi.tex ESMF_Util_C_fapi.tex ESMF_Fraction_fapi.tex ESMF_F90Interface_fapi.tex        ESMC_ReturnCodes.tex *.aux *.bbl *.blg *.log *.toc *.dvi *.ps *.ORIG *.out IOUtil_refdoc.tex IOUtil_refdoc.pdf *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Util/doc'
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Util'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/LogErr
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/LogErr'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/LogErr/src
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/LogErr/src'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/LogErr/src'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/LogErr/interface
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/LogErr/interface'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/LogErr/interface'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/LogErr/examples
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/LogErr/examples'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_LogErrEx *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/LogErr/examples'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/LogErr/doc
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/LogErr/doc'
+rm -rf ESMCI_LogErr_ccapi.tex ESMC_LogErr_chapi.tex ESMCI_LogErr_chapi.tex        ESMF_LogErrEx_fapi.tex   ESMC_LogErr_ccapi.tex ESMCI_LogErr_F_ccapi.tex  ESMF_LogPublic_fapi.tex ESMF_LogErr_C_fapi.tex    *.aux *.bbl *.blg *.log *.toc *.dvi *.ps *.ORIG *.out LogErr_refdoc.tex LogErr_crefdoc.tex LogErr_refdoc.pdf LogErr_crefdoc.pdf *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/LogErr/doc'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/LogErr/tests
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/LogErr/tests'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMC_LogErrUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMC_LogErrPerfUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_LogErrUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_LogErrPerfUTest Log* *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/LogErr/tests'
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/LogErr'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/VM
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/VM'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/VM/src
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/VM/src'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/VM/src/acc
+make[6]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/VM/src/acc'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[6]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/VM/src/acc'
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/VM/src'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/VM/interface
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/VM/interface'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/VM/interface'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/VM/doc
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/VM/doc'
+rm -rf ESMCI_VMKernel_ccapi.tex ESMCI_VM_ccapi.tex ESMC_VM_chapi.tex ESMCI_VMKernel_chapi.tex ESMCI_VM_chapi.tex ESMCI_AccInfo_chapi.tex  ESMF_VM_fapi.tex     ESMF_VMUserMpiEx_fapi.tex ESMF_VMUserMpiCommMultiEx_fapi.tex ESMF_VMUserMpiCommEx_fapi.tex ESMF_VMSendVMRecvEx_fapi.tex ESMF_VMScatterVMGatherEx_fapi.tex ESMF_VMNonBlockingEx_fapi.tex ESMF_VMHigherRankDataEx_fapi.tex ESMF_VMGetMPICommunicatorEx_fapi.tex ESMF_VMDefaultBasicsEx_fapi.tex ESMF_VMComponentEx_fapi.tex ESMF_VMAllFullReduceEx_fapi.tex   *.aux *.bbl *.blg *.log *.toc *.dvi *.ps *.ORIG *.out VM_refdoc.tex VM_crefdoc.tex VM_refdoc.pdf VM_crefdoc.pdf *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/VM/doc'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/VM/examples
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/VM/examples'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_VMDefaultBasicsEx /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_VMGetMPICommunicatorEx /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_VMUserMpiEx /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_VMUserMpiCommEx /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_VMUserMpiCommMultiEx /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_VMComponentEx /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_VMSendVMRecvEx /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_VMNonBlockingEx /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_VMScatterVMGatherEx /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_VMAllFullReduceEx /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_VMHigherRankDataEx *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/VM/examples'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/VM/tests
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/VM/tests'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMC_VMUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_VMUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_VMAccUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_VMOpenMPUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_VMUserMpiInitUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_VMSendVMRecvUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_VMSendNbVMRecvNbUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_VMSendRecvUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_VMSendRecvNbUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_VMScatterUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_VMGatherUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_VMAllGatherUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_VMAllGatherVUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_VMBroadcastUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_VMAllToAllUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_VMAllToAllVUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_VMBarrierUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_VMComponentUTest *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/VM/tests'
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/VM'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Trace
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Trace'
+rm -rf preload/*.o *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Trace/src
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Trace/src'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Trace/src'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Trace/interface
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Trace/interface'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Trace/interface'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Trace/tests
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Trace/tests'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_TraceClkMonoUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_TraceClkMonoSyncUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_TraceUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_TraceIOUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_TraceMPIUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMC_TraceRegionUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_ProfileUTest  /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/traceout /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_Profile.* *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Trace/tests'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Trace/doc
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Trace/doc'
+rm -rf ESMCI_TraceWrap_ccapi.tex ESMCI_TraceMetadata_ccapi.tex ESMCI_TraceClock_ccapi.tex ESMCI_Trace_ccapi.tex esmftrc_chapi.tex esmftrc-bitfield_chapi.tex ESMCI_TraceUtil_chapi.tex ESMCI_TraceRegion_chapi.tex ESMCI_TraceMacros_chapi.tex ESMCI_Trace_chapi.tex ESMCI_RegionSummary_chapi.tex ESMCI_RegionNode_chapi.tex ESMCI_KeyHash_chapi.tex ESMCI_HashNode_chapi.tex ESMCI_HashMap_chapi.tex ESMCI_ComponentInfo_chapi.tex      ESMF_Trace_fapi.tex   ESMF_TraceUserEx_fapi.tex ESMF_TraceEx_fapi.tex   *.aux *.bbl *.blg *.log *.toc *.dvi *.ps *.ORIG *.out Trace_refdoc.tex Trace_refdoc.pdf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Trace/doc'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Trace/examples
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Trace/examples'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_TraceEx /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_TraceUserEx /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/traceout *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Trace/examples'
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Trace'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Base
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Base'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Base/src
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Base/src'
+rm -rf   *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Base/src'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Base/interface
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Base/interface'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Base/interface'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Base/tests
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Base/tests'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_BaseUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMC_BaseUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMC_NlohmannJSONUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMC_InfoUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_InfoUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_InfoArrayUTest *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Base/tests'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Base/examples
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Base/examples'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_InfoTutorialEx /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_InfoGetFromHostEx *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Base/examples'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Base/doc
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Base/doc'
+rm -rf ESMC_InfoCDefGeneric_ccapi.tex ESMC_InfoCDef_ccapi.tex ESMCI_Info_ccapi.tex ESMCI_Base_ccapi.tex ESMCI_Info_chapi.tex ESMCI_Base_chapi.tex     ESMCI_Base_F_ccapi.tex  ESMF_Info_fapi.tex ESMF_InfoCDefGeneric_fapi.tex ESMF_InfoCDef_fapi.tex ESMF_FactorRead_fapi.tex ESMF_Base_fapi.tex     ESMF_InfoTutorialEx_fapi.tex ESMF_InfoGetFromHostEx_fapi.tex   *.aux *.bbl *.blg *.log *.toc *.dvi *.ps *.ORIG *.out Info_refdoc.tex Info_refdoc.pdf *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Base/doc'
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Base'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/TimeMgr
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/TimeMgr'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/TimeMgr/src
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/TimeMgr/src'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/TimeMgr/src'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/TimeMgr/interface
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/TimeMgr/interface'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/TimeMgr/interface'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/TimeMgr/examples
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/TimeMgr/examples'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_TimeEx /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_TimeIntervalEx /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_CalendarEx /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_ClockEx /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_AlarmEx *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/TimeMgr/examples'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/TimeMgr/tests
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/TimeMgr/tests'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMC_ClockUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMC_TimeIntervalUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMC_TimeUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMC_CalendarUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_CalendarUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_AlarmUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_ClockUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_CalRangeUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_TimeIntervalUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_TimeUTest   *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/TimeMgr/tests'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/TimeMgr/doc
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/TimeMgr/doc'
+rm -rf ESMCI_TimeInterval_ccapi.tex ESMCI_Time_ccapi.tex ESMCI_Clock_ccapi.tex ESMCI_Calendar_ccapi.tex ESMCI_BaseTime_ccapi.tex ESMCI_Alarm_ccapi.tex ESMC_TimeInterval_chapi.tex ESMC_Time_chapi.tex ESMCI_TimeInterval_chapi.tex ESMCI_Time_chapi.tex ESMCI_Clock_chapi.tex ESMCI_Calendar_chapi.tex ESMCI_BaseTime_chapi.tex ESMCI_Alarm_chapi.tex ESMC_Clock_chapi.tex ESMC_Calendar_chapi.tex     ESMC_ClockEx_ccapi.tex  ESMF_TimeIntervalEx_fapi.tex ESMF_TimeEx_fapi.tex ESMF_ClockEx_fapi.tex ESMF_CalendarEx_fapi.tex ESMF_AlarmEx_fapi.tex    ESMF_TimeType_fapi.tex ESMF_TimeIntervalType_fapi.tex ESMF_TimeInterval_fapi.tex ESMF_Time_fapi.tex ESMF_ClockType_fapi.tex ESMF_Clock_fapi.tex ESMF_Calendar_fapi.tex ESMF_AlarmType_fapi.tex ESMF_Alarm_fapi.tex   *.aux *.bbl *.blg *.log *.toc *.dvi *.ps *.ORIG *.out TimeMgr_refdoc.tex TimeMgr_refdoc.pdf TimeMgr_crefdoc.pdf *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/TimeMgr/doc'
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/TimeMgr'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/DELayout
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/DELayout'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/DELayout/src
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/DELayout/src'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/DELayout/src'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/DELayout/interface
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/DELayout/interface'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/DELayout/interface'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/DELayout/tests
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/DELayout/tests'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_DELayoutUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_DELayoutWorkQueueUTest *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/DELayout/tests'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/DELayout/examples
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/DELayout/examples'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_DELayoutEx *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/DELayout/examples'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/DELayout/doc
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/DELayout/doc'
+rm -rf ESMCI_DELayout_ccapi.tex ESMCI_DELayout_chapi.tex  ESMF_DELayout_fapi.tex     ESMF_DELayoutEx_fapi.tex   *.aux *.bbl *.blg *.log *.toc *.dvi *.ps *.ORIG *.out DELayout_refdoc.tex DELayout_crefdoc.tex DELayout_refdoc.pdf DELayout_crefdoc.pdf *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/DELayout/doc'
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/DELayout'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Config
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Config'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Config/src
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Config/src'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Config/src'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Config/interface
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Config/interface'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Config/interface'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Config/examples
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Config/examples'
+rm -rf foo.nc /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_ConfigOverviewEx 0 1 2 3 *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Config/examples'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Config/doc
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Config/doc'
+rm -rf  ESMC_Config_chapi.tex  ESMF_Config_fapi.tex    ESMC_ConfigOverviewEx_ccapi.tex  ESMF_ConfigOverviewEx_fapi.tex   *.aux *.bbl *.blg *.log *.toc *.dvi *.ps *.ORIG *.out Config_refdoc.tex Config_refdoc.pdf *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Config/doc'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Config/tests
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Config/tests'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_ConfigUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMC_ConfigUTest  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Config/tests'
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Config'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/ArraySpec
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/ArraySpec'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/ArraySpec/src
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/ArraySpec/src'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/ArraySpec/src'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/ArraySpec/interface
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/ArraySpec/interface'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/ArraySpec/interface'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/ArraySpec/examples
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/ArraySpec/examples'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_ArraySpecEx *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/ArraySpec/examples'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/ArraySpec/tests
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/ArraySpec/tests'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_ArraySpecUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMC_ArraySpecUTest *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/ArraySpec/tests'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/ArraySpec/doc
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/ArraySpec/doc'
+rm -rf  ESMCI_ArraySpec_chapi.tex ESMC_ArraySpec_chapi.tex  ESMF_ArraySpec_fapi.tex      ESMF_ArraySpecEx_fapi.tex   *.aux *.bbl *.blg *.log *.toc *.dvi *.ps *.ORIG *.out ArraySpec_refdoc.tex ArraySpec_crefdoc.tex ArraySpec_refdoc.pdf ArraySpec_crefdoc.pdf *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/ArraySpec/doc'
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/ArraySpec'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/LocalArray
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/LocalArray'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/LocalArray/src
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/LocalArray/src'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/LocalArray/src'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/LocalArray/interface
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/LocalArray/interface'
+rm -rf ESMF_LocalArrayWrapperType.F90 ESMF_LocalArrayCreate.F90 ESMF_LocalArrayGet.F90 *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/LocalArray/interface'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/LocalArray/tests
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/LocalArray/tests'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_LocalArrayDataUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_LocalArrayUTest  TestArrayData *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/LocalArray/tests'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/LocalArray/doc
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/LocalArray/doc'
+rm -rf ESMCI_LocalArray_ccapi.tex ESMCI_LocalArray_chapi.tex  ESMF_LocalArray_fapi.tex ESMF_LocalArray_C_fapi.tex   ESMF_LocalArrayWrapperType_fapi.tex ESMF_LocalArrayGet_fapi.tex ESMF_LocalArrayCreate_fapi.tex      *.aux *.bbl *.blg *.log *.toc *.dvi *.ps *.ORIG *.out LocalArray_refdoc.tex LocalArray_refdoc.pdf *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/LocalArray/doc'
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/LocalArray'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Route
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Route'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Route/src
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Route/src'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Route/src'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Route/interface
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Route/interface'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Route/interface'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Route/tests
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Route/tests'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_RouteHandleUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_RouteHandleAdvancedUTest *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Route/tests'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Route/examples
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Route/examples'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_RHandleBitForBitEx /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_RHandleFromRHandleEx /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_RHandleFromFileEx /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_RHandleReusabilityEx /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_RHandleDynamicMaskingEx *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Route/examples'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Route/doc
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Route/doc'
+rm -rf ESMCI_RHandle_ccapi.tex ESMC_RHandle_chapi.tex ESMCI_RHandle_chapi.tex  ESMF_RHandle_fapi.tex     ESMF_RHandleReusabilityEx_fapi.tex ESMF_RHandleFromRHandleEx_fapi.tex ESMF_RHandleFromFileEx_fapi.tex ESMF_RHandleDynamicMaskingEx_fapi.tex ESMF_RHandleBitForBitEx_fapi.tex   *.aux *.bbl *.blg *.log *.toc *.dvi *.ps *.ORIG *.out RHandle_refdoc.tex RHandle_crefdoc.tex RHandle_refdoc.pdf RHandle_crefdoc.pdf *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Route/doc'
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Route'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/DistGrid
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/DistGrid'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/DistGrid/src
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/DistGrid/src'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/DistGrid/src'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/DistGrid/interface
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/DistGrid/interface'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/DistGrid/interface'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/DistGrid/tests
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/DistGrid/tests'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_DistGridCreateGetUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMC_DistGridUTest *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/DistGrid/tests'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/DistGrid/examples
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/DistGrid/examples'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_DistGridEx *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/DistGrid/examples'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/DistGrid/doc
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/DistGrid/doc'
+rm -rf ESMCI_DistGrid_ccapi.tex ESMCI_DistGrid_chapi.tex ESMC_DistGrid_chapi.tex  ESMF_DistGridRegDecomp_fapi.tex ESMF_DistGrid_fapi.tex ESMF_DistGridConnection_fapi.tex     ESMF_DistGridEx_fapi.tex   *.aux *.bbl *.blg *.log *.toc *.dvi *.ps *.ORIG *.out DistGrid_refdoc.tex DistGrid_crefdoc.tex DistGrid_refdoc.pdf DistGrid_crefdoc.pdf dgconnect_2tiles_not_connected.eps dgconnect_2tiles_connected.eps dgconnect_1tile_not_connected.eps dgconnect_1tile_periodic1_connected.eps dgconnect_1tile_periodic2_connected.eps dgconnect_1tile_peripole_connected.eps dgconnect_1tile_peribipole_connected.eps dgconnect_cusph_not_connected.eps dgconnect_cusph_5connected.eps dgconnect_cusph_6connected.eps dgconnect_cusph_2rotconnected.eps dgconnect_cusph_12connected.eps *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/DistGrid/doc'
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/DistGrid'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Array
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Array'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Array/src
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Array/src'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Array/src'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Array/interface
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Array/interface'
+rm -rf ESMF_ArrayCreate.F90 ESMF_ArrayGet.F90 ESMF_ArrayGather.F90 ESMF_ArrayScatter.F90 *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Array/interface'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Array/tests
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Array/tests'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_ArrayCreateGetUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_ArrayDataUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_ArrayScatterUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_ArrayGatherUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_ArrayIOUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_ArraySMMUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_ArraySMMFromFileUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_ArrayArbIdxSMMUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_ArrayRedistUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_ArrayRedistPerfUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_ArrayHaloUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMC_ArrayUTest *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Array/tests'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Array/examples
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Array/examples'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_ArrayFarrayEx /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_ArrayFarrayHaloEx /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_ArrayLarrayEx /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_ArrayEx /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_ArrayScatterGatherEx /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_ArrayHaloEx /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_ArrayArbHaloEx /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_ArrayRedistEx /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_ArraySparseMatMulEx /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_ArrayScatterGatherArbEx /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_ArrayCommNBEx *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Array/examples'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Array/doc
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Array/doc'
+rm -rf ESMCI_Array_ccapi.tex ESMCI_Array_chapi.tex ESMC_Array_chapi.tex  ESMF_DynamicMask_fapi.tex ESMF_ArrayHa_fapi.tex ESMF_Array_fapi.tex   ESMF_ArrayScatter_fapi.tex ESMF_ArrayGet_fapi.tex ESMF_ArrayGather_fapi.tex ESMF_ArrayCreate_fapi.tex   ESMF_ArraySparseMatMulEx_fapi.tex ESMF_ArrayScatterGatherEx_fapi.tex ESMF_ArrayScatterGatherArbEx_fapi.tex ESMF_ArrayRedistEx_fapi.tex ESMF_ArrayLarrayEx_fapi.tex ESMF_ArrayHaloEx_fapi.tex ESMF_ArrayFarrayHaloEx_fapi.tex ESMF_ArrayFarrayEx_fapi.tex ESMF_ArrayEx_fapi.tex ESMF_ArrayCommNBEx_fapi.tex ESMF_ArrayArbHaloEx_fapi.tex   ESMF_IO_YAML_fapi.tex ESMF_IOUGrid_fapi.tex ESMF_IOScrip_fapi.tex ESMF_IO_Scrip_C_fapi.tex ESMF_IO_NetCDF_fapi.tex ESMF_IO_NCPutGet_fapi.tex ESMF_IOGridspec_fapi.tex ESMF_IO_Gridspec_C_fapi.tex ESMF_IOGridmosaic_fapi.tex ESMF_IOFileTypeCheck_fapi.tex ESMF_IO_fapi.tex *.aux *.bbl *.blg *.log *.toc *.dvi *.ps *.ORIG *.out Array_refdoc.tex Array_crefdoc.tex Array_refdoc.pdf Array_crefdoc.pdf *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Array/doc'
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Array'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/ArrayBundle
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/ArrayBundle'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/ArrayBundle/src
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/ArrayBundle/src'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/ArrayBundle/src'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/ArrayBundle/interface
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/ArrayBundle/interface'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/ArrayBundle/interface'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/ArrayBundle/tests
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/ArrayBundle/tests'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_ArrayBundleCreateUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_ArrayBundleRedistUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_ArrayBundleIOUTest *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/ArrayBundle/tests'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/ArrayBundle/examples
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/ArrayBundle/examples'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_ArrayBundleEx /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_ArrayBundleHaloEx *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/ArrayBundle/examples'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/ArrayBundle/doc
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/ArrayBundle/doc'
+rm -rf ESMCI_ArrayBundle_ccapi.tex ESMCI_ArrayBundle_chapi.tex  ESMF_ArrayBundle_fapi.tex      ESMF_ArrayBundleHaloEx_fapi.tex ESMF_ArrayBundleEx_fapi.tex   *.aux *.bbl *.blg *.log *.toc *.dvi *.ps *.ORIG *.out ArrayBundle_refdoc.tex ArrayBundle_refdoc.pdf *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/ArrayBundle/doc'
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/ArrayBundle'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/IO
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/IO'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/IO/PIO
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/IO/PIO'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/IO/PIO'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/IO/src
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/IO/src'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/IO/src'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/IO/interface
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/IO/interface'
+rm -rf ESMF_IO_NCPutGet.F90 *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/IO/interface'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/IO/tests
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/IO/tests'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMCI_IO_NetCDFUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_IO_PIOUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMCI_IO_PIOUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMC_IO_InqUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_IO_YAMLUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_IOUTest  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/IO/tests'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/IO/doc
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/IO/doc'
+rm -rf ESMCI_SAX2WriteHandler_ccapi.tex ESMCI_SAX2ReadHandler_ccapi.tex ESMCI_PIO_Handler_ccapi.tex ESMCI_IO_YAML_ccapi.tex ESMCI_IO_XML_ccapi.tex ESMCI_IO_Scrip_ccapi.tex ESMCI_IO_Schema_ccapi.tex ESMCI_IO_NetCDF_ccapi.tex ESMCI_IO_Handler_ccapi.tex ESMCI_IO_Gridspec_ccapi.tex ESMCI_IO_ccapi.tex pio_types_chapi.tex pio_kinds_chapi.tex pio_chapi.tex esmf_io_debug_chapi.tex ESMCI_SAX2WriteHandler_chapi.tex ESMCI_SAX2ReadHandler_chapi.tex ESMCI_PIO_Handler_chapi.tex ESMCI_IO_YAML_chapi.tex ESMCI_IO_XML_chapi.tex ESMCI_IO_Scrip_chapi.tex ESMCI_IO_Schema_chapi.tex ESMCI_IO_NetCDF_chapi.tex ESMCI_IO_Handler_chapi.tex ESMCI_IO_chapi.tex ESMCI_IO_Gridspec_chapi.tex            ESMF_IO_YAML_fapi.tex ESMF_IOUGrid_fapi.tex ESMF_IOScrip_fapi.tex ESMF_IO_Scrip_C_fapi.tex ESMF_IO_NetCDF_fapi.tex ESMF_IOGridspec_fapi.tex ESMF_IO_Gridspec_C_fapi.tex ESMF_IOGridmosaic_fapi.tex ESMF_IOFileTypeCheck_fapi.tex ESMF_IO_fapi.tex   ESMF_IO_NCPutGet_fapi.tex *.aux *.bbl *.blg *.log *.toc *.dvi *.ps *.ORIG *.out IO_refdoc.tex IO_refdoc.pdf *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/IO/doc'
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/IO'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Grid
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Grid'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Grid/doc
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Grid/doc'
+rm -rf ESMCI_Grid_ccapi.tex ESMCI_Grid_chapi.tex ESMC_Grid_chapi.tex        ESMF_GridUsageEx_fapi.tex ESMF_GridCreateTripoleEx_fapi.tex ESMF_GridCreateSph2DPlus1Ex_fapi.tex ESMF_GridCreateRegFromDGEx_fapi.tex ESMF_GridCreateFromF90ArraysEx_fapi.tex    ESMF_StaggerLoc_fapi.tex ESMF_Grid_fapi.tex ESMF_Grid_C_fapi.tex    *.aux *.bbl *.blg *.log *.toc *.dvi *.ps *.ORIG *.out Grid_refdoc.tex Grid_crefdoc.tex Grid_refdoc.pdf Grid_crefdoc.pdf *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Grid/doc'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Grid/src
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Grid/src'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Grid/src'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Grid/interface
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Grid/interface'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Grid/interface'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Grid/tests
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Grid/tests'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMC_GridUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_GridCreateUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_GridCoordUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_GridItemUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_GridArbitraryUTest *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Grid/tests'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Grid/examples
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Grid/examples'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_GridUsageEx /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_GridCreateRegFromDGEx *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Grid/examples'
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Grid'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Mesh
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Mesh'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Mesh/src
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Mesh/src'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Mesh/src/Legacy
+make[6]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Mesh/src/Legacy'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[6]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Mesh/src/Legacy'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Mesh/src/Regridding
+make[6]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Mesh/src/Regridding'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[6]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Mesh/src/Regridding'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Mesh/src/Zoltan
+make[6]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Mesh/src/Zoltan'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[6]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Mesh/src/Zoltan'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Mesh/src/Lapack
+make[6]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Mesh/src/Lapack'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[6]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Mesh/src/Lapack'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Mesh/src/BLAS
+make[6]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Mesh/src/BLAS'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[6]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Mesh/src/BLAS'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Mesh/src/Moab
+make[6]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Mesh/src/Moab'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Mesh/src/Moab/DiscreteGeometry
+make[7]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Mesh/src/Moab/DiscreteGeometry'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[7]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Mesh/src/Moab/DiscreteGeometry'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Mesh/src/Moab/IntxMesh
+make[7]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Mesh/src/Moab/IntxMesh'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[7]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Mesh/src/Moab/IntxMesh'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Mesh/src/Moab/io
+make[7]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Mesh/src/Moab/io'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[7]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Mesh/src/Moab/io'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Mesh/src/Moab/LocalDiscretization
+make[7]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Mesh/src/Moab/LocalDiscretization'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[7]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Mesh/src/Moab/LocalDiscretization'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Mesh/src/Moab/parallel
+make[7]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Mesh/src/Moab/parallel'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[7]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Mesh/src/Moab/parallel'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Mesh/src/Moab/verdict
+make[7]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Mesh/src/Moab/verdict'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[7]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Mesh/src/Moab/verdict'
+make[6]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Mesh/src/Moab'
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Mesh/src'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Mesh/examples
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Mesh/examples'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_MeshEx /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMC_DCatEx /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMC_RefineEx  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Mesh/examples'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Mesh/interface
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Mesh/interface'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Mesh/interface'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Mesh/doc
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Mesh/doc'
+rm -rf ESMCI_XGridUtil_ccapi.tex ESMCI_Search_NearestNPnts_ccapi.tex ESMCI_Search_Nearest_ccapi.tex ESMCI_Rendez_Nearest_ccapi.tex ESMCI_Regrid_Nearest_ccapi.tex ESMCI_OTree_ccapi.tex ESMCI_Mesh_XGrid_Glue_ccapi.tex ESMCI_Mesh_Regrid_Glue_ccapi.tex ESMCI_MeshRedist_ccapi.tex ESMCI_Mesh_GToM_Glue_ccapi.tex ESMCI_Mesh_Glue_ccapi.tex ESMCI_MeshDual_ccapi.tex ESMCI_MeshCXX_ccapi.tex ESMCI_MeshCap_ccapi.tex ESMCI_Mesh_ccapi.tex ESMCI_MBMesh_Util_ccapi.tex ESMCI_MBMesh_ShapeFunc_ccapi.tex ESMCI_MBMesh_Search_EtoP_ccapi.tex ESMCI_MBMesh_Search_EtoE_ccapi.tex ESMCI_MBMesh_Rendez_EtoP_ccapi.tex ESMCI_MBMesh_Rendez_Elem_ccapi.tex ESMCI_MBMesh_Regrid_Glue_ccapi.tex ESMCI_MBMesh_Redist_ccapi.tex ESMCI_MBMesh_Patch_ccapi.tex ESMCI_MBMesh_Mapping_ccapi.tex ESMCI_MBMesh_GToM_Glue_ccapi.tex ESMCI_MBMesh_Glue_ccapi.tex ESMCI_MBMesh_Extrapolation_ccapi.tex ESMCI_MBMesh_Dual_ccapi.tex ESMCI_MBMesh_Conserve_ccapi.tex ESMCI_MBMesh_ccapi.tex ESMCI_MBMesh_Bilinear_ccapi.tex ESMCI_MBMesh_BBox_ccapi.tex ESMCI_MathUtil_ccapi.tex ESMCI_GToM_Util_ccapi.tex ESMCI_ClumpPnts_ccapi.tex ESMC_Mesh_chapi.tex ESMCI_XGridUtil_chapi.tex ESMCI_Search_Nearest_chapi.tex ESMCI_Rendez_Nearest_chapi.tex ESMCI_Regrid_Nearest_chapi.tex ESMCI_RegridConstants_chapi.tex ESMCI_OTree_chapi.tex ESMCI_Mesh_XGrid_Glue_chapi.tex ESMCI_Mesh_Regrid_Glue_chapi.tex ESMCI_MeshRedist_chapi.tex ESMCI_Mesh_chapi.tex ESMCI_Mesh_GToM_Glue_chapi.tex ESMCI_Mesh_Glue_chapi.tex ESMCI_MeshDual_chapi.tex ESMCI_MeshCXX_chapi.tex ESMCI_MeshCap_chapi.tex ESMCI_MBMesh_Util_chapi.tex ESMCI_MBMesh_Types_chapi.tex ESMCI_MBMesh_ShapeFunc_chapi.tex ESMCI_MBMesh_Search_chapi.tex ESMCI_MBMesh_Search_EtoP_chapi.tex ESMCI_MBMesh_Search_EtoE_chapi.tex ESMCI_MBMesh_Rendez_EtoP_chapi.tex ESMCI_MBMesh_Rendez_Elem_chapi.tex ESMCI_MBMesh_Regrid_Glue_chapi.tex ESMCI_MBMesh_Redist_chapi.tex ESMCI_MBMesh_Patch_chapi.tex ESMCI_MBMesh_Mapping_chapi.tex ESMCI_MBMesh_chapi.tex ESMCI_MBMesh_GToM_Glue_chapi.tex ESMCI_MBMesh_Glue_chapi.tex ESMCI_MBMesh_Extrapolation_chapi.tex ESMCI_MBMesh_Dual_chapi.tex ESMCI_MBMesh_Conserve_chapi.tex ESMCI_MBMesh_Bilinear_chapi.tex ESMCI_MBMesh_BBox_chapi.tex ESMCI_MathUtil_chapi.tex ESMCI_GToM_Util_chapi.tex ESMCI_ClumpPnts_chapi.tex      ESMC_Mesh_ccapi.tex ESMCI_Mesh_F_ccapi.tex  ESMF_Mesh_fapi.tex ESMF_Mesh_C_fapi.tex    ESMC_RendEx_ccapi.tex ESMC_RefineEx_ccapi.tex ESMC_DPart_ccapi.tex ESMC_DCatEx_ccapi.tex  ESMF_MeshEx_fapi.tex   *.aux *.bbl *.blg *.log *.toc *.dvi *.ps *.ORIG *.out Mesh_refdoc.tex Mesh_crefdoc.tex Mesh_refdoc.pdf Mesh_crefdoc.pdf *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Mesh/doc'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Mesh/tests
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Mesh/tests'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMC_MBMeshUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMC_MBMeshRegridUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMC_MBMesh_ExtrapolateUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMC_MBMesh_UtilUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMC_MeshMOABUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMCI_IntegrateUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMC_MeshUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMC_MeshVTKUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_MeshOpUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_MeshUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMC_NearestUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMC_Proj4UTest *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Mesh/tests'
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Mesh'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/XGridGeomBase
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/XGridGeomBase'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/XGridGeomBase/src
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/XGridGeomBase/src'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/XGridGeomBase/src'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/XGridGeomBase/interface
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/XGridGeomBase/interface'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/XGridGeomBase/interface'
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/XGridGeomBase'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/GridUtil
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/GridUtil'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/GridUtil/src
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/GridUtil/src'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/GridUtil/src'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/GridUtil/interface
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/GridUtil/interface'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/GridUtil/interface'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/GridUtil/tests
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/GridUtil/tests'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_GridToMeshUTest *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/GridUtil/tests'
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/GridUtil'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/LocStream
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/LocStream'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/LocStream/doc
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/LocStream/doc'
+rm -rf  ESMC_LocStream_chapi.tex ESMCI_LocStream_chapi.tex  ESMF_LocStream_fapi.tex      ESMF_LocStreamEx_fapi.tex    ESMF_LocStream_C_fapi.tex    *.aux *.bbl *.blg *.log *.toc *.dvi *.ps *.ORIG *.out LocStream_refdoc.tex LocStream_refdoc.pdf LocStream_crefdoc.pdf *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/LocStream/doc'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/LocStream/src
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/LocStream/src'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/LocStream/src'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/LocStream/interface
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/LocStream/interface'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/LocStream/interface'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/LocStream/tests
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/LocStream/tests'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_LocStreamUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMC_LocStreamUTest *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/LocStream/tests'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/LocStream/examples
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/LocStream/examples'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_LocStreamEx *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/LocStream/examples'
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/LocStream'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/XGrid
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/XGrid'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/XGrid/src
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/XGrid/src'
+rm -rf   *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/XGrid/src'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/XGrid/interface
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/XGrid/interface'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/XGrid/interface'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/XGrid/doc
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/XGrid/doc'
+rm -rf  ESMC_XGrid_chapi.tex ESMCI_XGrid_chapi.tex  ESMF_XGridGet_fapi.tex ESMF_XGrid_fapi.tex ESMF_XGridCreate_fapi.tex      ESMF_XGridSparseMatEx_fapi.tex ESMF_XGridEx_fapi.tex   *.aux *.bbl *.blg *.log *.toc *.dvi *.ps *.ORIG *.out XGrid_refdoc.tex XGrid_crefdoc.tex XGrid_refdoc.pdf XGrid_crefdoc.pdf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/XGrid/doc'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/XGrid/tests
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/XGrid/tests'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_XGridUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_XGridMaskingUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMC_XGridUTest  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/XGrid/tests'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/XGrid/examples
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/XGrid/examples'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_XGridEx /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_XGridSparseMatEx *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/XGrid/examples'
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/XGrid'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/GeomBase
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/GeomBase'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/GeomBase/src
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/GeomBase/src'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/GeomBase/src'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/GeomBase/interface
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/GeomBase/interface'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/GeomBase/interface'
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/GeomBase'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/PointList
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/PointList'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/PointList/src
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/PointList/src'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/PointList/src'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/PointList/interface
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/PointList/interface'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/PointList/interface'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/PointList/tests
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/PointList/tests'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_PointListUTest  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/PointList/tests'
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/PointList'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Regrid
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Regrid'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Regrid/src
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Regrid/src'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Regrid/src'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Regrid/interface
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Regrid/interface'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Regrid/interface'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Regrid/doc
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Regrid/doc'
+rm -rf    ESMF_Regrid_fapi.tex     ESMF_RegridEx_fapi.tex   *.aux *.bbl *.blg *.log *.toc *.dvi *.ps *.ORIG *.out Regrid_refdoc.tex  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Regrid/doc'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Regrid/examples
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Regrid/examples'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Regrid/examples'
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Regrid'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Field
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Field'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Field/src
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Field/src'
+rm -rf ESMF_FieldGet.F90 ESMF_FieldEmpty.F90 ESMF_FieldCreate.F90 ESMF_FieldGather.F90 ESMF_FieldScatter.F90  ../doc/ESMF_FieldGet_fapi.tex ../doc/ESMF_FieldEmpty_fapi.tex ../doc/ESMF_FieldCreate_fapi.tex ../doc/ESMF_FieldGather_fapi.tex ../doc/ESMF_FieldScatter_fapi.tex *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Field/src'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Field/interface
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Field/interface'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Field/interface'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Field/doc
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Field/doc'
+rm -rf  ESMCI_Field_chapi.tex ESMC_Field_chapi.tex  ESMF_FieldWr_fapi.tex ESMF_FieldSMM_fapi.tex ESMF_FieldSet_fapi.tex ESMF_FieldRegrid_fapi.tex ESMF_FieldRedist_fapi.tex ESMF_FieldPr_fapi.tex ESMF_FieldHalo_fapi.tex ESMF_FieldGetAllocBounds_fapi.tex ESMF_Field_fapi.tex   ESMF_FieldScatter_fapi.tex ESMF_FieldGet_fapi.tex ESMF_FieldGather_fapi.tex ESMF_FieldEmpty_fapi.tex ESMF_FieldCreate_fapi.tex   ESMF_FieldSphereRegridEx_fapi.tex ESMF_FieldSMMEx_fapi.tex ESMF_FieldRepDimEx_fapi.tex ESMF_FieldRegridMaskEx_fapi.tex ESMF_FieldRegridEx_fapi.tex ESMF_FieldRedistEx_fapi.tex ESMF_FieldMeshRegridEx_fapi.tex ESMF_FieldHaloEx_fapi.tex ESMF_FieldEx_fapi.tex ESMF_FieldCreateEx_fapi.tex ESMF_FieldCommEx_fapi.tex ESMF_FieldArbGridEx_fapi.tex   *.aux *.bbl *.blg *.log *.toc *.dvi *.ps *.ORIG *.out Field_refdoc.tex Field_crefdoc.tex Field_refdoc.pdf Field_crefdoc.pdf *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Field/doc'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Field/tests
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Field/tests'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMC_FieldUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMC_FieldRegridUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMC_FieldRegridCsrvUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMC_FieldGridRegridUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMC_FieldGridRegrid2UTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMC_FieldGridRegridCsrvUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMC_FieldGridRegridCsrv2UTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMC_FieldGridRegridParUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMC_FieldGridGridRegridUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMC_FieldGridGridRegridCsrvUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMC_FieldTripoleRegridUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMC_FieldSMMFromFileUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_FieldUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_FieldCreateGetUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_FieldRegridCsrvUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_FieldRegridCsrv2ndUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_FieldRegridUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_FieldRegridCSUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_FieldArbGridUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_FieldIOUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_FieldRegridXGSMMUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_FieldRegridXGUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_FieldStressUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_FieldGatherUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_FieldRedistUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_FieldLSSMMUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_FieldSMMUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_FieldRedistArbUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_FieldMeshSMMUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_FieldHaloUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_FieldSMMFromFileUTest  *.nc *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Field/tests'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Field/examples
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Field/examples'
+rm -rf foo.nc /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_FieldCreateEx /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_FieldEx /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_FieldRegridEx /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_FieldRegridMaskEx /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_FieldSphereRegridEx /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_FieldMeshRegridEx /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_FieldRepDimEx /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_FieldArbGridEx /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_FieldCommEx /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_FieldRedistEx /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_FieldSMMEx /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_FieldHaloEx 0 1 2 3 *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Field/examples'
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Field'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Container
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Container'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Container/interface
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Container/interface'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Container/interface'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Container/tests
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Container/tests'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_ContainerUTest *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Container/tests'
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/Container'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/FieldBundle
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/FieldBundle'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/FieldBundle/src
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/FieldBundle/src'
+rm -rf ESMF_FieldBundle.F90 ../doc/ESMF_FieldBundle_fapi.tex *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/FieldBundle/src'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/FieldBundle/interface
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/FieldBundle/interface'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/FieldBundle/interface'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/FieldBundle/doc
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/FieldBundle/doc'
+rm -rf       ESMF_FieldBundle_fapi.tex   ESMF_FieldBundleSMMEx_fapi.tex ESMF_FieldBundleRedistEx_fapi.tex ESMF_FieldBundleHaloEx_fapi.tex ESMF_FieldBundleCreateEx_fapi.tex   *.aux *.bbl *.blg *.log *.toc *.dvi *.ps *.ORIG *.out FieldBundle_refdoc.tex FieldBundle_crefdoc.tex FieldBundle_refdoc.pdf FieldBundle_crefdoc.pdf *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/FieldBundle/doc'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/FieldBundle/tests
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/FieldBundle/tests'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_FieldBundleUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_FieldBundleCrGetUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_FieldBundleRedistUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_FieldBundleSMMUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_FieldBundleIOUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_FieldBundleRegridUTest *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/FieldBundle/tests'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/FieldBundle/examples
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/FieldBundle/examples'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_FieldBundleCreateEx /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_FieldBundleRedistEx /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_FieldBundleSMMEx /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_FieldBundleHaloEx  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/FieldBundle/examples'
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure/FieldBundle'
+make[3]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Infrastructure'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure
+make[3]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/State
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/State'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/State/src
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/State/src'
+rm -rf ESMF_StateInternals.F90 ESMF_StateRemRep.F90 ESMF_StateAPI.F90 ../doc/ESMF_StateInternals_fapi.tex ../doc/ESMF_StateRemRep_fapi.tex ../doc/ESMF_StateAPI_fapi.tex ESMF_LogFile *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/State/src'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/State/interface
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/State/interface'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/State/interface'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/State/doc
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/State/doc'
+rm -rf  ESMC_State_chapi.tex ESMCI_StateItem_chapi.tex ESMCI_State_chapi.tex  ESMF_StateWr_fapi.tex ESMF_StateVa_fapi.tex ESMF_StateTypes_fapi.tex ESMF_StateSet_fapi.tex ESMF_StateItem_fapi.tex ESMF_State_fapi.tex ESMF_StateContainer_fapi.tex   ESMF_StateRemRep_fapi.tex ESMF_StateInternals_fapi.tex ESMF_StateGet_fapi.tex ESMF_StateAPI_fapi.tex   ESMF_StateReadWriteEx_fapi.tex ESMF_StateEx_fapi.tex   *.aux *.bbl *.blg *.log *.toc *.dvi *.ps *.ORIG *.out State_refdoc.tex State_crefdoc.tex State_refdoc.pdf State_crefdoc.pdf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/State/doc'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/State/tests
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/State/tests'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMC_StateUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_StateCreateUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_StateReadWriteUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_StateUTest *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/State/tests'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/State/examples
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/State/examples'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_StateEx /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_StateReadWriteEx *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/State/examples'
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/State'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/Component
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/Component'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/Component/src
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/Component/src'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/Component/src'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/Component/interface
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/Component/interface'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/Component/interface'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/Component/examples
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/Component/examples'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_AppMainEx /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_CplEx /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_GCompEx /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_SCompEx /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_InternalStateEx /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_InternalStateModEx /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_CompTunnelEx *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/Component/examples'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/Component/tests
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/Component/tests'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_ComponentUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_GridCompCreateUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_CplCompCreateUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_SciCompCreateUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_CompSetServUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_StdCompMethodsUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_CompTunnelUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMC_ComponentUTest *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/Component/tests'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/Component/doc
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/Component/doc'
+rm -rf ESMCI_MethodTable_ccapi.tex ESMCI_FTable_ccapi.tex ESMCI_CompTunnel_ccapi.tex ESMC_SciComp_chapi.tex ESMCI_MethodTable_chapi.tex ESMCI_FTable_chapi.tex ESMCI_CompTunnel_chapi.tex ESMCI_Comp_chapi.tex ESMC_GridComp_chapi.tex ESMC_CplComp_chapi.tex  ESMF_SciComp_fapi.tex ESMF_GridComp_fapi.tex ESMF_CplComp_fapi.tex ESMF_Comp_fapi.tex    ESMCI_Comp_ccapi.tex ESMC_Comp_ccapi.tex ESMF_Comp_C_fapi.tex    ESMF_SCompEx_fapi.tex ESMF_InternalStateModEx_fapi.tex ESMF_InternalStateEx_fapi.tex ESMF_GCompEx_fapi.tex ESMF_CplEx_fapi.tex ESMF_CompTunnelEx_fapi.tex ESMF_AppMainEx_fapi.tex   *.aux *.bbl *.blg *.log *.toc *.dvi *.ps *.ORIG *.out Component_refdoc.tex Component_crefdoc.tex Component_refdoc.pdf Component_crefdoc.pdf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/Component/doc'
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/Component'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/AttachMethods
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/AttachMethods'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/AttachMethods/src
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/AttachMethods/src'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/AttachMethods/src'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/AttachMethods/doc
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/AttachMethods/doc'
+rm -rf    ESMF_AttachMethods_fapi.tex      ESMF_AttachMethodsEx_fapi.tex   *.aux *.bbl *.blg *.log *.toc *.dvi *.ps *.ORIG *.out AttachMethods_refdoc.tex AttachMethods_refdoc.pdf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/AttachMethods/doc'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/AttachMethods/examples
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/AttachMethods/examples'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_AttachMethodsEx  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/AttachMethods/examples'
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/AttachMethods'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/InfoAPI
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/InfoAPI'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/InfoAPI/src
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/InfoAPI/src'
+rm -rf   *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/InfoAPI/src'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/InfoAPI/interface
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/InfoAPI/interface'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/InfoAPI/interface'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/InfoAPI/tests
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/InfoAPI/tests'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_InfoGetInterfaceArrayUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_InfoSyncUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_InfoDescribeUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_InfoCacheUTest  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/InfoAPI/tests'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/InfoAPI/doc
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/InfoAPI/doc'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/InfoAPI/doc'
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/InfoAPI'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/StateReconcile
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/StateReconcile'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/StateReconcile/src
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/StateReconcile/src'
+rm -rf   ESMF_LogFile *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/StateReconcile/src'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/StateReconcile/doc
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/StateReconcile/doc'
+rm -rf  ESMF_StateReconcile_fapi.tex      ESMF_StateReconcileEx_fapi.tex   *.aux *.bbl *.blg *.log *.toc *.dvi *.ps *.ORIG *.out  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/StateReconcile/doc'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/StateReconcile/tests
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/StateReconcile/tests'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_StateReconcileUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_StateReconcileProxyUTest *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/StateReconcile/tests'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/StateReconcile/examples
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/StateReconcile/examples'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_StateReconcileEx *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/StateReconcile/examples'
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/StateReconcile'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/AttributeAPI
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/AttributeAPI'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/AttributeAPI/interface
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/AttributeAPI/interface'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/AttributeAPI/interface'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/AttributeAPI/tests
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/AttributeAPI/tests'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_AttPackABundleUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_AttPackArrayUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_AttPackCplCompUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_AttPackDistGridUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_AttPackFBundleUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_AttPackFieldUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_AttPackGridCompUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_AttPackGridUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_AttPackLocStreamUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_AttPackSciCompUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_AttPackStateUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_AttributeArrayUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_AttributeABundleUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_AttributeCplCompUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_AttributeDistGridUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_AttributeFBundleUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_AttributeFieldUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_AttributeGridCompUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_AttributeGridUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_AttributeLocStreamUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_AttributeSciCompUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_AttributeStateUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_AttributeUpdateUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_AttributeUpdateComponentUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_AttributeUpdateContainerStressUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_AttributeUpdateMultiReconcileUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_AttributeUpdateRemoveOnlyUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_AttributeUpdateReconcileUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_AttributeUtilUTest ESMF_AttPackABundleUTest.F90 ESMF_AttPackArrayUTest.F90 ESMF_AttPackCplCompUTest.F90 ESMF_AttPackDistGridUTest.F90 ESMF_AttPackFBundleUTest.F90 ESMF_AttPackFieldUTest.F90 ESMF_AttPackGridCompUTest.F90 ESMF_AttPackGridUTest.F90 ESMF_AttPackLocStreamUTest.F90 ESMF_AttPackSciCompUTest.F90 ESMF_AttPackStateUTest.F90 ESMF_AttributeABundleUTest.F90 ESMF_AttributeArrayUTest.F90 ESMF_AttributeCplCompUTest.F90 ESMF_AttributeDistGridUTest.F90 ESMF_AttributeFBundleUTest.F90 ESMF_AttributeFieldUTest.F90 ESMF_AttributeGridCompUTest.F90 ESMF_AttributeGridUTest.F90 ESMF_AttributeLocStreamUTest.F90 ESMF_AttributeSciCompUTest.F90 ESMF_AttributeStateUTest.F90 *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/AttributeAPI/tests'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/AttributeAPI/doc
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/AttributeAPI/doc'
+rm -rf          ESMF_Attribute_fapi.tex    *.aux *.bbl *.blg *.log *.toc *.dvi *.ps *.ORIG *.out AttributeAPI_refdoc.tex AttributeAPI_refdoc.pdf *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/AttributeAPI/doc'
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/AttributeAPI'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/TraceAPI
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/TraceAPI'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/TraceAPI/interface
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/TraceAPI/interface'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/TraceAPI/interface'
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/TraceAPI'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/WebServices
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/WebServices'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/WebServices/src
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/WebServices/src'
+rm -rf   ESMF_LogFile *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/WebServices/src'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/WebServices/doc
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/WebServices/doc'
+rm -rf ESMCI_WebServSocketUtils_ccapi.tex ESMCI_WebServServerSocket_ccapi.tex ESMCI_WebServSecureUtils_ccapi.tex ESMCI_WebServSecureSocket_ccapi.tex ESMCI_WebServSecureServerSocket_ccapi.tex ESMCI_WebServSecureClientSocket_ccapi.tex ESMCI_WebServRegistrarClient_ccapi.tex ESMCI_WebServProcCtrlClient_ccapi.tex ESMCI_WebServProcCtrl_ccapi.tex ESMCI_WebServNetEsmfServer_ccapi.tex ESMCI_WebServNetEsmfClient_ccapi.tex ESMCI_WebServLowLevelSocket_ccapi.tex ESMCI_WebServGRAMClient_ccapi.tex ESMCI_WebServForkClient_ccapi.tex ESMCI_WebServ_F_ccapi.tex ESMCI_WebServDataMgr_ccapi.tex ESMCI_WebServDataDesc_ccapi.tex ESMCI_WebServDataContent_ccapi.tex ESMCI_WebServCompSvrMgr_ccapi.tex ESMCI_WebServCompSvrInfo_ccapi.tex ESMCI_WebServCompSvrClient_ccapi.tex ESMCI_WebServComponentSvr_ccapi.tex ESMCI_WebServClientSocket_ccapi.tex ESMCI_WebServClientInfo_ccapi.tex ESMCI_WebServSocketUtils_chapi.tex ESMCI_WebServServerSocket_chapi.tex ESMCI_WebServSecureUtils_chapi.tex ESMCI_WebServSecureSocket_chapi.tex ESMCI_WebServSecureServerSocket_chapi.tex ESMCI_WebServSecureClientSocket_chapi.tex ESMCI_WebServRegistrarClient_chapi.tex ESMCI_WebServProcCtrl_chapi.tex ESMCI_WebServProcCtrlClient_chapi.tex ESMCI_WebServNetEsmfServer_chapi.tex ESMCI_WebServNetEsmf_chapi.tex ESMCI_WebServNetEsmfClient_chapi.tex ESMCI_WebServLowLevelSocket_chapi.tex ESMCI_WebServ_chapi.tex ESMCI_WebServGRAMClient_chapi.tex ESMCI_WebServForkClient_chapi.tex ESMCI_WebServDataMgr_chapi.tex ESMCI_WebServDataDesc_chapi.tex ESMCI_WebServDataContent_chapi.tex ESMCI_WebServCompSvrMgr_chapi.tex ESMCI_WebServCompSvrInfo_chapi.tex ESMCI_WebServCompSvrClient_chapi.tex ESMCI_WebServComponentSvr_chapi.tex ESMCI_WebServClientSocket_chapi.tex ESMCI_WebServClientInfo_chapi.tex  ESMF_WebServ_fapi.tex ESMF_WebServComponent_C_fapi.tex      ESMF_WebServicesEx_fapi.tex   *.aux *.bbl *.blg *.log *.toc *.dvi *.ps *.ORIG *.out WebServices_refdoc.tex WebServices_refdoc.pdf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/WebServices/doc'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/WebServices/examples
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/WebServices/examples'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_WebServicesEx  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/WebServices/examples'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/WebServices/tests
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/WebServices/tests'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_WebServUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMC_WebServCompSvrClientUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMC_WebServProcCtrlUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMC_WebServProcCtrlClientUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMC_WebServRegistrarClientUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMC_WebServServerSocketUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMC_WebServClientSocketUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMC_WebServForkClientUTest  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/WebServices/tests'
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/WebServices'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/IOAPI
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/IOAPI'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/IOAPI/interface
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/IOAPI/interface'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/IOAPI/interface'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/IOAPI/tests
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/IOAPI/tests'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_IOCompUTest  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/IOAPI/tests'
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/IOAPI'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/PreESMFMod
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/PreESMFMod'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/PreESMFMod/src
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/PreESMFMod/src'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/PreESMFMod/src'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/PreESMFMod/doc
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/PreESMFMod/doc'
+rm -rf    ESMF_RegridWeightGen_fapi.tex ESMF_RegridWeightGenCheck_fapi.tex ESMF_FileRegrid_fapi.tex ESMF_FileRegridCheck_fapi.tex               *.aux *.bbl *.blg *.log *.toc *.dvi *.ps *.ORIG *.out *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/PreESMFMod/doc'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/PreESMFMod/tests
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/PreESMFMod/tests'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_RegridWeightGenUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_FileRegridUTest *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/PreESMFMod/tests'
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/PreESMFMod'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/ESMFMod
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/ESMFMod'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/ESMFMod/src
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/ESMFMod/src'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/ESMFMod/src'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/ESMFMod/interface
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/ESMFMod/interface'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/ESMFMod/interface'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/ESMFMod/tests
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/ESMFMod/tests'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_FrameworkUTest *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/ESMFMod/tests'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/ESMFMod/examples
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/ESMFMod/examples'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/ESMFMod/examples'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/ESMFMod/doc
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/ESMFMod/doc'
+rm -rf  ESMC_Init_chapi.tex ESMCI_Init_chapi.tex ESMCI_chapi.tex ESMC_chapi.tex  ESMF_Overloads_fapi.tex ESMF_Init_fapi.tex ESMF_fapi.tex    ESMC_Init_ccapi.tex ESMCI_Init_F_ccapi.tex ESMCI_Init_ccapi.tex ESMF_Init_C_fapi.tex       *.aux *.bbl *.blg *.log *.toc *.dvi *.ps *.ORIG *.out ESMFMod_refdoc.tex   *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/ESMFMod/doc'
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/ESMFMod'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/AppDriver
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/AppDriver'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/AppDriver/doc
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/AppDriver/doc'
+rm -rf ParentGridCompTemplateSeqPrF_fapi.tex GridComp2TemplateSeqPrF_fapi.tex GridComp1TemplateSeqPrF_fapi.tex CplCompTemplateSeqPrF_fapi.tex ChangeMeSeqPrF_fapi.tex AppDriverSeqPrF_fapi.tex *.aux *.bbl *.blg *.log *.toc *.dvi *.ps *.ORIG *.out AppDriver_refdoc.tex /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/doc/AppDriver_refdoc.pdf   *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/AppDriver/doc'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/AppDriver/seq_pairwise_fdriver_spmd
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/AppDriver/seq_pairwise_fdriver_spmd'
+rm -rf Application CplCompTemplate.o GridComp1Template.o GridComp2Template.o ParentGridCompTemplate.o AppDriver.o *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/AppDriver/seq_pairwise_fdriver_spmd'
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure/AppDriver'
+make[3]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/Superstructure'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/epilogue
+make[3]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/epilogue'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/epilogue/src
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/epilogue/src'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/epilogue/src'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/epilogue/tests
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/epilogue/tests'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_TestUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMCI_TestUTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMC_TestUTest *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/epilogue/tests'
+make[3]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/epilogue'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/doc
+make[3]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/doc'
+rm -rf *.aux *.bbl *.blg *.log *.toc *.dvi *.ps *.ORIG *.out ESMF.bib ESMC.bib ESMF_refdoc.tex ESMC_crefdoc.tex ESMF_usrdoc.tex ESMF_refdoc.pdf ESMC_crefdoc.pdf ESMF_usrdoc.pdf ESMF_refdoc.bib ESMC_crefdoc.bib ESMF_usrdoc.bib /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/doc/ESMF_refdoc.pdf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/doc/ESMC_crefdoc.pdf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/doc/ESMF_usrdoc.pdf ESMF_refdoc.dvi ESMC_crefdoc.dvi ESMF_usrdoc.dvi *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[3]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/doc'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests
+make[3]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_CompCreate
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_CompCreate'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_CompCreateSTest *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_CompCreate'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_CompFortranAndC
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_CompFortranAndC'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_CompFortranAndCSTest *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_CompFortranAndC'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_RecursiveComponent
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_RecursiveComponent'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_RecursiveComponentSTest *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_RecursiveComponent'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_ArrayScatterGather
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_ArrayScatterGather'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_ArrayScatterGatherSTest *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_ArrayScatterGather'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_Attribute
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_Attribute'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_AttributeSTest *.xml *.stdout *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_Attribute'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_ComplianceChecker
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_ComplianceChecker'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_ComplianceCheckerSTest *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_ComplianceChecker'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_ArraySparseMatMul
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_ArraySparseMatMul'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_ArraySparseMatMulSTest *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_ArraySparseMatMul'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_ArrayRedist
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_ArrayRedist'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_ArrayRedistSTest *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_ArrayRedist'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_ArrayRedistMPMD
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_ArrayRedistMPMD'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_ArrayRedistSTestA /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_ArrayRedistSTestB *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_ArrayRedistMPMD'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_ArrayRedistSharedObj
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_ArrayRedistSharedObj'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_ArrayRedistSharedObj'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_ArrayRedist3D
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_ArrayRedist3D'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_ArrayRedist3DSTest *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_ArrayRedist3D'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_ArrayBundleSparseMatMul
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_ArrayBundleSparseMatMul'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_ArrayBundleSparseMatMulSTest *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_ArrayBundleSparseMatMul'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_ArrayBundleRedist
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_ArrayBundleRedist'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_ArrayBundleRedistSTest *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_ArrayBundleRedist'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_ArrayRedistOpenMP
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_ArrayRedistOpenMP'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_ArrayRedistOpenMPSTest *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_ArrayRedistOpenMP'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_ArrayRedistOpenACC
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_ArrayRedistOpenACC'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_ArrayRedistOpenACCSTest *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_ArrayRedistOpenACC'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_ArraySharedDeSSI
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_ArraySharedDeSSI'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_ArraySharedDeSSISTest *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_ArraySharedDeSSI'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_ConcurrentComponent
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_ConcurrentComponent'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_ConcurrentCompSTest *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_ConcurrentComponent'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldConcurrentComp
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldConcurrentComp'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_FieldConCompSTest *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldConcurrentComp'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldBundleSMM
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldBundleSMM'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_FieldBundleSMMSTest *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldBundleSMM'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldBundleSMMPacked
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldBundleSMMPacked'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_FieldBundleSMMPackedSTest *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldBundleSMMPacked'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldBundleRedistPacked
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldBundleRedistPacked'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_FieldBundleRedistPackedSTest *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldBundleRedistPacked'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldBundleRegridPacked
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldBundleRegridPacked'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_FieldBundleRegridPackedSTest *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldBundleRegridPacked'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldRedist
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldRedist'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_FieldRedistSTest *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldRedist'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldRedistBlk2Blk
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldRedistBlk2Blk'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_FieldRedistBlk2BlkSTest *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldRedistBlk2Blk'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldRedistBlk2Arb
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldRedistBlk2Arb'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_FieldRedistBlk2ArbSTest *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldRedistBlk2Arb'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldRedistArb2Arb
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldRedistArb2Arb'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_FieldRedistArb2ArbSTest *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldRedistArb2Arb'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldBundleLSRedistArb2Arb
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldBundleLSRedistArb2Arb'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_FieldBundleLSRedistArb2ArbSTest *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldBundleLSRedistArb2Arb'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldBundleLSRedistArb2ArbUngrdDim
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldBundleLSRedistArb2ArbUngrdDim'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_FieldBundleLSRedistArb2ArbUngrdDimSTest *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldBundleLSRedistArb2ArbUngrdDim'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldBundleRedistBlk2Blk
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldBundleRedistBlk2Blk'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_FieldBundleRedistBlk2BlkSTest *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldBundleRedistBlk2Blk'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldBundleRedistBlk2Arb
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldBundleRedistBlk2Arb'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_FieldBundleRedistBlk2ArbSTest *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldBundleRedistBlk2Arb'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldBundleRedistArb2Arb
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldBundleRedistArb2Arb'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_FieldBundleRedistArb2ArbSTest *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldBundleRedistArb2Arb'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldRegrid
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldRegrid'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_FieldRegridSTest *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldRegrid'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldRegridDisjoint
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldRegridDisjoint'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_FieldRegridDisjointSTest *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldRegridDisjoint'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldRegridOverlap
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldRegridOverlap'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_FieldRegridOverlapSTest *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldRegridOverlap'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldRegridMesh
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldRegridMesh'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_FieldRegridMeshSTest *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldRegridMesh'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldRegridMeshToMesh
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldRegridMeshToMesh'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_FieldRegridMeshToMeshSTest *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldRegridMeshToMesh'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldSparseMatMul
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldSparseMatMul'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_FieldSparseMatMulSTest *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldSparseMatMul'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldSharedDeSSI
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldSharedDeSSI'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_FieldSharedDeSSISTest *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldSharedDeSSI'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldLSRedistArb2Arb
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldLSRedistArb2Arb'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_FieldLSRedistArb2ArbSTest *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldLSRedistArb2Arb'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldLSRedistArb2ArbUngrdDim
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldLSRedistArb2ArbUngrdDim'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_FieldLSRedistArb2ArbUngrdDimSTest *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldLSRedistArb2ArbUngrdDim'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldLSSMM
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldLSSMM'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_FieldLSSMMSTest *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldLSSMM'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldMeshSMM
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldMeshSMM'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_FieldMeshSMMSTest *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_FieldMeshSMM'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_TransferGrid
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_TransferGrid'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_TransferGridSTest *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_TransferGrid'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_TransferMesh
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_TransferMesh'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_TransferMeshSTest *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_TransferMesh'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_SequentialEnsemble
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_SequentialEnsemble'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_SequentialEnsembleSTest *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_SequentialEnsemble'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_ConcurrentEnsemble
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_ConcurrentEnsemble'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_ConcurrentEnsembleSTest *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_ConcurrentEnsemble'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_DirectCoupling
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_DirectCoupling'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_DirectCouplingSTest *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_DirectCoupling'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_XGridConcurrent
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_XGridConcurrent'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_XGridConcurrentSTest *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_XGridConcurrent'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_XGridSerial
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_XGridSerial'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_XGridSerialSTest *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_XGridSerial'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_Trace
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_Trace'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_TraceSTest /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/traceout *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests/ESMF_Trace'
+make[3]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/system_tests'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/apps
+make[3]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/apps'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/apps/ESMF_PrintInfo
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/apps/ESMF_PrintInfo'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/apps/appsg/Unicos.gfortran.64.mpi.default/ESMF_PrintInfo *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/apps/ESMF_PrintInfo'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/apps/ESMF_PrintInfoC
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/apps/ESMF_PrintInfoC'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/apps/appsg/Unicos.gfortran.64.mpi.default/ESMF_PrintInfoC *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/apps/ESMF_PrintInfoC'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/apps/ESMF_RegridWeightGen
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/apps/ESMF_RegridWeightGen'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/apps/appsg/Unicos.gfortran.64.mpi.default/ESMF_RegridWeightGen *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/apps/ESMF_RegridWeightGen'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/apps/ESMF_WebServController
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/apps/ESMF_WebServController'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/apps/appsg/Unicos.gfortran.64.mpi.default/ESMF_WebServController *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/apps/ESMF_WebServController'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/apps/ESMF_Scrip2Unstruct
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/apps/ESMF_Scrip2Unstruct'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/apps/appsg/Unicos.gfortran.64.mpi.default/ESMF_Scrip2Unstruct *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/apps/ESMF_Scrip2Unstruct'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/apps/ESMF_Regrid
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/apps/ESMF_Regrid'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/apps/appsg/Unicos.gfortran.64.mpi.default/ESMF_Regrid *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/apps/ESMF_Regrid'
+make[3]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/apps'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/addon
+make[3]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/addon'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/addon/NUOPC
+make[4]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/addon/NUOPC'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/addon/NUOPC/src
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/addon/NUOPC/src'
+rm -rf  *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/addon/NUOPC/src'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/addon/NUOPC/tests
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/addon/NUOPC/tests'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/test/testg/Unicos.gfortran.64.mpi.default/ESMF_NUOPC_UTest *.nc *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/addon/NUOPC/tests'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/addon/NUOPC/doc
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/addon/NUOPC/doc'
+rm -rf  NUOPC_RunSequenceDef_fapi.tex NUOPC_Model_fapi.tex NUOPC_ModelBase_fapi.tex NUOPC_Mediator_fapi.tex NUOPC_FreeFormatDef_fapi.tex NUOPC_FieldDictionaryDef_fapi.tex NUOPC_FieldDictionaryApi_fapi.tex NUOPC_fapi.tex NUOPC_Driver_fapi.tex NUOPC_Connector_fapi.tex NUOPC_Compliance_Model_fapi.tex NUOPC_Compliance_Driver_fapi.tex NUOPC_Compliance_Connector_fapi.tex NUOPC_Compliance_Base_fapi.tex NUOPC_Comp_fapi.tex NUOPC_Base_fapi.tex NUOPC_Auxiliary_fapi.tex      ESMF_NUOPCBasicModelEx_fapi.tex ESMF_NUOPCAtmModelEx_fapi.tex   *.aux *.bbl *.blg *.log *.toc *.dvi *.ps *.ORIG *.out NUOPC_refdoc.tex NUOPC_howtodoc.tex NUOPC_refdoc.pdf NUOPC_howtodoc.pdf *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/addon/NUOPC/doc'
+tree_clean in: /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/addon/NUOPC/examples
+make[5]: Entering directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/addon/NUOPC/examples'
+rm -rf /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_NUOPCBasicModelEx /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/examples/examplesg/Unicos.gfortran.64.mpi.default/ESMF_NUOPCAtmModelEx *.o *.so *.mod core ESM*.stdout ESM*.Log PET*.Log *ESMF_LogFile
+make[5]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/addon/NUOPC/examples'
+make[4]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/addon/NUOPC'
+make[3]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src/addon'
+make[2]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g/src'
+make[1]: Leaving directory '/lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_g'
