@@ -1,0 +1,14 @@
+ Time1 = 
+Time -----------------------------------
+2000-02-28T02:24:45
+end Time -------------------------------
+
+ Timeinterval1 = 
+TimeInterval ---------------------------
+P0Y0M2DT8H36M15S
+end TimeInterval -----------------------
+
+ time2 = time1 + timeinterval1 =         2000 /           3 /           1            11 :           1 :           0
+ time2 is larger than time1
+  PASS  Example ESMF_TimeEx, ESMF_TimeEx.F90, line 141
+ PASS: ESMF_TimeEx.F90

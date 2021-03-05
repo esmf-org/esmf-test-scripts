@@ -1,0 +1,48 @@
+  Beginning Test, file ESMF_FrameworkUTest.F90, line 59
+  Beginning Test, file ESMF_FrameworkUTest.F90, line 59
+  Beginning Test, file ESMF_FrameworkUTest.F90, line 59
+  Beginning Test, file ESMF_FrameworkUTest.F90, line 59
+  NUMBER_OF_PROCESSORS           4
+  NUMBER_OF_PROCESSORS           4
+  NUMBER_OF_PROCESSORS           4
+  NUMBER_OF_PROCESSORS           4
+  PASS  Testing IsInitialized() before ESMF_Initialize() was called, ESMF_FrameworkUTest.F90, line 66
+  PASS  Testing IsInitialized() before ESMF_Initialize() was called, ESMF_FrameworkUTest.F90, line 66
+  PASS  Testing IsInitialized() before ESMF_Initialize() was called, ESMF_FrameworkUTest.F90, line 66
+  PASS  Testing IsInitialized() before ESMF_Initialize() was called, ESMF_FrameworkUTest.F90, line 72
+  PASS  Testing IsInitialized() before ESMF_Initialize() was called, ESMF_FrameworkUTest.F90, line 66
+  PASS  Testing IsInitialized() before ESMF_Initialize() was called, ESMF_FrameworkUTest.F90, line 72
+  PASS  Testing IsInitialized() before ESMF_Initialize() was called, ESMF_FrameworkUTest.F90, line 72
+  PASS  Testing IsFinalized() before ESMF_Initialize() was called, ESMF_FrameworkUTest.F90, line 78
+  PASS  Testing IsFinalized() before ESMF_Initialize() was called, ESMF_FrameworkUTest.F90, line 78
+  PASS  Testing IsFinalized() before ESMF_Initialize() was called, ESMF_FrameworkUTest.F90, line 84
+  PASS  Testing IsFinalized() before ESMF_Initialize() was called, ESMF_FrameworkUTest.F90, line 78
+  PASS  Testing IsFinalized() before ESMF_Initialize() was called, ESMF_FrameworkUTest.F90, line 84
+  PASS  Testing IsInitialized() after ESMF_Initialize() was called, ESMF_FrameworkUTest.F90, line 91
+  PASS  Testing IsInitialized() before ESMF_Initialize() was called, ESMF_FrameworkUTest.F90, line 72
+  PASS  Testing IsFinalized() before ESMF_Initialize() was called, ESMF_FrameworkUTest.F90, line 78
+  PASS  Testing IsFinalized() before ESMF_Initialize() was called, ESMF_FrameworkUTest.F90, line 84
+  PASS  Testing IsInitialized() after ESMF_Initialize() was called, ESMF_FrameworkUTest.F90, line 91
+  PASS  Testing IsFinalized() before ESMF_Initialize() was called, ESMF_FrameworkUTest.F90, line 84
+  PASS  Testing IsInitialized() after ESMF_Initialize() was called, ESMF_FrameworkUTest.F90, line 91
+  PASS  Testing IsInitialized() after ESMF_Initialize() was called, ESMF_FrameworkUTest.F90, line 91
+  PASS  Testing IsInitialized() after ESMF_Initialize() was called, ESMF_FrameworkUTest.F90, line 97
+  PASS  Testing IsFinalized() after ESMF_Initialize() was called, ESMF_FrameworkUTest.F90, line 104
+  PASS  Testing IsInitialized() after ESMF_Initialize() was called, ESMF_FrameworkUTest.F90, line 97
+  PASS  Testing IsFinalized() after ESMF_Initialize() was called, ESMF_FrameworkUTest.F90, line 104
+  PASS  Testing IsInitialized() after ESMF_Initialize() was called, ESMF_FrameworkUTest.F90, line 97
+  PASS  Testing IsFinalized() after ESMF_Initialize() was called, ESMF_FrameworkUTest.F90, line 104
+  PASS  Testing IsFinalized() after ESMF_Initialize() was called, ESMF_FrameworkUTest.F90, line 110
+  PASS  Testing IsInitialized() after ESMF_Initialize() was called, ESMF_FrameworkUTest.F90, line 97
+  PASS  Testing IsFinalized() after ESMF_Initialize() was called, ESMF_FrameworkUTest.F90, line 104
+  PASS  Testing IsFinalized() after ESMF_Initialize() was called, ESMF_FrameworkUTest.F90, line 110
+  PASS  Testing IsFinalized() after ESMF_Initialize() was called, ESMF_FrameworkUTest.F90, line 110
+  PASS  Testing IsFinalized() after ESMF_Initialize() was called, ESMF_FrameworkUTest.F90, line 110
+  Ending Test, file ESMF_FrameworkUTest.F90, line 116
+  Ending Test, file ESMF_FrameworkUTest.F90, line 116
+  Ending Test, file ESMF_FrameworkUTest.F90, line 116
+  Ending Test, file ESMF_FrameworkUTest.F90, line 116
+  PET           0  Test Elapsed Time    5.1760000000000002       msec.
+  PET           1  Test Elapsed Time    22.689000000000000       msec.
+  PET           2  Test Elapsed Time    22.646000000000001       msec.
+  PET           3  Test Elapsed Time    22.682000000000002       msec.

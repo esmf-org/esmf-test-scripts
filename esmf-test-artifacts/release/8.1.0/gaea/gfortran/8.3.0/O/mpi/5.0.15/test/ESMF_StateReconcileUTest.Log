@@ -1,0 +1,588 @@
+20210305 103121.242 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103121.242 INFO             PET0 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 103121.242 INFO             PET0 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 103121.242 INFO             PET0 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 103121.242 INFO             PET0 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 103121.242 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103121.242 INFO             PET0 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 103121.242 INFO             PET0 ESMF library build date/time: "Mar  5 2021" "09:44:29"
+20210305 103121.242 INFO             PET0 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_O
+20210305 103121.242 INFO             PET0 ESMF_COMM                   : mpi
+20210305 103121.243 INFO             PET0 ESMF_MOAB                   : enabled
+20210305 103121.243 INFO             PET0 ESMF_LAPACK                 : enabled
+20210305 103121.243 INFO             PET0 ESMF_NETCDF                 : enabled
+20210305 103121.243 INFO             PET0 ESMF_PNETCDF                : disabled
+20210305 103121.243 INFO             PET0 ESMF_PIO                    : enabled
+20210305 103121.243 INFO             PET0 ESMF_YAMLCPP                : enabled
+20210305 103121.253 INFO             PET0  Beginning Test, file ESMF_StateReconcileUTest.F90, line 282
+20210305 103121.253 INFO             PET0  NUMBER_OF_PROCESSORS           4
+20210305 103121.258 INFO             PET0  PASS  Creating a Gridded Component, ESMF_StateReconcileUTest.F90, line 304
+20210305 103121.258 INFO             PET0  PASS  Creating a Gridded Component, ESMF_StateReconcileUTest.F90, line 313
+20210305 103121.260 INFO             PET0  PASS  Creating a State, ESMF_StateReconcileUTest.F90, line 321
+20210305 103121.262 INFO             PET0  PASS  Testing empty State for reconcile needed, ESMF_StateReconcileUTest.F90, line 328
+20210305 103121.262 INFO             PET0  PASS  Testing empty State for reconcile needed, ESMF_StateReconcileUTest.F90, line 333
+20210305 103121.263 INFO             PET0  PASS  Testing empty State for reconcile needed (collective), ESMF_StateReconcileUTest.F90, line 341
+20210305 103121.263 INFO             PET0  PASS  Testing empty State for reconcile needed (collective), ESMF_StateReconcileUTest.F90, line 346
+20210305 103121.272 INFO             PET0  PASS  Calling GridCompSetServices, ESMF_StateReconcileUTest.F90, line 357
+20210305 103121.272 INFO             PET0  PASS  Calling GridCompSetServices, ESMF_StateReconcileUTest.F90, line 364
+20210305 103121.272 INFO             PET0  PASS  Calling GridCompSetEntryPoint, ESMF_StateReconcileUTest.F90, line 372
+20210305 103121.272 INFO             PET0  PASS  Calling GridCompSetEntryPoint, ESMF_StateReconcileUTest.F90, line 380
+20210305 103121.272 INFO             PET0  PASS  Calling GridCompSetEntryPoint, ESMF_StateReconcileUTest.F90, line 388
+20210305 103121.272 INFO             PET0  PASS  Calling GridCompSetEntryPoint, ESMF_StateReconcileUTest.F90, line 396
+20210305 103121.283 INFO             PET0  PASS  Calling GridCompInitialize, ESMF_StateReconcileUTest.F90, line 403
+20210305 103121.283 INFO             PET0  PASS  Calling GridCompInitialize, ESMF_StateReconcileUTest.F90, line 410
+20210305 103121.283 INFO             PET0  PASS  Calling StateValidate, ESMF_StateReconcileUTest.F90, line 417
+20210305 103121.283 INFO             PET0  PASS  Testing modified State for reconcile needed, ESMF_StateReconcileUTest.F90, line 424
+20210305 103121.283 INFO             PET0  PASS  Testing modified State for reconcile needed, ESMF_StateReconcileUTest.F90, line 429
+20210305 103121.283 INFO             PET0  PASS  Testing modified State for reconcile needed (collective), ESMF_StateReconcileUTest.F90, line 437
+20210305 103121.283 INFO             PET0  PASS  Testing modified State for reconcile needed (collective), ESMF_StateReconcileUTest.F90, line 442
+20210305 103121.330 INFO             PET0  PASS  Calling StateReconcile in concurrent mode, ESMF_StateReconcileUTest.F90, line 449
+20210305 103121.330 INFO             PET0  PASS  Calling StateValidate, ESMF_StateReconcileUTest.F90, line 456
+20210305 103121.330 INFO             PET0  PASS  Testing reconciled State for reconcile needed, ESMF_StateReconcileUTest.F90, line 463
+20210305 103121.330 INFO             PET0  PASS  Testing reconciled State for reconcile needed, ESMF_StateReconcileUTest.F90, line 473
+20210305 103121.330 INFO             PET0  PASS  Testing reconciled State for reconcile needed (collective), ESMF_StateReconcileUTest.F90, line 481
+20210305 103121.330 INFO             PET0  PASS  Testing reconciled State for reconcile needed (collective), ESMF_StateReconcileUTest.F90, line 491
+20210305 103121.332 INFO             PET0  PASS  Calling 2nd StateReconcile in concurrent mode, ESMF_StateReconcileUTest.F90, line 499
+20210305 103121.332 INFO             PET0  PASS  Calling StateValidate on 2nd StateReconcile, ESMF_StateReconcileUTest.F90, line 506
+20210305 103121.332 INFO             PET0  PASS  Calling GridCompFinalize, ESMF_StateReconcileUTest.F90, line 513
+20210305 103121.332 INFO             PET0  PASS  Calling GridCompFinalize, ESMF_StateReconcileUTest.F90, line 520
+20210305 103121.333 INFO             PET0  PASS  Calling GridCompDestroy, ESMF_StateReconcileUTest.F90, line 527
+20210305 103121.333 INFO             PET0  PASS  Calling GridCompDestroy, ESMF_StateReconcileUTest.F90, line 534
+20210305 103121.333 INFO             PET0  PASS  Calling StateDestroy, ESMF_StateReconcileUTest.F90, line 541
+20210305 103121.333 INFO             PET0  PASS  Creating a Gridded Component, ESMF_StateReconcileUTest.F90, line 557
+20210305 103121.333 INFO             PET0  PASS  Creating a Gridded Component, ESMF_StateReconcileUTest.F90, line 565
+20210305 103121.333 INFO             PET0  PASS  Creating a State, ESMF_StateReconcileUTest.F90, line 573
+20210305 103121.333 INFO             PET0  PASS  Calling GridCompSetServices, ESMF_StateReconcileUTest.F90, line 585
+20210305 103121.333 INFO             PET0  PASS  Calling GridCompSetServices, ESMF_StateReconcileUTest.F90, line 592
+20210305 103121.333 INFO             PET0  PASS  Calling GridCompSetEntryPoint, ESMF_StateReconcileUTest.F90, line 600
+20210305 103121.333 INFO             PET0  PASS  Calling GridCompSetEntryPoint, ESMF_StateReconcileUTest.F90, line 608
+20210305 103121.333 INFO             PET0  PASS  Calling GridCompSetEntryPoint, ESMF_StateReconcileUTest.F90, line 616
+20210305 103121.333 INFO             PET0  PASS  Calling GridCompSetEntryPoint, ESMF_StateReconcileUTest.F90, line 624
+20210305 103121.333 INFO             PET0  PASS  Calling GridCompInitialize, ESMF_StateReconcileUTest.F90, line 631
+20210305 103121.333 INFO             PET0  PASS  Calling GridCompInitialize, ESMF_StateReconcileUTest.F90, line 638
+20210305 103121.333 INFO             PET0  PASS  Calling StateValidate, ESMF_StateReconcileUTest.F90, line 645
+20210305 103121.334 INFO             PET0  PASS  Calling StateReconcile in sequential mode, ESMF_StateReconcileUTest.F90, line 652
+20210305 103121.335 INFO             PET0  PASS  Calling StateValidate, ESMF_StateReconcileUTest.F90, line 659
+20210305 103121.335 INFO             PET0  PASS  Calling 2nd StateReconcile in sequential mode, ESMF_StateReconcileUTest.F90, line 667
+20210305 103121.335 INFO             PET0  PASS  Calling StateValidate on 2nd StateReconcile, ESMF_StateReconcileUTest.F90, line 674
+20210305 103121.335 INFO             PET0  PASS  Calling GridCompFinalize, ESMF_StateReconcileUTest.F90, line 681
+20210305 103121.336 INFO             PET0  PASS  Calling GridCompFinalize, ESMF_StateReconcileUTest.F90, line 688
+20210305 103121.336 INFO             PET0  PASS  Calling GridCompDestroy, ESMF_StateReconcileUTest.F90, line 695
+20210305 103121.336 INFO             PET0  PASS  Calling GridCompDestroy, ESMF_StateReconcileUTest.F90, line 702
+20210305 103121.336 INFO             PET0  PASS  Calling StateDestroy, ESMF_StateReconcileUTest.F90, line 709
+20210305 103121.336 INFO             PET0  PASS  Creating a Gridded Component, ESMF_StateReconcileUTest.F90, line 727
+20210305 103121.336 INFO             PET0  PASS  Creating a Gridded Component, ESMF_StateReconcileUTest.F90, line 736
+20210305 103121.336 INFO             PET0  PASS  Creating a State, ESMF_StateReconcileUTest.F90, line 744
+20210305 103121.336 INFO             PET0  PASS  Calling GridCompSetServices, ESMF_StateReconcileUTest.F90, line 756
+20210305 103121.336 INFO             PET0  PASS  Calling GridCompSetServices, ESMF_StateReconcileUTest.F90, line 763
+20210305 103121.336 INFO             PET0  PASS  Calling GridCompSetEntryPoint, ESMF_StateReconcileUTest.F90, line 771
+20210305 103121.336 INFO             PET0  PASS  Calling GridCompSetEntryPoint, ESMF_StateReconcileUTest.F90, line 779
+20210305 103121.336 INFO             PET0  PASS  Calling GridCompSetEntryPoint, ESMF_StateReconcileUTest.F90, line 787
+20210305 103121.336 INFO             PET0  PASS  Calling GridCompSetEntryPoint, ESMF_StateReconcileUTest.F90, line 795
+20210305 103121.336 INFO             PET0  PASS  Calling GridCompInitialize, ESMF_StateReconcileUTest.F90, line 802
+20210305 103121.336 INFO             PET0  PASS  Calling GridCompInitialize, ESMF_StateReconcileUTest.F90, line 809
+20210305 103121.336 INFO             PET0  PASS  Calling StateValidate, ESMF_StateReconcileUTest.F90, line 816
+20210305 103121.337 INFO             PET0  PASS  Calling StateReconcile in run-in-parent mode, ESMF_StateReconcileUTest.F90, line 823
+20210305 103121.337 INFO             PET0  PASS  Calling StateValidate, ESMF_StateReconcileUTest.F90, line 830
+20210305 103121.338 INFO             PET0  PASS  Calling 2nd StateReconcile in run-in-parent mode, ESMF_StateReconcileUTest.F90, line 838
+20210305 103121.338 INFO             PET0  PASS  Calling StateValidate on 2nd StateReconcile, ESMF_StateReconcileUTest.F90, line 845
+20210305 103121.338 INFO             PET0  PASS  Calling GridCompFinalize, ESMF_StateReconcileUTest.F90, line 852
+20210305 103121.338 INFO             PET0  PASS  Calling GridCompFinalize, ESMF_StateReconcileUTest.F90, line 859
+20210305 103121.338 INFO             PET0  PASS  Calling GridCompDestroy, ESMF_StateReconcileUTest.F90, line 866
+20210305 103121.339 INFO             PET0  PASS  Calling GridCompDestroy, ESMF_StateReconcileUTest.F90, line 873
+20210305 103121.339 INFO             PET0  PASS  Calling StateDestroy, ESMF_StateReconcileUTest.F90, line 880
+20210305 103121.339 INFO             PET0  PASS  Calling StateCreate for rereconcile tests, ESMF_StateReconcileUTest.F90, line 896
+20210305 103121.362 INFO             PET0  PASS  Creating PET 0 Array for rereconcile tests, ESMF_StateReconcileUTest.F90, line 917
+20210305 103121.363 INFO             PET0  PASS  Calling initial reconcile for rereconcile tests, ESMF_StateReconcileUTest.F90, line 924
+20210305 103121.363 INFO             PET0  PASS  PET           0 : Calling StateGet to access proxies, ESMF_StateReconcileUTest.F90, line 932
+20210305 103121.363 INFO             PET0  PASS  Removing non-proxy item test, ESMF_StateReconcileUTest.F90, line 941
+20210305 103121.363 INFO             PET0  PASS  Re-reconciling State test, ESMF_StateReconcileUTest.F90, line 948
+20210305 103121.363 ERROR            PET0 ESMF_StateAPI.cppF90:2431 ESMF_StateGet Not found  -  no ESMF_Array found named: Array_for_reconciling
+20210305 103121.363 INFO             PET0  PASS  Checking for empty State tests, ESMF_StateReconcileUTest.F90, line 956
+20210305 103121.363 INFO             PET0  PASS  Calling StateCreate for top-level State tests, ESMF_StateReconcileUTest.F90, line 975
+20210305 103121.363 INFO             PET0  PASS  Calling StateCreate for nested State tests, ESMF_StateReconcileUTest.F90, line 987
+20210305 103121.363 INFO             PET0  PASS  Calling FieldEmptyCreate for nested State test, ESMF_StateReconcileUTest.F90, line 996
+20210305 103121.363 INFO             PET0  PASS  Calling StateAdd of nested Field test, ESMF_StateReconcileUTest.F90, line 1005
+20210305 103121.363 INFO             PET0  PASS  Calling StateAdd of nested State test, ESMF_StateReconcileUTest.F90, line 1015
+20210305 103121.364 INFO             PET0  PASS  Calling StateReconcile of nested State test, ESMF_StateReconcileUTest.F90, line 1022
+20210305 103121.364 INFO             PET0  PASS  Calling StateGet of nested Field test, ESMF_StateReconcileUTest.F90, line 1034
+20210305 103121.364 ERROR            PET0 ESMF_StateAPI.cppF90:2565 ESMF_StateGet Not found  -  no ESMF_Field found named: state_nested/nested Field_badname
+20210305 103121.364 INFO             PET0  PASS  Calling StateGet of nested Field with wrong name test, ESMF_StateReconcileUTest.F90, line 1044
+20210305 103121.364 INFO             PET0  PASS  Creating a State for attributes, ESMF_StateReconcileUTest.F90, line 1056
+20210305 103121.364 INFO             PET0  PASS  Reconciling state with Attribute reconciling turned on, ESMF_StateReconcileUTest.F90, line 1063
+20210305 103121.366 INFO             PET0  PASS  Adding an Attribute to the Base test, ESMF_StateReconcileUTest.F90, line 1074
+20210305 103121.367 INFO             PET0  PASS  Reconciling state with Base attribute test, ESMF_StateReconcileUTest.F90, line 1081
+20210305 103121.368 INFO             PET0  PASS  Verifying reconciled Base attributes test, ESMF_StateReconcileUTest.F90, line 1093
+20210305 103121.368 INFO             PET0  PASS  Adding Field to State on PET 0 test, ESMF_StateReconcileUTest.F90, line 1118
+20210305 103121.370 INFO             PET0  PASS  Reconciling state with Field and Attribute test, ESMF_StateReconcileUTest.F90, line 1125
+20210305 103121.370 INFO             PET0  PASS  Accessing reconciled Fields test, ESMF_StateReconcileUTest.F90, line 1138
+20210305 103121.370 INFO             PET0  PASS  Accessing reconciled Field Attributes test, ESMF_StateReconcileUTest.F90, line 1156
+20210305 103121.372 INFO             PET0  PASS  Create a FieldBundle with Attributes on PET 0 test, ESMF_StateReconcileUTest.F90, line 1177
+20210305 103121.376 INFO             PET0  PASS  Reconciling state with FieldBundle and Attributes test, ESMF_StateReconcileUTest.F90, line 1184
+20210305 103121.376 INFO             PET0  PASS  Access reconciled FieldBundle test, ESMF_StateReconcileUTest.F90, line 1194
+20210305 103121.376 INFO             PET0  PASS  Creating a Gridded Component for shared grid tests, ESMF_StateReconcileUTest.F90, line 1207
+20210305 103121.376 INFO             PET0  PASS  Creating a Gridded Component for shared grid tests, ESMF_StateReconcileUTest.F90, line 1216
+20210305 103121.376 INFO             PET0  PASS  Create State for shared Grid test, ESMF_StateReconcileUTest.F90, line 1223
+20210305 103121.376 INFO             PET0  PASS  Calling GridCompSetServices for shared grid tests, ESMF_StateReconcileUTest.F90, line 1234
+20210305 103121.376 INFO             PET0  PASS  Calling GridCompSetServices for shared grid tests, ESMF_StateReconcileUTest.F90, line 1241
+20210305 103121.376 INFO             PET0  PASS  Calling GridCompSetEntryPoint for shared grid tests, ESMF_StateReconcileUTest.F90, line 1249
+20210305 103121.376 INFO             PET0  PASS  Calling GridCompSetEntryPoint for shared grid tests, ESMF_StateReconcileUTest.F90, line 1257
+20210305 103121.376 INFO             PET0  PASS  Calling GridCompSetEntryPoint for shared grid tests, ESMF_StateReconcileUTest.F90, line 1265
+20210305 103121.376 INFO             PET0  PASS  Calling GridCompSetEntryPoint for shared grid tests, ESMF_StateReconcileUTest.F90, line 1273
+20210305 103121.382 INFO             PET0  PASS  Calling GridCompInitialize for shared grid tests, ESMF_StateReconcileUTest.F90, line 1280
+20210305 103121.382 INFO             PET0  PASS  Calling GridCompInitialize for shared grid tests, ESMF_StateReconcileUTest.F90, line 1287
+20210305 103121.385 INFO             PET0  PASS  Reconcile State for shared Grid test, ESMF_StateReconcileUTest.F90, line 1294
+20210305 103121.385 INFO             PET0  PASS  Access Proxy Field 1 test, ESMF_StateReconcileUTest.F90, line 1305
+20210305 103121.385 INFO             PET0  PASS  Access Proxy Field 2 test, ESMF_StateReconcileUTest.F90, line 1316
+20210305 103121.385 INFO             PET0  PASS  Access shared Grid 1 test, ESMF_StateReconcileUTest.F90, line 1323
+20210305 103121.385 INFO             PET0  PASS  Access shared Grid 2 test, ESMF_StateReconcileUTest.F90, line 1330
+20210305 103121.385 INFO             PET0  PASS  Compare shared grids test, ESMF_StateReconcileUTest.F90, line 1337
+20210305 103121.386 INFO             PET0  PASS  Re-reconcile State for shared Grid test, ESMF_StateReconcileUTest.F90, line 1344
+20210305 103121.386 INFO             PET0  PASS  Calling GridCompFinalize for shared Grid test, ESMF_StateReconcileUTest.F90, line 1351
+20210305 103121.386 INFO             PET0  PASS  Calling GridCompFinalize for shared Grid test, ESMF_StateReconcileUTest.F90, line 1358
+20210305 103121.386 INFO             PET0  PASS  Calling GridCompDestroy for shared Grid test, ESMF_StateReconcileUTest.F90, line 1365
+20210305 103121.386 INFO             PET0  PASS  Calling GridCompDestroy for shared Grid test, ESMF_StateReconcileUTest.F90, line 1372
+20210305 103121.386 INFO             PET0  PASS  Calling StateDestroy for shared Grid test, ESMF_StateReconcileUTest.F90, line 1379
+20210305 103121.386 INFO             PET0  Ending Test, file ESMF_StateReconcileUTest.F90, line 1384
+20210305 103121.386 INFO             PET0 Finalizing ESMF
+20210305 103121.252 INFO             PET1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103121.252 INFO             PET1 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 103121.252 INFO             PET1 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 103121.252 INFO             PET1 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 103121.252 INFO             PET1 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 103121.252 INFO             PET1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103121.252 INFO             PET1 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 103121.252 INFO             PET1 ESMF library build date/time: "Mar  5 2021" "09:44:29"
+20210305 103121.252 INFO             PET1 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_O
+20210305 103121.252 INFO             PET1 ESMF_COMM                   : mpi
+20210305 103121.253 INFO             PET1 ESMF_MOAB                   : enabled
+20210305 103121.253 INFO             PET1 ESMF_LAPACK                 : enabled
+20210305 103121.253 INFO             PET1 ESMF_NETCDF                 : enabled
+20210305 103121.253 INFO             PET1 ESMF_PNETCDF                : disabled
+20210305 103121.253 INFO             PET1 ESMF_PIO                    : enabled
+20210305 103121.253 INFO             PET1 ESMF_YAMLCPP                : enabled
+20210305 103121.253 INFO             PET1  Beginning Test, file ESMF_StateReconcileUTest.F90, line 282
+20210305 103121.253 INFO             PET1  NUMBER_OF_PROCESSORS           4
+20210305 103121.258 INFO             PET1  PASS  Creating a Gridded Component, ESMF_StateReconcileUTest.F90, line 304
+20210305 103121.258 INFO             PET1  PASS  Creating a Gridded Component, ESMF_StateReconcileUTest.F90, line 313
+20210305 103121.260 INFO             PET1  PASS  Creating a State, ESMF_StateReconcileUTest.F90, line 321
+20210305 103121.262 INFO             PET1  PASS  Testing empty State for reconcile needed, ESMF_StateReconcileUTest.F90, line 328
+20210305 103121.262 INFO             PET1  PASS  Testing empty State for reconcile needed, ESMF_StateReconcileUTest.F90, line 333
+20210305 103121.263 INFO             PET1  PASS  Testing empty State for reconcile needed (collective), ESMF_StateReconcileUTest.F90, line 341
+20210305 103121.263 INFO             PET1  PASS  Testing empty State for reconcile needed (collective), ESMF_StateReconcileUTest.F90, line 346
+20210305 103121.272 INFO             PET1  PASS  Calling GridCompSetServices, ESMF_StateReconcileUTest.F90, line 357
+20210305 103121.272 INFO             PET1  PASS  Calling GridCompSetServices, ESMF_StateReconcileUTest.F90, line 364
+20210305 103121.272 INFO             PET1  PASS  Calling GridCompSetEntryPoint, ESMF_StateReconcileUTest.F90, line 372
+20210305 103121.272 INFO             PET1  PASS  Calling GridCompSetEntryPoint, ESMF_StateReconcileUTest.F90, line 380
+20210305 103121.272 INFO             PET1  PASS  Calling GridCompSetEntryPoint, ESMF_StateReconcileUTest.F90, line 388
+20210305 103121.272 INFO             PET1  PASS  Calling GridCompSetEntryPoint, ESMF_StateReconcileUTest.F90, line 396
+20210305 103121.283 INFO             PET1  PASS  Calling GridCompInitialize, ESMF_StateReconcileUTest.F90, line 403
+20210305 103121.283 INFO             PET1  PASS  Calling GridCompInitialize, ESMF_StateReconcileUTest.F90, line 410
+20210305 103121.283 INFO             PET1  PASS  Calling StateValidate, ESMF_StateReconcileUTest.F90, line 417
+20210305 103121.283 INFO             PET1  PASS  Testing modified State for reconcile needed, ESMF_StateReconcileUTest.F90, line 424
+20210305 103121.283 INFO             PET1  PASS  Testing modified State for reconcile needed, ESMF_StateReconcileUTest.F90, line 429
+20210305 103121.283 INFO             PET1  PASS  Testing modified State for reconcile needed (collective), ESMF_StateReconcileUTest.F90, line 437
+20210305 103121.283 INFO             PET1  PASS  Testing modified State for reconcile needed (collective), ESMF_StateReconcileUTest.F90, line 442
+20210305 103121.330 INFO             PET1  PASS  Calling StateReconcile in concurrent mode, ESMF_StateReconcileUTest.F90, line 449
+20210305 103121.330 INFO             PET1  PASS  Calling StateValidate, ESMF_StateReconcileUTest.F90, line 456
+20210305 103121.330 INFO             PET1  PASS  Testing reconciled State for reconcile needed, ESMF_StateReconcileUTest.F90, line 463
+20210305 103121.330 INFO             PET1  PASS  Testing reconciled State for reconcile needed, ESMF_StateReconcileUTest.F90, line 473
+20210305 103121.330 INFO             PET1  PASS  Testing reconciled State for reconcile needed (collective), ESMF_StateReconcileUTest.F90, line 481
+20210305 103121.330 INFO             PET1  PASS  Testing reconciled State for reconcile needed (collective), ESMF_StateReconcileUTest.F90, line 491
+20210305 103121.332 INFO             PET1  PASS  Calling 2nd StateReconcile in concurrent mode, ESMF_StateReconcileUTest.F90, line 499
+20210305 103121.332 INFO             PET1  PASS  Calling StateValidate on 2nd StateReconcile, ESMF_StateReconcileUTest.F90, line 506
+20210305 103121.332 INFO             PET1  PASS  Calling GridCompFinalize, ESMF_StateReconcileUTest.F90, line 513
+20210305 103121.332 INFO             PET1  PASS  Calling GridCompFinalize, ESMF_StateReconcileUTest.F90, line 520
+20210305 103121.333 INFO             PET1  PASS  Calling GridCompDestroy, ESMF_StateReconcileUTest.F90, line 527
+20210305 103121.333 INFO             PET1  PASS  Calling GridCompDestroy, ESMF_StateReconcileUTest.F90, line 534
+20210305 103121.333 INFO             PET1  PASS  Calling StateDestroy, ESMF_StateReconcileUTest.F90, line 541
+20210305 103121.333 INFO             PET1  PASS  Creating a Gridded Component, ESMF_StateReconcileUTest.F90, line 557
+20210305 103121.333 INFO             PET1  PASS  Creating a Gridded Component, ESMF_StateReconcileUTest.F90, line 565
+20210305 103121.333 INFO             PET1  PASS  Creating a State, ESMF_StateReconcileUTest.F90, line 573
+20210305 103121.333 INFO             PET1  PASS  Calling GridCompSetServices, ESMF_StateReconcileUTest.F90, line 585
+20210305 103121.333 INFO             PET1  PASS  Calling GridCompSetServices, ESMF_StateReconcileUTest.F90, line 592
+20210305 103121.333 INFO             PET1  PASS  Calling GridCompSetEntryPoint, ESMF_StateReconcileUTest.F90, line 600
+20210305 103121.333 INFO             PET1  PASS  Calling GridCompSetEntryPoint, ESMF_StateReconcileUTest.F90, line 608
+20210305 103121.333 INFO             PET1  PASS  Calling GridCompSetEntryPoint, ESMF_StateReconcileUTest.F90, line 616
+20210305 103121.333 INFO             PET1  PASS  Calling GridCompSetEntryPoint, ESMF_StateReconcileUTest.F90, line 624
+20210305 103121.333 INFO             PET1  PASS  Calling GridCompInitialize, ESMF_StateReconcileUTest.F90, line 631
+20210305 103121.333 INFO             PET1  PASS  Calling GridCompInitialize, ESMF_StateReconcileUTest.F90, line 638
+20210305 103121.333 INFO             PET1  PASS  Calling StateValidate, ESMF_StateReconcileUTest.F90, line 645
+20210305 103121.334 INFO             PET1  PASS  Calling StateReconcile in sequential mode, ESMF_StateReconcileUTest.F90, line 652
+20210305 103121.335 INFO             PET1  PASS  Calling StateValidate, ESMF_StateReconcileUTest.F90, line 659
+20210305 103121.335 INFO             PET1  PASS  Calling 2nd StateReconcile in sequential mode, ESMF_StateReconcileUTest.F90, line 667
+20210305 103121.335 INFO             PET1  PASS  Calling StateValidate on 2nd StateReconcile, ESMF_StateReconcileUTest.F90, line 674
+20210305 103121.335 INFO             PET1  PASS  Calling GridCompFinalize, ESMF_StateReconcileUTest.F90, line 681
+20210305 103121.336 INFO             PET1  PASS  Calling GridCompFinalize, ESMF_StateReconcileUTest.F90, line 688
+20210305 103121.336 INFO             PET1  PASS  Calling GridCompDestroy, ESMF_StateReconcileUTest.F90, line 695
+20210305 103121.336 INFO             PET1  PASS  Calling GridCompDestroy, ESMF_StateReconcileUTest.F90, line 702
+20210305 103121.336 INFO             PET1  PASS  Calling StateDestroy, ESMF_StateReconcileUTest.F90, line 709
+20210305 103121.336 INFO             PET1  PASS  Creating a Gridded Component, ESMF_StateReconcileUTest.F90, line 727
+20210305 103121.336 INFO             PET1  PASS  Creating a Gridded Component, ESMF_StateReconcileUTest.F90, line 736
+20210305 103121.336 INFO             PET1  PASS  Creating a State, ESMF_StateReconcileUTest.F90, line 744
+20210305 103121.336 INFO             PET1  PASS  Calling GridCompSetServices, ESMF_StateReconcileUTest.F90, line 756
+20210305 103121.336 INFO             PET1  PASS  Calling GridCompSetServices, ESMF_StateReconcileUTest.F90, line 763
+20210305 103121.336 INFO             PET1  PASS  Calling GridCompSetEntryPoint, ESMF_StateReconcileUTest.F90, line 771
+20210305 103121.336 INFO             PET1  PASS  Calling GridCompSetEntryPoint, ESMF_StateReconcileUTest.F90, line 779
+20210305 103121.336 INFO             PET1  PASS  Calling GridCompSetEntryPoint, ESMF_StateReconcileUTest.F90, line 787
+20210305 103121.336 INFO             PET1  PASS  Calling GridCompSetEntryPoint, ESMF_StateReconcileUTest.F90, line 795
+20210305 103121.336 INFO             PET1  PASS  Calling GridCompInitialize, ESMF_StateReconcileUTest.F90, line 802
+20210305 103121.336 INFO             PET1  PASS  Calling GridCompInitialize, ESMF_StateReconcileUTest.F90, line 809
+20210305 103121.336 INFO             PET1  PASS  Calling StateValidate, ESMF_StateReconcileUTest.F90, line 816
+20210305 103121.337 INFO             PET1  PASS  Calling StateReconcile in run-in-parent mode, ESMF_StateReconcileUTest.F90, line 823
+20210305 103121.337 INFO             PET1  PASS  Calling StateValidate, ESMF_StateReconcileUTest.F90, line 830
+20210305 103121.338 INFO             PET1  PASS  Calling 2nd StateReconcile in run-in-parent mode, ESMF_StateReconcileUTest.F90, line 838
+20210305 103121.338 INFO             PET1  PASS  Calling StateValidate on 2nd StateReconcile, ESMF_StateReconcileUTest.F90, line 845
+20210305 103121.338 INFO             PET1  PASS  Calling GridCompFinalize, ESMF_StateReconcileUTest.F90, line 852
+20210305 103121.338 INFO             PET1  PASS  Calling GridCompFinalize, ESMF_StateReconcileUTest.F90, line 859
+20210305 103121.338 INFO             PET1  PASS  Calling GridCompDestroy, ESMF_StateReconcileUTest.F90, line 866
+20210305 103121.339 INFO             PET1  PASS  Calling GridCompDestroy, ESMF_StateReconcileUTest.F90, line 873
+20210305 103121.339 INFO             PET1  PASS  Calling StateDestroy, ESMF_StateReconcileUTest.F90, line 880
+20210305 103121.339 INFO             PET1  PASS  Calling StateCreate for rereconcile tests, ESMF_StateReconcileUTest.F90, line 896
+20210305 103121.339 INFO             PET1  PASS  Creating PET 0 Array for rereconcile tests, ESMF_StateReconcileUTest.F90, line 917
+20210305 103121.363 INFO             PET1  PASS  Calling initial reconcile for rereconcile tests, ESMF_StateReconcileUTest.F90, line 924
+20210305 103121.363 INFO             PET1  PASS  PET           1 : Calling StateGet to access proxies, ESMF_StateReconcileUTest.F90, line 932
+20210305 103121.363 INFO             PET1  PASS  Removing non-proxy item test, ESMF_StateReconcileUTest.F90, line 941
+20210305 103121.363 INFO             PET1  PASS  Re-reconciling State test, ESMF_StateReconcileUTest.F90, line 948
+20210305 103121.363 ERROR            PET1 ESMF_StateAPI.cppF90:2431 ESMF_StateGet Not found  -  no ESMF_Array found named: Array_for_reconciling
+20210305 103121.363 INFO             PET1  PASS  Checking for empty State tests, ESMF_StateReconcileUTest.F90, line 956
+20210305 103121.363 INFO             PET1  PASS  Calling StateCreate for top-level State tests, ESMF_StateReconcileUTest.F90, line 975
+20210305 103121.363 INFO             PET1  PASS  Calling StateCreate for nested State tests, ESMF_StateReconcileUTest.F90, line 987
+20210305 103121.363 INFO             PET1  PASS  Calling FieldEmptyCreate for nested State test, ESMF_StateReconcileUTest.F90, line 996
+20210305 103121.363 INFO             PET1  PASS  Calling StateAdd of nested Field test, ESMF_StateReconcileUTest.F90, line 1005
+20210305 103121.363 INFO             PET1  PASS  Calling StateAdd of nested State test, ESMF_StateReconcileUTest.F90, line 1015
+20210305 103121.364 INFO             PET1  PASS  Calling StateReconcile of nested State test, ESMF_StateReconcileUTest.F90, line 1022
+20210305 103121.364 INFO             PET1  PASS  Calling StateGet of nested Field test, ESMF_StateReconcileUTest.F90, line 1034
+20210305 103121.364 ERROR            PET1 ESMF_StateAPI.cppF90:2565 ESMF_StateGet Not found  -  no ESMF_Field found named: state_nested/nested Field_badname
+20210305 103121.364 INFO             PET1  PASS  Calling StateGet of nested Field with wrong name test, ESMF_StateReconcileUTest.F90, line 1044
+20210305 103121.364 INFO             PET1  PASS  Creating a State for attributes, ESMF_StateReconcileUTest.F90, line 1056
+20210305 103121.364 INFO             PET1  PASS  Reconciling state with Attribute reconciling turned on, ESMF_StateReconcileUTest.F90, line 1063
+20210305 103121.366 INFO             PET1  PASS  Adding an Attribute to the Base test, ESMF_StateReconcileUTest.F90, line 1074
+20210305 103121.367 INFO             PET1  PASS  Reconciling state with Base attribute test, ESMF_StateReconcileUTest.F90, line 1081
+20210305 103121.368 INFO             PET1  PASS  Verifying reconciled Base attributes test, ESMF_StateReconcileUTest.F90, line 1093
+20210305 103121.368 INFO             PET1  PASS  Adding Field to State on PET 0 test, ESMF_StateReconcileUTest.F90, line 1118
+20210305 103121.370 INFO             PET1  PASS  Reconciling state with Field and Attribute test, ESMF_StateReconcileUTest.F90, line 1125
+20210305 103121.370 INFO             PET1  PASS  Accessing reconciled Fields test, ESMF_StateReconcileUTest.F90, line 1138
+20210305 103121.370 INFO             PET1  PASS  Accessing reconciled Field Attributes test, ESMF_StateReconcileUTest.F90, line 1156
+20210305 103121.370 INFO             PET1  PASS  Create a FieldBundle with Attributes on PET 0 test, ESMF_StateReconcileUTest.F90, line 1177
+20210305 103121.376 INFO             PET1  PASS  Reconciling state with FieldBundle and Attributes test, ESMF_StateReconcileUTest.F90, line 1184
+20210305 103121.376 INFO             PET1  PASS  Access reconciled FieldBundle test, ESMF_StateReconcileUTest.F90, line 1194
+20210305 103121.376 INFO             PET1  PASS  Creating a Gridded Component for shared grid tests, ESMF_StateReconcileUTest.F90, line 1207
+20210305 103121.376 INFO             PET1  PASS  Creating a Gridded Component for shared grid tests, ESMF_StateReconcileUTest.F90, line 1216
+20210305 103121.376 INFO             PET1  PASS  Create State for shared Grid test, ESMF_StateReconcileUTest.F90, line 1223
+20210305 103121.376 INFO             PET1  PASS  Calling GridCompSetServices for shared grid tests, ESMF_StateReconcileUTest.F90, line 1234
+20210305 103121.376 INFO             PET1  PASS  Calling GridCompSetServices for shared grid tests, ESMF_StateReconcileUTest.F90, line 1241
+20210305 103121.376 INFO             PET1  PASS  Calling GridCompSetEntryPoint for shared grid tests, ESMF_StateReconcileUTest.F90, line 1249
+20210305 103121.376 INFO             PET1  PASS  Calling GridCompSetEntryPoint for shared grid tests, ESMF_StateReconcileUTest.F90, line 1257
+20210305 103121.376 INFO             PET1  PASS  Calling GridCompSetEntryPoint for shared grid tests, ESMF_StateReconcileUTest.F90, line 1265
+20210305 103121.376 INFO             PET1  PASS  Calling GridCompSetEntryPoint for shared grid tests, ESMF_StateReconcileUTest.F90, line 1273
+20210305 103121.382 INFO             PET1  PASS  Calling GridCompInitialize for shared grid tests, ESMF_StateReconcileUTest.F90, line 1280
+20210305 103121.382 INFO             PET1  PASS  Calling GridCompInitialize for shared grid tests, ESMF_StateReconcileUTest.F90, line 1287
+20210305 103121.385 INFO             PET1  PASS  Reconcile State for shared Grid test, ESMF_StateReconcileUTest.F90, line 1294
+20210305 103121.385 INFO             PET1  PASS  Access Proxy Field 1 test, ESMF_StateReconcileUTest.F90, line 1305
+20210305 103121.385 INFO             PET1  PASS  Access Proxy Field 2 test, ESMF_StateReconcileUTest.F90, line 1316
+20210305 103121.385 INFO             PET1  PASS  Access shared Grid 1 test, ESMF_StateReconcileUTest.F90, line 1323
+20210305 103121.385 INFO             PET1  PASS  Access shared Grid 2 test, ESMF_StateReconcileUTest.F90, line 1330
+20210305 103121.385 INFO             PET1  PASS  Compare shared grids test, ESMF_StateReconcileUTest.F90, line 1337
+20210305 103121.386 INFO             PET1  PASS  Re-reconcile State for shared Grid test, ESMF_StateReconcileUTest.F90, line 1344
+20210305 103121.386 INFO             PET1  PASS  Calling GridCompFinalize for shared Grid test, ESMF_StateReconcileUTest.F90, line 1351
+20210305 103121.386 INFO             PET1  PASS  Calling GridCompFinalize for shared Grid test, ESMF_StateReconcileUTest.F90, line 1358
+20210305 103121.386 INFO             PET1  PASS  Calling GridCompDestroy for shared Grid test, ESMF_StateReconcileUTest.F90, line 1365
+20210305 103121.386 INFO             PET1  PASS  Calling GridCompDestroy for shared Grid test, ESMF_StateReconcileUTest.F90, line 1372
+20210305 103121.386 INFO             PET1  PASS  Calling StateDestroy for shared Grid test, ESMF_StateReconcileUTest.F90, line 1379
+20210305 103121.386 INFO             PET1  Ending Test, file ESMF_StateReconcileUTest.F90, line 1384
+20210305 103121.386 INFO             PET1 Finalizing ESMF
+20210305 103121.230 INFO             PET2 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103121.230 INFO             PET2 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 103121.230 INFO             PET2 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 103121.230 INFO             PET2 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 103121.230 INFO             PET2 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 103121.230 INFO             PET2 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103121.230 INFO             PET2 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 103121.230 INFO             PET2 ESMF library build date/time: "Mar  5 2021" "09:44:29"
+20210305 103121.230 INFO             PET2 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_O
+20210305 103121.230 INFO             PET2 ESMF_COMM                   : mpi
+20210305 103121.231 INFO             PET2 ESMF_MOAB                   : enabled
+20210305 103121.231 INFO             PET2 ESMF_LAPACK                 : enabled
+20210305 103121.231 INFO             PET2 ESMF_NETCDF                 : enabled
+20210305 103121.231 INFO             PET2 ESMF_PNETCDF                : disabled
+20210305 103121.231 INFO             PET2 ESMF_PIO                    : enabled
+20210305 103121.231 INFO             PET2 ESMF_YAMLCPP                : enabled
+20210305 103121.253 INFO             PET2  Beginning Test, file ESMF_StateReconcileUTest.F90, line 282
+20210305 103121.253 INFO             PET2  NUMBER_OF_PROCESSORS           4
+20210305 103121.258 INFO             PET2  PASS  Creating a Gridded Component, ESMF_StateReconcileUTest.F90, line 304
+20210305 103121.258 INFO             PET2  PASS  Creating a Gridded Component, ESMF_StateReconcileUTest.F90, line 313
+20210305 103121.260 INFO             PET2  PASS  Creating a State, ESMF_StateReconcileUTest.F90, line 321
+20210305 103121.262 INFO             PET2  PASS  Testing empty State for reconcile needed, ESMF_StateReconcileUTest.F90, line 328
+20210305 103121.262 INFO             PET2  PASS  Testing empty State for reconcile needed, ESMF_StateReconcileUTest.F90, line 333
+20210305 103121.263 INFO             PET2  PASS  Testing empty State for reconcile needed (collective), ESMF_StateReconcileUTest.F90, line 341
+20210305 103121.263 INFO             PET2  PASS  Testing empty State for reconcile needed (collective), ESMF_StateReconcileUTest.F90, line 346
+20210305 103121.269 INFO             PET2  PASS  Calling GridCompSetServices, ESMF_StateReconcileUTest.F90, line 357
+20210305 103121.272 INFO             PET2  PASS  Calling GridCompSetServices, ESMF_StateReconcileUTest.F90, line 364
+20210305 103121.272 INFO             PET2  PASS  Calling GridCompSetEntryPoint, ESMF_StateReconcileUTest.F90, line 372
+20210305 103121.272 INFO             PET2  PASS  Calling GridCompSetEntryPoint, ESMF_StateReconcileUTest.F90, line 380
+20210305 103121.272 INFO             PET2  PASS  Calling GridCompSetEntryPoint, ESMF_StateReconcileUTest.F90, line 388
+20210305 103121.272 INFO             PET2  PASS  Calling GridCompSetEntryPoint, ESMF_StateReconcileUTest.F90, line 396
+20210305 103121.273 INFO             PET2  PASS  Calling GridCompInitialize, ESMF_StateReconcileUTest.F90, line 403
+20210305 103121.283 INFO             PET2  PASS  Calling GridCompInitialize, ESMF_StateReconcileUTest.F90, line 410
+20210305 103121.283 INFO             PET2  PASS  Calling StateValidate, ESMF_StateReconcileUTest.F90, line 417
+20210305 103121.283 INFO             PET2  PASS  Testing modified State for reconcile needed, ESMF_StateReconcileUTest.F90, line 424
+20210305 103121.283 INFO             PET2  PASS  Testing modified State for reconcile needed, ESMF_StateReconcileUTest.F90, line 429
+20210305 103121.283 INFO             PET2  PASS  Testing modified State for reconcile needed (collective), ESMF_StateReconcileUTest.F90, line 437
+20210305 103121.283 INFO             PET2  PASS  Testing modified State for reconcile needed (collective), ESMF_StateReconcileUTest.F90, line 442
+20210305 103121.330 INFO             PET2  PASS  Calling StateReconcile in concurrent mode, ESMF_StateReconcileUTest.F90, line 449
+20210305 103121.330 INFO             PET2  PASS  Calling StateValidate, ESMF_StateReconcileUTest.F90, line 456
+20210305 103121.330 INFO             PET2  PASS  Testing reconciled State for reconcile needed, ESMF_StateReconcileUTest.F90, line 463
+20210305 103121.330 INFO             PET2  PASS  Testing reconciled State for reconcile needed, ESMF_StateReconcileUTest.F90, line 473
+20210305 103121.330 INFO             PET2  PASS  Testing reconciled State for reconcile needed (collective), ESMF_StateReconcileUTest.F90, line 481
+20210305 103121.330 INFO             PET2  PASS  Testing reconciled State for reconcile needed (collective), ESMF_StateReconcileUTest.F90, line 491
+20210305 103121.332 INFO             PET2  PASS  Calling 2nd StateReconcile in concurrent mode, ESMF_StateReconcileUTest.F90, line 499
+20210305 103121.332 INFO             PET2  PASS  Calling StateValidate on 2nd StateReconcile, ESMF_StateReconcileUTest.F90, line 506
+20210305 103121.332 INFO             PET2  PASS  Calling GridCompFinalize, ESMF_StateReconcileUTest.F90, line 513
+20210305 103121.332 INFO             PET2  PASS  Calling GridCompFinalize, ESMF_StateReconcileUTest.F90, line 520
+20210305 103121.332 INFO             PET2  PASS  Calling GridCompDestroy, ESMF_StateReconcileUTest.F90, line 527
+20210305 103121.333 INFO             PET2  PASS  Calling GridCompDestroy, ESMF_StateReconcileUTest.F90, line 534
+20210305 103121.333 INFO             PET2  PASS  Calling StateDestroy, ESMF_StateReconcileUTest.F90, line 541
+20210305 103121.333 INFO             PET2  PASS  Creating a Gridded Component, ESMF_StateReconcileUTest.F90, line 557
+20210305 103121.333 INFO             PET2  PASS  Creating a Gridded Component, ESMF_StateReconcileUTest.F90, line 565
+20210305 103121.333 INFO             PET2  PASS  Creating a State, ESMF_StateReconcileUTest.F90, line 573
+20210305 103121.333 INFO             PET2  PASS  Calling GridCompSetServices, ESMF_StateReconcileUTest.F90, line 585
+20210305 103121.333 INFO             PET2  PASS  Calling GridCompSetServices, ESMF_StateReconcileUTest.F90, line 592
+20210305 103121.333 INFO             PET2  PASS  Calling GridCompSetEntryPoint, ESMF_StateReconcileUTest.F90, line 600
+20210305 103121.333 INFO             PET2  PASS  Calling GridCompSetEntryPoint, ESMF_StateReconcileUTest.F90, line 608
+20210305 103121.333 INFO             PET2  PASS  Calling GridCompSetEntryPoint, ESMF_StateReconcileUTest.F90, line 616
+20210305 103121.333 INFO             PET2  PASS  Calling GridCompSetEntryPoint, ESMF_StateReconcileUTest.F90, line 624
+20210305 103121.333 INFO             PET2  PASS  Calling GridCompInitialize, ESMF_StateReconcileUTest.F90, line 631
+20210305 103121.333 INFO             PET2  PASS  Calling GridCompInitialize, ESMF_StateReconcileUTest.F90, line 638
+20210305 103121.333 INFO             PET2  PASS  Calling StateValidate, ESMF_StateReconcileUTest.F90, line 645
+20210305 103121.334 INFO             PET2  PASS  Calling StateReconcile in sequential mode, ESMF_StateReconcileUTest.F90, line 652
+20210305 103121.335 INFO             PET2  PASS  Calling StateValidate, ESMF_StateReconcileUTest.F90, line 659
+20210305 103121.335 INFO             PET2  PASS  Calling 2nd StateReconcile in sequential mode, ESMF_StateReconcileUTest.F90, line 667
+20210305 103121.335 INFO             PET2  PASS  Calling StateValidate on 2nd StateReconcile, ESMF_StateReconcileUTest.F90, line 674
+20210305 103121.335 INFO             PET2  PASS  Calling GridCompFinalize, ESMF_StateReconcileUTest.F90, line 681
+20210305 103121.336 INFO             PET2  PASS  Calling GridCompFinalize, ESMF_StateReconcileUTest.F90, line 688
+20210305 103121.336 INFO             PET2  PASS  Calling GridCompDestroy, ESMF_StateReconcileUTest.F90, line 695
+20210305 103121.336 INFO             PET2  PASS  Calling GridCompDestroy, ESMF_StateReconcileUTest.F90, line 702
+20210305 103121.336 INFO             PET2  PASS  Calling StateDestroy, ESMF_StateReconcileUTest.F90, line 709
+20210305 103121.336 INFO             PET2  PASS  Creating a Gridded Component, ESMF_StateReconcileUTest.F90, line 727
+20210305 103121.336 INFO             PET2  PASS  Creating a Gridded Component, ESMF_StateReconcileUTest.F90, line 736
+20210305 103121.336 INFO             PET2  PASS  Creating a State, ESMF_StateReconcileUTest.F90, line 744
+20210305 103121.336 INFO             PET2  PASS  Calling GridCompSetServices, ESMF_StateReconcileUTest.F90, line 756
+20210305 103121.336 INFO             PET2  PASS  Calling GridCompSetServices, ESMF_StateReconcileUTest.F90, line 763
+20210305 103121.336 INFO             PET2  PASS  Calling GridCompSetEntryPoint, ESMF_StateReconcileUTest.F90, line 771
+20210305 103121.336 INFO             PET2  PASS  Calling GridCompSetEntryPoint, ESMF_StateReconcileUTest.F90, line 779
+20210305 103121.336 INFO             PET2  PASS  Calling GridCompSetEntryPoint, ESMF_StateReconcileUTest.F90, line 787
+20210305 103121.336 INFO             PET2  PASS  Calling GridCompSetEntryPoint, ESMF_StateReconcileUTest.F90, line 795
+20210305 103121.336 INFO             PET2  PASS  Calling GridCompInitialize, ESMF_StateReconcileUTest.F90, line 802
+20210305 103121.336 INFO             PET2  PASS  Calling GridCompInitialize, ESMF_StateReconcileUTest.F90, line 809
+20210305 103121.336 INFO             PET2  PASS  Calling StateValidate, ESMF_StateReconcileUTest.F90, line 816
+20210305 103121.337 INFO             PET2  PASS  Calling StateReconcile in run-in-parent mode, ESMF_StateReconcileUTest.F90, line 823
+20210305 103121.337 INFO             PET2  PASS  Calling StateValidate, ESMF_StateReconcileUTest.F90, line 830
+20210305 103121.338 INFO             PET2  PASS  Calling 2nd StateReconcile in run-in-parent mode, ESMF_StateReconcileUTest.F90, line 838
+20210305 103121.338 INFO             PET2  PASS  Calling StateValidate on 2nd StateReconcile, ESMF_StateReconcileUTest.F90, line 845
+20210305 103121.338 INFO             PET2  PASS  Calling GridCompFinalize, ESMF_StateReconcileUTest.F90, line 852
+20210305 103121.338 INFO             PET2  PASS  Calling GridCompFinalize, ESMF_StateReconcileUTest.F90, line 859
+20210305 103121.338 INFO             PET2  PASS  Calling GridCompDestroy, ESMF_StateReconcileUTest.F90, line 866
+20210305 103121.339 INFO             PET2  PASS  Calling GridCompDestroy, ESMF_StateReconcileUTest.F90, line 873
+20210305 103121.339 INFO             PET2  PASS  Calling StateDestroy, ESMF_StateReconcileUTest.F90, line 880
+20210305 103121.339 INFO             PET2  PASS  Calling StateCreate for rereconcile tests, ESMF_StateReconcileUTest.F90, line 896
+20210305 103121.339 INFO             PET2  PASS  Creating PET 0 Array for rereconcile tests, ESMF_StateReconcileUTest.F90, line 917
+20210305 103121.363 INFO             PET2  PASS  Calling initial reconcile for rereconcile tests, ESMF_StateReconcileUTest.F90, line 924
+20210305 103121.363 INFO             PET2  PASS  PET           2 : Calling StateGet to access proxies, ESMF_StateReconcileUTest.F90, line 932
+20210305 103121.363 INFO             PET2  PASS  Removing non-proxy item test, ESMF_StateReconcileUTest.F90, line 941
+20210305 103121.363 INFO             PET2  PASS  Re-reconciling State test, ESMF_StateReconcileUTest.F90, line 948
+20210305 103121.363 ERROR            PET2 ESMF_StateAPI.cppF90:2431 ESMF_StateGet Not found  -  no ESMF_Array found named: Array_for_reconciling
+20210305 103121.363 INFO             PET2  PASS  Checking for empty State tests, ESMF_StateReconcileUTest.F90, line 956
+20210305 103121.363 INFO             PET2  PASS  Calling StateCreate for top-level State tests, ESMF_StateReconcileUTest.F90, line 975
+20210305 103121.363 INFO             PET2  PASS  Calling StateCreate for nested State tests, ESMF_StateReconcileUTest.F90, line 987
+20210305 103121.363 INFO             PET2  PASS  Calling FieldEmptyCreate for nested State test, ESMF_StateReconcileUTest.F90, line 996
+20210305 103121.363 INFO             PET2  PASS  Calling StateAdd of nested Field test, ESMF_StateReconcileUTest.F90, line 1005
+20210305 103121.363 INFO             PET2  PASS  Calling StateAdd of nested State test, ESMF_StateReconcileUTest.F90, line 1015
+20210305 103121.364 INFO             PET2  PASS  Calling StateReconcile of nested State test, ESMF_StateReconcileUTest.F90, line 1022
+20210305 103121.364 INFO             PET2  PASS  Calling StateGet of nested Field test, ESMF_StateReconcileUTest.F90, line 1034
+20210305 103121.364 ERROR            PET2 ESMF_StateAPI.cppF90:2565 ESMF_StateGet Not found  -  no ESMF_Field found named: state_nested/nested Field_badname
+20210305 103121.364 INFO             PET2  PASS  Calling StateGet of nested Field with wrong name test, ESMF_StateReconcileUTest.F90, line 1044
+20210305 103121.364 INFO             PET2  PASS  Creating a State for attributes, ESMF_StateReconcileUTest.F90, line 1056
+20210305 103121.364 INFO             PET2  PASS  Reconciling state with Attribute reconciling turned on, ESMF_StateReconcileUTest.F90, line 1063
+20210305 103121.366 INFO             PET2  PASS  Adding an Attribute to the Base test, ESMF_StateReconcileUTest.F90, line 1074
+20210305 103121.367 INFO             PET2  PASS  Reconciling state with Base attribute test, ESMF_StateReconcileUTest.F90, line 1081
+20210305 103121.368 INFO             PET2  PASS  Verifying reconciled Base attributes test, ESMF_StateReconcileUTest.F90, line 1093
+20210305 103121.368 INFO             PET2  PASS  Adding Field to State on PET 0 test, ESMF_StateReconcileUTest.F90, line 1118
+20210305 103121.370 INFO             PET2  PASS  Reconciling state with Field and Attribute test, ESMF_StateReconcileUTest.F90, line 1125
+20210305 103121.370 INFO             PET2  PASS  Accessing reconciled Fields test, ESMF_StateReconcileUTest.F90, line 1138
+20210305 103121.370 INFO             PET2  PASS  Accessing reconciled Field Attributes test, ESMF_StateReconcileUTest.F90, line 1156
+20210305 103121.370 INFO             PET2  PASS  Create a FieldBundle with Attributes on PET 0 test, ESMF_StateReconcileUTest.F90, line 1177
+20210305 103121.376 INFO             PET2  PASS  Reconciling state with FieldBundle and Attributes test, ESMF_StateReconcileUTest.F90, line 1184
+20210305 103121.376 INFO             PET2  PASS  Access reconciled FieldBundle test, ESMF_StateReconcileUTest.F90, line 1194
+20210305 103121.376 INFO             PET2  PASS  Creating a Gridded Component for shared grid tests, ESMF_StateReconcileUTest.F90, line 1207
+20210305 103121.376 INFO             PET2  PASS  Creating a Gridded Component for shared grid tests, ESMF_StateReconcileUTest.F90, line 1216
+20210305 103121.376 INFO             PET2  PASS  Create State for shared Grid test, ESMF_StateReconcileUTest.F90, line 1223
+20210305 103121.376 INFO             PET2  PASS  Calling GridCompSetServices for shared grid tests, ESMF_StateReconcileUTest.F90, line 1234
+20210305 103121.376 INFO             PET2  PASS  Calling GridCompSetServices for shared grid tests, ESMF_StateReconcileUTest.F90, line 1241
+20210305 103121.376 INFO             PET2  PASS  Calling GridCompSetEntryPoint for shared grid tests, ESMF_StateReconcileUTest.F90, line 1249
+20210305 103121.376 INFO             PET2  PASS  Calling GridCompSetEntryPoint for shared grid tests, ESMF_StateReconcileUTest.F90, line 1257
+20210305 103121.376 INFO             PET2  PASS  Calling GridCompSetEntryPoint for shared grid tests, ESMF_StateReconcileUTest.F90, line 1265
+20210305 103121.376 INFO             PET2  PASS  Calling GridCompSetEntryPoint for shared grid tests, ESMF_StateReconcileUTest.F90, line 1273
+20210305 103121.382 INFO             PET2  PASS  Calling GridCompInitialize for shared grid tests, ESMF_StateReconcileUTest.F90, line 1280
+20210305 103121.382 INFO             PET2  PASS  Calling GridCompInitialize for shared grid tests, ESMF_StateReconcileUTest.F90, line 1287
+20210305 103121.385 INFO             PET2  PASS  Reconcile State for shared Grid test, ESMF_StateReconcileUTest.F90, line 1294
+20210305 103121.385 INFO             PET2  PASS  Access Proxy Field 1 test, ESMF_StateReconcileUTest.F90, line 1305
+20210305 103121.385 INFO             PET2  PASS  Access Proxy Field 2 test, ESMF_StateReconcileUTest.F90, line 1316
+20210305 103121.385 INFO             PET2  PASS  Access shared Grid 1 test, ESMF_StateReconcileUTest.F90, line 1323
+20210305 103121.385 INFO             PET2  PASS  Access shared Grid 2 test, ESMF_StateReconcileUTest.F90, line 1330
+20210305 103121.385 INFO             PET2  PASS  Compare shared grids test, ESMF_StateReconcileUTest.F90, line 1337
+20210305 103121.386 INFO             PET2  PASS  Re-reconcile State for shared Grid test, ESMF_StateReconcileUTest.F90, line 1344
+20210305 103121.386 INFO             PET2  PASS  Calling GridCompFinalize for shared Grid test, ESMF_StateReconcileUTest.F90, line 1351
+20210305 103121.386 INFO             PET2  PASS  Calling GridCompFinalize for shared Grid test, ESMF_StateReconcileUTest.F90, line 1358
+20210305 103121.386 INFO             PET2  PASS  Calling GridCompDestroy for shared Grid test, ESMF_StateReconcileUTest.F90, line 1365
+20210305 103121.386 INFO             PET2  PASS  Calling GridCompDestroy for shared Grid test, ESMF_StateReconcileUTest.F90, line 1372
+20210305 103121.386 INFO             PET2  PASS  Calling StateDestroy for shared Grid test, ESMF_StateReconcileUTest.F90, line 1379
+20210305 103121.386 INFO             PET2  Ending Test, file ESMF_StateReconcileUTest.F90, line 1384
+20210305 103121.386 INFO             PET2 Finalizing ESMF
+20210305 103121.237 INFO             PET3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103121.237 INFO             PET3 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 103121.237 INFO             PET3 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 103121.237 INFO             PET3 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 103121.237 INFO             PET3 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 103121.237 INFO             PET3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103121.237 INFO             PET3 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 103121.237 INFO             PET3 ESMF library build date/time: "Mar  5 2021" "09:44:29"
+20210305 103121.237 INFO             PET3 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_O
+20210305 103121.237 INFO             PET3 ESMF_COMM                   : mpi
+20210305 103121.238 INFO             PET3 ESMF_MOAB                   : enabled
+20210305 103121.238 INFO             PET3 ESMF_LAPACK                 : enabled
+20210305 103121.238 INFO             PET3 ESMF_NETCDF                 : enabled
+20210305 103121.238 INFO             PET3 ESMF_PNETCDF                : disabled
+20210305 103121.238 INFO             PET3 ESMF_PIO                    : enabled
+20210305 103121.238 INFO             PET3 ESMF_YAMLCPP                : enabled
+20210305 103121.253 INFO             PET3  Beginning Test, file ESMF_StateReconcileUTest.F90, line 282
+20210305 103121.253 INFO             PET3  NUMBER_OF_PROCESSORS           4
+20210305 103121.258 INFO             PET3  PASS  Creating a Gridded Component, ESMF_StateReconcileUTest.F90, line 304
+20210305 103121.258 INFO             PET3  PASS  Creating a Gridded Component, ESMF_StateReconcileUTest.F90, line 313
+20210305 103121.260 INFO             PET3  PASS  Creating a State, ESMF_StateReconcileUTest.F90, line 321
+20210305 103121.262 INFO             PET3  PASS  Testing empty State for reconcile needed, ESMF_StateReconcileUTest.F90, line 328
+20210305 103121.262 INFO             PET3  PASS  Testing empty State for reconcile needed, ESMF_StateReconcileUTest.F90, line 333
+20210305 103121.263 INFO             PET3  PASS  Testing empty State for reconcile needed (collective), ESMF_StateReconcileUTest.F90, line 341
+20210305 103121.263 INFO             PET3  PASS  Testing empty State for reconcile needed (collective), ESMF_StateReconcileUTest.F90, line 346
+20210305 103121.269 INFO             PET3  PASS  Calling GridCompSetServices, ESMF_StateReconcileUTest.F90, line 357
+20210305 103121.272 INFO             PET3  PASS  Calling GridCompSetServices, ESMF_StateReconcileUTest.F90, line 364
+20210305 103121.272 INFO             PET3  PASS  Calling GridCompSetEntryPoint, ESMF_StateReconcileUTest.F90, line 372
+20210305 103121.272 INFO             PET3  PASS  Calling GridCompSetEntryPoint, ESMF_StateReconcileUTest.F90, line 380
+20210305 103121.272 INFO             PET3  PASS  Calling GridCompSetEntryPoint, ESMF_StateReconcileUTest.F90, line 388
+20210305 103121.272 INFO             PET3  PASS  Calling GridCompSetEntryPoint, ESMF_StateReconcileUTest.F90, line 396
+20210305 103121.273 INFO             PET3  PASS  Calling GridCompInitialize, ESMF_StateReconcileUTest.F90, line 403
+20210305 103121.283 INFO             PET3  PASS  Calling GridCompInitialize, ESMF_StateReconcileUTest.F90, line 410
+20210305 103121.283 INFO             PET3  PASS  Calling StateValidate, ESMF_StateReconcileUTest.F90, line 417
+20210305 103121.283 INFO             PET3  PASS  Testing modified State for reconcile needed, ESMF_StateReconcileUTest.F90, line 424
+20210305 103121.283 INFO             PET3  PASS  Testing modified State for reconcile needed, ESMF_StateReconcileUTest.F90, line 429
+20210305 103121.283 INFO             PET3  PASS  Testing modified State for reconcile needed (collective), ESMF_StateReconcileUTest.F90, line 437
+20210305 103121.283 INFO             PET3  PASS  Testing modified State for reconcile needed (collective), ESMF_StateReconcileUTest.F90, line 442
+20210305 103121.330 INFO             PET3  PASS  Calling StateReconcile in concurrent mode, ESMF_StateReconcileUTest.F90, line 449
+20210305 103121.330 INFO             PET3  PASS  Calling StateValidate, ESMF_StateReconcileUTest.F90, line 456
+20210305 103121.330 INFO             PET3  PASS  Testing reconciled State for reconcile needed, ESMF_StateReconcileUTest.F90, line 463
+20210305 103121.330 INFO             PET3  PASS  Testing reconciled State for reconcile needed, ESMF_StateReconcileUTest.F90, line 473
+20210305 103121.330 INFO             PET3  PASS  Testing reconciled State for reconcile needed (collective), ESMF_StateReconcileUTest.F90, line 481
+20210305 103121.330 INFO             PET3  PASS  Testing reconciled State for reconcile needed (collective), ESMF_StateReconcileUTest.F90, line 491
+20210305 103121.332 INFO             PET3  PASS  Calling 2nd StateReconcile in concurrent mode, ESMF_StateReconcileUTest.F90, line 499
+20210305 103121.332 INFO             PET3  PASS  Calling StateValidate on 2nd StateReconcile, ESMF_StateReconcileUTest.F90, line 506
+20210305 103121.332 INFO             PET3  PASS  Calling GridCompFinalize, ESMF_StateReconcileUTest.F90, line 513
+20210305 103121.332 INFO             PET3  PASS  Calling GridCompFinalize, ESMF_StateReconcileUTest.F90, line 520
+20210305 103121.332 INFO             PET3  PASS  Calling GridCompDestroy, ESMF_StateReconcileUTest.F90, line 527
+20210305 103121.333 INFO             PET3  PASS  Calling GridCompDestroy, ESMF_StateReconcileUTest.F90, line 534
+20210305 103121.333 INFO             PET3  PASS  Calling StateDestroy, ESMF_StateReconcileUTest.F90, line 541
+20210305 103121.333 INFO             PET3  PASS  Creating a Gridded Component, ESMF_StateReconcileUTest.F90, line 557
+20210305 103121.333 INFO             PET3  PASS  Creating a Gridded Component, ESMF_StateReconcileUTest.F90, line 565
+20210305 103121.333 INFO             PET3  PASS  Creating a State, ESMF_StateReconcileUTest.F90, line 573
+20210305 103121.333 INFO             PET3  PASS  Calling GridCompSetServices, ESMF_StateReconcileUTest.F90, line 585
+20210305 103121.333 INFO             PET3  PASS  Calling GridCompSetServices, ESMF_StateReconcileUTest.F90, line 592
+20210305 103121.333 INFO             PET3  PASS  Calling GridCompSetEntryPoint, ESMF_StateReconcileUTest.F90, line 600
+20210305 103121.333 INFO             PET3  PASS  Calling GridCompSetEntryPoint, ESMF_StateReconcileUTest.F90, line 608
+20210305 103121.333 INFO             PET3  PASS  Calling GridCompSetEntryPoint, ESMF_StateReconcileUTest.F90, line 616
+20210305 103121.333 INFO             PET3  PASS  Calling GridCompSetEntryPoint, ESMF_StateReconcileUTest.F90, line 624
+20210305 103121.333 INFO             PET3  PASS  Calling GridCompInitialize, ESMF_StateReconcileUTest.F90, line 631
+20210305 103121.333 INFO             PET3  PASS  Calling GridCompInitialize, ESMF_StateReconcileUTest.F90, line 638
+20210305 103121.333 INFO             PET3  PASS  Calling StateValidate, ESMF_StateReconcileUTest.F90, line 645
+20210305 103121.334 INFO             PET3  PASS  Calling StateReconcile in sequential mode, ESMF_StateReconcileUTest.F90, line 652
+20210305 103121.335 INFO             PET3  PASS  Calling StateValidate, ESMF_StateReconcileUTest.F90, line 659
+20210305 103121.335 INFO             PET3  PASS  Calling 2nd StateReconcile in sequential mode, ESMF_StateReconcileUTest.F90, line 667
+20210305 103121.335 INFO             PET3  PASS  Calling StateValidate on 2nd StateReconcile, ESMF_StateReconcileUTest.F90, line 674
+20210305 103121.335 INFO             PET3  PASS  Calling GridCompFinalize, ESMF_StateReconcileUTest.F90, line 681
+20210305 103121.336 INFO             PET3  PASS  Calling GridCompFinalize, ESMF_StateReconcileUTest.F90, line 688
+20210305 103121.336 INFO             PET3  PASS  Calling GridCompDestroy, ESMF_StateReconcileUTest.F90, line 695
+20210305 103121.336 INFO             PET3  PASS  Calling GridCompDestroy, ESMF_StateReconcileUTest.F90, line 702
+20210305 103121.336 INFO             PET3  PASS  Calling StateDestroy, ESMF_StateReconcileUTest.F90, line 709
+20210305 103121.336 INFO             PET3  PASS  Creating a Gridded Component, ESMF_StateReconcileUTest.F90, line 727
+20210305 103121.336 INFO             PET3  PASS  Creating a Gridded Component, ESMF_StateReconcileUTest.F90, line 736
+20210305 103121.336 INFO             PET3  PASS  Creating a State, ESMF_StateReconcileUTest.F90, line 744
+20210305 103121.336 INFO             PET3  PASS  Calling GridCompSetServices, ESMF_StateReconcileUTest.F90, line 756
+20210305 103121.336 INFO             PET3  PASS  Calling GridCompSetServices, ESMF_StateReconcileUTest.F90, line 763
+20210305 103121.336 INFO             PET3  PASS  Calling GridCompSetEntryPoint, ESMF_StateReconcileUTest.F90, line 771
+20210305 103121.336 INFO             PET3  PASS  Calling GridCompSetEntryPoint, ESMF_StateReconcileUTest.F90, line 779
+20210305 103121.336 INFO             PET3  PASS  Calling GridCompSetEntryPoint, ESMF_StateReconcileUTest.F90, line 787
+20210305 103121.336 INFO             PET3  PASS  Calling GridCompSetEntryPoint, ESMF_StateReconcileUTest.F90, line 795
+20210305 103121.336 INFO             PET3  PASS  Calling GridCompInitialize, ESMF_StateReconcileUTest.F90, line 802
+20210305 103121.336 INFO             PET3  PASS  Calling GridCompInitialize, ESMF_StateReconcileUTest.F90, line 809
+20210305 103121.336 INFO             PET3  PASS  Calling StateValidate, ESMF_StateReconcileUTest.F90, line 816
+20210305 103121.337 INFO             PET3  PASS  Calling StateReconcile in run-in-parent mode, ESMF_StateReconcileUTest.F90, line 823
+20210305 103121.337 INFO             PET3  PASS  Calling StateValidate, ESMF_StateReconcileUTest.F90, line 830
+20210305 103121.338 INFO             PET3  PASS  Calling 2nd StateReconcile in run-in-parent mode, ESMF_StateReconcileUTest.F90, line 838
+20210305 103121.338 INFO             PET3  PASS  Calling StateValidate on 2nd StateReconcile, ESMF_StateReconcileUTest.F90, line 845
+20210305 103121.338 INFO             PET3  PASS  Calling GridCompFinalize, ESMF_StateReconcileUTest.F90, line 852
+20210305 103121.338 INFO             PET3  PASS  Calling GridCompFinalize, ESMF_StateReconcileUTest.F90, line 859
+20210305 103121.338 INFO             PET3  PASS  Calling GridCompDestroy, ESMF_StateReconcileUTest.F90, line 866
+20210305 103121.339 INFO             PET3  PASS  Calling GridCompDestroy, ESMF_StateReconcileUTest.F90, line 873
+20210305 103121.339 INFO             PET3  PASS  Calling StateDestroy, ESMF_StateReconcileUTest.F90, line 880
+20210305 103121.339 INFO             PET3  PASS  Calling StateCreate for rereconcile tests, ESMF_StateReconcileUTest.F90, line 896
+20210305 103121.339 INFO             PET3  PASS  Creating PET 0 Array for rereconcile tests, ESMF_StateReconcileUTest.F90, line 917
+20210305 103121.363 INFO             PET3  PASS  Calling initial reconcile for rereconcile tests, ESMF_StateReconcileUTest.F90, line 924
+20210305 103121.363 INFO             PET3  PASS  PET           3 : Calling StateGet to access proxies, ESMF_StateReconcileUTest.F90, line 932
+20210305 103121.363 INFO             PET3  PASS  Removing non-proxy item test, ESMF_StateReconcileUTest.F90, line 941
+20210305 103121.363 INFO             PET3  PASS  Re-reconciling State test, ESMF_StateReconcileUTest.F90, line 948
+20210305 103121.363 ERROR            PET3 ESMF_StateAPI.cppF90:2431 ESMF_StateGet Not found  -  no ESMF_Array found named: Array_for_reconciling
+20210305 103121.363 INFO             PET3  PASS  Checking for empty State tests, ESMF_StateReconcileUTest.F90, line 956
+20210305 103121.363 INFO             PET3  PASS  Calling StateCreate for top-level State tests, ESMF_StateReconcileUTest.F90, line 975
+20210305 103121.363 INFO             PET3  PASS  Calling StateCreate for nested State tests, ESMF_StateReconcileUTest.F90, line 987
+20210305 103121.363 INFO             PET3  PASS  Calling FieldEmptyCreate for nested State test, ESMF_StateReconcileUTest.F90, line 996
+20210305 103121.363 INFO             PET3  PASS  Calling StateAdd of nested Field test, ESMF_StateReconcileUTest.F90, line 1005
+20210305 103121.363 INFO             PET3  PASS  Calling StateAdd of nested State test, ESMF_StateReconcileUTest.F90, line 1015
+20210305 103121.364 INFO             PET3  PASS  Calling StateReconcile of nested State test, ESMF_StateReconcileUTest.F90, line 1022
+20210305 103121.364 INFO             PET3  PASS  Calling StateGet of nested Field test, ESMF_StateReconcileUTest.F90, line 1034
+20210305 103121.364 ERROR            PET3 ESMF_StateAPI.cppF90:2565 ESMF_StateGet Not found  -  no ESMF_Field found named: state_nested/nested Field_badname
+20210305 103121.364 INFO             PET3  PASS  Calling StateGet of nested Field with wrong name test, ESMF_StateReconcileUTest.F90, line 1044
+20210305 103121.364 INFO             PET3  PASS  Creating a State for attributes, ESMF_StateReconcileUTest.F90, line 1056
+20210305 103121.364 INFO             PET3  PASS  Reconciling state with Attribute reconciling turned on, ESMF_StateReconcileUTest.F90, line 1063
+20210305 103121.366 INFO             PET3  PASS  Adding an Attribute to the Base test, ESMF_StateReconcileUTest.F90, line 1074
+20210305 103121.367 INFO             PET3  PASS  Reconciling state with Base attribute test, ESMF_StateReconcileUTest.F90, line 1081
+20210305 103121.368 INFO             PET3  PASS  Verifying reconciled Base attributes test, ESMF_StateReconcileUTest.F90, line 1093
+20210305 103121.368 INFO             PET3  PASS  Adding Field to State on PET 0 test, ESMF_StateReconcileUTest.F90, line 1118
+20210305 103121.370 INFO             PET3  PASS  Reconciling state with Field and Attribute test, ESMF_StateReconcileUTest.F90, line 1125
+20210305 103121.370 INFO             PET3  PASS  Accessing reconciled Fields test, ESMF_StateReconcileUTest.F90, line 1138
+20210305 103121.370 INFO             PET3  PASS  Accessing reconciled Field Attributes test, ESMF_StateReconcileUTest.F90, line 1156
+20210305 103121.370 INFO             PET3  PASS  Create a FieldBundle with Attributes on PET 0 test, ESMF_StateReconcileUTest.F90, line 1177
+20210305 103121.376 INFO             PET3  PASS  Reconciling state with FieldBundle and Attributes test, ESMF_StateReconcileUTest.F90, line 1184
+20210305 103121.376 INFO             PET3  PASS  Access reconciled FieldBundle test, ESMF_StateReconcileUTest.F90, line 1194
+20210305 103121.376 INFO             PET3  PASS  Creating a Gridded Component for shared grid tests, ESMF_StateReconcileUTest.F90, line 1207
+20210305 103121.376 INFO             PET3  PASS  Creating a Gridded Component for shared grid tests, ESMF_StateReconcileUTest.F90, line 1216
+20210305 103121.376 INFO             PET3  PASS  Create State for shared Grid test, ESMF_StateReconcileUTest.F90, line 1223
+20210305 103121.376 INFO             PET3  PASS  Calling GridCompSetServices for shared grid tests, ESMF_StateReconcileUTest.F90, line 1234
+20210305 103121.376 INFO             PET3  PASS  Calling GridCompSetServices for shared grid tests, ESMF_StateReconcileUTest.F90, line 1241
+20210305 103121.376 INFO             PET3  PASS  Calling GridCompSetEntryPoint for shared grid tests, ESMF_StateReconcileUTest.F90, line 1249
+20210305 103121.376 INFO             PET3  PASS  Calling GridCompSetEntryPoint for shared grid tests, ESMF_StateReconcileUTest.F90, line 1257
+20210305 103121.376 INFO             PET3  PASS  Calling GridCompSetEntryPoint for shared grid tests, ESMF_StateReconcileUTest.F90, line 1265
+20210305 103121.376 INFO             PET3  PASS  Calling GridCompSetEntryPoint for shared grid tests, ESMF_StateReconcileUTest.F90, line 1273
+20210305 103121.382 INFO             PET3  PASS  Calling GridCompInitialize for shared grid tests, ESMF_StateReconcileUTest.F90, line 1280
+20210305 103121.382 INFO             PET3  PASS  Calling GridCompInitialize for shared grid tests, ESMF_StateReconcileUTest.F90, line 1287
+20210305 103121.385 INFO             PET3  PASS  Reconcile State for shared Grid test, ESMF_StateReconcileUTest.F90, line 1294
+20210305 103121.385 INFO             PET3  PASS  Access Proxy Field 1 test, ESMF_StateReconcileUTest.F90, line 1305
+20210305 103121.385 INFO             PET3  PASS  Access Proxy Field 2 test, ESMF_StateReconcileUTest.F90, line 1316
+20210305 103121.385 INFO             PET3  PASS  Access shared Grid 1 test, ESMF_StateReconcileUTest.F90, line 1323
+20210305 103121.385 INFO             PET3  PASS  Access shared Grid 2 test, ESMF_StateReconcileUTest.F90, line 1330
+20210305 103121.385 INFO             PET3  PASS  Compare shared grids test, ESMF_StateReconcileUTest.F90, line 1337
+20210305 103121.386 INFO             PET3  PASS  Re-reconcile State for shared Grid test, ESMF_StateReconcileUTest.F90, line 1344
+20210305 103121.386 INFO             PET3  PASS  Calling GridCompFinalize for shared Grid test, ESMF_StateReconcileUTest.F90, line 1351
+20210305 103121.386 INFO             PET3  PASS  Calling GridCompFinalize for shared Grid test, ESMF_StateReconcileUTest.F90, line 1358
+20210305 103121.386 INFO             PET3  PASS  Calling GridCompDestroy for shared Grid test, ESMF_StateReconcileUTest.F90, line 1365
+20210305 103121.386 INFO             PET3  PASS  Calling GridCompDestroy for shared Grid test, ESMF_StateReconcileUTest.F90, line 1372
+20210305 103121.386 INFO             PET3  PASS  Calling StateDestroy for shared Grid test, ESMF_StateReconcileUTest.F90, line 1379
+20210305 103121.386 INFO             PET3  Ending Test, file ESMF_StateReconcileUTest.F90, line 1384
+20210305 103121.386 INFO             PET3 Finalizing ESMF

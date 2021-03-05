@@ -1,0 +1,140 @@
+20210305 102437.544 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102437.544 INFO             PET0 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 102437.544 INFO             PET0 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 102437.544 INFO             PET0 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 102437.544 INFO             PET0 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 102437.544 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102437.544 INFO             PET0 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 102437.544 INFO             PET0 ESMF library build date/time: "Mar  5 2021" "09:44:29"
+20210305 102437.544 INFO             PET0 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_O
+20210305 102437.544 INFO             PET0 ESMF_COMM                   : mpi
+20210305 102437.545 INFO             PET0 ESMF_MOAB                   : enabled
+20210305 102437.545 INFO             PET0 ESMF_LAPACK                 : enabled
+20210305 102437.545 INFO             PET0 ESMF_NETCDF                 : enabled
+20210305 102437.545 INFO             PET0 ESMF_PNETCDF                : disabled
+20210305 102437.545 INFO             PET0 ESMF_PIO                    : enabled
+20210305 102437.545 INFO             PET0 ESMF_YAMLCPP                : enabled
+20210305 102437.545 INFO             PET0 Beginning Test, file ESMC_NlohmannJSONUTest.C, line 79
+20210305 102437.545 INFO             PET0 NUMBER_OF_PROCESSORS 4
+20210305 102437.545 INFO             PET0 PASS Basic JSON Map Creation, ESMC_NlohmannJSONUTest.C, line 112
+20210305 102437.545 INFO             PET0 PASS Reference and pointer access using the JSON API (1), ESMC_NlohmannJSONUTest.C, line 132
+20210305 102437.545 INFO             PET0 PASS Reference and pointer access using the JSON API (2), ESMC_NlohmannJSONUTest.C, line 144
+20210305 102437.545 INFO             PET0 PASS Reference and pointer access using the JSON API (3), ESMC_NlohmannJSONUTest.C, line 157
+20210305 102437.545 INFO             PET0 PASS Reference and pointer access using the JSON API (4), ESMC_NlohmannJSONUTest.C, line 169
+20210305 102437.545 INFO             PET0 PASS Reference and pointer access using the JSON API (5), ESMC_NlohmannJSONUTest.C, line 181
+20210305 102437.545 INFO             PET0 PASS Mock info constructor (1), ESMC_NlohmannJSONUTest.C, line 200
+20210305 102437.545 INFO             PET0 PASS Mock info constructor (2), ESMC_NlohmannJSONUTest.C, line 215
+20210305 102437.545 INFO             PET0 PASS Mock info constructor (3), ESMC_NlohmannJSONUTest.C, line 227
+20210305 102437.545 INFO             PET0 PASS Move constructor (1), ESMC_NlohmannJSONUTest.C, line 248
+20210305 102437.545 INFO             PET0 PASS Move constructor (2), ESMC_NlohmannJSONUTest.C, line 260
+20210305 102437.545 INFO             PET0 PASS Vector retrieval, ESMC_NlohmannJSONUTest.C, line 309
+20210305 102437.545 INFO             PET0 PASS Vector reservation, ESMC_NlohmannJSONUTest.C, line 332
+20210305 102437.545 INFO             PET0 PASS Pointer to internal information, ESMC_NlohmannJSONUTest.C, line 364
+20210305 102437.545 INFO             PET0 PASS Equality operator between in-memory and parse, ESMC_NlohmannJSONUTest.C, line 385
+20210305 102437.545 INFO             PET0 Ending Test, file ESMC_NlohmannJSONUTest.C, line 388
+20210305 102437.545 INFO             PET0 Finalizing ESMF
+20210305 102437.529 INFO             PET1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102437.529 INFO             PET1 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 102437.529 INFO             PET1 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 102437.529 INFO             PET1 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 102437.529 INFO             PET1 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 102437.529 INFO             PET1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102437.529 INFO             PET1 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 102437.529 INFO             PET1 ESMF library build date/time: "Mar  5 2021" "09:44:29"
+20210305 102437.529 INFO             PET1 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_O
+20210305 102437.529 INFO             PET1 ESMF_COMM                   : mpi
+20210305 102437.530 INFO             PET1 ESMF_MOAB                   : enabled
+20210305 102437.530 INFO             PET1 ESMF_LAPACK                 : enabled
+20210305 102437.530 INFO             PET1 ESMF_NETCDF                 : enabled
+20210305 102437.530 INFO             PET1 ESMF_PNETCDF                : disabled
+20210305 102437.530 INFO             PET1 ESMF_PIO                    : enabled
+20210305 102437.530 INFO             PET1 ESMF_YAMLCPP                : enabled
+20210305 102437.541 INFO             PET1 Beginning Test, file ESMC_NlohmannJSONUTest.C, line 79
+20210305 102437.541 INFO             PET1 NUMBER_OF_PROCESSORS 4
+20210305 102437.545 INFO             PET1 PASS Basic JSON Map Creation, ESMC_NlohmannJSONUTest.C, line 112
+20210305 102437.545 INFO             PET1 PASS Reference and pointer access using the JSON API (1), ESMC_NlohmannJSONUTest.C, line 132
+20210305 102437.545 INFO             PET1 PASS Reference and pointer access using the JSON API (2), ESMC_NlohmannJSONUTest.C, line 144
+20210305 102437.545 INFO             PET1 PASS Reference and pointer access using the JSON API (3), ESMC_NlohmannJSONUTest.C, line 157
+20210305 102437.545 INFO             PET1 PASS Reference and pointer access using the JSON API (4), ESMC_NlohmannJSONUTest.C, line 169
+20210305 102437.545 INFO             PET1 PASS Reference and pointer access using the JSON API (5), ESMC_NlohmannJSONUTest.C, line 181
+20210305 102437.545 INFO             PET1 PASS Mock info constructor (1), ESMC_NlohmannJSONUTest.C, line 200
+20210305 102437.545 INFO             PET1 PASS Mock info constructor (2), ESMC_NlohmannJSONUTest.C, line 215
+20210305 102437.545 INFO             PET1 PASS Mock info constructor (3), ESMC_NlohmannJSONUTest.C, line 227
+20210305 102437.545 INFO             PET1 PASS Move constructor (1), ESMC_NlohmannJSONUTest.C, line 248
+20210305 102437.545 INFO             PET1 PASS Move constructor (2), ESMC_NlohmannJSONUTest.C, line 260
+20210305 102437.545 INFO             PET1 PASS Vector retrieval, ESMC_NlohmannJSONUTest.C, line 309
+20210305 102437.545 INFO             PET1 PASS Vector reservation, ESMC_NlohmannJSONUTest.C, line 332
+20210305 102437.545 INFO             PET1 PASS Pointer to internal information, ESMC_NlohmannJSONUTest.C, line 364
+20210305 102437.545 INFO             PET1 PASS Equality operator between in-memory and parse, ESMC_NlohmannJSONUTest.C, line 385
+20210305 102437.545 INFO             PET1 Ending Test, file ESMC_NlohmannJSONUTest.C, line 388
+20210305 102437.545 INFO             PET1 Finalizing ESMF
+20210305 102437.532 INFO             PET2 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102437.532 INFO             PET2 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 102437.532 INFO             PET2 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 102437.532 INFO             PET2 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 102437.532 INFO             PET2 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 102437.532 INFO             PET2 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102437.532 INFO             PET2 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 102437.532 INFO             PET2 ESMF library build date/time: "Mar  5 2021" "09:44:29"
+20210305 102437.532 INFO             PET2 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_O
+20210305 102437.532 INFO             PET2 ESMF_COMM                   : mpi
+20210305 102437.533 INFO             PET2 ESMF_MOAB                   : enabled
+20210305 102437.533 INFO             PET2 ESMF_LAPACK                 : enabled
+20210305 102437.533 INFO             PET2 ESMF_NETCDF                 : enabled
+20210305 102437.533 INFO             PET2 ESMF_PNETCDF                : disabled
+20210305 102437.533 INFO             PET2 ESMF_PIO                    : enabled
+20210305 102437.533 INFO             PET2 ESMF_YAMLCPP                : enabled
+20210305 102437.541 INFO             PET2 Beginning Test, file ESMC_NlohmannJSONUTest.C, line 79
+20210305 102437.541 INFO             PET2 NUMBER_OF_PROCESSORS 4
+20210305 102437.545 INFO             PET2 PASS Basic JSON Map Creation, ESMC_NlohmannJSONUTest.C, line 112
+20210305 102437.545 INFO             PET2 PASS Reference and pointer access using the JSON API (1), ESMC_NlohmannJSONUTest.C, line 132
+20210305 102437.545 INFO             PET2 PASS Reference and pointer access using the JSON API (2), ESMC_NlohmannJSONUTest.C, line 144
+20210305 102437.545 INFO             PET2 PASS Reference and pointer access using the JSON API (3), ESMC_NlohmannJSONUTest.C, line 157
+20210305 102437.545 INFO             PET2 PASS Reference and pointer access using the JSON API (4), ESMC_NlohmannJSONUTest.C, line 169
+20210305 102437.545 INFO             PET2 PASS Reference and pointer access using the JSON API (5), ESMC_NlohmannJSONUTest.C, line 181
+20210305 102437.545 INFO             PET2 PASS Mock info constructor (1), ESMC_NlohmannJSONUTest.C, line 200
+20210305 102437.545 INFO             PET2 PASS Mock info constructor (2), ESMC_NlohmannJSONUTest.C, line 215
+20210305 102437.545 INFO             PET2 PASS Mock info constructor (3), ESMC_NlohmannJSONUTest.C, line 227
+20210305 102437.545 INFO             PET2 PASS Move constructor (1), ESMC_NlohmannJSONUTest.C, line 248
+20210305 102437.545 INFO             PET2 PASS Move constructor (2), ESMC_NlohmannJSONUTest.C, line 260
+20210305 102437.545 INFO             PET2 PASS Vector retrieval, ESMC_NlohmannJSONUTest.C, line 309
+20210305 102437.545 INFO             PET2 PASS Vector reservation, ESMC_NlohmannJSONUTest.C, line 332
+20210305 102437.545 INFO             PET2 PASS Pointer to internal information, ESMC_NlohmannJSONUTest.C, line 364
+20210305 102437.545 INFO             PET2 PASS Equality operator between in-memory and parse, ESMC_NlohmannJSONUTest.C, line 385
+20210305 102437.545 INFO             PET2 Ending Test, file ESMC_NlohmannJSONUTest.C, line 388
+20210305 102437.545 INFO             PET2 Finalizing ESMF
+20210305 102437.538 INFO             PET3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102437.538 INFO             PET3 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 102437.538 INFO             PET3 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 102437.538 INFO             PET3 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 102437.538 INFO             PET3 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 102437.538 INFO             PET3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102437.538 INFO             PET3 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 102437.538 INFO             PET3 ESMF library build date/time: "Mar  5 2021" "09:44:29"
+20210305 102437.538 INFO             PET3 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_O
+20210305 102437.538 INFO             PET3 ESMF_COMM                   : mpi
+20210305 102437.538 INFO             PET3 ESMF_MOAB                   : enabled
+20210305 102437.538 INFO             PET3 ESMF_LAPACK                 : enabled
+20210305 102437.538 INFO             PET3 ESMF_NETCDF                 : enabled
+20210305 102437.538 INFO             PET3 ESMF_PNETCDF                : disabled
+20210305 102437.538 INFO             PET3 ESMF_PIO                    : enabled
+20210305 102437.538 INFO             PET3 ESMF_YAMLCPP                : enabled
+20210305 102437.541 INFO             PET3 Beginning Test, file ESMC_NlohmannJSONUTest.C, line 79
+20210305 102437.541 INFO             PET3 NUMBER_OF_PROCESSORS 4
+20210305 102437.545 INFO             PET3 PASS Basic JSON Map Creation, ESMC_NlohmannJSONUTest.C, line 112
+20210305 102437.545 INFO             PET3 PASS Reference and pointer access using the JSON API (1), ESMC_NlohmannJSONUTest.C, line 132
+20210305 102437.545 INFO             PET3 PASS Reference and pointer access using the JSON API (2), ESMC_NlohmannJSONUTest.C, line 144
+20210305 102437.545 INFO             PET3 PASS Reference and pointer access using the JSON API (3), ESMC_NlohmannJSONUTest.C, line 157
+20210305 102437.545 INFO             PET3 PASS Reference and pointer access using the JSON API (4), ESMC_NlohmannJSONUTest.C, line 169
+20210305 102437.545 INFO             PET3 PASS Reference and pointer access using the JSON API (5), ESMC_NlohmannJSONUTest.C, line 181
+20210305 102437.545 INFO             PET3 PASS Mock info constructor (1), ESMC_NlohmannJSONUTest.C, line 200
+20210305 102437.545 INFO             PET3 PASS Mock info constructor (2), ESMC_NlohmannJSONUTest.C, line 215
+20210305 102437.545 INFO             PET3 PASS Mock info constructor (3), ESMC_NlohmannJSONUTest.C, line 227
+20210305 102437.545 INFO             PET3 PASS Move constructor (1), ESMC_NlohmannJSONUTest.C, line 248
+20210305 102437.545 INFO             PET3 PASS Move constructor (2), ESMC_NlohmannJSONUTest.C, line 260
+20210305 102437.545 INFO             PET3 PASS Vector retrieval, ESMC_NlohmannJSONUTest.C, line 309
+20210305 102437.545 INFO             PET3 PASS Vector reservation, ESMC_NlohmannJSONUTest.C, line 332
+20210305 102437.545 INFO             PET3 PASS Pointer to internal information, ESMC_NlohmannJSONUTest.C, line 364
+20210305 102437.545 INFO             PET3 PASS Equality operator between in-memory and parse, ESMC_NlohmannJSONUTest.C, line 385
+20210305 102437.545 INFO             PET3 Ending Test, file ESMC_NlohmannJSONUTest.C, line 388
+20210305 102437.545 INFO             PET3 Finalizing ESMF

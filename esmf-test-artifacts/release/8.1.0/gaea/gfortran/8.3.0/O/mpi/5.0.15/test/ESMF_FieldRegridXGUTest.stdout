@@ -1,0 +1,536 @@
+  Beginning Test, file ESMF_FieldRegridXGUTest.F90, line 51
+  Beginning Test, file ESMF_FieldRegridXGUTest.F90, line 51
+  Beginning Test, file ESMF_FieldRegridXGUTest.F90, line 51
+  Beginning Test, file ESMF_FieldRegridXGUTest.F90, line 51
+  NUMBER_OF_PROCESSORS           4
+  NUMBER_OF_PROCESSORS           4
+  NUMBER_OF_PROCESSORS           4
+  NUMBER_OF_PROCESSORS           4
+  PASS  Regrid then create xgrid online and regrid through xgrid, overlapping cut, ESMF_FieldRegridXGUTest.F90, line 62
+  PASS  Regrid then create xgrid online and regrid through xgrid, overlapping cut, ESMF_FieldRegridXGUTest.F90, line 62
+  PASS  Regrid then create xgrid online and regrid through xgrid, overlapping cut, ESMF_FieldRegridXGUTest.F90, line 70
+  PASS  Regrid then create xgrid online and regrid through xgrid, overlapping cut, ESMF_FieldRegridXGUTest.F90, line 62
+  PASS  Regrid then create xgrid online and regrid through xgrid, overlapping cut, ESMF_FieldRegridXGUTest.F90, line 70
+  PASS  Regrid then create xgrid online and regrid through xgrid, overlapping cut, ESMF_FieldRegridXGUTest.F90, line 62
+  PASS  Regrid then create xgrid online and regrid through xgrid, overlapping cut, ESMF_FieldRegridXGUTest.F90, line 70
+  PASS  Regrid then create xgrid online and regrid through xgrid, overlapping cut, ESMF_FieldRegridXGUTest.F90, line 70
+ !------------------------------------
+ !medium size test A1
+ !------------------------------------
+ coordX:    5.0000000745058060E-002  0.15000000223517418       0.25000000372529030     
+ coordX:   0.35000001266598701       0.45000000670552254       0.55000000074505806     
+ coordX:   0.65000002458691597       0.74999998882412910     
+ coordX:   0.85000001266598701       0.95000003650784492     
+Total # of XGrid cells:  484
+Total src flux:  0.1500000972E+00
+  src flux and area:   0.35443489830509534       0.70559995594024727        1.0000000000000000     
+  src flux and area sub:   0.35443489830509534       0.70559995594024727        1.0000000000000000     
+  dst flux and area from direct Regrid:   0.35443489830509534       0.70559995594024727       0.70559995594024727     
+  recomputed src flux and area from direct Regrid:   0.33346054182718493       0.70559995594024727        1.0000000000000000     
+  xgrid flux and area:   0.35443489830509534       0.70559995594024727       0.70559995594024727     
+  dst flux and area:   0.35443489830509534       0.70559995594024727       0.70559995594024727     
+Verify:   0.3544348983E+00  0.3544348983E+00  0.0000000000E+00
+  recomputed xgrid flux and area:   0.35443489830509523       0.70559995594024727       0.70559995594024727     
+  recomputed src flux and area:   0.44325239188660659       0.70559995594024727        1.0000000000000000     
+  PASS  Regrid then create xgrid online and regrid through xgrid, overlapping cut, ESMF_FieldRegridXGUTest.F90, line 78
+  PASS  Regrid then create xgrid online and regrid through xgrid, overlapping cut, ESMF_FieldRegridXGUTest.F90, line 78
+  PASS  Regrid then create xgrid online and regrid through xgrid, overlapping cut, ESMF_FieldRegridXGUTest.F90, line 78
+  PASS  Regrid then create xgrid online and regrid through xgrid, overlapping cut, ESMF_FieldRegridXGUTest.F90, line 78
+ !------------------------------------
+ !medium size test A2
+ !------------------------------------
+ coordX:   0.65000002458691597       0.74999998882412910     
+ coordX:   0.85000001266598701       0.95000003650784492     
+ coordX:    5.0000000745058060E-002  0.15000000223517418       0.25000000372529030     
+ coordX:   0.35000001266598701       0.45000000670552254       0.55000000074505806     
+Total # of XGrid cells:  225
+Total src flux:  0.1500000972E+00
+  src flux and area:   0.17999998437878600       0.35999995708465704        1.0000000000000000     
+  src flux and area sub:   0.17999998437878600       0.35999995708465704        1.0000000000000000     
+  dst flux and area from direct Regrid:   0.17999998437878600       0.35999995708465704       0.35999995708465704     
+  recomputed src flux and area from direct Regrid:   0.17999994894109522       0.35999995708465704        1.0000000000000000     
+  xgrid flux and area:   0.17999998437878598       0.35999995708465704       0.35999995708465704     
+  dst flux and area:   0.17999998437878600       0.35999995708465704       0.35999995708465704     
+Verify:   0.1799999844E+00  0.1799999844E+00  0.0000000000E+00
+  recomputed xgrid flux and area:   0.17999998437878600       0.35999995708465704       0.35999995708465704     
+  recomputed src flux and area:   0.50000006555310539       0.35999995708465704        1.0000000000000000     
+  PASS  Regrid then create xgrid online and regrid through xgrid, overlapping cut, ESMF_FieldRegridXGUTest.F90, line 86
+  PASS  Regrid then create xgrid online and regrid through xgrid, overlapping cut, ESMF_FieldRegridXGUTest.F90, line 86
+  PASS  Regrid then create xgrid online and regrid through xgrid, overlapping cut, ESMF_FieldRegridXGUTest.F90, line 86
+  PASS  Regrid then create xgrid online and regrid through xgrid, overlapping cut, ESMF_FieldRegridXGUTest.F90, line 86
+ !------------------------------------
+ !medium size test A3
+ !------------------------------------
+ coordX:   0.65000002458691597       0.74999998882412910     
+ coordX:   0.85000001266598701       0.95000003650784492     
+ coordX:   0.35000001266598701       0.45000000670552254       0.55000000074505806     
+ coordX:    5.0000000745058060E-002  0.15000000223517418       0.25000000372529030     
+Total # of XGrid cells:  100
+Total src flux:  0.1500000972E+00
+  src flux and area:   0.50000010087261970        1.0000000000000000        1.0000000000000000     
+  src flux and area sub:   0.50000010087261970        1.0000000000000000        1.0000000000000000     
+  dst flux and area from direct Regrid:   0.50000010087261970        1.0000000000000000        1.0000000000000000     
+  recomputed src flux and area from direct Regrid:   0.50000010087261970        1.0000000000000000        1.0000000000000000     
+  xgrid flux and area:   0.50000010087261981        1.0000000000000000        1.0000000000000000     
+  dst flux and area:   0.50000010087261970        1.0000000000000000        1.0000000000000000     
+Verify:   0.5000001009E+00  0.5000001009E+00  0.0000000000E+00
+  recomputed xgrid flux and area:   0.50000010087261981        1.0000000000000000        1.0000000000000000     
+  recomputed src flux and area:   0.50000010087261970        1.0000000000000000        1.0000000000000000     
+  PASS  Regrid then create xgrid online and regrid through xgrid, overlapping cut, ESMF_FieldRegridXGUTest.F90, line 94
+  PASS  Regrid then create xgrid online and regrid through xgrid, overlapping cut, ESMF_FieldRegridXGUTest.F90, line 94
+  PASS  Regrid then create xgrid online and regrid through xgrid, overlapping cut, ESMF_FieldRegridXGUTest.F90, line 94
+  PASS  Regrid then create xgrid online and regrid through xgrid, overlapping cut, ESMF_FieldRegridXGUTest.F90, line 94
+ !------------------------------------
+ !reverse medium size test
+ !------------------------------------
+ coordX:   0.85000001266598701       0.95000003650784492     
+ coordX:   0.65000002458691597       0.74999998882412910     
+ coordX:   0.35000001266598701       0.45000000670552254       0.55000000074505806     
+ coordX:    5.0000000745058060E-002  0.15000000223517418       0.25000000372529030     
+Total # of XGrid cells:  484
+Total src flux:  0.1500000972E+00
+  src flux and area:   0.35443489830509534       0.70559995594024727        1.0000000000000000     
+  src flux and area sub:   0.35443489830509534       0.70559995594024727        1.0000000000000000     
+  dst flux and area from direct Regrid:   0.35443489830509534       0.70559995594024727       0.70559995594024727     
+  recomputed src flux and area from direct Regrid:   0.33346054182718493       0.70559995594024727        1.0000000000000000     
+  xgrid flux and area:   0.35443489830509534       0.70559995594024727       0.70559995594024727     
+  dst flux and area:   0.35443489830509534       0.70559995594024727       0.70559995594024727     
+Verify:   0.3544348983E+00  0.3544348983E+00  0.0000000000E+00
+  recomputed xgrid flux and area:   0.35443489830509523       0.70559995594024727       0.70559995594024727     
+  recomputed src flux and area:   0.44325239188660659       0.70559995594024727        1.0000000000000000     
+  PASS  Regrid then create xgrid online and regrid through xgrid, overlapping cut, ESMF_FieldRegridXGUTest.F90, line 102
+  PASS  Regrid then create xgrid online and regrid through xgrid, overlapping cut, ESMF_FieldRegridXGUTest.F90, line 102
+  PASS  Regrid then create xgrid online and regrid through xgrid, overlapping cut, ESMF_FieldRegridXGUTest.F90, line 102
+  PASS  Regrid then create xgrid online and regrid through xgrid, overlapping cut, ESMF_FieldRegridXGUTest.F90, line 102
+  PASS  Regrid then create xgrid online and regrid through xgrid, overlapping cut, ESMF_FieldRegridXGUTest.F90, line 110
+  PASS  Regrid then create xgrid online and regrid through xgrid, overlapping cut, ESMF_FieldRegridXGUTest.F90, line 118
+  PASS  Regrid then create xgrid online and regrid through xgrid, overlapping cut, ESMF_FieldRegridXGUTest.F90, line 110
+  PASS  Regrid then create xgrid online and regrid through xgrid, overlapping cut, ESMF_FieldRegridXGUTest.F90, line 118
+  PASS  Regrid then create xgrid online and regrid through xgrid, overlapping cut, ESMF_FieldRegridXGUTest.F90, line 110
+  PASS  Regrid then create xgrid online and regrid through xgrid, overlapping cut, ESMF_FieldRegridXGUTest.F90, line 110
+  PASS  Regrid then create xgrid online and regrid through xgrid, overlapping cut, ESMF_FieldRegridXGUTest.F90, line 118
+  PASS  Regrid then create xgrid online and regrid through xgrid, overlapping cut, ESMF_FieldRegridXGUTest.F90, line 118
+ !------------------------------------
+ !exact large test A2
+ !------------------------------------
+ coordX:    20.250000000000000        20.750000000000000        21.250000000000000        21.750000000000000        22.250000000000000        22.750000000000000        23.250000000000000        23.750000000000000        24.250000000000000        24.750000000000000        25.250000000000000        25.750000000000000        26.250000000000000        26.750000000000000        27.250000000000000        27.750000000000000        28.250000000000000        28.750000000000000        29.250000000000000        29.750000000000000     
+ coordX:    10.250000000000000        10.750000000000000        11.250000000000000        11.750000000000000        12.250000000000000        12.750000000000000        13.250000000000000        13.750000000000000        14.250000000000000        14.750000000000000        15.250000000000000        15.750000000000000        16.250000000000000        16.750000000000000        17.250000000000000        17.750000000000000        18.250000000000000        18.750000000000000        19.250000000000000        19.750000000000000     
+ coordX:    30.250000000000000        30.750000000000000        31.250000000000000        31.750000000000000        32.250000000000000        32.750000000000000        33.250000000000000        33.750000000000000        34.250000000000000        34.750000000000000        35.250000000000000        35.750000000000000        36.250000000000000        36.750000000000000        37.250000000000000        37.750000000000000        38.250000000000000        38.750000000000000        39.250000000000000        39.750000000000000     
+ coordX:   0.25000000000000000       0.75000000000000000        1.2500000000000000        1.7500000000000000        2.2500000000000000        2.7500000000000000        3.2500000000000000        3.7500000000000000        4.2500000000000000        4.7500000000000000        5.2500000000000000        5.7500000000000000        6.2500000000000000        6.7500000000000000        7.2500000000000000        7.7500000000000000        8.2500000000000000        8.7500000000000000        9.2500000000000000        9.7500000000000000     
+Total # of XGrid cells: 6400
+Total src flux:  0.2000001172E+03
+  src flux and area:    800.00013729597345        1600.0000000000000        1600.0000000000000     
+  src flux and area sub:    800.00013729597345        1600.0000000000000        1600.0000000000000     
+  dst flux and area from direct Regrid:    800.00013729597322        1600.0000000000000        1600.0000000000000     
+  recomputed src flux and area from direct Regrid:    800.00013729597345        1600.0000000000000        1600.0000000000000     
+  xgrid flux and area:    800.00013729597345        1600.0000000000000        1600.0000000000000     
+  dst flux and area:    800.00013729597322        1600.0000000000000        1600.0000000000000     
+Verify:   0.8000001373E+03  0.8000001373E+03  0.0000000000E+00
+  recomputed xgrid flux and area:    800.00013729597345        1600.0000000000000        1600.0000000000000     
+  recomputed src flux and area:    800.00013729597345        1600.0000000000000        1600.0000000000000     
+  PASS  Regrid then create xgrid online and regrid through xgrid, overlapping cut, ESMF_FieldRegridXGUTest.F90, line 126
+  PASS  Regrid then create xgrid online and regrid through xgrid, overlapping cut, ESMF_FieldRegridXGUTest.F90, line 126
+ !------------------------------------
+ !reverse exact large test
+  PASS  Regrid then create xgrid online and regrid through xgrid, overlapping cut, ESMF_FieldRegridXGUTest.F90, line 126
+  PASS  Regrid then create xgrid online and regrid through xgrid, overlapping cut, ESMF_FieldRegridXGUTest.F90, line 126
+ !------------------------------------
+ coordX:    10.500000000000000        11.500000000000000        12.500000000000000        13.500000000000000        14.500000000000000        15.500000000000000        16.500000000000000        17.500000000000000        18.500000000000000        19.500000000000000     
+ coordX:    20.500000000000000        21.500000000000000        22.500000000000000        23.500000000000000        24.500000000000000        25.500000000000000        26.500000000000000        27.500000000000000        28.500000000000000        29.500000000000000     
+ coordX:   0.50000000000000000        1.5000000000000000        2.5000000000000000        3.5000000000000000        4.5000000000000000        5.5000000000000000        6.5000000000000000        7.5000000000000000        8.5000000000000000        9.5000000000000000     
+ coordX:    30.500000000000000        31.500000000000000        32.500000000000000        33.500000000000000        34.500000000000000        35.500000000000000        36.500000000000000        37.500000000000000        38.500000000000000        39.500000000000000     
+Total # of XGrid cells: 6400
+Total src flux:  0.2000001180E+03
+  src flux and area:    800.00013819998139        1600.0000000000000        1600.0000000000000     
+  src flux and area sub:    800.00013819998139        1600.0000000000000        1600.0000000000000     
+  dst flux and area from direct Regrid:    800.00013819998151        1600.0000000000000        1600.0000000000000     
+  recomputed src flux and area from direct Regrid:    800.00013819998139        1600.0000000000000        1600.0000000000000     
+  xgrid flux and area:    800.00013819998082        1600.0000000000000        1600.0000000000000     
+  dst flux and area:    800.00013819998151        1600.0000000000000        1600.0000000000000     
+Verify:   0.8000001382E+03  0.8000001382E+03  0.0000000000E+00
+  recomputed xgrid flux and area:    800.00013819998082        1600.0000000000000        1600.0000000000000     
+  recomputed src flux and area:    800.00013819998139        1600.0000000000000        1600.0000000000000     
+  PASS  Regrid then create xgrid online and regrid through xgrid, overlapping cut, ESMF_FieldRegridXGUTest.F90, line 134
+  PASS  Regrid then create xgrid online and regrid through xgrid, overlapping cut, ESMF_FieldRegridXGUTest.F90, line 134
+  PASS  Regrid then create xgrid online and regrid through xgrid, overlapping cut, ESMF_FieldRegridXGUTest.F90, line 134
+  PASS  Regrid then create xgrid online and regrid through xgrid, overlapping cut, ESMF_FieldRegridXGUTest.F90, line 134
+  PASS  Regrid then create xgrid and regrid through xgrid, spherical grids, ESMF_FieldRegridXGUTest.F90, line 142
+  PASS  Regrid then create xgrid and regrid through xgrid, spherical grids, ESMF_FieldRegridXGUTest.F90, line 142
+  PASS  Regrid then create xgrid and regrid through xgrid, spherical grids, ESMF_FieldRegridXGUTest.F90, line 142
+  PASS  Regrid then create xgrid and regrid through xgrid, spherical grids, ESMF_FieldRegridXGUTest.F90, line 150
+  PASS  Regrid then create xgrid and regrid through xgrid, spherical grids, ESMF_FieldRegridXGUTest.F90, line 142
+  PASS  Regrid then create xgrid and regrid through xgrid, spherical grids, ESMF_FieldRegridXGUTest.F90, line 150
+  PASS  Regrid then create xgrid and regrid through xgrid, spherical grids, ESMF_FieldRegridXGUTest.F90, line 150
+  PASS  Regrid then create xgrid and regrid through xgrid, spherical grids, ESMF_FieldRegridXGUTest.F90, line 158
+  PASS  Regrid then create xgrid and regrid through xgrid, spherical grids, ESMF_FieldRegridXGUTest.F90, line 150
+  PASS  Regrid then create xgrid and regrid through xgrid, spherical grids, ESMF_FieldRegridXGUTest.F90, line 158
+  PASS  Regrid then create xgrid and regrid through xgrid, spherical grids, ESMF_FieldRegridXGUTest.F90, line 158
+  PASS  Regrid then create xgrid and regrid through xgrid, spherical grids, ESMF_FieldRegridXGUTest.F90, line 158
+ !------------------------------------
+ !medium regional sphere cut B1
+ !------------------------------------
+ startx:   -165.00000000000000                4           6 coordX:   -161.50000000000000       -160.50000000000000       -159.50000000000000     
+ startx:   -165.00000000000000                7           8 coordX:   -158.50000000000000       -157.50000000000000     
+ startx:   -165.00000000000000                1           3 coordX:   -164.50000000000000       -163.50000000000000       -162.50000000000000     
+ startx:   -165.00000000000000                9          10 coordX:   -156.50000000000000       -155.50000000000000     
+ eleCount =          224 size(fptr) =          224
+ eleCount =          206 size(fptr) =          206
+ eleCount =          174 size(fptr) =          174
+ eleCount =          176 size(fptr) =          176
+init_src_sph bounds:     0    1    3    1   20
+init_src_sph bounds:     1    4    6    1   20
+init_src_sph bounds:     2    7    8    1   20
+init_src_sph bounds:     3    9   10    1   20
+  src flux and area:    9.2864408006207017E-002   4.6432204003103508E-002   4.6433255730193815E-002   4.6433514385594780E-002
+  src flux and area sub:    9.2864408006207017E-002   4.6432204003103508E-002   4.6433255730193815E-002
+  dst flux and area from direct Regrid:    9.2864408006207030E-002   4.6432204003103515E-002   4.6433450105477239E-002
+  recomputed src flux and area from direct Regrid:    9.2859814648783665E-002   4.6432204003103508E-002   4.6433255730193815E-002
+init_src_sph bounds:     1    4    6    1   20
+init_src_sph bounds:     2    7    8    1   20
+init_src_sph bounds:     3    9   10    1   20
+init_src_sph bounds:     0    1    3    1   20
+init_src_sph bounds:     0    1    3    1   20
+init_src_sph bounds:     1    4    6    1   20
+init_src_sph bounds:     2    7    8    1   20
+init_src_sph bounds:     3    9   10    1   20
+  xgrid flux and area:    9.2864408006206850E-002   4.6432204003103487E-002   4.6432204003103487E-002
+  dst flux and area:    9.2864408006206753E-002   4.6432204003103515E-002   4.6433450105477239E-002
+Verify:   0.9286440801E-01  0.9286440801E-01  0.2988828143E-14  0.2265029824E-04
+  recomputed xgrid flux and area:    9.2861916984683657E-002   4.6432204003103487E-002   4.6432204003103487E-002
+  recomputed src flux and area:    9.2861916984683657E-002   4.6432204003103508E-002   4.6433255730193815E-002
+init_src_sph bounds:     1    4    6    1   20
+init_src_sph bounds:     2    7    8    1   20
+init_src_sph bounds:     3    9   10    1   20
+init_src_sph bounds:     0    1    3    1   20
+  PASS  Regrid then create xgrid and regrid through xgrid, spherical grids, ESMF_FieldRegridXGUTest.F90, line 166
+  PASS  Regrid then create xgrid and regrid through xgrid, spherical grids, ESMF_FieldRegridXGUTest.F90, line 166
+  PASS  Regrid then create xgrid and regrid through xgrid, spherical grids, ESMF_FieldRegridXGUTest.F90, line 166
+  PASS  Regrid then create xgrid and regrid through xgrid, spherical grids, ESMF_FieldRegridXGUTest.F90, line 166
+ !------------------------------------
+ !medium regional sphere overlap
+ !------------------------------------
+ startx:   -165.00000000000000                7           8 coordX:   -158.50000000000000       -157.50000000000000     
+ startx:   -165.00000000000000                9          10 coordX:   -156.50000000000000       -155.50000000000000     
+ startx:   -165.00000000000000                4           6 coordX:   -161.50000000000000       -160.50000000000000       -159.50000000000000     
+ startx:   -165.00000000000000                1           3 coordX:   -164.50000000000000       -163.50000000000000       -162.50000000000000     
+ eleCount =          404 size(fptr) =          404
+ eleCount =          396 size(fptr) =          396
+ eleCount =          548 size(fptr) =          548
+ eleCount =          576 size(fptr) =          576
+init_src_sph bounds:     0    1    3    1   20
+init_src_sph bounds:     1    4    6    1   20
+init_src_sph bounds:     2    7    8    1   20
+init_src_sph bounds:     3    9   10    1   20
+  src flux and area:    9.2864559237064326E-002   4.6432279618532163E-002   4.6433255730193815E-002   4.6433514385594780E-002
+  src flux and area sub:    9.2864559237064326E-002   4.6432279618532163E-002   4.6433255730193815E-002
+  dst flux and area from direct Regrid:    9.2864559237064354E-002   4.6432279618532177E-002   5.5720105918762947E-002
+  recomputed src flux and area from direct Regrid:    9.1622175841981957E-002   4.6432279618532163E-002   4.6433255730193815E-002
+init_src_sph bounds:     1    4    6    1   20
+init_src_sph bounds:     2    7    8    1   20
+init_src_sph bounds:     3    9   10    1   20
+init_src_sph bounds:     0    1    3    1   20
+init_src_sph bounds:     0    1    3    1   20
+init_src_sph bounds:     1    4    6    1   20
+init_src_sph bounds:     2    7    8    1   20
+init_src_sph bounds:     3    9   10    1   20
+  xgrid flux and area:    9.2864559237063660E-002   4.6432279618532163E-002   4.6432279618532163E-002
+  dst flux and area:    9.2864559237063521E-002   4.6432279618532177E-002   5.5720105918762947E-002
+Verify:   0.9286455924E-01  0.9286455924E-01  0.8966469828E-14  0.2102182253E-04
+  recomputed xgrid flux and area:    9.1624101827071841E-002   4.6432279618532163E-002   4.6432279618532163E-002
+  recomputed src flux and area:    9.1624101827071897E-002   4.6432279618532163E-002   4.6433255730193815E-002
+init_src_sph bounds:     1    4    6    1   20
+init_src_sph bounds:     2    7    8    1   20
+init_src_sph bounds:     3    9   10    1   20
+init_src_sph bounds:     0    1    3    1   20
+  PASS  Regrid then create xgrid and regrid through xgrid, spherical grids, ESMF_FieldRegridXGUTest.F90, line 174
+  PASS  Regrid then create xgrid and regrid through xgrid, spherical grids, ESMF_FieldRegridXGUTest.F90, line 174
+  PASS  Regrid then create xgrid and regrid through xgrid, spherical grids, ESMF_FieldRegridXGUTest.F90, line 174
+  PASS  Regrid then create xgrid and regrid through xgrid, spherical grids, ESMF_FieldRegridXGUTest.F90, line 174
+ !------------------------------------
+ !medium regional sphere overlap2
+ !------------------------------------
+ startx:   -165.00000000000000                7           8 coordX:   -158.50000000000000       -157.50000000000000     
+ startx:   -165.00000000000000                9          10 coordX:   -156.50000000000000       -155.50000000000000     
+ startx:   -165.00000000000000                4           6 coordX:   -161.50000000000000       -160.50000000000000       -159.50000000000000     
+ startx:   -165.00000000000000                1           3 coordX:   -164.50000000000000       -163.50000000000000       -162.50000000000000     
+ eleCount =          465 size(fptr) =          465
+ eleCount =          448 size(fptr) =          448
+ eleCount =          554 size(fptr) =          554
+ eleCount =          575 size(fptr) =          575
+init_src_sph bounds:     0    1    3    1   20
+init_src_sph bounds:     1    4    6    1   20
+init_src_sph bounds:     2    7    8    1   20
+init_src_sph bounds:     3    9   10    1   20
+  src flux and area:    9.2864540872907325E-002   4.6432270436453663E-002   4.6433255730193815E-002   4.6433514385594780E-002
+  src flux and area sub:    9.2864540872907325E-002   4.6432270436453663E-002   4.6433255730193815E-002
+  dst flux and area from direct Regrid:    9.2864540872907325E-002   4.6432270436453663E-002   5.5720105918762940E-002
+  recomputed src flux and area from direct Regrid:    9.0383942772170933E-002   4.6432270436453663E-002   4.6433255730193815E-002
+init_src_sph bounds:     1    4    6    1   20
+init_src_sph bounds:     2    7    8    1   20
+init_src_sph bounds:     3    9   10    1   20
+init_src_sph bounds:     0    1    3    1   20
+init_src_sph bounds:     0    1    3    1   20
+init_src_sph bounds:     1    4    6    1   20
+init_src_sph bounds:     2    7    8    1   20
+init_src_sph bounds:     3    9   10    1   20
+  xgrid flux and area:    9.2864540872907020E-002   4.6432270436453656E-002   4.6432270436453656E-002
+  dst flux and area:    9.2864540872907603E-002   4.6432270436453663E-002   5.5720105918762940E-002
+Verify:   0.9286454087E-01  0.9286454087E-01  0.2988823867E-14  0.2121957043E-04
+  recomputed xgrid flux and area:    9.0385856915897719E-002   4.6432270436453656E-002   4.6432270436453656E-002
+  recomputed src flux and area:    9.0385856915898385E-002   4.6432270436453663E-002   4.6433255730193815E-002
+init_src_sph bounds:     1    4    6    1   20
+init_src_sph bounds:     2    7    8    1   20
+init_src_sph bounds:     3    9   10    1   20
+init_src_sph bounds:     0    1    3    1   20
+  PASS  Regrid then create xgrid and regrid through xgrid, spherical grids, ESMF_FieldRegridXGUTest.F90, line 182
+  PASS  Regrid then create xgrid and regrid through xgrid, spherical grids, ESMF_FieldRegridXGUTest.F90, line 182
+  PASS  Regrid then create xgrid and regrid through xgrid, spherical grids, ESMF_FieldRegridXGUTest.F90, line 182
+  PASS  Regrid then create xgrid and regrid through xgrid, spherical grids, ESMF_FieldRegridXGUTest.F90, line 182
+ !------------------------------------
+ !large regional sphere overlap B2
+ !------------------------------------
+ startx:   -165.00000000000000               21          30 coordX:   -144.50000000000000       -143.50000000000000       -142.50000000000000       -141.50000000000000       -140.50000000000000       -139.50000000000000       -138.50000000000000       -137.50000000000000       -136.50000000000000       -135.50000000000000     
+ startx:   -165.00000000000000               31          40 coordX:   -134.50000000000000       -133.50000000000000       -132.50000000000000       -131.50000000000000       -130.50000000000000       -129.50000000000000       -128.50000000000000       -127.50000000000000       -126.50000000000000       -125.50000000000000     
+ startx:   -165.00000000000000               11          20 coordX:   -154.50000000000000       -153.50000000000000       -152.50000000000000       -151.50000000000000       -150.50000000000000       -149.50000000000000       -148.50000000000000       -147.50000000000000       -146.50000000000000       -145.50000000000000     
+ startx:   -165.00000000000000                1          10 coordX:   -164.50000000000000       -163.50000000000000       -162.50000000000000       -161.50000000000000       -160.50000000000000       -159.50000000000000       -158.50000000000000       -157.50000000000000       -156.50000000000000       -155.50000000000000     
+ eleCount =         3296 size(fptr) =         3296
+ eleCount =         3446 size(fptr) =         3446
+ eleCount =         3877 size(fptr) =         3877
+ eleCount =         3868 size(fptr) =         3868
+init_src_sph bounds:     0    1   10    1   40
+init_src_sph bounds:     1   11   20    1   40
+init_src_sph bounds:     2   21   30    1   40
+init_src_sph bounds:     3   31   40    1   40
+  src flux and area:   0.61391731872046074       0.30695865936023037       0.30695865936023009       0.30696335499211619     
+  src flux and area sub:   0.61391731872046074       0.30695865936023037       0.30695865936023009     
+  dst flux and area from direct Regrid:   0.61391731872046029       0.30695865936023015       0.44709812007015648     
+  recomputed src flux and area from direct Regrid:   0.60906087807375076       0.30695865936023037       0.30695865936023009     
+init_src_sph bounds:     1   11   20    1   40
+init_src_sph bounds:     2   21   30    1   40
+init_src_sph bounds:     3   31   40    1   40
+init_src_sph bounds:     0    1   10    1   40
+init_src_sph bounds:     0    1   10    1   40
+init_src_sph bounds:     1   11   20    1   40
+init_src_sph bounds:     2   21   30    1   40
+init_src_sph bounds:     3   31   40    1   40
+  xgrid flux and area:   0.61391731872047506       0.30695865936023026       0.30695865936023026     
+  dst flux and area:   0.61391731872052491       0.30695865936023015       0.44709812007015648     
+Verify:   0.6139173187E+00  0.6139173187E+00  0.1052502968E-12  0.5425273033E-15
+  recomputed xgrid flux and area:   0.60906087807386899       0.30695865936023026       0.30695865936023026     
+  recomputed src flux and area:   0.60906087807389486       0.30695865936023037       0.30695865936023009     
+init_src_sph bounds:     1   11   20    1   40
+init_src_sph bounds:     2   21   30    1   40
+init_src_sph bounds:     3   31   40    1   40
+init_src_sph bounds:     0    1   10    1   40
+  PASS  Regrid then create xgrid and regrid through xgrid, spherical grids, ESMF_FieldRegridXGUTest.F90, line 190
+  PASS  Regrid then create xgrid and regrid through xgrid, spherical grids, ESMF_FieldRegridXGUTest.F90, line 190
+  PASS  Regrid then create xgrid and regrid through xgrid, spherical grids, ESMF_FieldRegridXGUTest.F90, line 190
+  PASS  Regrid then create xgrid and regrid through xgrid, spherical grids, ESMF_FieldRegridXGUTest.F90, line 190
+ !------------------------------------
+ !reverse large regional sphere overlap
+ !------------------------------------
+ startx:   -168.00000000000000               61          80 coordX:   -131.69999998807907       -131.09999769926071       -130.49999922513962       -129.89999693632126       -129.29999846220016       -128.69999998807907       -128.09999769926071       -127.49999922513962       -126.89999693632126       -126.29999846220016       -125.69999998807907       -125.09999769926071       -124.49999922513962       -123.89999693632126       -123.29999846220016       -122.69999998807907       -122.09999769926071       -121.49999922513962       -120.89999693632126       -120.29999846220016     
+ startx:   -168.00000000000000               41          60 coordX:   -143.69999998807907       -143.09999960660934       -142.49999922513962       -141.89999884366989       -141.29999846220016       -140.69999808073044       -140.09999960660934       -139.49999922513962       -138.89999884366989       -138.29999846220016       -137.69999808073044       -137.09999960660934       -136.49999922513962       -135.89999884366989       -135.29999846220016       -134.69999998807907       -134.09999769926071       -133.49999922513962       -132.89999693632126       -132.29999846220016     
+ startx:   -168.00000000000000               21          40 coordX:   -155.69999998807907       -155.09999960660934       -154.49999922513962       -153.89999979734421       -153.29999941587448       -152.69999903440475       -152.09999960660934       -151.49999922513962       -150.89999884366989       -150.29999846220016       -149.69999998807907       -149.09999960660934       -148.49999922513962       -147.89999884366989       -147.29999846220016       -146.69999998807907       -146.09999960660934       -145.49999922513962       -144.89999884366989       -144.29999846220016     
+ startx:   -168.00000000000000                1          20 coordX:   -167.69999998807907       -167.09999996423721       -166.49999994039536       -165.89999991655350       -165.29999989271164       -164.69999998807907       -164.09999984502792       -163.49999970197678       -162.89999979734421       -162.29999989271164       -161.69999998807907       -161.09999960660934       -160.49999970197678       -159.89999979734421       -159.29999941587448       -158.69999998807907       -158.09999960660934       -157.49999922513962       -156.89999979734421       -156.29999941587448     
+ eleCount =         3091 size(fptr) =         3091
+ eleCount =         3335 size(fptr) =         3335
+ eleCount =         3786 size(fptr) =         3786
+ eleCount =         4275 size(fptr) =         4275
+init_src_sph bounds:     0    1   20    1   80
+init_src_sph bounds:     1   21   40    1   80
+init_src_sph bounds:     2   41   60    1   80
+init_src_sph bounds:     3   61   80    1   80
+  src flux and area:   0.61391731872046051       0.30695865936023026       0.44709812007015648       0.44710014857055336     
+  src flux and area sub:   0.61391731872046051       0.30695865936023026       0.44709812007015648     
+  dst flux and area from direct Regrid:   0.61391731872046096       0.30695865936023048       0.30695865936023009     
+  recomputed src flux and area from direct Regrid:   0.60906087807375142       0.30695865936023026       0.44709812007015648     
+init_src_sph bounds:     1   21   40    1   80
+init_src_sph bounds:     2   41   60    1   80
+init_src_sph bounds:     3   61   80    1   80
+init_src_sph bounds:     0    1   20    1   80
+init_src_sph bounds:     0    1   20    1   80
+init_src_sph bounds:     1   21   40    1   80
+init_src_sph bounds:     2   41   60    1   80
+init_src_sph bounds:     3   61   80    1   80
+  xgrid flux and area:   0.61391731872045852       0.30695865936023004       0.30695865936023004     
+  dst flux and area:   0.61391731872056499       0.30695865936023048       0.30695865936023009     
+Verify:   0.6139173187E+00  0.6139173187E+00  0.1694493611E-12  0.3134422947E+00
+  recomputed xgrid flux and area:   0.61391731872057065       0.30695865936023004       0.30695865936023004     
+  recomputed src flux and area:   0.88192086977102147       0.30695865936023026       0.44709812007015648     
+init_src_sph bounds:     1   21   40    1   80
+init_src_sph bounds:     2   41   60    1   80
+init_src_sph bounds:     3   61   80    1   80
+init_src_sph bounds:     0    1   20    1   80
+  PASS  Regrid then create xgrid and regrid through xgrid, spherical grids, ESMF_FieldRegridXGUTest.F90, line 198
+  PASS  Regrid then create xgrid and regrid through xgrid, spherical grids, ESMF_FieldRegridXGUTest.F90, line 198
+  PASS  Regrid then create xgrid and regrid through xgrid, spherical grids, ESMF_FieldRegridXGUTest.F90, line 198
+ !------------------------------------
+ !large full sphere cut C1
+ !------------------------------------
+  PASS  Regrid then create xgrid and regrid through xgrid, spherical grids, ESMF_FieldRegridXGUTest.F90, line 198
+ startx:   -180.00000000000000                1          12 coordX:   -176.00000000000000       -168.00000000000000       -160.00000000000000       -152.00000000000000       -144.00000000000000       -136.00000000000000       -128.00000000000000       -120.00000000000000       -112.00000000000000       -104.00000000000000       -96.000000000000000       -88.000000000000000     
+ startx:   -180.00000000000000               35          45 coordX:    96.000000000000000        104.00000000000000        112.00000000000000        120.00000000000000        128.00000000000000        136.00000000000000        144.00000000000000        152.00000000000000        160.00000000000000        168.00000000000000        176.00000000000000     
+ startx:   -180.00000000000000               13          23 coordX:   -80.000000000000000       -72.000000000000000       -64.000000000000000       -56.000000000000000       -48.000000000000000       -40.000000000000000       -32.000000000000000       -24.000000000000000       -16.000000000000000       -8.0000000000000000        0.0000000000000000     
+ startx:   -180.00000000000000               24          34 coordX:    8.0000000000000000        16.000000000000000        24.000000000000000        32.000000000000000        40.000000000000000        48.000000000000000        56.000000000000000        64.000000000000000        72.000000000000000        80.000000000000000        88.000000000000000     
+ eleCount =         2940 size(fptr) =         2940
+ eleCount =         3088 size(fptr) =         3088
+ eleCount =         3477 size(fptr) =         3477
+ eleCount =         3749 size(fptr) =         3749
+init_src_sph bounds:     0    1   12    1   45
+init_src_sph bounds:     1   13   23    1   45
+init_src_sph bounds:     2   24   34    1   45
+init_src_sph bounds:     3   35   45    1   45
+  src flux and area:    25.132741228718359        12.566370614359180        12.566370614359199        12.566370517015455     
+  src flux and area sub:    25.132741228718359        12.566370614359180        12.566370614359199     
+  dst flux and area from direct Regrid:    25.132741228718167        12.566370614359084        12.566370614359096     
+  recomputed src flux and area from direct Regrid:    25.132741228718281        12.566370614359180        12.566370614359199     
+init_src_sph bounds:     1   13   23    1   45
+init_src_sph bounds:     2   24   34    1   45
+init_src_sph bounds:     3   35   45    1   45
+init_src_sph bounds:     0    1   12    1   45
+init_src_sph bounds:     0    1   12    1   45
+init_src_sph bounds:     1   13   23    1   45
+init_src_sph bounds:     2   24   34    1   45
+init_src_sph bounds:     3   35   45    1   45
+  xgrid flux and area:    25.132741228718213        12.566370614359105        12.566370614359105     
+  dst flux and area:    25.132741228718178        12.566370614359084        12.566370614359096     
+Verify:   0.2513274123E+02  0.2513274123E+02  0.4240739575E-15  0.7491973250E-14
+  recomputed xgrid flux and area:    25.132741228718139        12.566370614359105        12.566370614359105     
+  recomputed src flux and area:    25.132741228718309        12.566370614359180        12.566370614359199     
+init_src_sph bounds:     1   13   23    1   45
+init_src_sph bounds:     2   24   34    1   45
+init_src_sph bounds:     3   35   45    1   45
+init_src_sph bounds:     0    1   12    1   45
+  PASS  Regrid then create xgrid and regrid through xgrid, full spherical grids, ESMF_FieldRegridXGUTest.F90, line 207
+  PASS  Regrid then create xgrid and regrid through xgrid, full spherical grids, ESMF_FieldRegridXGUTest.F90, line 207
+ !------------------------------------
+ !reverse large full sphere cut
+ !------------------------------------
+  PASS  Regrid then create xgrid and regrid through xgrid, full spherical grids, ESMF_FieldRegridXGUTest.F90, line 207
+  PASS  Regrid then create xgrid and regrid through xgrid, full spherical grids, ESMF_FieldRegridXGUTest.F90, line 207
+ startx:    0.0000000000000000                1          23 coordX:    2.0000000000000000        6.0000000000000000        10.000000000000000        14.000000000000000        18.000000000000000        22.000000000000000        26.000000000000000        30.000000000000000        34.000000000000000        38.000000000000000        42.000000000000000        46.000000000000000        50.000000000000000        54.000000000000000        58.000000000000000        62.000000000000000        66.000000000000000        70.000000000000000        74.000000000000000        78.000000000000000        82.000000000000000        86.000000000000000        90.000000000000000     
+ startx:    0.0000000000000000               24          46 coordX:    94.000000000000000        98.000000000000000        102.00000000000000        106.00000000000000        110.00000000000000        114.00000000000000        118.00000000000000        122.00000000000000        126.00000000000000        130.00000000000000        134.00000000000000        138.00000000000000        142.00000000000000        146.00000000000000        150.00000000000000        154.00000000000000        158.00000000000000        162.00000000000000        166.00000000000000        170.00000000000000        174.00000000000000        178.00000000000000        182.00000000000000     
+ startx:    0.0000000000000000               47          68 coordX:    186.00000000000000        190.00000000000000        194.00000000000000        198.00000000000000        202.00000000000000        206.00000000000000        210.00000000000000        214.00000000000000        218.00000000000000        222.00000000000000        226.00000000000000        230.00000000000000        234.00000000000000        238.00000000000000        242.00000000000000        246.00000000000000        250.00000000000000        254.00000000000000        258.00000000000000        262.00000000000000        266.00000000000000        270.00000000000000     
+ startx:    0.0000000000000000               69          90 coordX:    274.00000000000000        278.00000000000000        282.00000000000000        286.00000000000000        290.00000000000000        294.00000000000000        298.00000000000000        302.00000000000000        306.00000000000000        310.00000000000000        314.00000000000000        318.00000000000000        322.00000000000000        326.00000000000000        330.00000000000000        334.00000000000000        338.00000000000000        342.00000000000000        346.00000000000000        350.00000000000000        354.00000000000000        358.00000000000000     
+ eleCount =         2904 size(fptr) =         2904
+ eleCount =         3128 size(fptr) =         3128
+ eleCount =         3493 size(fptr) =         3493
+ eleCount =         3656 size(fptr) =         3656
+init_src_sph bounds:     0    1   23    1   90
+init_src_sph bounds:     1   24   46    1   90
+init_src_sph bounds:     2   47   68    1   90
+init_src_sph bounds:     3   69   90    1   90
+  src flux and area:    25.132741228718174        12.566370614359087        12.566370614359096        12.566370517015455     
+  src flux and area sub:    25.132741228718174        12.566370614359087        12.566370614359096     
+  dst flux and area from direct Regrid:    25.132741228718370        12.566370614359185        12.566370614359199     
+  recomputed src flux and area from direct Regrid:    25.132741228718128        12.566370614359087        12.566370614359096     
+init_src_sph bounds:     1   24   46    1   90
+init_src_sph bounds:     2   47   68    1   90
+init_src_sph bounds:     3   69   90    1   90
+init_src_sph bounds:     0    1   23    1   90
+init_src_sph bounds:     0    1   23    1   90
+init_src_sph bounds:     1   24   46    1   90
+init_src_sph bounds:     2   47   68    1   90
+init_src_sph bounds:     3   69   90    1   90
+  xgrid flux and area:    25.132741228718224        12.566370614359117        12.566370614359117     
+  dst flux and area:    25.132741228718359        12.566370614359185        12.566370614359199     
+Verify:   0.2513274123E+02  0.2513274123E+02  0.4240739575E-15  0.1696295830E-14
+  recomputed xgrid flux and area:    25.132741228718182        12.566370614359117        12.566370614359117     
+  recomputed src flux and area:    25.132741228718139        12.566370614359087        12.566370614359096     
+init_src_sph bounds:     1   24   46    1   90
+init_src_sph bounds:     2   47   68    1   90
+init_src_sph bounds:     3   69   90    1   90
+init_src_sph bounds:     0    1   23    1   90
+  PASS  Regrid then create xgrid and regrid through xgrid, full spherical grids, ESMF_FieldRegridXGUTest.F90, line 216
+  PASS  Regrid then create xgrid and regrid through xgrid, full spherical grids, ESMF_FieldRegridXGUTest.F90, line 216
+ !------------------------------------
+ !large full sphere latlonclip C2
+ !------------------------------------
+  PASS  Regrid then create xgrid and regrid through xgrid, full spherical grids, ESMF_FieldRegridXGUTest.F90, line 216
+  PASS  Regrid then create xgrid and regrid through xgrid, full spherical grids, ESMF_FieldRegridXGUTest.F90, line 216
+ startx:   -180.00000000000000                1          15 coordX:   -177.00000000000000       -171.00000000000000       -165.00000000000000       -159.00000000000000       -153.00000000000000       -147.00000000000000       -141.00000000000000       -135.00000000000000       -129.00000000000000       -123.00000000000000       -117.00000000000000       -111.00000000000000       -105.00000000000000       -99.000000000000000       -93.000000000000000     
+ startx:   -180.00000000000000               16          30 coordX:   -87.000000000000000       -81.000000000000000       -75.000000000000000       -69.000000000000000       -63.000000000000000       -57.000000000000000       -51.000000000000000       -45.000000000000000       -39.000000000000000       -33.000000000000000       -27.000000000000000       -21.000000000000000       -15.000000000000000       -9.0000000000000000       -3.0000000000000000     
+ startx:   -180.00000000000000               31          45 coordX:    3.0000000000000000        9.0000000000000000        15.000000000000000        21.000000000000000        27.000000000000000        33.000000000000000        39.000000000000000        45.000000000000000        51.000000000000000        57.000000000000000        63.000000000000000        69.000000000000000        75.000000000000000        81.000000000000000        87.000000000000000     
+ startx:   -180.00000000000000               46          60 coordX:    93.000000000000000        99.000000000000000        105.00000000000000        111.00000000000000        117.00000000000000        123.00000000000000        129.00000000000000        135.00000000000000        141.00000000000000        147.00000000000000        153.00000000000000        159.00000000000000        165.00000000000000        171.00000000000000        177.00000000000000     
+ eleCount =         6538 size(fptr) =         6538
+ eleCount =         6864 size(fptr) =         6864
+ eleCount =         6867 size(fptr) =         6867
+ eleCount =         6484 size(fptr) =         6484
+init_src_sph bounds:     0    1   15    1   60
+init_src_sph bounds:     1   16   30    1   60
+init_src_sph bounds:     2   31   45    1   60
+init_src_sph bounds:     3   46   60    1   60
+  src flux and area:    25.132741228718224        12.566370614359112        12.566370614359119        12.566370517015455     
+  src flux and area sub:    25.132741228718224        12.566370614359112        12.566370614359119     
+  dst flux and area from direct Regrid:    25.132741228718185        12.566370614359093        12.566370614359096     
+  recomputed src flux and area from direct Regrid:    25.132741228718196        12.566370614359112        12.566370614359119     
+init_src_sph bounds:     1   16   30    1   60
+init_src_sph bounds:     2   31   45    1   60
+init_src_sph bounds:     3   46   60    1   60
+init_src_sph bounds:     0    1   15    1   60
+init_src_sph bounds:     0    1   15    1   60
+init_src_sph bounds:     1   16   30    1   60
+init_src_sph bounds:     2   31   45    1   60
+init_src_sph bounds:     3   46   60    1   60
+  xgrid flux and area:    25.132741228718356        12.566370614359190        12.566370614359190     
+  dst flux and area:    25.132741228718139        12.566370614359093        12.566370614359096     
+Verify:   0.2513274123E+02  0.2513274123E+02  0.1837653816E-14  0.5654319434E-14
+  recomputed xgrid flux and area:    25.132741228718224        12.566370614359190        12.566370614359190     
+  recomputed src flux and area:    25.132741228718135        12.566370614359112        12.566370614359119     
+init_src_sph bounds:     1   16   30    1   60
+init_src_sph bounds:     2   31   45    1   60
+init_src_sph bounds:     3   46   60    1   60
+init_src_sph bounds:     0    1   15    1   60
+  PASS  Regrid then create xgrid and regrid through xgrid, full spherical grids, ESMF_FieldRegridXGUTest.F90, line 224
+  PASS  Regrid then create xgrid and regrid through xgrid, full spherical grids, ESMF_FieldRegridXGUTest.F90, line 224
+ !------------------------------------
+ !reverse large full sphere latlonclip
+ !------------------------------------
+  PASS  Regrid then create xgrid and regrid through xgrid, full spherical grids, ESMF_FieldRegridXGUTest.F90, line 224
+  PASS  Regrid then create xgrid and regrid through xgrid, full spherical grids, ESMF_FieldRegridXGUTest.F90, line 224
+ startx:    0.0000000000000000               24          46 coordX:    94.000000000000000        98.000000000000000        102.00000000000000        106.00000000000000        110.00000000000000        114.00000000000000        118.00000000000000        122.00000000000000        126.00000000000000        130.00000000000000        134.00000000000000        138.00000000000000        142.00000000000000        146.00000000000000        150.00000000000000        154.00000000000000        158.00000000000000        162.00000000000000        166.00000000000000        170.00000000000000        174.00000000000000        178.00000000000000        182.00000000000000     
+ startx:    0.0000000000000000                1          23 coordX:    2.0000000000000000        6.0000000000000000        10.000000000000000        14.000000000000000        18.000000000000000        22.000000000000000        26.000000000000000        30.000000000000000        34.000000000000000        38.000000000000000        42.000000000000000        46.000000000000000        50.000000000000000        54.000000000000000        58.000000000000000        62.000000000000000        66.000000000000000        70.000000000000000        74.000000000000000        78.000000000000000        82.000000000000000        86.000000000000000        90.000000000000000     
+ startx:    0.0000000000000000               47          68 coordX:    186.00000000000000        190.00000000000000        194.00000000000000        198.00000000000000        202.00000000000000        206.00000000000000        210.00000000000000        214.00000000000000        218.00000000000000        222.00000000000000        226.00000000000000        230.00000000000000        234.00000000000000        238.00000000000000        242.00000000000000        246.00000000000000        250.00000000000000        254.00000000000000        258.00000000000000        262.00000000000000        266.00000000000000        270.00000000000000     
+ startx:    0.0000000000000000               69          90 coordX:    274.00000000000000        278.00000000000000        282.00000000000000        286.00000000000000        290.00000000000000        294.00000000000000        298.00000000000000        302.00000000000000        306.00000000000000        310.00000000000000        314.00000000000000        318.00000000000000        322.00000000000000        326.00000000000000        330.00000000000000        334.00000000000000        338.00000000000000        342.00000000000000        346.00000000000000        350.00000000000000        354.00000000000000        358.00000000000000     
+ eleCount =         6483 size(fptr) =         6483
+ eleCount =         6845 size(fptr) =         6845
+ eleCount =         6551 size(fptr) =         6551
+ eleCount =         6835 size(fptr) =         6835
+init_src_sph bounds:     0    1   23    1   90
+init_src_sph bounds:     1   24   46    1   90
+init_src_sph bounds:     2   47   68    1   90
+init_src_sph bounds:     3   69   90    1   90
+  src flux and area:    25.132741228718185        12.566370614359093        12.566370614359096        12.566370517015455     
+  src flux and area sub:    25.132741228718185        12.566370614359093        12.566370614359096     
+  dst flux and area from direct Regrid:    25.132741228718231        12.566370614359116        12.566370614359119     
+  recomputed src flux and area from direct Regrid:    25.132741228718164        12.566370614359093        12.566370614359096     
+init_src_sph bounds:     1   24   46    1   90
+init_src_sph bounds:     2   47   68    1   90
+init_src_sph bounds:     3   69   90    1   90
+init_src_sph bounds:     0    1   23    1   90
+init_src_sph bounds:     0    1   23    1   90
+init_src_sph bounds:     1   24   46    1   90
+init_src_sph bounds:     2   47   68    1   90
+init_src_sph bounds:     3   69   90    1   90
+  xgrid flux and area:    25.132741228718160        12.566370614359109        12.566370614359109     
+  dst flux and area:    25.132741228718182        12.566370614359116        12.566370614359119     
+Verify:   0.2513274123E+02  0.2513274123E+02  0.1979011802E-14  0.9895059009E-15
+  recomputed xgrid flux and area:    25.132741228718068        12.566370614359109        12.566370614359109     
+  recomputed src flux and area:    25.132741228718047        12.566370614359093        12.566370614359096     
+init_src_sph bounds:     1   24   46    1   90
+init_src_sph bounds:     2   47   68    1   90
+init_src_sph bounds:     3   69   90    1   90
+init_src_sph bounds:     0    1   23    1   90
+  PASS  Regrid then create xgrid and regrid through xgrid, full spherical grids, ESMF_FieldRegridXGUTest.F90, line 233
+  PASS  Regrid then create xgrid and regrid through xgrid, full spherical grids, ESMF_FieldRegridXGUTest.F90, line 233
+  PASS  Regrid then create xgrid and regrid through xgrid, full spherical grids, ESMF_FieldRegridXGUTest.F90, line 233
+  PASS  Regrid then create xgrid and regrid through xgrid, full spherical grids, ESMF_FieldRegridXGUTest.F90, line 233
+  Ending Test, file ESMF_FieldRegridXGUTest.F90, line 235
+  Ending Test, file ESMF_FieldRegridXGUTest.F90, line 235
+  Ending Test, file ESMF_FieldRegridXGUTest.F90, line 235
+  Ending Test, file ESMF_FieldRegridXGUTest.F90, line 235
+  PET           0  Test Elapsed Time    7581.0509999999995       msec.
+  PET           2  Test Elapsed Time    7606.2529999999997       msec.
+  PET           1  Test Elapsed Time    7605.5159999999996       msec.
+  PET           3  Test Elapsed Time    7605.5789999999997       msec.

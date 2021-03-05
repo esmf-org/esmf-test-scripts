@@ -1,0 +1,180 @@
+20210305 102931.453 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102931.453 INFO             PET0 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 102931.453 INFO             PET0 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 102931.453 INFO             PET0 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 102931.453 INFO             PET0 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 102931.453 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102931.453 INFO             PET0 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 102931.453 INFO             PET0 ESMF library build date/time: "Mar  5 2021" "09:44:29"
+20210305 102931.453 INFO             PET0 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_O
+20210305 102931.453 INFO             PET0 ESMF_COMM                   : mpi
+20210305 102931.454 INFO             PET0 ESMF_MOAB                   : enabled
+20210305 102931.454 INFO             PET0 ESMF_LAPACK                 : enabled
+20210305 102931.454 INFO             PET0 ESMF_NETCDF                 : enabled
+20210305 102931.454 INFO             PET0 ESMF_PNETCDF                : disabled
+20210305 102931.454 INFO             PET0 ESMF_PIO                    : enabled
+20210305 102931.454 INFO             PET0 ESMF_YAMLCPP                : enabled
+20210305 102931.454 INFO             PET0  Beginning Test, file ESMF_StateReadWriteUTest.F90, line 81
+20210305 102931.454 INFO             PET0  NUMBER_OF_PROCESSORS           4
+20210305 102931.470 INFO             PET0  PASS  Creating an empty export State Test, ESMF_StateReadWriteUTest.F90, line 95
+20210305 102931.470 ERROR            PET0 ESMF_StateAPI.cppF90:3186 ESMF_StateRead Value unrecognized or out of range  - File name required
+20210305 102931.470 INFO             PET0  PASS  Reading a file with no file name specified, ESMF_StateReadWriteUTest.F90, line 103
+20210305 102931.588 INFO             PET0  PASS  Reading netCDF file io_netcdf_testdata.nc into Arrays in a State, ESMF_StateReadWriteUTest.F90, line 111
+20210305 102931.588 INFO             PET0  PASS  Checking read-in Array item count in a State test, ESMF_StateReadWriteUTest.F90, line 127
+20210305 102931.589 INFO             PET0  PASS  Checking read-in Array names in a State test, ESMF_StateReadWriteUTest.F90, line 148
+20210305 102931.632 INFO             PET0  PASS  Reconciling Arrays across all PETs in a VM, ESMF_StateReadWriteUTest.F90, line 156
+20210305 102931.632 ERROR            PET0 ESMF_StateWr.F90:179 ESMF_StateWrite Value unrecognized or out of range  - File name required
+20210305 102931.632 INFO             PET0  PASS  Writing a file with no file name, ESMF_StateReadWriteUTest.F90, line 164
+20210305 102931.650 INFO             PET0  PASS  Writing netCDF file io_netcdf_testdata_out.nc from Arrays in a State, ESMF_StateReadWriteUTest.F90, line 172
+20210305 102931.650 INFO             PET0  PASS  Getting Array named 'lat' from a State, ESMF_StateReadWriteUTest.F90, line 183
+20210305 102931.650 INFO             PET0  PASS  Getting Array named 'lon' from a State, ESMF_StateReadWriteUTest.F90, line 196
+20210305 102931.650 INFO             PET0  PASS  Getting Array named 'time' from a State, ESMF_StateReadWriteUTest.F90, line 209
+20210305 102931.650 INFO             PET0  PASS  Getting Array named 'Q' from a State, ESMF_StateReadWriteUTest.F90, line 222
+20210305 102931.650 INFO             PET0  PASS  Getting Array named 'TEMP' from a State, ESMF_StateReadWriteUTest.F90, line 235
+20210305 102931.650 INFO             PET0  PASS  Getting Array named 'p' from a State, ESMF_StateReadWriteUTest.F90, line 248
+20210305 102931.650 INFO             PET0  PASS  Getting Array named 'rh' from a State, ESMF_StateReadWriteUTest.F90, line 261
+20210305 102931.650 INFO             PET0  PASS  Destroying a State, ESMF_StateReadWriteUTest.F90, line 275
+20210305 102931.650 INFO             PET0  PASS  Destroying Array named 'lat' from a State, ESMF_StateReadWriteUTest.F90, line 285
+20210305 102931.651 INFO             PET0  PASS  Destroying Array named 'lon' from a State, ESMF_StateReadWriteUTest.F90, line 293
+20210305 102931.651 INFO             PET0  PASS  Destroying Array named 'time' from a State, ESMF_StateReadWriteUTest.F90, line 301
+20210305 102931.651 INFO             PET0  PASS  Destroying Array named 'Q' from a State, ESMF_StateReadWriteUTest.F90, line 309
+20210305 102931.651 INFO             PET0  PASS  Destroying Array named 'TEMP' from a State, ESMF_StateReadWriteUTest.F90, line 317
+20210305 102931.651 INFO             PET0  PASS  Destroying Array named 'p' from a State, ESMF_StateReadWriteUTest.F90, line 325
+20210305 102931.651 INFO             PET0  PASS  Destroying Array named 'rh' from a State, ESMF_StateReadWriteUTest.F90, line 333
+20210305 102931.651 INFO             PET0  Ending Test, file ESMF_StateReadWriteUTest.F90, line 341
+20210305 102931.651 INFO             PET0 Finalizing ESMF
+20210305 102931.448 INFO             PET1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102931.448 INFO             PET1 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 102931.448 INFO             PET1 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 102931.448 INFO             PET1 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 102931.448 INFO             PET1 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 102931.448 INFO             PET1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102931.448 INFO             PET1 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 102931.448 INFO             PET1 ESMF library build date/time: "Mar  5 2021" "09:44:29"
+20210305 102931.448 INFO             PET1 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_O
+20210305 102931.448 INFO             PET1 ESMF_COMM                   : mpi
+20210305 102931.448 INFO             PET1 ESMF_MOAB                   : enabled
+20210305 102931.448 INFO             PET1 ESMF_LAPACK                 : enabled
+20210305 102931.448 INFO             PET1 ESMF_NETCDF                 : enabled
+20210305 102931.448 INFO             PET1 ESMF_PNETCDF                : disabled
+20210305 102931.448 INFO             PET1 ESMF_PIO                    : enabled
+20210305 102931.448 INFO             PET1 ESMF_YAMLCPP                : enabled
+20210305 102931.454 INFO             PET1  Beginning Test, file ESMF_StateReadWriteUTest.F90, line 81
+20210305 102931.454 INFO             PET1  NUMBER_OF_PROCESSORS           4
+20210305 102931.470 INFO             PET1  PASS  Creating an empty export State Test, ESMF_StateReadWriteUTest.F90, line 95
+20210305 102931.470 ERROR            PET1 ESMF_StateAPI.cppF90:3186 ESMF_StateRead Value unrecognized or out of range  - File name required
+20210305 102931.470 INFO             PET1  PASS  Reading a file with no file name specified, ESMF_StateReadWriteUTest.F90, line 103
+20210305 102931.470 INFO             PET1  PASS  Reading netCDF file io_netcdf_testdata.nc into Arrays in a State, ESMF_StateReadWriteUTest.F90, line 111
+20210305 102931.471 INFO             PET1  PASS  Checking read-in Array item count in a State test, ESMF_StateReadWriteUTest.F90, line 127
+20210305 102931.471 INFO             PET1  PASS  Checking read-in Array names in a State test, ESMF_StateReadWriteUTest.F90, line 148
+20210305 102931.632 INFO             PET1  PASS  Reconciling Arrays across all PETs in a VM, ESMF_StateReadWriteUTest.F90, line 156
+20210305 102931.632 ERROR            PET1 ESMF_StateWr.F90:179 ESMF_StateWrite Value unrecognized or out of range  - File name required
+20210305 102931.632 INFO             PET1  PASS  Writing a file with no file name, ESMF_StateReadWriteUTest.F90, line 164
+20210305 102931.632 INFO             PET1  PASS  Writing netCDF file io_netcdf_testdata_out.nc from Arrays in a State, ESMF_StateReadWriteUTest.F90, line 172
+20210305 102931.632 INFO             PET1  PASS  Getting Array named 'lat' from a State, ESMF_StateReadWriteUTest.F90, line 183
+20210305 102931.632 INFO             PET1  PASS  Getting Array named 'lon' from a State, ESMF_StateReadWriteUTest.F90, line 196
+20210305 102931.632 INFO             PET1  PASS  Getting Array named 'time' from a State, ESMF_StateReadWriteUTest.F90, line 209
+20210305 102931.632 INFO             PET1  PASS  Getting Array named 'Q' from a State, ESMF_StateReadWriteUTest.F90, line 222
+20210305 102931.632 INFO             PET1  PASS  Getting Array named 'TEMP' from a State, ESMF_StateReadWriteUTest.F90, line 235
+20210305 102931.632 INFO             PET1  PASS  Getting Array named 'p' from a State, ESMF_StateReadWriteUTest.F90, line 248
+20210305 102931.632 INFO             PET1  PASS  Getting Array named 'rh' from a State, ESMF_StateReadWriteUTest.F90, line 261
+20210305 102931.632 INFO             PET1  PASS  Destroying a State, ESMF_StateReadWriteUTest.F90, line 275
+20210305 102931.633 INFO             PET1  PASS  Destroying Array named 'lat' from a State, ESMF_StateReadWriteUTest.F90, line 285
+20210305 102931.633 INFO             PET1  PASS  Destroying Array named 'lon' from a State, ESMF_StateReadWriteUTest.F90, line 293
+20210305 102931.633 INFO             PET1  PASS  Destroying Array named 'time' from a State, ESMF_StateReadWriteUTest.F90, line 301
+20210305 102931.633 INFO             PET1  PASS  Destroying Array named 'Q' from a State, ESMF_StateReadWriteUTest.F90, line 309
+20210305 102931.633 INFO             PET1  PASS  Destroying Array named 'TEMP' from a State, ESMF_StateReadWriteUTest.F90, line 317
+20210305 102931.633 INFO             PET1  PASS  Destroying Array named 'p' from a State, ESMF_StateReadWriteUTest.F90, line 325
+20210305 102931.633 INFO             PET1  PASS  Destroying Array named 'rh' from a State, ESMF_StateReadWriteUTest.F90, line 333
+20210305 102931.633 INFO             PET1  Ending Test, file ESMF_StateReadWriteUTest.F90, line 341
+20210305 102931.633 INFO             PET1 Finalizing ESMF
+20210305 102931.444 INFO             PET2 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102931.444 INFO             PET2 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 102931.444 INFO             PET2 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 102931.444 INFO             PET2 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 102931.444 INFO             PET2 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 102931.444 INFO             PET2 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102931.444 INFO             PET2 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 102931.444 INFO             PET2 ESMF library build date/time: "Mar  5 2021" "09:44:29"
+20210305 102931.444 INFO             PET2 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_O
+20210305 102931.444 INFO             PET2 ESMF_COMM                   : mpi
+20210305 102931.445 INFO             PET2 ESMF_MOAB                   : enabled
+20210305 102931.445 INFO             PET2 ESMF_LAPACK                 : enabled
+20210305 102931.445 INFO             PET2 ESMF_NETCDF                 : enabled
+20210305 102931.445 INFO             PET2 ESMF_PNETCDF                : disabled
+20210305 102931.445 INFO             PET2 ESMF_PIO                    : enabled
+20210305 102931.445 INFO             PET2 ESMF_YAMLCPP                : enabled
+20210305 102931.454 INFO             PET2  Beginning Test, file ESMF_StateReadWriteUTest.F90, line 81
+20210305 102931.454 INFO             PET2  NUMBER_OF_PROCESSORS           4
+20210305 102931.470 INFO             PET2  PASS  Creating an empty export State Test, ESMF_StateReadWriteUTest.F90, line 95
+20210305 102931.470 ERROR            PET2 ESMF_StateAPI.cppF90:3186 ESMF_StateRead Value unrecognized or out of range  - File name required
+20210305 102931.470 INFO             PET2  PASS  Reading a file with no file name specified, ESMF_StateReadWriteUTest.F90, line 103
+20210305 102931.470 INFO             PET2  PASS  Reading netCDF file io_netcdf_testdata.nc into Arrays in a State, ESMF_StateReadWriteUTest.F90, line 111
+20210305 102931.471 INFO             PET2  PASS  Checking read-in Array item count in a State test, ESMF_StateReadWriteUTest.F90, line 127
+20210305 102931.471 INFO             PET2  PASS  Checking read-in Array names in a State test, ESMF_StateReadWriteUTest.F90, line 148
+20210305 102931.632 INFO             PET2  PASS  Reconciling Arrays across all PETs in a VM, ESMF_StateReadWriteUTest.F90, line 156
+20210305 102931.632 ERROR            PET2 ESMF_StateWr.F90:179 ESMF_StateWrite Value unrecognized or out of range  - File name required
+20210305 102931.632 INFO             PET2  PASS  Writing a file with no file name, ESMF_StateReadWriteUTest.F90, line 164
+20210305 102931.632 INFO             PET2  PASS  Writing netCDF file io_netcdf_testdata_out.nc from Arrays in a State, ESMF_StateReadWriteUTest.F90, line 172
+20210305 102931.632 INFO             PET2  PASS  Getting Array named 'lat' from a State, ESMF_StateReadWriteUTest.F90, line 183
+20210305 102931.632 INFO             PET2  PASS  Getting Array named 'lon' from a State, ESMF_StateReadWriteUTest.F90, line 196
+20210305 102931.632 INFO             PET2  PASS  Getting Array named 'time' from a State, ESMF_StateReadWriteUTest.F90, line 209
+20210305 102931.632 INFO             PET2  PASS  Getting Array named 'Q' from a State, ESMF_StateReadWriteUTest.F90, line 222
+20210305 102931.632 INFO             PET2  PASS  Getting Array named 'TEMP' from a State, ESMF_StateReadWriteUTest.F90, line 235
+20210305 102931.632 INFO             PET2  PASS  Getting Array named 'p' from a State, ESMF_StateReadWriteUTest.F90, line 248
+20210305 102931.632 INFO             PET2  PASS  Getting Array named 'rh' from a State, ESMF_StateReadWriteUTest.F90, line 261
+20210305 102931.632 INFO             PET2  PASS  Destroying a State, ESMF_StateReadWriteUTest.F90, line 275
+20210305 102931.633 INFO             PET2  PASS  Destroying Array named 'lat' from a State, ESMF_StateReadWriteUTest.F90, line 285
+20210305 102931.633 INFO             PET2  PASS  Destroying Array named 'lon' from a State, ESMF_StateReadWriteUTest.F90, line 293
+20210305 102931.633 INFO             PET2  PASS  Destroying Array named 'time' from a State, ESMF_StateReadWriteUTest.F90, line 301
+20210305 102931.633 INFO             PET2  PASS  Destroying Array named 'Q' from a State, ESMF_StateReadWriteUTest.F90, line 309
+20210305 102931.633 INFO             PET2  PASS  Destroying Array named 'TEMP' from a State, ESMF_StateReadWriteUTest.F90, line 317
+20210305 102931.633 INFO             PET2  PASS  Destroying Array named 'p' from a State, ESMF_StateReadWriteUTest.F90, line 325
+20210305 102931.633 INFO             PET2  PASS  Destroying Array named 'rh' from a State, ESMF_StateReadWriteUTest.F90, line 333
+20210305 102931.633 INFO             PET2  Ending Test, file ESMF_StateReadWriteUTest.F90, line 341
+20210305 102931.633 INFO             PET2 Finalizing ESMF
+20210305 102931.445 INFO             PET3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102931.445 INFO             PET3 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 102931.445 INFO             PET3 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 102931.445 INFO             PET3 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 102931.445 INFO             PET3 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 102931.445 INFO             PET3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102931.445 INFO             PET3 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 102931.445 INFO             PET3 ESMF library build date/time: "Mar  5 2021" "09:44:29"
+20210305 102931.445 INFO             PET3 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_O
+20210305 102931.445 INFO             PET3 ESMF_COMM                   : mpi
+20210305 102931.445 INFO             PET3 ESMF_MOAB                   : enabled
+20210305 102931.445 INFO             PET3 ESMF_LAPACK                 : enabled
+20210305 102931.445 INFO             PET3 ESMF_NETCDF                 : enabled
+20210305 102931.445 INFO             PET3 ESMF_PNETCDF                : disabled
+20210305 102931.445 INFO             PET3 ESMF_PIO                    : enabled
+20210305 102931.445 INFO             PET3 ESMF_YAMLCPP                : enabled
+20210305 102931.454 INFO             PET3  Beginning Test, file ESMF_StateReadWriteUTest.F90, line 81
+20210305 102931.454 INFO             PET3  NUMBER_OF_PROCESSORS           4
+20210305 102931.470 INFO             PET3  PASS  Creating an empty export State Test, ESMF_StateReadWriteUTest.F90, line 95
+20210305 102931.470 ERROR            PET3 ESMF_StateAPI.cppF90:3186 ESMF_StateRead Value unrecognized or out of range  - File name required
+20210305 102931.470 INFO             PET3  PASS  Reading a file with no file name specified, ESMF_StateReadWriteUTest.F90, line 103
+20210305 102931.470 INFO             PET3  PASS  Reading netCDF file io_netcdf_testdata.nc into Arrays in a State, ESMF_StateReadWriteUTest.F90, line 111
+20210305 102931.471 INFO             PET3  PASS  Checking read-in Array item count in a State test, ESMF_StateReadWriteUTest.F90, line 127
+20210305 102931.471 INFO             PET3  PASS  Checking read-in Array names in a State test, ESMF_StateReadWriteUTest.F90, line 148
+20210305 102931.632 INFO             PET3  PASS  Reconciling Arrays across all PETs in a VM, ESMF_StateReadWriteUTest.F90, line 156
+20210305 102931.632 ERROR            PET3 ESMF_StateWr.F90:179 ESMF_StateWrite Value unrecognized or out of range  - File name required
+20210305 102931.632 INFO             PET3  PASS  Writing a file with no file name, ESMF_StateReadWriteUTest.F90, line 164
+20210305 102931.632 INFO             PET3  PASS  Writing netCDF file io_netcdf_testdata_out.nc from Arrays in a State, ESMF_StateReadWriteUTest.F90, line 172
+20210305 102931.632 INFO             PET3  PASS  Getting Array named 'lat' from a State, ESMF_StateReadWriteUTest.F90, line 183
+20210305 102931.632 INFO             PET3  PASS  Getting Array named 'lon' from a State, ESMF_StateReadWriteUTest.F90, line 196
+20210305 102931.632 INFO             PET3  PASS  Getting Array named 'time' from a State, ESMF_StateReadWriteUTest.F90, line 209
+20210305 102931.632 INFO             PET3  PASS  Getting Array named 'Q' from a State, ESMF_StateReadWriteUTest.F90, line 222
+20210305 102931.632 INFO             PET3  PASS  Getting Array named 'TEMP' from a State, ESMF_StateReadWriteUTest.F90, line 235
+20210305 102931.632 INFO             PET3  PASS  Getting Array named 'p' from a State, ESMF_StateReadWriteUTest.F90, line 248
+20210305 102931.632 INFO             PET3  PASS  Getting Array named 'rh' from a State, ESMF_StateReadWriteUTest.F90, line 261
+20210305 102931.632 INFO             PET3  PASS  Destroying a State, ESMF_StateReadWriteUTest.F90, line 275
+20210305 102931.633 INFO             PET3  PASS  Destroying Array named 'lat' from a State, ESMF_StateReadWriteUTest.F90, line 285
+20210305 102931.633 INFO             PET3  PASS  Destroying Array named 'lon' from a State, ESMF_StateReadWriteUTest.F90, line 293
+20210305 102931.633 INFO             PET3  PASS  Destroying Array named 'time' from a State, ESMF_StateReadWriteUTest.F90, line 301
+20210305 102931.633 INFO             PET3  PASS  Destroying Array named 'Q' from a State, ESMF_StateReadWriteUTest.F90, line 309
+20210305 102931.633 INFO             PET3  PASS  Destroying Array named 'TEMP' from a State, ESMF_StateReadWriteUTest.F90, line 317
+20210305 102931.633 INFO             PET3  PASS  Destroying Array named 'p' from a State, ESMF_StateReadWriteUTest.F90, line 325
+20210305 102931.633 INFO             PET3  PASS  Destroying Array named 'rh' from a State, ESMF_StateReadWriteUTest.F90, line 333
+20210305 102931.633 INFO             PET3  Ending Test, file ESMF_StateReadWriteUTest.F90, line 341
+20210305 102931.633 INFO             PET3 Finalizing ESMF

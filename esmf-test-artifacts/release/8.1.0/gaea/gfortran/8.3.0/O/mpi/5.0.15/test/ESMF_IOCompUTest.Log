@@ -1,0 +1,160 @@
+20210305 103227.952 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103227.952 INFO             PET0 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 103227.952 INFO             PET0 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 103227.952 INFO             PET0 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 103227.952 INFO             PET0 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 103227.952 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103227.952 INFO             PET0 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 103227.952 INFO             PET0 ESMF library build date/time: "Mar  5 2021" "09:44:29"
+20210305 103227.952 INFO             PET0 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_O
+20210305 103227.952 INFO             PET0 ESMF_COMM                   : mpi
+20210305 103227.952 INFO             PET0 ESMF_MOAB                   : enabled
+20210305 103227.952 INFO             PET0 ESMF_LAPACK                 : enabled
+20210305 103227.952 INFO             PET0 ESMF_NETCDF                 : enabled
+20210305 103227.952 INFO             PET0 ESMF_PNETCDF                : disabled
+20210305 103227.952 INFO             PET0 ESMF_PIO                    : enabled
+20210305 103227.952 INFO             PET0 ESMF_YAMLCPP                : enabled
+20210305 103227.960 INFO             PET0  Beginning Test, file ESMF_IOCompUTest.F90, line 77
+20210305 103227.960 INFO             PET0  NUMBER_OF_PROCESSORS           4
+20210305 103228.033 INFO             PET0  PASS  Create ESMFIO Component Test, ESMF_IOCompUTest.F90, line 110
+20210305 103228.142 INFO             PET0  PASS  Write through ESMFIO Component Test, ESMF_IOCompUTest.F90, line 118
+20210305 103228.151 INFO             PET0  PASS  Read through ESMFIO Component Test, ESMF_IOCompUTest.F90, line 130
+20210305 103228.151 INFO             PET0  PASS  Destroy ESMFIO Component Test, ESMF_IOCompUTest.F90, line 141
+20210305 103228.153 INFO             PET0  PASS  Compare read vs. written ESMF_TYPEKIND_I4 Field center values, ESMF_IOCompUTest.F90, line 157
+20210305 103228.153 INFO             PET0  PASS  Compare read vs. written ESMF_TYPEKIND_I4 Field edge1 values, ESMF_IOCompUTest.F90, line 167
+20210305 103228.153 INFO             PET0  PASS  Compare read vs. written ESMF_TYPEKIND_I4 Field edge2 values, ESMF_IOCompUTest.F90, line 177
+20210305 103228.153 INFO             PET0  PASS  Compare read vs. written ESMF_TYPEKIND_I4 Field corner values, ESMF_IOCompUTest.F90, line 187
+20210305 103228.153 INFO             PET0  PASS  Compare read vs. written ESMF_TYPEKIND_R4 Field values, ESMF_IOCompUTest.F90, line 197
+20210305 103228.153 INFO             PET0  PASS  Compare read vs. written ESMF_TYPEKIND_R8 Field values, ESMF_IOCompUTest.F90, line 207
+20210305 103228.163 INFO             PET0  PASS  Create ESMFIO Component Test, ESMF_IOCompUTest.F90, line 248
+20210305 103228.179 INFO             PET0  PASS  Write through ESMFIO Component Test, ESMF_IOCompUTest.F90, line 256
+20210305 103228.185 INFO             PET0  PASS  Read through ESMFIO Component Test, ESMF_IOCompUTest.F90, line 268
+20210305 103228.185 INFO             PET0  PASS  Destroy ESMFIO Component Test, ESMF_IOCompUTest.F90, line 279
+20210305 103228.186 INFO             PET0  PASS  Compare read vs. written ESMF_TYPEKIND_I4 Field center values, ESMF_IOCompUTest.F90, line 295
+20210305 103228.186 INFO             PET0  PASS  Compare read vs. written ESMF_TYPEKIND_I4 Field edge1 values, ESMF_IOCompUTest.F90, line 305
+20210305 103228.186 INFO             PET0  PASS  Compare read vs. written ESMF_TYPEKIND_I4 Field edge2 values, ESMF_IOCompUTest.F90, line 315
+20210305 103228.186 INFO             PET0  PASS  Compare read vs. written ESMF_TYPEKIND_I4 Field corner values, ESMF_IOCompUTest.F90, line 325
+20210305 103228.186 INFO             PET0  PASS  Compare read vs. written ESMF_TYPEKIND_R4 Field values, ESMF_IOCompUTest.F90, line 335
+20210305 103228.186 INFO             PET0  PASS  Compare read vs. written ESMF_TYPEKIND_R8 Field values, ESMF_IOCompUTest.F90, line 345
+20210305 103228.186 INFO             PET0  Ending Test, file ESMF_IOCompUTest.F90, line 368
+20210305 103228.186 INFO             PET0 Finalizing ESMF
+20210305 103227.945 INFO             PET1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103227.945 INFO             PET1 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 103227.945 INFO             PET1 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 103227.945 INFO             PET1 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 103227.945 INFO             PET1 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 103227.945 INFO             PET1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103227.945 INFO             PET1 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 103227.945 INFO             PET1 ESMF library build date/time: "Mar  5 2021" "09:44:29"
+20210305 103227.945 INFO             PET1 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_O
+20210305 103227.945 INFO             PET1 ESMF_COMM                   : mpi
+20210305 103227.946 INFO             PET1 ESMF_MOAB                   : enabled
+20210305 103227.946 INFO             PET1 ESMF_LAPACK                 : enabled
+20210305 103227.946 INFO             PET1 ESMF_NETCDF                 : enabled
+20210305 103227.946 INFO             PET1 ESMF_PNETCDF                : disabled
+20210305 103227.946 INFO             PET1 ESMF_PIO                    : enabled
+20210305 103227.946 INFO             PET1 ESMF_YAMLCPP                : enabled
+20210305 103227.960 INFO             PET1  Beginning Test, file ESMF_IOCompUTest.F90, line 77
+20210305 103227.960 INFO             PET1  NUMBER_OF_PROCESSORS           4
+20210305 103228.033 INFO             PET1  PASS  Create ESMFIO Component Test, ESMF_IOCompUTest.F90, line 110
+20210305 103228.150 INFO             PET1  PASS  Write through ESMFIO Component Test, ESMF_IOCompUTest.F90, line 118
+20210305 103228.159 INFO             PET1  PASS  Read through ESMFIO Component Test, ESMF_IOCompUTest.F90, line 130
+20210305 103228.159 INFO             PET1  PASS  Destroy ESMFIO Component Test, ESMF_IOCompUTest.F90, line 141
+20210305 103228.160 INFO             PET1  PASS  Compare read vs. written ESMF_TYPEKIND_I4 Field center values, ESMF_IOCompUTest.F90, line 157
+20210305 103228.160 INFO             PET1  PASS  Compare read vs. written ESMF_TYPEKIND_I4 Field edge1 values, ESMF_IOCompUTest.F90, line 167
+20210305 103228.160 INFO             PET1  PASS  Compare read vs. written ESMF_TYPEKIND_I4 Field edge2 values, ESMF_IOCompUTest.F90, line 177
+20210305 103228.160 INFO             PET1  PASS  Compare read vs. written ESMF_TYPEKIND_I4 Field corner values, ESMF_IOCompUTest.F90, line 187
+20210305 103228.160 INFO             PET1  PASS  Compare read vs. written ESMF_TYPEKIND_R4 Field values, ESMF_IOCompUTest.F90, line 197
+20210305 103228.160 INFO             PET1  PASS  Compare read vs. written ESMF_TYPEKIND_R8 Field values, ESMF_IOCompUTest.F90, line 207
+20210305 103228.163 INFO             PET1  PASS  Create ESMFIO Component Test, ESMF_IOCompUTest.F90, line 248
+20210305 103228.177 INFO             PET1  PASS  Write through ESMFIO Component Test, ESMF_IOCompUTest.F90, line 256
+20210305 103228.185 INFO             PET1  PASS  Read through ESMFIO Component Test, ESMF_IOCompUTest.F90, line 268
+20210305 103228.185 INFO             PET1  PASS  Destroy ESMFIO Component Test, ESMF_IOCompUTest.F90, line 279
+20210305 103228.186 INFO             PET1  PASS  Compare read vs. written ESMF_TYPEKIND_I4 Field center values, ESMF_IOCompUTest.F90, line 295
+20210305 103228.186 INFO             PET1  PASS  Compare read vs. written ESMF_TYPEKIND_I4 Field edge1 values, ESMF_IOCompUTest.F90, line 305
+20210305 103228.186 INFO             PET1  PASS  Compare read vs. written ESMF_TYPEKIND_I4 Field edge2 values, ESMF_IOCompUTest.F90, line 315
+20210305 103228.186 INFO             PET1  PASS  Compare read vs. written ESMF_TYPEKIND_I4 Field corner values, ESMF_IOCompUTest.F90, line 325
+20210305 103228.186 INFO             PET1  PASS  Compare read vs. written ESMF_TYPEKIND_R4 Field values, ESMF_IOCompUTest.F90, line 335
+20210305 103228.186 INFO             PET1  PASS  Compare read vs. written ESMF_TYPEKIND_R8 Field values, ESMF_IOCompUTest.F90, line 345
+20210305 103228.186 INFO             PET1  Ending Test, file ESMF_IOCompUTest.F90, line 368
+20210305 103228.186 INFO             PET1 Finalizing ESMF
+20210305 103227.945 INFO             PET2 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103227.945 INFO             PET2 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 103227.945 INFO             PET2 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 103227.945 INFO             PET2 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 103227.945 INFO             PET2 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 103227.945 INFO             PET2 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103227.945 INFO             PET2 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 103227.945 INFO             PET2 ESMF library build date/time: "Mar  5 2021" "09:44:29"
+20210305 103227.945 INFO             PET2 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_O
+20210305 103227.945 INFO             PET2 ESMF_COMM                   : mpi
+20210305 103227.946 INFO             PET2 ESMF_MOAB                   : enabled
+20210305 103227.946 INFO             PET2 ESMF_LAPACK                 : enabled
+20210305 103227.946 INFO             PET2 ESMF_NETCDF                 : enabled
+20210305 103227.946 INFO             PET2 ESMF_PNETCDF                : disabled
+20210305 103227.946 INFO             PET2 ESMF_PIO                    : enabled
+20210305 103227.946 INFO             PET2 ESMF_YAMLCPP                : enabled
+20210305 103227.960 INFO             PET2  Beginning Test, file ESMF_IOCompUTest.F90, line 77
+20210305 103227.960 INFO             PET2  NUMBER_OF_PROCESSORS           4
+20210305 103228.033 INFO             PET2  PASS  Create ESMFIO Component Test, ESMF_IOCompUTest.F90, line 110
+20210305 103228.135 INFO             PET2  PASS  Write through ESMFIO Component Test, ESMF_IOCompUTest.F90, line 118
+20210305 103228.146 INFO             PET2  PASS  Read through ESMFIO Component Test, ESMF_IOCompUTest.F90, line 130
+20210305 103228.146 INFO             PET2  PASS  Destroy ESMFIO Component Test, ESMF_IOCompUTest.F90, line 141
+20210305 103228.147 INFO             PET2  PASS  Compare read vs. written ESMF_TYPEKIND_I4 Field center values, ESMF_IOCompUTest.F90, line 157
+20210305 103228.147 INFO             PET2  PASS  Compare read vs. written ESMF_TYPEKIND_I4 Field edge1 values, ESMF_IOCompUTest.F90, line 167
+20210305 103228.147 INFO             PET2  PASS  Compare read vs. written ESMF_TYPEKIND_I4 Field edge2 values, ESMF_IOCompUTest.F90, line 177
+20210305 103228.147 INFO             PET2  PASS  Compare read vs. written ESMF_TYPEKIND_I4 Field corner values, ESMF_IOCompUTest.F90, line 187
+20210305 103228.147 INFO             PET2  PASS  Compare read vs. written ESMF_TYPEKIND_R4 Field values, ESMF_IOCompUTest.F90, line 197
+20210305 103228.147 INFO             PET2  PASS  Compare read vs. written ESMF_TYPEKIND_R8 Field values, ESMF_IOCompUTest.F90, line 207
+20210305 103228.163 INFO             PET2  PASS  Create ESMFIO Component Test, ESMF_IOCompUTest.F90, line 248
+20210305 103228.177 INFO             PET2  PASS  Write through ESMFIO Component Test, ESMF_IOCompUTest.F90, line 256
+20210305 103228.185 INFO             PET2  PASS  Read through ESMFIO Component Test, ESMF_IOCompUTest.F90, line 268
+20210305 103228.185 INFO             PET2  PASS  Destroy ESMFIO Component Test, ESMF_IOCompUTest.F90, line 279
+20210305 103228.186 INFO             PET2  PASS  Compare read vs. written ESMF_TYPEKIND_I4 Field center values, ESMF_IOCompUTest.F90, line 295
+20210305 103228.186 INFO             PET2  PASS  Compare read vs. written ESMF_TYPEKIND_I4 Field edge1 values, ESMF_IOCompUTest.F90, line 305
+20210305 103228.186 INFO             PET2  PASS  Compare read vs. written ESMF_TYPEKIND_I4 Field edge2 values, ESMF_IOCompUTest.F90, line 315
+20210305 103228.186 INFO             PET2  PASS  Compare read vs. written ESMF_TYPEKIND_I4 Field corner values, ESMF_IOCompUTest.F90, line 325
+20210305 103228.186 INFO             PET2  PASS  Compare read vs. written ESMF_TYPEKIND_R4 Field values, ESMF_IOCompUTest.F90, line 335
+20210305 103228.186 INFO             PET2  PASS  Compare read vs. written ESMF_TYPEKIND_R8 Field values, ESMF_IOCompUTest.F90, line 345
+20210305 103228.186 INFO             PET2  Ending Test, file ESMF_IOCompUTest.F90, line 368
+20210305 103228.186 INFO             PET2 Finalizing ESMF
+20210305 103227.945 INFO             PET3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103227.945 INFO             PET3 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 103227.945 INFO             PET3 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 103227.945 INFO             PET3 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 103227.945 INFO             PET3 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 103227.945 INFO             PET3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103227.945 INFO             PET3 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 103227.945 INFO             PET3 ESMF library build date/time: "Mar  5 2021" "09:44:29"
+20210305 103227.945 INFO             PET3 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_O
+20210305 103227.945 INFO             PET3 ESMF_COMM                   : mpi
+20210305 103227.946 INFO             PET3 ESMF_MOAB                   : enabled
+20210305 103227.946 INFO             PET3 ESMF_LAPACK                 : enabled
+20210305 103227.946 INFO             PET3 ESMF_NETCDF                 : enabled
+20210305 103227.946 INFO             PET3 ESMF_PNETCDF                : disabled
+20210305 103227.946 INFO             PET3 ESMF_PIO                    : enabled
+20210305 103227.946 INFO             PET3 ESMF_YAMLCPP                : enabled
+20210305 103227.960 INFO             PET3  Beginning Test, file ESMF_IOCompUTest.F90, line 77
+20210305 103227.960 INFO             PET3  NUMBER_OF_PROCESSORS           4
+20210305 103228.033 INFO             PET3  PASS  Create ESMFIO Component Test, ESMF_IOCompUTest.F90, line 110
+20210305 103228.135 INFO             PET3  PASS  Write through ESMFIO Component Test, ESMF_IOCompUTest.F90, line 118
+20210305 103228.146 INFO             PET3  PASS  Read through ESMFIO Component Test, ESMF_IOCompUTest.F90, line 130
+20210305 103228.146 INFO             PET3  PASS  Destroy ESMFIO Component Test, ESMF_IOCompUTest.F90, line 141
+20210305 103228.147 INFO             PET3  PASS  Compare read vs. written ESMF_TYPEKIND_I4 Field center values, ESMF_IOCompUTest.F90, line 157
+20210305 103228.147 INFO             PET3  PASS  Compare read vs. written ESMF_TYPEKIND_I4 Field edge1 values, ESMF_IOCompUTest.F90, line 167
+20210305 103228.147 INFO             PET3  PASS  Compare read vs. written ESMF_TYPEKIND_I4 Field edge2 values, ESMF_IOCompUTest.F90, line 177
+20210305 103228.147 INFO             PET3  PASS  Compare read vs. written ESMF_TYPEKIND_I4 Field corner values, ESMF_IOCompUTest.F90, line 187
+20210305 103228.147 INFO             PET3  PASS  Compare read vs. written ESMF_TYPEKIND_R4 Field values, ESMF_IOCompUTest.F90, line 197
+20210305 103228.147 INFO             PET3  PASS  Compare read vs. written ESMF_TYPEKIND_R8 Field values, ESMF_IOCompUTest.F90, line 207
+20210305 103228.163 INFO             PET3  PASS  Create ESMFIO Component Test, ESMF_IOCompUTest.F90, line 248
+20210305 103228.177 INFO             PET3  PASS  Write through ESMFIO Component Test, ESMF_IOCompUTest.F90, line 256
+20210305 103228.185 INFO             PET3  PASS  Read through ESMFIO Component Test, ESMF_IOCompUTest.F90, line 268
+20210305 103228.185 INFO             PET3  PASS  Destroy ESMFIO Component Test, ESMF_IOCompUTest.F90, line 279
+20210305 103228.186 INFO             PET3  PASS  Compare read vs. written ESMF_TYPEKIND_I4 Field center values, ESMF_IOCompUTest.F90, line 295
+20210305 103228.186 INFO             PET3  PASS  Compare read vs. written ESMF_TYPEKIND_I4 Field edge1 values, ESMF_IOCompUTest.F90, line 305
+20210305 103228.186 INFO             PET3  PASS  Compare read vs. written ESMF_TYPEKIND_I4 Field edge2 values, ESMF_IOCompUTest.F90, line 315
+20210305 103228.186 INFO             PET3  PASS  Compare read vs. written ESMF_TYPEKIND_I4 Field corner values, ESMF_IOCompUTest.F90, line 325
+20210305 103228.186 INFO             PET3  PASS  Compare read vs. written ESMF_TYPEKIND_R4 Field values, ESMF_IOCompUTest.F90, line 335
+20210305 103228.186 INFO             PET3  PASS  Compare read vs. written ESMF_TYPEKIND_R8 Field values, ESMF_IOCompUTest.F90, line 345
+20210305 103228.186 INFO             PET3  Ending Test, file ESMF_IOCompUTest.F90, line 368
+20210305 103228.186 INFO             PET3 Finalizing ESMF

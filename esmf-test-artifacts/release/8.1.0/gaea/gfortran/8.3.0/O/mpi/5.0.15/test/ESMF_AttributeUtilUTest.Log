@@ -1,0 +1,78 @@
+20210305 103223.271 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103223.271 INFO             PET0 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 103223.271 INFO             PET0 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 103223.271 INFO             PET0 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 103223.271 INFO             PET0 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 103223.271 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103223.271 INFO             PET0 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 103223.271 INFO             PET0 ESMF library build date/time: "Mar  5 2021" "09:44:29"
+20210305 103223.271 INFO             PET0 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_O
+20210305 103223.271 INFO             PET0 ESMF_COMM                   : mpi
+20210305 103223.271 INFO             PET0 ESMF_MOAB                   : enabled
+20210305 103223.271 INFO             PET0 ESMF_LAPACK                 : enabled
+20210305 103223.271 INFO             PET0 ESMF_NETCDF                 : enabled
+20210305 103223.271 INFO             PET0 ESMF_PNETCDF                : disabled
+20210305 103223.271 INFO             PET0 ESMF_PIO                    : enabled
+20210305 103223.271 INFO             PET0 ESMF_YAMLCPP                : enabled
+20210305 103223.284 INFO             PET0  Beginning Test, file ESMF_AttributeUtilUTest.F90, line 79
+20210305 103223.284 INFO             PET0  NUMBER_OF_PROCESSORS           2
+20210305 103223.285 INFO             PET0  PASS  ESMF_InfoFormatKey w/ name, ESMF_AttributeUtilUTest.F90, line 94
+20210305 103223.326 INFO             PET0  PASS  Attribute copy by reference, ESMF_AttributeUtilUTest.F90, line 125
+20210305 103223.352 INFO             PET0  PASS  Setting scalars and arrays in loop, ESMF_AttributeUtilUTest.F90, line 182
+20210305 103223.353 INFO             PET0  PASS  Array to scalar, ESMF_AttributeUtilUTest.F90, line 225
+20210305 103223.354 ERROR            PET0 /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_O/src/Infrastructure/Base/src/ESMCI_Info.C:820 Info::get(): Failed type check (JSON trace will follow): /ESMF/General/mv_array
+20210305 103223.354 ERROR            PET0 ESMCI_Info.C:822 Info::get() Attribute incorrect typekind  - [json.exception.type_error.302] type must be number, but is array
+20210305 103223.354 ERROR            PET0 ESMCI_Info.C:836 Info::get() Attribute incorrect typekind  - Internal subroutine call returned Error
+20210305 103223.354 ERROR            PET0 ESMC_InfoCDefGeneric.C:100 ESMC_InfoGetI4() Attribute incorrect typekind  - Internal subroutine call returned Error
+20210305 103223.354 ERROR            PET0 ESMF_Info.F90:1572 ESMF_InfoGetI4() Attribute incorrect typekind  - Internal subroutine call returned Error
+20210305 103223.354 ERROR            PET0 src/Superstructure/AttributeAPI/interface/ESMF_Attribute.F90:25480 ESMF_AttributeGetObjFieldI4() Attribute incorrect typekind  - Internal subroutine call returned Error
+20210305 103223.354 INFO             PET0  PASS  Scalar from multi-valued array should error out, ESMF_AttributeUtilUTest.F90, line 241
+20210305 103223.354 INFO             PET0  PASS  Default value when getting an attribute that does not exist, ESMF_AttributeUtilUTest.F90, line 255
+20210305 103223.354 INFO             PET0  PASS  Multi-valued array from scalar should fail, ESMF_AttributeUtilUTest.F90, line 271
+20210305 103223.355 INFO             PET0  PASS  Set array and retrieve a type R4, ESMF_AttributeUtilUTest.F90, line 292
+20210305 103223.355 INFO             PET0  PASS  Set array and retrieve a type R8, ESMF_AttributeUtilUTest.F90, line 311
+20210305 103223.355 INFO             PET0  PASS  Mix R4 and R8 and return R8, ESMF_AttributeUtilUTest.F90, line 331
+20210305 103223.356 INFO             PET0  PASS  Attribute copy preserves 32-bit, ESMF_AttributeUtilUTest.F90, line 356
+20210305 103223.356 INFO             PET0  PASS  Attribute copy by reference preserves 32-bit, ESMF_AttributeUtilUTest.F90, line 382
+20210305 103223.356 INFO             PET0  PASS  Attribute get by index preserves 32-bit, ESMF_AttributeUtilUTest.F90, line 406
+20210305 103223.358 INFO             PET0  Ending Test, file ESMF_AttributeUtilUTest.F90, line 444
+20210305 103223.358 INFO             PET0 Finalizing ESMF
+20210305 103223.282 INFO             PET1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103223.282 INFO             PET1 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 103223.282 INFO             PET1 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 103223.282 INFO             PET1 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 103223.282 INFO             PET1 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 103223.282 INFO             PET1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103223.282 INFO             PET1 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 103223.282 INFO             PET1 ESMF library build date/time: "Mar  5 2021" "09:44:29"
+20210305 103223.282 INFO             PET1 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_O
+20210305 103223.282 INFO             PET1 ESMF_COMM                   : mpi
+20210305 103223.283 INFO             PET1 ESMF_MOAB                   : enabled
+20210305 103223.283 INFO             PET1 ESMF_LAPACK                 : enabled
+20210305 103223.283 INFO             PET1 ESMF_NETCDF                 : enabled
+20210305 103223.283 INFO             PET1 ESMF_PNETCDF                : disabled
+20210305 103223.283 INFO             PET1 ESMF_PIO                    : enabled
+20210305 103223.283 INFO             PET1 ESMF_YAMLCPP                : enabled
+20210305 103223.284 INFO             PET1  Beginning Test, file ESMF_AttributeUtilUTest.F90, line 79
+20210305 103223.284 INFO             PET1  NUMBER_OF_PROCESSORS           2
+20210305 103223.285 INFO             PET1  PASS  ESMF_InfoFormatKey w/ name, ESMF_AttributeUtilUTest.F90, line 94
+20210305 103223.326 INFO             PET1  PASS  Attribute copy by reference, ESMF_AttributeUtilUTest.F90, line 125
+20210305 103223.352 INFO             PET1  PASS  Setting scalars and arrays in loop, ESMF_AttributeUtilUTest.F90, line 182
+20210305 103223.353 INFO             PET1  PASS  Array to scalar, ESMF_AttributeUtilUTest.F90, line 225
+20210305 103223.354 ERROR            PET1 /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_O/src/Infrastructure/Base/src/ESMCI_Info.C:820 Info::get(): Failed type check (JSON trace will follow): /ESMF/General/mv_array
+20210305 103223.354 ERROR            PET1 ESMCI_Info.C:822 Info::get() Attribute incorrect typekind  - [json.exception.type_error.302] type must be number, but is array
+20210305 103223.354 ERROR            PET1 ESMCI_Info.C:836 Info::get() Attribute incorrect typekind  - Internal subroutine call returned Error
+20210305 103223.354 ERROR            PET1 ESMC_InfoCDefGeneric.C:100 ESMC_InfoGetI4() Attribute incorrect typekind  - Internal subroutine call returned Error
+20210305 103223.354 ERROR            PET1 ESMF_Info.F90:1572 ESMF_InfoGetI4() Attribute incorrect typekind  - Internal subroutine call returned Error
+20210305 103223.354 ERROR            PET1 src/Superstructure/AttributeAPI/interface/ESMF_Attribute.F90:25480 ESMF_AttributeGetObjFieldI4() Attribute incorrect typekind  - Internal subroutine call returned Error
+20210305 103223.354 INFO             PET1  PASS  Scalar from multi-valued array should error out, ESMF_AttributeUtilUTest.F90, line 241
+20210305 103223.354 INFO             PET1  PASS  Default value when getting an attribute that does not exist, ESMF_AttributeUtilUTest.F90, line 255
+20210305 103223.354 INFO             PET1  PASS  Multi-valued array from scalar should fail, ESMF_AttributeUtilUTest.F90, line 271
+20210305 103223.355 INFO             PET1  PASS  Set array and retrieve a type R4, ESMF_AttributeUtilUTest.F90, line 292
+20210305 103223.355 INFO             PET1  PASS  Set array and retrieve a type R8, ESMF_AttributeUtilUTest.F90, line 311
+20210305 103223.355 INFO             PET1  PASS  Mix R4 and R8 and return R8, ESMF_AttributeUtilUTest.F90, line 331
+20210305 103223.356 INFO             PET1  PASS  Attribute copy preserves 32-bit, ESMF_AttributeUtilUTest.F90, line 356
+20210305 103223.356 INFO             PET1  PASS  Attribute copy by reference preserves 32-bit, ESMF_AttributeUtilUTest.F90, line 382
+20210305 103223.356 INFO             PET1  PASS  Attribute get by index preserves 32-bit, ESMF_AttributeUtilUTest.F90, line 406
+20210305 103223.357 INFO             PET1  Ending Test, file ESMF_AttributeUtilUTest.F90, line 444
+20210305 103223.357 INFO             PET1 Finalizing ESMF

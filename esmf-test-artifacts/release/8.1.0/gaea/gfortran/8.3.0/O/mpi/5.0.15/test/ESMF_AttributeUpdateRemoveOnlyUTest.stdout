@@ -1,0 +1,20 @@
+  Beginning Test, file ESMF_AttributeUpdateRemoveOnlyUTest.F90, line 533
+  NUMBER_OF_PROCESSORS           4
+  Beginning Test, file ESMF_AttributeUpdateRemoveOnlyUTest.F90, line 533
+  NUMBER_OF_PROCESSORS           4
+  Beginning Test, file ESMF_AttributeUpdateRemoveOnlyUTest.F90, line 533
+  NUMBER_OF_PROCESSORS           4
+  Beginning Test, file ESMF_AttributeUpdateRemoveOnlyUTest.F90, line 533
+  NUMBER_OF_PROCESSORS           4
+  PASS  Getting an updated deleted Attribute value from a Field test, ESMF_AttributeUpdateRemoveOnlyUTest.F90, line 621
+  PASS  Getting an updated deleted Attribute value from a Field test, ESMF_AttributeUpdateRemoveOnlyUTest.F90, line 621
+  PASS  Getting an updated deleted Attribute value from a Field test, ESMF_AttributeUpdateRemoveOnlyUTest.F90, line 621
+  PASS  Getting an updated deleted Attribute value from a Field test, ESMF_AttributeUpdateRemoveOnlyUTest.F90, line 621
+  Ending Test, file ESMF_AttributeUpdateRemoveOnlyUTest.F90, line 646
+  Ending Test, file ESMF_AttributeUpdateRemoveOnlyUTest.F90, line 646
+  Ending Test, file ESMF_AttributeUpdateRemoveOnlyUTest.F90, line 646
+  Ending Test, file ESMF_AttributeUpdateRemoveOnlyUTest.F90, line 646
+  PET           1  Test Elapsed Time    95.725999999999985       msec.
+  PET           2  Test Elapsed Time    138.70400000000001       msec.
+  PET           3  Test Elapsed Time    138.95200000000000       msec.
+  PET           0  Test Elapsed Time    69.738000000000000       msec.

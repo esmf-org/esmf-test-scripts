@@ -1,0 +1,492 @@
+  Beginning Test, file ESMF_ConfigUTest.F90, line 1960
+  Beginning Test, file ESMF_ConfigUTest.F90, line 1960
+  NUMBER_OF_PROCESSORS           4
+  Beginning Test, file ESMF_ConfigUTest.F90, line 1960
+  NUMBER_OF_PROCESSORS           4
+  Beginning Test, file ESMF_ConfigUTest.F90, line 1960
+  NUMBER_OF_PROCESSORS           4
+  NUMBER_OF_PROCESSORS           4
+  PASS  Testing Config IsCreated for uncreated object, ESMF_ConfigUTest.F90, line 1969
+  PASS  Testing Config IsCreated for uncreated object, ESMF_ConfigUTest.F90, line 1977
+  PASS  Testing Config IsCreated for uncreated object, ESMF_ConfigUTest.F90, line 1969
+  PASS  Testing Config IsCreated for uncreated object, ESMF_ConfigUTest.F90, line 1977
+  PASS  Testing Config IsCreated for uncreated object, ESMF_ConfigUTest.F90, line 1969
+  PASS  Testing Config IsCreated for uncreated object, ESMF_ConfigUTest.F90, line 1977
+  PASS  Testing Config IsCreated for uncreated object, ESMF_ConfigUTest.F90, line 1969
+  PASS  Testing Config IsCreated for uncreated object, ESMF_ConfigUTest.F90, line 1977
+  PASS  Create test Config for IsCreated, ESMF_ConfigUTest.F90, line 1985
+  PASS  Create test Config for IsCreated, ESMF_ConfigUTest.F90, line 1985
+  PASS  Create test Config for IsCreated, ESMF_ConfigUTest.F90, line 1985
+  PASS  Testing Config IsCreated for created object, ESMF_ConfigUTest.F90, line 1993
+  PASS  Testing Config IsCreated for created object, ESMF_ConfigUTest.F90, line 1993
+  PASS  Create test Config for IsCreated, ESMF_ConfigUTest.F90, line 1985
+  PASS  Testing Config IsCreated for created object, ESMF_ConfigUTest.F90, line 1993
+  PASS  Testing Config IsCreated for created object, ESMF_ConfigUTest.F90, line 1993
+  PASS  Testing Config IsCreated for created object, ESMF_ConfigUTest.F90, line 2001
+  PASS  Testing Config IsCreated for created object, ESMF_ConfigUTest.F90, line 2001
+  PASS  Testing Config IsCreated for created object, ESMF_ConfigUTest.F90, line 2001
+  PASS  Testing Config IsCreated for created object, ESMF_ConfigUTest.F90, line 2001
+  PASS  Destroy test Config for IsCreated, ESMF_ConfigUTest.F90, line 2009
+  PASS  Destroy test Config for IsCreated, ESMF_ConfigUTest.F90, line 2009
+  PASS  Destroy test Config for IsCreated, ESMF_ConfigUTest.F90, line 2009
+  PASS  Destroy test Config for IsCreated, ESMF_ConfigUTest.F90, line 2009
+  PASS  Testing Config IsCreated for destroyed object, ESMF_ConfigUTest.F90, line 2017
+  PASS  Testing Config IsCreated for destroyed object, ESMF_ConfigUTest.F90, line 2017
+  PASS  Testing Config IsCreated for destroyed object, ESMF_ConfigUTest.F90, line 2017
+  PASS  Testing Config IsCreated for destroyed object, ESMF_ConfigUTest.F90, line 2017
+  PASS  Testing Config IsCreated for destroyed object, ESMF_ConfigUTest.F90, line 2025
+  PASS  Testing Config IsCreated for destroyed object, ESMF_ConfigUTest.F90, line 2025
+  PASS  Testing Config IsCreated for destroyed object, ESMF_ConfigUTest.F90, line 2025
+  PASS  Testing Config IsCreated for destroyed object, ESMF_ConfigUTest.F90, line 2025
+  PASS  Config Create Test, ESMF_ConfigUTest.F90, line 2034
+  PASS  Config Create Test, ESMF_ConfigUTest.F90, line 2034
+  PASS  Config Create Test, ESMF_ConfigUTest.F90, line 2034
+  PASS  Config Create Test, ESMF_ConfigUTest.F90, line 2034
+  PASS  Config Destroy Test, ESMF_ConfigUTest.F90, line 2042
+  PASS  Config Destroy Test, ESMF_ConfigUTest.F90, line 2042
+  PASS  Config Destroy Test, ESMF_ConfigUTest.F90, line 2042
+  PASS  Config Destroy Test, ESMF_ConfigUTest.F90, line 2042
+  PASS  Destroy a destroyed Config Test, ESMF_ConfigUTest.F90, line 2052
+  PASS  Destroy a destroyed Config Test, ESMF_ConfigUTest.F90, line 2052
+  PASS  Destroy a destroyed Config Test, ESMF_ConfigUTest.F90, line 2052
+  PASS  Destroy a destroyed Config Test, ESMF_ConfigUTest.F90, line 2052
+  PASS  Destroyed Config Get Attribute Int Test, ESMF_ConfigUTest.F90, line 2061
+  PASS  Destroyed Config Get Attribute Int Test, ESMF_ConfigUTest.F90, line 2061
+  PASS  Destroyed Config Get Attribute Int Test, ESMF_ConfigUTest.F90, line 2061
+  PASS  Destroyed Config Get Attribute Int Test, ESMF_ConfigUTest.F90, line 2061
+  PASS  Destroyed Config Get Attribute Char Test, ESMF_ConfigUTest.F90, line 2070
+  PASS  Destroyed Config Get Attribute Char Test, ESMF_ConfigUTest.F90, line 2070
+  PASS  Destroyed Config Get Attribute Char Test, ESMF_ConfigUTest.F90, line 2070
+  PASS  Destroyed Config Get Attribute Char Test, ESMF_ConfigUTest.F90, line 2070
+  PASS  Non-create Config Find Label Test, ESMF_ConfigUTest.F90, line 2078
+  PASS  Non-create Config Find Label Test, ESMF_ConfigUTest.F90, line 2078
+  PASS  Non-create Config Find Label Test, ESMF_ConfigUTest.F90, line 2078
+  PASS  Non-create Config Find Label Test, ESMF_ConfigUTest.F90, line 2078
+  PASS  Create Config Test, ESMF_ConfigUTest.F90, line 98
+  PASS  Create Config Test, ESMF_ConfigUTest.F90, line 98
+  PASS  Create Config Test, ESMF_ConfigUTest.F90, line 98
+  PASS  Create Config Test, ESMF_ConfigUTest.F90, line 98
+  PASS  Config assignment Test, ESMF_ConfigUTest.F90, line 112
+  PASS  Config assignment Test, ESMF_ConfigUTest.F90, line 112
+  PASS  Config assignment Test, ESMF_ConfigUTest.F90, line 112
+  PASS  Config equality with same Config Test, ESMF_ConfigUTest.F90, line 120
+  PASS  Config assignment Test, ESMF_ConfigUTest.F90, line 112
+  PASS  Config equality with same Config Test, ESMF_ConfigUTest.F90, line 120
+  PASS  Config equality with same Config Test, ESMF_ConfigUTest.F90, line 120
+  PASS  Config equality with same Config Test, ESMF_ConfigUTest.F90, line 120
+  PASS  Config equality with different Config Test, ESMF_ConfigUTest.F90, line 128
+  PASS  Config equality with different Config Test, ESMF_ConfigUTest.F90, line 128
+  PASS  Config equality with different Config Test, ESMF_ConfigUTest.F90, line 128
+  PASS  Config inequality with same Config Test, ESMF_ConfigUTest.F90, line 136
+  PASS  Config inequality with same Config Test, ESMF_ConfigUTest.F90, line 136
+  PASS  Config inequality with different Config Test, ESMF_ConfigUTest.F90, line 144
+  PASS  Config inequality with same Config Test, ESMF_ConfigUTest.F90, line 136
+  PASS  Config inequality with different Config Test, ESMF_ConfigUTest.F90, line 144
+  PASS  Config inequality with different Config Test, ESMF_ConfigUTest.F90, line 144
+  PASS  Config equality with different Config Test, ESMF_ConfigUTest.F90, line 128
+  PASS  Config inequality with same Config Test, ESMF_ConfigUTest.F90, line 136
+  PASS  Config inequality with different Config Test, ESMF_ConfigUTest.F90, line 144
+  PASS  Config Load File Test, ESMF_ConfigUTest.F90, line 152
+  File contains duplicate labels - check logfile.
+  PASS  Config Load File Test, ESMF_ConfigUTest.F90, line 152
+  File contains duplicate labels - check logfile.
+  PASS  Config Load File Test, ESMF_ConfigUTest.F90, line 152
+  File contains duplicate labels - check logfile.
+  PASS  Config Load File Test, ESMF_ConfigUTest.F90, line 152
+  File contains duplicate labels - check logfile.
+  PASS  Non initialized Config Get Attribute Int Test, ESMF_ConfigUTest.F90, line 198
+  PASS  Non initialized Config Get Attribute Int Test, ESMF_ConfigUTest.F90, line 198
+  PASS  Non initialized Config Get Attribute Int Test, ESMF_ConfigUTest.F90, line 198
+  PASS  Non initialized Config Get Attribute Int Test, ESMF_ConfigUTest.F90, line 198
+  PASS  Config Get Attribute Int Test, ESMF_ConfigUTest.F90, line 207
+  PASS  Verify Attribute Value Test, ESMF_ConfigUTest.F90, line 228
+  PASS  Config Get Attribute Int Test, ESMF_ConfigUTest.F90, line 207
+  PASS  Verify Attribute Value Test, ESMF_ConfigUTest.F90, line 228
+  PASS  Config Get Attribute Float Test, ESMF_ConfigUTest.F90, line 243
+  PASS  Config Get Attribute Int Test, ESMF_ConfigUTest.F90, line 207
+  PASS  Verify Attribute Value Test, ESMF_ConfigUTest.F90, line 228
+  PASS  Config Get Attribute Float Test, ESMF_ConfigUTest.F90, line 243
+  PASS  Config Get Attribute Int Test, ESMF_ConfigUTest.F90, line 207
+  PASS  Verify Attribute Value Test, ESMF_ConfigUTest.F90, line 228
+  PASS  Config Get Attribute Float Test, ESMF_ConfigUTest.F90, line 243
+  PASS  Verify Attribute Float Value Test, ESMF_ConfigUTest.F90, line 263
+  PASS  Config Get Attribute Float Test, ESMF_ConfigUTest.F90, line 243
+  PASS  Verify Attribute Float Value Test, ESMF_ConfigUTest.F90, line 263
+  PASS  Verify Attribute Float Value Test, ESMF_ConfigUTest.F90, line 263
+  PASS  Verify Attribute Float Value Test, ESMF_ConfigUTest.F90, line 263
+  PASS  Config Get Attribute Char Test, ESMF_ConfigUTest.F90, line 277
+  PASS  Config Get Attribute Char Test, ESMF_ConfigUTest.F90, line 277
+  PASS  Config Get Attribute Char Test, ESMF_ConfigUTest.F90, line 277
+  PASS  Config Get Attribute Char Test, ESMF_ConfigUTest.F90, line 277
+  PASS  Config Get Attribute Char Test, ESMF_ConfigUTest.F90, line 286
+  PASS  Config Get Attribute Char Test, ESMF_ConfigUTest.F90, line 286
+  PASS  Config Get Attribute Char Test, ESMF_ConfigUTest.F90, line 286
+  PASS  Config Get Attribute Char Test, ESMF_ConfigUTest.F90, line 286
+  PASS  Verify Attribute Char Value Test, ESMF_ConfigUTest.F90, line 306
+  PASS  Verify Attribute Char Value Test, ESMF_ConfigUTest.F90, line 306
+  PASS  Verify Attribute Char Value Test, ESMF_ConfigUTest.F90, line 306
+  PASS  Config Get Attribute String too short Test, ESMF_ConfigUTest.F90, line 321
+  PASS  Verify Attribute Char Value Test, ESMF_ConfigUTest.F90, line 306
+  PASS  Config Get Attribute String too short Test, ESMF_ConfigUTest.F90, line 321
+  PASS  Config Get Attribute String too short Test, ESMF_ConfigUTest.F90, line 321
+  PASS  Config Get Attribute String too short Test, ESMF_ConfigUTest.F90, line 321
+  PASS  Config Get Attribute String too short w/default Test, ESMF_ConfigUTest.F90, line 330
+  PASS  Config Get Attribute String too short w/default Test, ESMF_ConfigUTest.F90, line 330
+  PASS  Config Get Attribute String too short w/default Test, ESMF_ConfigUTest.F90, line 330
+  PASS  Config Get Attribute String too short w/default Test, ESMF_ConfigUTest.F90, line 330
+  PASS  Config Get Attribute String Test, ESMF_ConfigUTest.F90, line 339
+  PASS  Config Get Attribute String Test, ESMF_ConfigUTest.F90, line 339
+  PASS  Verify Attribute String Value Test, ESMF_ConfigUTest.F90, line 359
+  PASS  Config Get Attribute String Test, ESMF_ConfigUTest.F90, line 339
+  PASS  Verify Attribute String Value Test, ESMF_ConfigUTest.F90, line 359
+  PASS  Config Get Attribute String Test, ESMF_ConfigUTest.F90, line 339
+  PASS  Verify Attribute String Value Test, ESMF_ConfigUTest.F90, line 359
+  PASS  Config Get Attribute String Multi-word apostrophe Token Test, ESMF_ConfigUTest.F90, line 368
+  PASS  Config Get Attribute String Multi-word apostrophe Token Test, ESMF_ConfigUTest.F90, line 368
+  PASS  Config Get Attribute String Multi-word apostrophe Token value Test, ESMF_ConfigUTest.F90, line 376
+  PASS  Config Get Attribute String Multi-word apostrophe Token Test, ESMF_ConfigUTest.F90, line 368
+  PASS  Config Get Attribute String Multi-word apostrophe Token value Test, ESMF_ConfigUTest.F90, line 376
+  PASS  Verify Attribute String Value Test, ESMF_ConfigUTest.F90, line 359
+  PASS  Config Get Attribute String Multi-word apostrophe Token Test, ESMF_ConfigUTest.F90, line 368
+  PASS  Config Get Attribute String Multi-word apostrophe Token value Test, ESMF_ConfigUTest.F90, line 376
+  PASS  Config Get Attribute String Multi-word apostrophe Token value Test, ESMF_ConfigUTest.F90, line 376
+  PASS  Config Get Attribute String Multi-word quoted Token Test, ESMF_ConfigUTest.F90, line 386
+  PASS  Config Get Attribute String Multi-word quoted Token value Test, ESMF_ConfigUTest.F90, line 394
+  PASS  Config Get Attribute String Multi-word quoted Token Test, ESMF_ConfigUTest.F90, line 386
+  PASS  Config Get Attribute String Multi-word quoted Token value Test, ESMF_ConfigUTest.F90, line 394
+  PASS  Config Get Attribute String Multi-word quoted Token Test, ESMF_ConfigUTest.F90, line 386
+  PASS  Config Get Attribute String Multi-word quoted Token value Test, ESMF_ConfigUTest.F90, line 394
+  PASS  Config Get Attribute String Multi-word quoted Token Test, ESMF_ConfigUTest.F90, line 386
+  PASS  Config Get Attribute String Multi-word quoted Token value Test, ESMF_ConfigUTest.F90, line 394
+  PASS  Config Get Attribute Logical Test, ESMF_ConfigUTest.F90, line 406
+  PASS  Config Get Attribute Logical Test, ESMF_ConfigUTest.F90, line 406
+  PASS  Verify Attribute Logical Value Test, ESMF_ConfigUTest.F90, line 427
+  PASS  Config Get Attribute Logical Test, ESMF_ConfigUTest.F90, line 406
+  PASS  Verify Attribute Logical Value Test, ESMF_ConfigUTest.F90, line 427
+  PASS  Config Get Attribute Logical Test, ESMF_ConfigUTest.F90, line 406
+  PASS  Verify Attribute Logical Value Test, ESMF_ConfigUTest.F90, line 427
+  PASS  Verify Attribute Logical Value Test, ESMF_ConfigUTest.F90, line 427
+  PASS  Config Find Label Test, ESMF_ConfigUTest.F90, line 461
+  PASS  Config Find Label Test, ESMF_ConfigUTest.F90, line 461
+  PASS  Config Find Label Test, ESMF_ConfigUTest.F90, line 461
+  PASS  Config Find Label Test, ESMF_ConfigUTest.F90, line 461
+  PASS  Config Get String Test, ESMF_ConfigUTest.F90, line 480
+  PASS  Config Get String Test, ESMF_ConfigUTest.F90, line 480
+  PASS  Config Get String Test, ESMF_ConfigUTest.F90, line 480
+  PASS  Config Get String Test, ESMF_ConfigUTest.F90, line 480
+  PASS  Verify Attribute String Value Test, ESMF_ConfigUTest.F90, line 502
+  PASS  Verify Attribute String Value Test, ESMF_ConfigUTest.F90, line 502
+  PASS  Verify Attribute String Value Test, ESMF_ConfigUTest.F90, line 502
+  PASS  Config Get Int Test, ESMF_ConfigUTest.F90, line 512
+  PASS  Verify Attribute String Value Test, ESMF_ConfigUTest.F90, line 502
+  PASS  Config Get Int Test, ESMF_ConfigUTest.F90, line 512
+  PASS  Config Get Int Test, ESMF_ConfigUTest.F90, line 512
+  PASS  Verify Attribute Int Value Test, ESMF_ConfigUTest.F90, line 534
+  PASS  Verify Attribute Int Value Test, ESMF_ConfigUTest.F90, line 534
+  PASS  Config Get Int Test, ESMF_ConfigUTest.F90, line 512
+  PASS  Verify Attribute Int Value Test, ESMF_ConfigUTest.F90, line 534
+  PASS  Verify Attribute Int Value Test, ESMF_ConfigUTest.F90, line 534
+  PASS  Config Get Floats Test, ESMF_ConfigUTest.F90, line 543
+  PASS  Config Get Floats Test, ESMF_ConfigUTest.F90, line 543
+  PASS  Verify Attribute Floats Values Test, ESMF_ConfigUTest.F90, line 567
+  PASS  Config Get Floats Test, ESMF_ConfigUTest.F90, line 543
+  PASS  Verify Attribute Floats Values Test, ESMF_ConfigUTest.F90, line 567
+  PASS  Config Get Floats Test, ESMF_ConfigUTest.F90, line 543
+  PASS  Verify Attribute Floats Values Test, ESMF_ConfigUTest.F90, line 567
+  PASS  Verify Attribute Floats Values Test, ESMF_ConfigUTest.F90, line 567
+  PASS  Config Get Quoted String Array too short Test, ESMF_ConfigUTest.F90, line 577
+  PASS  Config Get Quoted String Array too short Test, ESMF_ConfigUTest.F90, line 577
+  PASS  Config Get Quoted String Array too short Test, ESMF_ConfigUTest.F90, line 577
+  PASS  Config Get Quoted String Array too short Test, ESMF_ConfigUTest.F90, line 577
+  PASS  Config Get Quoted String Array too short default Test, ESMF_ConfigUTest.F90, line 586
+  PASS  Config Get Quoted String Array too short default Test, ESMF_ConfigUTest.F90, line 586
+  PASS  Config Get Quoted String Array Test, ESMF_ConfigUTest.F90, line 594
+  PASS  Config Get Quoted String Array too short default Test, ESMF_ConfigUTest.F90, line 586
+  PASS  Config Get Quoted String Array Test, ESMF_ConfigUTest.F90, line 594
+  PASS  Config Get Quoted String Array too short default Test, ESMF_ConfigUTest.F90, line 586
+  PASS  Config Get Quoted String Array Test, ESMF_ConfigUTest.F90, line 594
+  PASS  Verify Attribute Quoted String Array Value Test, ESMF_ConfigUTest.F90, line 601
+  PASS  Config Get Quoted String Array Test, ESMF_ConfigUTest.F90, line 594
+  PASS  Verify Attribute Quoted String Array Value Test, ESMF_ConfigUTest.F90, line 601
+  PASS  Verify Attribute Quoted String Array Value Test, ESMF_ConfigUTest.F90, line 601
+  PASS  Verify Attribute Quoted String Array Value Test, ESMF_ConfigUTest.F90, line 601
+  PASS  Config Find Label Test, ESMF_ConfigUTest.F90, line 626
+  PASS  Config Find Label Test, ESMF_ConfigUTest.F90, line 626
+  PASS  Config Find Label Test, ESMF_ConfigUTest.F90, line 626
+  PASS  Config Get String Test, ESMF_ConfigUTest.F90, line 644
+  PASS  Config Get String Test, ESMF_ConfigUTest.F90, line 644
+  PASS  Verify Attribute String Values Test, ESMF_ConfigUTest.F90, line 666
+  PASS  Config Get String Test, ESMF_ConfigUTest.F90, line 644
+  PASS  Verify Attribute String Values Test, ESMF_ConfigUTest.F90, line 666
+  PASS  Config Find Label Test, ESMF_ConfigUTest.F90, line 626
+  PASS  Config Get String Test, ESMF_ConfigUTest.F90, line 644
+  PASS  Verify Attribute String Values Test, ESMF_ConfigUTest.F90, line 666
+  PASS  Config Get Int Test, ESMF_ConfigUTest.F90, line 676
+  PASS  Config Get Int Test, ESMF_ConfigUTest.F90, line 676
+  PASS  Verify Attribute Int Values Test, ESMF_ConfigUTest.F90, line 698
+  PASS  Config Get Int Test, ESMF_ConfigUTest.F90, line 676
+  PASS  Verify Attribute Int Values Test, ESMF_ConfigUTest.F90, line 698
+  PASS  Verify Attribute String Values Test, ESMF_ConfigUTest.F90, line 666
+  PASS  Config Get Int Test, ESMF_ConfigUTest.F90, line 676
+  PASS  Verify Attribute Int Values Test, ESMF_ConfigUTest.F90, line 698
+  PASS  Config Get Floats Test, ESMF_ConfigUTest.F90, line 708
+  PASS  Config Get Floats Test, ESMF_ConfigUTest.F90, line 708
+  PASS  Verify Attribute Floats Values Test, ESMF_ConfigUTest.F90, line 730
+  PASS  Config Get Floats Test, ESMF_ConfigUTest.F90, line 708
+  PASS  Verify Attribute Floats Values Test, ESMF_ConfigUTest.F90, line 730
+  PASS  Verify Attribute Int Values Test, ESMF_ConfigUTest.F90, line 698
+  PASS  Config Get Floats Test, ESMF_ConfigUTest.F90, line 708
+  PASS  Verify Attribute Floats Values Test, ESMF_ConfigUTest.F90, line 730
+  PASS  Verify Attribute Floats Values Test, ESMF_ConfigUTest.F90, line 730
+  PASS  Non-create Config Find Label Test, ESMF_ConfigUTest.F90, line 755
+  PASS  Non-create Config Find Label Test, ESMF_ConfigUTest.F90, line 755
+  PASS  Non-create Config Find Label Test, ESMF_ConfigUTest.F90, line 755
+  PASS  Non-create Config Find Label Test, ESMF_ConfigUTest.F90, line 755
+  PASS  Config Find Label Test, ESMF_ConfigUTest.F90, line 763
+  PASS  Config Find Label Test, ESMF_ConfigUTest.F90, line 763
+  PASS  Config Get String Test, ESMF_ConfigUTest.F90, line 781
+  PASS  Config Find Label Test, ESMF_ConfigUTest.F90, line 763
+  PASS  Config Get String Test, ESMF_ConfigUTest.F90, line 781
+  PASS  Config Find Label Test, ESMF_ConfigUTest.F90, line 763
+  PASS  Config Get String Test, ESMF_ConfigUTest.F90, line 781
+  PASS  Verify Attribute String Values Test, ESMF_ConfigUTest.F90, line 803
+  PASS  Config Get String Test, ESMF_ConfigUTest.F90, line 781
+  PASS  Verify Attribute String Values Test, ESMF_ConfigUTest.F90, line 803
+  PASS  Verify Attribute String Values Test, ESMF_ConfigUTest.F90, line 803
+  PASS  Config Get Int Test, ESMF_ConfigUTest.F90, line 813
+  PASS  Verify Attribute String Values Test, ESMF_ConfigUTest.F90, line 803
+  PASS  Config Get Int Test, ESMF_ConfigUTest.F90, line 813
+  PASS  Config Get Int Test, ESMF_ConfigUTest.F90, line 813
+  PASS  Verify Attribute Int Values Test, ESMF_ConfigUTest.F90, line 835
+  PASS  Config Get Int Test, ESMF_ConfigUTest.F90, line 813
+  PASS  Verify Attribute Int Values Test, ESMF_ConfigUTest.F90, line 835
+  PASS  Verify Attribute Int Values Test, ESMF_ConfigUTest.F90, line 835
+  PASS  Verify Attribute Int Values Test, ESMF_ConfigUTest.F90, line 835
+  PASS  Config Get Logicals Test, ESMF_ConfigUTest.F90, line 845
+  PASS  Config Get Logicals Test, ESMF_ConfigUTest.F90, line 845
+  PASS  Config Get Logicals Test, ESMF_ConfigUTest.F90, line 845
+  PASS  Verify Attribute Logicals Values Test, ESMF_ConfigUTest.F90, line 868
+  PASS  Config Get Logicals Test, ESMF_ConfigUTest.F90, line 845
+  PASS  Verify Attribute Logicals Values Test, ESMF_ConfigUTest.F90, line 868
+  PASS  Verify Attribute Logicals Values Test, ESMF_ConfigUTest.F90, line 868
+  PASS  Verify Attribute Logicals Values Test, ESMF_ConfigUTest.F90, line 868
+  PASS  Config Find Label Test, ESMF_ConfigUTest.F90, line 897
+  PASS  Config Get Next Line Test, ESMF_ConfigUTest.F90, line 916
+  PASS  Config Find Label Test, ESMF_ConfigUTest.F90, line 897
+  PASS  Config Get Next Line Test, ESMF_ConfigUTest.F90, line 916
+  PASS  Config Get String Test, ESMF_ConfigUTest.F90, line 935
+  PASS  Config Find Label Test, ESMF_ConfigUTest.F90, line 897
+  PASS  Config Get Next Line Test, ESMF_ConfigUTest.F90, line 916
+  PASS  Config Get String Test, ESMF_ConfigUTest.F90, line 935
+  PASS  Config Find Label Test, ESMF_ConfigUTest.F90, line 897
+  PASS  Config Get Next Line Test, ESMF_ConfigUTest.F90, line 916
+  PASS  Config Get String Test, ESMF_ConfigUTest.F90, line 935
+  PASS  Verify Attribute String Values Test, ESMF_ConfigUTest.F90, line 957
+  PASS  Config Get String Test, ESMF_ConfigUTest.F90, line 935
+  PASS  Verify Attribute String Values Test, ESMF_ConfigUTest.F90, line 957
+  PASS  Config Get Int Test, ESMF_ConfigUTest.F90, line 967
+  PASS  Verify Attribute String Values Test, ESMF_ConfigUTest.F90, line 957
+  PASS  Config Get Int Test, ESMF_ConfigUTest.F90, line 967
+  PASS  Verify Attribute String Values Test, ESMF_ConfigUTest.F90, line 957
+  PASS  Config Get Int Test, ESMF_ConfigUTest.F90, line 967
+  PASS  Config Get Int Test, ESMF_ConfigUTest.F90, line 967
+  PASS  Config Get Floats Test, ESMF_ConfigUTest.F90, line 992
+  PASS  Config Get Floats Test, ESMF_ConfigUTest.F90, line 992
+  PASS  Config Get Floats Test, ESMF_ConfigUTest.F90, line 992
+  PASS  Config Get Floats Test, ESMF_ConfigUTest.F90, line 992
+  PASS  Verify Attribute Floats Values Test, ESMF_ConfigUTest.F90, line 1014
+  PASS  Verify Attribute Floats Values Test, ESMF_ConfigUTest.F90, line 1014
+  PASS  Config Get Next Line Test, ESMF_ConfigUTest.F90, line 1026
+  PASS  Verify Attribute Floats Values Test, ESMF_ConfigUTest.F90, line 1014
+  PASS  Config Get Next Line Test, ESMF_ConfigUTest.F90, line 1026
+  PASS  Verify Attribute Floats Values Test, ESMF_ConfigUTest.F90, line 1014
+  PASS  Config Get Next Line Test, ESMF_ConfigUTest.F90, line 1026
+  PASS  Config Get String Test, ESMF_ConfigUTest.F90, line 1045
+  PASS  Config Get Next Line Test, ESMF_ConfigUTest.F90, line 1026
+  PASS  Config Get String Test, ESMF_ConfigUTest.F90, line 1045
+  PASS  Config Get String Test, ESMF_ConfigUTest.F90, line 1045
+  PASS  Verify Attribute String Values Test, ESMF_ConfigUTest.F90, line 1067
+  PASS  Config Get String Test, ESMF_ConfigUTest.F90, line 1045
+  PASS  Verify Attribute String Values Test, ESMF_ConfigUTest.F90, line 1067
+  PASS  Verify Attribute String Values Test, ESMF_ConfigUTest.F90, line 1067
+  PASS  Config Get Int Test, ESMF_ConfigUTest.F90, line 1076
+  PASS  Config Get Int Test, ESMF_ConfigUTest.F90, line 1076
+  PASS  Verify Attribute Int Values Test, ESMF_ConfigUTest.F90, line 1098
+  PASS  Config Get Int Test, ESMF_ConfigUTest.F90, line 1076
+  PASS  Verify Attribute Int Values Test, ESMF_ConfigUTest.F90, line 1098
+  PASS  Verify Attribute String Values Test, ESMF_ConfigUTest.F90, line 1067
+  PASS  Config Get Int Test, ESMF_ConfigUTest.F90, line 1076
+  PASS  Verify Attribute Int Values Test, ESMF_ConfigUTest.F90, line 1098
+  PASS  Verify Attribute Int Values Test, ESMF_ConfigUTest.F90, line 1098
+  PASS  Config Get Floats Test, ESMF_ConfigUTest.F90, line 1108
+  PASS  Config Get Floats Test, ESMF_ConfigUTest.F90, line 1108
+  PASS  Verify Attribute Floats Values Test, ESMF_ConfigUTest.F90, line 1130
+  PASS  Config Get Floats Test, ESMF_ConfigUTest.F90, line 1108
+  PASS  Verify Attribute Floats Values Test, ESMF_ConfigUTest.F90, line 1130
+  PASS  Config Get Floats Test, ESMF_ConfigUTest.F90, line 1108
+  PASS  Verify Attribute Floats Values Test, ESMF_ConfigUTest.F90, line 1130
+  PASS  Verify Attribute Floats Values Test, ESMF_ConfigUTest.F90, line 1130
+  PASS  Config Get Dim Test, ESMF_ConfigUTest.F90, line 1179
+  PASS  Config Get Dim Test, ESMF_ConfigUTest.F90, line 1179
+  PASS  Config Get Dim Test, ESMF_ConfigUTest.F90, line 1179
+  PASS  Config Get Dim Test, ESMF_ConfigUTest.F90, line 1179
+  PASS  Verify Attribute Dim Values Test, ESMF_ConfigUTest.F90, line 1200
+  PASS  Verify Attribute Dim Values Test, ESMF_ConfigUTest.F90, line 1200
+  PASS  Verify Attribute Dim Values Test, ESMF_ConfigUTest.F90, line 1200
+  PASS  Verify Attribute Dim Values Test, ESMF_ConfigUTest.F90, line 1200
+  PASS  Config Find Label Test, ESMF_ConfigUTest.F90, line 1211
+  PASS  Config Find Label Test, ESMF_ConfigUTest.F90, line 1211
+  PASS  Config Find Label Test, ESMF_ConfigUTest.F90, line 1211
+  PASS  Config Find Label Test, ESMF_ConfigUTest.F90, line 1211
+  PASS  Verify Attribute Line Values Test, ESMF_ConfigUTest.F90, line 1257
+  PASS  Verify Attribute Line Values Test, ESMF_ConfigUTest.F90, line 1257
+  PASS  Verify Attribute Line Values Test, ESMF_ConfigUTest.F90, line 1257
+  PASS  Verify Attribute Line Values Test, ESMF_ConfigUTest.F90, line 1257
+  PASS  Config Bad Label Test, ESMF_ConfigUTest.F90, line 1277
+  PASS  Config Bad Label Test, ESMF_ConfigUTest.F90, line 1277
+  PASS  Config Bad Label Test, ESMF_ConfigUTest.F90, line 1277
+  PASS  Config Find Label Test, ESMF_ConfigUTest.F90, line 1285
+  PASS  Config Bad Label Test, ESMF_ConfigUTest.F90, line 1277
+  PASS  Config Find Label Test, ESMF_ConfigUTest.F90, line 1285
+  PASS  Config Find Label Test, ESMF_ConfigUTest.F90, line 1285
+  PASS  Config Find Label Test, ESMF_ConfigUTest.F90, line 1285
+  PASS  Config Set Attribute IntI4 Test 1, ESMF_ConfigUTest.F90, line 1388
+  PASS  Config Set Attribute IntI4 Test 1, ESMF_ConfigUTest.F90, line 1388
+  PASS  Config Set Attribute IntI4 Test 1, ESMF_ConfigUTest.F90, line 1388
+  PASS  Config Set Attribute IntI4 Test 1, ESMF_ConfigUTest.F90, line 1388
+  PASS  Config Set Attribute IntI4 Test 2, ESMF_ConfigUTest.F90, line 1414
+  PASS  Config Set Attribute IntI4 Test 2, ESMF_ConfigUTest.F90, line 1414
+  PASS  Config Set Attribute IntI4 Test 2, ESMF_ConfigUTest.F90, line 1414
+  PASS  Config Set Attribute IntI4 Test 3, ESMF_ConfigUTest.F90, line 1442
+  PASS  Config Set Attribute IntI4 Test 2, ESMF_ConfigUTest.F90, line 1414
+  PASS  Config Set Attribute IntI4 Test 3, ESMF_ConfigUTest.F90, line 1442
+  PASS  Config Set Attribute IntI4 Test 3, ESMF_ConfigUTest.F90, line 1442
+  PASS  Config Set Attribute IntI4 Test 4, ESMF_ConfigUTest.F90, line 1470
+  PASS  Config Set Attribute IntI4 Test 4, ESMF_ConfigUTest.F90, line 1470
+  PASS  Config Set Attribute IntI4 Test 3, ESMF_ConfigUTest.F90, line 1442
+  PASS  Config Set Attribute IntI4 Test 4, ESMF_ConfigUTest.F90, line 1470
+  PASS  Config Set Attribute IntI4 Test 4, ESMF_ConfigUTest.F90, line 1470
+  PASS  Config Create From Empty Section Test, ESMF_ConfigUTest.F90, line 1521
+  PASS  Config From Empty Section Print Test, ESMF_ConfigUTest.F90, line 1537
+  PASS  Config Create From Empty Section Test, ESMF_ConfigUTest.F90, line 1521
+  PASS  Config From Empty Section Print Test, ESMF_ConfigUTest.F90, line 1537
+  PASS  Config Create From Empty Section Test, ESMF_ConfigUTest.F90, line 1521
+  PASS  Config From Empty Section Print Test, ESMF_ConfigUTest.F90, line 1537
+  PASS  Config Create From Empty Section Test, ESMF_ConfigUTest.F90, line 1521
+  PASS  Config From Empty Section Print Test, ESMF_ConfigUTest.F90, line 1537
+  PASS  Config From Empty Section Destroy Test, ESMF_ConfigUTest.F90, line 1553
+  PASS  Config From Empty Section Destroy Test, ESMF_ConfigUTest.F90, line 1553
+  PASS  Config From Empty Section Destroy Test, ESMF_ConfigUTest.F90, line 1553
+  PASS  Config From Empty Section Destroy Test, ESMF_ConfigUTest.F90, line 1553
+  PASS  Config Create From Section Test, ESMF_ConfigUTest.F90, line 1569
+  PASS  Config Create From Section Test, ESMF_ConfigUTest.F90, line 1569
+  PASS  Config Create From Section Test, ESMF_ConfigUTest.F90, line 1569
+section_token:  'This is a section example'
+number_bins: 5
+lower_radius:       0.1    1.0    1.8    3.0   6.0
+  PASS  Config Create From Section Test, ESMF_ConfigUTest.F90, line 1569
+section_token:  'This is a section example'
+number_bins: 5
+section_token:  'This is a section example'
+number_bins: 5
+lower_radius:       0.1    1.0    1.8    3.0   6.0
+upper_radius:       1.0    1.8    3.0    6.0  10.0
+effective_radius:  0.73    1.4    2.4    4.5   8.0
+fraction:           0.1   0.25   0.25   0.25  0.25
+section_token:  'This is a section example'
+number_bins: 5
+lower_radius:       0.1    1.0    1.8    3.0   6.0
+upper_radius:       1.0    1.8    3.0    6.0  10.0
+effective_radius:  0.73    1.4    2.4    4.5   8.0
+fraction:           0.1   0.25   0.25   0.25  0.25
+  PASS  Config Print Test, ESMF_ConfigUTest.F90, line 1585
+upper_radius:       1.0    1.8    3.0    6.0  10.0
+effective_radius:  0.73    1.4    2.4    4.5   8.0
+fraction:           0.1   0.25   0.25   0.25  0.25
+  PASS  Config Print Test, ESMF_ConfigUTest.F90, line 1585
+lower_radius:       0.1    1.0    1.8    3.0   6.0
+upper_radius:       1.0    1.8    3.0    6.0  10.0
+effective_radius:  0.73    1.4    2.4    4.5   8.0
+fraction:           0.1   0.25   0.25   0.25  0.25
+  PASS  Config Print Test, ESMF_ConfigUTest.F90, line 1585
+  PASS  Config Print Test, ESMF_ConfigUTest.F90, line 1585
+  PASS  Config From Section Destroy Test, ESMF_ConfigUTest.F90, line 1601
+  PASS  Config From Section Destroy Test, ESMF_ConfigUTest.F90, line 1601
+  PASS  Config From Section Destroy Test, ESMF_ConfigUTest.F90, line 1601
+  PASS  Config From Section Destroy Test, ESMF_ConfigUTest.F90, line 1601
+  PASS  Config Create From Section Test, ESMF_ConfigUTest.F90, line 1617
+  PASS  Config Section Get Attribute String Multi-word Token, ESMF_ConfigUTest.F90, line 1634
+  PASS  Config Section Validate Attribute String Multi-word apostrophe Token Test, ESMF_ConfigUTest.F90, line 1649
+  PASS  Config Create From Section Test, ESMF_ConfigUTest.F90, line 1617
+  PASS  Config Create From Section Test, ESMF_ConfigUTest.F90, line 1617
+  PASS  Config Section Get Attribute String Multi-word Token, ESMF_ConfigUTest.F90, line 1634
+  PASS  Config Section Find Next Label section_data_values Test, ESMF_ConfigUTest.F90, line 1667
+  PASS  Config Create From Section Test, ESMF_ConfigUTest.F90, line 1617
+  PASS  Config Section Get Attribute String Multi-word Token, ESMF_ConfigUTest.F90, line 1634
+  PASS  Config Section Get Attribute String Multi-word Token, ESMF_ConfigUTest.F90, line 1634
+  PASS  Config Section Validate Attribute String Multi-word apostrophe Token Test, ESMF_ConfigUTest.F90, line 1649
+  PASS  Config Section Get Attribute section_data_num Test, ESMF_ConfigUTest.F90, line 1683
+  PASS  Config Section Validate Attribute section_data_num Value Test, ESMF_ConfigUTest.F90, line 1698
+  PASS  Config Section Validate Attribute String Multi-word apostrophe Token Test, ESMF_ConfigUTest.F90, line 1649
+  PASS  Config Section Find Next Label section_data_values Test, ESMF_ConfigUTest.F90, line 1667
+  PASS  Config Section Find Next Label section_data_values Test, ESMF_ConfigUTest.F90, line 1667
+  PASS  Config Section Get Attribute section_data_num Test, ESMF_ConfigUTest.F90, line 1683
+  PASS  Config Section Validate Attribute String Multi-word apostrophe Token Test, ESMF_ConfigUTest.F90, line 1649
+  PASS  Config Section Find Next Label section_data_values Test, ESMF_ConfigUTest.F90, line 1667
+  PASS  Config Section Get Attribute section_data_num Test, ESMF_ConfigUTest.F90, line 1683
+  PASS  Config Section Validate Attribute section_data_num Value Test, ESMF_ConfigUTest.F90, line 1698
+  PASS  Config Section Get Attribute section_data_values Test, ESMF_ConfigUTest.F90, line 1717
+  PASS  Config Section Get Attribute section_data_num Test, ESMF_ConfigUTest.F90, line 1683
+  PASS  Config Section Validate Attribute section_data_num Value Test, ESMF_ConfigUTest.F90, line 1698
+  PASS  Config Section Validate Attribute section_data_num Value Test, ESMF_ConfigUTest.F90, line 1698
+  PASS  Config Section Get Attribute section_data_values Test, ESMF_ConfigUTest.F90, line 1717
+  PASS  Config Section Validate Attribute section_data_values Values Test, ESMF_ConfigUTest.F90, line 1742
+  PASS  Config Section Read Table Test, ESMF_ConfigUTest.F90, line 1767
+  PASS  Config Section Get Attribute section_data_values Test, ESMF_ConfigUTest.F90, line 1717
+  PASS  Config Section Get Attribute section_data_values Test, ESMF_ConfigUTest.F90, line 1717
+  PASS  Config Section Validate Attribute section_data_values Values Test, ESMF_ConfigUTest.F90, line 1742
+  PASS  Config Section Read Table Dimensions Test, ESMF_ConfigUTest.F90, line 1791
+  PASS  Config Section Validate Attribute section_data_values Values Test, ESMF_ConfigUTest.F90, line 1742
+  PASS  Config Section Read Table Test, ESMF_ConfigUTest.F90, line 1767
+  PASS  Config Section Validate Attribute section_data_values Values Test, ESMF_ConfigUTest.F90, line 1742
+  PASS  Config Section Read Table Test, ESMF_ConfigUTest.F90, line 1767
+  PASS  Config Section Read Table Dimensions Test, ESMF_ConfigUTest.F90, line 1791
+  PASS  Config Section Read Table Test, ESMF_ConfigUTest.F90, line 1767
+  PASS  Config Section Read Table Dimensions Test, ESMF_ConfigUTest.F90, line 1791
+  PASS  Config Section Read Table Values Test, ESMF_ConfigUTest.F90, line 1833
+  PASS  Config Section Read Table Dimensions Test, ESMF_ConfigUTest.F90, line 1791
+  PASS  Config From Section Validate Test, ESMF_ConfigUTest.F90, line 1856
+  PASS  Config Section Read Table Values Test, ESMF_ConfigUTest.F90, line 1833
+  PASS  Config Section Read Table Values Test, ESMF_ConfigUTest.F90, line 1833
+  PASS  Config Section Read Table Values Test, ESMF_ConfigUTest.F90, line 1833
+  PASS  Config From Section Validate Test, ESMF_ConfigUTest.F90, line 1856
+  PASS  Config From Section Validate Test, ESMF_ConfigUTest.F90, line 1856
+  PASS  Config From Section Destroy Test, ESMF_ConfigUTest.F90, line 1872
+  PASS  Config From Section Validate Test, ESMF_ConfigUTest.F90, line 1856
+  PASS  Config From Section Destroy Test, ESMF_ConfigUTest.F90, line 1872
+  PASS  Config From Section Destroy Test, ESMF_ConfigUTest.F90, line 1872
+  PASS  Config From Section Destroy Test, ESMF_ConfigUTest.F90, line 1872
+  PASS  Config Validate Test, ESMF_ConfigUTest.F90, line 1898
+  PASS  Config Validate Test, ESMF_ConfigUTest.F90, line 1898
+  PASS  Config Validate Test, ESMF_ConfigUTest.F90, line 1898
+  PASS  Config Validate Test, ESMF_ConfigUTest.F90, line 1898
+  PASS  Config Destroy Test, ESMF_ConfigUTest.F90, line 1915
+  PASS  Config Destroy Test, ESMF_ConfigUTest.F90, line 1915
+  PASS  Config Unit Test, ESMF_ConfigUTest.F90, line 2136
+  PASS  Config Destroy Test, ESMF_ConfigUTest.F90, line 1915
+  PASS  Config Unit Test, ESMF_ConfigUTest.F90, line 2136
+  PASS  Config Unit Test, ESMF_ConfigUTest.F90, line 2136
+ ESMF_Config: All tests were successful
+  Ending Test, file ESMF_ConfigUTest.F90, line 2148
+  PASS  Config Destroy Test, ESMF_ConfigUTest.F90, line 1915
+  PASS  Config Unit Test, ESMF_ConfigUTest.F90, line 2136
+ ESMF_Config: All tests were successful
+  Ending Test, file ESMF_ConfigUTest.F90, line 2148
+ ESMF_Config: All tests were successful
+  Ending Test, file ESMF_ConfigUTest.F90, line 2148
+ ESMF_Config: All tests were successful
+  Ending Test, file ESMF_ConfigUTest.F90, line 2148
+  PET           0  Test Elapsed Time    10.545999999999999       msec.
+  PET           1  Test Elapsed Time    24.101999999999997       msec.
+  PET           2  Test Elapsed Time    24.175000000000001       msec.
+  PET           3  Test Elapsed Time    23.717999999999996       msec.

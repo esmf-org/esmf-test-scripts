@@ -1,0 +1,108 @@
+  Beginning Test, file ESMF_StateReadWriteUTest.F90, line 81
+  Beginning Test, file ESMF_StateReadWriteUTest.F90, line 81
+  NUMBER_OF_PROCESSORS           4
+  Beginning Test, file ESMF_StateReadWriteUTest.F90, line 81
+  NUMBER_OF_PROCESSORS           4
+  Beginning Test, file ESMF_StateReadWriteUTest.F90, line 81
+  NUMBER_OF_PROCESSORS           4
+  NUMBER_OF_PROCESSORS           4
+  PASS  Creating an empty export State Test, ESMF_StateReadWriteUTest.F90, line 95
+  PASS  Creating an empty export State Test, ESMF_StateReadWriteUTest.F90, line 95
+  PASS  Creating an empty export State Test, ESMF_StateReadWriteUTest.F90, line 95
+  PASS  Creating an empty export State Test, ESMF_StateReadWriteUTest.F90, line 95
+  PASS  Reading a file with no file name specified, ESMF_StateReadWriteUTest.F90, line 103
+  PASS  Reading a file with no file name specified, ESMF_StateReadWriteUTest.F90, line 103
+  PASS  Reading a file with no file name specified, ESMF_StateReadWriteUTest.F90, line 103
+  PASS  Reading a file with no file name specified, ESMF_StateReadWriteUTest.F90, line 103
+  PASS  Reading netCDF file io_netcdf_testdata.nc into Arrays in a State, ESMF_StateReadWriteUTest.F90, line 111
+  PASS  Reading netCDF file io_netcdf_testdata.nc into Arrays in a State, ESMF_StateReadWriteUTest.F90, line 111
+  PASS  Reading netCDF file io_netcdf_testdata.nc into Arrays in a State, ESMF_StateReadWriteUTest.F90, line 111
+  PASS  Checking read-in Array item count in a State test, ESMF_StateReadWriteUTest.F90, line 127
+  PASS  Checking read-in Array item count in a State test, ESMF_StateReadWriteUTest.F90, line 127
+  PASS  Checking read-in Array item count in a State test, ESMF_StateReadWriteUTest.F90, line 127
+  PASS  Checking read-in Array names in a State test, ESMF_StateReadWriteUTest.F90, line 148
+  PASS  Checking read-in Array names in a State test, ESMF_StateReadWriteUTest.F90, line 148
+  PASS  Checking read-in Array names in a State test, ESMF_StateReadWriteUTest.F90, line 148
+  PASS  Reading netCDF file io_netcdf_testdata.nc into Arrays in a State, ESMF_StateReadWriteUTest.F90, line 111
+  PASS  Checking read-in Array item count in a State test, ESMF_StateReadWriteUTest.F90, line 127
+  PASS  Checking read-in Array names in a State test, ESMF_StateReadWriteUTest.F90, line 148
+  PASS  Reconciling Arrays across all PETs in a VM, ESMF_StateReadWriteUTest.F90, line 156
+  PASS  Reconciling Arrays across all PETs in a VM, ESMF_StateReadWriteUTest.F90, line 156
+  PASS  Reconciling Arrays across all PETs in a VM, ESMF_StateReadWriteUTest.F90, line 156
+  PASS  Reconciling Arrays across all PETs in a VM, ESMF_StateReadWriteUTest.F90, line 156
+  PASS  Writing a file with no file name, ESMF_StateReadWriteUTest.F90, line 164
+  PASS  Writing a file with no file name, ESMF_StateReadWriteUTest.F90, line 164
+  PASS  Writing a file with no file name, ESMF_StateReadWriteUTest.F90, line 164
+  PASS  Writing netCDF file io_netcdf_testdata_out.nc from Arrays in a State, ESMF_StateReadWriteUTest.F90, line 172
+  PASS  Writing a file with no file name, ESMF_StateReadWriteUTest.F90, line 164
+  PASS  Writing netCDF file io_netcdf_testdata_out.nc from Arrays in a State, ESMF_StateReadWriteUTest.F90, line 172
+  PASS  Writing netCDF file io_netcdf_testdata_out.nc from Arrays in a State, ESMF_StateReadWriteUTest.F90, line 172
+  PASS  Getting Array named 'lat' from a State, ESMF_StateReadWriteUTest.F90, line 183
+  PASS  Getting Array named 'lat' from a State, ESMF_StateReadWriteUTest.F90, line 183
+  PASS  Getting Array named 'lon' from a State, ESMF_StateReadWriteUTest.F90, line 196
+  PASS  Getting Array named 'lat' from a State, ESMF_StateReadWriteUTest.F90, line 183
+  PASS  Getting Array named 'lon' from a State, ESMF_StateReadWriteUTest.F90, line 196
+  PASS  Getting Array named 'lon' from a State, ESMF_StateReadWriteUTest.F90, line 196
+  PASS  Getting Array named 'time' from a State, ESMF_StateReadWriteUTest.F90, line 209
+  PASS  Getting Array named 'time' from a State, ESMF_StateReadWriteUTest.F90, line 209
+  PASS  Getting Array named 'Q' from a State, ESMF_StateReadWriteUTest.F90, line 222
+  PASS  Getting Array named 'time' from a State, ESMF_StateReadWriteUTest.F90, line 209
+  PASS  Getting Array named 'Q' from a State, ESMF_StateReadWriteUTest.F90, line 222
+  PASS  Getting Array named 'Q' from a State, ESMF_StateReadWriteUTest.F90, line 222
+  PASS  Getting Array named 'TEMP' from a State, ESMF_StateReadWriteUTest.F90, line 235
+  PASS  Getting Array named 'TEMP' from a State, ESMF_StateReadWriteUTest.F90, line 235
+  PASS  Getting Array named 'p' from a State, ESMF_StateReadWriteUTest.F90, line 248
+  PASS  Getting Array named 'TEMP' from a State, ESMF_StateReadWriteUTest.F90, line 235
+  PASS  Getting Array named 'p' from a State, ESMF_StateReadWriteUTest.F90, line 248
+  PASS  Getting Array named 'p' from a State, ESMF_StateReadWriteUTest.F90, line 248
+  PASS  Getting Array named 'rh' from a State, ESMF_StateReadWriteUTest.F90, line 261
+  PASS  Getting Array named 'rh' from a State, ESMF_StateReadWriteUTest.F90, line 261
+  PASS  Getting Array named 'rh' from a State, ESMF_StateReadWriteUTest.F90, line 261
+  PASS  Destroying a State, ESMF_StateReadWriteUTest.F90, line 275
+  PASS  Destroying a State, ESMF_StateReadWriteUTest.F90, line 275
+  PASS  Destroying a State, ESMF_StateReadWriteUTest.F90, line 275
+  PASS  Destroying Array named 'lat' from a State, ESMF_StateReadWriteUTest.F90, line 285
+  PASS  Destroying Array named 'lat' from a State, ESMF_StateReadWriteUTest.F90, line 285
+  PASS  Destroying Array named 'lat' from a State, ESMF_StateReadWriteUTest.F90, line 285
+  PASS  Destroying Array named 'lon' from a State, ESMF_StateReadWriteUTest.F90, line 293
+  PASS  Destroying Array named 'lon' from a State, ESMF_StateReadWriteUTest.F90, line 293
+  PASS  Destroying Array named 'time' from a State, ESMF_StateReadWriteUTest.F90, line 301
+  PASS  Destroying Array named 'time' from a State, ESMF_StateReadWriteUTest.F90, line 301
+  PASS  Destroying Array named 'Q' from a State, ESMF_StateReadWriteUTest.F90, line 309
+  PASS  Destroying Array named 'Q' from a State, ESMF_StateReadWriteUTest.F90, line 309
+  PASS  Destroying Array named 'TEMP' from a State, ESMF_StateReadWriteUTest.F90, line 317
+  PASS  Destroying Array named 'TEMP' from a State, ESMF_StateReadWriteUTest.F90, line 317
+  PASS  Destroying Array named 'p' from a State, ESMF_StateReadWriteUTest.F90, line 325
+  PASS  Destroying Array named 'p' from a State, ESMF_StateReadWriteUTest.F90, line 325
+  PASS  Destroying Array named 'rh' from a State, ESMF_StateReadWriteUTest.F90, line 333
+  PASS  Destroying Array named 'rh' from a State, ESMF_StateReadWriteUTest.F90, line 333
+  PASS  Destroying Array named 'lon' from a State, ESMF_StateReadWriteUTest.F90, line 293
+  PASS  Destroying Array named 'time' from a State, ESMF_StateReadWriteUTest.F90, line 301
+  PASS  Destroying Array named 'Q' from a State, ESMF_StateReadWriteUTest.F90, line 309
+  PASS  Destroying Array named 'TEMP' from a State, ESMF_StateReadWriteUTest.F90, line 317
+  PASS  Destroying Array named 'p' from a State, ESMF_StateReadWriteUTest.F90, line 325
+  PASS  Destroying Array named 'rh' from a State, ESMF_StateReadWriteUTest.F90, line 333
+  Ending Test, file ESMF_StateReadWriteUTest.F90, line 341
+  Ending Test, file ESMF_StateReadWriteUTest.F90, line 341
+  Ending Test, file ESMF_StateReadWriteUTest.F90, line 341
+  PASS  Writing netCDF file io_netcdf_testdata_out.nc from Arrays in a State, ESMF_StateReadWriteUTest.F90, line 172
+  PASS  Getting Array named 'lat' from a State, ESMF_StateReadWriteUTest.F90, line 183
+  PASS  Getting Array named 'lon' from a State, ESMF_StateReadWriteUTest.F90, line 196
+  PASS  Getting Array named 'time' from a State, ESMF_StateReadWriteUTest.F90, line 209
+  PASS  Getting Array named 'Q' from a State, ESMF_StateReadWriteUTest.F90, line 222
+  PASS  Getting Array named 'TEMP' from a State, ESMF_StateReadWriteUTest.F90, line 235
+  PASS  Getting Array named 'p' from a State, ESMF_StateReadWriteUTest.F90, line 248
+  PASS  Getting Array named 'rh' from a State, ESMF_StateReadWriteUTest.F90, line 261
+  PASS  Destroying a State, ESMF_StateReadWriteUTest.F90, line 275
+  PASS  Destroying Array named 'lat' from a State, ESMF_StateReadWriteUTest.F90, line 285
+  PASS  Destroying Array named 'lon' from a State, ESMF_StateReadWriteUTest.F90, line 293
+  PASS  Destroying Array named 'time' from a State, ESMF_StateReadWriteUTest.F90, line 301
+  PASS  Destroying Array named 'Q' from a State, ESMF_StateReadWriteUTest.F90, line 309
+  PASS  Destroying Array named 'TEMP' from a State, ESMF_StateReadWriteUTest.F90, line 317
+  PASS  Destroying Array named 'p' from a State, ESMF_StateReadWriteUTest.F90, line 325
+  PASS  Destroying Array named 'rh' from a State, ESMF_StateReadWriteUTest.F90, line 333
+  Ending Test, file ESMF_StateReadWriteUTest.F90, line 341
+  PET           0  Test Elapsed Time    93.049999999999997       msec.
+  PET           2  Test Elapsed Time    198.10499999999996       msec.
+  PET           3  Test Elapsed Time    197.50200000000001       msec.
+  PET           1  Test Elapsed Time    197.90999999999997       msec.

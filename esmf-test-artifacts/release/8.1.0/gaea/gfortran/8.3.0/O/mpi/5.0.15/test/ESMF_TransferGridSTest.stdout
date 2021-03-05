@@ -1,0 +1,472 @@
+ --------------------------------------- 
+ Start of  System Test ESMF_TransferGridSTest
+ --------------------------------------- 
+ --------------------------------------- 
+ Start of  System Test ESMF_TransferGridSTest
+ --------------------------------------- 
+ --------------------------------------- 
+ Start of  System Test ESMF_TransferGridSTest
+ --------------------------------------- 
+ --------------------------------------- 
+ Start of  System Test ESMF_TransferGridSTest
+ --------------------------------------- 
+ --------------------------------------- 
+ Start of  System Test ESMF_TransferGridSTest
+ --------------------------------------- 
+ --------------------------------------- 
+ Start of  System Test ESMF_TransferGridSTest
+ --------------------------------------- 
+ Created component user model 1, rc =           0
+ Created component user model 1, rc =           0
+ Created component user model 1, rc =           0
+ Created component user model 1, rc =           0
+ Created component user model 2, rc =           0
+ Created component user model 1, rc =           0
+ Created component user model 2, rc =           0
+ Created component user model 2, rc =           0
+ Created component user model 2, rc =           0
+ Created component user model 1, rc =           0
+ Created component user model 2, rc =           0
+ Created component user model 2, rc =           0
+ Created component user one-way coupler, rc =           0
+ Comp Creates finished
+ Created component user one-way coupler, rc =           0
+ Comp Creates finished
+ Created component user one-way coupler, rc =           0
+ Comp Creates finished
+ Created component user one-way coupler, rc =           0
+ Comp Creates finished
+ Created component user one-way coupler, rc =           0
+ Comp Creates finished
+ Created component user one-way coupler, rc =           0
+ Comp Creates finished
+ Comp1 SetVM finished, rc=            0
+ Comp1 SetVM finished, rc=            0
+ Comp1 SetVM finished, rc=            0
+ Comp1 SetVM finished, rc=            0
+ Comp1 SetVM finished, rc=            0
+ Comp1 SetVM finished, rc=            0
+ Comp1 SetServices finished, rc=            0
+ Comp1 SetServices finished, rc=            0
+ Comp2 SetVM finished, rc=            0
+ Comp2 SetVM finished, rc=            0
+ User Comp1 Register starting
+ Registered Initialize, Run, and Finalize routines
+ User Comp1 Register returning
+ User Comp1 Register starting
+ User Comp2 Register starting
+ Registered Initialize, Run, and Finalize routines
+ User Comp1 Register returning
+ Registered Initialize, Run, and Finalize routines
+ User Comp2 Register returning
+ Comp1 SetServices finished, rc=            0
+ Comp1 SetServices finished, rc=            0
+ Comp2 SetVM finished, rc=            0
+ Comp2 SetServices finished, rc=            0
+ Comp2 SetVM finished, rc=            0
+ Comp2 SetServices finished, rc=            0
+ Comp1 SetServices finished, rc=            0
+ Comp2 SetVM finished, rc=            0
+ Comp2 SetServices finished, rc=            0
+ Comp2 SetServices finished, rc=            0
+ Cpl SetVM finished, rc=            0
+ Cpl SetVM finished, rc=            0
+ Cpl SetVM finished, rc=            0
+ Cpl SetVM finished, rc=            0
+ Comp2 SetServices finished, rc=            0
+ Cpl SetVM finished, rc=            0
+ Comp1 SetServices finished, rc=            0
+ Comp2 SetVM finished, rc=            0
+ Comp2 SetServices finished, rc=            0
+ Cpl SetVM finished, rc=            0
+ User Coupler Register starting
+ User Coupler Register starting
+ Registered Initialize, Run, and Finalize routines
+ User Coupler Register returning
+ User Coupler Register starting
+ User Coupler Register starting
+ Registered Initialize, Run, and Finalize routines
+ User Coupler Register returning
+ User Coupler Register starting
+ Registered Initialize, Run, and Finalize routines
+ Registered Initialize, Run, and Finalize routines
+ User Coupler Register returning
+ Cpl SetServices finished, rc=            0
+ Cpl SetServices finished, rc=            0
+ Registered Initialize, Run, and Finalize routines
+ User Coupler Register returning
+ Cpl SetServices finished, rc=            0
+ User Coupler Register returning
+ Cpl SetServices finished, rc=            0
+ Cpl SetServices finished, rc=            0
+ User Coupler Register starting
+ Registered Initialize, Run, and Finalize routines
+ User Coupler Register returning
+ Cpl SetServices finished, rc=            0
+ Comp 1 Initialize phase=1 finished, rc =           0           0
+ User Comp1 Init phase=1 starting
+ User Comp1 Init phase=1 starting
+ Comp 1 Initialize phase=1 finished, rc =           0           0
+ User Comp2 Init phase=1 starting
+ User Comp2 Init phase=1 returning
+ Comp 2 Initialize phase=1 finished, rc =           0           0
+ User Coupler Init phase=1 starting
+ Comp 2 Initialize phase=1 finished, rc =           0           0
+ User Coupler Init phase=1 starting
+ User Comp1 Init phase=1 returning
+ Comp 1 Initialize phase=1 finished, rc =           0           0
+ Comp 2 Initialize phase=1 finished, rc =           0           0
+ User Comp1 Init phase=1 returning
+ Comp 1 Initialize phase=1 finished, rc =           0           0
+ Comp 2 Initialize phase=1 finished, rc =           0           0
+ User Coupler Init phase=1 starting
+ User Coupler Init phase=1 starting
+ Comp 1 Initialize phase=1 finished, rc =           0           0
+ Comp 2 Initialize phase=1 finished, rc =           0           0
+ Comp 1 Initialize phase=1 finished, rc =           0           0
+ Comp 2 Initialize phase=1 finished, rc =           0           0
+ User Coupler Init phase=1 starting
+ User Coupler Init phase=1 starting
+ User Coupler Init phase=1 returning
+ User Coupler Init phase=1 returning
+ Coupler Initialize phase=1 finished, rc =           0           0
+ User Coupler Init phase=1 returning
+ Coupler Initialize phase=1 finished, rc =           0           0
+ User Coupler Init phase=1 returning
+ Coupler Initialize phase=1 finished, rc =           0           0
+ Coupler Initialize phase=1 finished, rc =           0           0
+ User Coupler Init phase=1 returning
+ Coupler Initialize phase=1 finished, rc =           0           0
+ Comp 1 Initialize phase=2 finished, rc =           0           0
+ User Coupler Init phase=1 returning
+ Coupler Initialize phase=1 finished, rc =           0           0
+ Comp 1 Initialize phase=2 finished, rc =           0           0
+ User Comp2 Init phase=2 starting
+ User Comp1 Init phase=2 starting
+ User Comp1 Init phase=2 starting
+--- ESMCI::DistGrid::print start ---
+indexTK: Integer*4
+dimCount = 2
+tileCount = 1
+elementCountPTile: 15000 
+regDecomp = YES
+tileListPDe: 1 1 
+elementCountPDe: 7500 7500 
+contigFlagPDimPDe (dims separated by / ):
+ for DE 0: 1 / 1 / 
+ for DE 1: 1 / 1 / 
+(min,max)IndexPDimPDe (dims separated by / ):
+ for DE 0: (1, 50) / (1, 150) / 
+ for DE 1: (51, 100) / (1, 150) / 
+indexListPDimPLocalDe (dims separated by / ):
+ for localDE 0 - DE 0:  (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50) / (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150) /
+ for localDE 1 - DE 1:  (51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100) / (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150) /
+diffCollocationCount = 1
+collocationPDim:	1 / 1
+arbSeqIndexListPCollPLocalDe:
+ for collocation 1, localDE 0 - DE 0 -  elementCountPCollPLocalDe 7500:  default
+ for collocation 1, localDE 1 - DE 1 -  elementCountPCollPLocalDe 7500:  default
+connectionCount = 3
+~ lower class' values ~
+deCount = 2
+Member on this PET appears to be an actual member.
+DistGrid-VM: localPet = 0, CurrentVM: localPet = 0
+DistGrid-VM: petCount = 1, CurrentVM: petCount = 1
+--- ESMCI::DistGrid::print end ---
+ User Comp2 Init phase=2 returning
+ Comp 2 Initialize phase=2 finished, rc =           0           0
+ User Coupler Init phase=2 starting
+ Comp 2 Initialize phase=2 finished, rc =           0           0
+ User Coupler Init phase=2 starting
+ User Comp1 Init phase=2 returning
+ Comp 1 Initialize phase=2 finished, rc =           0           0
+ User Comp1 Init phase=2 returning
+ Comp 1 Initialize phase=2 finished, rc =           0           0
+ Comp 2 Initialize phase=2 finished, rc =           0           0
+ User Coupler Init phase=2 starting
+ Comp 2 Initialize phase=2 finished, rc =           0           0
+ User Coupler Init phase=2 starting
+ Comp 1 Initialize phase=2 finished, rc =           0           0
+ Comp 2 Initialize phase=2 finished, rc =           0           0
+ Comp 1 Initialize phase=2 finished, rc =           0           0
+ Comp 2 Initialize phase=2 finished, rc =           0           0
+ User Coupler Init phase=2 starting
+ User Coupler Init phase=2 starting
+ User Coupler Init phase=2 returning
+ User Coupler Init phase=2 returning
+ Coupler Initialize phase=2 finished, rc =           0           0
+ User Coupler Init phase=2 returning
+ Coupler Initialize phase=2 finished, rc =           0           0
+ User Coupler Init phase=2 returning
+ Coupler Initialize phase=2 finished, rc =           0           0
+ Comp 1 Initialize phase=3 finished, rc =           0           0
+ User Comp2 Init phase=3 starting
+ User Coupler Init phase=2 returning
+ Coupler Initialize phase=2 finished, rc =           0           0
+ Comp 1 Initialize phase=3 finished, rc =           0           0
+ Coupler Initialize phase=2 finished, rc =           0           0
+ User Comp1 Init phase=3 starting
+ User Coupler Init phase=2 returning
+ Coupler Initialize phase=2 finished, rc =           0           0
+ User Comp1 Init phase=3 starting
+ User Comp2 Init phase=3 returning
+ Comp 2 Initialize phase=3 finished, rc =           0           0
+ Comp 2 Initialize phase=3 finished, rc =           0           0
+ User Coupler Init phase=3 starting
+ User Coupler Init phase=3 starting
+ User Comp1 Init phase=3 returning
+ User Comp1 Init phase=3 returning
+ Comp 1 Initialize phase=3 finished, rc =           0           0
+ Comp 2 Initialize phase=3 finished, rc =           0           0
+ Comp 1 Initialize phase=3 finished, rc =           0           0
+ Comp 2 Initialize phase=3 finished, rc =           0           0
+ User Coupler Init phase=3 starting
+ Comp 1 Initialize phase=3 finished, rc =           0           0
+ Comp 2 Initialize phase=3 finished, rc =           0           0
+ User Coupler Init phase=3 starting
+ User Coupler Init phase=3 starting
+ Comp 1 Initialize phase=3 finished, rc =           0           0
+ Comp 2 Initialize phase=3 finished, rc =           0           0
+ User Coupler Init phase=3 starting
+ User Coupler Init phase=3 returning
+ Coupler Initialize phase=3 finished, rc =           0           0
+ User Coupler Init phase=3 returning
+ Coupler Initialize phase=3 finished, rc =           0           0
+ User Coupler Init phase=3 returning
+ Coupler Initialize phase=3 finished, rc =           0           0
+ User Coupler Init phase=3 returning
+ Coupler Initialize phase=3 finished, rc =           0           0
+ Comp 1 Run finished, rc =           0           0
+ User Coupler Run starting
+ User Coupler Init phase=3 returning
+ User Comp1 Run starting
+ Coupler Initialize phase=3 finished, rc =           0           0
+ User Comp1 Run starting
+ User Coupler Run returning
+ Coupler Run finished, rc =           0           0
+ User Comp1 Run returning
+ Comp 1 Run finished, rc =           0           0
+ User Coupler Run starting
+ Comp 1 Run finished, rc =           0           0
+ User Comp1 Run returning
+ Comp 1 Run finished, rc =           0           0
+ User Coupler Run starting
+ User Coupler Run starting
+ Comp 1 Run finished, rc =           0           0
+ User Coupler Run starting
+ User Coupler Run returning
+ Coupler Run finished, rc =           0           0
+ Comp 2 Run returned, rc =           0
+ User Coupler Final starting
+ User Coupler Final returning
+ Coupler Finalize finished, rc =           0           0
+ User Coupler Run returning
+ Coupler Run finished, rc =           0           0
+ Comp 2 Run returned, rc =           0
+ User Coupler Final starting
+ User Coupler Final returning
+ Coupler Finalize finished, rc =           0           0
+ User Coupler Init phase=3 returning
+ Coupler Initialize phase=3 finished, rc =           0           0
+ Comp 1 Run finished, rc =           0           0
+ User Coupler Run starting
+ User Coupler Run returning
+ Coupler Run finished, rc =           0           0
+ User Coupler Run returning
+ User Comp2 Run starting
+ User Coupler Run returning
+ Coupler Run finished, rc =           0           0
+ Coupler Run finished, rc =           0           0
+ Comp 2 Run returned, rc =           0
+ User Coupler Final starting
+ Field Print Starts ====>
+ Comp 2 Run returned, rc =           0
+ User Coupler Final starting
+ User Coupler Final returning
+ User Coupler Final returning
+ Coupler Finalize finished, rc =           0           0
+ User Comp1 Final starting
+ Coupler Finalize finished, rc =           0           0
+ User Comp1 Final starting
+ User Comp1 Final returning
+ Comp 1 Finalize finished, rc =           0           0
+ Comp 2 Finalize finished, rc =           0           0
+ Comp 1 Finalize finished, rc =           0           0
+ Comp 2 Finalize finished, rc =           0           0
+ Field base status = Ready
+   Name = 'dstField'
+ User Comp1 Final returning
+ Comp 1 Finalize finished, rc =           0           0
+ Comp 2 Finalize finished, rc =           0           0
+ Comp 1 Finalize finished, rc =           0           0
+ Comp 2 Finalize finished, rc =           0           0
+ Base name    = dstField
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ Root Info (Attributes):
+ All Destroy routines done
+  System Test ESMF_TransferGridSTest                                                                                                                                                                                                                              complete.
+ 
+  System Test ESMF_TransferGridSTest
+  SUCCESS:  System Test ESMF_TransferGridSTest finished correctly.
+ 
+ ------------------------------------------------------------
+ ------------------------------------------------------------
+ Test finished, localPet =            3
+ ------------------------------------------------------------
+ ------------------------------------------------------------
+ All Destroy routines done
+  System Test ESMF_TransferGridSTest                                                                                                                                                                                                                              complete.
+ 
+  System Test ESMF_TransferGridSTest
+  SUCCESS:  System Test ESMF_TransferGridSTest finished correctly.
+ 
+  PASS  System Test ESMF_TransferGridSTest, ESMF_TransferGridSTest.F90, line 447
+ ------------------------------------------------------------
+ ------------------------------------------------------------
+ Test finished, localPet =            1
+ ------------------------------------------------------------
+ ------------------------------------------------------------
+  PASS  System Test ESMF_TransferGridSTest, ESMF_TransferGridSTest.F90, line 447
+{} Field status =            4
+ gridrank =            2
+ All Destroy routines done
+  System Test ESMF_TransferGridSTest                                                                                                                                                                                                                              complete.
+--- ESMCI::Array::print start ---
+ Base name    = Array004
+ Status: Base = Ready,  object = Ready
+ Proxy        = no
+ 
+  System Test ESMF_TransferGridSTest
+  SUCCESS:  System Test ESMF_TransferGridSTest finished correctly.
+ 
+ Root Info (Attributes):
+ ------------------------------------------------------------
+ ------------------------------------------------------------
+ Test finished, localPet =            0
+ ------------------------------------------------------------
+ ------------------------------------------------------------
+  PASS  System Test ESMF_TransferGridSTest, ESMF_TransferGridSTest.F90, line 447
+ All Destroy routines done
+  System Test ESMF_TransferGridSTest                                                                                                                                                                                                                              complete.
+ 
+  System Test ESMF_TransferGridSTest
+  SUCCESS:  System Test ESMF_TransferGridSTest finished correctly.
+ 
+ ------------------------------------------------------------
+ ------------------------------------------------------------
+ Test finished, localPet =            2
+ ------------------------------------------------------------
+ ------------------------------------------------------------
+  PASS  System Test ESMF_TransferGridSTest, ESMF_TransferGridSTest.F90, line 447
+{}Array typekind/rank: Real*8 / 2 
+~ lower class' values ~
+DistGrid dimCount = 2
+deCount = 2
+localDeCount = 2
+~ local data in LocalArray for DE 0 ~
+LocalArrayPrint: Array at address 0x7fff78003300:
+            rank = 2, typekind = 6, base_addr = 0x7fff78003630
+            dim[0] = 50  dim[1] = 150  
+  Real, *8, Dim 2, Data values:
+( 1, 1) =  0
+( 2, 1) =  0.040361
+( 3, 1) =  0.0805626
+( 4, 1) =  0.120446
+( 5, 1) =  0.159855
+( 6, 1) =  0.198632
+( 7, 1) =  0.236626
+( 8, 1) =  0.273686
+( 9, 1) =  0.309665
+(10, 1) =  0.344423
+  skipping to end ...
+(41,150) =  0.383031
+(42,150) =  0.349171
+(43,150) =  0.313934
+(44,150) =  0.277458
+(45,150) =  0.239887
+(46,150) =  0.201369
+(47,150) =  0.162056
+(48,150) =  0.122104
+(49,150) =  0.0816698
+(50,150) =  0.0409133
+dim 1: [0]: [1 [1 [1, 50] 50] 50]
+dim 2: [1]: [1 [1 [1, 150] 150] 150]
+~ local data in LocalArray for DE 1 ~
+LocalArrayPrint: Array at address 0x7fff780120a0:
+            rank = 2, typekind = 6, base_addr = 0x7fff780123d0
+            dim[0] = 50  dim[1] = 150  
+  Real, *8, Dim 2, Data values:
+(51, 1) =  -4.65376e-06
+(52, 1) =  -0.0403655
+(53, 1) =  -0.0805672
+(54, 1) =  -0.120451
+(55, 1) =  -0.159859
+(56, 1) =  -0.198637
+(57, 1) =  -0.23663
+(58, 1) =  -0.27369
+(59, 1) =  -0.309669
+(60, 1) =  -0.344427
+  skipping to end ...
+(91,150) =  -0.383027
+(92,150) =  -0.349167
+(93,150) =  -0.31393
+(94,150) =  -0.277454
+(95,150) =  -0.239882
+(96,150) =  -0.201364
+(97,150) =  -0.162052
+(98,150) =  -0.122099
+(99,150) =  -0.0816651
+(100,150) =  -0.0409085
+dim 1: [0]: [51 [51 [51, 100] 100] 100]
+dim 2: [1]: [1 [1 [1, 150] 150] 150]
+--- ESMCI::Array::print end ---
+ arrayrank =            2
+ gridToFieldMap ungriddedLBound ungriddedUBound totalLWidth totalUWidth
+           1          -1          -1                0           0
+           2          -1          -1                0           0
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+          -1          -1          -1               -1          -1
+ Field Print Ends   ====>
+ User Comp2 Run returning
+ Comp 2 Run returned, rc =           0
+ User Coupler Final starting
+ User Coupler Final returning
+ Comp 2 Run returned, rc =           0
+ User Coupler Final starting
+ Coupler Finalize finished, rc =           0           0
+ Comp 1 Finalize finished, rc =           0           0
+ User Coupler Final returning
+ Coupler Finalize finished, rc =           0           0
+ Comp 1 Finalize finished, rc =           0           0
+ User Comp2 Final starting
+ User Comp2 Final returning
+ Comp 2 Finalize finished, rc =           0           0
+ Comp 2 Finalize finished, rc =           0           0
+ All Destroy routines done
+  System Test ESMF_TransferGridSTest                                                                                                                                                                                                                              complete.
+ 
+  System Test ESMF_TransferGridSTest
+  SUCCESS:  System Test ESMF_TransferGridSTest finished correctly.
+ 
+ ------------------------------------------------------------
+ ------------------------------------------------------------
+ Test finished, localPet =            5
+ ------------------------------------------------------------
+ ------------------------------------------------------------
+  PASS  System Test ESMF_TransferGridSTest, ESMF_TransferGridSTest.F90, line 447
+ All Destroy routines done
+  System Test ESMF_TransferGridSTest                                                                                                                                                                                                                              complete.
+ 
+  System Test ESMF_TransferGridSTest
+  SUCCESS:  System Test ESMF_TransferGridSTest finished correctly.
+ 
+ ------------------------------------------------------------
+ ------------------------------------------------------------
+ Test finished, localPet =            4
+ ------------------------------------------------------------
+ ------------------------------------------------------------
+  PASS  System Test ESMF_TransferGridSTest, ESMF_TransferGridSTest.F90, line 447

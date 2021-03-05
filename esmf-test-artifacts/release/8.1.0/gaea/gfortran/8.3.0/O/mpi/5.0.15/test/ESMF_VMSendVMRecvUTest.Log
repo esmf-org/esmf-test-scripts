@@ -1,0 +1,152 @@
+20210305 102314.224 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102314.224 INFO             PET0 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 102314.224 INFO             PET0 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 102314.224 INFO             PET0 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 102314.224 INFO             PET0 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 102314.224 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102314.224 INFO             PET0 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 102314.224 INFO             PET0 ESMF library build date/time: "Mar  5 2021" "09:44:29"
+20210305 102314.224 INFO             PET0 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_O
+20210305 102314.224 INFO             PET0 ESMF_COMM                   : mpi
+20210305 102314.225 INFO             PET0 ESMF_MOAB                   : enabled
+20210305 102314.225 INFO             PET0 ESMF_LAPACK                 : enabled
+20210305 102314.225 INFO             PET0 ESMF_NETCDF                 : enabled
+20210305 102314.225 INFO             PET0 ESMF_PNETCDF                : disabled
+20210305 102314.225 INFO             PET0 ESMF_PIO                    : enabled
+20210305 102314.225 INFO             PET0 ESMF_YAMLCPP                : enabled
+20210305 102314.234 INFO             PET0  Beginning Test, file ESMF_VMSendVMRecvUTest.F90, line 76
+20210305 102314.234 INFO             PET0  NUMBER_OF_PROCESSORS           4
+20210305 102314.235 INFO             PET0  PASS  Sending local data Test, ESMF_VMSendVMRecvUTest.F90, line 147
+20210305 102314.236 INFO             PET0  PASS  Receiving local data Test, ESMF_VMSendVMRecvUTest.F90, line 157
+20210305 102314.236 INFO             PET0  PASS  Verify local data after receive Test, ESMF_VMSendVMRecvUTest.F90, line 167
+20210305 102314.236 INFO             PET0  PASS  Sending local data Test, ESMF_VMSendVMRecvUTest.F90, line 177
+20210305 102314.236 INFO             PET0  PASS  Receiving local data Test, ESMF_VMSendVMRecvUTest.F90, line 187
+20210305 102314.236 INFO             PET0  PASS  Verify local data after receive Test, ESMF_VMSendVMRecvUTest.F90, line 198
+20210305 102314.236 INFO             PET0  PASS  Sending local data Test, ESMF_VMSendVMRecvUTest.F90, line 208
+20210305 102314.236 INFO             PET0  PASS  Receiving local data Test, ESMF_VMSendVMRecvUTest.F90, line 218
+20210305 102314.236 INFO             PET0  PASS  Verify local data after receive Test, ESMF_VMSendVMRecvUTest.F90, line 229
+20210305 102314.236 INFO             PET0  PASS  Sending local data Test, ESMF_VMSendVMRecvUTest.F90, line 239
+20210305 102314.237 INFO             PET0  PASS  Receiving local data Test, ESMF_VMSendVMRecvUTest.F90, line 252
+20210305 102314.237 INFO             PET0  PASS  Verify local data after receive Test, ESMF_VMSendVMRecvUTest.F90, line 271
+20210305 102314.237 INFO             PET0  PASS  Sending local character string data Test, ESMF_VMSendVMRecvUTest.F90, line 285
+20210305 102314.237 INFO             PET0  PASS  Receiving local data Test, ESMF_VMSendVMRecvUTest.F90, line 298
+20210305 102314.237 INFO             PET0  PASS  Verify local data after receive Test, ESMF_VMSendVMRecvUTest.F90, line 309
+20210305 102314.237 INFO             PET0  PASS  Sending local character array data Test, ESMF_VMSendVMRecvUTest.F90, line 323
+20210305 102314.237 INFO             PET0  PASS  Receiving local data Test, ESMF_VMSendVMRecvUTest.F90, line 339
+20210305 102314.237 INFO             PET0  PASS  Verify local data after receive Test, ESMF_VMSendVMRecvUTest.F90, line 357
+20210305 102314.237 INFO             PET0  Ending Test, file ESMF_VMSendVMRecvUTest.F90, line 371
+20210305 102314.237 INFO             PET0 Finalizing ESMF
+20210305 102314.230 INFO             PET1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102314.230 INFO             PET1 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 102314.230 INFO             PET1 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 102314.230 INFO             PET1 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 102314.230 INFO             PET1 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 102314.230 INFO             PET1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102314.230 INFO             PET1 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 102314.230 INFO             PET1 ESMF library build date/time: "Mar  5 2021" "09:44:29"
+20210305 102314.230 INFO             PET1 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_O
+20210305 102314.230 INFO             PET1 ESMF_COMM                   : mpi
+20210305 102314.231 INFO             PET1 ESMF_MOAB                   : enabled
+20210305 102314.231 INFO             PET1 ESMF_LAPACK                 : enabled
+20210305 102314.231 INFO             PET1 ESMF_NETCDF                 : enabled
+20210305 102314.231 INFO             PET1 ESMF_PNETCDF                : disabled
+20210305 102314.231 INFO             PET1 ESMF_PIO                    : enabled
+20210305 102314.231 INFO             PET1 ESMF_YAMLCPP                : enabled
+20210305 102314.234 INFO             PET1  Beginning Test, file ESMF_VMSendVMRecvUTest.F90, line 76
+20210305 102314.234 INFO             PET1  NUMBER_OF_PROCESSORS           4
+20210305 102314.235 INFO             PET1  PASS  Sending local data Test, ESMF_VMSendVMRecvUTest.F90, line 147
+20210305 102314.236 INFO             PET1  PASS  Receiving local data Test, ESMF_VMSendVMRecvUTest.F90, line 157
+20210305 102314.236 INFO             PET1  PASS  Verify local data after receive Test, ESMF_VMSendVMRecvUTest.F90, line 167
+20210305 102314.236 INFO             PET1  PASS  Sending local data Test, ESMF_VMSendVMRecvUTest.F90, line 177
+20210305 102314.236 INFO             PET1  PASS  Receiving local data Test, ESMF_VMSendVMRecvUTest.F90, line 187
+20210305 102314.236 INFO             PET1  PASS  Verify local data after receive Test, ESMF_VMSendVMRecvUTest.F90, line 198
+20210305 102314.236 INFO             PET1  PASS  Sending local data Test, ESMF_VMSendVMRecvUTest.F90, line 208
+20210305 102314.236 INFO             PET1  PASS  Receiving local data Test, ESMF_VMSendVMRecvUTest.F90, line 218
+20210305 102314.236 INFO             PET1  PASS  Verify local data after receive Test, ESMF_VMSendVMRecvUTest.F90, line 229
+20210305 102314.236 INFO             PET1  PASS  Sending local data Test, ESMF_VMSendVMRecvUTest.F90, line 239
+20210305 102314.237 INFO             PET1  PASS  Receiving local data Test, ESMF_VMSendVMRecvUTest.F90, line 252
+20210305 102314.237 INFO             PET1  PASS  Verify local data after receive Test, ESMF_VMSendVMRecvUTest.F90, line 271
+20210305 102314.237 INFO             PET1  PASS  Sending local character string data Test, ESMF_VMSendVMRecvUTest.F90, line 285
+20210305 102314.237 INFO             PET1  PASS  Receiving local data Test, ESMF_VMSendVMRecvUTest.F90, line 298
+20210305 102314.237 INFO             PET1  PASS  Verify local data after receive Test, ESMF_VMSendVMRecvUTest.F90, line 309
+20210305 102314.237 INFO             PET1  PASS  Sending local character array data Test, ESMF_VMSendVMRecvUTest.F90, line 323
+20210305 102314.237 INFO             PET1  PASS  Receiving local data Test, ESMF_VMSendVMRecvUTest.F90, line 339
+20210305 102314.237 INFO             PET1  PASS  Verify local data after receive Test, ESMF_VMSendVMRecvUTest.F90, line 357
+20210305 102314.237 INFO             PET1  Ending Test, file ESMF_VMSendVMRecvUTest.F90, line 371
+20210305 102314.237 INFO             PET1 Finalizing ESMF
+20210305 102314.218 INFO             PET2 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102314.218 INFO             PET2 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 102314.218 INFO             PET2 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 102314.218 INFO             PET2 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 102314.218 INFO             PET2 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 102314.218 INFO             PET2 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102314.218 INFO             PET2 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 102314.218 INFO             PET2 ESMF library build date/time: "Mar  5 2021" "09:44:29"
+20210305 102314.218 INFO             PET2 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_O
+20210305 102314.218 INFO             PET2 ESMF_COMM                   : mpi
+20210305 102314.219 INFO             PET2 ESMF_MOAB                   : enabled
+20210305 102314.219 INFO             PET2 ESMF_LAPACK                 : enabled
+20210305 102314.219 INFO             PET2 ESMF_NETCDF                 : enabled
+20210305 102314.219 INFO             PET2 ESMF_PNETCDF                : disabled
+20210305 102314.219 INFO             PET2 ESMF_PIO                    : enabled
+20210305 102314.219 INFO             PET2 ESMF_YAMLCPP                : enabled
+20210305 102314.234 INFO             PET2  Beginning Test, file ESMF_VMSendVMRecvUTest.F90, line 76
+20210305 102314.234 INFO             PET2  NUMBER_OF_PROCESSORS           4
+20210305 102314.235 INFO             PET2  PASS  Sending local data Test, ESMF_VMSendVMRecvUTest.F90, line 147
+20210305 102314.236 INFO             PET2  PASS  Receiving local data Test, ESMF_VMSendVMRecvUTest.F90, line 157
+20210305 102314.236 INFO             PET2  PASS  Verify local data after receive Test, ESMF_VMSendVMRecvUTest.F90, line 167
+20210305 102314.236 INFO             PET2  PASS  Sending local data Test, ESMF_VMSendVMRecvUTest.F90, line 177
+20210305 102314.236 INFO             PET2  PASS  Receiving local data Test, ESMF_VMSendVMRecvUTest.F90, line 187
+20210305 102314.236 INFO             PET2  PASS  Verify local data after receive Test, ESMF_VMSendVMRecvUTest.F90, line 198
+20210305 102314.236 INFO             PET2  PASS  Sending local data Test, ESMF_VMSendVMRecvUTest.F90, line 208
+20210305 102314.236 INFO             PET2  PASS  Receiving local data Test, ESMF_VMSendVMRecvUTest.F90, line 218
+20210305 102314.236 INFO             PET2  PASS  Verify local data after receive Test, ESMF_VMSendVMRecvUTest.F90, line 229
+20210305 102314.236 INFO             PET2  PASS  Sending local data Test, ESMF_VMSendVMRecvUTest.F90, line 239
+20210305 102314.237 INFO             PET2  PASS  Receiving local data Test, ESMF_VMSendVMRecvUTest.F90, line 252
+20210305 102314.237 INFO             PET2  PASS  Verify local data after receive Test, ESMF_VMSendVMRecvUTest.F90, line 271
+20210305 102314.237 INFO             PET2  PASS  Sending local character string data Test, ESMF_VMSendVMRecvUTest.F90, line 285
+20210305 102314.237 INFO             PET2  PASS  Receiving local data Test, ESMF_VMSendVMRecvUTest.F90, line 298
+20210305 102314.237 INFO             PET2  PASS  Verify local data after receive Test, ESMF_VMSendVMRecvUTest.F90, line 309
+20210305 102314.237 INFO             PET2  PASS  Sending local character array data Test, ESMF_VMSendVMRecvUTest.F90, line 323
+20210305 102314.237 INFO             PET2  PASS  Receiving local data Test, ESMF_VMSendVMRecvUTest.F90, line 339
+20210305 102314.237 INFO             PET2  PASS  Verify local data after receive Test, ESMF_VMSendVMRecvUTest.F90, line 357
+20210305 102314.237 INFO             PET2  Ending Test, file ESMF_VMSendVMRecvUTest.F90, line 371
+20210305 102314.237 INFO             PET2 Finalizing ESMF
+20210305 102314.234 INFO             PET3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102314.234 INFO             PET3 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 102314.234 INFO             PET3 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 102314.234 INFO             PET3 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 102314.234 INFO             PET3 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 102314.234 INFO             PET3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102314.234 INFO             PET3 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 102314.234 INFO             PET3 ESMF library build date/time: "Mar  5 2021" "09:44:29"
+20210305 102314.234 INFO             PET3 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_O
+20210305 102314.234 INFO             PET3 ESMF_COMM                   : mpi
+20210305 102314.234 INFO             PET3 ESMF_MOAB                   : enabled
+20210305 102314.234 INFO             PET3 ESMF_LAPACK                 : enabled
+20210305 102314.234 INFO             PET3 ESMF_NETCDF                 : enabled
+20210305 102314.234 INFO             PET3 ESMF_PNETCDF                : disabled
+20210305 102314.234 INFO             PET3 ESMF_PIO                    : enabled
+20210305 102314.234 INFO             PET3 ESMF_YAMLCPP                : enabled
+20210305 102314.234 INFO             PET3  Beginning Test, file ESMF_VMSendVMRecvUTest.F90, line 76
+20210305 102314.234 INFO             PET3  NUMBER_OF_PROCESSORS           4
+20210305 102314.235 INFO             PET3  PASS  Sending local data Test, ESMF_VMSendVMRecvUTest.F90, line 147
+20210305 102314.236 INFO             PET3  PASS  Receiving local data Test, ESMF_VMSendVMRecvUTest.F90, line 157
+20210305 102314.236 INFO             PET3  PASS  Verify local data after receive Test, ESMF_VMSendVMRecvUTest.F90, line 167
+20210305 102314.236 INFO             PET3  PASS  Sending local data Test, ESMF_VMSendVMRecvUTest.F90, line 177
+20210305 102314.236 INFO             PET3  PASS  Receiving local data Test, ESMF_VMSendVMRecvUTest.F90, line 187
+20210305 102314.236 INFO             PET3  PASS  Verify local data after receive Test, ESMF_VMSendVMRecvUTest.F90, line 198
+20210305 102314.236 INFO             PET3  PASS  Sending local data Test, ESMF_VMSendVMRecvUTest.F90, line 208
+20210305 102314.236 INFO             PET3  PASS  Receiving local data Test, ESMF_VMSendVMRecvUTest.F90, line 218
+20210305 102314.236 INFO             PET3  PASS  Verify local data after receive Test, ESMF_VMSendVMRecvUTest.F90, line 229
+20210305 102314.236 INFO             PET3  PASS  Sending local data Test, ESMF_VMSendVMRecvUTest.F90, line 239
+20210305 102314.237 INFO             PET3  PASS  Receiving local data Test, ESMF_VMSendVMRecvUTest.F90, line 252
+20210305 102314.237 INFO             PET3  PASS  Verify local data after receive Test, ESMF_VMSendVMRecvUTest.F90, line 271
+20210305 102314.237 INFO             PET3  PASS  Sending local character string data Test, ESMF_VMSendVMRecvUTest.F90, line 285
+20210305 102314.237 INFO             PET3  PASS  Receiving local data Test, ESMF_VMSendVMRecvUTest.F90, line 298
+20210305 102314.237 INFO             PET3  PASS  Verify local data after receive Test, ESMF_VMSendVMRecvUTest.F90, line 309
+20210305 102314.237 INFO             PET3  PASS  Sending local character array data Test, ESMF_VMSendVMRecvUTest.F90, line 323
+20210305 102314.237 INFO             PET3  PASS  Receiving local data Test, ESMF_VMSendVMRecvUTest.F90, line 339
+20210305 102314.237 INFO             PET3  PASS  Verify local data after receive Test, ESMF_VMSendVMRecvUTest.F90, line 357
+20210305 102314.237 INFO             PET3  Ending Test, file ESMF_VMSendVMRecvUTest.F90, line 371
+20210305 102314.237 INFO             PET3 Finalizing ESMF

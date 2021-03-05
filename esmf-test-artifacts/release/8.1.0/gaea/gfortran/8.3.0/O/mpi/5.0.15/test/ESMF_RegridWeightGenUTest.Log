@@ -1,0 +1,136 @@
+20210305 103231.489 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103231.490 INFO             PET0 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 103231.490 INFO             PET0 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 103231.490 INFO             PET0 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 103231.490 INFO             PET0 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 103231.490 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103231.490 INFO             PET0 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 103231.490 INFO             PET0 ESMF library build date/time: "Mar  5 2021" "09:44:29"
+20210305 103231.490 INFO             PET0 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_O
+20210305 103231.490 INFO             PET0 ESMF_COMM                   : mpi
+20210305 103231.491 INFO             PET0 ESMF_MOAB                   : enabled
+20210305 103231.491 INFO             PET0 ESMF_LAPACK                 : enabled
+20210305 103231.491 INFO             PET0 ESMF_NETCDF                 : enabled
+20210305 103231.491 INFO             PET0 ESMF_PNETCDF                : disabled
+20210305 103231.491 INFO             PET0 ESMF_PIO                    : enabled
+20210305 103231.491 INFO             PET0 ESMF_YAMLCPP                : enabled
+20210305 103231.506 INFO             PET0  Beginning Test, file ESMF_RegridWeightGenUTest.F90, line 62
+20210305 103231.506 INFO             PET0  NUMBER_OF_PROCESSORS           4
+20210305 103231.788 INFO             PET0  PASS  RegridWeightGen bilinear routehandle Test, ESMF_RegridWeightGenUTest.F90, line 94
+20210305 103232.073 INFO             PET0  PASS  RegridWeightGen weightfile and routehandle file Test, ESMF_RegridWeightGenUTest.F90, line 114
+20210305 103232.307 INFO             PET0  PASS  RegridWeightGen just routehandle file Test, ESMF_RegridWeightGenUTest.F90, line 132
+20210305 103232.307 ERROR            PET0 ESMF_RegridWeightGen.F90:432 ESMF_RegridWeightGenFile Wrong argument specified  - either a weightFile or a rhFile must be specified
+20210305 103232.307 INFO             PET0  PASS  RegridWeightGen no file fail Test, ESMF_RegridWeightGenUTest.F90, line 150
+20210305 103233.815 INFO             PET0  PASS  RegridWeightGen patch Test, ESMF_RegridWeightGenUTest.F90, line 171
+20210305 103234.021 INFO             PET0  PASS  RegridWeightGen conserve with no pole Test, ESMF_RegridWeightGenUTest.F90, line 194
+20210305 103234.064 WARNING          PET0 ESMF_IOScrip.F90:4699 ESMF_EsmfGetElement Variable centerCoords in .esmf.nc does not exist
+20210305 103234.125 WARNING          PET0 ESMF_IOScrip.F90:4699 ESMF_EsmfGetElement Variable centerCoords in .esmf.nc does not exist
+20210305 103234.254 INFO             PET0  PASS  RegridWeightGen bilinear with route handle, ESMF_RegridWeightGenUTest.F90, line 220
+20210305 103234.291 WARNING          PET0 ESMF_IOScrip.F90:4699 ESMF_EsmfGetElement Variable centerCoords in .esmf.nc does not exist
+20210305 103234.356 WARNING          PET0 ESMF_IOScrip.F90:4699 ESMF_EsmfGetElement Variable centerCoords in .esmf.nc does not exist
+20210305 103235.450 INFO             PET0  PASS  RegridWeightGen patch Test with route handle, ESMF_RegridWeightGenUTest.F90, line 241
+20210305 103235.746 INFO             PET0  PASS  RegridWeightGen conserve with route handle, ESMF_RegridWeightGenUTest.F90, line 263
+20210305 103235.746 INFO             PET0  Ending Test, file ESMF_RegridWeightGenUTest.F90, line 274
+20210305 103235.746 INFO             PET0 Finalizing ESMF
+20210305 103231.489 INFO             PET1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103231.490 INFO             PET1 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 103231.490 INFO             PET1 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 103231.490 INFO             PET1 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 103231.490 INFO             PET1 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 103231.490 INFO             PET1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103231.490 INFO             PET1 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 103231.490 INFO             PET1 ESMF library build date/time: "Mar  5 2021" "09:44:29"
+20210305 103231.490 INFO             PET1 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_O
+20210305 103231.490 INFO             PET1 ESMF_COMM                   : mpi
+20210305 103231.491 INFO             PET1 ESMF_MOAB                   : enabled
+20210305 103231.491 INFO             PET1 ESMF_LAPACK                 : enabled
+20210305 103231.491 INFO             PET1 ESMF_NETCDF                 : enabled
+20210305 103231.491 INFO             PET1 ESMF_PNETCDF                : disabled
+20210305 103231.491 INFO             PET1 ESMF_PIO                    : enabled
+20210305 103231.491 INFO             PET1 ESMF_YAMLCPP                : enabled
+20210305 103231.506 INFO             PET1  Beginning Test, file ESMF_RegridWeightGenUTest.F90, line 62
+20210305 103231.506 INFO             PET1  NUMBER_OF_PROCESSORS           4
+20210305 103231.788 INFO             PET1  PASS  RegridWeightGen bilinear routehandle Test, ESMF_RegridWeightGenUTest.F90, line 94
+20210305 103232.073 INFO             PET1  PASS  RegridWeightGen weightfile and routehandle file Test, ESMF_RegridWeightGenUTest.F90, line 114
+20210305 103232.306 INFO             PET1  PASS  RegridWeightGen just routehandle file Test, ESMF_RegridWeightGenUTest.F90, line 132
+20210305 103232.306 ERROR            PET1 ESMF_RegridWeightGen.F90:432 ESMF_RegridWeightGenFile Wrong argument specified  - either a weightFile or a rhFile must be specified
+20210305 103232.306 INFO             PET1  PASS  RegridWeightGen no file fail Test, ESMF_RegridWeightGenUTest.F90, line 150
+20210305 103233.815 INFO             PET1  PASS  RegridWeightGen patch Test, ESMF_RegridWeightGenUTest.F90, line 171
+20210305 103234.021 INFO             PET1  PASS  RegridWeightGen conserve with no pole Test, ESMF_RegridWeightGenUTest.F90, line 194
+20210305 103234.064 WARNING          PET1 ESMF_IOScrip.F90:4699 ESMF_EsmfGetElement Variable centerCoords in .esmf.nc does not exist
+20210305 103234.125 WARNING          PET1 ESMF_IOScrip.F90:4699 ESMF_EsmfGetElement Variable centerCoords in .esmf.nc does not exist
+20210305 103234.254 INFO             PET1  PASS  RegridWeightGen bilinear with route handle, ESMF_RegridWeightGenUTest.F90, line 220
+20210305 103234.292 WARNING          PET1 ESMF_IOScrip.F90:4699 ESMF_EsmfGetElement Variable centerCoords in .esmf.nc does not exist
+20210305 103234.355 WARNING          PET1 ESMF_IOScrip.F90:4699 ESMF_EsmfGetElement Variable centerCoords in .esmf.nc does not exist
+20210305 103235.450 INFO             PET1  PASS  RegridWeightGen patch Test with route handle, ESMF_RegridWeightGenUTest.F90, line 241
+20210305 103235.746 INFO             PET1  PASS  RegridWeightGen conserve with route handle, ESMF_RegridWeightGenUTest.F90, line 263
+20210305 103235.746 INFO             PET1  Ending Test, file ESMF_RegridWeightGenUTest.F90, line 274
+20210305 103235.746 INFO             PET1 Finalizing ESMF
+20210305 103231.495 INFO             PET2 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103231.495 INFO             PET2 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 103231.495 INFO             PET2 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 103231.495 INFO             PET2 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 103231.495 INFO             PET2 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 103231.495 INFO             PET2 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103231.495 INFO             PET2 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 103231.495 INFO             PET2 ESMF library build date/time: "Mar  5 2021" "09:44:29"
+20210305 103231.495 INFO             PET2 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_O
+20210305 103231.495 INFO             PET2 ESMF_COMM                   : mpi
+20210305 103231.495 INFO             PET2 ESMF_MOAB                   : enabled
+20210305 103231.495 INFO             PET2 ESMF_LAPACK                 : enabled
+20210305 103231.495 INFO             PET2 ESMF_NETCDF                 : enabled
+20210305 103231.495 INFO             PET2 ESMF_PNETCDF                : disabled
+20210305 103231.495 INFO             PET2 ESMF_PIO                    : enabled
+20210305 103231.495 INFO             PET2 ESMF_YAMLCPP                : enabled
+20210305 103231.506 INFO             PET2  Beginning Test, file ESMF_RegridWeightGenUTest.F90, line 62
+20210305 103231.506 INFO             PET2  NUMBER_OF_PROCESSORS           4
+20210305 103231.788 INFO             PET2  PASS  RegridWeightGen bilinear routehandle Test, ESMF_RegridWeightGenUTest.F90, line 94
+20210305 103232.073 INFO             PET2  PASS  RegridWeightGen weightfile and routehandle file Test, ESMF_RegridWeightGenUTest.F90, line 114
+20210305 103232.306 INFO             PET2  PASS  RegridWeightGen just routehandle file Test, ESMF_RegridWeightGenUTest.F90, line 132
+20210305 103232.306 ERROR            PET2 ESMF_RegridWeightGen.F90:432 ESMF_RegridWeightGenFile Wrong argument specified  - either a weightFile or a rhFile must be specified
+20210305 103232.306 INFO             PET2  PASS  RegridWeightGen no file fail Test, ESMF_RegridWeightGenUTest.F90, line 150
+20210305 103233.815 INFO             PET2  PASS  RegridWeightGen patch Test, ESMF_RegridWeightGenUTest.F90, line 171
+20210305 103234.021 INFO             PET2  PASS  RegridWeightGen conserve with no pole Test, ESMF_RegridWeightGenUTest.F90, line 194
+20210305 103234.064 WARNING          PET2 ESMF_IOScrip.F90:4699 ESMF_EsmfGetElement Variable centerCoords in .esmf.nc does not exist
+20210305 103234.125 WARNING          PET2 ESMF_IOScrip.F90:4699 ESMF_EsmfGetElement Variable centerCoords in .esmf.nc does not exist
+20210305 103234.254 INFO             PET2  PASS  RegridWeightGen bilinear with route handle, ESMF_RegridWeightGenUTest.F90, line 220
+20210305 103234.292 WARNING          PET2 ESMF_IOScrip.F90:4699 ESMF_EsmfGetElement Variable centerCoords in .esmf.nc does not exist
+20210305 103234.355 WARNING          PET2 ESMF_IOScrip.F90:4699 ESMF_EsmfGetElement Variable centerCoords in .esmf.nc does not exist
+20210305 103235.451 INFO             PET2  PASS  RegridWeightGen patch Test with route handle, ESMF_RegridWeightGenUTest.F90, line 241
+20210305 103235.746 INFO             PET2  PASS  RegridWeightGen conserve with route handle, ESMF_RegridWeightGenUTest.F90, line 263
+20210305 103235.746 INFO             PET2  Ending Test, file ESMF_RegridWeightGenUTest.F90, line 274
+20210305 103235.746 INFO             PET2 Finalizing ESMF
+20210305 103231.490 INFO             PET3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103231.490 INFO             PET3 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 103231.490 INFO             PET3 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 103231.490 INFO             PET3 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 103231.490 INFO             PET3 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 103231.490 INFO             PET3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 103231.490 INFO             PET3 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 103231.490 INFO             PET3 ESMF library build date/time: "Mar  5 2021" "09:44:29"
+20210305 103231.490 INFO             PET3 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_O
+20210305 103231.490 INFO             PET3 ESMF_COMM                   : mpi
+20210305 103231.491 INFO             PET3 ESMF_MOAB                   : enabled
+20210305 103231.491 INFO             PET3 ESMF_LAPACK                 : enabled
+20210305 103231.491 INFO             PET3 ESMF_NETCDF                 : enabled
+20210305 103231.491 INFO             PET3 ESMF_PNETCDF                : disabled
+20210305 103231.491 INFO             PET3 ESMF_PIO                    : enabled
+20210305 103231.491 INFO             PET3 ESMF_YAMLCPP                : enabled
+20210305 103231.506 INFO             PET3  Beginning Test, file ESMF_RegridWeightGenUTest.F90, line 62
+20210305 103231.506 INFO             PET3  NUMBER_OF_PROCESSORS           4
+20210305 103231.788 INFO             PET3  PASS  RegridWeightGen bilinear routehandle Test, ESMF_RegridWeightGenUTest.F90, line 94
+20210305 103232.073 INFO             PET3  PASS  RegridWeightGen weightfile and routehandle file Test, ESMF_RegridWeightGenUTest.F90, line 114
+20210305 103232.306 INFO             PET3  PASS  RegridWeightGen just routehandle file Test, ESMF_RegridWeightGenUTest.F90, line 132
+20210305 103232.306 ERROR            PET3 ESMF_RegridWeightGen.F90:432 ESMF_RegridWeightGenFile Wrong argument specified  - either a weightFile or a rhFile must be specified
+20210305 103232.306 INFO             PET3  PASS  RegridWeightGen no file fail Test, ESMF_RegridWeightGenUTest.F90, line 150
+20210305 103233.815 INFO             PET3  PASS  RegridWeightGen patch Test, ESMF_RegridWeightGenUTest.F90, line 171
+20210305 103234.021 INFO             PET3  PASS  RegridWeightGen conserve with no pole Test, ESMF_RegridWeightGenUTest.F90, line 194
+20210305 103234.064 WARNING          PET3 ESMF_IOScrip.F90:4699 ESMF_EsmfGetElement Variable centerCoords in .esmf.nc does not exist
+20210305 103234.125 WARNING          PET3 ESMF_IOScrip.F90:4699 ESMF_EsmfGetElement Variable centerCoords in .esmf.nc does not exist
+20210305 103234.254 INFO             PET3  PASS  RegridWeightGen bilinear with route handle, ESMF_RegridWeightGenUTest.F90, line 220
+20210305 103234.292 WARNING          PET3 ESMF_IOScrip.F90:4699 ESMF_EsmfGetElement Variable centerCoords in .esmf.nc does not exist
+20210305 103234.355 WARNING          PET3 ESMF_IOScrip.F90:4699 ESMF_EsmfGetElement Variable centerCoords in .esmf.nc does not exist
+20210305 103235.451 INFO             PET3  PASS  RegridWeightGen patch Test with route handle, ESMF_RegridWeightGenUTest.F90, line 241
+20210305 103235.746 INFO             PET3  PASS  RegridWeightGen conserve with route handle, ESMF_RegridWeightGenUTest.F90, line 263
+20210305 103235.746 INFO             PET3  Ending Test, file ESMF_RegridWeightGenUTest.F90, line 274
+20210305 103235.746 INFO             PET3 Finalizing ESMF

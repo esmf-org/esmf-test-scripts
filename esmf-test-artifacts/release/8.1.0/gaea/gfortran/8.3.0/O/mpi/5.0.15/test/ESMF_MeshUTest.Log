@@ -1,0 +1,448 @@
+20210305 102705.465 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.467 INFO             PET0 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 102705.467 INFO             PET0 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 102705.467 INFO             PET0 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 102705.467 INFO             PET0 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 102705.467 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.467 INFO             PET0 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 102705.469 INFO             PET0 ESMF library build date/time: "Mar  5 2021" "09:44:29"
+20210305 102705.469 INFO             PET0 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_O
+20210305 102705.469 INFO             PET0 ESMF_COMM                   : mpi
+20210305 102705.470 INFO             PET0 ESMF_MOAB                   : enabled
+20210305 102705.470 INFO             PET0 ESMF_LAPACK                 : enabled
+20210305 102705.470 INFO             PET0 ESMF_NETCDF                 : enabled
+20210305 102705.470 INFO             PET0 ESMF_PNETCDF                : disabled
+20210305 102705.470 INFO             PET0 ESMF_PIO                    : enabled
+20210305 102705.470 INFO             PET0 ESMF_YAMLCPP                : enabled
+20210305 102705.482 INFO             PET0  Beginning Test, file ESMF_MeshUTest.F90, line 106
+20210305 102705.482 INFO             PET0  NUMBER_OF_PROCESSORS           4
+20210305 102705.482 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.482 INFO             PET0 !!!        MOAB turned OFF            !!!
+20210305 102705.482 INFO             PET0 !!! Meshes now created using native   !!!
+20210305 102705.482 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.483 INFO             PET0  PASS  Testing Mesh IsCreated for uncreated object, ESMF_MeshUTest.F90, line 130
+20210305 102705.483 INFO             PET0  PASS  Testing Mesh IsCreated for uncreated object, ESMF_MeshUTest.F90, line 138
+20210305 102705.487 INFO             PET0  PASS  Create test Mesh for IsCreated, ESMF_MeshUTest.F90, line 147
+20210305 102705.487 INFO             PET0  PASS  Testing Mesh IsCreated for created object, ESMF_MeshUTest.F90, line 155
+20210305 102705.487 INFO             PET0  PASS  Testing Mesh IsCreated for created object, ESMF_MeshUTest.F90, line 163
+20210305 102705.488 INFO             PET0  PASS  Testing MeshGet, accessing name, ESMF_MeshUTest.F90, line 171
+20210305 102705.488 INFO             PET0 meshName=bigbadmeshname
+20210305 102705.488 INFO             PET0  PASS  Destroy test Mesh for IsCreated, ESMF_MeshUTest.F90, line 180
+20210305 102705.489 INFO             PET0  PASS  Testing Mesh IsCreated for destroyed object, ESMF_MeshUTest.F90, line 188
+20210305 102705.489 INFO             PET0  PASS  Testing Mesh IsCreated for destroyed object, ESMF_MeshUTest.F90, line 196
+20210305 102705.489 INFO             PET0  PASS  Test creating a small 2x2 2D QUAD Mesh in 3 steps on 1 proc, ESMF_MeshUTest.F90, line 339
+20210305 102705.489 INFO             PET0  PASS  Test creating a small 2x2 2D QUAD Mesh in 3 steps on 1 proc, ESMF_MeshUTest.F90, line 357
+20210305 102705.489 INFO             PET0  PASS  Test creating a small 2x2 2D QUAD Mesh in 3 steps on 1 proc, ESMF_MeshUTest.F90, line 376
+20210305 102705.489 INFO             PET0  PASS  Test creating a small 2x2 2D QUAD Mesh in 3 steps on 1 proc, ESMF_MeshUTest.F90, line 394
+20210305 102705.489 INFO             PET0  PASS  Test creating a small 2x2 2D QUAD Mesh in 3 steps on 1 proc, ESMF_MeshUTest.F90, line 413
+20210305 102705.489 INFO             PET0  PASS  Test creating a small 2x2 2D QUAD Mesh in 3 steps on 1 proc, ESMF_MeshUTest.F90, line 432
+20210305 102705.525 INFO             PET0  PASS  Test creating a small 2x2 2D QUAD Mesh in 1 step on 4 procs and MeshGet, ESMF_MeshUTest.F90, line 734
+20210305 102705.566 INFO             PET0  PASS  Test ESMF_MeshFreeMemory(), ESMF_MeshUTest.F90, line 775
+20210305 102705.566 INFO             PET0  PASS  Test error checking, ESMF_MeshUTest.F90, line 902
+20210305 102705.571 INFO             PET0  PASS  Test Mesh Serialize/Deserialize, ESMF_MeshUTest.F90, line 984
+20210305 102705.572 INFO             PET0  PASS  Test Mesh Find Point, ESMF_MeshUTest.F90, line 1066
+20210305 102705.572 INFO             PET0  PASS  Test setting and getting area of Mesh, ESMF_MeshUTest.F90, line 1215
+20210305 102705.576 INFO             PET0  PASS  Test Mesh Create Redist, ESMF_MeshUTest.F90, line 1318
+20210305 102705.577 INFO             PET0  PASS  Test Mesh Create Redist: Different Location Node Element, ESMF_MeshUTest.F90, line 1427
+20210305 102705.578 INFO             PET0  PASS  Test Mesh Create Redist with just element distgrid, ESMF_MeshUTest.F90, line 1507
+20210305 102705.580 INFO             PET0  PASS  Test Mesh Create Redist with just node distgrid, ESMF_MeshUTest.F90, line 1606
+20210305 102705.582 INFO             PET0  PASS  Test Mesh Create Redist with just node distgrid and >4 sided elements, ESMF_MeshUTest.F90, line 1688
+20210305 102705.583 INFO             PET0  PASS  Test Mesh Create Redist with no distgrids, ESMF_MeshUTest.F90, line 1734
+20210305 102705.587 INFO             PET0  PASS  Test Mesh Create Redist: >1 localDECount Distgrid, ESMF_MeshUTest.F90, line 1849
+20210305 102705.589 INFO             PET0  PASS  Test Mesh Create >1 localDECount Distgrid, ESMF_MeshUTest.F90, line 1864
+20210305 102705.589 INFO             PET0  PASS  Test Mesh Create with coordSys ESMF_COORDSYS_SPH_DEG, ESMF_MeshUTest.F90, line 1955
+20210305 102705.590 INFO             PET0  PASS  Mesh Create with a pentagon and hexagon element, ESMF_MeshUTest.F90, line 1998
+20210305 102705.591 INFO             PET0  PASS  Mesh Create Dual with a pentagon and hexagon element, ESMF_MeshUTest.F90, line 2030
+20210305 102705.592 INFO             PET0  PASS  Mesh Create and then Redist with a pentagon and hexagon element, ESMF_MeshUTest.F90, line 2102
+20210305 102705.593 INFO             PET0  PASS  Mesh Create Dual, ESMF_MeshUTest.F90, line 2139
+20210305 102705.593 INFO             PET0  PASS  Mesh Create with a multipart element, ESMF_MeshUTest.F90, line 2167
+20210305 102705.594 INFO             PET0  PASS  Mesh create easy elems, ESMF_MeshUTest.F90, line 2183
+20210305 102705.594 INFO             PET0  PASS  Mesh create easy elems 1 type, ESMF_MeshUTest.F90, line 2198
+20210305 102705.594 INFO             PET0  PASS  Test Mesh Empty Create, ESMF_MeshUTest.F90, line 2357
+20210305 102705.594 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.594 INFO             PET0 !!!        MOAB turned ON             !!!
+20210305 102705.594 INFO             PET0 !!! Meshes now created using MOAB     !!!
+20210305 102705.594 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.608 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.608 INFO             PET0 !!!        MOAB turned OFF            !!!
+20210305 102705.608 INFO             PET0 !!! Meshes now created using native   !!!
+20210305 102705.608 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.608 INFO             PET0  PASS  Test creating a MOAB Mesh, ESMF_MeshUTest.F90, line 2487
+20210305 102705.618 INFO             PET0  PASS  Test get of element mask and area info, ESMF_MeshUTest.F90, line 2596
+20210305 102705.618 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.618 INFO             PET0 !!!        MOAB turned ON             !!!
+20210305 102705.618 INFO             PET0 !!! Meshes now created using MOAB     !!!
+20210305 102705.618 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.622 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.622 INFO             PET0 !!!        MOAB turned OFF            !!!
+20210305 102705.622 INFO             PET0 !!! Meshes now created using native   !!!
+20210305 102705.622 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.624 INFO             PET0  PASS  Test MOAB get of element mask and area info, ESMF_MeshUTest.F90, line 2720
+20210305 102705.634 INFO             PET0  PASS  Test Mesh Create from Grid with 1 width DE, ESMF_MeshUTest.F90, line 2736
+20210305 102705.635 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.635 INFO             PET0 !!!        MOAB turned ON             !!!
+20210305 102705.635 INFO             PET0 !!! Meshes now created using MOAB     !!!
+20210305 102705.635 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.707 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.707 INFO             PET0 !!!        MOAB turned OFF            !!!
+20210305 102705.707 INFO             PET0 !!! Meshes now created using native   !!!
+20210305 102705.707 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.712 INFO             PET0  PASS  Test MOAB Mesh Create from Grid, ESMF_MeshUTest.F90, line 2759
+20210305 102705.714 INFO             PET0  PASS  Mesh get/set of creation info (elementConn, etc.), ESMF_MeshUTest.F90, line 2773
+20210305 102705.714 INFO             PET0  PASS  Mesh set of >4 sided, ESMF_MeshUTest.F90, line 2787
+20210305 102705.714 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.714 INFO             PET0 !!!        MOAB turned ON             !!!
+20210305 102705.714 INFO             PET0 !!! Meshes now created using MOAB     !!!
+20210305 102705.714 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.717 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.717 INFO             PET0 !!!        MOAB turned OFF            !!!
+20210305 102705.717 INFO             PET0 !!! Meshes now created using native   !!!
+20210305 102705.717 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.717 INFO             PET0  PASS  MOAB Mesh Create with a pentagon and hexagon element, ESMF_MeshUTest.F90, line 2823
+20210305 102705.717 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.717 INFO             PET0 !!!        MOAB turned ON             !!!
+20210305 102705.717 INFO             PET0 !!! Meshes now created using MOAB     !!!
+20210305 102705.717 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.717 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.717 INFO             PET0 !!!        MOAB turned OFF            !!!
+20210305 102705.717 INFO             PET0 !!! Meshes now created using native   !!!
+20210305 102705.717 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.717 INFO             PET0  PASS  Mesh Set/Get MOAB, ESMF_MeshUTest.F90, line 2863
+20210305 102705.717 INFO             PET0  Ending Test, file ESMF_MeshUTest.F90, line 2878
+20210305 102705.717 INFO             PET0 Finalizing ESMF
+20210305 102705.481 INFO             PET1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.481 INFO             PET1 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 102705.481 INFO             PET1 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 102705.481 INFO             PET1 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 102705.481 INFO             PET1 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 102705.481 INFO             PET1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.481 INFO             PET1 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 102705.481 INFO             PET1 ESMF library build date/time: "Mar  5 2021" "09:44:29"
+20210305 102705.481 INFO             PET1 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_O
+20210305 102705.481 INFO             PET1 ESMF_COMM                   : mpi
+20210305 102705.482 INFO             PET1 ESMF_MOAB                   : enabled
+20210305 102705.482 INFO             PET1 ESMF_LAPACK                 : enabled
+20210305 102705.482 INFO             PET1 ESMF_NETCDF                 : enabled
+20210305 102705.482 INFO             PET1 ESMF_PNETCDF                : disabled
+20210305 102705.482 INFO             PET1 ESMF_PIO                    : enabled
+20210305 102705.482 INFO             PET1 ESMF_YAMLCPP                : enabled
+20210305 102705.482 INFO             PET1  Beginning Test, file ESMF_MeshUTest.F90, line 106
+20210305 102705.482 INFO             PET1  NUMBER_OF_PROCESSORS           4
+20210305 102705.482 INFO             PET1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.482 INFO             PET1 !!!        MOAB turned OFF            !!!
+20210305 102705.482 INFO             PET1 !!! Meshes now created using native   !!!
+20210305 102705.482 INFO             PET1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.483 INFO             PET1  PASS  Testing Mesh IsCreated for uncreated object, ESMF_MeshUTest.F90, line 130
+20210305 102705.483 INFO             PET1  PASS  Testing Mesh IsCreated for uncreated object, ESMF_MeshUTest.F90, line 138
+20210305 102705.487 INFO             PET1  PASS  Create test Mesh for IsCreated, ESMF_MeshUTest.F90, line 147
+20210305 102705.487 INFO             PET1  PASS  Testing Mesh IsCreated for created object, ESMF_MeshUTest.F90, line 155
+20210305 102705.487 INFO             PET1  PASS  Testing Mesh IsCreated for created object, ESMF_MeshUTest.F90, line 163
+20210305 102705.488 INFO             PET1  PASS  Testing MeshGet, accessing name, ESMF_MeshUTest.F90, line 171
+20210305 102705.488 INFO             PET1 meshName=bigbadmeshname
+20210305 102705.488 INFO             PET1  PASS  Destroy test Mesh for IsCreated, ESMF_MeshUTest.F90, line 180
+20210305 102705.489 INFO             PET1  PASS  Testing Mesh IsCreated for destroyed object, ESMF_MeshUTest.F90, line 188
+20210305 102705.489 INFO             PET1  PASS  Testing Mesh IsCreated for destroyed object, ESMF_MeshUTest.F90, line 196
+20210305 102705.489 INFO             PET1  PASS  Test creating a small 2x2 2D QUAD Mesh in 3 steps on 1 proc, ESMF_MeshUTest.F90, line 339
+20210305 102705.489 INFO             PET1  PASS  Test creating a small 2x2 2D QUAD Mesh in 3 steps on 1 proc, ESMF_MeshUTest.F90, line 357
+20210305 102705.489 INFO             PET1  PASS  Test creating a small 2x2 2D QUAD Mesh in 3 steps on 1 proc, ESMF_MeshUTest.F90, line 376
+20210305 102705.489 INFO             PET1  PASS  Test creating a small 2x2 2D QUAD Mesh in 3 steps on 1 proc, ESMF_MeshUTest.F90, line 394
+20210305 102705.489 INFO             PET1  PASS  Test creating a small 2x2 2D QUAD Mesh in 3 steps on 1 proc, ESMF_MeshUTest.F90, line 413
+20210305 102705.489 INFO             PET1  PASS  Test creating a small 2x2 2D QUAD Mesh in 3 steps on 1 proc, ESMF_MeshUTest.F90, line 432
+20210305 102705.525 INFO             PET1  PASS  Test creating a small 2x2 2D QUAD Mesh in 1 step on 4 procs and MeshGet, ESMF_MeshUTest.F90, line 734
+20210305 102705.566 INFO             PET1  PASS  Test ESMF_MeshFreeMemory(), ESMF_MeshUTest.F90, line 775
+20210305 102705.566 INFO             PET1  PASS  Test error checking, ESMF_MeshUTest.F90, line 902
+20210305 102705.571 INFO             PET1  PASS  Test Mesh Serialize/Deserialize, ESMF_MeshUTest.F90, line 984
+20210305 102705.572 INFO             PET1  PASS  Test Mesh Find Point, ESMF_MeshUTest.F90, line 1066
+20210305 102705.572 INFO             PET1  PASS  Test setting and getting area of Mesh, ESMF_MeshUTest.F90, line 1215
+20210305 102705.576 INFO             PET1  PASS  Test Mesh Create Redist, ESMF_MeshUTest.F90, line 1318
+20210305 102705.577 INFO             PET1  PASS  Test Mesh Create Redist: Different Location Node Element, ESMF_MeshUTest.F90, line 1427
+20210305 102705.578 INFO             PET1  PASS  Test Mesh Create Redist with just element distgrid, ESMF_MeshUTest.F90, line 1507
+20210305 102705.580 INFO             PET1  PASS  Test Mesh Create Redist with just node distgrid, ESMF_MeshUTest.F90, line 1606
+20210305 102705.582 INFO             PET1  PASS  Test Mesh Create Redist with just node distgrid and >4 sided elements, ESMF_MeshUTest.F90, line 1688
+20210305 102705.583 INFO             PET1  PASS  Test Mesh Create Redist with no distgrids, ESMF_MeshUTest.F90, line 1734
+20210305 102705.587 INFO             PET1  PASS  Test Mesh Create Redist: >1 localDECount Distgrid, ESMF_MeshUTest.F90, line 1849
+20210305 102705.589 INFO             PET1  PASS  Test Mesh Create >1 localDECount Distgrid, ESMF_MeshUTest.F90, line 1864
+20210305 102705.589 INFO             PET1  PASS  Test Mesh Create with coordSys ESMF_COORDSYS_SPH_DEG, ESMF_MeshUTest.F90, line 1955
+20210305 102705.590 INFO             PET1  PASS  Mesh Create with a pentagon and hexagon element, ESMF_MeshUTest.F90, line 1998
+20210305 102705.591 INFO             PET1  PASS  Mesh Create Dual with a pentagon and hexagon element, ESMF_MeshUTest.F90, line 2030
+20210305 102705.592 INFO             PET1  PASS  Mesh Create and then Redist with a pentagon and hexagon element, ESMF_MeshUTest.F90, line 2102
+20210305 102705.593 INFO             PET1  PASS  Mesh Create Dual, ESMF_MeshUTest.F90, line 2139
+20210305 102705.593 INFO             PET1  PASS  Mesh Create with a multipart element, ESMF_MeshUTest.F90, line 2167
+20210305 102705.594 INFO             PET1  PASS  Mesh create easy elems, ESMF_MeshUTest.F90, line 2183
+20210305 102705.594 INFO             PET1  PASS  Mesh create easy elems 1 type, ESMF_MeshUTest.F90, line 2198
+20210305 102705.594 INFO             PET1  PASS  Test Mesh Empty Create, ESMF_MeshUTest.F90, line 2357
+20210305 102705.594 INFO             PET1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.594 INFO             PET1 !!!        MOAB turned ON             !!!
+20210305 102705.594 INFO             PET1 !!! Meshes now created using MOAB     !!!
+20210305 102705.594 INFO             PET1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.608 INFO             PET1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.608 INFO             PET1 !!!        MOAB turned OFF            !!!
+20210305 102705.608 INFO             PET1 !!! Meshes now created using native   !!!
+20210305 102705.608 INFO             PET1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.608 INFO             PET1  PASS  Test creating a MOAB Mesh, ESMF_MeshUTest.F90, line 2487
+20210305 102705.622 INFO             PET1  PASS  Test get of element mask and area info, ESMF_MeshUTest.F90, line 2596
+20210305 102705.622 INFO             PET1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.622 INFO             PET1 !!!        MOAB turned ON             !!!
+20210305 102705.622 INFO             PET1 !!! Meshes now created using MOAB     !!!
+20210305 102705.622 INFO             PET1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.622 INFO             PET1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.622 INFO             PET1 !!!        MOAB turned OFF            !!!
+20210305 102705.622 INFO             PET1 !!! Meshes now created using native   !!!
+20210305 102705.622 INFO             PET1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.624 INFO             PET1  PASS  Test MOAB get of element mask and area info, ESMF_MeshUTest.F90, line 2720
+20210305 102705.634 INFO             PET1  PASS  Test Mesh Create from Grid with 1 width DE, ESMF_MeshUTest.F90, line 2736
+20210305 102705.635 INFO             PET1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.635 INFO             PET1 !!!        MOAB turned ON             !!!
+20210305 102705.635 INFO             PET1 !!! Meshes now created using MOAB     !!!
+20210305 102705.635 INFO             PET1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.707 INFO             PET1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.707 INFO             PET1 !!!        MOAB turned OFF            !!!
+20210305 102705.707 INFO             PET1 !!! Meshes now created using native   !!!
+20210305 102705.707 INFO             PET1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.712 INFO             PET1  PASS  Test MOAB Mesh Create from Grid, ESMF_MeshUTest.F90, line 2759
+20210305 102705.714 INFO             PET1  PASS  Mesh get/set of creation info (elementConn, etc.), ESMF_MeshUTest.F90, line 2773
+20210305 102705.714 INFO             PET1  PASS  Mesh set of >4 sided, ESMF_MeshUTest.F90, line 2787
+20210305 102705.714 INFO             PET1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.714 INFO             PET1 !!!        MOAB turned ON             !!!
+20210305 102705.714 INFO             PET1 !!! Meshes now created using MOAB     !!!
+20210305 102705.714 INFO             PET1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.717 INFO             PET1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.717 INFO             PET1 !!!        MOAB turned OFF            !!!
+20210305 102705.717 INFO             PET1 !!! Meshes now created using native   !!!
+20210305 102705.717 INFO             PET1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.717 INFO             PET1  PASS  MOAB Mesh Create with a pentagon and hexagon element, ESMF_MeshUTest.F90, line 2823
+20210305 102705.717 INFO             PET1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.717 INFO             PET1 !!!        MOAB turned ON             !!!
+20210305 102705.717 INFO             PET1 !!! Meshes now created using MOAB     !!!
+20210305 102705.717 INFO             PET1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.717 INFO             PET1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.717 INFO             PET1 !!!        MOAB turned OFF            !!!
+20210305 102705.717 INFO             PET1 !!! Meshes now created using native   !!!
+20210305 102705.717 INFO             PET1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.717 INFO             PET1  PASS  Mesh Set/Get MOAB, ESMF_MeshUTest.F90, line 2863
+20210305 102705.717 INFO             PET1  Ending Test, file ESMF_MeshUTest.F90, line 2878
+20210305 102705.717 INFO             PET1 Finalizing ESMF
+20210305 102705.465 INFO             PET2 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.467 INFO             PET2 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 102705.467 INFO             PET2 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 102705.467 INFO             PET2 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 102705.467 INFO             PET2 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 102705.467 INFO             PET2 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.467 INFO             PET2 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 102705.469 INFO             PET2 ESMF library build date/time: "Mar  5 2021" "09:44:29"
+20210305 102705.469 INFO             PET2 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_O
+20210305 102705.469 INFO             PET2 ESMF_COMM                   : mpi
+20210305 102705.471 INFO             PET2 ESMF_MOAB                   : enabled
+20210305 102705.471 INFO             PET2 ESMF_LAPACK                 : enabled
+20210305 102705.471 INFO             PET2 ESMF_NETCDF                 : enabled
+20210305 102705.471 INFO             PET2 ESMF_PNETCDF                : disabled
+20210305 102705.471 INFO             PET2 ESMF_PIO                    : enabled
+20210305 102705.471 INFO             PET2 ESMF_YAMLCPP                : enabled
+20210305 102705.482 INFO             PET2  Beginning Test, file ESMF_MeshUTest.F90, line 106
+20210305 102705.482 INFO             PET2  NUMBER_OF_PROCESSORS           4
+20210305 102705.482 INFO             PET2 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.482 INFO             PET2 !!!        MOAB turned OFF            !!!
+20210305 102705.482 INFO             PET2 !!! Meshes now created using native   !!!
+20210305 102705.482 INFO             PET2 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.483 INFO             PET2  PASS  Testing Mesh IsCreated for uncreated object, ESMF_MeshUTest.F90, line 130
+20210305 102705.483 INFO             PET2  PASS  Testing Mesh IsCreated for uncreated object, ESMF_MeshUTest.F90, line 138
+20210305 102705.487 INFO             PET2  PASS  Create test Mesh for IsCreated, ESMF_MeshUTest.F90, line 147
+20210305 102705.487 INFO             PET2  PASS  Testing Mesh IsCreated for created object, ESMF_MeshUTest.F90, line 155
+20210305 102705.487 INFO             PET2  PASS  Testing Mesh IsCreated for created object, ESMF_MeshUTest.F90, line 163
+20210305 102705.488 INFO             PET2  PASS  Testing MeshGet, accessing name, ESMF_MeshUTest.F90, line 171
+20210305 102705.488 INFO             PET2 meshName=bigbadmeshname
+20210305 102705.488 INFO             PET2  PASS  Destroy test Mesh for IsCreated, ESMF_MeshUTest.F90, line 180
+20210305 102705.489 INFO             PET2  PASS  Testing Mesh IsCreated for destroyed object, ESMF_MeshUTest.F90, line 188
+20210305 102705.489 INFO             PET2  PASS  Testing Mesh IsCreated for destroyed object, ESMF_MeshUTest.F90, line 196
+20210305 102705.489 INFO             PET2  PASS  Test creating a small 2x2 2D QUAD Mesh in 3 steps on 1 proc, ESMF_MeshUTest.F90, line 339
+20210305 102705.489 INFO             PET2  PASS  Test creating a small 2x2 2D QUAD Mesh in 3 steps on 1 proc, ESMF_MeshUTest.F90, line 357
+20210305 102705.489 INFO             PET2  PASS  Test creating a small 2x2 2D QUAD Mesh in 3 steps on 1 proc, ESMF_MeshUTest.F90, line 376
+20210305 102705.489 INFO             PET2  PASS  Test creating a small 2x2 2D QUAD Mesh in 3 steps on 1 proc, ESMF_MeshUTest.F90, line 394
+20210305 102705.489 INFO             PET2  PASS  Test creating a small 2x2 2D QUAD Mesh in 3 steps on 1 proc, ESMF_MeshUTest.F90, line 413
+20210305 102705.489 INFO             PET2  PASS  Test creating a small 2x2 2D QUAD Mesh in 3 steps on 1 proc, ESMF_MeshUTest.F90, line 432
+20210305 102705.525 INFO             PET2  PASS  Test creating a small 2x2 2D QUAD Mesh in 1 step on 4 procs and MeshGet, ESMF_MeshUTest.F90, line 734
+20210305 102705.566 INFO             PET2  PASS  Test ESMF_MeshFreeMemory(), ESMF_MeshUTest.F90, line 775
+20210305 102705.566 INFO             PET2  PASS  Test error checking, ESMF_MeshUTest.F90, line 902
+20210305 102705.571 INFO             PET2  PASS  Test Mesh Serialize/Deserialize, ESMF_MeshUTest.F90, line 984
+20210305 102705.572 INFO             PET2  PASS  Test Mesh Find Point, ESMF_MeshUTest.F90, line 1066
+20210305 102705.572 INFO             PET2  PASS  Test setting and getting area of Mesh, ESMF_MeshUTest.F90, line 1215
+20210305 102705.576 INFO             PET2  PASS  Test Mesh Create Redist, ESMF_MeshUTest.F90, line 1318
+20210305 102705.577 INFO             PET2  PASS  Test Mesh Create Redist: Different Location Node Element, ESMF_MeshUTest.F90, line 1427
+20210305 102705.578 INFO             PET2  PASS  Test Mesh Create Redist with just element distgrid, ESMF_MeshUTest.F90, line 1507
+20210305 102705.580 INFO             PET2  PASS  Test Mesh Create Redist with just node distgrid, ESMF_MeshUTest.F90, line 1606
+20210305 102705.582 INFO             PET2  PASS  Test Mesh Create Redist with just node distgrid and >4 sided elements, ESMF_MeshUTest.F90, line 1688
+20210305 102705.583 INFO             PET2  PASS  Test Mesh Create Redist with no distgrids, ESMF_MeshUTest.F90, line 1734
+20210305 102705.587 INFO             PET2  PASS  Test Mesh Create Redist: >1 localDECount Distgrid, ESMF_MeshUTest.F90, line 1849
+20210305 102705.589 INFO             PET2  PASS  Test Mesh Create >1 localDECount Distgrid, ESMF_MeshUTest.F90, line 1864
+20210305 102705.589 INFO             PET2  PASS  Test Mesh Create with coordSys ESMF_COORDSYS_SPH_DEG, ESMF_MeshUTest.F90, line 1955
+20210305 102705.590 INFO             PET2  PASS  Mesh Create with a pentagon and hexagon element, ESMF_MeshUTest.F90, line 1998
+20210305 102705.591 INFO             PET2  PASS  Mesh Create Dual with a pentagon and hexagon element, ESMF_MeshUTest.F90, line 2030
+20210305 102705.592 INFO             PET2  PASS  Mesh Create and then Redist with a pentagon and hexagon element, ESMF_MeshUTest.F90, line 2102
+20210305 102705.593 INFO             PET2  PASS  Mesh Create Dual, ESMF_MeshUTest.F90, line 2139
+20210305 102705.593 INFO             PET2  PASS  Mesh Create with a multipart element, ESMF_MeshUTest.F90, line 2167
+20210305 102705.594 INFO             PET2  PASS  Mesh create easy elems, ESMF_MeshUTest.F90, line 2183
+20210305 102705.594 INFO             PET2  PASS  Mesh create easy elems 1 type, ESMF_MeshUTest.F90, line 2198
+20210305 102705.594 INFO             PET2  PASS  Test Mesh Empty Create, ESMF_MeshUTest.F90, line 2357
+20210305 102705.594 INFO             PET2 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.594 INFO             PET2 !!!        MOAB turned ON             !!!
+20210305 102705.594 INFO             PET2 !!! Meshes now created using MOAB     !!!
+20210305 102705.594 INFO             PET2 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.608 INFO             PET2 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.608 INFO             PET2 !!!        MOAB turned OFF            !!!
+20210305 102705.608 INFO             PET2 !!! Meshes now created using native   !!!
+20210305 102705.608 INFO             PET2 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.608 INFO             PET2  PASS  Test creating a MOAB Mesh, ESMF_MeshUTest.F90, line 2487
+20210305 102705.619 INFO             PET2  PASS  Test get of element mask and area info, ESMF_MeshUTest.F90, line 2596
+20210305 102705.619 INFO             PET2 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.619 INFO             PET2 !!!        MOAB turned ON             !!!
+20210305 102705.619 INFO             PET2 !!! Meshes now created using MOAB     !!!
+20210305 102705.619 INFO             PET2 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.622 INFO             PET2 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.622 INFO             PET2 !!!        MOAB turned OFF            !!!
+20210305 102705.622 INFO             PET2 !!! Meshes now created using native   !!!
+20210305 102705.622 INFO             PET2 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.624 INFO             PET2  PASS  Test MOAB get of element mask and area info, ESMF_MeshUTest.F90, line 2720
+20210305 102705.634 INFO             PET2  PASS  Test Mesh Create from Grid with 1 width DE, ESMF_MeshUTest.F90, line 2736
+20210305 102705.635 INFO             PET2 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.635 INFO             PET2 !!!        MOAB turned ON             !!!
+20210305 102705.635 INFO             PET2 !!! Meshes now created using MOAB     !!!
+20210305 102705.635 INFO             PET2 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.707 INFO             PET2 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.707 INFO             PET2 !!!        MOAB turned OFF            !!!
+20210305 102705.707 INFO             PET2 !!! Meshes now created using native   !!!
+20210305 102705.707 INFO             PET2 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.713 INFO             PET2  PASS  Test MOAB Mesh Create from Grid, ESMF_MeshUTest.F90, line 2759
+20210305 102705.714 INFO             PET2  PASS  Mesh get/set of creation info (elementConn, etc.), ESMF_MeshUTest.F90, line 2773
+20210305 102705.714 INFO             PET2  PASS  Mesh set of >4 sided, ESMF_MeshUTest.F90, line 2787
+20210305 102705.714 INFO             PET2 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.714 INFO             PET2 !!!        MOAB turned ON             !!!
+20210305 102705.714 INFO             PET2 !!! Meshes now created using MOAB     !!!
+20210305 102705.714 INFO             PET2 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.717 INFO             PET2 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.717 INFO             PET2 !!!        MOAB turned OFF            !!!
+20210305 102705.717 INFO             PET2 !!! Meshes now created using native   !!!
+20210305 102705.717 INFO             PET2 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.717 INFO             PET2  PASS  MOAB Mesh Create with a pentagon and hexagon element, ESMF_MeshUTest.F90, line 2823
+20210305 102705.717 INFO             PET2 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.717 INFO             PET2 !!!        MOAB turned ON             !!!
+20210305 102705.717 INFO             PET2 !!! Meshes now created using MOAB     !!!
+20210305 102705.717 INFO             PET2 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.717 INFO             PET2 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.717 INFO             PET2 !!!        MOAB turned OFF            !!!
+20210305 102705.717 INFO             PET2 !!! Meshes now created using native   !!!
+20210305 102705.717 INFO             PET2 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.717 INFO             PET2  PASS  Mesh Set/Get MOAB, ESMF_MeshUTest.F90, line 2863
+20210305 102705.717 INFO             PET2  Ending Test, file ESMF_MeshUTest.F90, line 2878
+20210305 102705.717 INFO             PET2 Finalizing ESMF
+20210305 102705.468 INFO             PET3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.468 INFO             PET3 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 102705.468 INFO             PET3 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 102705.468 INFO             PET3 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 102705.468 INFO             PET3 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 102705.468 INFO             PET3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.468 INFO             PET3 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 102705.469 INFO             PET3 ESMF library build date/time: "Mar  5 2021" "09:44:29"
+20210305 102705.469 INFO             PET3 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_O
+20210305 102705.469 INFO             PET3 ESMF_COMM                   : mpi
+20210305 102705.470 INFO             PET3 ESMF_MOAB                   : enabled
+20210305 102705.470 INFO             PET3 ESMF_LAPACK                 : enabled
+20210305 102705.470 INFO             PET3 ESMF_NETCDF                 : enabled
+20210305 102705.470 INFO             PET3 ESMF_PNETCDF                : disabled
+20210305 102705.470 INFO             PET3 ESMF_PIO                    : enabled
+20210305 102705.470 INFO             PET3 ESMF_YAMLCPP                : enabled
+20210305 102705.482 INFO             PET3  Beginning Test, file ESMF_MeshUTest.F90, line 106
+20210305 102705.482 INFO             PET3  NUMBER_OF_PROCESSORS           4
+20210305 102705.482 INFO             PET3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.482 INFO             PET3 !!!        MOAB turned OFF            !!!
+20210305 102705.482 INFO             PET3 !!! Meshes now created using native   !!!
+20210305 102705.482 INFO             PET3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.483 INFO             PET3  PASS  Testing Mesh IsCreated for uncreated object, ESMF_MeshUTest.F90, line 130
+20210305 102705.483 INFO             PET3  PASS  Testing Mesh IsCreated for uncreated object, ESMF_MeshUTest.F90, line 138
+20210305 102705.487 INFO             PET3  PASS  Create test Mesh for IsCreated, ESMF_MeshUTest.F90, line 147
+20210305 102705.487 INFO             PET3  PASS  Testing Mesh IsCreated for created object, ESMF_MeshUTest.F90, line 155
+20210305 102705.487 INFO             PET3  PASS  Testing Mesh IsCreated for created object, ESMF_MeshUTest.F90, line 163
+20210305 102705.488 INFO             PET3  PASS  Testing MeshGet, accessing name, ESMF_MeshUTest.F90, line 171
+20210305 102705.488 INFO             PET3 meshName=bigbadmeshname
+20210305 102705.488 INFO             PET3  PASS  Destroy test Mesh for IsCreated, ESMF_MeshUTest.F90, line 180
+20210305 102705.489 INFO             PET3  PASS  Testing Mesh IsCreated for destroyed object, ESMF_MeshUTest.F90, line 188
+20210305 102705.489 INFO             PET3  PASS  Testing Mesh IsCreated for destroyed object, ESMF_MeshUTest.F90, line 196
+20210305 102705.489 INFO             PET3  PASS  Test creating a small 2x2 2D QUAD Mesh in 3 steps on 1 proc, ESMF_MeshUTest.F90, line 339
+20210305 102705.489 INFO             PET3  PASS  Test creating a small 2x2 2D QUAD Mesh in 3 steps on 1 proc, ESMF_MeshUTest.F90, line 357
+20210305 102705.489 INFO             PET3  PASS  Test creating a small 2x2 2D QUAD Mesh in 3 steps on 1 proc, ESMF_MeshUTest.F90, line 376
+20210305 102705.489 INFO             PET3  PASS  Test creating a small 2x2 2D QUAD Mesh in 3 steps on 1 proc, ESMF_MeshUTest.F90, line 394
+20210305 102705.489 INFO             PET3  PASS  Test creating a small 2x2 2D QUAD Mesh in 3 steps on 1 proc, ESMF_MeshUTest.F90, line 413
+20210305 102705.489 INFO             PET3  PASS  Test creating a small 2x2 2D QUAD Mesh in 3 steps on 1 proc, ESMF_MeshUTest.F90, line 432
+20210305 102705.525 INFO             PET3  PASS  Test creating a small 2x2 2D QUAD Mesh in 1 step on 4 procs and MeshGet, ESMF_MeshUTest.F90, line 734
+20210305 102705.566 INFO             PET3  PASS  Test ESMF_MeshFreeMemory(), ESMF_MeshUTest.F90, line 775
+20210305 102705.566 INFO             PET3  PASS  Test error checking, ESMF_MeshUTest.F90, line 902
+20210305 102705.571 INFO             PET3  PASS  Test Mesh Serialize/Deserialize, ESMF_MeshUTest.F90, line 984
+20210305 102705.572 INFO             PET3  PASS  Test Mesh Find Point, ESMF_MeshUTest.F90, line 1066
+20210305 102705.572 INFO             PET3  PASS  Test setting and getting area of Mesh, ESMF_MeshUTest.F90, line 1215
+20210305 102705.576 INFO             PET3  PASS  Test Mesh Create Redist, ESMF_MeshUTest.F90, line 1318
+20210305 102705.577 INFO             PET3  PASS  Test Mesh Create Redist: Different Location Node Element, ESMF_MeshUTest.F90, line 1427
+20210305 102705.578 INFO             PET3  PASS  Test Mesh Create Redist with just element distgrid, ESMF_MeshUTest.F90, line 1507
+20210305 102705.580 INFO             PET3  PASS  Test Mesh Create Redist with just node distgrid, ESMF_MeshUTest.F90, line 1606
+20210305 102705.582 INFO             PET3  PASS  Test Mesh Create Redist with just node distgrid and >4 sided elements, ESMF_MeshUTest.F90, line 1688
+20210305 102705.583 INFO             PET3  PASS  Test Mesh Create Redist with no distgrids, ESMF_MeshUTest.F90, line 1734
+20210305 102705.587 INFO             PET3  PASS  Test Mesh Create Redist: >1 localDECount Distgrid, ESMF_MeshUTest.F90, line 1849
+20210305 102705.589 INFO             PET3  PASS  Test Mesh Create >1 localDECount Distgrid, ESMF_MeshUTest.F90, line 1864
+20210305 102705.589 INFO             PET3  PASS  Test Mesh Create with coordSys ESMF_COORDSYS_SPH_DEG, ESMF_MeshUTest.F90, line 1955
+20210305 102705.590 INFO             PET3  PASS  Mesh Create with a pentagon and hexagon element, ESMF_MeshUTest.F90, line 1998
+20210305 102705.591 INFO             PET3  PASS  Mesh Create Dual with a pentagon and hexagon element, ESMF_MeshUTest.F90, line 2030
+20210305 102705.592 INFO             PET3  PASS  Mesh Create and then Redist with a pentagon and hexagon element, ESMF_MeshUTest.F90, line 2102
+20210305 102705.593 INFO             PET3  PASS  Mesh Create Dual, ESMF_MeshUTest.F90, line 2139
+20210305 102705.593 INFO             PET3  PASS  Mesh Create with a multipart element, ESMF_MeshUTest.F90, line 2167
+20210305 102705.594 INFO             PET3  PASS  Mesh create easy elems, ESMF_MeshUTest.F90, line 2183
+20210305 102705.594 INFO             PET3  PASS  Mesh create easy elems 1 type, ESMF_MeshUTest.F90, line 2198
+20210305 102705.594 INFO             PET3  PASS  Test Mesh Empty Create, ESMF_MeshUTest.F90, line 2357
+20210305 102705.594 INFO             PET3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.594 INFO             PET3 !!!        MOAB turned ON             !!!
+20210305 102705.594 INFO             PET3 !!! Meshes now created using MOAB     !!!
+20210305 102705.594 INFO             PET3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.608 INFO             PET3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.608 INFO             PET3 !!!        MOAB turned OFF            !!!
+20210305 102705.608 INFO             PET3 !!! Meshes now created using native   !!!
+20210305 102705.608 INFO             PET3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.608 INFO             PET3  PASS  Test creating a MOAB Mesh, ESMF_MeshUTest.F90, line 2487
+20210305 102705.618 INFO             PET3  PASS  Test get of element mask and area info, ESMF_MeshUTest.F90, line 2596
+20210305 102705.618 INFO             PET3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.618 INFO             PET3 !!!        MOAB turned ON             !!!
+20210305 102705.618 INFO             PET3 !!! Meshes now created using MOAB     !!!
+20210305 102705.618 INFO             PET3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.622 INFO             PET3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.622 INFO             PET3 !!!        MOAB turned OFF            !!!
+20210305 102705.622 INFO             PET3 !!! Meshes now created using native   !!!
+20210305 102705.622 INFO             PET3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.624 INFO             PET3  PASS  Test MOAB get of element mask and area info, ESMF_MeshUTest.F90, line 2720
+20210305 102705.634 INFO             PET3  PASS  Test Mesh Create from Grid with 1 width DE, ESMF_MeshUTest.F90, line 2736
+20210305 102705.635 INFO             PET3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.635 INFO             PET3 !!!        MOAB turned ON             !!!
+20210305 102705.635 INFO             PET3 !!! Meshes now created using MOAB     !!!
+20210305 102705.635 INFO             PET3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.707 INFO             PET3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.707 INFO             PET3 !!!        MOAB turned OFF            !!!
+20210305 102705.707 INFO             PET3 !!! Meshes now created using native   !!!
+20210305 102705.707 INFO             PET3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.713 INFO             PET3  PASS  Test MOAB Mesh Create from Grid, ESMF_MeshUTest.F90, line 2759
+20210305 102705.714 INFO             PET3  PASS  Mesh get/set of creation info (elementConn, etc.), ESMF_MeshUTest.F90, line 2773
+20210305 102705.714 INFO             PET3  PASS  Mesh set of >4 sided, ESMF_MeshUTest.F90, line 2787
+20210305 102705.714 INFO             PET3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.714 INFO             PET3 !!!        MOAB turned ON             !!!
+20210305 102705.714 INFO             PET3 !!! Meshes now created using MOAB     !!!
+20210305 102705.714 INFO             PET3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.717 INFO             PET3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.717 INFO             PET3 !!!        MOAB turned OFF            !!!
+20210305 102705.717 INFO             PET3 !!! Meshes now created using native   !!!
+20210305 102705.717 INFO             PET3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.717 INFO             PET3  PASS  MOAB Mesh Create with a pentagon and hexagon element, ESMF_MeshUTest.F90, line 2823
+20210305 102705.717 INFO             PET3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.717 INFO             PET3 !!!        MOAB turned ON             !!!
+20210305 102705.717 INFO             PET3 !!! Meshes now created using MOAB     !!!
+20210305 102705.717 INFO             PET3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.717 INFO             PET3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.717 INFO             PET3 !!!        MOAB turned OFF            !!!
+20210305 102705.717 INFO             PET3 !!! Meshes now created using native   !!!
+20210305 102705.717 INFO             PET3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102705.717 INFO             PET3  PASS  Mesh Set/Get MOAB, ESMF_MeshUTest.F90, line 2863
+20210305 102705.717 INFO             PET3  Ending Test, file ESMF_MeshUTest.F90, line 2878
+20210305 102705.717 INFO             PET3 Finalizing ESMF

@@ -1,0 +1,282 @@
+ ------------------------------------------------ 
+ Start of System Test FieldBundleLSRedistArb2Arb:
+ ------------------------------------------------ 
+ ------------------------------------------------ 
+ Start of System Test FieldBundleLSRedistArb2Arb:
+ ------------------------------------------------ 
+ ------------------------------------------------ 
+ Start of System Test FieldBundleLSRedistArb2Arb:
+ ------------------------------------------------ 
+ ------------------------------------------------ 
+ Start of System Test FieldBundleLSRedistArb2Arb:
+ ------------------------------------------------ 
+ ------------------------------------------------ 
+ Start of System Test FieldBundleLSRedistArb2Arb:
+ ------------------------------------------------ 
+ ------------------------------------------------ 
+ Start of System Test FieldBundleLSRedistArb2Arb:
+ ------------------------------------------------ 
+ Created component user model 1rc =           0
+ Created component user model 2rc =           0
+ Created component user model 1rc =           0
+ Created component user model 2rc =           0
+ Created component user model 1rc =           0
+ Created component user model 2rc =           0
+ Created component user model 1rc =           0
+ Created component user model 2rc =           0
+ Created component user model 1rc =           0
+ Created component user model 2rc =           0
+ Created component user model 1rc =           0
+ Created component user model 2rc =           0
+ Created component user one-way coupler, rc =           0
+ Comp Creates finished
+ Created component user one-way coupler, rc =           0
+ Comp Creates finished
+ Created component user one-way coupler, rc =           0
+ Comp Creates finished
+ Created component user one-way coupler, rc =           0
+ Comp Creates finished
+ Created component user one-way coupler, rc =           0
+ Comp Creates finished
+ Created component user one-way coupler, rc =           0
+ Comp Creates finished
+ Comp SetServices finished, rc=            0           0
+ Comp SetServices finished, rc=            0           0
+ User Comp2 Register starting
+ User Comp2 Register starting
+ Registered Initialize, Run, and Finalize routines
+ Registered Initialize, Run, and Finalize routines
+ User Comp2 Register returning
+ User Comp2 Register returning
+ User Comp1 Register starting
+ User Comp1 Register starting
+ User Comp1 Register starting
+ Registered Initialize, Run, and Finalize routines
+ User Comp1 Register returning
+ Registered Initialize, Run, and Finalize routines
+ User Comp1 Register returning
+ User Comp1 Register starting
+ Registered Initialize, Run, and Finalize routines
+ User Comp1 Register returning
+ Registered Initialize, Run, and Finalize routines
+ User Comp1 Register returning
+ Comp SetServices finished, rc=            0           0
+ Comp SetServices finished, rc=            0           0
+ Comp SetServices finished, rc=            0           0
+ Comp SetServices finished, rc=            0           0
+ Comp SetServices finished, rc=            0           0
+ Comp SetServices finished, rc=            0           0
+ Comp SetServices finished, rc=            0           0
+ Comp SetServices finished, rc=            0           0
+ Comp SetServices finished, rc=            0           0
+ Comp SetServices finished, rc=            0           0
+ User Coupler Register starting
+ Registered Initialize, Run, and Finalize routines
+ User Coupler Register returning
+ Comp SetServices finished, rc=            0           0
+ User Coupler Register starting
+ Registered Initialize, Run, and Finalize routines
+ User Coupler Register returning
+ Comp SetServices finished, rc=            0           0
+ User Coupler Register starting
+ Registered Initialize, Run, and Finalize routines
+ User Coupler Register returning
+ Comp SetServices finished, rc=            0           0
+ User Coupler Register starting
+ Registered Initialize, Run, and Finalize routines
+ User Coupler Register returning
+ Comp SetServices finished, rc=            0           0
+ User Coupler Register starting
+ Registered Initialize, Run, and Finalize routines
+ User Coupler Register returning
+ Comp SetServices finished, rc=            0           0
+ User Coupler Register starting
+ Registered Initialize, Run, and Finalize routines
+ User Coupler Register returning
+ Comp SetServices finished, rc=            0           0
+           1 User Comp 1 Init starting
+           2 User Comp 1 Init starting
+           3 User Comp 1 Init starting
+           0 User Comp 1 Init starting
+ Comp 1 Initialize finished, rc =           0
+ Comp 1 Initialize finished, rc =           0
+           0 User Comp 2 Init starting
+           1 User Comp 2 Init starting
+           1 User Comp1 Init returning
+           3 User Comp1 Init returning
+ Comp 1 Initialize finished, rc =           0
+           0 User Comp2 Init returning
+ Comp 2 Initialize finished, rc =           0
+           0 User Comp1 Init returning
+ Comp 1 Initialize finished, rc =           0
+ Comp 2 Initialize finished, rc =           0
+ Comp 1 Initialize finished, rc =           0
+ Comp 2 Initialize finished, rc =           0
+           2 User Comp1 Init returning
+ Comp 1 Initialize finished, rc =           0
+ Comp 2 Initialize finished, rc =           0
+ Comp 2 Initialize finished, rc =           0
+           1 User Comp2 Init returning
+ Comp 2 Initialize finished, rc =           0
+ User Coupler Init starting
+ User Coupler Init starting
+ User Coupler Init starting
+ User Coupler Init starting
+ User Coupler Init starting
+ User Coupler Init starting
+ Import State contains            1  items.
+ Import State contains            1  items.
+ Import State contains            0  items.
+ Import State contains            1  items.
+ Import State contains            1  items.
+ Import State contains            0  items.
+ User Coupler Init returning
+ User Coupler Init returning
+ Coupler Initialize finished, rc =           0
+ User Coupler Init returning
+ Coupler Initialize finished, rc =           0
+ User Coupler Init returning
+ Coupler Initialize finished, rc =           0
+ User Coupler Init returning
+ Coupler Initialize finished, rc =           0
+ Coupler Initialize finished, rc =           0
+ User Coupler Init returning
+ Coupler Initialize finished, rc =           0
+           2 User Comp1 Run starting
+ Comp 1 Run returned, rc =           0
+ User Coupler Run starting
+           0 User Comp1 Run starting
+           0 User Comp1 Run returning
+ Comp 1 Run returned, rc =           0
+           1 User Comp1 Run starting
+           1 User Comp1 Run returning
+ Comp 1 Run returned, rc =           0
+ User Coupler Run starting
+           2 User Comp1 Run returning
+ Comp 1 Run returned, rc =           0
+ User Coupler Run starting
+           3 User Comp1 Run starting
+           3 User Comp1 Run returning
+ Comp 1 Run returned, rc =           0
+ User Coupler Run starting
+ Comp 1 Run returned, rc =           0
+ User Coupler Run starting
+ User Coupler Run starting
+ User Coupler Run returning
+ Coupler Run returned, rc =           0
+ User Coupler Run returning
+ Coupler Run returned, rc =           0
+ User Coupler Run returning
+ Coupler Run returned, rc =           0
+ Comp 2 Run returned, rc =           0
+ User Coupler Run returning
+ Coupler Run returned, rc =           0
+ Comp 2 Run returned, rc =           0
+ Comp 2 Run returned, rc =           0
+           0 User Comp1 Final starting
+ Comp 2 Run returned, rc =           0
+           1 User Comp1 Final starting
+           2 User Comp1 Final starting
+           3 User Comp1 Final starting
+ User Coupler Run returning
+ Coupler Run returned, rc =           0
+           0 User Comp2 Run starting
+ User Coupler Run returning
+ Coupler Run returned, rc =           0
+           1 User Comp2 Run starting
+           1 User Comp1 Final returning
+           2 User Comp1 Final returning
+ Comp 1 Finalize finished, rc =           0           0
+           3 User Comp1 Final returning
+ Comp 1 Finalize finished, rc =           0           0
+ Comp 2 Finalize finished, rc =           0           0
+           0 User Comp1 Final returning
+ Comp 1 Finalize finished, rc =           0           0
+ Comp 2 Finalize finished, rc =           0           0
+ User Coupler Final starting
+ Comp 1 Finalize finished, rc =           0           0
+ Comp 2 Finalize finished, rc =           0           0
+ User Coupler Final starting
+ Comp 2 Finalize finished, rc =           0           0
+ User Coupler Final starting
+ User Coupler Final starting
+ User Coupler Final returning
+ User Coupler Final returning
+ Coupler Finalize finished, rc =           0           0
+ User Coupler Final returning
+ Coupler Finalize finished, rc =           0           0
+ ------------------------------------------------------------
+ User Coupler Final returning
+ Coupler Finalize finished, rc =           0           0
+ ------------------------------------------------------------
+ ------------------------------------------------------------
+ Coupler Finalize finished, rc =           0           0
+ ------------------------------------------------------------
+ ------------------------------------------------------------
+ Test finished, pet_id =            0
+ ------------------------------------------------------------
+ ------------------------------------------------------------
+ ------------------------------------------------------------
+ Test finished, pet_id =            1
+ ------------------------------------------------------------
+ ------------------------------------------------------------
+ Comp Finalize returned
+ ------------------------------------------------------------
+ Test finished, pet_id =            2
+ ------------------------------------------------------------
+ ------------------------------------------------------------
+ Comp Finalize returned
+ Test finished, pet_id =            3
+ ------------------------------------------------------------
+ ------------------------------------------------------------
+ Comp Finalize returned
+ ------------------------------------------------------------
+ Comp Finalize returned
+ All Destroy routines done
+ System Test FieldBundleLSRedistArb2Arb complete.
+ All Destroy routines done
+ System Test FieldBundleLSRedistArb2Arb complete.
+  PASS  System Test FieldBundleLSRedistArb2Arb: LocStream based FieldBundleRedist, ESMF_FieldBundleLSRedistArb2ArbSTest.F90, line 396
+ All Destroy routines done
+ System Test FieldBundleLSRedistArb2Arb complete.
+  PASS  System Test FieldBundleLSRedistArb2Arb: LocStream based FieldBundleRedist, ESMF_FieldBundleLSRedistArb2ArbSTest.F90, line 396
+ All Destroy routines done
+ System Test FieldBundleLSRedistArb2Arb complete.
+  PASS  System Test FieldBundleLSRedistArb2Arb: LocStream based FieldBundleRedist, ESMF_FieldBundleLSRedistArb2ArbSTest.F90, line 396
+  PASS  System Test FieldBundleLSRedistArb2Arb: LocStream based FieldBundleRedist, ESMF_FieldBundleLSRedistArb2ArbSTest.F90, line 396
+           0 User Comp2 Run returning
+ Comp 2 Run returned, rc =           0
+ Comp 1 Finalize finished, rc =           0           0
+           1 User Comp2 Run returning
+ Comp 2 Run returned, rc =           0
+ Comp 1 Finalize finished, rc =           0           0
+           1 User Comp2 Final starting
+           0 User Comp2 Final starting
+           0 User Comp2 Final returning
+           1 User Comp2 Final returning
+ Comp 2 Finalize finished, rc =           0           0
+ Comp 2 Finalize finished, rc =           0           0
+ User Coupler Final starting
+ User Coupler Final starting
+ User Coupler Final returning
+ User Coupler Final returning
+ Coupler Finalize finished, rc =           0           0
+ ------------------------------------------------------------
+ ------------------------------------------------------------
+ Test finished, pet_id =            5
+ ------------------------------------------------------------
+ Coupler Finalize finished, rc =           0           0
+ ------------------------------------------------------------
+ ------------------------------------------------------------
+ Test finished, pet_id =            4
+ ------------------------------------------------------------
+ ------------------------------------------------------------
+ ------------------------------------------------------------
+ Comp Finalize returned
+ Comp Finalize returned
+ All Destroy routines done
+ System Test FieldBundleLSRedistArb2Arb complete.
+ All Destroy routines done
+ System Test FieldBundleLSRedistArb2Arb complete.
+  PASS  System Test FieldBundleLSRedistArb2Arb: LocStream based FieldBundleRedist, ESMF_FieldBundleLSRedistArb2ArbSTest.F90, line 396
+  PASS  System Test FieldBundleLSRedistArb2Arb: LocStream based FieldBundleRedist, ESMF_FieldBundleLSRedistArb2ArbSTest.F90, line 396

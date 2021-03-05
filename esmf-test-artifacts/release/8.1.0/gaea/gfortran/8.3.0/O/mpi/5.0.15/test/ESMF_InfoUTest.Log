@@ -1,0 +1,320 @@
+20210305 102440.716 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102440.717 INFO             PET0 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 102440.717 INFO             PET0 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 102440.717 INFO             PET0 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 102440.717 INFO             PET0 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 102440.717 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102440.717 INFO             PET0 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 102440.717 INFO             PET0 ESMF library build date/time: "Mar  5 2021" "09:44:29"
+20210305 102440.717 INFO             PET0 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_O
+20210305 102440.717 INFO             PET0 ESMF_COMM                   : mpi
+20210305 102440.717 INFO             PET0 ESMF_MOAB                   : enabled
+20210305 102440.717 INFO             PET0 ESMF_LAPACK                 : enabled
+20210305 102440.717 INFO             PET0 ESMF_NETCDF                 : enabled
+20210305 102440.717 INFO             PET0 ESMF_PNETCDF                : disabled
+20210305 102440.717 INFO             PET0 ESMF_PIO                    : enabled
+20210305 102440.717 INFO             PET0 ESMF_YAMLCPP                : enabled
+20210305 102440.739 INFO             PET0  Beginning Test, file ESMF_InfoUTest.F90, line 87
+20210305 102440.739 INFO             PET0  NUMBER_OF_PROCESSORS           4
+20210305 102440.742 INFO             PET0  PASS  ESMF_InfoCreate, ESMF_InfoUTest.F90, line 105
+20210305 102440.742 INFO             PET0  PASS  ESMF_InfoDestroy, ESMF_InfoUTest.F90, line 115
+20210305 102440.779 INFO             PET0  PASS  ESMF_InfoSet, ESMF_InfoUTest.F90, line 152
+20210305 102440.779 INFO             PET0  PASS  ESMF_InfoGetI4, ESMF_InfoUTest.F90, line 162
+20210305 102440.779 INFO             PET0  PASS  ESMF_InfoGetI8, ESMF_InfoUTest.F90, line 173
+20210305 102440.779 INFO             PET0  PASS  ESMF_InfoGetR4, ESMF_InfoUTest.F90, line 184
+20210305 102440.779 INFO             PET0  PASS  ESMF_InfoGetR8, ESMF_InfoUTest.F90, line 195
+20210305 102440.779 INFO             PET0  PASS  ESMF_InfoGetCH with Default, ESMF_InfoUTest.F90, line 208
+20210305 102440.779 INFO             PET0  PASS  ESMF_InfoSet/Get Empty Character, ESMF_InfoUTest.F90, line 224
+20210305 102440.779 INFO             PET0  PASS  ESMF_InfoGetCH, ESMF_InfoUTest.F90, line 235
+20210305 102440.780 INFO             PET0  PASS  ESMF_InfoSet Force Flag, ESMF_InfoUTest.F90, line 260
+20210305 102442.568 INFO             PET0  PASS  Create+Destroy Loop, ESMF_InfoUTest.F90, line 284
+20210305 102442.568 INFO             PET0  PASS  ESMF_InfoGet with Default Value, ESMF_InfoUTest.F90, line 300
+20210305 102442.569 INFO             PET0  PASS  ESMF_InfoPrint, ESMF_InfoUTest.F90, line 336
+20210305 102442.569 INFO             PET0  PASS  ESMF_InfoRemove Child From Parent, ESMF_InfoUTest.F90, line 362
+20210305 102442.569 INFO             PET0  PASS  ESMF_InfoRemove Root, ESMF_InfoUTest.F90, line 381
+20210305 102442.570 INFO             PET0  PASS  ESMF_InfoIsPresent False, ESMF_InfoUTest.F90, line 398
+20210305 102442.570 INFO             PET0  PASS  ESMF_InfoIsPresent True, ESMF_InfoUTest.F90, line 418
+20210305 102442.570 INFO             PET0  PASS  ESMF_InfoIsPresent True w/ Pointer, ESMF_InfoUTest.F90, line 439
+20210305 102442.571 INFO             PET0  PASS  Array Setting/Getting, ESMF_InfoUTest.F90, line 472
+20210305 102442.571 INFO             PET0  PASS  ESMF_InfoSetNULL and ESMF_InfoIsSet, ESMF_InfoUTest.F90, line 507
+20210305 102442.571 INFO             PET0  PASS  ESMF_InfoCreateFromInfo, ESMF_InfoUTest.F90, line 532
+20210305 102442.581 INFO             PET0  PASS  ESMF_InfoWrite & ESMF_InfoRead, ESMF_InfoUTest.F90, line 568
+20210305 102442.581 INFO             PET0  PASS  Logical Scalar, ESMF_InfoUTest.F90, line 593
+20210305 102442.581 ERROR            PET0 ESMCI_Info.C:363 handleJSONTypeCheck() Invalid argument  - Error/Return Code 506 (ESMC_RC_ARG_BAD) - Types not equivalent. The key is: key
+20210305 102442.581 ERROR            PET0 ESMCI_Info.C:1314 Info::set(<json>) Invalid argument  - Internal subroutine call returned Error
+20210305 102442.581 ERROR            PET0 ESMCI_Info.C:1322 Info::set(<json>) Invalid argument  - Internal subroutine call returned Error
+20210305 102442.581 ERROR            PET0 ESMCI_Info.C:1325 Info::set(<json>) Invalid argument  - Internal subroutine call returned Error
+20210305 102442.581 ERROR            PET0 ESMCI_Info.C:1373 Info::set(<scalar>) Invalid argument  - Internal subroutine call returned Error
+20210305 102442.581 ERROR            PET0 ESMC_InfoCDefGeneric.C:354 ESMC_InfoSetR4() Invalid argument  - Internal subroutine call returned Error
+20210305 102442.581 ERROR            PET0 ESMF_Info.F90:566 ESMF_InfoSetR4() Invalid argument  - Internal subroutine call returned Error
+20210305 102442.581 INFO             PET0  PASS  Test Type Checking, ESMF_InfoUTest.F90, line 611
+20210305 102442.581 INFO             PET0  PASS  Set/Get Object, ESMF_InfoUTest.F90, line 650
+20210305 102442.581 INFO             PET0  PASS  Create By Parse, ESMF_InfoUTest.F90, line 676
+20210305 102442.581 INFO             PET0  PASS  ESMF_InfoUpdate, ESMF_InfoUTest.F90, line 703
+20210305 102442.582 INFO             PET0  PASS  ESMF_InfoGet, ESMF_InfoUTest.F90, line 728
+20210305 102442.582 INFO             PET0  PASS  ESMF_InfoEqual/NotEqual Operator, ESMF_InfoUTest.F90, line 747
+20210305 102442.582 INFO             PET0  PASS  ESMF_InfoGet Recursive, ESMF_InfoUTest.F90, line 768
+20210305 102442.582 INFO             PET0  PASS  ESMF_InfoSet with Parent Key, ESMF_InfoUTest.F90, line 791
+20210305 102442.582 INFO             PET0  PASS  ESMF_InfoGet Character Allocatable, ESMF_InfoUTest.F90, line 813
+20210305 102442.582 ERROR            PET0 ESMC_InfoCDef.C:608 ESMC_InfoSetCH() Object being used before creation  - Object pointer is null. Object has not been created appropriately.
+20210305 102442.582 ERROR            PET0 ESMF_Info.F90:766 ESMF_InfoSetCH() Object being used before creation  - Internal subroutine call returned Error
+20210305 102442.582 INFO             PET0  PASS  Check Initialization, ESMF_InfoUTest.F90, line 828
+20210305 102442.582 INFO             PET0  PASS  Dirty State, ESMF_InfoUTest.F90, line 848
+20210305 102442.582 ERROR            PET0 ESMCI_Info.C:363 handleJSONTypeCheck() Invalid argument  - Error/Return Code 506 (ESMC_RC_ARG_BAD) - Types not equivalent. The key is: float
+20210305 102442.582 ERROR            PET0 ESMCI_Info.C:814 Info::get() Invalid argument  - Internal subroutine call returned Error
+20210305 102442.583 ERROR            PET0 ESMCI_Info.C:836 Info::get() Invalid argument  - Internal subroutine call returned Error
+20210305 102442.583 ERROR            PET0 ESMC_InfoCDefGeneric.C:100 ESMC_InfoGetI4() Invalid argument  - Internal subroutine call returned Error
+20210305 102442.583 ERROR            PET0 ESMF_Info.F90:1572 ESMF_InfoGetI4() Invalid argument  - Internal subroutine call returned Error
+20210305 102442.583 INFO             PET0  PASS  Implicit Conversion, ESMF_InfoUTest.F90, line 868
+20210305 102442.583 ERROR            PET0 ESMCI_Info.C:363 handleJSONTypeCheck() Invalid argument  - Error/Return Code 506 (ESMC_RC_ARG_BAD) - Types not equivalent. The key is: float
+20210305 102442.583 ERROR            PET0 ESMCI_Info.C:814 Info::get() Invalid argument  - Internal subroutine call returned Error
+20210305 102442.583 ERROR            PET0 ESMCI_Info.C:836 Info::get() Invalid argument  - Internal subroutine call returned Error
+20210305 102442.583 ERROR            PET0 ESMC_InfoCDefGeneric.C:251 ESMC_InfoGetArrayI4() Invalid argument  - Internal subroutine call returned Error
+20210305 102442.583 ERROR            PET0 ESMF_Info.F90:2166 ESMF_InfoGetArrayI4() Invalid argument  - Internal subroutine call returned Error
+20210305 102442.583 INFO             PET0  PASS  Implicit Conversion w/ Scalar to List, ESMF_InfoUTest.F90, line 889
+20210305 102442.583 INFO             PET0  PASS  Copy while preserving 32-bit, ESMF_InfoUTest.F90, line 911
+20210305 102442.583 INFO             PET0  PASS  Create by key while preserving 32-bit, ESMF_InfoUTest.F90, line 937
+20210305 102442.583 INFO             PET0  PASS  InfoGetTK for I4, ESMF_InfoUTest.F90, line 963
+20210305 102442.583 INFO             PET0  PASS  InfoGetTK for Character, ESMF_InfoUTest.F90, line 985
+20210305 102442.583 INFO             PET0  Ending Test, file ESMF_InfoUTest.F90, line 992
+20210305 102442.583 INFO             PET0 Finalizing ESMF
+20210305 102440.714 INFO             PET1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102440.715 INFO             PET1 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 102440.715 INFO             PET1 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 102440.715 INFO             PET1 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 102440.715 INFO             PET1 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 102440.715 INFO             PET1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102440.715 INFO             PET1 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 102440.715 INFO             PET1 ESMF library build date/time: "Mar  5 2021" "09:44:29"
+20210305 102440.715 INFO             PET1 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_O
+20210305 102440.715 INFO             PET1 ESMF_COMM                   : mpi
+20210305 102440.715 INFO             PET1 ESMF_MOAB                   : enabled
+20210305 102440.715 INFO             PET1 ESMF_LAPACK                 : enabled
+20210305 102440.715 INFO             PET1 ESMF_NETCDF                 : enabled
+20210305 102440.715 INFO             PET1 ESMF_PNETCDF                : disabled
+20210305 102440.715 INFO             PET1 ESMF_PIO                    : enabled
+20210305 102440.715 INFO             PET1 ESMF_YAMLCPP                : enabled
+20210305 102440.739 INFO             PET1  Beginning Test, file ESMF_InfoUTest.F90, line 87
+20210305 102440.739 INFO             PET1  NUMBER_OF_PROCESSORS           4
+20210305 102440.742 INFO             PET1  PASS  ESMF_InfoCreate, ESMF_InfoUTest.F90, line 105
+20210305 102440.742 INFO             PET1  PASS  ESMF_InfoDestroy, ESMF_InfoUTest.F90, line 115
+20210305 102440.779 INFO             PET1  PASS  ESMF_InfoSet, ESMF_InfoUTest.F90, line 152
+20210305 102440.779 INFO             PET1  PASS  ESMF_InfoGetI4, ESMF_InfoUTest.F90, line 162
+20210305 102440.779 INFO             PET1  PASS  ESMF_InfoGetI8, ESMF_InfoUTest.F90, line 173
+20210305 102440.779 INFO             PET1  PASS  ESMF_InfoGetR4, ESMF_InfoUTest.F90, line 184
+20210305 102440.779 INFO             PET1  PASS  ESMF_InfoGetR8, ESMF_InfoUTest.F90, line 195
+20210305 102440.779 INFO             PET1  PASS  ESMF_InfoGetCH with Default, ESMF_InfoUTest.F90, line 208
+20210305 102440.779 INFO             PET1  PASS  ESMF_InfoSet/Get Empty Character, ESMF_InfoUTest.F90, line 224
+20210305 102440.779 INFO             PET1  PASS  ESMF_InfoGetCH, ESMF_InfoUTest.F90, line 235
+20210305 102440.780 INFO             PET1  PASS  ESMF_InfoSet Force Flag, ESMF_InfoUTest.F90, line 260
+20210305 102442.567 INFO             PET1  PASS  Create+Destroy Loop, ESMF_InfoUTest.F90, line 284
+20210305 102442.567 INFO             PET1  PASS  ESMF_InfoGet with Default Value, ESMF_InfoUTest.F90, line 300
+20210305 102442.569 INFO             PET1  PASS  ESMF_InfoPrint, ESMF_InfoUTest.F90, line 336
+20210305 102442.569 INFO             PET1  PASS  ESMF_InfoRemove Child From Parent, ESMF_InfoUTest.F90, line 362
+20210305 102442.569 INFO             PET1  PASS  ESMF_InfoRemove Root, ESMF_InfoUTest.F90, line 381
+20210305 102442.570 INFO             PET1  PASS  ESMF_InfoIsPresent False, ESMF_InfoUTest.F90, line 398
+20210305 102442.570 INFO             PET1  PASS  ESMF_InfoIsPresent True, ESMF_InfoUTest.F90, line 418
+20210305 102442.570 INFO             PET1  PASS  ESMF_InfoIsPresent True w/ Pointer, ESMF_InfoUTest.F90, line 439
+20210305 102442.571 INFO             PET1  PASS  Array Setting/Getting, ESMF_InfoUTest.F90, line 472
+20210305 102442.571 INFO             PET1  PASS  ESMF_InfoSetNULL and ESMF_InfoIsSet, ESMF_InfoUTest.F90, line 507
+20210305 102442.571 INFO             PET1  PASS  ESMF_InfoCreateFromInfo, ESMF_InfoUTest.F90, line 532
+20210305 102442.581 INFO             PET1  PASS  ESMF_InfoWrite & ESMF_InfoRead, ESMF_InfoUTest.F90, line 568
+20210305 102442.581 INFO             PET1  PASS  Logical Scalar, ESMF_InfoUTest.F90, line 593
+20210305 102442.581 ERROR            PET1 ESMCI_Info.C:363 handleJSONTypeCheck() Invalid argument  - Error/Return Code 506 (ESMC_RC_ARG_BAD) - Types not equivalent. The key is: key
+20210305 102442.581 ERROR            PET1 ESMCI_Info.C:1314 Info::set(<json>) Invalid argument  - Internal subroutine call returned Error
+20210305 102442.581 ERROR            PET1 ESMCI_Info.C:1322 Info::set(<json>) Invalid argument  - Internal subroutine call returned Error
+20210305 102442.581 ERROR            PET1 ESMCI_Info.C:1325 Info::set(<json>) Invalid argument  - Internal subroutine call returned Error
+20210305 102442.581 ERROR            PET1 ESMCI_Info.C:1373 Info::set(<scalar>) Invalid argument  - Internal subroutine call returned Error
+20210305 102442.581 ERROR            PET1 ESMC_InfoCDefGeneric.C:354 ESMC_InfoSetR4() Invalid argument  - Internal subroutine call returned Error
+20210305 102442.581 ERROR            PET1 ESMF_Info.F90:566 ESMF_InfoSetR4() Invalid argument  - Internal subroutine call returned Error
+20210305 102442.581 INFO             PET1  PASS  Test Type Checking, ESMF_InfoUTest.F90, line 611
+20210305 102442.581 INFO             PET1  PASS  Set/Get Object, ESMF_InfoUTest.F90, line 650
+20210305 102442.581 INFO             PET1  PASS  Create By Parse, ESMF_InfoUTest.F90, line 676
+20210305 102442.581 INFO             PET1  PASS  ESMF_InfoUpdate, ESMF_InfoUTest.F90, line 703
+20210305 102442.582 INFO             PET1  PASS  ESMF_InfoGet, ESMF_InfoUTest.F90, line 728
+20210305 102442.582 INFO             PET1  PASS  ESMF_InfoEqual/NotEqual Operator, ESMF_InfoUTest.F90, line 747
+20210305 102442.582 INFO             PET1  PASS  ESMF_InfoGet Recursive, ESMF_InfoUTest.F90, line 768
+20210305 102442.582 INFO             PET1  PASS  ESMF_InfoSet with Parent Key, ESMF_InfoUTest.F90, line 791
+20210305 102442.582 INFO             PET1  PASS  ESMF_InfoGet Character Allocatable, ESMF_InfoUTest.F90, line 813
+20210305 102442.582 ERROR            PET1 ESMC_InfoCDef.C:608 ESMC_InfoSetCH() Object being used before creation  - Object pointer is null. Object has not been created appropriately.
+20210305 102442.582 ERROR            PET1 ESMF_Info.F90:766 ESMF_InfoSetCH() Object being used before creation  - Internal subroutine call returned Error
+20210305 102442.582 INFO             PET1  PASS  Check Initialization, ESMF_InfoUTest.F90, line 828
+20210305 102442.582 INFO             PET1  PASS  Dirty State, ESMF_InfoUTest.F90, line 848
+20210305 102442.582 ERROR            PET1 ESMCI_Info.C:363 handleJSONTypeCheck() Invalid argument  - Error/Return Code 506 (ESMC_RC_ARG_BAD) - Types not equivalent. The key is: float
+20210305 102442.582 ERROR            PET1 ESMCI_Info.C:814 Info::get() Invalid argument  - Internal subroutine call returned Error
+20210305 102442.583 ERROR            PET1 ESMCI_Info.C:836 Info::get() Invalid argument  - Internal subroutine call returned Error
+20210305 102442.583 ERROR            PET1 ESMC_InfoCDefGeneric.C:100 ESMC_InfoGetI4() Invalid argument  - Internal subroutine call returned Error
+20210305 102442.583 ERROR            PET1 ESMF_Info.F90:1572 ESMF_InfoGetI4() Invalid argument  - Internal subroutine call returned Error
+20210305 102442.583 INFO             PET1  PASS  Implicit Conversion, ESMF_InfoUTest.F90, line 868
+20210305 102442.583 ERROR            PET1 ESMCI_Info.C:363 handleJSONTypeCheck() Invalid argument  - Error/Return Code 506 (ESMC_RC_ARG_BAD) - Types not equivalent. The key is: float
+20210305 102442.583 ERROR            PET1 ESMCI_Info.C:814 Info::get() Invalid argument  - Internal subroutine call returned Error
+20210305 102442.583 ERROR            PET1 ESMCI_Info.C:836 Info::get() Invalid argument  - Internal subroutine call returned Error
+20210305 102442.583 ERROR            PET1 ESMC_InfoCDefGeneric.C:251 ESMC_InfoGetArrayI4() Invalid argument  - Internal subroutine call returned Error
+20210305 102442.583 ERROR            PET1 ESMF_Info.F90:2166 ESMF_InfoGetArrayI4() Invalid argument  - Internal subroutine call returned Error
+20210305 102442.583 INFO             PET1  PASS  Implicit Conversion w/ Scalar to List, ESMF_InfoUTest.F90, line 889
+20210305 102442.583 INFO             PET1  PASS  Copy while preserving 32-bit, ESMF_InfoUTest.F90, line 911
+20210305 102442.583 INFO             PET1  PASS  Create by key while preserving 32-bit, ESMF_InfoUTest.F90, line 937
+20210305 102442.583 INFO             PET1  PASS  InfoGetTK for I4, ESMF_InfoUTest.F90, line 963
+20210305 102442.583 INFO             PET1  PASS  InfoGetTK for Character, ESMF_InfoUTest.F90, line 985
+20210305 102442.583 INFO             PET1  Ending Test, file ESMF_InfoUTest.F90, line 992
+20210305 102442.583 INFO             PET1 Finalizing ESMF
+20210305 102440.738 INFO             PET2 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102440.738 INFO             PET2 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 102440.738 INFO             PET2 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 102440.738 INFO             PET2 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 102440.738 INFO             PET2 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 102440.738 INFO             PET2 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102440.738 INFO             PET2 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 102440.738 INFO             PET2 ESMF library build date/time: "Mar  5 2021" "09:44:29"
+20210305 102440.738 INFO             PET2 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_O
+20210305 102440.738 INFO             PET2 ESMF_COMM                   : mpi
+20210305 102440.739 INFO             PET2 ESMF_MOAB                   : enabled
+20210305 102440.739 INFO             PET2 ESMF_LAPACK                 : enabled
+20210305 102440.739 INFO             PET2 ESMF_NETCDF                 : enabled
+20210305 102440.739 INFO             PET2 ESMF_PNETCDF                : disabled
+20210305 102440.739 INFO             PET2 ESMF_PIO                    : enabled
+20210305 102440.739 INFO             PET2 ESMF_YAMLCPP                : enabled
+20210305 102440.739 INFO             PET2  Beginning Test, file ESMF_InfoUTest.F90, line 87
+20210305 102440.739 INFO             PET2  NUMBER_OF_PROCESSORS           4
+20210305 102440.742 INFO             PET2  PASS  ESMF_InfoCreate, ESMF_InfoUTest.F90, line 105
+20210305 102440.742 INFO             PET2  PASS  ESMF_InfoDestroy, ESMF_InfoUTest.F90, line 115
+20210305 102440.779 INFO             PET2  PASS  ESMF_InfoSet, ESMF_InfoUTest.F90, line 152
+20210305 102440.779 INFO             PET2  PASS  ESMF_InfoGetI4, ESMF_InfoUTest.F90, line 162
+20210305 102440.779 INFO             PET2  PASS  ESMF_InfoGetI8, ESMF_InfoUTest.F90, line 173
+20210305 102440.779 INFO             PET2  PASS  ESMF_InfoGetR4, ESMF_InfoUTest.F90, line 184
+20210305 102440.779 INFO             PET2  PASS  ESMF_InfoGetR8, ESMF_InfoUTest.F90, line 195
+20210305 102440.779 INFO             PET2  PASS  ESMF_InfoGetCH with Default, ESMF_InfoUTest.F90, line 208
+20210305 102440.779 INFO             PET2  PASS  ESMF_InfoSet/Get Empty Character, ESMF_InfoUTest.F90, line 224
+20210305 102440.779 INFO             PET2  PASS  ESMF_InfoGetCH, ESMF_InfoUTest.F90, line 235
+20210305 102440.780 INFO             PET2  PASS  ESMF_InfoSet Force Flag, ESMF_InfoUTest.F90, line 260
+20210305 102442.571 INFO             PET2  PASS  Create+Destroy Loop, ESMF_InfoUTest.F90, line 284
+20210305 102442.572 INFO             PET2  PASS  ESMF_InfoGet with Default Value, ESMF_InfoUTest.F90, line 300
+20210305 102442.572 INFO             PET2  PASS  ESMF_InfoPrint, ESMF_InfoUTest.F90, line 336
+20210305 102442.572 INFO             PET2  PASS  ESMF_InfoRemove Child From Parent, ESMF_InfoUTest.F90, line 362
+20210305 102442.572 INFO             PET2  PASS  ESMF_InfoRemove Root, ESMF_InfoUTest.F90, line 381
+20210305 102442.572 INFO             PET2  PASS  ESMF_InfoIsPresent False, ESMF_InfoUTest.F90, line 398
+20210305 102442.572 INFO             PET2  PASS  ESMF_InfoIsPresent True, ESMF_InfoUTest.F90, line 418
+20210305 102442.572 INFO             PET2  PASS  ESMF_InfoIsPresent True w/ Pointer, ESMF_InfoUTest.F90, line 439
+20210305 102442.572 INFO             PET2  PASS  Array Setting/Getting, ESMF_InfoUTest.F90, line 472
+20210305 102442.572 INFO             PET2  PASS  ESMF_InfoSetNULL and ESMF_InfoIsSet, ESMF_InfoUTest.F90, line 507
+20210305 102442.572 INFO             PET2  PASS  ESMF_InfoCreateFromInfo, ESMF_InfoUTest.F90, line 532
+20210305 102442.581 INFO             PET2  PASS  ESMF_InfoWrite & ESMF_InfoRead, ESMF_InfoUTest.F90, line 568
+20210305 102442.581 INFO             PET2  PASS  Logical Scalar, ESMF_InfoUTest.F90, line 593
+20210305 102442.581 ERROR            PET2 ESMCI_Info.C:363 handleJSONTypeCheck() Invalid argument  - Error/Return Code 506 (ESMC_RC_ARG_BAD) - Types not equivalent. The key is: key
+20210305 102442.581 ERROR            PET2 ESMCI_Info.C:1314 Info::set(<json>) Invalid argument  - Internal subroutine call returned Error
+20210305 102442.581 ERROR            PET2 ESMCI_Info.C:1322 Info::set(<json>) Invalid argument  - Internal subroutine call returned Error
+20210305 102442.581 ERROR            PET2 ESMCI_Info.C:1325 Info::set(<json>) Invalid argument  - Internal subroutine call returned Error
+20210305 102442.581 ERROR            PET2 ESMCI_Info.C:1373 Info::set(<scalar>) Invalid argument  - Internal subroutine call returned Error
+20210305 102442.581 ERROR            PET2 ESMC_InfoCDefGeneric.C:354 ESMC_InfoSetR4() Invalid argument  - Internal subroutine call returned Error
+20210305 102442.581 ERROR            PET2 ESMF_Info.F90:566 ESMF_InfoSetR4() Invalid argument  - Internal subroutine call returned Error
+20210305 102442.581 INFO             PET2  PASS  Test Type Checking, ESMF_InfoUTest.F90, line 611
+20210305 102442.581 INFO             PET2  PASS  Set/Get Object, ESMF_InfoUTest.F90, line 650
+20210305 102442.581 INFO             PET2  PASS  Create By Parse, ESMF_InfoUTest.F90, line 676
+20210305 102442.581 INFO             PET2  PASS  ESMF_InfoUpdate, ESMF_InfoUTest.F90, line 703
+20210305 102442.582 INFO             PET2  PASS  ESMF_InfoGet, ESMF_InfoUTest.F90, line 728
+20210305 102442.582 INFO             PET2  PASS  ESMF_InfoEqual/NotEqual Operator, ESMF_InfoUTest.F90, line 747
+20210305 102442.582 INFO             PET2  PASS  ESMF_InfoGet Recursive, ESMF_InfoUTest.F90, line 768
+20210305 102442.582 INFO             PET2  PASS  ESMF_InfoSet with Parent Key, ESMF_InfoUTest.F90, line 791
+20210305 102442.582 INFO             PET2  PASS  ESMF_InfoGet Character Allocatable, ESMF_InfoUTest.F90, line 813
+20210305 102442.582 ERROR            PET2 ESMC_InfoCDef.C:608 ESMC_InfoSetCH() Object being used before creation  - Object pointer is null. Object has not been created appropriately.
+20210305 102442.582 ERROR            PET2 ESMF_Info.F90:766 ESMF_InfoSetCH() Object being used before creation  - Internal subroutine call returned Error
+20210305 102442.582 INFO             PET2  PASS  Check Initialization, ESMF_InfoUTest.F90, line 828
+20210305 102442.582 INFO             PET2  PASS  Dirty State, ESMF_InfoUTest.F90, line 848
+20210305 102442.582 ERROR            PET2 ESMCI_Info.C:363 handleJSONTypeCheck() Invalid argument  - Error/Return Code 506 (ESMC_RC_ARG_BAD) - Types not equivalent. The key is: float
+20210305 102442.582 ERROR            PET2 ESMCI_Info.C:814 Info::get() Invalid argument  - Internal subroutine call returned Error
+20210305 102442.583 ERROR            PET2 ESMCI_Info.C:836 Info::get() Invalid argument  - Internal subroutine call returned Error
+20210305 102442.583 ERROR            PET2 ESMC_InfoCDefGeneric.C:100 ESMC_InfoGetI4() Invalid argument  - Internal subroutine call returned Error
+20210305 102442.583 ERROR            PET2 ESMF_Info.F90:1572 ESMF_InfoGetI4() Invalid argument  - Internal subroutine call returned Error
+20210305 102442.583 INFO             PET2  PASS  Implicit Conversion, ESMF_InfoUTest.F90, line 868
+20210305 102442.583 ERROR            PET2 ESMCI_Info.C:363 handleJSONTypeCheck() Invalid argument  - Error/Return Code 506 (ESMC_RC_ARG_BAD) - Types not equivalent. The key is: float
+20210305 102442.583 ERROR            PET2 ESMCI_Info.C:814 Info::get() Invalid argument  - Internal subroutine call returned Error
+20210305 102442.583 ERROR            PET2 ESMCI_Info.C:836 Info::get() Invalid argument  - Internal subroutine call returned Error
+20210305 102442.583 ERROR            PET2 ESMC_InfoCDefGeneric.C:251 ESMC_InfoGetArrayI4() Invalid argument  - Internal subroutine call returned Error
+20210305 102442.583 ERROR            PET2 ESMF_Info.F90:2166 ESMF_InfoGetArrayI4() Invalid argument  - Internal subroutine call returned Error
+20210305 102442.583 INFO             PET2  PASS  Implicit Conversion w/ Scalar to List, ESMF_InfoUTest.F90, line 889
+20210305 102442.583 INFO             PET2  PASS  Copy while preserving 32-bit, ESMF_InfoUTest.F90, line 911
+20210305 102442.583 INFO             PET2  PASS  Create by key while preserving 32-bit, ESMF_InfoUTest.F90, line 937
+20210305 102442.583 INFO             PET2  PASS  InfoGetTK for I4, ESMF_InfoUTest.F90, line 963
+20210305 102442.583 INFO             PET2  PASS  InfoGetTK for Character, ESMF_InfoUTest.F90, line 985
+20210305 102442.583 INFO             PET2  Ending Test, file ESMF_InfoUTest.F90, line 992
+20210305 102442.583 INFO             PET2 Finalizing ESMF
+20210305 102440.714 INFO             PET3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102440.715 INFO             PET3 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 102440.715 INFO             PET3 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 102440.715 INFO             PET3 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 102440.715 INFO             PET3 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 102440.715 INFO             PET3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102440.715 INFO             PET3 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 102440.715 INFO             PET3 ESMF library build date/time: "Mar  5 2021" "09:44:29"
+20210305 102440.715 INFO             PET3 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_O
+20210305 102440.715 INFO             PET3 ESMF_COMM                   : mpi
+20210305 102440.715 INFO             PET3 ESMF_MOAB                   : enabled
+20210305 102440.715 INFO             PET3 ESMF_LAPACK                 : enabled
+20210305 102440.715 INFO             PET3 ESMF_NETCDF                 : enabled
+20210305 102440.715 INFO             PET3 ESMF_PNETCDF                : disabled
+20210305 102440.715 INFO             PET3 ESMF_PIO                    : enabled
+20210305 102440.715 INFO             PET3 ESMF_YAMLCPP                : enabled
+20210305 102440.739 INFO             PET3  Beginning Test, file ESMF_InfoUTest.F90, line 87
+20210305 102440.739 INFO             PET3  NUMBER_OF_PROCESSORS           4
+20210305 102440.742 INFO             PET3  PASS  ESMF_InfoCreate, ESMF_InfoUTest.F90, line 105
+20210305 102440.742 INFO             PET3  PASS  ESMF_InfoDestroy, ESMF_InfoUTest.F90, line 115
+20210305 102440.779 INFO             PET3  PASS  ESMF_InfoSet, ESMF_InfoUTest.F90, line 152
+20210305 102440.779 INFO             PET3  PASS  ESMF_InfoGetI4, ESMF_InfoUTest.F90, line 162
+20210305 102440.779 INFO             PET3  PASS  ESMF_InfoGetI8, ESMF_InfoUTest.F90, line 173
+20210305 102440.779 INFO             PET3  PASS  ESMF_InfoGetR4, ESMF_InfoUTest.F90, line 184
+20210305 102440.779 INFO             PET3  PASS  ESMF_InfoGetR8, ESMF_InfoUTest.F90, line 195
+20210305 102440.779 INFO             PET3  PASS  ESMF_InfoGetCH with Default, ESMF_InfoUTest.F90, line 208
+20210305 102440.779 INFO             PET3  PASS  ESMF_InfoSet/Get Empty Character, ESMF_InfoUTest.F90, line 224
+20210305 102440.779 INFO             PET3  PASS  ESMF_InfoGetCH, ESMF_InfoUTest.F90, line 235
+20210305 102440.780 INFO             PET3  PASS  ESMF_InfoSet Force Flag, ESMF_InfoUTest.F90, line 260
+20210305 102442.569 INFO             PET3  PASS  Create+Destroy Loop, ESMF_InfoUTest.F90, line 284
+20210305 102442.569 INFO             PET3  PASS  ESMF_InfoGet with Default Value, ESMF_InfoUTest.F90, line 300
+20210305 102442.569 INFO             PET3  PASS  ESMF_InfoPrint, ESMF_InfoUTest.F90, line 336
+20210305 102442.569 INFO             PET3  PASS  ESMF_InfoRemove Child From Parent, ESMF_InfoUTest.F90, line 362
+20210305 102442.569 INFO             PET3  PASS  ESMF_InfoRemove Root, ESMF_InfoUTest.F90, line 381
+20210305 102442.570 INFO             PET3  PASS  ESMF_InfoIsPresent False, ESMF_InfoUTest.F90, line 398
+20210305 102442.570 INFO             PET3  PASS  ESMF_InfoIsPresent True, ESMF_InfoUTest.F90, line 418
+20210305 102442.570 INFO             PET3  PASS  ESMF_InfoIsPresent True w/ Pointer, ESMF_InfoUTest.F90, line 439
+20210305 102442.571 INFO             PET3  PASS  Array Setting/Getting, ESMF_InfoUTest.F90, line 472
+20210305 102442.571 INFO             PET3  PASS  ESMF_InfoSetNULL and ESMF_InfoIsSet, ESMF_InfoUTest.F90, line 507
+20210305 102442.571 INFO             PET3  PASS  ESMF_InfoCreateFromInfo, ESMF_InfoUTest.F90, line 532
+20210305 102442.581 INFO             PET3  PASS  ESMF_InfoWrite & ESMF_InfoRead, ESMF_InfoUTest.F90, line 568
+20210305 102442.581 INFO             PET3  PASS  Logical Scalar, ESMF_InfoUTest.F90, line 593
+20210305 102442.581 ERROR            PET3 ESMCI_Info.C:363 handleJSONTypeCheck() Invalid argument  - Error/Return Code 506 (ESMC_RC_ARG_BAD) - Types not equivalent. The key is: key
+20210305 102442.581 ERROR            PET3 ESMCI_Info.C:1314 Info::set(<json>) Invalid argument  - Internal subroutine call returned Error
+20210305 102442.581 ERROR            PET3 ESMCI_Info.C:1322 Info::set(<json>) Invalid argument  - Internal subroutine call returned Error
+20210305 102442.581 ERROR            PET3 ESMCI_Info.C:1325 Info::set(<json>) Invalid argument  - Internal subroutine call returned Error
+20210305 102442.581 ERROR            PET3 ESMCI_Info.C:1373 Info::set(<scalar>) Invalid argument  - Internal subroutine call returned Error
+20210305 102442.581 ERROR            PET3 ESMC_InfoCDefGeneric.C:354 ESMC_InfoSetR4() Invalid argument  - Internal subroutine call returned Error
+20210305 102442.581 ERROR            PET3 ESMF_Info.F90:566 ESMF_InfoSetR4() Invalid argument  - Internal subroutine call returned Error
+20210305 102442.581 INFO             PET3  PASS  Test Type Checking, ESMF_InfoUTest.F90, line 611
+20210305 102442.581 INFO             PET3  PASS  Set/Get Object, ESMF_InfoUTest.F90, line 650
+20210305 102442.581 INFO             PET3  PASS  Create By Parse, ESMF_InfoUTest.F90, line 676
+20210305 102442.581 INFO             PET3  PASS  ESMF_InfoUpdate, ESMF_InfoUTest.F90, line 703
+20210305 102442.582 INFO             PET3  PASS  ESMF_InfoGet, ESMF_InfoUTest.F90, line 728
+20210305 102442.582 INFO             PET3  PASS  ESMF_InfoEqual/NotEqual Operator, ESMF_InfoUTest.F90, line 747
+20210305 102442.582 INFO             PET3  PASS  ESMF_InfoGet Recursive, ESMF_InfoUTest.F90, line 768
+20210305 102442.582 INFO             PET3  PASS  ESMF_InfoSet with Parent Key, ESMF_InfoUTest.F90, line 791
+20210305 102442.582 INFO             PET3  PASS  ESMF_InfoGet Character Allocatable, ESMF_InfoUTest.F90, line 813
+20210305 102442.582 ERROR            PET3 ESMC_InfoCDef.C:608 ESMC_InfoSetCH() Object being used before creation  - Object pointer is null. Object has not been created appropriately.
+20210305 102442.582 ERROR            PET3 ESMF_Info.F90:766 ESMF_InfoSetCH() Object being used before creation  - Internal subroutine call returned Error
+20210305 102442.582 INFO             PET3  PASS  Check Initialization, ESMF_InfoUTest.F90, line 828
+20210305 102442.582 INFO             PET3  PASS  Dirty State, ESMF_InfoUTest.F90, line 848
+20210305 102442.582 ERROR            PET3 ESMCI_Info.C:363 handleJSONTypeCheck() Invalid argument  - Error/Return Code 506 (ESMC_RC_ARG_BAD) - Types not equivalent. The key is: float
+20210305 102442.582 ERROR            PET3 ESMCI_Info.C:814 Info::get() Invalid argument  - Internal subroutine call returned Error
+20210305 102442.583 ERROR            PET3 ESMCI_Info.C:836 Info::get() Invalid argument  - Internal subroutine call returned Error
+20210305 102442.583 ERROR            PET3 ESMC_InfoCDefGeneric.C:100 ESMC_InfoGetI4() Invalid argument  - Internal subroutine call returned Error
+20210305 102442.583 ERROR            PET3 ESMF_Info.F90:1572 ESMF_InfoGetI4() Invalid argument  - Internal subroutine call returned Error
+20210305 102442.583 INFO             PET3  PASS  Implicit Conversion, ESMF_InfoUTest.F90, line 868
+20210305 102442.583 ERROR            PET3 ESMCI_Info.C:363 handleJSONTypeCheck() Invalid argument  - Error/Return Code 506 (ESMC_RC_ARG_BAD) - Types not equivalent. The key is: float
+20210305 102442.583 ERROR            PET3 ESMCI_Info.C:814 Info::get() Invalid argument  - Internal subroutine call returned Error
+20210305 102442.583 ERROR            PET3 ESMCI_Info.C:836 Info::get() Invalid argument  - Internal subroutine call returned Error
+20210305 102442.583 ERROR            PET3 ESMC_InfoCDefGeneric.C:251 ESMC_InfoGetArrayI4() Invalid argument  - Internal subroutine call returned Error
+20210305 102442.583 ERROR            PET3 ESMF_Info.F90:2166 ESMF_InfoGetArrayI4() Invalid argument  - Internal subroutine call returned Error
+20210305 102442.583 INFO             PET3  PASS  Implicit Conversion w/ Scalar to List, ESMF_InfoUTest.F90, line 889
+20210305 102442.583 INFO             PET3  PASS  Copy while preserving 32-bit, ESMF_InfoUTest.F90, line 911
+20210305 102442.583 INFO             PET3  PASS  Create by key while preserving 32-bit, ESMF_InfoUTest.F90, line 937
+20210305 102442.583 INFO             PET3  PASS  InfoGetTK for I4, ESMF_InfoUTest.F90, line 963
+20210305 102442.583 INFO             PET3  PASS  InfoGetTK for Character, ESMF_InfoUTest.F90, line 985
+20210305 102442.583 INFO             PET3  Ending Test, file ESMF_InfoUTest.F90, line 992
+20210305 102442.583 INFO             PET3 Finalizing ESMF

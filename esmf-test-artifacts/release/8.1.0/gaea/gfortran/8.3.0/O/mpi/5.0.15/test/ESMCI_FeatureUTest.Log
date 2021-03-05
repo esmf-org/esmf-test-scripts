@@ -1,0 +1,64 @@
+20210305 102209.396 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102209.397 INFO             PET0 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 102209.397 INFO             PET0 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 102209.397 INFO             PET0 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 102209.397 INFO             PET0 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 102209.397 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102209.397 INFO             PET0 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 102209.397 INFO             PET0 ESMF library build date/time: "Mar  5 2021" "09:44:29"
+20210305 102209.397 INFO             PET0 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_O
+20210305 102209.397 INFO             PET0 ESMF_COMM                   : mpi
+20210305 102209.398 INFO             PET0 ESMF_MOAB                   : enabled
+20210305 102209.398 INFO             PET0 ESMF_LAPACK                 : enabled
+20210305 102209.398 INFO             PET0 ESMF_NETCDF                 : enabled
+20210305 102209.398 INFO             PET0 ESMF_PNETCDF                : disabled
+20210305 102209.398 INFO             PET0 ESMF_PIO                    : enabled
+20210305 102209.398 INFO             PET0 ESMF_YAMLCPP                : enabled
+20210305 102209.411 INFO             PET0 Beginning Test, file ESMCI_FeatureUTest.C, line 54
+20210305 102209.411 INFO             PET0 NUMBER_OF_PROCESSORS 2
+20210305 102209.411 INFO             PET0 PASS Call Fortran with both args present scalar Test, ESMCI_FeatureUTest.C, line 66
+20210305 102209.411 INFO             PET0 PASS Call Fortran with arg #1 not present scalar Test, ESMCI_FeatureUTest.C, line 76
+20210305 102209.411 INFO             PET0 PASS Call Fortran with arg #2 not present scalar Test, ESMCI_FeatureUTest.C, line 86
+20210305 102209.411 INFO             PET0 PASS Call Fortran with no args present scalar Test, ESMCI_FeatureUTest.C, line 96
+20210305 102209.411 INFO             PET0 PASS Call Fortran with both args present 1D array Test, ESMCI_FeatureUTest.C, line 114
+20210305 102209.411 INFO             PET0 PASS Call Fortran with arg #1 not present 1D array Test, ESMCI_FeatureUTest.C, line 125
+20210305 102209.411 INFO             PET0 PASS Call Fortran with arg #2 not present 1D array Test, ESMCI_FeatureUTest.C, line 136
+20210305 102209.411 INFO             PET0 PASS Call Fortran with no args present 1D array Test, ESMCI_FeatureUTest.C, line 147
+20210305 102209.411 INFO             PET0 PASS Call Fortran with both args present 2D array Test, ESMCI_FeatureUTest.C, line 165
+20210305 102209.411 INFO             PET0 PASS Call Fortran with arg #1 not present 2D array Test, ESMCI_FeatureUTest.C, line 176
+20210305 102209.411 INFO             PET0 PASS Call Fortran with arg #2 not present 2D array Test, ESMCI_FeatureUTest.C, line 187
+20210305 102209.411 INFO             PET0 PASS Call Fortran with no args present 2D array Test, ESMCI_FeatureUTest.C, line 198
+20210305 102209.411 INFO             PET0 Ending Test, file ESMCI_FeatureUTest.C, line 202
+20210305 102209.411 INFO             PET0 Finalizing ESMF
+20210305 102209.398 INFO             PET1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102209.398 INFO             PET1 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 102209.398 INFO             PET1 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 102209.398 INFO             PET1 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 102209.398 INFO             PET1 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 102209.398 INFO             PET1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102209.398 INFO             PET1 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 102209.398 INFO             PET1 ESMF library build date/time: "Mar  5 2021" "09:44:29"
+20210305 102209.398 INFO             PET1 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_O
+20210305 102209.398 INFO             PET1 ESMF_COMM                   : mpi
+20210305 102209.399 INFO             PET1 ESMF_MOAB                   : enabled
+20210305 102209.399 INFO             PET1 ESMF_LAPACK                 : enabled
+20210305 102209.399 INFO             PET1 ESMF_NETCDF                 : enabled
+20210305 102209.399 INFO             PET1 ESMF_PNETCDF                : disabled
+20210305 102209.399 INFO             PET1 ESMF_PIO                    : enabled
+20210305 102209.399 INFO             PET1 ESMF_YAMLCPP                : enabled
+20210305 102209.411 INFO             PET1 Beginning Test, file ESMCI_FeatureUTest.C, line 54
+20210305 102209.411 INFO             PET1 NUMBER_OF_PROCESSORS 2
+20210305 102209.411 INFO             PET1 PASS Call Fortran with both args present scalar Test, ESMCI_FeatureUTest.C, line 66
+20210305 102209.411 INFO             PET1 PASS Call Fortran with arg #1 not present scalar Test, ESMCI_FeatureUTest.C, line 76
+20210305 102209.411 INFO             PET1 PASS Call Fortran with arg #2 not present scalar Test, ESMCI_FeatureUTest.C, line 86
+20210305 102209.411 INFO             PET1 PASS Call Fortran with no args present scalar Test, ESMCI_FeatureUTest.C, line 96
+20210305 102209.411 INFO             PET1 PASS Call Fortran with both args present 1D array Test, ESMCI_FeatureUTest.C, line 114
+20210305 102209.411 INFO             PET1 PASS Call Fortran with arg #1 not present 1D array Test, ESMCI_FeatureUTest.C, line 125
+20210305 102209.411 INFO             PET1 PASS Call Fortran with arg #2 not present 1D array Test, ESMCI_FeatureUTest.C, line 136
+20210305 102209.411 INFO             PET1 PASS Call Fortran with no args present 1D array Test, ESMCI_FeatureUTest.C, line 147
+20210305 102209.411 INFO             PET1 PASS Call Fortran with both args present 2D array Test, ESMCI_FeatureUTest.C, line 165
+20210305 102209.411 INFO             PET1 PASS Call Fortran with arg #1 not present 2D array Test, ESMCI_FeatureUTest.C, line 176
+20210305 102209.411 INFO             PET1 PASS Call Fortran with arg #2 not present 2D array Test, ESMCI_FeatureUTest.C, line 187
+20210305 102209.411 INFO             PET1 PASS Call Fortran with no args present 2D array Test, ESMCI_FeatureUTest.C, line 198
+20210305 102209.411 INFO             PET1 Ending Test, file ESMCI_FeatureUTest.C, line 202
+20210305 102209.411 INFO             PET1 Finalizing ESMF

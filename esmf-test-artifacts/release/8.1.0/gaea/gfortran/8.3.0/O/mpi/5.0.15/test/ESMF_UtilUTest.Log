@@ -1,0 +1,464 @@
+20210305 102213.967 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102213.967 INFO             PET0 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 102213.967 INFO             PET0 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 102213.967 INFO             PET0 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 102213.967 INFO             PET0 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 102213.967 INFO             PET0 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102213.967 INFO             PET0 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 102213.967 INFO             PET0 ESMF library build date/time: "Mar  5 2021" "09:44:29"
+20210305 102213.967 INFO             PET0 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_O
+20210305 102213.967 INFO             PET0 ESMF_COMM                   : mpi
+20210305 102213.967 INFO             PET0 ESMF_MOAB                   : enabled
+20210305 102213.967 INFO             PET0 ESMF_LAPACK                 : enabled
+20210305 102213.967 INFO             PET0 ESMF_NETCDF                 : enabled
+20210305 102213.967 INFO             PET0 ESMF_PNETCDF                : disabled
+20210305 102213.968 INFO             PET0 ESMF_PIO                    : enabled
+20210305 102213.968 INFO             PET0 ESMF_YAMLCPP                : enabled
+20210305 102213.968 INFO             PET0  Beginning Test, file ESMF_UtilUTest.F90, line 124
+20210305 102213.968 INFO             PET0  NUMBER_OF_PROCESSORS           4
+20210305 102213.968 INFO             PET0  PASS  Comparing numeric and character major version, ESMF_UtilUTest.F90, line 153
+20210305 102213.968 INFO             PET0  PASS  Comparing numeric and character minor version, ESMF_UtilUTest.F90, line 164
+20210305 102213.968 INFO             PET0  PASS  Comparing numeric and character revision, ESMF_UtilUTest.F90, line 179
+20210305 102213.969 INFO             PET0  PASS  No arg VersionPrint test, ESMF_UtilUTest.F90, line 191
+20210305 102213.969 INFO             PET0  PASS  One line VersionPrint test, ESMF_UtilUTest.F90, line 199
+20210305 102213.969 INFO             PET0  PASS  Multi-line VersionPrint test, ESMF_UtilUTest.F90, line 207
+20210305 102213.969 INFO             PET0  PASS  Single and multi-line VersionPrint test, ESMF_UtilUTest.F90, line 215
+20210305 102214.036 INFO             PET0  PASS  Testing ESMF_UtilIOUnitGet, obtaining and opening units, ESMF_UtilUTest.F90, line 240
+20210305 102214.040 INFO             PET0  PASS  Testing ESMF_UtilIOUnitFlush, get a free unit, ESMF_UtilUTest.F90, line 257
+20210305 102214.050 INFO             PET0  PASS  ESMF_UtilIOUnitFlush, open scratch file: IOtempfile_00, ESMF_UtilUTest.F90, line 266
+20210305 102214.050 INFO             PET0  PASS  ESMF_UtilIOUnitFlush, flush the scratch file, ESMF_UtilUTest.F90, line 275
+20210305 102214.051 INFO             PET0  PASS  Testing ESMF_UtilGetArgC, command line argument count, ESMF_UtilUTest.F90, line 290
+20210305 102214.051 INFO             PET0  PASS  Testing ESMF_UtilGetArgC, command line argument count value, ESMF_UtilUTest.F90, line 297
+20210305 102214.051 ERROR            PET0 ESMF_Util.F90:200 ESMF_UtilGetArg Value unrecognized or out of range  - Internal subroutine call returned Error
+20210305 102214.051 INFO             PET0  PASS  Testing ESMF_UtilGetArgC, argindex < 0, ESMF_UtilUTest.F90, line 305
+20210305 102214.051 INFO             PET0  PASS  Testing ESMF_UtilGetArgC, get command name, ESMF_UtilUTest.F90, line 314
+20210305 102214.051 ERROR            PET0 ESMF_Util.F90:297 ESMF_UtilGetArg Argument sizes do not match  - Internal subroutine call returned Error
+20210305 102214.051 INFO             PET0  PASS  Testing ESMF_UtilGetArgC, get truncated command name, ESMF_UtilUTest.F90, line 322
+20210305 102214.051 INFO             PET0  PASS  Testing ESMF_UtilGetArgC, compare arg lengths, ESMF_UtilUTest.F90, line 332
+20210305 102214.051 ERROR            PET0 ESMF_Util.F90:200 ESMF_UtilGetArg Value unrecognized or out of range  - Internal subroutine call returned Error
+20210305 102214.051 INFO             PET0  PASS  Testing ESMF_UtilGetArgC, argindex > nargs, ESMF_UtilUTest.F90, line 342
+20210305 102214.051 INFO             PET0  PASS  Testing ESMF_UtilGetArgIndex for program path, ESMF_UtilUTest.F90, line 351
+20210305 102214.052 INFO             PET0  PASS  Testing ESMF_UtilGetArgIndex for program path, ESMF_UtilUTest.F90, line 360
+20210305 102214.052 INFO             PET0  PASS  Testing ascending real sort, ESMF_UtilUTest.F90, line 375
+20210305 102214.052 INFO             PET0  PASS  Testing sorted ascending real results, ESMF_UtilUTest.F90, line 389
+20210305 102214.052 INFO             PET0  PASS  Testing descending real sort, ESMF_UtilUTest.F90, line 398
+20210305 102214.052 INFO             PET0  PASS  Testing sorted descending real results, ESMF_UtilUTest.F90, line 412
+20210305 102214.052 INFO             PET0  PASS  Testing ascending double precision real sort, ESMF_UtilUTest.F90, line 423
+20210305 102214.052 INFO             PET0  PASS  Testing sorted ascending double precision real results, ESMF_UtilUTest.F90, line 437
+20210305 102214.052 INFO             PET0  PASS  Testing descending double precision real sort, ESMF_UtilUTest.F90, line 446
+20210305 102214.052 INFO             PET0  PASS  Testing sorted descending double precision real results, ESMF_UtilUTest.F90, line 460
+20210305 102214.052 INFO             PET0  PASS  Testing ascending integer sort, ESMF_UtilUTest.F90, line 471
+20210305 102214.052 INFO             PET0  PASS  Testing sorted ascending integer results, ESMF_UtilUTest.F90, line 486
+20210305 102214.052 INFO             PET0  PASS  Testing descending integer sort, ESMF_UtilUTest.F90, line 495
+20210305 102214.052 INFO             PET0  PASS  Testing sorted descending integer results, ESMF_UtilUTest.F90, line 510
+20210305 102214.052 INFO             PET0  PASS  Testing ascending double integer sort, ESMF_UtilUTest.F90, line 521
+20210305 102214.052 INFO             PET0  PASS  Testing sorted ascending double integer results, ESMF_UtilUTest.F90, line 536
+20210305 102214.052 INFO             PET0  PASS  Testing descending double integer sort, ESMF_UtilUTest.F90, line 545
+20210305 102214.052 INFO             PET0  PASS  Testing sorted descending double integer results, ESMF_UtilUTest.F90, line 560
+20210305 102214.052 INFO             PET0  PASS  Testing ascending character string sort, ESMF_UtilUTest.F90, line 571
+20210305 102214.052 INFO             PET0  PASS  Testing sorted ascending character string results, ESMF_UtilUTest.F90, line 583
+20210305 102214.052 INFO             PET0  PASS  Testing descending character string sort, ESMF_UtilUTest.F90, line 592
+20210305 102214.052 INFO             PET0  PASS  Testing sorted descending character string results, ESMF_UtilUTest.F90, line 604
+20210305 102214.052 INFO             PET0  PASS  Testing creating a directory, ESMF_UtilUTest.F90, line 618
+20210305 102214.052 ERROR            PET0 ESMF_Util.F90:639 ESMF_UtilIOMkDir Failure  - Internal subroutine call returned Error
+20210305 102214.052 INFO             PET0  PASS  Testing creating a directory which already exists, ESMF_UtilUTest.F90, line 626
+20210305 102214.052 INFO             PET0  PASS  Testing creating a directory which already exists w/relaxedFlag, ESMF_UtilUTest.F90, line 634
+20210305 102214.053 INFO             PET0  PASS  Testing removing a directory, ESMF_UtilUTest.F90, line 642
+20210305 102214.053 ERROR            PET0 ESMF_Util.F90:737 ESMF_UtilIORmDir Not found  - Internal subroutine call returned Error
+20210305 102214.053 INFO             PET0  PASS  Testing removing a directory which does not exist, ESMF_UtilUTest.F90, line 650
+20210305 102214.053 INFO             PET0  PASS  Testing removing a directory which does not exist, relaxed, ESMF_UtilUTest.F90, line 658
+20210305 102214.053 INFO             PET0  PASS  Testing getting the current directory, ESMF_UtilUTest.F90, line 672
+20210305 102214.053 INFO             PET0  PASS  Testing directory name for valid characters, ESMF_UtilUTest.F90, line 691
+20210305 102214.053 ERROR            PET0 ESMF_Util.F90:526 ESMF_UtilIOGetCWD Input buffer not long enough  - Internal subroutine call returned Error
+20210305 102214.053 INFO             PET0  PASS  Testing getting the current directory with small string, ESMF_UtilUTest.F90, line 699
+20210305 102214.053 INFO             PET0  PASS  Testing converting string to UPPER case, ESMF_UtilUTest.F90, line 711
+20210305 102214.053 INFO             PET0  PASS  Testing converting string to lower case, ESMF_UtilUTest.F90, line 721
+20210305 102214.053 INFO             PET0  PASS  ESMF_UtilString2Int() - no blanks - Test, ESMF_UtilUTest.F90, line 733
+20210305 102214.053 INFO             PET0  PASS  ESMF_UtilString2Int() - no blanks - Test, ESMF_UtilUTest.F90, line 740
+20210305 102214.053 INFO             PET0  PASS  ESMF_UtilStringInt2String() - Test, ESMF_UtilUTest.F90, line 749
+20210305 102214.053 INFO             PET0  PASS  String -> Integer -> String conversion correctness - Test, ESMF_UtilUTest.F90, line 756
+20210305 102214.053 INFO             PET0  PASS  ESMF_UtilString2Int() - negative value - Test, ESMF_UtilUTest.F90, line 764
+20210305 102214.053 INFO             PET0  PASS  ESMF_UtilString2Int() - negative value - Test, ESMF_UtilUTest.F90, line 771
+20210305 102214.053 INFO             PET0  PASS  ESMF_UtilString2Int() - explicit positive value - Test, ESMF_UtilUTest.F90, line 779
+20210305 102214.053 INFO             PET0  PASS  ESMF_UtilString2Int() - explicit positive value - Test, ESMF_UtilUTest.F90, line 786
+20210305 102214.053 INFO             PET0  PASS  ESMF_UtilString2Int() - leading blanks - Test, ESMF_UtilUTest.F90, line 794
+20210305 102214.053 INFO             PET0  PASS  ESMF_UtilString2Int() - leading blanks - Test, ESMF_UtilUTest.F90, line 801
+20210305 102214.053 INFO             PET0  PASS  ESMF_UtilString2Int() - trailing blanks - Test, ESMF_UtilUTest.F90, line 809
+20210305 102214.053 INFO             PET0  PASS  ESMF_UtilString2Int() - trailing blanks - Test, ESMF_UtilUTest.F90, line 816
+20210305 102214.053 ERROR            PET0 ESMF_Util.F90:879 Invalid argument  - Both specialStringList and specialValueList must either be present or absent.
+20210305 102214.053 INFO             PET0  PASS  ESMF_UtilString2Int() - special string missing - Test, ESMF_UtilUTest.F90, line 826
+20210305 102214.053 INFO             PET0  PASS  ESMF_UtilString2Int() - special string - Test, ESMF_UtilUTest.F90, line 836
+20210305 102214.053 INFO             PET0  PASS  ESMF_UtilString2Int() - special string - Test, ESMF_UtilUTest.F90, line 843
+20210305 102214.053 INFO             PET0  PASS  ESMF_UtilString2Real() - no blanks - Test, ESMF_UtilUTest.F90, line 856
+20210305 102214.054 INFO             PET0  PASS  ESMF_UtilString2Real() - no blanks - Test, ESMF_UtilUTest.F90, line 863
+20210305 102214.054 INFO             PET0  PASS  ESMF_UtilString2Real() - negative value - Test, ESMF_UtilUTest.F90, line 871
+20210305 102214.054 INFO             PET0  PASS  ESMF_UtilString2Real() - negative value - Test, ESMF_UtilUTest.F90, line 878
+20210305 102214.054 INFO             PET0  PASS  ESMF_UtilString2Real() - explicit positive value - Test, ESMF_UtilUTest.F90, line 886
+20210305 102214.054 INFO             PET0  PASS  ESMF_UtilString2Real() - explicit positive value - Test, ESMF_UtilUTest.F90, line 893
+20210305 102214.054 INFO             PET0  PASS  ESMF_UtilString2Real() - leading blanks - Test, ESMF_UtilUTest.F90, line 901
+20210305 102214.054 INFO             PET0  PASS  ESMF_UtilString2Real() - leading blanks - Test, ESMF_UtilUTest.F90, line 908
+20210305 102214.054 INFO             PET0  PASS  ESMF_UtilString2Real() - trailing blanks - Test, ESMF_UtilUTest.F90, line 916
+20210305 102214.054 INFO             PET0  PASS  ESMF_UtilString2Real() - leading blanks - Test, ESMF_UtilUTest.F90, line 923
+20210305 102214.054 INFO             PET0  PASS  ESMF_UtilString2Double() - no blanks - Test, ESMF_UtilUTest.F90, line 936
+20210305 102214.054 INFO             PET0  PASS  ESMF_UtilString2Double() - no blanks - Test, ESMF_UtilUTest.F90, line 943
+20210305 102214.054 INFO             PET0  PASS  ESMF_UtilString2Double() - negative value - Test, ESMF_UtilUTest.F90, line 951
+20210305 102214.054 INFO             PET0  PASS  ESMF_UtilString2Double() - negative value - Test, ESMF_UtilUTest.F90, line 958
+20210305 102214.054 INFO             PET0  PASS  ESMF_UtilString2Double() - explicit positive value - Test, ESMF_UtilUTest.F90, line 966
+20210305 102214.054 INFO             PET0  PASS  ESMF_UtilString2Double() - explicit positive value - Test, ESMF_UtilUTest.F90, line 973
+20210305 102214.054 INFO             PET0  PASS  ESMF_UtilString2Double() - leading blanks - Test, ESMF_UtilUTest.F90, line 981
+20210305 102214.054 INFO             PET0  PASS  ESMF_UtilString2Double() - leading blanks - Test, ESMF_UtilUTest.F90, line 988
+20210305 102214.054 INFO             PET0  PASS  ESMF_UtilString2Double() - trailing blanks - Test, ESMF_UtilUTest.F90, line 996
+20210305 102214.054 INFO             PET0  PASS  ESMF_UtilString2Double() - leading blanks - Test, ESMF_UtilUTest.F90, line 1003
+20210305 102214.054 INFO             PET0  PASS  Testing concatenating strings, ESMF_UtilUTest.F90, line 1016
+20210305 102214.054 INFO             PET0  PASS  Testing converting C string to Fortran string, ESMF_UtilUTest.F90, line 1031
+20210305 102214.054 INFO             PET0  PASS  Testing converting Fortran string to C string, ESMF_UtilUTest.F90, line 1047
+20210305 102214.054 INFO             PET0  Ending Test, file ESMF_UtilUTest.F90, line 1053
+20210305 102214.054 INFO             PET0 Finalizing ESMF
+20210305 102213.963 INFO             PET1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102213.963 INFO             PET1 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 102213.963 INFO             PET1 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 102213.963 INFO             PET1 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 102213.963 INFO             PET1 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 102213.963 INFO             PET1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102213.963 INFO             PET1 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 102213.963 INFO             PET1 ESMF library build date/time: "Mar  5 2021" "09:44:29"
+20210305 102213.963 INFO             PET1 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_O
+20210305 102213.963 INFO             PET1 ESMF_COMM                   : mpi
+20210305 102213.964 INFO             PET1 ESMF_MOAB                   : enabled
+20210305 102213.964 INFO             PET1 ESMF_LAPACK                 : enabled
+20210305 102213.964 INFO             PET1 ESMF_NETCDF                 : enabled
+20210305 102213.964 INFO             PET1 ESMF_PNETCDF                : disabled
+20210305 102213.964 INFO             PET1 ESMF_PIO                    : enabled
+20210305 102213.964 INFO             PET1 ESMF_YAMLCPP                : enabled
+20210305 102213.968 INFO             PET1  Beginning Test, file ESMF_UtilUTest.F90, line 124
+20210305 102213.968 INFO             PET1  NUMBER_OF_PROCESSORS           4
+20210305 102213.968 INFO             PET1  PASS  Comparing numeric and character major version, ESMF_UtilUTest.F90, line 153
+20210305 102213.968 INFO             PET1  PASS  Comparing numeric and character minor version, ESMF_UtilUTest.F90, line 164
+20210305 102213.968 INFO             PET1  PASS  Comparing numeric and character revision, ESMF_UtilUTest.F90, line 179
+20210305 102213.969 INFO             PET1  PASS  No arg VersionPrint test, ESMF_UtilUTest.F90, line 191
+20210305 102213.969 INFO             PET1  PASS  One line VersionPrint test, ESMF_UtilUTest.F90, line 199
+20210305 102213.969 INFO             PET1  PASS  Multi-line VersionPrint test, ESMF_UtilUTest.F90, line 207
+20210305 102213.969 INFO             PET1  PASS  Single and multi-line VersionPrint test, ESMF_UtilUTest.F90, line 215
+20210305 102214.018 INFO             PET1  PASS  Testing ESMF_UtilIOUnitGet, obtaining and opening units, ESMF_UtilUTest.F90, line 240
+20210305 102214.022 INFO             PET1  PASS  Testing ESMF_UtilIOUnitFlush, get a free unit, ESMF_UtilUTest.F90, line 257
+20210305 102214.031 INFO             PET1  PASS  ESMF_UtilIOUnitFlush, open scratch file: IOtempfile_01, ESMF_UtilUTest.F90, line 266
+20210305 102214.032 INFO             PET1  PASS  ESMF_UtilIOUnitFlush, flush the scratch file, ESMF_UtilUTest.F90, line 275
+20210305 102214.032 INFO             PET1  PASS  Testing ESMF_UtilGetArgC, command line argument count, ESMF_UtilUTest.F90, line 290
+20210305 102214.032 INFO             PET1  PASS  Testing ESMF_UtilGetArgC, command line argument count value, ESMF_UtilUTest.F90, line 297
+20210305 102214.032 ERROR            PET1 ESMF_Util.F90:200 ESMF_UtilGetArg Value unrecognized or out of range  - Internal subroutine call returned Error
+20210305 102214.032 INFO             PET1  PASS  Testing ESMF_UtilGetArgC, argindex < 0, ESMF_UtilUTest.F90, line 305
+20210305 102214.032 INFO             PET1  PASS  Testing ESMF_UtilGetArgC, get command name, ESMF_UtilUTest.F90, line 314
+20210305 102214.033 ERROR            PET1 ESMF_Util.F90:297 ESMF_UtilGetArg Argument sizes do not match  - Internal subroutine call returned Error
+20210305 102214.033 INFO             PET1  PASS  Testing ESMF_UtilGetArgC, get truncated command name, ESMF_UtilUTest.F90, line 322
+20210305 102214.033 INFO             PET1  PASS  Testing ESMF_UtilGetArgC, compare arg lengths, ESMF_UtilUTest.F90, line 332
+20210305 102214.033 ERROR            PET1 ESMF_Util.F90:200 ESMF_UtilGetArg Value unrecognized or out of range  - Internal subroutine call returned Error
+20210305 102214.033 INFO             PET1  PASS  Testing ESMF_UtilGetArgC, argindex > nargs, ESMF_UtilUTest.F90, line 342
+20210305 102214.033 INFO             PET1  PASS  Testing ESMF_UtilGetArgIndex for program path, ESMF_UtilUTest.F90, line 351
+20210305 102214.033 INFO             PET1  PASS  Testing ESMF_UtilGetArgIndex for program path, ESMF_UtilUTest.F90, line 360
+20210305 102214.033 INFO             PET1  PASS  Testing ascending real sort, ESMF_UtilUTest.F90, line 375
+20210305 102214.033 INFO             PET1  PASS  Testing sorted ascending real results, ESMF_UtilUTest.F90, line 389
+20210305 102214.033 INFO             PET1  PASS  Testing descending real sort, ESMF_UtilUTest.F90, line 398
+20210305 102214.033 INFO             PET1  PASS  Testing sorted descending real results, ESMF_UtilUTest.F90, line 412
+20210305 102214.033 INFO             PET1  PASS  Testing ascending double precision real sort, ESMF_UtilUTest.F90, line 423
+20210305 102214.033 INFO             PET1  PASS  Testing sorted ascending double precision real results, ESMF_UtilUTest.F90, line 437
+20210305 102214.034 INFO             PET1  PASS  Testing descending double precision real sort, ESMF_UtilUTest.F90, line 446
+20210305 102214.034 INFO             PET1  PASS  Testing sorted descending double precision real results, ESMF_UtilUTest.F90, line 460
+20210305 102214.034 INFO             PET1  PASS  Testing ascending integer sort, ESMF_UtilUTest.F90, line 471
+20210305 102214.034 INFO             PET1  PASS  Testing sorted ascending integer results, ESMF_UtilUTest.F90, line 486
+20210305 102214.034 INFO             PET1  PASS  Testing descending integer sort, ESMF_UtilUTest.F90, line 495
+20210305 102214.034 INFO             PET1  PASS  Testing sorted descending integer results, ESMF_UtilUTest.F90, line 510
+20210305 102214.034 INFO             PET1  PASS  Testing ascending double integer sort, ESMF_UtilUTest.F90, line 521
+20210305 102214.034 INFO             PET1  PASS  Testing sorted ascending double integer results, ESMF_UtilUTest.F90, line 536
+20210305 102214.034 INFO             PET1  PASS  Testing descending double integer sort, ESMF_UtilUTest.F90, line 545
+20210305 102214.034 INFO             PET1  PASS  Testing sorted descending double integer results, ESMF_UtilUTest.F90, line 560
+20210305 102214.035 INFO             PET1  PASS  Testing ascending character string sort, ESMF_UtilUTest.F90, line 571
+20210305 102214.035 INFO             PET1  PASS  Testing sorted ascending character string results, ESMF_UtilUTest.F90, line 583
+20210305 102214.035 INFO             PET1  PASS  Testing descending character string sort, ESMF_UtilUTest.F90, line 592
+20210305 102214.035 INFO             PET1  PASS  Testing sorted descending character string results, ESMF_UtilUTest.F90, line 604
+20210305 102214.035 INFO             PET1  PASS  Testing creating a directory, ESMF_UtilUTest.F90, line 618
+20210305 102214.035 ERROR            PET1 ESMF_Util.F90:639 ESMF_UtilIOMkDir Failure  - Internal subroutine call returned Error
+20210305 102214.035 INFO             PET1  PASS  Testing creating a directory which already exists, ESMF_UtilUTest.F90, line 626
+20210305 102214.035 INFO             PET1  PASS  Testing creating a directory which already exists w/relaxedFlag, ESMF_UtilUTest.F90, line 634
+20210305 102214.036 INFO             PET1  PASS  Testing removing a directory, ESMF_UtilUTest.F90, line 642
+20210305 102214.036 ERROR            PET1 ESMF_Util.F90:737 ESMF_UtilIORmDir Not found  - Internal subroutine call returned Error
+20210305 102214.036 INFO             PET1  PASS  Testing removing a directory which does not exist, ESMF_UtilUTest.F90, line 650
+20210305 102214.036 INFO             PET1  PASS  Testing removing a directory which does not exist, relaxed, ESMF_UtilUTest.F90, line 658
+20210305 102214.036 INFO             PET1  PASS  Testing getting the current directory, ESMF_UtilUTest.F90, line 672
+20210305 102214.036 INFO             PET1  PASS  Testing directory name for valid characters, ESMF_UtilUTest.F90, line 691
+20210305 102214.036 ERROR            PET1 ESMF_Util.F90:526 ESMF_UtilIOGetCWD Input buffer not long enough  - Internal subroutine call returned Error
+20210305 102214.036 INFO             PET1  PASS  Testing getting the current directory with small string, ESMF_UtilUTest.F90, line 699
+20210305 102214.037 INFO             PET1  PASS  Testing converting string to UPPER case, ESMF_UtilUTest.F90, line 711
+20210305 102214.037 INFO             PET1  PASS  Testing converting string to lower case, ESMF_UtilUTest.F90, line 721
+20210305 102214.037 INFO             PET1  PASS  ESMF_UtilString2Int() - no blanks - Test, ESMF_UtilUTest.F90, line 733
+20210305 102214.037 INFO             PET1  PASS  ESMF_UtilString2Int() - no blanks - Test, ESMF_UtilUTest.F90, line 740
+20210305 102214.037 INFO             PET1  PASS  ESMF_UtilStringInt2String() - Test, ESMF_UtilUTest.F90, line 749
+20210305 102214.037 INFO             PET1  PASS  String -> Integer -> String conversion correctness - Test, ESMF_UtilUTest.F90, line 756
+20210305 102214.037 INFO             PET1  PASS  ESMF_UtilString2Int() - negative value - Test, ESMF_UtilUTest.F90, line 764
+20210305 102214.037 INFO             PET1  PASS  ESMF_UtilString2Int() - negative value - Test, ESMF_UtilUTest.F90, line 771
+20210305 102214.037 INFO             PET1  PASS  ESMF_UtilString2Int() - explicit positive value - Test, ESMF_UtilUTest.F90, line 779
+20210305 102214.037 INFO             PET1  PASS  ESMF_UtilString2Int() - explicit positive value - Test, ESMF_UtilUTest.F90, line 786
+20210305 102214.037 INFO             PET1  PASS  ESMF_UtilString2Int() - leading blanks - Test, ESMF_UtilUTest.F90, line 794
+20210305 102214.037 INFO             PET1  PASS  ESMF_UtilString2Int() - leading blanks - Test, ESMF_UtilUTest.F90, line 801
+20210305 102214.037 INFO             PET1  PASS  ESMF_UtilString2Int() - trailing blanks - Test, ESMF_UtilUTest.F90, line 809
+20210305 102214.037 INFO             PET1  PASS  ESMF_UtilString2Int() - trailing blanks - Test, ESMF_UtilUTest.F90, line 816
+20210305 102214.037 ERROR            PET1 ESMF_Util.F90:879 Invalid argument  - Both specialStringList and specialValueList must either be present or absent.
+20210305 102214.037 INFO             PET1  PASS  ESMF_UtilString2Int() - special string missing - Test, ESMF_UtilUTest.F90, line 826
+20210305 102214.037 INFO             PET1  PASS  ESMF_UtilString2Int() - special string - Test, ESMF_UtilUTest.F90, line 836
+20210305 102214.038 INFO             PET1  PASS  ESMF_UtilString2Int() - special string - Test, ESMF_UtilUTest.F90, line 843
+20210305 102214.038 INFO             PET1  PASS  ESMF_UtilString2Real() - no blanks - Test, ESMF_UtilUTest.F90, line 856
+20210305 102214.038 INFO             PET1  PASS  ESMF_UtilString2Real() - no blanks - Test, ESMF_UtilUTest.F90, line 863
+20210305 102214.038 INFO             PET1  PASS  ESMF_UtilString2Real() - negative value - Test, ESMF_UtilUTest.F90, line 871
+20210305 102214.038 INFO             PET1  PASS  ESMF_UtilString2Real() - negative value - Test, ESMF_UtilUTest.F90, line 878
+20210305 102214.038 INFO             PET1  PASS  ESMF_UtilString2Real() - explicit positive value - Test, ESMF_UtilUTest.F90, line 886
+20210305 102214.038 INFO             PET1  PASS  ESMF_UtilString2Real() - explicit positive value - Test, ESMF_UtilUTest.F90, line 893
+20210305 102214.038 INFO             PET1  PASS  ESMF_UtilString2Real() - leading blanks - Test, ESMF_UtilUTest.F90, line 901
+20210305 102214.038 INFO             PET1  PASS  ESMF_UtilString2Real() - leading blanks - Test, ESMF_UtilUTest.F90, line 908
+20210305 102214.038 INFO             PET1  PASS  ESMF_UtilString2Real() - trailing blanks - Test, ESMF_UtilUTest.F90, line 916
+20210305 102214.038 INFO             PET1  PASS  ESMF_UtilString2Real() - leading blanks - Test, ESMF_UtilUTest.F90, line 923
+20210305 102214.038 INFO             PET1  PASS  ESMF_UtilString2Double() - no blanks - Test, ESMF_UtilUTest.F90, line 936
+20210305 102214.038 INFO             PET1  PASS  ESMF_UtilString2Double() - no blanks - Test, ESMF_UtilUTest.F90, line 943
+20210305 102214.038 INFO             PET1  PASS  ESMF_UtilString2Double() - negative value - Test, ESMF_UtilUTest.F90, line 951
+20210305 102214.038 INFO             PET1  PASS  ESMF_UtilString2Double() - negative value - Test, ESMF_UtilUTest.F90, line 958
+20210305 102214.038 INFO             PET1  PASS  ESMF_UtilString2Double() - explicit positive value - Test, ESMF_UtilUTest.F90, line 966
+20210305 102214.038 INFO             PET1  PASS  ESMF_UtilString2Double() - explicit positive value - Test, ESMF_UtilUTest.F90, line 973
+20210305 102214.038 INFO             PET1  PASS  ESMF_UtilString2Double() - leading blanks - Test, ESMF_UtilUTest.F90, line 981
+20210305 102214.038 INFO             PET1  PASS  ESMF_UtilString2Double() - leading blanks - Test, ESMF_UtilUTest.F90, line 988
+20210305 102214.038 INFO             PET1  PASS  ESMF_UtilString2Double() - trailing blanks - Test, ESMF_UtilUTest.F90, line 996
+20210305 102214.038 INFO             PET1  PASS  ESMF_UtilString2Double() - leading blanks - Test, ESMF_UtilUTest.F90, line 1003
+20210305 102214.038 INFO             PET1  PASS  Testing concatenating strings, ESMF_UtilUTest.F90, line 1016
+20210305 102214.038 INFO             PET1  PASS  Testing converting C string to Fortran string, ESMF_UtilUTest.F90, line 1031
+20210305 102214.039 INFO             PET1  PASS  Testing converting Fortran string to C string, ESMF_UtilUTest.F90, line 1047
+20210305 102214.039 INFO             PET1  Ending Test, file ESMF_UtilUTest.F90, line 1053
+20210305 102214.039 INFO             PET1 Finalizing ESMF
+20210305 102213.963 INFO             PET2 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102213.963 INFO             PET2 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 102213.963 INFO             PET2 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 102213.963 INFO             PET2 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 102213.963 INFO             PET2 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 102213.963 INFO             PET2 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102213.963 INFO             PET2 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 102213.963 INFO             PET2 ESMF library build date/time: "Mar  5 2021" "09:44:29"
+20210305 102213.963 INFO             PET2 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_O
+20210305 102213.963 INFO             PET2 ESMF_COMM                   : mpi
+20210305 102213.963 INFO             PET2 ESMF_MOAB                   : enabled
+20210305 102213.963 INFO             PET2 ESMF_LAPACK                 : enabled
+20210305 102213.963 INFO             PET2 ESMF_NETCDF                 : enabled
+20210305 102213.963 INFO             PET2 ESMF_PNETCDF                : disabled
+20210305 102213.963 INFO             PET2 ESMF_PIO                    : enabled
+20210305 102213.963 INFO             PET2 ESMF_YAMLCPP                : enabled
+20210305 102213.968 INFO             PET2  Beginning Test, file ESMF_UtilUTest.F90, line 124
+20210305 102213.968 INFO             PET2  NUMBER_OF_PROCESSORS           4
+20210305 102213.968 INFO             PET2  PASS  Comparing numeric and character major version, ESMF_UtilUTest.F90, line 153
+20210305 102213.968 INFO             PET2  PASS  Comparing numeric and character minor version, ESMF_UtilUTest.F90, line 164
+20210305 102213.968 INFO             PET2  PASS  Comparing numeric and character revision, ESMF_UtilUTest.F90, line 179
+20210305 102213.969 INFO             PET2  PASS  No arg VersionPrint test, ESMF_UtilUTest.F90, line 191
+20210305 102213.969 INFO             PET2  PASS  One line VersionPrint test, ESMF_UtilUTest.F90, line 199
+20210305 102213.969 INFO             PET2  PASS  Multi-line VersionPrint test, ESMF_UtilUTest.F90, line 207
+20210305 102213.969 INFO             PET2  PASS  Single and multi-line VersionPrint test, ESMF_UtilUTest.F90, line 215
+20210305 102214.027 INFO             PET2  PASS  Testing ESMF_UtilIOUnitGet, obtaining and opening units, ESMF_UtilUTest.F90, line 240
+20210305 102214.031 INFO             PET2  PASS  Testing ESMF_UtilIOUnitFlush, get a free unit, ESMF_UtilUTest.F90, line 257
+20210305 102214.038 INFO             PET2  PASS  ESMF_UtilIOUnitFlush, open scratch file: IOtempfile_02, ESMF_UtilUTest.F90, line 266
+20210305 102214.038 INFO             PET2  PASS  ESMF_UtilIOUnitFlush, flush the scratch file, ESMF_UtilUTest.F90, line 275
+20210305 102214.039 INFO             PET2  PASS  Testing ESMF_UtilGetArgC, command line argument count, ESMF_UtilUTest.F90, line 290
+20210305 102214.039 INFO             PET2  PASS  Testing ESMF_UtilGetArgC, command line argument count value, ESMF_UtilUTest.F90, line 297
+20210305 102214.039 ERROR            PET2 ESMF_Util.F90:200 ESMF_UtilGetArg Value unrecognized or out of range  - Internal subroutine call returned Error
+20210305 102214.039 INFO             PET2  PASS  Testing ESMF_UtilGetArgC, argindex < 0, ESMF_UtilUTest.F90, line 305
+20210305 102214.039 INFO             PET2  PASS  Testing ESMF_UtilGetArgC, get command name, ESMF_UtilUTest.F90, line 314
+20210305 102214.039 ERROR            PET2 ESMF_Util.F90:297 ESMF_UtilGetArg Argument sizes do not match  - Internal subroutine call returned Error
+20210305 102214.039 INFO             PET2  PASS  Testing ESMF_UtilGetArgC, get truncated command name, ESMF_UtilUTest.F90, line 322
+20210305 102214.039 INFO             PET2  PASS  Testing ESMF_UtilGetArgC, compare arg lengths, ESMF_UtilUTest.F90, line 332
+20210305 102214.039 ERROR            PET2 ESMF_Util.F90:200 ESMF_UtilGetArg Value unrecognized or out of range  - Internal subroutine call returned Error
+20210305 102214.040 INFO             PET2  PASS  Testing ESMF_UtilGetArgC, argindex > nargs, ESMF_UtilUTest.F90, line 342
+20210305 102214.040 INFO             PET2  PASS  Testing ESMF_UtilGetArgIndex for program path, ESMF_UtilUTest.F90, line 351
+20210305 102214.040 INFO             PET2  PASS  Testing ESMF_UtilGetArgIndex for program path, ESMF_UtilUTest.F90, line 360
+20210305 102214.040 INFO             PET2  PASS  Testing ascending real sort, ESMF_UtilUTest.F90, line 375
+20210305 102214.040 INFO             PET2  PASS  Testing sorted ascending real results, ESMF_UtilUTest.F90, line 389
+20210305 102214.040 INFO             PET2  PASS  Testing descending real sort, ESMF_UtilUTest.F90, line 398
+20210305 102214.040 INFO             PET2  PASS  Testing sorted descending real results, ESMF_UtilUTest.F90, line 412
+20210305 102214.040 INFO             PET2  PASS  Testing ascending double precision real sort, ESMF_UtilUTest.F90, line 423
+20210305 102214.040 INFO             PET2  PASS  Testing sorted ascending double precision real results, ESMF_UtilUTest.F90, line 437
+20210305 102214.040 INFO             PET2  PASS  Testing descending double precision real sort, ESMF_UtilUTest.F90, line 446
+20210305 102214.040 INFO             PET2  PASS  Testing sorted descending double precision real results, ESMF_UtilUTest.F90, line 460
+20210305 102214.040 INFO             PET2  PASS  Testing ascending integer sort, ESMF_UtilUTest.F90, line 471
+20210305 102214.040 INFO             PET2  PASS  Testing sorted ascending integer results, ESMF_UtilUTest.F90, line 486
+20210305 102214.040 INFO             PET2  PASS  Testing descending integer sort, ESMF_UtilUTest.F90, line 495
+20210305 102214.040 INFO             PET2  PASS  Testing sorted descending integer results, ESMF_UtilUTest.F90, line 510
+20210305 102214.040 INFO             PET2  PASS  Testing ascending double integer sort, ESMF_UtilUTest.F90, line 521
+20210305 102214.040 INFO             PET2  PASS  Testing sorted ascending double integer results, ESMF_UtilUTest.F90, line 536
+20210305 102214.040 INFO             PET2  PASS  Testing descending double integer sort, ESMF_UtilUTest.F90, line 545
+20210305 102214.040 INFO             PET2  PASS  Testing sorted descending double integer results, ESMF_UtilUTest.F90, line 560
+20210305 102214.040 INFO             PET2  PASS  Testing ascending character string sort, ESMF_UtilUTest.F90, line 571
+20210305 102214.040 INFO             PET2  PASS  Testing sorted ascending character string results, ESMF_UtilUTest.F90, line 583
+20210305 102214.040 INFO             PET2  PASS  Testing descending character string sort, ESMF_UtilUTest.F90, line 592
+20210305 102214.040 INFO             PET2  PASS  Testing sorted descending character string results, ESMF_UtilUTest.F90, line 604
+20210305 102214.040 INFO             PET2  PASS  Testing creating a directory, ESMF_UtilUTest.F90, line 618
+20210305 102214.041 ERROR            PET2 ESMF_Util.F90:639 ESMF_UtilIOMkDir Failure  - Internal subroutine call returned Error
+20210305 102214.041 INFO             PET2  PASS  Testing creating a directory which already exists, ESMF_UtilUTest.F90, line 626
+20210305 102214.041 INFO             PET2  PASS  Testing creating a directory which already exists w/relaxedFlag, ESMF_UtilUTest.F90, line 634
+20210305 102214.041 INFO             PET2  PASS  Testing removing a directory, ESMF_UtilUTest.F90, line 642
+20210305 102214.041 ERROR            PET2 ESMF_Util.F90:737 ESMF_UtilIORmDir Not found  - Internal subroutine call returned Error
+20210305 102214.041 INFO             PET2  PASS  Testing removing a directory which does not exist, ESMF_UtilUTest.F90, line 650
+20210305 102214.043 INFO             PET2  PASS  Testing removing a directory which does not exist, relaxed, ESMF_UtilUTest.F90, line 658
+20210305 102214.043 INFO             PET2  PASS  Testing getting the current directory, ESMF_UtilUTest.F90, line 672
+20210305 102214.043 INFO             PET2  PASS  Testing directory name for valid characters, ESMF_UtilUTest.F90, line 691
+20210305 102214.043 ERROR            PET2 ESMF_Util.F90:526 ESMF_UtilIOGetCWD Input buffer not long enough  - Internal subroutine call returned Error
+20210305 102214.043 INFO             PET2  PASS  Testing getting the current directory with small string, ESMF_UtilUTest.F90, line 699
+20210305 102214.043 INFO             PET2  PASS  Testing converting string to UPPER case, ESMF_UtilUTest.F90, line 711
+20210305 102214.043 INFO             PET2  PASS  Testing converting string to lower case, ESMF_UtilUTest.F90, line 721
+20210305 102214.043 INFO             PET2  PASS  ESMF_UtilString2Int() - no blanks - Test, ESMF_UtilUTest.F90, line 733
+20210305 102214.043 INFO             PET2  PASS  ESMF_UtilString2Int() - no blanks - Test, ESMF_UtilUTest.F90, line 740
+20210305 102214.043 INFO             PET2  PASS  ESMF_UtilStringInt2String() - Test, ESMF_UtilUTest.F90, line 749
+20210305 102214.043 INFO             PET2  PASS  String -> Integer -> String conversion correctness - Test, ESMF_UtilUTest.F90, line 756
+20210305 102214.043 INFO             PET2  PASS  ESMF_UtilString2Int() - negative value - Test, ESMF_UtilUTest.F90, line 764
+20210305 102214.043 INFO             PET2  PASS  ESMF_UtilString2Int() - negative value - Test, ESMF_UtilUTest.F90, line 771
+20210305 102214.043 INFO             PET2  PASS  ESMF_UtilString2Int() - explicit positive value - Test, ESMF_UtilUTest.F90, line 779
+20210305 102214.043 INFO             PET2  PASS  ESMF_UtilString2Int() - explicit positive value - Test, ESMF_UtilUTest.F90, line 786
+20210305 102214.043 INFO             PET2  PASS  ESMF_UtilString2Int() - leading blanks - Test, ESMF_UtilUTest.F90, line 794
+20210305 102214.043 INFO             PET2  PASS  ESMF_UtilString2Int() - leading blanks - Test, ESMF_UtilUTest.F90, line 801
+20210305 102214.043 INFO             PET2  PASS  ESMF_UtilString2Int() - trailing blanks - Test, ESMF_UtilUTest.F90, line 809
+20210305 102214.043 INFO             PET2  PASS  ESMF_UtilString2Int() - trailing blanks - Test, ESMF_UtilUTest.F90, line 816
+20210305 102214.043 ERROR            PET2 ESMF_Util.F90:879 Invalid argument  - Both specialStringList and specialValueList must either be present or absent.
+20210305 102214.043 INFO             PET2  PASS  ESMF_UtilString2Int() - special string missing - Test, ESMF_UtilUTest.F90, line 826
+20210305 102214.043 INFO             PET2  PASS  ESMF_UtilString2Int() - special string - Test, ESMF_UtilUTest.F90, line 836
+20210305 102214.043 INFO             PET2  PASS  ESMF_UtilString2Int() - special string - Test, ESMF_UtilUTest.F90, line 843
+20210305 102214.043 INFO             PET2  PASS  ESMF_UtilString2Real() - no blanks - Test, ESMF_UtilUTest.F90, line 856
+20210305 102214.043 INFO             PET2  PASS  ESMF_UtilString2Real() - no blanks - Test, ESMF_UtilUTest.F90, line 863
+20210305 102214.043 INFO             PET2  PASS  ESMF_UtilString2Real() - negative value - Test, ESMF_UtilUTest.F90, line 871
+20210305 102214.043 INFO             PET2  PASS  ESMF_UtilString2Real() - negative value - Test, ESMF_UtilUTest.F90, line 878
+20210305 102214.043 INFO             PET2  PASS  ESMF_UtilString2Real() - explicit positive value - Test, ESMF_UtilUTest.F90, line 886
+20210305 102214.043 INFO             PET2  PASS  ESMF_UtilString2Real() - explicit positive value - Test, ESMF_UtilUTest.F90, line 893
+20210305 102214.043 INFO             PET2  PASS  ESMF_UtilString2Real() - leading blanks - Test, ESMF_UtilUTest.F90, line 901
+20210305 102214.043 INFO             PET2  PASS  ESMF_UtilString2Real() - leading blanks - Test, ESMF_UtilUTest.F90, line 908
+20210305 102214.043 INFO             PET2  PASS  ESMF_UtilString2Real() - trailing blanks - Test, ESMF_UtilUTest.F90, line 916
+20210305 102214.043 INFO             PET2  PASS  ESMF_UtilString2Real() - leading blanks - Test, ESMF_UtilUTest.F90, line 923
+20210305 102214.043 INFO             PET2  PASS  ESMF_UtilString2Double() - no blanks - Test, ESMF_UtilUTest.F90, line 936
+20210305 102214.043 INFO             PET2  PASS  ESMF_UtilString2Double() - no blanks - Test, ESMF_UtilUTest.F90, line 943
+20210305 102214.043 INFO             PET2  PASS  ESMF_UtilString2Double() - negative value - Test, ESMF_UtilUTest.F90, line 951
+20210305 102214.043 INFO             PET2  PASS  ESMF_UtilString2Double() - negative value - Test, ESMF_UtilUTest.F90, line 958
+20210305 102214.043 INFO             PET2  PASS  ESMF_UtilString2Double() - explicit positive value - Test, ESMF_UtilUTest.F90, line 966
+20210305 102214.043 INFO             PET2  PASS  ESMF_UtilString2Double() - explicit positive value - Test, ESMF_UtilUTest.F90, line 973
+20210305 102214.043 INFO             PET2  PASS  ESMF_UtilString2Double() - leading blanks - Test, ESMF_UtilUTest.F90, line 981
+20210305 102214.043 INFO             PET2  PASS  ESMF_UtilString2Double() - leading blanks - Test, ESMF_UtilUTest.F90, line 988
+20210305 102214.043 INFO             PET2  PASS  ESMF_UtilString2Double() - trailing blanks - Test, ESMF_UtilUTest.F90, line 996
+20210305 102214.043 INFO             PET2  PASS  ESMF_UtilString2Double() - leading blanks - Test, ESMF_UtilUTest.F90, line 1003
+20210305 102214.043 INFO             PET2  PASS  Testing concatenating strings, ESMF_UtilUTest.F90, line 1016
+20210305 102214.043 INFO             PET2  PASS  Testing converting C string to Fortran string, ESMF_UtilUTest.F90, line 1031
+20210305 102214.043 INFO             PET2  PASS  Testing converting Fortran string to C string, ESMF_UtilUTest.F90, line 1047
+20210305 102214.043 INFO             PET2  Ending Test, file ESMF_UtilUTest.F90, line 1053
+20210305 102214.043 INFO             PET2 Finalizing ESMF
+20210305 102213.964 INFO             PET3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102213.964 INFO             PET3 !!! THE ESMF_LOG IS SET TO OUTPUT ALL LOG MESSAGES !!!
+20210305 102213.964 INFO             PET3 !!!     THIS MAY CAUSE SLOWDOWN IN PERFORMANCE     !!!
+20210305 102213.964 INFO             PET3 !!! FOR PRODUCTION RUNS, USE:                      !!!
+20210305 102213.964 INFO             PET3 !!!                   ESMF_LOGKIND_Multi_On_Error  !!!
+20210305 102213.964 INFO             PET3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+20210305 102213.964 INFO             PET3 Running with ESMF Version   : 8.1.0 beta snapshot
+20210305 102213.964 INFO             PET3 ESMF library build date/time: "Mar  5 2021" "09:44:29"
+20210305 102213.964 INFO             PET3 ESMF library build location : /lustre/f2/dev/ncep/Mark.Potts/gfortran_8.3.0_mpi_O
+20210305 102213.964 INFO             PET3 ESMF_COMM                   : mpi
+20210305 102213.964 INFO             PET3 ESMF_MOAB                   : enabled
+20210305 102213.964 INFO             PET3 ESMF_LAPACK                 : enabled
+20210305 102213.964 INFO             PET3 ESMF_NETCDF                 : enabled
+20210305 102213.964 INFO             PET3 ESMF_PNETCDF                : disabled
+20210305 102213.964 INFO             PET3 ESMF_PIO                    : enabled
+20210305 102213.964 INFO             PET3 ESMF_YAMLCPP                : enabled
+20210305 102213.968 INFO             PET3  Beginning Test, file ESMF_UtilUTest.F90, line 124
+20210305 102213.968 INFO             PET3  NUMBER_OF_PROCESSORS           4
+20210305 102213.968 INFO             PET3  PASS  Comparing numeric and character major version, ESMF_UtilUTest.F90, line 153
+20210305 102213.968 INFO             PET3  PASS  Comparing numeric and character minor version, ESMF_UtilUTest.F90, line 164
+20210305 102213.968 INFO             PET3  PASS  Comparing numeric and character revision, ESMF_UtilUTest.F90, line 179
+20210305 102213.969 INFO             PET3  PASS  No arg VersionPrint test, ESMF_UtilUTest.F90, line 191
+20210305 102213.969 INFO             PET3  PASS  One line VersionPrint test, ESMF_UtilUTest.F90, line 199
+20210305 102213.969 INFO             PET3  PASS  Multi-line VersionPrint test, ESMF_UtilUTest.F90, line 207
+20210305 102213.969 INFO             PET3  PASS  Single and multi-line VersionPrint test, ESMF_UtilUTest.F90, line 215
+20210305 102214.023 INFO             PET3  PASS  Testing ESMF_UtilIOUnitGet, obtaining and opening units, ESMF_UtilUTest.F90, line 240
+20210305 102214.027 INFO             PET3  PASS  Testing ESMF_UtilIOUnitFlush, get a free unit, ESMF_UtilUTest.F90, line 257
+20210305 102214.046 INFO             PET3  PASS  ESMF_UtilIOUnitFlush, open scratch file: IOtempfile_03, ESMF_UtilUTest.F90, line 266
+20210305 102214.046 INFO             PET3  PASS  ESMF_UtilIOUnitFlush, flush the scratch file, ESMF_UtilUTest.F90, line 275
+20210305 102214.047 INFO             PET3  PASS  Testing ESMF_UtilGetArgC, command line argument count, ESMF_UtilUTest.F90, line 290
+20210305 102214.047 INFO             PET3  PASS  Testing ESMF_UtilGetArgC, command line argument count value, ESMF_UtilUTest.F90, line 297
+20210305 102214.047 ERROR            PET3 ESMF_Util.F90:200 ESMF_UtilGetArg Value unrecognized or out of range  - Internal subroutine call returned Error
+20210305 102214.047 INFO             PET3  PASS  Testing ESMF_UtilGetArgC, argindex < 0, ESMF_UtilUTest.F90, line 305
+20210305 102214.047 INFO             PET3  PASS  Testing ESMF_UtilGetArgC, get command name, ESMF_UtilUTest.F90, line 314
+20210305 102214.047 ERROR            PET3 ESMF_Util.F90:297 ESMF_UtilGetArg Argument sizes do not match  - Internal subroutine call returned Error
+20210305 102214.047 INFO             PET3  PASS  Testing ESMF_UtilGetArgC, get truncated command name, ESMF_UtilUTest.F90, line 322
+20210305 102214.047 INFO             PET3  PASS  Testing ESMF_UtilGetArgC, compare arg lengths, ESMF_UtilUTest.F90, line 332
+20210305 102214.047 ERROR            PET3 ESMF_Util.F90:200 ESMF_UtilGetArg Value unrecognized or out of range  - Internal subroutine call returned Error
+20210305 102214.048 INFO             PET3  PASS  Testing ESMF_UtilGetArgC, argindex > nargs, ESMF_UtilUTest.F90, line 342
+20210305 102214.048 INFO             PET3  PASS  Testing ESMF_UtilGetArgIndex for program path, ESMF_UtilUTest.F90, line 351
+20210305 102214.048 INFO             PET3  PASS  Testing ESMF_UtilGetArgIndex for program path, ESMF_UtilUTest.F90, line 360
+20210305 102214.048 INFO             PET3  PASS  Testing ascending real sort, ESMF_UtilUTest.F90, line 375
+20210305 102214.048 INFO             PET3  PASS  Testing sorted ascending real results, ESMF_UtilUTest.F90, line 389
+20210305 102214.048 INFO             PET3  PASS  Testing descending real sort, ESMF_UtilUTest.F90, line 398
+20210305 102214.048 INFO             PET3  PASS  Testing sorted descending real results, ESMF_UtilUTest.F90, line 412
+20210305 102214.048 INFO             PET3  PASS  Testing ascending double precision real sort, ESMF_UtilUTest.F90, line 423
+20210305 102214.048 INFO             PET3  PASS  Testing sorted ascending double precision real results, ESMF_UtilUTest.F90, line 437
+20210305 102214.048 INFO             PET3  PASS  Testing descending double precision real sort, ESMF_UtilUTest.F90, line 446
+20210305 102214.048 INFO             PET3  PASS  Testing sorted descending double precision real results, ESMF_UtilUTest.F90, line 460
+20210305 102214.048 INFO             PET3  PASS  Testing ascending integer sort, ESMF_UtilUTest.F90, line 471
+20210305 102214.048 INFO             PET3  PASS  Testing sorted ascending integer results, ESMF_UtilUTest.F90, line 486
+20210305 102214.048 INFO             PET3  PASS  Testing descending integer sort, ESMF_UtilUTest.F90, line 495
+20210305 102214.048 INFO             PET3  PASS  Testing sorted descending integer results, ESMF_UtilUTest.F90, line 510
+20210305 102214.048 INFO             PET3  PASS  Testing ascending double integer sort, ESMF_UtilUTest.F90, line 521
+20210305 102214.048 INFO             PET3  PASS  Testing sorted ascending double integer results, ESMF_UtilUTest.F90, line 536
+20210305 102214.048 INFO             PET3  PASS  Testing descending double integer sort, ESMF_UtilUTest.F90, line 545
+20210305 102214.048 INFO             PET3  PASS  Testing sorted descending double integer results, ESMF_UtilUTest.F90, line 560
+20210305 102214.048 INFO             PET3  PASS  Testing ascending character string sort, ESMF_UtilUTest.F90, line 571
+20210305 102214.048 INFO             PET3  PASS  Testing sorted ascending character string results, ESMF_UtilUTest.F90, line 583
+20210305 102214.048 INFO             PET3  PASS  Testing descending character string sort, ESMF_UtilUTest.F90, line 592
+20210305 102214.048 INFO             PET3  PASS  Testing sorted descending character string results, ESMF_UtilUTest.F90, line 604
+20210305 102214.050 INFO             PET3  PASS  Testing creating a directory, ESMF_UtilUTest.F90, line 618
+20210305 102214.050 ERROR            PET3 ESMF_Util.F90:639 ESMF_UtilIOMkDir Failure  - Internal subroutine call returned Error
+20210305 102214.050 INFO             PET3  PASS  Testing creating a directory which already exists, ESMF_UtilUTest.F90, line 626
+20210305 102214.050 INFO             PET3  PASS  Testing creating a directory which already exists w/relaxedFlag, ESMF_UtilUTest.F90, line 634
+20210305 102214.050 INFO             PET3  PASS  Testing removing a directory, ESMF_UtilUTest.F90, line 642
+20210305 102214.051 ERROR            PET3 ESMF_Util.F90:737 ESMF_UtilIORmDir Not found  - Internal subroutine call returned Error
+20210305 102214.051 INFO             PET3  PASS  Testing removing a directory which does not exist, ESMF_UtilUTest.F90, line 650
+20210305 102214.051 INFO             PET3  PASS  Testing removing a directory which does not exist, relaxed, ESMF_UtilUTest.F90, line 658
+20210305 102214.051 INFO             PET3  PASS  Testing getting the current directory, ESMF_UtilUTest.F90, line 672
+20210305 102214.051 INFO             PET3  PASS  Testing directory name for valid characters, ESMF_UtilUTest.F90, line 691
+20210305 102214.051 ERROR            PET3 ESMF_Util.F90:526 ESMF_UtilIOGetCWD Input buffer not long enough  - Internal subroutine call returned Error
+20210305 102214.051 INFO             PET3  PASS  Testing getting the current directory with small string, ESMF_UtilUTest.F90, line 699
+20210305 102214.051 INFO             PET3  PASS  Testing converting string to UPPER case, ESMF_UtilUTest.F90, line 711
+20210305 102214.051 INFO             PET3  PASS  Testing converting string to lower case, ESMF_UtilUTest.F90, line 721
+20210305 102214.051 INFO             PET3  PASS  ESMF_UtilString2Int() - no blanks - Test, ESMF_UtilUTest.F90, line 733
+20210305 102214.051 INFO             PET3  PASS  ESMF_UtilString2Int() - no blanks - Test, ESMF_UtilUTest.F90, line 740
+20210305 102214.051 INFO             PET3  PASS  ESMF_UtilStringInt2String() - Test, ESMF_UtilUTest.F90, line 749
+20210305 102214.051 INFO             PET3  PASS  String -> Integer -> String conversion correctness - Test, ESMF_UtilUTest.F90, line 756
+20210305 102214.051 INFO             PET3  PASS  ESMF_UtilString2Int() - negative value - Test, ESMF_UtilUTest.F90, line 764
+20210305 102214.051 INFO             PET3  PASS  ESMF_UtilString2Int() - negative value - Test, ESMF_UtilUTest.F90, line 771
+20210305 102214.051 INFO             PET3  PASS  ESMF_UtilString2Int() - explicit positive value - Test, ESMF_UtilUTest.F90, line 779
+20210305 102214.051 INFO             PET3  PASS  ESMF_UtilString2Int() - explicit positive value - Test, ESMF_UtilUTest.F90, line 786
+20210305 102214.051 INFO             PET3  PASS  ESMF_UtilString2Int() - leading blanks - Test, ESMF_UtilUTest.F90, line 794
+20210305 102214.051 INFO             PET3  PASS  ESMF_UtilString2Int() - leading blanks - Test, ESMF_UtilUTest.F90, line 801
+20210305 102214.051 INFO             PET3  PASS  ESMF_UtilString2Int() - trailing blanks - Test, ESMF_UtilUTest.F90, line 809
+20210305 102214.051 INFO             PET3  PASS  ESMF_UtilString2Int() - trailing blanks - Test, ESMF_UtilUTest.F90, line 816
+20210305 102214.051 ERROR            PET3 ESMF_Util.F90:879 Invalid argument  - Both specialStringList and specialValueList must either be present or absent.
+20210305 102214.051 INFO             PET3  PASS  ESMF_UtilString2Int() - special string missing - Test, ESMF_UtilUTest.F90, line 826
+20210305 102214.051 INFO             PET3  PASS  ESMF_UtilString2Int() - special string - Test, ESMF_UtilUTest.F90, line 836
+20210305 102214.052 INFO             PET3  PASS  ESMF_UtilString2Int() - special string - Test, ESMF_UtilUTest.F90, line 843
+20210305 102214.052 INFO             PET3  PASS  ESMF_UtilString2Real() - no blanks - Test, ESMF_UtilUTest.F90, line 856
+20210305 102214.052 INFO             PET3  PASS  ESMF_UtilString2Real() - no blanks - Test, ESMF_UtilUTest.F90, line 863
+20210305 102214.052 INFO             PET3  PASS  ESMF_UtilString2Real() - negative value - Test, ESMF_UtilUTest.F90, line 871
+20210305 102214.052 INFO             PET3  PASS  ESMF_UtilString2Real() - negative value - Test, ESMF_UtilUTest.F90, line 878
+20210305 102214.052 INFO             PET3  PASS  ESMF_UtilString2Real() - explicit positive value - Test, ESMF_UtilUTest.F90, line 886
+20210305 102214.052 INFO             PET3  PASS  ESMF_UtilString2Real() - explicit positive value - Test, ESMF_UtilUTest.F90, line 893
+20210305 102214.052 INFO             PET3  PASS  ESMF_UtilString2Real() - leading blanks - Test, ESMF_UtilUTest.F90, line 901
+20210305 102214.052 INFO             PET3  PASS  ESMF_UtilString2Real() - leading blanks - Test, ESMF_UtilUTest.F90, line 908
+20210305 102214.052 INFO             PET3  PASS  ESMF_UtilString2Real() - trailing blanks - Test, ESMF_UtilUTest.F90, line 916
+20210305 102214.052 INFO             PET3  PASS  ESMF_UtilString2Real() - leading blanks - Test, ESMF_UtilUTest.F90, line 923
+20210305 102214.052 INFO             PET3  PASS  ESMF_UtilString2Double() - no blanks - Test, ESMF_UtilUTest.F90, line 936
+20210305 102214.052 INFO             PET3  PASS  ESMF_UtilString2Double() - no blanks - Test, ESMF_UtilUTest.F90, line 943
+20210305 102214.052 INFO             PET3  PASS  ESMF_UtilString2Double() - negative value - Test, ESMF_UtilUTest.F90, line 951
+20210305 102214.052 INFO             PET3  PASS  ESMF_UtilString2Double() - negative value - Test, ESMF_UtilUTest.F90, line 958
+20210305 102214.052 INFO             PET3  PASS  ESMF_UtilString2Double() - explicit positive value - Test, ESMF_UtilUTest.F90, line 966
+20210305 102214.052 INFO             PET3  PASS  ESMF_UtilString2Double() - explicit positive value - Test, ESMF_UtilUTest.F90, line 973
+20210305 102214.052 INFO             PET3  PASS  ESMF_UtilString2Double() - leading blanks - Test, ESMF_UtilUTest.F90, line 981
+20210305 102214.052 INFO             PET3  PASS  ESMF_UtilString2Double() - leading blanks - Test, ESMF_UtilUTest.F90, line 988
+20210305 102214.052 INFO             PET3  PASS  ESMF_UtilString2Double() - trailing blanks - Test, ESMF_UtilUTest.F90, line 996
+20210305 102214.052 INFO             PET3  PASS  ESMF_UtilString2Double() - leading blanks - Test, ESMF_UtilUTest.F90, line 1003
+20210305 102214.052 INFO             PET3  PASS  Testing concatenating strings, ESMF_UtilUTest.F90, line 1016
+20210305 102214.052 INFO             PET3  PASS  Testing converting C string to Fortran string, ESMF_UtilUTest.F90, line 1031
+20210305 102214.052 INFO             PET3  PASS  Testing converting Fortran string to C string, ESMF_UtilUTest.F90, line 1047
+20210305 102214.052 INFO             PET3  Ending Test, file ESMF_UtilUTest.F90, line 1053
+20210305 102214.052 INFO             PET3 Finalizing ESMF
