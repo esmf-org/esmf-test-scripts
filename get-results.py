@@ -59,10 +59,7 @@ def copy_artifacts(build_dir,artifacts_root,machine_name,mpiversion,oe_filelist,
   if(oe_filelist == []):
     return
   for cfile in oe_filelist:
-    if(scheduler == "pbs"):
-      nfile = os.path.basename(re.sub('{}'.format(jobid), '', cfile))
-    else:
-      nfile = os.path.basename(re.sub('_{}'.format(jobid), '', cfile))
+    nfile = os.path.basename(re.sub('_{}'.format(jobid), '', cfile))
     print("nfile is {}".format(nfile))
     if(nfile.find("build") != -1): # this is just the build job, so no test artifacts yet
       build_stage = True
@@ -102,6 +99,7 @@ def copy_artifacts(build_dir,artifacts_root,machine_name,mpiversion,oe_filelist,
   build_hash = subprocess.check_output('git describe --tags',shell=True).strip().decode('utf-8')
   os.chdir(cwd)
   esmfmkfile = glob.glob('{}/lib/lib{}/*/esmf.mk'.format(build_dir,build_type))
+  print("esmfmkfile is {}".format(esmfmkfile))
   build_time = datetime.datetime.fromtimestamp(os.path.getmtime(esmfmkfile[0]))
   summary_file = open('{}/summary.dat'.format(outpath),"w")
   summary_file.write('\n===================================================================\n')
@@ -154,8 +152,8 @@ def main(argv):
     job_done = checkqueue(jobid,scheduler)
     if(job_done):
 #     oe_filelist = glob.glob('{}/{}/*{}*'.format(test_root_dir,build_basename,jobid))
-      oe_filelist = glob.glob('{}/{}/*_{}.log'.format(test_root_dir,build_basename,jobid))
-      print("looking in {}/{}/*_{}.log".format(test_root_dir,build_basename,jobid))
+      oe_filelist = glob.glob('{}/{}/*_{}*.log'.format(test_root_dir,build_basename,jobid))
+      print("looking in {}/{}/*_{}*.log".format(test_root_dir,build_basename,jobid))
       copy_artifacts(build_dir,artifacts_root,machine_name,mpiver,oe_filelist,jobid,scheduler,branch)
       break
     time.sleep(30)
