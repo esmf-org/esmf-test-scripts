@@ -137,13 +137,15 @@ def main(argv):
                 ft.write("export {}\n".format(mpidict[key]['mpi_env_vars'][mpi_var]))
 
             if(machine_list[comp]['versions'][ver]['netcdf'] == "None" ):
-              modulecmd = "module load {} {} \nmodule list\n".format(machine_list[comp]['versions'][ver]['compiler'],mpiflavor['module'])
+              modulecmd_b = "module load {} {} \nmodule list >& module-build.log\n".format(machine_list[comp]['versions'][ver]['compiler'],mpiflavor['module'])
+              modulecmd_t = "module load {} {} \nmodule list >& module-test.log\n".format(machine_list[comp]['versions'][ver]['compiler'],mpiflavor['module'])
               esmfnetcdf = "\n"
             else:
-              modulecmd = "module load {} {} {}\nmodule list\n".format(machine_list[comp]['versions'][ver]['compiler'],mpiflavor['module'],machine_list[comp]['versions'][ver]['netcdf'])
+              modulecmd_b = "module load {} {} {}\nmodule list >& module-build.log\n".format(machine_list[comp]['versions'][ver]['compiler'],mpiflavor['module'],machine_list[comp]['versions'][ver]['netcdf'])
+              modulecmd_t = "module load {} {} {}\nmodule list >& module-test.log\n".format(machine_list[comp]['versions'][ver]['compiler'],mpiflavor['module'],machine_list[comp]['versions'][ver]['netcdf'])
               esmfnetcdf = "export ESMF_NETCDF=nc-config\n"
-            fb.write(modulecmd)
-            ft.write(modulecmd)
+            fb.write(modulecmd_b)
+            ft.write(modulecmd_t)
             fb.write(esmfnetcdf)
             ft.write(esmfnetcdf)
 
