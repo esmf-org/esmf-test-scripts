@@ -29,9 +29,7 @@ def create_header(file_out,scheduler,filename,time,account,partition,queue,cpn,c
     file_out.write("#PBS -A {}\n".format(account))
     file_out.write("#PBS -l select=1:ncpus={}:mpiprocs={}\n".format(cpn,cpn))
     file_out.write("#PBS -l walltime={}\n".format(time))
-    file_out.write("IFS='\.'\n")
-    file_out.write("read -a strarr <<< \"$PBS_JOBID\"\n")
-    file_out.write("JOBID=${strarr[0]}\n")
+    file_out.write("JOBID=\"`echo $PBS_JOBID | cut -d. -f1`\"\n\n")
     file_out.write("cd {}\n".format(os.getcwd()))
   elif(scheduler == "None"): 
     file_out.write("#!/bin/bash -l\n")
