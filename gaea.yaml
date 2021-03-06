@@ -5,7 +5,7 @@ partition: None
 cluster: c4
 scheduler: slurm
 corespernode: 24
-compiler: [gfortran]
+compiler: [gfortran,intel]
 branch: release/8.1.0
 intel:
      versions: 
@@ -28,8 +28,8 @@ gfortran:
          compiler: gcc/8.3.0
          netcdf: cray-netcdf/4.6.3.2
          mpi:
-#          mpiuni: 
-#            module: None
+           mpiuni: 
+             module: None
            mpi: 
              module: pmi/5.0.15
          extra_env_vars: 
