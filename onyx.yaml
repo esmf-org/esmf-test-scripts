@@ -18,7 +18,7 @@ intel:
      extramodule: PrgEnv-intel
      unloadmodule: "PrgEnv-cray PrgEnv-gnu"
 gfortran:
-     test_time: 2:00:00
+     test_time: "2:00:00"
      versions: 
        7.2.0: 
          compiler: gcc/7.2.0

@@ -42,17 +42,6 @@ def copy_artifacts(build_dir,artifacts_root,machine_name,mpiversion,oe_filelist,
     outpath = "{}/{}/{}/{}/{}/{}/{}/{}".format(artifacts_root,branch,machine_name,compiler,version,build_type,mpiflavor,mpiversion)
   else:
     outpath = "{}/{}/{}/{}/{}/{}/{}".format(artifacts_root,branch,machine_name,compiler,version,build_type,mpiflavor)
-  #Make directories, if they aren't already there
-  cmd = 'mkdir -p {}/examples; rm {}/examples/*; rm {}/*'.format(outpath,outpath,outpath)
-  os.system(cmd)
-  cmd = 'mkdir -p {}/apps; rm {}/apps/*'.format(outpath,outpath)
-  os.system(cmd)
-  cmd = 'mkdir -p {}/test; rm {}/test/*'.format(outpath,outpath)
-  os.system(cmd)
-  cmd = 'mkdir -p {}/lib; rm {}/lib/*'.format(outpath,outpath)
-  os.system(cmd)
-  cmd = 'mkdir -p {}/out; rm {}/out/*'.format(outpath,outpath)
-  os.system(cmd)
   #copy/rename the stdout/stderr files to artifacts out directory
   build_stage = False
   print("oe filelist is {}".format(oe_filelist))
@@ -63,6 +52,9 @@ def copy_artifacts(build_dir,artifacts_root,machine_name,mpiversion,oe_filelist,
     print("nfile is {}".format(nfile))
     if(nfile.find("build") != -1): # this is just the build job, so no test artifacts yet
       build_stage = True
+      #remove old files in out directory
+      cmd = 'mkdir -p {}/out; rm {}/out/*'.format(outpath,outpath)
+      os.system(cmd)
     cp_cmd = 'cp {} {}/out/{}'.format(cfile,outpath,nfile)
     os.system(cp_cmd)
   if(build_stage):
@@ -73,6 +65,15 @@ def copy_artifacts(build_dir,artifacts_root,machine_name,mpiversion,oe_filelist,
     git_cmd = "cd {};git pull -X theirs --no-edit origin main;git push origin main".format(artifacts_root,branch,machine_name,build_basename,machine_name)
     os.system(git_cmd)
     return
+  #Make directories, if they aren't already there
+  cmd = 'mkdir -p {}/examples; rm {}/examples/*; rm {}/*'.format(outpath,outpath,outpath)
+  os.system(cmd)
+  cmd = 'mkdir -p {}/apps; rm {}/apps/*'.format(outpath,outpath)
+  os.system(cmd)
+  cmd = 'mkdir -p {}/test; rm {}/test/*'.format(outpath,outpath)
+  os.system(cmd)
+  cmd = 'mkdir -p {}/lib; rm {}/lib/*'.format(outpath,outpath)
+  os.system(cmd)
   print("globbing examples")
   example_artifacts = glob.glob('{}/examples/examples{}/*/*.Log'.format(build_dir,build_type))
   example_artifacts.extend(glob.glob('{}/examples/examples{}/*/*.stdout'.format(build_dir,build_type)))
@@ -153,6 +154,7 @@ def main(argv):
     if(job_done):
 #     oe_filelist = glob.glob('{}/{}/*{}*'.format(test_root_dir,build_basename,jobid))
       oe_filelist = glob.glob('{}/{}/*_{}*.log'.format(test_root_dir,build_basename,jobid))
+      oe_filelist.extend(glob.glob('{}/{}/*_{}*.bat'.format(test_root_dir,build_basename,jobid)))
       print("looking in {}/{}/*_{}*.log".format(test_root_dir,build_basename,jobid))
       copy_artifacts(build_dir,artifacts_root,machine_name,mpiver,oe_filelist,jobid,scheduler,branch)
       break

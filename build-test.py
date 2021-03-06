@@ -6,9 +6,9 @@ import sys
 import pathlib
 
 
-def create_header(file_out,scheduler,filename,time,account,partition,queue,cpn,cluster):
+def create_header(file_out,scheduler,filename,time,account,partition,queue,cpn,cluster,bash):
   if(scheduler == "slurm"): 
-    file_out.write("#!/bin/sh -l\n")
+    file_out.write("#!{} -l\n".format(bash))
     file_out.write("#SBATCH --account={}\n".format(account))
     if(partition != "None"):
       file_out.write("#SBATCH --partition={}\n".format(partition))
@@ -22,19 +22,17 @@ def create_header(file_out,scheduler,filename,time,account,partition,queue,cpn,c
     file_out.write("#SBATCH --output {}_%j.o\n".format(filename))
     file_out.write("export JOBID=$SLURM_JOBID\n")
   elif(scheduler == "pbs"): 
-    file_out.write("#!/bin/sh -l\n")
+    file_out.write("#!{} -l\n".format(bash))
     file_out.write("#PBS -N {}\n".format(filename))
     file_out.write("#PBS -j oe\n")
     file_out.write("#PBS -q {}\n".format(queue))
     file_out.write("#PBS -A {}\n".format(account))
     file_out.write("#PBS -l select=1:ncpus={}:mpiprocs={}\n".format(cpn,cpn))
     file_out.write("#PBS -l walltime={}\n".format(time))
-    file_out.write("IFS='\.'\n")
-    file_out.write("read -a strarr <<< \"$PBS_JOBID\"\n")
-    file_out.write("JOBID=${strarr[0]}\n")
+    file_out.write("JOBID=\"`echo $PBS_JOBID | cut -d. -f1`\"\n\n")
     file_out.write("cd {}\n".format(os.getcwd()))
   elif(scheduler == "None"): 
-    file_out.write("#!/bin/bash -l\n")
+    file_out.write("#!{} -l\n".format(bash))
     file_out.write("export JOBID=$1\n")
 
 def main(argv):
@@ -45,6 +43,10 @@ def main(argv):
   with open(inpfile) as file:
     machine_list = yaml.load(file, Loader=yaml.FullLoader)
     machine_name = machine_list['machine']
+    if("bash" in machine_list):
+      bash = machine_list['bash']
+    else: 
+      bash = "/bin/bash"
     if("git-https" in machine_list):
       https = True
     else: 
@@ -106,13 +108,13 @@ def main(argv):
               build_time = machine_list[comp]['build_time']
             else:
               build_time = "1:00:00"
-            create_header(fb,scheduler,filename,build_time,account,partition,queue,cpn,cluster)
+            create_header(fb,scheduler,filename,build_time,account,partition,queue,cpn,cluster,bash)
 
             if('test_time' in machine_list[comp]):
               test_time = machine_list[comp]['test_time']
             else:
               test_time = "1:00:00"
-            create_header(ft,scheduler,t_filename,test_time,account,partition,queue,cpn,cluster)
+            create_header(ft,scheduler,t_filename,test_time,account,partition,queue,cpn,cluster,bash)
             fb.write("set -x\n") 
             ft.write("set -x\n")
             if("unloadmodule" in machine_list[comp]):
@@ -139,13 +141,15 @@ def main(argv):
                 ft.write("export {}\n".format(mpidict[key]['mpi_env_vars'][mpi_var]))
 
             if(machine_list[comp]['versions'][ver]['netcdf'] == "None" ):
-              modulecmd = "module load {} {} \nmodule list\n".format(machine_list[comp]['versions'][ver]['compiler'],mpiflavor['module'])
+              modulecmd_b = "module load {} {} \nmodule list >& module-build.log\n".format(machine_list[comp]['versions'][ver]['compiler'],mpiflavor['module'])
+              modulecmd_t = "module load {} {} \nmodule list >& module-test.log\n".format(machine_list[comp]['versions'][ver]['compiler'],mpiflavor['module'])
               esmfnetcdf = "\n"
             else:
-              modulecmd = "module load {} {} {}\nmodule list\n".format(machine_list[comp]['versions'][ver]['compiler'],mpiflavor['module'],machine_list[comp]['versions'][ver]['netcdf'])
+              modulecmd_b = "module load {} {} {}\nmodule list >& module-build.log\n".format(machine_list[comp]['versions'][ver]['compiler'],mpiflavor['module'],machine_list[comp]['versions'][ver]['netcdf'])
+              modulecmd_t = "module load {} {} {}\nmodule list >& module-test.log\n".format(machine_list[comp]['versions'][ver]['compiler'],mpiflavor['module'],machine_list[comp]['versions'][ver]['netcdf'])
               esmfnetcdf = "export ESMF_NETCDF=nc-config\n"
-            fb.write(modulecmd)
-            ft.write(modulecmd)
+            fb.write(modulecmd_b)
+            ft.write(modulecmd_t)
             fb.write(esmfnetcdf)
             ft.write(esmfnetcdf)
 
@@ -196,10 +200,10 @@ def main(argv):
             fb.write(cmdstring)
             ft.write(cmdstring)
 
-            cmdstring = "make -j {} clean |& tee clean_$JOBID.log \nmake -j {} |& tee build_$JOBID.log\n\n".format(cpn,cpn)
+            cmdstring = "make -j {} clean 2>&1|tee clean_$JOBID.log \nmake -j {} 2>&1|tee build_$JOBID.log\n\n".format(cpn,cpn)
             fb.write(cmdstring)
 
-            cmdstring = "make install |& tee install_$JOBID.log \nmake all_tests |& tee test_$JOBID.log \n\n"
+            cmdstring = "make install 2>&1|tee install_$JOBID.log \nmake all_tests 2>&1|tee test_$JOBID.log \n\n"
             ft.write(cmdstring)
   
             fb.close()
