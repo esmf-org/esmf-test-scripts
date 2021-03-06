@@ -3,7 +3,7 @@ account: NRLMR03795024
 queue: standard
 scheduler: pbs
 corespernode: 48
-compiler: [intel]
+compiler: [intel,gfortran]
 branch: release/8.1.0
 intel:
      versions: 
@@ -14,8 +14,8 @@ intel:
          mpi:
            intelmpi: 
              module: compiler/intelmpi/18.0.1.163 
-#          mpt: 
-#            module: mpt/2.20
+           mpt: 
+             module: mpt/2.20
          extra_env_vars: 
            var1: ESMF_F90COMPILEOPTS=-I$CSE_NETCDF_FORTRAN_INCLUDE_DIR
      extramodule: cseinit-intel

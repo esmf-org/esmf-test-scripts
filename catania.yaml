@@ -1,0 +1,29 @@
+machine: catania
+scheduler: None
+corespernode: 4
+modulepath: /project/esmf/stack/modulefiles
+compiler: [gfortran]
+branch: release/8.1.0
+
+#intel:
+#     versions:
+#       19.1.0.166:
+#         compiler: Intel/19.1.0.166/intel
+#         netcdf: Intel/19.1.0.166/netcdf/4.7.4s
+#         mpi:
+#           mpich3:
+#             module: Intel/19.1.0.166/mpich/3.3.2
+#           mpiuni:
+#             module: None
+
+gfortran:
+     versions: 
+       9.3.0: 
+         compiler: gnu/9.3.0/compiler
+         netcdf: gnu/9.3.0/netcdf-c/4.7.4
+         netcdf-fortran: gnu/9.3.0/netcdf-fortran/4.5.3
+         mpi:
+           mpich3: 
+             module: gnu/9.3.0/mpich3/3.3.2
+#           mpiuni: 
+#            module: None
