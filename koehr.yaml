@@ -9,30 +9,32 @@ intel:
      versions: 
        2020.2: 
          compiler: compiler/intel/2020.2.254
-         netcdf: cse/netcdf/4.7.4
+         netcdf: netcdf-c-parallel/intel/sgimpt/4.3.3.1  
+         netcdf-fortran: netcdf-fortran-parallel/intel/sgimpt/4.4.2
          mpi:
-           intelmpi: 
-             module: compiler/intelmpi/2020.2.254
-           openmpi: 
-             module: compiler/openmpi/2.1.2
+#          intelmpi: 
+#            module: compiler/intelmpi/2020.2.254
+#          openmpi: 
+#            module: compiler/openmpi/2.1.2
            mpt: 
              module: mpt/2.20
-     extramodule: cseinit
-     unloadmodule: mpt/2.20
+#    extramodule: cseinit
+#    unloadmodule: "mpt/2.20 compiler/intel"
 gfortran:
      versions: 
        7.3.0: 
          compiler: gcc/7.3.0
-         netcdf: cse/netcdf/4.7.4
+         netcdf: None
          mpi:
            mpt: 
              module: mpt/2.20
-     extramodule: cseinit
-     versions: 
        10.1.0: 
-         compiler: gcc/10.1.1
-         netcdf: cse/netcdf/4.7.4
+         compiler: gcc/10.1.0
+         netcdf: None
          mpi:
            mpt: 
              module: mpt/2.20
+         extra_env_vars: 
+           var1: ESMF_F90COMPILEOPTS="-fallow-argument-mismatch -fallow-invalid-boz"
      extramodule: cseinit
+     unloadmodule: "compiler/intel mpt"
