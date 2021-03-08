@@ -23,7 +23,7 @@ gfortran:
            mpiuni: 
              module: None
          extra_env_vars: 
-            var1: $ESMF_NETCDF=/home/mpotts/spack/opt/spack/linux-linuxmint19-skylake/gcc-9.3.0/netcdf-c-4.7.4-mh42cmw5oougqeytguqxjkkrrd2bfdsl/bin/nc-config
+            var1: ESMF_NETCDF=/home/mpotts/spack/opt/spack/linux-linuxmint19-skylake/gcc-9.3.0/netcdf-c-4.7.4-mh42cmw5oougqeytguqxjkkrrd2bfdsl/bin/nc-config
             var2: ESMF_NFCONFIG=/home/mpotts/spack/opt/spack/linux-linuxmint19-skylake/gcc-9.3.0/netcdf-fortran-4.5.3-7cigsuiobyasv6mbext7pmabw5fhzo6y/bin/nf-config
             var3: CC=/home/mpotts/spack/opt/spack/linux-linuxmint19-skylake/gcc-7.5.0/gcc-9.3.0-3ltccu6cenbq/bin/gcc
             var4: CXX=/home/mpotts/spack/opt/spack/linux-linuxmint19-skylake/gcc-7.5.0/gcc-9.3.0-3ltccu6cenbq/bin/g++
