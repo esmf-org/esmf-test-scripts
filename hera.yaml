@@ -4,7 +4,8 @@ queue: batch
 partition: hera
 scheduler: slurm
 corespernode: 40
-compiler:[intel,gfortran,pgi]
+#compiler: [intel,gfortran,pgi]
+compiler: [gfortran]
 branch: release/8.1.0
 intel:
      versions: 
@@ -17,6 +18,7 @@ intel:
            mpiuni: 
              module: None
 gfortran:
+     test_time: "2:00:00"
      versions: 
        9.2.0: 
          compiler: gnu/9.2.0
@@ -25,8 +27,8 @@ gfortran:
          mpi:
            openmpi: 
              module: openmpi/3.1.4
-           mpiuni: 
-             module: None
+#          mpiuni: 
+#            module: None
          extra_env_vars: 
             var1: ESMF_NETCDF=split
             var2: ESMF_NETCDF_INCLUDE=$NETCDF/include
