@@ -143,15 +143,12 @@ def main(argv):
             if(machine_list[comp]['versions'][ver]['netcdf'] == "None" ):
               modulecmd_b = "module load {} {} \nmodule list >& module-build.log\n".format(machine_list[comp]['versions'][ver]['compiler'],mpiflavor['module'])
               modulecmd_t = "module load {} {} \nmodule list >& module-test.log\n".format(machine_list[comp]['versions'][ver]['compiler'],mpiflavor['module'])
-              esmfnetcdf = "\n"
+              esmfnetcdf = "\n\n"
             else:
-              modulecmd_b = "module load {} {} {}\nmodule list >& module-build.log\n".format(machine_list[comp]['versions'][ver]['compiler'],mpiflavor['module'],machine_list[comp]['versions'][ver]['netcdf'])
-              modulecmd_t = "module load {} {} {}\nmodule list >& module-test.log\n".format(machine_list[comp]['versions'][ver]['compiler'],mpiflavor['module'],machine_list[comp]['versions'][ver]['netcdf'])
-              esmfnetcdf = "export ESMF_NETCDF=nc-config\n"
-            fb.write(modulecmd_b)
-            ft.write(modulecmd_t)
-            fb.write(esmfnetcdf)
-            ft.write(esmfnetcdf)
+              modulecmd = "module load {} {} {}\n".format(machine_list[comp]['versions'][ver]['compiler'],mpiflavor['module'],machine_list[comp]['versions'][ver]['netcdf'])
+              esmfnetcdf = "export ESMF_NETCDF=nc-config\n\n"
+            fb.write(modulecmd)
+            ft.write(modulecmd)
 
             if("hdf5" in machine_list[comp]['versions'][ver]):
               modulecmd = "module load {} \nmodule list\n".format(machine_list[comp]['versions'][ver]['hdf5'])
@@ -161,6 +158,14 @@ def main(argv):
               modulecmd = "module load {} \nmodule list\n".format(machine_list[comp]['versions'][ver]['netcdf-fortran'])
               fb.write(modulecmd)
               ft.write(modulecmd)
+
+            modulecmd_b = "module list >& module-build.log\n\n"
+            modulecmd_t = "module list >& module-test.log\n\n"
+            fb.write(modulecmd_b)
+            ft.write(modulecmd_t)
+
+            fb.write(esmfnetcdf)
+            ft.write(esmfnetcdf)
 
 #           if("extramodule" in machine_list[comp]):
 #             fb.write("\nmodule load {}\n".format(machine_list[comp]['extramodule']))

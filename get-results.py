@@ -154,9 +154,10 @@ def main(argv):
     if(job_done):
 #     oe_filelist = glob.glob('{}/{}/*{}*'.format(test_root_dir,build_basename,jobid))
       oe_filelist = glob.glob('{}/{}/*_{}*.log'.format(test_root_dir,build_basename,jobid))
-      oe_filelist.extend(glob.glob('{}/{}/*_{}*.bat'.format(test_root_dir,build_basename,jobid)))
-      oe_filelist.extend(glob.glob('{}/{}/module*.log'.format(test_root_dir,build_basename,jobid)))
-      print("looking in {}/{}/*_{}*.log".format(test_root_dir,build_basename,jobid))
+      oe_filelist.extend(glob.glob('{}/{}/*.bat'.format(test_root_dir,build_basename)))
+      oe_filelist.extend(glob.glob('{}/{}/module-*.log'.format(test_root_dir,build_basename)))
+      print("looking in {}/{}/*.log".format(test_root_dir,build_basename))
+      print("oe list is {}\n".format(oe_filelist))
       copy_artifacts(build_dir,artifacts_root,machine_name,mpiver,oe_filelist,jobid,scheduler,branch)
       break
     time.sleep(30)
