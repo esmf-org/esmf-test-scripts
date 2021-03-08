@@ -1,8 +1,0 @@
- ESMF application on MPI rank:           0
- ESMF application on MPI rank:           1
-  PASS  Example ESMF_VMUserMpiCommEx, ESMF_VMUserMpiCommEx.F90, line 113
-  PASS  Example ESMF_VMUserMpiCommEx, ESMF_VMUserMpiCommEx.F90, line 113
- PASS: ESMF_VMUserMpiCommEx.F90
- PASS: ESMF_VMUserMpiCommEx.F90
- PASS: ESMF_VMUserMpiCommEx.F90
- PASS: ESMF_VMUserMpiCommEx.F90
