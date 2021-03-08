@@ -44,18 +44,19 @@ def copy_artifacts(build_dir,artifacts_root,machine_name,mpiversion,oe_filelist,
     outpath = "{}/{}/{}/{}/{}/{}/{}".format(artifacts_root,branch,machine_name,compiler,version,build_type,mpiflavor)
   #copy/rename the stdout/stderr files to artifacts out directory
   build_stage = False
-  print("oe filelist is {}".format(oe_filelist))
+# print("oe filelist is {}".format(oe_filelist))
   if(oe_filelist == []):
     return
   for cfile in oe_filelist:
     nfile = os.path.basename(re.sub('_{}'.format(jobid), '', cfile))
-    print("nfile is {}".format(nfile))
-    if(nfile.find("build") != -1): # this is just the build job, so no test artifacts yet
+#   print("nfile is {}, and find says {} and {}".format(nfile,nfile.find('build-'),nfile.find('.bat')))
+    if((nfile.find('build-') != -1) and (nfile.find('.bat') == -1)): # this is just the build job, so no test artifacts yet
       build_stage = True
       #remove old files in out directory
       cmd = 'mkdir -p {}/out; rm {}/out/*'.format(outpath,outpath)
       os.system(cmd)
     cp_cmd = 'cp {} {}/out/{}'.format(cfile,outpath,nfile)
+    print("cp command is {}".format(cp_cmd))
     os.system(cp_cmd)
   if(build_stage):
     print('just the build stage')
@@ -156,7 +157,6 @@ def main(argv):
       oe_filelist = glob.glob('{}/{}/*_{}*.log'.format(test_root_dir,build_basename,jobid))
       oe_filelist.extend(glob.glob('{}/{}/*.bat'.format(test_root_dir,build_basename)))
       oe_filelist.extend(glob.glob('{}/{}/module-*.log'.format(test_root_dir,build_basename)))
-      print("looking in {}/{}/*.log".format(test_root_dir,build_basename))
       print("oe list is {}\n".format(oe_filelist))
       copy_artifacts(build_dir,artifacts_root,machine_name,mpiver,oe_filelist,jobid,scheduler,branch)
       break
