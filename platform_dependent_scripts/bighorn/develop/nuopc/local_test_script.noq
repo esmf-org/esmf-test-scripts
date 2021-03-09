@@ -1,0 +1,3045 @@
+#!/bin/bash --login
+rfile=$1
+
+export homedir=/scratch/esmf/esmf_test/cronjobs/trunk/nuopc
+
+export TZ="/usr/share/zoneinfo/US/Mountain"
+
+############################### Read the file for log directory and email recipient #######
+
+datestamp=`date +%y%m`
+logfile="${datestamp}_test"
+echo " The logfile is $logfile"
+here=`pwd`
+
+
+if grep -i "LOG_DIR1" $rfile > tmp
+then
+        read location log_dir log_tmp < tmp
+        cd $log_dir
+        if test ! -d  $logfile
+        then
+                # Make new directory if doesn't exist
+                mkdir $logfile
+        fi
+        cd $here
+        echo "LOGDIR1 is $log_dir/$logfile"
+        export LOGDIR=$log_dir/$logfile
+fi
+
+if grep -i "LOGDIR2" $rfile > tmp
+then
+        read location log_dir2 < tmp
+        cd $log_dir2
+        if test ! -d  $logfile
+        then
+                mkdir $logfile
+        fi
+        cd $here
+
+        echo "LOGDIR2 is $log_dir2/$logfile"
+        export LOGDIR2=$log_dir2/$logfile
+fi
+
+
+
+if grep -i "email_to" $rfile > tmp
+then
+	read location emailuser < tmp
+	echo "Email user is $emailuser"
+fi
+
+if grep -i "email_title" $rfile > tmp
+then
+	read location email_title < tmp
+	echo "Email title is $email_title"
+fi
+
+
+rm -f tmp
+
+rm -f $LOGDIR/mailMessage
+rm -f $LOGDIR/newMailMessage
+rm -f $LOGDIR/header
+rm -f $LOGDIR/mailHeader
+rm -f $LOGDIR/newsummary
+rm -f $LOGDIR/sum
+rm -f $LOGDIR/summary
+
+# Set test status as green, assume it will run clean
+echo "Test_results:green" > $LOGDIR/Test_Status
+echo "Set Test Status to green."
+
+
+export TZ="/usr/share/zoneinfo/US/Mountain"
+echo "Day_of_Week:`date +%A`" > $LOGDIR/Day_Started
+
+#Set Number of test failure
+echo "0" > $LOGDIR/Test_Failures
+
+
+
+echo "" >> $LOGDIR/header
+echo "Script start time: `date`" >> $LOGDIR/header
+
+cd $homedir
+
+############################### Extract script to checkout ESMF ###########################
+
+                                
+############################### Extract script to checkout ESMF ###########################
+
+############################### Extract script to checkout ESMF ###########################
+                               
+
+
+############################### Parse the compute file and checkout esmf where ind
+
+ ############################## Extract script to checkout ESMF Contrib Site ###########################
+ 
+ ############################### Parse the compute file and checkout esmf contrib  module where indicated #
+
+
+ 
+################ Execute test in jaguar  #######################
+
+#### Extract script to run system test
+
+
+############################### Extract test_esmf ########################################
+##echo "" >> $LOGDIR/mailMessage
+##echo "________________________________________________________________________________________" >> $LOGDIR/mailMessage
+##echo "" >> $LOGDIR/mailMessage
+#
+##test_results=0  #assume build passes
+##install_results=0  #assume install passes
+##tests=0
+##test_failures=0
+##ex_passed=0
+##ex_failed=0
+#
+##echo "`date` on `uname -n` " >> $LOGDIR/mailMessage
+#
+##read chkout_src <  ~/bin/esmf_chkout_src
+##if read fails default:git://git.code.sf.net/p/esmf/esmf
+##if [ "$?" != "0" ]
+##then
+##        export chkout_src="https://github.com/esmf-org/esmf.git"
+##fi
+##echo "" >> $LOGDIR/mailMessage
+##echo "ESMF Checkout Source: $chkout_src" >> $LOGDIR/mailMessage
+##echo "" >> $LOGDIR/mailMessage
+#
+#
+##echo "Compiler and configuration information:" >> $LOGDIR/mailMessage
+##echo "" >> $LOGDIR/mailMessage
+##echo "-------------------------------------------------------------- " >> $LOGDIR/mailMessage
+#
+##module list  1> tmp 2>&1
+##cat tmp >> $LOGDIR/mailMessage
+##echo "" >> $LOGDIR/mailMessage
+##git remote -v 1> tmp 2>&1
+#
+##if (grep -i "Not a git repository" tmp)
+##then
+##        #Checkout failed
+##        echo "Test_results:blue" > $LOGDIR/Test_Status
+##fi
+#
+##echo "ESMF Repository:" >> $LOGDIR/mailMessage
+##cat tmp >> $LOGDIR/mailMessage
+##echo " " >> $LOGDIR/mailMessage
+##git describe --tags 1> tmp 2>&1
+##cat tmp >> $LOGDIR/mailMessage
+##echo " " >> $LOGDIR/mailMessage
+##echo " " >> $LOGDIR/mailMessage
+#
+#
+##cd ../nuopc-app-prototypes
+##svn info 1> svn_info 2>&1
+##echo "NUOPC Repository:" >> $LOGDIR/mailMessage
+##echo " " >> $LOGDIR/mailMessage
+##cat svn_info >> $LOGDIR/mailMessage
+##echo " " >> $LOGDIR/mailMessage
+##cd $ESMF_DIR
+#
+#
+##gmake -j4 ESMF_BOPT=$OPT info 1> tmp 2>&1
+##cat tmp >> $LOGDIR/mailMessage
+#
+#
+#
+##gmake -j4 ESMF_BOPT=$OPT  1> tmp 2>&1
+##if [ "$?" != "0" ]
+##then
+##        echo "Library build FAIL with ESMF_BOPT=$OPT"
+##
+##	if [ $OPT != g ]
+##	then 
+##		cat tmp > $LOGDIR/build_O_`date +%d``uname -n`$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+##	else
+##		cat tmp > $LOGDIR/build_g_`date +%d``uname -n`$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+##	fi #end of if [ $OPT != g ]
+##
+##	echo "`date` library build -j4 *************************FAIL" >> $LOGDIR/mailMessage
+##	test_results=1
+##	echo "" >> $LOGDIR/mailMessage
+##	echo "" >> $LOGDIR/mailMessage
+##	echo "The following is the 'tail' of the build failure">> $LOGDIR/mailMessage
+##	echo "" >> $LOGDIR/mailMessage
+##        tail  -50 tmp >> $LOGDIR/mailMessage
+##
+##
+#        # If checkout did not fail, set test status to red, build failed
+##        if !(grep "blue" $LOGDIR/Test_Status)
+##        then
+##                echo "Test_results:red" > $LOGDIR/Test_Status
+# #               echo "Set Test Status to red."
+# #       fi
+#
+#	
+#
+##else
+##
+##       	echo "Library build PASS with ESMF_BOPT=$OPT"
+##	echo "`date` library build -j4 .........................PASS" >> $LOGDIR/mailMessage
+#
+#        # Check for warnings
+##        if grep -i "warning[ ]*:" tmp
+##        then
+##                echo "Builds with warnings." >> $LOGDIR/mailMessage
+##        fi
+#
+#
+#
+##        gmake  ESMF_BOPT=$OPT  install 1> tmp 2>&1
+##        if [ "$?" != "0" ]
+##        then
+##                echo "Library install FAILED with ESMF_BOPT=$OPT"
+##                install_results=1  # install failed
+#
+##                if [ $OPT != g ]
+##                then
+##                        cat tmp > $LOGDIR/install_O_`date +%d``uname -n`$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+##                else
+##                        cat tmp > $LOGDIR/install_g_`date +%d``uname -n`$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+##                fi #end of if [ $OPT != g ]
+#
+# #               echo "`date` library install ***************************FAIL" >> $LOGDIR/mailMessage
+# #               echo "" >> $LOGDIR/mailMessage
+# #               echo "" >> $LOGDIR/mailMessage
+# #               echo "The following is the 'tail' of the install failure">> $LOGDIR/mailMessage
+# #               echo "" >> $LOGDIR/mailMessage
+# #               tail  -50 tmp >> $LOGDIR/mailMessage
+#
+#  #              else
+#
+#  #              echo "Library install PASSED with ESMF_BOPT=$OPT"
+#  #              echo "`date` library install ...........................PASS" >> $LOGDIR/mailMessage
+#
+#   #             gmake  ESMF_BOPT=$OPT  installcheck 1> tmp 2>&1
+#   #             if [ "$?" != "0" ]
+#   #             then
+#   #                     echo "Library install check FAILED with ESMF_BOPT=$OPT"
+#   #                     install_results=1  # install failed
+#
+#   #                     if [ $OPT != g ]
+#   #                     then
+#   #                             cat tmp > $LOGDIR/installcheck_O_`date +%d``uname -n`$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+#   #                     else
+#    #                            cat tmp > $LOGDIR/installcheck_g_`date +%d``uname -n`$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+#     #                   fi #end of if [ $OPT != g ]
+#
+#      #                  echo "`date` library installcheck **********************FAIL" >> $LOGDIR/mailMessage
+#      #                  echo "" >> $LOGDIR/mailMessage
+#      #                  echo "" >> $LOGDIR/mailMessage
+#      #                  echo "The following is the 'tail' of the install failure">> $LOGDIR/mailMessage
+#      #                  echo "" >> $LOGDIR/mailMessage
+#      #                  tail  -50 tmp >> $LOGDIR/mailMessage
+#                	# Set test status as yellow, if it is not red
+#      #          	if !(grep "red" $LOGDIR/Test_Status)
+#      #          	then
+#      #                  	echo "Test_results:yellow" > $LOGDIR/Test_Status
+#      #                  	echo "Set Test Status to yellow."
+#      #          	fi
+#
+#
+#
+#       #                 else
+#
+#       #                 echo "Library installcheck PASSED with ESMF_BOPT=$OPT"
+#       #                 echo "`date` library installcheck ......................PASS" >> $LOGDIR/mailMessage
+#
+#
+#	#		export pass_num=0
+#        #                export fail_num=0
+#
+#	#		echo "" >> $LOGDIR/mailMessage
+#	#		echo "" >> $LOGDIR/mailMessage
+#	#		echo "|---------------------------------- NUOPC TESTS ----------------------------|" >> $LOGDIR/mailMessage
+#
+#
+#
+#                        cd $ESMF_DIR/../nuopc-app-prototypes/SingleModelProto
+#                        gmake -j32 distclean
+#                        echo "" >> $LOGDIR/mailMessage
+#                        gmake  ESMF_BOPT=$OPT 1> tmp 2>&1
+#                        if [ "$?" != "0" ]
+#                        then
+#                                echo " SingleModelProto failed to build"
+#                                echo "`date` Build SingleModelProto ********************FAIL" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the 'tail' of the SingleModelProto build failure">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                tail  -50 tmp >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#
+#                        else
+#                                echo " SingleModelProto built successfully"
+#                                echo "`date` Build SingleModelProto ....................PASS" >> $LOGDIR/mailMessage
+#
+#
+#                        fi
+#
+#
+#                        mpirun -np 4 ./mainApp 1> SingleModelProto.stdout 2>&1
+#                        count=`grep FINISHED PET* | wc -l`
+#                        if [[ $count != "4" ]]
+#                        then
+#                                echo " SingleModelProto failed to run"
+#                                echo "`date` Run SingleModelProto **********************FAIL" >> $LOGDIR/mailMessage
+#                                fail_num=`expr $fail_num + 1`
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the output of cat PET*.ESMF_LogFile">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                cat PET*.ESMF_LogFile  >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#                                # Update number of test failures
+#                                read failures < $LOGDIR/Test_Failures
+#                                total=`expr $failures + 1`
+#                                echo "$total" > $LOGDIR/Test_Failures
+#                                echo "New failure total is $total."
+#
+#                        else
+#                                echo " SingleModelProto ran"
+#                                echo "`date` Run SingleModelProto ......................PASS" >> $LOGDIR/mailMessage
+#                                pass_num=`expr $pass_num + 1`
+#                        fi
+#
+#
+#        
+#
+#
+#                        cd $ESMF_DIR/../nuopc-app-prototypes/AtmOcnLndProto
+#                        gmake distclean
+#                        echo "" >> $LOGDIR/mailMessage
+#                        gmake  ESMF_BOPT=$OPT 1> tmp 2>&1
+#                        if [ "$?" != "0" ]
+#                        then
+#                                echo " AtmOcnLndProto failed to build"
+#                                echo "`date` Build AtmOcnLndProto **********************FAIL" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the 'tail' of the AtmOcnLndProto build failure">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                tail  -50 tmp >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#
+#                        else
+#                                echo " AtmOcnLndProto built successfully"
+#                                echo "`date` Build AtmOcnLndProto ......................PASS" >> $LOGDIR/mailMessage
+#
+#
+#                        fi
+#
+#
+#                        mpirun -np 4 ./esmApp 1> AtmOcnLndProto.stdout 2>&1
+#                        count=`grep FINISHED PET* | wc -l`
+#                        if [[ $count != "4" ]]
+#                        then
+#                                echo " AtmOcnLndProto failed to run"
+#                                echo "`date` Run AtmOcnLndProto ************************FAIL" >> $LOGDIR/mailMessage
+#                                fail_num=`expr $fail_num + 1`
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#				echo "The following is the output of cat PET*.ESMF_LogFile">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                cat PET*.ESMF_LogFile  >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then    
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi      
+#                                # Update number of test failures
+#                                read failures < $LOGDIR/Test_Failures
+#                                total=`expr $failures + 1`
+#                                echo "$total" > $LOGDIR/Test_Failures
+#                                echo "New failure total is $total."
+#                            
+#                        else    
+#                                echo " AtmOcnLndProto ran"
+#                                echo "`date` Run AtmOcnLndProto ........................PASS" >> $LOGDIR/mailMessage
+#                                pass_num=`expr $pass_num + 1`
+#                        fi
+#
+#
+#
+#
+#
+#                        cd $ESMF_DIR/../nuopc-app-prototypes/AtmOcnMedPetListProto
+#                        gmake distclean
+#                        echo "" >> $LOGDIR/mailMessage
+#                        gmake  ESMF_BOPT=$OPT 1> tmp 2>&1
+#                        if [ "$?" != "0" ]
+#                        then
+#                                echo " AtmOcnMedPetListProto failed to build"
+#                                echo "`date` Build AtmOcnMedPetListProto ***************FAIL" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage                                
+#				echo "The following is the 'tail' of the AtmOcnMedPetListProto build failure">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                tail  -50 tmp >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#
+#                        else
+#                                echo " AtmOcnMedPetListProto built successfully"
+#                                echo "`date` Build AtmOcnMedPetListProto ...............PASS" >> $LOGDIR/mailMessage
+#
+#
+#                        fi
+#
+#
+#                        mpirun -np 4 ./esmApp 1> AtmOcnMedPetListProto.stdout  2>&1
+#                        count=`grep FINISHED PET* | wc -l`
+#                        if [[ $count != "4" ]]
+#                        then
+#                                echo " AtmOcnMedPetListProto failed to run"
+#                                echo "`date` Run AtmOcnMedPetListProto *****************FAIL" >> $LOGDIR/mailMessage
+#                                fail_num=`expr $fail_num + 1`
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage                                
+#				echo "The following is the output of cat PET*.ESMF_LogFile">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                cat PET*.ESMF_LogFile  >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#                                # Update number of test failures
+#                                read failures < $LOGDIR/Test_Failures
+#                                total=`expr $failures + 1`
+#                                echo "$total" > $LOGDIR/Test_Failures
+#                                echo "New failure total is $total."
+#
+#                        else
+#                                echo " AtmOcnMedPetListProto ran"
+#                                echo "`date` Run AtmOcnMedPetListProto .................PASS" >> $LOGDIR/mailMessage
+#                                pass_num=`expr $pass_num + 1`
+#                        fi
+#
+#
+#
+#
+#                        cd $ESMF_DIR/../nuopc-app-prototypes/AtmOcnMedPetListTimescalesProto
+#                        gmake distclean
+#                        echo "" >> $LOGDIR/mailMessage
+#                        gmake  ESMF_BOPT=$OPT 1> tmp 2>&1
+#                        if [ "$?" != "0" ]
+#                        then
+#                                echo " AtmOcnMedPetListTimescalesProto failed to build"  
+#				echo "`date` Build AtmOcnMedPetListTimescalesProto *****FAIL" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage 
+#				echo "The following is the 'tail' of the AtmOcnMedPetListTimescalesProto build failure">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                tail  -50 tmp >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#
+#                        else
+#                                echo " AtmOcnMedPetListTimescalesProto built successfully" 
+#				echo "`date` Build AtmOcnMedPetListTimescalesProto .....PASS" >> $LOGDIR/mailMessage
+#
+#                        fi
+#
+#
+#                        mpirun -np 4 ./esmApp 1> AtmOcnMedPetListTimescalesProto.stdout 2>&1
+#                        count=`grep FINISHED PET* | wc -l`
+#                        if [[ $count != "4" ]]
+#                        then
+#                                echo " AtmOcnMedPetListTimescalesProto failed to run"                                
+#				echo "`date` Run AtmOcnMedPetListTimescalesProto *******FAIL" >> $LOGDIR/mailMessage
+#                                fail_num=`expr $fail_num + 1`
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage 	
+#				echo "The following is the output of cat PET*.ESMF_LogFile">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                cat PET*.ESMF_LogFile  >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#                                # Update number of test failures
+#                                read failures < $LOGDIR/Test_Failures
+#                                total=`expr $failures + 1`
+#                                echo "$total" > $LOGDIR/Test_Failures
+#                                echo "New failure total is $total."
+#
+#                        else
+#                                echo " AtmOcnMedPetListTimescalesProto ran"                                
+#				echo "`date` Run AtmOcnMedPetListTimescalesProto .......PASS" >> $LOGDIR/mailMessage
+#                                pass_num=`expr $pass_num + 1`
+#                        fi
+#
+#
+#
+#        
+#
+#                        cd $ESMF_DIR/../nuopc-app-prototypes/AtmOcnMedPetListTimescalesSplitFastProto
+#                        gmake distclean
+#                        echo "" >> $LOGDIR/mailMessage
+#                        gmake  ESMF_BOPT=$OPT 1> tmp 2>&1
+#                        if [ "$?" != "0" ]
+#                        then
+#                                echo " AtmOcnMedPetListTimescalesSplitFastProto failed to build"  
+#				echo "`date` Build AtmOcnMedPetListTimescalesSplitFastProto*FAIL" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage                                 
+#				echo "The following is the 'tail' of the AtmOcnMedPetListTimescalesSplitFastProto build failure">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                tail  -50 tmp >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#
+#                        else
+#                                echo " AtmOcnMedPetListTimescalesSplitFastProto built successfully" 
+#                                echo "`date` Build AtmOcnMedPetListTimescalesSplitFastProto.PASS" >> $LOGDIR/mailMessage
+#
+#                        fi
+#
+#
+#                        mpirun -np 4 ./esmApp 1> AtmOcnMedPetListTimescalesSplitFastProto.stdout 2>&1
+#                        count=`grep FINISHED PET* | wc -l`
+#                        if [[ $count != "4" ]]
+#                        then
+#                                echo " AtmOcnMedPetListTimescalesSplitFastProto failed to run"                              
+#                                echo "`date` Run AtmOcnMedPetListTimescalesSplitFastProto***FAIL" >> $LOGDIR/mailMessage
+#                                fail_num=`expr $fail_num + 1`
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage                                  
+#				echo "The following is the output of cat PET*.ESMF_LogFile">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                cat PET*.ESMF_LogFile  >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#                                # Update number of test failures
+#                                read failures < $LOGDIR/Test_Failures
+#                                total=`expr $failures + 1`
+#                                echo "$total" > $LOGDIR/Test_Failures
+#                                echo "New failure total is $total."
+#
+#                        else
+#                                echo " AtmOcnMedPetListTimescalesSplitFastProto ran" 
+#				echo "`date` Run AtmOcnMedPetListTimescalesSplitFastProto...PASS" >> $LOGDIR/mailMessage
+#                                pass_num=`expr $pass_num + 1`
+#                        fi
+#
+#
+#
+#
+#                        cd $ESMF_DIR/../nuopc-app-prototypes/AtmOcnProto
+#                        gmake distclean
+#                        echo "" >> $LOGDIR/mailMessage
+#                        gmake  ESMF_BOPT=$OPT 1> tmp 2>&1
+#                        if [ "$?" != "0" ]
+#                        then
+#                                echo " AtmOcnProto failed to build"  
+#                                echo "`date` Build AtmOcnProto *************************FAIL" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the 'tail' of the AtmOcnProto build failure">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                tail  -50 tmp >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#
+#                        else
+#                                echo " AtmOcnProto built successfully" 
+#                                echo "`date` Build AtmOcnProto .........................PASS" >> $LOGDIR/mailMessage
+#
+#                        fi
+#
+#
+#                        mpirun -np 4 ./esmApp 1> AtmOcnProto.stdout 2>&1
+#                        count=`grep FINISHED PET* | wc -l`
+#                        if [[ $count != "4" ]]
+#                        then
+#                                echo " AtmOcnProto failed to run"                                
+#                                echo "`date` Run AtmOcnProto ***************************FAIL" >> $LOGDIR/mailMessage
+#                                fail_num=`expr $fail_num + 1`
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the output of cat PET*.ESMF_LogFile">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                cat PET*.ESMF_LogFile  >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#                                # Update number of test failures
+#                                read failures < $LOGDIR/Test_Failures
+#                                total=`expr $failures + 1`
+#                                echo "$total" > $LOGDIR/Test_Failures
+#                                echo "New failure total is $total."
+#
+#                        else
+#                                echo " AtmOcnProto ran"                                
+#                                echo "`date` Run AtmOcnProto ...........................PASS" >> $LOGDIR/mailMessage
+#                                pass_num=`expr $pass_num + 1`
+#                        fi
+#
+#
+#
+#
+#        
+#
+#
+#
+#                        cd $ESMF_DIR/../nuopc-app-prototypes/AtmOcnTransferGridProto
+#                        gmake distclean
+#                        echo "" >> $LOGDIR/mailMessage
+#                        gmake  ESMF_BOPT=$OPT 1> tmp 2>&1
+#                        if [ "$?" != "0" ]
+#                        then
+#                                echo " AtmOcnTransferGridProto failed to build"  
+#                                echo "`date` Build AtmOcnTransferGridProto *************FAIL" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage  
+#				echo "The following is the 'tail' of the AtmOcnTransferGridProto build failure">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                tail  -50 tmp >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#
+#                        else
+#                                echo " AtmOcnTransferGridProto built successfully" 
+#                                echo "`date` Build AtmOcnTransferGridProto .............PASS" >> $LOGDIR/mailMessage
+#
+#                        fi
+#
+#
+#                        mpirun -np 4 ./esmApp 1> AtmOcnTransferGridProto.stdout 2>&1
+#                        count=`grep FINISHED PET* | wc -l`
+#                        if [[ $count != "4" ]]
+#                        then
+#                                echo " AtmOcnTransferGridProto failed to run"                                
+#                                echo "`date` Run AtmOcnTransferGridProto ***************FAIL" >> $LOGDIR/mailMessage
+#                                fail_num=`expr $fail_num + 1`
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage 
+#				echo "The following is the output of cat PET*.ESMF_LogFile">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                cat PET*.ESMF_LogFile  >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#                                # Update number of test failures
+#                                read failures < $LOGDIR/Test_Failures
+#                                total=`expr $failures + 1`
+#                                echo "$total" > $LOGDIR/Test_Failures
+#                                echo "New failure total is $total."
+#
+#                        else
+#                                echo " AtmOcnTransferGridProto ran"                                
+#                                echo "`date` Run AtmOcnTransferGridProto ...............PASS" >> $LOGDIR/mailMessage
+#                                pass_num=`expr $pass_num + 1`
+#                        fi
+#
+#
+#
+#
+#
+#                        cd $ESMF_DIR/../nuopc-app-prototypes/AtmOcnTransferLocStreamProto
+#                        gmake distclean
+#                        echo "" >> $LOGDIR/mailMessage
+#                        gmake  ESMF_BOPT=$OPT 1> tmp 2>&1
+#                        if [ "$?" != "0" ]
+#                        then
+#                                echo " AtmOcnTransferLocStreamProto failed to build"  
+#                                echo "`date` Build AtmOcnTransferLocStreamProto ********FAIL" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the 'tail' of the AtmOcnTransferLocStreamProto build failure">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                tail  -50 tmp >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#
+#                        else
+#                                echo " AtmOcnTransferLocStreamProto built successfully" 
+#                                echo "`date` Build AtmOcnTransferLocStreamProto ........PASS" >> $LOGDIR/mailMessage
+#
+#                        fi
+#
+#
+#
+#                        mpirun -np 4 ./esmApp 1> AtmOcnTransferLocStreamProto.stdout 2>&1
+#                        count=`grep FINISHED PET* | wc -l`
+#                        if [[ $count != "4" ]]
+#                        then
+#                                echo " AtmOcnTransferLocStreamProto failed to run"                                
+#                                echo "`date` Run AtmOcnTransferLocStreamProto **********FAIL" >> $LOGDIR/mailMessage
+#                                fail_num=`expr $fail_num + 1`
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the output of cat PET*.ESMF_LogFile">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                cat PET*.ESMF_LogFile  >> $LOGDIR/mailMessage
+#                                #Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#                                 Update number of test failures
+#                                read failures < $LOGDIR/Test_Failures
+#                                total=`expr $failures + 1`
+#                                echo "$total" > $LOGDIR/Test_Failures
+#                                echo "New failure total is $total."
+#
+#                        else
+#                                echo " AtmOcnTransferLocStreamProto ran"                                
+#                                echo "`date` Run AtmOcnTransferLocStreamProto ..........PASS" >> $LOGDIR/mailMessage
+#                                pass_num=`expr $pass_num + 1`
+#                        fi
+#
+#
+#                        cd $ESMF_DIR/../nuopc-app-prototypes/NamespaceProto
+#                        gmake distclean
+#                        echo "" >> $LOGDIR/mailMessage
+#                        gmake  ESMF_BOPT=$OPT 1> tmp 2>&1
+#                        if [ "$?" != "0" ]
+#                        then
+#                                echo " NamespaceProto failed to build"   
+#				echo "`date` Build NamespaceProto **********************FAIL" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage  	
+#				echo "The following is the 'tail' of the NamespaceProto build failure">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                tail  -50 tmp >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#
+#                        else
+#                                echo " NamespaceProto built successfully"  
+#				echo "`date` Build NamespaceProto ......................PASS" >> $LOGDIR/mailMessage
+#
+#                        fi
+#
+#
+#                        mpirun -np 4 ./mainApp 1> NamespaceProto.stdout 2>&1
+#                        count=`grep FINISHED PET* | wc -l`
+#                        if [[ $count != "4" ]]
+#                        then
+#                                echo " NamespaceProto failed to run"                                
+#                                echo "`date` Run NamespaceProto ************************FAIL" >> $LOGDIR/mailMessage
+#                                fail_num=`expr $fail_num + 1`
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage 
+#				echo "The following is the output of cat PET*.ESMF_LogFile">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                cat PET*.ESMF_LogFile  >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#                                # Update number of test failures
+#                                read failures < $LOGDIR/Test_Failures
+#                                total=`expr $failures + 1`
+#                                echo "$total" > $LOGDIR/Test_Failures
+#                                echo "New failure total is $total."
+#
+#                        else
+#                                echo " NamespaceProto ran"                                
+#                                echo "`date` Run NamespaceProto ........................PASS" >> $LOGDIR/mailMessage
+#                                pass_num=`expr $pass_num + 1`  
+#
+#			fi
+#
+#
+#                        cd $ESMF_DIR/../nuopc-app-prototypes/AtmOcnCplListProto
+#                        gmake distclean
+#                        echo "" >> $LOGDIR/mailMessage
+#                        gmake  ESMF_BOPT=$OPT 1> tmp 2>&1
+#                        if [ "$?" != "0" ]
+#                        then
+#                                echo " AtmOcnCplListProto failed to build"   
+#                                echo "`date` Build AtmOcnCplListProto ******************FAIL" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the 'tail' of the AtmOcnCplListProto build failure">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                tail  -50 tmp >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#
+#                        else
+#                                echo " AtmOcnCplListProto built successfully"  
+#                                echo "`date` Build AtmOcnCplListProto ..................PASS" >> $LOGDIR/mailMessage
+#
+#                        fi
+#
+#
+#                        mpirun -np 4 ./esmApp 1> AtmOcnCplListProto.stdout 2>&1
+#                        count=`grep FINISHED PET* | wc -l`
+#                        if [[ $count != "4" ]]
+#                        then
+#                                echo " AtmOcnCplListProto failed to run"                                
+#                                echo "`date` Run AtmOcnCplListProto ********************FAIL" >> $LOGDIR/mailMessage
+#                                fail_num=`expr $fail_num + 1`
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the output of cat PET*.ESMF_LogFile">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                cat PET*.ESMF_LogFile  >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#                                # Update number of test failures
+#                                read failures < $LOGDIR/Test_Failures
+#                                total=`expr $failures + 1`
+#                                echo "$total" > $LOGDIR/Test_Failures
+#                                echo "New failure total is $total."
+#
+#                        else
+#                                echo " AtmOcnCplListProto ran"                                
+#                                echo "`date` Run AtmOcnCplListProto ....................PASS" >> $LOGDIR/mailMessage
+#                                pass_num=`expr $pass_num + 1`
+#
+#                        fi
+#
+#
+#
+#
+#
+#                        cd $ESMF_DIR/../nuopc-app-prototypes/DriverInDriverProto
+#                        gmake distclean
+#                        echo "" >> $LOGDIR/mailMessage
+#                        gmake  ESMF_BOPT=$OPT 1> tmp 2>&1
+#                        if [ "$?" != "0" ]
+#                        then
+#                                echo " DriverInDriverProto failed to build"   
+#                                echo "`date` Build DriverInDriverProto *****************FAIL" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the 'tail' of the DriverInDriverProto build failure">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                tail  -50 tmp >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#
+#                        else
+#                                echo " DriverInDriverProto built successfully"  
+#                                echo "`date` Build DriverInDriverProto .................PASS" >> $LOGDIR/mailMessage
+#
+#                        fi
+#
+#
+#                        mpirun -np 4 ./mainApp 1> DriverInDriverProto.stdout 2>&1
+#                        count=`grep FINISHED PET* | wc -l`
+#                        if [[ $count != "4" ]]
+#                        then
+#                                echo " DriverInDriverProto failed to run"                                
+#                                echo "`date` Run DriverInDriverProto ******************FAIL" >> $LOGDIR/mailMessage
+#                                fail_num=`expr $fail_num + 1`
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the output of cat PET*.ESMF_LogFile">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                cat PET*.ESMF_LogFile  >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#                                # Update number of test failures
+#                                read failures < $LOGDIR/Test_Failures
+#                                total=`expr $failures + 1`
+#                                echo "$total" > $LOGDIR/Test_Failures
+#                                echo "New failure total is $total."
+#
+#                        else
+#                                echo " DriverInDriverProto ran"                                
+#                                echo "`date` Run DriverInDriverProto ...................PASS" >> $LOGDIR/mailMessage
+#                                pass_num=`expr $pass_num + 1`
+#
+#                        fi
+#
+#
+#
+#                        cd $ESMF_DIR/../nuopc-app-prototypes/AtmOcnRtmTwoTimescalesProto
+#                        gmake distclean
+#                        echo "" >> $LOGDIR/mailMessage
+#                        gmake  ESMF_BOPT=$OPT 1> tmp 2>&1
+#                        if [ "$?" != "0" ]
+#                        then 
+#                                echo " AtmOcnRtmTwoTimescalesProto failed to build"   
+#                                echo "`date` Build AtmOcnRtmTwoTimescalesProto *********FAIL" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the 'tail' of the AtmOcnRtmTwoTimescalesProto build failure">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                tail  -50 tmp >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi      
+#                                
+#                        else
+#                                echo " AtmOcnRtmTwoTimescalesProto built successfully"  
+#                                echo "`date` Build AtmOcnRtmTwoTimescalesProto .........PASS" >> $LOGDIR/mailMessage
+#                                
+#                        fi
+#                        
+#
+#                        mpirun -np 4 ./esmApp 1> AtmOcnRtmTwoTimescalesProto.stdout 2>&1
+#                        count=`grep FINISHED PET* | wc -l`
+#                        if [[ $count != "4" ]]
+#                        then
+#                                echo " AtmOcnRtmTwoTimescalesProto failed to run"                                
+#                                echo "`date` Run AtmOcnRtmTwoTimescalesProto ***********FAIL" >> $LOGDIR/mailMessage
+#                                fail_num=`expr $fail_num + 1`
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the output of cat PET*.ESMF_LogFile">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                cat PET*.ESMF_LogFile  >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi      
+#                                # Update number of test failures
+#                                read failures < $LOGDIR/Test_Failures
+#                                total=`expr $failures + 1`
+#                                echo "$total" > $LOGDIR/Test_Failures
+#                                echo "New failure total is $total."
+#                                
+#                        else
+#                                echo " AtmOcnRtmTwoTimescalesProto ran"                                
+#                                echo "`date` Run AtmOcnRtmTwoTimescalesProto ...........PASS" >> $LOGDIR/mailMessage
+#                                pass_num=`expr $pass_num + 1`
+#
+#                        fi
+#
+#
+#                        cd $ESMF_DIR/../nuopc-app-prototypes/AsyncIOBlockingProto
+#                        gmake distclean
+#                        echo "" >> $LOGDIR/mailMessage
+#                        gmake  ESMF_BOPT=$OPT 1> tmp 2>&1
+#                        if [ "$?" != "0" ]
+#                        then 
+#                                echo " AsyncIOBlockingProto failed to build"   
+#                                echo "`date` Build AsyncIOBlockingProto ****************FAIL" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the 'tail' of the AsyncIOBlockingProto build failure">> $LOGDIR/mailMessage                            
+#                                echo "" >> $LOGDIR/mailMessage
+#                                tail  -50 tmp >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi      
+#                                
+#                        else
+#                                echo " AsyncIOBlockingProto built successfully"  
+#                                echo "`date` Build AsyncIOBlockingProto ................PASS" >> $LOGDIR/mailMessage
+#                                
+#                        fi
+#                        
+#
+#
+#                        mpirun -np 4 ./asyncIOApp 1> AsyncIOBlockingProto.stdout 2>&1
+#                        count=`grep FINISHED PET* | wc -l`
+#                        if [[ $count != "4" ]]
+#                        then
+#                                echo " AsyncIOBlockingProto failed to run"                                
+#                                echo "`date` Run AsyncIOBlockingProto ******************FAIL" >> $LOGDIR/mailMessage
+#                                fail_num=`expr $fail_num + 1`
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the output of cat PET*.ESMF_LogFile">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                cat PET*.ESMF_LogFile  >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#                                # Update number of test failures
+#                                read failures < $LOGDIR/Test_Failures
+#                                total=`expr $failures + 1`
+#                                echo "$total" > $LOGDIR/Test_Failures
+#                                echo "New failure total is $total."
+#
+#                        else
+#                                echo " AsyncIOBlockingProto ran"                                
+#                                echo "`date` Run AsyncIOBlockingProto ..................PASS" >> $LOGDIR/mailMessage
+#                                pass_num=`expr $pass_num + 1`
+#
+#                        fi
+#
+#
+#
+#                        cd $ESMF_DIR/../nuopc-app-prototypes/AsyncIONonblockingProto
+#                        gmake distclean
+#                        echo "" >> $LOGDIR/mailMessage
+#                        gmake  ESMF_BOPT=$OPT 1> tmp 2>&1
+#                        if [ "$?" != "0" ]
+#                        then
+#                                echo " AsyncIONonblockingProto failed to build"   
+#                                echo "`date` Build AsyncIONonblockingProto *************FAIL" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the 'tail' of the AsyncIONonblockingProto build failure">> $LOGDIR/mailMessage    
+#                                echo "" >> $LOGDIR/mailMessage
+#                                tail  -50 tmp >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi      
+#                                
+#                        else
+#                                echo " AsyncIONonblockingProto built successfully"  
+#                                echo "`date` Build AsyncIONonblockingProto .............PASS" >> $LOGDIR/mailMessage
+#                                
+#                        fi      
+#                                
+#
+#                        mpirun -np 4 ./asyncIOApp 1> AsyncIONonblockingProto.stdout 2>&1
+#                        count=`grep FINISHED PET* | wc -l`
+#                        if [[ $count != "4" ]]
+#                        then
+#                                echo " AsyncIONonblockingProto failed to run"                                
+#                                echo "`date` Run AsyncIONonblockingProto ***************FAIL" >> $LOGDIR/mailMessage
+#                                fail_num=`expr $fail_num + 1`
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the output of cat PET*.ESMF_LogFile">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                cat PET*.ESMF_LogFile  >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#                                # Update number of test failures
+#                                read failures < $LOGDIR/Test_Failures
+#                                total=`expr $failures + 1`
+#                                echo "$total" > $LOGDIR/Test_Failures
+#                                echo "New failure total is $total."
+#
+#                        else
+#                                echo " AsyncIONonblockingProto ran"                                
+#                                echo "`date` Run AsyncIONonblockingProto ...............PASS" >> $LOGDIR/mailMessage
+#                                pass_num=`expr $pass_num + 1`
+#
+#                        fi
+#
+#
+#
+#                        cd $ESMF_DIR/../nuopc-app-prototypes/AtmOcnConProto
+#                        gmake distclean
+#                        echo "" >> $LOGDIR/mailMessage
+#                        gmake  ESMF_BOPT=$OPT 1> tmp 2>&1
+#                        if [ "$?" != "0" ]
+#                        then
+#                                echo " AtmOcnConProto failed to build"   
+#                                echo "`date` Build AtmOcnConProto **********************FAIL" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the 'tail' of the AtmOcnConProto build failure">> $LOGDIR/mailMessage 
+#                                echo "" >> $LOGDIR/mailMessage
+#                                tail  -50 tmp >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#
+#                        else
+#                                echo " AtmOcnConProto built successfully"  
+#                                echo "`date` Build AtmOcnConProto ......................PASS" >> $LOGDIR/mailMessage
+#
+#                        fi
+#
+#
+#
+#                        mpirun -np 4 ./esmApp 1> AtmOcnConProto.stdout 2>&1
+#                        count=`grep FINISHED PET* | wc -l`
+#                        if [[ $count != "4" ]]
+#                        then
+#                                echo " AtmOcnConProto failed to run"                                
+#                                echo "`date` Run AtmOcnConProto ************************FAIL" >> $LOGDIR/mailMessage
+#                                fail_num=`expr $fail_num + 1`
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the output of cat PET*.ESMF_LogFile">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                cat PET*.ESMF_LogFile  >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#                                # Update number of test failures
+#                                read failures < $LOGDIR/Test_Failures
+#                                total=`expr $failures + 1`
+#                                echo "$total" > $LOGDIR/Test_Failures
+#                                echo "New failure total is $total."
+#
+#                        else
+#                                echo " AtmOcnConProto ran"                                
+#                                echo "`date` Run AtmOcnConProto ........................PASS" >> $LOGDIR/mailMessage
+#                                pass_num=`expr $pass_num + 1`
+#
+#                        fi
+#
+#
+#
+#                        cd $ESMF_DIR/../nuopc-app-prototypes/AtmOcnFDSynoProto
+#                        gmake distclean
+#                        echo "" >> $LOGDIR/mailMessage
+#                        gmake  ESMF_BOPT=$OPT 1> tmp 2>&1
+#                        if [ "$?" != "0" ]
+#                        then
+#                                echo " AtmOcnFDSynoProto failed to build"   
+#                                echo "`date` Build AtmOcnFDSynoProto *******************FAIL" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the 'tail' of the AtmOcnFDSynoProto build failure">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                tail  -50 tmp >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#
+#                        else
+#                                echo " AtmOcnFDSynoProto built successfully"  
+#                                echo "`date` Build AtmOcnFDSynoProto ...................PASS" >> $LOGDIR/mailMessage
+#
+#                        fi
+#
+#
+#
+# 
+#
+#                        mpirun -np 4 ./esmApp 1> AtmOcnFDSynoProto.stdout 2>&1
+#                        count=`grep FINISHED PET* | wc -l`
+#                        if [[ $count != "4" ]]
+#                        then
+#                                echo " AtmOcnFDSynoProto failed to run"                                
+#                                echo "`date` Run AtmOcnFDSynoProto *********************FAIL" >> $LOGDIR/mailMessage
+#                                fail_num=`expr $fail_num + 1`
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the output of cat PET*.ESMF_LogFile">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                cat PET*.ESMF_LogFile  >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#                                # Update number of test failures
+#                                read failures < $LOGDIR/Test_Failures
+#                                total=`expr $failures + 1`
+#                                echo "$total" > $LOGDIR/Test_Failures
+#                                echo "New failure total is $total."
+#
+#                        else
+#                                echo " AtmOcnFDSynoProto ran"                                
+#                                echo "`date` Run AtmOcnFDSynoProto .....................PASS" >> $LOGDIR/mailMessage
+#                                pass_num=`expr $pass_num + 1`
+#
+#                        fi
+#
+#
+#
+#
+#                        cd $ESMF_DIR/../nuopc-app-prototypes/AtmOcnImplicitProto
+#                        gmake distclean
+#                        echo "" >> $LOGDIR/mailMessage
+#                        gmake  ESMF_BOPT=$OPT 1> tmp 2>&1
+#                        if [ "$?" != "0" ]
+#                        then
+#                                echo " AtmOcnImplicitProto failed to build"   
+#                                echo "`date` Build AtmOcnImplicitProto *****************FAIL" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the 'tail' of the AtmOcnImplicitProto build failure">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                tail  -50 tmp >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#
+#                        else
+#                                echo " AtmOcnImplicitProto built successfully"  
+#                                echo "`date` Build AtmOcnImplicitProto .................PASS" >> $LOGDIR/mailMessage
+#
+#                        fi
+#
+#
+# 
+#
+#                        mpirun -np 4 ./esmApp 1> AtmOcnImplicitProto.stdout 2>&1
+#                        count=`grep FINISHED PET* | wc -l`
+#                        if [[ $count != "4" ]]
+#                        then
+#                                echo " AtmOcnImplicitProto failed to run"                                
+#                                echo "`date` Run AtmOcnImplicitProto *******************FAIL" >> $LOGDIR/mailMessage
+#                                fail_num=`expr $fail_num + 1`
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the output of cat PET*.ESMF_LogFile" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                cat PET*.ESMF_LogFile  >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#                                # Update number of test failures
+#                                read failures < $LOGDIR/Test_Failures
+#                                total=`expr $failures + 1`
+#                                echo "$total" > $LOGDIR/Test_Failures
+#                                echo "New failure total is $total."
+#
+#                        else
+#                                echo " AtmOcnImplicitProto ran"                                
+#                                echo "`date` Run AtmOcnImplicitProto ...................PASS" >> $LOGDIR/mailMessage
+#                                pass_num=`expr $pass_num + 1`
+#
+#                        fi
+#
+#
+#
+#                        cd $ESMF_DIR/../nuopc-app-prototypes/AtmOcnMedProto
+#                        gmake distclean
+#                        echo "" >> $LOGDIR/mailMessage
+#                        gmake  ESMF_BOPT=$OPT 1> tmp 2>&1
+#                        if [ "$?" != "0" ]
+#                        then
+#                                echo " AtmOcnMedProto failed to build"   
+#                                echo "`date` Build AtmOcnMedProto **********************FAIL" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the 'tail' of the AtmOcnMedProto build failure">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                tail  -50 tmp >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#
+#                        else
+#                                echo " AtmOcnMedProto built successfully"  
+#                                echo "`date` Build AtmOcnMedProto ......................PASS" >> $LOGDIR/mailMessage
+#
+#                        fi
+#
+# 
+#
+#                        mpirun -np 4 ./esmApp 1> AtmOcnMedProto.stdout 2>&1
+#                        count=`grep FINISHED PET* | wc -l`
+#                        if [[ $count != "4" ]]
+#                        then
+#                                echo " AtmOcnMedProto failed to run"                                
+#                                echo "`date` Run AtmOcnMedProto ************************FAIL" >> $LOGDIR/mailMessage
+#                                fail_num=`expr $fail_num + 1`
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the output of cat PET*.ESMF_LogFile">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                cat PET*.ESMF_LogFile  >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#                                # Update number of test failures
+#                                read failures < $LOGDIR/Test_Failures
+#                                total=`expr $failures + 1`
+#                                echo "$total" > $LOGDIR/Test_Failures
+#                                echo "New failure total is $total."
+#
+#                        else
+#                                echo " AtmOcnMedProto ran"                                
+#                                echo "`date` Run AtmOcnMedProto ........................PASS" >> $LOGDIR/mailMessage
+#                                pass_num=`expr $pass_num + 1`
+#
+#                        fi
+#
+#
+#
+#
+#                        cd $ESMF_DIR/../nuopc-app-prototypes/AtmOcnPetListProto
+#                        gmake distclean
+#                        echo "" >> $LOGDIR/mailMessage
+#                        gmake  ESMF_BOPT=$OPT 1> tmp 2>&1
+#                        if [ "$?" != "0" ]
+#                        then
+#                                echo " AtmOcnPetListProto failed to build"   
+#                                echo "`date` Build AtmOcnPetListProto ******************FAIL" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the 'tail' of the AtmOcnPetListProton build failure">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                tail  -50 tmp >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#
+#                        else
+#                                echo " AtmOcnPetListProton built successfully"  
+#                                echo "`date` Build AtmOcnPetListProto ..................PASS" >> $LOGDIR/mailMessage
+#
+#                        fi
+#
+# 
+# 
+#
+#                        mpirun -np 4 ./esmApp 1> AtmOcnPetListProto.stdout 2>&1
+#                        count=`grep FINISHED PET* | wc -l`
+#                        if [[ $count != "4" ]]
+#                        then
+#                                echo " AtmOcnPetListProto failed to run"                                
+#                                echo "`date` Run AtmOcnPetListProto ********************FAIL" >> $LOGDIR/mailMessage
+#                                fail_num=`expr $fail_num + 1`
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the output of cat PET*.ESMF_LogFile">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                cat PET*.ESMF_LogFile  >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#                                # Update number of test failures
+#                                read failures < $LOGDIR/Test_Failures
+#                                total=`expr $failures + 1`
+#                                echo "$total" > $LOGDIR/Test_Failures
+#                                echo "New failure total is $total."
+#
+#                        else
+#                                echo " AtmOcnPetListProto ran"                                
+#                                echo "`date` Run AtmOcnPetListProto ....................PASS" >> $LOGDIR/mailMessage
+#                                pass_num=`expr $pass_num + 1`
+#
+#                        fi
+#
+#                        echo "" >> $LOGDIR/mailMessage
+#			echo "|-------------------------------- ATM=A OCN=A,B,C --------------------------|" >> $LOGDIR/mailMessage
+#                        cd $ESMF_DIR/../nuopc-app-prototypes/AtmOcnSelectExternalProto
+#                        gmake distclean
+#			./cleanSubs.csh
+#			./buildSubs.csh
+#                        gmake ATM=A OCN=A,B,C 1> tmp 2>&1
+#                        if [ "$?" != "0" ]
+#                        then
+#                                echo " AtmOcnSelectExternalProto failed to build"   
+#                                echo "`date` Build AtmOcnSelectExternalProto ***********FAIL" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the 'tail' of the AtmOcnSelectExternalProto build failure">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                tail  -50 tmp >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#
+#                        else
+#                                echo " AtmOcnSelectExternalProto built successfully"  
+#                                echo "`date` Build AtmOcnSelectExternalProto ...........PASS" >> $LOGDIR/mailMessage
+#
+#                        fi
+#			echo "OCN_SELECT: A" > esm.config
+#                        mpirun -np 4 ./esmApp 1> AtmOcnPetListProtoA.ABC.stdout 2>&1
+#                        count=`grep FINISHED PET* | wc -l`
+#                        if [[ $count != "4" ]]
+#                        then
+#                                echo " AtmOcnSelectExternalProto failed to run"                                
+#                                echo "`date` Run AtmOcnSelectExternalProto *************FAIL" >> $LOGDIR/mailMessage
+#                                fail_num=`expr $fail_num + 1`
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the output of cat PET*.ESMF_LogFile">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                cat PET*.ESMF_LogFile  >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#                                # Update number of test failures
+#                                read failures < $LOGDIR/Test_Failures
+#                                total=`expr $failures + 1`
+#                                echo "$total" > $LOGDIR/Test_Failures
+#                                echo "New failure total is $total."
+#
+#                        else
+#                                echo " AtmOcnSelectExternalProto ran"                                
+#                                echo "`date` Run AtmOcnSelectExternalProto .............PASS" >> $LOGDIR/mailMessage
+#                                pass_num=`expr $pass_num + 1`
+#
+#                        fi
+#
+#
+#
+#                        echo "" >> $LOGDIR/mailMessage
+#                        echo "|-------------------------------- ATM=B OCN=A,B,C --------------------------|" >> $LOGDIR/mailMessage
+#                        cd $ESMF_DIR/../nuopc-app-prototypes/AtmOcnSelectExternalProto
+#                        gmake distclean
+#                        ./cleanSubs.csh
+#                        ./buildSubs.csh
+#                        gmake ATM=B OCN=A,B,C 1> tmp 2>&1
+#                        if [ "$?" != "0" ]
+#                        then
+#                                echo " AtmOcnSelectExternalProto failed to build"   
+#                                echo "`date` Build AtmOcnSelectExternalProto ***********FAIL" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the 'tail' of the AtmOcnSelectExternalProto build failure">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                tail  -50 tmp >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#
+#                        else
+#                                echo " AtmOcnSelectExternalProto built successfully"  
+#                                echo "`date` Build AtmOcnSelectExternalProto ...........PASS" >> $LOGDIR/mailMessage
+#
+#                        fi
+#
+#			echo "OCN_SELECT: B" > esm.config
+#                        mpirun -np 4 ./esmApp 1> AtmOcnSelectExternalProto.B.ABC.stdout 2>&1
+#                        count=`grep FINISHED PET* | wc -l`
+#                        if [[ $count != "4" ]]
+#                        then
+#                                echo " AtmOcnSelectExternalProto failed to run"                                
+#                                echo "`date` Run AtmOcnSelectExternalProto *************FAIL" >> $LOGDIR/mailMessage
+#                                fail_num=`expr $fail_num + 1`
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the output of cat PET*.ESMF_LogFile">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                cat PET*.ESMF_LogFile  >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#                                # Update number of test failures
+#                                read failures < $LOGDIR/Test_Failures
+#                                total=`expr $failures + 1`
+#                                echo "$total" > $LOGDIR/Test_Failures
+#                                echo "New failure total is $total."
+#
+#                        else
+#                                echo " AtmOcnSelectExternalProto ran"                                
+#                                echo "`date` Run AtmOcnSelectExternalProto .............PASS" >> $LOGDIR/mailMessage
+#                                pass_num=`expr $pass_num + 1`
+#
+#                        fi
+#
+#
+#
+#                        echo "" >> $LOGDIR/mailMessage
+#                        echo "|-------------------------------- ATM=C OCN=A,B,C --------------------------|" >> $LOGDIR/mailMessage
+#                        cd $ESMF_DIR/../nuopc-app-prototypes/AtmOcnSelectExternalProto
+#                        gmake distclean
+#                        ./cleanSubs.csh
+#                        ./buildSubs.csh
+#                        gmake ATM=C OCN=A,B,C 1> tmp 2>&1
+#                        if [ "$?" != "0" ]
+#                        then
+#                                echo " AtmOcnSelectExternalProto failed to build"   
+#                                echo "`date` Build AtmOcnSelectExternalProto ***********FAIL" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the 'tail' of the AtmOcnSelectExternalProto build failure">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                tail  -50 tmp >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#
+#                        else
+#                                echo " AtmOcnSelectExternalProto built successfully"  
+#                                echo "`date` Build AtmOcnSelectExternalProto ...........PASS" >> $LOGDIR/mailMessage
+#
+#                        fi
+#
+#			echo "OCN_SELECT: C" > esm.config
+#                        mpirun -np 4 ./esmApp 1> AtmOcnSelectExternalProto.C.ABC.stdout 2>&1
+#                        count=`grep FINISHED PET* | wc -l`
+#                        if [[ $count != "4" ]]
+#                        then
+#                                echo " AtmOcnSelectExternalProto failed to run"                                
+#                                echo "`date` Run AtmOcnSelectExternalProto *************FAIL" >> $LOGDIR/mailMessage
+#                                fail_num=`expr $fail_num + 1`
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the output of cat PET*.ESMF_LogFile">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                cat PET*.ESMF_LogFile  >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#                                # Update number of test failures
+#                                read failures < $LOGDIR/Test_Failures
+#                                total=`expr $failures + 1`
+#                                echo "$total" > $LOGDIR/Test_Failures
+#                                echo "New failure total is $total."
+#
+#                        else
+#                                echo " AtmOcnSelectExternalProto ran"                                
+#                                echo "`date` Run AtmOcnSelectExternalProto .............PASS" >> $LOGDIR/mailMessage
+#                                pass_num=`expr $pass_num + 1`
+#
+#                        fi
+#
+#
+#
+#
+#                        echo "" >> $LOGDIR/mailMessage
+#                        echo "|-------------------------------- ATM=D OCN=A,B,C --------------------------|" >> $LOGDIR/mailMessage
+#                        cd $ESMF_DIR/../nuopc-app-prototypes/AtmOcnSelectExternalProto
+#                        gmake distclean
+#                        ./cleanSubs.csh
+#                        ./buildSubs.csh
+#                        gmake ATM=D OCN=A,B,C 1> tmp 2>&1
+#                        if [ "$?" != "0" ]
+#                        then
+#                                echo " AtmOcnSelectExternalProto failed to build"   
+#                                echo "`date` Build AtmOcnSelectExternalProto ***********FAIL" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the 'tail' of the AtmOcnSelectExternalProto build failure">> $LOGDIR/mailMessage                 
+#                                echo "" >> $LOGDIR/mailMessage
+#                                tail  -50 tmp >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#
+#                        else
+#                                echo " AtmOcnSelectExternalProto built successfully"  
+#                                echo "`date` Build AtmOcnSelectExternalProto ...........PASS" >> $LOGDIR/mailMessage
+#
+#                        fi
+#
+#			echo "OCN_SELECT: A" > esm.config
+#                        mpirun -np 4 ./esmApp 1> AtmOcnSelectExternalProto.D.ABC.stdout 2>&1
+#                        count=`grep FINISHED PET* | wc -l`
+#                        if [[ $count != "4" ]]
+#                        then
+#                                echo " AtmOcnSelectExternalProto failed to run"                                
+#                                echo "`date` Run AtmOcnSelectExternalProto *************FAIL" >> $LOGDIR/mailMessage
+#                                fail_num=`expr $fail_num + 1`
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the output of cat PET*.ESMF_LogFile">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                cat PET*.ESMF_LogFile  >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#                                # Update number of test failures
+#                                read failures < $LOGDIR/Test_Failures
+#                                total=`expr $failures + 1`
+#                                echo "$total" > $LOGDIR/Test_Failures
+#                                echo "New failure total is $total."
+#
+#                        else
+#                                echo " AtmOcnSelectExternalProto ran"                                
+#                                echo "`date` Run AtmOcnSelectExternalProto .............PASS" >> $LOGDIR/mailMessage
+#                                pass_num=`expr $pass_num + 1`
+#
+#                        fi
+#
+#
+#
+#
+#
+#                        echo "" >> $LOGDIR/mailMessage
+#                        echo "|-------------------------------- ATM=E OCN=A,B,C --------------------------|" >> $LOGDIR/mailMessage
+#                        cd $ESMF_DIR/../nuopc-app-prototypes/AtmOcnSelectExternalProto
+#                        gmake distclean
+#                        ./cleanSubs.csh
+#                        ./buildSubs.csh
+#                        gmake ATM=E OCN=A,B,C 1> tmp 2>&1
+#                        if [ "$?" != "0" ]
+#                        then
+#                                echo " AtmOcnSelectExternalProto failed to build"   
+#                                echo "`date` Build AtmOcnSelectExternalProto ***********FAIL" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the 'tail' of the AtmOcnSelectExternalProto build failure">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                tail  -50 tmp >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#
+#                        else
+#                                echo " AtmOcnSelectExternalProto built successfully"  
+#                                echo "`date` Build AtmOcnSelectExternalProto ...........PASS" >> $LOGDIR/mailMessage
+#
+#                        fi
+#
+#			echo "OCN_SELECT: B" > esm.config
+#                        mpirun -np 4 ./esmApp 1> AtmOcnSelectExternalProto.E.ABC.stdout 2>&1
+#                        count=`grep FINISHED PET* | wc -l`
+#                        if [[ $count != "4" ]]
+#                        then
+#                                echo " AtmOcnSelectExternalProto failed to run"                                
+#                                echo "`date` Run AtmOcnSelectExternalProto *************FAIL" >> $LOGDIR/mailMessage
+#                                fail_num=`expr $fail_num + 1`
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the output of cat PET*.ESMF_LogFile">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                cat PET*.ESMF_LogFile  >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#                                # Update number of test failures
+#                                read failures < $LOGDIR/Test_Failures
+#                                total=`expr $failures + 1`
+#                                echo "$total" > $LOGDIR/Test_Failures
+#                                echo "New failure total is $total."
+#
+#                        else
+#                                echo " AtmOcnSelectExternalProto ran"                                
+#                                echo "`date` Run AtmOcnSelectExternalProto .............PASS" >> $LOGDIR/mailMessage
+#                                pass_num=`expr $pass_num + 1`
+#
+#                        fi
+#
+#
+#
+#                                
+#                        echo "" >> $LOGDIR/mailMessage
+#                        echo "|-------------------------------- ATM=A OCN=A,B ----------------------------|" >> $LOGDIR/mailMessage
+#
+#                        cd $ESMF_DIR/../nuopc-app-prototypes/AtmOcnSelectProto
+#                        gmake distclean
+#                        gmake   ATM=A OCN=A,B 1> tmp 2>&1
+#                        if [ "$?" != "0" ]
+#                        then
+#                                echo " AtmOcnSelectProto failed to build"   
+#                                echo "`date` Build AtmOcnSelectProto *******************FAIL" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the 'tail' of the AtmOcnSelectProto build failure">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                tail  -50 tmp >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#
+#                        else
+#                                echo " AtmOcnSelectProto built successfully"  
+#                                echo "`date` Build AtmOcnSelectProto ...................PASS" >> $LOGDIR/mailMessage
+#
+#                        fi
+#			echo "OCN_SELECT: A" > esm.config
+#                        mpirun -np 4 ./esmApp 1> AtmOcnSelectExternalProto.A.AB.stdout 2>&1
+#                        count=`grep FINISHED PET* | wc -l`
+#                        if [[ $count != "4" ]]
+#                        then
+#                                echo " AtmOcnSelectProto failed to run"                                
+#                                echo "`date` Run AtmOcnSelectProto *********************FAIL" >> $LOGDIR/mailMessage
+#                                fail_num=`expr $fail_num + 1`
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the output of cat PET*.ESMF_LogFile">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                cat PET*.ESMF_LogFile  >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#                                # Update number of test failures
+#                                read failures < $LOGDIR/Test_Failures
+#                                total=`expr $failures + 1`
+#                                echo "$total" > $LOGDIR/Test_Failures
+#                                echo "New failure total is $total."
+#
+#                        else
+#                                echo " AtmOcnSelectProto ran"                                
+#                                echo "`date` Run AtmOcnSelectProto .....................PASS" >> $LOGDIR/mailMessage
+#                                pass_num=`expr $pass_num + 1`
+#
+#                        fi
+#
+#
+#                        echo "" >> $LOGDIR/mailMessage
+#                        echo "|-------------------------------- ATM=B OCN=A,B ----------------------------|" >> $LOGDIR/mailMessage
+#
+#                        cd $ESMF_DIR/../nuopc-app-prototypes/AtmOcnSelectProto
+#                        gmake distclean
+#                        gmake  ATM=B OCN=A,B 1> tmp 2>&1
+#                        if [ "$?" != "0" ]
+#                        then
+#                                echo " AtmOcnSelectProto failed to build"   
+#                                echo "`date` Build AtmOcnSelectProto *******************FAIL" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the 'tail' of the AtmOcnSelectProto build failure">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                tail  -50 tmp >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#
+#                        else
+#                                echo " AtmOcnSelectProto built successfully"  
+#                                echo "`date` Build AtmOcnSelectProto ...................PASS" >> $LOGDIR/mailMessage
+#
+#                        fi
+#                        echo "OCN_SELECT: A" > esm.config
+#                        mpirun -np 4 ./esmApp 1> AtmOcnSelectExternalProto.B.AB.stdout 2>&1
+#                        count=`grep FINISHED PET* | wc -l`
+#                        if [[ $count != "4" ]]
+#                        then
+#                                echo " AtmOcnSelectProto failed to run"                                
+#                                echo "`date` Run AtmOcnSelectProto *********************FAIL" >> $LOGDIR/mailMessage
+#                                fail_num=`expr $fail_num + 1`
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the output of cat PET*.ESMF_LogFile">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                cat PET*.ESMF_LogFile  >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#                                # Update number of test failures
+#                                read failures < $LOGDIR/Test_Failures
+#                                total=`expr $failures + 1`
+#                                echo "$total" > $LOGDIR/Test_Failures
+#                                echo "New failure total is $total."
+#
+#                        else
+#                                echo " AtmOcnSelectProto ran"                                
+#                                echo "`date` Run AtmOcnSelectProto .....................PASS" >> $LOGDIR/mailMessage
+#                                pass_num=`expr $pass_num + 1`
+#
+#                        fi
+#
+#
+#
+#                        echo "" >> $LOGDIR/mailMessage  
+#                        echo "|-------------------------------- ATM=A OCN=B ------------------------------|" >> $LOGDIR/mailMessage                       
+#                        cd $ESMF_DIR/../nuopc-app-prototypes/AtmOcnSelectProto
+#                        gmake distclean
+#                        gmake  ATM=A OCN=B 1> tmp 2>&1
+#                        if [ "$?" != "0" ]
+#                        then
+#                                echo " AtmOcnSelectProto failed to build"   
+#                                echo "`date` Build AtmOcnSelectProto *******************FAIL" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the 'tail' of the AtmOcnSelectProto build failure">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                tail  -50 tmp >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#
+#                        else
+#                                echo " AtmOcnSelectProto built successfully"  
+#                                echo "`date` Build AtmOcnSelectProto ...................PASS" >> $LOGDIR/mailMessage
+#
+#                        fi
+#                        echo "OCN_SELECT: B" > esm.config
+#                        mpirun -np 4 ./esmApp 1> AtmOcnSelectExternalProto.A.B.stdout 2>&1
+#                        count=`grep FINISHED PET* | wc -l`
+#                        if [[ $count != "4" ]]
+#                        then
+#                                echo " AtmOcnSelectProto failed to run"                                
+#                                echo "`date` Run AtmOcnSelectProto *********************FAIL" >> $LOGDIR/mailMessage
+#                                fail_num=`expr $fail_num + 1`
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the output of cat PET*.ESMF_LogFile">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                cat PET*.ESMF_LogFile  >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#                                # Update number of test failures
+#                                read failures < $LOGDIR/Test_Failures
+#                                total=`expr $failures + 1`
+#                                echo "$total" > $LOGDIR/Test_Failures
+#                                echo "New failure total is $total."
+#
+#                        else
+#                                echo " AtmOcnSelectProto ran"                                
+#                                echo "`date` Run AtmOcnSelectProto .....................PASS" >> $LOGDIR/mailMessage
+#                                pass_num=`expr $pass_num + 1`
+#
+#                        fi
+#
+#
+#
+#                        cd $ESMF_DIR/../nuopc-app-prototypes/AtmOcnSimpleImplicitProto
+#                        gmake distclean
+#                        echo "" >> $LOGDIR/mailMessage
+#                        gmake  ESMF_BOPT=$OPT 1> tmp 2>&1
+#                        if [ "$?" != "0" ]
+#                        then
+#                                echo " AtmOcnSimpleImplicitProto failed to build"   
+#                                echo "`date` Build AtmOcnSimpleImplicitProto ***********FAIL" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the 'tail' of the AtmOcnSimpleImplicitProto build failure">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                tail  -50 tmp >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#
+#                        else
+#                                echo " AtmOcnSimpleImplicitProto built successfully"  
+#                                echo "`date` Build AtmOcnSimpleImplicitProto ...........PASS" >> $LOGDIR/mailMessage
+#
+#                        fi
+#
+# 
+# 
+#
+#                        mpirun -np 4 ./esmApp 1> AtmOcnSimpleImplicitProto.stdout 2>&1
+#                        count=`grep FINISHED PET* | wc -l`
+#                        if [[ $count != "4" ]]
+#                        then
+#                                echo " AtmOcnSimpleImplicitProto failed to run"                                
+#                                echo "`date` Run AtmOcnSimpleImplicitProto *************FAIL" >> $LOGDIR/mailMessage
+#                                fail_num=`expr $fail_num + 1`
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the output of cat PET*.ESMF_LogFile">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                cat PET*.ESMF_LogFile  >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#                                # Update number of test failures
+#                                read failures < $LOGDIR/Test_Failures
+#                                total=`expr $failures + 1`
+#                                echo "$total" > $LOGDIR/Test_Failures
+#                                echo "New failure total is $total."
+#
+#                        else
+#                                echo " AtmOcnSimpleImplicitProto ran"                                
+#                                echo "`date` Run AtmOcnSimpleImplicitProto .............PASS" >> $LOGDIR/mailMessage
+#                                pass_num=`expr $pass_num + 1`
+#
+#                        fi
+#
+#
+#
+#
+#                        cd $ESMF_DIR/../nuopc-app-prototypes/GenericMediatorProto
+#                        gmake distclean
+#                        echo "" >> $LOGDIR/mailMessage
+#                        gmake  ESMF_BOPT=$OPT 1> tmp 2>&1
+#                        if [ "$?" != "0" ]
+#                        then
+#                                echo " GenericMediatorProto failed to build"   
+#                                echo "`date` Build GenericMediatorProto ****************FAIL" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the 'tail' of the GenericMediatorProto build failure">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                tail  -50 tmp >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#
+#                        else
+#                                echo " GenericMediatorProto built successfully"  
+#                                echo "`date` Build GenericMediatorProto ................PASS" >> $LOGDIR/mailMessage
+#
+#                        fi
+#
+# 
+#
+#                        mpirun -np 4 ./app 1> GenericMediatorProto.stdout 2>&1
+#                        count=`grep FINISHED PET* | wc -l`
+#                        if [[ $count != "4" ]]
+#                        then
+#                                echo " GenericMediatorProto failed to run"                                
+#                                echo "`date` Run GenericMediatorProto ******************FAIL" >> $LOGDIR/mailMessage
+#                                fail_num=`expr $fail_num + 1`
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the output of cat PET*.ESMF_LogFile">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                cat PET*.ESMF_LogFile  >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#                                # Update number of test failures
+#                                read failures < $LOGDIR/Test_Failures
+#                                total=`expr $failures + 1`
+#                                echo "$total" > $LOGDIR/Test_Failures
+#                                echo "New failure total is $total."
+#
+#                        else
+#                                echo " GenericMediatorProto ran"                                
+#                                echo "`date` Run GenericMediatorProto ..................PASS" >> $LOGDIR/mailMessage
+#                                pass_num=`expr $pass_num + 1`
+#
+#                        fi
+#
+#
+#
+#
+#                        cd $ESMF_DIR/../nuopc-app-prototypes/NestingMultipleProto
+#                        gmake distclean
+#                        echo "" >> $LOGDIR/mailMessage
+#                        gmake  ESMF_BOPT=$OPT 1> tmp 2>&1
+#                        if [ "$?" != "0" ]
+#                        then
+#                                echo " NestingMultipleProto failed to build"   
+#                                echo "`date` Build NestingMultipleProto ****************FAIL" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the 'tail' of the NestingMultipleProto build failure">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                tail  -50 tmp >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#
+#                        else
+#                                echo " NestingMultipleProto built successfully"  
+#                                echo "`date` Build NestingMultipleProto ................PASS" >> $LOGDIR/mailMessage
+#
+#                        fi
+#
+# 
+#
+# 
+#
+#                        mpirun -np 4 ./mainApp 1> NestingMultipleProto.stdout 2>&1
+#                        count=`grep FINISHED PET* | wc -l`
+#                        if [[ $count != "4" ]]
+#                        then
+#                                echo " NestingMultipleProto failed to run"                                
+#                                echo "`date` Run NestingMultipleProto ******************FAIL" >> $LOGDIR/mailMessage
+#                                fail_num=`expr $fail_num + 1`
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the output of cat PET*.ESMF_LogFile">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                cat PET*.ESMF_LogFile  >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#                                # Update number of test failures
+#                                read failures < $LOGDIR/Test_Failures
+#                                total=`expr $failures + 1`
+#                                echo "$total" > $LOGDIR/Test_Failures
+#                                echo "New failure total is $total."
+#
+#                        else
+#                                echo " NestingMultipleProto ran"                                
+#                                echo "`date` Run NestingMultipleProto ..................PASS" >> $LOGDIR/mailMessage
+#                                pass_num=`expr $pass_num + 1`
+#
+#                        fi
+#
+#
+#
+#
+#
+#
+#
+#                        cd $ESMF_DIR/../nuopc-app-prototypes/NestingSingleProto
+#                        gmake distclean
+#                        echo "" >> $LOGDIR/mailMessage
+#                        gmake  ESMF_BOPT=$OPT 1> tmp 2>&1
+#                        if [ "$?" != "0" ]
+#                        then
+#                                echo " NestingSingleProto failed to build"   
+#                                echo "`date` Build NestingSingleProto ******************FAIL" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the 'tail' of the NestingSingleProto build failure">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                tail  -50 tmp >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#
+#                        else
+#                                echo " NestingSingleProto built successfully"  
+#                                echo "`date` Build NestingSingleProto ..................PASS" >> $LOGDIR/mailMessage
+#
+#                        fi
+#
+# 
+#
+# 
+#
+#                        mpirun -np 4 ./mainApp 1> NestingSingleProto.stdout 2>&1
+#                        count=`grep FINISHED PET* | wc -l`
+#                        if [[ $count != "4" ]]
+#                        then
+#                                echo " NestingSingleProto failed to run"                                
+#                                echo "`date` Run NestingSingleProto ********************FAIL" >> $LOGDIR/mailMessage
+#                                fail_num=`expr $fail_num + 1`
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the output of cat PET*.ESMF_LogFile">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                cat PET*.ESMF_LogFile  >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#                                # Update number of test failures
+#                                read failures < $LOGDIR/Test_Failures
+#                                total=`expr $failures + 1`
+#                                echo "$total" > $LOGDIR/Test_Failures
+#                                echo "New failure total is $total."
+#
+#                        else
+#                                echo " NestingSingleProto ran"                                
+#                                echo "`date` Run NestingSingleProto ....................PASS" >> $LOGDIR/mailMessage
+#                                pass_num=`expr $pass_num + 1`
+#
+#                        fi
+#
+#
+#
+#
+#
+#                        cd $ESMF_DIR/../nuopc-app-prototypes/NestingTelescopeMultipleProto
+#                        gmake distclean
+#                        echo "" >> $LOGDIR/mailMessage
+#                        gmake  ESMF_BOPT=$OPT 1> tmp 2>&1
+#                        if [ "$?" != "0" ]
+#                        then
+#                                echo " NestingTelescopeMultipleProto failed to build"   
+#                                echo "`date` Build NestingTelescopeMultipleProto *******FAIL" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the 'tail' of the NestingTelescopeMultipleProto build failure">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                tail  -50 tmp >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#
+#                        else
+#                                echo " NestingTelescopeMultipleProto built successfully"  
+#                                echo "`date` Build NestingTelescopeMultipleProto .......PASS" >> $LOGDIR/mailMessage
+#
+#                        fi
+#
+# 
+#
+#
+#
+#                        mpirun -np 4 ./mainApp 1> NestingTelescopeMultipleProto.stdout  2>&1
+#                        count=`grep FINISHED PET* | wc -l`
+#                        if [[ $count != "4" ]]
+#                        then
+#                                echo " NestingTelescopeMultipleProto failed to run"                                
+#                                echo "`date` Run NestingTelescopeMultipleProto *********FAIL" >> $LOGDIR/mailMessage
+#                                fail_num=`expr $fail_num + 1`
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the output of cat PET*.ESMF_LogFile">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                cat PET*.ESMF_LogFile  >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#                                # Update number of test failures
+#                                read failures < $LOGDIR/Test_Failures
+#                                total=`expr $failures + 1`
+#                                echo "$total" > $LOGDIR/Test_Failures
+#                                echo "New failure total is $total."
+#
+#                        else
+#                                echo " NestingTelescopeMultipleProto ran"                                
+#                                echo "`date` Run NestingTelescopeMultipleProto .........PASS" >> $LOGDIR/mailMessage
+#                                pass_num=`expr $pass_num + 1`
+#
+#                        fi
+#
+#
+#
+#                        cd $ESMF_DIR/../nuopc-app-prototypes/AtmOcnMedIngestFromConfigProto
+#                        gmake distclean
+#                        echo "" >> $LOGDIR/mailMessage
+#                        gmake  ESMF_BOPT=$OPT 1> tmp 2>&1
+#                        if [ "$?" != "0" ]
+#                        then
+#                                echo " AtmOcnMedIngestFromConfigProto failed to build"   
+#                                echo "`date` Build AtmOcnMedIngestFromConfigProto ******FAIL" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the 'tail' of the AtmOcnMedIngestFromConfigProto build failure">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                tail  -50 tmp >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#
+#                        else
+#                                echo " AtmOcnMedIngestFromConfigProto built successfully"  
+#                                echo "`date` Build AtmOcnMedIngestFromConfigProto ......PASS" >> $LOGDIR/mailMessage
+#
+#                        fi
+#
+#
+#
+#
+#
+#                        mpirun -np 4 ./esmApp 1> AtmOcnMedIngestFromConfigProto.stdout 2>&1
+#                        count=`grep FINISHED PET* | wc -l`
+#                        if [[ $count != "4" ]]
+#                        then
+#                                echo " AtmOcnMedIngestFromConfigProto failed to run"                                
+#                                echo "`date` Run AtmOcnMedIngestFromConfigProto ********FAIL" >> $LOGDIR/mailMessage
+#                                fail_num=`expr $fail_num + 1`
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the output of cat PET*.ESMF_LogFile">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                cat PET*.ESMF_LogFile  >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#                                # Update number of test failures
+#                                read failures < $LOGDIR/Test_Failures
+#                                total=`expr $failures + 1`
+#                                echo "$total" > $LOGDIR/Test_Failures
+#                                echo "New failure total is $total."
+#
+#                        else
+#                                echo " AtmOcnMedIngestFromConfigProto ran"                                
+#                                echo "`date` Run AtmOcnMedIngestFromConfigProto ........PASS" >> $LOGDIR/mailMessage
+#                                pass_num=`expr $pass_num + 1`
+#
+#                        fi
+#
+#
+#
+#
+#                        cd $ESMF_DIR/../nuopc-app-prototypes/DriverInDriverProtoIPDv02
+#                        gmake distclean
+#                        echo "" >> $LOGDIR/mailMessage
+#                        gmake  ESMF_BOPT=$OPT 1> tmp 2>&1
+#                        if [ "$?" != "0" ]
+#                        then
+#                                echo " DriverInDriverProtoIPDv02 failed to build"   
+#                                echo "`date` Build DriverInDriverProtoIPDv02 ***********FAIL" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the 'tail' of the DriverInDriverProtoIPDv02 build failure">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                tail  -50 tmp >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#
+#                        else
+#                                echo " DriverInDriverProtoIPDv02 built successfully"  
+#                                echo "`date` Build DriverInDriverProtoIPDv02 ...........PASS" >> $LOGDIR/mailMessage
+#
+#                        fi
+#
+#
+#
+#
+#
+#        
+#                        mpirun -np 4 ./mainApp 1> DriverInDriverProtoIPDv02.stdout 2>&1
+#                        count=`grep FINISHED PET* | wc -l`
+#                        if [[ $count != "4" ]]
+#                        then
+#                                echo " DriverInDriverProtoIPDv02 failed to run"                                
+#                                echo "`date` Run DriverInDriverProtoIPDv02 ***********FAIL" >> $LOGDIR/mailMessage
+#                                fail_num=`expr $fail_num + 1`
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the output of cat PET*.ESMF_LogFile">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                cat PET*.ESMF_LogFile  >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#                                # Update number of test failures
+#                                read failures < $LOGDIR/Test_Failures
+#                                total=`expr $failures + 1`
+#                                echo "$total" > $LOGDIR/Test_Failures
+#                                echo "New failure total is $total."
+#
+#                        else
+#                                echo " DriverInDriverProtoIPDv02 ran"                                
+#                                echo "`date` Run DriverInDriverProtoIPDv02 .............PASS" >> $LOGDIR/mailMessage
+#                                pass_num=`expr $pass_num + 1`
+#
+#                        fi
+#
+#
+#
+#
+#                        cd $ESMF_DIR/../nuopc-app-prototypes/AtmOcnScalarProto
+#                        gmake distclean
+#                        echo "" >> $LOGDIR/mailMessage
+#                        gmake  ESMF_BOPT=$OPT 1> tmp 2>&1
+#                        if [ "$?" != "0" ]
+#                        then
+#                                echo " AtmOcnScalarProto failed to build"   
+#                                echo "`date` Build AtmOcnScalarProto *******************FAIL" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the 'tail' of the AtmOcnScalarProto build failure">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                tail  -50 tmp >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#
+#                        else
+#                                echo " AtmOcnScalarProto built successfully"  
+#                                echo "`date` Build AtmOcnScalarProto ...................PASS" >> $LOGDIR/mailMessage
+#
+#                        fi
+#
+#
+#
+#
+#
+#
+#                        mpirun -np 4 ./esmApp 1> AtmOcnScalarProto.stdout 2>&1
+#                        count=`grep FINISHED PET* | wc -l`
+#                        if [[ $count != "4" ]]
+#                        then
+#                                echo " AtmOcnScalarProto failed to run"                                
+#                                echo "`date` Run AtmOcnScalarProto *******************FAIL" >> $LOGDIR/mailMessage
+#                                fail_num=`expr $fail_num + 1`
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the output of cat PET*.ESMF_LogFile">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                cat PET*.ESMF_LogFile  >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#                                # Update number of test failures
+#                                read failures < $LOGDIR/Test_Failures
+#                                total=`expr $failures + 1`
+#                                echo "$total" > $LOGDIR/Test_Failures
+#                                echo "New failure total is $total."
+#
+#                        else
+#                                echo " AtmOcnScalarProto ran"                                
+#                                echo "`date` Run AtmOcnScalarProto .....................PASS" >> $LOGDIR/mailMessage
+#                                pass_num=`expr $pass_num + 1`
+#
+#                        fi
+#
+#
+#
+#                        cd $ESMF_DIR/../nuopc-app-prototypes/HierarchyProto
+#                        gmake distclean
+#                        echo "" >> $LOGDIR/mailMessage
+#                        gmake  ESMF_BOPT=$OPT 1> tmp 2>&1
+#                        if [ "$?" != "0" ]
+#                        then
+#                                echo " HierarchyProto failed to build"   
+#                                echo "`date` Build HierarchyProto **********************FAIL" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the 'tail' of the HierarchyProto build failure">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                tail  -50 tmp >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#
+#                        else
+#                                echo " HierarchyProto built successfully"  
+#                                echo "`date` Build HierarchyProto ......................PASS" >> $LOGDIR/mailMessage
+#
+#                        fi
+#
+#
+#
+#
+#
+#
+#                        mpirun -np 4 ./esmApp 1> HierarchyProto.stdout 2>&1
+#                        count=`grep FINISHED PET* | wc -l`
+#                        if [[ $count != "4" ]]
+#                        then
+#                                echo " HierarchyProto failed to run"                                
+#                                echo "`date` Run HierarchyProto **********************FAIL" >> $LOGDIR/mailMessage
+#                                fail_num=`expr $fail_num + 1`
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the output of cat PET*.ESMF_LogFile">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                cat PET*.ESMF_LogFile  >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#                                # Update number of test failures
+#                                read failures < $LOGDIR/Test_Failures
+#                                total=`expr $failures + 1`
+#                                echo "$total" > $LOGDIR/Test_Failures
+#                                echo "New failure total is $total."
+#
+#                        else
+#                                echo " HierarchyProto ran"                                
+#                                echo "`date` Run HierarchyProto ........................PASS" >> $LOGDIR/mailMessage
+#                                pass_num=`expr $pass_num + 1`
+#
+#                        fi
+#
+# 
+#
+#                        cd $ESMF_DIR/../nuopc-app-prototypes/AtmOcnMedIngestFromInternalProto
+#                        gmake distclean
+#                        echo "" >> $LOGDIR/mailMessage
+#                        gmake  ESMF_BOPT=$OPT 1> tmp 2>&1
+#                        if [ "$?" != "0" ]
+#                        then
+#                                echo " AtmOcnMedIngestFromInternalProto failed to build"   
+#                                echo "`date` Build AtmOcnMedIngestFromInternalProto ****FAIL" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the 'tail' of the AtmOcnMedIngestFromInternalProto build failure">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                tail  -50 tmp >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#
+#                        else
+#                                echo " AtmOcnMedIngestFromInternalProto built successfully"  
+#                                echo "`date` Build AtmOcnMedIngestFromInternalProto ....PASS" >> $LOGDIR/mailMessage
+#
+#                        fi
+#
+#
+#
+#
+#
+#
+#                        mpirun -np 4 ./esmApp 1> AtmOcnMedIngestFromInternalProto.stdout 2>&1
+#                        count=`grep FINISHED PET* | wc -l`
+#                        if [[ $count != "4" ]]
+#                        then
+#                                echo " AtmOcnMedIngestFromInternalProto failed to run"                                
+#                                echo "`date` Run HierarchyProto **********************FAIL" >> $LOGDIR/mailMessage
+#                                echo "`date` Run AtmOcnMedIngestFromInternalProto ****FAIL" >> $LOGDIR/mailMessage
+#                                fail_num=`expr $fail_num + 1`
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the output of cat PET*.ESMF_LogFile">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                cat PET*.ESMF_LogFile  >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#                                # Update number of test failures
+#                                read failures < $LOGDIR/Test_Failures
+#                                total=`expr $failures + 1`
+#                                echo "$total" > $LOGDIR/Test_Failures
+#                                echo "New failure total is $total."
+#
+#                        else
+#                                echo " AtmOcnMedIngestFromInternalProto ran"                                
+#                                echo "`date` Run AtmOcnMedIngestFromInternalProto ......PASS" >> $LOGDIR/mailMessage
+#                                pass_num=`expr $pass_num + 1`
+#
+#                        fi
+#
+#
+#                        cd $ESMF_DIR/../nuopc-app-prototypes/AtmOcnLogNoneProto
+#                        gmake distclean
+#                        echo "" >> $LOGDIR/mailMessage
+#                        gmake  ESMF_BOPT=$OPT 1> tmp 2>&1
+#                        if [ "$?" != "0" ]
+#                        then
+#                                echo " AtmOcnLogNoneProto failed to build"   
+#                                echo "`date` Build AtmOcnLogNoneProto ******************FAIL" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the 'tail' of the AtmOcnLogNoneProto build failure">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                tail  -50 tmp >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#
+#                        else
+#                                echo " AtmOcnLogNoneProto built successfully"  
+#                                echo "`date` Build AtmOcnLogNoneProto ..................PASS" >> $LOGDIR/mailMessage
+#
+#                        fi
+#
+#
+#
+#
+#
+#
+#                        mpirun -np 4 ./esmApp 1> AtmOcnLogNoneProto.stdout  2>&1
+#                        count=`grep -o "FINISHED" AtmOcnLogNoneProto.stdout | wc -l`
+#                        if [[ $count != "4" ]]
+#                        then
+#                                echo " AtmOcnLogNoneProto failed to run"                                
+#                                echo "`date` Run AtmOcnLogNoneProto ********************FAIL" >> $LOGDIR/mailMessage
+#                                fail_num=`expr $fail_num + 1`
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the AtmOcnLogNoneProto.stdout file: ">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                cat  AtmOcnLogNoneProto.stdout >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#                                # Update number of test failures
+#                                read failures < $LOGDIR/Test_Failures
+#                                total=`expr $failures + 1`
+#                                echo "$total" > $LOGDIR/Test_Failures
+#                                echo "New failure total is $total."
+#
+#                        else
+#                                echo " AtmOcnLogNoneProto ran"                                
+#                                echo "`date` Run AtmOcnLogNoneProto ....................PASS" >> $LOGDIR/mailMessage
+#                                pass_num=`expr $pass_num + 1`
+#
+#                        fi
+#
+#
+#
+#                        cd $ESMF_DIR/../nuopc-app-prototypes/AtmOcnIceSimpleImplicitProto
+#                        gmake distclean
+#                        echo "" >> $LOGDIR/mailMessage
+#                        gmake  ESMF_BOPT=$OPT 1> tmp 2>&1
+#                        if [ "$?" != "0" ]
+#                        then
+#                                echo " AtmOcnIceSimpleImplicitProto failed to build"   
+#                                echo "`date` Build AtmOcnIceSimpleImplicitProto ********FAIL" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the 'tail' of the AtmOcnIceSimpleImplicitProto build failure">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                tail  -50 tmp >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#
+#                        else
+#                                echo "  AtmOcnIceSimpleImplicitProto built successfully"  
+#                                echo "`date` Build AtmOcnIceSimpleImplicitProto ........PASS" >> $LOGDIR/mailMessage
+#
+#                        fi
+#
+#
+#
+#
+#
+#
+#                        mpirun -np 4 ./esmApp 1> AtmOcnIceSimpleImplicitProto.stdout  2>&1
+#                        count=`grep FINISHED PET* | wc -l`
+#                        if [[ $count != "4" ]]
+#                        then
+#                                echo " AtmOcnIceSimpleImplicitProto failed to run"                                
+#                                echo "`date` Run AtmOcnIceSimpleImplicitProto ********FAIL" >> $LOGDIR/mailMessage
+#                                fail_num=`expr $fail_num + 1`
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the output of cat PET*.ESMF_LogFile">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                cat PET*.ESMF_LogFile  >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#                                # Update number of test failures
+#                                read failures < $LOGDIR/Test_Failures
+#                                total=`expr $failures + 1`
+#                                echo "$total" > $LOGDIR/Test_Failures
+#                                echo "New failure total is $total."
+#
+#                        else
+#                                echo " AtmOcnIceSimpleImplicitProto ran"                                
+#                                echo "`date` Run AtmOcnIceSimpleImplicitProto ...........PASS" >> $LOGDIR/mailMessage
+#                                pass_num=`expr $pass_num + 1`
+#
+#                        fi
+#
+#
+#
+#
+#                        cd $ESMF_DIR/../nuopc-app-prototypes/DynPhyProto
+#                        gmake distclean
+#                        echo "" >> $LOGDIR/mailMessage
+#                        gmake  ESMF_BOPT=$OPT 1> tmp 2>&1
+#                        if [ "$?" != "0" ]
+#                        then
+#                                echo " DynPhyProto failed to build"   
+#                                echo "`date` Build DynPhyProto *************************FAIL" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the 'tail' of the DynPhyProto build failure">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                tail  -50 tmp >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#
+#                        else
+#                                echo "  DynPhyProto built successfully"  
+#                                echo "`date` Build DynPhyProto .........................PASS" >> $LOGDIR/mailMessage
+#
+#                        fi
+#
+#
+#
+#
+#
+#
+#                        mpirun -np 4 ./esmApp 1> DynPhyProto.stdout  2>&1
+#                        count=`grep FINISHED PET* | wc -l`
+#                        if [[ $count != "4" ]]
+#                        then
+#                                echo " DynPhyProto failed to run"                                
+#                                echo "`date` Run DynPhyProto *************************FAIL" >> $LOGDIR/mailMessage
+#                                fail_num=`expr $fail_num + 1`
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the output of cat PET*.ESMF_LogFile">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                cat PET*.ESMF_LogFile  >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#                                # Update number of test failures
+#                                read failures < $LOGDIR/Test_Failures
+#                                total=`expr $failures + 1`
+#                                echo "$total" > $LOGDIR/Test_Failures
+#                                echo "New failure total is $total."
+#
+#                        else
+#                                echo " DynPhyProto ran"                                
+#                                echo "`date` Run DynPhyProto ............................PASS" >> $LOGDIR/mailMessage
+#                                pass_num=`expr $pass_num + 1`
+#
+#                        fi
+#
+#
+#
+#                        cd $ESMF_DIR/../nuopc-app-prototypes/AtmOcnCplSetProto
+#                        gmake distclean
+#                        echo "" >> $LOGDIR/mailMessage
+#                        gmake  ESMF_BOPT=$OPT 1> tmp 2>&1
+#                        if [ "$?" != "0" ]
+#                        then
+#                                echo " AtmOcnCplSetProto failed to build"   
+#                                echo "`date` Build AtmOcnCplSetProto *******************FAIL" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the 'tail' of the AtmOcnCplSetProto build failure">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                tail  -50 tmp >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#
+#                        else
+#                                echo "  AtmOcnCplSetProto built successfully"  
+#                                echo "`date` Build AtmOcnCplSetProto ...................PASS" >> $LOGDIR/mailMessage
+#
+#                        fi
+#
+#
+#
+#
+#
+#
+#                        mpirun -np 4 ./esmApp 1> AtmOcnCplSetProto.stdout  2>&1
+#                        count=`grep FINISHED PET* | wc -l`
+#                        if [[ $count != "4" ]]
+#                        then
+#                                echo " AtmOcnCplSetProto failed to run"                                
+#                                echo "`date` Run AtmOcnCplSetProto *******************FAIL" >> $LOGDIR/mailMessage
+#                                fail_num=`expr $fail_num + 1`
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the output of cat PET*.ESMF_LogFile">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                cat PET*.ESMF_LogFile  >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#                                # Update number of test failures
+#                                read failures < $LOGDIR/Test_Failures
+#                                total=`expr $failures + 1`
+#                                echo "$total" > $LOGDIR/Test_Failures
+#                                echo "New failure total is $total."
+#
+#                        else
+#                                echo " AtmOcnCplSetProto ran"                                
+#                                echo "`date` Run AtmOcnCplSetProto  .....................PASS" >> $LOGDIR/mailMessage
+#                                pass_num=`expr $pass_num + 1`
+#
+#                        fi
+#
+#
+#
+#
+#                        cd $ESMF_DIR/../nuopc-app-prototypes/AtmOcnTransferMeshProto
+#                        gmake distclean
+#                        echo "" >> $LOGDIR/mailMessage
+#                        gmake  ESMF_BOPT=$OPT 1> tmp 2>&1
+#                        if [ "$?" != "0" ]
+#                        then
+#                                echo " AtmOcnTransferMeshProto failed to build"   
+#                                echo "`date` Build AtmOcnTransferMeshProto *************FAIL" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the 'tail' of the AtmOcnTransferMeshProto build failure">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                tail  -50 tmp >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#
+#                        else
+#                                echo "  AtmOcnTransferMeshProto built successfully"  
+#                                echo "`date` Build AtmOcnTransferMeshProto .............PASS" >> $LOGDIR/mailMessage
+#
+#                        fi
+#
+#
+#
+#
+#
+#
+#                        mpirun -np 4 ./esmApp 1> AtmOcnTransferMeshProto.stdout  2>&1
+#                        count=`grep FINISHED PET* | wc -l`
+#                        if [[ $count != "4" ]]
+#                        then
+#                                echo " AtmOcnTransferMeshProto failed to run"                                
+#                                echo "`date` Run AtmOcnTransferMeshProto *************FAIL" >> $LOGDIR/mailMessage
+#                                fail_num=`expr $fail_num + 1`
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the output of cat PET*.ESMF_LogFile">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                cat PET*.ESMF_LogFile  >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#                                # Update number of test failures
+#                                read failures < $LOGDIR/Test_Failures
+#                                total=`expr $failures + 1`
+#                                echo "$total" > $LOGDIR/Test_Failures
+#                                echo "New failure total is $total."
+#
+#                        else
+#                                echo " AtmOcnTransferMeshProto ran"                                
+#                                echo "`date` Run AtmOcnTransferMeshProto ................PASS" >> $LOGDIR/mailMessage
+#                                pass_num=`expr $pass_num + 1`
+#
+#                        fi
+#
+#
+#
+#
+#                        cd $ESMF_DIR/../nuopc-app-prototypes/CustomFieldDictionaryProto
+#                        gmake distclean
+#                        echo "" >> $LOGDIR/mailMessage
+#                        gmake  ESMF_BOPT=$OPT 1> tmp 2>&1
+#                        if [ "$?" != "0" ]
+#                        then
+#                                echo " CustomFieldDictionaryProto failed to build"   
+#                                echo "`date` Build CustomFieldDictionaryProto **********FAIL" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                echo "The following is the 'tail' of the CustomFieldDictionaryProto build failure">> $LOGDIR/mailMessage
+#                                echo "" >> $LOGDIR/mailMessage
+#                                tail  -50 tmp >> $LOGDIR/mailMessage
+#                                # Set test status as yellow, if it is not red
+#                                if !(grep "red" $LOGDIR/Test_Status)
+#                                then
+#                                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+#                                        echo "Set Test Status to yellow."
+#                                fi
+#
+#                        else
+#                                echo " CustomFieldDictionaryProto built successfully"  
+#                                echo "`date` Build CustomFieldDictionaryProto ..........PASS" >> $LOGDIR/mailMessage
+#
+#                        fi
+#
+#
+#
+#
+#                         mpirun -np 4 ./mainApp  1> CustomFieldDictionaryProto.stdout  2>&1
+#                        count=`grep FINISHED PET* | wc -l`
+#                        if [[ $count != "4" ]]
+#                        then
+#                                echo " CustomFieldDictionaryProto failed to run"                                
+#                                echo "`date` Run CustomFieldDictionaryProto ************FAIL" >> $LOGDIR/mailMessage
+#                                
+#
+############################# Run the tests on all computers ###############################
+
+export First_Build=NOT_DONE
+number=1
+while grep "^$number " $rfile >tmp
+do
+	# Get the computer information
+        read num location directory hostname abi site comp comm u_tests u_tests_type sys_test_type threaded mpmd ck_out_opt tag < tmp
+        echo "$location $directory $hostname $abi $site $comp $comm $u_tests $u_tests_type $sys_test_type $threaded $mpmd $ck_out_opt $tag"
+        cat tmp
+
+	export ESMF_OS=`uname -s`
+	export ESMF_DIR=/scratch/esmf/esmf_test/cronjobs/trunk/nuopc/esmf
+	export MP_RMPOOL=1
+	export LOGTMP=$log_tmp
+	export OPT=g
+	export ESMF_BOPT=g
+	export SYS_TEST_TYPE=$sys_test_type
+	export U_TESTS=$u_tests
+	export U_TESTS_TYPE=$u_tests_type
+	export ESMF_ABI=$abi
+	export ESMF_SITE=$site
+	export ESMF_COMPILER=$comp
+	export ESMF_COMM=$comm
+        export ESMF_INSTALL_PREFIX=$ESMF_DIR/../install_dir
+	export ESMF_INSTALL_HEADERDIR=include
+	export ESMF_INSTALL_LIBDIR=lib
+	export ESMF_INSTALL_MODDIR=include
+	export ESMF_INSTALL_BINDIR=bin
+	export ESMFMKFILE=$ESMF_DIR/../install_dir/lib/esmf.mk
+	export PATH=$PATH:$ESMF_DIR/../install_dir/bin
+        #export MP_MPILIB=mpich2
+	export MODULEPATH=$MODULEPATH":/project/esmf/modulefiles"
+
+        if [[ $ESMF_COMPILER = "gfortran" ]]
+        then
+                export ESMF_COMPILER=gfortran
+                module load compiler/gnu/8.1.0
+                module load tool/nccmp/1.8.7.0
+                module load tool/netcdf/4.6.1/gcc-8.1.0
+                module load tool/hdf5/1.8.7/gcc
+        fi
+
+        if [[ $ESMF_COMM = "mpich3" ]]
+        then
+             export ESMF_COMM=mpich3
+             module load mpich/3.2.1-gnu8.1.0
+        fi	
+
+
+        export ESMF_MPIRUN=mpirun
+        #export ESMF_NETCDF=split
+        #export ESMF_NETCDF_LIBPATH=/glade/u/apps/ch/opt/netcdf/4.6.0/intel/17.0.1/lib
+        #export ESMF_NETCDF_INCLUDE=/glade/u/apps/ch/opt/netcdf/4.6.0/intel/17.0.1/include
+        #export ESMF_PNETCDF=standard
+        #export ESMF_PNETCDF_LIBPATH=/glade/u/apps/ch/opt/pnetcdf/1.9.0/mpt/2.15f/intel/17.0.1/lib
+        #export ESMF_PNETCDF_INCLUDE=/glade/u/apps/ch/opt/pnetcdf/1.9.0/mpt/2.15f/intel/17.0.1/include
+	export ESMF_NETCDF=nc-config
+
+        rm -rf $ESMF_INSTALL_PREFIX/*
+        if [[ $threaded = "THREADED" ]]
+        then
+                export ESMF_TESTWITHTHREADS=ON 
+        else
+                export ESMF_TESTWITHTHREADS=OFF
+        fi 
+        if [[ $u_tests = "EX" ]]
+        then
+                export ESMF_TESTEXHAUSTIVE=ON
+        else 
+                export ESMF_TESTEXHAUSTIVE=OFF
+        fi 
+
+        if [[ $mpmd = "MPMD" ]]
+        then
+                export ESMF_TESTMPMD=ON
+        else
+                export ESMF_TESTMPMD=OFF
+        fi
+	
+	#export ESMF_YAMLCPP=standard
+	#export ESMF_YAMLCPP_INCLUDE=/glade/u/home/svasquez/bin/yaml0.6.2/intel15.1.133/include
+	#export ESMF_YAMLCPP_LIBPATH=/glade/u/home/svasquez/bin/yaml0.6.2/intel15.1.133/lib
+	export my_make="gmake -j32"
+        export RFile=$rfile
+	echo "ESMF_DIR = $ESMF_DIR"
+	cd $ESMF_DIR
+	#$homedir/bin/test_esmf
+        rm -rf $ESMF_INSTALL_PREFIX/*
+	$homedir/bin/test_nuopc
+	export OPT=O
+	export ESMF_BOPT=O
+	#$homedir/bin/test_esmf
+	$homedir/bin/test_nuopc
+	cd $homedir
+        number=`expr $number + 1`
+        echo "number = $number"
+done
+
+
+echo "end of test script"
+exit
+

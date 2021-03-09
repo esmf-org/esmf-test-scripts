@@ -1,0 +1,188 @@
+#!/bin/bash --login
+rfile=$1
+
+export homedir=/project/esmf/bighorn_8.1.0/nuopc
+
+export TZ="/usr/share/zoneinfo/US/Mountain"
+
+############################### Read the file for log directory and email recipient #######
+
+datestamp=`date +%y%m`
+logfile="${datestamp}_test"
+echo " The logfile is $logfile"
+here=`pwd`
+
+
+if grep -i "LOG_DIR1" $rfile > tmp
+then
+        read location log_dir log_tmp < tmp
+        cd $log_dir
+        if test ! -d  $logfile
+        then
+                # Make new directory if doesn't exist
+                mkdir $logfile
+        fi
+        cd $here
+        echo "LOGDIR1 is $log_dir/$logfile"
+        export LOGDIR=$log_dir/$logfile
+fi
+
+if grep -i "LOGDIR2" $rfile > tmp
+then
+        read location log_dir2 < tmp
+        cd $log_dir2
+        if test ! -d  $logfile
+        then
+                mkdir $logfile
+        fi
+        cd $here
+
+        echo "LOGDIR2 is $log_dir2/$logfile"
+        export LOGDIR2=$log_dir2/$logfile
+fi
+
+
+
+if grep -i "email_to" $rfile > tmp
+then
+	read location emailuser < tmp
+	echo "Email user is $emailuser"
+fi
+
+if grep -i "email_title" $rfile > tmp
+then
+	read location email_title < tmp
+	echo "Email title is $email_title"
+fi
+
+
+rm -f tmp
+
+rm -f $LOGDIR/mailMessage
+rm -f $LOGDIR/newMailMessage
+rm -f $LOGDIR/header
+rm -f $LOGDIR/mailHeader
+rm -f $LOGDIR/newsummary
+rm -f $LOGDIR/sum
+rm -f $LOGDIR/summary
+
+# Set test status as green, assume it will run clean
+echo "Test_results:green" > $LOGDIR/Test_Status
+echo "Set Test Status to green."
+
+
+export TZ="/usr/share/zoneinfo/US/Mountain"
+echo "Day_of_Week:`date +%A`" > $LOGDIR/Day_Started
+
+#Set Number of test failure
+echo "0" > $LOGDIR/Test_Failures
+
+
+
+echo "" >> $LOGDIR/header
+echo "Script start time: `date`" >> $LOGDIR/header
+
+cd $homedir
+
+
+export First_Build=NOT_DONE
+number=1
+while grep "^$number " $rfile >tmp
+do
+	# Get the computer information
+        read num location directory hostname abi site comp comm u_tests u_tests_type sys_test_type threaded mpmd ck_out_opt tag < tmp
+        echo "$location $directory $hostname $abi $site $comp $comm $u_tests $u_tests_type $sys_test_type $threaded $mpmd $ck_out_opt $tag"
+        cat tmp
+
+	export ESMF_OS=`uname -s`
+	export ESMF_DIR=/project/esmf/bighorn_8.1.0/nuopc/esmf
+	export MP_RMPOOL=1
+	export LOGTMP=$log_tmp
+	export OPT=g
+	export ESMF_BOPT=g
+	export SYS_TEST_TYPE=$sys_test_type
+	export U_TESTS=$u_tests
+	export U_TESTS_TYPE=$u_tests_type
+	export ESMF_ABI=$abi
+	export ESMF_SITE=$site
+	export ESMF_COMPILER=$comp
+	export ESMF_COMM=$comm
+        export ESMF_INSTALL_PREFIX=$ESMF_DIR/../install_dir
+	export ESMF_INSTALL_HEADERDIR=include
+	export ESMF_INSTALL_LIBDIR=lib
+	export ESMF_INSTALL_MODDIR=include
+	export ESMF_INSTALL_BINDIR=bin
+	export ESMFMKFILE=$ESMF_DIR/../install_dir/lib/esmf.mk
+	export PATH=$PATH:$ESMF_DIR/../install_dir/bin
+        #export MP_MPILIB=mpich2
+	export MODULEPATH=$MODULEPATH":/project/esmf/modulefiles"
+
+        if [[ $ESMF_COMPILER = "gfortran" ]]
+        then
+                export ESMF_COMPILER=gfortran
+                module load compiler/gnu/8.1.0
+                module load tool/nccmp/1.8.7.0
+                module load tool/netcdf/4.6.1/gcc-8.1.0
+                module load tool/hdf5/1.8.7/gcc
+        fi
+
+        if [[ $ESMF_COMM = "mpich3" ]]
+        then
+             export ESMF_COMM=mpich3
+             module load mpich/3.2.1-gnu8.1.0
+        fi	
+
+
+        export ESMF_MPIRUN=mpirun
+        #export ESMF_NETCDF=split
+        #export ESMF_NETCDF_LIBPATH=/glade/u/apps/ch/opt/netcdf/4.6.0/intel/17.0.1/lib
+        #export ESMF_NETCDF_INCLUDE=/glade/u/apps/ch/opt/netcdf/4.6.0/intel/17.0.1/include
+        #export ESMF_PNETCDF=standard
+        #export ESMF_PNETCDF_LIBPATH=/glade/u/apps/ch/opt/pnetcdf/1.9.0/mpt/2.15f/intel/17.0.1/lib
+        #export ESMF_PNETCDF_INCLUDE=/glade/u/apps/ch/opt/pnetcdf/1.9.0/mpt/2.15f/intel/17.0.1/include
+	export ESMF_NETCDF=nc-config
+
+        rm -rf $ESMF_INSTALL_PREFIX/*
+        if [[ $threaded = "THREADED" ]]
+        then
+                export ESMF_TESTWITHTHREADS=ON 
+        else
+                export ESMF_TESTWITHTHREADS=OFF
+        fi 
+        if [[ $u_tests = "EX" ]]
+        then
+                export ESMF_TESTEXHAUSTIVE=ON
+        else 
+                export ESMF_TESTEXHAUSTIVE=OFF
+        fi 
+
+        if [[ $mpmd = "MPMD" ]]
+        then
+                export ESMF_TESTMPMD=ON
+        else
+                export ESMF_TESTMPMD=OFF
+        fi
+	
+	#export ESMF_YAMLCPP=standard
+	#export ESMF_YAMLCPP_INCLUDE=/glade/u/home/svasquez/bin/yaml0.6.2/intel15.1.133/include
+	#export ESMF_YAMLCPP_LIBPATH=/glade/u/home/svasquez/bin/yaml0.6.2/intel15.1.133/lib
+	export my_make="gmake -j32"
+        export RFile=$rfile
+	echo "ESMF_DIR = $ESMF_DIR"
+	cd $ESMF_DIR
+	#$homedir/bin/test_esmf
+        rm -rf $ESMF_INSTALL_PREFIX/*
+	$homedir/bin/test_nuopc
+	export OPT=O
+	export ESMF_BOPT=O
+	#$homedir/bin/test_esmf
+	$homedir/bin/test_nuopc
+	cd $homedir
+        number=`expr $number + 1`
+        echo "number = $number"
+done
+
+
+echo "end of test script"
+exit
+

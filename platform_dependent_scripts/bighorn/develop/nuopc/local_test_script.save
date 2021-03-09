@@ -1,0 +1,998 @@
+#!/bin/bash
+rfile=$1
+
+
+
+############################### Read the file for log directory and email recipient #######
+
+datestamp=`date +%y%m`
+logfile="${datestamp}_test"
+echo " The logfile is $logfile"
+here=`pwd`
+
+
+if grep -i "LOG_DIR1" $rfile > tmp
+then
+        read location log_dir log_tmp < tmp
+        cd $log_dir
+        if test ! -d  $logfile
+        then
+                # Make new directory if doesn't exist
+                mkdir $logfile
+        fi
+        cd $here
+        echo "LOGDIR1 is $log_dir/$logfile"
+        export LOGDIR=$log_dir/$logfile
+fi
+
+if grep -i "LOGDIR2" $rfile > tmp
+then
+        read location log_dir2 < tmp
+        cd $log_dir2
+        if test ! -d  $logfile
+        then
+                mkdir $logfile
+        fi
+        cd $here
+
+        echo "LOGDIR2 is $log_dir2/$logfile"
+        export LOGDIR2=$log_dir2/$logfile
+fi
+
+
+
+if grep -i "email_to" $rfile > tmp
+then
+	read location emailuser < tmp
+	echo "Email user is $emailuser"
+fi
+
+if grep -i "email_title" $rfile > tmp
+then
+	read location email_title < tmp
+	echo "Email title is $email_title"
+fi
+
+
+rm -f tmp
+
+rm -f $LOGDIR/mailMessage
+rm -f $LOGDIR/newMailMessage
+rm -f $LOGDIR/header
+rm -f $LOGDIR/mailHeader
+rm -f $LOGDIR/newsummary
+rm -f $LOGDIR/sum
+rm -f $LOGDIR/summary
+
+
+echo "" >> $LOGDIR/header
+echo "Script start time: `date`" >> $LOGDIR/header
+
+cd $homedir
+
+############################### Extract script to checkout ESMF ###########################
+cat  > $homedir/exp_co << \THE-END-OF-EXP-CO
+#!/usr/bin/expect --
+
+set sfuser [lindex $argv 0]
+set tag [lindex $argv 1]
+send_user " tag is $tag"
+
+set timeout 3600
+
+if { $tag == "" } {
+
+        spawn  cvs -z3 -d:ext:$sfuser@esmf.cvs.sourceforge.net:/cvsroot/esmf co -P esmf
+        #spawn  cvs -d svasquez@login.sourceforge.net:/home/groups/e/es/esmf/backupCVS co -d esmf -P esmf
+
+} else {
+
+        spawn cvs -z3 -d:ext:$sfuser@esmf.cvs.sourceforge.net:/cvsroot/esmf co -P -r $tag esmf
+}
+
+
+expect {
+        "password: "
+                        {
+
+                                send "$sfpword\r"
+
+                        }
+        "(yes/no)?"
+                        {
+
+                                send "yes\r"
+
+                                exp_continue
+
+
+                        }
+        "(yes/no)? "
+                        {
+
+                                send "yes\r"
+
+                                exp_continue
+
+                        }
+        "Connection closed by remote host"
+                        {
+                                exit
+                        }
+	eof
+			{
+				exit
+			}
+
+
+        }
+
+
+
+expect eof
+
+
+THE-END-OF-EXP-CO
+
+
+############################### Extract script to checkout ESMF ###########################
+cat  > $homedir/exp_co_euc << \THE-END-OF-EXP-CO-EUC
+#!/usr/bin/expect --
+
+set sfuser [lindex $argv 0]
+set tag [lindex $argv 1]
+send_user " tag is $tag"
+
+set timeout 3600
+
+if { $tag == "" } {
+
+        spawn  cvs -z3 -d:ext:$sfuser@esmf.cvs.sourceforge.net:/cvsroot/esmf co -P external_demos
+        #spawn  cvs -d svasquez@login.sourceforge.net:/home/groups/e/es/esmf/backupCVS co -d esmf -P esmf
+
+} else {
+
+        spawn cvs -z3 -d:ext:$sfuser@esmf.cvs.sourceforge.net:/cvsroot/esmf co -P -r $tag external_demos
+}
+
+
+expect {
+        "password: "
+                        {
+
+                                send "$sfpword\r"
+
+                        }
+        "(yes/no)?"
+                        {
+
+                                send "yes\r"
+
+                                exp_continue
+
+
+                        }
+        "(yes/no)? "
+                        {
+
+                                send "yes\r"
+
+                                exp_continue
+
+                        }
+        "Connection closed by remote host"
+                        {
+                                exit
+                        }
+	       eof
+                        {
+                                exit
+                        }
+
+
+
+        }
+
+
+
+expect eof
+THE-END-OF-EXP-CO-EUC
+
+
+
+############################### Parse the compute file and checkout esmf where indicated ##
+
+number=1
+while grep "^$number " $rfile >tmp
+do
+        read num location directory hostname abi site comp comm u_tests u_tests_type sys_test_type threaded procs ck_out_opt tag < tmp
+        echo "$location $directory $hostname $abi $site $comp $comm $u_tests $u_tests_type $sys_test_type $threaded $procs $ck_out_opt $ta
+g"
+        if [[ $ck_out_opt = "co" ]]
+        then
+                umask 002
+                export CVS_RSH=ssh
+                export homedir=`pwd`
+		export sfuser=svasquez
+                cd $directory
+                pwd
+                rm -rf esmf
+                # Execute the script to checkout the esmf
+                expect $homedir/exp_co $sfuser  $tag
+                # Check if checkout was successful
+                loop=1
+                sleep_time=10
+                while (( $loop < 10))
+                do
+                        # Check if checkout was successful
+                        # If the esmf directory does not exists or it has less than 5 items in it
+                        if test ! -d esmf || (( `ls esmf | wc -l ` < 5 ))
+                        then
+                                echo "Sleeping"
+                                echo "sleep time =" $sleep_time
+                                sleep $sleep_time
+                                sleep_time=`expr 100 + $sleep_time`
+                                echo "sleep time =" $sleep_time
+                                expect $homedir/exp_co $sfuser  $tag
+                                loop=`expr $loop + 1`
+                        else
+                                # Check out the external demos directory
+				rm -rf external_demos
+                                expect $homedir/exp_co_euc $sfuser  $tag
+                                if test ! -d external_demos
+                                then
+                                        cd $homedir
+                                        echo "Unable to checkout the external SourceForge." > mailMessage
+                                        echo "No tests were run" >> mailMessage
+                                        mail -s  $email_title $emailuser <  mailMessage
+                                        mail -s  $email_title esmf_test@list.woc.noaa.gov <  mailMessage
+                                        rm -rf mailMessage
+                                        rm -f $homedir/.outFile
+                                        echo "Checkout failed"
+                                        echo "end of test script"
+                                        exit
+                                else
+                                        cd $directory
+                                        break
+                                fi
+                        fi
+                done
+                # Check if checkout was successful
+                if test ! -d esmf || (( `ls esmf | wc -l ` < 5 ))
+                then
+                        cd $homedir
+                        echo "Unable to checkout ESMF from SourceForge." > mailMessage
+                        echo "No tests were run" >> mailMessage
+                        #mail -s  $email_title $emailuser <  mailMessage
+                        #mail -s  $email_title esmf_test@ucar.edu <  mailMessage
+                        mail -s  $email_title svasquez@ucar.edu <  mailMessage
+                        rm -rf mailMessage
+                        rm -f $homedir/.outFile
+                        echo "Checkout failed"
+                        echo "end of test script"
+                        exit
+                fi
+
+                cd $homedir
+        fi
+        number=`expr $number + 1`
+        echo "number = $number"
+done
+
+rm -f exp_co
+
+ ############################### Extract script to checkout ESMF Contrib Site ###########################
+ cat  > $homedir/exp_co << \THE-END-OF-EXP-CO
+ #!/usr/bin/expect --
+
+ set sfuser [lindex $argv 0]
+ set sfpword [lindex $argv 1]
+ set module [lindex $argv 2]
+ 
+ set timeout 900
+
+if { $module == "blackforest" || $module == "babyblue"|| $module == "bluesky"|| $module == "chinook" || $module == "longs" || $module == "mika" } { 
+		set module "ncar"
+	}
+ 
+ spawn  cvs -z3 -d:ext:$sfuser@esmfcontrib.cvs.sourceforge.net:/cvsroot/esmfcontrib co $module
+ 
+ expect {
+       "password: "
+                       {
+ 
+                                 send "$sfpword\r"
+ 
+                         }
+         "(yes/no)?"
+                         {
+ 
+                                 send "yes\r"
+ 
+                                 exp_continue
+ 
+ 
+                         }
+         "(yes/no)? "
+                         {
+ 
+                                 send "yes\r"
+ 
+                                 exp_continue
+ 
+                         }
+ 
+         }
+ 
+ 
+ 
+ expect eof
+ 
+THE-END-OF-EXP-CO
+ 
+ ############################### Parse the compute file and checkout esmf contrib  module where indicated ##
+ 
+ number=1
+ while grep "^$number " $rfile >tmp
+ do
+        read num location directory hostname abi site comp comm u_tests u_tests_type sys_test_type threaded mpmd ck_out_opt tag < tmp
+        echo "$location $directory $hostname $abi $site $comp $comm $u_tests $u_tests_type $sys_test_type $threaded $mpmd $ck_out_opt $tag"
+       if [[ $site != "default" ]]
+       then
+                umask 002
+                export CVS_RSH=ssh
+                cd $directory/esmf/build_config
+		dir_size=`ls | wc -l`
+		echo "dir_size = $dir_size"
+                # Execute the script to checkout the esmfconfig
+                expect $homedir/exp_co $sfuser $sfpword $site
+               # Check if checkout was successful
+                new_dir_size=`ls | wc -l`
+		echo "new_dir_size = $new_dir_size"
+		if [ $new_dir_size =  $dir_size ]
+                then
+			echo "Sleeping 10"
+                        sleep 10
+                        expect $homedir/exp_co $sfuser $sfpword $site
+                        # Check if checkout was successful
+                	new_dir_size=`ls | wc -l`
+		else
+			# Done if successfull
+			break 
+		fi
+		if [ $new_dir_size =  $dir_size ]
+                then
+			echo "Sleeping 900"
+                        sleep 900
+                        expect $homedir/exp_co $sfuser $sfpword $site
+                        # Check if checkout was successful
+                	new_dir_size=`ls | wc -l`
+		else
+			# Done if successfull
+			break 
+		fi
+		if [ $new_dir_size =  $dir_size ]
+                then
+			echo "Sleeping 1800"
+                	sleep 1800
+                        expect $homedir/exp_co $sfuser $sfpword $site
+                        # Check if checkout was successful
+                	new_dir_size=`ls | wc -l`
+		else
+			# Done if successfull
+			break 
+		fi
+		if [ $new_dir_size =  $dir_size ]
+                then
+			echo "Sleeping 3600"
+                	sleep 3600
+                        expect $homedir/exp_co $sfuser $sfpword $site
+                        # Check if checkout was successful
+                	new_dir_size=`ls | wc -l`
+		else
+			# Done if successfull
+			break 
+		fi
+		if [ $new_dir_size =  $dir_size ]
+                then
+                      	cd $homedir
+                        echo "Unable to checkout ESMFCONTRIB from SourceForge." > mailMessage
+                        echo "No tests were run" >> mailMessage
+                        mail -s  $email_title $emailuser <  mailMessage
+                        mail -s  $email_title esmf_test@ucar.edu <  mailMessage
+                        rm -rf mailMessage
+			# Can't go any further
+			rm -f $homedir/.outFile
+                        exit
+		else
+			# Done if successfull
+			break 
+		fi
+       fi
+       number=`expr $number + 1`
+       echo "number = $number"
+ done
+ 
+rm -f $homedir/.outFile
+cd $homedir
+
+
+
+ 
+################ Execute test in jaguar  #######################
+
+#### Extract script to run system test
+cat  > exec_test << \THE-END-OF-EXEC_TEST
+#!/usr/bin/expect --
+ 
+set test_type [lindex $argv 0]
+set ESMF_DIR [lindex $argv 1]
+set ESMF_BOPT [lindex $argv 2]
+set ESMF_COMM [lindex $argv 3]
+set sys_test [lindex $argv 4]
+set sys_test_type [lindex $argv 5]
+set unit_test_type [lindex $argv 6]
+set u_tests [lindex $argv 7]
+set threaded [lindex $argv 8]
+set ksh_pid [spawn /bin/ksh]
+
+
+set prompt "(%|>|#|\\$) $"          ;# default prompt
+
+catch {set prompt $env(EXPECT_PROMPT)}
+
+expect -re $prompt
+
+send "export ESMF_OS=`uname -s` \r"
+
+expect -re $prompt
+
+send "export ESMF_COMPILER=pgi \r"
+
+expect -re $prompt
+
+send "export ESMF_SITE=default \r"
+
+expect -re $prompt
+
+send "cd $ESMF_DIR \r"
+
+expect -re $prompt
+
+if { $u_tests == "EX" } {
+	send "export  ESMF_TESTEXHAUSTIVE=ON \r"
+} else {
+	send "export ESMF_TESTEXHAUSTIVE=OFF \r"
+}
+
+expect -re $prompt
+
+if { $threaded == "THREADED" } {
+	send "export ESMF_TESTWITHTHREADS=ON \r"
+} else {
+	send "export ESMF_TESTWITHTHREADS=OFF \r"
+}
+
+expect -re $prompt
+
+send "cd $ESMF_DIR \r"
+
+expect -re $prompt
+
+set timeout 3600
+
+if { $test_type == "ESMC_HelloWorld" } {
+		send "cd $ESMF_DIR/../external_demos/ESMC_HelloWorld \r"
+        	send "mpirun -np 4 ESMC_HelloWorld > ESMC_HelloWorld.out\r"
+		send "cd $ESMF_DIR \r"
+
+} elseif { $test_type == "ESMF_HelloWorld" } {
+
+		send "cd $ESMF_DIR/../external_demos/ESMF_HelloWorld \r"
+                send "mpirun -np 4 ESMF_HelloWorld > ESMF_HelloWorld.out\r"
+                send "cd $ESMF_DIR \r"
+
+} elseif { $test_type == "ESMF_RegridWeightGenCheck" } {
+
+		send "cd $ESMF_DIR/../external_demos/ESMF_RegridWeightGenCheck \r"
+                send "gmake run \r"
+                send "cd $ESMF_DIR \r"
+
+}
+ 
+expect {
+	-re $prompt
+                        {
+        
+                                send "exit\r"
+        
+                        }
+        "completed"
+                        {
+
+                                send "\r"
+
+                        }
+
+        }
+
+expect -re $prompt
+
+THE-END-OF-EXEC_TEST
+
+chmod 777 exec_test
+
+ 
+
+
+############################### Extract test_esmf ########################################
+
+cat > $homedir/test_esmf << \BUILD-ESMF
+#!/bin/bash
+#PBS -eo -q reg -l nodes=1:ppn=1
+
+cd $ESMF_DIR
+
+env
+
+#Clobber previous arch files
+#gmake clobber 1> tmp 2>&1
+
+
+echo "" >> $LOGDIR/mailMessage
+echo "__________________________________________________________________________________________________" >> $LOGDIR/mailMessage
+echo "" >> $LOGDIR/mailMessage
+
+test_results=0  #assume build passes
+install_results=0  #assume install passes
+tests=0
+test_failures=0
+ex_passed=0
+ex_failed=0
+
+echo "`date` on `uname -n` " >> $LOGDIR/mailMessage
+echo "Compiler and configuration information:" >> $LOGDIR/mailMessage
+echo " " >> $LOGDIR/mailMessage
+gmake ESMF_BOPT=$OPT info 1> tmp 2>&1
+cat tmp >> $LOGDIR/mailMessage
+
+
+
+gmake ESMF_BOPT=$OPT  1> tmp 2>&1
+if [ "$?" != "0" ]
+then
+        echo "Library build FAIL with ESMF_BOPT=$OPT"
+
+	if [ $OPT != g ]
+	then 
+		cat tmp > $LOGDIR/build_O_`date +%d``uname -n`$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+	else
+		cat tmp > $LOGDIR/build_g_`date +%d``uname -n`$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+	fi #end of if [ $OPT != g ]
+
+	echo "`date` library build ****************FAIL" >> $LOGDIR/mailMessage
+	test_results=1
+	echo "" >> $LOGDIR/mailMessage
+	echo "" >> $LOGDIR/mailMessage
+	echo "The following is the 'tail' of the build failure">> $LOGDIR/mailMessage
+	echo "" >> $LOGDIR/mailMessage
+        tail  -50 tmp >> $LOGDIR/mailMessage
+	
+
+else
+
+       	echo "Library build PASS with ESMF_BOPT=$OPT"
+	echo "`date` library build ................PASS" >> $LOGDIR/mailMessage
+
+        # Check for warnings
+        if grep -i "warning[ ]*:" tmp
+        then
+                echo "Builds with warnings." >> $LOGDIR/mailMessage
+        fi
+
+
+
+        gmake ESMF_BOPT=$OPT  install 1> tmp 2>&1
+        if [ "$?" != "0" ]
+        then
+                echo "Library install FAILED with ESMF_BOPT=$OPT"
+                install_results=1  # install failed
+
+                if [ $OPT != g ]
+                then
+                        cat tmp > $LOGDIR/install_O_`date +%d``uname -n`$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                else
+                        cat tmp > $LOGDIR/install_g_`date +%d``uname -n`$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                fi #end of if [ $OPT != g ]
+
+                echo "`date` library install **************FAIL" >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+                echo "The following is the 'tail' of the install failure">> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+                tail  -50 tmp >> $LOGDIR/mailMessage
+
+                else
+
+                echo "Library install PASSED with ESMF_BOPT=$OPT"
+                echo "`date` library install ..............PASS" >> $LOGDIR/mailMessage
+
+                gmake ESMF_BOPT=$OPT  installcheck 1> tmp 2>&1
+                if [ "$?" != "0" ]
+                then
+                        echo "Library install check FAILED with ESMF_BOPT=$OPT"
+                        install_results=1  # install failed
+
+                        if [ $OPT != g ]
+                        then
+                                cat tmp > $LOGDIR/installcheck_O_`date +%d``uname -n`$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        else
+                                cat tmp > $LOGDIR/installcheck_g_`date +%d``uname -n`$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        fi #end of if [ $OPT != g ]
+
+                        echo "`date` library installcheck *********FAIL" >> $LOGDIR/mailMessage
+                        echo "" >> $LOGDIR/mailMessage
+                        echo "" >> $LOGDIR/mailMessage
+                        echo "The following is the 'tail' of the install failure">> $LOGDIR/mailMessage
+                        echo "" >> $LOGDIR/mailMessage
+                        tail  -50 tmp >> $LOGDIR/mailMessage
+
+                        else
+
+                        echo "Library installcheck PASSED with ESMF_BOPT=$OPT"
+                        echo "`date` library installcheck .........PASS" >> $LOGDIR/mailMessage
+
+			echo "" >> $LOGDIR/mailMessage
+			echo "" >> $LOGDIR/mailMessage
+			echo "|----------------------- EXTERNAL DEMOS -----------------------|" >> $LOGDIR/mailMessage
+
+			#cat out ESMF_InstallationCheck.sh.
+			cd $ESMF_DIR/../external_demos/ESMF_InstallationCheck
+			echo "" >> $LOGDIR/mailMessage
+			echo "Output of ESMF_InstallationCheck.sh" >> $LOGDIR/mailMessage
+			echo "" >> $LOGDIR/mailMessage
+			./ESMF_InstallationCheck.sh >> $LOGDIR/mailMessage
+			echo "" >> $LOGDIR/mailMessage
+			echo "" >> $LOGDIR/mailMessage
+			#Build the ESMC_HelloWorld
+			cd $ESMF_DIR/../external_demos/ESMC_HelloWorld
+			gmake clean
+			rm -f ESMC_HelloWorld.out
+			gmake  ESMF_BOPT=$OPT  1> tmp 2>&1
+        		if [ "$?" != "0" ]
+        		then
+                		echo "ESMC_HelloWorld build FAIL "
+                		echo "`date` ESMC_HelloWorld build ********FAIL" >> $LOGDIR/mailMessage
+                		echo "" >> $LOGDIR/mailMessage
+                		echo "" >> $LOGDIR/mailMessage
+                		echo "The following is the 'tail' of the ESMC_HelloWorld failure">> $LOGDIR/mailMessage
+                		echo "" >> $LOGDIR/mailMessage
+                		tail  -50 tmp >> $LOGDIR/mailMessage
+                		echo "" >> $LOGDIR/mailMessage
+
+                		if [ $OPT != g ]
+                		then
+                        		cat tmp > $LOGDIR/build_O_`date +%d``uname -n`build_ESMC_HelloWorld_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                		else
+                        		cat tmp > $LOGDIR/build_g_`date +%d``uname -n`build_ESMC_HelloWorld_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                		fi # end of if [ $OPT != g ]
+
+        		else
+                		echo "build ESMC_HelloWorld PASS "
+                		echo "`date` build ESMC_HelloWorld ........PASS" >> $LOGDIR/mailMessage
+
+                		if [[ $LOGTMP = "ALL" ]]
+                		then
+                        		if [ $OPT != g ]
+                        		then
+                                		cat tmp > $LOGDIR/build_O_`date +%d``uname -n`build_ESMC_HelloWorld_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        		else
+                                		cat tmp > $LOGDIR/build_g_`date +%d``uname -n`build_ESMC_HelloWorld_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        		fi #end of if [ $OPT != g ]
+                		fi # end of if [[ $LOGTMP = "ALL" ]]
+
+        		fi #end of if [ "$?" != "0" ] for gmake ESMF_BOPT=$OPT 1> tmp 2>&1
+        		cd $ESMF_DIR
+		
+
+        		# Run the ESMC Hello World 
+        		$homedir/exec_test ESMC_HelloWorld $ESMF_DIR $OPT $ESMF_COMM dummy $SYS_TEST_TYPE $U_TESTS_TYPE $U_TESTS $THREADED
+		
+			if grep "Hello ESMC World" $ESMF_DIR/../external_demos/ESMC_HelloWorld/ESMC_HelloWorld.out
+			then
+        			echo "run_ESMC_HelloWorld PASS "
+        			echo "`date` run_ESMC_HelloWorld ..........PASS" >> $LOGDIR/mailMessage
+				echo "" >> $LOGDIR/mailMessage
+				export ESMC_HW_results="PASS"
+			else
+				echo "run_ESMC_HelloWorld FAIL "
+                		echo "`date` run_ESMC_HelloWorld **********FAIL" >> $LOGDIR/mailMessage
+                		echo "" >> $LOGDIR/mailMessage
+				echo "The following is ESMC_HelloWorld run output:"  >> $LOGDIR/mailMessage
+				cat $ESMF_DIR/../external_demos/ESMC_HelloWorld/ESMC_HelloWorld.out >> $LOGDIR/mailMessage
+				echo "" >> $LOGDIR/mailMessage
+				export ESMC_HW_results="FAIL"
+			fi
+
+
+        		#Build the ESMF_HelloWorld
+        		cd $ESMF_DIR/../external_demos/ESMF_HelloWorld
+			rm -f ESMF_HelloWorld.out
+			gmake clean
+        		gmake  ESMF_BOPT=$OPT  1> tmp 2>&1
+        		if [ "$?" != "0" ]
+        		then
+                		echo "ESMF_HelloWorld build FAIL "
+                		echo "`date` ESMF_HelloWorld build ********FAIL" >> $LOGDIR/mailMessage
+                		echo "" >> $LOGDIR/mailMessage
+                		echo "" >> $LOGDIR/mailMessage
+                		echo "The following is the 'tail' of the ESMF_HelloWorld failure">> $LOGDIR/mailMessage
+                		echo "" >> $LOGDIR/mailMessage
+                		tail  -50 tmp >> $LOGDIR/mailMessage
+                		echo "" >> $LOGDIR/mailMessage
+
+                		if [ $OPT != g ]
+                		then
+                        		cat tmp > $LOGDIR/build_O_`date +%d``uname -n`build_ESMF_HelloWorld_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM                
+				else
+                        		cat tmp > $LOGDIR/build_g_`date +%d``uname -n`build_ESMF_HelloWorld_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                		fi # end of if [ $OPT != g ]
+
+        		else
+                		echo "build ESMF_HelloWorld PASS "
+                		echo "`date` build ESMF_HelloWorld ........PASS" >> $LOGDIR/mailMessage
+
+                		if [[ $LOGTMP = "ALL" ]]
+                		then                        if [ $OPT != g ]
+                        		then
+                                		cat tmp > $LOGDIR/build_O_`date +%d``uname -n`build_ESMF_HelloWorld_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        		else
+                                		cat tmp > $LOGDIR/build_g_`date +%d``uname -n`build_ESMF_HelloWorld_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        		fi #end of if [ $OPT != g ]
+                		fi # end of if [[ $LOGTMP = "ALL" ]]
+		
+        		fi #end of if [ "$?" != "0" ] for gmake ESMF_BOPT=$OPT 1> tmp 2>&1
+        		cd $ESMF_DIR
+
+
+        		if [[ $LOGTMP = "ALL" ]]
+        		then
+                		if [ $OPT != g ]
+                		then
+                        		cat tmp > $LOGDIR/build_O_`date +%d``uname -n`run_examples_$ESMF_OS$ESMF_ABI$ESMF_COMPILER
+                		else
+                        		cat tmp > $LOGDIR/build_g_`date +%d``uname -n`run_examples_$ESMF_OS$ESMF_ABI$ESMF_COMPILER
+                		fi #end of if [ $OPT != g ]
+         		fi # end of if [[ $LOGTMP = "ALL" ]]
+
+			# Run ESMF Hello World
+        		$homedir/exec_test ESMF_HelloWorld $ESMF_DIR $OPT $ESMF_COMM dummy $SYS_TEST_TYPE $U_TESTS_TYPE $U_TESTS $THREADED
+
+	        		if grep "Hello ESMF World" $ESMF_DIR/../external_demos/ESMF_HelloWorld/ESMF_HelloWorld.out
+        		then
+                		echo "run_ESMF_HelloWorld PASS "
+                		echo "`date` run_ESMF_HelloWorld ..........PASS" >> $LOGDIR/mailMessage
+                		echo "" >> $LOGDIR/mailMessage
+				export ESMF_HW_results="PASS"
+        		else
+                		echo "run_ESMF_HelloWorld FAIL "
+                		echo "`date` run_ESMF_HelloWorld **********FAIL" >> $LOGDIR/mailMessage
+                		echo "" >> $LOGDIR/mailMessage
+                		echo "The following is ESMF_HelloWorld run output:"  >> $LOGDIR/mailMessage
+                		cat $ESMF_DIR/../external_demos/ESMF_HelloWorld/ESMF_HelloWorld.out >> $LOGDIR/mailMessage
+                		echo "" >> $LOGDIR/mailMessage
+				export ESMF_HW_results="FAIL"
+        		fi
+
+
+        		if [[ $LOGTMP = "ALL" ]]
+        		then
+                		if [ $OPT != g ]
+                		then
+                        		cat tmp > $LOGDIR/build_O_`date +%d``uname -n`run_examples_$ESMF_OS$ESMF_ABI$ESMF_COMPILER
+                		else
+                        		cat tmp > $LOGDIR/build_g_`date +%d``uname -n`run_examples_$ESMF_OS$ESMF_ABI$ESMF_COMPILER
+                		fi #end of if [ $OPT != g ]
+         		fi # end of if [[ $LOGTMP = "ALL" ]]
+
+        		#Build the ESMF_RegridWeightGenCheck
+        		cd $ESMF_DIR/../external_demos/ESMF_RegridWeightGenCheck
+			gmake clean
+        		gmake  ESMF_BOPT=$OPT  1> tmp 2>&1
+        		if [ "$?" != "0" ]
+        		then
+                		echo "ESMF_RegridWeightGenCheck build FAIL "
+                		echo "`date` RegridWeightGenCheck build ***FAIL" >> $LOGDIR/mailMessage
+                		echo "" >> $LOGDIR/mailMessage
+                		echo "" >> $LOGDIR/mailMessage
+                		echo "The following is the 'tail' of the ESMF_RegridWeightGenCheck failure">> $LOGDIR/mailMessage
+                		echo "" >> $LOGDIR/mailMessage
+                		tail  -50 tmp >> $LOGDIR/mailMessage
+                		echo "" >> $LOGDIR/mailMessage
+		
+                		if [ $OPT != g ]
+                		then
+                        		cat tmp > $LOGDIR/build_O_`date +%d``uname -n`build_ESMF_RegridWeightGenCheck_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM                else
+                        		cat tmp > $LOGDIR/build_g_`date +%d``uname -n`build_ESMF_RegridWeightGenCheck_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                		fi # end of if [ $OPT != g ]
+
+        		else
+                		echo "build ESMF_RegridWeightGenCheck PASS "
+                		echo "`date` build RegridWeightGenCheck ...PASS" >> $LOGDIR/mailMessage
+
+                		if [[ $LOGTMP = "ALL" ]]
+                		then                        if [ $OPT != g ]
+                        		then
+                                		cat tmp > $LOGDIR/build_O_`date +%d``uname -n`build_ESMF_RegridWeightGenCheck_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        		else
+                                		cat tmp > $LOGDIR/build_g_`date +%d``uname -n`build_ESMF_RegridWeightGenCheck_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        		fi #end of if [ $OPT != g ]
+                		fi # end of if [[ $LOGTMP = "ALL" ]]
+
+        		fi #end of if [ "$?" != "0" ] for gmake ESMF_BOPT=$OPT 1> tmp 2>&1
+        		cd $ESMF_DIR
+
+
+
+        		# Run the ESMF_RegridWeightGenCheck
+        		$homedir/exec_test ESMF_RegridWeightGenCheck $ESMF_DIR $OPT $ESMF_COMM dummy $SYS_TEST_TYPE $U_TESTS_TYPE $U_TESTS $THREADED
+
+        		echo "run_ESMF_RegridWeightGenCheck PASS "
+        		echo "`date` run_RegridWeightGenCheck .....PASS" >> $LOGDIR/mailMessage
+			echo "" >> $LOGDIR/mailMessage
+			cat $ESMF_DIR/../external_demos/ESMF_RegridWeightGenCheck/ESMF_RegridWeightGenCheck.Log >> $LOGDIR/mailMessage
+
+			cd $ESMF_DIR/../external_demos/ESMF_RegridWeightGenCheck
+			perl $homedir/check_external_demos_results.pl >> $LOGDIR/mailMessage
+			read pass pass_num fail fail_num < ext_tests_results
+			cd -
+        		if [[ $LOGTMP = "ALL" ]]
+        		then
+                		if [ $OPT != g ]
+                		then
+                        		cat tmp > $LOGDIR/build_O_`date +%d``uname -n`run_examples_$ESMF_OS$ESMF_ABI$ESMF_COMPILER
+                		else
+                        		cat tmp > $LOGDIR/build_g_`date +%d``uname -n`run_examples_$ESMF_OS$ESMF_ABI$ESMF_COMPILER
+                		fi #end of if [ $OPT != g ]
+         		fi # end of if [[ $LOGTMP = "ALL" ]]
+		
+
+			echo "" >> $LOGDIR/mailMessage
+			echo "" >> $LOGDIR/mailMessage
+			
+
+		fi
+	fi
+
+
+fi #end of if [ "$?" != "0" ] for gmake ESMF_BOPT=$OPT  1> tmp 2>&1
+
+# Make name as short as possible
+name=`uname -n | sed 's/\..*//'`
+
+
+if [[ $test_results != 0 ]] 
+then  #The build failed
+	echo "**FAIL** $name($OPT) $ESMF_OS.$ESMF_COMPILER.$ESMF_COMM.$ESMF_ABI" >> $LOGDIR/summary
+else
+	if [[ $install_results != 0 ]]
+        then  #The install failed
+                echo "PASS FAIL $name($OPT) $ESMF_OS.$ESMF_COMPILER.$ESMF_COMM.$ESMF_ABI $ESMC_HW_results $ESMF_HW_results $pass_num/$fail_num" >> $LOGDIR/summary
+        else
+                echo "PASS PASS $name($OPT) $ESMF_OS.$ESMF_COMPILER.$ESMF_COMM.$ESMF_ABI $ESMC_HW_results $ESMF_HW_results $pass_num/$fail_num" >> $LOGDIR/summary
+        fi
+fi #end of if [$test_results != 0]
+
+
+
+echo "" >> $LOGDIR/mailMessage
+
+
+# keep expect happy
+echo "test_esmf has finished"
+BUILD-ESMF
+
+############################# Run the tests on all computers ###############################
+
+export First_Build=NOT_DONE
+number=1
+while grep "^$number " $rfile >tmp
+do
+	# Get the computer information
+        read num location directory hostname abi site comp comm u_tests u_tests_type sys_test_type threaded mpmd ck_out_opt tag < tmp
+        echo "$location $directory $hostname $abi $site $comp $comm $u_tests $u_tests_type $sys_test_type $threaded $mpmd $ck_out_opt $tag"
+        cat tmp
+
+	export ESMF_OS=`uname -s`
+	export ESMF_DIR=$directory/esmf
+	export MP_RMPOOL=1
+	export LOGTMP=$log_tmp
+	export OPT=g
+	export ESMF_BOPT=g
+	export SYS_TEST_TYPE=$sys_test_type
+	export U_TESTS=$u_tests
+	export U_TESTS_TYPE=$u_tests_type
+	export ESMF_ABI=$abi
+	export ESMF_SITE=$site
+	export ESMF_COMPILER=$comp
+	export ESMF_COMM=$comm
+        export ESMF_INSTALL_PREFIX=$ESMF_DIR/../install_dir
+	export ESMF_INSTALL_HEADERDIR=include
+	export ESMF_INSTALL_LIBDIR=lib
+	export ESMF_INSTALL_MODDIR=include
+	export ESMF_INSTALL_BINDIR=bin
+	export ESMFMKFILE=$ESMF_DIR/../install_dir/lib/esmf.mk
+	export PATH=$PATH:$ESMF_DIR/../install_dir/bin
+
+
+        rm -rf $ESMF_INSTALL_PREFIX/*
+        if [[ $threaded = "THREADED" ]]
+        then
+                export ESMF_TESTWITHTHREADS=ON 
+        else
+                export ESMF_TESTWITHTHREADS=OFF
+        fi 
+        if [[ $u_tests = "EX" ]]
+        then
+                export ESMF_TESTEXHAUSTIVE=ON
+        else 
+                export ESMF_TESTEXHAUSTIVE=OFF
+        fi 
+
+        if [[ $mpmd = "MPMD" ]]
+        then
+                export ESMF_TESTMPMD=ON
+        else
+                export ESMF_TESTMPMD=OFF
+        fi
+
+	module load  gfortran/4.4.0/gcc gfortran/4.4.0/openmpi/1.4.1
+
+	module load netcdf/gfortran/4.4.0/4.0.1; export ESMF_NETCDF=standard; export ESMF_NETCDF_LIBPATH=/export/esmf/gcc/4.4.0/netcdf/4.0.1/lib; export ESMF_NETCDF_INCLUDE=/export/esmf/gcc/4.4.0/netcdf/4.0.1/include
+
+	#export ESMF_PNETCDF=standard; export ESMF_PNETCDF_LIBPATH=/usr/local/lib; export ESMF_PNETCDF_INCLUDE=/usr/local/include
+
+	module load lapack/3.2.1; export ESMF_LAPACK=standard; export ESMF_LAPACK_LIBS="-llapack -lblas"; export ESMF_LAPACK_LIBPATH=/export/esmf/lapack/3.2.1
+	
+#	export ESMF_LAPACK=standard
+	#module load lapack/3.2.1
+	#export ESMF_LAPACK_LIBS="-llapack -lblas"
+	#export ESMF_LAPACK_LIBPATH=/export/esmf/lapack/3.2.1
+#
+
+	#module load netcdf/gfortran/4.4.0/4.0.1
+	#export ESMF_NETCDF=standard
+	#export ESMF_NETCDF_INCLUDE=/export/esmf/gcc/4.4.0/netcdf/4.0.1/include
+	#export ESMF_NETCDF_LIBPATH=/export/esmf/gcc/4.4.0/netcdf/4.0.1/lib
+#
+	#export ESMF_PNETCDF=standard; export ESMF_PNETCDF_LIBPATH=/usr/local/lib; export ESMF_PNETCDF_INCLUDE=/usr/local/include
+#
+	#export ESMF_PNETCDF=standard
+	#export ESMF_PNETCDF_LIBPATH=/usr/local/lib
+	#export ESMF_PNETCDF_INCLUDE=/usr/local/include
+	#export ESMF_PNETCDF_LIBS=-lpnetcdf
+
+        export RFile=$rfile
+	echo "ESMF_DIR = $ESMF_DIR"
+	cd $ESMF_DIR
+	chmod 777 $homedir/test_esmf
+        rm -rf $ESMF_INSTALL_PREFIX/*
+	$homedir/test_esmf
+	export OPT=O
+	export ESMF_BOPT=O
+	$homedir/test_esmf
+	cd $homedir
+        number=`expr $number + 1`
+        echo "number = $number"
+done
+haltlam
+cd $homedir
+rm -f test_esmf
+rm -f exp_co
+rm -f tmp
+
+
+
+echo "end of test script"
+exit
+

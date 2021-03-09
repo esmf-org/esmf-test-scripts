@@ -1,0 +1,56 @@
+ #!/usr/bin/expect --   
+set rfile  [lindex $argv 0]
+set results_file  [lindex $argv 1]
+set homedir  [lindex $argv 2]
+set bash_pid [spawn /bin/bash -l ]
+
+send "\r"
+
+set prompt "(%|>|#|\\$) $"          ;# default prompt
+
+catch {set prompt $env(EXPECT_PROMPT)}
+
+expect -re $prompt
+
+send "export homedir=$homedir \r"
+
+expect -re $prompt
+
+send "rm -rf esmf \r"
+
+expect -re $prompt
+
+set timeout 900
+
+send "git clone https://github.com/esmf-org/esmf.git \r"
+
+expect eof
+
+expect -re $prompt
+
+send " cd /scratch/esmf/esmf_test/cronjobs/trunk/gfortran \r"
+
+expect  eof
+
+expect -re $prompt
+
+set timeout 18000
+send "./local_script  $rfile  \r"
+#spawn ./local_script  $rfile  
+
+expect {
+                "end of test script"
+                {
+                        puts "detected end of test script"
+                        set file [ open $results_file w]
+                        puts $file "normal"
+                        #send "kill -9 $bash_pid\r"
+                }
+                timeout
+                {
+                        puts "detected timeout"
+                        set file [ open $results_file w]
+                        puts $file "error"
+                        #send "kill -9 $bash_pid\r"
+                }
+        }

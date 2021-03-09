@@ -1,0 +1,13 @@
+TFORM	DIRECTORY			   		     HOSTNAME  		PREC SITE  COMPILER COMM UTEST_TYPE UTEST_RUN SYSTEST_RUN SYS_TEST_TYPE CO TAG
+1 mt  /scratch/esmf/esmf_test/cronjobs/trunk/gfortran mt	64 default  gfortran8  mp  EX MULTI MULTI   NON_THREADED  NON_MPMD 
+2 mt  /scratch/esmf/esmf_test/cronjobs/trunk/gfortran mt       64 default  gfortran8  openmpi  EX MULTI MULTI   NON_THREADED  NON_MPMD
+3 mt  /scratch/esmf/esmf_test/cronjobs/trunk/gfortran mt        64 default  gfortran4  mpic3  EX MULTI MULTI   NON_THREADED  NON_MPMD
+
+BENCHMARKRUN ON
+BENCHMARKINSTALL OFF
+
+LOG_DIR1    /scratch/esmf/esmf_test/cronjobs/trunk/gfortran/dir/esmf_logs ERROR
+email__title ESMF_Trunk_Bighorn_gfortran_Test
+email_title ESMF_Trunk_Bighorn_gfortran_Test
+email_to   himanshu@ucar.edu
+

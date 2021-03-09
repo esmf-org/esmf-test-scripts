@@ -1,0 +1,238 @@
+#!/bin/bash  -l
+
+testFile=$1
+############################### Extract script to run on bighorn  ###########################
+ cat  > run_mt << \THE-END-OF-MT
+ #!/usr/bin/expect --   
+set rfile  [lindex $argv 0]
+set results_file  [lindex $argv 1]
+set homedir  [lindex $argv 2]
+set bash_pid [spawn /bin/bash -l ]
+
+send "\r"
+
+set prompt "(%|>|#|\\$) $"          ;# default prompt
+
+catch {set prompt $env(EXPECT_PROMPT)}
+
+expect -re $prompt
+
+send "export homedir=$homedir \r"
+
+expect -re $prompt
+
+send "rm -rf esmf \r"
+
+expect -re $prompt
+
+set timeout 900
+
+send "git clone https://github.com/esmf-org/esmf.git \r"
+
+expect eof
+
+expect -re $prompt
+
+send " cd /scratch/esmf/esmf_test/cronjobs/trunk/gfortran \r"
+
+expect  eof
+
+expect -re $prompt
+
+set timeout 18000
+send "./local_script  $rfile  \r"
+#spawn ./local_script  $rfile  
+
+expect {
+                "end of test script"
+                {
+                        puts "detected end of test script"
+                        set file [ open $results_file w]
+                        puts $file "normal"
+                        #send "kill -9 $bash_pid\r"
+                }
+                timeout
+                {
+                        puts "detected timeout"
+                        set file [ open $results_file w]
+                        puts $file "error"
+                        #send "kill -9 $bash_pid\r"
+                }
+        }
+THE-END-OF-MT
+
+chmod a+x run_mt
+
+expect ./run_mt /scratch/esmf/esmf_test/cronjobs/trunk/gfortran/$testFile  /scratch/esmf/esmf_test/cronjobs/trunk/gfortran/test_results /scratch/esmf/esmf_test/cronjobs/trunk/gfortran
+
+export homedir=/scratch/esmf/esmf_test/cronjobs/trunk/gfortran
+export RFile=$homedir/$testFile
+
+echo "Continue with sending mail"
+
+
+
+
+############################# Get email address and title ####################
+datestamp=`date +%y%m`
+logfile="${datestamp}_test"
+echo " The logfile is $logfile"
+here=`pwd`
+
+
+
+if grep -i "LOG_DIR1" $RFile > tmp
+then
+        read location log_dir log_tmp < tmp
+        cd $log_dir
+        if test ! -d $logfile
+        then
+                # Make new directory if doesn't exist
+                mkdir $logfile
+        fi
+        cd $here
+        echo "LOGDIR1 is $log_dir/$logfile"
+        export LOGDIR=$log_dir/$logfile
+
+fi
+	echo "LOGDIR=$LOGDIR"
+
+if grep -i "LOGDIR2" $RFile > tmp
+then
+        read location log_dir2 < tmp
+        cd $log_dir2
+        if test ! -d $logfile
+        then
+                mkdir $logfile
+        fi
+        cd $here
+
+        echo "LOGDIR2 is $log_dir2/$logfile"
+        export LOGDIR2=$log_dir2/$logfile
+
+fi
+
+
+if grep -i "email_to" $RFile > tmp
+then
+        read location emailuser < tmp
+        echo "Email user is $emailuser"
+fi
+
+if grep -i "email_title" $RFile > tmp
+then
+        read location email_title < tmp
+        echo "Email title is $email_title"
+fi
+
+
+if grep -i "email_title" $RFile > tmp
+then
+        read location email_title < tmp
+        echo "Email title is $email_title"
+fi
+
+
+rm -f tmp
+
+
+
+######### Start the mail message file ################################
+
+
+echo "" > $LOGDIR/mailHeader
+echo "" >> $LOGDIR/header
+export TZ="/usr/share/zoneinfo/US/Mountain"
+echo "Script end: `date`" >> $LOGDIR/header
+
+
+
+echo "" >> $LOGDIR/mailMessage
+echo "" >> $LOGDIR/mailMessage
+echo "" >> $LOGDIR/mailHeader
+echo "" >> $LOGDIR/mailHeader
+echo "" >> $LOGDIR/header
+echo "" >> $LOGDIR/header
+echo "_____________________________________ESMF TRUNK BUILD AND TEST SUMMARY___________________________" >> $LOGDIR/header
+#echo "_____________________________________ESMF_7_1_0r BUILD AND TEST SUMMARY___________________________" >> $LOGDIR/header
+
+echo "" >> $LOGDIR/header
+echo "" >> $LOGDIR/header
+echo "" >> $LOGDIR/header
+echo "                                            " >> $LOGDIR/header
+echo "                    INSTALL/" >> $LOGDIR/header
+echo "           BUILD  QUICK_START OS.COMPILER.COMM.ABI    UNIT TESTS   EXAMPLES  SYSTEM TESTS  APPS TESTS" >> $LOGDIR/header
+
+echo "______________________________________________________________________________________________________" >> $LOGDIR/header
+
+echo "          PASS/FAIL PASS/FAIL                           PASS/FAIL   PASS/FAIL  PASS/FAIL   PASS/FAIL">> $LOGDIR/header
+
+echo "______________________________________________________________________________________________________" >> $LOGDIR/header
+
+
+
+
+############################# Put the mail message together and mail it ####################
+
+
+
+# Put all the files together
+# First fix the summmary file
+
+
+if grep "normal" $homedir/test_results
+then
+        echo ""
+else
+        echo "WARNING: The test experienced an abnormal termination during execution," >> $LOGDIR/mailHeader
+        echo "         therefore the test results may be incomplete/invalid." >> $LOGDIR/mailHeader
+        echo "" >> $LOGDIR/mailHeader
+
+        if (grep "red" $LOGDIR/Test_Status)        
+        then
+                echo ""
+        else
+                echo "Test_results:orange" > $LOGDIR/Test_Status
+        fi
+
+
+
+fi
+
+awk '{if ($1 ~/PASS/) printf ("%-12s%-10s%-8s%-25s%10s%10s%10s%10s\n",  $3, $1, $2, $4, $5, $6, $7, $8) ;else  printf ("%-10s%-20s%-10s\n", $2, $1,  $3 )}'  $LOGDIR/summary > $LOGDIR/newsummary
+
+#awk '{if ($1 ~/PASS/) printf ("%-12s%-10s%-8s%-25s%10s%10s%10s\n",  $3, $1, $2, $4, $5, $6, $7) ;else  printf ("%-10s%-20s%-10s\n", $2, $1,  $3 )}'  $LOGDIR/summary > $LOGDIR/newsummary
+cat $LOGDIR/mailHeader $LOGDIR/header $LOGDIR/newsummary > $LOGDIR/sum
+cat $LOGDIR/sum $LOGDIR/mailMessage > $LOGDIR/newMailMessage
+echo "" >>  $LOGDIR/newMailMessage
+echo " The tarballs of the tests and examples directories can be found at:" >>  $LOGDIR/newMailMessage
+echo " $LOGDIR." >>  $LOGDIR/newMailMessage
+echo " These tarballs contain the *Log and *stdout files only, not the executables." >>  $LOGDIR/newMailMessage
+echo " This directory also contains failed build output files with the naming convention of " >>  $LOGDIR/newMailMessage
+echo " build_ESMF_BOPT_(day)(platform)ESMF_OS ESMF_ABI ESMF_COMPILER ESMF_COMM." >>  $LOGDIR/newMailMessage
+echo " For example, if the build fails on longs on the 19th of the month with ESMF_BOPT=g, the file " >>  $LOGDIR/newMailMessage
+echo " would be called 'build_g_19longslinux32pgimpiuni'." >>  $LOGDIR/newMailMessage
+
+
+#mail -s $email_title  esmf-test@lists.sourceforge.net <  $LOGDIR/newMailMessage
+mail -s $email_title esmf_test@cgd.ucar.edu  <  $LOGDIR/newMailMessage
+#mail -s $email_title esmf_test@list.woc.noaa.gov  <  $LOGDIR/newMailMessage
+cat $LOGDIR/Test_Status >> $LOGDIR/newMailMessage
+cat $LOGDIR/Day_Started >> $LOGDIR/newMailMessage
+echo "Test_Failures:`cat $LOGDIR/Test_Failures`" >> $LOGDIR/newMailMessage
+mail -s ESMF_Trunk_Bighorn_gfortran himanshu@ucar.edu <  $LOGDIR/newMailMessage
+#mail -s ESMF_Bighorn_gfortran esmf_test@cgd.ucar.edu <  $LOGDIR/newMailMessage
+cat $LOGDIR/header $LOGDIR/newsummary $LOGDIR/mailMessage >> $LOGDIR/ESMFdailyLog
+#cat $LOGDIR/header $LOGDIR/newsummary $LOGDIR/mailMessage >> $LOGDIR2/ESMFdailyLog
+chmod -R a+xr $LOGDIR
+
+rm -f $LOGDIR/mailMessage
+rm -f $LOGDIR/newMailMessage
+rm -f $LOGDIR/header
+rm -f $LOGDIR/mailHeader
+rm -f $LOGDIR/newsummary
+rm -f $LOGDIR/sum
+rm -f $LOGDIR/summary
+rm -f $homedir/test_results
+exit
+

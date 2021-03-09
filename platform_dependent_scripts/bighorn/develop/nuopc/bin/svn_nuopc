@@ -1,0 +1,23 @@
+#!/usr/bin/expect --
+
+set tag [lindex $argv 0]
+send_user " tag is $tag"
+
+set timeout 900
+
+if { $tag == "" } {
+
+        spawn git clone git@github.com:esmf-org/nuopc-app-prototypes.git 
+
+} else {
+
+        spawn git clone git@github.com:esmf-org/nuopc-app-prototypes.git 
+	cd nuopc-app-prototypes
+	spawn git checkout $tag
+         #spawn svn checkout https://svn.code.sf.net/p/esmfcontrib/svn/NUOPC/branches/$tag NUOPC-Protos
+
+}
+
+expect  eof
+
+

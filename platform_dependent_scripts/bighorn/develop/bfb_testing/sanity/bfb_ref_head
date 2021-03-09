@@ -1,0 +1,41 @@
+
+Variable Group Count         Sum     AbsSum          Min         Max       Range        Mean      StdDev
+S        /     68750 1.99119e-15 1.2798e-12 -3.33067e-16 3.33067e-16 6.66134e-16 2.89628e-20 3.88114e-17
+bggd_SCRIP_NCL_BR_INTERPOL_to_icos_ESMF_unstruct_six_corners_INTERPOL_conserve2nd_test143.nc
+
+Variable Group  Count          Sum      AbsSum          Min         Max     Range         Mean      StdDev
+S        /     127564 -2.67894e-15 1.28559e-12 -1.38778e-16 1.11022e-16 2.498e-16 -2.10008e-20 1.87904e-17
+mpas_uniform_10242_dual_to_mpas_uniform_10242_conserve2nd_test66.nc
+
+Variable Group Count         Sum      AbsSum          Min         Max       Range        Mean     StdDev
+S        /      6074 1.02696e-15 1.68837e-13 -5.55112e-17 5.55112e-17 1.11022e-16 1.69074e-19 2.7819e-17
+mpas_uniform_10242_dual_to_mpas_uniform_10242_conserve_test64.nc
+
+Variable Group Count         Sum      AbsSum    Min   Max Range        Mean   StdDev
+col      /     34702           0 1.76692e+08 -15365 15365 30730           0  7760.23
+S        /     35310 6.88338e-15     20418.6     -1     1     2 1.94941e-19 0.661591
+mpas_uniform_10242_dual_to_ne60np4_pentagons_100408_conserve_test77.nc
+
+Variable Group Count          Sum      AbsSum   Min  Max Range         Mean   StdDev
+col      /      6098            0 2.23979e+07 -7683 7683 15366            0  4464.88
+S        /      9711 -6.21725e-15     3541.93    -1    1     2 -6.40227e-19 0.523574
+mpas_uniform_10242_to_ne60np4_pentagons_100408_conserve_test113.nc
+
+Variable Group Count         Sum      AbsSum   Min  Max Range        Mean   StdDev
+col      /      6374           0 2.26596e+07 -7683 7683 15366           0   4391.3
+S        /      9864 5.98133e-15     3702.14    -1    1     2 6.06379e-19 0.529537
+mpas_uniform_10242_to_ne60np4_pentagons_100408_conserve_test114.nc
+
+Variable Group Count         Sum      AbsSum          Min         Max       Range        Mean      StdDev
+S        /      7471 4.86954e-16 5.43578e-14 -2.77556e-17 2.77556e-17 5.55112e-17 6.51792e-20 8.99395e-18
+ne60np4_pentagons_100408_to_mpas_uniform_10242_conserve_test78.nc
+
+Variable Group Count         Sum      AbsSum          Min         Max       Range      Mean      StdDev
+S        /     55266 1.09813e-14 1.09173e-12 -3.33067e-16 3.33067e-16 6.66134e-16 1.987e-19 4.08707e-17
+T42_grid_to_mpas_uniform_10242_conserve2nd_test162.nc
+
+Variable Group Count         Sum      AbsSum          Min         Max       Range       Mean      StdDev
+S        /      4923 4.24998e-15 3.21588e-13 -2.22045e-16 2.22045e-16 4.44089e-16 8.6329e-19 7.86631e-17
+T42_grid_to_mpas_uniform_10242_conserve_test116.nc
+
+
