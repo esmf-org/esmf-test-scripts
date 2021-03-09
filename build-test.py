@@ -115,8 +115,6 @@ def main(argv):
             else:
               test_time = "1:00:00"
             create_header(ft,scheduler,t_filename,test_time,account,partition,queue,cpn,cluster,bash)
-            fb.write("set -x\n") 
-            ft.write("set -x\n")
             if("unloadmodule" in machine_list[comp]):
               fb.write("\nmodule unload {}\n".format(machine_list[comp]['unloadmodule']))
               ft.write("\nmodule unload {}\n".format(machine_list[comp]['unloadmodule']))
@@ -141,11 +139,10 @@ def main(argv):
                 ft.write("export {}\n".format(mpidict[key]['mpi_env_vars'][mpi_var]))
 
             if(machine_list[comp]['versions'][ver]['netcdf'] == "None" ):
-              modulecmd_b = "module load {} {} \nmodule list >& module-build.log\n".format(machine_list[comp]['versions'][ver]['compiler'],mpiflavor['module'])
-              modulecmd_t = "module load {} {} \nmodule list >& module-test.log\n".format(machine_list[comp]['versions'][ver]['compiler'],mpiflavor['module'])
-              esmfnetcdf = "export -n ESMF_NETCDF\n\n"
-              fb.write(modulecmd_b)
-              ft.write(modulecmd_t)
+              modulecmd = "module load {} {} \n\n".format(machine_list[comp]['versions'][ver]['compiler'],mpiflavor['module'])
+              esmfnetcdf = "\n"
+              fb.write(modulecmd)
+              ft.write(modulecmd)
             else:
               modulecmd = "module load {} {} {}\n".format(machine_list[comp]['versions'][ver]['compiler'],mpiflavor['module'],machine_list[comp]['versions'][ver]['netcdf'])
               esmfnetcdf = "export ESMF_NETCDF=nc-config\n\n"
@@ -165,6 +162,9 @@ def main(argv):
             modulecmd_t = "module list >& module-test.log\n\n"
             fb.write(modulecmd_b)
             ft.write(modulecmd_t)
+
+            fb.write("set -x\n") 
+            ft.write("set -x\n")
 
             fb.write(esmfnetcdf)
             ft.write(esmfnetcdf)

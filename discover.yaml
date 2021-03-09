@@ -5,8 +5,8 @@ queue: allnccs
 partition: compute
 scheduler: slurm
 corespernode: 28
-compiler: [pgi,intel,gfortran]
-#compiler: [gfortran]
+#compiler: [pgi,intel,gfortran]
+compiler: [pgi]
 branch: release/8.1.0
 intel:
    versions:
