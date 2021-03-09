@@ -144,12 +144,14 @@ def main(argv):
             if(machine_list[comp]['versions'][ver]['netcdf'] == "None" ):
               modulecmd_b = "module load {} {} \nmodule list >& module-build.log\n".format(machine_list[comp]['versions'][ver]['compiler'],mpiflavor['module'])
               modulecmd_t = "module load {} {} \nmodule list >& module-test.log\n".format(machine_list[comp]['versions'][ver]['compiler'],mpiflavor['module'])
-              esmfnetcdf = "\n\n"
+              esmfnetcdf = "export -n ESMF_NETCDF\n\n"
+              fb.write(modulecmd_b)
+              ft.write(modulecmd_t)
             else:
               modulecmd = "module load {} {} {}\n".format(machine_list[comp]['versions'][ver]['compiler'],mpiflavor['module'],machine_list[comp]['versions'][ver]['netcdf'])
               esmfnetcdf = "export ESMF_NETCDF=nc-config\n\n"
-            fb.write(modulecmd)
-            ft.write(modulecmd)
+              fb.write(modulecmd)
+              ft.write(modulecmd)
 
             if("hdf5" in machine_list[comp]['versions'][ver]):
               modulecmd = "module load {} \nmodule list\n".format(machine_list[comp]['versions'][ver]['hdf5'])
