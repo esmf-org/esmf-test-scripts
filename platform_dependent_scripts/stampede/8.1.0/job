@@ -1,0 +1,270 @@
+#!/bin/bash 
+
+cd /work/07356/tg866552/stampede2/8.1.0
+
+rm -rf LOGDIR
+mkdir LOGDIR
+
+rm -rf esmf 
+git clone -b release/8.1.0 https://github.com/esmf-org/esmf.git
+
+#rm -rf esmf-test_scripts
+#git clone https://git.code.sf.net/p/esmf/test_scripts test_scripts
+
+
+module purge
+module load intel/18.0.2
+module load impi/18.0.2
+module load python2/2.7.15
+module load libfabric/1.7.0
+module load autotools/1.1
+module load cmake/3.10.2
+module load git/2.24.1
+module load xalt/2.8
+module load TACC
+module load netcdf/4.6.2
+module list
+
+
+export ROOTDIR=`pwd`
+
+cd $ROOTDIR/esmf
+unset $(compgen -v ESMF_)
+
+export ESMF_DIR=`pwd`
+export ESMF_TESTEXHAUSTIVE=ON
+export ESMF_ABI=64
+export ESMF_OS=`uname -s`
+export ESMF_SITE=default
+export ESMF_TESTWITHTHREADS=ON
+
+export homedir=$ROOTDIR/manual_testing
+export LOGDIR=$ROOTDIR/LOGDIR
+
+export ESMF_COMPILER=intel
+export ESMF_COMM=intelmpi
+export ESMF_MPIRUN=ibrun
+export ESMF_NETCDF=nc-config
+export ESMF_BOPT=g
+$homedir/test_esmf_local
+$homedir/summarize
+
+	cd /work/07356/tg866552/stampede2/8.1.0/store
+	x="${ESMF_OS}_${ESMF_COMPILER}_${ESMF_COMM}"
+        mkdir testg_$x
+        mkdir examplesg_$x
+        mkdir libg_$x
+        mkdir appsg_$x
+	mkdir g_outputfiles
+
+        cp -rf $ESMF_DIR/test/testg/$ESMF_OS.$ESMF_COMPILER.64.$ESMF_COMM.default/*.Log testg_$x/
+        cp -rf $ESMF_DIR/test/testg/$ESMF_OS.$ESMF_COMPILER.64.$ESMF_COMM.default/*.stdout testg_$x/
+	cp -rf $ESMF_DIR/test/testg/$ESMF_OS.$ESMF_COMPILER.64.$ESMF_COMM.default/*_results testg_$x/ 
+	cp -rf $ESMF_DIR/test/testg/$ESMF_OS.$ESMF_COMPILER.64.$ESMF_COMM.default/*.config testg_$x/
+        cp -rf $ESMF_DIR/examples/examplesg/$ESMF_OS.$ESMF_COMPILER.64.$ESMF_COMM.default/*.Log examplesg_$x/
+	cp -rf $ESMF_DIR/examples/examplesg/$ESMF_OS.$ESMF_COMPILER.64.$ESMF_COMM.default/*_results examplesg_$x/
+	cp -rf $ESMF_DIR/examples/examplesg/$ESMF_OS.$ESMF_COMPILER.64.$ESMF_COMM.default/*.config examplesg_$x/
+cp -rf $ESMF_DIR/examples/examplesg/$ESMF_OS.$ESMF_COMPILER.64.$ESMF_COMM.default/*.stdout examplesg_$x/
+        cp -rf $ESMF_DIR/lib/libg/$ESMF_OS.$ESMF_COMPILER.64.$ESMF_COMM.default/esmf.mk libg_$x/
+        cp -rf $ESMF_DIR/apps/appsg/$ESMF_OS.$ESMF_COMPILER.64.$ESMF_COMM.default/*.Log appsg_$x/
+        cp -rf $ESMF_DIR/apps/appsg/$ESMF_OS.$ESMF_COMPILER.64.$ESMF_COMM.default/*.stdout appsg_$x/
+         
+        for f in *.out; do mv "$f" "${f%.out}_g.out"; done
+	mv *_g.out g_outputfiles/
+
+cd $ROOTDIR
+
+
+export ESMF_BOPT=O
+$homedir/test_esmf_local
+$homedir/summarize
+
+
+	cd /work/07356/tg866552/stampede2/8.1.0/store
+	mkdir testO_$x
+        mkdir examplesO_$x
+        mkdir libO_$ESMF_OS_$x
+        mkdir appsO_$ESMF_OS_$x
+	mkdir O_outputfiles
+
+       cp -rf $ESMF_DIR/test/testO/$ESMF_OS.$ESMF_COMPILER.64.$ESMF_COMM.default/*.stdout testO_$x/
+       cp -rf $ESMF_DIR/test/testO/$ESMF_OS.$ESMF_COMPILER.64.$ESMF_COMM.default/*_results testO_$x/
+       cp -rf $ESMF_DIR/test/testO/$ESMF_OS.$ESMF_COMPILER.64.$ESMF_COMM.default/*.config testO_$x/
+
+       cp -rf $ESMF_DIR/examples/examplesO/$ESMF_OS.$ESMF_COMPILER.64.$ESMF_COMM.default/*.stdout examplesO_$x/
+
+       cp -rf $ESMF_DIR/examples/examplesO/$ESMF_OS.$ESMF_COMPILER.64.$ESMF_COMM.default/*_results examplesO_$x/ 
+       cp -rf $ESMF_DIR/examples/examplesO/$ESMF_OS.$ESMF_COMPILER.64.$ESMF_COMM.default/*.config examplesO_$x/
+       cp -rf $ESMF_DIR/lib/libO/$ESMF_OS.$ESMF_COMPILER.64.$ESMF_COMM.default/esmf.mk libO_$x/
+        cp -rf $ESMF_DIR/apps/appsO/$ESMF_OS.$ESMF_COMPILER.64.$ESMF_COMM.default/*.stdout appsO_$x/
+        cp -rf $ESMF_DIR/test/testO/$ESMF_OS.$ESMF_COMPILER.64.$ESMF_COMM.default/*.Log testO_$x/
+        cp -rf $ESMF_DIR/examples/examplesO/$ESMF_OS.$ESMF_COMPILER.64.$ESMF_COMM.default/*.Log examplesO_$x/
+        cp -rf $ESMF_DIR/apps/appsO/$ESMF_OS.$ESMF_COMPILER.64.$ESMF_COMM.default/*.Log appsO_$x/
+
+	for h in *.out; do mv "$h" "${h%.out}_O.out"; done
+        mv *_O.out O_outputfiles/
+
+cd /work/07356/tg866552/stampede2/8.1.0/store
+rm meta_data_intel_impi.log
+rm Release_8.1.0_Stampede_intel.html
+touch meta_data_intel_impi.log
+cat $LOGDIR/Test_Status >> meta_data_intel_impi.log
+echo "Test_Failures :" `cat $LOGDIR/Test_Failures` >> meta_data_intel_impi.log
+echo "Test_artifacts made at" `date` >> meta_data_intel_impi.log
+
+cp $LOGDIR/newMailMessage Release_8.1.0_Stampede_intel.html
+sed -i '1i<pre>' Release_8.1.0_Stampede_intel.html
+
+cd $ROOTDIR
+
+mail -s "Release_8.1.0_Stampede_intel" himanshu@ucar.edu esmf_test@cgd.ucar.edu < $LOGDIR/newMailMessage
+
+check=`date +%A`
+echo $check
+ 
+
+#cd /home1/07356/tg866552/esmf-org.github.io/
+#git pull 
+#cp $LOGDIR/newMailMessage /home1/07356/tg866552/esmf-org.github.io/regression_test_result/nightly/develop/lib/$check/ESMF_Trunk_Stampede_intel.html
+#sed -i '1i<pre>' /home1/07356/tg866552/esmf-org.github.io/regression_test_result/nightly/develop/lib/$check/ESMF_Trunk_Stampede_intel.html
+#git add .
+#git commit -m " Stampede result pushed at `date`"
+#git push origin master
+
+cd /work/07356/tg866552/stampede2/esmf-test-artifacts/
+git pull
+
+mkdir -p release/8.1.0/stampede/intel/18.0.2/g/intelmpi/18.0.2 
+mkdir -p release/8.1.0/stampede/intel/18.0.2/O/intelmpi/18.0.2
+
+cd /work/07356/tg866552/stampede2/esmf-test-artifacts/release/8.1.0/stampede/intel/18.0.2/g/intelmpi/18.0.2/
+mkdir -p apps examples test lib out
+
+cd /work/07356/tg866552/stampede2/esmf-test-artifacts/release/8.1.0/stampede/intel/18.0.2/O/intelmpi/18.0.2/
+mkdir -p apps examples test lib out
+
+cd /work/07356/tg866552/stampede2/esmf-test-artifacts/release/8.1.0/stampede/intel/18.0.2/g/intelmpi/18.0.2/apps
+touch a.sh
+git rm *.stdout
+git rm *.Log
+cp -rf /work/07356/tg866552/stampede2/8.1.0/store/appsg_Linux_intel_intelmpi/* .
+for h in *.Log; do date >> $h; done
+for i in *.stdout; do date >> $i; done
+rm a.sh
+
+cd /work/07356/tg866552/stampede2/esmf-test-artifacts/release/8.1.0/stampede/intel/18.0.2/O/intelmpi/18.0.2/apps
+touch a.sh
+git rm *.stdout
+git rm *.Log
+cp -rf /work/07356/tg866552/stampede2/8.1.0/store/appsO_Linux_intel_intelmpi/* .
+for h in *.Log; do date >> $h; done
+for i in *.stdout; do date >> $i; done
+rm a.sh
+
+cd /work/07356/tg866552/stampede2/esmf-test-artifacts/release/8.1.0/stampede/intel/18.0.2/g/intelmpi/18.0.2/test
+touch a.sh
+git rm *.stdout
+git rm *.Log
+git rm *_results
+git rm *.config
+cp -rf /work/07356/tg866552/stampede2/8.1.0/store/testg_Linux_intel_intelmpi/* .
+for h in *.Log; do date >> $h; done
+for i in *.stdout; do date >> $i; done
+rm a.sh
+
+cd /work/07356/tg866552/stampede2/esmf-test-artifacts/release/8.1.0/stampede/intel/18.0.2/O/intelmpi/18.0.2/test
+touch a.sh
+git rm *.stdout
+git rm *.Log
+git rm *_results
+git rm *.config
+cp -rf /work/07356/tg866552/stampede2/8.1.0/store/testO_Linux_intel_intelmpi/* .
+for h in *.Log; do date >> $h; done
+for i in *.stdout; do date >> $i; done
+rm a.sh
+
+cd /work/07356/tg866552/stampede2/esmf-test-artifacts/release/8.1.0/stampede/intel/18.0.2/g/intelmpi/18.0.2/examples
+touch a.sh
+git rm *.stdout
+git rm *.Log
+git rm *_results
+git rm *.config
+cp -rf /work/07356/tg866552/stampede2/8.1.0/store/examplesg_Linux_intel_intelmpi/* .
+for h in *.Log; do date >> $h; done
+for i in *.stdout; do date >> $i; done
+rm a.sh
+
+cd /work/07356/tg866552/stampede2/esmf-test-artifacts/release/8.1.0/stampede/intel/18.0.2/O/intelmpi/18.0.2/examples
+touch a.sh
+git rm *.stdout
+git rm *.Log
+git rm *_results
+git rm *.config
+cp -rf /work/07356/tg866552/stampede2/8.1.0/store/examplesO_Linux_intel_intelmpi/* .
+for h in *.Log; do date >> $h; done
+for i in *.stdout; do date >> $i; done
+rm a.sh
+
+cd /work/07356/tg866552/stampede2/esmf-test-artifacts/release/8.1.0/stampede/intel/18.0.2/g/intelmpi/18.0.2/lib
+touch a.sh
+git rm *.mk
+cp -rf /work/07356/tg866552/stampede2/8.1.0/store/libg_Linux_intel_intelmpi/* .
+rm a.sh
+
+cd /work/07356/tg866552/stampede2/esmf-test-artifacts/release/8.1.0/stampede/intel/18.0.2/O/intelmpi/18.0.2/lib
+touch a.sh
+git rm *.mk
+cp -rf /work/07356/tg866552/stampede2/8.1.0/store/libO_Linux_intel_intelmpi/* .
+rm a.sh
+
+cd /work/07356/tg866552/stampede2/esmf-test-artifacts/release/8.1.0/stampede/intel/18.0.2/g/intelmpi/18.0.2/out/
+touch a.sh
+git rm *.out
+cp -rf /work/07356/tg866552/stampede2/8.1.0/store/g_outputfiles/build_apps_Linux64intelintelmpi_g.out build_apps.out
+cp -rf /work/07356/tg866552/stampede2/8.1.0/store/g_outputfiles/install_Linux64intelintelmpi_g.out install.out
+cp -rf /work/07356/tg866552/stampede2/8.1.0/store/g_outputfiles/build_examples_Linux64intelintelmpi_g.out    build_examples.out
+cp -rf /work/07356/tg866552/stampede2/8.1.0/store/g_outputfiles/quickstartbuild_Linux64intelintelmpi_g.out build_quick_start.out
+cp -rf /work/07356/tg866552/stampede2/8.1.0/store/g_outputfiles/build_Linux64intelintelmpi_g.out build.out
+cp -rf /work/07356/tg866552/stampede2/8.1.0/store/g_outputfiles/run_examples_Linux64intelintelmpi_g.out run_examples.out
+cp -rf /work/07356/tg866552/stampede2/8.1.0/store/g_outputfiles/build_system_tests_Linux64intelintelmpi_g.out  build_system_tests.out
+cp -rf /work/07356/tg866552/stampede2/8.1.0/store/g_outputfiles/run_system_tests_Linux64intelintelmpi_g.out run_system_tests.out
+cp -rf /work/07356/tg866552/stampede2/8.1.0/store/g_outputfiles/build_unit_tests_Linux64intelintelmpi_g.out build_unit_tests.out
+cp -rf /work/07356/tg866552/stampede2/8.1.0/store/g_outputfiles/run_unit_tests_Linux64intelintelmpi_g.out run_unit_tests.out
+cp -rf /work/07356/tg866552/stampede2/8.1.0/store/g_outputfiles/installcheck_Linux64intelintelmpi_g.out installcheck.out
+for h in *.out; do date >> $h; done
+rm a.sh
+
+cd /work/07356/tg866552/stampede2/esmf-test-artifacts/release/8.1.0/stampede/intel/18.0.2/O/intelmpi/18.0.2/out/
+touch a.sh
+git rm *.out
+cp -rf /work/07356/tg866552/stampede2/8.1.0/store/O_outputfiles/build_apps_Linux64intelintelmpi_O.out build_apps.out
+cp -rf /work/07356/tg866552/stampede2/8.1.0/store/O_outputfiles/install_Linux64intelintelmpi_O.out install.out
+cp -rf /work/07356/tg866552/stampede2/8.1.0/store/O_outputfiles/build_examples_Linux64intelintelmpi_O.out    build_examples.out
+cp -rf /work/07356/tg866552/stampede2/8.1.0/store/O_outputfiles/quickstartbuild_Linux64intelintelmpi_O.out build_quick_start.out
+cp -rf /work/07356/tg866552/stampede2/8.1.0/store/O_outputfiles/build_Linux64intelintelmpi_O.out build.out
+cp -rf /work/07356/tg866552/stampede2/8.1.0/store/O_outputfiles/run_examples_Linux64intelintelmpi_O.out run_examples.out
+cp -rf /work/07356/tg866552/stampede2/8.1.0/store/O_outputfiles/build_system_tests_Linux64intelintelmpi_O.out  build_system_tests.out
+cp -rf /work/07356/tg866552/stampede2/8.1.0/store/O_outputfiles/run_system_tests_Linux64intelintelmpi_O.out run_system_tests.out
+cp -rf /work/07356/tg866552/stampede2/8.1.0/store/O_outputfiles/build_unit_tests_Linux64intelintelmpi_O.out build_unit_tests.out
+cp -rf /work/07356/tg866552/stampede2/8.1.0/store/O_outputfiles/run_unit_tests_Linux64intelintelmpi_O.out run_unit_tests.out
+cp -rf /work/07356/tg866552/stampede2/8.1.0/store/O_outputfiles/installcheck_Linux64intelintelmpi_O.out installcheck.out
+for h in *.out; do date >> $h; done
+rm a.sh
+
+cd /work/07356/tg866552/stampede2/esmf-test-artifacts/release/8.1.0/stampede/intel/
+touch a.sh
+git rm *.log
+git rm *.html
+cp -rf /work/07356/tg866552/stampede2/8.1.0/store/meta_data_intel_impi.log summary.log
+cp -rf /work/07356/tg866552/stampede2/8.1.0/store/Release_8.1.0_Stampede_intel.html result.html
+rm a.sh
+
+cd /work/07356/tg866552/stampede2/esmf-test-artifacts
+
+git log --since=6.days --grep='Release 8.1.0 Stampede artifacts' > /work/07356/tg866552/stampede2/esmf-test-artifacts/release/8.1.0/stampede/intel/commit.log
+
+git add .
+git commit -m " Release 8.1.0 Stampede artifacts pushed at `date` [ci skip] "
+git push origin master
+
+exit
