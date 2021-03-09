@@ -1,0 +1,21 @@
+#!/usr/bin/expect --
+
+set tag [lindex $argv 0]
+send_user " tag is $tag"
+
+set timeout 900
+
+if { $tag == "" } {
+
+        spawn svn checkout svn://svn.code.sf.net/p/esmfcontrib/svn/NUOPC/trunk NUOPC-Protos
+
+} else {
+
+        spawn svn checkout https://svn.code.sf.net/p/esmfcontrib/svn/NUOPC/tags/$tag NUOPC-Protos
+         #spawn svn checkout https://svn.code.sf.net/p/esmfcontrib/svn/NUOPC/branches/$tag NUOPC-Protos
+
+}
+
+expect  eof
+
+

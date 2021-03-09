@@ -1,0 +1,244 @@
+#!/bin/bash -l
+
+testFile=$1
+
+export PATH=~/bin:$PATH
+############################### Extract script to run on yellowstone  ###########################
+ cat  > run_ys << \THE-END-OF-YS
+ #!/usr/bin/expect --   
+set rfile  [lindex $argv 0]
+set results_file  [lindex $argv 1]
+set homedir  [lindex $argv 2]
+set ksh_pid [spawn /bin/bash -l ]
+
+set prompt "(%|>|#|\\$) $"          ;# default prompt
+
+catch {set prompt $env(EXPECT_PROMPT)}
+
+expect -re $prompt
+
+send "export homedir=$homedir \r"
+
+expect -re $prompt
+
+send "cd $homedir \r"
+
+expect -re $prompt
+
+
+spawn qsub -I -l select=1:ncpus=36:mpiprocs=36 -l walltime=4:00:00 -q regular -A P93300606
+set timeout 54000
+expect {
+        timeout
+                {
+                        puts "detected queue timeout"
+                        set file [ open $results_file w]
+                        puts $file "error"
+                        send "kill -9 $bash_pid\r"
+                }
+        "ready" 
+                {
+                        send "cd $homedir \r"
+      
+                        expect -re $prompt
+                }
+    
+        }
+            
+    
+ 
+# 4:15  hours
+set timeout 15300
+send "./local_script  $rfile  \r"
+
+expect {
+                "end of test script"
+                {
+                        puts "detected end of test script"
+                        set file [ open $results_file w]
+                        puts $file "normal"
+                        send "kill -9 $ksh_pid\r"
+                }
+                timeout
+                {
+                        puts "detected timeout"
+                        set file [ open $results_file w]
+                        puts $file "error"
+                        send "kill -9 $ksh_pid\r"
+                }
+	}
+THE-END-OF-YS
+
+expect run_ys /gpfs/u/home/svasquez/esmf_test/cronjobs/daily/external_demos_cheyenne/intel/$testFile  /gpfs/u/home/svasquez/esmf_test/cronjobs/daily/external_demos_cheyenne/intel/test_results /gpfs/u/home/svasquez/esmf_test/cronjobs/daily/external_demos_cheyenne/intel
+
+export homedir=/gpfs/u/home/svasquez/esmf_test/cronjobs/daily/external_demos_cheyenne/intel
+export RFile=$homedir/$testFile
+
+echo "Continue with sending mail"
+
+
+
+
+############################# Get email address and title ####################
+datestamp=`date +%y%m`
+logfile="${datestamp}_test"
+echo " The logfile is $logfile"
+here=`pwd`
+
+
+
+if grep -i "LOG_DIR1" $RFile > tmp
+then
+        read location log_dir log_tmp < tmp
+        cd $log_dir
+        if test ! -d $logfile
+        then
+                # Make new directory if doesn't exist
+                mkdir $logfile
+        fi
+        cd $here
+        echo "LOGDIR1 is $log_dir/$logfile"
+        export LOGDIR=$log_dir/$logfile
+
+fi
+
+if grep -i "LOGDIR2" $RFile > tmp
+then
+        read location log_dir2 < tmp
+        cd $log_dir2
+        if test ! -d $logfile
+        then
+                mkdir $logfile
+        fi
+        cd $here
+
+        echo "LOGDIR2 is $log_dir2/$logfile"
+        export LOGDIR2=$log_dir2/$logfile
+
+fi
+
+
+if grep -i "email_to" $RFile > tmp
+then
+        read location emailuser < tmp
+        echo "Email user is $emailuser"
+fi
+
+if grep -i "email_title" $RFile > tmp
+then
+        read location email_title < tmp
+        echo "Email title is $email_title"
+fi
+
+
+if grep -i "email_title" $RFile > tmp
+then
+        read location email_title < tmp
+        echo "Email title is $email_title"
+fi
+
+
+rm -f tmp
+
+######### Start the mail message file ################################
+
+
+echo "" > $LOGDIR/mailHeader
+echo "" >> $LOGDIR/header
+echo "Script end: `date`" >> $LOGDIR/header
+
+
+
+echo "" >> $LOGDIR/mailMessage
+echo "" >> $LOGDIR/mailMessage
+echo "" >> $LOGDIR/mailHeader
+echo "" >> $LOGDIR/mailHeader
+echo "" >> $LOGDIR/header
+echo "" >> $LOGDIR/header
+echo "_______________________ESMF TRUNK EXTERNAL DEMOS AND BFB TEST SUMMARY_____________________________" >> $LOGDIR/header
+
+echo "" >> $LOGDIR/header
+
+
+echo "               BUILD       INSTALL    OS.COMPILER.COMM.ABI       external demos     bfb compare">> $LOGDIR/header
+
+echo "_________________________________________________________________________________________________" >> $LOGDIR/header
+
+echo "               PASS/FAIL   PASS/FAIL                              PASS/FAIL/SKIP"    PASS/FAIL/NOTFOUND  >> $LOGDIR/header
+
+echo "________________________________________________________________________________________________" >> $LOGDIR/header
+
+
+
+
+
+
+
+
+############################# Put the mail message together and mail it ####################
+
+
+
+# Put all the files together
+# First fix the summmary file
+
+
+if grep "normal" $homedir/test_results
+then
+        echo ""
+else
+        echo "WARNING: The test experienced an abnormal termination during execution," >> $LOGDIR/mailHeader
+        echo "         therefore the test results may be incomplete/invalid." >> $LOGDIR/mailHeader
+        echo "" >> $LOGDIR/mailHeader
+
+        if (grep "red" $LOGDIR/Test_Status)        
+        then
+                echo ""
+        else
+                echo "Test_results:orange" > $LOGDIR/Test_Status
+        fi
+
+
+
+fi
+
+#awk '{if ($1 ~/PASS/) printf ("%-16s%-12s%-8s%-25s%13s\n",  $3, $1, $2, $4, $5, $6, $7) ;else  printf ("%-10s%-20s%-10s\n", $2, $1,  $3 )}'  $LOGDIR/summary > $LOGDIR/newsummary
+awk '{if ($1 ~/PASS/ && $2 ~/PASS/ ) printf ("%-16s%-12s%-8s%-25s%10s%15s%15s\n",  $3, $1, $2, $4, $5, $6, $7) ;else  if ($1 ~/FAIL/) printf ("%-10s%-20s%-10s\n", $2, $1,  $3 );else printf ("%-16s%-12s%-8s\n", $3, $1, $2 )}'  $LOGDIR/summary > $LOGDIR/newsummary
+
+cat $LOGDIR/mailHeader $LOGDIR/header $LOGDIR/newsummary > $LOGDIR/sum
+cat $LOGDIR/sum $LOGDIR/mailMessage > $LOGDIR/newMailMessage
+echo "" >>  $LOGDIR/newMailMessage
+echo " The tarballs of the tests and examples directories can be found at:" >>  $LOGDIR/newMailMessage
+echo " $LOGDIR." >>  $LOGDIR/newMailMessage
+echo " These tarballs contain the *Log and *stdout files only, not the executables." >>  $LOGDIR/newMailMessage
+echo " This directory also contains failed build output files with the naming convention of " >>  $LOGDIR/newMailMessage
+echo " build_ESMF_BOPT_(day)(platform)ESMF_OS ESMF_ABI ESMF_COMPILER ESMF_COMM." >>  $LOGDIR/newMailMessage
+echo " For example, if the build fails on longs on the 19th of the month with ESMF_BOPT=g, the file " >>  $LOGDIR/newMailMessage
+echo " would be called 'build_g_19longslinux32pgimpiuni'." >>  $LOGDIR/newMailMessage
+
+#mail -s $email_title esmf-test.esrl@noaa.gov <  $LOGDIR/newMailMessage
+mail -s $email_title  esmf_test@list.woc.noaa.gov  <  $LOGDIR/newMailMessage
+mail -s $email_title  esmf_test@cgd.ucar.edu  <  $LOGDIR/newMailMessage
+cat $LOGDIR/Test_Status >> $LOGDIR/newMailMessage
+cat $LOGDIR/Day_Started >> $LOGDIR/newMailMessage
+echo "Test_Failures:`cat $LOGDIR/Test_Failures`" >> $LOGDIR/newMailMessage
+mail -s ESMF_BFB_Cheyenne_intel silverio.vasquez@noaa.gov <  $LOGDIR/newMailMessage
+#mail -s ESMF_BFB_Cheyenne_intel esmf_test@noaa.gov < $LOGDIR/newMailMessage
+mail -s ESMF_BFB_Cheyenne_intel esmftest@cgd.ucar.edu < $LOGDIR/newMailMessage
+cat $LOGDIR/header $LOGDIR/newsummary $LOGDIR/mailMessage >> $LOGDIR/ESMFdailyLog
+cat $LOGDIR/header $LOGDIR/newsummary $LOGDIR/mailMessage >> $LOGDIR2/ESMFdailyLog
+if [[ $LOGDIR != $LOGDIR2 ]]
+then
+        scp $LOGDIR/build* $LOGDIR2/.
+        rm -rf $LOGDIR/build*
+fi
+rm -f $LOGDIR/mailMessage
+rm -f $LOGDIR/newMailMessage
+rm -f $LOGDIR/header
+rm -f $LOGDIR/mailHeader
+rm -f $LOGDIR/newsummary
+rm -f $LOGDIR/sum
+rm -f $LOGDIR/summary
+rm -f $homedir/test_results
+exit
+

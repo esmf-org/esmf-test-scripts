@@ -1,0 +1,8 @@
+#!/usr/bin/expect --
+
+set timeout 3600
+
+spawn git clone git@github.com:esmf-org/esmf-extended-tests.git
+
+expect  eof
+

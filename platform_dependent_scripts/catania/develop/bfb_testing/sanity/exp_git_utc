@@ -1,0 +1,13 @@
+#!/usr/bin/expect --
+
+set tag [lindex $argv 0]
+send_user " tag is $tag"
+
+set timeout 900
+
+#spawn git clone git://esmf.git.sourceforge.net/gitroot/esmf/use_test_cases 
+spawn git clone git://git.code.sf.net/p/esmf/use_test_cases use_test_cases
+
+expect  eof
+
+

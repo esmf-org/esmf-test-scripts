@@ -1,0 +1,96 @@
+#!/bin/bash
+rfile=$1
+subjest=$2
+
+############################### Parse the compute file and checkout external demos where indicated ##
+
+number=1
+while grep "^$number " $rfile >tmp
+do
+        read num location directory hostname abi site comp comm u_tests u_tests_type sys_test_type threaded mpmd ck_out_opt tag < tmp
+        echo "$location $directory $hostname $abi $site $comp $comm $u_tests $u_tests_type $sys_test_type $threaded $mpmd $ck_out_opt $tag"
+	if [[ $ck_out_opt = "co" ]]
+	then
+		umask 002
+		# Get ESMF checkout source
+                read chkout_src <  ~/bin/esmf_chkout_src
+                #if read fails default:git://git.code.sf.net/p/esmf/esmf
+                if [ "$?" != "0" ]
+                then
+                        export chkout_src="https://github.com/esmf-org/esmf.git"
+                fi
+                echo "checking out esmf-extended-tests from $chkout_src"
+                cd $directory
+                pwd
+                rm -rf esmf-extended-tests
+                # Execute the script to checkout the external_demos
+		 if [[ $tag == *branch ]]
+                then
+                        expect $homedir/bin/exp_git_external_demos $chkout_src branch
+                else
+                        expect $homedir/bin/exp_git_external_demos $chkout_src trunk
+                fi
+                if test ! -d  external_demos
+                then
+                        echo "Sleeping 900"
+                        sleep 900
+                        # Try again
+                 	if [[ $tag == *branch ]]
+                	then
+                        	expect $homedir/bin/exp_git_external_demos $chkout_src branch
+                	else
+                        	expect $homedir/bin/exp_git_external_demos $chkout_src trunk
+                	fi
+
+                        if test ! -d  external_demos
+                        then
+                                echo "Unable to checkout external_demos from SourceForge." > mailMessage
+                                echo "No tests were run" >> mailMessage
+                                mail -s  $email_title $emailuser <  mailMessage
+                                mail -s  $email_title esmf_test@cgd.ucar.edu <  mailMessage
+                                rm -rf mailMessage
+                                rm -f $homedir/.outFile
+                                Set test status as blue, checkout failed.
+                                echo "Test_results:blue" > $LOGDIR/Test_Status
+                                echo "Set Test Status to blue."
+                                cat $LOGDIR/Test_Status >> $LOGDIR/newMailMessage
+                                mail -s $subjest himanshu@ucar.edu <  $LOGDIR/newMailMessage
+                                #mail -s $subject esmftest@cgd.ucar.edu < $LOGDIR/newMailMessage
+                         else
+                                if [[ $tag != "" ]]
+                                then
+                                        cd esmf-extended-tests
+                 			if [[ $tag == *branch ]]
+                			then
+                        			expect $homedir/bin/exp_git_branch $tag
+                			else
+                        			expect $homedir/bin/exp_git_tag $tag
+                			fi
+                                        cd ..
+                                fi
+                        fi
+                else
+                        if [[ $tag != "" ]]
+                        then
+                                cd esmf-extended-tests
+		                if [[ $tag == *branch ]]
+                		then
+                        		expect $homedir/bin/exp_git_branch $tag
+                		else
+                        		expect $homedir/bin/exp_git_tag $tag
+
+                		fi
+
+                                cd ..
+                        fi
+
+                fi
+
+                cd $homedir
+        fi
+        number=`expr $number + 1`
+        echo "number = $number"
+done
+
+
+

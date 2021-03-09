@@ -1,0 +1,6 @@
+TFORM	DIRECTORY			   		     HOSTNAME  		PREC SITE  COMPILER COMM UTEST_TYPE UTEST_RUN SYSTEST_RUN SYS_TEST_TYPE CO TAG
+1 cat  /project/esmf/himanshu/esmf_test/cronjobs/release_8.1.0/bfb_testing/sanity cat 64 default int mpich EX MULTI MULTI THREADED NON_MPMD
+
+LOG_DIR1   /project/esmf/himanshu/esmf_test/cronjobs/release_8.1.0/bfb_testing/sanity/esmf_logs ERROR
+email_title Release_8.1.0_BFB_Combination_Catania_Test
+email_to  himanshu@ucar.edu

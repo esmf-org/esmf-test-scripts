@@ -1,0 +1,250 @@
+spawn /bin/bash -l
+[?1034hcgdm-catania:sanity himanshu$ export homedir=/project/esmf/himanshu/esmf_test/cronjobs/release_8.1.0/bfb_testin g/sanity 
+cgdm-catania:sanity himanshu$ cd /project/esmf/himanshu/esmf_test/cronjobs/release_8.1.0/bfb_testing/sanity 
+cgdm-catania:sanity himanshu$ cd /project/esmf/himanshu/esmf_test/cronjobs/release_8.1.0/bfb_testing/sanity 
+cgdm-catania:sanity himanshu$ rm -rf esmf 
+cgdm-catania:sanity himanshu$ git clone -b release/8.1.0 https://github.com/esmf-org/esmf.git 
+Cloning into 'esmf'...
+remote: Enumerating objects: 254, done.[K
+remote: Counting objects:   0% (1/254)[Kremote: Counting objects:   1% (3/254)[Kremote: Counting objects:   2% (6/254)[Kremote: Counting objects:   3% (8/254)[Kremote: Counting objects:   4% (11/254)[Kremote: Counting objects:   5% (13/254)[Kremote: Counting objects:   6% (16/254)[Kremote: Counting objects:   7% (18/254)[Kremote: Counting objects:   8% (21/254)[Kremote: Counting objects:   9% (23/254)[Kremote: Counting objects:  10% (26/254)[Kremote: Counting objects:  11% (28/254)[Kremote: Counting objects:  12% (31/254)[Kremote: Counting objects:  13% (34/254)[Kremote: Counting objects:  14% (36/254)[Kremote: Counting objects:  15% (39/254)[Kremote: Counting objects:  16% (41/254)[Kremote: Counting objects:  17% (44/254)[Kremote: Counting objects:  18% (46/254)[Kremote: Counting objects:  19% (49/254)[Kremote: Counting objects:  20% (51/254)[Kremote: Counting objects:  21% (54/254)[Kremote: Counting objects:  22% (56/254)[Kremote: Counting objects:  23% (59/254)[Kremote: Counting objects:  24% (61/254)[Kremote: Counting objects:  25% (64/254)[Kremote: Counting objects:  26% (67/254)[Kremote: Counting objects:  27% (69/254)[Kremote: Counting objects:  28% (72/254)[Kremote: Counting objects:  29% (74/254)[Kremote: Counting objects:  30% (77/254)[Kremote: Counting objects:  31% (79/254)[Kremote: Counting objects:  32% (82/254)[Kremote: Counting objects:  33% (84/254)[Kremote: Counting objects:  34% (87/254)[Kremote: Counting objects:  35% (89/254)[Kremote: Counting objects:  36% (92/254)[Kremote: Counting objects:  37% (94/254)[Kremote: Counting objects:  38% (97/254)[Kremote: Counting objects:  39% (100/254)[Kremote: Counting objects:  40% (102/254)[Kremote: Counting objects:  41% (105/254)[Kremote: Counting objects:  42% (107/254)[Kremote: Counting objects:  43% (110/254)[Kremote: Counting objects:  44% (112/254)[Kremote: Counting objects:  45% (115/254)[Kremote: Counting objects:  46% (117/254)[Kremote: Counting objects:  47% (120/254)[Kremote: Counting objects:  48% (122/254)[Kremote: Counting objects:  49% (125/254)[Kremote: Counting objects:  50% (127/254)[Kremote: Counting objects:  51% (130/254)[Kremote: Counting objects:  52% (133/254)[Kremote: Counting objects:  53% (135/254)[Kremote: Counting objects:  54% (138/254)[Kremote: Counting objects:  55% (140/254)[Kremote: Counting objects:  56% (143/254)[Kremote: Counting objects:  57% (145/254)[Kremote: Counting objects:  58% (148/254)[Kremote: Counting objects:  59% (150/254)[Kremote: Counting objects:  60% (153/254)[Kremote: Counting objects:  61% (155/254)[Kremote: Counting objects:  62% (158/254)[Kremote: Counting objects:  63% (161/254)[Kremote: Counting objects:  64% (163/254)[Kremote: Counting objects:  65% (166/254)[Kremote: Counting objects:  66% (168/254)[Kremote: Counting objects:  67% (171/254)[Kremote: Counting objects:  68% (173/254)[Kremote: Counting objects:  69% (176/254)[Kremote: Counting objects:  70% (178/254)[Kremote: Counting objects:  71% (181/254)[Kremote: Counting objects:  72% (183/254)[Kremote: Counting objects:  73% (186/254)[Kremote: Counting objects:  74% (188/254)[Kremote: Counting objects:  75% (191/254)[Kremote: Counting objects:  76% (194/254)[Kremote: Counting objects:  77% (196/254)[Kremote: Counting objects:  78% (199/254)[Kremote: Counting objects:  79% (201/254)[Kremote: Counting objects:  80% (204/254)[Kremote: Counting objects:  81% (206/254)[Kremote: Counting objects:  82% (209/254)[Kremote: Counting objects:  83% (211/254)[Kremote: Counting objects:  84% (214/254)[Kremote: Counting objects:  85% (216/254)[Kremote: Counting objects:  86% (219/254)[Kremote: Counting objects:  87% (221/254)[Kremote: Counting objects:  88% (224/254)[Kremote: Counting objects:  89% (227/254)[Kremote: Counting objects:  90% (229/254)[Kremote: Counting objects:  91% (232/254)[Kremote: Counting objects:  92% (234/254)[Kremote: Counting objects:  93% (237/254)[Kremote: Counting objects:  94% (239/254)[Kremote: Counting objects:  95% (242/254)[Kremote: Counting objects:  96% (244/254)[Kremote: Counting objects:  97% (247/254)[Kremote: Counting objects:  98% (249/254)[Kremote: Counting objects:  99% (252/254)[Kremote: Counting objects: 100% (254/254)[Kremote: Counting objects: 100% (254/254), done.[K
+remote: Compressing objects:   0% (1/208)[Kremote: Compressing objects:   1% (3/208)[Kremote: Compressing objects:   2% (5/208)[Kremote: Compressing objects:   3% (7/208)[Kremote: Compressing objects:   4% (9/208)[Kremote: Compressing objects:   5% (11/208)[Kremote: Compressing objects:   6% (13/208)[Kremote: Compressing objects:   7% (15/208)[Kremote: Compressing objects:   8% (17/208)[Kremote: Compressing objects:   9% (19/208)[Kremote: Compressing objects:  10% (21/208)[Kremote: Compressing objects:  11% (23/208)[Kremote: Compressing objects:  12% (25/208)[Kremote: Compressing objects:  13% (28/208)[Kremote: Compressing objects:  14% (30/208)[Kremote: Compressing objects:  15% (32/208)[Kremote: Compressing objects:  16% (34/208)[Kremote: Compressing objects:  17% (36/208)[Kremote: Compressing objects:  18% (38/208)[Kremote: Compressing objects:  19% (40/208)[Kremote: Compressing objects:  20% (42/208)[Kremote: Compressing objects:  21% (44/208)[Kremote: Compressing objects:  22% (46/208)[Kremote: Compressing objects:  23% (48/208)[Kremote: Compressing objects:  24% (50/208)[Kremote: Compressing objects:  25% (52/208)[Kremote: Compressing objects:  26% (55/208)[Kremote: Compressing objects:  27% (57/208)[Kremote: Compressing objects:  28% (59/208)[Kremote: Compressing objects:  29% (61/208)[Kremote: Compressing objects:  30% (63/208)[Kremote: Compressing objects:  31% (65/208)[Kremote: Compressing objects:  32% (67/208)[Kremote: Compressing objects:  33% (69/208)[Kremote: Compressing objects:  34% (71/208)[Kremote: Compressing objects:  35% (73/208)[Kremote: Compressing objects:  36% (75/208)[Kremote: Compressing objects:  37% (77/208)[Kremote: Compressing objects:  38% (80/208)[Kremote: Compressing objects:  39% (82/208)[Kremote: Compressing objects:  40% (84/208)[Kremote: Compressing objects:  41% (86/208)[Kremote: Compressing objects:  42% (88/208)[Kremote: Compressing objects:  43% (90/208)[Kremote: Compressing objects:  44% (92/208)[Kremote: Compressing objects:  45% (94/208)[Kremote: Compressing objects:  46% (96/208)[Kremote: Compressing objects:  47% (98/208)[Kremote: Compressing objects:  48% (100/208)[Kremote: Compressing objects:  49% (102/208)[Kremote: Compressing objects:  50% (104/208)[Kremote: Compressing objects:  51% (107/208)[Kremote: Compressing objects:  52% (109/208)[Kremote: Compressing objects:  53% (111/208)[Kremote: Compressing objects:  54% (113/208)[Kremote: Compressing objects:  55% (115/208)[Kremote: Compressing objects:  56% (117/208)[Kremote: Compressing objects:  57% (119/208)[Kremote: Compressing objects:  58% (121/208)[Kremote: Compressing objects:  59% (123/208)[Kremote: Compressing objects:  60% (125/208)[Kremote: Compressing objects:  61% (127/208)[Kremote: Compressing objects:  62% (129/208)[Kremote: Compressing objects:  63% (132/208)[Kremote: Compressing objects:  64% (134/208)[Kremote: Compressing objects:  65% (136/208)[Kremote: Compressing objects:  66% (138/208)[Kremote: Compressing objects:  67% (140/208)[Kremote: Compressing objects:  68% (142/208)[Kremote: Compressing objects:  69% (144/208)[Kremote: Compressing objects:  70% (146/208)[Kremote: Compressing objects:  71% (148/208)[Kremote: Compressing objects:  72% (150/208)[Kremote: Compressing objects:  73% (152/208)[Kremote: Compressing objects:  74% (154/208)[Kremote: Compressing objects:  75% (156/208)[Kremote: Compressing objects:  76% (159/208)[Kremote: Compressing objects:  77% (161/208)[Kremote: Compressing objects:  78% (163/208)[Kremote: Compressing objects:  79% (165/208)[Kremote: Compressing objects:  80% (167/208)[Kremote: Compressing objects:  81% (169/208)[Kremote: Compressing objects:  82% (171/208)[Kremote: Compressing objects:  83% (173/208)[Kremote: Compressing objects:  84% (175/208)[Kremote: Compressing objects:  85% (177/208)[Kremote: Compressing objects:  86% (179/208)[Kremote: Compressing objects:  87% (181/208)[Kremote: Compressing objects:  88% (184/208)[Kremote: Compressing objects:  89% (186/208)[Kremote: Compressing objects:  90% (188/208)[Kremote: Compressing objects:  91% (190/208)[Kremote: Compressing objects:  92% (192/208)[Kremote: Compressing objects:  93% (194/208)[Kremote: Compressing objects:  94% (196/208)[Kremote: Compressing objects:  95% (198/208)[Kremote: Compressing objects:  96% (200/208)[Kremote: Compressing objects:  97% (202/208)[Kremote: Compressing objects:  98% (204/208)[Kremote: Compressing objects:  99% (206/208)[Kremote: Compressing objects: 100% (208/208)[Kremote: Compressing objects: 100% (208/208), done.[K
+Receiving objects:   0% (1/293266)   Receiving objects:   1% (2933/293266)   Receiving objects:   2% (5866/293266)   Receiving objects:   3% (8798/293266)   Receiving objects:   4% (11731/293266)   Receiving objects:   5% (14664/293266)   Receiving objects:   6% (17596/293266)   Receiving objects:   7% (20529/293266)   Receiving objects:   8% (23462/293266)   Receiving objects:   9% (26394/293266)   Receiving objects:  10% (29327/293266)   Receiving objects:  11% (32260/293266)   Receiving objects:  12% (35192/293266), 9.85 MiB | 19.69 MiB/s   Receiving objects:  13% (38125/293266), 9.85 MiB | 19.69 MiB/s   Receiving objects:  14% (41058/293266), 9.85 MiB | 19.69 MiB/s   Receiving objects:  15% (43990/293266), 9.85 MiB | 19.69 MiB/s   Receiving objects:  16% (46923/293266), 9.85 MiB | 19.69 MiB/s   Receiving objects:  17% (49856/293266), 33.07 MiB | 33.07 MiB/s   Receiving objects:  17% (50293/293266), 33.07 MiB | 33.07 MiB/s   Receiving objects:  18% (52788/293266), 33.07 MiB | 33.07 MiB/s   Receiving objects:  19% (55721/293266), 33.07 MiB | 33.07 MiB/s   Receiving objects:  20% (58654/293266), 33.07 MiB | 33.07 MiB/s   Receiving objects:  21% (61586/293266), 33.07 MiB | 33.07 MiB/s   Receiving objects:  22% (64519/293266), 33.07 MiB | 33.07 MiB/s   Receiving objects:  23% (67452/293266), 33.07 MiB | 33.07 MiB/s   Receiving objects:  24% (70384/293266), 33.07 MiB | 33.07 MiB/s   Receiving objects:  25% (73317/293266), 33.07 MiB | 33.07 MiB/s   Receiving objects:  26% (76250/293266), 33.07 MiB | 33.07 MiB/s   Receiving objects:  27% (79182/293266), 33.07 MiB | 33.07 MiB/s   Receiving objects:  28% (82115/293266), 33.07 MiB | 33.07 MiB/s   Receiving objects:  29% (85048/293266), 33.07 MiB | 33.07 MiB/s   Receiving objects:  30% (87980/293266), 33.07 MiB | 33.07 MiB/s   Receiving objects:  31% (90913/293266), 33.07 MiB | 33.07 MiB/s   Receiving objects:  32% (93846/293266), 33.07 MiB | 33.07 MiB/s   Receiving objects:  33% (96778/293266), 33.07 MiB | 33.07 MiB/s   Receiving objects:  34% (99711/293266), 33.07 MiB | 33.07 MiB/s   Receiving objects:  35% (102644/293266), 33.07 MiB | 33.07 MiB/s   Receiving objects:  36% (105576/293266), 33.07 MiB | 33.07 MiB/s   Receiving objects:  37% (108509/293266), 33.07 MiB | 33.07 MiB/s   Receiving objects:  38% (111442/293266), 33.07 MiB | 33.07 MiB/s   Receiving objects:  39% (114374/293266), 33.07 MiB | 33.07 MiB/s   Receiving objects:  40% (117307/293266), 33.07 MiB | 33.07 MiB/s   Receiving objects:  41% (120240/293266), 33.07 MiB | 33.07 MiB/s   Receiving objects:  42% (123172/293266), 33.07 MiB | 33.07 MiB/s   Receiving objects:  43% (126105/293266), 33.07 MiB | 33.07 MiB/s   Receiving objects:  44% (129038/293266), 33.07 MiB | 33.07 MiB/s   Receiving objects:  45% (131970/293266), 33.07 MiB | 33.07 MiB/s   Receiving objects:  46% (134903/293266), 33.07 MiB | 33.07 MiB/s   Receiving objects:  47% (137836/293266), 33.07 MiB | 33.07 MiB/s   Receiving objects:  48% (140768/293266), 33.07 MiB | 33.07 MiB/s   Receiving objects:  49% (143701/293266), 33.07 MiB | 33.07 MiB/s   Receiving objects:  50% (146633/293266), 33.07 MiB | 33.07 MiB/s   Receiving objects:  51% (149566/293266), 33.07 MiB | 33.07 MiB/s   Receiving objects:  52% (152499/293266), 33.07 MiB | 33.07 MiB/s   Receiving objects:  53% (155431/293266), 33.07 MiB | 33.07 MiB/s   Receiving objects:  54% (158364/293266), 33.07 MiB | 33.07 MiB/s   Receiving objects:  55% (161297/293266), 33.07 MiB | 33.07 MiB/s   Receiving objects:  56% (164229/293266), 33.07 MiB | 33.07 MiB/s   Receiving objects:  57% (167162/293266), 33.07 MiB | 33.07 MiB/s   Receiving objects:  58% (170095/293266), 33.07 MiB | 33.07 MiB/s   Receiving objects:  59% (173027/293266), 33.07 MiB | 33.07 MiB/s   Receiving objects:  60% (175960/293266), 33.07 MiB | 33.07 MiB/s   Receiving objects:  61% (178893/293266), 57.70 MiB | 38.47 MiB/s   Receiving objects:  62% (181825/293266), 57.70 MiB | 38.47 MiB/s   Receiving objects:  63% (184758/293266), 57.70 MiB | 38.47 MiB/s   Receiving objects:  64% (187691/293266), 57.70 MiB | 38.47 MiB/s   Receiving objects:  65% (190623/293266), 57.70 MiB | 38.47 MiB/s   Receiving objects:  66% (193556/293266), 57.70 MiB | 38.47 MiB/s   Receiving objects:  67% (196489/293266), 57.70 MiB | 38.47 MiB/s   Receiving objects:  68% (199421/293266), 57.70 MiB | 38.47 MiB/s   Receiving objects:  69% (202354/293266), 57.70 MiB | 38.47 MiB/s   Receiving objects:  70% (205287/293266), 57.70 MiB | 38.47 MiB/s   Receiving objects:  71% (208219/293266), 57.70 MiB | 38.47 MiB/s   Receiving objects:  72% (211152/293266), 57.70 MiB | 38.47 MiB/s   Receiving objects:  73% (214085/293266), 57.70 MiB | 38.47 MiB/s   Receiving objects:  74% (217017/293266), 57.70 MiB | 38.47 MiB/s   Receiving objects:  75% (219950/293266), 57.70 MiB | 38.47 MiB/s   Receiving objects:  76% (222883/293266), 57.70 MiB | 38.47 MiB/s   Receiving objects:  76% (223440/293266), 83.47 MiB | 41.73 MiB/s   Receiving objects:  77% (225815/293266), 109.54 MiB | 43.83 MiB/s   Receiving objects:  78% (228748/293266), 109.54 MiB | 43.83 MiB/s   Receiving objects:  79% (231681/293266), 109.54 MiB | 43.83 MiB/s   Receiving objects:  80% (234613/293266), 109.54 MiB | 43.83 MiB/s   Receiving objects:  81% (237546/293266), 109.54 MiB | 43.83 MiB/s   Receiving objects:  82% (240479/293266), 109.54 MiB | 43.83 MiB/s   Receiving objects:  83% (243411/293266), 109.54 MiB | 43.83 MiB/s   Receiving objects:  84% (246344/293266), 109.54 MiB | 43.83 MiB/s   Receiving objects:  85% (249277/293266), 109.54 MiB | 43.83 MiB/s   Receiving objects:  86% (252209/293266), 109.54 MiB | 43.83 MiB/s   Receiving objects:  87% (255142/293266), 109.54 MiB | 43.83 MiB/s   Receiving objects:  88% (258075/293266), 109.54 MiB | 43.83 MiB/s   Receiving objects:  89% (261007/293266), 109.54 MiB | 43.83 MiB/s   Receiving objects:  90% (263940/293266), 109.54 MiB | 43.83 MiB/s   Receiving objects:  91% (266873/293266), 109.54 MiB | 43.83 MiB/s   Receiving objects:  92% (269805/293266), 109.54 MiB | 43.83 MiB/s   Receiving objects:  93% (272738/293266), 109.54 MiB | 43.83 MiB/s   Receiving objects:  94% (275671/293266), 109.54 MiB | 43.83 MiB/s   Receiving objects:  95% (278603/293266), 109.54 MiB | 43.83 MiB/s   Receiving objects:  96% (281536/293266), 109.54 MiB | 43.83 MiB/s   Receiving objects:  97% (284469/293266), 109.54 MiB | 43.83 MiB/s   Receiving objects:  98% (287401/293266), 109.54 MiB | 43.83 MiB/s   Receiving objects:  99% (290334/293266), 109.54 MiB | 43.83 MiB/s   remote: Total 293266 (delta 123), reused 80 (delta 46), pack-reused 293012[K
+Receiving objects: 100% (293266/293266), 109.54 MiB | 43.83 MiB/s   Receiving objects: 100% (293266/293266), 131.33 MiB | 44.57 MiB/s, done.
+Resolving deltas:   0% (0/229065)   Resolving deltas:   1% (2628/229065)   Resolving deltas:   2% (4592/229065)   Resolving deltas:   3% (7056/229065)   Resolving deltas:   4% (9240/229065)   Resolving deltas:   5% (11461/229065)   Resolving deltas:   6% (14278/229065)   Resolving deltas:   7% (16061/229065)   Resolving deltas:   8% (18371/229065)   Resolving deltas:   9% (20649/229065)   Resolving deltas:  10% (22970/229065)   Resolving deltas:  11% (25224/229065)   Resolving deltas:  12% (27547/229065)   Resolving deltas:  13% (29821/229065)   Resolving deltas:  14% (32099/229065)   Resolving deltas:  15% (34370/229065)   Resolving deltas:  16% (36656/229065)   Resolving deltas:  17% (38944/229065)   Resolving deltas:  18% (41285/229065)   Resolving deltas:  19% (43524/229065)   Resolving deltas:  19% (45601/229065)   Resolving deltas:  20% (45883/229065)   Resolving deltas:  21% (48142/229065)   Resolving deltas:  22% (50428/229065)   Resolving deltas:  23% (52698/229065)   Resolving deltas:  24% (55310/229065)   Resolving deltas:  25% (57318/229065)   Resolving deltas:  26% (59557/229065)   Resolving deltas:  27% (62801/229065)   Resolving deltas:  28% (64151/229065)   Resolving deltas:  29% (66442/229065)   Resolving deltas:  30% (68722/229065)   Resolving deltas:  31% (71018/229065)   Resolving deltas:  32% (73306/229065)   Resolving deltas:  33% (75664/229065)   Resolving deltas:  34% (77889/229065)   Resolving deltas:  35% (80187/229065)   Resolving deltas:  36% (82469/229065)   Resolving deltas:  37% (84997/229065)   Resolving deltas:  38% (87049/229065)   Resolving deltas:  39% (89352/229065)   Resolving deltas:  40% (91669/229065)   Resolving deltas:  41% (93917/229065)   Resolving deltas:  42% (96216/229065)   Resolving deltas:  43% (98564/229065)   Resolving deltas:  44% (100841/229065)   Resolving deltas:  45% (103086/229065)   Resolving deltas:  46% (105420/229065)   Resolving deltas:  47% (107661/229065)   Resolving deltas:  48% (109954/229065)   Resolving deltas:  49% (112251/229065)   Resolving deltas:  50% (114663/229065)   Resolving deltas:  51% (116837/229065)   Resolving deltas:  52% (119181/229065)   Resolving deltas:  53% (121410/229065)   Resolving deltas:  54% (123737/229065)   Resolving deltas:  55% (126086/229065)   Resolving deltas:  55% (126355/229065)   Resolving deltas:  56% (128279/229065)   Resolving deltas:  57% (130568/229065)   Resolving deltas:  58% (132953/229065)   Resolving deltas:  59% (135149/229065)   Resolving deltas:  60% (137452/229065)   Resolving deltas:  61% (139730/229065)   Resolving deltas:  62% (142061/229065)   Resolving deltas:  63% (144315/229065)   Resolving deltas:  64% (146615/229065)   Resolving deltas:  65% (149033/229065)   Resolving deltas:  66% (151206/229065)   Resolving deltas:  67% (153532/229065)   Resolving deltas:  68% (155772/229065)   Resolving deltas:  69% (158110/229065)   Resolving deltas:  70% (160606/229065)   Resolving deltas:  71% (162638/229065)   Resolving deltas:  72% (164932/229065)   Resolving deltas:  73% (167220/229065)   Resolving deltas:  74% (169511/229065)   Resolving deltas:  75% (171814/229065)   Resolving deltas:  76% (174095/229065)   Resolving deltas:  77% (176388/229065)   Resolving deltas:  78% (178674/229065)   Resolving deltas:  79% (180967/229065)   Resolving deltas:  80% (183252/229065)   Resolving deltas:  81% (185565/229065)   Resolving deltas:  82% (188048/229065)   Resolving deltas:  83% (190136/229065)   Resolving deltas:  84% (192427/229065)   Resolving deltas:  85% (194707/229065)   Resolving deltas:  86% (197003/229065)   Resolving deltas:  87% (199303/229065)   Resolving deltas:  88% (201630/229065)   Resolving deltas:  89% (203915/229065)   Resolving deltas:  90% (206160/229065)   Resolving deltas:  91% (208495/229065)   Resolving deltas:  92% (210740/229065)   Resolving deltas:  93% (213054/229065)   Resolving deltas:  94% (215332/229065)   Resolving deltas:  95% (217638/229065)   Resolving deltas:  96% (219905/229065)   Resolving deltas:  97% (222235/229065)   Resolving deltas:  98% (224500/229065)   Resolving deltas:  99% (226775/229065)   Resolving deltas: 100% (229065/229065)   Resolving deltas: 100% (229065/229065), done.
+Checking out files:  82% (3250/3934)   Checking out files:  83% (3266/3934)   Checking out files:  84% (3305/3934)   Checking out files:  85% (3344/3934)   Checking out files:  85% (3369/3934)   Checking out files:  86% (3384/3934)   Checking out files:  87% (3423/3934)   Checking out files:  88% (3462/3934)   Checking out files:  89% (3502/3934)   Checking out files:  90% (3541/3934)   Checking out files:  91% (3580/3934)   Checking out files:  92% (3620/3934)   Checking out files:  93% (3659/3934)   Checking out files:  94% (3698/3934)   Checking out files:  95% (3738/3934)   Checking out files:  96% (3777/3934)   Checking out files:  97% (3816/3934)   Checking out files:  98% (3856/3934)   Checking out files:  99% (3895/3934)   Checking out files: 100% (3934/3934)   Checking out files: 100% (3934/3934), done.
+cgdm-catania:sanity himanshu$  cd /project/esmf/himanshu/esmf_test/cronjobs/release_8.1.0/bfb_testing/sanity 
+cgdm-catania:sanity himanshu$  rm -rf esmf-extended-tests 
+cgdm-catania:sanity himanshu$ git clone https://github.com/esmf-org/esmf-extended-tests.git  
+Cloning into 'esmf-extended-tests'...
+remote: Enumerating objects: 400, done.[K
+remote: Counting objects:   0% (1/400)[Kremote: Counting objects:   1% (4/400)[Kremote: Counting objects:   2% (8/400)[Kremote: Counting objects:   3% (12/400)[Kremote: Counting objects:   4% (16/400)[Kremote: Counting objects:   5% (20/400)[Kremote: Counting objects:   6% (24/400)[Kremote: Counting objects:   7% (28/400)[Kremote: Counting objects:   8% (32/400)[Kremote: Counting objects:   9% (36/400)[Kremote: Counting objects:  10% (40/400)[Kremote: Counting objects:  11% (44/400)[Kremote: Counting objects:  12% (48/400)[Kremote: Counting objects:  13% (52/400)[Kremote: Counting objects:  14% (56/400)[Kremote: Counting objects:  15% (60/400)[Kremote: Counting objects:  16% (64/400)[Kremote: Counting objects:  17% (68/400)[Kremote: Counting objects:  18% (72/400)[Kremote: Counting objects:  19% (76/400)[Kremote: Counting objects:  20% (80/400)[Kremote: Counting objects:  21% (84/400)[Kremote: Counting objects:  22% (88/400)[Kremote: Counting objects:  23% (92/400)[Kremote: Counting objects:  24% (96/400)[Kremote: Counting objects:  25% (100/400)[Kremote: Counting objects:  26% (104/400)[Kremote: Counting objects:  27% (108/400)[Kremote: Counting objects:  28% (112/400)[Kremote: Counting objects:  29% (116/400)[Kremote: Counting objects:  30% (120/400)[Kremote: Counting objects:  31% (124/400)[Kremote: Counting objects:  32% (128/400)[Kremote: Counting objects:  33% (132/400)[Kremote: Counting objects:  34% (136/400)[Kremote: Counting objects:  35% (140/400)[Kremote: Counting objects:  36% (144/400)[Kremote: Counting objects:  37% (148/400)[Kremote: Counting objects:  38% (152/400)[Kremote: Counting objects:  39% (156/400)[Kremote: Counting objects:  40% (160/400)[Kremote: Counting objects:  41% (164/400)[Kremote: Counting objects:  42% (168/400)[Kremote: Counting objects:  43% (172/400)[Kremote: Counting objects:  44% (176/400)[Kremote: Counting objects:  45% (180/400)[Kremote: Counting objects:  46% (184/400)[Kremote: Counting objects:  47% (188/400)[Kremote: Counting objects:  48% (192/400)[Kremote: Counting objects:  49% (196/400)[Kremote: Counting objects:  50% (200/400)[Kremote: Counting objects:  51% (204/400)[Kremote: Counting objects:  52% (208/400)[Kremote: Counting objects:  53% (212/400)[Kremote: Counting objects:  54% (216/400)[Kremote: Counting objects:  55% (220/400)[Kremote: Counting objects:  56% (224/400)[Kremote: Counting objects:  57% (228/400)[Kremote: Counting objects:  58% (232/400)[Kremote: Counting objects:  59% (236/400)[Kremote: Counting objects:  60% (240/400)[Kremote: Counting objects:  61% (244/400)[Kremote: Counting objects:  62% (248/400)[Kremote: Counting objects:  63% (252/400)[Kremote: Counting objects:  64% (256/400)[Kremote: Counting objects:  65% (260/400)[Kremote: Counting objects:  66% (264/400)[Kremote: Counting objects:  67% (268/400)[Kremote: Counting objects:  68% (272/400)[Kremote: Counting objects:  69% (276/400)[Kremote: Counting objects:  70% (280/400)[Kremote: Counting objects:  71% (284/400)[Kremote: Counting objects:  72% (288/400)[Kremote: Counting objects:  73% (292/400)[Kremote: Counting objects:  74% (296/400)[Kremote: Counting objects:  75% (300/400)[Kremote: Counting objects:  76% (304/400)[Kremote: Counting objects:  77% (308/400)[Kremote: Counting objects:  78% (312/400)[Kremote: Counting objects:  79% (316/400)[Kremote: Counting objects:  80% (320/400)[Kremote: Counting objects:  81% (324/400)[Kremote: Counting objects:  82% (328/400)[Kremote: Counting objects:  83% (332/400)[Kremote: Counting objects:  84% (336/400)[Kremote: Counting objects:  85% (340/400)[Kremote: Counting objects:  86% (344/400)[Kremote: Counting objects:  87% (348/400)[Kremote: Counting objects:  88% (352/400)[Kremote: Counting objects:  89% (356/400)[Kremote: Counting objects:  90% (360/400)[Kremote: Counting objects:  91% (364/400)[Kremote: Counting objects:  92% (368/400)[Kremote: Counting objects:  93% (372/400)[Kremote: Counting objects:  94% (376/400)[Kremote: Counting objects:  95% (380/400)[Kremote: Counting objects:  96% (384/400)[Kremote: Counting objects:  97% (388/400)[Kremote: Counting objects:  98% (392/400)[Kremote: Counting objects:  99% (396/400)[Kremote: Counting objects: 100% (400/400)[Kremote: Counting objects: 100% (400/400), done.[K
+remote: Compressing objects:   0% (1/233)[Kremote: Compressing objects:   1% (3/233)[Kremote: Compressing objects:   2% (5/233)[Kremote: Compressing objects:   3% (7/233)[Kremote: Compressing objects:   4% (10/233)[Kremote: Compressing objects:   5% (12/233)[Kremote: Compressing objects:   6% (14/233)[Kremote: Compressing objects:   7% (17/233)[Kremote: Compressing objects:   8% (19/233)[Kremote: Compressing objects:   9% (21/233)[Kremote: Compressing objects:  10% (24/233)[Kremote: Compressing objects:  11% (26/233)[Kremote: Compressing objects:  12% (28/233)[Kremote: Compressing objects:  13% (31/233)[Kremote: Compressing objects:  14% (33/233)[Kremote: Compressing objects:  15% (35/233)[Kremote: Compressing objects:  16% (38/233)[Kremote: Compressing objects:  17% (40/233)[Kremote: Compressing objects:  18% (42/233)[Kremote: Compressing objects:  19% (45/233)[Kremote: Compressing objects:  20% (47/233)[Kremote: Compressing objects:  21% (49/233)[Kremote: Compressing objects:  22% (52/233)[Kremote: Compressing objects:  23% (54/233)[Kremote: Compressing objects:  24% (56/233)[Kremote: Compressing objects:  25% (59/233)[Kremote: Compressing objects:  26% (61/233)[Kremote: Compressing objects:  27% (63/233)[Kremote: Compressing objects:  28% (66/233)[Kremote: Compressing objects:  29% (68/233)[Kremote: Compressing objects:  30% (70/233)[Kremote: Compressing objects:  31% (73/233)[Kremote: Compressing objects:  32% (75/233)[Kremote: Compressing objects:  33% (77/233)[Kremote: Compressing objects:  34% (80/233)[Kremote: Compressing objects:  35% (82/233)[Kremote: Compressing objects:  36% (84/233)[Kremote: Compressing objects:  37% (87/233)[Kremote: Compressing objects:  38% (89/233)[Kremote: Compressing objects:  39% (91/233)[Kremote: Compressing objects:  40% (94/233)[Kremote: Compressing objects:  41% (96/233)[Kremote: Compressing objects:  42% (98/233)[Kremote: Compressing objects:  43% (101/233)[Kremote: Compressing objects:  44% (103/233)[Kremote: Compressing objects:  45% (105/233)[Kremote: Compressing objects:  46% (108/233)[Kremote: Compressing objects:  47% (110/233)[Kremote: Compressing objects:  48% (112/233)[Kremote: Compressing objects:  49% (115/233)[Kremote: Compressing objects:  50% (117/233)[Kremote: Compressing objects:  51% (119/233)[Kremote: Compressing objects:  52% (122/233)[Kremote: Compressing objects:  53% (124/233)[Kremote: Compressing objects:  54% (126/233)[Kremote: Compressing objects:  55% (129/233)[Kremote: Compressing objects:  56% (131/233)[Kremote: Compressing objects:  57% (133/233)[Kremote: Compressing objects:  58% (136/233)[Kremote: Compressing objects:  59% (138/233)[Kremote: Compressing objects:  60% (140/233)[Kremote: Compressing objects:  61% (143/233)[Kremote: Compressing objects:  62% (145/233)[Kremote: Compressing objects:  63% (147/233)[Kremote: Compressing objects:  64% (150/233)[Kremote: Compressing objects:  65% (152/233)[Kremote: Compressing objects:  66% (154/233)[Kremote: Compressing objects:  67% (157/233)[Kremote: Compressing objects:  68% (159/233)[Kremote: Compressing objects:  69% (161/233)[Kremote: Compressing objects:  70% (164/233)[Kremote: Compressing objects:  71% (166/233)[Kremote: Compressing objects:  72% (168/233)[Kremote: Compressing objects:  73% (171/233)[Kremote: Compressing objects:  74% (173/233)[Kremote: Compressing objects:  75% (175/233)[Kremote: Compressing objects:  76% (178/233)[Kremote: Compressing objects:  77% (180/233)[Kremote: Compressing objects:  78% (182/233)[Kremote: Compressing objects:  79% (185/233)[Kremote: Compressing objects:  80% (187/233)[Kremote: Compressing objects:  81% (189/233)[Kremote: Compressing objects:  82% (192/233)[Kremote: Compressing objects:  83% (194/233)[Kremote: Compressing objects:  84% (196/233)[Kremote: Compressing objects:  85% (199/233)[Kremote: Compressing objects:  86% (201/233)[Kremote: Compressing objects:  87% (203/233)[Kremote: Compressing objects:  88% (206/233)[Kremote: Compressing objects:  89% (208/233)[Kremote: Compressing objects:  90% (210/233)[Kremote: Compressing objects:  91% (213/233)[Kremote: Compressing objects:  92% (215/233)[Kremote: Compressing objects:  93% (217/233)[Kremote: Compressing objects:  94% (220/233)[Kremote: Compressing objects:  95% (222/233)[Kremote: Compressing objects:  96% (224/233)[Kremote: Compressing objects:  97% (227/233)[Kremote: Compressing objects:  98% (229/233)[Kremote: Compressing objects:  99% (231/233)[Kremote: Compressing objects: 100% (233/233)[Kremote: Compressing objects: 100% (233/233), done.[K
+Receiving objects:   0% (1/400)   Receiving objects:   1% (4/400)   Receiving objects:   2% (8/400)   Receiving objects:   3% (12/400)   Receiving objects:   4% (16/400)   Receiving objects:   5% (20/400)   Receiving objects:   6% (24/400)   Receiving objects:   7% (28/400)   Receiving objects:   8% (32/400)   Receiving objects:   9% (36/400)   Receiving objects:  10% (40/400)   Receiving objects:  11% (44/400)   Receiving objects:  12% (48/400)   Receiving objects:  13% (52/400)   Receiving objects:  14% (56/400)   Receiving objects:  15% (60/400)   Receiving objects:  16% (64/400)   Receiving objects:  17% (68/400)   Receiving objects:  18% (72/400)   Receiving objects:  19% (76/400)   Receiving objects:  20% (80/400)   Receiving objects:  21% (84/400)   Receiving objects:  22% (88/400)   Receiving objects:  23% (92/400)   Receiving objects:  24% (96/400)   Receiving objects:  25% (100/400)   Receiving objects:  26% (104/400)   Receiving objects:  27% (108/400)   Receiving objects:  28% (112/400)   Receiving objects:  29% (116/400)   Receiving objects:  30% (120/400)   Receiving objects:  31% (124/400)   Receiving objects:  32% (128/400)   Receiving objects:  33% (132/400)   Receiving objects:  34% (136/400)   Receiving objects:  35% (140/400)   Receiving objects:  36% (144/400)   Receiving objects:  37% (148/400)   Receiving objects:  38% (152/400)   Receiving objects:  39% (156/400)   Receiving objects:  40% (160/400)   Receiving objects:  41% (164/400)   Receiving objects:  42% (168/400)   Receiving objects:  43% (172/400)   Receiving objects:  44% (176/400)   Receiving objects:  45% (180/400)   Receiving objects:  46% (184/400)   Receiving objects:  47% (188/400)   Receiving objects:  48% (192/400)   Receiving objects:  49% (196/400)   Receiving objects:  50% (200/400)   Receiving objects:  51% (204/400)   Receiving objects:  52% (208/400)   Receiving objects:  53% (212/400)   Receiving objects:  54% (216/400)   Receiving objects:  55% (220/400)   Receiving objects:  56% (224/400)   Receiving objects:  57% (228/400)   Receiving objects:  58% (232/400)   Receiving objects:  59% (236/400)   Receiving objects:  60% (240/400)   Receiving objects:  61% (244/400)   Receiving objects:  62% (248/400)   Receiving objects:  63% (252/400)   Receiving objects:  64% (256/400)   Receiving objects:  65% (260/400)   Receiving objects:  66% (264/400)   Receiving objects:  67% (268/400)   Receiving objects:  68% (272/400)   Receiving objects:  69% (276/400)   Receiving objects:  70% (280/400)   Receiving objects:  71% (284/400)   Receiving objects:  72% (288/400)   Receiving objects:  73% (292/400)   Receiving objects:  74% (296/400)   Receiving objects:  75% (300/400)   remote: Total 400 (delta 245), reused 308 (delta 160), pack-reused 0[K
+Receiving objects:  76% (304/400)   Receiving objects:  77% (308/400)   Receiving objects:  78% (312/400)   Receiving objects:  79% (316/400)   Receiving objects:  80% (320/400)   Receiving objects:  81% (324/400)   Receiving objects:  82% (328/400)   Receiving objects:  83% (332/400)   Receiving objects:  84% (336/400)   Receiving objects:  85% (340/400)   Receiving objects:  86% (344/400)   Receiving objects:  87% (348/400)   Receiving objects:  88% (352/400)   Receiving objects:  89% (356/400)   Receiving objects:  90% (360/400)   Receiving objects:  91% (364/400)   Receiving objects:  92% (368/400)   Receiving objects:  93% (372/400)   Receiving objects:  94% (376/400)   Receiving objects:  95% (380/400)   Receiving objects:  96% (384/400)   Receiving objects:  97% (388/400)   Receiving objects:  98% (392/400)   Receiving objects:  99% (396/400)   Receiving objects: 100% (400/400)   Receiving objects: 100% (400/400), 912.60 KiB | 4.70 MiB/s, done.
+Resolving deltas:   0% (0/245)   Resolving deltas:   1% (3/245)   Resolving deltas:   3% (9/245)   Resolving deltas:   8% (21/245)   Resolving deltas:  10% (25/245)   Resolving deltas:  11% (27/245)   Resolving deltas:  20% (49/245)   Resolving deltas:  21% (52/245)   Resolving deltas:  24% (61/245)   Resolving deltas:  25% (62/245)   Resolving deltas:  26% (65/245)   Resolving deltas:  27% (67/245)   Resolving deltas:  28% (71/245)   Resolving deltas:  30% (74/245)   Resolving deltas:  31% (76/245)   Resolving deltas:  33% (82/245)   Resolving deltas:  35% (86/245)   Resolving deltas:  41% (102/245)   Resolving deltas:  42% (103/245)   Resolving deltas:  43% (106/245)   Resolving deltas:  44% (110/245)   Resolving deltas:  45% (111/245)   Resolving deltas:  49% (121/245)   Resolving deltas:  51% (126/245)   Resolving deltas:  54% (133/245)   Resolving deltas:  59% (146/245)   Resolving deltas:  61% (150/245)   Resolving deltas:  62% (153/245)   Resolving deltas:  64% (157/245)   Resolving deltas:  65% (161/245)   Resolving deltas:  76% (187/245)   Resolving deltas:  77% (190/245)   Resolving deltas:  78% (192/245)   Resolving deltas:  79% (195/245)   Resolving deltas:  80% (196/245)   Resolving deltas:  85% (209/245)   Resolving deltas:  88% (217/245)   Resolving deltas:  90% (221/245)   Resolving deltas:  91% (223/245)   Resolving deltas:  96% (237/245)   Resolving deltas:  97% (238/245)   Resolving deltas:  98% (241/245)   Resolving deltas:  99% (243/245)   Resolving deltas: 100% (245/245)   Resolving deltas: 100% (245/245), done.
+cgdm-catania:sanity himanshu$   cd /project/esmf/himanshu/esmf_test/cronjobs/release_8.1.0/bfb_testing/sanity/e smf-extended-tests/ESMF_RegridWeightGenCheck 
+cgdm-catania:ESMF_RegridWeightGenCheck himanshu$  export ESMFMKFILE=/project/esmf/himanshu/esmf_test/cronjobs/r elease_8.1.0/bfb_testing/sanity/install_dir/lib/libO/Darwin.intel.64.mpich3.default/esmf.mk 
+cgdm-catania:ESMF_RegridWeightGenCheck himanshu$ gmake dryrun 
+perl ./RegridWeightGenCheckDriver.pl --dryrun > RegridWeightGenCheck.Log
+x C48_mosaic.nc
+x horizontal_grid.tile1.nc
+x horizontal_grid.tile2.nc
+x horizontal_grid.tile3.nc
+x horizontal_grid.tile4.nc
+x horizontal_grid.tile5.nc
+x horizontal_grid.tile6.nc
+x latlon_grid.nc
+x latlon_mosaic.nc
+cgdm-catania:ESMF_RegridWeightGenCheck himanshu$ export homedir=/project/esmf/himanshu/esmf_test/cronjobs/relea se_8.1.0/bfb_testing/sanity 
+cgdm-catania:ESMF_RegridWeightGenCheck himanshu$ cd /project/esmf/himanshu/esmf_test/cronjobs/release_8.1.0/bfb _testing/sanity 
+cgdm-catania:sanity himanshu$ ./local_script  /project/esmf/himanshu/esmf_test/cronjobs/release_8.1.0/bfb_testi ng/sanity/testFile_EM  
+ The logfile is 2103_test
+LOGDIR1 is /project/esmf/himanshu/esmf_test/cronjobs/release_8.1.0/bfb_testing/sanity/esmf_logs/2103_test
+Email user is himanshu@ucar.edu
+Email title is Release_8.1.0_BFB_Combination_Catania_Test
+./local_script: line 70: chk_out_scripts: command not found
+cat /project/esmf/himanshu/esmf_test/cronjobs/release_8.1.0/bfb_testing/sanity cat 64 default int mpich EX MULTI MULTI THREADED NON_MPMD  
+number = 2
+cat /project/esmf/himanshu/esmf_test/cronjobs/release_8.1.0/bfb_testing/sanity cat 64 default int mpich EX MULTI MULTI THREADED NON_MPMD  
+1 cat  /project/esmf/himanshu/esmf_test/cronjobs/release_8.1.0/bfb_testing/sanity cat 64 default int mpich EX MULTI MULTI THREADED NON_MPMD
+ESMF_DIR = /project/esmf/himanshu/esmf_test/cronjobs/release_8.1.0/bfb_testing/sanity/esmf
+MANPATH=/project/esmf/Modules/share/man:/usr/share/man:/usr/local/share/man:/opt/X11/share/man:/project/esmf/Intel/19.1.0.166/man
+ESMF_F90COMPILEOPTS=-fp-model precise
+_LMFILES__modshare=/project/esmf/Modules/modulefiles/Intel/19.1.0.166/netcdf/4.7.4s:1:/project/esmf/Modules/modulefiles/Intel/19.1.0.166/intel:1:/project/esmf/Modules/modulefiles/Intel/19.1.0.166/mpich/3.3.2:1
+MODULEPATH_modshare=/project/esmf/Modules/modulefiles:1
+NUM_PETS=16
+TERM=xterm
+SHELL=/bin/bash
+MODULES_CMD=/project/esmf/Modules/libexec/modulecmd.tcl
+ESMF_OS=Darwin
+U_TESTS=EX
+TMPDIR=/var/folders/q3/8nnhltcj6ws7wxttz_49xlzwwd2pp2/T/
+SSH_CLIENT=128.117.70.133 59345 22
+ESMF_TESTMPMD=OFF
+ESMF_TESTHARNESS_ARRAY=RUN_ESMF_TestHarnessArray_2
+ESMF_NETCDF=nc-config
+OLDPWD=/project/esmf/himanshu/esmf_test/cronjobs/release_8.1.0/bfb_testing/sanity/esmf
+SSH_TTY=/dev/ttys000
+USER=himanshu
+homedir=/project/esmf/himanshu/esmf_test/cronjobs/release_8.1.0/bfb_testing/sanity
+ESMF_MPIRUN=/project/esmf/Intel/19.1.0.166/mpich/3.3.2/bin/mpirun
+ENV=/project/esmf/Modules/init/profile.sh
+ESMF_DIR=/project/esmf/himanshu/esmf_test/cronjobs/release_8.1.0/bfb_testing/sanity/esmf
+ESMF_TESTHARNESS_FIELD=RUN_ESMF_TestHarnessField_1
+ESMF_BASELINE_DIR2=/project/esmf/himanshu/nc_files/bs27/ESMF_RegridWeightGenCheck/
+ESMF_BASELINE_DIR1=/project/esmf/himanshu/esmf_test/cronjobs/release_8.1.0/bfb_testing/sanity/dir/ESMF_RegridWeightGenCheck/
+__CF_USER_TEXT_ENCODING=0x38D15AC2:0:0
+ESMF_NETCDFF_LIBPATH=/project/esmf/Intel/19.1.0.166/netcdf/4.7.4/lib
+ESMF_SHARED_LIB_BUILD=OFF
+MAIL=/var/mail/himanshu
+PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/local/bin:/opt/local/sbin:/opt/X11/bin:/project/esmf/himanshu/esmf_test/cronjobs/release_8.1.0/bfb_testing/sanity/install_dir/bin/binO/Darwin.intel.64.mpich3.default/:/project/esmf/Intel/19.1.0.166/netcdf/4.7.4/bin:/project/esmf/Intel/19.1.0.166/mpich/3.3.2/bin:/project/esmf/Intel/19.1.0.166/bin:/project/esmf/Modules/bin:/home/himanshu/bin
+ESMF_BASELINE_REF2=ESMF_8_1_0_beta_snapshot_27
+ESMF_TESTWITHTHREADS=ON
+PWD=/project/esmf/himanshu/esmf_test/cronjobs/release_8.1.0/bfb_testing/sanity/esmf
+ESMF_NUM_PROCS=16
+_LMFILES_=/project/esmf/Modules/modulefiles/Intel/19.1.0.166/intel:/project/esmf/Modules/modulefiles/Intel/19.1.0.166/mpich/3.3.2:/project/esmf/Modules/modulefiles/Intel/19.1.0.166/netcdf/4.7.4s
+OPT=O
+ESMF_OPTLEVEL=2
+ESMF_NETCDF_LIBPATH=/project/esmf/Intel/19.1.0.166/netcdf/4.7.4/lib
+MODULEPATH=/project/esmf/Modules/modulefiles
+LOADEDMODULES=Intel/19.1.0.166/intel:Intel/19.1.0.166/mpich/3.3.2:Intel/19.1.0.166/netcdf/4.7.4s
+ESMF_COMM=mpich3
+ESMF_INSTALL_PREFIX=/project/esmf/himanshu/esmf_test/cronjobs/release_8.1.0/bfb_testing/sanity/install_dir
+ESMF_CXXCOMPILEOPTS=-fp-model precise
+ESMF_CXXCOMPILER=/project/esmf/Intel/19.1.0.166/mpich/3.3.2/bin/mpicxx
+ESMF_F90COMPILER=/project/esmf/Intel/19.1.0.166/mpich/3.3.2/bin/mpif90
+ESMF_CXXLINKER=/project/esmf/Intel/19.1.0.166/mpich/3.3.2/bin/mpicxx
+ESMFMKFILE=/project/esmf/himanshu/esmf_test/cronjobs/release_8.1.0/bfb_testing/sanity/install_dir/lib/libO/Darwin.intel.64.mpich3.default/esmf.mk
+KRB5CCNAME=API:988A20B4-BC02-4E89-A71C-422B6EFF0862
+THREADED=THREADED
+ESMF_TESTEXHAUSTIVE=ON
+ESMF_F90LINKER=/project/esmf/Intel/19.1.0.166/mpich/3.3.2/bin/mpif90
+SHLVL=5
+HOME=/home/himanshu
+LOGTMP=ERROR
+ESMF_BOPT=O
+PATH_modshare=/project/esmf/Modules/bin:1:/usr/bin:1:/usr/local/bin:1:/project/esmf/Intel/19.1.0.166/bin:1:/opt/local/bin:1:/opt/local/sbin:1:/bin:1:/project/esmf/Intel/19.1.0.166/netcdf/4.7.4/bin:1:/sbin:1:/opt/X11/bin:1:/home/himanshu/bin:1:/usr/sbin:1:/project/esmf/Intel/19.1.0.166/mpich/3.3.2/bin:1
+ESMF_NETCDFF_INCLUDE=/project/esmf/Intel/19.1.0.166/netcdf/4.7.4/include
+ESMF_NETCDFF_LIBS=-lnetcdff
+RFile=/project/esmf/himanshu/esmf_test/cronjobs/release_8.1.0/bfb_testing/sanity/testFile_EM
+ESMF_SITE=default
+MANPATH_modshare=:1:/project/esmf/Intel/19.1.0.166/man:1
+PATH_org=/home/himanshu/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/local/bin:/opt/local/sbin:/opt/X11/bin:/home/himanshu/bin
+BASH_ENV=/project/esmf/Modules/init/bash
+ESMF_ABI=64
+LOGNAME=himanshu
+LOGDIR=/project/esmf/himanshu/esmf_test/cronjobs/release_8.1.0/bfb_testing/sanity/esmf_logs/2103_test
+SSH_CONNECTION=128.117.70.133 59345 128.117.20.204 22
+SYS_TEST_TYPE=MULTI
+MODULESHOME=/project/esmf/Modules
+LOADEDMODULES_modshare=Intel/19.1.0.166/intel:1:Intel/19.1.0.166/mpich/3.3.2:1:Intel/19.1.0.166/netcdf/4.7.4s:1
+ESMF_NETCDF_LIBS=-lnetcdf
+U_TESTS_TYPE=MULTI
+ESMF_NETCDF_INCLUDE=/project/esmf/Intel/19.1.0.166/netcdf/4.7.4/include
+ESMF_NFCONFIG=nf-config
+ESMF_COMPILER=intel
+BASH_FUNC_module%%=() {  _module_raw "$@" 2>&1
+}
+BASH_FUNC_switchml%%=() {  typeset swfound=1;
+ if [ "${MODULES_USE_COMPAT_VERSION:-0}" = '1' ]; then
+ typeset swname='main';
+ if [ -e /project/esmf/Modules/libexec/modulecmd.tcl ]; then
+ typeset swfound=0;
+ unset MODULES_USE_COMPAT_VERSION;
+ fi;
+ else
+ typeset swname='compatibility';
+ if [ -e /project/esmf/Modules/libexec/modulecmd-compat ]; then
+ typeset swfound=0;
+ MODULES_USE_COMPAT_VERSION=1;
+ export MODULES_USE_COMPAT_VERSION;
+ fi;
+ fi;
+ if [ $swfound -eq 0 ]; then
+ echo "Switching to Modules $swname version";
+ source /project/esmf/Modules/init/bash;
+ else
+ echo "Cannot switch to Modules $swname version, command not found";
+ return 1;
+ fi
+}
+BASH_FUNC__module_raw%%=() {  unset _mlshdbg;
+ if [ "${MODULES_SILENT_SHELL_DEBUG:-0}" = '1' ]; then
+ case "$-" in 
+ *v*x*)
+ set +vx;
+ _mlshdbg='vx'
+ ;;
+ *v*)
+ set +v;
+ _mlshdbg='v'
+ ;;
+ *x*)
+ set +x;
+ _mlshdbg='x'
+ ;;
+ *)
+ _mlshdbg=''
+ ;;
+ esac;
+ fi;
+ unset _mlre _mlIFS;
+ if [ -n "${IFS+x}" ]; then
+ _mlIFS=$IFS;
+ fi;
+ IFS=' ';
+ for _mlv in ${MODULES_RUN_QUARANTINE:-};
+ do
+ if [ "${_mlv}" = "${_mlv##*[!A-Za-z0-9_]}" -a "${_mlv}" = "${_mlv#[0-9]}" ]; then
+ if [ -n "`eval 'echo ${'$_mlv'+x}'`" ]; then
+ _mlre="${_mlre:-}${_mlv}_modquar='`eval 'echo ${'$_mlv'}'`' ";
+ fi;
+ _mlrv="MODULES_RUNENV_${_mlv}";
+ _mlre="${_mlre:-}${_mlv}='`eval 'echo ${'$_mlrv':-}'`' ";
+ fi;
+ done;
+ if [ -n "${_mlre:-}" ]; then
+ eval `eval ${_mlre}/usr/bin/tclsh /project/esmf/Modules/libexec/modulecmd.tcl bash '"$@"'`;
+ else
+ eval `/usr/bin/tclsh /project/esmf/Modules/libexec/modulecmd.tcl bash "$@"`;
+ fi;
+ _mlstatus=$?;
+ if [ -n "${_mlIFS+x}" ]; then
+ IFS=$_mlIFS;
+ else
+ unset IFS;
+ fi;
+ unset _mlre _mlv _mlrv _mlIFS;
+ if [ -n "${_mlshdbg:-}" ]; then
+ set -$_mlshdbg;
+ fi;
+ unset _mlshdbg;
+ return $_mlstatus
+}
+BASH_FUNC_ml%%=() {  module ml "$@"
+}
+_=/usr/bin/env
+/project/esmf/himanshu/esmf_test/cronjobs/release_8.1.0/bfb_testing/sanity/bin/test_bfb: line 26: /home/himanshu/bin/esmf_chkout_src: No such file or directory
+Library build PASS with ESMF_BOPT=O
+Library install PASSED with ESMF_BOPT=O
+Library installcheck PASSED with ESMF_BOPT=O
+rm -f *.o *.Log *.nc *.out *.vtk *.err
+rm -f *.o *.mod
+/project/esmf/himanshu/esmf_test/cronjobs/release_8.1.0/bfb_testing/sanity/esmf-extended-tests/ESMF_RegridWeightGenCheck
+spawn /bin/bash
+[?1034hbash-3.2$ export ESMF_OS=`uname -s` 
+bash-3.2$ export ESMF_COMPILER=intel 
+bash-3.2$ export ESMF_SITE=default 
+bash-3.2$ cd /project/esmf/himanshu/esmf_test/cronjobs/release_8.1.0/bfb_testing/sanity/esmf 
+bash-3.2$  cd /project/esmf/himanshu/esmf_test/cronjobs/release_8.1.0/bfb_testing/sanity/esmf
+bash-3.2$ Got a queue 
+echo '5'
+5
+bash-3.2$ echo '4'
+4
+bash-3.2$ cd /project/esmf/himanshu/esmf_test/cronjobs/release_8.1.0/bfb_testing/sanity/esmf 
+bash-3.2$ export NUM_PETS=16 
+bash-3.2$ export ESMF_NUM_PROCS=16 
+bash-3.2$ cd /project/esmf/himanshu/esmf_test/cronjobs/release_8.1.0/bfb_testing/sanity/esmf/../esmf-extended-t ests/ESMF_RegridWeightGenCheck 
+bash-3.2$ gmake run 1>  regridwgc.out  2>&1  
+exit
+bash-3.2$ passed
+run_ESMF_RegridWeightGenCheck PASS 
+/project/esmf/himanshu/esmf_test/cronjobs/release_8.1.0/bfb_testing/sanity/esmf
+Set Test Status to yellow.
+expr: syntax error
+Set Test Status to yellow.
+expr: syntax error
+test_esmf has finished
+number = 2
+end of test script
+detected end of test script
+Continue with sending mail
+ The logfile is 2103_test
+LOGDIR1 is /project/esmf/himanshu/esmf_test/cronjobs/release_8.1.0/bfb_testing/sanity/esmf_logs/2103_test
+Email user is himanshu@ucar.edu
+Email title is Release_8.1.0_BFB_Combination_Catania_Test
+Email title is Release_8.1.0_BFB_Combination_Catania_Test
+normal
+
+cp: /project/esmf/himanshu/esmf_test/cronjobs/release_8.1.0/bfb_testing/sanity/esmf_logs/2103_test/build*: No such file or directory

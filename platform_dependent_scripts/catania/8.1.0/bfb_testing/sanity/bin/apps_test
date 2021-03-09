@@ -1,0 +1,862 @@
+#!/bin/bash
+
+
+# if no param, set default to mpirun
+default='mpirun'
+RUN=${1:-$default}
+
+echo "RUN: [$RUN]"
+
+
+
+
+		apps_pass=0
+		apps_fail=0
+
+
+	echo "" >> $LOGDIR/mailMessage
+	echo "|--------------------------------------------------------------|" >> $LOGDIR/mailMessage
+
+                if [ $ESMF_COMM != mpiuni ]
+                then
+			if [ $RUN == aprun ] || [ $RUN == srun ]
+			then
+                        	$RUN -n 4 ./ESMF_Regrid --help 1> ESMF_Regrid.stdout  2>&1
+			else
+                        	$RUN -np 4 ./ESMF_Regrid --help 1> ESMF_Regrid.stdout  2>&1
+			fi
+                else
+                        ./ESMF_Regrid --help 1> ESMF_Regrid.stdout  2>&1
+                fi
+		if [ "$?" != "0" ]
+        	then
+			echo "ESMF_Regrid FAILED with ESMF_BOPT=$OPT"
+                	echo "`date` ESMF_Regrid --help ***********FAIL" >> $LOGDIR/mailMessage
+
+                	# Set test status as yellow, if it is not red
+                	if !(grep "red" $LOGDIR/Test_Status)
+                	then
+                        	echo "Test_results:yellow" > $LOGDIR/Test_Status
+                        	echo "Set Test Status to yellow."
+                	fi
+                	# Update number of test failures
+			apps_fail=`expr $apps_fail + 1`
+                	read failures < $LOGDIR/Test_Failures
+                	total=`expr $failures + 1`
+                	echo "$total" > $LOGDIR/Test_Failures
+                	echo "New failure total is $total."
+
+
+                else
+
+                	echo "ESMF_Regrid PASSED with ESMF_BOPT=$OPT"
+                	echo "`date` ESMF_Regrid --help ...........PASS" >> $LOGDIR/mailMessage
+			apps_pass=`expr $apps_pass + 1`
+		fi
+
+		echo "The following is the output of ESMF_Regrid --help">> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+                cat ESMF_Regrid.stdout >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+
+	echo "" >> $LOGDIR/mailMessage
+	echo "|--------------------------------------------------------------|" >> $LOGDIR/mailMessage
+
+                if [ $ESMF_COMM != mpiuni ]
+                then
+			if [ $RUN == aprun ] || [ $RUN == srun ]
+                        then
+                        	$RUN -n 4 ./ESMF_Regrid --version 1> ESMF_Regrid.stdout  2>&1
+			else
+                        	$RUN -np 4 ./ESMF_Regrid --version 1> ESMF_Regrid.stdout  2>&1
+			fi
+                else
+                        ./ESMF_Regrid --version 1> ESMF_Regrid.stdout  2>&1
+                fi
+                if [ "$?" != "0" ]
+                then
+                        echo "ESMF_Regrid FAILED with ESMF_BOPT=$OPT"
+                        echo "`date` ESMF_Regrid --version ********FAIL" >> $LOGDIR/mailMessage
+
+                        # Set test status as yellow, if it is not red
+                        if !(grep "red" $LOGDIR/Test_Status)
+                        then
+                                echo "Test_results:yellow" > $LOGDIR/Test_Status
+                                echo "Set Test Status to yellow."
+                        fi
+                        # Update number of test failures
+                        apps_fail=`expr $apps_fail + 1`
+                        read failures < $LOGDIR/Test_Failures
+                        total=`expr $failures + 1`
+                        echo "$total" > $LOGDIR/Test_Failures
+                        echo "New failure total is $total."
+
+
+                else
+
+                        echo "ESMF_Regrid PASSED with ESMF_BOPT=$OPT"
+                        echo "`date` ESMF_Regrid --version ........PASS" >> $LOGDIR/mailMessage
+                        apps_pass=`expr $apps_pass + 1`
+                fi
+
+                echo "The following is the output of ESMF_Regrid --version">> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+                cat ESMF_Regrid.stdout >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+
+
+	echo "" >> $LOGDIR/mailMessage
+	echo "|--------------------------------------------------------------|" >> $LOGDIR/mailMessage
+                if [ $ESMF_COMM != mpiuni ]
+                then
+			if [ $RUN == aprun ] || [ $RUN == srun ]
+                        then
+                        	$RUN -n 4 ./ESMF_Regrid -V 1> ESMF_Regrid.stdout  2>&1
+			else
+                        	$RUN -np 4 ./ESMF_Regrid -V 1> ESMF_Regrid.stdout  2>&1
+			fi
+                else
+                        ./ESMF_Regrid -V 1> ESMF_Regrid.stdout  2>&1
+                fi
+                if [ "$?" != "0" ]
+                then
+                        echo "ESMF_Regrid FAILED with ESMF_BOPT=$OPT"
+                        echo "`date` ESMF_Regrid -V ***************FAIL" >> $LOGDIR/mailMessage
+
+                        # Set test status as yellow, if it is not red
+                        if !(grep "red" $LOGDIR/Test_Status)
+                        then
+                                echo "Test_results:yellow" > $LOGDIR/Test_Status
+                                echo "Set Test Status to yellow."
+                        fi
+                        # Update number of test failures
+                        apps_fail=`expr $apps_fail + 1`
+                        read failures < $LOGDIR/Test_Failures
+                        total=`expr $failures + 1`
+                        echo "$total" > $LOGDIR/Test_Failures
+                        echo "New failure total is $total."
+
+
+                else
+
+                        echo "ESMF_Regrid PASSED with ESMF_BOPT=$OPT"
+                        echo "`date` ESMF_Regrid -V ...............PASS" >> $LOGDIR/mailMessage
+                        apps_pass=`expr $apps_pass + 1`
+                fi
+
+                echo "The following is the output of ESMF_Regrid -V">> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+                cat ESMF_Regrid.stdout >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+
+
+	echo "" >> $LOGDIR/mailMessage
+	echo "|--------------------------------------------------------------|" >> $LOGDIR/mailMessage
+
+                if [ $ESMF_COMM != mpiuni ]
+                then
+			if [ $RUN == aprun ] || [ $RUN == srun ]
+                        then
+                        	$RUN -n 4 ./ESMF_Info --help  1> ESMF_Info.stdout  2>&1
+			else
+                        	$RUN -np 4 ./ESMF_Info --help  1> ESMF_Info.stdout  2>&1
+			fi
+                else
+                        ./ESMF_Info --help  1> ESMF_Info.stdout  2>&1
+                fi
+                if [ "$?" != "0" ]
+                then
+                        echo "ESMF_Info FAILED with ESMF_BOPT=$OPT"
+                        echo "`date` ESMF_Info --help *************FAIL" >> $LOGDIR/mailMessage
+
+                        # Set test status as yellow, if it is not red
+                        if !(grep "red" $LOGDIR/Test_Status)
+                        then
+                                echo "Test_results:yellow" > $LOGDIR/Test_Status
+                                echo "Set Test Status to yellow."
+                        fi
+                        # Update number of test failures
+                        apps_fail=`expr $apps_fail + 1`
+                        read failures < $LOGDIR/Test_Failures
+                        total=`expr $failures + 1`
+                        echo "$total" > $LOGDIR/Test_Failures
+                        echo "New failure total is $total."
+
+
+                else
+
+                        echo "ESMF_Info PASSED with ESMF_BOPT=$OPT"
+                        echo "`date` ESMF_Info --help .............PASS" >> $LOGDIR/mailMessage
+                        apps_pass=`expr $apps_pass + 1`
+                fi
+
+                echo "The following is the output of ESMF_Info --help ">> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+                cat  ESMF_Info.stdout >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+
+	echo "" >> $LOGDIR/mailMessage
+	echo "|--------------------------------------------------------------|" >> $LOGDIR/mailMessage
+
+                if [ $ESMF_COMM != mpiuni ]
+                then
+			if [ $RUN == aprun ] || [ $RUN == srun ]
+                        then
+                        	$RUN -n 4 ./ESMF_Info --version  1> ESMF_Info.stdout  2>&1
+			else
+                        	$RUN -np 4 ./ESMF_Info --version  1> ESMF_Info.stdout  2>&1
+			fi
+                else
+                        ./ESMF_Info --version  1> ESMF_Info.stdout  2>&1
+                fi
+
+                if [ "$?" != "0" ]
+                then
+                        echo "ESMF_Info FAILED with ESMF_BOPT=$OPT"
+                        echo "`date` ESMF_Info --version **********FAIL" >> $LOGDIR/mailMessage
+
+                        # Set test status as yellow, if it is not red
+                        if !(grep "red" $LOGDIR/Test_Status)
+                        then
+                                echo "Test_results:yellow" > $LOGDIR/Test_Status
+                                echo "Set Test Status to yellow."
+                        fi
+                        # Update number of test failures
+                        apps_fail=`expr $apps_fail + 1`
+                        read failures < $LOGDIR/Test_Failures
+                        total=`expr $failures + 1`
+                        echo "$total" > $LOGDIR/Test_Failures
+                        echo "New failure total is $total."
+
+
+                else
+
+                        echo "ESMF_Info PASSED with ESMF_BOPT=$OPT"
+                        echo "`date` ESMF_Info --version ..........PASS" >> $LOGDIR/mailMessage
+                        apps_pass=`expr $apps_pass + 1`
+                fi
+
+                echo "The following is the output of ESMF_Info --version ">> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+                cat  ESMF_Info.stdout >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+
+
+
+	echo "" >> $LOGDIR/mailMessage
+	echo "|--------------------------------------------------------------|" >> $LOGDIR/mailMessage
+                if [ $ESMF_COMM != mpiuni ]
+                then
+			if [ $RUN == aprun ] || [ $RUN == srun ]
+                        then
+                        	$RUN -n 4 ./ESMF_Info -V  1> ESMF_Info.stdout  2>&1
+			else
+                        	$RUN -np 4 ./ESMF_Info -V  1> ESMF_Info.stdout  2>&1
+			fi
+                else
+                        ./ESMF_Info -V  1> ESMF_Info.stdout  2>&1
+                fi
+                if [ "$?" != "0" ]
+                then
+                        echo "ESMF_Info FAILED with ESMF_BOPT=$OPT"
+                        echo "`date` ESMF_Info -V *****************FAIL" >> $LOGDIR/mailMessage
+
+                        # Set test status as yellow, if it is not red
+                        if !(grep "red" $LOGDIR/Test_Status)
+                        then
+                                echo "Test_results:yellow" > $LOGDIR/Test_Status
+                                echo "Set Test Status to yellow."
+                        fi
+                        # Update number of test failures
+                        apps_fail=`expr $apps_fail + 1`
+                        read failures < $LOGDIR/Test_Failures
+                        total=`expr $failures + 1`
+                        echo "$total" > $LOGDIR/Test_Failures
+                        echo "New failure total is $total."
+
+
+                else
+
+                        echo "ESMF_Info PASSED with ESMF_BOPT=$OPT"
+                        echo "`date` ESMF_Info -V .................PASS" >> $LOGDIR/mailMessage
+                        apps_pass=`expr $apps_pass + 1`
+                fi
+
+                echo "The following is the output of ESMF_Info -V ">> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+                cat  ESMF_Info.stdout >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+
+	echo "" >> $LOGDIR/mailMessage
+	echo "|--------------------------------------------------------------|" >> $LOGDIR/mailMessage
+                if [ $ESMF_COMM != mpiuni ]
+                then
+			if [ $RUN == aprun ] || [ $RUN == srun ]
+                        then
+                        	$RUN -n 4 ./ESMF_InfoC --help  1> ESMF_InfoC.stdout  2>&1
+			else
+                        	$RUN -np 4 ./ESMF_InfoC --help  1> ESMF_InfoC.stdout  2>&1
+			fi
+                else
+                        ./ESMF_InfoC --help  1> ESMF_InfoC.stdout  2>&1
+                fi
+                if [ "$?" != "0" ]
+                then
+                        echo "ESMF_InfoC FAILED with ESMF_BOPT=$OPT"
+                        echo "`date` ESMF_InfoC --help ************FAIL" >> $LOGDIR/mailMessage
+
+                        # Set test status as yellow, if it is not red
+                        if !(grep "red" $LOGDIR/Test_Status)
+                        then
+                                echo "Test_results:yellow" > $LOGDIR/Test_Status
+                                echo "Set Test Status to yellow."
+                        fi
+                        # Update number of test failures
+                        apps_fail=`expr $apps_fail + 1`
+                        read failures < $LOGDIR/Test_Failures
+                        total=`expr $failures + 1`
+                        echo "$total" > $LOGDIR/Test_Failures
+                        echo "New failure total is $total."
+
+
+                else
+
+                        echo "ESMF_InfoC PASSED with ESMF_BOPT=$OPT"
+                        echo "`date` ESMF_InfoC --help ............PASS" >> $LOGDIR/mailMessage
+                        apps_pass=`expr $apps_pass + 1`
+                fi
+
+                echo "The following is the output of ESMF_InfoC --help">> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+                cat  ESMF_InfoC.stdout >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+
+
+	echo "" >> $LOGDIR/mailMessage
+	echo "|--------------------------------------------------------------|" >> $LOGDIR/mailMessage
+                if [ $ESMF_COMM != mpiuni ]
+                then
+			if [ $RUN == aprun ] || [ $RUN == srun ]
+                        then
+                        	$RUN -n 4 ./ESMF_InfoC --version  1> ESMF_InfoC.stdout  2>&1
+			else
+                        	$RUN -np 4 ./ESMF_InfoC --version  1> ESMF_InfoC.stdout  2>&1
+			fi
+                else
+                        ./ESMF_InfoC --version  1> ESMF_InfoC.stdout  2>&1
+                fi
+                if [ "$?" != "0" ]
+                then
+                        echo "ESMF_InfoC FAILED with ESMF_BOPT=$OPT"
+                        echo "`date` ESMF_InfoC --version *********FAIL" >> $LOGDIR/mailMessage
+
+                        # Set test status as yellow, if it is not red
+                        if !(grep "red" $LOGDIR/Test_Status)
+                        then
+                                echo "Test_results:yellow" > $LOGDIR/Test_Status
+                                echo "Set Test Status to yellow."
+                        fi
+                        # Update number of test failures
+                        apps_fail=`expr $apps_fail + 1`
+                        read failures < $LOGDIR/Test_Failures
+                        total=`expr $failures + 1`
+                        echo "$total" > $LOGDIR/Test_Failures
+                        echo "New failure total is $total."
+
+
+                else
+
+                        echo "ESMF_InfoC PASSED with ESMF_BOPT=$OPT"
+                        echo "`date` ESMF_InfoC --version .........PASS" >> $LOGDIR/mailMessage
+                        apps_pass=`expr $apps_pass + 1`
+                fi
+
+                echo "The following is the output of ESMF_InfoC --version">> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+                cat  ESMF_InfoC.stdout >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+
+
+
+	echo "" >> $LOGDIR/mailMessage
+	echo "|--------------------------------------------------------------|" >> $LOGDIR/mailMessage
+                if [ $ESMF_COMM != mpiuni ]
+                then
+			if [ $RUN == aprun ] || [ $RUN == srun ]
+                        then
+                        	$RUN -n 4 ./ESMF_InfoC -V  1> ESMF_InfoC.stdout  2>&1
+			else
+                        	$RUN -np 4 ./ESMF_InfoC -V  1> ESMF_InfoC.stdout  2>&1
+			fi
+                else
+                        ./ESMF_InfoC -V  1> ESMF_InfoC.stdout  2>&1
+                fi
+                if [ "$?" != "0" ]
+                then 
+                        echo "ESMF_InfoC FAILED with ESMF_BOPT=$OPT"
+                        echo "`date` ESMF_InfoC -V ****************FAIL" >> $LOGDIR/mailMessage
+                        
+                        # Set test status as yellow, if it is not red
+                        if !(grep "red" $LOGDIR/Test_Status)
+                        then 
+                                echo "Test_results:yellow" > $LOGDIR/Test_Status
+                                echo "Set Test Status to yellow."
+                        fi
+                        # Update number of test failures
+                        apps_fail=`expr $apps_fail + 1`
+                        read failures < $LOGDIR/Test_Failures 
+                        total=`expr $failures + 1`
+                        echo "$total" > $LOGDIR/Test_Failures
+                        echo "New failure total is $total."
+
+
+                else
+
+                        echo "ESMF_InfoC PASSED with ESMF_BOPT=$OPT"
+                        echo "`date` ESMF_InfoC -V ................PASS" >> $LOGDIR/mailMessage
+                        apps_pass=`expr $apps_pass + 1`
+                fi
+
+                echo "The following is the output of ESMF_InfoC -V">> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+                cat  ESMF_InfoC.stdout >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+
+
+
+	echo "" >> $LOGDIR/mailMessage
+	echo "|--------------------------------------------------------------|" >> $LOGDIR/mailMessage
+
+                if [ $ESMF_COMM != mpiuni ]
+                then
+			if [ $RUN == aprun ] || [ $RUN == srun ]
+                        then
+                        	$RUN -n 4 ./ESMF_RegridWeightGen --help  1> ESMF_RegridWeightGen.stdout  2>&1
+			else
+                        	$RUN -np 4 ./ESMF_RegridWeightGen --help  1> ESMF_RegridWeightGen.stdout  2>&1
+			fi
+                else
+                        ./ESMF_RegridWeightGen --help  1> ESMF_RegridWeightGen.stdout  2>&1
+                fi
+                if [ "$?" != "0" ]
+                then
+                        echo "ESMF_RegridWeightGen FAILED with ESMF_BOPT=$OPT"
+                        echo "`date` ESMF_RegridWeightGen --help **FAIL" >> $LOGDIR/mailMessage
+
+                        # Set test status as yellow, if it is not red
+                        if !(grep "red" $LOGDIR/Test_Status)
+                        then
+                                echo "Test_results:yellow" > $LOGDIR/Test_Status
+                                echo "Set Test Status to yellow."
+                        fi
+                        # Update number of test failures
+                        apps_fail=`expr $apps_fail + 1`
+                        read failures < $LOGDIR/Test_Failures
+                        total=`expr $failures + 1`
+                        echo "$total" > $LOGDIR/Test_Failures
+                        echo "New failure total is $total."
+
+
+                else
+
+                        echo "ESMF_RegridWeightGen PASSED with ESMF_BOPT=$OPT"
+                        echo "`date` ESMF_RegridWeightGen --help ..PASS" >> $LOGDIR/mailMessage
+                        apps_pass=`expr $apps_pass + 1`
+                fi
+
+                        echo "The following is the output of ESMF_RegridWeightGen --help">> $LOGDIR/mailMessage
+                        echo "" >> $LOGDIR/mailMessage
+                        cat ESMF_RegridWeightGen.stdout >> $LOGDIR/mailMessage
+                        echo "" >> $LOGDIR/mailMessage
+                        echo "" >> $LOGDIR/mailMessage
+
+
+
+	echo "" >> $LOGDIR/mailMessage
+	echo "|--------------------------------------------------------------|" >> $LOGDIR/mailMessage
+
+                if [ $ESMF_COMM != mpiuni ]
+                then
+			if [ $RUN == aprun ] || [ $RUN == srun ]
+                        then
+                        	$RUN -n 4 ./ESMF_RegridWeightGen --version  1> ESMF_RegridWeightGen.stdout  2>&1
+			else
+                        	$RUN -np 4 ./ESMF_RegridWeightGen --version  1> ESMF_RegridWeightGen.stdout  2>&1
+			fi
+                else
+                        ./ESMF_RegridWeightGen --version  1> ESMF_RegridWeightGen.stdout  2>&1
+                fi
+                if [ "$?" != "0" ]
+                then
+                        echo "ESMF_RegridWeightGen FAILED with ESMF_BOPT=$OPT"
+                        echo "`date` ESMF_RegridWeightGen --version FAIL" >> $LOGDIR/mailMessage
+
+                        # Set test status as yellow, if it is not red
+                        if !(grep "red" $LOGDIR/Test_Status)
+                        then
+                                echo "Test_results:yellow" > $LOGDIR/Test_Status
+                                echo "Set Test Status to yellow."
+                        fi
+                        # Update number of test failures
+                        apps_fail=`expr $apps_fail + 1`
+                        read failures < $LOGDIR/Test_Failures
+                        total=`expr $failures + 1`
+                        echo "$total" > $LOGDIR/Test_Failures
+                        echo "New failure total is $total."
+
+
+                else
+
+                        echo "ESMF_RegridWeightGen PASSED with ESMF_BOPT=$OPT"
+                        echo "`date` ESMF_RegridWeightGen --version PASS" >> $LOGDIR/mailMessage
+                        apps_pass=`expr $apps_pass + 1`
+                fi
+
+                        echo "The following is the output of ESMF_RegridWeightGen --version">> $LOGDIR/mailMessage
+                        echo "" >> $LOGDIR/mailMessage
+                        cat ESMF_RegridWeightGen.stdout >> $LOGDIR/mailMessage
+                        echo "" >> $LOGDIR/mailMessage
+                        echo "" >> $LOGDIR/mailMessage
+
+
+
+
+	echo "" >> $LOGDIR/mailMessage
+	echo "|--------------------------------------------------------------|" >> $LOGDIR/mailMessage
+
+                if [ $ESMF_COMM != mpiuni ]
+                then
+			if [ $RUN == aprun ] || [ $RUN == srun ]
+                        then
+                        	$RUN -n 4 ./ESMF_RegridWeightGen -V  1> ESMF_RegridWeightGen.stdout  2>&1
+			else
+                        	$RUN -np 4 ./ESMF_RegridWeightGen -V  1> ESMF_RegridWeightGen.stdout  2>&1
+			fi
+                else
+                        ./ESMF_RegridWeightGen -V  1> ESMF_RegridWeightGen.stdout  2>&1
+                fi
+                if [ "$?" != "0" ]
+                then
+                        echo "ESMF_RegridWeightGen FAILED with ESMF_BOPT=$OPT"
+                        echo "`date` ESMF_RegridWeightGen -V ******FAIL" >> $LOGDIR/mailMessage
+
+                        # Set test status as yellow, if it is not red
+                        if !(grep "red" $LOGDIR/Test_Status)
+                        then
+                                echo "Test_results:yellow" > $LOGDIR/Test_Status
+                                echo "Set Test Status to yellow."
+                        fi
+                        # Update number of test failures
+                        apps_fail=`expr $apps_fail + 1`
+                        read failures < $LOGDIR/Test_Failures
+                        total=`expr $failures + 1`
+                        echo "$total" > $LOGDIR/Test_Failures
+                        echo "New failure total is $total."
+
+
+                else
+
+                        echo "ESMF_RegridWeightGen PASSED with ESMF_BOPT=$OPT"
+                        echo "`date` ESMF_RegridWeightGen -V ......PASS" >> $LOGDIR/mailMessage
+                        apps_pass=`expr $apps_pass + 1`
+                fi
+
+                        echo "The following is the output of ESMF_RegridWeightGen -V">> $LOGDIR/mailMessage
+                        echo "" >> $LOGDIR/mailMessage
+                        cat ESMF_RegridWeightGen.stdout >> $LOGDIR/mailMessage
+                        echo "" >> $LOGDIR/mailMessage
+                        echo "" >> $LOGDIR/mailMessage
+
+
+
+
+	echo "" >> $LOGDIR/mailMessage
+	echo "|--------------------------------------------------------------|" >> $LOGDIR/mailMessage
+
+                if [ $ESMF_COMM != mpiuni ]
+                then
+			if [ $RUN == aprun ] || [ $RUN == srun ]
+                        then
+                        	$RUN -n 4 ./ESMF_Scrip2Unstruct --help  1> ESMF_Scrip2Unstruct.stdout  2>&1
+			else
+                        	$RUN -np 4 ./ESMF_Scrip2Unstruct --help  1> ESMF_Scrip2Unstruct.stdout  2>&1
+			fi
+                else
+                        ./ESMF_Scrip2Unstruct --help  1> ESMF_Scrip2Unstruct.stdout  2>&1
+                fi
+                if [ "$?" != "0" ]
+                then
+                        echo "ESMF_Scrip2Unstruct FAILED with ESMF_BOPT=$OPT"
+                        echo "`date` ESMF_Scrip2Unstruct --help ***FAIL" >> $LOGDIR/mailMessage
+
+                        # Set test status as yellow, if it is not red
+                        if !(grep "red" $LOGDIR/Test_Status)
+                        then
+                                echo "Test_results:yellow" > $LOGDIR/Test_Status
+                                echo "Set Test Status to yellow."
+                        fi
+                        # Update number of test failures
+                        apps_fail=`expr $apps_fail + 1`
+                        read failures < $LOGDIR/Test_Failures
+                        total=`expr $failures + 1`
+                        echo "$total" > $LOGDIR/Test_Failures
+                        echo "New failure total is $total."
+
+
+                else
+
+                        echo "ESMF_Scrip2Unstruct PASSED with ESMF_BOPT=$OPT"
+                        echo "`date` ESMF_Scrip2Unstruct --help ...PASS" >> $LOGDIR/mailMessage
+                        apps_pass=`expr $apps_pass + 1`
+                fi
+
+                echo "The following is the output of ESMF_Scrip2Unstruct --help">> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+                cat ESMF_Scrip2Unstruct.stdout >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+
+
+
+
+	echo "" >> $LOGDIR/mailMessage
+	echo "|--------------------------------------------------------------|" >> $LOGDIR/mailMessage
+
+                if [ $ESMF_COMM != mpiuni ]
+                then
+			if [ $RUN == aprun ] || [ $RUN == srun ]
+                        then
+                        	$RUN -n 4 ./ESMF_Scrip2Unstruct --version  1> ESMF_Scrip2Unstruct.stdout  2>&1
+			else
+                        	$RUN -np 4 ./ESMF_Scrip2Unstruct --version  1> ESMF_Scrip2Unstruct.stdout  2>&1
+			fi
+                else
+                        ./ESMF_Scrip2Unstruct --version  1> ESMF_Scrip2Unstruct.stdout  2>&1
+                fi
+                if [ "$?" != "0" ]
+                then
+                        echo "ESMF_Scrip2Unstruct FAILED with ESMF_BOPT=$OPT"
+                        echo "`date` ESMF_Scrip2Unstruct --version FAIL" >> $LOGDIR/mailMessage
+
+                        # Set test status as yellow, if it is not red
+                        if !(grep "red" $LOGDIR/Test_Status)
+                        then
+                                echo "Test_results:yellow" > $LOGDIR/Test_Status
+                                echo "Set Test Status to yellow."
+                        fi
+                        # Update number of test failures
+                        apps_fail=`expr $apps_fail + 1`
+                        read failures < $LOGDIR/Test_Failures
+                        total=`expr $failures + 1`
+                        echo "$total" > $LOGDIR/Test_Failures
+                        echo "New failure total is $total."
+
+
+                else
+
+                        echo "ESMF_Scrip2Unstruct PASSED with ESMF_BOPT=$OPT"
+                        echo "`date` ESMF_Scrip2Unstruct --version PASS" >> $LOGDIR/mailMessage
+                        apps_pass=`expr $apps_pass + 1`
+                fi
+
+                echo "The following is the output of ESMF_Scrip2Unstruct --version">> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+                cat ESMF_Scrip2Unstruct.stdout >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+                        
+
+
+	echo "" >> $LOGDIR/mailMessage
+	echo "|--------------------------------------------------------------|" >> $LOGDIR/mailMessage
+
+                if [ $ESMF_COMM != mpiuni ]
+                then
+			if [ $RUN == aprun ] || [ $RUN == srun ]
+                        then
+                        	$RUN -n 4 ./ESMF_Scrip2Unstruct -V  1> ESMF_Scrip2Unstruct.stdout  2>&1
+			else
+                        	$RUN -np 4 ./ESMF_Scrip2Unstruct -V  1> ESMF_Scrip2Unstruct.stdout  2>&1
+			fi
+                else
+                        ./ESMF_Scrip2Unstruct -V  1> ESMF_Scrip2Unstruct.stdout  2>&1
+                fi
+                if [ "$?" != "0" ]
+                then
+                        echo "ESMF_Scrip2Unstruct FAILED with ESMF_BOPT=$OPT"
+                        echo "`date` ESMF_Scrip2Unstruct -V *******FAIL" >> $LOGDIR/mailMessage
+
+                        # Set test status as yellow, if it is not red
+                        if !(grep "red" $LOGDIR/Test_Status)
+                        then
+                                echo "Test_results:yellow" > $LOGDIR/Test_Status
+                                echo "Set Test Status to yellow."
+                        fi
+                        # Update number of test failures
+                        apps_fail=`expr $apps_fail + 1`
+                        read failures < $LOGDIR/Test_Failures
+                        total=`expr $failures + 1`
+                        echo "$total" > $LOGDIR/Test_Failures
+                        echo "New failure total is $total."
+
+
+                else
+
+                        echo "ESMF_Scrip2Unstruct PASSED with ESMF_BOPT=$OPT"
+                        echo "`date` ESMF_Scrip2Unstruct -V .......PASS" >> $LOGDIR/mailMessage
+                        apps_pass=`expr $apps_pass + 1`
+                fi      
+
+                echo "The following is the output of ESMF_Scrip2Unstruct -V">> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+                cat ESMF_Scrip2Unstruct.stdout >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+
+
+	echo "" >> $LOGDIR/mailMessage
+	echo "|--------------------------------------------------------------|" >> $LOGDIR/mailMessage
+
+		if [ $RUN == aprun ] && [ $ESMF_COMPILER == intel ]
+                then
+                	$RUN -n 1 ./ESMF_WebServController --help  1> ESMF_WebServController.stdout  2>&1
+		else
+                	./ESMF_WebServController --help  1> ESMF_WebServController.stdout  2>&1
+		fi
+                if [ "$?" != "0" ]
+                then
+                        echo "ESMF_WebServController FAILED with ESMF_BOPT=$OPT"
+                        echo "`date` ESMF_WebServController --help FAIL" >> $LOGDIR/mailMessage
+
+                        # Set test status as yellow, if it is not red
+                        if !(grep "red" $LOGDIR/Test_Status)
+                        then
+                                echo "Test_results:yellow" > $LOGDIR/Test_Status
+                                echo "Set Test Status to yellow."
+                        fi
+                        # Update number of test failures
+                        apps_fail=`expr $apps_fail + 1`
+                        read failures < $LOGDIR/Test_Failures
+                        total=`expr $failures + 1`
+                        echo "$total" > $LOGDIR/Test_Failures
+                        echo "New failure total is $total."
+
+
+                else
+
+                        echo "ESMF_WebServController PASSED with ESMF_BOPT=$OPT"
+                        echo "`date` ESMF_WebServController --help PASS" >> $LOGDIR/mailMessage
+                        apps_pass=`expr $apps_pass + 1`
+                fi
+
+                echo "The following is the output of ESMF_WebServController --help">> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+                cat  ESMF_WebServController.stdout >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+
+
+	echo "" >> $LOGDIR/mailMessage
+	echo "|--------------------------------------------------------------|" >> $LOGDIR/mailMessage
+
+		if [ $RUN == aprun ] && [ $ESMF_COMPILER == intel ]
+                then
+                	$RUN -n 1 ./ESMF_WebServController --version  1> ESMF_WebServController.stdout  2>&1
+		else
+                	./ESMF_WebServController --version  1> ESMF_WebServController.stdout  2>&1
+		fi
+                if [ "$?" != "0" ]
+                then 
+                        echo "ESMF_WebServController FAILED with ESMF_BOPT=$OPT"
+                        echo "`date` ESMF_WebServController --version FAIL" >> $LOGDIR/mailMessage
+
+                        # Set test status as yellow, if it is not red
+                        if !(grep "red" $LOGDIR/Test_Status)
+                        then
+                                echo "Test_results:yellow" > $LOGDIR/Test_Status
+                                echo "Set Test Status to yellow."
+                        fi
+                        # Update number of test failures
+                        apps_fail=`expr $apps_fail + 1`
+                        read failures < $LOGDIR/Test_Failures
+                        total=`expr $failures + 1`
+                        echo "$total" > $LOGDIR/Test_Failures
+                        echo "New failure total is $total."
+
+
+                else
+
+                        echo "ESMF_WebServController PASSED with ESMF_BOPT=$OPT"
+                        echo "`date` ESMF_WebServController --version PASS" >> $LOGDIR/mailMessage
+                        apps_pass=`expr $apps_pass + 1`
+                fi
+
+                echo "The following is the output of ESMF_WebServController --version">> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+                cat  ESMF_WebServController.stdout >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+
+
+
+	echo "" >> $LOGDIR/mailMessage
+	echo "|--------------------------------------------------------------|" >> $LOGDIR/mailMessage
+
+		if [ $RUN == aprun ] && [ $ESMF_COMPILER == intel ]
+                then
+                	$RUN -n 1 ./ESMF_WebServController -V  1> ESMF_WebServController.stdout  2>&1
+		else
+                	./ESMF_WebServController -V  1> ESMF_WebServController.stdout  2>&1
+		fi
+                if [ "$?" != "0" ]
+                then 
+                        echo "ESMF_WebServController FAILED with ESMF_BOPT=$OPT"
+                        echo "`date` ESMF_WebServController -V ****FAIL" >> $LOGDIR/mailMessage
+
+                        # Set test status as yellow, if it is not red
+                        if !(grep "red" $LOGDIR/Test_Status)
+                        then
+                                echo "Test_results:yellow" > $LOGDIR/Test_Status
+                                echo "Set Test Status to yellow."
+                        fi
+                        # Update number of test failures
+                        apps_fail=`expr $apps_fail + 1`
+                        read failures < $LOGDIR/Test_Failures
+                        total=`expr $failures + 1`
+                        echo "$total" > $LOGDIR/Test_Failures
+                        echo "New failure total is $total."
+
+
+                else
+
+                        echo "ESMF_WebServController PASSED with ESMF_BOPT=$OPT"
+                        echo "`date` ESMF_WebServController -V ....PASS" >> $LOGDIR/mailMessage
+                        apps_pass=`expr $apps_pass + 1`
+                fi
+
+                echo "The following is the output of ESMF_WebServController -V">> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+                cat  ESMF_WebServController.stdout >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+
+		tar --atime-preserve='replace' -cf app$OPT.$ESMF_COMPILER.$ESMF_ABI.$ESMF_COMM.tar *.stdout
+        	gzip app$OPT.$ESMF_COMPILER.$ESMF_ABI.$ESMF_COMM.tar
+        	mv -f app$OPT.$ESMF_COMPILER.$ESMF_ABI.$ESMF_COMM.tar.gz $LOGDIR/.
+
+
+		# Save results for summary
+		echo "PASS $apps_pass FAIL $apps_fail" > $LOGDIR/apps_results
+
+
+		cd $ESMF_DIR
+

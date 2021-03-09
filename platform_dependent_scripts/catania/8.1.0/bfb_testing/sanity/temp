@@ -1,0 +1,1665 @@
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.0  0.0 191280  7628 ?        Ss   Jul02   8:51 /sbin/init
+root         2  0.0  0.0      0     0 ?        S    Jul02   0:02 [kthreadd]
+root         4  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/0:0H]
+root         7  0.0  0.0      0     0 ?        S<   Jul02   0:00 [mm_percpu_wq]
+root         8  0.0  0.0      0     0 ?        S    Jul02   0:09 [ksoftirqd/0]
+root         9  0.0  0.0      0     0 ?        S    Jul02   8:48 [rcu_sched]
+root        10  0.0  0.0      0     0 ?        S    Jul02   0:00 [rcu_bh]
+root        11  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/0]
+root        12  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/0]
+root        13  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/0]
+root        14  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/1]
+root        15  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/1]
+root        16  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/1]
+root        17  0.0  0.0      0     0 ?        S    Jul02   0:04 [ksoftirqd/1]
+root        19  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/1:0H]
+root        20  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/2]
+root        21  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/2]
+root        22  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/2]
+root        23  0.0  0.0      0     0 ?        S    Jul02   0:04 [ksoftirqd/2]
+root        25  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/2:0H]
+root        26  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/3]
+root        27  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/3]
+root        28  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/3]
+root        29  0.0  0.0      0     0 ?        S    Jul02   0:04 [ksoftirqd/3]
+root        31  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/3:0H]
+root        32  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/4]
+root        33  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/4]
+root        34  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/4]
+root        35  0.0  0.0      0     0 ?        S    Jul02   0:04 [ksoftirqd/4]
+root        37  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/4:0H]
+root        38  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/5]
+root        39  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/5]
+root        40  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/5]
+root        41  0.0  0.0      0     0 ?        S    Jul02   0:04 [ksoftirqd/5]
+root        43  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/5:0H]
+root        44  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/6]
+root        45  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/6]
+root        46  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/6]
+root        47  0.0  0.0      0     0 ?        S    Jul02   0:04 [ksoftirqd/6]
+root        49  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/6:0H]
+root        50  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/7]
+root        51  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/7]
+root        52  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/7]
+root        53  0.0  0.0      0     0 ?        S    Jul02   0:04 [ksoftirqd/7]
+root        55  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/7:0H]
+root        56  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/8]
+root        57  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/8]
+root        58  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/8]
+root        59  0.0  0.0      0     0 ?        S    Jul02   0:04 [ksoftirqd/8]
+root        61  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/8:0H]
+root        62  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/9]
+root        63  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/9]
+root        64  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/9]
+root        65  0.0  0.0      0     0 ?        S    Jul02   0:04 [ksoftirqd/9]
+root        67  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/9:0H]
+root        68  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/10]
+root        69  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/10]
+root        70  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/10]
+root        71  0.0  0.0      0     0 ?        S    Jul02   0:04 [ksoftirqd/10]
+root        73  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/10:0H]
+root        74  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/11]
+root        75  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/11]
+root        76  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/11]
+root        77  0.0  0.0      0     0 ?        S    Jul02   0:04 [ksoftirqd/11]
+root        79  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/11:0H]
+root        80  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/12]
+root        81  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/12]
+root        82  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/12]
+root        83  0.0  0.0      0     0 ?        S    Jul02   0:06 [ksoftirqd/12]
+root        85  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/12:0H]
+root        86  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/13]
+root        87  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/13]
+root        88  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/13]
+root        89  0.0  0.0      0     0 ?        S    Jul02   0:04 [ksoftirqd/13]
+root        91  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/13:0H]
+root        92  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/14]
+root        93  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/14]
+root        94  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/14]
+root        95  0.0  0.0      0     0 ?        S    Jul02   0:04 [ksoftirqd/14]
+root        97  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/14:0H]
+root        98  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/15]
+root        99  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/15]
+root       100  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/15]
+root       101  0.0  0.0      0     0 ?        S    Jul02   0:04 [ksoftirqd/15]
+root       103  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/15:0H]
+root       104  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/16]
+root       105  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/16]
+root       106  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/16]
+root       107  0.0  0.0      0     0 ?        S    Jul02   0:04 [ksoftirqd/16]
+root       109  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/16:0H]
+root       110  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/17]
+root       111  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/17]
+root       112  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/17]
+root       113  0.0  0.0      0     0 ?        S    Jul02   0:04 [ksoftirqd/17]
+root       115  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/17:0H]
+root       116  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/18]
+root       117  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/18]
+root       118  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/18]
+root       119  0.0  0.0      0     0 ?        S    Jul02   0:06 [ksoftirqd/18]
+root       121  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/18:0H]
+root       123  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/19]
+root       124  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/19]
+root       125  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/19]
+root       126  0.0  0.0      0     0 ?        S    Jul02   0:07 [ksoftirqd/19]
+root       128  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/19:0H]
+root       129  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/20]
+root       130  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/20]
+root       131  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/20]
+root       132  0.0  0.0      0     0 ?        S    Jul02   0:09 [ksoftirqd/20]
+root       134  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/20:0H]
+root       135  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/21]
+root       136  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/21]
+root       137  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/21]
+root       138  0.0  0.0      0     0 ?        S    Jul02   0:07 [ksoftirqd/21]
+root       140  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/21:0H]
+root       141  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/22]
+root       142  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/22]
+root       143  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/22]
+root       144  0.0  0.0      0     0 ?        S    Jul02   0:07 [ksoftirqd/22]
+root       146  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/22:0H]
+root       147  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/23]
+root       148  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/23]
+root       149  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/23]
+root       150  0.0  0.0      0     0 ?        S    Jul02   0:08 [ksoftirqd/23]
+root       152  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/23:0H]
+root       153  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/24]
+root       154  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/24]
+root       155  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/24]
+root       156  0.0  0.0      0     0 ?        S    Jul02   0:07 [ksoftirqd/24]
+root       158  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/24:0H]
+root       159  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/25]
+root       160  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/25]
+root       161  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/25]
+root       162  0.0  0.0      0     0 ?        S    Jul02   0:08 [ksoftirqd/25]
+root       164  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/25:0H]
+root       165  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/26]
+root       166  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/26]
+root       167  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/26]
+root       168  0.0  0.0      0     0 ?        S    Jul02   0:07 [ksoftirqd/26]
+root       170  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/26:0H]
+root       171  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/27]
+root       172  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/27]
+root       173  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/27]
+root       174  0.0  0.0      0     0 ?        S    Jul02   0:08 [ksoftirqd/27]
+root       176  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/27:0H]
+root       177  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/28]
+root       178  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/28]
+root       179  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/28]
+root       180  0.0  0.0      0     0 ?        S    Jul02   0:07 [ksoftirqd/28]
+root       182  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/28:0H]
+root       183  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/29]
+root       184  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/29]
+root       185  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/29]
+root       186  0.0  0.0      0     0 ?        S    Jul02   0:07 [ksoftirqd/29]
+root       188  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/29:0H]
+root       189  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/30]
+root       190  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/30]
+root       191  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/30]
+root       192  0.0  0.0      0     0 ?        S    Jul02   0:08 [ksoftirqd/30]
+root       194  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/30:0H]
+root       195  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/31]
+root       196  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/31]
+root       197  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/31]
+root       198  0.0  0.0      0     0 ?        S    Jul02   0:07 [ksoftirqd/31]
+root       200  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/31:0H]
+root       201  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/32]
+root       202  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/32]
+root       203  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/32]
+root       204  0.0  0.0      0     0 ?        S    Jul02   0:07 [ksoftirqd/32]
+root       206  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/32:0H]
+root       207  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/33]
+root       208  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/33]
+root       209  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/33]
+root       210  0.0  0.0      0     0 ?        S    Jul02   0:08 [ksoftirqd/33]
+root       212  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/33:0H]
+root       213  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/34]
+root       214  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/34]
+root       215  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/34]
+root       216  0.0  0.0      0     0 ?        S    Jul02   0:08 [ksoftirqd/34]
+root       218  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/34:0H]
+root       219  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/35]
+root       220  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/35]
+root       221  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/35]
+root       222  0.0  0.0      0     0 ?        S    Jul02   0:08 [ksoftirqd/35]
+root       224  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/35:0H]
+root       225  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/36]
+root       226  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/36]
+root       227  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/36]
+root       228  0.0  0.0      0     0 ?        S    Jul02   0:03 [ksoftirqd/36]
+root       230  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/36:0H]
+root       231  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/37]
+root       232  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/37]
+root       233  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/37]
+root       234  0.0  0.0      0     0 ?        S    Jul02   0:03 [ksoftirqd/37]
+root       236  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/37:0H]
+root       237  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/38]
+root       238  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/38]
+root       239  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/38]
+root       240  0.0  0.0      0     0 ?        S    Jul02   0:04 [ksoftirqd/38]
+root       242  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/38:0H]
+root       243  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/39]
+root       244  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/39]
+root       245  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/39]
+root       246  0.0  0.0      0     0 ?        S    Jul02   0:06 [ksoftirqd/39]
+root       248  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/39:0H]
+root       249  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/40]
+root       250  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/40]
+root       251  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/40]
+root       252  0.0  0.0      0     0 ?        S    Jul02   0:05 [ksoftirqd/40]
+root       254  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/40:0H]
+root       255  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/41]
+root       256  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/41]
+root       257  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/41]
+root       258  0.0  0.0      0     0 ?        S    Jul02   0:05 [ksoftirqd/41]
+root       260  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/41:0H]
+root       261  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/42]
+root       262  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/42]
+root       263  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/42]
+root       264  0.0  0.0      0     0 ?        S    Jul02   0:05 [ksoftirqd/42]
+root       266  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/42:0H]
+root       267  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/43]
+root       268  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/43]
+root       269  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/43]
+root       270  0.0  0.0      0     0 ?        S    Jul02   0:04 [ksoftirqd/43]
+root       272  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/43:0H]
+root       273  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/44]
+root       274  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/44]
+root       275  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/44]
+root       276  0.0  0.0      0     0 ?        S    Jul02   0:04 [ksoftirqd/44]
+root       278  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/44:0H]
+root       279  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/45]
+root       280  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/45]
+root       281  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/45]
+root       282  0.0  0.0      0     0 ?        S    Jul02   0:04 [ksoftirqd/45]
+root       284  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/45:0H]
+root       285  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/46]
+root       286  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/46]
+root       287  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/46]
+root       288  0.0  0.0      0     0 ?        S    Jul02   0:04 [ksoftirqd/46]
+root       290  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/46:0H]
+root       291  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/47]
+root       292  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/47]
+root       293  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/47]
+root       294  0.0  0.0      0     0 ?        S    Jul02   0:05 [ksoftirqd/47]
+root       296  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/47:0H]
+root       297  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/48]
+root       298  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/48]
+root       299  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/48]
+root       300  0.0  0.0      0     0 ?        S    Jul02   0:04 [ksoftirqd/48]
+root       302  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/48:0H]
+root       303  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/49]
+root       304  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/49]
+root       305  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/49]
+root       306  0.0  0.0      0     0 ?        S    Jul02   0:04 [ksoftirqd/49]
+root       308  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/49:0H]
+root       309  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/50]
+root       310  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/50]
+root       311  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/50]
+root       312  0.0  0.0      0     0 ?        S    Jul02   0:05 [ksoftirqd/50]
+root       314  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/50:0H]
+root       315  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/51]
+root       316  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/51]
+root       317  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/51]
+root       318  0.0  0.0      0     0 ?        S    Jul02   0:05 [ksoftirqd/51]
+root       320  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/51:0H]
+root       321  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/52]
+root       322  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/52]
+root       323  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/52]
+root       324  0.0  0.0      0     0 ?        S    Jul02   0:05 [ksoftirqd/52]
+root       326  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/52:0H]
+root       327  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/53]
+root       328  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/53]
+root       329  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/53]
+root       330  0.0  0.0      0     0 ?        S    Jul02   0:04 [ksoftirqd/53]
+root       332  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/53:0H]
+root       333  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/54]
+root       334  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/54]
+root       335  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/54]
+root       336  0.0  0.0      0     0 ?        S    Jul02   0:06 [ksoftirqd/54]
+root       338  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/54:0H]
+root       339  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/55]
+root       340  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/55]
+root       341  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/55]
+root       342  0.0  0.0      0     0 ?        S    Jul02   0:07 [ksoftirqd/55]
+root       344  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/55:0H]
+root       345  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/56]
+root       346  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/56]
+root       347  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/56]
+root       348  0.0  0.0      0     0 ?        S    Jul02   0:07 [ksoftirqd/56]
+root       350  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/56:0H]
+root       351  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/57]
+root       352  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/57]
+root       353  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/57]
+root       354  0.0  0.0      0     0 ?        S    Jul02   0:08 [ksoftirqd/57]
+root       356  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/57:0H]
+root       357  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/58]
+root       358  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/58]
+root       359  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/58]
+root       360  0.0  0.0      0     0 ?        S    Jul02   0:07 [ksoftirqd/58]
+root       362  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/58:0H]
+root       363  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/59]
+root       364  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/59]
+root       365  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/59]
+root       366  0.0  0.0      0     0 ?        S    Jul02   0:07 [ksoftirqd/59]
+root       368  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/59:0H]
+root       369  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/60]
+root       370  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/60]
+root       371  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/60]
+root       372  0.0  0.0      0     0 ?        S    Jul02   0:07 [ksoftirqd/60]
+root       374  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/60:0H]
+root       375  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/61]
+root       376  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/61]
+root       377  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/61]
+root       378  0.0  0.0      0     0 ?        S    Jul02   0:07 [ksoftirqd/61]
+root       380  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/61:0H]
+root       381  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/62]
+root       382  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/62]
+root       383  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/62]
+root       384  0.0  0.0      0     0 ?        S    Jul02   0:07 [ksoftirqd/62]
+root       386  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/62:0H]
+root       387  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/63]
+root       388  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/63]
+root       389  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/63]
+root       390  0.0  0.0      0     0 ?        S    Jul02   0:07 [ksoftirqd/63]
+root       392  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/63:0H]
+root       393  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/64]
+root       394  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/64]
+root       395  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/64]
+root       396  0.0  0.0      0     0 ?        S    Jul02   0:07 [ksoftirqd/64]
+root       398  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/64:0H]
+root       399  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/65]
+root       400  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/65]
+root       401  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/65]
+root       402  0.0  0.0      0     0 ?        S    Jul02   0:07 [ksoftirqd/65]
+root       404  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/65:0H]
+root       405  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/66]
+root       406  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/66]
+root       407  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/66]
+root       408  0.0  0.0      0     0 ?        S    Jul02   0:06 [ksoftirqd/66]
+root       410  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/66:0H]
+root       411  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/67]
+root       412  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/67]
+root       413  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/67]
+root       414  0.0  0.0      0     0 ?        S    Jul02   0:07 [ksoftirqd/67]
+root       416  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/67:0H]
+root       417  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/68]
+root       418  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/68]
+root       419  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/68]
+root       420  0.0  0.0      0     0 ?        S    Jul02   0:07 [ksoftirqd/68]
+root       422  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/68:0H]
+root       423  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/69]
+root       424  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/69]
+root       425  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/69]
+root       426  0.0  0.0      0     0 ?        S    Jul02   0:07 [ksoftirqd/69]
+root       428  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/69:0H]
+root       429  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/70]
+root       430  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/70]
+root       431  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/70]
+root       432  0.0  0.0      0     0 ?        S    Jul02   0:07 [ksoftirqd/70]
+root       434  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/70:0H]
+root       435  0.0  0.0      0     0 ?        S    Jul02   0:00 [cpuhp/71]
+root       436  0.0  0.0      0     0 ?        S    Jul02   0:00 [watchdog/71]
+root       437  0.0  0.0      0     0 ?        S    Jul02   0:00 [migration/71]
+root       438  0.0  0.0      0     0 ?        S    Jul02   0:08 [ksoftirqd/71]
+root       440  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/71:0H]
+root       443  0.0  0.0      0     0 ?        S    Jul02   0:00 [kdevtmpfs]
+root       444  0.0  0.0      0     0 ?        S<   Jul02   0:00 [netns]
+root       447  0.0  0.0      0     0 ?        S    Jul02   0:00 [khungtaskd]
+root       448  0.0  0.0      0     0 ?        S    Jul02   0:00 [oom_reaper]
+root       449  0.0  0.0      0     0 ?        S<   Jul02   0:00 [writeback]
+root       450  0.0  0.0      0     0 ?        S    Jul02   0:00 [kcompactd0]
+root       451  0.0  0.0      0     0 ?        S    Jul02   0:00 [kcompactd1]
+root       452  0.0  0.0      0     0 ?        SN   Jul02   0:00 [ksmd]
+root       453  0.0  0.0      0     0 ?        SN   Jul02   0:09 [khugepaged]
+root       454  0.0  0.0      0     0 ?        S<   Jul02   0:00 [crypto]
+root       455  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kintegrityd]
+root       456  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kblockd]
+root       528  0.0  0.0      0     0 ?        S<   Jul02   0:00 [edac-poller]
+root       529  0.0  0.0      0     0 ?        S<   Jul02   0:00 [devfreq_wq]
+root       530  0.0  0.0      0     0 ?        S<   Jul02   0:00 [watchdogd]
+root       532  0.0  0.0      0     0 ?        S    Jul02   0:00 [kauditd]
+root       533  0.0  0.0      0     0 ?        S    Jul02   0:00 [kswapd0]
+root       534  0.0  0.0      0     0 ?        S    Jul02   0:00 [kswapd1]
+root       584  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kthrotld]
+root       587  0.0  0.0      0     0 ?        S<   Jul02   0:00 [ipv6_addrconf]
+valmass    610  0.0  0.0  13372  1468 ?        Ss   Jul04   0:00 ssh-agent -s
+jiarong    679  0.0  0.0  40272  2824 ?        S    Jul03   0:00 dbus-daemon --nofork --print-address 4 --session
+root       945  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/1:1H]
+root       946  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/2:1H]
+root       947  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/3:1H]
+root       948  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/4:1H]
+root       949  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/5:1H]
+root       950  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/6:1H]
+root       951  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/9:1H]
+root       952  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/11:1H]
+root       953  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/10:1H]
+root       954  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/12:1H]
+root       955  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/13:1H]
+root       956  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/15:1H]
+root       957  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/16:1H]
+root       958  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/14:1H]
+root       959  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/17:1H]
+root       960  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/18:1H]
+root       961  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/19:1H]
+root       962  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/21:1H]
+root       963  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/20:1H]
+root       964  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/22:1H]
+root       965  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/23:1H]
+root       966  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/24:1H]
+root       967  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/0:1H]
+root       968  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/25:1H]
+root       969  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/26:1H]
+root       970  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/27:1H]
+root       971  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/28:1H]
+root       972  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/29:1H]
+root       973  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/30:1H]
+root       974  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/33:1H]
+root       975  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/31:1H]
+root       976  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/32:1H]
+root       977  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/34:1H]
+root       978  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/35:1H]
+root       979  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/36:1H]
+root       980  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/39:1H]
+root       981  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/37:1H]
+root       982  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/38:1H]
+root       983  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/40:1H]
+root       984  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/42:1H]
+root       985  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/43:1H]
+root       986  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/41:1H]
+root       987  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/44:1H]
+root       988  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/46:1H]
+root       989  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/47:1H]
+root       990  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/45:1H]
+root       991  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/48:1H]
+root       992  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/49:1H]
+root       993  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/50:1H]
+root       994  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/51:1H]
+root       995  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/52:1H]
+root       996  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/53:1H]
+root       997  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/55:1H]
+root       998  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/54:1H]
+root       999  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/56:1H]
+root      1000  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/57:1H]
+root      1001  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/58:1H]
+root      1002  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/59:1H]
+root      1003  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/60:1H]
+root      1004  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/61:1H]
+root      1005  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/62:1H]
+root      1006  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/63:1H]
+root      1007  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/64:1H]
+root      1008  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/65:1H]
+root      1009  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/66:1H]
+root      1010  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/67:1H]
+root      1011  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/68:1H]
+root      1012  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/7:1H]
+root      1013  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/69:1H]
+root      1014  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/71:1H]
+root      1015  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/70:1H]
+root      1016  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/8:1H]
+root      1022  0.0  0.0      0     0 ?        S    02:40   0:00 [kworker/33:1]
+root      1104  0.0  0.0      0     0 ?        S    Jul02   0:00 [scsi_eh_0]
+root      1105  0.0  0.0      0     0 ?        S<   Jul02   0:00 [scsi_tmf_0]
+root      1106  0.0  0.0      0     0 ?        S<   Jul02   0:00 [ata_sff]
+root      1122  0.0  0.0      0     0 ?        S    Jul02   0:00 [scsi_eh_1]
+root      1123  0.0  0.0      0     0 ?        S<   Jul02   0:00 [scsi_tmf_1]
+root      1124  0.0  0.0      0     0 ?        S    Jul02   0:00 [scsi_eh_2]
+root      1125  0.0  0.0      0     0 ?        S<   Jul02   0:00 [scsi_tmf_2]
+root      1126  0.0  0.0      0     0 ?        S    Jul02   0:00 [scsi_eh_3]
+root      1127  0.0  0.0      0     0 ?        S<   Jul02   0:00 [scsi_tmf_3]
+root      1128  0.0  0.0      0     0 ?        S    Jul02   0:00 [scsi_eh_4]
+root      1129  0.0  0.0      0     0 ?        S<   Jul02   0:00 [scsi_tmf_4]
+root      1135  0.0  0.0      0     0 ?        S    Jul02   0:00 [scsi_eh_5]
+root      1136  0.0  0.0      0     0 ?        S<   Jul02   0:00 [scsi_tmf_5]
+root      1137  0.0  0.0      0     0 ?        S    Jul02   0:00 [scsi_eh_6]
+root      1138  0.0  0.0      0     0 ?        S<   Jul02   0:00 [scsi_tmf_6]
+root      1139  0.0  0.0      0     0 ?        S    Jul02   0:00 [scsi_eh_7]
+root      1140  0.0  0.0      0     0 ?        S<   Jul02   0:00 [scsi_tmf_7]
+root      1141  0.0  0.0      0     0 ?        S    Jul02   0:00 [scsi_eh_8]
+root      1142  0.0  0.0      0     0 ?        S<   Jul02   0:00 [scsi_tmf_8]
+root      1143  0.0  0.0      0     0 ?        S    Jul02   0:00 [scsi_eh_9]
+root      1144  0.0  0.0      0     0 ?        S<   Jul02   0:00 [scsi_tmf_9]
+root      1145  0.0  0.0      0     0 ?        S    Jul02   0:00 [scsi_eh_10]
+root      1146  0.0  0.0      0     0 ?        S<   Jul02   0:00 [scsi_tmf_10]
+root      1239  0.0  0.0 113996  8036 ?        Ss   09:39   0:00 sshd: cab478 [priv]
+root      1241  0.0  0.0 113996  8252 ?        Ss   09:39   0:00 sshd: svasquez [priv]
+root      1308  0.0  0.0      0     0 ?        S    Jul02   0:24 [jbd2/sda32-8]
+root      1309  0.0  0.0      0     0 ?        S<   Jul02   0:00 [ext4-rsv-conver]
+root      1367  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kaluad]
+root      1369  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kmpath_rdacd]
+root      1370  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kmpathd]
+root      1371  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kmpath_handlerd]
+root      1374  0.0  0.0  12024  4632 ?        Ss   Jul02   5:13 /usr/sbin/haveged -w 1024 -v 0 -F
+root      1375  0.0  0.0  39596  8612 ?        Ss   Jul02   2:01 /usr/lib/systemd/systemd-journald
+root      1402  0.0  0.0  51160  7300 ?        Ss   Jul02   0:01 /usr/lib/systemd/systemd-udevd
+root      1489  0.0  0.0      0     0 ?        S    09:40   0:00 [kworker/69:1]
+luxu      1955  0.0  0.0  42484  5584 ?        Ss   Jul03   5:14 /usr/lib/systemd/systemd --user
+luxu      1956  0.0  0.0 239324  2484 ?        S    Jul03   0:00 (sd-pam)
+root      2050  0.0  0.0      0     0 ?        S<   Jul02   0:00 [ixgbe]
+root      2140  0.0  0.0      0     0 ?        SN   Jul02   0:34 [kipmi0]
+root      2143  0.0  0.0      0     0 ?        S<   Jul02   0:00 [ttm_swap]
+root      2200  0.0  0.0      0     0 ?        S    Jul02   0:00 [jbd2/sda12-8]
+root      2201  0.0  0.0      0     0 ?        S<   Jul02   0:00 [ext4-rsv-conver]
+root      2225  0.1  0.0  20100  3484 ?        Ss   Jul02  13:19 /usr/sbin/irqbalance --foreground
+root      2234  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/u147:0]
+root      2235  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/u148:0]
+cab478    2254  0.0  0.0  42400  5392 ?        Ss   09:40   0:03 /usr/lib/systemd/systemd --user
+cab478    2255  0.0  0.0 240568  3616 ?        S    09:40   0:00 (sd-pam)
+message+  2256  0.0  0.0  48044  4600 ?        Ss   Jul02   1:23 /bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation
+cab478    2259  0.0  0.0 113996  3360 ?        S    09:40   0:00 sshd: cab478@pts/43
+root      2260  0.0  0.0      0     0 ?        S<   Jul02   0:00 [ib-comp-wq]
+root      2261  0.0  0.0      0     0 ?        S<   Jul02   0:00 [ib-comp-unb-wq]
+root      2262  0.0  0.0      0     0 ?        S<   Jul02   0:00 [ib_mcast]
+root      2263  0.0  0.0      0     0 ?        S<   Jul02   0:00 [ib_nl_sa_wq]
+cab478    2264  0.0  0.0  17596  6948 pts/43   Ss+  09:40   0:00 -bash
+nscd      2265  0.0  0.0 1142580 4236 ?        Ssl  Jul02   8:07 /usr/sbin/nscd
+root      2286  0.0  0.0      0     0 ?        S<   Jul02   0:00 [mlx5_ib_sigerr_]
+root      2291  0.0  0.0  25324  4408 ?        Ss   Jul02   0:00 /usr/sbin/smartd -n
+root      2294  0.0  0.0 426072 12352 ?        Ssl  Jul02   2:26 /usr/sbin/rsyslogd -n
+root      2299  0.0  0.0  23860  4476 ?        Ss   Jul02   0:39 /usr/lib/systemd/systemd-logind
+root      2345  0.0  0.0   8804  1900 ?        Sl   Jul02   0:00 /usr/sbin/memlogd -e 60 -m -v -b -f /var/log/memlog/
+root      2456  0.0  0.0 113996  8112 ?        Ss   Jul10   0:00 sshd: lisipei [priv]
+root      2500  0.0  0.0 113996  8132 ?        Ss   08:41   0:00 sshd: mickelso [priv]
+root      2511  0.0  0.0  29872  5192 ?        SLs  Jul02   0:00 /usr/lib/wicked/bin/wickedd-auto4 --systemd --foreground
+root      2512  0.0  0.0  29876  5304 ?        SLs  Jul02   0:00 /usr/lib/wicked/bin/wickedd-dhcp4 --systemd --foreground
+root      2513  0.0  0.0  29872  5152 ?        SLs  Jul02   0:00 /usr/lib/wicked/bin/wickedd-dhcp6 --systemd --foreground
+root      2514  0.0  0.0  29956  5336 ?        SLs  Jul02   0:00 /usr/sbin/wickedd --systemd --foreground
+root      2515  0.0  0.0  30136  5508 ?        SLs  Jul02   0:00 /usr/sbin/wickedd-nanny --systemd --foreground
+lisipei   2517  0.0  0.0  42492  5532 ?        Ss   Jul10   0:21 /usr/lib/systemd/systemd --user
+lisipei   2518  0.0  0.0 240568  3616 ?        S    Jul10   0:00 (sd-pam)
+lisipei   2521  0.0  0.0 113996  4260 ?        S    Jul10   0:00 sshd: lisipei@pts/12
+lisipei   2522  0.0  0.0  17960  7112 pts/12   Ss+  Jul10   0:00 -bash
+root      2607  0.0  0.0 113996  8124 ?        Ss   08:41   0:00 sshd: tilmes [priv]
+root      2611  0.0  0.0      0     0 ?        S<   Jul02   0:00 [mlx4]
+root      2621  0.0  0.0      0     0 ?        S<   Jul02   0:00 [mlx4_ib]
+root      2622  0.0  0.0      0     0 ?        S<   Jul02   0:00 [mlx4_ib_mcg]
+root      2677  0.0  0.0      0     0 ?        S<   Jul02   0:00 [ipoib_flush]
+mickelso  2681  0.0  0.0 114976  5112 ?        S    08:41   0:00 sshd: mickelso@pts/94
+mickelso  2682  0.0  0.0  15260  6220 pts/94   Ss   08:41   0:00 -tcsh
+root      2728  0.0  0.0      0     0 ?        S<   Jul02   0:00 [rdma_cm]
+xyhuang   2758  0.0  0.0  28840  1592 ?        Ss   Jul10   0:00 SCREEN
+xyhuang   2762  0.0  0.0  14268  4064 pts/29   Ss+  Jul10   0:00 -bin/tcsh
+root      2804  0.0  0.0      0     0 ?        S    09:40   0:00 [kworker/12:0]
+svasquez  2831  0.0  0.0 113996  3556 ?        S    09:40   0:00 sshd: svasquez@pts/85
+svasquez  2832  0.0  0.0  15584  6208 pts/85   Ss   09:40   0:00 -tcsh
+root      2875  0.0  0.0 113996  8016 ?        Ss   Jul10   0:00 sshd: acamras [priv]
+root      2940  0.0  0.0 113996  8996 ?        Ss   Jul10   0:00 sshd: olson [priv]
+root      2945  0.0  0.0      0     0 ?        S<   Jul02   0:00 [bond1]
+root      2953  0.0  0.0      0     0 ?        S<   Jul02   0:00 [bond0]
+root      3032  0.0  0.0      0     0 ?        S<   Jul02   0:00 [kworker/u149:1]
+tilmes    3139  0.0  0.0  42392  5560 ?        Ss   08:41   0:05 /usr/lib/systemd/systemd --user
+tilmes    3140  0.0  0.0 240568  3616 ?        S    08:41   0:00 (sd-pam)
+tilmes    3143  0.0  0.0 113996  3472 ?        S    08:41   0:00 sshd: tilmes@pts/95
+tilmes    3144  0.0  0.0  15272  5952 pts/95   Ss+  08:41   0:00 -tcsh
+czhuomin  3244  0.0  0.0  31224  6372 pts/103  S+   09:41   0:02 vi plot_region_first_withoutzoomin_obs_sta.py
+olson     3270  0.0  0.0  42400  5916 ?        Ss   Jul10   0:47 /usr/lib/systemd/systemd --user
+olson     3271  0.0  0.0 240568  3608 ?        S    Jul10   0:00 (sd-pam)
+olson     3274  0.0  0.0 113996  3536 ?        S    Jul10   0:00 sshd: olson@pts/75
+olson     3275  0.0  0.0  15300  6632 pts/75   Ss+  Jul10   0:01 -tcsh
+root      3350  0.0  0.0 113996  8224 ?        Ss   09:41   0:00 sshd: lgchen [priv]
+root      3399  0.0  0.0 113996  8124 ?        Ss   09:41   0:00 sshd: slevis [priv]
+root      3405  0.0  0.0 113996  8168 ?        Ss   09:41   0:00 sshd: dazlich [priv]
+lgchen    3412  0.0  0.0 113996  3352 ?        S    09:41   0:00 sshd: lgchen@pts/121
+lgchen    3413  0.0  0.0  15144  5836 pts/121  Ss+  09:41   0:00 -tcsh
+hannay    3447  0.0  0.0 502504 17972 ?        Sl   Jul10   0:00 /glade/u/apps/ch/opt/xxdiff/4.0.1/gnu/8.3.0/bin/xxdiff cesm1_1_2_LENS_n19/pop_som_frc cesm2_0_exp10j/pop_som_frc --title1= --title2=
+dazlich   3513  0.0  0.0  42400  5516 ?        Ss   09:42   0:02 /usr/lib/systemd/systemd --user
+dazlich   3514  0.0  0.0 240568  3616 ?        S    09:42   0:00 (sd-pam)
+dazlich   3517  0.0  0.0 113996  3404 ?        S    09:42   0:00 sshd: dazlich@pts/122
+dazlich   3518  0.0  0.0  17956  7104 pts/122  Ss+  09:42   0:00 -bash
+slevis    3660  0.0  0.0  42404  5336 ?        Ss   09:42   0:02 /usr/lib/systemd/systemd --user
+slevis    3661  0.0  0.0 240568  3616 ?        S    09:42   0:00 (sd-pam)
+slevis    3664  0.0  0.0 113996  3424 ?        S    09:42   0:00 sshd: slevis@pts/124
+slevis    3665  0.0  0.0  15368  6316 pts/124  Ss+  09:42   0:00 -tcsh
+xyhuang   3674  0.0  0.0  42400  5376 ?        Ss   Jul08   2:05 /usr/lib/systemd/systemd --user
+yijunw    3701  0.0  0.0  40268  3032 ?        S    Jul08   0:00 dbus-daemon --nofork --print-address 4 --session
+root      3858  0.0  0.0 113996  8128 ?        Ss   09:42   0:00 sshd: slevis [priv]
+slevis    3944  0.0  0.0 113996  3168 ?        S    09:42   0:00 sshd: slevis@pts/125
+slevis    3945  0.0  0.0  15368  6256 pts/125  Ss+  09:42   0:00 -tcsh
+root      4017  0.0  0.0 113996  8208 ?        Ss   09:42   0:00 sshd: slevis [priv]
+root      4019  0.0  0.0 113996  8016 ?        Ss   Jul07   0:00 sshd: sunlei [priv]
+slevis    4028  0.0  0.0 113996  3352 ?        S    09:42   0:00 sshd: slevis@pts/126
+slevis    4029  0.0  0.0  15368  6312 pts/126  Ss+  09:42   0:00 -tcsh
+sunlei    4052  0.0  0.0  42492  5472 ?        Ss   Jul07   2:49 /usr/lib/systemd/systemd --user
+sunlei    4053  0.0  0.0 239992  3244 ?        S    Jul07   0:00 (sd-pam)
+sunlei    4056  0.0  0.0 113996  4424 ?        S    Jul07   0:00 sshd: sunlei@pts/39
+sunlei    4057  0.0  0.0  17896  7092 pts/39   Ss+  Jul07   0:00 -bash
+xyhuang   4085  0.0  0.0 240576  3572 ?        S    Jul08   0:00 (sd-pam)
+zzeng     4212  0.0  0.0  40272   368 ?        Ss   Jul03   0:00 /bin/dbus-daemon --fork --print-pid 5 --print-address 7 --session
+zzeng     4219  0.0  0.0  40272   376 ?        Ss   Jul10   0:00 /bin/dbus-daemon --fork --print-pid 5 --print-address 7 --session
+root      4228  0.0  0.0  79248  4460 ?        Ss   Jul02   0:00 /usr/bin/su - daemon -c /usr/sbin/munged -F -S /var/run/munge/munge.socket.2
+jdwhite   4238  0.0  0.0  40268  1152 ?        S    Jul08   0:00 dbus-daemon --nofork --print-address 4 --session
+postfix   4262  0.0  0.0  36684  4232 ?        S    09:43   0:00 pickup -l -t fifo -u
+xyhuang   4322  0.0  0.0  28840  1432 ?        Ss   Jul08   0:04 SCREEN
+xyhuang   4323  0.0  0.0  14816  4336 pts/67   Ss+  Jul08   0:00 -bin/tcsh
+root      4507  0.0  0.0      0     0 ?        S<   Jul02   0:00 [rpciod]
+root      4509  0.0  0.0      0     0 ?        S<   Jul02   0:00 [xprtiod]
+zzeng     4559  0.0  0.0  40268   368 ?        Ss   Jul10   0:00 /bin/dbus-daemon --fork --print-pid 4 --print-address 6 --session
+root      4668  0.0  0.0 113996  8180 ?        Ss   09:43   0:00 sshd: lgao [priv]
+lgao      4715  0.0  0.0 113996  3508 ?        S    09:44   0:00 sshd: lgao@pts/128
+lgao      4716  0.0  0.0  17944  7112 pts/128  Ss   09:44   0:00 -bash
+root      4781  0.0  0.0      0     0 ?        S<   Jul02   0:00 [nfsiod]
+root      5091  0.0  0.0  16364  1776 ?        S    Jul02   0:03 /usr/sbin/ipmievd sel daemon pidfile=/var/run/ipmievd.pid
+root      5156  0.0  0.0      0     0 ?        S    09:44   0:00 [kworker/33:2]
+root      5164  0.0  0.0      0     0 ?        S    09:44   0:00 [kworker/26:1]
+root      5351  0.0  0.0      0     0 ?        S    Jul02   0:00 [NFSv4 callback]
+root      5410  0.0  0.0  64700  6784 ?        Ss   Jul02   0:18 /usr/sbin/sshd -D
+root      5655  0.0  0.0   4400  1512 ?        Ss   Jul02   0:07 /opt/sgi/sbin/tempohbc
+root      5710  0.0  0.0  22844  1416 ?        Ss   Jul02   7:31 /usr/sbin/procsetd
+root      5825  0.0  0.0 113996  8140 ?        Ss   08:42   0:00 sshd: rberrios [priv]
+acamras   5878  0.0  0.0  42404  5316 ?        Ss   Jul10   0:48 /usr/lib/systemd/systemd --user
+acamras   5879  0.0  0.0 240568  3608 ?        S    Jul10   0:00 (sd-pam)
+acamras   5897  0.0  0.0 113996  3428 ?        S    Jul10   0:00 sshd: acamras@pts/21
+acamras   5934  0.0  0.0  15352  6268 pts/21   Ss+  Jul10   0:01 -tcsh
+zzeng     5979  0.0  0.0  40268   364 ?        Ss   Jul09   0:00 /bin/dbus-daemon --fork --print-pid 4 --print-address 6 --session
+rberrios  6294  0.0  0.0  42396  5544 ?        Ss   08:42   0:05 /usr/lib/systemd/systemd --user
+rberrios  6295  0.0  0.0 240568  3616 ?        S    08:42   0:00 (sd-pam)
+rberrios  6300  0.0  0.0 113996  3540 ?        S    08:42   0:00 sshd: rberrios@pts/97
+rberrios  6301  0.0  0.0  17896  6984 pts/97   Ss+  08:42   0:00 -bash
+jluo      6472  0.0  0.0  28836  1876 ?        Ss   07:44   0:00 SCREEN -S jluo
+jluo      6473  0.0  0.0  17568  5912 pts/44   Ss+  07:44   0:00 /bin/bash
+root      6508  0.0  0.0   4748  1652 tty1     Ss+  Jul02   0:00 /sbin/agetty --noclear tty1 linux
+root      6533  0.0  0.0   4748  1660 ttyS1    Ss+  Jul02   0:00 /sbin/agetty --keep-baud 115200,38400,9600 ttyS1 vt220
+mickelso  6551  0.0  0.0  30960  6020 pts/94   S+   09:45   0:00 vi ../CESM_postprocessing_3/conformer/conformer/scripts/next_version
+root      6606  0.0  0.0 113996  8176 ?        Ss   08:43   0:00 sshd: lgao [priv]
+root      6700  0.0  0.0      0     0 ?        S    09:45   0:00 [kworker/37:0]
+lgao      6777  0.0  0.0  42400  5380 ?        Ss   08:43   0:05 /usr/lib/systemd/systemd --user
+lgao      6778  0.0  0.0 240568  3616 ?        S    08:43   0:00 (sd-pam)
+lgao      6781  0.0  0.0 113996  4336 ?        S    08:43   0:00 sshd: lgao@pts/63
+lgao      6782  0.0  0.0  18704  8104 pts/63   Ss+  08:43   0:00 -bash
+griffins  6960  9.7  1.4 4168140 3888792 pts/171 S+ Jul10 143:28 python extract_wrf_variables.py
+root      7009  0.0  0.0      0     0 ?        S    09:46   0:00 [kworker/0:2]
+daemon    7113  0.0  0.0  41820  5428 ?        Ss   Jul02   5:40 /usr/lib/systemd/systemd --user
+root      7249  0.0  0.0 113996  8012 ?        Ss   09:46   0:00 sshd: mgropp [priv]
+mgropp    7383  0.0  0.0  42400  5360 ?        Ss   09:46   0:02 /usr/lib/systemd/systemd --user
+mgropp    7385  0.0  0.0 240568  3616 ?        S    09:46   0:00 (sd-pam)
+mgropp    7398  0.1  0.0 115028  5572 ?        S    09:46   0:04 sshd: mgropp@pts/130
+mgropp    7423  0.0  0.0  17940  7080 pts/130  Ss+  09:46   0:00 -bash
+mgropp    7658  0.8  0.0 1769148 38424 pts/130 Sl   09:47   0:35 gedit PyartGridder.py
+mgropp    7668  0.0  0.0  14924  1136 pts/130  S    09:47   0:00 dbus-launch --autolaunch=7b245067d692a49dae63d89158190bd8 --binary-syntax --close-stderr
+mgropp    7669  0.0  0.0  40376  2000 ?        Ss   09:47   0:00 /bin/dbus-daemon --fork --print-pid 5 --print-address 7 --session
+mgropp    7687  0.0  0.0 761956  2668 ?        Sl   09:47   0:00 /usr/lib/dconf-service
+zzeng     7746  0.0  0.0  40268   372 ?        Ss   Jul10   0:00 /bin/dbus-daemon --fork --print-pid 4 --print-address 6 --session
+daemon    7778  0.0  0.0  90676  1924 ?        S    Jul02   0:00 (sd-pam)
+root      7973  0.0  0.0 113996  8744 ?        Ss   Jul04   0:00 sshd: sshu3 [priv]
+daemon    7978  0.0  0.0 226780  8148 ?        Ssl  Jul02   0:33 /usr/sbin/munged -F -S /var/run/munge/munge.socket.2
+sshu3     8159  0.0  0.0 114148  4648 ?        S    Jul04   0:00 sshd: sshu3@pts/19
+sshu3     8160  0.0  0.0  17888  8148 pts/19   Ss+  Jul04   0:00 -bash
+root      8330  0.0  0.0 113996  8120 ?        Ss   08:45   0:00 sshd: haonan [priv]
+haonan    8347  0.0  0.0 114324  4852 ?        S    08:45   0:00 sshd: haonan@pts/65
+haonan    8351  0.0  0.0  17848  7116 pts/65   Ss+  08:45   0:00 -bash
+root      8765  0.0  0.0 113996  8156 ?        Ss   07:49   0:00 sshd: shpark [priv]
+root      8921  0.0  0.0 113996  8232 ?        Ss   Jul10   0:00 sshd: mcginnis [priv]
+shpark    8962  0.0  0.0  42496  5316 ?        Ss   07:49   0:07 /usr/lib/systemd/systemd --user
+shpark    8963  0.0  0.0 240568  3616 ?        S    07:49   0:00 (sd-pam)
+shpark    8966  0.0  0.0 113996  3488 ?        S    07:49   0:00 sshd: shpark@pts/49
+shpark    8968  0.0  0.0  17952  7120 pts/49   Ss+  07:49   0:00 -bash
+phamkh    9003  0.0  0.0   5812   648 pts/23   S+   Jul10   0:02 tail -f CMIT-IPWM-036.out
+root      9018  0.0  0.0      0     0 ?        S    08:46   0:00 [kworker/31:1]
+root      9265  0.0  0.0 113996  7968 ?        Ss   08:47   0:00 sshd: mariavm [priv]
+mariavm   9294  0.0  0.0  42400  5452 ?        Ss   08:47   0:05 /usr/lib/systemd/systemd --user
+mariavm   9295  0.0  0.0 240568  3616 ?        S    08:47   0:00 (sd-pam)
+mariavm   9298  0.0  0.0 113996  3424 ?        S    08:47   0:00 sshd: mariavm@pts/72
+mariavm   9300  0.0  0.0  17116  6544 pts/72   Ss+  08:47   0:00 -tcsh
+root      9371  0.0  0.0 113996  8200 ?        Ss   08:47   0:00 sshd: visioni [priv]
+visioni   9488  0.0  0.0  42400  5336 ?        Ss   08:47   0:05 /usr/lib/systemd/systemd --user
+visioni   9489  0.0  0.0 240568  3616 ?        S    08:47   0:00 (sd-pam)
+visioni   9492  0.0  0.0 113996  3588 ?        S    08:47   0:00 sshd: visioni@pts/73
+visioni   9493  0.0  0.0  18312  7800 pts/73   Ss+  08:47   0:00 -bash
+mcginnis  9779  0.0  0.0  42420  5392 ?        Ss   Jul10   0:42 /usr/lib/systemd/systemd --user
+mcginnis  9780  0.0  0.0 240568  3608 ?        S    Jul10   0:00 (sd-pam)
+mcginnis  9783  0.0  0.0 113996  4392 ?        S    Jul10   0:00 sshd: mcginnis@pts/111
+mcginnis  9784  0.0  0.0  16492  6448 pts/111  Ss+  Jul10   0:02 -tcsh
+root      9816  0.0  0.0  34172  2472 ?        Ss   Jul02   0:02 /usr/lib/postfix/master -w
+root      9913  0.0  0.0      0     0 ?        S    09:50   0:00 [kworker/22:2]
+root      9914  0.0  0.0      0     0 ?        S    09:50   0:00 [kworker/51:2]
+postfix   9943  0.0  0.0  36500  5452 ?        S    Jul02   0:00 qmgr -l -t fifo -u
+zzeng    10135  0.0  0.0  40268   372 ?        Ss   Jul10   0:00 /bin/dbus-daemon --fork --print-pid 4 --print-address 6 --session
+root     10179  0.0  0.0      0     0 ?        S    09:51   0:00 [kworker/11:1]
+rfisher  10238  0.0  0.0  15444  5608 pts/37   S+   08:48   0:00 -csh
+root     10319  0.0  0.0 113996  8084 ?        Ss   Jul10   0:00 sshd: griffins [priv]
+griffins 10331  0.0  0.0  42400  5316 ?        Ss   Jul10   0:51 /usr/lib/systemd/systemd --user
+griffins 10332  0.0  0.0 240568  3608 ?        S    Jul10   0:00 (sd-pam)
+griffins 10335  0.0  0.0 113996  3352 ?        S    Jul10   0:00 sshd: griffins@pts/118
+griffins 10336  0.0  0.0  17996  7120 pts/118  Ss   Jul10   0:00 -bash
+zzeng    10356  0.0  0.0  40272   380 ?        Ss   Jul03   0:00 /bin/dbus-daemon --fork --print-pid 5 --print-address 7 --session
+root     10480  0.0  0.0  19564  3472 ?        Ss   Jul02   0:01 /usr/sbin/cron -n
+root     10760  0.0  0.0 113996  8108 ?        Ss   Jul09   0:00 sshd: lintao [priv]
+root     10948  0.0  0.0      0     0 ?        S    08:50   0:00 [kworker/62:0]
+alyammar 10962  0.0  0.0 3319076 28916 ?       Sl   Jul05   0:00 /glade/u/home/alyammar/.vscode-server/bin/c7d83e57cd18f18026a8162d042843bda1bcf21f/node /glade/u/home/alyammar/.vscode-server/extensions/ms-python.python-2019.6.22090/out/client/debugger/debugAdapter/main.js
+root     11187  0.0  0.0      0     0 ?        S    Jul06   0:01 [mmkproc]
+root     11188  0.0  0.0      0     0 ?        S    Jul06   0:01 [mmkproc]
+root     11301  0.0  0.0 113996  8120 ?        Ss   Jul10   0:00 sshd: sungyoon [priv]
+sungyoon 11455  0.0  0.0 113996  3424 ?        S    Jul10   0:00 sshd: sungyoon@pts/146
+root     11458  0.0  0.0 113996  8096 ?        Ss   03:06   0:00 sshd: jiating [priv]
+sungyoon 11464  0.0  0.0  17972  7100 pts/146  Ss+  Jul10   0:00 -bash
+jiating  11647  0.0  0.0  42484  5448 ?        Ss   03:06   0:15 /usr/lib/systemd/systemd --user
+jiating  11648  0.0  0.0 240568  3616 ?        S    03:06   0:00 (sd-pam)
+jiating  11651  0.0  0.0 113996  3556 ?        S    03:06   0:00 sshd: jiating@pts/0
+jiating  11652  0.0  0.0  15264  5964 pts/0    Ss+  03:06   0:00 -tcsh
+root     11966  0.0  0.0      0     0 ?        S    08:50   0:00 [kworker/50:2]
+root     12208  0.0  0.0      0     0 ?        S    09:55   0:00 [kworker/54:0]
+root     12216  0.0  0.0      0     0 ?        S    09:55   0:00 [kworker/23:0]
+lintao   12245  0.0  0.0  42400  5520 ?        Ss   Jul09   1:29 /usr/lib/systemd/systemd --user
+lintao   12253  0.0  0.0 240568  3584 ?        S    Jul09   0:00 (sd-pam)
+zzeng    12268  0.0  0.0  40272   376 ?        Ss   Jul10   0:00 /bin/dbus-daemon --fork --print-pid 5 --print-address 7 --session
+lintao   12285  0.0  0.0 113996  4304 ?        S    Jul09   0:00 sshd: lintao@pts/113
+lintao   12328  0.0  0.0  19140  7384 pts/113  Ss   Jul09   0:00 -bash
+root     12424  0.0  0.0      0     0 ?        S    09:55   0:00 [kworker/40:0]
+rtkit    12475  0.0  0.0 183012  3520 ?        SNsl Jul06   0:02 /usr/lib/rtkit/rtkit-daemon
+polkitd  12478  0.0  0.0 527212 19208 ?        Ssl  Jul06   0:10 /usr/lib/polkit-1/polkitd --no-debug
+weiming  12503  0.0  0.0  28836  1644 ?        Ss   Jul09   0:00 SCREEN -S 02
+weiming  12504  0.0  0.0  17580  6052 pts/133  Ss+  Jul09   0:00 /bin/bash
+root     12689  0.0  0.0      0     0 ?        S    09:56   0:00 [kworker/15:0]
+root     12933  0.0  0.0 113996  8132 ?        Ss   07:57   0:00 sshd: abanihi [priv]
+root     12943  0.0  0.0 113996  8036 ?        Ss   09:56   0:00 sshd: benedict [priv]
+benedict 12961  0.0  0.0  42404  5268 ?        Ss   09:56   0:02 /usr/lib/systemd/systemd --user
+benedict 12962  0.0  0.0 240568  3616 ?        S    09:56   0:00 (sd-pam)
+benedict 12965  0.0  0.0 114128  4572 ?        S    09:56   0:00 sshd: benedict@pts/129
+benedict 12966  0.0  0.0  15036  5776 pts/129  Ss+  09:56   0:00 -tcsh
+abanihi  12995  0.0  0.0  42492  5408 ?        Ss   07:57   0:07 /usr/lib/systemd/systemd --user
+abanihi  12996  0.0  0.0 240568  3616 ?        S    07:57   0:00 (sd-pam)
+abanihi  12999  0.0  0.0 113996  3488 ?        S    07:57   0:00 sshd: abanihi@pts/30
+abanihi  13000  0.0  0.0  18032  7192 pts/30   Ss+  07:57   0:00 -bash
+jiarong  13114  0.0  0.0  42476  5480 ?        Ss   Jul03   5:16 /usr/lib/systemd/systemd --user
+jiarong  13115  0.0  0.0 239192  2316 ?        S    Jul03   0:00 (sd-pam)
+zzeng    13165  0.0  0.0  40268   364 ?        Ss   Jul09   0:00 /bin/dbus-daemon --fork --print-pid 4 --print-address 6 --session
+root     13188  0.0  0.0 113996  8212 ?        Ss   Jul09   0:00 sshd: sshams [priv]
+trude    13495  0.0  0.0  42512  6096 ?        Ss   Jul03   5:16 /usr/lib/systemd/systemd --user
+trude    13497  0.0  0.0 239524  2744 ?        S    Jul03   0:00 (sd-pam)
+mgropp   13755  0.1  0.1 1664492 464144 pts/130 T   09:57   0:05 python run.py 0
+root     13795  0.0  0.0 113996  8124 ?        Ss   07:59   0:00 sshd: fvitt [priv]
+zzeng    13811  0.0  0.0  40272   380 ?        Ss   Jul10   0:00 /bin/dbus-daemon --fork --print-pid 5 --print-address 7 --session
+fvitt    13849  0.0  0.0  42492  5276 ?        Ss   07:59   0:07 /usr/lib/systemd/systemd --user
+fvitt    13850  0.0  0.0 240568  3616 ?        S    07:59   0:00 (sd-pam)
+fvitt    13853  0.1  0.0 118560  8408 ?        S    07:59   0:15 sshd: fvitt@pts/47
+fvitt    13863  0.0  0.0  17972  7116 pts/47   Ss+  07:59   0:00 -bash
+zzeng    13945  0.0  0.0  40268   364 ?        Ss   Jul09   0:00 /bin/dbus-daemon --fork --print-pid 4 --print-address 6 --session
+root     13998  0.0  0.0 113996  8164 ?        Ss   09:58   0:00 sshd: andrewmc [priv]
+andrewmc 14088  0.0  0.0  42400  5464 ?        Ss   09:58   0:02 /usr/lib/systemd/systemd --user
+andrewmc 14089  0.0  0.0 240568  3616 ?        S    09:58   0:00 (sd-pam)
+andrewmc 14092  0.0  0.0 113996  3480 ?        S    09:58   0:00 sshd: andrewmc@pts/131
+andrewmc 14093  0.0  0.0  19400  7372 pts/131  Ss+  09:58   0:00 -bash
+griffins 14307  0.0  0.0  28832  1768 ?        Ss   Jul10   0:00 SCREEN -S wrf_May_5
+griffins 14308  0.0  0.0  17496  5300 pts/171  Ss   Jul10   0:00 /bin/bash
+root     14442  0.0  0.0 113996  8104 ?        Ss   09:59   0:00 sshd: gthompsn [priv]
+gthompsn 14481  0.0  0.0 113996  3360 ?        S    09:59   0:00 sshd: gthompsn@pts/132
+gthompsn 14482  0.0  0.0  15300  6168 pts/132  Ss+  09:59   0:00 -tcsh
+root     14799  0.0  0.0      0     0 ?        S    10:00   0:00 [kworker/47:1]
+weiming  15077  0.0  0.0  28836  1688 ?        Ss   Jul09   0:00 SCREEN -S 03
+weiming  15078  0.0  0.0  17668  6036 pts/136  Ss   Jul09   0:00 /bin/bash
+root     15546  0.0  0.0 118192  8112 ?        Ss   03:17   0:00 sshd: svasquez [priv]
+svasquez 15548  0.0  0.0 118192  3472 ?        S    03:17   0:00 sshd: svasquez@notty
+svasquez 15549  0.0  0.0  12612  3156 ?        Ss   03:17   0:00 tcsh -c (cd /glade/u/home/svasquez/esmf_test/cronjobs/daily/intel_cheyenne/; /glade/u/home/svasquez/esmf_test/cronjobs/daily/intel_cheyenne/runTest testFile_EM > /glade/u/home/svasquez/esmf_test/cronjobs/daily/intel_cheyenne/cron.out )
+svasquez 15603  0.0  0.0  13272  2308 ?        S    03:17   0:00 /bin/bash -l /glade/u/home/svasquez/esmf_test/cronjobs/daily/intel_cheyenne/runTest testFile_EM
+svasquez 15612  0.0  0.0 323788  3380 ?        Sl   03:17   0:00 expect run_ys /glade/u/home/svasquez/esmf_test/cronjobs/daily/intel_cheyenne/testFile_EM /glade/u/home/svasquez/esmf_test/cronjobs/daily/intel_cheyenne/test_results /glade/u/home/svasquez/esmf_test/cronjobs/daily/intel_cheyenne
+svasquez 15613  0.0  0.0  16832  5400 pts/33   Ss+  03:17   0:00 /bin/bash -l
+root     15633  0.0  0.0      0     0 ?        S    10:00   0:00 [kworker/7:2]
+fvitt    15843  0.0  0.0  71236  9572 pts/47   S    08:01   0:00 xterm
+fvitt    15866  0.0  0.0  17848  6212 pts/26   Ss+  08:01   0:00 bash
+root     16090  0.0  0.0      0     0 ?        S    10:00   0:00 [kworker/27:0]
+root     16291  0.0  0.0      0     0 ?        S    10:01   0:00 [kworker/44:0]
+zzeng    16380  0.0  0.0  40272   372 ?        Ss   Jul03   0:00 /bin/dbus-daemon --fork --print-pid 5 --print-address 7 --session
+valmass  16422  0.0  0.0  42488  5308 ?        Ss   Jul04   4:48 /usr/lib/systemd/systemd --user
+nobody   16616  0.1  0.0  89436 15060 ?        Ss   Jul02  15:54 /usr/sbin/gmond
+fvitt    16666  0.0  0.0  75352 13580 pts/47   S    08:02   0:00 xterm
+fvitt    16693  0.0  0.0  17772  6360 pts/51   Ss+  08:03   0:00 bash
+root     17136  0.0  0.0 113996  8200 ?        Ss   08:03   0:00 sshd: ksgarcia [priv]
+root     17200  0.0  0.0 113996  8220 ?        Ss   10:02   0:00 sshd: svasquez [priv]
+weiming  17310  0.0  0.0  28836  1620 ?        Ss   Jul09   0:00 SCREEN -S 04
+weiming  17311  0.0  0.0  17520  6012 pts/138  Ss+  Jul09   0:00 /bin/bash
+ksgarcia 17340  0.0  0.0  42500  5428 ?        Ss   08:04   0:07 /usr/lib/systemd/systemd --user
+ksgarcia 17341  0.0  0.0 240568  3616 ?        S    08:04   0:00 (sd-pam)
+ksgarcia 17344  0.0  0.0 114684  5112 ?        S    08:04   0:00 sshd: ksgarcia@pts/52
+ksgarcia 17345  0.0  0.0  26340 15772 pts/52   Ss+  08:04   0:08 -bash
+svasquez 17407  0.0  0.0 113996  3408 ?        S    10:02   0:00 sshd: svasquez@pts/134
+svasquez 17408  0.0  0.0  15588  6288 pts/134  Ss+  10:02   0:00 -tcsh
+root     17583  0.0  0.0 113996  8156 ?        Ss   10:03   0:00 sshd: katec [priv]
+katec    17635  0.0  0.0  42400  5260 ?        Ss   10:03   0:02 /usr/lib/systemd/systemd --user
+katec    17636  0.0  0.0 240568  3616 ?        S    10:03   0:00 (sd-pam)
+katec    17639  0.0  0.0 113996  3476 ?        S    10:03   0:00 sshd: katec@pts/135
+katec    17640  0.0  0.0  14908  5628 pts/135  Ss+  10:03   0:00 -tcsh
+root     17641  0.0  0.0 113996  8072 ?        Ss   Jul10   0:00 sshd: zhangf [priv]
+zhangf   17657  0.0  0.0  42488  5276 ?        Ss   Jul10   0:56 /usr/lib/systemd/systemd --user
+zhangf   17658  0.0  0.0 240568  3608 ?        S    Jul10   0:00 (sd-pam)
+zhangf   17661  0.0  0.0 113996  4416 ?        S    Jul10   0:00 sshd: zhangf@notty
+zhangf   17662  0.0  0.0  14412  1832 ?        Ss   Jul10   0:00 /usr/lib/ssh/sftp-server
+adugger  17917  0.0  0.0  14924  1024 pts/96   S    Jul10   0:00 dbus-launch --autolaunch=7b245067d692a49dae63d89158190bd8 --binary-syntax --close-stderr
+adugger  17918  0.0  0.0  40272  1700 ?        Ss   Jul10   0:00 /bin/dbus-daemon --fork --print-pid 5 --print-address 7 --session
+fvitt    17941  0.0  0.0  76664 14848 pts/51   S    08:04   0:00 xterm
+root     17947  0.0  0.0      0     0 ?        S    10:04   0:00 [kworker/16:1]
+fvitt    17957  0.0  0.0  17848  6352 pts/54   Ss+  08:04   0:00 bash
+jsmall   18008  0.0  0.0  13276  2412 pts/160  S    10:04   0:00 /bin/bash /glade/u/apps/ch/opt/usr/bin/execdav -a NCGD0011 -t 8:00:00 -m 100GB
+jsmall   18030  0.0  0.0  97136  2468 pts/160  Sl   10:04   0:00 salloc --partition dav --ntasks 1 --account NCGD0011 -t 8:00:00 --mem 100GB srun --pty --mem 0 --export=PATH=/bin:/usr/bin,SHELL,TERM,HOME,DISPLAY,XAUTHORITY /bin/tcsh -l
+jsmall   18088  0.0  0.0 315588  5124 pts/160  Sl+  10:04   0:00 srun --pty --mem 0 --export=PATH=/bin:/usr/bin,SHELL,TERM,HOME,DISPLAY,XAUTHORITY /bin/tcsh -l
+jsmall   18089  0.0  0.0  43224  2576 pts/160  S+   10:04   0:00 srun --pty --mem 0 --export=PATH=/bin:/usr/bin,SHELL,TERM,HOME,DISPLAY,XAUTHORITY /bin/tcsh -l
+adugger  18090  0.0  0.0 761956  3156 ?        Sl   Jul10   0:00 /usr/lib/dconf-service
+root     18586  0.0  0.0 113996  8152 ?        Ss   05:55   0:00 sshd: anewman [priv]
+anewman  18766  0.0  0.0  42484  5352 ?        Ss   05:55   0:11 /usr/lib/systemd/systemd --user
+anewman  18767  0.0  0.0 240568  3616 ?        S    05:55   0:00 (sd-pam)
+anewman  18770  0.0  0.0 114108  4572 ?        S    05:55   0:00 sshd: anewman@pts/22
+anewman  18771  0.0  0.0  15564  6488 pts/22   Ss+  05:55   0:00 -tcsh
+root     18886  0.0  0.0      0     0 ?        S    08:05   0:00 [kworker/2:1]
+weiming  18897  0.0  0.0  42400  5344 ?        Ss   Jul09   1:39 /usr/lib/systemd/systemd --user
+weiming  18898  0.0  0.0 240568  3584 ?        S    Jul09   0:00 (sd-pam)
+root     18926  0.0  0.0      0     0 ?        S    10:05   0:00 [kworker/14:1]
+mjisan   18940  0.0  0.0  40376  1844 ?        S    Jul10   0:00 dbus-daemon --nofork --print-address 4 --session
+mgropp   18989  1.6  0.6 3174912 1800604 pts/130 T  10:05   0:49 python run.py 0
+root     19110  0.0  0.0      0     0 ?        S    10:05   0:00 [kworker/34:2]
+root     19114  0.0  0.0      0     0 ?        S    10:05   0:00 [kworker/15:1]
+root     19120  0.0  0.0      0     0 ?        S    10:05   0:00 [kworker/2:0]
+root     19202  0.0  0.0      0     0 ?        S    08:06   0:00 [kworker/65:1]
+root     19282  0.0  0.0      0     0 ?        S    10:06   0:00 [kworker/58:0]
+root     19290  0.0  0.0      0     0 ?        S    10:06   0:00 [kworker/38:1]
+root     19293  0.0  0.0      0     0 ?        S    10:06   0:00 [kworker/55:0]
+root     19313  0.0  0.0      0     0 ?        S    10:06   0:00 [kworker/35:0]
+root     19319  0.0  0.0      0     0 ?        S    10:06   0:00 [kworker/57:2]
+griffins 19412  0.0  0.0  28832  1752 ?        Ss   Jul10   0:00 SCREEN -S wrf_Jan_5
+griffins 19413  0.0  0.0  17496  5344 pts/172  Ss   Jul10   0:00 /bin/bash
+weiming  19487  0.0  0.0  28836  1632 ?        Ss   Jul09   0:00 SCREEN -S 05
+weiming  19488  0.0  0.0  17520  5700 pts/139  Ss+  Jul09   0:00 /bin/bash
+valmass  19512  0.0  0.0 239992  3236 ?        S    Jul04   0:00 (sd-pam)
+root     20459  0.0  0.0 113996  8104 ?        Ss   08:08   0:00 sshd: eychoi [priv]
+mgropp   20461  2.0  0.1 1250140 374884 pts/130 T   10:08   0:56 python run.py 0
+eychoi   20502  0.0  0.0  42496  5356 ?        Ss   08:08   0:06 /usr/lib/systemd/systemd --user
+eychoi   20503  0.0  0.0 240568  3616 ?        S    08:08   0:00 (sd-pam)
+eychoi   20506  0.0  0.0 114320  4652 ?        S    08:08   0:01 sshd: eychoi@pts/57
+eychoi   20507  0.0  0.0  19400  8888 pts/57   Ss+  08:08   0:01 -bash
+root     21085  0.0  0.0      0     0 ?        S    10:10   0:00 [kworker/9:2]
+svasquez 21566  0.0  0.0  16492  1312 pts/35   Ss+  03:32   0:00 qsub -I -l select=1:ncpus=36:mpiprocs=36 -l walltime=10:00:00 -q regular -A P93300606
+root     21684  0.0  0.0      0     0 ?        S    10:10   0:00 [kworker/0:0]
+svasquez 21698  0.0  0.0  16492   996 pts/35   S+   03:32   0:00 qsub -I -l select=1:ncpus=36:mpiprocs=36 -l walltime=10:00:00 -q regular -A P93300606
+root     21858  0.0  0.0 113996  8032 ?        Ss   08:55   0:00 sshd: eychoi [priv]
+eychoi   21867  0.0  0.0 115068  5588 ?        S    08:55   0:01 sshd: eychoi
+root     21900  0.0  0.0      0     0 ?        S    08:10   0:00 [kworker/21:1]
+zzeng    22021  0.0  0.0  40268   364 ?        Ss   Jul09   0:00 /bin/dbus-daemon --fork --print-pid 4 --print-address 6 --session
+root     22041  0.0  0.0      0     0 ?        S    10:10   0:00 [kworker/25:2]
+root     22042  0.0  0.0      0     0 ?        S    10:10   0:00 [kworker/43:2]
+root     22097  0.0  0.0      0     0 ?        S    08:56   0:00 [kworker/66:1]
+root     22244  0.0  0.0      0     0 ?        S    10:11   0:00 [kworker/45:3]
+root     22245  0.0  0.0      0     0 ?        S    10:11   0:00 [kworker/1:2]
+root     22280  0.0  0.0      0     0 ?        S    10:11   0:00 [kworker/u145:1]
+root     22592  0.0  0.0 113996  8124 ?        Ss   Jul06   0:00 sshd: weisun [priv]
+root     22670  0.0  0.0 113996  8124 ?        Ss   08:13   0:00 sshd: mickelso [priv]
+mickelso 22686  0.0  0.0  42384  5368 ?        Ss   08:13   0:06 /usr/lib/systemd/systemd --user
+mickelso 22687  0.0  0.0 240568  3616 ?        S    08:13   0:00 (sd-pam)
+mickelso 22690  0.0  0.0 113996  3424 ?        S    08:13   0:00 sshd: mickelso@pts/3
+mickelso 22691  0.0  0.0  14824  5816 pts/3    Ss   08:13   0:00 -tcsh
+weisun   22747  0.0  0.0  42492  5348 ?        Ss   Jul06   3:20 /usr/lib/systemd/systemd --user
+weisun   22748  0.0  0.0 239992  3244 ?        S    Jul06   0:00 (sd-pam)
+weisun   22757  0.0  0.0 115984  5468 ?        S    Jul06   0:04 sshd: weisun@pts/7
+weisun   22760  0.0  0.0  18848  8056 pts/7    Ss+  Jul06   0:07 -bash
+root     22928  0.0  0.0 113996  7940 ?        Ss   08:13   0:00 sshd: kmanning [priv]
+root     22970  0.0  0.0 113996  8220 ?        Ss   Jul10   0:00 sshd: lgchen [priv]
+pel      22977  0.0  0.0  42504  5324 ?        Ss   Jul05   3:58 /usr/lib/systemd/systemd --user
+pel      22978  0.0  0.0 239992  3244 ?        S    Jul05   0:00 (sd-pam)
+lgchen   22989  0.0  0.0  42408  5392 ?        Ss   Jul10   0:42 /usr/lib/systemd/systemd --user
+lgchen   22990  0.0  0.0 240568  3612 ?        S    Jul10   0:00 (sd-pam)
+lgchen   22993  0.0  0.0 113996  3472 ?        S    Jul10   0:00 sshd: lgchen@pts/20
+lgchen   22994  0.0  0.0  15144  5988 pts/20   Ss+  Jul10   0:00 -tcsh
+kmanning 23087  0.0  0.0  42388  5508 ?        Ss   08:13   0:06 /usr/lib/systemd/systemd --user
+kmanning 23088  0.0  0.0 240568  3616 ?        S    08:13   0:00 (sd-pam)
+kmanning 23091  0.0  0.0 114140  4292 ?        S    08:13   0:00 sshd: kmanning@pts/60
+mickelso 23092  0.0  0.0  13280  2412 pts/3    S    08:13   0:00 /bin/bash /glade/u/apps/ch/opt/usr/bin/sudox cmip6
+kmanning 23096  0.0  0.0  15152  5848 pts/60   Ss   08:13   0:00 -tcsh
+root     23108  0.0  0.0 108124  7388 pts/3    S    08:13   0:00 sudo -u cmip6 /tmp/sudodisp.23092
+cmip6    23176  0.0  0.0  13292  3892 pts/3    S    08:14   0:00 /bin/tcsh /tmp/sudodisp.23092
+ntp      23225  0.0  0.0  20828  4908 ?        Ss   Jul02   0:25 /usr/sbin/ntpd -p /var/run/ntp/ntpd.pid -g -u ntp:ntp -c /etc/ntp.conf
+ntp      23228  0.0  0.0  20824  1276 ?        S    Jul02   0:00 ntpd: asynchronous dns resolver
+cmip6    23280  0.0  0.0  15012  5152 pts/3    S+   08:14   0:00 -bin/tcsh
+root     23418  0.0  0.0 101616  7316 pts/60   S    08:14   0:00 sudo -i -u ampsrt /bin/csh
+ampsrt   23419  0.0  0.0  13140  3752 pts/60   S    08:14   0:00 -tcsh -c \/bin\/csh
+sshams   23426  0.0  0.0  42400  5260 ?        Ss   Jul09   1:24 /usr/lib/systemd/systemd --user
+sshams   23431  0.0  0.0 240568  3604 ?        S    Jul09   0:00 (sd-pam)
+sshams   23440  0.0  0.0 113996  3408 ?        S    Jul09   0:00 sshd: sshams@pts/36
+sshams   23441  0.0  0.0  17480  6832 pts/36   Ss+  Jul09   0:00 -bash
+ampsrt   23459  0.0  0.0  15064  5296 pts/60   S+   08:14   0:00 -bin/csh
+root     23518  0.0  0.0 113996  8020 ?        Ss   08:14   0:00 sshd: nfrazie1 [priv]
+root     23523  0.0  0.0 113996  8812 ?        Ss   Jul10   0:00 sshd: behzad [priv]
+nfrazie1 23531  0.0  0.0  42388  5436 ?        Ss   08:14   0:06 /usr/lib/systemd/systemd --user
+nfrazie1 23532  0.0  0.0 240568  3616 ?        S    08:14   0:00 (sd-pam)
+nfrazie1 23535  0.0  0.0 114308  4644 ?        S    08:14   0:00 sshd: nfrazie1@pts/61
+nfrazie1 23536  0.0  0.0  17952  7064 pts/61   Ss+  08:14   0:00 -bash
+root     23587  0.0  0.0 113996  8112 ?        Ss   10:14   0:00 sshd: eloken [priv]
+eloken   23637  0.0  0.0  42400  5348 ?        Ss   10:14   0:01 /usr/lib/systemd/systemd --user
+eloken   23638  0.0  0.0 240568  3616 ?        S    10:14   0:00 (sd-pam)
+eloken   23641  0.0  0.0 113996  3420 ?        S    10:14   0:00 sshd: eloken@pts/6
+eloken   23642  0.0  0.0  17984  6512 pts/6    Ss+  10:14   0:00 -tcsh
+root     23848  0.0  0.0 113996  8172 ?        Ss   08:14   0:00 sshd: nfrazie1 [priv]
+root     23859  0.0  0.0      0     0 ?        S    08:59   0:00 [kworker/47:0]
+nfrazie1 23929  0.0  0.0 114308  4704 ?        S    08:14   0:00 sshd: nfrazie1@pts/77
+nfrazie1 23930  0.0  0.0  17572  6700 pts/77   Ss+  08:14   0:00 -bash
+root     23934  0.0  0.0 113996  8268 ?        Ss   Jul10   0:00 sshd: jsmall [priv]
+jsmall   23982  0.0  0.0  42404  5420 ?        Ss   Jul10   0:36 /usr/lib/systemd/systemd --user
+jsmall   23983  0.0  0.0 240568  3612 ?        S    Jul10   0:00 (sd-pam)
+jsmall   23986  0.0  0.0 113996  3460 ?        S    Jul10   0:00 sshd: jsmall@pts/160
+jsmall   23987  0.0  0.0  15168  5800 pts/160  Ss   Jul10   0:00 -tcsh
+weiming  24038  0.0  0.0  28836  1616 ?        Ss   Jul09   0:00 SCREEN -S 06
+weiming  24039  0.0  0.0  17520  5696 pts/140  Ss+  Jul09   0:00 /bin/bash
+root     24650  0.0  0.0      0     0 ?        S    10:15   0:00 [kworker/50:1]
+nanr     24782  0.0  0.0  42508  5392 ?        Ss   Jul08   2:27 /usr/lib/systemd/systemd --user
+nanr     24818  0.0  0.0 239992  3244 ?        S    Jul08   0:00 (sd-pam)
+root     24876  0.0  0.0      0     0 ?        S    10:15   0:00 [kworker/48:2]
+root     24884  0.0  0.0      0     0 ?        S    10:15   0:00 [kworker/17:1]
+root     24886  0.0  0.0      0     0 ?        S    10:15   0:00 [kworker/42:1]
+root     24887  0.0  0.0      0     0 ?        S    10:15   0:00 [kworker/30:2]
+root     24912  0.0  0.0 113996  8112 ?        Ss   10:15   0:00 sshd: yeddebba [priv]
+root     24960  0.0  0.0 113996  8056 ?        Ss   09:00   0:00 sshd: tilmes [priv]
+yeddebba 24967  0.0  0.0  42400  5372 ?        Ss   10:15   0:01 /usr/lib/systemd/systemd --user
+yeddebba 24968  0.0  0.0 240568  3616 ?        S    10:15   0:00 (sd-pam)
+yeddebba 24971  0.0  0.0 113996  3480 ?        S    10:15   0:00 sshd: yeddebba@pts/101
+tilmes   24973  0.0  0.0 113996  3476 ?        S    09:00   0:00 sshd: tilmes@pts/27
+yeddebba 24974  0.0  0.0  17600  6876 pts/101  Ss   10:15   0:00 -bash
+tilmes   24999  0.0  0.0  15272  5948 pts/27   Ss+  09:00   0:00 -tcsh
+root     25007  0.0  0.0      0     0 ?        S    08:15   0:00 [kworker/71:0]
+root     25015  0.0  0.0      0     0 ?        S    08:15   0:00 [kworker/10:1]
+behzad   25031  0.0  0.0  42400  5716 ?        Ss   Jul10   0:47 /usr/lib/systemd/systemd --user
+behzad   25032  0.0  0.0 240568  3608 ?        S    Jul10   0:00 (sd-pam)
+behzad   25035  0.0  0.0 113996  4376 ?        S    Jul10   0:00 sshd: behzad@pts/84
+behzad   25036  0.0  0.0  17484  7156 pts/84   Ss+  Jul10   0:00 -bash
+root     25126  0.0  0.0      0     0 ?        S    09:00   0:00 [kworker/31:0]
+root     25189  0.0  0.0      0     0 ?        S    10:16   0:00 [kworker/38:0]
+root     25720  0.0  0.0 113996  8156 ?        Ss   Jul10   0:00 sshd: bdobbins [priv]
+root     25812  0.0  0.0 113996  8120 ?        Ss   09:02   0:00 sshd: gthompsn [priv]
+gthompsn 25834  0.0  0.0  42400  5528 ?        Ss   09:02   0:04 /usr/lib/systemd/systemd --user
+gthompsn 25835  0.0  0.0 240568  3616 ?        S    09:02   0:00 (sd-pam)
+gthompsn 25838  0.1  0.0 114092  4492 ?        S    09:02   0:09 sshd: gthompsn@pts/17
+gthompsn 25839  0.0  0.0  15300  6096 pts/17   Ss+  09:02   0:00 -tcsh
+root     25927  0.0  0.0 113996  8272 ?        Ss   10:18   0:00 sshd: jamsmith [priv]
+jamsmith 26137  0.0  0.0  42400  5444 ?        Ss   10:18   0:01 /usr/lib/systemd/systemd --user
+jamsmith 26138  0.0  0.0 240568  3616 ?        S    10:18   0:00 (sd-pam)
+jamsmith 26141  0.0  0.0 113996  4400 ?        S    10:18   0:00 sshd: jamsmith@pts/32
+jamsmith 26144  0.0  0.0  17936  7152 pts/32   Ss   10:18   0:00 -bash
+bdobbins 26163  0.0  0.0  42408  5292 ?        Ss   Jul10   0:36 /usr/lib/systemd/systemd --user
+bdobbins 26164  0.0  0.0 240568  3612 ?        S    Jul10   0:00 (sd-pam)
+bdobbins 26167  0.0  0.0 114516  4760 ?        S    Jul10   0:00 sshd: bdobbins@pts/167
+bdobbins 26168  0.0  0.0  17952  7208 pts/167  Ss+  Jul10   0:01 -bash
+svasquez 26262  0.0  0.0  13276  2360 pts/85   S    10:18   0:00 /bin/bash -l ./runTest testFile_EM
+svasquez 26270  0.0  0.0 323808  3384 pts/85   Sl   10:18   0:00 expect run_ys /gpfs/u/home/svasquez/esmf_test/cronjobs/daily/external_demos_cheyenne/intel/testFile_EM /gpfs/u/home/svasquez/esmf_test/cronjobs/daily/external_demos_cheyenne/intel/test_results /gpfs/u/home/svasquez/esmf_test/cronjobs/daily/external_demos_cheyenne/intel
+svasquez 26271  0.0  0.0  17444  5960 pts/100  Ss+  10:18   0:00 /bin/bash -l
+root     26453  0.0  0.0 113996  8112 ?        Ss   09:04   0:00 sshd: siyuan [priv]
+siyuan   26611  0.0  0.0  42400  5312 ?        Ss   09:04   0:04 /usr/lib/systemd/systemd --user
+siyuan   26612  0.0  0.0 240568  3616 ?        S    09:04   0:00 (sd-pam)
+siyuan   26615  0.0  0.0 116812  7032 ?        S    09:04   0:00 sshd: siyuan@notty
+siyuan   26616  0.0  0.0  14256  3476 ?        Ss   09:04   0:00 -bash
+root     26756  0.0  0.0      0     0 ?        S    10:20   0:00 [kworker/1:1]
+root     26907  0.0  0.0      0     0 ?        S    Jul09   0:00 [mmkproc]
+root     26908  0.0  0.0      0     0 ?        S    Jul09   0:00 [mmkproc]
+root     26951  0.0  0.0 113996  8096 ?        Ss   Jul10   0:00 sshd: behzad [priv]
+behzad   27120  0.0  0.0 113996  3424 ?        S    Jul10   0:00 sshd: behzad@notty
+behzad   27139  0.0  0.0  14680  1860 ?        Ss   Jul10   0:00 /usr/lib/ssh/sftp-server
+root     27630  0.0  0.0  14032  2520 ?        Ss   Jul02   1:12 /usr/sbin/lldpad -t
+root     27637  0.0  0.0      0     0 ?        S    Jul09   0:00 [mmkproc]
+root     27663  0.0  0.0 113996  8048 ?        Ss   09:05   0:00 sshd: siyuan [priv]
+root     27692  0.0  0.0      0     0 ?        S    Jul09   0:00 [mmkproc]
+root     27716  0.0  0.0      0     0 ?        S    Jul09   0:00 [mmkproc]
+root     27717  0.0  0.0      0     0 ?        S    Jul09   0:00 [mmkproc]
+weiming  27724  0.0  0.0  28836  1640 ?        Ss   Jul09   0:00 SCREEN -S 07
+weiming  27725  0.0  0.0  17520  5716 pts/143  Ss+  Jul09   0:00 /bin/bash
+root     27734  0.0  0.0      0     0 ?        S    10:20   0:00 [kworker/69:2]
+root     27737  0.0  0.0      0     0 ?        S    10:20   0:00 [kworker/46:1]
+root     27843  0.0  0.0      0     0 ?        S    Jul09   0:00 [mmkproc]
+root     27919  0.0  0.0      0     0 ?        S    Jul09   0:00 [mmkproc]
+siyuan   27988  0.0  0.0 114320  4560 ?        S    09:05   0:00 sshd: siyuan@pts/80
+siyuan   27991  0.0  0.0  17968  7240 pts/80   Ss+  09:05   0:00 -bash
+root     27995  0.0  0.0      0     0 ?        S    Jul09   0:00 [mmkproc]
+root     28004  0.0  0.0      0     0 ?        S    Jul09   0:00 [mmkproc]
+root     28192  0.0  0.0 113996  8884 ?        Ss   Jul09   0:00 sshd: jeffreyg [priv]
+root     28204  0.0  0.0      0     0 ?        S    Jul09   0:00 [mmkproc]
+root     28205  0.0  0.0      0     0 ?        S    08:20   0:00 [kworker/55:1]
+svasquez 28273  0.0  0.0  16496  1324 pts/142  Ss+  10:20   0:00 qsub -I -l select=1:ncpus=36:mpiprocs=36 -l walltime=4:00:00 -q regular -A P93300606
+root     28348  0.0  0.0      0     0 ?        S    09:05   0:00 [kworker/13:0]
+root     28415  0.0  0.0      0     0 ?        S    10:20   0:00 [kworker/21:2]
+svasquez 28468  0.0  0.0  16496   996 pts/142  S+   10:20   0:00 qsub -I -l select=1:ncpus=36:mpiprocs=36 -l walltime=4:00:00 -q regular -A P93300606
+root     28504  0.0  0.0 113996  8148 ?        Ss   Jul03   0:00 sshd: georgios [priv]
+root     28513  0.0  0.0      0     0 ?        S    10:20   0:00 [kworker/56:1]
+root     28523  0.0  0.0      0     0 ?        S    10:20   0:00 [kworker/53:1]
+georgios 28625  0.0  0.0  42480  5512 ?        Ss   Jul03   5:18 /usr/lib/systemd/systemd --user
+georgios 28626  0.0  0.0 238996  2260 ?        S    Jul03   0:00 (sd-pam)
+georgios 28629  0.0  0.0 118152  7972 ?        S    Jul03   0:03 sshd: georgios@pts/1
+georgios 28630  0.0  0.0  19184  7316 pts/1    Ss+  Jul03   0:00 -bash
+jeffreyg 28631  0.0  0.0  42408  6212 ?        Ss   Jul09   1:26 /usr/lib/systemd/systemd --user
+jeffreyg 28632  0.0  0.0 240568  3604 ?        S    Jul09   0:00 (sd-pam)
+jeffreyg 28635  0.0  0.0 114440  4776 ?        S    Jul09   0:06 sshd: jeffreyg@pts/8
+jeffreyg 28638  0.0  0.0  17968  7944 pts/8    Ss+  Jul09   0:00 -bash
+root     28640  0.0  0.0      0     0 ?        S    10:21   0:00 [kworker/7:0]
+root     28646  0.0  0.0      0     0 ?        S    10:21   0:00 [kworker/64:1]
+root     28647  0.0  0.0      0     0 ?        S    10:21   0:00 [kworker/41:2]
+root     28818  0.0  0.0      0     0 ?        S    09:06   0:00 [kworker/63:0]
+root     28822  0.0  0.0      0     0 ?        S    09:06   0:00 [kworker/24:0]
+root     29567  0.0  0.0 113996  8064 ?        Ss   Jul07   0:00 sshd: renjian [priv]
+root     29603  0.0  0.0 113996  8076 ?        Ss   10:23   0:00 sshd: zonato [priv]
+renjian  29621  0.0  0.0  42476  5500 ?        Ss   Jul07   2:53 /usr/lib/systemd/systemd --user
+renjian  29830  0.0  0.0 239992  3244 ?        S    Jul07   0:00 (sd-pam)
+renjian  29833  0.0  0.0 122384 12456 ?        S    Jul07   5:02 sshd: renjian@pts/11
+root     29845  0.0  0.0  40944 11520 ?        Ss   Jul02   0:23 /usr/bin/perl /usr/sbin/gpfsmond --extension /usr/sbin/gpfsmond.d/
+renjian  29909  0.0  0.0  17464  6864 pts/11   Ss+  Jul07   0:00 -bash
+fvitt    29924  0.0  0.0  72476 10624 pts/26   S    08:22   0:00 xterm
+root     29937  0.0  0.0 113996  8180 ?        Ss   10:24   0:00 sshd: jamsmith [priv]
+fvitt    29943  0.0  0.0  17848  6184 pts/81   Ss+  08:22   0:00 bash
+zonato   29994  0.0  0.0  42404  5428 ?        Ss   10:24   0:01 /usr/lib/systemd/systemd --user
+zonato   29995  0.0  0.0 240568  3616 ?        S    10:24   0:00 (sd-pam)
+zonato   29998  0.0  0.0 113996  4488 ?        S    10:24   0:00 sshd: zonato@notty
+zonato   29999  0.0  0.0  14720  2012 ?        Ss   10:24   0:00 /usr/lib/ssh/sftp-server
+jamsmith 30152  0.0  0.0 113996  3328 ?        S    10:24   0:00 sshd: jamsmith@pts/149
+jamsmith 30153  0.0  0.0  17940  7076 pts/149  Ss   10:24   0:00 -bash
+weiming  30165  0.0  0.0  28836  1640 ?        Ss   Jul09   0:00 SCREEN -S 08
+weiming  30166  0.0  0.0  17520  5744 pts/145  Ss+  Jul09   0:00 /bin/bash
+root     30467  0.0  0.0 113996  8156 ?        Ss   10:24   0:00 sshd: mwong [priv]
+mwong    30564  0.0  0.0  42404  5456 ?        Ss   10:24   0:01 /usr/lib/systemd/systemd --user
+mwong    30565  0.0  0.0 240568  3616 ?        S    10:24   0:00 (sd-pam)
+mwong    30568  0.0  0.0 113996  4192 ?        S    10:24   0:00 sshd: mwong@pts/152
+mwong    30569  0.0  0.0  15652  6352 pts/152  Ss   10:24   0:00 -tcsh
+root     31053  0.0  0.0 113996  8108 ?        Ss   Jul08   0:00 sshd: minseop [priv]
+trude    31114  0.0  0.0   8696   344 ?        S    Jul03   0:00 /usr/bin/dbus-run-session -- /usr/bin/emacs-gtk -nw configure.wrf.backup
+trude    31118  0.0  0.0  40272  2868 ?        S    Jul03   0:00 dbus-daemon --nofork --print-address 4 --session
+trude    31119  0.0  0.0 252132 23928 ?        S    Jul03   0:00 /usr/bin/emacs-gtk -nw configure.wrf.backup
+minseop  31126  0.0  0.0  42516  5380 ?        Ss   Jul08   2:23 /usr/lib/systemd/systemd --user
+minseop  31127  0.0  0.0 240356  3356 ?        S    Jul08   0:00 (sd-pam)
+minseop  31130  0.0  0.0 118096  7968 ?        S    Jul08   0:02 sshd: minseop@pts/70
+minseop  31132  0.0  0.0  16388  6880 pts/70   Ss+  Jul08   0:00 -bash
+root     31649  0.0  0.0      0     0 ?        S    09:10   0:00 [kworker/67:2]
+root     31652  0.0  0.0      0     0 ?        S    10:25   0:00 [kworker/37:2]
+root     31656  0.0  0.0      0     0 ?        S    10:25   0:00 [kworker/39:2]
+yeddebba 31660  0.0  0.0  17812  6064 pts/101  S    10:25   0:00 bash
+root     31672  0.0  0.0      0     0 ?        S<   Jul05   0:00 [mlx5_health0000]
+root     31673  0.0  0.0      0     0 ?        S<   Jul05   0:00 [mlx5_cmd_0000:8]
+root     31687  0.0  0.0      0     0 ?        S<   Jul05   0:00 [mlx5_page_alloc]
+yeddebba 31712  0.0  0.0  13560  2540 pts/101  S+   10:25   0:00 /bin/bash ./scripts/jlab-dav
+root     32081  0.0  0.0      0     0 ?        S<   Jul05   0:00 [mlx5_fc]
+root     32089  0.0  0.0      0     0 ?        S<   Jul05   0:00 [ib_mad1]
+root     32090  0.0  0.0      0     0 ?        S<   Jul05   0:00 [to_fifo]
+root     32095  0.0  0.0      0     0 ?        S<   Jul05   0:00 [mlx5i]
+root     32115  0.0  0.0      0     0 ?        S<   Jul05   0:00 [ipoib_wq]
+root     32123  0.0  0.0      0     0 ?        S<   Jul05   0:00 [mkey_cache]
+zzeng    32159  0.0  0.0  40268   364 ?        Ss   Jul09   0:00 /bin/dbus-daemon --fork --print-pid 4 --print-address 6 --session
+weiming  32479  0.0  0.0  28836  1624 ?        Ss   Jul09   0:00 SCREEN -S 09
+weiming  32480  0.0  0.0  17520  5716 pts/55   Ss+  Jul09   0:00 /bin/bash
+root     32489  0.0  0.0 113996  8092 ?        Ss   10:25   0:00 sshd: zonato [priv]
+zonato   32582  0.0  0.0 113996  3428 ?        S    10:25   0:00 sshd: zonato@pts/41
+zonato   32583  0.0  0.0  18848  8344 pts/41   Ss   10:25   0:01 -bash
+cmv      32713  0.0  0.0 1776732 36604 pts/99  Sl   Jul10   0:37 gedit
+cmv      32719  0.0  0.0  15052  1056 pts/99   S    Jul10   0:00 dbus-launch --autolaunch=7b245067d692a49dae63d89158190bd8 --binary-syntax --close-stderr
+cmv      32720  0.0  0.0  40372  1724 ?        Ss   Jul10   0:00 /bin/dbus-daemon --fork --print-pid 5 --print-address 7 --session
+cmv      32723  0.0  0.0 761952  1152 ?        Sl   Jul10   0:00 /usr/lib/dconf-service
+root     32891  0.0  0.0      0     0 ?        S    10:25   0:00 [kworker/67:0]
+root     32892  0.0  0.0      0     0 ?        S    10:25   0:00 [kworker/12:1]
+mwong    32897  0.0  0.0  30824  6192 pts/152  S+   10:25   0:00 /usr/bin/vim gen_mrms_3hpcp.sh
+root     32898  0.0  0.0      0     0 ?        S    10:25   0:00 [kworker/66:0]
+root     32920  0.0  0.0      0     0 ?        S    05:11   0:00 [kworker/52:1]
+yeddebba 32964  0.0  0.0  38008  3688 ?        Ss   10:25   0:00 ssh -f -o ExitOnForwardFailure=yes -N -L 8898:casper20:8888 casper20
+yeddebba 32965  0.0  0.0   5808   644 pts/101  S+   10:25   0:00 tail -f /glade/scratch/yeddebba/tmp/jlab-dav.jlab-log.20190711T102514
+root     33244  0.0  0.0      0     0 ?        S    10:26   0:00 [kworker/59:2]
+root     33249  0.0  0.0      0     0 ?        S    10:26   0:00 [kworker/22:1]
+root     33313  0.0  0.0 113996  8120 ?        Ss   10:26   0:00 sshd: jiarong [priv]
+jiarong  33388  0.0  0.0 113996  3484 ?        S    10:26   0:00 sshd: jiarong@pts/161
+jiarong  33395  0.0  0.0  17940  7048 pts/161  Ss+  10:26   0:00 -bash
+kareed   33448  0.0  0.0  42416  5476 ?        Ss   Jul10   0:42 /usr/lib/systemd/systemd --user
+kareed   33449  0.0  0.0 240568  3612 ?        S    Jul10   0:00 (sd-pam)
+weiming  33676  0.0  0.0  28836  1612 ?        Ss   Jul09   0:00 SCREEN -S 10
+weiming  33677  0.0  0.0  17520  5768 pts/144  Ss+  Jul09   0:00 /bin/bash
+griffins 33687  9.7  1.3 3932476 3634836 pts/141 S+ Jul10 147:21 python extract_wrf_variables.py
+root     34033  0.0  0.0      0     0 ?        S    09:11   0:00 [kworker/20:1]
+root     34115  0.0  0.0 113996  8056 ?        Ss   10:26   0:00 sshd: yeddebba [priv]
+yeddebba 34352  0.0  0.0 114544  4908 ?        S    10:26   0:00 sshd: yeddebba
+root     34528  0.0  0.0 113996  8120 ?        Ss   Jul09   0:00 sshd: weimao [priv]
+root     34600  0.0  0.0      0     0 ?        S    05:21   0:02 [kworker/5:1]
+root     34740  0.0  0.0 113996  8152 ?        Ss   Jul03   0:00 sshd: jiangzhu [priv]
+jiangzhu 34823  0.0  0.0  42476  5432 ?        Ss   Jul03   5:17 /usr/lib/systemd/systemd --user
+jiangzhu 34824  0.0  0.0 238996  2260 ?        S    Jul03   0:00 (sd-pam)
+jiangzhu 34827  0.0  0.0 115244  5412 ?        S    Jul03   0:04 sshd: jiangzhu@pts/13
+jiangzhu 34828  0.0  0.0  15680  6088 pts/13   Ss+  Jul03   0:01 -tcsh
+root     34839  0.0  0.0 113996  8248 ?        Ss   Jul10   0:00 sshd: gaubert [priv]
+root     34951  0.0  0.0 113996  8068 ?        Ss   Jul10   0:00 sshd: phamkh [priv]
+phamkh   34955  0.0  0.0  42404  5572 ?        Ss   Jul10   0:37 /usr/lib/systemd/systemd --user
+phamkh   34956  0.0  0.0 240568  3612 ?        S    Jul10   0:00 (sd-pam)
+phamkh   34959  0.0  0.0 114308  4684 ?        S    Jul10   0:06 sshd: phamkh@pts/23
+phamkh   34960  0.0  0.0  15304  6152 pts/23   Ss   Jul10   0:01 -tcsh
+gaubert  35663  0.0  0.0  42400  5388 ?        Ss   Jul10   0:45 /usr/lib/systemd/systemd --user
+gaubert  35664  0.0  0.0 240568  3608 ?        S    Jul10   0:00 (sd-pam)
+gaubert  35667  0.0  0.0 113996  4220 ?        S    Jul10   0:00 sshd: gaubert@pts/34
+gaubert  35668  0.0  0.0  15200  6036 pts/34   Ss+  Jul10   0:00 -tcsh
+root     36106  0.0  0.0 2559040 42688 ?       Ssl  Jul02  12:32 /usr/share/filebeat/bin/filebeat -c /etc/filebeat/filebeat.yml -path.home /usr/share/filebeat -path.config /etc/filebeat -path.data /var/lib/filebeat -path.logs /var/log/filebeat
+weimao   36717  0.0  0.0 113996  4436 ?        S    Jul09   0:01 sshd: weimao@pts/115
+jeffreyg 36745  0.0  0.0 7668576 246132 pts/8  Tl   Jul09   0:02 /glade/u/apps/ch/opt/matlab/R2019a/bin/glnxa64/MATLAB -prefersoftwareopengl
+weimao   36746  0.0  0.0  18164  7520 pts/115  Ss+  Jul09   0:05 -bash
+weiming  36918  0.0  0.0  28836  1632 ?        Ss   Jul09   0:00 SCREEN -S 11
+weiming  36919  0.0  0.0  17520  5724 pts/58   Ss+  Jul09   0:00 /bin/bash
+ckruse   37145  0.0  0.0  30704  6856 pts/62   S+   Jul06   0:00 vi namelist.input
+root     37262  0.0  0.0 113996  8132 ?        Ss   04:14   0:00 sshd: dfgrogan [priv]
+dfgrogan 37405  0.0  0.0  42388  5252 ?        Ss   04:14   0:14 /usr/lib/systemd/systemd --user
+dfgrogan 37406  0.0  0.0 240568  3616 ?        S    04:14   0:00 (sd-pam)
+root     37409  0.0  0.0 113996  8848 ?        Ss   Jul10   0:00 sshd: sdegelia [priv]
+dfgrogan 37410  0.0  0.0 113996  3488 ?        S    04:14   0:00 sshd: dfgrogan@pts/18
+dfgrogan 37411  0.0  0.0  15148  5832 pts/18   Ss+  04:14   0:00 -tcsh
+haonan   37521  0.0  0.0  42396  5496 ?        Ss   08:27   0:06 /usr/lib/systemd/systemd --user
+haonan   37522  0.0  0.0 240568  3616 ?        S    08:27   0:00 (sd-pam)
+weiming  37993  0.0  0.0  28492  1656 pts/136  S+   Jul09   0:00 screen -r 12503.02
+root     38186  0.0  0.0 113996  8128 ?        Ss   10:28   0:00 sshd: zonato [priv]
+weiming  38309  0.0  0.0  28836  1632 ?        Ss   Jul09   0:00 SCREEN -S 12
+weiming  38310  0.0  0.0  17520  5724 pts/148  Ss+  Jul09   0:00 /bin/bash
+root     38463  0.0  0.0 113996  8124 ?        Ss   04:16   0:00 sshd: dfgrogan [priv]
+dfgrogan 38470  0.0  0.0 113996  4432 ?        S    04:16   0:00 sshd: dfgrogan@notty
+dfgrogan 38471  0.0  0.0  12628  3168 ?        Ss   04:16   0:00 tcsh -c /usr/lib/ssh/sftp-server
+root     38486  0.0  0.0 113996  8392 ?        Ss   Jul03   0:00 sshd: lqian [priv]
+dfgrogan 38534  0.0  0.0  14724  1932 ?        S    04:16   0:00 /usr/lib/ssh/sftp-server
+zonato   38546  0.0  0.0 113996  3488 ?        S    10:29   0:00 sshd: zonato@pts/164
+zonato   38551  0.0  0.0  17948  7268 pts/164  Ss   10:29   0:00 -bash
+root     38962  0.0  0.0      0     0 ?        S    08:28   0:00 [kworker/17:0]
+yufeizou 39141  0.0  0.0  42504  5400 ?        Ss   Jul09   1:41 /usr/lib/systemd/systemd --user
+yufeizou 39142  0.0  0.0 240568  3584 ?        S    Jul09   0:00 (sd-pam)
+mjisan   39340  0.0  0.0  40280  1748 ?        S    Jul10   0:00 dbus-daemon --nofork --print-address 4 --session
+root     39635  0.0  0.0 113996  8144 ?        Ss   10:29   0:00 sshd: jamsmith [priv]
+svasquez 39720  0.0  0.0  42484  5404 ?        Ss   01:07   0:19 /usr/lib/systemd/systemd --user
+svasquez 39721  0.0  0.0 240568  3616 ?        S    01:07   0:00 (sd-pam)
+jamsmith 40228  0.0  0.0 113996  3592 ?        S    10:29   0:00 sshd: jamsmith@pts/165
+jamsmith 40231  0.0  0.0  17940  7132 pts/165  Ss   10:29   0:00 -bash
+root     40253  0.0  0.0 113996  8208 ?        Ss   Jul09   0:00 sshd: marcusl [priv]
+sdegelia 40480  0.0  0.0  42400  6172 ?        Ss   Jul10   0:50 /usr/lib/systemd/systemd --user
+sdegelia 40484  0.0  0.0 240568  3608 ?        S    Jul10   0:00 (sd-pam)
+sdegelia 40499  0.0  0.0 113996  3556 ?        S    Jul10   0:00 sshd: sdegelia@pts/156
+sdegelia 40546  0.0  0.0  17992  7848 pts/156  Ss+  Jul10   0:00 -bash
+mjisan   40583  0.0  0.0  42516  5480 ?        Ss   Jul08   2:31 /usr/lib/systemd/systemd --user
+mjisan   40584  0.0  0.0 239992  3244 ?        S    Jul08   0:00 (sd-pam)
+lqian    40779  0.0  0.0  42516  5540 ?        Ss   Jul03   5:15 /usr/lib/systemd/systemd --user
+lqian    40780  0.0  0.0 239612  2808 ?        S    Jul03   0:00 (sd-pam)
+lqian    40785  0.0  0.0 114136  4404 ?        S    Jul03   0:00 sshd: lqian@pts/87
+lqian    40786  0.0  0.0  15304  6524 pts/87   Ss   Jul03   0:00 -tcsh
+root     40951  0.0  0.0      0     0 ?        S    10:30   0:00 [kworker/62:1]
+root     40975  0.0  0.0      0     0 ?        S    10:30   0:00 [kworker/28:0]
+root     40992  0.0  0.0      0     0 ?        S    10:30   0:00 [kworker/71:2]
+marcusl  41045  0.0  0.0 120556 10052 ?        S    Jul09   0:03 sshd: marcusl@pts/137
+marcusl  41116  0.0  0.0  18004  7224 pts/137  Ss+  Jul09   0:00 -bash
+zzeng    41261  0.0  0.0  40268   364 ?        Ss   Jul09   0:00 /bin/dbus-daemon --fork --print-pid 4 --print-address 6 --session
+root     41847  0.0  0.0      0     0 ?        S    10:30   0:00 [kworker/19:2]
+root     41854  0.0  0.0      0     0 ?        S    10:30   0:00 [kworker/18:2]
+root     41907  0.0  0.0 113996  8188 ?        Ss   Jul03   0:00 sshd: bjung [priv]
+bjung    41920  0.0  0.0  42516  5372 ?        Ss   Jul03   5:09 /usr/lib/systemd/systemd --user
+bjung    41921  0.0  0.0 239992  3220 ?        S    Jul03   0:00 (sd-pam)
+bjung    41924  0.0  0.0 114116  4400 ?        S    Jul03   0:00 sshd: bjung@pts/5
+bjung    41925  0.0  0.0  18112  8100 pts/5    Ss+  Jul03   0:00 -bash
+jamsmith 42013  0.0  0.0  30932  6136 pts/165  S+   10:30   0:00 vi logs.txt
+root     42506  0.0  0.0 113996  8904 ?        Ss   Jul10   0:00 sshd: eerfani [priv]
+eerfani  42554  0.0  0.0  42400  6084 ?        Ss   Jul10   0:33 /usr/lib/systemd/systemd --user
+eerfani  42555  0.0  0.0 240568  3616 ?        S    Jul10   0:00 (sd-pam)
+eerfani  42558  0.0  0.0 113996  3488 ?        S    Jul10   0:00 sshd: eerfani@pts/50
+eerfani  42637  0.0  0.0  15200  6532 pts/50   Ss+  Jul10   0:00 -tcsh
+root     42803  0.0  0.0      0     0 ?        S    10:30   0:00 [kworker/11:2]
+root     42812  0.0  0.0      0     0 ?        S    10:30   0:00 [kworker/29:0]
+root     42813  0.0  0.0      0     0 ?        S    10:30   0:00 [kworker/8:2]
+root     42985  0.0  0.0 113996  8116 ?        Ss   09:14   0:00 sshd: adugger [priv]
+adugger  42996  0.0  0.0 113996  3296 ?        S    09:14   0:00 sshd: adugger@pts/98
+adugger  42997  0.0  0.0  18156  7228 pts/98   Ss+  09:14   0:00 -bash
+root     43441  0.0  0.0 113996  8116 ?        Ss   10:30   0:00 sshd: jamsmith [priv]
+sshu3    43568  0.0  0.0  42480  5548 ?        Ss   Jul02   5:18 /usr/lib/systemd/systemd --user
+sshu3    43569  0.0  0.0 238996  2248 ?        S    Jul02   0:00 (sd-pam)
+root     43570  0.0  0.0      0     0 ?        S    10:31   0:00 [kworker/u146:1]
+root     43591  0.0  0.0 113996  8152 ?        Ss   Jul08   0:00 sshd: fenghe [priv]
+fenghe   43596  0.0  0.0  42492  5480 ?        Ss   Jul08   2:00 /usr/lib/systemd/systemd --user
+fenghe   43597  0.0  0.0 240568  3584 ?        S    Jul08   0:00 (sd-pam)
+fenghe   43600  0.0  0.0 113996  4372 ?        S    Jul08   0:00 sshd: fenghe@pts/31
+fenghe   43601  0.0  0.0  16304  6704 pts/31   Ss+  Jul08   0:01 -tcsh
+root     43634  0.0  0.0      0     0 ?        S    10:31   0:00 [kworker/16:0]
+root     43638  0.0  0.0      0     0 ?        S    10:31   0:00 [kworker/42:2]
+root     43642  0.0  0.0      0     0 ?        S    10:31   0:00 [kworker/24:2]
+kareed   43730  3.0  0.0 112296 28108 ?        S    Jul10  27:44 python get-levs-multilevs.py 1981 u_component_of_wind
+jamsmith 43738  0.0  0.0 113996  3416 ?        S    10:31   0:00 sshd: jamsmith@pts/166
+jamsmith 43739  0.0  0.0  17932  7032 pts/166  Ss   10:31   0:00 -bash
+root     44067  7.6  7.7 58308992 20472696 ?   S<Ll Jul05 656:24 /usr/lpp/mmfs/bin/mmfsd
+root     44127  0.0  0.0      0     0 ?        S    Jul05   0:00 [mmkproc]
+root     44167  0.0  0.0      0     0 ?        S    09:15   0:00 [kworker/19:0]
+root     44343  0.0  0.0      0     0 ?        S    Jul09   0:00 [mmkproc]
+root     44445  0.0  0.0      0     0 ?        S<   Jul05   0:00 [ucma_close_id]
+root     44500  0.0  0.0      0     0 ?        S    09:16   0:00 [kworker/65:0]
+root     44621  0.0  0.0      0     0 ?        Z    Jul05   0:00 [sh] <defunct>
+yijunw   44697  0.0  0.0  42508  5392 ?        Ss   Jul08   2:25 /usr/lib/systemd/systemd --user
+yijunw   44698  0.0  0.0 239992  3248 ?        S    Jul08   0:00 (sd-pam)
+root     45660  0.0  0.0 113996  8168 ?        Ss   Jul10   0:00 sshd: cmv [priv]
+weiming  45690  0.0  0.0  28836  1664 ?        Ss   Jul09   0:00 SCREEN -S extra_01
+weiming  45691  0.0  0.0  17580  5864 pts/150  Ss+  Jul09   0:00 /bin/bash
+root     45852  0.0  0.0      0     0 ?        S    Jul09   0:00 [mmkproc]
+cmv      46105  0.0  0.0 116284  6516 ?        S    Jul10   0:11 sshd: cmv@pts/99
+cmv      46108  0.0  0.0  19876  9128 pts/99   Ss+  Jul10   0:00 -bash
+root     46577  0.0  0.0      0     0 ?        S    Jul09   0:00 [mmkproc]
+root     46582  0.0  0.0      0     0 ?        S    10:32   0:00 [kworker/u144:2]
+root     46602  0.0  0.0      0     0 ?        S    Jul09   0:00 [mmkproc]
+root     46618  0.0  0.0      0     0 ?        S    Jul09   0:00 [mmkproc]
+yufeizou 47208  0.0  0.0  28836  1552 ?        Ss   Jul09   0:01 SCREEN
+yufeizou 47209  0.0  0.0  14588  4676 pts/86   Ss   Jul09   0:00 -bin/tcsh
+root     47254  0.0  0.0 113996  8244 ?        Ss   Jul10   0:00 sshd: cmv [priv]
+yufeizou 47326  0.0  0.0  13276  1976 pts/86   S+   Jul09   0:00 /bin/bash /glade/u/apps/opt/hpss/hpss-client.5.0.2.p5/bin/hsi
+yufeizou 47337  0.2  0.0 931768 204992 pts/86  S+   Jul09   7:12 /glade/u/apps/opt/hpss/hpss-client.5.0.2.p5/bin/hsi.exe
+root     47343  0.0  0.0      0     0 ?        S    Jul09   0:00 [mmkproc]
+root     47550  0.0  0.0      0     0 ?        S    Jul09   0:00 [mmkproc]
+cmv      47648  0.0  0.0  42412  5428 ?        Ss   Jul10   0:41 /usr/lib/systemd/systemd --user
+cmv      47649  0.0  0.0 240568  3612 ?        S    Jul10   0:00 (sd-pam)
+cmv      47652  0.0  0.0 113996  3488 ?        S    Jul10   0:00 sshd: cmv@pts/64
+cmv      47653  0.0  0.0  20208  9492 pts/64   Ss+  Jul10   0:00 -bash
+czhu95   47738  0.0  0.0  42496  5308 ?        Ss   07:09   0:09 /usr/lib/systemd/systemd --user
+czhu95   47739  0.0  0.0 240568  3616 ?        S    07:09   0:00 (sd-pam)
+root     47914  0.0  0.0 113996  7964 ?        Ss   Jul08   0:00 sshd: dattilo [priv]
+dattilo  47975  0.0  0.0  42512  5452 ?        Ss   Jul08   2:14 /usr/lib/systemd/systemd --user
+dattilo  47976  0.0  0.0 240576  3560 ?        S    Jul08   0:00 (sd-pam)
+dattilo  47979  0.0  0.0 113996  4412 ?        S    Jul08   0:00 sshd: dattilo@pts/102
+dattilo  47980  0.0  0.0  15356  6244 pts/102  Ss+  Jul08   0:00 -tcsh
+chenming 48117  0.0  0.0  30744  5864 pts/104  S+   10:33   0:00 vi PointStatConfig.GHT
+bachman  48119  0.0  0.0  42480  5304 ?        Ss   Jul03   5:15 /usr/lib/systemd/systemd --user
+bachman  48120  0.0  0.0 239392  2548 ?        S    Jul03   0:00 (sd-pam)
+sungyoon 48135  0.0  0.0  42408  5400 ?        Ss   Jul09   1:25 /usr/lib/systemd/systemd --user
+sungyoon 48136  0.0  0.0 240568  3604 ?        S    Jul09   0:00 (sd-pam)
+root     48245  0.0  0.0      0     0 ?        S    07:10   0:00 [kworker/3:2]
+weiming  48413  0.0  0.0  28836  1608 ?        Ss   Jul09   0:00 SCREEN -S extra_02
+weiming  48414  0.0  0.0  17520  6112 pts/154  Ss+  Jul09   0:00 /bin/bash
+root     48460  0.0  0.0      0     0 ?        S    10:34   0:00 [kworker/26:2]
+root     48464  0.0  0.0      0     0 ?        S    10:34   0:00 [kworker/61:0]
+root     48467  0.0  0.0      0     0 ?        S    10:34   0:00 [kworker/48:3]
+root     48491  0.0  0.0 113996  8044 ?        Ss   10:34   0:00 sshd: harrold [priv]
+zzeng    48529  0.0  0.0  40268   364 ?        Ss   Jul09   0:00 /bin/dbus-daemon --fork --print-pid 4 --print-address 6 --session
+ckruse   48542  0.0  0.0   5808  1364 pts/69   S+   Jul06   0:08 tail -f metgrid.log.0000
+root     48898  0.0  0.0 113996  8888 ?        Ss   Jul10   0:00 sshd: kkeene [priv]
+harrold  48966  0.0  0.0  42408  5368 ?        Ss   10:34   0:00 /usr/lib/systemd/systemd --user
+harrold  48967  0.0  0.0 240568  3616 ?        S    10:34   0:00 (sd-pam)
+harrold  48970  0.0  0.0 113996  3492 ?        S    10:34   0:00 sshd: harrold@pts/112
+harrold  48971  0.0  0.0  14896  5640 pts/112  Ss+  10:34   0:00 -tcsh
+root     49077  0.0  0.0 113996  8124 ?        Ss   07:10   0:00 sshd: rfisher [priv]
+rfisher  49087  0.0  0.0  42492  5460 ?        Ss   07:10   0:08 /usr/lib/systemd/systemd --user
+rfisher  49088  0.0  0.0 240568  3616 ?        S    07:10   0:00 (sd-pam)
+rfisher  49091  0.0  0.0 114184  4588 ?        S    07:10   0:00 sshd: rfisher@pts/37
+rfisher  49092  0.0  0.0  16700  6104 pts/37   Ss   07:10   0:00 -tcsh
+cmip6    49697  0.1  0.0 4510936 54416 ?       Sl   Jul08   6:02 /glade/u/apps/ch/opt/python/2.7.16/gnu/8.3.0/pkg-library/20190627/bin/python2 /glade/u/apps/ch/opt/cylc/7.8.3/gnu/8.3.0/cylc-7.8.3/bin/cylc-restart --hold g.e21.GOMIPECOIAF.T62_g17.CMIP6-omip1.001.suite.cmip6
+cmip6    49810  0.2  0.0 4513688 59196 ?       Sl   Jul08   9:06 /glade/u/apps/ch/opt/python/2.7.16/gnu/8.3.0/pkg-library/20190627/bin/python2 /glade/u/apps/ch/opt/cylc/7.8.3/gnu/8.3.0/cylc-7.8.3/bin/cylc-restart --hold b.e21.B1850.f09_g17.CMIP6-DAMIP-hist-nat.002.suite.cmip6
+root     49953  0.0  0.0 113996  8176 ?        Ss   09:19   0:00 sshd: anewman [priv]
+anewman  49960  0.0  0.0 114128  4408 ?        S    09:19   0:00 sshd: anewman@pts/92
+anewman  49961  0.0  0.0  15564  6260 pts/92   Ss   09:19   0:00 -tcsh
+kkeene   50038  0.0  0.0  42404  6056 ?        Ss   Jul10   0:50 /usr/lib/systemd/systemd --user
+kkeene   50042  0.0  0.0 240568  3608 ?        S    Jul10   0:00 (sd-pam)
+kkeene   50059  0.0  0.0 114128  4272 ?        S    Jul10   0:00 sshd: kkeene@pts/14
+kkeene   50060  0.0  0.0  15128  6520 pts/14   Ss+  Jul10   0:00 -tcsh
+root     50468  0.0  0.0 113996  8224 ?        Ss   Jul08   0:00 sshd: hannay [priv]
+root     50875  0.0  0.0      0     0 ?        S    10:35   0:00 [kworker/14:0]
+root     50877  0.0  0.0      0     0 ?        S    10:35   0:00 [kworker/56:2]
+root     50881  0.0  0.0      0     0 ?        S    10:35   0:00 [kworker/25:0]
+hannay   50910  0.0  0.0  42508  5488 ?        Ss   Jul08   2:17 /usr/lib/systemd/systemd --user
+hannay   50911  0.0  0.0 240432  3452 ?        S    Jul08   0:00 (sd-pam)
+hannay   50914  0.0  0.0 127380 17704 ?        S    Jul08   0:26 sshd: hannay@pts/53
+hannay   50916  0.0  0.0  15340  6248 pts/53   Ss+  Jul08   0:00 -tcsh
+ckruse   50928  0.0  0.0  42412  5504 ?        Ss   Jul06   3:32 /usr/lib/systemd/systemd --user
+ckruse   50929  0.0  0.0 239992  3244 ?        S    Jul06   0:00 (sd-pam)
+ckruse   51069  0.0  0.0  28844  9352 ?        Ss   Jul06   1:08 tmux
+ckruse   51070  0.0  0.0  17428  6748 pts/59   Ss   Jul06   0:00 -bash
+ckruse   51096  0.0  0.0  17428  6616 pts/62   Ss   Jul06   0:00 -bash
+root     51115  0.0  0.0 113996  8164 ?        Ss   Jul09   0:00 sshd: wanruwu [priv]
+ckruse   51117  0.0  0.0  17624  6812 pts/68   Ss+  Jul06   0:00 -bash
+wanruwu  51121  0.0  0.0  42504  5540 ?        Ss   Jul09   1:46 /usr/lib/systemd/systemd --user
+wanruwu  51122  0.0  0.0 240568  3584 ?        S    Jul09   0:00 (sd-pam)
+wanruwu  51125  0.0  0.0 113996  3492 ?        S    Jul09   0:00 sshd: wanruwu@pts/9
+wanruwu  51126  0.0  0.0  17600  6952 pts/9    Ss+  Jul09   0:00 -bash
+ckruse   51135  0.0  0.0  17428  6776 pts/69   Ss   Jul06   0:00 -bash
+luxu     51204  0.0  0.0  43468  5768 ?        S    Jul03   0:00 ifort -DWRF -I ./ -I /glade/work/sdegelia/GSI-ENKF_OUMAP/comGSIv3.4_EnKFv1.0_OU-MAP_20160818_CHEYENNE/include -I /glade/u/apps/ch/opt/netcdf/4.4.1.1/intel/16.0.3//include -O3 -fp-model precise -assume byterecl -convert big_endian -c gridinfo_wrf.f90 -Wl,-Bstatic -lnetcdff -lnetcdf -lhdf5hl_fortran -lhdf5_hl -lhdf5_fortran -lhdf5 -lsz -lz -Wl,-Bdynamic -lm -ldl -Wl,-Bstatic -lpnetcdf -Wl,-Bdynamic -lrt -ldl -L/glade/u/apps/opt/intel/2017u1/tbb/lib/intel64/gcc4.7 -L/glade/u/apps/ch/opt/python/3.6.4/intel/17.0.1/lib -L/glade/u/apps/ch/opt/pnetcdf/1.11.0/mpt/2.19/intel/17.0.1/lib -L/glade/u/apps/ch/opt/netcdf/4.4.1.1/intel/17.0.1/lib -L/glade/u/apps/ch/opt/nco/4.6.9/gnu/6.3.0/lib -L/glade/u/apps/ch/opt/ncl/6.4.0/intel/17.0.1/lib -L/glade/u/apps/ch/opt/mkl/2017.0.1/intel/17.0.1//lib -L/glade/u/apps/opt/intel/2017u1/mkl/lib/intel64 -I/glade/u/apps/ch/opt/python/3.6.4/intel/17.0.1/include -I/glade/u/apps/ch/opt/pnetcdf/1.11.0/mpt/2.19/intel/17.0.1/include -I/glade/u/apps/ch/opt/netcdf/4.4.1.1/intel/17.0.1/include -I/glade/u/apps/ch/opt/nco/4.6.9/gnu/6.3.0/include -I/glade/u/apps/ch/opt/ncl/6.4.0/intel/17.0.1/include -I/glade/u/apps/opt/intel/2017u1/mkl/include -Wl,--disable-new-dtags -Wl,-rpath,/glade/u/apps/opt/intel/2017u1/tbb/lib/intel64/gcc4.7 -Wl,-rpath,/glade/u/apps/ch/opt/python/3.6.4/intel/17.0.1/lib -Wl,-rpath,/glade/u/apps/ch/opt/pnetcdf/1.11.0/mpt/2.19/intel/17.0.1/lib -Wl,-rpath,/glade/u/apps/ch/opt/netcdf/4.4.1.1/intel/17.0.1/lib -Wl,-rpath,/glade/u/apps/ch/opt/nco/4.6.9/gnu/6.3.0/lib -Wl,-rpath,/glade/u/apps/ch/opt/ncl/6.4.0/intel/17.0.1/lib -Wl,-rpath,/glade/u/apps/ch/opt/mkl/2017.0.1/intel/17.0.1//lib -Wl,-rpath,/glade/u/apps/opt/intel/2017u1/mkl/lib/intel64 -I/glade/u/apps/ch/opt/mpt/2.19/include -DWRF -I ./ -I /glade/work/sdegelia/GSI-ENKF_OUMAP/comGSIv3.4_EnKFv1.0_OU-MAP_20160818_CHEYENNE/include -I /glade/u/apps/ch/opt/netcdf/4.4.1.1/intel/16.0.3//include -O3 -fp-model precise -assume byterecl -convert big_endian
+weiming  51849  0.0  0.0  28836  1612 ?        Ss   Jul09   0:00 SCREEN -S extra_03
+weiming  51850  0.0  0.0  17520  5396 pts/66   Ss+  Jul09   0:00 /bin/bash
+root     51960  0.0  0.0 113996  8740 ?        Ss   Jul03   0:00 sshd: tarique [priv]
+root     51994  0.0  0.0      0     0 ?        S    10:35   0:00 [kworker/13:2]
+root     51996  0.0  0.0      0     0 ?        S    10:35   0:00 [kworker/23:2]
+root     51998  0.0  0.0      0     0 ?        S    10:35   0:00 [kworker/32:1]
+root     52000  0.0  0.0      0     0 ?        S    10:35   0:00 [kworker/32:3]
+zzeng    52053  0.0  0.0  40272   372 ?        Ss   Jul10   0:00 /bin/dbus-daemon --fork --print-pid 5 --print-address 7 --session
+root     52177  0.0  0.0      0     0 ?        S    09:20   0:00 [kworker/59:1]
+root     52556  0.0  0.0 113996  8120 ?        Ss   Jul09   0:00 sshd: mrehme [priv]
+root     52874  0.0  0.0      0     0 ?        S    10:36   0:00 [kworker/60:1]
+root     52880  0.0  0.0      0     0 ?        S    10:36   0:00 [kworker/57:0]
+tarique  53329  0.0  0.0  42516  5640 ?        Ss   Jul03   5:04 /usr/lib/systemd/systemd --user
+tarique  53331  0.0  0.0 239992  3232 ?        S    Jul03   0:00 (sd-pam)
+tarique  53337  0.0  0.0 113996  4300 ?        S    Jul03   0:00 sshd: tarique@pts/127
+tarique  53338  0.0  0.0  17952  7460 pts/127  Ss+  Jul03   0:00 -bash
+root     53534  0.0  0.0 113996  8028 ?        Ss   Jul09   0:00 sshd: mrehme [priv]
+griffins 53763 11.0  1.3 3914160 3634824 pts/118 S+ 10:37   1:56 python extract_wrf_variables.py
+root     53793  0.0  0.0 113996  8084 ?        Ss   09:22   0:00 sshd: czhuomin [priv]
+root     53854  0.0  0.0      0     0 ?        S    Jul08   0:01 [mmkproc]
+root     53856  0.0  0.0      0     0 ?        S    Jul08   0:01 [mmkproc]
+root     53857  0.0  0.0      0     0 ?        S    Jul08   0:00 [mmkproc]
+root     53859  0.0  0.0      0     0 ?        S    Jul08   0:00 [mmkproc]
+root     53864  0.0  0.0      0     0 ?        S    Jul08   0:00 [mmkproc]
+root     53868  0.0  0.0      0     0 ?        S    Jul08   0:01 [mmkproc]
+root     53869  0.0  0.0      0     0 ?        S    Jul08   0:00 [mmkproc]
+root     53870  0.0  0.0      0     0 ?        S    Jul08   0:00 [mmkproc]
+root     53873  0.0  0.0      0     0 ?        S    Jul08   0:01 [mmkproc]
+root     53886  0.0  0.0      0     0 ?        S    Jul08   0:01 [mmkproc]
+pel      53976  0.0  0.0  40372  3944 ?        S    Jul05   0:00 dbus-daemon --nofork --print-address 4 --session
+pel      54006  0.0  0.0  42408  4644 ?        S    Jul05   0:00 /usr/lib/GConf/2/gconfd-2
+czhuomin 54055  0.0  0.0  42400  5440 ?        Ss   09:22   0:03 /usr/lib/systemd/systemd --user
+czhuomin 54056  0.0  0.0 240568  3616 ?        S    09:22   0:00 (sd-pam)
+czhuomin 54059  0.0  0.0 113996  3360 ?        S    09:22   0:00 sshd: czhuomin@pts/103
+czhuomin 54060  0.0  0.0  17972  7128 pts/103  Ss   09:22   0:00 -bash
+root     54240  0.0  0.0 113996  8088 ?        Ss   Jul03   0:00 sshd: adugger [priv]
+root     54242  0.0  0.0      0     0 ?        S    10:38   0:00 [kworker/u144:1]
+mrehme   54294  0.0  0.0 113996  3428 ?        S    Jul09   0:00 sshd: mrehme@pts/123
+mrehme   54295  0.0  0.0  18116  7272 pts/123  Ss+  Jul09   0:00 -bash
+jamsmith 54447  0.0  0.0  30696  5924 pts/166  S+   10:38   0:00 vi 11.txt
+root     54457  0.0  0.0 113996  8184 ?        Ss   09:22   0:00 sshd: chenming [priv]
+chenming 54482  0.0  0.0  42400  5516 ?        Ss   09:23   0:03 /usr/lib/systemd/systemd --user
+chenming 54483  0.0  0.0 240568  3616 ?        S    09:23   0:00 (sd-pam)
+chenming 54486  0.0  0.0 113996  3420 ?        S    09:23   0:00 sshd: chenming@pts/104
+chenming 54487  0.0  0.0  17600  6980 pts/104  Ss   09:23   0:00 -bash
+root     54589  0.0  0.0 113996  8120 ?        Ss   09:23   0:00 sshd: chenming [priv]
+root     54617  0.0  0.0      0     0 ?        S    10:39   0:00 [kworker/u145:2]
+yufeizou 54652  0.0  0.0  28836  1576 ?        Ss   Jul09   0:01 SCREEN
+yufeizou 54653  0.0  0.0  14588  4716 pts/74   Ss   Jul09   0:00 -bin/tcsh
+chenming 54666  0.0  0.0 114132  4492 ?        S    09:23   0:03 sshd: chenming@pts/106
+chenming 54667  0.0  0.0  17880  7100 pts/106  Ss   09:23   0:00 -bash
+weiming  54729  0.0  0.0  28836  1636 ?        Ss   Jul09   0:00 SCREEN -S extra_04
+weiming  54730  0.0  0.0  17520  5372 pts/155  Ss+  Jul09   0:00 /bin/bash
+root     54740  0.0  0.0 113996  8108 ?        Ss   09:23   0:00 sshd: chenming [priv]
+yufeizou 54744  0.0  0.0  13276  1980 pts/74   S+   Jul09   0:00 /bin/bash /glade/u/apps/opt/hpss/hpss-client.5.0.2.p5/bin/hsi
+yufeizou 54746  0.1  0.0 797836 180296 pts/74  S+   Jul09   3:33 /glade/u/apps/opt/hpss/hpss-client.5.0.2.p5/bin/hsi.exe
+chenming 54781  0.0  0.0 113996  4348 ?        S    09:23   0:00 sshd: chenming@pts/107
+chenming 54782  0.0  0.0  17600  6912 pts/107  Ss+  09:23   0:00 -bash
+root     54916  0.0  0.0 113996  8204 ?        Ss   09:23   0:00 sshd: chenming [priv]
+chenming 54933  0.0  0.0 114876  4672 ?        S    09:23   0:00 sshd: chenming@pts/108
+chenming 54934  0.0  0.0  17952  7020 pts/108  Ss   09:23   0:00 -bash
+root     55116  0.0  0.0      0     0 ?        S    08:34   0:00 [kworker/68:2]
+griffins 55121  9.7  1.3 3936324 3632092 pts/172 S+ Jul10 143:09 python -i extract_wrf_variables.py
+mrehme   55139  0.0  0.0  42404  5368 ?        Ss   Jul09   1:28 /usr/lib/systemd/systemd --user
+mrehme   55140  0.0  0.0 240568  3584 ?        S    Jul09   0:00 (sd-pam)
+mrehme   55143  0.0  0.0 113996  3412 ?        S    Jul09   0:00 sshd: mrehme@pts/117
+mrehme   55144  0.0  0.0  18136  7336 pts/117  Ss+  Jul09   0:00 -bash
+root     55234  0.0  0.0      0     0 ?        S    10:40   0:00 [kworker/4:1]
+root     55239  0.0  0.0      0     0 ?        S    10:40   0:00 [kworker/64:0]
+root     55240  0.0  0.0      0     0 ?        S    10:40   0:00 [kworker/39:1]
+root     55501  0.0  0.0 113996  8844 ?        Ss   Jul03   0:00 sshd: chliu [priv]
+yufeizou 55572  0.0  0.0  28836  1580 ?        Ss   Jul09   0:00 SCREEN
+yufeizou 55573  0.0  0.0  14588  4628 pts/40   Ss   Jul09   0:00 -bin/tcsh
+kareed   55703  0.0  0.0  13276  2084 ?        S    Jul10   0:00 /bin/bash -l ./batch_submit_loop.csh
+zzeng    55792  0.0  0.0  40268   372 ?        Ss   Jul10   0:00 /bin/dbus-daemon --fork --print-pid 4 --print-address 6 --session
+yufeizou 55830  0.0  0.0  13276  1996 pts/40   S+   Jul09   0:00 /bin/bash /glade/u/apps/opt/hpss/hpss-client.5.0.2.p5/bin/hsi
+yufeizou 55832  0.0  0.0 527316 120560 pts/40  S+   Jul09   0:11 /glade/u/apps/opt/hpss/hpss-client.5.0.2.p5/bin/hsi.exe
+root     55871  0.0  0.0 113996  8120 ?        Ss   09:24   0:00 sshd: singha [priv]
+weiming  55895  0.0  0.0  28836  1616 ?        Ss   Jul09   0:00 SCREEN -S extra_05
+weiming  55896  0.0  0.0  17520  5368 pts/157  Ss+  Jul09   0:00 /bin/bash
+singha   55986  0.0  0.0  42400  5504 ?        Ss   09:24   0:03 /usr/lib/systemd/systemd --user
+singha   55987  0.0  0.0 240568  3616 ?        S    09:24   0:00 (sd-pam)
+singha   55990  0.0  0.0 113996  3424 ?        S    09:24   0:00 sshd: singha@pts/109
+singha   56011  0.0  0.0  17948  7084 pts/109  Ss+  09:24   0:00 -bash
+root     56229  0.0  0.0      0     0 ?        S    10:40   0:00 [kworker/52:2]
+root     56236  0.0  0.0      0     0 ?        S    10:40   0:00 [kworker/40:1]
+root     56237  0.0  0.0      0     0 ?        S    10:40   0:00 [kworker/36:2]
+mjisan   56307  0.0  0.0  40376  1292 ?        S    Jul08   0:00 dbus-daemon --nofork --print-address 4 --session
+weiming  56651  0.0  0.0  28836  1632 ?        Ss   Jul09   0:00 SCREEN -S extra_05
+weiming  56652  0.0  0.0  17520  5360 pts/158  Ss+  Jul09   0:00 /bin/bash
+root     56775  0.0  0.0      0     0 ?        S    10:40   0:00 [kworker/8:1]
+root     56777  0.0  0.0      0     0 ?        S    10:40   0:00 [kworker/28:1]
+root     56782  0.0  0.0      0     0 ?        S    10:40   0:00 [kworker/61:1]
+root     56783  0.0  0.0      0     0 ?        S    10:40   0:00 [kworker/43:1]
+root     56943  0.0  0.0      0     0 ?        S    Jul08   0:00 [mmkproc]
+root     56944  0.0  0.0      0     0 ?        S    Jul08   0:01 [mmkproc]
+root     56964  0.0  0.0 113996  8184 ?        Ss   10:40   0:00 sshd: guozhun [priv]
+yufeizou 57300  0.0  0.0  28836  1572 ?        Ss   Jul09   0:01 SCREEN
+yufeizou 57301  0.0  0.0  14588  4716 pts/89   Ss   Jul09   0:00 -bin/tcsh
+adugger  57418  0.0  0.0  42496  5440 ?        Ss   Jul03   5:16 /usr/lib/systemd/systemd --user
+adugger  57422  0.0  0.0 239688  2908 ?        S    Jul03   0:00 (sd-pam)
+adugger  57439  0.0  0.0 117672  8036 ?        S    Jul03   0:07 sshd: adugger@pts/96
+guozhun  57480  0.0  0.0  42412  5564 ?        Ss   10:41   0:00 /usr/lib/systemd/systemd --user
+guozhun  57481  0.0  0.0 240568  3616 ?        S    10:41   0:00 (sd-pam)
+guozhun  57485  0.0  0.0 113996  3424 ?        S    10:41   0:00 sshd: guozhun@pts/170
+guozhun  57488  0.0  0.0  17976  7116 pts/170  Ss   10:41   0:00 -bash
+yufeizou 57514  0.0  0.0  13276  1936 pts/89   S+   Jul09   0:00 /bin/bash /glade/u/apps/opt/hpss/hpss-client.5.0.2.p5/bin/hsi
+yufeizou 57516  0.0  0.1 930556 284812 pts/89  S+   Jul09   1:49 /glade/u/apps/opt/hpss/hpss-client.5.0.2.p5/bin/hsi.exe
+adugger  57558  0.0  0.0  18152  7472 pts/96   Ss+  Jul03   0:02 -bash
+root     57811  0.0  0.0      0     0 ?        S    10:41   0:00 [kworker/29:1]
+root     57814  0.0  0.0      0     0 ?        S    10:41   0:00 [kworker/45:0]
+root     58097  0.0  0.0 113996  8148 ?        Ss   09:26   0:00 sshd: kauff [priv]
+kauff    58106  0.0  0.0  42400  5532 ?        Ss   09:26   0:03 /usr/lib/systemd/systemd --user
+kauff    58107  0.0  0.0 240568  3616 ?        S    09:26   0:00 (sd-pam)
+kauff    58110  0.0  0.0 113996  3356 ?        S    09:26   0:00 sshd: kauff@pts/110
+kauff    58111  0.0  0.0  15156  5788 pts/110  Ss+  09:26   0:00 -tcsh
+alyammar 58328  0.0  0.0  13136  1460 ?        Ss   Jul08   0:00 bash
+alyammar 58419  0.0  0.0   5768   188 ?        S    Jul08   0:00 sleep infinity
+root     58740  0.0  0.0 113996  8104 ?        Ss   10:42   0:00 sshd: burakows [priv]
+burakows 58792  0.0  0.0  42412  5384 ?        Ss   10:43   0:00 /usr/lib/systemd/systemd --user
+burakows 58793  0.0  0.0 240568  3616 ?        S    10:43   0:00 (sd-pam)
+burakows 58796  0.0  0.0 115356  5588 ?        S    10:43   0:00 sshd: burakows@pts/173
+burakows 58798  0.0  0.0  15176  5976 pts/173  Ss+  10:43   0:00 -tcsh
+root     58830  0.0  0.0      0     0 ?        S    09:27   0:00 [kworker/70:0]
+zzeng    58872  0.0  0.0  40268   364 ?        Ss   Jul09   0:00 /bin/dbus-daemon --fork --print-pid 4 --print-address 6 --session
+root     58907  0.0  0.0 113996  8016 ?        Ss   09:27   0:00 sshd: bwallace [priv]
+root     58977  0.0  0.0      0     0 ?        S    Jul08   0:00 [mmkproc]
+yufeizou 59001  0.0  0.0  28836  1584 ?        Ss   Jul09   0:00 SCREEN
+yufeizou 59002  0.0  0.0  14588  4668 pts/91   Ss   Jul09   0:00 -bin/tcsh
+bwallace 59037  0.0  0.0  42400  5356 ?        Ss   09:27   0:03 /usr/lib/systemd/systemd --user
+bwallace 59038  0.0  0.0 240568  3616 ?        S    09:27   0:00 (sd-pam)
+bwallace 59041  0.0  0.0 113996  3424 ?        S    09:27   0:00 sshd: bwallace@pts/16
+bwallace 59042  0.0  0.0  17488  6884 pts/16   Ss   09:27   0:00 -bash
+yufeizou 59066  0.0  0.0  13276  1952 pts/91   S+   Jul09   0:00 /bin/bash /glade/u/apps/opt/hpss/hpss-client.5.0.2.p5/bin/hsi
+yufeizou 59068  0.0  0.0 526844 54116 pts/91   S+   Jul09   0:02 /glade/u/apps/opt/hpss/hpss-client.5.0.2.p5/bin/hsi.exe
+root     59162  0.0  0.0      0     0 ?        S    08:36   0:00 [kworker/58:1]
+bwallace 59233  0.0  0.0  13136  2176 pts/16   S+   09:28   0:00 /bin/bash ./qinter.sh
+bwallace 59234  0.0  0.0  16496  1328 pts/16   S+   09:28   0:00 qsub -I -l select=1:ncpus=1:mpiprocs=1 -l walltime=06:00:00 -q share -A UALB0005
+bwallace 59419  0.0  0.0  16496  1004 pts/16   S+   09:28   0:00 qsub -I -l select=1:ncpus=1:mpiprocs=1 -l walltime=06:00:00 -q share -A UALB0005
+root     59473  0.0  0.0      0     0 ?        S    10:43   0:00 [kworker/27:1]
+root     59475  0.0  0.0      0     0 ?        S    10:43   0:00 [kworker/9:0]
+root     59478  0.0  0.0      0     0 ?        S    10:43   0:00 [kworker/70:2]
+root     59482  0.0  0.0      0     0 ?        S    10:43   0:00 [kworker/44:2]
+chliu    59598  0.0  0.0  42500  6176 ?        Ss   Jul03   5:17 /usr/lib/systemd/systemd --user
+chliu    59599  0.0  0.0 239524  2708 ?        S    Jul03   0:00 (sd-pam)
+chliu    59602  0.0  0.0 118408  8308 ?        S    Jul03   0:09 sshd: chliu@pts/10
+chliu    59607  0.0  0.0  17664  7248 pts/10   Ss+  Jul03   0:01 -tcsh
+root     59888  0.0  0.0 113996  8152 ?        Ss   10:44   0:00 sshd: duvivier [priv]
+duvivier 59949  0.0  0.0  42412  5420 ?        Ss   10:44   0:00 /usr/lib/systemd/systemd --user
+duvivier 59950  0.0  0.0 240568  3616 ?        S    10:44   0:00 (sd-pam)
+root     59953  0.0  0.0 113996  7988 ?        Ss   Jul02   0:00 sshd: amargol [priv]
+duvivier 59954  0.0  0.0 114144  4456 ?        S    10:44   0:00 sshd: duvivier@pts/169
+duvivier 59955  0.0  0.0  15236  5864 pts/169  Ss   10:44   0:00 -tcsh
+amargol  60060  0.0  0.0  42484  5360 ?        Ss   Jul02   5:18 /usr/lib/systemd/systemd --user
+amargol  60061  0.0  0.0 238996  2252 ?        S    Jul02   0:00 (sd-pam)
+amargol  60064  0.0  0.0 115584  5920 ?        S    Jul02   0:01 sshd: amargol@pts/4
+amargol  60065  0.0  0.0  15312  6152 pts/4    Ss+  Jul02   0:04 -tcsh
+zzeng    60256  0.0  0.0  40272   372 ?        Ss   Jul09   0:00 /bin/dbus-daemon --fork --print-pid 5 --print-address 7 --session
+duvivier 60281  0.0  0.0  13280  2456 pts/169  S    10:44   0:00 /bin/bash /glade/u/apps/ch/opt/usr/bin/execdav
+duvivier 60294  0.0  0.0  97140  2464 pts/169  Sl   10:44   0:00 salloc --time 6:00:00 --partition dav --account ucgd0005 --ntasks 1 srun --pty --mem 0 --export=PATH=/bin:/usr/bin,SHELL,TERM,HOME,DISPLAY,XAUTHORITY /bin/tcsh -l
+duvivier 60349  0.0  0.0 315600  5164 pts/169  Sl+  10:44   0:00 srun --pty --mem 0 --export=PATH=/bin:/usr/bin,SHELL,TERM,HOME,DISPLAY,XAUTHORITY /bin/tcsh -l
+duvivier 60350  0.0  0.0  43228  2600 pts/169  S+   10:44   0:00 srun --pty --mem 0 --export=PATH=/bin:/usr/bin,SHELL,TERM,HOME,DISPLAY,XAUTHORITY /bin/tcsh -l
+hannay   60645  0.0  0.0 502504 18144 ?        Sl   Jul10   0:01 /glade/u/apps/ch/opt/xxdiff/4.0.1/gnu/8.3.0/bin/xxdiff /glade/p/cesmdata/cseg/runs/cesm1_1/e.e13.E1850LENS.f09_g16.2xco2.001/CaseDocs b.e11.B1850LENS.f09_g16.pi_4xco2.001/CaseDocs --title1= --title2=
+hannay   60832  0.0  0.0 508060 23280 ?        Sl   Jul10   0:04 /glade/u/apps/ch/opt/xxdiff/4.0.1/gnu/8.3.0/bin/xxdiff /glade/p/cesmdata/cseg/runs/cesm1_1/e.e13.E1850LENS.f09_g16.2xco2.001/CaseDocs/atm_in b.e11.B1850LENS.f09_g16.pi_4xco2.001/CaseDocs/atm_in --title1= --title2=
+weiming  61159  0.0  0.0  28836  1632 ?        Ss   Jul09   0:00 SCREEN -S extra_06
+weiming  61160  0.0  0.0  17520  5352 pts/159  Ss+  Jul09   0:00 /bin/bash
+root     61374  0.0  0.0      0     0 ?        S    10:45   0:00 [kworker/51:0]
+root     61377  0.0  0.0      0     0 ?        S    10:45   0:00 [kworker/41:0]
+root     61379  0.0  0.0      0     0 ?        S    10:45   0:00 [kworker/5:2]
+root     61403  0.0  0.0      0     0 ?        S    09:30   0:00 [kworker/6:0]
+root     61552  0.0  0.0 113996  8012 ?        Ss   09:30   0:00 sshd: mclong [priv]
+mclong   61570  0.0  0.0  42400  5260 ?        Ss   09:30   0:03 /usr/lib/systemd/systemd --user
+mclong   61571  0.0  0.0 240568  3616 ?        S    09:30   0:00 (sd-pam)
+mclong   61574  0.0  0.0 113996  4196 ?        S    09:30   0:00 sshd: mclong@pts/114,pts/116
+mclong   61575  0.0  0.0  17616  6900 pts/114  Ss+  09:30   0:00 -bash
+root     61629  0.0  0.0 113996  8080 ?        Ss   Jul10   0:00 sshd: gwangjin [priv]
+gwangjin 61634  0.0  0.0  42492  5436 ?        Ss   Jul10   0:22 /usr/lib/systemd/systemd --user
+gwangjin 61635  0.0  0.0 240568  3616 ?        S    Jul10   0:00 (sd-pam)
+gwangjin 61638  0.0  0.0 114424  4712 ?        S    Jul10   0:00 sshd: gwangjin@notty
+gwangjin 61639  0.0  0.0  14688  1960 ?        Ss   Jul10   0:00 /usr/lib/ssh/sftp-server
+mclong   61660  0.0  0.0  17984  7108 pts/116  Ss+  09:31   0:00 -bash
+root     61677  0.0  0.0      0     0 ?        S    10:45   0:00 [kworker/36:0]
+fvitt    61819  0.0  0.0  72036 10348 pts/26   S    08:37   0:00 xterm
+root     61827  0.0  0.0      0     0 ?        S    09:31   0:00 [kworker/49:0]
+root     61879  0.0  0.0      0     0 ?        S    10:46   0:00 [kworker/6:1]
+root     61886  0.0  0.0 113996  8060 ?        Ss   10:46   0:00 sshd: aorton [priv]
+root     61888  0.0  0.0      0     0 ?        S    10:46   0:00 [kworker/10:0]
+root     61889  0.0  0.0      0     0 ?        S    10:46   0:00 [kworker/53:0]
+fvitt    61896  0.0  0.0  17772  6272 pts/88   Ss+  08:37   0:00 bash
+aorton   61904  0.0  0.0  42416  5300 ?        Ss   10:46   0:00 /usr/lib/systemd/systemd --user
+aorton   61905  0.0  0.0 240568  3616 ?        S    10:46   0:00 (sd-pam)
+aorton   61908  0.0  0.0 113996  3360 ?        S    10:46   0:00 sshd: aorton@pts/174
+aorton   61909  0.0  0.0  17436  6572 pts/174  Ss   10:46   0:00 -bash
+zzeng    61946  0.0  0.0  40268   372 ?        Ss   Jul10   0:00 /bin/dbus-daemon --fork --print-pid 4 --print-address 6 --session
+root     61967  0.0  0.0 113996  8100 ?        Ss   09:31   0:00 sshd: siyuan [priv]
+root     61984  0.0  0.0      0     0 ?        S    10:46   0:00 [kworker/20:0]
+root     61986  0.0  0.0      0     0 ?        S    10:46   0:00 [kworker/u146:0]
+root     61989  0.0  0.0      0     0 ?        S    10:46   0:00 [kworker/18:0]
+root     61993  0.0  0.0      0     0 ?        S    10:46   0:00 [kworker/54:1]
+siyuan   62004  0.0  0.0 114148  4324 ?        S    09:31   0:00 sshd: siyuan@notty
+siyuan   62005  0.0  0.0  14256  3464 ?        Ss   09:31   0:00 -bash
+root     62351  0.0  0.0      0     0 ?        S    10:47   0:00 [kworker/46:0]
+zzeng    62411  0.0  0.0  40268   364 ?        Ss   Jul09   0:00 /bin/dbus-daemon --fork --print-pid 4 --print-address 6 --session
+root     62575  0.0  0.0      0     0 ?        S    10:47   0:00 [kworker/49:2]
+guozhun  62589  0.0  0.0  31160  6360 pts/170  S+   10:47   0:00 vi advance_clubb_core_module.F90
+root     62660  0.0  0.0 113996  8084 ?        Ss   10:47   0:00 sshd: czhu95 [priv]
+root     62664  0.0  0.0 113996  8088 ?        Ss   10:47   0:00 sshd: mjisan [priv]
+czhu95   62674  0.0  0.0 113996  3360 ?        S    10:47   0:00 sshd: czhu95@pts/28
+czhu95   62675  0.0  0.0  18000  7088 pts/28   Ss+  10:47   0:00 -bash
+root     62729  0.0  0.0 113996  8160 ?        Ss   09:33   0:00 sshd: nusbaume [priv]
+nusbaume 62737  0.0  0.0  42400  5380 ?        Ss   09:33   0:03 /usr/lib/systemd/systemd --user
+nusbaume 62738  0.0  0.0 240568  3616 ?        S    09:33   0:00 (sd-pam)
+nusbaume 62741  0.0  0.0 113996  3552 ?        S    09:33   0:00 sshd: nusbaume@pts/119
+nusbaume 62742  0.0  0.0  17600  6924 pts/119  Ss+  09:33   0:00 -bash
+zzeng    62859  0.0  0.0  40268   364 ?        Ss   Jul09   0:00 /bin/dbus-daemon --fork --print-pid 4 --print-address 6 --session
+weiming  62860  0.0  0.0  28836  1628 ?        Ss   Jul09   0:00 SCREEN -S extra_07
+weiming  62861  0.0  0.0  17520  5396 pts/162  Ss+  Jul09   0:00 /bin/bash
+mjisan   62869  0.0  0.0 114320  4528 ?        S    10:47   0:00 sshd: mjisan@pts/79
+mjisan   62933  0.2  0.0  15652  6652 pts/79   Ss   10:47   0:00 -tcsh
+root     63795  0.0  0.0      0     0 ?        S    10:48   0:00 [kworker/30:0]
+root     63812  0.0  0.0      0     0 ?        S    10:48   0:00 [kworker/34:0]
+root     63813  0.0  0.0      0     0 ?        S    10:48   0:00 [kworker/68:0]
+griffins 63903  0.0  0.0  28832  1800 ?        Ss   Jul10   0:00 SCREEN -S wrf_Jan
+griffins 63906  0.0  0.0  17496  5924 pts/141  Ss   Jul10   0:00 /bin/bash
+marcusl  63973  0.0  0.0  42516  5588 ?        Ss   Jul03   5:04 /usr/lib/systemd/systemd --user
+marcusl  63974  0.0  0.0 239992  3232 ?        S    Jul03   0:00 (sd-pam)
+jamsmith 64039  0.0  0.0  30712  5852 pts/149  S+   10:49   0:00 vi TenCarmaCirrus.run.o7092159
+root     64086  0.0  0.0      0     0 ?        S    10:49   0:00 [kworker/u145:0]
+root     64106  0.0  0.0 113996  7972 ?        Ss   10:49   0:00 sshd: yiyi063 [priv]
+mjisan   64111  0.0  0.0   8700   472 pts/79   T    10:49   0:00 /usr/bin/dbus-run-session -- /usr/bin/emacs-gtk -nw init_pom.e7092466
+mjisan   64115  0.0  0.0  40280  1956 pts/79   T    10:49   0:00 dbus-daemon --nofork --print-address 4 --session
+mjisan   64116  0.1  0.0 252176 19812 pts/79   T    10:49   0:00 /usr/bin/emacs-gtk -nw init_pom.e7092466
+yiyi063  64118  0.0  0.0  42408  5244 ?        Ss   10:49   0:00 /usr/lib/systemd/systemd --user
+yiyi063  64119  0.0  0.0 240568  3616 ?        S    10:49   0:00 (sd-pam)
+yiyi063  64122  0.0  0.0 114308  4652 ?        S    10:49   0:00 sshd: yiyi063@pts/168
+yiyi063  64123  0.0  0.0  17952  7108 pts/168  Ss+  10:49   0:00 -bash
+root     64363  0.0  0.0      0     0 ?        S    09:35   0:00 [kworker/35:2]
+root     64366  0.0  0.0      0     0 ?        S    10:50   0:00 [kworker/47:2]
+root     64374  0.0  0.0      0     0 ?        S    10:50   0:00 [kworker/65:2]
+fvitt    64735  0.0  0.0  70560  8836 pts/26   S    09:35   0:00 xterm
+fvitt    64772  0.0  0.0  17456  5972 pts/120  Ss+  09:35   0:00 bash
+griffins 64796  0.0  0.0  28832  1760 ?        Ss   Jul10   0:00 SCREEN -S wrf_May
+griffins 64799  0.0  0.0  17496  5912 pts/151  Ss   Jul10   0:00 /bin/bash
+root     64846  0.0  0.0 113996  8120 ?        Ss   Jul03   0:00 sshd: haishen [priv]
+root     64975  0.0  0.0      0     0 ?        S    09:36   0:00 [kworker/4:2]
+root     65058  0.0  0.0 113996  8020 ?        Ss   08:38   0:00 sshd: mickelso [priv]
+weiming  65091  0.0  0.0  28836  1628 ?        Ss   Jul09   0:00 SCREEN -S extra_07
+weiming  65093  0.0  0.0  17520  5688 pts/163  Ss+  Jul09   0:00 /bin/bash
+root     65163  0.0  0.0  19080 11520 ?        S<   Jul02   0:00 /usr/lpp/mmfs/bin/mmksh /usr/lpp/mmfs/bin/runmmfs
+renjian  65204  2.5  2.0 31885476 5403256 pts/11 Sl Jul09  79:21 /glade/u/apps/ch/opt/matlab/R2019a/bin/glnxa64/MATLAB -prefersoftwareopengl
+root     65251  0.0  0.0      0     0 ?        S    10:50   0:00 [kworker/39:0]
+root     65253  0.0  0.0      0     0 ?        S    10:50   0:00 [kworker/19:1]
+root     65255  0.0  0.0      0     0 ?        S    10:50   0:00 [kworker/9:1]
+root     65256  0.0  0.0      0     0 ?        S    10:50   0:00 [kworker/11:0]
+root     65259  0.0  0.0      0     0 ?        S<   Jul02   0:00 [gpfs_aio]
+root     65264  0.0  0.0      0     0 ?        S    Jul02   2:35 [gpfsSwapdKproc]
+root     65282  0.0  0.0 113996  8152 ?        Ss   09:36   0:00 sshd: heheren [priv]
+mickelso 65379  0.0  0.0 114124  4296 ?        S    08:38   0:00 sshd: mickelso@pts/90
+mickelso 65424  0.0  0.0  14812  5808 pts/90   Ss   08:38   0:00 -tcsh
+root     65439  0.0  0.0      0     0 ?        S    10:50   0:00 [kworker/u144:0]
+heheren  65473  0.0  0.0  42404  5424 ?        Ss   09:36   0:03 /usr/lib/systemd/systemd --user
+heheren  65474  0.0  0.0 240568  3616 ?        S    09:36   0:00 (sd-pam)
+heheren  65477  0.0  0.0 113996  4304 ?        S    09:36   0:00 sshd: heheren@notty
+heheren  65484  0.0  0.0  14724  2004 ?        Ss   09:36   0:00 /usr/lib/ssh/sftp-server
+root     65529  0.0  0.0      0     0 ?        S    10:50   0:00 [kworker/u144:3]
+lintao   65674  0.0  0.0 166836 26136 pts/113  S+   Jul09   0:00 python
+mickelso 65690  0.0  0.0  13280  2428 pts/90   S    08:38   0:00 /bin/bash /glade/u/apps/ch/opt/usr/bin/sudox cmip6
+root     65693  0.0  0.0      0     0 ?        S    10:50   0:00 [kworker/48:0]
+root     65701  0.0  0.0 108124  7468 pts/90   S    08:38   0:00 sudo -u cmip6 /tmp/sudodisp.65690
+root     65710  0.0  0.0      0     0 ?        S    10:50   0:00 [kworker/50:0]
+root     65727  0.0  0.0      0     0 ?        S    10:50   0:00 [kworker/70:1]
+root     65746  0.0  0.0 113996  8888 ?        Ss   Jul10   0:00 sshd: sunchao [priv]
+root     65801  0.0  0.0      0     0 ?        S    Jul02   0:04 [nfsWatchKproc]
+root     65827  0.0  0.0 113996  7992 ?        Ss   10:50   0:00 sshd: yiyi063 [priv]
+yiyi063  65840  0.0  0.0 114308  4668 ?        S    10:50   0:00 sshd: yiyi063@pts/175
+yiyi063  65843  0.0  0.0  17952  7104 pts/175  Ss   10:50   0:00 -bash
+cmip6    65857  0.0  0.0  13280  3884 pts/90   S    08:38   0:00 /bin/tcsh /tmp/sudodisp.65690
+zzeng    65887  0.0  0.0  40272   380 ?        Ss   Jul10   0:00 /bin/dbus-daemon --fork --print-pid 5 --print-address 7 --session
+cmip6    65980  0.0  0.0  23436  5372 pts/90   S+   08:38   0:00 -bin/tcsh
+root     66212  0.0  0.0      0     0 ?        S    10:51   0:00 [kworker/5:0]
+root     66214  0.0  0.0      0     0 ?        S    10:51   0:00 [kworker/51:1]
+zonato   66218  0.1  0.0  31296  6352 pts/41   S+   10:51   0:00 vi module_sf_bep_bem.F
+mjisan   66255  0.0  0.0   8700   476 pts/79   T    10:51   0:00 /usr/bin/dbus-run-session -- /usr/bin/emacs-gtk -nw init_pom.o7092466
+mjisan   66261  0.0  0.0  40280  1960 pts/79   T    10:51   0:00 dbus-daemon --nofork --print-address 4 --session
+root     66263  0.4  0.0 2675544 52932 ?       Sl   Jul02  60:19 python /usr/lpp/mmfs/bin/mmsysmon.py
+mjisan   66264  0.2  0.0 252256 20072 pts/79   T    10:51   0:00 /usr/bin/emacs-gtk -nw init_pom.o7092466
+root     66281  0.0  0.0  10664  2800 ?        S    Jul02   0:43 /usr/lpp/mmfs/bin/mmksh /usr/lpp/mmfs/bin/mmccrmonitor 15 0 no
+root     66329  0.0  0.0      0     0 ?        S    10:51   0:00 [kworker/60:0]
+root     66352  0.0  0.0 113996  8092 ?        Ss   10:51   0:00 sshd: afahad [priv]
+aorton   66379  0.0  0.0  30724  5912 pts/174  S+   10:51   0:00 vi atm_in
+afahad   66390  0.0  0.0  42412  5432 ?        Ss   10:51   0:00 /usr/lib/systemd/systemd --user
+afahad   66391  0.0  0.0 240568  3616 ?        S    10:51   0:00 (sd-pam)
+afahad   66394  0.0  0.0 113996  3292 ?        S    10:51   0:00 sshd: afahad@pts/46
+afahad   66395  0.2  0.0  15584  6320 pts/46   Ss+  10:51   0:00 -tcsh
+zonato   66630  0.0  0.0  31036  6256 pts/164  S+   10:51   0:00 vi module_sf_bep_bem.F
+root     66646  0.0  0.0      0     0 ?        S    10:51   0:00 [kworker/10:2]
+root     66649  0.0  0.0      0     0 ?        S    10:51   0:00 [kworker/2:2]
+root     66650  0.0  0.0      0     0 ?        S    10:51   0:00 [kworker/8:0]
+root     66653  0.0  0.0      0     0 ?        S    10:51   0:00 [kworker/17:2]
+root     66656  0.0  0.0      0     0 ?        S    10:51   0:00 [kworker/0:1]
+yiyi063  66658  0.0  0.0  30832  6008 pts/175  S+   10:51   0:00 vi user_nl_cam
+lqian    66691  0.0  0.2 22747436 543436 pts/87 Sl+ Jul09   1:02 /glade/u/apps/ch/opt/idl/8.7.2/idl87/bin/bin.linux.x86_64/idl
+root     66733  0.0  0.0      0     0 ?        S    10:51   0:00 [kworker/u146:2]
+root     66766  0.0  0.0 113996  8120 ?        Ss   10:52   0:00 sshd: mduetsch [priv]
+griffins 66769  0.0  0.0  13260  2368 pts/172  S+   10:52   0:00 /bin/bash ./move_wrf_files.scr /glade/scratch/griffins/wrfout/2018010700_mem3/2018.01.07.09-00/WRF_2018010700_mem3_output_2018_0107_09_00.nc
+mduetsch 66789  0.0  0.0  42416  5252 ?        Ss   10:52   0:00 /usr/lib/systemd/systemd --user
+mduetsch 66790  0.0  0.0 240568  3616 ?        S    10:52   0:00 (sd-pam)
+mduetsch 66793  0.0  0.0 113996  3232 ?        S    10:52   0:00 sshd: mduetsch@pts/176
+mduetsch 66796  0.0  0.0  17948  7016 pts/176  Ss+  10:52   0:00 -bash
+jdwhite  66924  0.0  0.0  42400  5440 ?        Ss   Jul08   2:05 /usr/lib/systemd/systemd --user
+jdwhite  66925  0.0  0.0 240576  3572 ?        S    Jul08   0:00 (sd-pam)
+jamsmith 67021  0.0  0.0  30800  5956 pts/32   S+   10:52   0:00 vi cesm.log.7092159.chadmin1.ib0.cheyenne.ucar.edu.190711-104326
+root     67039  0.0  0.0      0     0 ?        S    Jul09   0:00 [mmkproc]
+root     67040  0.0  0.0      0     0 ?        S    Jul09   0:00 [mmkproc]
+root     67042  0.0  0.0      0     0 ?        S    Jul09   0:00 [mmkproc]
+root     67070  0.0  0.0      0     0 ?        S    Jul09   0:00 [mmkproc]
+root     67095  0.0  0.0      0     0 ?        S    Jul09   0:00 [mmkproc]
+root     67318  0.0  0.0  67480  6616 ?        Ss   10:52   0:00 sshd: [accepted]
+mjisan   67319  0.0  0.0   8700   472 pts/79   T    10:52   0:00 /usr/bin/dbus-run-session -- /usr/bin/emacs-gtk -nw run.init_ocean.csh
+mjisan   67323  0.0  0.0  40280  1972 pts/79   T    10:52   0:00 dbus-daemon --nofork --print-address 4 --session
+mjisan   67324  0.0  0.0 252144 19636 pts/79   T    10:52   0:00 /usr/bin/emacs-gtk -nw run.init_ocean.csh
+griffins 67326  0.0  0.0  13260  2244 pts/151  S+   10:52   0:00 /bin/bash ./move_wrf_files.scr /glade/scratch/griffins/wrfout/2017051512_mem4/2017.05.16.22-00/WRF_2017051512_mem4_output_2017_0516_22_00.nc
+griffins 67334  2.0  0.0  25232  2604 pts/151  S+   10:52   0:02 rsync /glade/scratch/griffins/wrfout/2017051512_mem4/2017.05.16.22-00/WRF_2017051512_mem4_output_2017_0516_22_00.nc sarahm@ash.ssec.wisc.edu:/home/sarahm/
+griffins 67335  3.9  0.0  41556  7484 pts/151  S+   10:52   0:04 ssh -l sarahm ash.ssec.wisc.edu rsync --server -e.LsC . /home/sarahm/
+mjisan   67367  0.0  0.0   8700   472 pts/79   T    10:53   0:00 /usr/bin/dbus-run-session -- /usr/bin/emacs-gtk -nw hwrf.conf
+mjisan   67371  0.0  0.0  40280  1960 pts/79   T    10:53   0:00 dbus-daemon --nofork --print-address 4 --session
+mjisan   67372  0.1  0.0 252228 19588 pts/79   T    10:53   0:00 /usr/bin/emacs-gtk -nw hwrf.conf
+chenming 67373  0.0  0.0  30756  5916 pts/106  S+   10:53   0:00 vi PointStatConfig.GHT
+root     67385  0.0  0.0 113996  8780 ?        Ss   Jul03   0:00 sshd: sshu3 [priv]
+anewman  67422  0.0  0.0  16036  2992 pts/92   S+   10:53   0:00 nano regrid_daymet_border.bash
+root     67425  0.0  0.0      0     0 ?        S    10:53   0:00 [kworker/u144:4]
+griffins 67439  0.0  0.0  13260  2264 pts/118  S+   10:53   0:00 /bin/bash ./move_wrf_files.scr /glade/scratch/griffins/wrfout/2018010700_mem2/2018.01.07.09-00/WRF_2018010700_mem2_output_2018_0107_09_00.nc
+griffins 67447  1.9  0.0  25232  2584 pts/118  S+   10:53   0:01 rsync /glade/scratch/griffins/wrfout/2018010700_mem2/2018.01.07.09-00/WRF_2018010700_mem2_output_2018_0107_09_00.nc sarahm@ash.ssec.wisc.edu:/home/sarahm/
+griffins 67448  3.9  0.0  41512  7384 pts/118  S+   10:53   0:02 ssh -l sarahm ash.ssec.wisc.edu rsync --server -e.LsC . /home/sarahm/
+griffins 67555  0.0  0.0  13260  2256 pts/171  S+   10:53   0:00 /bin/bash ./move_wrf_files.scr /glade/scratch/griffins/wrfout/2017052512_mem4/2017.05.27.12-00/WRF_2017052512_mem4_output_2017_0527_12_00.nc
+griffins 67563  1.6  0.0  25232  2644 pts/171  S+   10:53   0:00 rsync /glade/scratch/griffins/wrfout/2017052512_mem4/2017.05.27.12-00/WRF_2017052512_mem4_output_2017_0527_12_00.nc sarahm@ash.ssec.wisc.edu:/home/sarahm/
+griffins 67564  3.3  0.0  41504  7416 pts/171  S+   10:53   0:01 ssh -l sarahm ash.ssec.wisc.edu rsync --server -e.LsC . /home/sarahm/
+sunchao  67586  0.0  0.0  42400  6140 ?        Ss   Jul10   0:50 /usr/lib/systemd/systemd --user
+sunchao  67589  0.0  0.0 240568  3608 ?        S    Jul10   0:00 (sd-pam)
+sunchao  67601  0.0  0.0 114896  5304 ?        S    Jul10   0:02 sshd: sunchao@pts/153
+sshu3    67624  0.0  0.0 113996  3292 ?        S    Jul03   0:00 sshd: sshu3@pts/42
+sshu3    67625  0.0  0.0  17924  7772 pts/42   Ss+  Jul03   0:00 -bash
+sunchao  67628  0.0  0.0  17956  7832 pts/153  Ss+  Jul10   0:01 -bash
+root     67677  0.0  0.0  67480  6620 ?        Ss   10:54   0:00 sshd: [accepted]
+root     67688  0.0  0.0 113996  8032 ?        Ss   10:54   0:00 sshd: cmaloney [priv]
+root     67703  0.0  0.0      0     0 ?        S    10:54   0:00 [kworker/29:2]
+root     67705  0.0  0.0      0     0 ?        S    10:54   0:00 [kworker/3:1]
+root     67707  0.0  0.0      0     0 ?        S    10:54   0:00 [kworker/37:1]
+root     67709  0.0  0.0      0     0 ?        S    10:54   0:00 [kworker/28:2]
+cmaloney 67710  0.0  0.0  42416  5400 ?        Ss   10:54   0:00 /usr/lib/systemd/systemd --user
+cmaloney 67711  0.0  0.0 240568  3616 ?        S    10:54   0:00 (sd-pam)
+cmaloney 67714  0.0  0.0 113996  3476 ?        S    10:54   0:00 sshd: cmaloney@pts/147
+cmaloney 67715  1.0  0.0  15324  6164 pts/147  Ss+  10:54   0:00 -tcsh
+chenming 67774  0.0  0.0  30736  5952 pts/108  S+   10:54   0:00 vi log
+mjisan   67775  0.0  0.0   8700   472 pts/79   T    10:54   0:00 /usr/bin/dbus-run-session -- /usr/bin/emacs-gtk -nw hwrf_basic.conf
+mjisan   67779  0.0  0.0  40280  1968 pts/79   T    10:54   0:00 dbus-daemon --nofork --print-address 4 --session
+mjisan   67780  0.5  0.0 252160 19844 pts/79   T    10:54   0:00 /usr/bin/emacs-gtk -nw hwrf_basic.conf
+jluo     67806  0.0  0.0  42416  5468 ?        Ss   Jul07   3:05 /usr/lib/systemd/systemd --user
+jluo     67807  0.0  0.0 239992  3244 ?        S    Jul07   0:00 (sd-pam)
+griffins 67847  0.0  0.0  13260  2244 pts/141  S+   10:54   0:00 /bin/bash ./move_wrf_files.scr /glade/scratch/griffins/wrfout/2018012900_mem0/2018.01.29.19-00/WRF_2018012900_mem0_output_2018_0129_19_00.nc
+griffins 67855  2.0  0.0  25232  2600 pts/141  S+   10:54   0:00 rsync /glade/scratch/griffins/wrfout/2018012900_mem0/2018.01.29.19-00/WRF_2018012900_mem0_output_2018_0129_19_00.nc sarahm@ash.ssec.wisc.edu:/home/sarahm/
+griffins 67856  4.0  0.0  41464  7476 pts/141  S+   10:54   0:00 ssh -l sarahm ash.ssec.wisc.edu rsync --server -e.LsC . /home/sarahm/
+zzeng    67905  0.0  0.0  42476  5384 ?        Ss   Jul03   5:17 /usr/lib/systemd/systemd --user
+zzeng    67906  0.0  0.0 239392  2556 ?        S    Jul03   0:00 (sd-pam)
+lgao     67998  0.6  0.0  30840  6080 pts/128  S+   10:54   0:00 vi MEIC.f90
+mjisan   67999  0.0  0.0   8700   464 pts/79   S    10:54   0:00 /usr/bin/dbus-run-session -- /usr/bin/emacs-gtk -nw hwrf_v4.0a_release.conf
+mjisan   68003  0.0  0.0  40280  1968 pts/79   S    10:54   0:00 dbus-daemon --nofork --print-address 4 --session
+mjisan   68004  1.0  0.0 252156 19460 pts/79   S+   10:54   0:00 /usr/bin/emacs-gtk -nw hwrf_v4.0a_release.conf
+root     68006  0.0  0.0  10664  2348 ?        S    10:54   0:00 /usr/lpp/mmfs/bin/mmksh /usr/lpp/mmfs/bin/mmccrmonitor 15 0 no
+griffins 68014  1.3  0.0  37788  3828 pts/172  S+   10:54   0:00 ssh sarahm@ash.ssec.wisc.edu /home/sarahm/move_from_ash_to_iris_wrfout.scr 2018.01.07.09-00 2018010700_mem3
+svasquez 68015  0.0  0.0  38576  2140 pts/85   R+   10:54   0:00 ps -aux
+zzeng    68171  0.0  0.0  40272   372 ?        Ss   Jul03   0:00 /bin/dbus-daemon --fork --print-pid 5 --print-address 7 --session
+root     68852  0.0  0.0      0     0 ?        S    Jul08   0:01 [mmkproc]
+haishen  68979  0.0  0.0  42508  5284 ?        Ss   Jul03   5:16 /usr/lib/systemd/systemd --user
+haishen  68980  0.0  0.0 239524  2736 ?        S    Jul03   0:00 (sd-pam)
+haishen  69010  0.0  0.0 114308  4592 ?        S    Jul03   0:00 sshd: haishen@pts/82
+griffins 69042  9.7  1.4 4150960 3871620 pts/151 S+ Jul10 146:58 python extract_wrf_variables.py
+zzeng    69049  0.0  0.0  40272   368 ?        Ss   Jul03   0:00 /bin/dbus-daemon --fork --print-pid 5 --print-address 7 --session
+haishen  69056  0.0  0.0  17956  7176 pts/82   Ss+  Jul03   0:00 -bash
+ckruse   69114  0.0  0.0  31180  7308 pts/59   S+   Jul06   0:00 vi module_big_step_utilities_em.F
+root     69160  0.0  0.0      0     0 ?        S<   Jul07   0:00 [kworker/u149:0]
+root     69885  0.0  0.0 113996  7968 ?        Ss   Jul08   0:00 sshd: bachman [priv]
+bachman  70056  0.0  0.0 117256  6576 ?        S    Jul08   0:37 sshd: bachman@pts/93
+bachman  70057  0.0  0.0  20876 10376 pts/93   Ss+  Jul08   0:05 -bash
+weimao   71083  0.0  0.0  42508  5500 ?        Ss   Jul04   4:26 /usr/lib/systemd/systemd --user
+weimao   71084  0.0  0.0 239992  3236 ?        S    Jul04   0:00 (sd-pam)
+alyammar 71187  0.0  0.0  42468  5184 ?        Ss   Jul05   4:05 /usr/lib/systemd/systemd --user
+alyammar 71188  0.0  0.0 239992  3244 ?        S    Jul05   0:00 (sd-pam)
+root     71242  0.0  0.0 113996  7896 ?        Ss   Jul06   0:00 sshd: weimao [priv]
+weimao   71319  0.0  0.0 114840  5072 ?        S    Jul06   0:00 sshd: weimao@pts/2
+weimao   71320  0.0  0.0  24696 14200 pts/2    Ss+  Jul06   0:03 -bash
+zzeng    71330  0.0  0.0  40268   364 ?        Ss   Jul09   0:00 /bin/dbus-daemon --fork --print-pid 4 --print-address 6 --session
+rfisher  71351  0.0  0.0  14756  4900 pts/37   S    08:40   0:00 -csh
+alyammar 71408  0.0  0.0  13136  3020 ?        S    Jul05   0:00 sh /glade/u/home/alyammar/.vscode-server/bin/c7d83e57cd18f18026a8162d042843bda1bcf21f/server.sh --port=0
+alyammar 71416  0.0  0.0 3852264 55808 ?       Sl   Jul05   0:08 /glade/u/home/alyammar/.vscode-server/bin/c7d83e57cd18f18026a8162d042843bda1bcf21f/node /glade/u/home/alyammar/.vscode-server/bin/c7d83e57cd18f18026a8162d042843bda1bcf21f/out/remoteExtensionHostAgent.js --port=0
+weiming  72130  0.0  0.0  28836  1648 ?        Ss   Jul09   0:00 SCREEN -S 01
+weiming  72131  0.0  0.0  17580  5432 pts/105  Ss+  Jul09   0:00 /bin/bash
+root     72264  0.0  0.0 113996  8032 ?        Ss   07:27   0:00 sshd: davidf [priv]
+davidf   72551  0.0  0.0  42500  5280 ?        Ss   07:27   0:08 /usr/lib/systemd/systemd --user
+davidf   72552  0.0  0.0 240568  3616 ?        S    07:27   0:00 (sd-pam)
+davidf   72555  0.0  0.0 113996  4552 ?        S    07:27   0:00 sshd: davidf@pts/45
+davidf   72556  0.0  0.0  15204  5836 pts/45   Ss+  07:27   0:00 -tcsh
+root     73005  0.0  0.0      0     0 ?        S    08:41   0:00 [kworker/3:0]
+root     73007  0.0  0.0      0     0 ?        S    08:41   0:00 [kworker/63:1]
+root     73008  0.0  0.0      0     0 ?        S    08:41   0:00 [kworker/60:2]
+klindsay 73291  0.0  0.0  42520  5408 ?        Ss   Jul03   5:06 /usr/lib/systemd/systemd --user
+klindsay 73292  0.0  0.0 239992  3232 ?        S    Jul03   0:00 (sd-pam)

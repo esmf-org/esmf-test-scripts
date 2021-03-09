@@ -1,0 +1,6 @@
+#!/bin/bash
+
+
+./bfb_comp  /glade/work/svasquez/scripts_dir/daily/external_demos_cheyenne/intel/external_demos/ESMF_RegridWeightGenCheck  /gpfs/fs1/work/svasquez/SACADO_test/800bs42/external_demos/ESMF_RegridWeightGenCheck 1> bfb_bs42-head 2>&1
+
+

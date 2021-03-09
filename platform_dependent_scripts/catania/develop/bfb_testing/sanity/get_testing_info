@@ -1,0 +1,15 @@
+#!/bin/ksh
+# $1 is ESMF_DIR
+echo " ESMF_DIR = $1"
+cd $1
+
+use_test_cases=`find . -name "*UseTestCase*" -type f -exec grep "\!USE_TEST_CASE" {} \; | wc -l`
+use_test_casess=`expr $use_test_cases - 0`
+find . -name "*UseTestCase*" -type f -exec grep "\!USE_TEST_CASE" {} \; -print > temp_file
+grep  -v "USE_TEST_CASE" temp_file > $LOGDIR/utc_files
+rm -f temp_file
+sed 's/^.*\///' $LOGDIR/utc_files | sed 's/\..*$//' | sort > $LOGDIR/utcases_files
+
+
+echo "$use_test_cases" > $LOGDIR/utc_num
+

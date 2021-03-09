@@ -1,0 +1,47 @@
+#!/bin/bash -l
+
+# This script does a bfb comparison of files in two provided directories.
+dir1=$1
+dir2=$2
+
+homedir=`pwd`
+rm failed_list passed_list not_found_list
+pass=0
+fail=0
+not_found=0
+
+touch failed_list
+touch passed_list
+touch not_found_list
+cd $dir1
+echo ""
+Files=*.nc
+        for f in $Files
+        do
+                if test -f $dir2/$f
+                then
+
+                        #nccmp -d   $f  $dir2/$f
+                        nccmp -dSqf  $f  $dir2/$f
+
+                        if [ "$?" != "0" ]
+                        then
+                                echo "$f" >> $homedir/failed_list
+				fail=`expr $fail + 1`
+				echo "$f"
+				echo ""
+                        else
+                                echo "$f" >> $homedir/passed_list
+				pass=`expr $pass + 1`
+                        fi
+		else
+			echo "$f" >> $homedir/not_found_list
+			not_found=`expr $not_found + 1`
+                fi
+        done
+cd $homedir
+
+echo "passed $pass  failed $fail " > bfb_results
+echo ""
+
+

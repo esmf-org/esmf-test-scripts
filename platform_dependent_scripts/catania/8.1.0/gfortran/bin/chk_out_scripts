@@ -1,0 +1,37 @@
+#!/bin/bash
+
+cd $homedir/bin
+
+rm -rf $homedir/bin/test_scripts
+
+exp_git_scripts
+
+if test ! -d test_scripts
+then 
+	# script check out failed, use scripts from previous test run
+	# scripts do not change very often
+	exit 1
+fi
+
+cp  $homedir/bin/test_scripts/regression_testing/esmf_scripts/* $homedir/bin/.
+
+#update the scripts in ~/bin if necessary
+diff $homedir/bin/test_scripts/regression_testing/esmf_scripts/exp_git_scripts ~/bin/exp_git_scripts
+if [ "$?" != "0" ]
+then
+	rm -f ~/bin/exp_git_scripts
+	cp $homedir/bin/test_scripts/regression_testing/esmf_scripts/exp_git_scripts ~/bin/.
+	chmod a+x ~/bin/exp_git_scripts
+fi
+
+diff $homedir/bin/test_scripts/regression_testing/esmf_scripts/chk_out_scripts ~/bin/chk_out_scripts
+if [ "$?" != "0" ]
+then
+        rm -f ~/bin/chk_out_scripts
+        cp $homedir/bin/test_scripts/regression_testing/esmf_scripts/chk_out_scripts ~/bin/.
+        chmod a+x ~/bin/chk_out_scripts
+fi
+
+rm -rf $homedir/bin/test_scripts
+
+exit

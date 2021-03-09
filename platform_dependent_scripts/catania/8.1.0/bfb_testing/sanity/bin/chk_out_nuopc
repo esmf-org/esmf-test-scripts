@@ -1,0 +1,65 @@
+#!/bin/bash
+rfile=$1
+subjest=$2
+
+############################### Parse the compute file and checkout esmf where indicated ##
+
+number=1
+while grep "^$number " $rfile >tmp
+do
+        read num location directory hostname abi site comp comm u_tests u_tests_type sys_test_type threaded mpmd ck_out_opt tag < tmp
+        echo "$location $directory $hostname $abi $site $comp $comm $u_tests $u_tests_type $sys_test_type $threaded $mpmd $ck_out_opt $tag"
+	if [[ $ck_out_opt = "co" ]]
+	then
+		umask 002
+                cd $directory
+                pwd
+                rm -rf  NUOPC-Protos                
+                # Execute the script to checkout the PROTOs
+                expect $homedir/bin/svn_nuopc
+                if test ! -d  NUOPC-Protos
+                then
+                        echo "Sleeping 900"
+                        sleep 900
+                        # Try again
+                        expect $homedir/bin/svn_nuopc
+                        if test ! -d  NUOPC-Protos
+                        then
+                                echo "Unable to checkout NUOPC-Protos from SourceForge." > mailMessage
+                                echo "No tests were run" >> mailMessage
+                                mail -s  $email_title $emailuser <  mailMessage
+                                mail -s  $email_title esmf_test@cgd.ucar.edu <  mailMessage
+                                rm -rf mailMessage
+                                rm -f $homedir/.outFile
+                                Set test status as blue, checkout failed.
+                                echo "Test_results:blue" > $LOGDIR/Test_Status
+                                echo "Set Test Status to blue."
+                                cat $LOGDIR/Test_Status >> $LOGDIR/newMailMessage
+                                mail -s $subjest himanshu@ucar.edu <  $LOGDIR/newMailMessage
+                                #mail -s $subject esmftest@cgd.ucar.edu < $LOGDIR/newMailMessage
+                         else
+                                if [[ $tag != "" ]]
+                                then
+                                        rm -rf  NUOPC-Protos
+                                        expect $homedir/bin/svn_nuopc $tag
+                                        cd ..
+                                fi
+                        fi
+                else
+                        if [[ $tag != "" ]]
+                        then
+                                rm -rf  NUOPC-Protos
+                                expect $homedir/bin/svn_nuopc $tag
+                                cd ..
+                        fi
+
+                fi
+
+                cd $homedir
+        fi
+        number=`expr $number + 1`
+        echo "number = $number"
+done
+
+
+
