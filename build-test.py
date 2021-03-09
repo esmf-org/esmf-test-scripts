@@ -143,7 +143,7 @@ def main(argv):
             if(machine_list[comp]['versions'][ver]['netcdf'] == "None" ):
               modulecmd_b = "module load {} {} \nmodule list >& module-build.log\n".format(machine_list[comp]['versions'][ver]['compiler'],mpiflavor['module'])
               modulecmd_t = "module load {} {} \nmodule list >& module-test.log\n".format(machine_list[comp]['versions'][ver]['compiler'],mpiflavor['module'])
-              esmfnetcdf = "\n\n"
+              esmfnetcdf = "export -n ESMF_NETCDF\n\n"
               fb.write(modulecmd_b)
               ft.write(modulecmd_t)
             else:
