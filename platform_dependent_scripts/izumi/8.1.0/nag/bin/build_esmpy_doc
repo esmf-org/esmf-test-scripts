@@ -1,0 +1,304 @@
+#!/bin/bash -l 
+
+cd $ESMF_DIR
+
+
+
+env
+
+#Clobber previous arch files
+gmake clobber 1> tmp 2>&1
+
+
+echo "" >> $LOGDIR/mailMessage
+echo "_____________________________________________________________________________________________________________" >> $LOGDIR/mailMessage
+echo "" >> $LOGDIR/mailMessage
+
+test_results=0  #assume build passes
+install_results=0  #assume install passes
+
+echo "`date` on `uname -n` " >> $LOGDIR/mailMessage
+echo "Compiler and configuration information:" >> $LOGDIR/mailMessage
+echo "" >> $LOGDIR/mailMessage
+echo "-------------------------------------------------------------- " >> $LOGDIR/mailMessage
+
+module list  1> tmp 2>&1
+cat tmp >> $LOGDIR/mailMessage
+
+
+echo " " >> $LOGDIR/mailMessage
+git remote -v 1> tmp 2>&1
+
+if (grep -i "Not a git repository" tmp)
+then
+        #Checkout failed
+        echo "Test_results:blue" > $LOGDIR/Test_Status
+fi
+
+
+echo "ESMF Repository:" >> $LOGDIR/mailMessage
+cat tmp >> $LOGDIR/mailMessage
+echo " " >> $LOGDIR/mailMessage
+git describe --tags 1> tmp 2>&1
+cat tmp >> $LOGDIR/mailMessage
+echo " " >> $LOGDIR/mailMessage
+
+gmake ESMF_BOPT=$OPT info 1> tmp 2>&1
+cat tmp >> $LOGDIR/mailMessage
+
+
+
+gmake -j4 ESMF_BOPT=$OPT  1> tmp 2>&1
+if [ "$?" != "0" ]
+then
+        echo "Library build FAIL with ESMF_BOPT=$OPT"
+
+	if [ $OPT != g ]
+	then 
+		cat tmp > $LOGDIR/build_O_`date +%d``uname -n`$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+	else
+		cat tmp > $LOGDIR/build_g_`date +%d``uname -n`$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+	fi #end of if [ $OPT != g ]
+
+	echo "`date` library build ****************FAIL" >> $LOGDIR/mailMessage
+	test_results=1
+	echo "" >> $LOGDIR/mailMessage
+	echo "" >> $LOGDIR/mailMessage
+	echo "The following is the 'tail' of the build failure">> $LOGDIR/mailMessage
+	echo "" >> $LOGDIR/mailMessage
+        tail  -50 tmp >> $LOGDIR/mailMessage
+
+
+        # If checkout did not fail, set test status to red, build failed
+        if !(grep "blue" $LOGDIR/Test_Status)
+        then
+                echo "Test_results:red" > $LOGDIR/Test_Status
+                echo "Set Test Status to red."
+        fi
+
+
+else
+
+       	echo "Library build PASS with ESMF_BOPT=$OPT"
+	echo "`date` library build ................PASS" >> $LOGDIR/mailMessage
+
+        # Check for warnings
+        if grep -i "warning[ ]*:" tmp
+        then
+                echo "Builds with warnings." >> $LOGDIR/mailMessage
+        fi
+
+	# check if all files should be logged
+	if [[ $LOGTMP = "ALL" ]]
+	then
+        	if [ $OPT != g ]
+        	then 
+                	cat tmp > $LOGDIR/build_O_`date +%d``uname -n`$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+        	else    
+                	cat tmp > $LOGDIR/build_g_`date +%d``uname -n`$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+        	fi #end of if [ $OPT != g ]
+	fi # end of if [[ $LOGTMP = "ALL" ]]
+
+
+        gmake ESMF_BOPT=$OPT  install 1> tmp 2>&1
+        if [ "$?" != "0" ]
+        then
+                echo "Library install FAILED with ESMF_BOPT=$OPT"
+                install_results=1  # install failed
+
+                if [ $OPT != g ]
+                then
+                        cat tmp > $LOGDIR/install_O_`date +%d``uname -n`$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                else
+                        cat tmp > $LOGDIR/install_g_`date +%d``uname -n`$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                fi #end of if [ $OPT != g ]
+
+                echo "`date` library install **************FAIL" >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+                echo "The following is the 'tail' of the install failure">> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+                tail  -50 tmp >> $LOGDIR/mailMessage
+
+                # Set test status as yellow, if it is not red
+                if !(grep "red" $LOGDIR/Test_Status)
+                then
+                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+                        echo "Set Test Status to yellow."
+                fi
+
+
+
+                else
+
+                echo "Library install PASSED with ESMF_BOPT=$OPT"
+                echo "`date` library install ..............PASS" >> $LOGDIR/mailMessage
+
+                gmake ESMF_BOPT=$OPT  installcheck 1> tmp 2>&1
+                if [ "$?" != "0" ]
+                then
+                        echo "Library install check FAILED with ESMF_BOPT=$OPT"
+                        install_results=1  # install failed
+
+                        if [ $OPT != g ]
+                        then
+                                cat tmp > $LOGDIR/installcheck_O_`date +%d``uname -n`$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        else
+                                cat tmp > $LOGDIR/installcheck_g_`date +%d``uname -n`$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        fi #end of if [ $OPT != g ]
+
+                        echo "`date` library installcheck *********FAIL" >> $LOGDIR/mailMessage
+                        echo "" >> $LOGDIR/mailMessage
+                        echo "" >> $LOGDIR/mailMessage
+                        echo "The following is the 'tail' of the install failure">> $LOGDIR/mailMessage
+                        echo "" >> $LOGDIR/mailMessage
+                        tail  -50 tmp >> $LOGDIR/mailMessage
+
+                	# Set test status as yellow, if it is not red
+                	if !(grep "red" $LOGDIR/Test_Status)
+                	then
+                        	echo "Test_results:yellow" > $LOGDIR/Test_Status
+                        	echo "Set Test Status to yellow."
+                	fi
+
+
+
+                        else
+
+                        echo "Library install PASSED with ESMF_BOPT=$OPT"
+                        echo "`date` library installcheck .........PASS" >> $LOGDIR/mailMessage
+
+                fi
+
+
+        fi
+
+	echo "" >> $LOGDIR/mailMessage
+	echo "|------------------------ PYTHON BUILD ------------------------|" >> $LOGDIR/mailMessage
+
+	##source activate sphinx
+
+	cd $ESMF_DIR/src/addon/ESMPy
+        
+	python setup.py build --ESMFMKFILE=$ESMFMKFILE install --prefix=$prefix 1> tmp 2>&1
+        if [ "$?" != "0" ]
+        then
+                echo "python build FAIL "
+                echo "`date` python build *****************FAIL" >> $LOGDIR/mailMessage
+		export python_build=1
+                echo "" >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+                echo "The following is the 'tail' of the build failure">> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+                tail  -50 tmp >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+
+                if [ $OPT != g ]
+                then
+                        cat tmp > $LOGDIR/build_O_`date +%d``uname -n`build_python_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                else
+                        cat tmp > $LOGDIR/build_g_`date +%d``uname -n`build_python_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                fi # end of if [ $OPT != g ]
+
+                # Set test status as yellow, if it is not red
+                if !(grep "red" $LOGDIR/Test_Status)
+                then
+                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+                        echo "Set Test Status to yellow."
+                fi
+
+
+
+        else
+                echo "build python PASS "
+                echo "`date` python build .................PASS" >> $LOGDIR/mailMessage
+		export python_build=0
+
+                if [[ $LOGTMP = "ALL" ]]
+                then
+                        if [ $OPT != g ]
+                        then
+                                cat tmp > $LOGDIR/build_O_`date +%d``uname -n`build_python_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        else
+                                cat tmp > $LOGDIR/build_g_`date +%d``uname -n`build_python_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        fi #end of if [ $OPT != g ]
+                fi # end of if [[ $LOGTMP = "ALL" ]]
+
+        fi #end of if [ "$?" != "0" ] for make ESMF_BOPT=$OPT build python 1> tmp 2>&1
+
+        cd $prefix/*/*/site-packages
+	export PYTHONPATH+=`pwd`
+	cd $ESMF_DIR/src/addon/ESMPy/doc
+	make html  1> tmp 2>&1
+        if [ "$?" != "0" ]
+        then
+		echo "ESMPy docs failed to build"
+                esmpy_doc=1  # doc build failed
+
+                if [ $OPT != g ]
+                then
+                	cat tmp > $LOGDIR/esmpy_doc_O_`date +%d``uname -n`$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                else
+                	cat tmp > $LOGDIR/esmpy_doc_g_`date +%d``uname -n`$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                fi #end of if [ $OPT != g ]
+
+                echo "`date` ESMPy Doc Build **************FAIL" >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+                echo "The following is the 'tail' of the doc build failure">> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+                tail  -50 tmp >> $LOGDIR/mailMessage
+                echo "The following is the 'tail' of the doc build failure">> $LOGDIR/esmpy_doc_message
+                tail  -50 tmp >> $LOGDIR/esmpy_doc_message
+
+                # Set test status as yellow, if it is not red
+                if !(grep "red" $LOGDIR/Test_Status)
+                then
+                	echo "Test_results:yellow" > $LOGDIR/Test_Status
+                        echo "Set Test Status to yellow."
+                fi
+cat tmp >> $LOGDIR/esmpy_doc_message
+                mail -s "ESMPy docs failed to build" esmf_test@cgd.ucar.edu < $LOGDIR/esmpy_doc_message
+                mail -s "ESMPy docs failed to build" himanshu@ucar.edu < $LOGDIR/esmpy_doc_message
+
+
+	else
+
+       		echo "ESMPy_doc build PASSED with ESMF_BOPT=$OPT"
+               	echo "`date` ESMPy Doc Build ..............PASS" >> $LOGDIR/mailMessage
+                esmpy_doc=0  # doc build passed
+ 		# Copy to website
+
+                #export cu_dir=/data/web/htdocs/esmf-cu/esmf_releases/last_built
+                #scp -r esmpy_doc siva7831@cog-cu.colorado.edu:$cu_dir/
+		#rsync -avz esmpy_doc/ siva7831@cog-cu.colorado.edu:$cu_dir/
+
+       fi
+
+fi #end of if [ "$?" != "0" ] for make ESMF_BOPT=$OPT  1> tmp 2>&1
+
+# Make name as short as possible
+name=`uname -n | sed 's/\..*//'`
+
+
+if [[ $test_results != 0 ]] 
+then  #The build failed
+	echo "**FAIL** $name($OPT) $ESMF_OS.$ESMF_COMPILER.$ESMF_COMM.$ESMF_ABI" >> $LOGDIR/summary
+else
+        if [[ $install_results != 0 && $esmpy_doc != 0 ]] 
+	then
+               	echo "PASS FAIL $name($OPT) $ESMF_OS.$ESMF_COMPILER.$ESMF_COMM.$ESMF_ABI   FAIL " >> $LOGDIR/summary
+	
+        elif [[ $install_results != 1 && $esmpy_doc != 1 ]]
+	then
+               	echo "PASS PASS $name($OPT) $ESMF_OS.$ESMF_COMPILER.$ESMF_COMM.$ESMF_ABI  PASS " >> $LOGDIR/summary
+        fi
+fi #end of if [$test_results != 0]
+
+
+
+echo "" >> $LOGDIR/mailMessage
+
+
+# keep expect happy
+echo "test_esmf has finished"

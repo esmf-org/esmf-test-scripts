@@ -1,0 +1,16 @@
+#!/usr/bin/expect --
+
+set source [lindex $argv 0]
+set domain [lindex $argv 1]
+send_user " source is $source "
+
+	set timeout 3600
+        if { $domain == "branch" } {
+		spawn git clone $source
+        } else {
+                        
+		spawn git clone --depth 100 $source
+        }
+
+expect  eof
+

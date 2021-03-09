@@ -1,0 +1,1128 @@
+#!/bin/bash -l
+
+cd $ESMF_DIR
+
+
+env
+
+#Clobber previous arch files
+gmake -j4 clobber 1> tmp 2>&1
+
+
+echo "" >> $LOGDIR/mailMessage
+echo "_____________________________________________________________________________________________________________" >> $LOGDIR/mailMessage
+echo "" >> $LOGDIR/mailMessage
+
+test_results=0  #assume build passes
+install_results=0  #assume install passes
+export tests=0
+export test_failures=0
+export test_fail=0
+export test_passes=0
+export unit_pass=0
+export unit_skip=0
+export unit_fail=0
+export examples_pass=0
+export examples_fail=0
+export examples_crash=0
+export examples_tests_total=0
+export regrid_ff_pass=0
+export regrid_ff_fail=0
+export regrid_ff_skip=0
+export regrid_ff_tests_total=0
+
+echo "`date` on `uname -n` " >> $LOGDIR/mailMessage
+# Get ESMF checkout source
+
+read chkout_src <  ~/bin/esmf_chkout_src
+#if read fails default:git://git.code.sf.net/p/esmf/esmf
+if [ "$?" != "0" ]
+then
+        export chkout_src="https://github.com/esmf-org/esmf.git"
+fi  
+echo "" >> $LOGDIR/mailMessage
+echo "ESMF Checkout Source: $chkout_src" >> $LOGDIR/mailMessage
+echo "" >> $LOGDIR/mailMessage
+
+echo "Compiler and configuration information:" >> $LOGDIR/mailMessage
+echo "" >> $LOGDIR/mailMessage
+echo "-------------------------------------------------------------- " >> $LOGDIR/mailMessage
+
+module list  1> tmp 2>&1
+cat tmp >> $LOGDIR/mailMessage
+echo "" >> $LOGDIR/mailMessage
+
+#echo "numpy verion:" >> $LOGDIR/mailMessage
+
+#python -c 'import numpy; print numpy.__version__' >> $LOGDIR/mailMessage
+
+echo "" >> $LOGDIR/mailMessage
+echo " " >> $LOGDIR/mailMessage
+git remote -v 1> tmp 2>&1
+
+if (grep -i "Not a git repository" tmp)
+then
+        #Checkout failed
+        echo "Test_results:blue" > $LOGDIR/Test_Status
+fi
+
+
+echo "ESMF Repository:" >> $LOGDIR/mailMessage
+cat tmp >> $LOGDIR/mailMessage
+echo " " >> $LOGDIR/mailMessage
+git describe --tags 1> tmp 2>&1
+cat tmp >> $LOGDIR/mailMessage
+echo " " >> $LOGDIR/mailMessage
+
+gmake ESMF_BOPT=$OPT info 1> tmp 2>&1
+cat tmp >> $LOGDIR/mailMessage
+
+
+
+gmake -j4 ESMF_BOPT=$OPT  1> tmp 2>&1
+if [ "$?" != "0" ]
+then
+        echo "Library build FAIL with ESMF_BOPT=$OPT"
+
+	if [ $OPT != g ]
+	then 
+		cat tmp > $LOGDIR/build_O_`date +%d``uname -n`$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+	else
+		cat tmp > $LOGDIR/build_g_`date +%d``uname -n`$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+	fi #end of if [ $OPT != g ]
+
+	echo "`date` library build -j4 ************FAIL" >> $LOGDIR/mailMessage
+	test_results=1
+	echo "" >> $LOGDIR/mailMessage
+	echo "" >> $LOGDIR/mailMessage
+	echo "The following is the 'tail' of the build failure">> $LOGDIR/mailMessage
+	echo "" >> $LOGDIR/mailMessage
+        tail  -50 tmp >> $LOGDIR/mailMessage
+
+
+        # If checkout did not fail, set test status to red, build failed
+        if !(grep "blue" $LOGDIR/Test_Status)
+        then
+                echo "Test_results:red" > $LOGDIR/Test_Status
+                echo "Set Test Status to red."
+        fi
+
+
+else
+
+       	echo "Library build PASS with ESMF_BOPT=$OPT"
+	echo "`date` library build -j4 ............PASS" >> $LOGDIR/mailMessage
+
+        # Check for warnings
+        if grep -i "warning[ ]*:" tmp
+        then
+                echo "Builds with warnings." >> $LOGDIR/mailMessage
+        fi
+
+	# check if all files should be logged
+	if [[ $LOGTMP = "ALL" ]]
+	then
+        	if [ $OPT != g ]
+        	then 
+                	cat tmp > $LOGDIR/build_O_`date +%d``uname -n`$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+        	else    
+                	cat tmp > $LOGDIR/build_g_`date +%d``uname -n`$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+        	fi #end of if [ $OPT != g ]
+	fi # end of if [[ $LOGTMP = "ALL" ]]
+
+
+        gmake  ESMF_BOPT=$OPT  install 1> tmp 2>&1
+        if [ "$?" != "0" ]
+        then
+                echo "Library install FAILED with ESMF_BOPT=$OPT"
+                install_results=1  # install failed
+
+                if [ $OPT != g ]
+                then
+                        cat tmp > $LOGDIR/install_O_`date +%d``uname -n`$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                else
+                        cat tmp > $LOGDIR/install_g_`date +%d``uname -n`$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                fi #end of if [ $OPT != g ]
+
+                echo "`date` library install **************FAIL" >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+                echo "The following is the 'tail' of the install failure">> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+                tail  -50 tmp >> $LOGDIR/mailMessage
+
+                # Set test status as yellow, if it is not red
+                if !(grep "red" $LOGDIR/Test_Status)
+                then
+                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+                        echo "Set Test Status to yellow."
+                fi
+
+
+
+                else
+
+                echo "Library install PASSED with ESMF_BOPT=$OPT"
+                echo "`date` library install ..............PASS" >> $LOGDIR/mailMessage
+
+                gmake  ESMF_BOPT=$OPT  installcheck 1> tmp 2>&1
+                if [ "$?" != "0" ]
+                then
+                        echo "Library install check FAILED with ESMF_BOPT=$OPT"
+                        install_results=1  # install failed
+
+                        if [ $OPT != g ]
+                        then
+                                cat tmp > $LOGDIR/installcheck_O_`date +%d``uname -n`$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        else
+                                cat tmp > $LOGDIR/installcheck_g_`date +%d``uname -n`$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        fi #end of if [ $OPT != g ]
+
+                        echo "`date` library installcheck *********FAIL" >> $LOGDIR/mailMessage
+                        echo "" >> $LOGDIR/mailMessage
+                        echo "" >> $LOGDIR/mailMessage
+                        echo "The following is the 'tail' of the install failure">> $LOGDIR/mailMessage
+                        echo "" >> $LOGDIR/mailMessage
+                        tail  -50 tmp >> $LOGDIR/mailMessage
+
+                	# Set test status as yellow, if it is not red
+                	if !(grep "red" $LOGDIR/Test_Status)
+                	then
+                        	echo "Test_results:yellow" > $LOGDIR/Test_Status
+                        	echo "Set Test Status to yellow."
+                	fi
+
+
+
+                        else
+
+                        echo "Library install PASSED with ESMF_BOPT=$OPT"
+                        echo "`date` library installcheck .........PASS" >> $LOGDIR/mailMessage
+
+                fi
+
+
+        fi
+
+	echo "" >> $LOGDIR/mailMessage
+	echo "|------------------------ PYTHON BUILD ------------------------|" >> $LOGDIR/mailMessage
+
+
+	cd $ESMF_DIR/src/addon/ESMPy
+	rm -rf $prefix/lib*
+        
+	python setup.py build --ESMFMKFILE=$ESMFMKFILE install --prefix=$prefix 1> tmp 2>&1
+	if  test ! -d $prefix/*/*/site-packages 
+        then
+                echo "python build FAIL "
+                echo "`date` python build *****************FAIL" >> $LOGDIR/mailMessage
+		export python_build=1
+                echo "" >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+                echo "The following is the 'tail' of the build failure">> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+                tail  -50 tmp >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+
+                if [ $OPT != g ]
+                then
+                        cat tmp > $LOGDIR/build_O_`date +%d``uname -n`build_python_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                else
+                        cat tmp > $LOGDIR/build_g_`date +%d``uname -n`build_python_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                fi # end of if [ $OPT != g ]
+
+                # Set test status as yellow, if it is not red
+                if !(grep "red" $LOGDIR/Test_Status)
+                then
+                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+                        echo "Set Test Status to yellow."
+                fi
+
+
+
+        else
+                echo "build python PASS "
+                echo "`date` python build .................PASS" >> $LOGDIR/mailMessage
+		export python_build=0
+
+                if [[ $LOGTMP = "ALL" ]]
+                then
+                        if [ $OPT != g ]
+                        then
+                                cat tmp > $LOGDIR/build_O_`date +%d``uname -n`build_python_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        else
+                                cat tmp > $LOGDIR/build_g_`date +%d``uname -n`build_python_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        fi #end of if [ $OPT != g ]
+                fi # end of if [[ $LOGTMP = "ALL" ]]
+
+        fi #end of if [ "$?" != "0" ] for make ESMF_BOPT=$OPT build python 1> tmp 2>&1
+
+        cd $prefix/*/*/site-packages
+	#export PYTHONPATH+=:`pwd`
+	export PYTHONPATH=`pwd`:$PYTHONPATH
+	cd $ESMF_DIR/src/addon/ESMPy
+	env > environ
+       	unit_pass=0
+       	unit_skip=0
+       	unit_fail=0
+
+
+	echo "" >> $LOGDIR/mailMessage
+        echo "" >> $LOGDIR/mailMessage
+	echo "|-------------------- PYTHON UNIT TESTS -----------------------|" >> $LOGDIR/mailMessage
+	if [[ $MACHINE = pluto ]]
+	then
+		cd $ESMF_DIR/src/addon/ESMPy
+		python setup.py test 1> run_unit_test.output 2>&1
+		echo "passed" > queue_results
+	else
+		expect $homedir/exec_test tests $ESMF_DIR $OPT $ESMF_COMM $PYTHONPATH $ESMFMKFILE $prefix  $U_TESTS $THREADED
+	fi
+        #check if queue was available
+        if !(grep "passed" queue_results)
+        then
+        	# Set test status as yellow, if it is not red
+                if !(grep "red" $LOGDIR/Test_Status)
+                then
+               		echo "Test_results:yellow" > $LOGDIR/Test_Status
+                        echo "Set Test Status to yellow."
+		fi
+                echo "Queue not available "
+                echo "`date` Queue not available **********FAIL" >> $LOGDIR/mailMessage
+                export unit_pass=0
+                export unit_fail=0
+                export unit_skip=0
+
+	else
+
+
+       		if !(grep "Ran" run_unit_test.output)
+        	then
+			echo "run tests FAIL "
+			echo "`date` run test *********************FAIL" >> $LOGDIR/mailMessage
+
+			if [ $OPT != g ]
+                        then
+                       		cat run_unit_test.output  > $LOGDIR/build_O_`date +%d``uname -n`run_unit_test_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        else
+                        	cat run_unit_test.output > $LOGDIR/build_g_`date +%d``uname -n`run_unit_test_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        fi # end of if [ $OPT != g ]
+			echo "" >> $LOGDIR/mailMessage
+			echo "" >> $LOGDIR/mailMessage
+
+                	# Set test status as yellow, if it is not red
+                	if !(grep "red" $LOGDIR/Test_Status)
+                	then
+                        	echo "Test_results:yellow" > $LOGDIR/Test_Status
+                        	echo "Set Test Status to yellow."
+                	fi
+	
+        	else
+			echo "run unit tests PASS "
+                	echo "`date` run test .....................PASS" >> $LOGDIR/mailMessage
+
+
+        		grep  "^Ran *" run_unit_test.output > tmp
+			cat tmp
+       			read Ran unit_tests_total other < tmp
+			if (grep "ok" run_unit_test.output)
+			then
+        			unit_pass=`grep -o "ok" run_unit_test.output | wc -l`
+			else
+				unit_pass=0
+			fi
+                        if (grep "SKIP" run_unit_test.output)
+                        then
+                        	unit_skipa=`grep -o "SKIP" run_unit_test.output | wc -l`
+                                unit_skipb=`grep -o "SKIP=" run_unit_test.output | wc -l`
+                                unit_skip=`expr $unit_skipa - $unit_skipb`
+			else
+				unit_skip=0
+			fi
+			echo " unit_skip = $unit_skip"
+	
+        		if [[ $unit_tests_total != $unit_pass ]]
+        		then
+                		test_p_s=`expr $unit_pass + $unit_skip`
+                		unit_fail=`expr $unit_tests_total - $test_p_s`
+				if [[ $unit_fail != 0 ]]
+				then
+                        		# Set test status as yellow, if it is not red
+                        		if !(grep "red" $LOGDIR/Test_Status)
+                        		then
+                                		echo "Test_results:yellow" > $LOGDIR/Test_Status
+                                		echo "Set Test Status to yellow."
+                        		fi
+                			# Update number of test failures
+                			read failures < $LOGDIR/Test_Failures
+                			total=`expr $failures + $unit_fail`
+                			echo "$total" > $LOGDIR/Test_Failures
+                			echo "New failure total is $total."
+				fi
+        		fi
+	
+
+
+        		echo "" >> $LOGDIR/mailMessage
+        		echo "Found $unit_tests_total unit tests, $unit_pass pass, $unit_fail fail and $unit_skip were skipped." >> $LOGDIR/mailMessage
+	
+        		echo "" >> $LOGDIR/mailMessage
+        		echo "" >> $LOGDIR/mailMessage
+
+
+			if [[ $unit_fail != 0 ]]
+			then
+				if !(grep "red" $LOGDIR/Test_Status)
+                		then
+                        		echo "Test_results:yellow" > $LOGDIR/Test_Status
+                        		echo "Set Test Status to yellow."
+                		fi
+	
+			fi
+		        echo "" >> $LOGDIR/mailMessage
+        		echo " The following is the run_unit_test.output file." >> $LOGDIR/mailMessage
+			echo "" >> $LOGDIR/mailMessage
+        		cat run_unit_test.output >> $LOGDIR/mailMessage
+			echo "" >> $LOGDIR/mailMessage
+		fi
+
+
+
+
+        	if [[ $LOGTMP = "ALL" ]]
+        	then
+                	if [ $OPT != g ]
+                	then
+                       		cat run_unit_test.output file  > $LOGDIR/build_O_`date +%d``uname -n`run_unit_test_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                	else
+                        	cat run_unit_test.output file  > $LOGDIR/build_g_`date +%d``uname -n`run_unit_test_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                	fi #end of if [ $OPT != g ]
+         	fi # end of if [[ $LOGTMP = "ALL" ]]
+	
+	fi
+	
+        unit_para_pass=0
+        unit_para_skip=0
+       	unit_para_fail=0
+
+
+        # Do not run the parallel tests mpiuni
+        if [ $ESMF_COMM != mpiuni ]
+        then
+        	echo "" >> $LOGDIR/mailMessage
+        	echo "" >> $LOGDIR/mailMessage
+
+
+                echo "|---------------- PYTHON UNIT PARALLEL TESTS ------------------|" >> $LOGDIR/mailMessage
+		if [[ $MACHINE = pluto ]]
+		then
+                	cd $ESMF_DIR/src/addon/ESMPy
+                	python setup.py test_parallel 1> run_unit_tests_parallel.out 2>&1
+			echo "passed" > queue_results
+		else
+			expect $homedir/exec_test test_parallel  $ESMF_DIR $OPT $ESMF_COMM $PYTHONPATH $ESMFMKFILE $prefix  $U_TESTS $THREADED
+		fi
+                #check if queue was available
+                if !(grep "passed" queue_results)
+                then
+                        # Set test status as yellow, if it is not red
+                        if !(grep "red" $LOGDIR/Test_Status)
+                        then
+                                echo "Test_results:yellow" > $LOGDIR/Test_Status
+                                echo "Set Test Status to yellow."
+                        fi
+                        echo "Queue not available "
+                        echo "`date` Queue not available **********FAIL" >> $LOGDIR/mailMessage
+                        export unit_para_pass=0
+                        export unit_para_fail=0
+                        export unit_para_skip=0
+
+                else
+
+
+                	if !(grep "Ran" run_unit_tests_parallel.out)
+                	then
+                		echo "run parallel tests FAIL "
+                        	echo "`date` run test_parallel ************FAIL" >> $LOGDIR/mailMessage
+	
+                        	if [ $OPT != g ]
+                        	then
+                        		cat run_unit_tests_parallel.out > $LOGDIR/build_O_`date +%d``uname -n`run_test_parallel_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        	else
+                        		cat run_unit_tests_parallel.out > $LOGDIR/build_g_`date +%d``uname -n`run_test_parallel_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        	fi # end of if [ $OPT != g ]
+                        	echo "" >> $LOGDIR/mailMessage
+                        	echo "" >> $LOGDIR/mailMessage
+                        	echo "The following is the 'tail' of the run parallel tests failure">> $LOGDIR/mailMessage
+
+                        	echo "" >> $LOGDIR/mailMessage
+                        	tail  -50 tmp >> $LOGDIR/mailMessage
+                        	echo "" >> $LOGDIR/mailMessage
+
+                        	# Set test status as yellow, if it is not red
+                        	if !(grep "red" $LOGDIR/Test_Status)
+                        	then
+                        		echo "Test_results:yellow" > $LOGDIR/Test_Status
+                                	echo "Set Test Status to yellow."
+                        	fi
+
+			else
+               			echo "run unit parallel tests PASS "
+                        	echo "`date` run test_parallel ............PASS" >> $LOGDIR/mailMessage
+
+
+                        	grep  "^Ran *" run_unit_tests_parallel.out > tmp
+                        	cat tmp
+                        	read Ran unit_para_tests other < tmp
+				NUM_PROCS=`grep -o  "Ran *" run_unit_tests_parallel.out | wc -l`
+				unit_para_tests_total=`expr $NUM_PROCS \* $unit_para_tests`
+				
+                        	if (grep "ok" run_unit_tests_parallel.out)
+                        	then
+                                	unit_para_pass=`grep -o "ok" run_unit_tests_parallel.out | wc -l`
+                        	else
+                                	unit_para_pass=0
+                        	fi
+                        	if (grep "SKIP" run_unit_tests_parallel.out)
+                        	then
+                                	unit_skipa=`grep -o "SKIP" run_unit_tests_parallel.out | wc -l`
+                                	unit_skipb=`grep -o "SKIP=" run_unit_tests_parallel.out | wc -l`
+                                	unit_para_skip=`expr $unit_skipa - $unit_skipb`
+	
+                        	else
+                                	unit_para_skip=0
+                        	fi
+
+				unit_para_fail=0
+
+                        	if [[ $unit_para_tests_total != $unit_para_pass ]]
+                        	then
+                                	test_p_s=`expr $unit_para_pass + $unit_para_skip`
+                                	unit_para_fail=`expr $unit_para_tests_total - $test_p_s`
+                                	if [[ $unit_para_fail != 0 ]]
+                                	then
+                        			# Set test status as yellow, if it is not red
+                        			if !(grep "red" $LOGDIR/Test_Status)
+                        			then
+                                			echo "Test_results:yellow" > $LOGDIR/Test_Status
+                                			echo "Set Test Status to yellow."
+                        			fi
+                                        	# Update number of test failures
+                                        	read failures < $LOGDIR/Test_Failures
+                                        	total=`expr $failures + $unit_fail`
+                                        	echo "$total" > $LOGDIR/Test_Failures
+                                        	echo "New failure total is $total."
+                                	fi
+                        	fi
+
+
+
+
+                        	echo "" >> $LOGDIR/mailMessage
+                        	echo "Found $unit_para_tests_total parallel unit tests, $unit_para_pass pass, $unit_para_fail fail and $unit_para_skip were skipped." >> $LOGDIR/mailMessage
+                        	echo "" >> $LOGDIR/mailMessage
+
+
+                        	if [[ $unit_para_fail != 0 ]]
+                        	then
+                        		if !(grep "red" $LOGDIR/Test_Status)
+                        		then
+                        			echo "Test_results:yellow" > $LOGDIR/Test_Status
+                               			echo "Set Test Status to yellow."
+					fi
+                       			# Update number of test failures
+                        		read failures < $LOGDIR/Test_Failures
+                        		total=`expr $failures + $unit_para_fail`
+                        		echo "$total" > $LOGDIR/Test_Failures
+                        		echo "New failure total is $total."
+	
+                        		echo "" >> $LOGDIR/mailMessage
+                        		echo " The following is the run_unit_tests_parallel.out file." >> $LOGDIR/mailMessage
+                        		echo "" >> $LOGDIR/mailMessage
+                        		cat run_unit_tests_parallel.out >> $LOGDIR/mailMessage
+                        		echo "" >> $LOGDIR/mailMessage
+	
+				fi
+
+
+
+       				# Combine unit test counts
+	
+       				unit_pass=`expr $unit_para_pass + $unit_pass`
+       				unit_fail=`expr $unit_para_fail + $unit_fail`
+       				unit_skip=`expr $unit_para_skip + $unit_skip`
+	
+
+
+
+			fi
+		fi
+	fi
+
+	export examples_pass=0
+	export examples_fail=0
+	export examples_crash=0
+	export examples_skip=0
+	export examples_tests_total=0
+
+    	echo "" >> $LOGDIR/mailMessage
+        echo "" >> $LOGDIR/mailMessage
+
+        echo "|------------------- PYTHON EXAMPLES TESTS --------------------|" >> $LOGDIR/mailMessage
+        
+        
+       	if [[ $MACHINE = pluto ]]
+        then
+       		cd $ESMF_DIR/src/addon/ESMPy
+		python setup.py test_examples_dryrun
+        	python setup.py test_examples 1> run_examples.output 2>&1
+		echo "passed" > queue_results
+	else
+        	cd $ESMF_DIR/src/addon/ESMPy
+		python setup.py test_examples_dryrun
+		expect $homedir/exec_test examples $ESMF_DIR $OPT $ESMF_COMM $PYTHONPATH $ESMFMKFILE $prefix  $U_TESTS $THREADED
+	fi
+        #check if queue was available
+       if !(grep "passed" queue_results)
+       then
+       		# Set test status as yellow, if it is not red
+                if !(grep "red" $LOGDIR/Test_Status)
+                then
+               		echo "Test_results:yellow" > $LOGDIR/Test_Status
+                        echo "Set Test Status to yellow."
+                fi
+                echo "Queue not available "
+                echo "`date` Queue not available **********FAIL" >> $LOGDIR/mailMessage
+                export examples_pass=0
+                export examples_fail=0
+                export examples_crash=0
+                export examples_skip=0
+
+	else
+
+
+		if !(grep "Ran" run_examples.output)
+        	then
+               		echo "run examples tests FAIL "
+                	echo "`date` run test_examples ************FAIL" >> $LOGDIR/mailMessage
+
+                	if [ $OPT != g ]
+                        then
+                       		cat run_examples.output  > $LOGDIR/build_O_`date +%d``uname -n`run_examples_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        else
+                        	cat run_examples.output  > $LOGDIR/build_g_`date +%d``uname -n`run_examples_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        fi # end of if [ $OPT != g ]
+                	echo "" >> $LOGDIR/mailMessage
+                	echo "" >> $LOGDIR/mailMessage
+                	echo "The following is the 'tail' of the run examples tests failure">> $LOGDIR/mailMessage
+
+                	echo "" >> $LOGDIR/mailMessage
+                	tail  -50 run_examples.output  >> $LOGDIR/mailMessage
+                	echo "" >> $LOGDIR/mailMessage
+
+                	# Set test status as yellow, if it is not red
+                	if !(grep "red" $LOGDIR/Test_Status)
+                	then
+                        	echo "Test_results:yellow" > $LOGDIR/Test_Status
+                        	echo "Set Test Status to yellow."
+                	fi
+	
+        	else
+                	echo "run examples tests PASS "
+                	echo "`date` run test_examples ............PASS" >> $LOGDIR/mailMessage
+                        grep  "^Ran *" run_examples.output > tmp
+                        cat tmp
+                        read Ran examples_tests_total other < tmp
+			if (grep "ok" run_examples.output)
+			then
+                       		examples_pass=`grep  -o "ok" run_examples.output | wc -l`
+			else
+				examples_pass=0
+			fi
+                        if (grep " SKIP" run_examples.output)
+                        then
+                        	examples_skip=`grep " SKIP" run_examples.output | wc -l`
+			else
+                       		examples_skip=0
+                        fi
+
+
+                        if [[ $examples_tests_total != $examples_pass ]]
+                        then
+                        	examples_fail=`expr $examples_tests_total - $examples_pass -  $examples_skip`
+			fi
+
+
+        	fi
+
+
+        	if [[ $LOGTMP = "ALL" ]]
+        	then
+        		if [ $OPT != g ]
+               		 then
+               			cat run_examples.output > $LOGDIR/build_O_`date +%d``uname -n`run_examples_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                	else
+                      		cat run_examples.output > $LOGDIR/build_g_`date +%d``uname -n`run_examples_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                	fi #end of if [ $OPT != g ]
+      		fi # end of if [[ $LOGTMP = "ALL" ]]
+        
+
+       		echo "" >> $LOGDIR/mailMessage
+       		echo "Found $examples_tests_total examples tests, $examples_pass pass, $examples_fail fail , and $examples_skip skipped." >> $LOGDIR/mailMessage
+       		echo "" >> $LOGDIR/mailMessage
+
+
+		if  ($examples_fail != 0)  
+        	then
+			echo "" >> $LOGDIR/mailMessage
+               		 # Set test status as yellow, if it is not red
+                	if !(grep "red" $LOGDIR/Test_Status)
+                	then
+               			echo "Test_results:yellow" > $LOGDIR/Test_Status
+                       		 echo "Set Test Status to yellow."
+                	fi
+
+			# Update number of test failures
+                	read failures < $LOGDIR/Test_Failures
+                	total=`expr $failures + $examples_fail `
+                	echo "$total" > $LOGDIR/Test_Failures
+                	echo "New failure total is $total."
+   		fi
+       		echo " The following is the run_examples.output file." >> $LOGDIR/mailMessage
+       		echo "" >> $LOGDIR/mailMessage
+       		cat run_examples.output >> $LOGDIR/mailMessage
+       		echo "" >> $LOGDIR/mailMessage
+
+		fi
+
+	fi
+       	export examples_para_pass=0
+        export examples_para_fail=0
+       	export examples_para_crash=0
+       	export examples_para_tests_total=0
+
+	# Do not run the parallel examples tests mpiuni
+	if [ $ESMF_COMM != mpiuni ]
+	then
+        	echo "" >> $LOGDIR/mailMessage
+        	echo "" >> $LOGDIR/mailMessage
+
+               	echo "|-------------- PYTHON EXAMPLES PARALLEL TESTS ----------------|" >> $LOGDIR/mailMessage
+	
+                if [[ $MACHINE = pluto ]]
+                then
+                	cd $ESMF_DIR/src/addon/ESMPy
+			python setup.py test_examples_dryrun
+			python setup.py test_examples_parallel 1> run_examples_parallel.out 2>&1 
+			echo "passed" > queue_results
+		else
+                        cd $ESMF_DIR/src/addon/ESMPy
+			python setup.py test_examples_dryrun
+			expect $homedir/exec_test examples_parallel $ESMF_DIR $OPT $ESMF_COMM $PYTHONPATH $ESMFMKFILE $prefix $U_TESTS $THREADED
+		fi
+                #check if queue was available
+                if !(grep "passed" queue_results)
+                then
+                        # Set test status as yellow, if it is not red
+                        if !(grep "red" $LOGDIR/Test_Status)
+                        then
+                                echo "Test_results:yellow" > $LOGDIR/Test_Status
+                                echo "Set Test Status to yellow."
+                        fi
+                        echo "Queue not available "
+                        echo "`date` Queue not available **********FAIL" >> $LOGDIR/mailMessage
+                        export examples_pass=0
+                        export examples_fail=0
+                        export examples_crash=0
+
+                else
+
+			cat tmp
+                	if !(grep "Ran" run_examples_parallel.out)
+                	then
+                		echo "run examples parallel FAIL "
+                        	echo "`date` run test_examples_parallel ***FAIL" >> $LOGDIR/mailMessage
+
+                        	if [ $OPT != g ]
+                        	then
+                        		cat run_examples_parallel.out  > $LOGDIR/build_O_`date +%d``uname -n`run_examples_parallel$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                       		else
+                       			cat run_examples_parallel.out  > $LOGDIR/build_g_`date +%d``uname -n`run_examples_parallel$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                       		fi # end of if [ $OPT != g ]
+                       		echo "" >> $LOGDIR/mailMessage
+                        	echo "" >> $LOGDIR/mailMessage
+                        	echo "The following is the 'tail' of the run examples parallel tests failure">> $LOGDIR/mailMessage
+
+                        	echo "" >> $LOGDIR/mailMessage
+                        	tail  -50 run_examples_parallel.out  >> $LOGDIR/mailMessage
+                        	echo "" >> $LOGDIR/mailMessage
+	
+                        	# Set test status as yellow, if it is not red
+                        	if !(grep "red" $LOGDIR/Test_Status)
+                        	then
+                        		echo "Test_results:yellow" > $LOGDIR/Test_Status
+                                	echo "Set Test Status to yellow."
+                      		fi
+                	else
+                		echo "run examples parallel tests PASS "
+                        	echo "`date` run examples parallel tests ..PASS" >> $LOGDIR/mailMessage
+                        	grep  "^Ran *" run_examples_parallel.out > tmp
+                        	cat tmp
+				NUM_PROCS=`grep  -o "Ran *" run_examples_parallel.out | wc -l`
+                        	read Ran total_examples_para_tests other < tmp
+				examples_para_tests_total=`expr $NUM_PROCS \* $total_examples_para_tests`
+                        	if (grep "ok" run_examples_parallel.out)
+                        	then
+                                	examples_para_pass=`grep -o "ok" run_examples_parallel.out | wc -l`
+                        	else    
+                                	examples_para_pass=0
+                        	fi      
+                        	if (grep " CRASH" run_examples_parallel.out)
+                        	then
+                                	examples_para_crash=`grep -o " CRASH"  run_examples_parallel.out | wc -l`
+                        	else    
+                                	examples_para_crash=0
+                        	fi      
+                        	if [[ $examples_para_tests_total != $examples_para_pass ]]
+                        	then
+                                	examples_para_fail=`expr $examples_para_tests_total - $examples_para_pass - $examples_para_crash`
+                        	fi      
+                        
+
+
+              		fi
+
+
+                	if [[ $LOGTMP = "ALL" ]]
+                	then
+                		if [ $OPT != g ]
+                       		then
+                       			cat run_examples_parallel.out  > $LOGDIR/build_O_`date +%d``uname -n`run_examples_parallel$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                       		else
+                       			cat run_examples_parallel.out > $LOGDIR/build_g_`date +%d``uname -n`run_examples_parallel$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                       		fi #end of if [ $OPT != g ]
+                	fi # end of if [[ $LOGTMP = "ALL" ]]
+
+
+
+                	echo "" >> $LOGDIR/mailMessage
+                	echo "Found $examples_para_tests_total examples parallel tests, $examples_para_pass pass, $examples_para_fail fail and $examples_para_crash crashed." >> $LOGDIR/mailMessage
+                	echo "" >> $LOGDIR/mailMessage
+	
+                	if (( ($examples_para_fail != 0) || ($examples_para_crash != 0) ))
+                	then
+                		# Update number of test failures
+                       		read failures < $LOGDIR/Test_Failures
+                        	total=`expr $failures + $examples_para_fail + $examples_para_crash`
+                        	echo "$total" > $LOGDIR/Test_Failures
+                        	echo "New failure total is $total."
+                        	if !(grep "red" $LOGDIR/Test_Status)
+                        	then
+                        		echo "Test_results:yellow" > $LOGDIR/Test_Status
+                               		echo "Set Test Status to yellow."
+                        	fi
+                        	echo "" >> $LOGDIR/mailMessage
+                        	echo " The following is the run_examples_parallel.out file." >> $LOGDIR/mailMessage
+                        	echo "" >> $LOGDIR/mailMessage
+                        	cat run_examples_parallel.out >> $LOGDIR/mailMessage
+                        	echo "" >> $LOGDIR/mailMessage
+		
+               	fi
+
+               	# Combine examples test counts
+		
+               	examples_pass=`expr $examples_para_pass + $examples_pass`
+               	examples_fail=`expr $examples_para_fail + $examples_fail`
+               	examples_crash=`expr $examples_para_crash + $examples_crash`
+
+
+		fi
+	fi
+
+
+        export regrid_ff_pass=0
+        export regrid_ff_fail=0
+        export regrid_ff_skip=0
+        export regrid_ff_tests_total=0
+
+        echo "" >> $LOGDIR/mailMessage
+        echo "" >> $LOGDIR/mailMessage
+
+        echo "|--------------- PYTHON REGRID FROM FILE TESTS ----------------|" >> $LOGDIR/mailMessage
+
+        if [[ $MACHINE = pluto ]]
+        then
+		cd $ESMF_DIR/src/addon/ESMPy
+		python setup.py test_regrid_from_file_dryrun
+        	python setup.py test_regrid_from_file 1> test_regrid_from_file.out 2>&1
+		echo "passed" > queue_results
+	else
+		cd $ESMF_DIR/src/addon/ESMPy
+		python setup.py test_regrid_from_file_dryrun
+                expect $homedir/exec_test regrid_from_file $ESMF_DIR $OPT $ESMF_COMM $PYTHONPATH $ESMFMKFILE $prefix $U_TESTS $THREADED
+	fi
+        #check if queue was available
+        if !(grep "passed" queue_results)
+        then
+        	# Set test status as yellow, if it is not red
+                if !(grep "red" $LOGDIR/Test_Status)
+                then
+               		echo "Test_results:yellow" > $LOGDIR/Test_Status
+                        echo "Set Test Status to yellow."
+                fi
+                echo "Queue not available "
+                echo "`date` Queue not available **********FAIL" >> $LOGDIR/mailMessage
+                export regrid_ff_pass=0
+                export regrid_ff_fail=0
+                export regrid_ff_skip=0
+
+	else
+
+
+
+       		if !(grep "PASS" run_regrid_from_file.log)
+        	then
+               		echo "run regrid tests FAIL "
+                	echo "`date` run test_regrid_from_file ****FAIL" >> $LOGDIR/mailMessage
+	
+                	if [ $OPT != g ]
+                        then
+                       		cat tmp > $LOGDIR/build_O_`date +%d``uname -n`run_regrid_from_file$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        else
+                        	cat tmp > $LOGDIR/build_g_`date +%d``uname -n`run_regrid_from_file$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        fi # end of if [ $OPT != g ]
+                	echo "" >> $LOGDIR/mailMessage
+                	echo "" >> $LOGDIR/mailMessage
+                	echo "The following is the 'tail' of the run regrid tests from file failure">> $LOGDIR/mailMessage
+	
+                	echo "" >> $LOGDIR/mailMessage
+                	tail  -50 test_regrid_from_file.out >> $LOGDIR/mailMessage
+                	echo "" >> $LOGDIR/mailMessage
+	
+                	# Set test status as yellow, if it is not red
+                	if !(grep "red" $LOGDIR/Test_Status)
+                	then
+                        	echo "Test_results:yellow" > $LOGDIR/Test_Status
+                        	echo "Set Test Status to yellow."
+                	fi
+		else
+               		echo "run regrid tests PASS "
+                	echo "`date` run test_regrid_from_file ....PASS" >> $LOGDIR/mailMessage
+			cat test_regrid_from_file.out
+                	grep PASS test_regrid_from_file.out > pass_file                
+			read name equal regrid_ff_pass < pass_file
+                	grep FAIL test_regrid_from_file.out > fail_file
+                	read name equal regrid_ff_fail < fail_file
+                	grep SKIP test_regrid_from_file.out > skip_file
+                	read name equal regrid_ff_skip < skip_file
+                 	regrid_ff_tests_total=`expr $regrid_ff_pass + $regrid_ff_fail + $regrid_ff_skip`
+	
+
+        	fi
+	
+
+        	if [[ $LOGTMP = "ALL" ]]
+        	then
+                	if [ $OPT != g ]
+                	then
+                       		cat tmp > $LOGDIR/build_O_`date +%d``uname -n`run_regrid_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                	else
+                        	cat tmp > $LOGDIR/build_g_`date +%d``uname -n`run_regrid_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                	fi #end of if [ $OPT != g ]
+         	fi # end of if [[ $LOGTMP = "ALL" ]]
+       	 
+        
+        	echo "" >> $LOGDIR/mailMessage
+        	echo "Found $regrid_ff_tests_total regrid from file tests, $regrid_ff_pass pass, $regrid_ff_fail fail and $regrid_ff_skip were skipped." >> $LOGDIR/mailMessage
+       		echo "" >> $LOGDIR/mailMessage
+       	 
+        
+      
+        	if (( ($regrid_ff_fail != 0) || ($regrid_ff_skip != 0) ))
+        	then
+                	# Update number of test failures
+                	read failures < $LOGDIR/Test_Failures
+                	total=`expr $failures + $regrid_ff_fail + $regrid_ff_skip`
+                	echo "$total" > $LOGDIR/Test_Failures
+                	echo "New failure total is $total."
+                	if !(grep "red" $LOGDIR/Test_Status)
+                       	then
+                        	echo "Test_results:yellow" > $LOGDIR/Test_Status
+                                echo "Set Test Status to yellow."
+                	fi              
+		fi      
+                echo "" >> $LOGDIR/mailMessage
+                echo " The following is the run_regrid_from_file.log file." >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+                cat run_regrid_from_file.log >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+	
+        
+
+	fi 
+
+       	export regrid_ff_para_pass=0
+       	export regrid_ff_para_fail=0
+       	export regrid_ff_para_skip=0
+       	export regrid_ff_para_tests_total=0
+
+        echo "" >> $LOGDIR/mailMessage
+        echo "" >> $LOGDIR/mailMessage
+        echo "|----------- PYTHON REGRID FROM FILE PARALLEL TESTS -----------|" >> $LOGDIR/mailMessage
+
+
+        if [[ $MACHINE = pluto ]]
+        then
+        	cd $ESMF_DIR/src/addon/ESMPy
+		python setup.py test_regrid_from_file_dryrun
+        	python setup.py test_regrid_from_file_parallel 1> test_regrid_from_file_parallel.out 2>&1
+		echo "passed" > queue_results
+	else
+		cd $ESMF_DIR/src/addon/ESMPy
+		python setup.py test_regrid_from_file_dryrun
+		expect $homedir/exec_test test_regrid_from_file_parallel  $ESMF_DIR $OPT $ESMF_COMM $PYTHONPATH $ESMFMKFILE $prefix  $U_TESTS $THREADED
+	fi
+        #check if queue was available
+        if !(grep "passed" queue_results)
+        then
+        	# Set test status as yellow, if it is not red
+                if !(grep "red" $LOGDIR/Test_Status)
+                then
+                	echo "Test_results:yellow" > $LOGDIR/Test_Status
+                        echo "Set Test Status to yellow."
+                 fi
+                 echo "Queue not available "
+                 echo "`date` Queue not available **********FAIL" >> $LOGDIR/mailMessage
+                 export regrid_ff_pass=0
+                 export regrid_ff_fail=0
+                 export regrid_ff_skip=0
+
+	else
+
+       		if !(grep "PASS" run_regrid_from_file_parallel.log)
+        	then
+               		echo "run regrid from file paralell tests FAIL "
+                	echo "`date` run test_regrid_from_file_parallel **FAIL" >> $LOGDIR/mailMessage
+
+                	if [ $OPT != g ]
+                        then
+                        	cat tmp > $LOGDIR/build_O_`date +%d``uname -n`run_regrid_from_file_para$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        else
+                        	cat tmp > $LOGDIR/build_g_`date +%d``uname -n`run_regrid_from_file_para$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        fi # end of if [ $OPT != g ]
+                	echo "" >> $LOGDIR/mailMessage
+                	echo "" >> $LOGDIR/mailMessage
+                	echo "The following is the 'tail' of the run regrid tests from file parallel failure">> $LOGDIR/mailMessage
+	
+                	echo "" >> $LOGDIR/mailMessage
+                	tail  -50 tmp >> $LOGDIR/mailMessage
+                	echo "" >> $LOGDIR/mailMessage
+	
+                	# Set test status as yellow, if it is not red
+                	if !(grep "red" $LOGDIR/Test_Status)
+                	then
+                        	echo "Test_results:yellow" > $LOGDIR/Test_Status
+                        	echo "Set Test Status to yellow."
+                	fi
+		else
+               		echo "run regrid from file parallel tests PASS "
+                	echo "`date` run test_regrid_from_file_parallel ..PASS" >> $LOGDIR/mailMessage
+			echo "" >> $LOGDIR/mailMessage
+			echo "" >> $LOGDIR/mailMessage
+			echo "The following is the output of the test run:" >> $LOGDIR/mailMessage
+			cat test_regrid_from_file_parallel.out  >> $LOGDIR/mailMessage
+			echo "" >> $LOGDIR/mailMessage
+                        echo "" >> $LOGDIR/mailMessage
+                	grep PASS test_regrid_from_file_parallel.out > pass_file                
+                	read name equal regrid_ff_para_pass < pass_file
+                	grep FAIL test_regrid_from_file_parallel.out > fail_file
+                	read name equal regrid_ff_para_fail < fail_file
+                	grep SKIP test_regrid_from_file_parallel.out > skip_file
+                	read name equal regrid_ff_para_skip < skip_file
+                	regrid_ff_para_tests_total=`expr $regrid_ff_para_pass + $regrid_ff_para_fail + $regrid_ff_para_skip`
+	
+
+        	fi
+
+
+
+        	if [[ $LOGTMP = "ALL" ]]
+        	then
+                	if [ $OPT != g ]
+                	then
+                       		cat test_regrid_from_file_parallel.out > $LOGDIR/build_O_`date +%d``uname -n`run_regrid_from_file_para$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                	else
+                        	cat test_regrid_from_file_parallel.out > $LOGDIR/build_g_`date +%d``uname -n`run_regrid_from_file_para$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                	fi #end of if [ $OPT != g ]
+         	fi # end of if [[ $LOGTMP = "ALL" ]]
+        
+        
+        	echo "" >> $LOGDIR/mailMessage
+        	echo "Found $regrid_ff_para_tests_total regrid from file parallel tests, $regrid_ff_para_pass pass, $regrid_ff_para_fail fail and $regrid_ff_para_skip were skipped." >> $LOGDIR/mailMessage
+        	echo "" >> $LOGDIR/mailMessage
+       	 
+        
+      
+        	if (( ($regrid_ff_para_fail != 0) || ($regrid_ff_para_skip != 0) ))
+        	then
+                	# Update number of test failures
+                	read failures < $LOGDIR/Test_Failures
+                	total=`expr $failures + $regrid_ff_para_fail + $regrid_ff_para_skip`
+                	echo "$total" > $LOGDIR/Test_Failures
+                	echo "New failure total is $total."
+                	if !(grep "red" $LOGDIR/Test_Status)
+                       	then
+                        	echo "Test_results:yellow" > $LOGDIR/Test_Status
+                                echo "Set Test Status to yellow."
+                	fi              
+        	fi      
+                echo "" >> $LOGDIR/mailMessage
+                echo " The following is the run_regrid_from_file_parallel.log file." >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+                cat run_regrid_from_file_parallel.log >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+	
+        
+        	echo "" >> $LOGDIR/mailMessage
+        	echo "" >> $LOGDIR/mailMessage
+	
+              	# Combine regrid test counts
+        
+               	regrid_ff_pass=`expr $regrid_ff_para_pass + $regrid_ff_pass`
+               	regrid_ff_fail=`expr $regrid_ff_para_fail + $regrid_ff_fail`
+               	regrid_ff_skip=`expr $regrid_ff_para_skip + $regrid_ff_skip`
+
+
+
+
+	fi
+
+
+fi #end of if [ "$?" != "0" ] for make ESMF_BOPT=$OPT  1> tmp 2>&1
+
+# Make name as short as possible
+name=`uname -n | sed 's/\..*//'`
+
+
+if [[ $test_results != 0 ]] 
+then  #The build failed
+	echo "**FAIL** $name($OPT) $ESMF_OS.$ESMF_COMPILER.$ESMF_COMM.$ESMF_ABI" >> $LOGDIR/summary
+else
+        if [ $install_results -eq 1 -o $python_build -eq 1 ] 
+	then
+               	echo "PASS FAIL $name($OPT) $ESMF_OS.$ESMF_COMPILER.$ESMF_COMM.$ESMF_ABI  $unit_pass/$unit_fail/$unit_skip  $examples_pass/$examples_fail/$examples_skip  $regrid_ff_pass/$regrid_ff_fail/$regrid_ff_skip " >> $LOGDIR/summary
+	
+        else
+               	echo "PASS PASS $name($OPT) $ESMF_OS.$ESMF_COMPILER.$ESMF_COMM.$ESMF_ABI $unit_pass/$unit_fail/$unit_skip   $examples_pass/$examples_fail/$examples_skip $regrid_ff_pass/$regrid_ff_fail/$regrid_ff_skip " >> $LOGDIR/summary
+        fi
+fi #end of if [$test_results != 0]
+
+
+
+echo "" >> $LOGDIR/mailMessage
+
+
+# keep expect happy
+
+echo "test_esmf has finished"
+

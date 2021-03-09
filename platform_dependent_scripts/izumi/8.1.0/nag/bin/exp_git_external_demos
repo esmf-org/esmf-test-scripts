@@ -1,0 +1,8 @@
+#!/usr/bin/expect --
+
+set timeout 3600
+
+spawn git clone git://git.code.sf.net/p/esmf/external_demos external_demos
+
+expect  eof
+

@@ -1,0 +1,12 @@
+#!/usr/bin/expect --
+
+set tag [lindex $argv 0]
+send_user " tag is $tag"
+
+set timeout 900
+
+spawn git checkout tags/$tag
+
+expect  eof
+
+

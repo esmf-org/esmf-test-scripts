@@ -1,0 +1,104 @@
+
+# Check if benchmarking should be run.
+if grep -i "BENCHMARKINSTALL" $rfile > tmp
+then
+
+    if [[ $test_results != 1 || $unit_tests_build != 1 ]]
+    then  #If the library build or the unit tests build failed,  don't run benchmarking
+
+        read BM  BENCHMARKINSTALL < tmp
+        export BENCHMARKINSTALL=$BENCHMARKINSTALL
+        echo "BENCHMARKINSTALL  is $BENCHMARKINSTALL"
+
+
+	if [[ $BENCHMARKINSTALL = "YES" ]]
+	then
+        	make ESMF_BOPT=$OPT install_unit_tests_benchmark 1> tmp 2>&1
+        	if [ "$?" != "0" ]
+        	then
+                	echo "install_unit_tests_benchmark  FAIL "
+                	echo "`date` install_unit_tests_benchmark *FAIL" >> $LOGDIR/mailMessage
+                	if [ $OPT != g ]
+                	then
+                        	cat tmp > $LOGDIR/benchmark_install`date +%d``uname -n`install_unit_tests_benchmark$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                	else
+                        	cat tmp > $LOGDIR/benchmark_install`date +%d``uname -n`install_unit_tests_benchmark$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                	fi # end of if [ $OPT != g ]
+                	echo "" >> $LOGDIR/mailMessage
+                	echo "" >> $LOGDIR/mailMessage
+                	echo "The following is the 'tail' of the install_unit_tests_benchmark failure">> $LOGDIR/mailMessage
+                	echo "" >> $LOGDIR/mailMessage
+                	echo "" >> $LOGDIR/mailMessage
+                	tail  -50 tmp >> $LOGDIR/mailMessage
+                	echo "" >> $LOGDIR/mailMessage
+                	# Set test status as yellow, if it is not red
+                	if !(grep "red" $LOGDIR/Test_Status)
+                	then
+                        	echo "Test_results:yellow" > $LOGDIR/Test_Status
+                        	echo "Set Test Status to yellow."
+                	fi
+        	else
+                	echo "install_unit_tests_benchmark  PASS "
+                	echo "`date` install_unit_tests_benchmark .PASS" >> $LOGDIR/mailMessage
+        	fi
+	fi
+	
+	make ESMF_BOPT=$OPT run_unit_tests_benchmark 1> tmp 2>&1
+	if [ "$?" != "0" ]
+	then
+        	echo "run_unit_tests_benchmark  FAIL "
+        	echo "`date` run_unit_tests_benchmark *****FAIL" >> $LOGDIR/mailMessage
+        	if [ $OPT != g ]
+        	then
+                	cat tmp > $LOGDIR/benchmark_run`date +%d``uname -n`run_examples_uni$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+        	else
+                	cat tmp > $LOGDIR/benchmark_run`date +%d``uname -n`run_examples_uni$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+        	fi # end of if [ $OPT != g ]
+        	echo "" >> $LOGDIR/mailMessage
+        	echo "" >> $LOGDIR/mailMessage
+        	echo "The following is the 'tail' of the run_unit_tests_benchmark failure">> $LOGDIR/mailMessage
+        	echo "" >> $LOGDIR/mailMessage
+        	echo "" >> $LOGDIR/mailMessage
+        	tail  -50 tmp >> $LOGDIR/mailMessage
+        	echo "" >> $LOGDIR/mailMessage
+        	# Set test status as lime, if it is green
+        	if (grep "green" $LOGDIR/Test_Status)
+        	then
+                	echo "Test_results:lime" > $LOGDIR/Test_Status
+                	echo "Set Test Status to lime."
+        	fi
+	else
+        	echo "run_unit_tests_benchmark  PASS "
+        	echo "`date` run_unit_tests_benchmark .....PASS" >> $LOGDIR/mailMessage
+        	echo "" >> $LOGDIR/mailMessage
+        	cat tmp >> $LOGDIR/mailMessage
+        	read pass bm_pass_total fail bm_test_failures match match < $ESMF_DIR/test/test$OPT/$ESMF_OS.$ESMF_COMPILER.$ESMF_ABI.$ESMF_COMM.$ESMF_SITE/unit_tests_bm_results
+        	echo "bm_pass_total = $bm_pass_total bm_test_failures = $ bm_test_failures"
+        	if [[ $bm_test_failures != 0 ]]
+        	then
+                	# Set test status as lime, if it is green
+                	if (grep "green" $LOGDIR/Test_Status)
+                	then
+                        	echo "Test_results:lime" > $LOGDIR/Test_Status
+                        	echo "Set Test Status to lime."
+                	fi
+                	# Update number of test failures
+                	read failures < $LOGDIR/Test_Failures
+                	total=`expr $failures + $bm_test_failures`
+                	echo "$total" > $LOGDIR/Test_Failures
+                	echo "New failure total is $total."
+        	fi
+	fi
+
+
+
+        if [[ $install_results != 0 || $quickstart_results != 0 ]]
+        then  #The install failed
+                echo "PASS FAIL $name($OPT) $ESMF_OS.$ESMF_COMPILER.$ESMF_COMM.$ESMF_ABI $bm_pass_total/$bm_test_failures Benchmark test results" >> $LOGDIR/summary
+        else
+                echo "PASS PASS $name($OPT) $ESMF_OS.$ESMF_COMPILER.$ESMF_COMM.$ESMF_ABI $bm_pass_total/$bm_test_failures Benchmark test results" >> $LOGDIR/summary
+   	fi
+   fi #end of if [ $install_results != 0 || $quickstart_results != 0 ]]
+fi # end of check if benchmarking should be done.
+
+

@@ -1,0 +1,1543 @@
+
+############################### test_targets  ########################################
+
+#!/bin/bash -l
+#PBS -eo -q reg -l nodes=1:ppn=1
+
+cd $ESMF_DIR
+
+env
+
+#Clobber previous arch files
+#gmake -j4 clobber 1> tmp 2>&1
+
+
+echo "" >> $LOGDIR/mailMessage
+echo "____________________________________________________________________________" >> $LOGDIR/mailMessage
+echo "" >> $LOGDIR/mailMessage
+
+test_results=0  #assume build passes
+install_results=0  #assume install passes
+tests=0
+test_failures=0
+ex_passed=0
+ex_failed=0
+
+echo "`date` on `uname -n` " >> $LOGDIR/mailMessage
+# Get ESMF checkout source
+
+read chkout_src <  ~/bin/esmf_chkout_src
+#if read fails default:git://git.code.sf.net/p/esmf/esmf
+if [ "$?" != "0" ]
+then
+        export chkout_src="https://github.com/esmf-org/esmf.git"
+fi
+echo "" >> $LOGDIR/mailMessage
+echo "ESMF Checkout Source: $chkout_src" >> $LOGDIR/mailMessage
+echo "" >> $LOGDIR/mailMessage
+
+echo "Compiler and configuration information:" >> $LOGDIR/mailMessage
+echo " " >> $LOGDIR/mailMessage
+
+module list  1> tmp 2>&1
+cat tmp >> $LOGDIR/mailMessage
+
+
+echo " " >> $LOGDIR/mailMessage
+git remote -v 1> tmp 2>&1
+
+if (grep -i "Not a git repository" tmp)
+then
+        #Checkout failed
+        echo "Test_results:blue" > $LOGDIR/Test_Status
+fi
+
+echo "Repository:" >> $LOGDIR/mailMessage
+cat tmp >> $LOGDIR/mailMessage
+echo " " >> $LOGDIR/mailMessage
+git describe --tags 1> tmp 2>&1
+cat tmp >> $LOGDIR/mailMessage
+echo " " >> $LOGDIR/mailMessage
+
+echo " " >> $LOGDIR/mailMessage
+gmake -j4 ESMF_BOPT=$OPT info 1> tmp 2>&1
+cat tmp >> $LOGDIR/mailMessage
+
+
+export pass_num=0
+export fail_num=0
+
+gmake -j4 ESMF_BOPT=$OPT  1> tmp 2>&1
+if [ "$?" != "0" ]
+then
+        echo "Library build FAIL with ESMF_BOPT=$OPT"
+
+	if [ $OPT != g ]
+	then 
+		cat tmp > $LOGDIR/build_O_`date +%d``uname -n`$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+	else
+		cat tmp > $LOGDIR/build_g_`date +%d``uname -n`$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+	fi #end of if [ $OPT != g ]
+
+	echo "`date` library build -j4 ************FAIL" >> $LOGDIR/mailMessage
+	test_results=1
+	echo "" >> $LOGDIR/mailMessage
+	echo "" >> $LOGDIR/mailMessage
+	echo "The following is the 'tail' of the build failure">> $LOGDIR/mailMessage
+	echo "" >> $LOGDIR/mailMessage
+        tail  -50 tmp >> $LOGDIR/mailMessage
+
+
+        # If checkout did not fail, set test status to red, build failed
+        if !(grep "blue" $LOGDIR/Test_Status)
+        then
+                echo "Test_results:red" > $LOGDIR/Test_Status
+                echo "Set Test Status to red."
+        fi
+
+
+	
+
+else
+
+       	echo "Library build PASS with ESMF_BOPT=$OPT"
+	echo "`date` library build -j4 ............PASS" >> $LOGDIR/mailMessage
+	pass_num=`expr $pass_num + 1`
+
+        # Check for warnings
+        if grep -i "warning[ ]*:" tmp
+        then
+                echo "Builds with warnings." >> $LOGDIR/mailMessage
+        fi
+
+	# check if all files should be logged
+	if [[ $LOGTMP = "ALL" ]]
+	then
+        	if [ $OPT != g ]
+        	then 
+                	cat tmp > $LOGDIR/build_O_`date +%d``uname -n`$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+        	else    
+                	cat tmp > $LOGDIR/build_g_`date +%d``uname -n`$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+        	fi #end of if [ $OPT != g ]
+	fi # end of if [[ $LOGTMP = "ALL" ]]
+
+
+        make ESMF_BOPT=$OPT  install 1> tmp 2>&1
+        if [ "$?" != "0" ]
+        then
+                echo "Library install FAILED with ESMF_BOPT=$OPT"
+                install_results=1  # install failed
+
+                if [ $OPT != g ]
+                then
+                        cat tmp > $LOGDIR/install_O_`date +%d``uname -n`$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                else
+                        cat tmp > $LOGDIR/install_g_`date +%d``uname -n`$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                fi #end of if [ $OPT != g ]
+
+                echo "`date` library install **************FAIL" >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+                echo "The following is the 'tail' of the install failure">> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+                tail  -50 tmp >> $LOGDIR/mailMessage
+
+                else
+
+                echo "Library install PASSED with ESMF_BOPT=$OPT"
+                echo "`date` library install ..............PASS" >> $LOGDIR/mailMessage
+
+                make ESMF_BOPT=$OPT  installcheck 1> tmp 2>&1
+                if [ "$?" != "0" ]
+                then
+                        echo "Library install check FAILED with ESMF_BOPT=$OPT"
+                        install_results=1  # install failed
+
+                        if [ $OPT != g ]
+                        then
+                                cat tmp > $LOGDIR/installcheck_O_`date +%d``uname -n`$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        else
+                                cat tmp > $LOGDIR/installcheck_g_`date +%d``uname -n`$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        fi #end of if [ $OPT != g ]
+
+                        echo "`date` library installcheck *********FAIL" >> $LOGDIR/mailMessage
+                        echo "" >> $LOGDIR/mailMessage
+                        echo "" >> $LOGDIR/mailMessage
+                        echo "The following is the 'tail' of the install failure">> $LOGDIR/mailMessage
+                        echo "" >> $LOGDIR/mailMessage
+                        tail  -50 tmp >> $LOGDIR/mailMessage
+
+                        else
+
+                        echo "Library install PASSED with ESMF_BOPT=$OPT"
+                        echo "`date` library installcheck .........PASS" >> $LOGDIR/mailMessage
+
+                fi
+
+	fi
+
+
+	echo "" >> $LOGDIR/mailMessage
+	echo "|----------------------- SYSTEM TESTS -------------------------|" >> $LOGDIR/mailMessage
+
+
+        
+        gmake  -j4 ESMF_BOPT=$OPT build_system_tests 1> tmp 2>&1
+        if [ "$?" != "0" ]
+        then
+                echo "system_tests build FAIL "
+                echo "`date` build_system_tests -j4 *******FAIL" >> $LOGDIR/mailMessage
+		
+        	fail_num=`expr $fail_num + 1`
+                # Update number of test failures
+                read failures < $LOGDIR/Test_Failures
+                total=`expr $failures + 1`
+		echo "$total" > $LOGDIR/Test_Failures
+                echo "New failure total is $total."
+                echo "" >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+                echo "The following is the 'tail' of the system tests failure">> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+                tail  -50 tmp >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+
+                if [ $OPT != g ]
+                then
+                        cat tmp > $LOGDIR/build_O_`date +%d``uname -n`build_system_tests_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                else
+                        cat tmp > $LOGDIR/build_g_`date +%d``uname -n`build_system_tests_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                fi # end of if [ $OPT != g ]
+
+                # Set test status as yellow, if it is not red
+                if !(grep "red" $LOGDIR/Test_Status)
+                then
+                        echo "Test_results:yellow" > $LOGDIR/Test_Status
+                        echo "Set Test Status to yellow."
+                fi
+
+
+
+        else
+                echo "build_system_tests PASS "
+                echo "`date` build_system_tests -j4 .......PASS" >> $LOGDIR/mailMessage
+        	pass_num=`expr $pass_num + 1`
+                if [[ $LOGTMP = "ALL" ]]
+                then
+                        if [ $OPT != g ]
+                        then
+                                cat tmp > $LOGDIR/build_O_`date +%d``uname -n`build_system_tests_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        else
+                                cat tmp > $LOGDIR/build_g_`date +%d``uname -n`build_system_tests_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        fi #end of if [ $OPT != g ]
+                fi # end of if [[ $LOGTMP = "ALL" ]]
+
+        fi #end of if [ "$?" != "0" ] for make ESMF_BOPT=$OPT build_system_tests 1> tmp 2>&1
+
+
+        if [[ $SYS_TEST_TYPE = "UNI" ]]
+        then
+                gmake ESMF_BOPT=$OPT run_system_tests_uni 1> tmp 2>&1
+        else
+                gmake ESMF_BOPT=$OPT run_system_tests 1> tmp 2>&1
+        fi #end of if [[ $SYS_TEST_TYPE = "UNI" ]]
+
+        if [ "$?" != "0" ]
+        then
+                if [[ $SYS_TEST_TYPE = "UNI" ]]
+                then
+                        echo "run_system_tests_uni FAIL "
+                        echo "`date` run_system_tests_uni *********FAIL" >> $LOGDIR/mailMessage
+        		fail_num=`expr $fail_num + 1`
+			# Update number of test failures
+                	read failures < $LOGDIR/Test_Failures
+                	total=`expr $failures + 1`
+			echo "$total" > $LOGDIR/Test_Failures
+                	echo "New failure total is $total."
+                        if [ $OPT != g ]
+                        then
+                                cat tmp > $LOGDIR/build_O_`date +%d``uname -n`run_system_tests_uni$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        else
+                                cat tmp > $LOGDIR/build_g_`date +%d``uname -n`run_system_tests_uni$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        fi # end of if [ $OPT != g ]
+                        echo "" >> $LOGDIR/mailMessage
+                        echo "" >> $LOGDIR/mailMessage
+                        echo "The following is the 'tail' of the run_system_tests_uni failure">> $LOGDIR/mailMessage
+
+
+                	# Set test status as yellow, if it is not red
+                	if !(grep "red" $LOGDIR/Test_Status)
+                	then
+                        	echo "Test_results:yellow" > $LOGDIR/Test_Status
+                        	echo "Set Test Status to yellow."
+                	fi
+
+
+                else
+                        echo "run_system_tests FAIL "
+                        echo "`date` run_system_tests *************FAIL" >> $LOGDIR/mailMessage
+        		fail_num=`expr $fail_num + 1`
+			# Update number of test failures
+                        read failures < $LOGDIR/Test_Failures
+                        total=`expr $failures + 1`
+                        echo "$total" > $LOGDIR/Test_Failures
+                        echo "New failure total is $total."
+                        if [ $OPT != g ]
+                        then
+                                cat tmp > $LOGDIR/build_O_`date +%d``uname -n`run_system_tests_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        else
+                                cat tmp > $LOGDIR/build_g_`date +%d``uname -n`run_system_tests_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        fi # end of if [ $OPT != g ]
+                        echo "" >> $LOGDIR/mailMessage
+                        echo "" >> $LOGDIR/mailMessage
+                        echo "The following is the 'tail' of the run_system_tests failure">> $LOGDIR/mailMessage
+
+
+                        # Set test status as yellow, if it is not red
+                        if !(grep "red" $LOGDIR/Test_Status)
+                        then
+                                echo "Test_results:yellow" > $LOGDIR/Test_Status
+                                echo "Set Test Status to yellow."
+                        fi
+
+                fi #end of if [[ $SYS_TEST_TYPE = "UNI" ]]
+
+                echo "" >> $LOGDIR/mailMessage
+                tail  -50 tmp >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+
+
+        else
+                if [[ $SYS_TEST_TYPE = "UNI" ]]
+                then
+                        echo "run_system_tests_uni PASS "
+                        echo "`date` run_system_tests_uni .........PASS" >> $LOGDIR/mailMessage
+        		pass_num=`expr $pass_num + 1`
+                else
+                        echo "run_system_tests PASS "
+                        echo "`date` run_system_tests .............PASS" >> $LOGDIR/mailMessage
+        		pass_num=`expr $pass_num + 1`
+                fi #end of if [[ $SYS_TEST_TYPE = "UNI" ]]
+        fi #end of if [ "$?" != "0" ] for gmake ESMF_BOPT=$OPT run_system_tests 1> tmp 2>&1
+
+        if [[ $LOGTMP = "ALL" ]]
+        then
+                if [ $OPT != g ]
+                then
+                        cat tmp > $LOGDIR/build_O_`date +%d``uname -n`run_system_tests_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                else
+                        cat tmp > $LOGDIR/build_g_`date +%d``uname -n`run_system_tests_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                fi #end of if [ $OPT != g ]
+         fi # end of if [[ $LOGTMP = "ALL" ]]
+
+        
+
+        gmake  -j4 ESMF_BOPT=$OPT clean_system_tests 1> tmp 2>&1
+        if [ "$?" != "0" ]
+        then
+                echo "system_tests clean FAIL "
+                echo "`date` clean_system_tests -j4 *******FAIL" >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+        	fail_num=`expr $fail_num + 1`
+                # Update number of test failures
+                read failures < $LOGDIR/Test_Failures
+                total=`expr $failures + 1`
+		echo "$total" > $LOGDIR/Test_Failures
+                echo "New failure total is $total."
+
+                echo "The following is the 'tail' of the clean system tests failure">> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+                tail  -50 tmp >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+
+
+		# Set test status as yellow, if it is not red
+                if !(grep "red" $LOGDIR/Test_Status)
+                then
+                	echo "Test_results:yellow" > $LOGDIR/Test_Status
+                        echo "Set Test Status to yellow."
+                fi
+
+
+                if [ $OPT != g ]
+                then
+                        cat tmp > $LOGDIR/build_O_`date +%d``uname -n`clean_system_tests_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                else
+                        cat tmp > $LOGDIR/build_g_`date +%d``uname -n`clean_system_tests_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                fi # end of if [ $OPT != g ]
+
+        else
+                echo "clean_system_tests PASS "
+                echo "`date` clean_system_tests -j4 .......PASS" >> $LOGDIR/mailMessage
+        	pass_num=`expr $pass_num + 1`
+
+                if [[ $LOGTMP = "ALL" ]]
+                then
+                        if [ $OPT != g ]
+                        then
+                                cat tmp > $LOGDIR/build_O_`date +%d``uname -n`clean_system_tests_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        else
+                                cat tmp > $LOGDIR/build_g_`date +%d``uname -n`clean_system_tests_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        fi #end of if [ $OPT != g ]
+                fi # end of if [[ $LOGTMP = "ALL" ]]
+
+        fi #end of if [ "$?" != "0" ] for gmake ESMF_BOPT=$OPT clean_system_tests 1> tmp 2>&1
+
+
+
+
+        if [[ $SYS_TEST_TYPE = "UNI" ]]
+        then
+                gmake ESMF_BOPT=$OPT system_tests_uni 1> tmp 2>&1
+        else    
+                gmake ESMF_BOPT=$OPT system_tests 1> tmp 2>&1
+        fi #end of if [[ $SYS_TEST_TYPE = "UNI" ]]
+        
+        if [ "$?" != "0" ]
+        then 
+                if [[ $SYS_TEST_TYPE = "UNI" ]]
+                then
+                        echo "system_tests_uni FAIL "
+                        echo "`date` system_tests_uni *************FAIL" >> $LOGDIR/mailMessage
+        		fail_num=`expr $fail_num + 1`
+			# Update number of test failures
+                	read failures < $LOGDIR/Test_Failures
+                	total=`expr $failures + 1`
+			echo "$total" > $LOGDIR/Test_Failures
+                        echo "New failure total is $total."
+                        if [ $OPT != g ]
+                        then 
+                                cat tmp > $LOGDIR/build_O_`date +%d``uname -n`system_tests_uni$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+			
+                        # Set test status as yellow, if it is not red
+                        if !(grep "red" $LOGDIR/Test_Status)
+                        then
+                                echo "Test_results:yellow" > $LOGDIR/Test_Status
+                                echo "Set Test Status to yellow."
+                        fi
+
+                        else    
+                                cat tmp > $LOGDIR/build_g_`date +%d``uname -n`system_tests_uni$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        fi # end of if [ $OPT != g ]
+                        echo "" >> $LOGDIR/mailMessage
+                        echo "" >> $LOGDIR/mailMessage
+                        echo "The following is the 'tail' of the system_tests_uni failure">> $LOGDIR/mailMessage
+                else    
+                        echo "system_tests FAIL "
+                        echo "`date` system_tests *****************FAIL" >> $LOGDIR/mailMessage
+        		fail_num=`expr $fail_num + 1`
+                	# Update number of test failures
+                	read failures < $LOGDIR/Test_Failures
+                	total=`expr $failures + 1`
+			echo "$total" > $LOGDIR/Test_Failures
+                        echo "New failure total is $total."
+			
+                        # Set test status as yellow, if it is not red
+                        if !(grep "red" $LOGDIR/Test_Status)
+                        then
+                                echo "Test_results:yellow" > $LOGDIR/Test_Status
+                                echo "Set Test Status to yellow."
+                        fi
+
+                        if [ $OPT != g ]
+                        then 
+                                cat tmp > $LOGDIR/build_O_`date +%d``uname -n`system_tests_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        else    
+                                cat tmp > $LOGDIR/build_g_`date +%d``uname -n`system_tests_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        fi # end of if [ $OPT != g ]
+                        echo "" >> $LOGDIR/mailMessage
+                        echo "" >> $LOGDIR/mailMessage
+                        echo "The following is the 'tail' of the system_tests failure">> $LOGDIR/mailMessage
+                fi #end of if [[ $SYS_TEST_TYPE = "UNI" ]]
+
+                echo "" >> $LOGDIR/mailMessage
+                tail  -50 tmp >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+
+
+        else
+                if [[ $SYS_TEST_TYPE = "UNI" ]]
+                then
+                        echo "system_tests_uni PASS "
+                        echo "`date` system_tests_uni .............PASS" >> $LOGDIR/mailMessage
+        		pass_num=`expr $pass_num + 1`
+                else
+                        echo "system_tests PASS "
+                        echo "`date` system_tests .................PASS" >> $LOGDIR/mailMessage
+        		pass_num=`expr $pass_num + 1`
+                fi #end of if [[ $SYS_TEST_TYPE = "UNI" ]]
+        fi #end of if [ "$?" != "0" ] for gmake ESMF_BOPT=$OPT system_tests 1> tmp 2>&1
+
+        if [[ $LOGTMP = "ALL" ]]
+        then
+                if [ $OPT != g ]
+                then
+                        cat tmp > $LOGDIR/build_O_`date +%d``uname -n`system_tests_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                else
+                        cat tmp > $LOGDIR/build_g_`date +%d``uname -n`system_tests_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                fi #end of if [ $OPT != g ]
+         fi # end of if [[ $LOGTMP = "ALL" ]]
+
+
+
+
+        gmake  -j4 ESMF_BOPT=$OPT dust_system_tests 1> tmp 2>&1
+        if [ "$?" != "0" ]
+        then 
+                echo "system_tests dust FAIL "
+                echo "`date` dust_system_tests -j4 ********FAIL" >> $LOGDIR/mailMessage
+        	fail_num=`expr $fail_num + 1`
+                # Update number of test failures
+                read failures < $LOGDIR/Test_Failures
+                total=`expr $failures + 1`
+		echo "$total" > $LOGDIR/Test_Failures
+                echo "New failure total is $total."
+                echo "" >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+                echo "The following is the 'tail' of the dust system tests failure">> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+                tail  -50 tmp >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+		
+                # Set test status as yellow, if it is not red
+                if !(grep "red" $LOGDIR/Test_Status)
+                then
+                	echo "Test_results:yellow" > $LOGDIR/Test_Status
+                       	echo "Set Test Status to yellow."
+                fi
+
+                
+                if [ $OPT != g ]
+                then 
+                        cat tmp > $LOGDIR/build_O_`date +%d``uname -n`dust_system_tests_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                else    
+                        cat tmp > $LOGDIR/build_g_`date +%d``uname -n`dust_system_tests_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                fi # end of if [ $OPT != g ]
+                
+        else
+                echo "dust_system_tests PASS "
+                echo "`date` dust_system_tests -j4 ........PASS" >> $LOGDIR/mailMessage
+        	pass_num=`expr $pass_num + 1`
+                
+                if [[ $LOGTMP = "ALL" ]]
+                then
+                        if [ $OPT != g ]
+                        then
+                                cat tmp > $LOGDIR/build_O_`date +%d``uname -n`dust_system_tests_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        else
+                                cat tmp > $LOGDIR/build_g_`date +%d``uname -n`dust_system_tests_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        fi #end of if [ $OPT != g ]
+                fi # end of if [[ $LOGTMP = "ALL" ]]
+
+        fi #end of if [ "$?" != "0" ] for gmake ESMF_BOPT=$OPT dust_system_tests 1> tmp 2>&1
+
+
+
+
+	echo "" >> $LOGDIR/mailMessage
+	echo "" >> $LOGDIR/mailMessage
+	echo "|------------------------- EXAMPLES ---------------------------|" >> $LOGDIR/mailMessage
+
+
+
+        gmake  -j4 ESMF_BOPT=$OPT build_examples 1> tmp 2>&1
+        if [ "$?" != "0" ]
+        then
+                echo "examples build FAIL "
+                echo "`date` build_examples -j4  **********FAIL" >> $LOGDIR/mailMessage
+        	fail_num=`expr $fail_num + 1`
+                # Update number of test failures
+                read failures < $LOGDIR/Test_Failures
+                total=`expr $failures + 1`
+		echo "$total" > $LOGDIR/Test_Failures
+                echo "New failure total is $total."
+        	echo "" >> $LOGDIR/mailMessage
+        	echo "" >> $LOGDIR/mailMessage
+        	echo "The following is the 'tail' of the examples failure">> $LOGDIR/mailMessage
+        	echo "" >> $LOGDIR/mailMessage
+        	tail  -50 tmp >> $LOGDIR/mailMessage
+        	echo "" >> $LOGDIR/mailMessage
+		
+                # Set test status as yellow, if it is not red
+                if !(grep "red" $LOGDIR/Test_Status)
+                then
+               		 echo "Test_results:yellow" > $LOGDIR/Test_Status
+                         echo "Set Test Status to yellow."
+                fi
+
+
+                if [ $OPT != g ]
+                then
+                        cat tmp > $LOGDIR/build_O_`date +%d``uname -n`build_examples_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                else
+                        cat tmp > $LOGDIR/build_g_`date +%d``uname -n`build_examples_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                fi # end of if [ $OPT != g ]
+
+        else
+                echo "build_examples PASS "
+                echo "`date` build_examples -j4 ...........PASS" >> $LOGDIR/mailMessage
+        	pass_num=`expr $pass_num + 1`
+
+                if [[ $LOGTMP = "ALL" ]]
+                then
+                        if [ $OPT != g ]
+                        then
+                                cat tmp > $LOGDIR/build_O_`date +%d``uname -n`build_examples_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        else
+                                cat tmp > $LOGDIR/build_g_`date +%d``uname -n`build_examples_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        fi #end of if [ $OPT != g ]
+                fi # end of if [[ $LOGTMP = "ALL" ]]
+
+        fi #end of if [ "$?" != "0" ] for gmake ESMF_BOPT=$OPT build_examples 1> tmp 2>&1
+
+
+
+	if [[ $SYS_TEST_TYPE = "UNI" ]]
+	then
+		gmake ESMF_BOPT=$OPT run_examples_uni 1> tmp 2>&1
+	else
+		gmake ESMF_BOPT=$OPT run_examples 1> tmp 2>&1
+	fi #end of if [[ $SYS_TEST_TYPE = "UNI" ]]
+		
+        if [ "$?" != "0" ]
+        then
+		if [[ $SYS_TEST_TYPE = "UNI" ]]
+		then
+                	echo "run_examples_uni FAIL "
+                	echo "`date` run_examples_uni *************FAIL" >> $LOGDIR/mailMessage
+        		fail_num=`expr $fail_num + 1`
+                	# Update number of test failures
+                	read failures < $LOGDIR/Test_Failures
+                	total=`expr $failures + 1`
+			echo "$total" > $LOGDIR/Test_Failures
+                        echo "New failure total is $total."
+			
+                        # Set test status as yellow, if it is not red
+                        if !(grep "red" $LOGDIR/Test_Status)
+                        then
+                                echo "Test_results:yellow" > $LOGDIR/Test_Status
+                                echo "Set Test Status to yellow."
+                        fi
+
+                	if [ $OPT != g ]
+                	then
+                        	cat tmp > $LOGDIR/build_O_`date +%d``uname -n`run_examples_uni$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                	else
+                        	cat tmp > $LOGDIR/build_g_`date +%d``uname -n`run_examples_uni$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                	fi # end of if [ $OPT != g ]
+        		echo "" >> $LOGDIR/mailMessage
+        		echo "" >> $LOGDIR/mailMessage
+        		echo "The following is the 'tail' of the run_examples_uni failure">> $LOGDIR/mailMessage
+		else
+                	echo "run_examples FAIL "
+                	echo "`date` run_examples *****************FAIL" >> $LOGDIR/mailMessage
+        		fail_num=`expr $fail_num + 1`
+			# Update number of test failures
+                	read failures < $LOGDIR/Test_Failures
+                	total=`expr $failures + 1`
+			echo "$total" > $LOGDIR/Test_Failures
+                        echo "New failure total is $total."
+			
+                        # Set test status as yellow, if it is not red
+                        if !(grep "red" $LOGDIR/Test_Status)
+                        then
+                                echo "Test_results:yellow" > $LOGDIR/Test_Status
+                                echo "Set Test Status to yellow."
+                        fi
+
+                	if [ $OPT != g ]
+                	then
+                        	cat tmp > $LOGDIR/build_O_`date +%d``uname -n`run_examples_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                	else
+                        	cat tmp > $LOGDIR/build_g_`date +%d``uname -n`run_examples_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                	fi # end of if [ $OPT != g ]
+        		echo "" >> $LOGDIR/mailMessage
+        		echo "" >> $LOGDIR/mailMessage
+        		echo "The following is the 'tail' of the run_examples failure">> $LOGDIR/mailMessage
+		fi #end of if [[ $SYS_TEST_TYPE = "UNI" ]]
+
+        	echo "" >> $LOGDIR/mailMessage
+        	tail  -50 tmp >> $LOGDIR/mailMessage
+        	echo "" >> $LOGDIR/mailMessage
+
+	else
+		if [[ $SYS_TEST_TYPE = "UNI" ]]
+		then
+                	echo "run_examples_uni PASS "
+                	echo "`date` run_examples_uni .............PASS" >> $LOGDIR/mailMessage
+        		pass_num=`expr $pass_num + 1`
+		else
+                	echo "run_examples PASS "
+                	echo "`date` run_examples .................PASS" >> $LOGDIR/mailMessage
+        		pass_num=`expr $pass_num + 1`
+		fi #end of if [[ $SYS_TEST_TYPE = "UNI" ]]
+        fi #end of if [ "$?" != "0" ] for gmake ESMF_BOPT=$OPT run_examples 1> tmp 2>&1
+
+        if [[ $LOGTMP = "ALL" ]]
+        then
+        	if [ $OPT != g ]
+                then
+                        cat tmp > $LOGDIR/build_O_`date +%d``uname -n`run_examples_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                else
+                        cat tmp > $LOGDIR/build_g_`date +%d``uname -n`run_examples_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                fi #end of if [ $OPT != g ]
+         fi # end of if [[ $LOGTMP = "ALL" ]]
+
+
+
+        gmake  -j4 ESMF_BOPT=$OPT clean_examples 1> tmp 2>&1
+        if [ "$?" != "0" ]
+        then
+                echo "examples clean FAIL "
+                echo "`date` clean_examples -j4 ***********FAIL" >> $LOGDIR/mailMessage
+        	fail_num=`expr $fail_num + 1`
+                # Update number of test failures
+                read failures < $LOGDIR/Test_Failures
+                total=`expr $failures + 1`
+		echo "$total" > $LOGDIR/Test_Failures
+                echo "New failure total is $total."
+                echo "" >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+                echo "The following is the 'tail' of the clean_examples failure">> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+                tail  -50 tmp >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+		
+                # Set test status as yellow, if it is not red
+                if !(grep "red" $LOGDIR/Test_Status)
+                then
+                	echo "Test_results:yellow" > $LOGDIR/Test_Status
+                        echo "Set Test Status to yellow."
+                fi
+
+                if [ $OPT != g ]
+                then
+                        cat tmp > $LOGDIR/build_O_`date +%d``uname -n`clean_examples_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                else
+                        cat tmp > $LOGDIR/build_g_`date +%d``uname -n`clean_examples_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                fi # end of if [ $OPT != g ]
+
+        else
+                echo "clean_examples PASS "
+                echo "`date` clean_examples -j4 ...........PASS" >> $LOGDIR/mailMessage
+        	pass_num=`expr $pass_num + 1`
+                if [[ $LOGTMP = "ALL" ]]
+                then
+                        if [ $OPT != g ]
+                        then
+                                cat tmp > $LOGDIR/build_O_`date +%d``uname -n`clean_examples_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        else
+                                cat tmp > $LOGDIR/build_g_`date +%d``uname -n`clean_examples_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        fi #end of if [ $OPT != g ]
+                fi # end of if [[ $LOGTMP = "ALL" ]]
+
+        fi #end of if [ "$?" != "0" ] for gmake ESMF_BOPT=$OPT clean_examples 1> tmp 2>&1
+
+
+
+        if [[ $SYS_TEST_TYPE = "UNI" ]]
+        then
+                gmake ESMF_BOPT=$OPT examples_uni 1> tmp 2>&1
+        else
+                gmake ESMF_BOPT=$OPT examples 1> tmp 2>&1
+        fi #end of if [[ $SYS_TEST_TYPE = "UNI" ]]
+        if [ "$?" != "0" ]
+        then
+                if [[ $SYS_TEST_TYPE = "UNI" ]]
+                then
+                        echo "examples_uni FAIL "
+                        echo "`date` examples_uni *****************FAIL" >> $LOGDIR/mailMessage
+        		fail_num=`expr $fail_num + 1`
+                	# Update number of test failures
+                	read failures < $LOGDIR/Test_Failures
+                	total=`expr $failures + 1`
+			echo "$total" > $LOGDIR/Test_Failures
+                        echo "New failure total is $total."
+			
+                        # Set test status as yellow, if it is not red
+                        if !(grep "red" $LOGDIR/Test_Status)
+                        then
+                                echo "Test_results:yellow" > $LOGDIR/Test_Status
+                                echo "Set Test Status to yellow."
+                        fi
+
+                        if [ $OPT != g ]
+                        then
+                                cat tmp > $LOGDIR/build_O_`date +%d``uname -n`examples_uni$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        else
+                                cat tmp > $LOGDIR/build_g_`date +%d``uname -n`examples_uni$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        fi # end of if [ $OPT != g ]
+                        echo "" >> $LOGDIR/mailMessage
+                        echo "" >> $LOGDIR/mailMessage
+                        echo "The following is the 'tail' of the examples_uni failure">> $LOGDIR/mailMessage
+                else
+                        echo "examples FAIL "                        
+			echo "`date` examples *********************FAIL" >> $LOGDIR/mailMessage
+        		fail_num=`expr $fail_num + 1`
+                	# Update number of test failures
+                	read failures < $LOGDIR/Test_Failures
+                	total=`expr $failures + 1`
+			echo "$total" > $LOGDIR/Test_Failures
+                        echo "New failure total is $total."
+			
+                        # Set test status as yellow, if it is not red
+                        if !(grep "red" $LOGDIR/Test_Status)
+                        then
+                                echo "Test_results:yellow" > $LOGDIR/Test_Status
+                                echo "Set Test Status to yellow."
+                        fi
+
+                        if [ $OPT != g ]                        
+			then
+                                cat tmp > $LOGDIR/build_O_`date +%d``uname -n`examples_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        else
+                                cat tmp > $LOGDIR/build_g_`date +%d``uname -n`examples_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        fi # end of if [ $OPT != g ]                        
+			echo "" >> $LOGDIR/mailMessage
+                        echo "" >> $LOGDIR/mailMessage
+                        echo "The following is the 'tail' of the examples failure">> $LOGDIR/mailMessage         
+       		fi #end of if [[ $SYS_TEST_TYPE = "UNI" ]]
+
+        else
+                if [[ $SYS_TEST_TYPE = "UNI" ]]
+                then
+                        echo "examples_uni PASS "
+                        echo "`date` examples_uni .................PASS" >> $LOGDIR/mailMessage
+        		pass_num=`expr $pass_num + 1`
+                else
+                        echo "examples PASS "
+                        echo "`date` examples .....................PASS" >> $LOGDIR/mailMessage
+        		pass_num=`expr $pass_num + 1`
+                fi #end of if [[ $SYS_TEST_TYPE = "UNI" ]]
+        fi #end of if [ "$?" != "0" ] for gmake ESMF_BOPT=$OPT examples 1> tmp 2>&1
+
+        if [[ $LOGTMP = "ALL" ]]
+        then
+                if [ $OPT != g ]
+                then
+                        cat tmp > $LOGDIR/build_O_`date +%d``uname -n`examples_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM                
+	else
+                        cat tmp > $LOGDIR/build_g_`date +%d``uname -n`examples_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                fi #end of if [ $OPT != g ]
+         fi # end of if [[ $LOGTMP = "ALL" ]]
+
+
+        gmake  -j4 ESMF_BOPT=$OPT dust_examples 1> tmp 2>&1
+        if [ "$?" != "0" ]
+        then
+                echo "examples dust FAIL "
+                echo "`date` dust_examples -j4 ************FAIL" >> $LOGDIR/mailMessage
+        	fail_num=`expr $fail_num + 1`
+                # Update number of test failures
+                read failures < $LOGDIR/Test_Failures
+                total=`expr $failures + 1`
+		echo "$total" > $LOGDIR/Test_Failures
+                echo "New failure total is $total."
+                echo "" >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+                echo "The following is the 'tail' of the dust_examples failure">> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+                tail  -50 tmp >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+		
+                # Set test status as yellow, if it is not red
+                if !(grep "red" $LOGDIR/Test_Status)
+                then
+                	echo "Test_results:yellow" > $LOGDIR/Test_Status
+                	echo "Set Test Status to yellow."
+                fi
+
+                if [ $OPT != g ]
+                then
+                        cat tmp > $LOGDIR/build_O_`date +%d``uname -n`dust_examples_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                else
+                        cat tmp > $LOGDIR/build_g_`date +%d``uname -n`dust_examples_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                fi # end of if [ $OPT != g ]
+
+        else
+                echo "dust_examples PASS "
+                echo "`date` dust_examples -j4 ............PASS" >> $LOGDIR/mailMessage
+        	pass_num=`expr $pass_num + 1`
+
+                if [[ $LOGTMP = "ALL" ]]
+                then
+                        if [ $OPT != g ]
+                        then
+                                cat tmp > $LOGDIR/build_O_`date +%d``uname -n`dust_examples_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        else
+                                cat tmp > $LOGDIR/build_g_`date +%d``uname -n`dust_examples_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        fi #end of if [ $OPT != g ]
+                fi # end of if [[ $LOGTMP = "ALL" ]]
+
+        fi #end of if [ "$?" != "0" ] for gmake ESMF_BOPT=$OPT dust_examples 1> tmp 2>&1
+
+
+
+
+
+	echo "" >> $LOGDIR/mailMessage
+	echo "" >> $LOGDIR/mailMessage
+
+
+	if [[ $U_TESTS = "NON" ]]
+	then
+		echo "|-------------------NON_EXHAUSTIVE UNIT TESTS -----------------|" >> $LOGDIR/mailMessage
+	else
+		echo "|-------------------- EXHAUSTIVE UNIT TESTS -------------------|" >> $LOGDIR/mailMessage
+	fi # end of if [[ $U_TESTS = "NON" ]]
+	gmake  -j4 build_unit_tests 1> tmp 2>&1
+	if [ "$?" != "0" ]
+        then
+        	echo "build_unit_tests FAIL "
+		echo "`date` build_unit_tests -j4 *********FAIL" >> $LOGDIR/mailMessage
+        	fail_num=`expr $fail_num + 1`
+                # Update number of test failures
+                read failures < $LOGDIR/Test_Failures
+                total=`expr $failures + 1`
+		echo "$total" > $LOGDIR/Test_Failures
+                echo "New failure total is $total."
+        	echo "" >> $LOGDIR/mailMessage
+        	echo "" >> $LOGDIR/mailMessage
+		
+                # Set test status as yellow, if it is not red
+                if !(grep "red" $LOGDIR/Test_Status)
+                then
+                	echo "Test_results:yellow" > $LOGDIR/Test_Status
+                	echo "Set Test Status to yellow."
+                fi
+
+        	echo "The following is the 'tail' of the build_unit_tests failure">> $LOGDIR/mailMessage
+
+        	echo "" >> $LOGDIR/mailMessage
+        	tail  -50 tmp >> $LOGDIR/mailMessage
+        	echo "" >> $LOGDIR/mailMessage
+
+		if [ $OPT != g ]
+		then
+			cat tmp > $LOGDIR/build_O_`date +%d``uname -n`build_unit_tests_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+		else
+			cat tmp > $LOGDIR/build_g_`date +%d``uname -n`build_unit_tests_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+		fi # end of if [ $OPT != g ]
+
+	else
+		echo "build_unit_tests PASS "
+		echo "`date` build_unit_tests -j4 .........PASS" >> $LOGDIR/mailMessage
+        	pass_num=`expr $pass_num + 1`
+                if [[ $LOGTMP = "ALL" ]]
+                then
+                        if [ $OPT != g ]
+                        then
+                                cat tmp > $LOGDIR/build_O_`date +%d``uname -n`build_unit_tests_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        else
+                                cat tmp > $LOGDIR/build_g_`date +%d``uname -n`build_unit_tests_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        fi #end of if [ $OPT != g ]
+                fi # end of if [[ $LOGTMP = "ALL" ]]
+
+	fi #end of if [ "$?" != "0" ] for gmake ESMF_BOPT=$OPT  build_unit_tests 1> tmp 2>&1
+
+
+
+
+        if [[ $U_TESTS_TYPE = "UNI" ]]
+        then
+                gmake run_unit_tests_uni 1> tmp 2>&1
+        else
+                gmake run_unit_tests 1> tmp 2>&1
+
+        fi # end of if [[ $U_TESTS_TYPE = "UNI" ]]
+
+
+
+	if [ "$?" != "0" ]
+       	then
+		if [[ $U_TESTS_TYPE = "UNI" ]]
+		then
+       			echo "run_unit_tests_uni FAIL "
+			echo "`date` run_unit_tests_uni ***********FAIL" >> $LOGDIR/mailMessage
+        		fail_num=`expr $fail_num + 1`
+                	# Update number of test failures
+                	read failures < $LOGDIR/Test_Failures
+                	total=`expr $failures + 1`
+			echo "$total" > $LOGDIR/Test_Failures
+                        echo "New failure total is $total."
+        		echo "" >> $LOGDIR/mailMessage
+        		echo "" >> $LOGDIR/mailMessage
+			
+                        # Set test status as yellow, if it is not red
+                        if !(grep "red" $LOGDIR/Test_Status)
+                        then
+                                echo "Test_results:yellow" > $LOGDIR/Test_Status
+                                echo "Set Test Status to yellow."
+                        fi
+
+        		echo "The following is the 'tail' of the run_unit_tests_uni failure">> $LOGDIR/mailMessage
+		else
+       			echo "run_unit_tests FAIL "
+			echo "`date` run_unit_tests ***************FAIL" >> $LOGDIR/mailMessage
+        		fail_num=`expr $fail_num + 1`
+                	# Update number of test failures
+                	read failures < $LOGDIR/Test_Failures
+                	total=`expr $failures + 1`
+			echo "$total" > $LOGDIR/Test_Failures
+                        echo "New failure total is $total."
+        		echo "" >> $LOGDIR/mailMessage
+        		echo "" >> $LOGDIR/mailMessage
+			
+                        # Set test status as yellow, if it is not red
+                        if !(grep "red" $LOGDIR/Test_Status)
+                        then
+                                echo "Test_results:yellow" > $LOGDIR/Test_Status
+                                echo "Set Test Status to yellow."
+                        fi
+
+        		echo "The following is the 'tail' of the run_unit_tests failure">> $LOGDIR/mailMessage
+		fi # end of if [[ $U_TESTS_TYPE = "UNI" ]]
+
+        	echo "" >> $LOGDIR/mailMessage
+        	tail  -50 tmp >> $LOGDIR/mailMessage
+        	echo "" >> $LOGDIR/mailMessage
+
+
+		if [ $OPT != g ]
+		then
+			cat tmp > $LOGDIR/build_O_`date +%d``uname -n`run_unit_tests_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+		else
+			cat tmp > $LOGDIR/build_g_`date +%d``uname -n`run_unit_tests_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+		fi # end of if [ $OPT != g ]
+
+	else
+		if [[ $U_TESTS_TYPE = "UNI" ]]
+		then
+       			echo "run_unit_tests_uni PASS "
+			echo "`date` run_unit_tests_uni ...........PASS" >> $LOGDIR/mailMessage
+        		pass_num=`expr $pass_num + 1`
+		else
+       			echo "run_test PASS "
+			echo "`date` run_unit_tests ...............PASS" >> $LOGDIR/mailMessage
+        		pass_num=`expr $pass_num + 1`
+		fi # end of if [[ $U_TESTS_TYPE = "UNI" ]]
+		if [[ $LOGTMP = "ALL" ]]
+                then
+                        if [ $OPT != g ]
+                        then
+                                cat tmp > $LOGDIR/build_O_`date +%d``uname -n`run_unit_tests_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        else
+                                cat tmp > $LOGDIR/build_g_`date +%d``uname -n`run_unit_tests_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        fi #end of if [ $OPT != g ]
+                fi # end of if [[ $LOGTMP = "ALL" ]]
+
+
+	fi #end of if [ "$?" != "0" ] for gmake ESMF_BOPT=$OPT  run_unit_tests_uni 1> tmp 2>&1
+
+
+        gmake  -j4 clean_unit_tests 1> tmp 2>&1
+        if [ "$?" != "0" ]
+        then
+                echo "clean_unit_tests FAIL "
+                echo "`date` clean_unit_tests -j4 *********FAIL" >> $LOGDIR/mailMessage
+        	fail_num=`expr $fail_num + 1`
+                # Update number of test failures
+                read failures < $LOGDIR/Test_Failures
+                total=`expr $failures + 1`
+		echo "$total" > $LOGDIR/Test_Failures
+                echo "New failure total is $total."
+                echo "" >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+                echo "The following is the 'tail' of the clean_unit_tests failure">> $LOGDIR/mailMessage
+
+                echo "" >> $LOGDIR/mailMessage
+                tail  -50 tmp >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+	
+		# Set test status as yellow, if it is not red
+                if !(grep "red" $LOGDIR/Test_Status)
+                then
+                	echo "Test_results:yellow" > $LOGDIR/Test_Status
+                        echo "Set Test Status to yellow."
+                fi
+
+
+                if [ $OPT != g ]
+                then
+                        cat tmp > $LOGDIR/build_O_`date +%d``uname -n`clean_unit_tests_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                else
+                        cat tmp > $LOGDIR/build_g_`date +%d``uname -n`clean_unit_tests_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                fi # end of if [ $OPT != g ]
+
+        else
+                echo "clean_unit_tests PASS "
+                echo "`date` clean_unit_tests -j4 .........PASS" >> $LOGDIR/mailMessage
+        	pass_num=`expr $pass_num + 1`
+                if [[ $LOGTMP = "ALL" ]]
+                then
+                        if [ $OPT != g ]
+                        then
+                                cat tmp > $LOGDIR/build_O_`date +%d``uname -n`clean_unit_tests_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        else
+                                cat tmp > $LOGDIR/clean_g_`date +%d``uname -n`clean_unit_tests_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        fi #end of if [ $OPT != g ]
+                fi # end of if [[ $LOGTMP = "ALL" ]]
+
+        fi #end of if [ "$?" != "0" ] for gmake ESMF_BOPT=$OPT  clean_unit_tests 1> tmp 2>&1
+
+
+        if [[ $U_TESTS_TYPE = "UNI" ]]
+        then
+                gmake unit_tests_uni 1> tmp 2>&1
+        else
+                gmake unit_tests 1> tmp 2>&1
+
+        fi # end of if [[ $U_TESTS_TYPE = "UNI" ]]
+
+
+
+        if [ "$?" != "0" ]
+        then
+                if [[ $U_TESTS_TYPE = "UNI" ]]
+                then
+                        echo "unit_tests_uni FAIL "
+                        echo "`date` unit_tests_uni ***************FAIL" >> $LOGDIR/mailMessage
+        		fail_num=`expr $fail_num + 1`
+			# Update number of test failures
+                	read failures < $LOGDIR/Test_Failures
+                	total=`expr $failures + 1`
+			echo "$total" > $LOGDIR/Test_Failures
+                        echo "New failure total is $total."
+			
+                        # Set test status as yellow, if it is not red
+                        if !(grep "red" $LOGDIR/Test_Status)
+                        then
+                                echo "Test_results:yellow" > $LOGDIR/Test_Status
+                                echo "Set Test Status to yellow."
+                        fi
+
+                        echo "" >> $LOGDIR/mailMessage                        echo "" >> $LOGDIR/mailMessage
+                        echo "The following is the 'tail' of the unit_tests_uni failure">> $LOGDIR/mailMessage
+                else
+                        echo "unit_tests FAIL "
+                        echo "`date` unit_tests *******************FAIL" >> $LOGDIR/mailMessage
+        		fail_num=`expr $fail_num + 1`
+                	# Update number of test failures
+                	read failures < $LOGDIR/Test_Failures
+                	total=`expr $failures + 1`
+			echo "$total" > $LOGDIR/Test_Failures
+                        echo "New failure total is $total."
+			
+                        # Set test status as yellow, if it is not red
+                        if !(grep "red" $LOGDIR/Test_Status)
+                        then
+                                echo "Test_results:yellow" > $LOGDIR/Test_Status
+                                echo "Set Test Status to yellow."
+                        fi
+
+                        echo "" >> $LOGDIR/mailMessage
+                        echo "" >> $LOGDIR/mailMessage
+                        echo "The following is the 'tail' of the unit_tests failure">> $LOGDIR/mailMessage
+                fi # end of if [[ $U_TESTS_TYPE = "UNI" ]]
+
+                echo "" >> $LOGDIR/mailMessage
+                tail  -50 tmp >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+
+
+                if [ $OPT != g ]
+                then
+                        cat tmp > $LOGDIR/build_O_`date +%d``uname -n`unit_tests_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                else
+                        cat tmp > $LOGDIR/build_g_`date +%d``uname -n`unit_tests_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                fi # end of if [ $OPT != g ]
+
+
+        else
+                if [[ $U_TESTS_TYPE = "UNI" ]]
+                then
+                        echo "unit_tests_uni PASS "
+                        echo "`date` unit_tests_uni ...............PASS" >> $LOGDIR/mailMessage
+        		pass_num=`expr $pass_num + 1`
+                else
+                        echo "test PASS "
+                        echo "`date` unit_tests ...................PASS" >> $LOGDIR/mailMessage
+        		pass_num=`expr $pass_num + 1`
+                fi # end of if [[ $U_TESTS_TYPE = "UNI" ]]
+                if [[ $LOGTMP = "ALL" ]]
+                then
+                        if [ $OPT != g ]
+                        then
+                                cat tmp > $LOGDIR/build_O_`date +%d``uname -n`unit_tests_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        else
+                                cat tmp > $LOGDIR/build_g_`date +%d``uname -n`unit_tests_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        fi #end of if [ $OPT != g ]
+                fi # end of if [[ $LOGTMP = "ALL" ]]
+
+
+        fi #end of if [ "$?" != "0" ] for gmake ESMF_BOPT=$OPT  unit_tests_uni 1> tmp 2>&1
+
+
+
+        gmake  -j4 dust_unit_tests 1> tmp 2>&1
+        if [ "$?" != "0" ]
+        then
+                echo "dust_unit_tests FAIL "
+                echo "`date` dust_unit_tests -j4 **********FAIL" >> $LOGDIR/mailMessage
+        	fail_num=`expr $fail_num + 1`
+                # Update number of test failures
+                read failures < $LOGDIR/Test_Failures
+                total=`expr $failures + 1`
+		echo "$total" > $LOGDIR/Test_Failures
+                echo "New failure total is $total."
+                echo "" >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+                echo "The following is the 'tail' of the dust_unit_tests failure">> $LOGDIR/mailMessage
+
+                echo "" >> $LOGDIR/mailMessage
+                tail  -50 tmp >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+
+                # Set test status as yellow, if it is not red
+                if !(grep "red" $LOGDIR/Test_Status)
+                then
+                	echo "Test_results:yellow" > $LOGDIR/Test_Status
+                	echo "Set Test Status to yellow."
+                fi
+
+
+                if [ $OPT != g ]
+                then
+                        cat tmp > $LOGDIR/build_O_`date +%d``uname -n`dust_unit_tests_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                else
+                        cat tmp > $LOGDIR/build_g_`date +%d``uname -n`dust_unit_tests_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                fi # end of if [ $OPT != g ]
+
+        else
+                echo "dust_unit_tests PASS "
+                echo "`date` dust_unit_tests -j4 ..........PASS" >> $LOGDIR/mailMessage
+        	pass_num=`expr $pass_num + 1`
+                if [[ $LOGTMP = "ALL" ]]
+                then
+                        if [ $OPT != g ]
+                        then
+                                cat tmp > $LOGDIR/build_O_`date +%d``uname -n`dust_unit_tests_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        else
+                                cat tmp > $LOGDIR/clean_g_`date +%d``uname -n`dust_unit_tests_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        fi #end of if [ $OPT != g ]
+                fi # end of if [[ $LOGTMP = "ALL" ]]
+
+        fi #end of if [ "$?" != "0" ] for gmake ESMF_BOPT=$OPT  dust_unit_tests 1> tmp 2>&1
+
+
+
+	echo "" >> $LOGDIR/mailMessage
+	echo "" >> $LOGDIR/mailMessage
+
+
+	export U_TESTS_TYPE=MULTI
+
+	if [[ $U_TESTS = "NON" ]]
+	then
+		echo "|--------------------NON_EXHAUSTIVE ALL TESTS -----------------|" >> $LOGDIR/mailMessage
+	else
+		echo "|--------------------- EXHAUSTIVE ALL TESTS -------------------|" >> $LOGDIR/mailMessage
+	fi # end of if [[ $U_TESTS = "NON" ]]
+	gmake  -j4 build_all_tests 1> tmp 2>&1
+	if [ "$?" != "0" ]
+        then
+        	echo "build_all_tests FAIL "
+		echo "`date` build_all_tests -j4 **********FAIL" >> $LOGDIR/mailMessage
+        	fail_num=`expr $fail_num + 1`
+                # Update number of test failures
+                read failures < $LOGDIR/Test_Failures
+                total=`expr $failures + 1`
+		echo "$total" > $LOGDIR/Test_Failures
+                echo "New failure total is $total."
+        	echo "" >> $LOGDIR/mailMessage
+        	echo "" >> $LOGDIR/mailMessage
+		
+                # Set test status as yellow, if it is not red
+                if !(grep "red" $LOGDIR/Test_Status)
+                then
+                	echo "Test_results:yellow" > $LOGDIR/Test_Status
+                	echo "Set Test Status to yellow."
+                fi
+
+        	echo "The following is the 'tail' of the build_all_tests failure">> $LOGDIR/mailMessage
+
+        	echo "" >> $LOGDIR/mailMessage
+        	tail  -50 tmp >> $LOGDIR/mailMessage
+        	echo "" >> $LOGDIR/mailMessage
+
+		if [ $OPT != g ]
+		then
+			cat tmp > $LOGDIR/build_O_`date +%d``uname -n`build_all_tests_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+		else
+			cat tmp > $LOGDIR/build_g_`date +%d``uname -n`build_all_tests_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+		fi # end of if [ $OPT != g ]
+
+	else
+		echo "build_all_tests PASS "
+		echo "`date` build_all_tests -j4 ..........PASS" >> $LOGDIR/mailMessage
+        	pass_num=`expr $pass_num + 1`
+                if [[ $LOGTMP = "ALL" ]]
+                then
+                        if [ $OPT != g ]
+                        then
+                                cat tmp > $LOGDIR/build_O_`date +%d``uname -n`build_all_tests_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        else
+                                cat tmp > $LOGDIR/build_g_`date +%d``uname -n`build_all_tests_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        fi #end of if [ $OPT != g ]
+                fi # end of if [[ $LOGTMP = "ALL" ]]
+
+	fi #end of if [ "$?" != "0" ] for gmake ESMF_BOPT=$OPT  build_all_tests 1> tmp 2>&1
+
+
+
+
+
+        gmake run_all_tests 1> tmp 2>&1
+
+
+	if [ "$?" != "0" ]
+       	then
+       		echo "run_all_tests FAIL "
+		echo "`date` run_all_tests ****************FAIL" >> $LOGDIR/mailMessage
+        	fail_num=`expr $fail_num + 1`
+                # Update number of test failures
+                read failures < $LOGDIR/Test_Failures
+                total=`expr $failures + 1`
+		echo "$total" > $LOGDIR/Test_Failures
+                echo "New failure total is $total."
+        	echo "" >> $LOGDIR/mailMessage
+        	echo "" >> $LOGDIR/mailMessage
+		
+                # Set test status as yellow, if it is not red
+                if !(grep "red" $LOGDIR/Test_Status)
+                then
+                	echo "Test_results:yellow" > $LOGDIR/Test_Status
+                	"Set Test Status to yellow."
+                fi
+
+        	echo "The following is the 'tail' of the run_all_tests failure">> $LOGDIR/mailMessage
+
+        	echo "" >> $LOGDIR/mailMessage
+        	tail  -50 tmp >> $LOGDIR/mailMessage
+        	echo "" >> $LOGDIR/mailMessage
+
+
+		if [ $OPT != g ]
+		then
+			cat tmp > $LOGDIR/build_O_`date +%d``uname -n`run_all_tests_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+		else
+			cat tmp > $LOGDIR/build_g_`date +%d``uname -n`run_all_tests_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+		fi # end of if [ $OPT != g ]
+
+	else
+       		echo "run_test PASS "
+		echo "`date` run_all_tests ................PASS" >> $LOGDIR/mailMessage
+        	pass_num=`expr $pass_num + 1`
+		if [[ $LOGTMP = "ALL" ]]
+                then
+                        if [ $OPT != g ]
+                        then
+                                cat tmp > $LOGDIR/build_O_`date +%d``uname -n`run_all_tests_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        else
+                                cat tmp > $LOGDIR/build_g_`date +%d``uname -n`run_all_tests_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        fi #end of if [ $OPT != g ]
+                fi # end of if [[ $LOGTMP = "ALL" ]]
+
+
+	fi #end of if [ "$?" != "0" ] for gmake ESMF_BOPT=$OPT  run_all_tests_uni 1> tmp 2>&1
+
+
+        gmake  -j4 clean_all_tests 1> tmp 2>&1
+        if [ "$?" != "0" ]
+        then
+                echo "clean_all_tests FAIL "
+                echo "`date` clean_all_tests -j4 **********FAIL" >> $LOGDIR/mailMessage
+        	fail_num=`expr $fail_num + 1`
+                # Update number of test failures
+                read failures < $LOGDIR/Test_Failures
+                total=`expr $failures + 1`
+		echo "$total" > $LOGDIR/Test_Failures
+                echo "New failure total is $total."
+
+                # Set test status as yellow, if it is not red
+                if !(grep "red" $LOGDIR/Test_Status)
+                then
+                	echo "Test_results:yellow" > $LOGDIR/Test_Status
+                	echo "Set Test Status to yellow."
+                fi
+
+                echo "" >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+                echo "The following is the 'tail' of the clean_all_tests failure">> $LOGDIR/mailMessage
+
+                echo "" >> $LOGDIR/mailMessage
+                tail  -50 tmp >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+
+                if [ $OPT != g ]
+                then
+                        cat tmp > $LOGDIR/build_O_`date +%d``uname -n`clean_all_tests_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                else
+                        cat tmp > $LOGDIR/build_g_`date +%d``uname -n`clean_all_tests_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                fi # end of if [ $OPT != g ]
+
+        else
+                echo "clean_all_tests PASS "
+                echo "`date` clean_all_tests -j4 ..........PASS" >> $LOGDIR/mailMessage
+        	pass_num=`expr $pass_num + 1`
+                if [[ $LOGTMP = "ALL" ]]
+                then
+                        if [ $OPT != g ]
+                        then
+                                cat tmp > $LOGDIR/build_O_`date +%d``uname -n`clean_all_tests_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        else
+                                cat tmp > $LOGDIR/clean_g_`date +%d``uname -n`clean_all_tests_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        fi #end of if [ $OPT != g ]
+                fi # end of if [[ $LOGTMP = "ALL" ]]
+
+        fi #end of if [ "$?" != "0" ] for gmake ESMF_BOPT=$OPT  clean_all_tests 1> tmp 2>&1
+
+	export U_TESTS_TYPE=UNI
+
+        gmake all_tests 1> tmp 2>&1
+
+
+        if [ "$?" != "0" ]
+        then
+                echo "all_tests FAIL "
+                echo "`date` all_tests ********************FAIL" >> $LOGDIR/mailMessage
+        	fail_num=`expr $fail_num + 1`
+                # Update number of test failures
+                read failures < $LOGDIR/Test_Failures
+                total=`expr $failures + 1`
+		echo "$total" > $LOGDIR/Test_Failures
+                echo "New failure total is $total."
+
+		# Set test status as yellow, if it is not red
+                if !(grep "red" $LOGDIR/Test_Status)
+                then
+                	echo "Test_results:yellow" > $LOGDIR/Test_Status
+                        echo "Set Test Status to yellow."
+                fi
+
+                echo "" >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+                echo "The following is the 'tail' of the all_tests failure">> $LOGDIR/mailMessage
+
+                echo "" >> $LOGDIR/mailMessage
+                tail  -50 tmp >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+
+
+                if [ $OPT != g ]
+                then
+                        cat tmp > $LOGDIR/build_O_`date +%d``uname -n`all_tests_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                else
+                        cat tmp > $LOGDIR/build_g_`date +%d``uname -n`all_tests_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                fi # end of if [ $OPT != g ]
+
+
+        else
+                echo "test PASS "
+                echo "`date` all_tests ....................PASS" >> $LOGDIR/mailMessage
+        	pass_num=`expr $pass_num + 1`
+		if [[ $LOGTMP = "ALL" ]]
+                then
+                        if [ $OPT != g ]
+                        then
+                                cat tmp > $LOGDIR/build_O_`date +%d``uname -n`all_tests_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        else
+                                cat tmp > $LOGDIR/build_g_`date +%d``uname -n`all_tests_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        fi #end of if [ $OPT != g ]
+                fi # end of if [[ $LOGTMP = "ALL" ]]
+
+
+        fi #end of if [ "$?" != "0" ] for gmake ESMF_BOPT=$OPT  all_tests_uni 1> tmp 2>&1
+
+
+
+        gmake  -j4 dust_all_tests 1> tmp 2>&1
+        if [ "$?" != "0" ]
+        then
+                echo "dust_all_tests FAIL "
+                echo "`date` dust_all_tests -j4 ***********FAIL" >> $LOGDIR/mailMessage
+        	fail_num=`expr $fail_num + 1`
+                # Update number of test failures
+                read failures < $LOGDIR/Test_Failures
+                total=`expr $failures + 1`
+		echo "$total" > $LOGDIR/Test_Failures
+                echo "New failure total is $total."
+		
+		# Set test status as yellow, if it is not red
+                if !(grep "red" $LOGDIR/Test_Status)
+                then
+                	echo "Test_results:yellow" > $LOGDIR/Test_Status
+               		echo "Set Test Status to yellow."
+                fi
+
+                echo "" >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+                echo "The following is the 'tail' of the dust_all_tests failure">> $LOGDIR/mailMessage
+
+                echo "" >> $LOGDIR/mailMessage
+                tail  -50 tmp >> $LOGDIR/mailMessage
+                echo "" >> $LOGDIR/mailMessage
+
+                if [ $OPT != g ]
+                then
+                        cat tmp > $LOGDIR/build_O_`date +%d``uname -n`dust_all_tests_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                else
+                        cat tmp > $LOGDIR/build_g_`date +%d``uname -n`dust_all_tests_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                fi # end of if [ $OPT != g ]
+
+        else
+                echo "dust_all_tests PASS "
+                echo "`date` dust_all_tests -j4 ...........PASS" >> $LOGDIR/mailMessage
+        	pass_num=`expr $pass_num + 1`
+                if [[ $LOGTMP = "ALL" ]]
+                then
+                        if [ $OPT != g ]
+                        then
+                                cat tmp > $LOGDIR/build_O_`date +%d``uname -n`dust_all_tests_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        else
+                                cat tmp > $LOGDIR/clean_g_`date +%d``uname -n`dust_all_tests_$ESMF_OS$ESMF_ABI$ESMF_COMPILER$ESMF_COMM
+                        fi #end of if [ $OPT != g ]
+                fi # end of if [[ $LOGTMP = "ALL" ]]
+
+        fi #end of if [ "$?" != "0" ] for gmake ESMF_BOPT=$OPT  dust_all_tests 1> tmp 2>&1
+
+
+
+
+	echo "" >> $LOGDIR/mailMessage
+	echo "" >> $LOGDIR/mailMessage
+                
+
+
+
+fi #end of if [ "$?" != "0" ] for gmake ESMF_BOPT=$OPT  1> tmp 2>&1
+
+# Make name as short as possible
+name=`uname -n | sed 's/\..*//'`
+
+
+if [[ $test_results != 0 ]] 
+then  #The build failed
+	echo "**FAIL** $name($OPT) $ESMF_OS.$ESMF_COMPILER.$ESMF_COMM.$ESMF_ABI" >> $LOGDIR/summary
+else
+        if [[ $install_results != 0 ]] 
+        then  #The install failed
+                echo "PASS FAIL $name($OPT) $ESMF_OS.$ESMF_COMPILER.$ESMF_COMM.$ESMF_ABI $pass_num/$fail_num" >> $LOGDIR/summary
+        else
+                echo "PASS PASS $name($OPT) $ESMF_OS.$ESMF_COMPILER.$ESMF_COMM.$ESMF_ABI $pass_num/$fail_num" >> $LOGDIR/summary
+        fi
+fi #end of if [$test_results != 0]
+
+
+
+echo "" >> $LOGDIR/mailMessage
+
+
+# keep expect happy
+echo "test_esmf has finished"
+
