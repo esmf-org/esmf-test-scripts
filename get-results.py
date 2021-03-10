@@ -43,23 +43,25 @@ def copy_artifacts(build_dir,artifacts_root,machine_name,mpiversion,oe_filelist,
   else:
     outpath = "{}/{}/{}/{}/{}/{}/{}".format(artifacts_root,branch,machine_name,compiler,version,build_type,mpiflavor)
   #copy/rename the stdout/stderr files to artifacts out directory
-  build_stage = False
+  test_stage = False
+  for cfile in oe_filelist:
+    if((cfile.find('test_{}'.format(jobid)) != -1)): # this is just the build job, so no test artifacts yet
+      test_stage = True
+  if(not test_stage):
+    #remove old files in out directory
+    print('just the build stage, so remove old files')
+    cmd = 'mkdir -p {}/out; rm {}/out/*'.format(outpath,outpath)
+    os.system(cmd)
 # print("oe filelist is {}".format(oe_filelist))
   if(oe_filelist == []):
     return
   for cfile in oe_filelist:
     nfile = os.path.basename(re.sub('_{}'.format(jobid), '', cfile))
-#   print("nfile is {}, and find says {} and {}".format(nfile,nfile.find('build-'),nfile.find('.bat')))
-    if((nfile.find('build-') != -1) and (nfile.find('.bat') == -1)): # this is just the build job, so no test artifacts yet
-      build_stage = True
-      #remove old files in out directory
-      cmd = 'mkdir -p {}/out; rm {}/out/*'.format(outpath,outpath)
-      os.system(cmd)
+#   print("cfile is {}, and find says {} ".format(cfile,cfile.find('test_{}'.format(jobid))))
     cp_cmd = 'cp {} {}/out/{}'.format(cfile,outpath,nfile)
     print("cp command is {}".format(cp_cmd))
     os.system(cp_cmd)
-  if(build_stage):
-    print('just the build stage')
+  if(not (test_stage)):
     git_cmd = "cd {};git pull -X theirs --no-edit origin main;git add {}/{};git commit -a -m\'update for build {} on {} [ci skip]\';git push origin main".format(artifacts_root,branch,machine_name,build_basename,machine_name)
     os.system(git_cmd)
     # pull and push again to make sure it gets updated
