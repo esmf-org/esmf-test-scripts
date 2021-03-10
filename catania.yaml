@@ -23,12 +23,12 @@ gfortran:
          netcdf: gnu/9.3.0/netcdf-c/4.7.4
          netcdf-fortran: gnu/9.3.0/netcdf-fortran/4.5.3
          mpi:
-            openmpi: 
-              module: gnu/9.3.0/openmpi/4.1.0
+           openmpi: 
+             module: gnu/9.3.0/openmpi/4.1.0
            mpich3: 
              module: gnu/9.3.0/mpich3/3.3.2
            mpiuni: 
-            module: None
+             module: None
        10.2.0: 
          extra_env_vars: 
            var1: ESMF_F90COMPILEOPTS="-fallow-argument-mismatch -fallow-invalid-boz"
