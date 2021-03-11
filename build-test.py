@@ -80,7 +80,6 @@ def main(argv):
       for comp in machine_list['compiler']:
   
        for ver in machine_list[comp]['versions']:
-          print("HEY {}".format(machine_list[comp]['versions'][ver]['mpi']))
           mpidict = machine_list[comp]['versions'][ver]['mpi']
           mpitypes= mpidict.keys()
           print(machine_list[comp]['versions'][ver])
@@ -89,10 +88,8 @@ def main(argv):
             subdir="{}_{}_{}_{}".format(comp,ver,key,build_type)
             if(not(os.path.isdir(subdir))):
                if(https == True):
-#                cmdstring = "git clone -b ESMF_8_1_0_beta_snapshot_43 https://github.com/esmf-org/esmf {}".format(subdir)
                  cmdstring = "git clone -b {} https://github.com/esmf-org/esmf {}".format(branch,subdir)
                else:
-#                cmdstring = "git clone -b ESMF_8_1_0_beta_snapshot_43 git@github.com:esmf-org/esmf {}".format(subdir)
                  cmdstring = "git clone -b {} git@github.com:esmf-org/esmf {}".format(branch,subdir)
                status= subprocess.check_output(cmdstring,shell=True).strip().decode('utf-8')
             os.chdir(subdir)
@@ -212,7 +209,12 @@ def main(argv):
 
             cmdstring = "make install 2>&1|tee install_$JOBID.log \nmake all_tests 2>&1|tee test_$JOBID.log \n\n"
             ft.write(cmdstring)
-  
+
+            if(scheduler == "pbs"):
+              cmd_build = "./getres-build.sh\n"
+              cmd_test = "./getres-test.sh\n"
+              fb.write("{}\n".format(cmd_build))
+              ft.write("{}\n".format(cmd_test))
             fb.close()
             ft.close()
 
@@ -226,46 +228,55 @@ def main(argv):
               batch_build = "sbatch {}".format(filename)
               print(batch_build)
               jobnum= subprocess.check_output(batch_build,shell=True).strip().decode('utf-8').split()[3]
-              monitor_cmd = "python3 {}/get-results.py {} {} {} {} {} {} {} {}".format(mypath,jobnum,subdir,machine_name,scheduler,script_dir,artifacts_root,mpiver,branch)
-              print(monitor_cmd)
-              proc = subprocess.Popen(monitor_cmd, shell=True, stdin=None, stdout=None, stderr=None, close_fds=True)
+              monitor_cmd_build = "python3 {}/get-results.py {} {} {} {} {} {} {} {}".format(mypath,jobnum,subdir,machine_name,scheduler,script_dir,artifacts_root,mpiver,branch)
+              print(monitor_cmd_build)
+              proc = subprocess.Popen(monitor_cmd_build, shell=True, stdin=None, stdout=None, stderr=None, close_fds=True)
               # submit the second job to be dependent on the first
               batch_test = "sbatch --depend=afterok:{} {}".format(jobnum,t_filename)
               print("Submitting test_batch with command: {}".format(batch_test))
               jobnum= subprocess.check_output(batch_test,shell=True).strip().decode('utf-8').split()[3]
-              monitor_cmd = "python3 {}/get-results.py {} {} {} {} {} {} {} {}".format(mypath,jobnum,subdir,machine_name,scheduler,script_dir,artifacts_root,mpiver,branch)
-              print(monitor_cmd)
-              proc = subprocess.Popen(monitor_cmd, shell=True, stdin=None, stdout=None, stderr=None, close_fds=True)
+              monitor_cmd_test = "python3 {}/get-results.py {} {} {} {} {} {} {} {}".format(mypath,jobnum,subdir,machine_name,scheduler,script_dir,artifacts_root,mpiver,branch)
+              print(monitor_cmd_test)
+              proc = subprocess.Popen(monitor_cmd_test, shell=True, stdin=None, stdout=None, stderr=None, close_fds=True)
             elif(scheduler == "pbs"):
               batch_build = "qsub {}".format(filename)
               print(batch_build)
               jobnum= subprocess.check_output(batch_build,shell=True).strip().decode('utf-8').split(".")[0]
               print("Submitting batch_build with command: {}, jobnum is {}".format(batch_build,jobnum))
-              monitor_cmd = \
+              monitor_cmd_build = \
                    "python3 {}/get-results.py {} {} {} {} {} {} {} {}".format(mypath,jobnum,subdir,machine_name,scheduler,script_dir,artifacts_root,mpiver,branch)
-              print(monitor_cmd)
-              proc = subprocess.Popen(monitor_cmd, shell=True, stdin=None, stdout=None, stderr=None, close_fds=True)
+              print(monitor_cmd_build)
+              get_res_file = open("getres-build.sh", "w")
+              get_res_file.write("#!{} -l\n".format(bash))
+              get_res_file.write("{}\n".format(monitor_cmd_build))
+              get_res_file.close()
+
+#             proc = subprocess.Popen(monitor_cmd_build, shell=True, stdin=None, stdout=None, stderr=None, close_fds=True)
               # submit the second job to be dependent on the first
               batch_test = "qsub -W depend=afterok:{} {}".format(jobnum,t_filename)
               print("Submitting test_batch with command: {}".format(batch_test))
               jobnum= subprocess.check_output(batch_test,shell=True).strip().decode('utf-8').split(".")[0]
-              monitor_cmd = \
+              monitor_cmd_test = \
                    "python3 {}/get-results.py {} {} {} {} {} {} {} {}".format(mypath,jobnum,subdir,machine_name,scheduler,script_dir,artifacts_root,mpiver,branch)
-              print(monitor_cmd)
-              proc = subprocess.Popen(monitor_cmd, shell=True)
+              print(monitor_cmd_test)
+              get_res_file = open("getres-test.sh", "w")
+              get_res_file.write("#!{} -l\n".format(bash))
+              get_res_file.write("{}\n".format(monitor_cmd_test))
+              get_res_file.close()
+#             proc = subprocess.Popen(monitor_cmd_test, shell=True)
             elif(scheduler == "None"):
               os.system("chmod +x {}".format(filename))
               jobnum = 12345
               os.system("./{} {}".format(filename,jobnum))
-              monitor_cmd = \
+              monitor_cmd_build = \
                    "python3 {}/get-results.py {} {} {} {} {} {} {} {}".format(mypath,jobnum,subdir,machine_name,scheduler,script_dir,artifacts_root,mpiver,branch)
               jobnum = 12346
-              os.system("{}".format(monitor_cmd))
+              os.system("{}".format(monitor_cmd_build))
               os.system("chmod +x {}".format(t_filename))
               os.system("./{} {}".format(t_filename,jobnum))
-              monitor_cmd = \
+              monitor_cmd_test = \
                    "python3 {}/get-results.py {} {} {} {} {} {} {} {}".format(mypath,jobnum,subdir,machine_name,scheduler,script_dir,artifacts_root,mpiver,branch)
-              os.system("{}".format(monitor_cmd))
+              os.system("{}".format(monitor_cmd_test))
               
             os.chdir("..")
   
