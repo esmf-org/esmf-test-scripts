@@ -248,7 +248,7 @@ def main(argv):
               print(monitor_cmd_build)
               get_res_file = open("getres-build.sh", "w")
               get_res_file.write("#!{} -l\n".format(bash))
-              get_res_file.write("{} &\n".format(monitor_cmd_build))
+              get_res_file.write("{} >& /dev/null &\n".format(monitor_cmd_build))
               get_res_file.close() 
               os.system("chmod +x getres-build.sh")      
 
@@ -262,7 +262,7 @@ def main(argv):
               print(monitor_cmd_test)
               get_res_file = open("getres-test.sh", "w")
               get_res_file.write("#!{} -l\n".format(bash))
-              get_res_file.write("{} &\n".format(monitor_cmd_test))
+              get_res_file.write("{} >& /dev/null &\n".format(monitor_cmd_test))
               get_res_file.close()
               os.system("chmod +x getres-test.sh")      
 #             proc = subprocess.Popen(monitor_cmd_test, shell=True)
