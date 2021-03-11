@@ -213,8 +213,8 @@ def main(argv):
             if(scheduler == "pbs"):
               cmd_build = "./getres-build.sh\n"
               cmd_test = "./getres-test.sh\n"
-              fb.write("{}\n".format(cmd_build))
-              ft.write("{}\n".format(cmd_test))
+              fb.write("sh {}\n".format(cmd_build))
+              ft.write("sh {}\n".format(cmd_test))
             fb.close()
             ft.close()
 
