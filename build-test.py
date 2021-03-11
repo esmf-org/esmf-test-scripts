@@ -211,10 +211,10 @@ def main(argv):
             ft.write(cmdstring)
 
             if(scheduler == "pbs"):
-              cmd_build = "./getres-build.sh\n"
-              cmd_test = "./getres-test.sh\n"
-              fb.write("sh {}\n".format(cmd_build))
-              ft.write("sh {}\n".format(cmd_test))
+              cmd_build = "ssh {} {}/getres-build.sh\n".format(os.uname()[1],os.getcwd())
+              cmd_test = "ssh {} {}/getres-test.sh\n".format(os.uname()[1],os.getcwd())
+              fb.write("{}\n".format(cmd_build))
+              ft.write("{}\n".format(cmd_test))
             fb.close()
             ft.close()
 
@@ -249,7 +249,8 @@ def main(argv):
               get_res_file = open("getres-build.sh", "w")
               get_res_file.write("#!{} -l\n".format(bash))
               get_res_file.write("{}\n".format(monitor_cmd_build))
-              get_res_file.close()
+              get_res_file.close() 
+              os.system("chmod +x getres-build.sh")      
 
 #             proc = subprocess.Popen(monitor_cmd_build, shell=True, stdin=None, stdout=None, stderr=None, close_fds=True)
               # submit the second job to be dependent on the first
@@ -263,6 +264,7 @@ def main(argv):
               get_res_file.write("#!{} -l\n".format(bash))
               get_res_file.write("{}\n".format(monitor_cmd_test))
               get_res_file.close()
+              os.system("chmod +x getres-test.sh")      
 #             proc = subprocess.Popen(monitor_cmd_test, shell=True)
             elif(scheduler == "None"):
               os.system("chmod +x {}".format(filename))
