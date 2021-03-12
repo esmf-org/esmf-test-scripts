@@ -86,19 +86,20 @@ def main(argv):
           for key in mpitypes:
             
             subdir="{}_{}_{}_{}".format(comp,ver,key,build_type)
+            if(https == True):
+              cmdstring = "git clone -b {} https://github.com/esmf-org/esmf {}".format(branch,subdir)
+              nuopcclone = "git clone -b {} https://github.com/esmf-org/nuopc-app-prototypes".format(branch)
+            else:
+              cmdstring = "git clone -b {} git@github.com:esmf-org/esmf {}".format(branch,subdir)
+              nuopcclone = "git clone -b {} git@github.com:esmf-org/nuopc-app-prototypes".format(branch)
             if(not(os.path.isdir(subdir))):
-               if(https == True):
-                 cmdstring = "git clone -b {} https://github.com/esmf-org/esmf {}".format(branch,subdir)
-                 nuopcclone = "git clone -b {} https://github.com/esmf-org/nuopc-app-prototypes {}".format(branch,subdir)
-               else:
-                 cmdstring = "git clone -b {} git@github.com:esmf-org/esmf {}".format(branch,subdir)
-                 nuopcclone = "git clone -b {} git@github.com:esmf-org/nuopc-app-prototypes {}".format(branch,subdir)
-               status= subprocess.check_output(cmdstring,shell=True).strip().decode('utf-8')
+              status= subprocess.check_output(cmdstring,shell=True).strip().decode('utf-8')
             os.chdir(subdir)
             os.system("rm -rf *.e *.o *bat.e* *bat.o* *.log DEFAULTINSTALLDIR nuopc-app-prototypes")
             os.system("git remote update; git checkout {}".format(branch))
             os.system("git pull origin {}".format(branch))
-	    os.system(nuopcclone)
+            status= subprocess.check_output(nuopcclone,shell=True).strip().decode('utf-8')
+            print("status from nuopc clone command {} was {}".format(nuopcclone,status))
             filename = 'build-{}_{}_{}_{}.bat'.format(comp,ver,key,build_type)
             t_filename = 'test-{}_{}_{}_{}.bat'.format(comp,ver,key,build_type)
             fb = open(filename, "w")
@@ -213,8 +214,7 @@ def main(argv):
             cmdstring = "make install 2>&1|tee install_$JOBID.log \nmake all_tests 2>&1|tee test_$JOBID.log \n\n"
             ft.write(cmdstring)
 
-            esmfmkfile = subprocess.check_output("find $PWD/DEFAULTINSTALLDIR -iname esmf.mk",shell=True).strip().decode('utf-8')
-            cmdstring = "export ESMFMKFILE={}\ncd nuopc-app-prototypes\n./testProtos.sh 2>&1|tee ../nuopc_$JOBID.log \n\n".format(esmfmkfile)
+            cmdstring = "export ESMFMKFILE=`find $PWD/DEFAULTINSTALLDIR -iname esmf.mk`\ncd nuopc-app-prototypes\n./testProtos.sh 2>&1|tee ../nuopc_$JOBID.log \n\n"
             ft.write(cmdstring)
 
             if(scheduler == "pbs"):
