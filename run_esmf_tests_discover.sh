@@ -1,6 +1,6 @@
 #!/bin/bash -l
 
-module load python/GEOSpyD/Ana2019.10_py3.7 
+module load python/GEOSpyD/Ana2019.10_py3.7 git/2.30.0
 cd /discover/nobackup/mapotts1/esmf-test-scripts
 git remote update
 git pull -X theirs origin python --no-edit
