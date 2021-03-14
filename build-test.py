@@ -218,9 +218,13 @@ def main(argv):
             cmdstring = "export ESMFMKFILE=`find $PWD/DEFAULTINSTALLDIR -iname esmf.mk`\ncd nuopc-app-prototypes\n./testProtos.sh 2>&1|tee ../nuopc_$JOBID.log \n\n"
             ft.write(cmdstring)
 
+            if("headnodename" in machine_list):
+              headnodename = machine_list["headnodename"]
+            else:
+              headnodename = os.uname()[1]
             if(scheduler == "pbs"):
-              cmd_build = "ssh {} {}/getres-build.sh\n".format(os.uname()[1],os.getcwd())
-              cmd_test = "ssh {} {}/getres-test.sh\n".format(os.uname()[1],os.getcwd())
+              cmd_build = "ssh {} {}/getres-build.sh\n".format(headnodename,os.getcwd())
+              cmd_test = "ssh {} {}/getres-test.sh\n".format(headnodename,os.getcwd())
               fb.write("{}\n".format(cmd_build))
               ft.write("{}\n".format(cmd_test))
             fb.close()

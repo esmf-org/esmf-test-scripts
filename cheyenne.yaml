@@ -6,16 +6,17 @@ scheduler: pbs
 corespernode: 36
 compiler: [gfortran]
 branch: release/8.1.0
+headnodename: cheyenne6
 gfortran:
     versions: 
-#      7.4.0: 
-#        compiler: gnu/7.4.0
-#        netcdf: netcdf/4.7.3
-#        mpi:
-#          openmpi: 
-#            module: openmpi/4.0.3
-#        extra_env_vars: 
-#          var1: ESMF_F90COMPILER=mpif90
+       7.4.0: 
+         compiler: gnu/7.4.0
+         netcdf: netcdf/4.7.3
+         mpi:
+           openmpi: 
+             module: openmpi/4.0.3
+         extra_env_vars: 
+           var1: ESMF_F90COMPILER=mpif90
        9.1.0: 
          compiler: gnu/9.1.0
          netcdf: netcdf/4.7.3
