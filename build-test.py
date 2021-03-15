@@ -230,6 +230,7 @@ def main(argv):
               mpiver = "None"
             else:
               mpiver = mpiflavor['module'].split('/')[-1]
+
   
             if(scheduler == "slurm"):
               batch_build = "sbatch {}".format(filename)
@@ -253,12 +254,6 @@ def main(argv):
               monitor_cmd_build = \
                    "python3 {}/get-results.py {} {} {} {} {} {} {} {}".format(mypath,jobnum,subdir,machine_name,scheduler,script_dir,artifacts_root,mpiver,branch)
               print(monitor_cmd_build)
-              get_res_file = open("getres-build.sh", "w")
-              get_res_file.write("#!{} -l\n".format(bash))
-              get_res_file.write("{} >& /dev/null &\n".format(monitor_cmd_build))
-              get_res_file.close() 
-              os.system("chmod +x getres-build.sh")      
-
 #             proc = subprocess.Popen(monitor_cmd_build, shell=True, stdin=None, stdout=None, stderr=None, close_fds=True)
               # submit the second job to be dependent on the first
               batch_test = "qsub -W depend=afterok:{} {}".format(jobnum,t_filename)
@@ -267,11 +262,6 @@ def main(argv):
               monitor_cmd_test = \
                    "python3 {}/get-results.py {} {} {} {} {} {} {} {}".format(mypath,jobnum,subdir,machine_name,scheduler,script_dir,artifacts_root,mpiver,branch)
               print(monitor_cmd_test)
-              get_res_file = open("getres-test.sh", "w")
-              get_res_file.write("#!{} -l\n".format(bash))
-              get_res_file.write("{} >& /dev/null &\n".format(monitor_cmd_test))
-              get_res_file.close()
-              os.system("chmod +x getres-test.sh")      
 #             proc = subprocess.Popen(monitor_cmd_test, shell=True)
             elif(scheduler == "None"):
               os.system("chmod +x {}".format(filename))
@@ -286,6 +276,19 @@ def main(argv):
               monitor_cmd_test = \
                    "python3 {}/get-results.py {} {} {} {} {} {} {} {}".format(mypath,jobnum,subdir,machine_name,scheduler,script_dir,artifacts_root,mpiver,branch)
               os.system("{}".format(monitor_cmd_test))
+
+# write these out no matter what, so we can run them manually, if necessary
+            get_res_file = open("getres-build.sh", "w")
+            get_res_file.write("#!{} -l\n".format(bash))
+            get_res_file.write("{} >& /dev/null &\n".format(monitor_cmd_build))
+            get_res_file.close() 
+            os.system("chmod +x getres-build.sh")      
+
+            get_res_file = open("getres-test.sh", "w")
+            get_res_file.write("#!{} -l\n".format(bash))
+            get_res_file.write("{} >& /dev/null &\n".format(monitor_cmd_test))
+            get_res_file.close()
+            os.system("chmod +x getres-test.sh")      
               
             os.chdir("..")
   
