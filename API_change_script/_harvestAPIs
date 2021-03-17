@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+set -Eeuxo pipefail
 
 ###############################################################################
 #
@@ -8,66 +9,62 @@
 #
 ###############################################################################
 
-# usage: sh _harvestAPIs <dir_of_esmf_with_final_backslash> <tag_of_baseline> <tag_of_new_release>
-
-# parse the input arguments
 # set up directories and build variables
 HERE=$PWD
+
+if [[ -z ${ESMF_DIR+x} ]]; then
+    echo "ERROR: ESMF_DIR is not defined"
+    exit -1
+fi
+if [[ -z ${TAG1+x} ]]; then
+    echo "ERROR: TAG1 is not defined"
+    exit -1
+fi
+if [[ -z ${TAG2+x} ]]; then
+    echo "ERROR: TAG2 is not defined"
+    exit -1
+fi
+
+if [ ! -d ${ESMF_DIR} ] 
+then
+    echo "ESMF_DIR does not exist: $ESMF_DIR"
+    exit -1
+fi
+
 export ESMF_DIR=$ESMF_DIR
 export TAG1=$TAG1
-export Branch_Tag=$Branch_Tag
 export TAG2=$TAG2
-export name="`echo $TAG2 | sed 's#/#_#'`"
+
+export TAG1NAME="`echo $TAG1 | sed 's#/#_#'`"
+export TAG2NAME="`echo $TAG2 | sed 's#/#_#'`"
 
 # build the first tag and associated documentation
 cd $ESMF_DIR
 git fetch --all
 git fetch --all --tags
-git checkout tags/$TAG1 -b $Branch_Tag
-#git checkout tags/$TAG1
+git checkout $TAG1
 git branch -a
 make doc
 cd $HERE
 
-python -c 'print "starting harvestAPIsFromRefDoc on $TAG1"'
-
-# collect apis from the first tag
-python -c 'import harvestAPIsFromRefDoc as h; h.harvest_APIs("'$ESMF_DIR'", "APIs-'$TAG1'.out")'
-
-#dryrun
-python -c 'import harvestAPIsFromRefDoc as h; h.harvest_APIs("'$ESMF_DIR'", "'$TAG1'")'
-
-python -c 'print "finishing harvestAPIsFromRefDoc on $TAG1"'
+echo "START harvest APIs on $TAG1"
+python -c 'import harvestAPIsFromRefDoc as h; h.harvest_APIs("'$ESMF_DIR'", "APIs-'$TAG1NAME'.out")'
+echo "FINISH harvest APIs on $TAG1"
 
 # build the second tag and associated documentation
 cd $ESMF_DIR
-git fetch --all
-#git fetch --all --tags
 git checkout $TAG2
-#git checkout tags/$TAG2
 git branch -a
 make distclean
 make doc
 cd $HERE
 
-python -c 'print "starting harvestAPIsFromRefDoc on $TAG2"'
-
-# collect apis from the second tag
-python -c 'import harvestAPIsFromRefDoc as h; h.harvest_APIs("'$ESMF_DIR'", "APIs-'$name'.out")'
-
-#dryrun
-python -c 'import harvestAPIsFromRefDoc as h; h.harvest_APIs("'$ESMF_DIR'", "'$name'")'
-
-
-python -c 'print "finishing harvestAPIsFromRefDoc on $TAG2"'
+echo "START harvest APIs on $TAG2"
+python -c 'import harvestAPIsFromRefDoc as h; h.harvest_APIs("'$ESMF_DIR'", "APIs-'$TAG2NAME'.out")'
+echo "FINISH harvest APIs on $TAG2"
 
 cd $HERE
 
 # diff the apis from both tags and create a report
-diff 'APIs-'$TAG1'.out' 'APIs-'$name'.out' > 'diff-'$TAG1'-'$name'.out'
+diff 'APIs-'$TAG1NAME'.out' 'APIs-'$TAG2NAME'.out' > 'diff-'$TAG1NAME'-'$TAG2NAME'.out'
 
-cd $ESMF_DIR
-make distclean
-git checkout develop
-
-cd $HERE

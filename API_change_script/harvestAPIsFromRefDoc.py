@@ -8,7 +8,8 @@
 
 def gather_source_files(esmfdir):
     import os
-
+    import sys
+    
     DIR = '/doc/ESMF_refdoc'
     REFDOCDIR = esmfdir + DIR
 
