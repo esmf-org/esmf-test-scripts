@@ -6,6 +6,8 @@
 #
 ###############################################################################
 
+import sys
+
 def gather_source_files(esmfdir):
     import os
     import sys
@@ -83,4 +85,12 @@ def harvest_APIs(esmfdir, outputfile):
                 flag = True
 
     OUTFILE.close()
+
+
+if __name__ == "__main__":
+    if len(sys.argv) != 3:
+        print "USAGE: harvestAPIsFromRefDoc.py /path/to/esmf filename.out"
+    else:
+        harvest_APIs(sys.argv[1], sys.argv[2])
+        
 
