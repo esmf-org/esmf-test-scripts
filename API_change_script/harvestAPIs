@@ -44,7 +44,7 @@ git fetch --all
 git fetch --all --tags
 git checkout $TAG1
 git branch -a
-#make doc
+make doc
 cd $HERE
 
 echo "START harvest APIs on $TAG1"
@@ -55,8 +55,8 @@ echo "FINISH harvest APIs on $TAG1"
 cd $ESMF_DIR
 git checkout $TAG2
 git branch -a
-#make distclean
-#make doc
+make distclean
+make doc
 cd $HERE
 
 echo "START harvest APIs on $TAG2"
