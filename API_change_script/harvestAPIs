@@ -70,8 +70,10 @@ $LOCALDIR/harvestAPIsFromRefDoc.py $ESMF_DIR "APIs-$TAG2NAME.out"
 echo "FINISH harvest APIs on second tag: $TAG2"
 ls -la
 
-# diff the apis from both tags and create a report
+# diff returns error of 1 when there are differences, so we need set +e to ignore the error code
+set +e
 diff 'APIs-'$TAG1NAME'.out' 'APIs-'$TAG2NAME'.out' > 'diff-'$TAG1NAME'-'$TAG2NAME'.out'
+set -e
+
 ls -la
 
-exit 0
