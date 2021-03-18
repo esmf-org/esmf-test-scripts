@@ -46,11 +46,10 @@ rm -f "diff-$TAG1NAME-$TAG2NAME.out"
 
 # build the first tag and associated documentation
 cd $ESMF_DIR
-git fetch --all
 git fetch --all --tags
 git checkout $TAG1
 git branch -a
-#make doc
+make doc
 cd $HERE
 
 echo "START harvest APIs on first tag: $TAG1"
@@ -62,8 +61,8 @@ ls -la
 cd $ESMF_DIR
 git checkout $TAG2
 git branch -a
-#make distclean
-#make doc
+make distclean
+make doc
 cd $HERE
 
 echo "START harvest APIs on second tag: $TAG2"
