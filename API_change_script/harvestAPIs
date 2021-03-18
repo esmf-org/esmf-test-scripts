@@ -40,6 +40,10 @@ export TAG2=$TAG2
 export TAG1NAME="`echo $TAG1 | sed 's#/#_#'`"
 export TAG2NAME="`echo $TAG2 | sed 's#/#_#'`"
 
+rm -f "APIs-$TAG1NAME.out"
+rm -f "APIs-$TAG2NAME.out"
+rm -f "diff-$TAG1NAME-$TAG2NAME.out"
+
 # build the first tag and associated documentation
 cd $ESMF_DIR
 git fetch --all
@@ -52,6 +56,7 @@ cd $HERE
 echo "START harvest APIs on first tag: $TAG1"
 $LOCALDIR/harvestAPIsFromRefDoc.py $ESMF_DIR "APIs-$TAG1NAME.out"
 echo "FINISH harvest APIs on first tag: $TAG1"
+ls -la
 
 # build the second tag and associated documentation
 cd $ESMF_DIR
@@ -64,10 +69,10 @@ cd $HERE
 echo "START harvest APIs on second tag: $TAG2"
 $LOCALDIR/harvestAPIsFromRefDoc.py $ESMF_DIR "APIs-$TAG2NAME.out"
 echo "FINISH harvest APIs on second tag: $TAG2"
-
-cd $HERE
+ls -la
 
 # diff the apis from both tags and create a report
 diff 'APIs-'$TAG1NAME'.out' 'APIs-'$TAG2NAME'.out' > 'diff-'$TAG1NAME'-'$TAG2NAME'.out'
+ls -la
 
-#exit 0
+exit 0

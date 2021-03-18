@@ -52,6 +52,8 @@ def harvest_APIs_dryrun(esmfdir, tag):
 def harvest_APIs(esmfdir, outputfile):
     import re
 
+    print "\t HARVESTING APIs in DIR: " + esmfdir
+    
     OUTFILE = open(outputfile, "w")
 
     START = 'INTERFACE'
@@ -66,6 +68,8 @@ def harvest_APIs(esmfdir, outputfile):
         flag = False
         file = open(f)
 
+        print "\t--> " + f
+        
         for line in file:
             # this is END for no arguments
             #if any(enditer in line for enditer in END):
