@@ -69,8 +69,12 @@ def main(argv):
       branch = machine_list['branch']
     else: 
       branch = "develop"
-
+    if("nuopcbranch" in machine_list):
+      nuopcbranch = machine_list['nuopcbranch']
+    else: 
+      nuopcbranch = branch
     build_types = ['O','g']
+#   build_types = ['O']
     script_dir=os.getcwd()
     if("cluster" in machine_list):
       cluster=machine_list['cluster']
@@ -88,10 +92,11 @@ def main(argv):
             subdir="{}_{}_{}_{}".format(comp,ver,key,build_type)
             if(https == True):
               cmdstring = "git clone -b {} https://github.com/esmf-org/esmf {}".format(branch,subdir)
-              nuopcclone = "git clone -b {} https://github.com/esmf-org/nuopc-app-prototypes".format(branch)
+              nuopcclone = "git clone -b {} https://github.com/esmf-org/nuopc-app-prototypes".format(nuopcbranch)
             else:
               cmdstring = "git clone -b {} git@github.com:esmf-org/esmf {}".format(branch,subdir)
-              nuopcclone = "git clone -b {} git@github.com:esmf-org/nuopc-app-prototypes".format(branch)
+              nuopcclone = "git clone -b {} git@github.com:esmf-org/nuopc-app-prototypes".format(nuopcbranch)
+            os.system("rm -rf {}".format(subdir))
             if(not(os.path.isdir(subdir))):
               status= subprocess.check_output(cmdstring,shell=True).strip().decode('utf-8')
             os.chdir(subdir)
@@ -217,9 +222,13 @@ def main(argv):
             cmdstring = "export ESMFMKFILE=`find $PWD/DEFAULTINSTALLDIR -iname esmf.mk`\ncd nuopc-app-prototypes\n./testProtos.sh 2>&1|tee ../nuopc_$JOBID.log \n\n"
             ft.write(cmdstring)
 
+            if("headnodename" in machine_list):
+              headnodename = machine_list["headnodename"]
+            else:
+              headnodename = os.uname()[1]
             if(scheduler == "pbs"):
-              cmd_build = "ssh {} {}/getres-build.sh\n".format(os.uname()[1],os.getcwd())
-              cmd_test = "ssh {} {}/getres-test.sh\n".format(os.uname()[1],os.getcwd())
+              cmd_build = "ssh {} {}/getres-build.sh\n".format(headnodename,os.getcwd())
+              cmd_test = "ssh {} {}/getres-test.sh\n".format(headnodename,os.getcwd())
               fb.write("{}\n".format(cmd_build))
               ft.write("{}\n".format(cmd_test))
             fb.close()
@@ -230,6 +239,7 @@ def main(argv):
               mpiver = "None"
             else:
               mpiver = mpiflavor['module'].split('/')[-1]
+
   
             if(scheduler == "slurm"):
               batch_build = "sbatch {}".format(filename)
@@ -253,12 +263,6 @@ def main(argv):
               monitor_cmd_build = \
                    "python3 {}/get-results.py {} {} {} {} {} {} {} {}".format(mypath,jobnum,subdir,machine_name,scheduler,script_dir,artifacts_root,mpiver,branch)
               print(monitor_cmd_build)
-              get_res_file = open("getres-build.sh", "w")
-              get_res_file.write("#!{} -l\n".format(bash))
-              get_res_file.write("{} >& /dev/null &\n".format(monitor_cmd_build))
-              get_res_file.close() 
-              os.system("chmod +x getres-build.sh")      
-
 #             proc = subprocess.Popen(monitor_cmd_build, shell=True, stdin=None, stdout=None, stderr=None, close_fds=True)
               # submit the second job to be dependent on the first
               batch_test = "qsub -W depend=afterok:{} {}".format(jobnum,t_filename)
@@ -267,11 +271,6 @@ def main(argv):
               monitor_cmd_test = \
                    "python3 {}/get-results.py {} {} {} {} {} {} {} {}".format(mypath,jobnum,subdir,machine_name,scheduler,script_dir,artifacts_root,mpiver,branch)
               print(monitor_cmd_test)
-              get_res_file = open("getres-test.sh", "w")
-              get_res_file.write("#!{} -l\n".format(bash))
-              get_res_file.write("{} >& /dev/null &\n".format(monitor_cmd_test))
-              get_res_file.close()
-              os.system("chmod +x getres-test.sh")      
 #             proc = subprocess.Popen(monitor_cmd_test, shell=True)
             elif(scheduler == "None"):
               os.system("chmod +x {}".format(filename))
@@ -286,6 +285,19 @@ def main(argv):
               monitor_cmd_test = \
                    "python3 {}/get-results.py {} {} {} {} {} {} {} {}".format(mypath,jobnum,subdir,machine_name,scheduler,script_dir,artifacts_root,mpiver,branch)
               os.system("{}".format(monitor_cmd_test))
+
+# write these out no matter what, so we can run them manually, if necessary
+            get_res_file = open("getres-build.sh", "w")
+            get_res_file.write("#!{} -l\n".format(bash))
+            get_res_file.write("{} >& /dev/null &\n".format(monitor_cmd_build))
+            get_res_file.close() 
+            os.system("chmod +x getres-build.sh")      
+
+            get_res_file = open("getres-test.sh", "w")
+            get_res_file.write("#!{} -l\n".format(bash))
+            get_res_file.write("{} >& /dev/null &\n".format(monitor_cmd_test))
+            get_res_file.close()
+            os.system("chmod +x getres-test.sh")      
               
             os.chdir("..")
   
