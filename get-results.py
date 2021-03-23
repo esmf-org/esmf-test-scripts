@@ -134,10 +134,10 @@ def copy_artifacts(build_dir,artifacts_root,machine_name,mpiversion,oe_filelist,
 
   print("trying git command from {}".format(artifacts_root))
   git_cmd = "cd {};git pull -X theirs --no-edit origin main;git add {}/{};git commit -a -m\'update for test {} on {} [ci skip]\';git push origin main".format(artifacts_root,branch,machine_name,build_basename,machine_name)
-# os.system(git_cmd)
+  os.system(git_cmd)
   # pull and push again to make sure it gets updated
   git_cmd = "cd {};git pull -X theirs --no-edit origin main;git push origin main".format(artifacts_root,branch,machine_name,build_basename,machine_name)
-# os.system(git_cmd)
+  os.system(git_cmd)
   return
 
 def main(argv):
