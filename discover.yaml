@@ -5,7 +5,7 @@ queue: allnccs
 partition: compute
 scheduler: slurm
 corespernode: 28
-compiler: [pgi,intel,gfortran]
+compiler: [intel,gfortran]
 #compiler: [pgi]
 branch: ESMF_8_1_0
 intel:
