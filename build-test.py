@@ -69,7 +69,10 @@ def main(argv):
       branch = machine_list['branch']
     else: 
       branch = "develop"
-
+    if("nuopcbranch" in machine_list):
+      nuopcbranch = machine_list['nuopcbranch']
+    else: 
+      nuopcbranch = branch
     build_types = ['O','g']
 #   build_types = ['O']
     script_dir=os.getcwd()
@@ -89,10 +92,10 @@ def main(argv):
             subdir="{}_{}_{}_{}".format(comp,ver,key,build_type)
             if(https == True):
               cmdstring = "git clone -b {} https://github.com/esmf-org/esmf {}".format(branch,subdir)
-              nuopcclone = "git clone -b {} https://github.com/esmf-org/nuopc-app-prototypes".format(branch)
+              nuopcclone = "git clone -b {} https://github.com/esmf-org/nuopc-app-prototypes".format(nuopcbranch)
             else:
               cmdstring = "git clone -b {} git@github.com:esmf-org/esmf {}".format(branch,subdir)
-              nuopcclone = "git clone -b {} git@github.com:esmf-org/nuopc-app-prototypes".format(branch)
+              nuopcclone = "git clone -b {} git@github.com:esmf-org/nuopc-app-prototypes".format(nuopcbranch)
             os.system("rm -rf {}".format(subdir))
             if(not(os.path.isdir(subdir))):
               status= subprocess.check_output(cmdstring,shell=True).strip().decode('utf-8')

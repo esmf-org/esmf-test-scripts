@@ -101,6 +101,7 @@ def copy_artifacts(build_dir,artifacts_root,machine_name,mpiversion,oe_filelist,
   cwd = os.getcwd()
   os.chdir(build_dir)
   build_hash = subprocess.check_output('git describe --tags',shell=True).strip().decode('utf-8')
+  make_info = subprocess.check_output('export ESMF_DIR=$PWD; cat module-build.log; make info',shell=True).strip().decode('utf-8')
   os.chdir(cwd)
   esmfmkfile = glob.glob('{}/lib/lib{}/*/esmf.mk'.format(build_dir,build_type))
   print("esmfmkfile is {}".format(esmfmkfile))
@@ -116,6 +117,8 @@ def copy_artifacts(build_dir,artifacts_root,machine_name,mpiversion,oe_filelist,
   summary_file.write('unit test results   \t{}\n'.format(unit_results))
   summary_file.write('system test results \t{}\n'.format(system_results))
   summary_file.write('example test results \t{}\n\n'.format(example_results))
+  summary_file.write('\n===================================================================\n')
+  summary_file.write('\n\n{}\n\n'.format(make_info))
   summary_file.write('\n===================================================================\n')
   summary_file.close()
 # return
