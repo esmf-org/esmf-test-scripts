@@ -6,7 +6,7 @@ scheduler: slurm
 corespernode: 40
 compiler: [intel,gfortran,pgi]
 #compiler: [gfortran]
-branch: release/8.1.0
+branch: ESMF_8_1_0
 intel:
      versions: 
        18.0.4: 
