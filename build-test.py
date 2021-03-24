@@ -216,7 +216,7 @@ def main(argv):
             cmdstring = "make -j {} clean 2>&1|tee clean_$JOBID.log \nmake -j {} 2>&1|tee build_$JOBID.log\n\n".format(cpn,cpn)
             fb.write(cmdstring)
 
-            cmdstring = "make install 2>&1|tee install_$JOBID.log \nmake all_tests 2>&1|tee test_$JOBID.log \n\n"
+            cmdstring = "make info 2>&1| tee info.log \nmake install 2>&1|tee install_$JOBID.log \nmake all_tests 2>&1|tee test_$JOBID.log \n\n"
             ft.write(cmdstring)
 
             cmdstring = "export ESMFMKFILE=`find $PWD/DEFAULTINSTALLDIR -iname esmf.mk`\ncd nuopc-app-prototypes\n./testProtos.sh 2>&1|tee ../nuopc_$JOBID.log \n\n"
