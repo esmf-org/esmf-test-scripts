@@ -6,8 +6,8 @@ cluster: c4
 scheduler: slurm
 corespernode: 24
 compiler: [gfortran,intel]
-branch: ESMF_8_1_0
-nuopcbranch: ESMF_8_1_0 
+branch: develop
+nuopcbranch: develop 
 intel:
      versions: 
        2019.5: 

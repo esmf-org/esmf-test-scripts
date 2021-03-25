@@ -5,7 +5,7 @@ partition: orion
 scheduler: slurm
 corespernode: 40
 compiler: [intel,gfortran]
-branch: ESMF_8_1_0
+branch: develop
 intel:
    versions:
      2020: 

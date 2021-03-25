@@ -2,7 +2,7 @@ machine: chianti
 scheduler: None
 corespernode: 8
 compiler: [gfortran]
-branch: ESMF_8_1_0
+branch: develop
 modulepath: /home/mpotts/spack/share/spack/modules/linux-linuxmint19-skylake 
 intel:
      versions: 

@@ -4,8 +4,8 @@ queue: regular
 partition: None
 scheduler: pbs
 corespernode: 36
-compiler: [gfortran]
-branch: ESMF_8_1_0
+compiler: [gfortran,intel]
+branch: develop
 headnodename: cheyenne6
 gfortran:
     versions: 
@@ -38,4 +38,16 @@ gfortran:
          extra_env_vars: 
            var1: ESMF_F90COMPILEOPTS="-fallow-argument-mismatch -fallow-invalid-boz"
            var2: ESMF_F90COMPILER=mpif90
+intel:
+     versions:
+       18.0.5:
+         compiler: intel/18.0.5
+         netcdf: netcdf/4.6.3
+         mpi:
+            mpt:
+             module: mpt/2.19
+            openmpi:
+             module: openmpi/3.1.4
+            intelmpi:
+             module: impi/2018.4.274
        

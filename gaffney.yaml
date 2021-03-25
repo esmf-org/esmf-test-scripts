@@ -4,7 +4,7 @@ queue: standard
 scheduler: pbs
 corespernode: 48
 compiler: [intel,gfortran]
-branch: ESMF_8_1_0
+branch: develop
 headnodename: gaffney06
 intel:
      versions: 
