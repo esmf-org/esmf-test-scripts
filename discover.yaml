@@ -5,7 +5,7 @@ queue: allnccs
 partition: compute
 scheduler: slurm
 corespernode: 28
-compiler: [intel,gfortran]
+compiler: [intel,gfortran,pgi]
 #compiler: [pgi]
 branch: develop
 intel:
@@ -53,7 +53,7 @@ pgi:
        compiler: comp/pgi/20.4
        netcdf: None
        mpi:
-           intelmpi: 
-             module: mpi/impi/20.0.0.166 
+#           intelmpi: 
+#             module: mpi/impi/20.0.0.166 
            mpiuni: 
              module: None
