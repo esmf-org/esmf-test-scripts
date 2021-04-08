@@ -100,7 +100,7 @@ def main(argv):
             else:
               cmdstring = "git clone -b {} git@github.com:esmf-org/esmf {}".format(branch,subdir)
               nuopcclone = "git clone -b {} git@github.com:esmf-org/nuopc-app-prototypes".format(nuopcbranch)
-#           os.system("rm -rf {}".format(subdir))
+            os.system("rm -rf {}".format(subdir))
             if(not(os.path.isdir(subdir))):
               status= subprocess.check_output(cmdstring,shell=True).strip().decode('utf-8')
             os.chdir(subdir)
