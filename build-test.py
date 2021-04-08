@@ -217,17 +217,19 @@ def main(argv):
             fb.write(cmdstring)
             ft.write(cmdstring)
 
-            cmdstring = "make -j {} clean 2>&1|tee clean_$JOBID.log \nmake -j {} 2>&1|tee build_$JOBID.log\n\n".format(cpn,cpn)
+            cmdstring = "make -j {} clean 2>&1| tee clean_$JOBID.log \nmake -j {} 2>&1| tee build_$JOBID.log\n\n".format(cpn,cpn)
             fb.write(cmdstring)
 
-            cmdstring = "make info 2>&1| tee info.log \nmake install 2>&1|tee install_$JOBID.log \nmake all_tests 2>&1|tee test_$JOBID.log \n\n"
+            cmdstring = "make info 2>&1| tee info.log \nmake install 2>&1| tee install_$JOBID.log \nmake all_tests 2>&1| tee test_$JOBID.log \n\n"
             ft.write(cmdstring)
 
-            cmdstring = "export ESMFMKFILE=`find $PWD/DEFAULTINSTALLDIR -iname esmf.mk`\ncd nuopc-app-prototypes\n./testProtos.sh 2>&1|tee ../nuopc_$JOBID.log \n\n"
+            cmdstring = "export ESMFMKFILE=`find $PWD/DEFAULTINSTALLDIR -iname esmf.mk`\ncd nuopc-app-prototypes\n./testProtos.sh 2>&1| tee ../nuopc_$JOBID.log \n\n"
             ft.write(cmdstring)
 
             if("pythontest" in mpiflavor):
                  print("HEY!!")
+                 cmdstring = "\ncd ../src/addon/ESMPy\n"
+                 ft.write(cmdstring)
                  cmdstring = "\nexport PATH=$PATH:$HOME/.local/bin\n".format(os.getcwd())
                  ft.write(cmdstring)
                  cmdstring = "ssh {} \"export PATH=$PATH:$HOME/.local/bin;module load python/3.6.8;cd $PWD; python3 setup.py test_examples_dryrun\"\n".format(headnodename)
@@ -236,11 +238,13 @@ def main(argv):
                  ft.write(cmdstring)
                  cmdstring = "ssh {} \"export PATH=$PATH:$HOME/.local/bin;module load python/3.6.8;cd $PWD; python3 setup.py test_regrid_from_file_dryrun\"\n".format(headnodename)
                  ft.write(cmdstring)
-                 cmdstring = "python3 setup.py test 2>&1 tee python_test.log\n".format(headnodename)
+                 cmdstring = "python3 setup.py build 2>&1 | tee python_build.log\n".format(headnodename)
                  ft.write(cmdstring)
-                 cmdstring = "python3 setup.py test_examples 2>&1 tee python_examples.log\n".format(headnodename)
+                 cmdstring = "python3 setup.py test 2>&1 | tee python_test.log\n".format(headnodename)
                  ft.write(cmdstring)
-                 cmdstring = "python3 setup.py test_regrid_from_file 2>&1 tee python_regrid.log\n".format(headnodename)
+                 cmdstring = "python3 setup.py test_examples 2>&1 | tee python_examples.log\n".format(headnodename)
+                 ft.write(cmdstring)
+                 cmdstring = "python3 setup.py test_regrid_from_file 2>&1 | tee python_regrid.log\n".format(headnodename)
                  ft.write(cmdstring)
 
             if(scheduler == "pbs"):
