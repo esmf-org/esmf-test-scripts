@@ -15,6 +15,7 @@ intel:
          mpi:
            intelmpi: 
              module: impi/2018.4.274
+             pythontest: True
            mpiuni: 
              module: None
 gfortran:
@@ -27,8 +28,10 @@ gfortran:
          mpi:
            intelmpi: 
              module: impi/2020
+             pythontest: True
            openmpi: 
              module: openmpi/3.1.4
+             pythontest: True
            mpiuni: 
              module: None
          extra_env_vars: 
