@@ -15,6 +15,7 @@ gfortran:
          mpi:
            openmpi: 
              module: openmpi/4.0.3
+             pythontest: True
          extra_env_vars: 
            var1: ESMF_F90COMPILER=mpif90
        9.1.0: 
@@ -48,6 +49,8 @@ intel:
              module: mpt/2.19
             openmpi:
              module: openmpi/3.1.4
+             pythontest: True
             intelmpi:
              module: impi/2018.4.274
+             pythontest: True
        

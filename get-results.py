@@ -95,6 +95,8 @@ def copy_artifacts(build_dir,artifacts_root,machine_name,mpiversion,oe_filelist,
   except:
     system_results="system tests did not complete"
 
+  python_artifacts = glob.glob('{}/src/addon/ESMPy/*.log'.format(build_dir))
+
   cwd = os.getcwd()
   os.chdir(build_dir)
   build_hash = subprocess.check_output('git describe --tags',shell=True).strip().decode('utf-8')
@@ -127,6 +129,9 @@ def copy_artifacts(build_dir,artifacts_root,machine_name,mpiversion,oe_filelist,
     os.system(cmd)
   for afile in esmfmkfile:
     cmd = 'cp {} {}/lib'.format(afile,outpath)
+    os.system(cmd)
+  for afile in python_artifacts:
+    cmd = 'cp {} {}'.format(afile,outpath)
     os.system(cmd)
 
   git_cmd = "cd {};git checkout {};git add {}/{};git commit -a -m\'update for build {} on {} [ci skip]\';git push origin {}".format(artifacts_root,machine_name,branch,machine_name,build_basename,machine_name,machine_name)

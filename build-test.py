@@ -63,6 +63,10 @@ def main(argv):
       queue = machine_list['queue']
     else: 
       queue = "None"
+    if("headnodename" in machine_list):
+      headnodename = machine_list["headnodename"]
+    else:
+      headnodename = os.uname()[1]
     cpn = machine_list['corespernode']
     scheduler = machine_list['scheduler']
     if("branch" in machine_list):
@@ -222,10 +226,23 @@ def main(argv):
             cmdstring = "export ESMFMKFILE=`find $PWD/DEFAULTINSTALLDIR -iname esmf.mk`\ncd nuopc-app-prototypes\n./testProtos.sh 2>&1|tee ../nuopc_$JOBID.log \n\n"
             ft.write(cmdstring)
 
-            if("headnodename" in machine_list):
-              headnodename = machine_list["headnodename"]
-            else:
-              headnodename = os.uname()[1]
+            if("pythontest" in mpiflavor):
+                 print("HEY!!")
+                 cmdstring = "\nexport PATH=$PATH:$HOME/.local/bin\n".format(os.getcwd())
+                 ft.write(cmdstring)
+                 cmdstring = "ssh {} \"export PATH=$PATH:$HOME/.local/bin;module load python/3.6.8;cd $PWD; python3 setup.py test_examples_dryrun\"\n".format(headnodename)
+                 ft.write(cmdstring)
+                 cmdstring = "ssh {} \"export PATH=$PATH:$HOME/.local/bin;module load python/3.6.8;cd $PWD; python3 setup.py test_regrid_from_file_dryrun\"\n".format(headnodename)
+                 ft.write(cmdstring)
+                 cmdstring = "ssh {} \"export PATH=$PATH:$HOME/.local/bin;module load python/3.6.8;cd $PWD; python3 setup.py test_regrid_from_file_dryrun\"\n".format(headnodename)
+                 ft.write(cmdstring)
+                 cmdstring = "python3 setup.py test 2>&1 tee python_test.log\n".format(headnodename)
+                 ft.write(cmdstring)
+                 cmdstring = "python3 setup.py test_examples 2>&1 tee python_examples.log\n".format(headnodename)
+                 ft.write(cmdstring)
+                 cmdstring = "python3 setup.py test_regrid_from_file 2>&1 tee python_regrid.log\n".format(headnodename)
+                 ft.write(cmdstring)
+
             if(scheduler == "pbs"):
               cmd_build = "ssh {} {}/getres-build.sh\n".format(headnodename,os.getcwd())
               cmd_test = "ssh {} {}/getres-test.sh\n".format(headnodename,os.getcwd())
