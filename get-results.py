@@ -62,12 +62,7 @@ def copy_artifacts(build_dir,artifacts_root,machine_name,mpiversion,oe_filelist,
     print("cp command is {}".format(cp_cmd))
     os.system(cp_cmd)
   if(not (test_stage)):
-    git_cmd = "cd {};git checkout {};git add {}/{};git commit -a -m\'update for build {} on {} [ci skip]\';git checkout main".format(artifacts_root,machine_name,branch,machine_name,build_basename,machine_name)
-    os.system(git_cmd)
-    git_cmd = "git remote update;git pull -X theirs origin main;git checkout {} {}/{};git commit -a -m\'update for build {} on {} [ci skip]\';git push origin main".format(machine_name,branch,machine_name,build_basename,machhine_name)
-    os.system(git_cmd)
-    # pull and push again to make sure it gets updated
-    git_cmd = "cd {};git pull -X theirs --no-edit origin main;git push origin main".format(artifacts_root,branch,machine_name,build_basename,machine_name)
+    git_cmd = "cd {};git checkout {};git add {}/{};git commit -a -m\'update for build {} on {} [ci skip]\';git push origin {}".format(artifacts_root,machine_name,branch,machine_name,build_basename,machine_name,machine_name)
     os.system(git_cmd)
     return
   #Make directories, if they aren't already there
@@ -134,12 +129,7 @@ def copy_artifacts(build_dir,artifacts_root,machine_name,mpiversion,oe_filelist,
     cmd = 'cp {} {}/lib'.format(afile,outpath)
     os.system(cmd)
 
-  git_cmd = "cd {};git checkout {};git add {}/{};git commit -a -m\'update for build {} on {} [ci skip]\';git checkout main".format(artifacts_root,machine_name,branch,machine_name,build_basename,machine_name)
-  os.system(git_cmd)
-  git_cmd = "git remote update;git pull -X theirs origin main;git checkout {} {}/{};git commit -a -m\'update for build {} on {} [ci skip]\';git push origin main".format(machine_name,branch,machine_name,build_basename,machhine_name)
-  os.system(git_cmd)
-  # pull and push again to make sure it gets updated
-  git_cmd = "cd {};git pull -X theirs --no-edit origin main;git push origin main".format(artifacts_root,branch,machine_name,build_basename,machine_name)
+  git_cmd = "cd {};git checkout {};git add {}/{};git commit -a -m\'update for build {} on {} [ci skip]\';git push origin {}".format(artifacts_root,machine_name,branch,machine_name,build_basename,machine_name,machine_name)
   os.system(git_cmd)
   return
 
