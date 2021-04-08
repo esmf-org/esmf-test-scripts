@@ -62,7 +62,7 @@ def copy_artifacts(build_dir,artifacts_root,machine_name,mpiversion,oe_filelist,
     print("cp command is {}".format(cp_cmd))
     os.system(cp_cmd)
   if(not (test_stage)):
-    git_cmd = "cd {};git checkout {};git add {}/{};git commit -a -m\'update for test {} on {} [ci skip]\';git push origin {}".format(artifacts_root,machine_name,branch,machine_name,build_basename,machine_name,machine_name)
+    git_cmd = "cd {};git checkout {};git add {}/{};git commit -a -m\'update for build {} on {} [ci skip]\';git push origin {}".format(artifacts_root,machine_name,branch,machine_name,build_basename,machine_name,machine_name)
     os.system(git_cmd)
     return
   #Make directories, if they aren't already there
@@ -134,7 +134,7 @@ def copy_artifacts(build_dir,artifacts_root,machine_name,mpiversion,oe_filelist,
     cmd = 'cp {} {}'.format(afile,outpath)
     os.system(cmd)
 
-  git_cmd = "cd {};git checkout {};git add {}/{};git commit -a -m\'update for build {} on {} [ci skip]\';git push origin {}".format(artifacts_root,machine_name,branch,machine_name,build_basename,machine_name,machine_name)
+  git_cmd = "cd {};git checkout {};git add {}/{};git commit -a -m\'update for test {} on {} [ci skip]\';git push origin {}".format(artifacts_root,machine_name,branch,machine_name,build_basename,machine_name,machine_name)
   os.system(git_cmd)
   return
 
