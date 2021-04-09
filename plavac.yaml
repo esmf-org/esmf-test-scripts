@@ -1,0 +1,37 @@
+machine: plavac
+bash: /usr/local/bin/bash
+scheduler: None
+corespernode: 4
+compiler: [gfortran]
+branch: develop
+gfortran:
+     versions: 
+       9.3.0: 
+         compiler: None
+         netcdf: None
+         mpi:
+           mpich3: 
+             module: 3.3.1  #this will populate the mpi version even if there is no actual module
+         extra_env_vars: 
+            var1: ESMF_NETCDF=/Users/mpotts/stack-mods-47/bin/nc-config
+            var2: ESMF_NFCONFIG=/Users/mpotts/stack-mods-47/bin/nf-config
+            var3: CC=/usr/local/bin/gcc-9
+            var4: CXX=/usr/local/bin/g++-9
+            var5: FC=/usr/local/bin/gfortran-9
+            var6: PATH=/Users/mpotts/stack-mods-47/bin:$PATH
+            var7: LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/Users/mpotts/stack-mods-47/lib
+            var8: LIBRARY_PATH=$LIBRARY_PATH:/Users/mpotts/stack-mods-47/lib
+            var9: MPICH_CC=$CC
+            var10: MPICH_CXX=$CXX
+            var11: NETCDF_ROOT=/Users/mpotts/stack-mods-47
+            var12: HDF5_ROOT=/Users/mpotts/stack-mods-47
+            var13: ESMF_CXXLINKPATHS="-L$HDF5_ROOT/lib $HDF5LDFLAGS -lz"
+            var14: ESMF_F90COMPILER=$FC
+            var15: ESMF_F90LINKER=mpif90
+            var16: ESMF_F90LINKPATHS="-L$HDF5_ROOT/lib $HDF5LDFLAGS -lz"
+            var17: ESMF_NETCDF=split
+            var18: ESMF_NETCDF_INCLUDE=$NETCDF_ROOT/include
+            var19: ESMF_NETCDF_LIBPATH=$NETCDF_ROOT/lib
+            var20: ESMF_NETCDF_LIBS="-lnetcdff -lnetcdf -lhdf5_hl -lhdf5 $HDF5ExtraLibs -lz"
+   
+

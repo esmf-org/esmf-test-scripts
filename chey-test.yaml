@@ -1,0 +1,20 @@
+machine: cheyenne
+account: p48503002
+queue: regular
+partition: None
+scheduler: slurm
+corespernode: 40
+git-https: True
+compiler: [gfortran]
+gfortran:
+     versions: 
+       9.1.0: 
+         compiler: gnu/9.1.0
+         netcdf: netcdf/4.7.3
+         mpi:
+           openmpi: 
+             module: openmpi/4.0.5
+           mpt: 
+             module: mpt/2.22
+     unloadmodule: "intel mpt"
+       

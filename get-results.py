@@ -43,26 +43,26 @@ def copy_artifacts(build_dir,artifacts_root,machine_name,mpiversion,oe_filelist,
   else:
     outpath = "{}/{}/{}/{}/{}/{}/{}".format(artifacts_root,branch,machine_name,compiler,version,build_type,mpiflavor)
   #copy/rename the stdout/stderr files to artifacts out directory
-  build_stage = False
-  print("oe filelist is {}".format(oe_filelist))
+  test_stage = False
+  for cfile in oe_filelist:
+    if((cfile.find('test_{}'.format(jobid)) != -1)): # this is just the build job, so no test artifacts yet
+      test_stage = True
+  if(not test_stage):
+    #remove old files in out directory
+    print('just the build stage, so remove old files')
+    cmd = 'mkdir -p {}/out; rm {}/out/*'.format(outpath,outpath)
+    os.system(cmd)
+# print("oe filelist is {}".format(oe_filelist))
   if(oe_filelist == []):
     return
   for cfile in oe_filelist:
     nfile = os.path.basename(re.sub('_{}'.format(jobid), '', cfile))
-    print("nfile is {}".format(nfile))
-    if(nfile.find("build") != -1): # this is just the build job, so no test artifacts yet
-      build_stage = True
-      #remove old files in out directory
-      cmd = 'mkdir -p {}/out; rm {}/out/*'.format(outpath,outpath)
-      os.system(cmd)
+#   print("cfile is {}, and find says {} ".format(cfile,cfile.find('test_{}'.format(jobid))))
     cp_cmd = 'cp {} {}/out/{}'.format(cfile,outpath,nfile)
+    print("cp command is {}".format(cp_cmd))
     os.system(cp_cmd)
-  if(build_stage):
-    print('just the build stage')
-    git_cmd = "cd {};git pull -X theirs --no-edit origin main;git add {}/{};git commit -a -m\'update for build {} on {} [ci skip]\';git push origin main".format(artifacts_root,branch,machine_name,build_basename,machine_name)
-    os.system(git_cmd)
-    # pull and push again to make sure it gets updated
-    git_cmd = "cd {};git pull -X theirs --no-edit origin main;git push origin main".format(artifacts_root,branch,machine_name,build_basename,machine_name)
+  if(not (test_stage)):
+    git_cmd = "cd {};git checkout {};git add {}/{};git commit -a -m\'update for build {} on {} [ci skip]\';git push origin {}".format(artifacts_root,machine_name,branch,machine_name,build_basename,machine_name,machine_name)
     os.system(git_cmd)
     return
   #Make directories, if they aren't already there
@@ -95,9 +95,12 @@ def copy_artifacts(build_dir,artifacts_root,machine_name,mpiversion,oe_filelist,
   except:
     system_results="system tests did not complete"
 
+  python_artifacts = glob.glob('{}/src/addon/ESMPy/*.log'.format(build_dir))
+
   cwd = os.getcwd()
   os.chdir(build_dir)
   build_hash = subprocess.check_output('git describe --tags',shell=True).strip().decode('utf-8')
+  make_info = subprocess.check_output('cat module-build.log; cat info.log',shell=True).strip().decode('utf-8')
   os.chdir(cwd)
   esmfmkfile = glob.glob('{}/lib/lib{}/*/esmf.mk'.format(build_dir,build_type))
   print("esmfmkfile is {}".format(esmfmkfile))
@@ -114,6 +117,8 @@ def copy_artifacts(build_dir,artifacts_root,machine_name,mpiversion,oe_filelist,
   summary_file.write('system test results \t{}\n'.format(system_results))
   summary_file.write('example test results \t{}\n\n'.format(example_results))
   summary_file.write('\n===================================================================\n')
+  summary_file.write('\n\n{}\n\n'.format(make_info))
+  summary_file.write('\n===================================================================\n')
   summary_file.close()
 # return
   for afile in example_artifacts:
@@ -125,12 +130,11 @@ def copy_artifacts(build_dir,artifacts_root,machine_name,mpiversion,oe_filelist,
   for afile in esmfmkfile:
     cmd = 'cp {} {}/lib'.format(afile,outpath)
     os.system(cmd)
+  for afile in python_artifacts:
+    cmd = 'cp {} {}'.format(afile,outpath)
+    os.system(cmd)
 
-  print("trying git command from {}".format(artifacts_root))
-  git_cmd = "cd {};git pull -X theirs --no-edit origin main;git add {}/{};git commit -a -m\'update for test {} on {} [ci skip]\';git push origin main".format(artifacts_root,branch,machine_name,build_basename,machine_name)
-  os.system(git_cmd)
-  # pull and push again to make sure it gets updated
-  git_cmd = "cd {};git pull -X theirs --no-edit origin main;git push origin main".format(artifacts_root,branch,machine_name,build_basename,machine_name)
+  git_cmd = "cd {};git checkout {};git add {}/{};git commit -a -m\'update for test {} on {} [ci skip]\';git push origin {}".format(artifacts_root,machine_name,branch,machine_name,build_basename,machine_name,machine_name)
   os.system(git_cmd)
   return
 
@@ -154,8 +158,9 @@ def main(argv):
     if(job_done):
 #     oe_filelist = glob.glob('{}/{}/*{}*'.format(test_root_dir,build_basename,jobid))
       oe_filelist = glob.glob('{}/{}/*_{}*.log'.format(test_root_dir,build_basename,jobid))
-      oe_filelist.extend(glob.glob('{}/{}/*_{}*.bat'.format(test_root_dir,build_basename,jobid)))
-      print("looking in {}/{}/*_{}*.log".format(test_root_dir,build_basename,jobid))
+      oe_filelist.extend(glob.glob('{}/{}/*.bat'.format(test_root_dir,build_basename)))
+      oe_filelist.extend(glob.glob('{}/{}/module-*.log'.format(test_root_dir,build_basename)))
+      print("oe list is {}\n".format(oe_filelist))
       copy_artifacts(build_dir,artifacts_root,machine_name,mpiver,oe_filelist,jobid,scheduler,branch)
       break
     time.sleep(30)
