@@ -2,7 +2,8 @@ machine: chianti
 scheduler: None
 corespernode: 8
 compiler: [gfortran]
-branch: develop
+branch: [patch/8.1.1,develop]
+nuopcbranch: develop
 modulepath: /home/mpotts/spack/share/spack/modules/linux-linuxmint19-skylake 
 intel:
      versions: 
@@ -29,3 +30,4 @@ gfortran:
          extra_env_vars: 
             var1: ESMF_NETCDF=nc-config
             var2: ESMF_NFCONFIG=nf-config
+     extramodule: python

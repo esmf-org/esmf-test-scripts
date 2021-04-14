@@ -1,5 +1,6 @@
 import yaml
 import os
+import re
 import time
 import subprocess
 import sys
@@ -69,16 +70,10 @@ def main(argv):
       headnodename = os.uname()[1]
     cpn = machine_list['corespernode']
     scheduler = machine_list['scheduler']
-    if("branch" in machine_list):
-      branch = machine_list['branch']
-    else: 
-      branch = "develop"
-    if("nuopcbranch" in machine_list):
-      nuopcbranch = machine_list['nuopcbranch']
-    else: 
-      nuopcbranch = branch
-    build_types = ['O','g']
-#   build_types = ['O']
+    if("branch" not in machine_list):
+      machine_list['branch'] = "develop"
+#   build_types = ['O','g']
+    build_types = ['O']
     script_dir=os.getcwd()
     if("cluster" in machine_list):
       cluster=machine_list['cluster']
@@ -92,8 +87,13 @@ def main(argv):
           mpitypes= mpidict.keys()
           print(machine_list[comp]['versions'][ver])
           for key in mpitypes:
-            
-            subdir="{}_{}_{}_{}".format(comp,ver,key,build_type)
+           for branch in machine_list['branch']:
+            if("nuopcbranch" in machine_list):
+              nuopcbranch = machine_list['nuopcbranch']
+            else: 
+              nuopcbranch = branch
+            subdir="{}_{}_{}_{}_{}".format(comp,ver,key,build_type,branch)
+            subdir = re.sub("/","_",subdir)
             if(https == True):
               cmdstring = "git clone -b {} https://github.com/esmf-org/esmf {}".format(branch,subdir)
               nuopcclone = "git clone -b {} https://github.com/esmf-org/nuopc-app-prototypes".format(nuopcbranch)
