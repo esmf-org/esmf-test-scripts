@@ -72,8 +72,8 @@ def main(argv):
     scheduler = machine_list['scheduler']
     if("branch" not in machine_list):
       machine_list['branch'] = "develop"
-#   build_types = ['O','g']
-    build_types = ['O']
+    build_types = ['O','g']
+#   build_types = ['O']
     script_dir=os.getcwd()
     if("cluster" in machine_list):
       cluster=machine_list['cluster']
