@@ -6,8 +6,8 @@ cluster: c4
 scheduler: slurm
 corespernode: 24
 compiler: [gfortran,intel]
-branch: develop
-nuopcbranch: develop 
+branch: [develop]
+nuopcbranch: [develop] 
 intel:
      versions: 
        2019.5: 
