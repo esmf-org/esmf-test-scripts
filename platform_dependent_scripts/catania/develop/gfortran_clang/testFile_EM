@@ -1,8 +1,0 @@
-TFORM	DIRECTORY			   		     HOSTNAME  		PREC SITE  COMPILER COMM UTEST_TYPE UTEST_RUN SYSTEST_RUN SYS_TEST_TYPE CO TAG
-1 mt  /project/esmf/himanshu/esmf_test/cronjobs/daily/gfortran_clang mt	64 default  gf  mpiuni  EX UNI UNI   THREADED  NON_MPMD
-2 mt  /project/esmf/himanshu/esmf_test/cronjobs/daily/gfortran_clang mt       64 default  gc  mpich3  EX MULTI MULTI  THREADED  NON_MPMD
-
-LOG_DIR1    /project/esmf/himanshu/esmf_test/cronjobs/daily/gfortran_clang/esmf_logs ERROR
-email_title ESMF_Trunk_Catania_gfortran_clang_Test
-email_to   himanshu@ucar.edu
-

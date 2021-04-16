@@ -1,7 +1,0 @@
-TFORM	DIRECTORY			   		     HOSTNAME  		PREC SITE  COMPILER COMM UTEST_TYPE UTEST_RUN SYSTEST_RUN SYS_TEST_TYPE CO TAG
-1 cheyenne  /project/esmf/bighorn_8.1.0/nuopc  bh	64 default  gfortran  mpich3  EX MULTI MULTI   NON_THREADED  NON_MPMD  
-
-LOG_DIR1   /project/esmf/bighorn_8.1.0/nuopc/esmf_logs ERROR
-email_title Release_8.1.0_NUOPC_Bighorn_gfortran_Test
-email_to   himanshu@ucar.edu
-

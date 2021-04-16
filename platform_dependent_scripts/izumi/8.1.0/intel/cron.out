@@ -1,1298 +1,0 @@
-spawn /bin/bash -l
-
-svasquez@chadmin3:~/esmf_test/cronjobs/daily/intel_cheyenne> 
-svasquez@chadmin3:~/esmf_test/cronjobs/daily/intel_cheyenne> export homedir=/<st/cronjobs/daily/intel_cheyenne> export homedir=/g                         lade/u/home/svasquez/esmf<eyenne> export homedir=/glade/u/home/svasquez/esmf_                         test/cronjobs/daily/intel<ade/u/home/svasquez/esmf_test/cronjobs/daily/intel_                         cheyenne 
-svasquez@chadmin3:~/esmf_test/cronjobs/daily/intel_cheyenne> cd /glade/u/home<st/cronjobs/daily/intel_cheyenne> cd /glade/u/home/                         svasquez/esmf_test/cronjo<eyenne> cd /glade/u/home/svasquez/esmf_test/cronjob                         s/daily/intel_cheyenne 
-svasquez@chadmin3:~/esmf_test/cronjobs/daily/intel_cheyenne> chk_out_scripts 
-If 'chk_out_scripts' is not a typo you can use command-not-found to lookup the package that contains it, like this:
-    cnf chk_out_scripts
-svasquez@chadmin3:~/esmf_test/cronjobs/daily/intel_cheyenne> cd /glade/work/s<st/cronjobs/daily/intel_cheyenne> cd /glade/work/sv                         asquez/scripts_dir/daily/<eyenne> cd /glade/work/svasquez/scripts_dir/daily/i                         ntel_cheyenne 
-svasquez@chadmin3:/glade/work/svasquez/scripts_dir/daily/intel_cheyenne> rm -<rk/svasquez/scripts_dir/daily/intel_cheyenne> rm -r                         f esmf 
-git clone https://github.com/esmf-org/esmf esmf 
-svasquez@chadmin3:/glade/work/svasquez/scripts_dir/daily/intel_cheyenne> git <rk/svasquez/scripts_dir/daily/intel_cheyenne> git c                         lone https://github.com/e<ily/intel_cheyenne> git clone https://github.com/es                         mf-org/esmf esmf 
-Cloning into 'esmf'...
-remote: Enumerating objects: 594, done.        
-remote: Counting objects:   0% (1/594)        remote: Counting objects:   1% (6/594)        remote: Counting objects:   2% (12/594)        remote: Counting objects:   3% (18/594)        remote: Counting objects:   4% (24/594)        remote: Counting objects:   5% (30/594)        remote: Counting objects:   6% (36/594)        remote: Counting objects:   7% (42/594)        remote: Counting objects:   8% (48/594)        remote: Counting objects:   9% (54/594)        remote: Counting objects:  10% (60/594)        remote: Counting objects:  11% (66/594)        remote: Counting objects:  12% (72/594)        remote: Counting objects:  13% (78/594)        remote: Counting objects:  14% (84/594)        remote: Counting objects:  15% (90/594)        remote: Counting objects:  16% (96/594)        remote: Counting objects:  17% (101/594)        remote: Counting objects:  18% (107/594)        remote: Counting objects:  19% (113/594)        remote: Counting objects:  20% (119/594)        remote: Counting objects:  21% (125/594)        remote: Counting objects:  22% (131/594)        remote: Counting objects:  23% (137/594)        remote: Counting objects:  24% (143/594)        remote: Counting objects:  25% (149/594)        remote: Counting objects:  26% (155/594)        remote: Counting objects:  27% (161/594)        remote: Counting objects:  28% (167/594)        remote: Counting objects:  29% (173/594)        remote: Counting objects:  30% (179/594)        remote: Counting objects:  31% (185/594)        remote: Counting objects:  32% (191/594)        remote: Counting objects:  33% (197/594)        remote: Counting objects:  34% (202/594)        remote: Counting objects:  35% (208/594)        remote: Counting objects:  36% (214/594)        remote: Counting objects:  37% (220/594)        remote: Counting objects:  38% (226/594)        remote: Counting objects:  39% (232/594)        remote: Counting objects:  40% (238/594)        remote: Counting objects:  41% (244/594)        remote: Counting objects:  42% (250/594)        remote: Counting objects:  43% (256/594)        remote: Counting objects:  44% (262/594)        remote: Counting objects:  45% (268/594)        remote: Counting objects:  46% (274/594)        remote: Counting objects:  47% (280/594)        remote: Counting objects:  48% (286/594)        remote: Counting objects:  49% (292/594)        remote: Counting objects:  50% (297/594)        remote: Counting objects:  51% (303/594)        remote: Counting objects:  52% (309/594)        remote: Counting objects:  53% (315/594)        remote: Counting objects:  54% (321/594)        remote: Counting objects:  55% (327/594)        remote: Counting objects:  56% (333/594)        remote: Counting objects:  57% (339/594)        remote: Counting objects:  58% (345/594)        remote: Counting objects:  59% (351/594)        remote: Counting objects:  60% (357/594)        remote: Counting objects:  61% (363/594)        remote: Counting objects:  62% (369/594)        remote: Counting objects:  63% (375/594)        remote: Counting objects:  64% (381/594)        remote: Counting objects:  65% (387/594)        remote: Counting objects:  66% (393/594)        remote: Counting objects:  67% (398/594)        remote: Counting objects:  68% (404/594)        remote: Counting objects:  69% (410/594)        remote: Counting objects:  70% (416/594)        remote: Counting objects:  71% (422/594)        remote: Counting objects:  72% (428/594)        remote: Counting objects:  73% (434/594)        remote: Counting objects:  74% (440/594)        remote: Counting objects:  75% (446/594)        remote: Counting objects:  76% (452/594)        remote: Counting objects:  77% (458/594)        remote: Counting objects:  78% (464/594)        remote: Counting objects:  79% (470/594)        remote: Counting objects:  80% (476/594)        remote: Counting objects:  81% (482/594)        remote: Counting objects:  82% (488/594)        remote: Counting objects:  83% (494/594)        remote: Counting objects:  84% (499/594)        remote: Counting objects:  85% (505/594)        remote: Counting objects:  86% (511/594)        remote: Counting objects:  87% (517/594)        remote: Counting objects:  88% (523/594)        remote: Counting objects:  89% (529/594)        remote: Counting objects:  90% (535/594)        remote: Counting objects:  91% (541/594)        remote: Counting objects:  92% (547/594)        remote: Counting objects:  93% (553/594)        remote: Counting objects:  94% (559/594)        remote: Counting objects:  95% (565/594)        remote: Counting objects:  96% (571/594)        remote: Counting objects:  97% (577/594)        remote: Counting objects:  98% (583/594)        remote: Counting objects:  99% (589/594)        remote: Counting objects: 100% (594/594)        remote: Counting objects: 100% (594/594), done.        
-remote: Compressing objects:   0% (1/363)        remote: Compressing objects:   1% (4/363)        remote: Compressing objects:   2% (8/363)        remote: Compressing objects:   3% (11/363)        remote: Compressing objects:   4% (15/363)        remote: Compressing objects:   5% (19/363)        remote: Compressing objects:   6% (22/363)        remote: Compressing objects:   7% (26/363)        remote: Compressing objects:   8% (30/363)        remote: Compressing objects:   9% (33/363)        remote: Compressing objects:  10% (37/363)        remote: Compressing objects:  11% (40/363)        remote: Compressing objects:  12% (44/363)        remote: Compressing objects:  13% (48/363)        remote: Compressing objects:  14% (51/363)        remote: Compressing objects:  15% (55/363)        remote: Compressing objects:  16% (59/363)        remote: Compressing objects:  17% (62/363)        remote: Compressing objects:  18% (66/363)        remote: Compressing objects:  19% (69/363)        remote: Compressing objects:  20% (73/363)        remote: Compressing objects:  21% (77/363)        remote: Compressing objects:  22% (80/363)        remote: Compressing objects:  23% (84/363)        remote: Compressing objects:  24% (88/363)        remote: Compressing objects:  25% (91/363)        remote: Compressing objects:  26% (95/363)        remote: Compressing objects:  27% (99/363)        remote: Compressing objects:  28% (102/363)        remote: Compressing objects:  29% (106/363)        remote: Compressing objects:  30% (109/363)        remote: Compressing objects:  31% (113/363)        remote: Compressing objects:  32% (117/363)        remote: Compressing objects:  33% (120/363)        remote: Compressing objects:  34% (124/363)        remote: Compressing objects:  35% (128/363)        remote: Compressing objects:  36% (131/363)        remote: Compressing objects:  37% (135/363)        remote: Compressing objects:  38% (138/363)        remote: Compressing objects:  39% (142/363)        remote: Compressing objects:  40% (146/363)        remote: Compressing objects:  41% (149/363)        remote: Compressing objects:  42% (153/363)        remote: Compressing objects:  43% (157/363)        remote: Compressing objects:  44% (160/363)        remote: Compressing objects:  45% (164/363)        remote: Compressing objects:  46% (167/363)        remote: Compressing objects:  47% (171/363)        remote: Compressing objects:  48% (175/363)        remote: Compressing objects:  49% (178/363)        remote: Compressing objects:  50% (182/363)        remote: Compressing objects:  51% (186/363)        remote: Compressing objects:  52% (189/363)        remote: Compressing objects:  53% (193/363)        remote: Compressing objects:  54% (197/363)        remote: Compressing objects:  55% (200/363)        remote: Compressing objects:  56% (204/363)        remote: Compressing objects:  57% (207/363)        remote: Compressing objects:  58% (211/363)        remote: Compressing objects:  59% (215/363)        remote: Compressing objects:  60% (218/363)        remote: Compressing objects:  61% (222/363)        remote: Compressing objects:  62% (226/363)        remote: Compressing objects:  63% (229/363)        remote: Compressing objects:  64% (233/363)        remote: Compressing objects:  65% (236/363)        remote: Compressing objects:  66% (240/363)        remote: Compressing objects:  67% (244/363)        remote: Compressing objects:  68% (247/363)        remote: Compressing objects:  69% (251/363)        remote: Compressing objects:  70% (255/363)        remote: Compressing objects:  71% (258/363)        remote: Compressing objects:  72% (262/363)        remote: Compressing objects:  73% (265/363)        remote: Compressing objects:  74% (269/363)        remote: Compressing objects:  75% (273/363)        remote: Compressing objects:  76% (276/363)        remote: Compressing objects:  77% (280/363)        remote: Compressing objects:  78% (284/363)        remote: Compressing objects:  79% (287/363)        remote: Compressing objects:  80% (291/363)        remote: Compressing objects:  81% (295/363)        remote: Compressing objects:  82% (298/363)        remote: Compressing objects:  83% (302/363)        remote: Compressing objects:  84% (305/363)        remote: Compressing objects:  85% (309/363)        remote: Compressing objects:  86% (313/363)        remote: Compressing objects:  87% (316/363)        remote: Compressing objects:  88% (320/363)        remote: Compressing objects:  89% (324/363)        remote: Compressing objects:  90% (327/363)        remote: Compressing objects:  91% (331/363)        remote: Compressing objects:  92% (334/363)        remote: Compressing objects:  93% (338/363)        remote: Compressing objects:  94% (342/363)        remote: Compressing objects:  95% (345/363)        remote: Compressing objects:  96% (349/363)        remote: Compressing objects:  97% (353/363)        remote: Compressing objects:  98% (356/363)        remote: Compressing objects:  99% (360/363)        remote: Compressing objects: 100% (363/363)        remote: Compressing objects: 100% (363/363), done.        
-Receiving objects:   0% (1/284890)   Receiving objects:   1% (2849/284890)   Receiving objects:   2% (5698/284890), 1.11 MiB | 2.17 MiB/s   Receiving objects:   3% (8547/284890), 1.11 MiB | 2.17 MiB/s   Receiving objects:   3% (10845/284890), 1.11 MiB | 2.17 MiB/s   Receiving objects:   4% (11396/284890), 2.23 MiB | 2.17 MiB/s   Receiving objects:   5% (14245/284890), 2.23 MiB | 2.17 MiB/s   Receiving objects:   6% (17094/284890), 3.33 MiB | 2.18 MiB/s   Receiving objects:   7% (19943/284890), 3.33 MiB | 2.18 MiB/s   Receiving objects:   7% (22610/284890), 3.33 MiB | 2.18 MiB/s   Receiving objects:   8% (22792/284890), 3.33 MiB | 2.18 MiB/s   Receiving objects:   9% (25641/284890), 4.39 MiB | 2.16 MiB/s   Receiving objects:  10% (28489/284890), 5.49 MiB | 2.15 MiB/s   Receiving objects:  10% (29205/284890), 5.49 MiB | 2.15 MiB/s   Receiving objects:  10% (29839/284890), 7.66 MiB | 2.15 MiB/s   Receiving objects:  11% (31338/284890), 9.83 MiB | 2.14 MiB/s   Receiving objects:  11% (31572/284890), 9.83 MiB | 2.14 MiB/s   Receiving objects:  11% (32449/284890), 11.96 MiB | 2.13 MiB/s   Receiving objects:  12% (34187/284890), 14.11 MiB | 2.12 MiB/s   Receiving objects:  12% (34589/284890), 14.11 MiB | 2.12 MiB/s   Receiving objects:  12% (35880/284890), 16.31 MiB | 2.13 MiB/s   Receiving objects:  12% (36493/284890), 18.43 MiB | 2.13 MiB/s   Receiving objects:  12% (36629/284890), 20.56 MiB | 2.13 MiB/s   Receiving objects:  12% (36721/284890), 22.68 MiB | 2.13 MiB/s   Receiving objects:  12% (36790/284890), 24.83 MiB | 2.12 MiB/s   Receiving objects:  12% (36904/284890), 26.97 MiB | 2.12 MiB/s   Receiving objects:  13% (37036/284890), 28.04 MiB | 2.12 MiB/s   Receiving objects:  14% (39885/284890), 29.10 MiB | 2.11 MiB/s   Receiving objects:  14% (40697/284890), 29.10 MiB | 2.11 MiB/s   Receiving objects:  15% (42734/284890), 30.16 MiB | 2.12 MiB/s   Receiving objects:  16% (45583/284890), 30.16 MiB | 2.12 MiB/s   Receiving objects:  16% (47603/284890), 31.22 MiB | 2.12 MiB/s   Receiving objects:  17% (48432/284890), 31.22 MiB | 2.12 MiB/s   Receiving objects:  18% (51281/284890), 32.30 MiB | 2.12 MiB/s   Receiving objects:  19% (54130/284890), 33.38 MiB | 2.12 MiB/s   Receiving objects:  20% (56978/284890), 33.38 MiB | 2.12 MiB/s   Receiving objects:  20% (58913/284890), 33.38 MiB | 2.12 MiB/s   Receiving objects:  21% (59827/284890), 33.38 MiB | 2.12 MiB/s   Receiving objects:  22% (62676/284890), 33.38 MiB | 2.12 MiB/s   Receiving objects:  23% (65525/284890), 34.45 MiB | 2.12 MiB/s   Receiving objects:  24% (68374/284890), 34.45 MiB | 2.12 MiB/s   Receiving objects:  25% (71223/284890), 34.45 MiB | 2.12 MiB/s   Receiving objects:  26% (74072/284890), 35.53 MiB | 2.12 MiB/s   Receiving objects:  27% (76921/284890), 35.53 MiB | 2.12 MiB/s   Receiving objects:  28% (79770/284890), 35.53 MiB | 2.12 MiB/s   Receiving objects:  29% (82619/284890), 36.59 MiB | 2.12 MiB/s   Receiving objects:  30% (85467/284890), 36.59 MiB | 2.12 MiB/s   Receiving objects:  31% (88316/284890), 37.64 MiB | 2.12 MiB/s   Receiving objects:  31% (91080/284890), 37.64 MiB | 2.12 MiB/s   Receiving objects:  32% (91165/284890), 37.64 MiB | 2.12 MiB/s   Receiving objects:  33% (94014/284890), 38.73 MiB | 2.12 MiB/s   Receiving objects:  34% (96863/284890), 38.73 MiB | 2.12 MiB/s   Receiving objects:  34% (98347/284890), 39.75 MiB | 2.09 MiB/s   Receiving objects:  35% (99712/284890), 40.92 MiB | 2.12 MiB/s   Receiving objects:  36% (102561/284890), 40.92 MiB | 2.12 MiB/s   Receiving objects:  37% (105410/284890), 40.92 MiB | 2.12 MiB/s   Receiving objects:  38% (108259/284890), 41.98 MiB | 2.11 MiB/s   Receiving objects:  38% (108516/284890), 41.98 MiB | 2.11 MiB/s   Receiving objects:  39% (111108/284890), 43.06 MiB | 2.11 MiB/s   Receiving objects:  40% (113956/284890), 43.06 MiB | 2.11 MiB/s   Receiving objects:  41% (116805/284890), 43.06 MiB | 2.11 MiB/s   Receiving objects:  41% (119334/284890), 44.18 MiB | 2.11 MiB/s   Receiving objects:  42% (119654/284890), 44.18 MiB | 2.11 MiB/s   Receiving objects:  43% (122503/284890), 45.30 MiB | 2.12 MiB/s   Receiving objects:  44% (125352/284890), 45.30 MiB | 2.12 MiB/s   Receiving objects:  45% (128201/284890), 45.30 MiB | 2.12 MiB/s   Receiving objects:  45% (130959/284890), 46.39 MiB | 2.12 MiB/s   Receiving objects:  46% (131050/284890), 46.39 MiB | 2.12 MiB/s   Receiving objects:  47% (133899/284890), 46.39 MiB | 2.12 MiB/s   Receiving objects:  48% (136748/284890), 46.39 MiB | 2.12 MiB/s   Receiving objects:  49% (139597/284890), 47.47 MiB | 2.13 MiB/s   Receiving objects:  50% (142445/284890), 47.47 MiB | 2.13 MiB/s   Receiving objects:  50% (144721/284890), 48.55 MiB | 2.12 MiB/s   Receiving objects:  51% (145294/284890), 48.55 MiB | 2.12 MiB/s   Receiving objects:  52% (148143/284890), 48.55 MiB | 2.12 MiB/s   Receiving objects:  53% (150992/284890), 49.64 MiB | 2.14 MiB/s   Receiving objects:  54% (153841/284890), 49.64 MiB | 2.14 MiB/s   Receiving objects:  54% (156140/284890), 50.72 MiB | 2.12 MiB/s   Receiving objects:  55% (156690/284890), 50.72 MiB | 2.12 MiB/s   Receiving objects:  56% (159539/284890), 50.72 MiB | 2.12 MiB/s   Receiving objects:  57% (162388/284890), 51.80 MiB | 2.12 MiB/s   Receiving objects:  58% (165237/284890), 51.80 MiB | 2.12 MiB/s   Receiving objects:  58% (167978/284890), 52.93 MiB | 2.13 MiB/s   Receiving objects:  59% (168086/284890), 52.93 MiB | 2.13 MiB/s   Receiving objects:  60% (170934/284890), 54.04 MiB | 2.14 MiB/s   Receiving objects:  61% (173783/284890), 55.14 MiB | 2.14 MiB/s   Receiving objects:  61% (173888/284890), 55.14 MiB | 2.14 MiB/s   Receiving objects:  62% (176632/284890), 55.14 MiB | 2.14 MiB/s   Receiving objects:  63% (179481/284890), 55.14 MiB | 2.14 MiB/s   Receiving objects:  64% (182330/284890), 56.21 MiB | 2.14 MiB/s   Receiving objects:  65% (185179/284890), 56.21 MiB | 2.14 MiB/s   Receiving objects:  66% (188028/284890), 56.21 MiB | 2.14 MiB/s   Receiving objects:  66% (188716/284890), 57.27 MiB | 2.13 MiB/s   Receiving objects:  67% (190877/284890), 57.27 MiB | 2.13 MiB/s   Receiving objects:  68% (193726/284890), 57.27 MiB | 2.13 MiB/s   Receiving objects:  69% (196575/284890), 58.32 MiB | 2.14 MiB/s   Receiving objects:  70% (199423/284890), 58.32 MiB | 2.14 MiB/s   Receiving objects:  71% (202272/284890), 58.32 MiB | 2.14 MiB/s   Receiving objects:  71% (204539/284890), 59.40 MiB | 2.13 MiB/s   Receiving objects:  72% (205121/284890), 59.40 MiB | 2.13 MiB/s   Receiving objects:  73% (207970/284890), 59.40 MiB | 2.13 MiB/s   Receiving objects:  74% (210819/284890), 60.48 MiB | 2.14 MiB/s   Receiving objects:  75% (213668/284890), 60.48 MiB | 2.14 MiB/s   Receiving objects:  75% (214360/284890), 61.54 MiB | 2.14 MiB/s   Receiving objects:  75% (214685/284890), 63.68 MiB | 2.13 MiB/s   Receiving objects:  75% (214692/284890), 65.83 MiB | 2.12 MiB/s   Receiving objects:  75% (214694/284890), 67.99 MiB | 2.12 MiB/s   Receiving objects:  75% (214704/284890), 69.08 MiB | 2.12 MiB/s   Receiving objects:  75% (214713/284890), 72.30 MiB | 2.12 MiB/s   Receiving objects:  75% (214717/284890), 74.43 MiB | 2.12 MiB/s   Receiving objects:  75% (214720/284890), 76.56 MiB | 2.12 MiB/s   Receiving objects:  75% (214723/284890), 78.70 MiB | 2.12 MiB/s   Receiving objects:  75% (214724/284890), 80.84 MiB | 2.12 MiB/s   Receiving objects:  75% (214726/284890), 82.98 MiB | 2.12 MiB/s   Receiving objects:  75% (214726/284890), 85.11 MiB | 2.12 MiB/s   Receiving objects:  75% (214728/284890), 87.24 MiB | 2.12 MiB/s   Receiving objects:  75% (215402/284890), 89.38 MiB | 2.12 MiB/s   Receiving objects:  75% (215402/284890), 91.50 MiB | 2.11 MiB/s   Receiving objects:  75% (215404/284890), 92.55 MiB | 2.11 MiB/s   Receiving objects:  75% (215404/284890), 95.75 MiB | 2.11 MiB/s   Receiving objects:  75% (215470/284890), 96.81 MiB | 2.11 MiB/s   Receiving objects:  75% (215502/284890), 98.95 MiB | 2.11 MiB/s   Receiving objects:  75% (216009/284890), 101.09 MiB | 2.11 MiB/s   Receiving objects:  75% (216477/284890), 104.32 MiB | 2.12 MiB/s   Receiving objects:  75% (216480/284890), 105.39 MiB | 2.11 MiB/s   Receiving objects:  75% (216484/284890), 107.52 MiB | 2.12 MiB/s   Receiving objects:  76% (216517/284890), 108.60 MiB | 2.12 MiB/s   Receiving objects:  76% (217004/284890), 109.68 MiB | 2.12 MiB/s   Receiving objects:  76% (217481/284890), 111.82 MiB | 2.12 MiB/s   Receiving objects:  76% (217541/284890), 113.94 MiB | 2.11 MiB/s   Receiving objects:  76% (217757/284890), 116.07 MiB | 2.12 MiB/s   Receiving objects:  77% (219366/284890), 117.14 MiB | 2.12 MiB/s   Receiving objects:  77% (220627/284890), 118.20 MiB | 2.12 MiB/s   Receiving objects:  78% (222215/284890), 118.20 MiB | 2.12 MiB/s   Receiving objects:  79% (225064/284890), 119.26 MiB | 2.11 MiB/s   Receiving objects:  80% (227912/284890), 119.26 MiB | 2.11 MiB/s   Receiving objects:  81% (230761/284890), 119.26 MiB | 2.11 MiB/s   Receiving objects:  82% (233610/284890), 120.34 MiB | 2.11 MiB/s   Receiving objects:  82% (236347/284890), 120.34 MiB | 2.11 MiB/s   Receiving objects:  83% (236459/284890), 120.34 MiB | 2.11 MiB/s   Receiving objects:  84% (239308/284890), 120.34 MiB | 2.11 MiB/s   Receiving objects:  85% (242157/284890), 121.41 MiB | 2.11 MiB/s   Receiving objects:  86% (245006/284890), 121.41 MiB | 2.11 MiB/s   Receiving objects:  87% (247855/284890), 121.41 MiB | 2.11 MiB/s   Receiving objects:  88% (250704/284890), 122.48 MiB | 2.11 MiB/s   Receiving objects:  88% (252596/284890), 122.48 MiB | 2.11 MiB/s   Receiving objects:  89% (253553/284890), 122.48 MiB | 2.11 MiB/s   Receiving objects:  90% (256401/284890), 122.48 MiB | 2.11 MiB/s   Receiving objects:  91% (259250/284890), 123.54 MiB | 2.12 MiB/s   Receiving objects:  92% (262099/284890), 124.62 MiB | 2.11 MiB/s   Receiving objects:  92% (263706/284890), 124.62 MiB | 2.11 MiB/s   Receiving objects:  93% (264948/284890), 124.62 MiB | 2.11 MiB/s   Receiving objects:  94% (267797/284890), 124.62 MiB | 2.11 MiB/s   Receiving objects:  95% (270646/284890), 125.70 MiB | 2.12 MiB/s   Receiving objects:  96% (273495/284890), 125.70 MiB | 2.12 MiB/s   Receiving objects:  97% (276344/284890), 126.78 MiB | 2.12 MiB/s   Receiving objects:  97% (278164/284890), 126.78 MiB | 2.12 MiB/s   Receiving objects:  98% (279193/284890), 126.78 MiB | 2.12 MiB/s   Receiving objects:  99% (282042/284890), 126.78 MiB | 2.12 MiB/s   remote: Total 284890 (delta 386), reused 363 (delta 230), pack-reused 284296        
-Receiving objects: 100% (284890/284890), 127.84 MiB | 2.12 MiB/s   Receiving objects: 100% (284890/284890), 128.77 MiB | 2.12 MiB/s, done.
-Resolving deltas:   0% (0/222299)   Resolving deltas:   1% (2456/222299)   Resolving deltas:   2% (4498/222299)   Resolving deltas:   3% (6758/222299)   Resolving deltas:   4% (9244/222299)   Resolving deltas:   5% (11197/222299)   Resolving deltas:   6% (13548/222299)   Resolving deltas:   7% (15585/222299)   Resolving deltas:   8% (17790/222299)   Resolving deltas:   9% (20245/222299)   Resolving deltas:  10% (22587/222299)   Resolving deltas:  11% (24482/222299)   Resolving deltas:  11% (26201/222299)   Resolving deltas:  12% (26834/222299)   Resolving deltas:  13% (28948/222299)   Resolving deltas:  14% (31130/222299)   Resolving deltas:  15% (33355/222299)   Resolving deltas:  16% (35597/222299)   Resolving deltas:  17% (37791/222299)   Resolving deltas:  18% (40055/222299)   Resolving deltas:  19% (42469/222299)   Resolving deltas:  20% (44491/222299)   Resolving deltas:  21% (46691/222299)   Resolving deltas:  22% (48923/222299)   Resolving deltas:  23% (51183/222299)   Resolving deltas:  24% (53467/222299)   Resolving deltas:  25% (55643/222299)   Resolving deltas:  25% (57194/222299)   Resolving deltas:  26% (57818/222299)   Resolving deltas:  27% (60027/222299)   Resolving deltas:  28% (62248/222299)   Resolving deltas:  29% (64485/222299)   Resolving deltas:  30% (66770/222299)   Resolving deltas:  31% (69026/222299)   Resolving deltas:  32% (71511/222299)   Resolving deltas:  33% (73390/222299)   Resolving deltas:  34% (75582/222299)   Resolving deltas:  35% (77947/222299)   Resolving deltas:  36% (80062/222299)   Resolving deltas:  37% (82252/222299)   Resolving deltas:  38% (84474/222299)   Resolving deltas:  39% (86699/222299)   Resolving deltas:  40% (88958/222299)   Resolving deltas:  41% (91237/222299)   Resolving deltas:  41% (91345/222299)   Resolving deltas:  42% (93373/222299)   Resolving deltas:  43% (95652/222299)   Resolving deltas:  44% (97815/222299)   Resolving deltas:  45% (100036/222299)   Resolving deltas:  46% (102259/222299)   Resolving deltas:  47% (104489/222299)   Resolving deltas:  48% (106709/222299)   Resolving deltas:  49% (109128/222299)   Resolving deltas:  50% (111215/222299)   Resolving deltas:  51% (113374/222299)   Resolving deltas:  52% (115597/222299)   Resolving deltas:  53% (117819/222299)   Resolving deltas:  54% (120062/222299)   Resolving deltas:  55% (122278/222299)   Resolving deltas:  56% (124510/222299)   Resolving deltas:  57% (126712/222299)   Resolving deltas:  58% (128937/222299)   Resolving deltas:  59% (131173/222299)   Resolving deltas:  60% (133538/222299)   Resolving deltas:  60% (134482/222299)   Resolving deltas:  61% (135805/222299)   Resolving deltas:  62% (137837/222299)   Resolving deltas:  63% (140049/222299)   Resolving deltas:  64% (142305/222299)   Resolving deltas:  65% (144541/222299)   Resolving deltas:  66% (146726/222299)   Resolving deltas:  67% (148947/222299)   Resolving deltas:  68% (151166/222299)   Resolving deltas:  69% (153620/222299)   Resolving deltas:  70% (155661/222299)   Resolving deltas:  71% (157852/222299)   Resolving deltas:  72% (160063/222299)   Resolving deltas:  73% (162280/222299)   Resolving deltas:  74% (164507/222299)   Resolving deltas:  75% (166782/222299)   Resolving deltas:  76% (168971/222299)   Resolving deltas:  77% (171181/222299)   Resolving deltas:  78% (173499/222299)   Resolving deltas:  79% (175621/222299)   Resolving deltas:  79% (176759/222299)   Resolving deltas:  80% (177884/222299)   Resolving deltas:  81% (180089/222299)   Resolving deltas:  82% (182296/222299)   Resolving deltas:  83% (184513/222299)   Resolving deltas:  84% (186755/222299)   Resolving deltas:  85% (188982/222299)   Resolving deltas:  86% (191178/222299)   Resolving deltas:  87% (193519/222299)   Resolving deltas:  88% (195630/222299)   Resolving deltas:  89% (197908/222299)   Resolving deltas:  90% (200071/222299)   Resolving deltas:  91% (202295/222299)   Resolving deltas:  92% (204570/222299)   Resolving deltas:  93% (206772/222299)   Resolving deltas:  94% (208964/222299)   Resolving deltas:  95% (211185/222299)   Resolving deltas:  96% (213447/222299)   Resolving deltas:  97% (215647/222299)   Resolving deltas:  98% (217887/222299)   Resolving deltas:  99% (220080/222299)   Resolving deltas:  99% (220432/222299)   Resolving deltas: 100% (222299/222299)   Resolving deltas: 100% (222299/222299), done.
-Checking out files:  31% (1402/4454)   Checking out files:  32% (1426/4454)   Checking out files:  33% (1470/4454)   Checking out files:  34% (1515/4454)   Checking out files:  35% (1559/4454)   Checking out files:  36% (1604/4454)   Checking out files:  37% (1648/4454)   Checking out files:  38% (1693/4454)   Checking out files:  39% (1738/4454)   Checking out files:  40% (1782/4454)   Checking out files:  41% (1827/4454)   Checking out files:  42% (1871/4454)   Checking out files:  43% (1916/4454)   Checking out files:  44% (1960/4454)   Checking out files:  45% (2005/4454)   Checking out files:  46% (2049/4454)   Checking out files:  47% (2094/4454)   Checking out files:  48% (2138/4454)   Checking out files:  49% (2183/4454)   Checking out files:  50% (2227/4454)   Checking out files:  51% (2272/4454)   Checking out files:  52% (2317/4454)   Checking out files:  53% (2361/4454)   Checking out files:  54% (2406/4454)   Checking out files:  55% (2450/4454)   Checking out files:  56% (2495/4454)   Checking out files:  57% (2539/4454)   Checking out files:  58% (2584/4454)   Checking out files:  59% (2628/4454)   Checking out files:  60% (2673/4454)   Checking out files:  60% (2689/4454)   Checking out files:  61% (2717/4454)   Checking out files:  62% (2762/4454)   Checking out files:  63% (2807/4454)   Checking out files:  64% (2851/4454)   Checking out files:  65% (2896/4454)   Checking out files:  66% (2940/4454)   Checking out files:  67% (2985/4454)   Checking out files:  68% (3029/4454)   Checking out files:  69% (3074/4454)   Checking out files:  70% (3118/4454)   Checking out files:  71% (3163/4454)   Checking out files:  72% (3207/4454)   Checking out files:  73% (3252/4454)   Checking out files:  74% (3296/4454)   Checking out files:  75% (3341/4454)   Checking out files:  76% (3386/4454)   Checking out files:  77% (3430/4454)   Checking out files:  78% (3475/4454)   Checking out files:  79% (3519/4454)   Checking out files:  80% (3564/4454)   Checking out files:  81% (3608/4454)   Checking out files:  82% (3653/4454)   Checking out files:  83% (3697/4454)   Checking out files:  84% (3742/4454)   Checking out files:  85% (3786/4454)   Checking out files:  85% (3824/4454)   Checking out files:  86% (3831/4454)   Checking out files:  87% (3875/4454)   Checking out files:  88% (3920/4454)   Checking out files:  89% (3965/4454)   Checking out files:  90% (4009/4454)   Checking out files:  91% (4054/4454)   Checking out files:  92% (4098/4454)   Checking out files:  93% (4143/4454)   Checking out files:  94% (4187/4454)   Checking out files:  95% (4232/4454)   Checking out files:  96% (4276/4454)   Checking out files:  97% (4321/4454)   Checking out files:  98% (4365/4454)   Checking out files:  99% (4410/4454)   Checking out files: 100% (4454/4454)   Checking out files: 100% (4454/4454), done.
-svasquez@chadmin3:/glade/work/svasquez/scripts_dir/daily/intel_cheyenne> cd /<rk/svasquez/scripts_dir/daily/intel_cheyenne> cd /g                         lade/u/home/svasquez/esmf<ily/intel_cheyenne> cd /glade/u/home/svasquez/esmf_                         test/cronjobs/daily/intel<ade/u/home/svasquez/esmf_test/cronjobs/daily/intel_                         cheyenne 
-svasquez@chadmin3:~/esmf_test/cronjobs/daily/intel_cheyenne> export homedir=/<st/cronjobs/daily/intel_cheyenne> export homedir=/g                         lade/u/home/svasquez/esmf<eyenne> export homedir=/glade/u/home/svasquez/esmf_                         test/cronjobs/daily/intel<ade/u/home/svasquez/esmf_test/cronjobs/daily/intel_                         cheyenne 
-svasquez@chadmin3:~/esmf_test/cronjobs/daily/intel_cheyenne> spawn qsub -I -l select=1:ncpus=36:mpiprocs=36 -l walltime=10:00:00 -q regular -A P93300606
-qsub: waiting for job 2149763.chadmin1.ib0.cheyenne.ucar.edu to start
-qsub: job 2149763.chadmin1.ib0.cheyenne.ucar.edu ready
-
-cd /glade/u/home/svasquez/esmf_test/cronjobs/daily/intel_cheyenne 
-cd /glade/u/home/svasquez/esmf_test/cronjobs/daily/intel_cheyenne 
-tcsh: using dumb terminal settings.
-r2i3n26 daily/intel_cheyenne> ./local_script  /glade/u/home/svasquez/esmf_test/cronjobs/daily/intel_cheyenne/testFile_EM  
-Directory: /glade/u/home/svasquez/esmf_test/cronjobs/daily/intel_cheyenne
-r2i3n26 daily/intel_cheyenne>  The logfile is 2005_test
-LOGDIR1 is /glade/work/svasquez/scripts_dir/daily/intel_cheyenne/esmf_logs/2005_test
-LOGDIR is /glade/work/svasquez/scripts_dir/daily/intel_cheyenne/esmf_logs/2005_test
-Email user is esmf-test@lists.sourceforge.net
-Email title is ESMF_Trunk_Cheyenne_intel_Test
-./local_script: line 69: chk_out_scripts: command not found
-cheye /glade/work/svasquez/scripts_dir/daily/intel_cheyenne cheye 64 default intel mpt EX MULTI MULTI NON_THREADED NON_MPMD  
-number = 2
-cheye /glade/work/svasquez/scripts_dir/daily/intel_cheyenne cheye 64 default intel openmpi EX MULTI MULTI NON_THREADED NON_MPMD  
-number = 3
-cheye /glade/work/svasquez/scripts_dir/daily/intel_cheyenne cheye 64 default intel intelmpi EX MULTI MULTI NON_THREADED NON_MPMD  
-number = 4
-cheye /glade/work/svasquez/scripts_dir/daily/intel_cheyenne cheye 64 default intel mpt EX MULTI MULTI NON_THREADED NON_MPMD  
-1 cheye  /glade/work/svasquez/scripts_dir/daily/intel_cheyenne cheye	64 default  intel  mpt  EX MULTI MULTI   NON_THREADED  NON_MPMD 
-ESMF_DIR = /glade/work/svasquez/scripts_dir/daily/intel_cheyenne/esmf
-LESSKEY=/etc/lesskey.bin
-LMOD_FAMILY_COMPILER_VERSION=18.0.5
-NNTPSERVER=news
-MANPATH=/ncar/opt/slurm/latest//share/man:/glade/u/apps/ch/opt/netcdf/4.7.3/intel/18.0.5/share/man:/glade/u/apps/ch/opt/mpt/2.19/man:/glade/u/apps/opt/intel/2018u4/compilers_and_libraries/linux/man/common:/usr/local/man:/usr/share/man:/opt/pbs/share/man:/opt/clmgr/man:/opt/sgi/share/man
-__LMOD_REF_COUNT_FPATH=/glade/u/apps/ch/opt/mpt/2.19/include:1
-_ModuleTable003_=YXJlbnY9e1siZm4iXT0iL2dsYWRlL3UvYXBwcy9jaC9tb2R1bGVmaWxlcy9kZWZhdWx0L2lkZXAvbmNhcmVudi8xLjMubHVhIixbImZ1bGxOYW1lIl09Im5jYXJlbnYvMS4zIixbImxvYWRPcmRlciJdPTEscHJvcFQ9e30sWyJzdGFja0RlcHRoIl09MCxbInN0YXR1cyJdPSJhY3RpdmUiLFsidXNlck5hbWUiXT0ibmNhcmVudi8xLjMiLH0sbmV0Y2RmPXtbImZuIl09Ii9nbGFkZS91L2FwcHMvY2gvbW9kdWxlZmlsZXMvZGVmYXVsdC9pbnRlbC8xOC4wLjUvbmV0Y2RmLzQuNy4zLmx1YSIsWyJmdWxsTmFtZSJdPSJuZXRjZGYvNC43LjMiLFsibG9hZE9yZGVyIl09NSxwcm9wVD17fSxbInN0YWNrRGVwdGgiXT0wLFsic3RhdHVzIl09ImFjdGl2ZSIsWyJ1c2VyTmFtZSJdPSJuZXRj
-HOSTNAME=chadmin3
-XKEYSYMDB=/usr/X11R6/lib/X11/XKeysymDB
-MPI_SYSLOG_COPY=2
-PBS_ACCOUNT=P93300606
-INTEL_LICENSE_FILE=28518@128.117.177.41
-TERM=unknown
-HOST=r2i3n26
-ADVISOR_2018_DIR=/glade/u/apps/opt/intel/2018u4/advisor
-SHELL=/usr/local/bin/pbs_shell
-__LMOD_REF_COUNT_MODULEPATH=/glade/u/apps/ch/modulefiles/default/compilers:1;/glade/u/apps/ch/modulefiles/default/idep:1;/glade/u/apps/ch/modulefiles/default/intel/18.0.5:1;/glade/u/apps/ch/modulefiles/default/mpt/2.19/intel/18.0.5:1
-ESMF_OS=Linux
-INTEL_MINOR_VERSION=0.5
-LUAROCKS_PREFIX=/glade/u/apps/ch/opt/lmod/8.1.7
-PROFILEREAD=true
-HISTSIZE=1000
-U_TESTS=EX
-PBS_JOBNAME=STDIN
-CESMDATAROOT=/glade/p/cesmdata/cseg
-LMOD_SYSTEM_DEFAULT_MODULES=ncarenv/1.3:intel/18.0.5:ncarcompilers/0.5:mpt/2.19:netcdf/4.7.3
-MODULEPATH_ROOT=/glade/u/apps/ch/modulefiles/default
-TMPDIR=/var/tmp/pbs.2149763.chadmin1.ib0.cheyenne.ucar.edu
-ESMF_TESTMPMD=OFF
-LIBRARY_PATH=/glade/u/apps/ch/opt/mpt/2.19/lib
-PERL5LIB=/glade/u/apps/ch/os/usr/lib/perl5/5.18.2/
-OMP_STACKSIZE=64000K
-ESMF_TESTHARNESS_ARRAY=RUN_ESMF_TestHarnessArrayUNI_2
-PBS_ENVIRONMENT=PBS_INTERACTIVE
-MORE=-sl
-LMOD_PKG=/glade/u/apps/ch/opt/lmod/8.1.7/lmod/lmod
-FPATH=/glade/u/apps/ch/opt/mpt/2.19/include
-OLDPWD=/glade/work/svasquez/scripts_dir/daily/intel_cheyenne/esmf
-MPICXX_CXX=icpc
-LMOD_VERSION=8.1.7
-PBS_O_WORKDIR=/glade/u/home/svasquez/esmf_test/cronjobs/daily/intel_cheyenne
-NCPUS=36
-__LMOD_REF_COUNT_LOADEDMODULES=ncarenv/1.3:1;intel/18.0.5:1;ncarcompilers/0.5.0:1;mpt/2.19:1;netcdf/4.7.3:1
-my_make=gmake
-TARG_TITLE_BAR_PAREN= 
-JRE_HOME=/usr/lib64/jvm/java/jre
-PBS_TASKNUM=1
-LMOD_MPI=mpt_fmods
-USER=svasquez
-GROUP=ncar
-WRFIO_NCD_LARGE_FILE_SUPPORT=1
-LD_LIBRARY_PATH=/ncar/opt/slurm/latest//lib:/glade/u/apps/ch/opt/mpt_fmods/2.19/intel/18.0.5:/glade/u/apps/ch/opt/mpt/2.19/lib:/glade/u/apps/opt/intel/2018u4/compilers_and_libraries/linux/lib/intel64:/glade/u/apps/ch/os/usr/lib64:/glade/u/apps/ch/os/usr/lib:/glade/u/apps/ch/os/lib64:/glade/u/apps/ch/os/lib
-LS_COLORS=
-homedir=/gpfs/u/home/svasquez/esmf_test/cronjobs/daily/intel_cheyenne
-PBS_O_HOME=/glade/u/home/svasquez
-ESMF_MPIRUN=mpirun
-XNLSPATH=/usr/share/X11/nls
-LMOD_MODULERCFILE=/glade/u/apps/ch/modulefiles/default/localinit/hidden.lua
-ENV=/etc/profile.d/modules.sh
-ESMF_DIR=/glade/work/svasquez/scripts_dir/daily/intel_cheyenne/esmf
-ESMF_TESTHARNESS_FIELD=RUN_ESMF_TestHarnessFieldUNI_1
-_ModuleTable004_=ZGYvNC43LjMiLH0sfSxtcGF0aEE9eyIvZ2xhZGUvdS9hcHBzL2NoL21vZHVsZWZpbGVzL2RlZmF1bHQvY29tcGlsZXJzIiwiL2dsYWRlL3UvYXBwcy9jaC9tb2R1bGVmaWxlcy9kZWZhdWx0L2lkZXAiLCIvZ2xhZGUvdS9hcHBzL2NoL21vZHVsZWZpbGVzL2RlZmF1bHQvaW50ZWwvMTguMC41IiwiL2dsYWRlL3UvYXBwcy9jaC9tb2R1bGVmaWxlcy9kZWZhdWx0L21wdC8yLjE5L2ludGVsLzE4LjAuNSIsfSxbInN5c3RlbUJhc2VNUEFUSCJdPSIvZ2xhZGUvdS9hcHBzL2NoL21vZHVsZWZpbGVzL2RlZmF1bHQvY29tcGlsZXJzOi9nbGFkZS91L2FwcHMvY2gvbW9kdWxlZmlsZXMvZGVmYXVsdC9pZGVwIix9
-HOSTTYPE=x86_64
-CPATH=/glade/u/apps/ch/opt/mpt_fmods/2.19/intel/18.0.5:/glade/u/apps/ch/opt/mpt/2.19/include
-OSCAR_HOME=/opt/oscar
-QEMU_AUDIO_DRV=pa
-VTUNE_AMPLIFIER_2018_DIR=/glade/u/apps/opt/intel/2018u4/vtune_amplifier
-__LMOD_REF_COUNT__LMFILES_=/glade/u/apps/ch/modulefiles/default/idep/ncarenv/1.3.lua:1;/glade/u/apps/ch/modulefiles/default/compilers/intel/18.0.5.lua:1;/glade/u/apps/ch/modulefiles/default/intel/18.0.5/ncarcompilers/0.5.0.lua:1;/glade/u/apps/ch/modulefiles/default/intel/18.0.5/mpt/2.19.lua:1;/glade/u/apps/ch/modulefiles/default/intel/18.0.5/netcdf/4.7.3.lua:1
-FROM_HEADER=
-MPT_VERSION=2.19
-PBS_MOMPORT=15003
-NCAR_HOST=cheyenne
-PAGER=less
-NCAR_EXCLUDE_ASNEEDED=1
-CSHEDIT=emacs
-PBS_O_QUEUE=regular
-XDG_CONFIG_DIRS=/etc/xdg
-LMOD_FAMILY_MPI_VERSION=2.19
-INTEL_MAJOR_VERSION=18.0
-NLSPATH=/glade/u/apps/opt/intel/2018u4/compilers_and_libraries/linux/lib/intel64/locale/%l_%t/%N
-MINICOM=-c on
-PATH=/glade/u/home/svasquez/bin:/glade/u/apps/ch/opt/lmod/8.1.7/bin:/glade/u/home/svasquez/bin:/ncar/opt/slurm/latest//bin:/opt/clmgr/sbin:/opt/clmgr/bin:/opt/sgi/sbin:/opt/sgi/bin:/glade/u/apps/ch/opt/netcdf/4.7.3/intel/18.0.5/bin:/glade/u/apps/ch/opt/ncarcompilers/0.5.0/intel/18.0.5/mpi:/glade/u/apps/ch/opt/mpt/2.19/bin:/glade/u/apps/ch/opt/ncarcompilers/0.5.0/intel/18.0.5:/glade/u/apps/opt/intel/2018u4/vtune_amplifier/bin64:/glade/u/apps/opt/intel/2018u4/inspector/bin64:/glade/u/apps/opt/intel/2018u4/advisor/bin64:/glade/u/apps/opt/intel/2018u4/compilers_and_libraries/linux/bin/intel64:/glade/u/apps/opt/vncmgr:/glade/u/apps/opt/globus-utils:/glade/u/apps/ch/opt/usr/bin:/glade/u/apps/ch/opt/lmod/8.1.7/bin:/glade/u/home/svasquez/bin:/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:/usr/games:/opt/ibutils/bin:/usr/lib/mit/bin:/glade/u/apps/opt/hpss/hpss-client.5.0.2.p5/bin:/glade/u/apps/ch/os/usr/bin:/opt/pbs/bin:/sbin:/bin
-NCAR_RANK_MPT=1000
-MAIL=/var/spool/mail/svasquez
-_ModuleTable001_=X01vZHVsZVRhYmxlXz17WyJNVHZlcnNpb24iXT0zLFsiY19yZWJ1aWxkVGltZSJdPWZhbHNlLFsiY19zaG9ydFRpbWUiXT0wLjEwOTM1MzA2NTQ5MDcyLGRlcHRoVD17fSxmYW1pbHk9e1siY29tcGlsZXIiXT0iaW50ZWwiLFsibXBpIl09Im1wdCIsfSxtVD17aW50ZWw9e1siZm4iXT0iL2dsYWRlL3UvYXBwcy9jaC9tb2R1bGVmaWxlcy9kZWZhdWx0L2NvbXBpbGVycy9pbnRlbC8xOC4wLjUubHVhIixbImZ1bGxOYW1lIl09ImludGVsLzE4LjAuNSIsWyJsb2FkT3JkZXIiXT0yLHByb3BUPXt9LFsic3RhY2tEZXB0aCJdPTAsWyJzdGF0dXMiXT0iYWN0aXZlIixbInVzZXJOYW1lIl09ImludGVsLzE4LjAuNSIsfSxtcHQ9e1siZm4iXT0iL2dsYWRlL3UvYXBwcy9jaC9tb2R1bGVm
-PBS_O_LOGNAME=svasquez
-__LMOD_REF_COUNT_NLSPATH=/glade/u/apps/opt/intel/2018u4/compilers_and_libraries/linux/lib/intel64/locale/%l_%t/%N:1
-CPU=x86_64
-PBS_O_LANG=en_US.UTF-8
-JAVA_BINDIR=/usr/lib64/jvm/java/bin
-PBS_JOBCOOKIE=000000002591677C0000000069F9C2C8
-ESMF_TESTWITHTHREADS=OFF
-LMOD_SETTARG_CMD=:
-PWD=/glade/work/svasquez/scripts_dir/daily/intel_cheyenne/esmf
-NCAR_LDFLAGS_NETCDF=/glade/u/apps/ch/opt/netcdf/4.7.3/intel/18.0.5/lib
-F90=ifort
-INPUTRC=/etc/inputrc
-_LMFILES_=/glade/u/apps/ch/modulefiles/default/idep/ncarenv/1.3.lua:/glade/u/apps/ch/modulefiles/default/compilers/intel/18.0.5.lua:/glade/u/apps/ch/modulefiles/default/intel/18.0.5/ncarcompilers/0.5.0.lua:/glade/u/apps/ch/modulefiles/default/intel/18.0.5/mpt/2.19.lua:/glade/u/apps/ch/modulefiles/default/intel/18.0.5/netcdf/4.7.3.lua
-JAVA_HOME=/usr/lib64/jvm/java
-NCAR_ROOT_MPT=/glade/u/apps/ch/opt/mpt/2.19
-OPT=g
-LUA_PATH=/glade/u/apps/ch/opt/lmod/8.1.7/share/lua/5.1/?.lua;/glade/u/apps/ch/opt/lmod/8.1.7/share/lua/5.1/?/init.lua;;
-LANG=en_US.UTF-8
-NCAR_ROOT_NETCDF=/glade/u/apps/ch/opt/netcdf/4.7.3/intel/18.0.5/
-PBS_NODENUM=0
-PYTHONSTARTUP=/etc/pythonstart
-MODULEPATH=/glade/u/apps/ch/modulefiles/default/compilers:/glade/u/apps/ch/modulefiles/default/idep:/glade/u/apps/ch/modulefiles/default/intel/18.0.5:/glade/u/apps/ch/modulefiles/default/mpt/2.19/intel/18.0.5
-LUA_CPATH=/glade/u/apps/ch/opt/lmod/8.1.7/lib/lua/5.1/?.so;;
-MPIF08_F08=ifort
-NCAR_INC_NETCDF=/glade/u/apps/ch/opt/netcdf/4.7.3/intel/18.0.5/include
-LOADEDMODULES=ncarenv/1.3:intel/18.0.5:ncarcompilers/0.5.0:mpt/2.19:netcdf/4.7.3
-PBS_JOBDIR=/glade/u/home/svasquez
-TZ=America/Denver
-_ModuleTable_Sz_=4
-LMOD_SYSTEM_NAME=ch
-SDK_HOME=/usr/lib64/jvm/java
-F77=ifort
-C3_RSH=ssh -oConnectTimeout=10 -oForwardX11=no
-PBS_O_SHELL=/bin/sh
-ESMF_COMM=mpt
-ESMF_INSTALL_PREFIX=/glade/work/svasquez/scripts_dir/daily/intel_cheyenne/esmf/../install_dir
-LMOD_CMD=/glade/u/apps/ch/opt/lmod/8.1.7/lmod/lmod/libexec/lmod
-LMOD_COMPILER_VERSION=18.0.5
-MPI_IB_CONGESTED=1
-LM_LICENSE_FILE=28518@128.117.177.41
-PBS_JOBID=2149763.chadmin1.ib0.cheyenne.ucar.edu
-INTEL_BASE_PATH=/glade/u/apps/opt/intel/2018u4
-MPI_SHEPHERD=true
-NCAR_LIBS_MPT=-lrt -ldl
-CXX=icpc
-THREADED=NON_THREADED
-AUDIODRIVER=pulseaudio
-LMOD_COMPILER=intel
-GPG_TTY=/dev/pts/0
-ESMF_TESTEXHAUSTIVE=ON
-HOME=/glade/u/home/svasquez
-SHLVL=5
-JDK_HOME=/usr/lib64/jvm/java
-QT_SYSTEM_DIR=/usr/share/desktop-data
-LOGTMP=ERROR
-ESMF_BOPT=g
-SDL_AUDIODRIVER=pulse
-OSTYPE=linux
-__LMOD_REF_COUNT_PATH=/glade/u/apps/ch/opt/netcdf/4.7.3/intel/18.0.5/bin:1;/glade/u/apps/ch/opt/ncarcompilers/0.5.0/intel/18.0.5/mpi:2;/glade/u/apps/ch/opt/mpt/2.19/bin:1;/glade/u/apps/ch/opt/ncarcompilers/0.5.0/intel/18.0.5:1;/glade/u/apps/opt/intel/2018u4/vtune_amplifier/bin64:1;/glade/u/apps/opt/intel/2018u4/inspector/bin64:1;/glade/u/apps/opt/intel/2018u4/advisor/bin64:1;/glade/u/apps/opt/intel/2018u4/compilers_and_libraries/linux/bin/intel64:1;/glade/u/apps/opt/vncmgr:1;/glade/u/apps/opt/globus-utils:1;/glade/u/apps/ch/opt/usr/bin:1;/glade/u/apps/ch/opt/lmod/8.1.7/bin:1;/glade/u/home/svasquez/bin:1;/usr/local/bin:1;/usr/bin:1;/bin:1;/usr/bin/X11:1;/usr/games:1;/opt/ibutils/bin:1;/usr/lib/mit/bin:1;/glade/u/apps/opt/hpss/hpss-client.5.0.2.p5/bin:1;/glade/u/apps/ch/os/usr/bin:1
-ALSA_CONFIG_PATH=/etc/alsa-pulse.conf
-LANGUAGE=en_US.UTF-8
-LESS_ADVANCED_PREPROCESSOR=no
-__LMOD_REF_COUNT_CPATH=/glade/u/apps/ch/opt/mpt_fmods/2.19/intel/18.0.5:1;/glade/u/apps/ch/opt/mpt/2.19/include:1
-PBS_O_HOST=chadmin3.ib0.cheyenne.ucar.edu
-CESMROOT=/glade/p/cesm
-_ModuleTable002_=aWxlcy9kZWZhdWx0L2ludGVsLzE4LjAuNS9tcHQvMi4xOS5sdWEiLFsiZnVsbE5hbWUiXT0ibXB0LzIuMTkiLFsibG9hZE9yZGVyIl09NCxwcm9wVD17fSxbInN0YWNrRGVwdGgiXT0wLFsic3RhdHVzIl09ImFjdGl2ZSIsWyJ1c2VyTmFtZSJdPSJtcHQvMi4xOSIsfSxuY2FyY29tcGlsZXJzPXtbImZuIl09Ii9nbGFkZS91L2FwcHMvY2gvbW9kdWxlZmlsZXMvZGVmYXVsdC9pbnRlbC8xOC4wLjUvbmNhcmNvbXBpbGVycy8wLjUuMC5sdWEiLFsiZnVsbE5hbWUiXT0ibmNhcmNvbXBpbGVycy8wLjUuMCIsWyJsb2FkT3JkZXIiXT0zLHByb3BUPXt9LFsic3RhY2tEZXB0aCJdPTAsWyJzdGF0dXMiXT0iYWN0aXZlIixbInVzZXJOYW1lIl09Im5jYXJjb21waWxlcnMvMC41Iix9LG5j
-XCURSOR_THEME=DMZ
-LS_OPTIONS=-N --color=none -T 0
-RFile=/glade/u/home/svasquez/esmf_test/cronjobs/daily/intel_cheyenne/testFile_EM
-NCAR_WRAPPER_MPI=/glade/u/apps/ch/opt/ncarcompilers/0.5.0/intel/18.0.5/mpi
-FC=ifort
-WINDOWMANAGER=env GNOME_SHELL_SESSION_MODE=classic SLE_CLASSIC_MODE=1 gnome-session --session gnome-classic
-ESMF_SITE=default
-NETCDF=/glade/u/apps/ch/opt/netcdf/4.7.3/intel/18.0.5/
-VENDOR=unknown
-BASH_ENV=/glade/u/apps/ch/opt/lmod/8.1.7/lmod/lmod/init/bash
-ESMF_ABI=64
-INSTALLPATH_ROOT=/glade/u/apps/ch/opt
-MPI_ROOT=/glade/u/apps/ch/opt/mpt/2.19
-OSHCXX_CXX=icpc
-G_FILENAME_ENCODING=@locale,UTF-8,ISO-8859-15,CP1252
-MACHTYPE=x86_64-suse-linux
-LOGNAME=svasquez
-LESS=-M -I -R
-LOGDIR=/glade/work/svasquez/scripts_dir/daily/intel_cheyenne/esmf_logs/2005_test
-SLURMPATH=/ncar/opt/slurm/latest/
-CVS_RSH=ssh
-XDG_DATA_DIRS=/usr/share
-PBS_QUEUE=regular
-OSHCC_CC=icc
-SYS_TEST_TYPE=MULTI
-__LMOD_REF_COUNT_LIBRARY_PATH=/glade/u/apps/ch/opt/mpt/2.19/lib:1
-COMPILER_VERSION=18.0.5
-MODULESHOME=/glade/u/apps/ch/opt/lmod/8.1.7/lmod/lmod
-NCAR_ROOT_INTEL=/glade/u/apps/opt/intel/2018u4
-OSHF90_F90=ifort
-OMP_NUM_THREADS=36
-PBS_O_MAIL=/var/spool/mail/svasquez
-PKG_CONFIG_PATH=/glade/u/apps/ch/opt/netcdf/4.7.3/intel/18.0.5/lib/pkgconfig
-__LMOD_REF_COUNT_LD_LIBRARY_PATH=/glade/u/apps/ch/opt/mpt_fmods/2.19/intel/18.0.5:1;/glade/u/apps/ch/opt/mpt/2.19/lib:1;/glade/u/apps/opt/intel/2018u4/compilers_and_libraries/linux/lib/intel64:1;/glade/u/apps/ch/os/usr/lib64:1;/glade/u/apps/ch/os/usr/lib:1;/glade/u/apps/ch/os/lib64:1;/glade/u/apps/ch/os/lib:1
-COMPILER=intel
-LESSOPEN=lessopen.sh %s
-LMOD_SETTARG_FULL_SUPPORT=no
-MP_MPILIB=mpich2
-__Init_Default_Modules=1
-LMOD_MPI_VERSION=2.19
-USE_PCM_DB=2
-LMOD_FAMILY_COMPILER=intel
-MPIF90_F90=ifort
-INFOPATH=/ncar/opt/slurm/latest//share/doc:
-LMOD_FULL_SETTARG_SUPPORT=no
-__LMOD_REF_COUNT_PKG_CONFIG_PATH=/glade/u/apps/ch/opt/netcdf/4.7.3/intel/18.0.5/lib/pkgconfig:1
-CC=icc
-U_TESTS_TYPE=MULTI
-INSPECTOR_2018_DIR=/glade/u/apps/opt/intel/2018u4/inspector
-NCAR_LIBS_NETCDF=-Wl,-Bstatic -lnetcdff -lnetcdf -lhdf5hl_fortran -lhdf5_hl -lhdf5_fortran -lhdf5 -lsz -lz -Wl,-Bdynamic -lm -ldl
-__LMOD_REF_COUNT_MANPATH=/glade/u/apps/ch/opt/netcdf/4.7.3/intel/18.0.5/share/man:1;/glade/u/apps/ch/opt/mpt/2.19/man:1;/glade/u/apps/opt/intel/2018u4/compilers_and_libraries/linux/man/common:1;/usr/local/man:1;/usr/share/man:1
-LMOD_DIR=/glade/u/apps/ch/opt/lmod/8.1.7/lmod/lmod/libexec
-MP_COMPILER=intel
-PBS_O_SYSTEM=Linux
-LESSCLOSE=lessclose.sh %s %s
-G_BROKEN_FILENAMES=1
-PBS_NODEFILE=/var/spool/pbs/aux/2149763.chadmin1.ib0.cheyenne.ucar.edu
-INTEL_COMPILER_BASE_PATH=/glade/u/apps/opt/intel/2018u4/compilers_and_libraries/linux
-LMOD_FAMILY_MPI=mpt
-DASK_ROOT_CONFIG=/glade/u/apps/config/dask
-JAVA_ROOT=/usr/lib64/jvm/java
-COLORTERM=1
-PBS_O_PATH=/glade/u/home/svasquez/bin:/ncar/opt/slurm/latest//bin:/opt/clmgr/sbin:/opt/clmgr/bin:/opt/sgi/sbin:/opt/sgi/bin:/glade/u/apps/ch/opt/netcdf/4.7.3/intel/18.0.5/bin:/glade/u/apps/ch/opt/ncarcompilers/0.5.0/intel/18.0.5/mpi:/glade/u/apps/ch/opt/mpt/2.19/bin:/glade/u/apps/ch/opt/ncarcompilers/0.5.0/intel/18.0.5:/glade/u/apps/opt/intel/2018u4/vtune_amplifier/bin64:/glade/u/apps/opt/intel/2018u4/inspector/bin64:/glade/u/apps/opt/intel/2018u4/advisor/bin64:/glade/u/apps/opt/intel/2018u4/compilers_and_libraries/linux/bin/intel64:/glade/u/apps/opt/vncmgr:/glade/u/apps/opt/globus-utils:/glade/u/apps/ch/opt/usr/bin:/glade/u/apps/ch/opt/lmod/8.1.7/bin:/glade/u/home/svasquez/bin:/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:/usr/games:/opt/ibutils/bin:/usr/lib/mit/bin:/glade/u/apps/opt/hpss/hpss-client.5.0.2.p5/bin:/glade/u/apps/ch/os/usr/bin:/opt/pbs/bin:/sbin:/bin
-MPICC_CC=icc
-ESMF_COMPILER=intel
-BASH_FUNC_module%%=() {  eval $($LMOD_CMD bash "$@") && eval $(${LMOD_SETTARG_CMD:-:} -s sh)
-}
-BASH_FUNC_ml%%=() {  eval $($LMOD_DIR/ml_cmd "$@")
-}
-_=/usr/bin/env
-Library build PASS with ESMF_BOPT=g
-Library install PASSED with ESMF_BOPT=g
-Library install PASSED with ESMF_BOPT=g
-Quickstart build passed with ESMF_BOPT=g
-build apps PASSED with ESMF_BOPT=g
-ESMF_Regrid PASSED with ESMF_BOPT=g
-ESMF_Regrid PASSED with ESMF_BOPT=g
-ESMF_Regrid PASSED with ESMF_BOPT=g
-ESMF_Info PASSED with ESMF_BOPT=g
-ESMF_Info PASSED with ESMF_BOPT=g
-ESMF_Info PASSED with ESMF_BOPT=g
-ESMF_InfoC PASSED with ESMF_BOPT=g
-ESMF_InfoC PASSED with ESMF_BOPT=g
-ESMF_InfoC PASSED with ESMF_BOPT=g
-ESMF_RegridWeightGen PASSED with ESMF_BOPT=g
-ESMF_RegridWeightGen PASSED with ESMF_BOPT=g
-ESMF_RegridWeightGen PASSED with ESMF_BOPT=g
-ESMF_Scrip2Unstruct PASSED with ESMF_BOPT=g
-ESMF_Scrip2Unstruct PASSED with ESMF_BOPT=g
-ESMF_Scrip2Unstruct PASSED with ESMF_BOPT=g
-ESMF_WebServController PASSED with ESMF_BOPT=g
-ESMF_WebServController PASSED with ESMF_BOPT=g
-ESMF_WebServController PASSED with ESMF_BOPT=g
-build_system_tests PASS 
-run_system_tests PASS 
-build_examples PASS 
-run_examples PASS 
-cp: cannot stat '/glade/work/svasquez/scripts_dir/daily/intel_cheyenne/esmf/examples/examplesg/Linux.intel.64.mpt.default/*xsd': No such file or directory
-build_unit_tests PASS 
-run_test PASS 
-cp: cannot stat '/glade/work/svasquez/scripts_dir/daily/intel_cheyenne/esmf/test/testg/Linux.intel.64.mpt.default/*xsd': No such file or directory
-test_esmf has finished
-LESSKEY=/etc/lesskey.bin
-LMOD_FAMILY_COMPILER_VERSION=18.0.5
-NNTPSERVER=news
-MANPATH=/ncar/opt/slurm/latest//share/man:/glade/u/apps/ch/opt/netcdf/4.7.3/intel/18.0.5/share/man:/glade/u/apps/ch/opt/mpt/2.19/man:/glade/u/apps/opt/intel/2018u4/compilers_and_libraries/linux/man/common:/usr/local/man:/usr/share/man:/opt/pbs/share/man:/opt/clmgr/man:/opt/sgi/share/man
-__LMOD_REF_COUNT_FPATH=/glade/u/apps/ch/opt/mpt/2.19/include:1
-_ModuleTable003_=YXJlbnY9e1siZm4iXT0iL2dsYWRlL3UvYXBwcy9jaC9tb2R1bGVmaWxlcy9kZWZhdWx0L2lkZXAvbmNhcmVudi8xLjMubHVhIixbImZ1bGxOYW1lIl09Im5jYXJlbnYvMS4zIixbImxvYWRPcmRlciJdPTEscHJvcFQ9e30sWyJzdGFja0RlcHRoIl09MCxbInN0YXR1cyJdPSJhY3RpdmUiLFsidXNlck5hbWUiXT0ibmNhcmVudi8xLjMiLH0sbmV0Y2RmPXtbImZuIl09Ii9nbGFkZS91L2FwcHMvY2gvbW9kdWxlZmlsZXMvZGVmYXVsdC9pbnRlbC8xOC4wLjUvbmV0Y2RmLzQuNy4zLmx1YSIsWyJmdWxsTmFtZSJdPSJuZXRjZGYvNC43LjMiLFsibG9hZE9yZGVyIl09NSxwcm9wVD17fSxbInN0YWNrRGVwdGgiXT0wLFsic3RhdHVzIl09ImFjdGl2ZSIsWyJ1c2VyTmFtZSJdPSJuZXRj
-HOSTNAME=chadmin3
-XKEYSYMDB=/usr/X11R6/lib/X11/XKeysymDB
-MPI_SYSLOG_COPY=2
-PBS_ACCOUNT=P93300606
-INTEL_LICENSE_FILE=28518@128.117.177.41
-TERM=unknown
-HOST=r2i3n26
-ADVISOR_2018_DIR=/glade/u/apps/opt/intel/2018u4/advisor
-SHELL=/usr/local/bin/pbs_shell
-__LMOD_REF_COUNT_MODULEPATH=/glade/u/apps/ch/modulefiles/default/compilers:1;/glade/u/apps/ch/modulefiles/default/idep:1;/glade/u/apps/ch/modulefiles/default/intel/18.0.5:1;/glade/u/apps/ch/modulefiles/default/mpt/2.19/intel/18.0.5:1
-ESMF_OS=Linux
-INTEL_MINOR_VERSION=0.5
-LUAROCKS_PREFIX=/glade/u/apps/ch/opt/lmod/8.1.7
-PROFILEREAD=true
-HISTSIZE=1000
-U_TESTS=EX
-PBS_JOBNAME=STDIN
-CESMDATAROOT=/glade/p/cesmdata/cseg
-LMOD_SYSTEM_DEFAULT_MODULES=ncarenv/1.3:intel/18.0.5:ncarcompilers/0.5:mpt/2.19:netcdf/4.7.3
-MODULEPATH_ROOT=/glade/u/apps/ch/modulefiles/default
-TMPDIR=/var/tmp/pbs.2149763.chadmin1.ib0.cheyenne.ucar.edu
-ESMF_TESTMPMD=OFF
-LIBRARY_PATH=/glade/u/apps/ch/opt/mpt/2.19/lib
-PERL5LIB=/glade/u/apps/ch/os/usr/lib/perl5/5.18.2/
-OMP_STACKSIZE=64000K
-ESMF_TESTHARNESS_ARRAY=RUN_ESMF_TestHarnessArrayUNI_2
-PBS_ENVIRONMENT=PBS_INTERACTIVE
-MORE=-sl
-LMOD_PKG=/glade/u/apps/ch/opt/lmod/8.1.7/lmod/lmod
-FPATH=/glade/u/apps/ch/opt/mpt/2.19/include
-OLDPWD=/glade/work/svasquez/scripts_dir/daily/intel_cheyenne/esmf
-MPICXX_CXX=icpc
-LMOD_VERSION=8.1.7
-PBS_O_WORKDIR=/glade/u/home/svasquez/esmf_test/cronjobs/daily/intel_cheyenne
-NCPUS=36
-__LMOD_REF_COUNT_LOADEDMODULES=ncarenv/1.3:1;intel/18.0.5:1;ncarcompilers/0.5.0:1;mpt/2.19:1;netcdf/4.7.3:1
-my_make=gmake
-TARG_TITLE_BAR_PAREN= 
-JRE_HOME=/usr/lib64/jvm/java/jre
-PBS_TASKNUM=1
-LMOD_MPI=mpt_fmods
-USER=svasquez
-GROUP=ncar
-WRFIO_NCD_LARGE_FILE_SUPPORT=1
-LD_LIBRARY_PATH=/ncar/opt/slurm/latest//lib:/glade/u/apps/ch/opt/mpt_fmods/2.19/intel/18.0.5:/glade/u/apps/ch/opt/mpt/2.19/lib:/glade/u/apps/opt/intel/2018u4/compilers_and_libraries/linux/lib/intel64:/glade/u/apps/ch/os/usr/lib64:/glade/u/apps/ch/os/usr/lib:/glade/u/apps/ch/os/lib64:/glade/u/apps/ch/os/lib
-LS_COLORS=
-homedir=/gpfs/u/home/svasquez/esmf_test/cronjobs/daily/intel_cheyenne
-PBS_O_HOME=/glade/u/home/svasquez
-ESMF_MPIRUN=mpirun
-XNLSPATH=/usr/share/X11/nls
-LMOD_MODULERCFILE=/glade/u/apps/ch/modulefiles/default/localinit/hidden.lua
-ENV=/etc/profile.d/modules.sh
-ESMF_DIR=/glade/work/svasquez/scripts_dir/daily/intel_cheyenne/esmf
-ESMF_TESTHARNESS_FIELD=RUN_ESMF_TestHarnessFieldUNI_1
-_ModuleTable004_=ZGYvNC43LjMiLH0sfSxtcGF0aEE9eyIvZ2xhZGUvdS9hcHBzL2NoL21vZHVsZWZpbGVzL2RlZmF1bHQvY29tcGlsZXJzIiwiL2dsYWRlL3UvYXBwcy9jaC9tb2R1bGVmaWxlcy9kZWZhdWx0L2lkZXAiLCIvZ2xhZGUvdS9hcHBzL2NoL21vZHVsZWZpbGVzL2RlZmF1bHQvaW50ZWwvMTguMC41IiwiL2dsYWRlL3UvYXBwcy9jaC9tb2R1bGVmaWxlcy9kZWZhdWx0L21wdC8yLjE5L2ludGVsLzE4LjAuNSIsfSxbInN5c3RlbUJhc2VNUEFUSCJdPSIvZ2xhZGUvdS9hcHBzL2NoL21vZHVsZWZpbGVzL2RlZmF1bHQvY29tcGlsZXJzOi9nbGFkZS91L2FwcHMvY2gvbW9kdWxlZmlsZXMvZGVmYXVsdC9pZGVwIix9
-HOSTTYPE=x86_64
-CPATH=/glade/u/apps/ch/opt/mpt_fmods/2.19/intel/18.0.5:/glade/u/apps/ch/opt/mpt/2.19/include
-OSCAR_HOME=/opt/oscar
-QEMU_AUDIO_DRV=pa
-VTUNE_AMPLIFIER_2018_DIR=/glade/u/apps/opt/intel/2018u4/vtune_amplifier
-__LMOD_REF_COUNT__LMFILES_=/glade/u/apps/ch/modulefiles/default/idep/ncarenv/1.3.lua:1;/glade/u/apps/ch/modulefiles/default/compilers/intel/18.0.5.lua:1;/glade/u/apps/ch/modulefiles/default/intel/18.0.5/ncarcompilers/0.5.0.lua:1;/glade/u/apps/ch/modulefiles/default/intel/18.0.5/mpt/2.19.lua:1;/glade/u/apps/ch/modulefiles/default/intel/18.0.5/netcdf/4.7.3.lua:1
-FROM_HEADER=
-MPT_VERSION=2.19
-PBS_MOMPORT=15003
-NCAR_HOST=cheyenne
-PAGER=less
-NCAR_EXCLUDE_ASNEEDED=1
-CSHEDIT=emacs
-PBS_O_QUEUE=regular
-XDG_CONFIG_DIRS=/etc/xdg
-LMOD_FAMILY_MPI_VERSION=2.19
-INTEL_MAJOR_VERSION=18.0
-NLSPATH=/glade/u/apps/opt/intel/2018u4/compilers_and_libraries/linux/lib/intel64/locale/%l_%t/%N
-MINICOM=-c on
-PATH=/glade/u/home/svasquez/bin:/glade/u/apps/ch/opt/lmod/8.1.7/bin:/glade/u/home/svasquez/bin:/ncar/opt/slurm/latest//bin:/opt/clmgr/sbin:/opt/clmgr/bin:/opt/sgi/sbin:/opt/sgi/bin:/glade/u/apps/ch/opt/netcdf/4.7.3/intel/18.0.5/bin:/glade/u/apps/ch/opt/ncarcompilers/0.5.0/intel/18.0.5/mpi:/glade/u/apps/ch/opt/mpt/2.19/bin:/glade/u/apps/ch/opt/ncarcompilers/0.5.0/intel/18.0.5:/glade/u/apps/opt/intel/2018u4/vtune_amplifier/bin64:/glade/u/apps/opt/intel/2018u4/inspector/bin64:/glade/u/apps/opt/intel/2018u4/advisor/bin64:/glade/u/apps/opt/intel/2018u4/compilers_and_libraries/linux/bin/intel64:/glade/u/apps/opt/vncmgr:/glade/u/apps/opt/globus-utils:/glade/u/apps/ch/opt/usr/bin:/glade/u/apps/ch/opt/lmod/8.1.7/bin:/glade/u/home/svasquez/bin:/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:/usr/games:/opt/ibutils/bin:/usr/lib/mit/bin:/glade/u/apps/opt/hpss/hpss-client.5.0.2.p5/bin:/glade/u/apps/ch/os/usr/bin:/opt/pbs/bin:/sbin:/bin
-NCAR_RANK_MPT=1000
-MAIL=/var/spool/mail/svasquez
-_ModuleTable001_=X01vZHVsZVRhYmxlXz17WyJNVHZlcnNpb24iXT0zLFsiY19yZWJ1aWxkVGltZSJdPWZhbHNlLFsiY19zaG9ydFRpbWUiXT0wLjEwOTM1MzA2NTQ5MDcyLGRlcHRoVD17fSxmYW1pbHk9e1siY29tcGlsZXIiXT0iaW50ZWwiLFsibXBpIl09Im1wdCIsfSxtVD17aW50ZWw9e1siZm4iXT0iL2dsYWRlL3UvYXBwcy9jaC9tb2R1bGVmaWxlcy9kZWZhdWx0L2NvbXBpbGVycy9pbnRlbC8xOC4wLjUubHVhIixbImZ1bGxOYW1lIl09ImludGVsLzE4LjAuNSIsWyJsb2FkT3JkZXIiXT0yLHByb3BUPXt9LFsic3RhY2tEZXB0aCJdPTAsWyJzdGF0dXMiXT0iYWN0aXZlIixbInVzZXJOYW1lIl09ImludGVsLzE4LjAuNSIsfSxtcHQ9e1siZm4iXT0iL2dsYWRlL3UvYXBwcy9jaC9tb2R1bGVm
-PBS_O_LOGNAME=svasquez
-__LMOD_REF_COUNT_NLSPATH=/glade/u/apps/opt/intel/2018u4/compilers_and_libraries/linux/lib/intel64/locale/%l_%t/%N:1
-CPU=x86_64
-PBS_O_LANG=en_US.UTF-8
-JAVA_BINDIR=/usr/lib64/jvm/java/bin
-PBS_JOBCOOKIE=000000002591677C0000000069F9C2C8
-ESMF_TESTWITHTHREADS=OFF
-LMOD_SETTARG_CMD=:
-PWD=/glade/work/svasquez/scripts_dir/daily/intel_cheyenne/esmf
-NCAR_LDFLAGS_NETCDF=/glade/u/apps/ch/opt/netcdf/4.7.3/intel/18.0.5/lib
-F90=ifort
-INPUTRC=/etc/inputrc
-_LMFILES_=/glade/u/apps/ch/modulefiles/default/idep/ncarenv/1.3.lua:/glade/u/apps/ch/modulefiles/default/compilers/intel/18.0.5.lua:/glade/u/apps/ch/modulefiles/default/intel/18.0.5/ncarcompilers/0.5.0.lua:/glade/u/apps/ch/modulefiles/default/intel/18.0.5/mpt/2.19.lua:/glade/u/apps/ch/modulefiles/default/intel/18.0.5/netcdf/4.7.3.lua
-JAVA_HOME=/usr/lib64/jvm/java
-NCAR_ROOT_MPT=/glade/u/apps/ch/opt/mpt/2.19
-OPT=O
-LUA_PATH=/glade/u/apps/ch/opt/lmod/8.1.7/share/lua/5.1/?.lua;/glade/u/apps/ch/opt/lmod/8.1.7/share/lua/5.1/?/init.lua;;
-LANG=en_US.UTF-8
-NCAR_ROOT_NETCDF=/glade/u/apps/ch/opt/netcdf/4.7.3/intel/18.0.5/
-PBS_NODENUM=0
-PYTHONSTARTUP=/etc/pythonstart
-MODULEPATH=/glade/u/apps/ch/modulefiles/default/compilers:/glade/u/apps/ch/modulefiles/default/idep:/glade/u/apps/ch/modulefiles/default/intel/18.0.5:/glade/u/apps/ch/modulefiles/default/mpt/2.19/intel/18.0.5
-LUA_CPATH=/glade/u/apps/ch/opt/lmod/8.1.7/lib/lua/5.1/?.so;;
-MPIF08_F08=ifort
-NCAR_INC_NETCDF=/glade/u/apps/ch/opt/netcdf/4.7.3/intel/18.0.5/include
-LOADEDMODULES=ncarenv/1.3:intel/18.0.5:ncarcompilers/0.5.0:mpt/2.19:netcdf/4.7.3
-PBS_JOBDIR=/glade/u/home/svasquez
-TZ=America/Denver
-_ModuleTable_Sz_=4
-LMOD_SYSTEM_NAME=ch
-SDK_HOME=/usr/lib64/jvm/java
-F77=ifort
-C3_RSH=ssh -oConnectTimeout=10 -oForwardX11=no
-PBS_O_SHELL=/bin/sh
-ESMF_COMM=mpt
-ESMF_INSTALL_PREFIX=/glade/work/svasquez/scripts_dir/daily/intel_cheyenne/esmf/../install_dir
-LMOD_CMD=/glade/u/apps/ch/opt/lmod/8.1.7/lmod/lmod/libexec/lmod
-LMOD_COMPILER_VERSION=18.0.5
-MPI_IB_CONGESTED=1
-LM_LICENSE_FILE=28518@128.117.177.41
-PBS_JOBID=2149763.chadmin1.ib0.cheyenne.ucar.edu
-INTEL_BASE_PATH=/glade/u/apps/opt/intel/2018u4
-MPI_SHEPHERD=true
-NCAR_LIBS_MPT=-lrt -ldl
-CXX=icpc
-THREADED=NON_THREADED
-AUDIODRIVER=pulseaudio
-LMOD_COMPILER=intel
-GPG_TTY=/dev/pts/0
-ESMF_TESTEXHAUSTIVE=ON
-HOME=/glade/u/home/svasquez
-SHLVL=5
-JDK_HOME=/usr/lib64/jvm/java
-QT_SYSTEM_DIR=/usr/share/desktop-data
-LOGTMP=ERROR
-ESMF_BOPT=O
-SDL_AUDIODRIVER=pulse
-OSTYPE=linux
-__LMOD_REF_COUNT_PATH=/glade/u/apps/ch/opt/netcdf/4.7.3/intel/18.0.5/bin:1;/glade/u/apps/ch/opt/ncarcompilers/0.5.0/intel/18.0.5/mpi:2;/glade/u/apps/ch/opt/mpt/2.19/bin:1;/glade/u/apps/ch/opt/ncarcompilers/0.5.0/intel/18.0.5:1;/glade/u/apps/opt/intel/2018u4/vtune_amplifier/bin64:1;/glade/u/apps/opt/intel/2018u4/inspector/bin64:1;/glade/u/apps/opt/intel/2018u4/advisor/bin64:1;/glade/u/apps/opt/intel/2018u4/compilers_and_libraries/linux/bin/intel64:1;/glade/u/apps/opt/vncmgr:1;/glade/u/apps/opt/globus-utils:1;/glade/u/apps/ch/opt/usr/bin:1;/glade/u/apps/ch/opt/lmod/8.1.7/bin:1;/glade/u/home/svasquez/bin:1;/usr/local/bin:1;/usr/bin:1;/bin:1;/usr/bin/X11:1;/usr/games:1;/opt/ibutils/bin:1;/usr/lib/mit/bin:1;/glade/u/apps/opt/hpss/hpss-client.5.0.2.p5/bin:1;/glade/u/apps/ch/os/usr/bin:1
-ALSA_CONFIG_PATH=/etc/alsa-pulse.conf
-LANGUAGE=en_US.UTF-8
-LESS_ADVANCED_PREPROCESSOR=no
-__LMOD_REF_COUNT_CPATH=/glade/u/apps/ch/opt/mpt_fmods/2.19/intel/18.0.5:1;/glade/u/apps/ch/opt/mpt/2.19/include:1
-PBS_O_HOST=chadmin3.ib0.cheyenne.ucar.edu
-CESMROOT=/glade/p/cesm
-_ModuleTable002_=aWxlcy9kZWZhdWx0L2ludGVsLzE4LjAuNS9tcHQvMi4xOS5sdWEiLFsiZnVsbE5hbWUiXT0ibXB0LzIuMTkiLFsibG9hZE9yZGVyIl09NCxwcm9wVD17fSxbInN0YWNrRGVwdGgiXT0wLFsic3RhdHVzIl09ImFjdGl2ZSIsWyJ1c2VyTmFtZSJdPSJtcHQvMi4xOSIsfSxuY2FyY29tcGlsZXJzPXtbImZuIl09Ii9nbGFkZS91L2FwcHMvY2gvbW9kdWxlZmlsZXMvZGVmYXVsdC9pbnRlbC8xOC4wLjUvbmNhcmNvbXBpbGVycy8wLjUuMC5sdWEiLFsiZnVsbE5hbWUiXT0ibmNhcmNvbXBpbGVycy8wLjUuMCIsWyJsb2FkT3JkZXIiXT0zLHByb3BUPXt9LFsic3RhY2tEZXB0aCJdPTAsWyJzdGF0dXMiXT0iYWN0aXZlIixbInVzZXJOYW1lIl09Im5jYXJjb21waWxlcnMvMC41Iix9LG5j
-XCURSOR_THEME=DMZ
-LS_OPTIONS=-N --color=none -T 0
-RFile=/glade/u/home/svasquez/esmf_test/cronjobs/daily/intel_cheyenne/testFile_EM
-NCAR_WRAPPER_MPI=/glade/u/apps/ch/opt/ncarcompilers/0.5.0/intel/18.0.5/mpi
-FC=ifort
-WINDOWMANAGER=env GNOME_SHELL_SESSION_MODE=classic SLE_CLASSIC_MODE=1 gnome-session --session gnome-classic
-ESMF_SITE=default
-NETCDF=/glade/u/apps/ch/opt/netcdf/4.7.3/intel/18.0.5/
-VENDOR=unknown
-BASH_ENV=/glade/u/apps/ch/opt/lmod/8.1.7/lmod/lmod/init/bash
-ESMF_ABI=64
-INSTALLPATH_ROOT=/glade/u/apps/ch/opt
-MPI_ROOT=/glade/u/apps/ch/opt/mpt/2.19
-OSHCXX_CXX=icpc
-G_FILENAME_ENCODING=@locale,UTF-8,ISO-8859-15,CP1252
-MACHTYPE=x86_64-suse-linux
-LOGNAME=svasquez
-LESS=-M -I -R
-LOGDIR=/glade/work/svasquez/scripts_dir/daily/intel_cheyenne/esmf_logs/2005_test
-SLURMPATH=/ncar/opt/slurm/latest/
-CVS_RSH=ssh
-XDG_DATA_DIRS=/usr/share
-PBS_QUEUE=regular
-OSHCC_CC=icc
-SYS_TEST_TYPE=MULTI
-__LMOD_REF_COUNT_LIBRARY_PATH=/glade/u/apps/ch/opt/mpt/2.19/lib:1
-COMPILER_VERSION=18.0.5
-MODULESHOME=/glade/u/apps/ch/opt/lmod/8.1.7/lmod/lmod
-NCAR_ROOT_INTEL=/glade/u/apps/opt/intel/2018u4
-OSHF90_F90=ifort
-OMP_NUM_THREADS=36
-PBS_O_MAIL=/var/spool/mail/svasquez
-PKG_CONFIG_PATH=/glade/u/apps/ch/opt/netcdf/4.7.3/intel/18.0.5/lib/pkgconfig
-__LMOD_REF_COUNT_LD_LIBRARY_PATH=/glade/u/apps/ch/opt/mpt_fmods/2.19/intel/18.0.5:1;/glade/u/apps/ch/opt/mpt/2.19/lib:1;/glade/u/apps/opt/intel/2018u4/compilers_and_libraries/linux/lib/intel64:1;/glade/u/apps/ch/os/usr/lib64:1;/glade/u/apps/ch/os/usr/lib:1;/glade/u/apps/ch/os/lib64:1;/glade/u/apps/ch/os/lib:1
-COMPILER=intel
-LESSOPEN=lessopen.sh %s
-LMOD_SETTARG_FULL_SUPPORT=no
-MP_MPILIB=mpich2
-__Init_Default_Modules=1
-LMOD_MPI_VERSION=2.19
-USE_PCM_DB=2
-LMOD_FAMILY_COMPILER=intel
-MPIF90_F90=ifort
-INFOPATH=/ncar/opt/slurm/latest//share/doc:
-LMOD_FULL_SETTARG_SUPPORT=no
-__LMOD_REF_COUNT_PKG_CONFIG_PATH=/glade/u/apps/ch/opt/netcdf/4.7.3/intel/18.0.5/lib/pkgconfig:1
-CC=icc
-U_TESTS_TYPE=MULTI
-INSPECTOR_2018_DIR=/glade/u/apps/opt/intel/2018u4/inspector
-NCAR_LIBS_NETCDF=-Wl,-Bstatic -lnetcdff -lnetcdf -lhdf5hl_fortran -lhdf5_hl -lhdf5_fortran -lhdf5 -lsz -lz -Wl,-Bdynamic -lm -ldl
-__LMOD_REF_COUNT_MANPATH=/glade/u/apps/ch/opt/netcdf/4.7.3/intel/18.0.5/share/man:1;/glade/u/apps/ch/opt/mpt/2.19/man:1;/glade/u/apps/opt/intel/2018u4/compilers_and_libraries/linux/man/common:1;/usr/local/man:1;/usr/share/man:1
-LMOD_DIR=/glade/u/apps/ch/opt/lmod/8.1.7/lmod/lmod/libexec
-MP_COMPILER=intel
-PBS_O_SYSTEM=Linux
-LESSCLOSE=lessclose.sh %s %s
-G_BROKEN_FILENAMES=1
-PBS_NODEFILE=/var/spool/pbs/aux/2149763.chadmin1.ib0.cheyenne.ucar.edu
-INTEL_COMPILER_BASE_PATH=/glade/u/apps/opt/intel/2018u4/compilers_and_libraries/linux
-LMOD_FAMILY_MPI=mpt
-DASK_ROOT_CONFIG=/glade/u/apps/config/dask
-JAVA_ROOT=/usr/lib64/jvm/java
-COLORTERM=1
-PBS_O_PATH=/glade/u/home/svasquez/bin:/ncar/opt/slurm/latest//bin:/opt/clmgr/sbin:/opt/clmgr/bin:/opt/sgi/sbin:/opt/sgi/bin:/glade/u/apps/ch/opt/netcdf/4.7.3/intel/18.0.5/bin:/glade/u/apps/ch/opt/ncarcompilers/0.5.0/intel/18.0.5/mpi:/glade/u/apps/ch/opt/mpt/2.19/bin:/glade/u/apps/ch/opt/ncarcompilers/0.5.0/intel/18.0.5:/glade/u/apps/opt/intel/2018u4/vtune_amplifier/bin64:/glade/u/apps/opt/intel/2018u4/inspector/bin64:/glade/u/apps/opt/intel/2018u4/advisor/bin64:/glade/u/apps/opt/intel/2018u4/compilers_and_libraries/linux/bin/intel64:/glade/u/apps/opt/vncmgr:/glade/u/apps/opt/globus-utils:/glade/u/apps/ch/opt/usr/bin:/glade/u/apps/ch/opt/lmod/8.1.7/bin:/glade/u/home/svasquez/bin:/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:/usr/games:/opt/ibutils/bin:/usr/lib/mit/bin:/glade/u/apps/opt/hpss/hpss-client.5.0.2.p5/bin:/glade/u/apps/ch/os/usr/bin:/opt/pbs/bin:/sbin:/bin
-MPICC_CC=icc
-ESMF_COMPILER=intel
-BASH_FUNC_module%%=() {  eval $($LMOD_CMD bash "$@") && eval $(${LMOD_SETTARG_CMD:-:} -s sh)
-}
-BASH_FUNC_ml%%=() {  eval $($LMOD_DIR/ml_cmd "$@")
-}
-_=/usr/bin/env
-Library build PASS with ESMF_BOPT=O
-Library install PASSED with ESMF_BOPT=O
-Library install PASSED with ESMF_BOPT=O
-Quickstart build passed with ESMF_BOPT=O
-build apps PASSED with ESMF_BOPT=O
-ESMF_Regrid PASSED with ESMF_BOPT=O
-ESMF_Regrid PASSED with ESMF_BOPT=O
-ESMF_Regrid PASSED with ESMF_BOPT=O
-ESMF_Info PASSED with ESMF_BOPT=O
-ESMF_Info PASSED with ESMF_BOPT=O
-ESMF_Info PASSED with ESMF_BOPT=O
-ESMF_InfoC PASSED with ESMF_BOPT=O
-ESMF_InfoC PASSED with ESMF_BOPT=O
-ESMF_InfoC PASSED with ESMF_BOPT=O
-ESMF_RegridWeightGen PASSED with ESMF_BOPT=O
-ESMF_RegridWeightGen PASSED with ESMF_BOPT=O
-ESMF_RegridWeightGen PASSED with ESMF_BOPT=O
-ESMF_Scrip2Unstruct PASSED with ESMF_BOPT=O
-ESMF_Scrip2Unstruct PASSED with ESMF_BOPT=O
-ESMF_Scrip2Unstruct PASSED with ESMF_BOPT=O
-ESMF_WebServController PASSED with ESMF_BOPT=O
-ESMF_WebServController PASSED with ESMF_BOPT=O
-ESMF_WebServController PASSED with ESMF_BOPT=O
-build_system_tests PASS 
-run_system_tests PASS 
-build_examples PASS 
-run_examples PASS 
-cp: cannot stat '/glade/work/svasquez/scripts_dir/daily/intel_cheyenne/esmf/examples/examplesO/Linux.intel.64.mpt.default/*xsd': No such file or directory
-build_unit_tests PASS 
-run_test PASS 
-cp: cannot stat '/glade/work/svasquez/scripts_dir/daily/intel_cheyenne/esmf/test/testO/Linux.intel.64.mpt.default/*xsd': No such file or directory
-test_esmf has finished
-number = 2
-cheye /glade/work/svasquez/scripts_dir/daily/intel_cheyenne cheye 64 default intel openmpi EX MULTI MULTI NON_THREADED NON_MPMD  
-2 cheye  /glade/work/svasquez/scripts_dir/daily/intel_cheyenne cheye	64 default  intel  openmpi  EX MULTI MULTI   NON_THREADED  NON_MPMD 
-ESMF_DIR = /glade/work/svasquez/scripts_dir/daily/intel_cheyenne/esmf
-LESSKEY=/etc/lesskey.bin
-LMOD_FAMILY_COMPILER_VERSION=18.0.5
-NNTPSERVER=news
-MANPATH=/glade/u/apps/ch/opt/openmpi/3.1.4/intel/18.0.5/share/man:/ncar/opt/slurm/latest/share/man:/glade/u/apps/ch/opt/netcdf/4.7.3/intel/18.0.5/share/man:/glade/u/apps/opt/intel/2018u4/compilers_and_libraries/linux/man/common:/usr/local/man:/usr/share/man:/opt/pbs/share/man:/opt/clmgr/man:/opt/sgi/share/man
-__LMOD_REF_COUNT_FPATH=/glade/u/apps/ch/opt/openmpi/3.1.4/intel/18.0.5/include:1
-_ModuleTable003_=MS4zIix9LG5ldGNkZj17WyJmbiJdPSIvZ2xhZGUvdS9hcHBzL2NoL21vZHVsZWZpbGVzL2RlZmF1bHQvaW50ZWwvMTguMC41L25ldGNkZi80LjcuMy5sdWEiLFsiZnVsbE5hbWUiXT0ibmV0Y2RmLzQuNy4zIixbImxvYWRPcmRlciJdPTQscHJvcFQ9e30sWyJzdGFja0RlcHRoIl09MCxbInN0YXR1cyJdPSJhY3RpdmUiLFsidXNlck5hbWUiXT0ibmV0Y2RmLzQuNy4zIix9LG9wZW5tcGk9e1siZm4iXT0iL2dsYWRlL3UvYXBwcy9jaC9tb2R1bGVmaWxlcy9kZWZhdWx0L2ludGVsLzE4LjAuNS9vcGVubXBpLzMuMS40Lmx1YSIsWyJmdWxsTmFtZSJdPSJvcGVubXBpLzMuMS40IixbImxvYWRPcmRlciJdPTUscHJvcFQ9e30sWyJzdGFja0RlcHRoIl09MCxbInN0YXR1cyJdPSJhY3Rp
-HOSTNAME=chadmin3
-XKEYSYMDB=/usr/X11R6/lib/X11/XKeysymDB
-MPI_SYSLOG_COPY=2
-PBS_ACCOUNT=P93300606
-INTEL_LICENSE_FILE=28518@128.117.177.41
-NCAR_LDFLAGS_OPENMPI=/glade/u/apps/ch/opt/openmpi/3.1.4/intel/18.0.5/lib
-TERM=unknown
-HOST=r2i3n26
-ADVISOR_2018_DIR=/glade/u/apps/opt/intel/2018u4/advisor
-SHELL=/usr/local/bin/pbs_shell
-__LMOD_REF_COUNT_MODULEPATH=/glade/u/apps/ch/modulefiles/default/compilers:1;/glade/u/apps/ch/modulefiles/default/idep:1;/glade/u/apps/ch/modulefiles/default/intel/18.0.5:1;/glade/u/apps/ch/modulefiles/default/openmpi/3.1.4/intel/18.0.5:1
-ESMF_OS=Linux
-INTEL_MINOR_VERSION=0.5
-LUAROCKS_PREFIX=/glade/u/apps/ch/opt/lmod/8.1.7
-PROFILEREAD=true
-HISTSIZE=1000
-U_TESTS=EX
-PBS_JOBNAME=STDIN
-CESMDATAROOT=/glade/p/cesmdata/cseg
-LMOD_SYSTEM_DEFAULT_MODULES=ncarenv/1.3:intel/18.0.5:ncarcompilers/0.5:mpt/2.19:netcdf/4.7.3
-MODULEPATH_ROOT=/glade/u/apps/ch/modulefiles/default
-TMPDIR=/var/tmp/pbs.2149763.chadmin1.ib0.cheyenne.ucar.edu
-ESMF_TESTMPMD=OFF
-LIBRARY_PATH=/glade/u/apps/ch/opt/openmpi/3.1.4/intel/18.0.5/lib
-PERL5LIB=/glade/u/apps/ch/os/usr/lib/perl5/5.18.2/
-OMP_STACKSIZE=64000K
-ESMF_TESTHARNESS_ARRAY=RUN_ESMF_TestHarnessArrayUNI_2
-PBS_ENVIRONMENT=PBS_INTERACTIVE
-MORE=-sl
-LMOD_PKG=/glade/u/apps/ch/opt/lmod/8.1.7/lmod/lmod
-FPATH=/glade/u/apps/ch/opt/openmpi/3.1.4/intel/18.0.5/include
-OLDPWD=/glade/work/svasquez/scripts_dir/daily/intel_cheyenne/esmf
-MPICXX_CXX=icpc
-LMOD_VERSION=8.1.7
-PBS_O_WORKDIR=/glade/u/home/svasquez/esmf_test/cronjobs/daily/intel_cheyenne
-NCPUS=36
-__LMOD_REF_COUNT_LOADEDMODULES=ncarenv/1.3:1;intel/18.0.5:1;ncarcompilers/0.5.0:1;netcdf/4.7.3:1;openmpi/3.1.4:1
-my_make=gmake
-TARG_TITLE_BAR_PAREN= 
-JRE_HOME=/usr/lib64/jvm/java/jre
-PBS_TASKNUM=1
-LMOD_MPI=openmpi
-USER=svasquez
-GROUP=ncar
-WRFIO_NCD_LARGE_FILE_SUPPORT=1
-LD_LIBRARY_PATH=/glade/u/apps/ch/opt/openmpi/3.1.4/intel/18.0.5/lib:/ncar/opt/slurm/latest/lib:/glade/u/apps/opt/intel/2018u4/compilers_and_libraries/linux/lib/intel64:/glade/u/apps/ch/os/usr/lib64:/glade/u/apps/ch/os/usr/lib:/glade/u/apps/ch/os/lib64:/glade/u/apps/ch/os/lib
-LS_COLORS=
-homedir=/gpfs/u/home/svasquez/esmf_test/cronjobs/daily/intel_cheyenne
-PBS_O_HOME=/glade/u/home/svasquez
-ESMF_MPIRUN=mpirun
-XNLSPATH=/usr/share/X11/nls
-LMOD_MODULERCFILE=/glade/u/apps/ch/modulefiles/default/localinit/hidden.lua
-ENV=/etc/profile.d/modules.sh
-ESMF_DIR=/glade/work/svasquez/scripts_dir/daily/intel_cheyenne/esmf
-ESMF_TESTHARNESS_FIELD=RUN_ESMF_TestHarnessFieldUNI_1
-_ModuleTable004_=dmUiLFsidXNlck5hbWUiXT0ib3Blbm1waSIsfSx9LG1wYXRoQT17Ii9nbGFkZS91L2FwcHMvY2gvbW9kdWxlZmlsZXMvZGVmYXVsdC9jb21waWxlcnMiLCIvZ2xhZGUvdS9hcHBzL2NoL21vZHVsZWZpbGVzL2RlZmF1bHQvaWRlcCIsIi9nbGFkZS91L2FwcHMvY2gvbW9kdWxlZmlsZXMvZGVmYXVsdC9pbnRlbC8xOC4wLjUiLCIvZ2xhZGUvdS9hcHBzL2NoL21vZHVsZWZpbGVzL2RlZmF1bHQvb3Blbm1waS8zLjEuNC9pbnRlbC8xOC4wLjUiLH0sWyJzeXN0ZW1CYXNlTVBBVEgiXT0iL2dsYWRlL3UvYXBwcy9jaC9tb2R1bGVmaWxlcy9kZWZhdWx0L2NvbXBpbGVyczovZ2xhZGUvdS9hcHBzL2NoL21vZHVsZWZpbGVzL2RlZmF1bHQvaWRlcCIsfQ==
-HOSTTYPE=x86_64
-CPATH=/glade/u/apps/ch/opt/openmpi/3.1.4/intel/18.0.5/include
-OSCAR_HOME=/opt/oscar
-QEMU_AUDIO_DRV=pa
-VTUNE_AMPLIFIER_2018_DIR=/glade/u/apps/opt/intel/2018u4/vtune_amplifier
-__LMOD_REF_COUNT__LMFILES_=/glade/u/apps/ch/modulefiles/default/idep/ncarenv/1.3.lua:1;/glade/u/apps/ch/modulefiles/default/compilers/intel/18.0.5.lua:1;/glade/u/apps/ch/modulefiles/default/intel/18.0.5/ncarcompilers/0.5.0.lua:1;/glade/u/apps/ch/modulefiles/default/intel/18.0.5/netcdf/4.7.3.lua:1;/glade/u/apps/ch/modulefiles/default/intel/18.0.5/openmpi/3.1.4.lua:1
-FROM_HEADER=
-PBS_MOMPORT=15003
-NCAR_HOST=cheyenne
-PAGER=less
-NCAR_EXCLUDE_ASNEEDED=1
-CSHEDIT=emacs
-PBS_O_QUEUE=regular
-XDG_CONFIG_DIRS=/etc/xdg
-LMOD_FAMILY_MPI_VERSION=3.1.4
-INTEL_MAJOR_VERSION=18.0
-NLSPATH=/glade/u/apps/opt/intel/2018u4/compilers_and_libraries/linux/lib/intel64/locale/%l_%t/%N
-MINICOM=-c on
-PATH=/glade/u/apps/ch/opt/ncarcompilers/0.5.0/intel/18.0.5/mpi:/glade/u/apps/ch/opt/openmpi/3.1.4/intel/18.0.5/bin:/glade/u/home/svasquez/bin:/glade/u/apps/ch/opt/lmod/8.1.7/bin:/ncar/opt/slurm/latest/bin:/opt/clmgr/sbin:/opt/clmgr/bin:/opt/sgi/sbin:/opt/sgi/bin:/glade/u/apps/ch/opt/netcdf/4.7.3/intel/18.0.5/bin:/glade/u/apps/ch/opt/ncarcompilers/0.5.0/intel/18.0.5:/glade/u/apps/opt/intel/2018u4/vtune_amplifier/bin64:/glade/u/apps/opt/intel/2018u4/inspector/bin64:/glade/u/apps/opt/intel/2018u4/advisor/bin64:/glade/u/apps/opt/intel/2018u4/compilers_and_libraries/linux/bin/intel64:/glade/u/apps/opt/vncmgr:/glade/u/apps/opt/globus-utils:/glade/u/apps/ch/opt/usr/bin:/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:/usr/games:/opt/ibutils/bin:/usr/lib/mit/bin:/glade/u/apps/opt/hpss/hpss-client.5.0.2.p5/bin:/glade/u/apps/ch/os/usr/bin:/opt/pbs/bin:/sbin
-MAIL=/var/spool/mail/svasquez
-_ModuleTable001_=X01vZHVsZVRhYmxlXz17WyJNVHZlcnNpb24iXT0zLFsiY19yZWJ1aWxkVGltZSJdPWZhbHNlLFsiY19zaG9ydFRpbWUiXT0wLjEwOTM1MzA2NTQ5MDcyLGRlcHRoVD17fSxmYW1pbHk9e1siY29tcGlsZXIiXT0iaW50ZWwiLFsibXBpIl09Im9wZW5tcGkiLH0sbVQ9e2ludGVsPXtbImZuIl09Ii9nbGFkZS91L2FwcHMvY2gvbW9kdWxlZmlsZXMvZGVmYXVsdC9jb21waWxlcnMvaW50ZWwvMTguMC41Lmx1YSIsWyJmdWxsTmFtZSJdPSJpbnRlbC8xOC4wLjUiLFsibG9hZE9yZGVyIl09Mixwcm9wVD17fSxbInN0YWNrRGVwdGgiXT0wLFsic3RhdHVzIl09ImFjdGl2ZSIsWyJ1c2VyTmFtZSJdPSJpbnRlbC8xOC4wLjUiLH0sbmNhcmNvbXBpbGVycz17WyJmbiJdPSIvZ2xhZGUvdS9h
-PBS_O_LOGNAME=svasquez
-__LMOD_REF_COUNT_NLSPATH=/glade/u/apps/opt/intel/2018u4/compilers_and_libraries/linux/lib/intel64/locale/%l_%t/%N:1
-CPU=x86_64
-PBS_O_LANG=en_US.UTF-8
-NCAR_LIBS_OPENMPI=-lrt -ldl
-JAVA_BINDIR=/usr/lib64/jvm/java/bin
-PBS_JOBCOOKIE=000000002591677C0000000069F9C2C8
-ESMF_TESTWITHTHREADS=OFF
-LMOD_SETTARG_CMD=:
-NCAR_RANK_OPENMPI=1000
-PWD=/glade/work/svasquez/scripts_dir/daily/intel_cheyenne/esmf
-NCAR_LDFLAGS_NETCDF=/glade/u/apps/ch/opt/netcdf/4.7.3/intel/18.0.5/lib
-F90=ifort
-INPUTRC=/etc/inputrc
-_LMFILES_=/glade/u/apps/ch/modulefiles/default/idep/ncarenv/1.3.lua:/glade/u/apps/ch/modulefiles/default/compilers/intel/18.0.5.lua:/glade/u/apps/ch/modulefiles/default/intel/18.0.5/ncarcompilers/0.5.0.lua:/glade/u/apps/ch/modulefiles/default/intel/18.0.5/netcdf/4.7.3.lua:/glade/u/apps/ch/modulefiles/default/intel/18.0.5/openmpi/3.1.4.lua
-JAVA_HOME=/usr/lib64/jvm/java
-OPT=g
-LUA_PATH=/glade/u/apps/ch/opt/lmod/8.1.7/share/lua/5.1/?.lua;/glade/u/apps/ch/opt/lmod/8.1.7/share/lua/5.1/?/init.lua;;
-LANG=en_US.UTF-8
-NCAR_ROOT_NETCDF=/glade/u/apps/ch/opt/netcdf/4.7.3/intel/18.0.5/
-PBS_NODENUM=0
-PYTHONSTARTUP=/etc/pythonstart
-MODULEPATH=/glade/u/apps/ch/modulefiles/default/compilers:/glade/u/apps/ch/modulefiles/default/idep:/glade/u/apps/ch/modulefiles/default/intel/18.0.5:/glade/u/apps/ch/modulefiles/default/openmpi/3.1.4/intel/18.0.5
-LUA_CPATH=/glade/u/apps/ch/opt/lmod/8.1.7/lib/lua/5.1/?.so;;
-NCAR_INC_NETCDF=/glade/u/apps/ch/opt/netcdf/4.7.3/intel/18.0.5/include
-LOADEDMODULES=ncarenv/1.3:intel/18.0.5:ncarcompilers/0.5.0:netcdf/4.7.3:openmpi/3.1.4
-PBS_JOBDIR=/glade/u/home/svasquez
-TZ=America/Denver
-_ModuleTable_Sz_=4
-LMOD_SYSTEM_NAME=ch
-SDK_HOME=/usr/lib64/jvm/java
-NCAR_ROOT_OPENMPI=/glade/u/apps/ch/opt/openmpi/3.1.4/intel/18.0.5/
-F77=ifort
-C3_RSH=ssh -oConnectTimeout=10 -oForwardX11=no
-PBS_O_SHELL=/bin/sh
-ESMF_COMM=openmpi
-ESMF_INSTALL_PREFIX=/glade/work/svasquez/scripts_dir/daily/intel_cheyenne/esmf/../install_dir
-LMOD_CMD=/glade/u/apps/ch/opt/lmod/8.1.7/lmod/lmod/libexec/lmod
-LMOD_COMPILER_VERSION=18.0.5
-MPI_IB_CONGESTED=1
-MPI_VERSION=3.1.4
-LM_LICENSE_FILE=28518@128.117.177.41
-PBS_JOBID=2149763.chadmin1.ib0.cheyenne.ucar.edu
-INTEL_BASE_PATH=/glade/u/apps/opt/intel/2018u4
-MPI_SHEPHERD=true
-CXX=icpc
-THREADED=NON_THREADED
-AUDIODRIVER=pulseaudio
-LMOD_COMPILER=intel
-GPG_TTY=/dev/pts/0
-ESMF_TESTEXHAUSTIVE=ON
-HOME=/glade/u/home/svasquez
-SHLVL=5
-JDK_HOME=/usr/lib64/jvm/java
-QT_SYSTEM_DIR=/usr/share/desktop-data
-LOGTMP=ERROR
-ESMF_BOPT=g
-SDL_AUDIODRIVER=pulse
-OSTYPE=linux
-__LMOD_REF_COUNT_PATH=/glade/u/apps/ch/opt/ncarcompilers/0.5.0/intel/18.0.5/mpi:2;/glade/u/apps/ch/opt/openmpi/3.1.4/intel/18.0.5/bin:1;/glade/u/home/svasquez/bin:3;/glade/u/apps/ch/opt/lmod/8.1.7/bin:2;/ncar/opt/slurm/latest/bin:1;/opt/clmgr/sbin:1;/opt/clmgr/bin:1;/opt/sgi/sbin:1;/opt/sgi/bin:1;/glade/u/apps/ch/opt/netcdf/4.7.3/intel/18.0.5/bin:1;/glade/u/apps/ch/opt/ncarcompilers/0.5.0/intel/18.0.5:1;/glade/u/apps/opt/intel/2018u4/vtune_amplifier/bin64:1;/glade/u/apps/opt/intel/2018u4/inspector/bin64:1;/glade/u/apps/opt/intel/2018u4/advisor/bin64:1;/glade/u/apps/opt/intel/2018u4/compilers_and_libraries/linux/bin/intel64:1;/glade/u/apps/opt/vncmgr:1;/glade/u/apps/opt/globus-utils:1;/glade/u/apps/ch/opt/usr/bin:1;/usr/local/bin:1;/usr/bin:1;/bin:2;/usr/bin/X11:1;/usr/games:1;/opt/ibutils/bin:1;/usr/lib/mit/bin:1;/glade/u/apps/opt/hpss/hpss-client.5.0.2.p5/bin:1;/glade/u/apps/ch/os/usr/bin:1;/opt/pbs/bin:1;/sbin:1
-ALSA_CONFIG_PATH=/etc/alsa-pulse.conf
-LANGUAGE=en_US.UTF-8
-LESS_ADVANCED_PREPROCESSOR=no
-__LMOD_REF_COUNT_CPATH=/glade/u/apps/ch/opt/openmpi/3.1.4/intel/18.0.5/include:1
-PBS_O_HOST=chadmin3.ib0.cheyenne.ucar.edu
-CESMROOT=/glade/p/cesm
-_ModuleTable002_=cHBzL2NoL21vZHVsZWZpbGVzL2RlZmF1bHQvaW50ZWwvMTguMC41L25jYXJjb21waWxlcnMvMC41LjAubHVhIixbImZ1bGxOYW1lIl09Im5jYXJjb21waWxlcnMvMC41LjAiLFsibG9hZE9yZGVyIl09Myxwcm9wVD17fSxbInN0YWNrRGVwdGgiXT0wLFsic3RhdHVzIl09ImFjdGl2ZSIsWyJ1c2VyTmFtZSJdPSJuY2FyY29tcGlsZXJzLzAuNSIsfSxuY2FyZW52PXtbImZuIl09Ii9nbGFkZS91L2FwcHMvY2gvbW9kdWxlZmlsZXMvZGVmYXVsdC9pZGVwL25jYXJlbnYvMS4zLmx1YSIsWyJmdWxsTmFtZSJdPSJuY2FyZW52LzEuMyIsWyJsb2FkT3JkZXIiXT0xLHByb3BUPXt9LFsic3RhY2tEZXB0aCJdPTAsWyJzdGF0dXMiXT0iYWN0aXZlIixbInVzZXJOYW1lIl09Im5jYXJlbnYv
-XCURSOR_THEME=DMZ
-LS_OPTIONS=-N --color=none -T 0
-RFile=/glade/u/home/svasquez/esmf_test/cronjobs/daily/intel_cheyenne/testFile_EM
-NCAR_WRAPPER_MPI=/glade/u/apps/ch/opt/ncarcompilers/0.5.0/intel/18.0.5/mpi
-FC=ifort
-WINDOWMANAGER=env GNOME_SHELL_SESSION_MODE=classic SLE_CLASSIC_MODE=1 gnome-session --session gnome-classic
-ESMF_SITE=default
-NETCDF=/glade/u/apps/ch/opt/netcdf/4.7.3/intel/18.0.5/
-VENDOR=unknown
-BASH_ENV=/glade/u/apps/ch/opt/lmod/8.1.7/lmod/lmod/init/bash
-ESMF_ABI=64
-INSTALLPATH_ROOT=/glade/u/apps/ch/opt
-MPI_ROOT=/glade/u/apps/ch/opt/openmpi/3.1.4/intel/18.0.5/
-G_FILENAME_ENCODING=@locale,UTF-8,ISO-8859-15,CP1252
-MACHTYPE=x86_64-suse-linux
-LOGNAME=svasquez
-LESS=-M -I -R
-LOGDIR=/glade/work/svasquez/scripts_dir/daily/intel_cheyenne/esmf_logs/2005_test
-SLURMPATH=/ncar/opt/slurm/latest/
-CVS_RSH=ssh
-XDG_DATA_DIRS=/usr/share
-PBS_QUEUE=regular
-SYS_TEST_TYPE=MULTI
-__LMOD_REF_COUNT_LIBRARY_PATH=/glade/u/apps/ch/opt/openmpi/3.1.4/intel/18.0.5/lib:1
-COMPILER_VERSION=18.0.5
-MODULESHOME=/glade/u/apps/ch/opt/lmod/8.1.7/lmod/lmod
-NCAR_ROOT_INTEL=/glade/u/apps/opt/intel/2018u4
-OMP_NUM_THREADS=36
-PBS_O_MAIL=/var/spool/mail/svasquez
-PKG_CONFIG_PATH=/glade/u/apps/ch/opt/openmpi/3.1.4/intel/18.0.5/lib/pkgconfig:/glade/u/apps/ch/opt/netcdf/4.7.3/intel/18.0.5/lib/pkgconfig
-__LMOD_REF_COUNT_LD_LIBRARY_PATH=/glade/u/apps/ch/opt/openmpi/3.1.4/intel/18.0.5/lib:1;/ncar/opt/slurm/latest/lib:1;/glade/u/apps/opt/intel/2018u4/compilers_and_libraries/linux/lib/intel64:1;/glade/u/apps/ch/os/usr/lib64:1;/glade/u/apps/ch/os/usr/lib:1;/glade/u/apps/ch/os/lib64:1;/glade/u/apps/ch/os/lib:1
-COMPILER=intel
-LESSOPEN=lessopen.sh %s
-LMOD_SETTARG_FULL_SUPPORT=no
-MP_MPILIB=mpich2
-__Init_Default_Modules=1
-LMOD_MPI_VERSION=3.1.4
-USE_PCM_DB=2
-LMOD_FAMILY_COMPILER=intel
-MPIF90_F90=ifort
-INFOPATH=/ncar/opt/slurm/latest//share/doc:
-LMOD_FULL_SETTARG_SUPPORT=no
-__LMOD_REF_COUNT_PKG_CONFIG_PATH=/glade/u/apps/ch/opt/openmpi/3.1.4/intel/18.0.5/lib/pkgconfig:1;/glade/u/apps/ch/opt/netcdf/4.7.3/intel/18.0.5/lib/pkgconfig:1
-CC=icc
-U_TESTS_TYPE=MULTI
-INSPECTOR_2018_DIR=/glade/u/apps/opt/intel/2018u4/inspector
-NCAR_LIBS_NETCDF=-Wl,-Bstatic -lnetcdff -lnetcdf -lhdf5hl_fortran -lhdf5_hl -lhdf5_fortran -lhdf5 -lsz -lz -Wl,-Bdynamic -lm -ldl
-__LMOD_REF_COUNT_MANPATH=/glade/u/apps/ch/opt/openmpi/3.1.4/intel/18.0.5/share/man:1;/ncar/opt/slurm/latest/share/man:1;/glade/u/apps/ch/opt/netcdf/4.7.3/intel/18.0.5/share/man:1;/glade/u/apps/opt/intel/2018u4/compilers_and_libraries/linux/man/common:1;/usr/local/man:1;/usr/share/man:1;/opt/pbs/share/man:1;/opt/clmgr/man:1;/opt/sgi/share/man:1
-LMOD_DIR=/glade/u/apps/ch/opt/lmod/8.1.7/lmod/lmod/libexec
-MP_COMPILER=intel
-PBS_O_SYSTEM=Linux
-LESSCLOSE=lessclose.sh %s %s
-G_BROKEN_FILENAMES=1
-PBS_NODEFILE=/var/spool/pbs/aux/2149763.chadmin1.ib0.cheyenne.ucar.edu
-INTEL_COMPILER_BASE_PATH=/glade/u/apps/opt/intel/2018u4/compilers_and_libraries/linux
-LMOD_FAMILY_MPI=openmpi
-DASK_ROOT_CONFIG=/glade/u/apps/config/dask
-JAVA_ROOT=/usr/lib64/jvm/java
-COLORTERM=1
-PBS_O_PATH=/glade/u/home/svasquez/bin:/ncar/opt/slurm/latest//bin:/opt/clmgr/sbin:/opt/clmgr/bin:/opt/sgi/sbin:/opt/sgi/bin:/glade/u/apps/ch/opt/netcdf/4.7.3/intel/18.0.5/bin:/glade/u/apps/ch/opt/ncarcompilers/0.5.0/intel/18.0.5/mpi:/glade/u/apps/ch/opt/mpt/2.19/bin:/glade/u/apps/ch/opt/ncarcompilers/0.5.0/intel/18.0.5:/glade/u/apps/opt/intel/2018u4/vtune_amplifier/bin64:/glade/u/apps/opt/intel/2018u4/inspector/bin64:/glade/u/apps/opt/intel/2018u4/advisor/bin64:/glade/u/apps/opt/intel/2018u4/compilers_and_libraries/linux/bin/intel64:/glade/u/apps/opt/vncmgr:/glade/u/apps/opt/globus-utils:/glade/u/apps/ch/opt/usr/bin:/glade/u/apps/ch/opt/lmod/8.1.7/bin:/glade/u/home/svasquez/bin:/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:/usr/games:/opt/ibutils/bin:/usr/lib/mit/bin:/glade/u/apps/opt/hpss/hpss-client.5.0.2.p5/bin:/glade/u/apps/ch/os/usr/bin:/opt/pbs/bin:/sbin:/bin
-MPICC_CC=icc
-ESMF_COMPILER=intel
-BASH_FUNC_module%%=() {  eval $($LMOD_CMD bash "$@") && eval $(${LMOD_SETTARG_CMD:-:} -s sh)
-}
-BASH_FUNC_ml%%=() {  eval $($LMOD_DIR/ml_cmd "$@")
-}
-_=/usr/bin/env
-Library build PASS with ESMF_BOPT=g
-Library install PASSED with ESMF_BOPT=g
-Library install PASSED with ESMF_BOPT=g
-Quickstart build passed with ESMF_BOPT=g
-build apps PASSED with ESMF_BOPT=g
-ESMF_Regrid PASSED with ESMF_BOPT=g
-ESMF_Regrid PASSED with ESMF_BOPT=g
-ESMF_Regrid PASSED with ESMF_BOPT=g
-ESMF_Info PASSED with ESMF_BOPT=g
-ESMF_Info PASSED with ESMF_BOPT=g
-ESMF_Info PASSED with ESMF_BOPT=g
-ESMF_InfoC PASSED with ESMF_BOPT=g
-ESMF_InfoC PASSED with ESMF_BOPT=g
-ESMF_InfoC PASSED with ESMF_BOPT=g
-ESMF_RegridWeightGen PASSED with ESMF_BOPT=g
-ESMF_RegridWeightGen PASSED with ESMF_BOPT=g
-ESMF_RegridWeightGen PASSED with ESMF_BOPT=g
-ESMF_Scrip2Unstruct PASSED with ESMF_BOPT=g
-ESMF_Scrip2Unstruct PASSED with ESMF_BOPT=g
-ESMF_Scrip2Unstruct PASSED with ESMF_BOPT=g
-ESMF_WebServController PASSED with ESMF_BOPT=g
-ESMF_WebServController PASSED with ESMF_BOPT=g
-ESMF_WebServController PASSED with ESMF_BOPT=g
-build_system_tests PASS 
-run_system_tests PASS 
-build_examples PASS 
-run_examples PASS 
-cp: cannot stat '/glade/work/svasquez/scripts_dir/daily/intel_cheyenne/esmf/examples/examplesg/Linux.intel.64.openmpi.default/*xsd': No such file or directory
-build_unit_tests PASS 
-run_test PASS 
-cp: cannot stat '/glade/work/svasquez/scripts_dir/daily/intel_cheyenne/esmf/test/testg/Linux.intel.64.openmpi.default/*xsd': No such file or directory
-test_esmf has finished
-LESSKEY=/etc/lesskey.bin
-LMOD_FAMILY_COMPILER_VERSION=18.0.5
-NNTPSERVER=news
-MANPATH=/glade/u/apps/ch/opt/openmpi/3.1.4/intel/18.0.5/share/man:/ncar/opt/slurm/latest/share/man:/glade/u/apps/ch/opt/netcdf/4.7.3/intel/18.0.5/share/man:/glade/u/apps/opt/intel/2018u4/compilers_and_libraries/linux/man/common:/usr/local/man:/usr/share/man:/opt/pbs/share/man:/opt/clmgr/man:/opt/sgi/share/man
-__LMOD_REF_COUNT_FPATH=/glade/u/apps/ch/opt/openmpi/3.1.4/intel/18.0.5/include:1
-_ModuleTable003_=MS4zIix9LG5ldGNkZj17WyJmbiJdPSIvZ2xhZGUvdS9hcHBzL2NoL21vZHVsZWZpbGVzL2RlZmF1bHQvaW50ZWwvMTguMC41L25ldGNkZi80LjcuMy5sdWEiLFsiZnVsbE5hbWUiXT0ibmV0Y2RmLzQuNy4zIixbImxvYWRPcmRlciJdPTQscHJvcFQ9e30sWyJzdGFja0RlcHRoIl09MCxbInN0YXR1cyJdPSJhY3RpdmUiLFsidXNlck5hbWUiXT0ibmV0Y2RmLzQuNy4zIix9LG9wZW5tcGk9e1siZm4iXT0iL2dsYWRlL3UvYXBwcy9jaC9tb2R1bGVmaWxlcy9kZWZhdWx0L2ludGVsLzE4LjAuNS9vcGVubXBpLzMuMS40Lmx1YSIsWyJmdWxsTmFtZSJdPSJvcGVubXBpLzMuMS40IixbImxvYWRPcmRlciJdPTUscHJvcFQ9e30sWyJzdGFja0RlcHRoIl09MCxbInN0YXR1cyJdPSJhY3Rp
-HOSTNAME=chadmin3
-XKEYSYMDB=/usr/X11R6/lib/X11/XKeysymDB
-MPI_SYSLOG_COPY=2
-PBS_ACCOUNT=P93300606
-INTEL_LICENSE_FILE=28518@128.117.177.41
-NCAR_LDFLAGS_OPENMPI=/glade/u/apps/ch/opt/openmpi/3.1.4/intel/18.0.5/lib
-TERM=unknown
-HOST=r2i3n26
-ADVISOR_2018_DIR=/glade/u/apps/opt/intel/2018u4/advisor
-SHELL=/usr/local/bin/pbs_shell
-__LMOD_REF_COUNT_MODULEPATH=/glade/u/apps/ch/modulefiles/default/compilers:1;/glade/u/apps/ch/modulefiles/default/idep:1;/glade/u/apps/ch/modulefiles/default/intel/18.0.5:1;/glade/u/apps/ch/modulefiles/default/openmpi/3.1.4/intel/18.0.5:1
-ESMF_OS=Linux
-INTEL_MINOR_VERSION=0.5
-LUAROCKS_PREFIX=/glade/u/apps/ch/opt/lmod/8.1.7
-PROFILEREAD=true
-HISTSIZE=1000
-U_TESTS=EX
-PBS_JOBNAME=STDIN
-CESMDATAROOT=/glade/p/cesmdata/cseg
-LMOD_SYSTEM_DEFAULT_MODULES=ncarenv/1.3:intel/18.0.5:ncarcompilers/0.5:mpt/2.19:netcdf/4.7.3
-MODULEPATH_ROOT=/glade/u/apps/ch/modulefiles/default
-TMPDIR=/var/tmp/pbs.2149763.chadmin1.ib0.cheyenne.ucar.edu
-ESMF_TESTMPMD=OFF
-LIBRARY_PATH=/glade/u/apps/ch/opt/openmpi/3.1.4/intel/18.0.5/lib
-PERL5LIB=/glade/u/apps/ch/os/usr/lib/perl5/5.18.2/
-OMP_STACKSIZE=64000K
-ESMF_TESTHARNESS_ARRAY=RUN_ESMF_TestHarnessArrayUNI_2
-PBS_ENVIRONMENT=PBS_INTERACTIVE
-MORE=-sl
-LMOD_PKG=/glade/u/apps/ch/opt/lmod/8.1.7/lmod/lmod
-FPATH=/glade/u/apps/ch/opt/openmpi/3.1.4/intel/18.0.5/include
-OLDPWD=/glade/work/svasquez/scripts_dir/daily/intel_cheyenne/esmf
-MPICXX_CXX=icpc
-LMOD_VERSION=8.1.7
-PBS_O_WORKDIR=/glade/u/home/svasquez/esmf_test/cronjobs/daily/intel_cheyenne
-NCPUS=36
-__LMOD_REF_COUNT_LOADEDMODULES=ncarenv/1.3:1;intel/18.0.5:1;ncarcompilers/0.5.0:1;netcdf/4.7.3:1;openmpi/3.1.4:1
-my_make=gmake
-TARG_TITLE_BAR_PAREN= 
-JRE_HOME=/usr/lib64/jvm/java/jre
-PBS_TASKNUM=1
-LMOD_MPI=openmpi
-USER=svasquez
-GROUP=ncar
-WRFIO_NCD_LARGE_FILE_SUPPORT=1
-LD_LIBRARY_PATH=/glade/u/apps/ch/opt/openmpi/3.1.4/intel/18.0.5/lib:/ncar/opt/slurm/latest/lib:/glade/u/apps/opt/intel/2018u4/compilers_and_libraries/linux/lib/intel64:/glade/u/apps/ch/os/usr/lib64:/glade/u/apps/ch/os/usr/lib:/glade/u/apps/ch/os/lib64:/glade/u/apps/ch/os/lib
-LS_COLORS=
-homedir=/gpfs/u/home/svasquez/esmf_test/cronjobs/daily/intel_cheyenne
-PBS_O_HOME=/glade/u/home/svasquez
-ESMF_MPIRUN=mpirun
-XNLSPATH=/usr/share/X11/nls
-LMOD_MODULERCFILE=/glade/u/apps/ch/modulefiles/default/localinit/hidden.lua
-ENV=/etc/profile.d/modules.sh
-ESMF_DIR=/glade/work/svasquez/scripts_dir/daily/intel_cheyenne/esmf
-ESMF_TESTHARNESS_FIELD=RUN_ESMF_TestHarnessFieldUNI_1
-_ModuleTable004_=dmUiLFsidXNlck5hbWUiXT0ib3Blbm1waSIsfSx9LG1wYXRoQT17Ii9nbGFkZS91L2FwcHMvY2gvbW9kdWxlZmlsZXMvZGVmYXVsdC9jb21waWxlcnMiLCIvZ2xhZGUvdS9hcHBzL2NoL21vZHVsZWZpbGVzL2RlZmF1bHQvaWRlcCIsIi9nbGFkZS91L2FwcHMvY2gvbW9kdWxlZmlsZXMvZGVmYXVsdC9pbnRlbC8xOC4wLjUiLCIvZ2xhZGUvdS9hcHBzL2NoL21vZHVsZWZpbGVzL2RlZmF1bHQvb3Blbm1waS8zLjEuNC9pbnRlbC8xOC4wLjUiLH0sWyJzeXN0ZW1CYXNlTVBBVEgiXT0iL2dsYWRlL3UvYXBwcy9jaC9tb2R1bGVmaWxlcy9kZWZhdWx0L2NvbXBpbGVyczovZ2xhZGUvdS9hcHBzL2NoL21vZHVsZWZpbGVzL2RlZmF1bHQvaWRlcCIsfQ==
-HOSTTYPE=x86_64
-CPATH=/glade/u/apps/ch/opt/openmpi/3.1.4/intel/18.0.5/include
-OSCAR_HOME=/opt/oscar
-QEMU_AUDIO_DRV=pa
-VTUNE_AMPLIFIER_2018_DIR=/glade/u/apps/opt/intel/2018u4/vtune_amplifier
-__LMOD_REF_COUNT__LMFILES_=/glade/u/apps/ch/modulefiles/default/idep/ncarenv/1.3.lua:1;/glade/u/apps/ch/modulefiles/default/compilers/intel/18.0.5.lua:1;/glade/u/apps/ch/modulefiles/default/intel/18.0.5/ncarcompilers/0.5.0.lua:1;/glade/u/apps/ch/modulefiles/default/intel/18.0.5/netcdf/4.7.3.lua:1;/glade/u/apps/ch/modulefiles/default/intel/18.0.5/openmpi/3.1.4.lua:1
-FROM_HEADER=
-PBS_MOMPORT=15003
-NCAR_HOST=cheyenne
-PAGER=less
-NCAR_EXCLUDE_ASNEEDED=1
-CSHEDIT=emacs
-PBS_O_QUEUE=regular
-XDG_CONFIG_DIRS=/etc/xdg
-LMOD_FAMILY_MPI_VERSION=3.1.4
-INTEL_MAJOR_VERSION=18.0
-NLSPATH=/glade/u/apps/opt/intel/2018u4/compilers_and_libraries/linux/lib/intel64/locale/%l_%t/%N
-MINICOM=-c on
-PATH=/glade/u/apps/ch/opt/ncarcompilers/0.5.0/intel/18.0.5/mpi:/glade/u/apps/ch/opt/openmpi/3.1.4/intel/18.0.5/bin:/glade/u/home/svasquez/bin:/glade/u/apps/ch/opt/lmod/8.1.7/bin:/ncar/opt/slurm/latest/bin:/opt/clmgr/sbin:/opt/clmgr/bin:/opt/sgi/sbin:/opt/sgi/bin:/glade/u/apps/ch/opt/netcdf/4.7.3/intel/18.0.5/bin:/glade/u/apps/ch/opt/ncarcompilers/0.5.0/intel/18.0.5:/glade/u/apps/opt/intel/2018u4/vtune_amplifier/bin64:/glade/u/apps/opt/intel/2018u4/inspector/bin64:/glade/u/apps/opt/intel/2018u4/advisor/bin64:/glade/u/apps/opt/intel/2018u4/compilers_and_libraries/linux/bin/intel64:/glade/u/apps/opt/vncmgr:/glade/u/apps/opt/globus-utils:/glade/u/apps/ch/opt/usr/bin:/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:/usr/games:/opt/ibutils/bin:/usr/lib/mit/bin:/glade/u/apps/opt/hpss/hpss-client.5.0.2.p5/bin:/glade/u/apps/ch/os/usr/bin:/opt/pbs/bin:/sbin
-MAIL=/var/spool/mail/svasquez
-_ModuleTable001_=X01vZHVsZVRhYmxlXz17WyJNVHZlcnNpb24iXT0zLFsiY19yZWJ1aWxkVGltZSJdPWZhbHNlLFsiY19zaG9ydFRpbWUiXT0wLjEwOTM1MzA2NTQ5MDcyLGRlcHRoVD17fSxmYW1pbHk9e1siY29tcGlsZXIiXT0iaW50ZWwiLFsibXBpIl09Im9wZW5tcGkiLH0sbVQ9e2ludGVsPXtbImZuIl09Ii9nbGFkZS91L2FwcHMvY2gvbW9kdWxlZmlsZXMvZGVmYXVsdC9jb21waWxlcnMvaW50ZWwvMTguMC41Lmx1YSIsWyJmdWxsTmFtZSJdPSJpbnRlbC8xOC4wLjUiLFsibG9hZE9yZGVyIl09Mixwcm9wVD17fSxbInN0YWNrRGVwdGgiXT0wLFsic3RhdHVzIl09ImFjdGl2ZSIsWyJ1c2VyTmFtZSJdPSJpbnRlbC8xOC4wLjUiLH0sbmNhcmNvbXBpbGVycz17WyJmbiJdPSIvZ2xhZGUvdS9h
-PBS_O_LOGNAME=svasquez
-__LMOD_REF_COUNT_NLSPATH=/glade/u/apps/opt/intel/2018u4/compilers_and_libraries/linux/lib/intel64/locale/%l_%t/%N:1
-CPU=x86_64
-PBS_O_LANG=en_US.UTF-8
-NCAR_LIBS_OPENMPI=-lrt -ldl
-JAVA_BINDIR=/usr/lib64/jvm/java/bin
-PBS_JOBCOOKIE=000000002591677C0000000069F9C2C8
-ESMF_TESTWITHTHREADS=OFF
-LMOD_SETTARG_CMD=:
-NCAR_RANK_OPENMPI=1000
-PWD=/glade/work/svasquez/scripts_dir/daily/intel_cheyenne/esmf
-NCAR_LDFLAGS_NETCDF=/glade/u/apps/ch/opt/netcdf/4.7.3/intel/18.0.5/lib
-F90=ifort
-INPUTRC=/etc/inputrc
-_LMFILES_=/glade/u/apps/ch/modulefiles/default/idep/ncarenv/1.3.lua:/glade/u/apps/ch/modulefiles/default/compilers/intel/18.0.5.lua:/glade/u/apps/ch/modulefiles/default/intel/18.0.5/ncarcompilers/0.5.0.lua:/glade/u/apps/ch/modulefiles/default/intel/18.0.5/netcdf/4.7.3.lua:/glade/u/apps/ch/modulefiles/default/intel/18.0.5/openmpi/3.1.4.lua
-JAVA_HOME=/usr/lib64/jvm/java
-OPT=O
-LUA_PATH=/glade/u/apps/ch/opt/lmod/8.1.7/share/lua/5.1/?.lua;/glade/u/apps/ch/opt/lmod/8.1.7/share/lua/5.1/?/init.lua;;
-LANG=en_US.UTF-8
-NCAR_ROOT_NETCDF=/glade/u/apps/ch/opt/netcdf/4.7.3/intel/18.0.5/
-PBS_NODENUM=0
-PYTHONSTARTUP=/etc/pythonstart
-MODULEPATH=/glade/u/apps/ch/modulefiles/default/compilers:/glade/u/apps/ch/modulefiles/default/idep:/glade/u/apps/ch/modulefiles/default/intel/18.0.5:/glade/u/apps/ch/modulefiles/default/openmpi/3.1.4/intel/18.0.5
-LUA_CPATH=/glade/u/apps/ch/opt/lmod/8.1.7/lib/lua/5.1/?.so;;
-NCAR_INC_NETCDF=/glade/u/apps/ch/opt/netcdf/4.7.3/intel/18.0.5/include
-LOADEDMODULES=ncarenv/1.3:intel/18.0.5:ncarcompilers/0.5.0:netcdf/4.7.3:openmpi/3.1.4
-PBS_JOBDIR=/glade/u/home/svasquez
-TZ=America/Denver
-_ModuleTable_Sz_=4
-LMOD_SYSTEM_NAME=ch
-SDK_HOME=/usr/lib64/jvm/java
-NCAR_ROOT_OPENMPI=/glade/u/apps/ch/opt/openmpi/3.1.4/intel/18.0.5/
-F77=ifort
-C3_RSH=ssh -oConnectTimeout=10 -oForwardX11=no
-PBS_O_SHELL=/bin/sh
-ESMF_COMM=openmpi
-ESMF_INSTALL_PREFIX=/glade/work/svasquez/scripts_dir/daily/intel_cheyenne/esmf/../install_dir
-LMOD_CMD=/glade/u/apps/ch/opt/lmod/8.1.7/lmod/lmod/libexec/lmod
-LMOD_COMPILER_VERSION=18.0.5
-MPI_IB_CONGESTED=1
-MPI_VERSION=3.1.4
-LM_LICENSE_FILE=28518@128.117.177.41
-PBS_JOBID=2149763.chadmin1.ib0.cheyenne.ucar.edu
-INTEL_BASE_PATH=/glade/u/apps/opt/intel/2018u4
-MPI_SHEPHERD=true
-CXX=icpc
-THREADED=NON_THREADED
-AUDIODRIVER=pulseaudio
-LMOD_COMPILER=intel
-GPG_TTY=/dev/pts/0
-ESMF_TESTEXHAUSTIVE=ON
-HOME=/glade/u/home/svasquez
-SHLVL=5
-JDK_HOME=/usr/lib64/jvm/java
-QT_SYSTEM_DIR=/usr/share/desktop-data
-LOGTMP=ERROR
-ESMF_BOPT=O
-SDL_AUDIODRIVER=pulse
-OSTYPE=linux
-__LMOD_REF_COUNT_PATH=/glade/u/apps/ch/opt/ncarcompilers/0.5.0/intel/18.0.5/mpi:2;/glade/u/apps/ch/opt/openmpi/3.1.4/intel/18.0.5/bin:1;/glade/u/home/svasquez/bin:3;/glade/u/apps/ch/opt/lmod/8.1.7/bin:2;/ncar/opt/slurm/latest/bin:1;/opt/clmgr/sbin:1;/opt/clmgr/bin:1;/opt/sgi/sbin:1;/opt/sgi/bin:1;/glade/u/apps/ch/opt/netcdf/4.7.3/intel/18.0.5/bin:1;/glade/u/apps/ch/opt/ncarcompilers/0.5.0/intel/18.0.5:1;/glade/u/apps/opt/intel/2018u4/vtune_amplifier/bin64:1;/glade/u/apps/opt/intel/2018u4/inspector/bin64:1;/glade/u/apps/opt/intel/2018u4/advisor/bin64:1;/glade/u/apps/opt/intel/2018u4/compilers_and_libraries/linux/bin/intel64:1;/glade/u/apps/opt/vncmgr:1;/glade/u/apps/opt/globus-utils:1;/glade/u/apps/ch/opt/usr/bin:1;/usr/local/bin:1;/usr/bin:1;/bin:2;/usr/bin/X11:1;/usr/games:1;/opt/ibutils/bin:1;/usr/lib/mit/bin:1;/glade/u/apps/opt/hpss/hpss-client.5.0.2.p5/bin:1;/glade/u/apps/ch/os/usr/bin:1;/opt/pbs/bin:1;/sbin:1
-ALSA_CONFIG_PATH=/etc/alsa-pulse.conf
-LANGUAGE=en_US.UTF-8
-LESS_ADVANCED_PREPROCESSOR=no
-__LMOD_REF_COUNT_CPATH=/glade/u/apps/ch/opt/openmpi/3.1.4/intel/18.0.5/include:1
-PBS_O_HOST=chadmin3.ib0.cheyenne.ucar.edu
-CESMROOT=/glade/p/cesm
-_ModuleTable002_=cHBzL2NoL21vZHVsZWZpbGVzL2RlZmF1bHQvaW50ZWwvMTguMC41L25jYXJjb21waWxlcnMvMC41LjAubHVhIixbImZ1bGxOYW1lIl09Im5jYXJjb21waWxlcnMvMC41LjAiLFsibG9hZE9yZGVyIl09Myxwcm9wVD17fSxbInN0YWNrRGVwdGgiXT0wLFsic3RhdHVzIl09ImFjdGl2ZSIsWyJ1c2VyTmFtZSJdPSJuY2FyY29tcGlsZXJzLzAuNSIsfSxuY2FyZW52PXtbImZuIl09Ii9nbGFkZS91L2FwcHMvY2gvbW9kdWxlZmlsZXMvZGVmYXVsdC9pZGVwL25jYXJlbnYvMS4zLmx1YSIsWyJmdWxsTmFtZSJdPSJuY2FyZW52LzEuMyIsWyJsb2FkT3JkZXIiXT0xLHByb3BUPXt9LFsic3RhY2tEZXB0aCJdPTAsWyJzdGF0dXMiXT0iYWN0aXZlIixbInVzZXJOYW1lIl09Im5jYXJlbnYv
-XCURSOR_THEME=DMZ
-LS_OPTIONS=-N --color=none -T 0
-RFile=/glade/u/home/svasquez/esmf_test/cronjobs/daily/intel_cheyenne/testFile_EM
-NCAR_WRAPPER_MPI=/glade/u/apps/ch/opt/ncarcompilers/0.5.0/intel/18.0.5/mpi
-FC=ifort
-WINDOWMANAGER=env GNOME_SHELL_SESSION_MODE=classic SLE_CLASSIC_MODE=1 gnome-session --session gnome-classic
-ESMF_SITE=default
-NETCDF=/glade/u/apps/ch/opt/netcdf/4.7.3/intel/18.0.5/
-VENDOR=unknown
-BASH_ENV=/glade/u/apps/ch/opt/lmod/8.1.7/lmod/lmod/init/bash
-ESMF_ABI=64
-INSTALLPATH_ROOT=/glade/u/apps/ch/opt
-MPI_ROOT=/glade/u/apps/ch/opt/openmpi/3.1.4/intel/18.0.5/
-G_FILENAME_ENCODING=@locale,UTF-8,ISO-8859-15,CP1252
-MACHTYPE=x86_64-suse-linux
-LOGNAME=svasquez
-LESS=-M -I -R
-LOGDIR=/glade/work/svasquez/scripts_dir/daily/intel_cheyenne/esmf_logs/2005_test
-SLURMPATH=/ncar/opt/slurm/latest/
-CVS_RSH=ssh
-XDG_DATA_DIRS=/usr/share
-PBS_QUEUE=regular
-SYS_TEST_TYPE=MULTI
-__LMOD_REF_COUNT_LIBRARY_PATH=/glade/u/apps/ch/opt/openmpi/3.1.4/intel/18.0.5/lib:1
-COMPILER_VERSION=18.0.5
-MODULESHOME=/glade/u/apps/ch/opt/lmod/8.1.7/lmod/lmod
-NCAR_ROOT_INTEL=/glade/u/apps/opt/intel/2018u4
-OMP_NUM_THREADS=36
-PBS_O_MAIL=/var/spool/mail/svasquez
-PKG_CONFIG_PATH=/glade/u/apps/ch/opt/openmpi/3.1.4/intel/18.0.5/lib/pkgconfig:/glade/u/apps/ch/opt/netcdf/4.7.3/intel/18.0.5/lib/pkgconfig
-__LMOD_REF_COUNT_LD_LIBRARY_PATH=/glade/u/apps/ch/opt/openmpi/3.1.4/intel/18.0.5/lib:1;/ncar/opt/slurm/latest/lib:1;/glade/u/apps/opt/intel/2018u4/compilers_and_libraries/linux/lib/intel64:1;/glade/u/apps/ch/os/usr/lib64:1;/glade/u/apps/ch/os/usr/lib:1;/glade/u/apps/ch/os/lib64:1;/glade/u/apps/ch/os/lib:1
-COMPILER=intel
-LESSOPEN=lessopen.sh %s
-LMOD_SETTARG_FULL_SUPPORT=no
-MP_MPILIB=mpich2
-__Init_Default_Modules=1
-LMOD_MPI_VERSION=3.1.4
-USE_PCM_DB=2
-LMOD_FAMILY_COMPILER=intel
-MPIF90_F90=ifort
-INFOPATH=/ncar/opt/slurm/latest//share/doc:
-LMOD_FULL_SETTARG_SUPPORT=no
-__LMOD_REF_COUNT_PKG_CONFIG_PATH=/glade/u/apps/ch/opt/openmpi/3.1.4/intel/18.0.5/lib/pkgconfig:1;/glade/u/apps/ch/opt/netcdf/4.7.3/intel/18.0.5/lib/pkgconfig:1
-CC=icc
-U_TESTS_TYPE=MULTI
-INSPECTOR_2018_DIR=/glade/u/apps/opt/intel/2018u4/inspector
-NCAR_LIBS_NETCDF=-Wl,-Bstatic -lnetcdff -lnetcdf -lhdf5hl_fortran -lhdf5_hl -lhdf5_fortran -lhdf5 -lsz -lz -Wl,-Bdynamic -lm -ldl
-__LMOD_REF_COUNT_MANPATH=/glade/u/apps/ch/opt/openmpi/3.1.4/intel/18.0.5/share/man:1;/ncar/opt/slurm/latest/share/man:1;/glade/u/apps/ch/opt/netcdf/4.7.3/intel/18.0.5/share/man:1;/glade/u/apps/opt/intel/2018u4/compilers_and_libraries/linux/man/common:1;/usr/local/man:1;/usr/share/man:1;/opt/pbs/share/man:1;/opt/clmgr/man:1;/opt/sgi/share/man:1
-LMOD_DIR=/glade/u/apps/ch/opt/lmod/8.1.7/lmod/lmod/libexec
-MP_COMPILER=intel
-PBS_O_SYSTEM=Linux
-LESSCLOSE=lessclose.sh %s %s
-G_BROKEN_FILENAMES=1
-PBS_NODEFILE=/var/spool/pbs/aux/2149763.chadmin1.ib0.cheyenne.ucar.edu
-INTEL_COMPILER_BASE_PATH=/glade/u/apps/opt/intel/2018u4/compilers_and_libraries/linux
-LMOD_FAMILY_MPI=openmpi
-DASK_ROOT_CONFIG=/glade/u/apps/config/dask
-JAVA_ROOT=/usr/lib64/jvm/java
-COLORTERM=1
-PBS_O_PATH=/glade/u/home/svasquez/bin:/ncar/opt/slurm/latest//bin:/opt/clmgr/sbin:/opt/clmgr/bin:/opt/sgi/sbin:/opt/sgi/bin:/glade/u/apps/ch/opt/netcdf/4.7.3/intel/18.0.5/bin:/glade/u/apps/ch/opt/ncarcompilers/0.5.0/intel/18.0.5/mpi:/glade/u/apps/ch/opt/mpt/2.19/bin:/glade/u/apps/ch/opt/ncarcompilers/0.5.0/intel/18.0.5:/glade/u/apps/opt/intel/2018u4/vtune_amplifier/bin64:/glade/u/apps/opt/intel/2018u4/inspector/bin64:/glade/u/apps/opt/intel/2018u4/advisor/bin64:/glade/u/apps/opt/intel/2018u4/compilers_and_libraries/linux/bin/intel64:/glade/u/apps/opt/vncmgr:/glade/u/apps/opt/globus-utils:/glade/u/apps/ch/opt/usr/bin:/glade/u/apps/ch/opt/lmod/8.1.7/bin:/glade/u/home/svasquez/bin:/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:/usr/games:/opt/ibutils/bin:/usr/lib/mit/bin:/glade/u/apps/opt/hpss/hpss-client.5.0.2.p5/bin:/glade/u/apps/ch/os/usr/bin:/opt/pbs/bin:/sbin:/bin
-MPICC_CC=icc
-ESMF_COMPILER=intel
-BASH_FUNC_module%%=() {  eval $($LMOD_CMD bash "$@") && eval $(${LMOD_SETTARG_CMD:-:} -s sh)
-}
-BASH_FUNC_ml%%=() {  eval $($LMOD_DIR/ml_cmd "$@")
-}
-_=/usr/bin/env
-Library build PASS with ESMF_BOPT=O
-Library install PASSED with ESMF_BOPT=O
-Library install PASSED with ESMF_BOPT=O
-Quickstart build passed with ESMF_BOPT=O
-build apps PASSED with ESMF_BOPT=O
-ESMF_Regrid PASSED with ESMF_BOPT=O
-ESMF_Regrid PASSED with ESMF_BOPT=O
-ESMF_Regrid PASSED with ESMF_BOPT=O
-ESMF_Info PASSED with ESMF_BOPT=O
-ESMF_Info PASSED with ESMF_BOPT=O
-ESMF_Info PASSED with ESMF_BOPT=O
-ESMF_InfoC PASSED with ESMF_BOPT=O
-ESMF_InfoC PASSED with ESMF_BOPT=O
-ESMF_InfoC PASSED with ESMF_BOPT=O
-ESMF_RegridWeightGen PASSED with ESMF_BOPT=O
-ESMF_RegridWeightGen PASSED with ESMF_BOPT=O
-ESMF_RegridWeightGen PASSED with ESMF_BOPT=O
-ESMF_Scrip2Unstruct PASSED with ESMF_BOPT=O
-ESMF_Scrip2Unstruct PASSED with ESMF_BOPT=O
-ESMF_Scrip2Unstruct PASSED with ESMF_BOPT=O
-ESMF_WebServController PASSED with ESMF_BOPT=O
-ESMF_WebServController PASSED with ESMF_BOPT=O
-ESMF_WebServController PASSED with ESMF_BOPT=O
-build_system_tests PASS 
-run_system_tests PASS 
-build_examples PASS 
-run_examples PASS 
-cp: cannot stat '/glade/work/svasquez/scripts_dir/daily/intel_cheyenne/esmf/examples/examplesO/Linux.intel.64.openmpi.default/*xsd': No such file or directory
-build_unit_tests PASS 
-run_test PASS 
-cp: cannot stat '/glade/work/svasquez/scripts_dir/daily/intel_cheyenne/esmf/test/testO/Linux.intel.64.openmpi.default/*xsd': No such file or directory
-test_esmf has finished
-number = 3
-cheye /glade/work/svasquez/scripts_dir/daily/intel_cheyenne cheye 64 default intel intelmpi EX MULTI MULTI NON_THREADED NON_MPMD  
-3 cheye  /glade/work/svasquez/scripts_dir/daily/intel_cheyenne cheye	64 default  intel  intelmpi  EX MULTI MULTI   NON_THREADED  NON_MPMD 
-ESMF_DIR = /glade/work/svasquez/scripts_dir/daily/intel_cheyenne/esmf
-LESSKEY=/etc/lesskey.bin
-LMOD_FAMILY_COMPILER_VERSION=18.0.5
-I_MPI_HYDRA_BRANCH_COUNT=-1
-NNTPSERVER=news
-MANPATH=/glade/u/apps/opt/intel/2018u4/impi/2018.4.274/man:/ncar/opt/slurm/latest/share/man:/glade/u/apps/ch/opt/netcdf/4.7.3/intel/18.0.5/share/man:/glade/u/apps/opt/intel/2018u4/compilers_and_libraries/linux/man/common:/usr/local/man:/usr/share/man:/opt/pbs/share/man:/opt/clmgr/man:/opt/sgi/share/man
-_ModuleTable003_=cnMvMC41Iix9LG5jYXJlbnY9e1siZm4iXT0iL2dsYWRlL3UvYXBwcy9jaC9tb2R1bGVmaWxlcy9kZWZhdWx0L2lkZXAvbmNhcmVudi8xLjMubHVhIixbImZ1bGxOYW1lIl09Im5jYXJlbnYvMS4zIixbImxvYWRPcmRlciJdPTEscHJvcFQ9e30sWyJzdGFja0RlcHRoIl09MCxbInN0YXR1cyJdPSJhY3RpdmUiLFsidXNlck5hbWUiXT0ibmNhcmVudi8xLjMiLH0sbmV0Y2RmPXtbImZuIl09Ii9nbGFkZS91L2FwcHMvY2gvbW9kdWxlZmlsZXMvZGVmYXVsdC9pbnRlbC8xOC4wLjUvbmV0Y2RmLzQuNy4zLmx1YSIsWyJmdWxsTmFtZSJdPSJuZXRjZGYvNC43LjMiLFsibG9hZE9yZGVyIl09NCxwcm9wVD17fSxbInN0YWNrRGVwdGgiXT0wLFsic3RhdHVzIl09ImFjdGl2ZSIsWyJ1c2Vy
-HOSTNAME=chadmin3
-XKEYSYMDB=/usr/X11R6/lib/X11/XKeysymDB
-MPI_SYSLOG_COPY=2
-PBS_ACCOUNT=P93300606
-INTEL_LICENSE_FILE=28518@128.117.177.41
-NCAR_ROOT_IMPI=/glade/u/apps/opt/intel/2018u4/impi/2018.4.274
-TERM=unknown
-HOST=r2i3n26
-ADVISOR_2018_DIR=/glade/u/apps/opt/intel/2018u4/advisor
-SHELL=/usr/local/bin/pbs_shell
-__LMOD_REF_COUNT_MODULEPATH=/glade/u/apps/ch/modulefiles/default/compilers:1;/glade/u/apps/ch/modulefiles/default/idep:1;/glade/u/apps/ch/modulefiles/default/intel/18.0.5:1;/glade/u/apps/ch/modulefiles/default/impi/2018.4.274/intel/18.0.5:1
-ESMF_OS=Linux
-INTEL_MINOR_VERSION=0.5
-LUAROCKS_PREFIX=/glade/u/apps/ch/opt/lmod/8.1.7
-PROFILEREAD=true
-HISTSIZE=1000
-U_TESTS=EX
-PBS_JOBNAME=STDIN
-CESMDATAROOT=/glade/p/cesmdata/cseg
-LMOD_SYSTEM_DEFAULT_MODULES=ncarenv/1.3:intel/18.0.5:ncarcompilers/0.5:mpt/2.19:netcdf/4.7.3
-MODULEPATH_ROOT=/glade/u/apps/ch/modulefiles/default
-TMPDIR=/var/tmp/pbs.2149763.chadmin1.ib0.cheyenne.ucar.edu
-ESMF_TESTMPMD=OFF
-PERL5LIB=/glade/u/apps/ch/os/usr/lib/perl5/5.18.2/
-OMP_STACKSIZE=64000K
-ESMF_TESTHARNESS_ARRAY=RUN_ESMF_TestHarnessArrayUNI_2
-ESMF_NETCDF=split
-PBS_ENVIRONMENT=PBS_INTERACTIVE
-MORE=-sl
-LMOD_PKG=/glade/u/apps/ch/opt/lmod/8.1.7/lmod/lmod
-OLDPWD=/glade/work/svasquez/scripts_dir/daily/intel_cheyenne/esmf
-MPICXX_CXX=icpc
-LMOD_VERSION=8.1.7
-PBS_O_WORKDIR=/glade/u/home/svasquez/esmf_test/cronjobs/daily/intel_cheyenne
-NCPUS=36
-__LMOD_REF_COUNT_LOADEDMODULES=ncarenv/1.3:1;intel/18.0.5:1;ncarcompilers/0.5.0:1;netcdf/4.7.3:1;impi/2018.4.274:1
-my_make=gmake
-TARG_TITLE_BAR_PAREN= 
-JRE_HOME=/usr/lib64/jvm/java/jre
-PBS_TASKNUM=1
-LMOD_MPI=impi
-USER=svasquez
-GROUP=ncar
-WRFIO_NCD_LARGE_FILE_SUPPORT=1
-LD_LIBRARY_PATH=/glade/u/apps/opt/intel/2018u4/impi/2018.4.274/intel64/lib:/ncar/opt/slurm/latest/lib:/glade/u/apps/opt/intel/2018u4/compilers_and_libraries/linux/lib/intel64:/glade/u/apps/ch/os/usr/lib64:/glade/u/apps/ch/os/usr/lib:/glade/u/apps/ch/os/lib64:/glade/u/apps/ch/os/lib
-LS_COLORS=
-homedir=/gpfs/u/home/svasquez/esmf_test/cronjobs/daily/intel_cheyenne
-PBS_O_HOME=/glade/u/home/svasquez
-ESMF_MPIRUN=mpirun
-XNLSPATH=/usr/share/X11/nls
-LMOD_MODULERCFILE=/glade/u/apps/ch/modulefiles/default/localinit/hidden.lua
-ENV=/etc/profile.d/modules.sh
-ESMF_DIR=/glade/work/svasquez/scripts_dir/daily/intel_cheyenne/esmf
-ESMF_TESTHARNESS_FIELD=RUN_ESMF_TestHarnessFieldUNI_1
-_ModuleTable004_=TmFtZSJdPSJuZXRjZGYvNC43LjMiLH0sfSxtcGF0aEE9eyIvZ2xhZGUvdS9hcHBzL2NoL21vZHVsZWZpbGVzL2RlZmF1bHQvY29tcGlsZXJzIiwiL2dsYWRlL3UvYXBwcy9jaC9tb2R1bGVmaWxlcy9kZWZhdWx0L2lkZXAiLCIvZ2xhZGUvdS9hcHBzL2NoL21vZHVsZWZpbGVzL2RlZmF1bHQvaW50ZWwvMTguMC41IiwiL2dsYWRlL3UvYXBwcy9jaC9tb2R1bGVmaWxlcy9kZWZhdWx0L2ltcGkvMjAxOC40LjI3NC9pbnRlbC8xOC4wLjUiLH0sWyJzeXN0ZW1CYXNlTVBBVEgiXT0iL2dsYWRlL3UvYXBwcy9jaC9tb2R1bGVmaWxlcy9kZWZhdWx0L2NvbXBpbGVyczovZ2xhZGUvdS9hcHBzL2NoL21vZHVsZWZpbGVzL2RlZmF1bHQvaWRlcCIsfQ==
-HOSTTYPE=x86_64
-OSCAR_HOME=/opt/oscar
-QEMU_AUDIO_DRV=pa
-VTUNE_AMPLIFIER_2018_DIR=/glade/u/apps/opt/intel/2018u4/vtune_amplifier
-__LMOD_REF_COUNT__LMFILES_=/glade/u/apps/ch/modulefiles/default/idep/ncarenv/1.3.lua:1;/glade/u/apps/ch/modulefiles/default/compilers/intel/18.0.5.lua:1;/glade/u/apps/ch/modulefiles/default/intel/18.0.5/ncarcompilers/0.5.0.lua:1;/glade/u/apps/ch/modulefiles/default/intel/18.0.5/netcdf/4.7.3.lua:1;/glade/u/apps/ch/modulefiles/default/intel/18.0.5/impi/2018.4.274.lua:1
-FROM_HEADER=
-PBS_MOMPORT=15003
-NCAR_HOST=cheyenne
-PAGER=less
-NCAR_EXCLUDE_ASNEEDED=1
-CSHEDIT=emacs
-PBS_O_QUEUE=regular
-XDG_CONFIG_DIRS=/etc/xdg
-LMOD_FAMILY_MPI_VERSION=2018.4.274
-INTEL_MAJOR_VERSION=18.0
-NLSPATH=/glade/u/apps/opt/intel/2018u4/compilers_and_libraries/linux/lib/intel64/locale/%l_%t/%N
-MINICOM=-c on
-PATH=/glade/u/apps/ch/opt/ncarcompilers/0.5.0/intel/18.0.5/mpi:/glade/u/apps/opt/intel/2018u4/impi/2018.4.274/intel64/bin:/glade/u/home/svasquez/bin:/glade/u/apps/ch/opt/lmod/8.1.7/bin:/ncar/opt/slurm/latest/bin:/opt/clmgr/sbin:/opt/clmgr/bin:/opt/sgi/sbin:/opt/sgi/bin:/glade/u/apps/ch/opt/netcdf/4.7.3/intel/18.0.5/bin:/glade/u/apps/ch/opt/ncarcompilers/0.5.0/intel/18.0.5:/glade/u/apps/opt/intel/2018u4/vtune_amplifier/bin64:/glade/u/apps/opt/intel/2018u4/inspector/bin64:/glade/u/apps/opt/intel/2018u4/advisor/bin64:/glade/u/apps/opt/intel/2018u4/compilers_and_libraries/linux/bin/intel64:/glade/u/apps/opt/vncmgr:/glade/u/apps/opt/globus-utils:/glade/u/apps/ch/opt/usr/bin:/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:/usr/games:/opt/ibutils/bin:/usr/lib/mit/bin:/glade/u/apps/opt/hpss/hpss-client.5.0.2.p5/bin:/glade/u/apps/ch/os/usr/bin:/opt/pbs/bin:/sbin
-MAIL=/var/spool/mail/svasquez
-_ModuleTable001_=X01vZHVsZVRhYmxlXz17WyJNVHZlcnNpb24iXT0zLFsiY19yZWJ1aWxkVGltZSJdPWZhbHNlLFsiY19zaG9ydFRpbWUiXT0wLjEwOTM1MzA2NTQ5MDcyLGRlcHRoVD17fSxmYW1pbHk9e1siY29tcGlsZXIiXT0iaW50ZWwiLFsibXBpIl09ImltcGkiLH0sbVQ9e2ltcGk9e1siZm4iXT0iL2dsYWRlL3UvYXBwcy9jaC9tb2R1bGVmaWxlcy9kZWZhdWx0L2ludGVsLzE4LjAuNS9pbXBpLzIwMTguNC4yNzQubHVhIixbImZ1bGxOYW1lIl09ImltcGkvMjAxOC40LjI3NCIsWyJsb2FkT3JkZXIiXT01LHByb3BUPXt9LFsic3RhY2tEZXB0aCJdPTAsWyJzdGF0dXMiXT0iYWN0aXZlIixbInVzZXJOYW1lIl09ImltcGkiLH0saW50ZWw9e1siZm4iXT0iL2dsYWRlL3UvYXBwcy9jaC9tb2R1
-PBS_O_LOGNAME=svasquez
-__LMOD_REF_COUNT_NLSPATH=/glade/u/apps/opt/intel/2018u4/compilers_and_libraries/linux/lib/intel64/locale/%l_%t/%N:1
-CPU=x86_64
-PBS_O_LANG=en_US.UTF-8
-JAVA_BINDIR=/usr/lib64/jvm/java/bin
-PBS_JOBCOOKIE=000000002591677C0000000069F9C2C8
-ESMF_TESTWITHTHREADS=OFF
-LMOD_SETTARG_CMD=:
-PWD=/glade/work/svasquez/scripts_dir/daily/intel_cheyenne/esmf
-NCAR_LDFLAGS_NETCDF=/glade/u/apps/ch/opt/netcdf/4.7.3/intel/18.0.5/lib
-F90=ifort
-INPUTRC=/etc/inputrc
-_LMFILES_=/glade/u/apps/ch/modulefiles/default/idep/ncarenv/1.3.lua:/glade/u/apps/ch/modulefiles/default/compilers/intel/18.0.5.lua:/glade/u/apps/ch/modulefiles/default/intel/18.0.5/ncarcompilers/0.5.0.lua:/glade/u/apps/ch/modulefiles/default/intel/18.0.5/netcdf/4.7.3.lua:/glade/u/apps/ch/modulefiles/default/intel/18.0.5/impi/2018.4.274.lua
-JAVA_HOME=/usr/lib64/jvm/java
-OPT=g
-ESMF_NETCDF_LIBPATH=/glade/u/apps/ch/opt/netcdf/4.6.1/intel/17.0.1/lib
-LUA_PATH=/glade/u/apps/ch/opt/lmod/8.1.7/share/lua/5.1/?.lua;/glade/u/apps/ch/opt/lmod/8.1.7/share/lua/5.1/?/init.lua;;
-LANG=en_US.UTF-8
-NCAR_ROOT_NETCDF=/glade/u/apps/ch/opt/netcdf/4.7.3/intel/18.0.5/
-PBS_NODENUM=0
-PYTHONSTARTUP=/etc/pythonstart
-MODULEPATH=/glade/u/apps/ch/modulefiles/default/compilers:/glade/u/apps/ch/modulefiles/default/idep:/glade/u/apps/ch/modulefiles/default/intel/18.0.5:/glade/u/apps/ch/modulefiles/default/impi/2018.4.274/intel/18.0.5
-LUA_CPATH=/glade/u/apps/ch/opt/lmod/8.1.7/lib/lua/5.1/?.so;;
-NCAR_INC_NETCDF=/glade/u/apps/ch/opt/netcdf/4.7.3/intel/18.0.5/include
-LOADEDMODULES=ncarenv/1.3:intel/18.0.5:ncarcompilers/0.5.0:netcdf/4.7.3:impi/2018.4.274
-PBS_JOBDIR=/glade/u/home/svasquez
-TZ=America/Denver
-_ModuleTable_Sz_=4
-LMOD_SYSTEM_NAME=ch
-SDK_HOME=/usr/lib64/jvm/java
-F77=ifort
-C3_RSH=ssh -oConnectTimeout=10 -oForwardX11=no
-PBS_O_SHELL=/bin/sh
-ESMF_COMM=intelmpi
-ESMF_INSTALL_PREFIX=/glade/work/svasquez/scripts_dir/daily/intel_cheyenne/esmf/../install_dir
-I_MPI_F90=ifort
-LMOD_CMD=/glade/u/apps/ch/opt/lmod/8.1.7/lmod/lmod/libexec/lmod
-LMOD_COMPILER_VERSION=18.0.5
-MPI_IB_CONGESTED=1
-MPI_VERSION=2018.4.274
-I_MPI_CC=icc
-LM_LICENSE_FILE=28518@128.117.177.41
-PBS_JOBID=2149763.chadmin1.ib0.cheyenne.ucar.edu
-INTEL_BASE_PATH=/glade/u/apps/opt/intel/2018u4
-MPI_SHEPHERD=true
-CXX=icpc
-THREADED=NON_THREADED
-AUDIODRIVER=pulseaudio
-LMOD_COMPILER=intel
-GPG_TTY=/dev/pts/0
-ESMF_TESTEXHAUSTIVE=ON
-HOME=/glade/u/home/svasquez
-SHLVL=5
-JDK_HOME=/usr/lib64/jvm/java
-QT_SYSTEM_DIR=/usr/share/desktop-data
-LOGTMP=ERROR
-ESMF_BOPT=g
-SDL_AUDIODRIVER=pulse
-OSTYPE=linux
-__LMOD_REF_COUNT_PATH=/glade/u/apps/ch/opt/ncarcompilers/0.5.0/intel/18.0.5/mpi:2;/glade/u/apps/opt/intel/2018u4/impi/2018.4.274/intel64/bin:1;/glade/u/home/svasquez/bin:3;/glade/u/apps/ch/opt/lmod/8.1.7/bin:2;/ncar/opt/slurm/latest/bin:1;/opt/clmgr/sbin:1;/opt/clmgr/bin:1;/opt/sgi/sbin:1;/opt/sgi/bin:1;/glade/u/apps/ch/opt/netcdf/4.7.3/intel/18.0.5/bin:1;/glade/u/apps/ch/opt/ncarcompilers/0.5.0/intel/18.0.5:1;/glade/u/apps/opt/intel/2018u4/vtune_amplifier/bin64:1;/glade/u/apps/opt/intel/2018u4/inspector/bin64:1;/glade/u/apps/opt/intel/2018u4/advisor/bin64:1;/glade/u/apps/opt/intel/2018u4/compilers_and_libraries/linux/bin/intel64:1;/glade/u/apps/opt/vncmgr:1;/glade/u/apps/opt/globus-utils:1;/glade/u/apps/ch/opt/usr/bin:1;/usr/local/bin:1;/usr/bin:1;/bin:2;/usr/bin/X11:1;/usr/games:1;/opt/ibutils/bin:1;/usr/lib/mit/bin:1;/glade/u/apps/opt/hpss/hpss-client.5.0.2.p5/bin:1;/glade/u/apps/ch/os/usr/bin:1;/opt/pbs/bin:1;/sbin:1
-ALSA_CONFIG_PATH=/etc/alsa-pulse.conf
-LANGUAGE=en_US.UTF-8
-LESS_ADVANCED_PREPROCESSOR=no
-I_MPI_CXX=icpc
-I_MPI_HYDRA_BOOTSTRAP_EXEC=pbs_tmrsh
-PBS_O_HOST=chadmin3.ib0.cheyenne.ucar.edu
-CESMROOT=/glade/p/cesm
-_ModuleTable002_=bGVmaWxlcy9kZWZhdWx0L2NvbXBpbGVycy9pbnRlbC8xOC4wLjUubHVhIixbImZ1bGxOYW1lIl09ImludGVsLzE4LjAuNSIsWyJsb2FkT3JkZXIiXT0yLHByb3BUPXt9LFsic3RhY2tEZXB0aCJdPTAsWyJzdGF0dXMiXT0iYWN0aXZlIixbInVzZXJOYW1lIl09ImludGVsLzE4LjAuNSIsfSxuY2FyY29tcGlsZXJzPXtbImZuIl09Ii9nbGFkZS91L2FwcHMvY2gvbW9kdWxlZmlsZXMvZGVmYXVsdC9pbnRlbC8xOC4wLjUvbmNhcmNvbXBpbGVycy8wLjUuMC5sdWEiLFsiZnVsbE5hbWUiXT0ibmNhcmNvbXBpbGVycy8wLjUuMCIsWyJsb2FkT3JkZXIiXT0zLHByb3BUPXt9LFsic3RhY2tEZXB0aCJdPTAsWyJzdGF0dXMiXT0iYWN0aXZlIixbInVzZXJOYW1lIl09Im5jYXJjb21waWxl
-XCURSOR_THEME=DMZ
-LS_OPTIONS=-N --color=none -T 0
-RFile=/glade/u/home/svasquez/esmf_test/cronjobs/daily/intel_cheyenne/testFile_EM
-NCAR_WRAPPER_MPI=/glade/u/apps/ch/opt/ncarcompilers/0.5.0/intel/18.0.5/mpi
-FC=ifort
-WINDOWMANAGER=env GNOME_SHELL_SESSION_MODE=classic SLE_CLASSIC_MODE=1 gnome-session --session gnome-classic
-ESMF_SITE=default
-NETCDF=/glade/u/apps/ch/opt/netcdf/4.7.3/intel/18.0.5/
-VENDOR=unknown
-BASH_ENV=/glade/u/apps/ch/opt/lmod/8.1.7/lmod/lmod/init/bash
-ESMF_ABI=64
-I_MPI_FC=ifort
-INSTALLPATH_ROOT=/glade/u/apps/ch/opt
-MPI_ROOT=/glade/u/apps/opt/intel/2018u4/impi/2018.4.274
-G_FILENAME_ENCODING=@locale,UTF-8,ISO-8859-15,CP1252
-MACHTYPE=x86_64-suse-linux
-LOGNAME=svasquez
-LESS=-M -I -R
-LOGDIR=/glade/work/svasquez/scripts_dir/daily/intel_cheyenne/esmf_logs/2005_test
-SLURMPATH=/ncar/opt/slurm/latest/
-CVS_RSH=ssh
-XDG_DATA_DIRS=/usr/share
-PBS_QUEUE=regular
-SYS_TEST_TYPE=MULTI
-COMPILER_VERSION=18.0.5
-MODULESHOME=/glade/u/apps/ch/opt/lmod/8.1.7/lmod/lmod
-NCAR_ROOT_INTEL=/glade/u/apps/opt/intel/2018u4
-I_MPI_HYDRA_BOOTSTRAP=rsh
-OMP_NUM_THREADS=36
-PBS_O_MAIL=/var/spool/mail/svasquez
-PKG_CONFIG_PATH=/glade/u/apps/ch/opt/netcdf/4.7.3/intel/18.0.5/lib/pkgconfig
-__LMOD_REF_COUNT_LD_LIBRARY_PATH=/glade/u/apps/opt/intel/2018u4/impi/2018.4.274/intel64/lib:1;/ncar/opt/slurm/latest/lib:1;/glade/u/apps/opt/intel/2018u4/compilers_and_libraries/linux/lib/intel64:1;/glade/u/apps/ch/os/usr/lib64:1;/glade/u/apps/ch/os/usr/lib:1;/glade/u/apps/ch/os/lib64:1;/glade/u/apps/ch/os/lib:1
-COMPILER=intel
-LESSOPEN=lessopen.sh %s
-LMOD_SETTARG_FULL_SUPPORT=no
-MP_MPILIB=mpich2
-__Init_Default_Modules=1
-LMOD_MPI_VERSION=2018.4.274
-USE_PCM_DB=2
-LMOD_FAMILY_COMPILER=intel
-MPIF90_F90=ifort
-INFOPATH=/ncar/opt/slurm/latest//share/doc:
-LMOD_FULL_SETTARG_SUPPORT=no
-__LMOD_REF_COUNT_PKG_CONFIG_PATH=/glade/u/apps/ch/opt/netcdf/4.7.3/intel/18.0.5/lib/pkgconfig:1
-CC=icc
-U_TESTS_TYPE=MULTI
-INSPECTOR_2018_DIR=/glade/u/apps/opt/intel/2018u4/inspector
-ESMF_NETCDF_INCLUDE=/glade/u/apps/ch/opt/netcdf/4.6.1/intel/17.0.1/include
-NCAR_LIBS_NETCDF=-Wl,-Bstatic -lnetcdff -lnetcdf -lhdf5hl_fortran -lhdf5_hl -lhdf5_fortran -lhdf5 -lsz -lz -Wl,-Bdynamic -lm -ldl
-__LMOD_REF_COUNT_MANPATH=/glade/u/apps/opt/intel/2018u4/impi/2018.4.274/man:1;/ncar/opt/slurm/latest/share/man:1;/glade/u/apps/ch/opt/netcdf/4.7.3/intel/18.0.5/share/man:1;/glade/u/apps/opt/intel/2018u4/compilers_and_libraries/linux/man/common:1;/usr/local/man:1;/usr/share/man:1;/opt/pbs/share/man:1;/opt/clmgr/man:1;/opt/sgi/share/man:1
-LMOD_DIR=/glade/u/apps/ch/opt/lmod/8.1.7/lmod/lmod/libexec
-MP_COMPILER=intel
-PBS_O_SYSTEM=Linux
-LESSCLOSE=lessclose.sh %s %s
-G_BROKEN_FILENAMES=1
-PBS_NODEFILE=/var/spool/pbs/aux/2149763.chadmin1.ib0.cheyenne.ucar.edu
-INTEL_COMPILER_BASE_PATH=/glade/u/apps/opt/intel/2018u4/compilers_and_libraries/linux
-LMOD_FAMILY_MPI=impi
-DASK_ROOT_CONFIG=/glade/u/apps/config/dask
-JAVA_ROOT=/usr/lib64/jvm/java
-COLORTERM=1
-PBS_O_PATH=/glade/u/home/svasquez/bin:/ncar/opt/slurm/latest//bin:/opt/clmgr/sbin:/opt/clmgr/bin:/opt/sgi/sbin:/opt/sgi/bin:/glade/u/apps/ch/opt/netcdf/4.7.3/intel/18.0.5/bin:/glade/u/apps/ch/opt/ncarcompilers/0.5.0/intel/18.0.5/mpi:/glade/u/apps/ch/opt/mpt/2.19/bin:/glade/u/apps/ch/opt/ncarcompilers/0.5.0/intel/18.0.5:/glade/u/apps/opt/intel/2018u4/vtune_amplifier/bin64:/glade/u/apps/opt/intel/2018u4/inspector/bin64:/glade/u/apps/opt/intel/2018u4/advisor/bin64:/glade/u/apps/opt/intel/2018u4/compilers_and_libraries/linux/bin/intel64:/glade/u/apps/opt/vncmgr:/glade/u/apps/opt/globus-utils:/glade/u/apps/ch/opt/usr/bin:/glade/u/apps/ch/opt/lmod/8.1.7/bin:/glade/u/home/svasquez/bin:/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:/usr/games:/opt/ibutils/bin:/usr/lib/mit/bin:/glade/u/apps/opt/hpss/hpss-client.5.0.2.p5/bin:/glade/u/apps/ch/os/usr/bin:/opt/pbs/bin:/sbin:/bin
-MPICC_CC=icc
-ESMF_COMPILER=intel
-I_MPI_ROOT=/glade/u/apps/opt/intel/2018u4/impi/2018.4.274
-BASH_FUNC_module%%=() {  eval $($LMOD_CMD bash "$@") && eval $(${LMOD_SETTARG_CMD:-:} -s sh)
-}
-BASH_FUNC_ml%%=() {  eval $($LMOD_DIR/ml_cmd "$@")
-}
-_=/usr/bin/env
-Library build PASS with ESMF_BOPT=g
-Library install PASSED with ESMF_BOPT=g
-Library install PASSED with ESMF_BOPT=g
-Quickstart build passed with ESMF_BOPT=g
-build apps PASSED with ESMF_BOPT=g
-ESMF_Regrid PASSED with ESMF_BOPT=g
-ESMF_Regrid PASSED with ESMF_BOPT=g
-ESMF_Regrid PASSED with ESMF_BOPT=g
-ESMF_Info PASSED with ESMF_BOPT=g
-ESMF_Info PASSED with ESMF_BOPT=g
-ESMF_Info PASSED with ESMF_BOPT=g
-ESMF_InfoC PASSED with ESMF_BOPT=g
-ESMF_InfoC PASSED with ESMF_BOPT=g
-ESMF_InfoC PASSED with ESMF_BOPT=g
-ESMF_RegridWeightGen PASSED with ESMF_BOPT=g
-ESMF_RegridWeightGen PASSED with ESMF_BOPT=g
-ESMF_RegridWeightGen PASSED with ESMF_BOPT=g
-ESMF_Scrip2Unstruct PASSED with ESMF_BOPT=g
-ESMF_Scrip2Unstruct PASSED with ESMF_BOPT=g
-ESMF_Scrip2Unstruct PASSED with ESMF_BOPT=g
-ESMF_WebServController PASSED with ESMF_BOPT=g
-ESMF_WebServController PASSED with ESMF_BOPT=g
-ESMF_WebServController PASSED with ESMF_BOPT=g

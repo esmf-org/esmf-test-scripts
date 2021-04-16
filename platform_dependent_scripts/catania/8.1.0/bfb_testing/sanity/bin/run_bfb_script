@@ -1,6 +1,0 @@
-#!/bin/bash
-
-
-./bfb_comp /glade/scratch/himanshu/scripts_dir/daily/bfb_testing/sanity/dir/esmf-extended-tests/ESMF_RegridWeightGenCheck  /glade/scratch/himanshu/scripts_dir/daily/bfb_testing/sanity/esmf-extended-tests/ESMF_RegridWeightGenCheck 1> bfb_bs39-aug-head 2>&1
-
-

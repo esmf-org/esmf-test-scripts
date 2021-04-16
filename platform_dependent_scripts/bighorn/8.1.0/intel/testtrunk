@@ -1,8 +1,0 @@
-TFORM	DIRECTORY			   		     HOSTNAME  		PREC SITE  COMPILER COMM UTEST_TYPE UTEST_RUN SYSTEST_RUN SYS_TEST_TYPE CO TAG
-1 mt  /project/esmf/bighorn_8.1.0/intel mt	64 default  intel  mpiuni  EX UNI UNI   NON_THREADED  NON_MPMD 
-#2 mt  /project/esmf/bighorn_8.1.0/intel mt	64 default  intel  openmpi  EX MULTI MULTI   NON_THREADED  NON_MPMD 
-
-LOG_DIR1    /project/esmf/bighorn_8.1.0/intel/dir/esmf_logs ERROR
-email_title Release_8.1.0_Bighorn_intel_Test
-email_to   himanshu@ucar.edu
-

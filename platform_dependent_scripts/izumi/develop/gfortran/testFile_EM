@@ -1,8 +1,0 @@
-TFORM	DIRECTORY			   		     HOSTNAME  		PREC SITE  COMPILER COMM UTEST_TYPE UTEST_RUN SYSTEST_RUN SYS_TEST_TYPE CO TAG
-1 mt  /project/esmf/himanshu/gfortran mt  64 default  gfortran  mpiuni EX UNI UNI NON_THREADED  NON_MPMD 
-#2 mt  /project/esmf/himanshu/gfortran mt  64 default  gfortran  openmpi  EX MULTI MULTI NON_THREADED  NON_MPMD 
-
-LOG_DIR1    /project/esmf/himanshu/gfortran/esmf_logs ERROR
-email_title ESMF_Trunk_Izumi_gfortran_Test
-email_to   himanshu@ucar.edu
-

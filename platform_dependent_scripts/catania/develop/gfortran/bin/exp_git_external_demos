@@ -1,8 +1,0 @@
-#!/usr/bin/expect --
-
-set timeout 3600
-
-spawn git clone https://github.com/esmf-org/esmf.git
-
-expect  eof
-
