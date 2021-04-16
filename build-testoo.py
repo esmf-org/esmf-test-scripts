@@ -408,8 +408,8 @@ class ESMFTest:
                 print("creating scripts")
                 self.createScripts(build_type,comp,ver,mpidict,mpitypes,key,branch)
                 self.scheduler.submit(self,subdir,self.mpiver,branch)
+                os.chdir("..")
 
-      os.chdir("..")
     
 if __name__ == "__main__":
   parser = argparse.ArgumentParser(description='ESMF nightly build/test system')
