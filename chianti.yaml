@@ -3,7 +3,6 @@ scheduler: None
 corespernode: 8
 compiler: [gfortran]
 branch: [patch/8.1.1,develop]
-nuopcbranch: develop
 modulepath: /home/mpotts/spack/share/spack/modules/linux-linuxmint19-skylake 
 intel:
      versions: 
