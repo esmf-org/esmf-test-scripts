@@ -297,9 +297,9 @@ class ESMFTest:
         modulecmd = "module load {} \n".format(self.machine_list[comp]['versions'][ver]['netcdf-fortran'])
         file_out.write(modulecmd)
 
-      if(build_type == "build"):
+      if(headerType == "build"):
         file_out.write("module list >& module-build.log\n\n")
-      elif(build_type == "test"):
+      elif(headerType == "test"):
         file_out.write("module list >& module-test.log\n\n")
 
       file_out.write("set -x\n") 
