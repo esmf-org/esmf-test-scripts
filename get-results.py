@@ -36,15 +36,25 @@ def checkqueue(jobid,scheduler):
 def copy_artifacts(build_dir,artifacts_root,machine_name,mpiversion,oe_filelist,jobid,scheduler,branch):
 
   build_basename = os.path.basename(build_dir)
-  [compiler, version, mpiflavor, build_type] = build_basename.split("_")
+  gitbranch = branch
+  dirbranch = re.sub("/","_",branch)
+  print("build_basename is {}".format(build_basename))
+  parts = build_basename.split("_")
+# [compiler, version, mpiflavor, build_type,dirbranch] = build_basename.split("_")
+  compiler = parts[0]
+  version = parts[1]
+  mpiflavor = parts[2]
+  build_type = parts[3]
   #get the full path for placment of artifacts
   if(mpiversion != "None"):
-    outpath = "{}/{}/{}/{}/{}/{}/{}/{}".format(artifacts_root,branch,machine_name,compiler,version,build_type,mpiflavor,mpiversion)
+    outpath = "{}/{}/{}/{}/{}/{}/{}/{}".format(artifacts_root,dirbranch,machine_name,compiler,version,build_type,mpiflavor,mpiversion)
   else:
-    outpath = "{}/{}/{}/{}/{}/{}/{}".format(artifacts_root,branch,machine_name,compiler,version,build_type,mpiflavor)
+    outpath = "{}/{}/{}/{}/{}/{}/{}".format(artifacts_root,dirbranch,machine_name,compiler,version,build_type,mpiflavor)
   #copy/rename the stdout/stderr files to artifacts out directory
   test_stage = False
+  print("outpath is {}".format(outpath))
   for cfile in oe_filelist:
+    print("cfile is {}".format(cfile))
     if((cfile.find('test_{}'.format(jobid)) != -1)): # this is just the build job, so no test artifacts yet
       test_stage = True
   if(not test_stage):
@@ -62,7 +72,8 @@ def copy_artifacts(build_dir,artifacts_root,machine_name,mpiversion,oe_filelist,
     print("cp command is {}".format(cp_cmd))
     os.system(cp_cmd)
   if(not (test_stage)):
-    git_cmd = "cd {};git checkout {};git add {}/{};git commit -a -m\'update for build {} on {} [ci skip]\';git push origin {}".format(artifacts_root,machine_name,branch,machine_name,build_basename,machine_name,machine_name)
+    git_cmd = "cd {};git checkout {};git add {}/{};git commit -a -m\'update for build {} on {} [ci skip]\';git push origin {}".format(artifacts_root,machine_name,dirbranch,machine_name,build_basename,machine_name,machine_name)
+    print("git_cmd is {}".format(git_cmd))
     os.system(git_cmd)
     return
   #Make directories, if they aren't already there
@@ -85,6 +96,7 @@ def copy_artifacts(build_dir,artifacts_root,machine_name,mpiversion,oe_filelist,
     example_results="No examples ran"
 # get information from test results files to accumulate
   test_artifacts = glob.glob('{}/test/test{}/*/*.Log'.format(build_dir,build_type))
+  print("test_artifacts are ".format(test_artifacts))
   test_artifacts.extend(glob.glob('{}/test/test{}/*/*.stdout'.format(build_dir,build_type)))
   try:
     unit_results= subprocess.check_output('cat {}/test/test{}/*/unit_tests_results'.format(build_dir,build_type),shell=True).strip().decode('utf-8')
@@ -123,18 +135,23 @@ def copy_artifacts(build_dir,artifacts_root,machine_name,mpiversion,oe_filelist,
 # return
   for afile in example_artifacts:
     cmd = 'cp {} {}/examples'.format(afile,outpath)
+#   print("cmd is {}".format(cmd))
     os.system(cmd)
   for afile in test_artifacts:
     cmd = 'cp {} {}/test'.format(afile,outpath)
+#   print("cmd is {}".format(cmd))
     os.system(cmd)
   for afile in esmfmkfile:
     cmd = 'cp {} {}/lib'.format(afile,outpath)
+#   print("cmd is {}".format(cmd))
     os.system(cmd)
   for afile in python_artifacts:
     cmd = 'cp {} {}'.format(afile,outpath)
+#   print("cmd is {}".format(cmd))
     os.system(cmd)
 
-  git_cmd = "cd {};git checkout {};git add {}/{};git commit -a -m\'update for test {} on {} [ci skip]\';git push origin {}".format(artifacts_root,machine_name,branch,machine_name,build_basename,machine_name,machine_name)
+  git_cmd = "cd {};git checkout {};git add {}/{};git commit -a -m\'update for test {} on {} [ci skip]\';git push origin {}".format(artifacts_root,machine_name,dirbranch,machine_name,build_basename,machine_name,machine_name)
+# print("git_cmd is {}".format(git_cmd))
   os.system(git_cmd)
   return
 
@@ -160,6 +177,7 @@ def main(argv):
       oe_filelist = glob.glob('{}/{}/*_{}*.log'.format(test_root_dir,build_basename,jobid))
       oe_filelist.extend(glob.glob('{}/{}/*.bat'.format(test_root_dir,build_basename)))
       oe_filelist.extend(glob.glob('{}/{}/module-*.log'.format(test_root_dir,build_basename)))
+      print("filelist is {}".format(oe_filelist))
       print("oe list is {}\n".format(oe_filelist))
       copy_artifacts(build_dir,artifacts_root,machine_name,mpiver,oe_filelist,jobid,scheduler,branch)
       break

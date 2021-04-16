@@ -6,7 +6,7 @@ scheduler: pbs
 corespernode: 128
 compiler: [intel,gfortran]
 #compiler: [gfortran]
-branch: develop
+branch: [develop]
 intel:
      versions: 
        2019.3: 

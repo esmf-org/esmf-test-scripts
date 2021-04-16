@@ -7,7 +7,7 @@ scheduler: slurm
 corespernode: 28
 compiler: [intel,gfortran,pgi]
 #compiler: [pgi]
-branch: develop
+branch: [develop]
 intel:
    versions:
      2020: 
