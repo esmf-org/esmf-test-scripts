@@ -75,6 +75,7 @@ class pbs(scheduler):
       file_out.write("#PBS -q {}\n".format(test.queue))
       file_out.write("#PBS -A {}\n".format(test.account))
       file_out.write("#PBS -l select=1:ncpus={}:mpiprocs={}\n".format(test.cpn,test.cpn))
+      file_out.write("JOBID=\"`echo $PBS_JOBID | cut -d. -f1`\"\n\n")
       file_out.write("cd {}\n".format(os.getcwd()))
 
   def submit(self,test,subdir,mpiver,branch):
@@ -121,6 +122,7 @@ class slurm(scheduler):
       file_out.write("#SBATCH --nodes=1\n")
       file_out.write("#SBATCH --ntasks-per-node={}\n".format(test.cpn))
       file_out.write("#SBATCH --exclusive\n")
+      file_out.write("export JOBID=$SLURM_JOBID\n")
 
   def submit(self,test,subdir,mpiver,branch):
     batch_build = "sbatch {}".format(test.b_filename)
