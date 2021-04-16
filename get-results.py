@@ -60,7 +60,8 @@ def copy_artifacts(build_dir,artifacts_root,machine_name,mpiversion,oe_filelist,
   if(not test_stage):
     #remove old files in out directory
     print('just the build stage, so remove old files')
-    cmd = 'mkdir -p {}/out; rm {}/*/*; rm *.log; rm summary.dat'.format(outpath,outpath)
+    cmd = 'mkdir -p {}/out; rm {}/*/*; rm {}/*.log; rm {}/summary.dat'.format(outpath,outpath,outpath,outpath)
+    print("cmd is {}\n".format(cmd))
     os.system(cmd)
 # print("oe filelist is {}".format(oe_filelist))
   if(oe_filelist == []):
