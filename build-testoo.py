@@ -251,7 +251,12 @@ class ESMFTest:
          print("status from nuopc clone command {} was {}".format(nuopcclone,status))
      
   def createScripts(self,build_type,comp,ver,mpidict,mpitypes,key,branch):
-    for headerType in ["build","test","python"]:
+    mpiflavor = mpidict[key]
+    if("pythontest" in mpiflavor):
+      headerList = ["build","test","python"]
+    else:
+      headerList = ["build","test"]
+    for headerType in headerList: 
       if(headerType == "build"):
         file_out = self.fb
       elif(headerType == "test"):
@@ -271,7 +276,6 @@ class ESMFTest:
       if("extramodule" in self.machine_list[comp]):
         file_out.write("\nmodule load {}\n".format(self.machine_list[comp]['extramodule']))
 
-      mpiflavor = mpidict[key]
       if(mpiflavor['module'] == "None"):
         mpiflavor['module'] = ""
         cmdstring = "export ESMF_MPIRUN={}/src/Infrastructure/stubs/mpiuni/mpirun\n".format(os.getcwd())
@@ -334,7 +338,7 @@ class ESMFTest:
       if(headerType == "build"):
         cmdstring = "make -j {} clean 2>&1| tee clean_$JOBID.log \nmake -j {} 2>&1| tee build_$JOBID.log\n\n".format(self.cpn,self.cpn)
       elif(headerType == "test"):
-        cmdstring = "make info 2>&1| tee info.log \nmake install 2>&1| tee install_$JOBID.log \nmake all_tests 2>&1| tee test_$JOBID.log \nchmod +x runpython.sh\n"
+        cmdstring = "make info 2>&1| tee info.log \nmake install 2>&1| tee install_$JOBID.log \nmake all_tests 2>&1| tee test_$JOBID.log \n"
       else:
         cmdstring = "python3 setup.py test_examples_dryrun\npython3 setup.py test_regrid_from_file_dryrun\npython3 setup.py test_regrid_from_file_dryrun\n"
       file_out.write(cmdstring)
@@ -342,6 +346,8 @@ class ESMFTest:
 
       if(("pythontest" in mpiflavor) and (headerType == "test")):
            cmdstring = "export ESMFMKFILE=`find $PWD/DEFAULTINSTALLDIR -iname esmf.mk`\ncd nuopc-app-prototypes\n./testProtos.sh 2>&1| tee ../nuopc_$JOBID.log \n\n"
+           file_out.write(cmdstring)
+           cmdstring = "chmod +x runpython.sh\n"
            file_out.write(cmdstring)
            cmdstring = "\ncd ../src/addon/ESMPy\n"
            file_out.write(cmdstring)
