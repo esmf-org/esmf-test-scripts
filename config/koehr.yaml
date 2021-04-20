@@ -1,0 +1,65 @@
+machine: koehr
+account: NRLMR03795024 
+queue: standard
+scheduler: pbs
+corespernode: 48
+compiler: [intel,gfortran]
+#compiler: [intel]
+branch: [develop] 
+intel:
+     versions: 
+       2019.4: 
+         compiler: compiler/intel/2019.4.243 
+         netcdf: netcdf-c-parallel/intel/sgimpt/4.3.3.1  
+         netcdf-fortran: netcdf-fortran-parallel/intel/sgimpt/4.4.2
+         mpi:
+           mpt: 
+             module: mpt/2.20
+         extra_env_vars: 
+           var1: ESMF_NETCDF_INCLUDE=/app/unsupported/netcdf-c-parallel/4.3.3.1/intel/sgimpt/include
+           var2: ESMF_NETCDFF_INCLUDE=/app/unsupported/netcdf-fortran-parallel/4.4.2/intel/sgimpt/include
+           var3: ESMF_NETCDF_LIBS=-lnetcdf
+           var4: ESMF_NETCDF_LIBPATH=/app/unsupported/netcdf-c-parallel/4.3.3.1/intel/sgimpt/lib
+           var5: ESMF_NETCDFF_LIBS="-lnetcdff -lnetcdf -lhdf5 -lhdf5_hl -lz"
+           var6: ESMF_NETCDFF_LIBPATH="/app/unsupported/netcdf-fortran-parallel/4.4.2/intel/sgimpt/lib /app/unsupported/hdf5-mpi/1.10.5/intel/sgimpt/lib /app/unsupported/netcdf-c-parallel/4.3.3.1/intel/sgimpt/lib"
+       2020.2: 
+         compiler: compiler/intel/2020.2.254
+         netcdf: netcdf-c/intel/4.3.3.1
+         netcdf-fortran: netcdf-c/intel/4.4.2
+         mpi:
+           intelmpi: 
+             module: compiler/intelmpi/2020.2.254
+         extra_env_vars: 
+           var1: ESMF_NETCDF_LIBPATH="/app/COST/netcdf-fortran/4.4.2/intel/lib /app/COST/netcdf-c/4.3.3.1/intel//lib /app/COST/hdf5/1.8.15/intel//lib"
+           var2: ESMF_NETCDFF_LIBS="-lnetcdff -lnetcdf -lhdf5 -lhdf5_hl -lz"
+           var3: ESMF_NETCDF_LIBPATH=/app/COST/netcdf-c/4.3.3.1/intel//lib
+           var4: ESMF_NETCDF_INCLUDE=/app/COST/netcdf-c/4.3.3.1/intel/include
+           var5: ESMF_NETCDFF_INCLUDE="/app/COST/netcdf-fortran/4.4.2/intel/include /app/COST/netcdf-c/4.3.3.1/intel//include /app/COST/hdf5/1.8.15/intel//include"
+           var6: ESMF_NETCDFF_LIBPATH="/app/COST/netcdf-fortran/4.4.2/intel/lib /app/COST/netcdf-c/4.3.3.1/intel//lib /app/COST/hdf5/1.8.15/intel//lib"
+     unloadmodule: "compiler/intel mpt"
+gfortran:
+     versions: 
+       7.3.0: 
+         compiler: gcc/7.3.0
+         netcdf: netcdf-c/gnu/4.3.3.1
+         netcdf-fortran: netcdf-c/gnu/4.4.2
+         mpi:
+           mpt: 
+             module: mpt/2.20
+         extra_env_vars: 
+           var1: ESMF_NETCDF_LIBPATH="/app/COST/netcdf-fortran/4.4.2/gnu/lib /app/COST/netcdf-c/4.3.3.1/gnu//lib /app/COST/hdf5/1.8.15/gnu//lib"
+           var2: ESMF_NETCDFF_LIBS="-lnetcdff -lnetcdf -lhdf5 -lhdf5_hl -lz"
+           var3: ESMF_NETCDF_LIBPATH=/app/COST/netcdf-c/4.3.3.1/gnu//lib
+           var4: ESMF_NETCDF_INCLUDE=/app/COST/netcdf-c/4.3.3.1/gnu/include
+           var5: ESMF_NETCDFF_INCLUDE="/app/COST/netcdf-fortran/4.4.2/gnu/include /app/COST/netcdf-c/4.3.3.1/gnu//include /app/COST/hdf5/1.8.15/gnu//include"
+           var6: ESMF_NETCDFF_LIBPATH="/app/COST/netcdf-fortran/4.4.2/gnu/lib /app/COST/netcdf-c/4.3.3.1/gnu//lib /app/COST/hdf5/1.8.15/gnu//lib"
+       10.1.0: 
+         compiler: gcc/10.1.0
+         netcdf: None
+         mpi:
+           mpt: 
+             module: mpt/2.20
+         extra_env_vars: 
+           var1: ESMF_F90COMPILEOPTS="-fallow-argument-mismatch -fallow-invalid-boz"
+     unloadmodule: "compiler/intel mpt"
+     extramodules: costinit

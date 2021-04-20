@@ -1,0 +1,35 @@
+machine: chianti
+scheduler: None
+corespernode: 8
+compiler: [gfortran]
+branch: [develop]
+intel:
+     versions: 
+         compiler: intel/18.0.5.274
+         netcdf: netcdf/4.7.0
+         mpi:
+           intelmpi: 
+             module: impi/2018.4.274
+           mpiuni: 
+             module: None
+gfortran:
+     versions: 
+       9.3.0: 
+         compiler: None
+         netcdf: None
+         mpi:
+           openmpi: 
+             module: NoModule
+           mpiuni: 
+             module: None
+         extra_env_vars: 
+            var1: ESMF_NETCDF=/home/mpotts/spack/opt/spack/linux-linuxmint19-skylake/gcc-9.3.0/netcdf-c-4.7.4-mh42cmw5oougqeytguqxjkkrrd2bfdsl/bin/nc-config
+            var2: ESMF_NFCONFIG=/home/mpotts/spack/opt/spack/linux-linuxmint19-skylake/gcc-9.3.0/netcdf-fortran-4.5.3-7cigsuiobyasv6mbext7pmabw5fhzo6y/bin/nf-config
+            var3: CC=/home/mpotts/spack/opt/spack/linux-linuxmint19-skylake/gcc-7.5.0/gcc-9.3.0-3ltccu6cenbq/bin/gcc
+            var4: CXX=/home/mpotts/spack/opt/spack/linux-linuxmint19-skylake/gcc-7.5.0/gcc-9.3.0-3ltccu6cenbq/bin/g++
+            var5: FC=/home/mpotts/spack/opt/spack/linux-linuxmint19-skylake/gcc-7.5.0/gcc-9.3.0-3ltccu6cenbq/bin/gfortran
+            var6: ESMF_NFCONFIG=nf-config
+            var7: PATH=/home/mpotts/spack/opt/spack/linux-linuxmint19-skylake/gcc-9.3.0/openmpi-3.1.6-jnhkylwskoutgnisw5k4agyzw77xr35b/bin:$PATH
+            var8: LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/mpotts/spack/opt/spack/linux-linuxmint19-skylake/gcc-9.3.0/openmpi-3.1.6-jnhkylwskoutgnisw5k4agyzw77xr35b/lib
+            var9: LIBRARY_PATH=$LIBRARY_PATH:/home/mpotts/spack/opt/spack/linux-linuxmint19-skylake/gcc-9.3.0/openmpi-3.1.6-jnhkylwskoutgnisw5k4agyzw77xr35b/lib
+   

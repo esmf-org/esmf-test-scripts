@@ -1,0 +1,54 @@
+machine: cheyenne
+account: P93300606
+queue: regular
+partition: None
+scheduler: slurm
+corespernode: 40
+compiler: [gfortran,intel,pgi]
+branch: [develop]
+gfortran:
+     versions:
+       6.3.0:
+         compiler: gnu/6.3.0
+         netcdf: None
+         mpi:
+           mpich3:
+             module: mpich/3.2
+       7.2.0:
+         compiler: gnu/7.2.0
+         netcdf: None
+         mpi:
+           mpich3:
+             module: mpich/3.2
+       8.1.0:
+         compiler: gnu/8.1.0
+         netcdf: None
+         mpi:
+           openmpi:
+             module: openmpi/3.1.0
+       9.1.0:
+         compiler: gnu/9.1.0
+         netcdf: netcdf/4.7.3
+         mpi:
+           mpt:
+             module: openmpi/4.0.3
+intel:
+     versions:
+       18.0.5:
+         compiler: intel/18.0.5
+         netcdf: netcdf/4.6.3
+         mpi:
+            mpt:
+             module: mpt/2.19
+            openmpi:
+             module: openmpi/3.1.4
+            intelmpi:
+             module: impi/2018.4.274
+pgi:
+     versions:
+       20.4:
+         compiler: pgi/20.4
+         netcdf: netcdf/4.7.3
+         mpi:
+           mpiuni:
+             module: None

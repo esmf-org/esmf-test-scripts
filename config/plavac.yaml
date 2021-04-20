@@ -1,0 +1,23 @@
+machine: plavac
+bash: /usr/local/bin/bash
+scheduler: None
+corespernode: 4
+compiler: [gfortran]
+branch: [develop]
+gfortran:
+     versions: 
+       9.3.0: 
+         compiler: gcc/9.3.0
+         netcdf: netcdf-c/4.7.3
+         netcdf-fortran: netcdf-fortran/4.5.2
+         hdf5: hdf5/1.10.6
+         mpi:
+           openmpi: 
+             module: openmpi/3.1.5
+         extra_env_vars: 
+            var1: ESMF_NETCDF=nc-config
+            var2: ESMF_NFCONFIG=nf-config
+            var3: ESMF_F90COMPILER=mpif90
+            var4: ESMF_F90LINKER=mpif90
+   
+

@@ -1,0 +1,42 @@
+machine: catania
+scheduler: None
+corespernode: 4
+modulepath: /project/esmf/stack/modulefiles
+compiler: [gfortran, intel]
+branch: [develop]
+
+intel:
+     versions:
+       19.1.0.166:
+         extra_env_vars: 
+           var1: ESMF_MOAB=OFF
+         compiler: intel/19.1.0.166/compiler
+         netcdf: None
+         mpi:
+           mpich3:
+             module: intel/19.1.0.166/mpich3/3.4.1-custom
+#           mpiuni:
+#             module: None
+
+gfortran:
+     versions: 
+       9.3.0: 
+         compiler: gnu/9.3.0/compiler
+         netcdf: gnu/9.3.0/netcdf-c/4.7.4
+         netcdf-fortran: gnu/9.3.0/netcdf-fortran/4.5.3
+         mpi:
+           openmpi: 
+             module: gnu/9.3.0/openmpi/4.1.0
+           mpich3: 
+             module: gnu/9.3.0/mpich3/3.3.2-custom
+           mpiuni: 
+             module: None
+       10.2.0: 
+         extra_env_vars: 
+           var1: ESMF_F90COMPILEOPTS="-fallow-argument-mismatch -fallow-invalid-boz"
+         compiler: gnu/10.2.0/compiler
+         netcdf: gnu/10.2.0/netcdf-c/4.7.4
+         netcdf-fortran: gnu/10.2.0/netcdf-fortran/4.5.3
+         mpi:
+           mpich3: 
+             module: gnu/10.2.0/mpich3/3.3.2-custom

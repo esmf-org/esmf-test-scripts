@@ -1,0 +1,40 @@
+machine: izumi
+account: P93300606
+queue: medium
+partition: None
+scheduler: pbs
+corespernode: 15
+compiler: [gfortran,pgi,intel,nag]
+branch: [develop]
+intel:
+   versions:
+     19.1.0.166: 
+       compiler: compiler/intel/20.0.1
+       netcdf: tool/netcdf/4.7.4/intel/20.0.1
+       mpi:
+           mpiuni:
+             module: None
+gfortran:
+   versions:
+     9.3.0: 
+       compiler: compiler/gnu/9.3.0
+       netcdf: tool/netcdf/4.7.4/gnu/9.3.0
+       mpi:
+           mpiuni:
+             module: None
+nag:
+   versions:
+     7.0: 
+       compiler: compiler/nag/7.0
+       netcdf: tool/netcdf/c4.7.4-f4.5.2/nag-gnu/7.0-9.3.0
+       mpi:
+           mpiuni:
+             module: None
+pgi:
+   versions:
+     20.1: 
+       compiler: compiler/pgi/20.1 
+       netcdf: tool/netcdf/4.7.4/pgi/20.1
+       mpi:
+           mpiuni:
+             module: None

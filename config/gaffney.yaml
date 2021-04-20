@@ -1,0 +1,33 @@
+machine: gaffney
+account: NRLMR03795024
+queue: standard
+scheduler: pbs
+corespernode: 48
+compiler: [intel,gfortran]
+branch: [develop]
+headnodename: gaffney06
+intel:
+     versions: 
+       2018.1: 
+         compiler: compiler/intel/18.0.1.163 
+         netcdf: cse/netcdf/latest
+         netcdf-fortran: cse/netcdf_fortran/latest
+         mpi:
+           intelmpi: 
+             module: compiler/intelmpi/18.0.1.163 
+           mpt: 
+             module: mpt/2.20
+         extra_env_vars: 
+           var1: ESMF_F90COMPILEOPTS=-I$CSE_NETCDF_FORTRAN_INCLUDE_DIR
+     extramodule: cseinit-intel
+gfortran:
+     versions: 
+       9.2.0: 
+         compiler: gcc/9.2.0
+         netcdf: None
+         mpi:
+           openmpi: 
+             module: compiler/openmpi/2.1.2
+           mpiuni: 
+             module: None
+     extramodule: cseinit

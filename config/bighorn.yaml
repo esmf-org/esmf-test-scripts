@@ -1,0 +1,66 @@
+machine: bighorn
+scheduler: None
+corespernode: 8
+modulepath: /project/esmf/modulefiles
+compiler: [gfortran,intel,nag,pgi]
+branch: [develop]
+gfortran:
+     versions:
+       8.2.0:
+         compiler: compiler/gnu/8.2.0
+         netcdf: tool/netcdf/4.6.1/gcc
+         mpi:
+           mpiuni:
+             module: None
+       4.8.5:
+         compiler: compiler/gnu/4.8.5
+         netcdf: tool/netcdf/4.6.1/gcc-4.8.5
+         mpi:
+           mpich3:
+             module: mpich/3.2.1-gnu4.8.5
+           openmpi:
+             module: openmpi/3.1.1-gnu4.8.5
+       8.1.0:
+         compiler: compiler/gnu/8.1.0
+         netcdf: tool/netcdf/4.6.1/gcc-8.1.0
+         mpi:
+           mpich3:
+             module: mpich/3.2.1-gnu8.1.0
+           openmpi:
+             module: openmpi/3.1.1-gnu8.1.0
+           mvapich2:
+             module: mpi/gcc/mvapich2-2.3rc2-qlc
+intel:
+     versions:
+        20.0.1: 
+         compiler: compiler/intel/20.0.1 
+         netcdf: tool/netcdf/4.6.1/intel
+         mpi:
+           mpiuni: 
+             module: None
+nag:
+     versions:
+        7.0:
+         compiler: compiler/nag/7.0
+         netcdf: tool/netcdf/4.6.1/nag
+         mpi:
+           mpiuni:
+             module: None
+        6.2:
+         compiler: compiler/nag/6.2
+         netcdf: tool/netcdf/4.6.1/nag
+         mpi:
+           mvapich2:
+             module: mpi/nag/mvapich2-2.3rc2
+           openmpi:
+             module: mpi/nag/openmpi-3.1.0 
+           mpiuni:
+             module: None
+pgi:
+     versions:
+        19.9:
+         compiler: compiler/pgi/19.9
+         netcdf: tool/netcdf/4.6.1/pgi
+         mpi:
+           mpiuni:
+             module: None
