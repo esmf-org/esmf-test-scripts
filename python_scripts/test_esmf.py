@@ -6,139 +6,10 @@ import subprocess
 import sys
 import pathlib
 import argparse
-
-class scheduler():
-  def __init__(self,scheduler_type,test):
-     pass
-
-  def submit(self,subdir):
-     pass
-
-  def create_headers(self):
-     pass
-
-  def submit_job(self):
-     pass
-
-  def checkqueue(self):
-     pass
-
-class NoScheduler(scheduler):
-  def __init__(self,scheduler_type):
-    self.type = scheduler_type
-
-  def submit(self,test,subdir,mpiver,branch):
-    print("HEY, in submit")
-    os.system("chmod +x {}".format(test.b_filename))
-    jobnum = 12345
-    os.system("./{} {}".format(test.b_filename,jobnum))
-    monitor_cmd_build = \
-                   "python3 {}/get-results.py {} {} {} {} {} {} {} {}".format(test.mypath,jobnum,subdir,test.machine_name,self.type,test.script_dir,test.artifacts_root,mpiver,branch)
-    jobnum = 12346
-    os.system("{}".format(monitor_cmd_build))
-    os.system("chmod +x {}".format(test.t_filename))
-    os.system("./{} {}".format(test.t_filename,jobnum))
-    monitor_cmd_test = \
-                   "python3 {}/get-results.py {} {} {} {} {} {} {} {}".format(test.mypath,jobnum,subdir,test.machine_name,self.type,test.script_dir,test.artifacts_root,mpiver,branch)
-    os.system("{}".format(monitor_cmd_test))
-    test.createGetResScripts(monitor_cmd_build,monitor_cmd_test)
-
-  def create_headers(self,test):
-    for headerType in ["build","test"]:
-      if(headerType == "build"):
-        file_out = test.fb
-        jobid = 12345
-      else:
-        file_out = test.ft
-        jobid = 12346
-      file_out.write("#!{} -l\n".format(test.bash))
-      file_out.write("export JOBID={}\n".format(jobid))
-
-class pbs(scheduler):
-  def __init__(self,scheduler_type):
-     self.type = scheduler_type
-
-
-  def create_headers(self,test):
-    for headerType in ["build","test"]:
-      if(headerType == "build"):
-        file_out = test.fb
-      else:
-        file_out = test.ft
-      file_out.write("#!/bin/sh -l\n")
-      if(headerType == "build"):
-        file_out.write("#PBS -N {}\n".format(test.b_filename))
-        file_out.write("#PBS -l walltime={}\n".format(test.build_time))
-      else:
-        file_out.write("#PBS -N {}\n".format(test.t_filename))
-      file_out.write("#PBS -l walltime={}\n".format(test.test_time))
-      file_out.write("#PBS -q {}\n".format(test.queue))
-      file_out.write("#PBS -A {}\n".format(test.account))
-      file_out.write("#PBS -l select=1:ncpus={}:mpiprocs={}\n".format(test.cpn,test.cpn))
-      file_out.write("JOBID=\"`echo $PBS_JOBID | cut -d. -f1`\"\n\n")
-      file_out.write("cd {}\n".format(os.getcwd()))
-
-  def submit(self,test,subdir,mpiver,branch):
-    batch_build = "qsub {}".format(test.b_filename)
-    print(batch_build)
-    jobnum= subprocess.check_output(batch_build,shell=True).strip().decode('utf-8').split(".")[0]
-    print("Submitting batch_build with command: {}, jobnum is {}".format(batch_build,jobnum))
-    monitor_cmd_build = \
-        "python3 {}/get-results.py {} {} {} {} {} {} {} {}".format(test.mypath,jobnum,subdir,test.machine_name,self.type,test.script_dir,test.artifacts_root,mpiver,branch)
-    print(monitor_cmd_build)
-    # submit the second job to be dependent on the first
-    batch_test = "qsub -W depend=afterok:{} {}".format(jobnum,test.t_filename)
-    print("Submitting test_batch with command: {}".format(batch_test))
-    jobnum= subprocess.check_output(batch_test,shell=True).strip().decode('utf-8').split(".")[0]
-    monitor_cmd_test = \
-        "python3 {}/get-results.py {} {} {} {} {} {} {} {}".format(test.mypath,jobnum,subdir,test.machine_name,self.type,test.script_dir,test.artifacts_root,mpiver,branch)
-    test.createGetResScripts(monitor_cmd_build,monitor_cmd_test)
-    
-class slurm(scheduler):
-  def __init__(self,scheduler_type):
-     self.type = scheduler_type
-
-  def create_headers(self,test):
-    for headerType in ["build","test"]:
-      if(headerType == "build"):
-        file_out = test.fb
-      else:
-        file_out = test.ft
-      file_out.write("#!/bin/sh -l\n")
-      file_out.write("#SBATCH --account={}\n".format(test.account))
-      if(headerType == "build"):
-        file_out.write("#SBATCH -o {}_%j.o\n".format(test.b_filename))
-        file_out.write("#SBATCH -e {}_%j.e\n".format(test.b_filename))
-        file_out.write("#SBATCH --time={}\n".format(test.build_time))
-      else:
-        file_out.write("#SBATCH -o {}_%j.o\n".format(test.t_filename))
-        file_out.write("#SBATCH -e {}_%j.e\n".format(test.t_filename))
-        file_out.write("#SBATCH --time={}\n".format(test.test_time))
-      if(test.partition != "None"):
-        file_out.write("#SBATCH --partition={}\n".format(test.partition))
-      if(test.cluster != "None"):
-        file_out.write("#SBATCH --cluster={}\n".format(test.cluster))
-      file_out.write("#SBATCH --qos={}\n".format(test.queue))
-      file_out.write("#SBATCH --nodes=1\n")
-      file_out.write("#SBATCH --ntasks-per-node={}\n".format(test.cpn))
-      file_out.write("#SBATCH --exclusive\n")
-      file_out.write("export JOBID=$SLURM_JOBID\n")
-
-  def submit(self,test,subdir,mpiver,branch):
-    batch_build = "sbatch {}".format(test.b_filename)
-    jobnum= subprocess.check_output(batch_build,shell=True).strip().decode('utf-8').split()[3]
-    monitor_cmd_build = "python3 {}/get-results.py {} {} {} {} {} {} {} {}".format(test.mypath,jobnum,subdir,test.machine_name,self.type,test.script_dir,test.artifacts_root,mpiver,branch)
-    print(monitor_cmd_build)
-    proc = subprocess.Popen(monitor_cmd_build, shell=True, stdin=None, stdout=None, stderr=None, close_fds=True)
-    # submit the second job to be dependent on the first
-    batch_test = "sbatch --depend=afterok:{} {}".format(jobnum,test.t_filename)
-    print("Submitting test_batch with command: {}".format(batch_test))
-    jobnum= subprocess.check_output(batch_test,shell=True).strip().decode('utf-8').split()[3]
-    monitor_cmd_test = "python3 {}/get-results.py {} {} {} {} {} {} {} {}".format(test.mypath,jobnum,subdir,test.machine_name,self.type,test.script_dir,test.artifacts_root,mpiver,branch)
-    print(monitor_cmd_test)
-    proc = subprocess.Popen(monitor_cmd_test, shell=True, stdin=None, stdout=None, stderr=None, close_fds=True)
-    test.createGetResScripts(monitor_cmd_build,monitor_cmd_test)
-    
+from scheduler import scheduler
+from noscheduler import NoScheduler
+from pbs import pbs
+from slurm import slurm
 
 class ESMFTest:
   def __init__(self, yaml_file, artifacts_root, workdir, dryrun):
@@ -153,8 +24,10 @@ class ESMFTest:
       self.scheduler=slurm("slurm")
     elif(self.scheduler_type == "None"):
       self.scheduler=NoScheduler("None")
+    elif(self.scheduler_type == "pbs"):
+      self.scheduler=pbs("pbs")
     print(self.yaml_file, self.artifacts_root, self.workdir)
-    self.createJobCards()
+    self.createJobCardsAndSubmit()
 
   def readYAML(self):
     with open(self.yaml_file) as file:
@@ -226,6 +99,7 @@ class ESMFTest:
        print("would have executed {}".format(cmd))
     else:
        os.system(cmd)
+
   def updateRepo(self,subdir,branch,nuopcbranch):
      os.system("rm -rf {}".format(subdir))
      if(not(os.path.isdir(subdir))):
@@ -385,7 +259,7 @@ class ESMFTest:
     get_res_file.close()
     os.system("chmod +x getres-test.sh")      
 
-  def createJobCards(self):
+  def createJobCardsAndSubmit(self):
       for build_type in self.build_types:
         for comp in self.machine_list['compiler']:
          for ver in self.machine_list[comp]['versions']:
@@ -412,10 +286,10 @@ class ESMFTest:
                 self.t_filename = 'test-{}_{}_{}_{}.bat'.format(comp,ver,key,build_type)
                 self.fb = open(self.b_filename, "w")
                 self.ft = open(self.t_filename, "w")
-                self.scheduler.create_headers(self)
+                self.scheduler.createHeaders(self)
                 print("creating scripts")
                 self.createScripts(build_type,comp,ver,mpidict,mpitypes,key,branch)
-                self.scheduler.submit(self,subdir,self.mpiver,branch)
+                self.scheduler.submitJob(self,subdir,self.mpiver,branch)
                 os.chdir("..")
 
     
