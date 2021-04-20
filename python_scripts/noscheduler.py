@@ -10,13 +10,13 @@ class NoScheduler(scheduler):
     jobnum = 12345
     os.system("./{} {}".format(test.b_filename,jobnum))
     monitor_cmd_build = \
-                   "python3 {}/get-results.py {} {} {} {} {} {} {} {}".format(test.mypath,jobnum,subdir,test.machine_name,self.type,test.script_dir,test.artifacts_root,mpiver,branch)
+                   "python3 {}/python_scripts/get-results.py {} {} {} {} {} {} {} {}".format(test.mypath,jobnum,subdir,test.machine_name,self.type,test.script_dir,test.artifacts_root,mpiver,branch)
     jobnum = 12346
     os.system("{}".format(monitor_cmd_build))
     os.system("chmod +x {}".format(test.t_filename))
     os.system("./{} {}".format(test.t_filename,jobnum))
     monitor_cmd_test = \
-                   "python3 {}/get-results.py {} {} {} {} {} {} {} {}".format(test.mypath,jobnum,subdir,test.machine_name,self.type,test.script_dir,test.artifacts_root,mpiver,branch)
+                   "python3 {}/python_scripts/get-results.py {} {} {} {} {} {} {} {}".format(test.mypath,jobnum,subdir,test.machine_name,self.type,test.script_dir,test.artifacts_root,mpiver,branch)
     os.system("{}".format(monitor_cmd_test))
     test.createGetResScripts(monitor_cmd_build,monitor_cmd_test)
 

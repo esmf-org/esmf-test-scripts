@@ -32,12 +32,12 @@ class pbs(scheduler):
     jobnum= subprocess.check_output(batch_build,shell=True).strip().decode('utf-8').split(".")[0]
     print("Submitting batch_build with command: {}, jobnum is {}".format(batch_build,jobnum))
     monitor_cmd_build = \
-        "python3 {}/get-results.py {} {} {} {} {} {} {} {}".format(test.mypath,jobnum,subdir,test.machine_name,self.type,test.script_dir,test.artifacts_root,mpiver,branch)
+        "python3 {}/python_scripts/get-results.py {} {} {} {} {} {} {} {}".format(test.mypath,jobnum,subdir,test.machine_name,self.type,test.script_dir,test.artifacts_root,mpiver,branch)
     print(monitor_cmd_build)
     # submit the second job to be dependent on the first
     batch_test = "qsub -W depend=afterok:{} {}".format(jobnum,test.t_filename)
     print("Submitting test_batch with command: {}".format(batch_test))
     jobnum= subprocess.check_output(batch_test,shell=True).strip().decode('utf-8').split(".")[0]
     monitor_cmd_test = \
-        "python3 {}/get-results.py {} {} {} {} {} {} {} {}".format(test.mypath,jobnum,subdir,test.machine_name,self.type,test.script_dir,test.artifacts_root,mpiver,branch)
+        "python3 {}/python_scripts/get-results.py {} {} {} {} {} {} {} {}".format(test.mypath,jobnum,subdir,test.machine_name,self.type,test.script_dir,test.artifacts_root,mpiver,branch)
     test.createGetResScripts(monitor_cmd_build,monitor_cmd_test)
