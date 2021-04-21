@@ -27,6 +27,9 @@ class pbs(scheduler):
       file_out.write("cd {}\n".format(os.getcwd()))
 
   def submitJob(self,test,subdir,mpiver,branch):
+    # add ssh back to the head node for archiving of results to batch scripts
+    test.runcmd("echo \"ssh {} {}/getres-build.sh\" >> {}".format(test.headnodename,os.getcwd(),test.b_filename))
+    test.runcmd("echo \"ssh {} {}/getres-test.sh\" >> {}".format(test.headnodename,os.getcwd(),test.t_filename))
     batch_build = "qsub {}".format(test.b_filename)
     print(batch_build)
     if(test.dryrun == True):
@@ -46,6 +49,7 @@ class pbs(scheduler):
     monitor_cmd_test = \
                    "python3 {}/archive_results.py -j {} -b {} -m {} -s {} -t {} -a {} -M {} -B {} -d {}".format(test.mypath,jobnum,subdir,test.machine_name,self.type,test.script_dir,test.artifacts_root,mpiver,branch,test.dryrun)
     test.createGetResScripts(monitor_cmd_build,monitor_cmd_test)
+    
 
   def checkqueue(self,jobid):
     queue_query = "qstat -H {} | tail -n 1 | awk -F ' +' '{{print $10}}'".format(jobid)
