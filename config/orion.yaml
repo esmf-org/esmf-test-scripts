@@ -15,6 +15,7 @@ intel:
            intelmpi: 
              module: impi/2020.2
              pythontest: True
+   extramodule: intelpython3
 gfortran:
    versions:
      8.3.0: 
@@ -28,6 +29,7 @@ gfortran:
              module: None
        extra_env_vars: 
          var1: LD_PRELOAD=/apps/gcc-8/gcc-8.3.0/lib64/libstdc++.so
+   extramodule: intelpython3
 #    10.2.0: 
 #      module: gcc/10.2.0
 #      netcdf: netcdf/4.7.4
