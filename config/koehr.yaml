@@ -62,4 +62,4 @@ gfortran:
          extra_env_vars: 
            var1: ESMF_F90COMPILEOPTS="-fallow-argument-mismatch -fallow-invalid-boz"
      unloadmodule: "compiler/intel mpt"
-     extramodules: costinit
+     extramodule: costinit
