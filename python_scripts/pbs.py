@@ -29,15 +29,34 @@ class pbs(scheduler):
   def submitJob(self,test,subdir,mpiver,branch):
     batch_build = "qsub {}".format(test.b_filename)
     print(batch_build)
-    jobnum= subprocess.check_output(batch_build,shell=True).strip().decode('utf-8').split(".")[0]
+    if(test.dryrun == True):
+      jobnum = 1234
+    else:
+      jobnum= subprocess.check_output(batch_build,shell=True).strip().decode('utf-8').split(".")[0]
     print("Submitting batch_build with command: {}, jobnum is {}".format(batch_build,jobnum))
     monitor_cmd_build = \
-        "python3 {}/get-results.py {} {} {} {} {} {} {} {}".format(test.mypath,jobnum,subdir,test.machine_name,self.type,test.script_dir,test.artifacts_root,mpiver,branch)
-    print(monitor_cmd_build)
+                   "python3 {}/archive_results.py -j {} -b {} -m {} -s {} -t {} -a {} -M {} -B {} -d {}".format(test.mypath,jobnum,subdir,test.machine_name,self.type,test.script_dir,test.artifacts_root,mpiver,branch,test.dryrun)
     # submit the second job to be dependent on the first
     batch_test = "qsub -W depend=afterok:{} {}".format(jobnum,test.t_filename)
     print("Submitting test_batch with command: {}".format(batch_test))
-    jobnum= subprocess.check_output(batch_test,shell=True).strip().decode('utf-8').split(".")[0]
+    if(test.dryrun == True):
+      jobnum = 1234
+    else:
+      jobnum= subprocess.check_output(batch_test,shell=True).strip().decode('utf-8').split(".")[0]
     monitor_cmd_test = \
-        "python3 {}/get-results.py {} {} {} {} {} {} {} {}".format(test.mypath,jobnum,subdir,test.machine_name,self.type,test.script_dir,test.artifacts_root,mpiver,branch)
+                   "python3 {}/archive_results.py -j {} -b {} -m {} -s {} -t {} -a {} -M {} -B {} -d {}".format(test.mypath,jobnum,subdir,test.machine_name,self.type,test.script_dir,test.artifacts_root,mpiver,branch,test.dryrun)
     test.createGetResScripts(monitor_cmd_build,monitor_cmd_test)
+
+  def checkqueue(self,jobid):
+    queue_query = "qstat -H {} | tail -n 1 | awk -F ' +' '{{print $10}}'".format(jobid)
+    try:
+      result= subprocess.check_output(queue_query,shell=True).strip().decode('utf-8')
+      if(result == "F"): #could check for R and Q to see if it is running or waiting
+        return True
+      else:
+        return False
+    except:
+      result="done"
+      return True
+    return False
+

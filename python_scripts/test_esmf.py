@@ -17,6 +17,7 @@ class ESMFTest:
     self.artifacts_root=artifacts_root
     self.workdir=workdir
     self.dryrun = dryrun
+    print("setting dryrun to {}".format(self.dryrun))
     self.mypath=pathlib.Path(__file__).parent.absolute()
     self.branch="develop"
     self.readYAML()
@@ -95,9 +96,10 @@ class ESMFTest:
               self.test_time = "1:00:00"
 
   def runcmd(self,cmd):
-    if(self.dryrun):
+    if(self.dryrun == True):
        print("would have executed {}".format(cmd))
     else:
+       print("running {}\n".format(cmd))
        os.system(cmd)
 
   def updateRepo(self,subdir,branch,nuopcbranch):
@@ -109,7 +111,7 @@ class ESMFTest:
        else:
          cmdstring = "git clone -b {} git@github.com:esmf-org/esmf {}".format(branch,subdir)
          nuopcclone = "git clone -b {} git@github.com:esmf-org/nuopc-app-prototypes".format(nuopcbranch)
-       if(self.dryrun):
+       if(self.dryrun == True):
          print("would have executed {}".format(cmdstring))
          print("would have executed {}".format(nuopcclone))
          print("would have cd'd to {}".format(subdir))
@@ -141,7 +143,7 @@ class ESMFTest:
         file_out.write("#!{} -l\n".format(self.bash))
         file_out.write("cd {}\n".format(os.getcwd()))
         file_out.write("export ESMFMKFILE=`find $PWD/DEFAULTINSTALLDIR -iname esmf.mk`\n\n")
-        file_out.write("cd {}/src/addon/ESMPy".format(os.getcwd()))
+        file_out.write("cd {}/src/addon/ESMPy\n".format(os.getcwd()))
       if("unloadmodule" in self.machine_list[comp]):
         file_out.write("\nmodule unload {}\n".format(self.machine_list[comp]['unloadmodule']))
       if("modulepath" in self.machine_list):
@@ -219,10 +221,11 @@ class ESMFTest:
 
 
       if(("pythontest" in mpiflavor) and (headerType == "test")):
-           cmdstring = "export ESMFMKFILE=`find $PWD/DEFAULTINSTALLDIR -iname esmf.mk`\ncd nuopc-app-prototypes\n./testProtos.sh 2>&1| tee ../nuopc_$JOBID.log \n\n"
+           cmdstring = "export ESMFMKFILE=`find $PWD/DEFAULTINSTALLDIR -iname esmf.mk`\n"
            file_out.write(cmdstring)
-           cmdstring = "chmod +x runpython.sh\n"
+           cmdstring = "chmod +x runpython.sh\ncd nuopc-app-prototypes\n./testProtos.sh 2>&1| tee ../nuopc_$JOBID.log \n\n"
            file_out.write(cmdstring)
+
            cmdstring = "\ncd ../src/addon/ESMPy\n"
            file_out.write(cmdstring)
            cmdstring = "\nexport PATH=$PATH:$HOME/.local/bin\n".format(os.getcwd())
@@ -294,12 +297,12 @@ class ESMFTest:
 
     
 if __name__ == "__main__":
-  parser = argparse.ArgumentParser(description='ESMF nightly build/test system')
+  parser = argparse.ArgumentParser(description='Archive collector for ESMF testing framework')
   parser.add_argument('-w','--workdir', help='directory where builds will be mad #', required=False,default=os.getcwd())
   parser.add_argument('-y','--yaml', help='Yaml file defining builds and testing parameters', required=True)
   parser.add_argument('-a','--artifacts', help='directory where artifacts will be placed', required=True)
   parser.add_argument('-d','--dryrun', help='directory where artifacts will be placed', required=False,default=False)
   args = vars(parser.parse_args())
-  
+
   test = ESMFTest(args['yaml'],args['artifacts'],args['workdir'],args['dryrun'])  
     
