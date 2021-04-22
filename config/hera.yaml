@@ -16,6 +16,8 @@ intel:
            intelmpi: 
              module: impi/2018.4.274
              pythontest: True
+             mpi_env_vars: 
+               var1: ESMF_MPIRUN=mpirun.srun
            mpiuni: 
              module: None
 gfortran:
@@ -29,9 +31,13 @@ gfortran:
            intelmpi: 
              module: impi/2020
              pythontest: True
+             mpi_env_vars: 
+               var1: ESMF_MPIRUN=mpirun.srun
            openmpi: 
              module: openmpi/3.1.4
              pythontest: True
+             mpi_env_vars: 
+               var1: ESMF_MPIRUN=mpirun.srun
            mpiuni: 
              module: None
          extra_env_vars: 
@@ -50,3 +56,5 @@ pgi:
          mpi:
            intelmpi: 
              module: impi/2018.0.4
+             mpi_env_vars: 
+               var1: ESMF_MPIRUN=mpirun.srun
