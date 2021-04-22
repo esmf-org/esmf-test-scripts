@@ -140,7 +140,7 @@ class ArchiveResults:
   
     cwd = os.getcwd()
     os.chdir(self.build_dir)
-    build_hash = subprocess.check_output('git describe --tags',shell=True).strip().decode('utf-8')
+    build_hash = subprocess.check_output('git describe --tags --abbrev=7',shell=True).strip().decode('utf-8')
     make_info = subprocess.check_output('cat module-build.log; cat info.log',shell=True).strip().decode('utf-8')
     os.chdir(cwd)
     esmfmkfile = glob.glob('{}/lib/lib{}/*/esmf.mk'.format(self.build_dir,build_type))
