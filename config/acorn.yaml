@@ -16,6 +16,7 @@ intel:
          mpi:
            mpi: 
              module: cray-mpich/8.1.4
+             pythontest: True
          extra_env_vars: 
             var1: ESMF_OS=Linux
             var2: ESMF_CXXCOMPILER=CC
@@ -40,6 +41,7 @@ gfortran:
          mpi:
            mpich3: 
              module: cray-mpich/8.1.4
+             pythontest: True
          extra_env_vars: 
             var1: ESMF_OS=Linux
             var2: ESMF_CXXCOMPILER=CC
