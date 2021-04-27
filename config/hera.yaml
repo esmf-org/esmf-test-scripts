@@ -28,11 +28,6 @@ gfortran:
          netcdf: netcdf/4.7.2
          hdf5: hdf5/1.10.5
          mpi:
-           intelmpi: 
-             module: impi/2020
-             pythontest: True
-             mpi_env_vars: 
-               var1: ESMF_MPIRUN=mpirun.srun
            openmpi: 
              module: openmpi/3.1.4
              pythontest: True
@@ -46,6 +41,15 @@ gfortran:
             var3: ESMF_NETCDF_LIBPATH=$NETCDF/lib
             var4: ESMF_NETCDF_LIBS="-lnetcdff -lnetcdf -lhdf5_hl -lhdf5 $HDF5ExtraLibs"
             var5: ESMF_NETCDF=nc-config
+       9.2.0b: 
+         compiler: gnu/9.2.0
+         netcdf: None
+         mpi:
+           intelmpi: 
+             module: impi/2020
+             pythontest: True
+             mpi_env_vars: 
+               var1: ESMF_MPIRUN=mpirun.srun
 pgi:
      test_time: "1:30:00"
      build_time: "1:20:00"
