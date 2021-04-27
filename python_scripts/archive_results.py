@@ -66,6 +66,10 @@ class ArchiveResults:
     build_basename = os.path.basename(self.build_dir)
     gitbranch = self.branch
     dirbranch = re.sub("/","_",self.branch)
+    cwd = os.getcwd()
+    os.chdir(self.build_dir)
+    self.build_hash = subprocess.check_output('git describe --tags --abbrev=7',shell=True).strip().decode('utf-8')
+    os.chdir(cwd)
     print("build_basename is {}".format(build_basename))
     parts = build_basename.split("_")
   # [compiler, version, mpiflavor, build_type,dirbranch] = build_basename.split("_")
@@ -101,7 +105,7 @@ class ArchiveResults:
       print("cp command is {}".format(cp_cmd))
       self.runcmd(cp_cmd)
     if(not (test_stage)):
-      git_cmd = "cd {};git checkout {};git add {}/{};git commit -a -m\'update for build {} on {} [ci skip]\';git push origin {}".format(self.artifacts_root,self.machine_name,dirbranch,self.machine_name,build_basename,self.machine_name,self.machine_name)
+      git_cmd = "cd {};git checkout {};git add {}/{};git commit -a -m\'update for build of {} with hash {} on {}\';git push origin {}".format(self.artifacts_root,self.machine_name,dirbranch,self.machine_name,build_basename,self.build_hash,self.machine_name,self.machine_name)
       print("git_cmd is {}".format(git_cmd))
       self.runcmd(git_cmd)
       return
@@ -140,7 +144,6 @@ class ArchiveResults:
   
     cwd = os.getcwd()
     os.chdir(self.build_dir)
-    build_hash = subprocess.check_output('git describe --tags --abbrev=7',shell=True).strip().decode('utf-8')
     make_info = subprocess.check_output('cat module-build.log; cat info.log',shell=True).strip().decode('utf-8')
     os.chdir(cwd)
     esmfmkfile = glob.glob('{}/lib/lib{}/*/esmf.mk'.format(self.build_dir,build_type))
@@ -150,7 +153,7 @@ class ArchiveResults:
     summary_file.write('\n===================================================================\n')
     summary_file.write('Build for = {}, mpi version {} on {}\n'.format(build_basename,self.mpiversion,self.machine_name))
     summary_file.write('Build time = {}\n'.format(build_time))
-    summary_file.write('git hash = {}\n\n'.format(build_hash))
+    summary_file.write('git hash = {}\n\n'.format(self.build_hash))
     unit_results = re.sub(' FAIL','\tFAIL',unit_results)
     system_results = re.sub(' FAIL',' \tFAIL',system_results)
     example_results = re.sub(' FAIL',' \tFAIL',example_results)
@@ -192,8 +195,7 @@ class ArchiveResults:
       print("cmd is {}".format(cmd))
       self.runcmd(cmd)
   
-    git_cmd = "cd {};git checkout {};git add {}/{};git commit -a -m\'update for test {} on {} [ci skip]\';git push origin {}".format(self.artifacts_root,self.machine_name,dirbranch,self.machine_name,build_basename,self.machine_name,self.machine_name)
-  # print("git_cmd is {}".format(git_cmd))
+    git_cmd = "cd {};git checkout {};git add {}/{};git commit -a -m\'update for test of {} with hash {} on {}\';git push origin {}".format(self.artifacts_root,self.machine_name,dirbranch,self.machine_name,build_basename,self.build_hash,self.machine_name,self.machine_name)
     self.runcmd(git_cmd)
     return
 
