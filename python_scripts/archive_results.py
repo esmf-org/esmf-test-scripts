@@ -105,7 +105,7 @@ class ArchiveResults:
       print("cp command is {}".format(cp_cmd))
       self.runcmd(cp_cmd)
     if(not (test_stage)):
-      git_cmd = "cd {};git checkout {};git add {}/{};git commit -a -m\'update for build of {} with hash {} on {} [ci skip]\';git push origin {}".format(self.artifacts_root,self.machine_name,dirbranch,self.machine_name,build_basename,self.build_hash,self.machine_name,self.machine_name)
+      git_cmd = "cd {};git checkout {};git add {}/{};git commit -a -m\'update for build of {} with hash {} on {} [ci skip]\';git push origin HEAD:{}".format(self.artifacts_root,self.machine_name,dirbranch,self.machine_name,build_basename,self.build_hash,self.machine_name,self.machine_name)
       print("git_cmd is {}".format(git_cmd))
       self.runcmd(git_cmd)
       return
@@ -195,7 +195,7 @@ class ArchiveResults:
       print("cmd is {}".format(cmd))
       self.runcmd(cmd)
   
-    git_cmd = "cd {};git checkout {};git add {}/{};git commit -a -m\'update for test of {} with hash {} on {} [ci skip]\';git push origin {}".format(self.artifacts_root,self.machine_name,dirbranch,self.machine_name,build_basename,self.build_hash,self.machine_name,self.machine_name)
+    git_cmd = "cd {};git checkout {};git add {}/{};git commit -a -m\'update for test of {} with hash {} on {} [ci skip]\';git push origin HEAD:{}".format(self.artifacts_root,self.machine_name,dirbranch,self.machine_name,build_basename,self.build_hash,self.machine_name,self.machine_name)
     self.runcmd(git_cmd)
     return
 
