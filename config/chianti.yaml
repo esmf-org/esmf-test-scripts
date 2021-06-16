@@ -1,18 +1,19 @@
 machine: chianti
 scheduler: None
 corespernode: 8
-compiler: [gfortran]
+#compiler: [gfortran]
+compiler: [intel]
 branch: [develop]
-modulepath: /home/mpotts/spack/share/spack/modules/linux-linuxmint19-skylake 
+modulepath: /home/mpotts/hpc-modules/modulefiles/stack
 intel:
      versions: 
-         compiler: intel/18.0.5.274
+       2021.2:
+         compiler: hpc-intel-oneapi-compilers/2021.2.0-gcc-9.3.0
          netcdf: netcdf/4.7.0
          mpi:
            intelmpi: 
-             module: impi/2018.4.274
-           mpiuni: 
-             module: None
+             module: hpc-intel-oneapi-mpi/2021.2.0-gcc-9.3.0
+     extramodule: hpc/1.1.0.a 
 gfortran:
      build_time: "2:00:00"
      test_time: "2:30:00"

@@ -212,7 +212,8 @@ class ESMFTest:
       file_out.write(cmdstring)
 
       if(headerType == "build"):
-        cmdstring = "make -j {} clean 2>&1| tee clean_$JOBID.log \nmake -j {} 2>&1| tee build_$JOBID.log\n\n".format(self.cpn,self.cpn)
+#       cmdstring = "make -j {} clean 2>&1| tee clean_$JOBID.log \nmake -j {} 2>&1| tee build_$JOBID.log\n\n".format(self.cpn,self.cpn)
+        cmdstring = "make -j {} 2>&1| tee build_$JOBID.log\n\n".format(self.cpn)
       elif(headerType == "test"):
         cmdstring = "make info 2>&1| tee info.log \nmake install 2>&1| tee install_$JOBID.log \nmake all_tests 2>&1| tee test_$JOBID.log \n"
       else:
