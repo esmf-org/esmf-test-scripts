@@ -35,7 +35,7 @@ class ArchiveResults:
     self.dryrun = dryrun
     print("dryrun is {} -- {}".format(dryrun,self.dryrun))
     start_time = time.time()
-    seconds = 14400
+    seconds = 144000
     self.build_dir = '{}/{}'.format(test_root_dir,build_basename)
     while True:
       current_time = time.time()
