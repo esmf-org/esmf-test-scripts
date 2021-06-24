@@ -61,6 +61,24 @@ class ArchiveResults:
     else:
        os.system(cmd)
 
+  def create_summary(self,unit_results,system_results,example_results,make_info,esmfmkfile):
+    build_time = datetime.datetime.fromtimestamp(os.path.getmtime(esmfmkfile[0]))
+    summary_file = open('{}/summary.dat'.format(self.outpath),"w")
+    summary_file.write('\n===================================================================\n')
+    summary_file.write('Build for = {}, mpi version {} on {}\n'.format(self.build_basename,self.mpiversion,self.machine_name))
+    summary_file.write('Build time = {}\n'.format(build_time))
+    summary_file.write('git hash = {}\n\n'.format(self.build_hash))
+    unit_results = re.sub(' FAIL','\tFAIL',unit_results)
+    system_results = re.sub(' FAIL',' \tFAIL',system_results)
+    example_results = re.sub(' FAIL',' \tFAIL',example_results)
+    summary_file.write('unit test results   \t{}\n'.format(unit_results))
+    summary_file.write('system test results \t{}\n'.format(system_results))
+    summary_file.write('example test results \t{}\n\n'.format(example_results))
+    summary_file.write('\n===================================================================\n')
+    summary_file.write('\n\n{}\n\n'.format(make_info))
+    summary_file.write('\n===================================================================\n')
+    summary_file.close()
+
   def copy_artifacts(self,oe_filelist):
   
     build_basename = os.path.basename(self.build_dir)
@@ -82,6 +100,7 @@ class ArchiveResults:
       outpath = "{}/{}/{}/{}/{}/{}/{}/{}".format(self.artifacts_root,dirbranch,self.machine_name,compiler,version,build_type,mpiflavor,self.mpiversion)
     else:
       outpath = "{}/{}/{}/{}/{}/{}/{}".format(self.artifacts_root,dirbranch,self.machine_name,compiler,version,build_type,mpiflavor)
+    self.outpath = outpath
     #copy/rename the stdout/stderr files to artifacts out directory
     test_stage = False
     print("outpath is {}".format(outpath))
@@ -105,6 +124,12 @@ class ArchiveResults:
       print("cp command is {}".format(cp_cmd))
       self.runcmd(cp_cmd)
     if(not (test_stage)):
+      unit_results="unit tests did not complete"
+      system_results="system tests did not complete"
+      example_results="No examples ran"
+      make_info = subprocess.check_output('cat {}/module-build.log; cat {}/info.log'.format(self.build_dir,self.build_dir),shell=True).strip().decode('utf-8')
+      esmfmkfile = glob.glob('{}/lib/lib{}/*/esmf.mk'.format(self.build_dir,build_type))
+      self.create_summary(unit_results,system_results,example_results,make_info,esmfmkfile)
       git_cmd = "cd {};git checkout {};git add {}/{};git commit -a -m\'update for build of {} with hash {} on {} [ci skip]\';git push origin {}".format(self.artifacts_root,self.machine_name,dirbranch,self.machine_name,build_basename,self.build_hash,self.machine_name,self.machine_name)
       print("git_cmd is {}".format(git_cmd))
       self.runcmd(git_cmd)
@@ -148,22 +173,7 @@ class ArchiveResults:
     os.chdir(cwd)
     esmfmkfile = glob.glob('{}/lib/lib{}/*/esmf.mk'.format(self.build_dir,build_type))
     print("esmfmkfile is {}".format(esmfmkfile))
-    build_time = datetime.datetime.fromtimestamp(os.path.getmtime(esmfmkfile[0]))
-    summary_file = open('{}/summary.dat'.format(outpath),"w")
-    summary_file.write('\n===================================================================\n')
-    summary_file.write('Build for = {}, mpi version {} on {}\n'.format(build_basename,self.mpiversion,self.machine_name))
-    summary_file.write('Build time = {}\n'.format(build_time))
-    summary_file.write('git hash = {}\n\n'.format(self.build_hash))
-    unit_results = re.sub(' FAIL','\tFAIL',unit_results)
-    system_results = re.sub(' FAIL',' \tFAIL',system_results)
-    example_results = re.sub(' FAIL',' \tFAIL',example_results)
-    summary_file.write('unit test results   \t{}\n'.format(unit_results))
-    summary_file.write('system test results \t{}\n'.format(system_results))
-    summary_file.write('example test results \t{}\n\n'.format(example_results))
-    summary_file.write('\n===================================================================\n')
-    summary_file.write('\n\n{}\n\n'.format(make_info))
-    summary_file.write('\n===================================================================\n')
-    summary_file.close()
+    self.create_summary(unit_results,system_results,example_results,make_info,esmfmkfile)
   # return
     timestamp = "build time -- {}".format(build_time)
     for afile in example_artifacts:
