@@ -62,11 +62,11 @@ class ArchiveResults:
        os.system(cmd)
 
   def create_summary(self,unit_results,system_results,example_results,make_info,esmfmkfile):
-    build_time = datetime.datetime.fromtimestamp(os.path.getmtime(esmfmkfile[0]))
+    self.build_time = datetime.datetime.fromtimestamp(os.path.getmtime(esmfmkfile[0]))
     summary_file = open('{}/summary.dat'.format(self.outpath),"w")
     summary_file.write('\n===================================================================\n')
     summary_file.write('Build for = {}, mpi version {} on {}\n'.format(self.build_basename,self.mpiversion,self.machine_name))
-    summary_file.write('Build time = {}\n'.format(build_time))
+    summary_file.write('Build time = {}\n'.format(self.build_time))
     summary_file.write('git hash = {}\n\n'.format(self.build_hash))
     unit_results = re.sub(' FAIL','\tFAIL',unit_results)
     system_results = re.sub(' FAIL',' \tFAIL',system_results)
@@ -175,7 +175,7 @@ class ArchiveResults:
     print("esmfmkfile is {}".format(esmfmkfile))
     self.create_summary(unit_results,system_results,example_results,make_info,esmfmkfile)
   # return
-    timestamp = "build time -- {}".format(build_time)
+    timestamp = "build time -- {}".format(self.build_time)
     for afile in example_artifacts:
       cmd = "echo {} > {}/examples/{}".format(timestamp,outpath,os.path.basename(afile))
       self.runcmd(cmd)
