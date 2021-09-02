@@ -16,7 +16,10 @@ class ESMFTest:
     self.yaml_file=yaml_file
     self.artifacts_root=artifacts_root
     self.workdir=workdir
-    self.dryrun = dryrun
+    if(dryrun == "True"):
+      self.dryrun = True
+    else:
+      self.dryrun = False
     print("setting dryrun to {}".format(self.dryrun))
     self.mypath=pathlib.Path(__file__).parent.absolute()
     self.branch="develop"
@@ -87,14 +90,6 @@ class ESMFTest:
           for key in mpitypes:
             subdir="{}_{}_{}_{}".format(comp,ver,key,build_type)
             print("{}".format(subdir))
-            if('build_time' in self.machine_list[comp]):
-              self.build_time = self.machine_list[comp]['build_time']
-            else:
-              self.build_time = "1:00:00"
-            if('test_time' in self.machine_list[comp]):
-              self.test_time = self.machine_list[comp]['test_time']
-            else:
-              self.test_time = "1:00:00"
 
   def runcmd(self,cmd):
     if(self.dryrun == True):
@@ -251,7 +246,6 @@ class ESMFTest:
 
   def createGetResScripts(self,monitor_cmd_build,monitor_cmd_test):
     # write these out no matter what, so we can run them manually, if necessary
-    print("HEY!! in create get res")
     get_res_file = open("getres-build.sh", "w")
     get_res_file.write("#!{} -l\n".format(self.bash))
     get_res_file.write("{} >& /dev/null &\n".format(monitor_cmd_build))
@@ -273,6 +267,14 @@ class ESMFTest:
             mpitypes= mpidict.keys()
             print(self.machine_list[comp]['versions'][ver])
             for key in mpitypes:
+              if('build_time' in self.machine_list[comp]):
+                self.build_time = self.machine_list[comp]['build_time']
+              else:
+                self.build_time = "1:00:00"
+              if('test_time' in self.machine_list[comp]):
+                self.test_time = self.machine_list[comp]['test_time']
+              else:
+                self.test_time = "1:00:00"
               for branch in self.machine_list['branch']:
                 if("nuopcbranch" in self.machine_list):
                   nuopcbranch = self.machine_list['nuopcbranch']
@@ -291,6 +293,7 @@ class ESMFTest:
                 self.t_filename = 'test-{}_{}_{}_{}.bat'.format(comp,ver,key,build_type)
                 self.fb = open(self.b_filename, "w")
                 self.ft = open(self.t_filename, "w")
+                print("HEY, creating headers, test_time is {}".format(self.test_time))
                 self.scheduler.createHeaders(self)
                 print("creating scripts")
                 self.createScripts(build_type,comp,ver,mpidict,mpitypes,key,branch)
