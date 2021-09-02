@@ -61,7 +61,7 @@ class ArchiveResults:
     else:
        os.system(cmd)
 
-  def create_summary(self,unit_results,system_results,example_results,make_info,esmfmkfile):
+  def create_summary(self,unit_results,system_results,example_results,nuopc_pass,nuopc_fail,make_info,esmfmkfile):
     self.build_time = datetime.datetime.fromtimestamp(os.path.getmtime(esmfmkfile[0]))
     summary_file = open('{}/summary.dat'.format(self.outpath),"w")
     summary_file.write('\n===================================================================\n')
@@ -73,7 +73,8 @@ class ArchiveResults:
     example_results = re.sub(' FAIL',' \tFAIL',example_results)
     summary_file.write('unit test results   \t{}\n'.format(unit_results))
     summary_file.write('system test results \t{}\n'.format(system_results))
-    summary_file.write('example test results \t{}\n\n'.format(example_results))
+    summary_file.write('example test results \t{}\n'.format(example_results))
+    summary_file.write('nuopc test results \tPASS {} \tFAIL {}\n\n'.format(nuopc_pass,nuopc_fail))
     summary_file.write('\n===================================================================\n')
     summary_file.write('\n\n{}\n\n'.format(make_info))
     summary_file.write('\n===================================================================\n')
@@ -119,14 +120,15 @@ class ArchiveResults:
       return
     for cfile in oe_filelist:
       nfile = os.path.basename(re.sub('_{}'.format(self.jobid), '', cfile))
-  #   print("cfile is {}, and find says {} ".format(cfile,cfile.find('test_{}'.format(self.jobid))))
-      cp_cmd = 'cp {} {}/out/{}'.format(cfile,outpath,nfile)
-      print("cp command is {}".format(cp_cmd))
+      cp_cmd = 'echo `date` > {}/out/{}'.format(outpath,nfile)
+      self.runcmd(cp_cmd)
+      cp_cmd = 'cat {} >> {}/out/{}'.format(cfile,outpath,nfile)
       self.runcmd(cp_cmd)
     if(not (test_stage)):
       unit_results="unit tests did not complete"
       system_results="system tests did not complete"
       example_results="No examples ran"
+      nuopc_results="No examples ran"
       make_info = subprocess.check_output('cat {}/module-build.log; cat {}/info.log'.format(self.build_dir,self.build_dir),shell=True).strip().decode('utf-8')
       esmfmkfile = glob.glob('{}/lib/lib{}/*/esmf.mk'.format(self.build_dir,build_type))
       self.create_summary(unit_results,system_results,example_results,make_info,esmfmkfile)
@@ -164,7 +166,13 @@ class ArchiveResults:
       system_results= subprocess.check_output('cat {}/test/test{}/*/system_tests_results'.format(self.build_dir,build_type),shell=True).strip().decode('utf-8')
     except:
       system_results="system tests did not complete"
-  
+    try: 
+      nuopc_pass = subprocess.check_output('grep PASS: {}/nuopc_{}.log | wc -l'.format(self.build_dir,self.jobid),shell=True).strip().decode('utf-8')
+      nuopc_fail = subprocess.check_output('grep FAIL: {}/nuopc_{}.log | wc -l'.format(self.build_dir,self.jobid),shell=True).strip().decode('utf-8')
+    except:
+      nuopc_pass=0
+      nuopc_fail=0
+
     python_artifacts = glob.glob('{}/src/addon/ESMPy/*.log'.format(self.build_dir))
   
     cwd = os.getcwd()
@@ -173,7 +181,7 @@ class ArchiveResults:
     os.chdir(cwd)
     esmfmkfile = glob.glob('{}/lib/lib{}/*/esmf.mk'.format(self.build_dir,build_type))
     print("esmfmkfile is {}".format(esmfmkfile))
-    self.create_summary(unit_results,system_results,example_results,make_info,esmfmkfile)
+    self.create_summary(unit_results,system_results,example_results,nuopc_pass,nuopc_fail,make_info,esmfmkfile)
   # return
     timestamp = "build time -- {}".format(self.build_time)
     for afile in example_artifacts:

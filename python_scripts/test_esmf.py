@@ -210,18 +210,21 @@ class ESMFTest:
       if(headerType == "build"):
 #       cmdstring = "make -j {} clean 2>&1| tee clean_$JOBID.log \nmake -j {} 2>&1| tee build_$JOBID.log\n\n".format(self.cpn,self.cpn)
         cmdstring = "make -j {} 2>&1| tee build_$JOBID.log\n\n".format(self.cpn)
+        file_out.write(cmdstring)
       elif(headerType == "test"):
         cmdstring = "make info 2>&1| tee info.log \nmake install 2>&1| tee install_$JOBID.log \nmake all_tests 2>&1| tee test_$JOBID.log \n"
+        file_out.write(cmdstring)
+        cmdstring = "export ESMFMKFILE=`find $PWD/DEFAULTINSTALLDIR -iname esmf.mk`\n"
+        file_out.write(cmdstring)
+        if(mpiflavor['module'] != "None"):
+          cmdstring = "chmod +x runpython.sh\ncd nuopc-app-prototypes\n./testProtos.sh 2>&1| tee ../nuopc_$JOBID.log \n\n"
+          file_out.write(cmdstring)
       else:
         cmdstring = "python3 setup.py test_examples_dryrun\npython3 setup.py test_regrid_from_file_dryrun\npython3 setup.py test_regrid_from_file_dryrun\n"
-      file_out.write(cmdstring)
+        file_out.write(cmdstring)
 
 
       if(("pythontest" in mpiflavor) and (headerType == "test")):
-           cmdstring = "export ESMFMKFILE=`find $PWD/DEFAULTINSTALLDIR -iname esmf.mk`\n"
-           file_out.write(cmdstring)
-           cmdstring = "chmod +x runpython.sh\ncd nuopc-app-prototypes\n./testProtos.sh 2>&1| tee ../nuopc_$JOBID.log \n\n"
-           file_out.write(cmdstring)
 
            cmdstring = "\ncd ../src/addon/ESMPy\n"
            file_out.write(cmdstring)
@@ -293,9 +296,7 @@ class ESMFTest:
                 self.t_filename = 'test-{}_{}_{}_{}.bat'.format(comp,ver,key,build_type)
                 self.fb = open(self.b_filename, "w")
                 self.ft = open(self.t_filename, "w")
-                print("HEY, creating headers, test_time is {}".format(self.test_time))
                 self.scheduler.createHeaders(self)
-                print("creating scripts")
                 self.createScripts(build_type,comp,ver,mpidict,mpitypes,key,branch)
                 self.scheduler.submitJob(self,subdir,self.mpiver,branch)
                 os.chdir("..")
