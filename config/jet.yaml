@@ -1,0 +1,50 @@
+machine: jet
+account: hfv3gfs
+queue: batch
+partition: xjet
+scheduler: slurm
+corespernode: 24
+compiler: [intel,gfortran]
+#compiler: [intel]
+branch: [develop]
+intel:
+     versions: 
+       2020.2: 
+         compiler: intel/2020.2
+         netcdf: netcdf/4.7.0
+         hdf5: hdf5/1.10.6
+         mpi:
+           intelmpi: 
+             module: impi/2020.2
+           mvapich2: 
+             module: mvapich2/2.3
+             mpi_env_vars: 
+               var1: ESMF_MPIRUN=mpirun.srun
+               var2: LIBRARY_PATH=$LIBRARY_PATH:/apps/mvapich2/2.3-intel/lib
+               var3: ESMF_CXXCOMPILEOPTS="-I/apps/mvapich2/2.3-intel/include"
+               var4: ESMF_F90COMPILEOPTS="-I/apps/mvapich2/2.3-intel/include"
+
+gfortran:
+     test_time: "2:00:00"
+     versions: 
+       9.2.0: 
+         compiler: gnu/9.2.0
+         netcdf: netcdf/4.7.2
+         hdf5: hdf5/1.10.5
+         mpi:
+           openmpi: 
+             module: openmpi/3.1.4
+             mpi_env_vars: 
+               var1: ESMF_NETCDF_LIBS="-lnetcdff -lnetcdf -lhdf5_hl -lhdf5"
+pgi:
+     test_time: "1:30:00"
+     build_time: "1:20:00"
+     versions: 
+       18.10: 
+         compiler: pgi/18.10 
+         netcdf: None
+         mpi:
+           intelmpi: 
+             module: impi/2018.0.4
+             mpi_env_vars: 
+               var1: ESMF_MPIRUN=mpirun.srun

@@ -32,7 +32,8 @@ class ESMFTest:
 
   def readYAML(self):
     with open(self.yaml_file) as file:
-      self.machine_list = yaml.load(file, Loader=yaml.FullLoader)
+#     self.machine_list = yaml.load(file, Loader=yaml.FullLoader)
+      self.machine_list = yaml.load(file)
       self.machine_name = self.machine_list['machine']
       print("machine name is {}".format(self.machine_name))
       if("git-https" in self.machine_list):
