@@ -23,7 +23,7 @@ intel:
            var2: ESMF_NETCDF_LIBS="-lnetcdff -lnetcdf"
 
 gfortran:
-     test_time: "2:00:00"
+     test_time: "3:00:00"
      versions: 
        8.3.0: 
          compiler: gcc/8.3.0
