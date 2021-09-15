@@ -130,10 +130,11 @@ class ArchiveResults:
       unit_results="unit tests did not complete"
       system_results="system tests did not complete"
       example_results="No examples ran"
-      nuopc_results="No examples ran"
+      nuopc_pass="None"
+      nuopc_fail="None"
       make_info = subprocess.check_output('cat {}/module-build.log; cat {}/info.log'.format(self.build_dir,self.build_dir),shell=True).strip().decode('utf-8')
       esmfmkfile = glob.glob('{}/lib/lib{}/*/esmf.mk'.format(self.build_dir,build_type))
-      self.create_summary(unit_results,system_results,example_results,make_info,esmfmkfile)
+      self.create_summary(unit_results,system_results,example_results,nuopc_pass,nuopc_fail,make_info,esmfmkfile)
       git_cmd = "cd {};git checkout {};git add {}/{};git commit -a -m\'update for build of {} with hash {} on {} [ci skip]\';git push origin {}".format(self.artifacts_root,self.machine_name,dirbranch,self.machine_name,build_basename,self.build_hash,self.machine_name,self.machine_name)
       print("git_cmd is {}".format(git_cmd))
       self.runcmd(git_cmd)
