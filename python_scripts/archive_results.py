@@ -107,6 +107,8 @@ class ArchiveResults:
     print("outpath is {}".format(outpath))
     for cfile in oe_filelist:
       print("cfile is {}".format(cfile))
+      if(int(self.jobid) < 0):
+        test_stage = True
       if((cfile.find('test_{}'.format(self.jobid)) != -1)): # this is just the build job, so no test artifacts yet
         test_stage = True
     if(not test_stage):

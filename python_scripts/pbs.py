@@ -40,8 +40,8 @@ class pbs(scheduler):
     monitor_cmd_build = \
                    "python3 {}/archive_results.py -j {} -b {} -m {} -s {} -t {} -a {} -M {} -B {} -d {}".format(test.mypath,jobnum,subdir,test.machine_name,self.type,test.script_dir,test.artifacts_root,mpiver,branch,test.dryrun)
     # submit the second job to be dependent on the first
-    getrescmd = "ssh {} {}/getres-test.sh".format(test.headnodename,os.getcwd())
-    os.system("echo {} >> {}".format(getrescmd,test.t_filename))
+#   getrescmd = "ssh {} {}/getres-test.sh".format(test.headnodename,os.getcwd())
+#   os.system("echo {} >> {}".format(getrescmd,test.t_filename))
     batch_test = "qsub -W depend=afterok:{} {}".format(jobnum,test.t_filename)
     print("Submitting test_batch with command: {}".format(batch_test))
     if(test.dryrun == True):
@@ -50,10 +50,14 @@ class pbs(scheduler):
       jobnum= subprocess.check_output(batch_test,shell=True).strip().decode('utf-8').split(".")[0]
     monitor_cmd_test = \
                    "python3 {}/archive_results.py -j {} -b {} -m {} -s {} -t {} -a {} -M {} -B {} -d {}".format(test.mypath,jobnum,subdir,test.machine_name,self.type,test.script_dir,test.artifacts_root,mpiver,branch,test.dryrun)
-    test.createGetResScripts(monitor_cmd_build,monitor_cmd_test)
+    interim_cmd_test = \
+                   "python3 {}/archive_results.py -j -1 -b {} -m {} -s {} -t {} -a {} -M {} -B {} -d {}".format(test.mypath,subdir,test.machine_name,self.type,test.script_dir,test.artifacts_root,mpiver,branch,test.dryrun)
+    test.createGetResScripts(monitor_cmd_build,monitor_cmd_test,interim_cmd_test)
     
 
   def checkqueue(self,jobid):
+    if(int(jobid) < 0):
+      return True
     queue_query = "qstat -H {} | tail -n 1 | awk -F ' +' '{{print $10}}'".format(jobid)
     try:
       result= subprocess.check_output(queue_query,shell=True).strip().decode('utf-8')
