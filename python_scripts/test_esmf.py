@@ -254,19 +254,19 @@ class ESMFTest:
     # write these out no matter what, so we can run them manually, if necessary
     get_res_file = open("getres-build.sh", "w")
     get_res_file.write("#!{} -l\n".format(self.bash))
-    get_res_file.write("{} >& /dev/null &\n".format(monitor_cmd_build))
+    get_res_file.write("{} >& build-res.log &\n".format(monitor_cmd_build))
     get_res_file.close() 
     os.system("chmod +x getres-build.sh")      
 
     get_res_file = open("getres-test.sh", "w")
     get_res_file.write("#!{} -l\n".format(self.bash))
-    get_res_file.write("{} >& /dev/null &\n".format(monitor_cmd_test))
+    get_res_file.write("{} >& test-res.log &\n".format(monitor_cmd_test))
     get_res_file.close()
     os.system("chmod +x getres-test.sh")      
 
     get_res_file = open("getres-int.sh", "w")
     get_res_file.write("#!{} -l\n".format(self.bash))
-    get_res_file.write("{} >& /dev/null &\n".format(interim_cmd_test))
+    get_res_file.write("{} >>& int-res.log &\n".format(interim_cmd_test))
     get_res_file.close()
     os.system("chmod +x getres-int.sh")      
 
