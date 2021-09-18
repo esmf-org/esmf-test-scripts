@@ -39,9 +39,13 @@ class pbs(scheduler):
     print("Submitting batch_build with command: {}, jobnum is {}".format(batch_build,jobnum))
     monitor_cmd_build = \
                    "python3 {}/archive_results.py -j {} -b {} -m {} -s {} -t {} -a {} -M {} -B {} -d {}".format(test.mypath,jobnum,subdir,test.machine_name,self.type,test.script_dir,test.artifacts_root,mpiver,branch,test.dryrun)
-    if(test.dryrun == False):
+    if(test.dryrun == True):
+      print(monitor_cmd_test)
+    else:
       proc = subprocess.Popen(monitor_cmd_build, shell=True, stdin=None, stdout=None, stderr=None, close_fds=True)
     # submit the second job to be dependent on the first
+#   getrescmd = "ssh {} {}/getres-test.sh".format(test.headnodename,os.getcwd())
+#   os.system("echo {} >> {}".format(getrescmd,test.t_filename))
     batch_test = "qsub -W depend=afterok:{} {}".format(jobnum,test.t_filename)
     print("Submitting test_batch with command: {}".format(batch_test))
     if(test.dryrun == True):
@@ -50,11 +54,11 @@ class pbs(scheduler):
       jobnum= subprocess.check_output(batch_test,shell=True).strip().decode('utf-8').split(".")[0]
     monitor_cmd_test = \
                    "python3 {}/archive_results.py -j {} -b {} -m {} -s {} -t {} -a {} -M {} -B {} -d {}".format(test.mypath,jobnum,subdir,test.machine_name,self.type,test.script_dir,test.artifacts_root,mpiver,branch,test.dryrun)
-    if(test.dryrun == False):
+    if(test.dryrun == True):
+      print(monitor_cmd_test)
+    else:
       proc = subprocess.Popen(monitor_cmd_test, shell=True, stdin=None, stdout=None, stderr=None, close_fds=True)
-    interim_cmd_test = \
-                   "python3 {}/archive_results.py -j -1 -b {} -m {} -s {} -t {} -a {} -M {} -B {} -d {}".format(test.mypath,subdir,test.machine_name,self.type,test.script_dir,test.artifacts_root,mpiver,branch,test.dryrun)
-    test.createGetResScripts(monitor_cmd_build,monitor_cmd_test,interim_cmd_test)
+    test.createGetResScripts(monitor_cmd_build,monitor_cmd_test)
     
 
   def checkqueue(self,jobid):

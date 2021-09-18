@@ -3,7 +3,7 @@
 chdir "/home/mpotts/esmf-artifacts-merge";
 system("git checkout main");
 @gitlines = split(/\n/,`git remote update 2>&1`);
-#@gitlines[0] = "line is    e4431636389..8eb7cf0f3b6  chianti    -> origin/chianti";
+#@gitlines[0] = "line is    jet        -> origin/jet";
 foreach(@gitlines) {
   print("line is $_\n");
   if($_ =~ /->/) {
@@ -26,6 +26,8 @@ foreach(@gitlines) {
     print("command is $command\n");
     system("$command");
     $command="find develop -iname summary.dat  | xargs grep -l \"hash = $branchhash\" | xargs grep \"example test results\" | sed \'s/\\// /g\'  | sed -e \'s/\\t/ /g\' | sed -e \'s/ \\+/ /g\' | sed -e \'s/mpiuni/mpiuni none/g\' | awk -F \" \" \'{print \$12,\$14}\' > examp";
+    print("command is $command\n");
+    system("$command");
     $command="find develop -iname summary.dat  | xargs grep -l \"hash = $branchhash\" | xargs grep \"nuopc test results\" | sed \'s/\\// /g\'  | sed -e \'s/\\t/ /g\' | sed -e \'s/ \\+/ /g\' | sed -e \'s/mpiuni/mpiuni none/g\' | awk -F \" \" \'{print \$12,\$14}\' > nuopc";
     print("command is $command\n");
     system("$command");
