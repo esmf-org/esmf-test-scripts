@@ -1,7 +1,6 @@
 import os
 import subprocess
 import argparse
-import datetime
 import sys
 import time
 import glob
@@ -64,7 +63,7 @@ class ArchiveResults:
   def create_summary(self,unit_results,system_results,example_results,nuopc_pass,nuopc_fail,make_info,esmfmkfile):
     esmf_os = subprocess.check_output('grep ESMF_OS: {}/build_{}.log | awk -F \":" \'{{print $2}}\''.format(self.build_dir,self.jobid),shell=True).strip().decode('utf-8')
     if(len(esmfmkfile) > 0):
-      self.build_time = datetime.datetime.fromtimestamp(os.path.getmtime(esmfmkfile[0]))
+      self.build_time = datetime.fromtimestamp(os.path.getmtime(esmfmkfile[0]))
     else:
       now = datetime.now()
       self.build_time= now.strftime("%H:%M:%S")
