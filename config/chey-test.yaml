@@ -2,19 +2,20 @@ machine: cheyenne
 account: p48503002
 queue: regular
 partition: None
-scheduler: slurm
-corespernode: 40
-git-https: True
+scheduler: pbs
+corespernode: 36
 compiler: [gfortran]
+branch: [develop]
+headnodename: cheyenne6
 gfortran:
-     versions: 
-       9.1.0: 
-         compiler: gnu/9.1.0
+    test_time: "2:00:00"
+    versions: 
+       7.4.0: 
+         compiler: gnu/7.4.0
          netcdf: netcdf/4.7.3
          mpi:
            openmpi: 
-             module: openmpi/4.0.5
-           mpt: 
-             module: mpt/2.22
-     unloadmodule: "intel mpt"
-       
+             module: openmpi/4.0.3
+#            pythontest: True
+         extra_env_vars: 
+           var1: ESMF_F90COMPILER=mpif90

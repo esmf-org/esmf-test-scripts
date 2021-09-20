@@ -56,6 +56,8 @@ class slurm(scheduler):
     test.createGetResScripts(monitor_cmd_build,monitor_cmd_test)
 
   def checkqueue(self,jobid):
+    if(int(jobid) < 0):
+      return True
     queue_query = "sacct -j {} | head -n 3 | tail -n 1 | awk -F ' ' '{{print $6}}'".format(jobid)
     try:
       result= subprocess.check_output(queue_query,shell=True).strip().decode('utf-8')

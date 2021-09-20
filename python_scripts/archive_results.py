@@ -11,7 +11,7 @@ from scheduler import scheduler
 from noscheduler import NoScheduler
 from pbs import pbs
 from slurm import slurm
-
+from datetime import datetime
 
 
 
@@ -67,7 +67,8 @@ class ArchiveResults:
       self.build_time = datetime.datetime.fromtimestamp(os.path.getmtime(esmfmkfile[0]))
     else:
       esmf_os = "unknown"
-      self.build_time = datetime.datetime.fromtimestamp(time.time())
+      now = datetime.now()
+      self.build_time= now.strftime("%H:%M:%S")
     summary_file = open('{}/summary.dat'.format(self.outpath),"w")
     summary_file.write('\n===================================================================\n')
     summary_file.write('Build for = {}, mpi version {} on {}, {}\n'.format(self.build_basename,self.mpiversion,self.machine_name,esmf_os))
@@ -112,6 +113,8 @@ class ArchiveResults:
     print("outpath is {}".format(outpath))
     for cfile in oe_filelist:
       print("cfile is {}".format(cfile))
+      if(int(self.jobid) < 0):
+        test_stage = True
       if((cfile.find('test_{}'.format(self.jobid)) != -1)): # this is just the build job, so no test artifacts yet
         test_stage = True
     if(not test_stage):
@@ -130,12 +133,15 @@ class ArchiveResults:
       cp_cmd = 'cat {} >> {}/out/{}'.format(cfile,outpath,nfile)
       self.runcmd(cp_cmd)
     if(not (test_stage)):
-      unit_results="unit tests did not complete"
-      system_results="system tests did not complete"
-      example_results="No examples ran"
-      nuopc_pass="None"
-      nuopc_fail="None"
-      make_info = subprocess.check_output('cat {}/module-build.log; cat {}/info.log'.format(self.build_dir,self.build_dir),shell=True).strip().decode('utf-8')
+      unit_results="-1 -1"
+      system_results="-1 -1"
+      example_results="-1 -1"
+      nuopc_pass="-1"
+      nuopc_fail="-1"
+      try:
+        make_info = subprocess.check_output('cat {}/module-build.log; cat {}/info.log'.format(self.build_dir,self.build_dir),shell=True).strip().decode('utf-8')
+      except:
+        make_info = "error finding {}/module-build.log or {}/info.log".format(self.build_dir,self.build_dir)
       esmfmkfile = glob.glob('{}/lib/lib{}/*/esmf.mk'.format(self.build_dir,build_type))
       self.create_summary(unit_results,system_results,example_results,nuopc_pass,nuopc_fail,make_info,esmfmkfile)
       git_cmd = "cd {};git checkout {};git add {}/{};git commit -a -m\'update for build of {} with hash {} on {} [ci skip]\';git push origin {}".format(self.artifacts_root,self.machine_name,dirbranch,self.machine_name,build_basename,self.build_hash,self.machine_name,self.machine_name)
@@ -188,7 +194,6 @@ class ArchiveResults:
     esmfmkfile = glob.glob('{}/lib/lib{}/*/esmf.mk'.format(self.build_dir,build_type))
     print("esmfmkfile is {}".format(esmfmkfile))
     self.create_summary(unit_results,system_results,example_results,nuopc_pass,nuopc_fail,make_info,esmfmkfile)
-  # return
     timestamp = "build time -- {}".format(self.build_time)
     for afile in example_artifacts:
       cmd = "echo {} > {}/examples/{}".format(timestamp,outpath,os.path.basename(afile))

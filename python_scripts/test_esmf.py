@@ -35,7 +35,6 @@ class ESMFTest:
 
   def readYAML(self):
     with open(self.yaml_file) as file:
-#     self.machine_list = yaml.load(file, Loader=yaml.FullLoader)
       self.machine_list = yaml.load(file)
       self.machine_name = self.machine_list['machine']
       print("machine name is {}".format(self.machine_name))
@@ -74,6 +73,7 @@ class ESMFTest:
       self.cpn = self.machine_list['corespernode']
       self.scheduler_type = self.machine_list['scheduler']
       self.build_types = ['O','g']
+#     self.build_types = ['O']
       self.script_dir=os.getcwd()
       if("cluster" in self.machine_list):
         self.cluster=self.machine_list['cluster']
@@ -214,14 +214,17 @@ class ESMFTest:
       elif(headerType == "test"):
         cmdstring = "make info 2>&1| tee info.log \nmake install 2>&1| tee install_$JOBID.log \nmake all_tests 2>&1| tee test_$JOBID.log \n"
         file_out.write(cmdstring)
+        file_out.write("ssh {} {}/{}/getres-int.sh\n".format(self.headnodename,self.script_dir,os.getcwd()))
         cmdstring = "export ESMFMKFILE=`find $PWD/DEFAULTINSTALLDIR -iname esmf.mk`\n"
         file_out.write(cmdstring)
         if(mpiflavor['module'] != "None"):
           cmdstring = "chmod +x runpython.sh\ncd nuopc-app-prototypes\n./testProtos.sh 2>&1| tee ../nuopc_$JOBID.log \n\n"
           file_out.write(cmdstring)
+          file_out.write("ssh {} {}/{}/getres-int.sh\n".format(self.headnodename,self.script_dir,os.getcwd()))
       else:
         cmdstring = "python3 setup.py test_examples_dryrun\npython3 setup.py test_regrid_from_file_dryrun\npython3 setup.py test_regrid_from_file_dryrun\n"
         file_out.write(cmdstring)
+#       file_out.write("ssh {} {}/{}/getres-int.sh\n".format(self.headnodename,self.script_dir,os.getcwd()))
 
 
       if(("pythontest" in mpiflavor) and (headerType == "test")):
@@ -251,13 +254,13 @@ class ESMFTest:
     # write these out no matter what, so we can run them manually, if necessary
     get_res_file = open("getres-build.sh", "w")
     get_res_file.write("#!{} -l\n".format(self.bash))
-    get_res_file.write("{} >& /dev/null &\n".format(monitor_cmd_build))
+    get_res_file.write("{} >& build-res.log &\n".format(monitor_cmd_build))
     get_res_file.close() 
     os.system("chmod +x getres-build.sh")      
 
     get_res_file = open("getres-test.sh", "w")
     get_res_file.write("#!{} -l\n".format(self.bash))
-    get_res_file.write("{} >& /dev/null &\n".format(monitor_cmd_test))
+    get_res_file.write("{} >& test-res.log &\n".format(monitor_cmd_test))
     get_res_file.close()
     os.system("chmod +x getres-test.sh")      
 
