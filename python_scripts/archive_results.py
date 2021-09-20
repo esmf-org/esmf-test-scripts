@@ -62,10 +62,15 @@ class ArchiveResults:
        os.system(cmd)
 
   def create_summary(self,unit_results,system_results,example_results,nuopc_pass,nuopc_fail,make_info,esmfmkfile):
-    self.build_time = datetime.datetime.fromtimestamp(os.path.getmtime(esmfmkfile[0]))
+    if(len(esmfmkfile) > 0):
+      esmf_os = subprocess.check_output('grep ESMF: {} | awk -F \" \" \'{{print $3}}\''.format(esmfmkfile[0]),shell=True).strip().decode('utf-8')
+      self.build_time = datetime.datetime.fromtimestamp(os.path.getmtime(esmfmkfile[0]))
+    else:
+      esmf_os = "unknown"
+      self.build_time = datetime.datetime.fromtimestamp(time.time())
     summary_file = open('{}/summary.dat'.format(self.outpath),"w")
     summary_file.write('\n===================================================================\n')
-    summary_file.write('Build for = {}, mpi version {} on {}\n'.format(self.build_basename,self.mpiversion,self.machine_name))
+    summary_file.write('Build for = {}, mpi version {} on {}, {}\n'.format(self.build_basename,self.mpiversion,self.machine_name,esmf_os))
     summary_file.write('Build time = {}\n'.format(self.build_time))
     summary_file.write('git hash = {}\n\n'.format(self.build_hash))
     unit_results = re.sub(' FAIL','\tFAIL',unit_results)
