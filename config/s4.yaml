@@ -1,0 +1,22 @@
+machine: s4
+account: star
+queue: normal
+partition: s4
+scheduler: slurm
+corespernode: 24
+compiler: [intel]
+branch: [develop]
+intel:
+     build_time: "2:00:00"
+     test_time: "2:30:00"
+     versions: 
+       2019.0.5: 
+         compiler: "intel/19.0.5 hdf hdf5"
+         hdf5: hdf5/1.10.5
+         netcdf: netcdf4/4.7.3
+         mpi:
+           intelmpi:
+             module: impi/19.0.5
+             mpi_env_vars: 
+               var1: ESMF_MPIRUN=mpirun.srun
+     extramodule: "license_intel/S4"
