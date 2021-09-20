@@ -250,7 +250,7 @@ class ESMFTest:
       else:
         self.mpiver = mpiflavor['module'].split('/')[-1]
 
-  def createGetResScripts(self,monitor_cmd_build,monitor_cmd_test,interim_cmd_test):
+  def createGetResScripts(self,monitor_cmd_build,monitor_cmd_test):
     # write these out no matter what, so we can run them manually, if necessary
     get_res_file = open("getres-build.sh", "w")
     get_res_file.write("#!{} -l\n".format(self.bash))
@@ -263,12 +263,6 @@ class ESMFTest:
     get_res_file.write("{} >& test-res.log &\n".format(monitor_cmd_test))
     get_res_file.close()
     os.system("chmod +x getres-test.sh")      
-
-    get_res_file = open("getres-int.sh", "w")
-    get_res_file.write("#!{} -l\n".format(self.bash))
-    get_res_file.write("{} >>& int-res.log &\n".format(interim_cmd_test))
-    get_res_file.close()
-    os.system("chmod +x getres-int.sh")      
 
   def createJobCardsAndSubmit(self):
       for build_type in self.build_types:
