@@ -62,16 +62,15 @@ class ArchiveResults:
        os.system(cmd)
 
   def create_summary(self,unit_results,system_results,example_results,nuopc_pass,nuopc_fail,make_info,esmfmkfile):
+    esmf_os = subprocess.check_output('grep ESMF_OS: {}/build_{}.log | awk -F \":" \'{{print $2}}\''.format(self.build_dir,self.jobid),shell=True).strip().decode('utf-8')
     if(len(esmfmkfile) > 0):
-      esmf_os = subprocess.check_output('grep ESMF: {} | awk -F \" \" \'{{print $3}}\''.format(esmfmkfile[0]),shell=True).strip().decode('utf-8')
       self.build_time = datetime.datetime.fromtimestamp(os.path.getmtime(esmfmkfile[0]))
     else:
-      esmf_os = "unknown"
       now = datetime.now()
       self.build_time= now.strftime("%H:%M:%S")
     summary_file = open('{}/summary.dat'.format(self.outpath),"w")
     summary_file.write('\n===================================================================\n')
-    summary_file.write('Build for = {}, mpi version {} on {}, {}\n'.format(self.build_basename,self.mpiversion,self.machine_name,esmf_os))
+    summary_file.write('Build for = {}, mpi version {} on {} esmf_os: {}\n'.format(self.build_basename,self.mpiversion,self.machine_name,esmf_os))
     summary_file.write('Build time = {}\n'.format(self.build_time))
     summary_file.write('git hash = {}\n\n'.format(self.build_hash))
     unit_results = re.sub(' FAIL','\tFAIL',unit_results)
@@ -133,11 +132,21 @@ class ArchiveResults:
       cp_cmd = 'cat {} >> {}/out/{}'.format(cfile,outpath,nfile)
       self.runcmd(cp_cmd)
     if(not (test_stage)):
+      command = "grep success {}/build_{}.log".format(self.build_dir,self.jobid)
       unit_results="-1 -1"
       system_results="-1 -1"
       example_results="-1 -1"
       nuopc_pass="-1"
       nuopc_fail="-1"
+      try:
+        build_result = subprocess.check_output('{}'.format(command),shell=True).strip().decode('utf-8')
+      except:
+        build_result = ""
+        example_results = "Build did not complete successfully"
+        unit_results = "Build did not complete successfully"
+        system_results = "Build did not complete successfully"
+        nuopc_pass= "Build did not complete successfully"
+        nuopc_fail= "Build did not complete successfully"
       try:
         make_info = subprocess.check_output('cat {}/module-build.log; cat {}/info.log'.format(self.build_dir,self.build_dir),shell=True).strip().decode('utf-8')
       except:
@@ -158,6 +167,7 @@ class ArchiveResults:
     cmd = 'mkdir -p {}/lib; rm {}/lib/*'.format(outpath,outpath)
     self.runcmd(cmd)
     print("globbing examples")
+       
     example_artifacts = glob.glob('{}/examples/examples{}/*/*.Log'.format(self.build_dir,build_type))
     example_artifacts.extend(glob.glob('{}/examples/examples{}/*/*.stdout'.format(self.build_dir,build_type)))
   # get information from example results file to accumulate
@@ -184,7 +194,6 @@ class ArchiveResults:
     except:
       nuopc_pass=0
       nuopc_fail=0
-
     python_artifacts = glob.glob('{}/src/addon/ESMPy/*.log'.format(self.build_dir))
   
     cwd = os.getcwd()
