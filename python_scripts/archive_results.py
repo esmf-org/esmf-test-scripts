@@ -61,7 +61,9 @@ class ArchiveResults:
        os.system(cmd)
 
   def create_summary(self,unit_results,system_results,example_results,nuopc_pass,nuopc_fail,make_info,esmfmkfile):
-    esmf_os = subprocess.check_output('grep ESMF_OS: {}/build_{}.log | awk -F \":" \'{{print $2}}\''.format(self.build_dir,self.jobid),shell=True).strip().decode('utf-8')
+    results = subprocess.check_output('grep ESMF_OS: {}/*_{}.log'.format(self.build_dir,self.jobid),shell=True).strip().decode('utf-8')
+    esmf_os = results.split()[1]
+    print("HEY!!! esmf_os is {}".format(esmf_os))
     if(len(esmfmkfile) > 0):
       self.build_time = datetime.fromtimestamp(os.path.getmtime(esmfmkfile[0]))
     else:
