@@ -31,9 +31,12 @@ foreach(@gitlines) {
     $command="find develop -iname summary.dat  | xargs grep -l \"hash = $branchhash\" | xargs grep \"nuopc test results\" | sed \'s/\\// /g\'  | sed -e \'s/\\t/ /g\' | sed -e \'s/ \\+/ /g\' | sed -e \'s/mpiuni/mpiuni none/g\' | awk -F \" \" \'{print \$12,\$14}\' > nuopc";
     print("command is $command\n");
     system("$command");
-    system("echo \"HOST compilier version mpi-type mpi-ver O/g unit-pass unit-fail sys-pass sys-fail ex-pass ex-fail nuopc-p nuopc-f\" > summary");
-    system("paste -d \" \" unit sys examp nuopc >> summary");
-    system("env LC_COLLATE=C sort summary | column -t > \"develop/$branchhash.summary\"");
+    $command="find develop -iname summary.dat  | xargs grep -l \"hash = $branchhash\" | xargs grep esmf_os | awk -F \": \" \'{print \$2}\' > os";
+    print("command is $command\n");
+    system("$command");
+    system("echo \"OS HOST compilier version mpi-type mpi-ver O/g unit-pass unit-fail sys-pass sys-fail ex-pass ex-fail nuopc-p nuopc-f\" > summary");
+    system("paste -d \" \" os unit sys examp nuopc >> summary");
+    system("env LC_COLLATE=C sort -k 2,2 summary | column -t > \"develop/$branchhash.summary\"");
     system("git add develop");
     system("git commit -a -m\'$message\'");
     system("git push origin main");
