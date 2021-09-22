@@ -10,7 +10,7 @@ compiler: [gfortran,intel]
 branch: [develop]
 nuopcbranch: develop
 gfortran:
-     test_time: "2:00:00"
+     test_time: "3:00:00"
      versions: 
        8.3.0: 
          compiler: gcc/8.3.0
@@ -25,6 +25,7 @@ gfortran:
      extramodule: PrgEnv-gnu
      unloadmodule: PrgEnv-intel
 intel:
+     test_time: "3:00:00"
      versions: 
        2019.5: 
          compiler: intel/19.0.5.281          
