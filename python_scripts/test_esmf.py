@@ -29,7 +29,9 @@ class ESMFTest:
     if(self.reclone == True):
       print("recloning")
       os.system("rm -rf {}".format(self.artifacts_root))
-      os.system("git clone -b {} https://github.com/esmf-org/esmf-test-artifacts.git".format(self.machine_name))
+      os.system("git clone https://github.com/esmf-org/esmf-test-artifacts.git")
+      os.chdir("esmf-test-artifacts")
+      os.system("git checkout -b {}".format(self.machine_name))
     if(self.scheduler_type == "slurm"):
       self.scheduler=slurm("slurm")
     elif(self.scheduler_type == "None"):
