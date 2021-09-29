@@ -22,8 +22,14 @@ class ESMFTest:
       self.dryrun = False
     print("setting dryrun to {}".format(self.dryrun))
     self.mypath=pathlib.Path(__file__).parent.absolute()
+    print("path is {}".format(self.mypath))
     self.branch="develop"
+    print("calling readyaml")
     self.readYAML()
+    if(self.reclone == True):
+      print("recloning")
+      os.system("rm -rf {}".format(self.artifacts_root))
+      os.system("git clone -b {} https://github.com/esmf-org/esmf-test-artifacts.git".format(self.machine_name))
     if(self.scheduler_type == "slurm"):
       self.scheduler=slurm("slurm")
     elif(self.scheduler_type == "None"):
@@ -34,6 +40,16 @@ class ESMFTest:
     self.createJobCardsAndSubmit()
 
   def readYAML(self):
+    config_path = os.path.dirname(self.yaml_file)
+    global_file = os.path.join(config_path,"global.yaml")
+    print("HEY!!!! {}".format(global_file))
+    with open(global_file) as file:
+      self.global_list = yaml.load(file)
+      if("reclone-artifacts" in self.global_list):
+        self.reclone = self.global_list['reclone-artifacts']
+      else:
+        self.reclone = False
+      print("set reclone to {}".format(self.reclone))
     with open(self.yaml_file) as file:
       self.machine_list = yaml.load(file)
       self.machine_name = self.machine_list['machine']
