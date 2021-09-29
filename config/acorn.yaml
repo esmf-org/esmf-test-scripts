@@ -36,8 +36,8 @@ gfortran:
      versions: 
        10.3.0: 
          compiler: gcc/10.3.0
-         netcdf: netcdf-hdf5parallel 
-         hdf5: hdf5-parallel
+         netcdf: netcdf
+         hdf5: hdf5
          mpi:
            mpich3: 
              module: cray-mpich/8.1.7
