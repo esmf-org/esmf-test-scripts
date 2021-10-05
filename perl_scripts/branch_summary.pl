@@ -3,13 +3,21 @@
 chdir "/home/mpotts/esmf-artifacts-merge";
 system("git checkout main");
 @gitlines = split(/\n/,`git remote update 2>&1`);
-#@gitlines[0] = "line is    jet        -> origin/jet";
+#@gitlines[0] = "line is    cheyenne        -> origin/cheyenne";
+#@gitlines[1] = "line is    hera            -> origin/hera";
+#@gitlines[2] = "line is    orion           -> origin/orion";
+#@gitlines[3] = "line is    jet             -> origin/jet";
+#@gitlines[4] = "line is    gaea            -> origin/gaea";
+#@gitlines[5] = "line is    discover        -> origin/discover";
+#@gitlines[6] = "line is    chianti         -> origin/chianti";
+#@gitlines[7] = "line is    acorn           -> origin/acorn";
 foreach(@gitlines) {
   print("line is $_\n");
   if($_ =~ /->/) {
-    @words = split(/\s+/,$_);
-    $branch = @words[2];
-    print("$branch, @words[3]\n");
+    @words = split(/origin\//,$_);
+    @newwords = split(/\s+/,@words[1]); 
+    $branch = @newwords[0];
+    print("$branch, @words[0]\n");
     system("git checkout origin/$branch develop/$branch");
     print("checked out $branch\n");
     $message=`git log --format=%B -n 1 origin/$branch | head -n 1`;
