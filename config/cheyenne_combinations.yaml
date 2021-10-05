@@ -5,7 +5,7 @@ partition: None
 scheduler: slurm
 corespernode: 40
 compiler: [gfortran,intel,pgi]
-branch: [develop]
+branch: [develop,release/8.2.0]
 gfortran:
      versions:
        6.3.0:
