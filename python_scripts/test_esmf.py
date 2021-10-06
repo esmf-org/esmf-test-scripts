@@ -23,7 +23,6 @@ class ESMFTest:
     print("setting dryrun to {}".format(self.dryrun))
     self.mypath=pathlib.Path(__file__).parent.absolute()
     print("path is {}".format(self.mypath))
-    self.branch="develop"
     print("calling readyaml")
     self.readYAML()
     if(self.reclone == True):
@@ -81,14 +80,14 @@ class ESMFTest:
         self.headnodename = self.machine_list["headnodename"]
       else:
         self.headnodename = os.uname()[1]
-      if("branch" in self.machine_list):
-        self.branch = self.machine_list['branch']
-      else: 
-        self.branch = "develop"
+#     if("branch" in self.machine_list):
+#       self.branch = self.machine_list['branch']
+#     else: 
+#       self.branch = "develop"
       if("nuopcbranch" in self.machine_list):
         self.nuopcbranch = self.machine_list['nuopcbranch']
       else: 
-        self.nuopcbranch = self.branch
+        self.nuopcbranch = "develop"
       self.cpn = self.machine_list['corespernode']
       self.scheduler_type = self.machine_list['scheduler']
       self.build_types = ['O','g']
@@ -106,9 +105,9 @@ class ESMFTest:
           mpidict = self.machine_list[comp]['versions'][ver]['mpi']
           mpitypes= mpidict.keys()
           print(self.machine_list[comp]['versions'][ver])
-          for key in mpitypes:
-            subdir="{}_{}_{}_{}".format(comp,ver,key,build_type)
-            print("{}".format(subdir))
+#         for key in mpitypes:
+#           subdir="{}_{}_{}_{}".format(comp,ver,key,build_type)
+#           print("{}".format(subdir))
 
   def runcmd(self,cmd):
     if(self.dryrun == True):
