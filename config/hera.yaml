@@ -50,8 +50,8 @@ gfortran:
              mpi_env_vars: 
                var1: ESMF_MPIRUN=mpirun.srun
 pgi:
-     test_time: "1:30:00"
-     build_time: "1:20:00"
+     test_time: "2:00:00"
+     build_time: "2:00:00"
      versions: 
        18.10: 
          compiler: pgi/18.10 
