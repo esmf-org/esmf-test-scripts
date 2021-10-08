@@ -6,8 +6,7 @@ partition: compute
 scheduler: slurm
 corespernode: 28
 compiler: [intel,gfortran,pgi]
-#compiler: [pgi]
-branch: [develop,release/8.2.0]
+branch: [release/8.2.0]
 intel:
    versions:
      2020: 

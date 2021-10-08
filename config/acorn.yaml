@@ -5,8 +5,7 @@ git-https: True
 scheduler: pbs
 corespernode: 128
 compiler: [intel,gfortran]
-#compiler: [gfortran]
-branch: [develop,release/8.2.0]
+branch: [release/8.2.0]
 intel:
      versions: 
        2019.3: 
