@@ -6,8 +6,7 @@ partition: compute
 scheduler: slurm
 corespernode: 28
 compiler: [intel,gfortran,pgi]
-#compiler: [pgi]
-branch: [develop,release/8.2.0]
+branch: [release/8.2.0]
 intel:
    versions:
      2020: 
@@ -46,8 +45,8 @@ gfortran:
        extra_env_vars:
             var1: ESMF_F90COMPILEOPTS="-fallow-argument-mismatch -fallow-invalid-boz"
 pgi:
-   test_time: "1:20:00"
-   build_time: "1:20:00"
+   test_time: "2:00:00"
+   build_time: "2:00:00"
    versions:
      2020: 
        compiler: comp/pgi/20.4

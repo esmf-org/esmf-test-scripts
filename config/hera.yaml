@@ -5,7 +5,7 @@ partition: hera
 scheduler: slurm
 corespernode: 40
 compiler: [intel,gfortran,pgi]
-branch: [develop,release/8.2.0]
+branch: [release/8.2.0]
 intel:
      versions: 
        18.0.4: 
@@ -40,6 +40,8 @@ gfortran:
             var3: ESMF_NETCDF_LIBPATH=$NETCDF/lib
             var4: ESMF_NETCDF_LIBS="-lnetcdff -lnetcdf -lhdf5_hl -lhdf5 $HDF5ExtraLibs"
             var5: ESMF_NETCDF=nc-config
+         extra_commands: 
+            cmd1: "tar xvfz pytest-input.tar.gz"
        9.2.0b: 
          compiler: gnu/9.2.0
          netcdf: None
@@ -49,9 +51,11 @@ gfortran:
              pythontest: True
              mpi_env_vars: 
                var1: ESMF_MPIRUN=mpirun.srun
+         extra_commands: 
+            cmd1: "tar xvfz pytest-input.tar.gz"
 pgi:
-     test_time: "1:30:00"
-     build_time: "1:20:00"
+     test_time: "2:00:00"
+     build_time: "2:00:00"
      versions: 
        18.10: 
          compiler: pgi/18.10 

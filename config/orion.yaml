@@ -5,7 +5,7 @@ partition: orion
 scheduler: slurm
 corespernode: 40
 compiler: [intel,gfortran]
-branch: [develop,release/8.2.0]
+branch: [release/8.2.0]
 intel:
    test_time: "4:00:00"
    versions:

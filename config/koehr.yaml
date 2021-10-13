@@ -4,8 +4,7 @@ queue: standard
 scheduler: pbs
 corespernode: 48
 compiler: [intel,gfortran]
-#compiler: [intel]
-branch: [develop,release/8.2.0] 
+branch: [release/8.2.0] 
 intel:
      versions: 
        2019.4: 
