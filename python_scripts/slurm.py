@@ -26,6 +26,8 @@ class slurm(scheduler):
         file_out.write("#SBATCH --partition={}\n".format(test.partition))
       if(test.cluster != "None"):
         file_out.write("#SBATCH --cluster={}\n".format(test.cluster))
+      if(test.constraint != "None"):
+        file_out.write("#SBATCH -C {}\n".format(test.constraint))
       file_out.write("#SBATCH --qos={}\n".format(test.queue))
       file_out.write("#SBATCH --nodes=1\n")
       file_out.write("#SBATCH --ntasks-per-node={}\n".format(test.cpn))
