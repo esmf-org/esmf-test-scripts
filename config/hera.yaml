@@ -19,6 +19,8 @@ intel:
                var1: ESMF_MPIRUN=mpirun.srun
            mpiuni: 
              module: None
+         extra_commands: 
+            cmd1: "tar xvfz ~/pytest-input.tar.gz"
 gfortran:
      test_time: "2:00:00"
      versions: 
@@ -41,7 +43,7 @@ gfortran:
             var4: ESMF_NETCDF_LIBS="-lnetcdff -lnetcdf -lhdf5_hl -lhdf5 $HDF5ExtraLibs"
             var5: ESMF_NETCDF=nc-config
          extra_commands: 
-            cmd1: "tar xvfz pytest-input.tar.gz"
+            cmd1: "tar xvfz ~/pytest-input.tar.gz"
        9.2.0b: 
          compiler: gnu/9.2.0
          netcdf: None
@@ -52,7 +54,7 @@ gfortran:
              mpi_env_vars: 
                var1: ESMF_MPIRUN=mpirun.srun
          extra_commands: 
-            cmd1: "tar xvfz pytest-input.tar.gz"
+            cmd1: "tar xvfz ~/pytest-input.tar.gz"
 pgi:
      test_time: "2:00:00"
      build_time: "2:00:00"
