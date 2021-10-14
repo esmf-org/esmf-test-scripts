@@ -16,6 +16,8 @@ intel:
            intelmpi: 
              module: impi/2020.2
              pythontest: True
+       extra_commands: 
+          cmd1: "tar xvfz ~/pytest-input.tar.gz"
    extramodule: intelpython3
 gfortran:
    versions:
@@ -28,6 +30,8 @@ gfortran:
              pythontest: True
            mpiuni: 
              module: None
+       extra_commands: 
+          cmd1: "tar xvfz ~/pytest-input.tar.gz"
        extra_env_vars: 
          var1: LD_PRELOAD=/apps/gcc-8/gcc-8.3.0/lib64/libstdc++.so
    extramodule: intelpython3

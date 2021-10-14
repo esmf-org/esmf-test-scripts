@@ -46,14 +46,14 @@ class ESMFTest:
     global_file = os.path.join(config_path,"global.yaml")
     print("HEY!!!! {}".format(global_file))
     with open(global_file) as file:
-      self.global_list = yaml.load(file)
+      self.global_list = yaml.load(file, Loader=yaml.SafeLoader)
       if("reclone-artifacts" in self.global_list):
         self.reclone = self.global_list['reclone-artifacts']
       else:
         self.reclone = False
       print("set reclone to {}".format(self.reclone))
     with open(self.yaml_file) as file:
-      self.machine_list = yaml.load(file)
+      self.machine_list = yaml.load(file, Loader=yaml.SafeLoader)
       self.machine_name = self.machine_list['machine']
       print("machine name is {}".format(self.machine_name))
       if("git-https" in self.machine_list):
