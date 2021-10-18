@@ -5,6 +5,9 @@ The purpose of this script is to allow testing of UFS with new snapshots of ESMF
 0. User should know what compiler and MPI they want to build with and an HPC-stack should be available for that combination a-priori on that machine.
 
 1. Clone hpc-stack from github
+     ```
+        git clone git@github.com:NOAA-EMC/hpc-stack.git
+     ```
 2. Check `hpc-stack/config/config.sh` to ensure the compiler and MPI are consistent with the installed version from 0.
 3. Edit `hpc-stack/stack/stack_noaa.yaml` to update the ESMF information e.g. version.
 4. Edit `build_standalone_esmf.sh` in the top section.  Items to edit:
