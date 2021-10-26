@@ -5,7 +5,7 @@ partition: hera
 scheduler: slurm
 corespernode: 40
 compiler: [intel,gfortran,pgi]
-branch: [release/8.2.0]
+branch: [main]
 intel:
      versions: 
        18.0.4: 

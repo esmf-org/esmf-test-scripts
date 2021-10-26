@@ -3,7 +3,7 @@ bash: /usr/local/bin/bash
 scheduler: None
 corespernode: 4
 compiler: [gfortran]
-branch: [release/8.2.0]
+branch: [main]
 gfortran:
      versions: 
        9.3.0: 

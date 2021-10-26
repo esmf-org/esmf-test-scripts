@@ -5,7 +5,7 @@ partition: xjet
 scheduler: slurm
 corespernode: 24
 compiler: [intel,gfortran]
-branch: [release/8.2.0]
+branch: [main]
 intel:
      test_time: "2:00:00"
      versions: 
