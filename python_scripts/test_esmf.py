@@ -97,6 +97,11 @@ class ESMFTest:
         self.cluster=self.machine_list['cluster']
       else:
         self.cluster="None"
+      if("constraint" in self.machine_list):
+        self.constraint=self.machine_list['constraint']
+      else:
+        self.constraint="None"
+
       # Now traverse the tree
       for build_type in self.build_types:
         for comp in self.machine_list['compiler']:

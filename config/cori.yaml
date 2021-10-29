@@ -1,0 +1,42 @@
+machine: cori
+account: e3sm
+queue: regular
+#partition: None
+#cluster: c4
+constraint: haswell
+scheduler: slurm
+corespernode: 32
+compiler: [intel]
+branch: [release/8.2.0]
+#nuopcbranch: develop
+
+#gfortran:
+#     test_time: "3:00:00"
+#     versions: 
+#       8.3.0: 
+#         compiler: gcc/8.3.0
+#         netcdf: cray-netcdf/4.6.3.2
+#         mpi:
+#           mpiuni: 
+#             module: None
+#           mpi: 
+#             module: cray-mpich/7.7.11
+#         extra_env_vars: 
+#           var1: ESMF_NETCDF_LIBS="-lnetcdff -lnetcdf"
+#     extramodule: PrgEnv-gnu
+#     unloadmodule: PrgEnv-intel
+
+intel:
+     test_time: "3:00:00"
+     versions: 
+       19.0.3: 
+         compiler: intel/19.0.3.199          
+         netcdf: cray-netcdf/4.6.3.2
+         mpi:
+           mpiuni: 
+             module: None
+           mpi: 
+             module: cray-mpich/7.7.10
+         extra_env_vars:
+             var1: ESMF_NETCDF_LIBS="-lnetcdf"
+             var2: ESMF_NETCDFF_LIBS="-lnetcdff"
