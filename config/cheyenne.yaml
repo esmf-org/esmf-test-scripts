@@ -5,7 +5,7 @@ partition: None
 scheduler: pbs
 corespernode: 36
 compiler: [gfortran,intel]
-branch: [main]
+branch: [develop]
 headnodename: cheyenne6
 gfortran:
     test_time: "2:00:00"
