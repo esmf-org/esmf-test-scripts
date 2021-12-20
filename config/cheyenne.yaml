@@ -47,7 +47,9 @@ intel:
         compiler: intel/18.0.5
         netcdf: netcdf/4.6.3
         mpi:
-           mpt:
+           mpiuni:
+            module: None
+	   mpt:
             module: mpt/2.19
            openmpi:
             module: openmpi/3.1.4
