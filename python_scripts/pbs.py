@@ -40,7 +40,7 @@ class pbs(scheduler):
     monitor_cmd_build = \
                    "python3 {}/archive_results.py -j {} -b {} -m {} -s {} -t {} -a {} -M {} -B {} -d {}".format(test.mypath,jobnum,subdir,test.machine_name,self.type,test.script_dir,test.artifacts_root,mpiver,branch,test.dryrun)
     if(test.dryrun == True):
-      print(monitor_cmd_test)
+      print(monitor_cmd_build)
     else:
       proc = subprocess.Popen(monitor_cmd_build, shell=True, stdin=None, stdout=None, stderr=None, close_fds=True)
     # submit the second job to be dependent on the first
