@@ -2,31 +2,29 @@ import os
 import subprocess
 from scheduler import scheduler
 
-
 class pbs(scheduler):
-    def __init__(self, scheduler_type):
-        self.type = scheduler_type
+  def __init__(self,scheduler_type):
+     self.type = scheduler_type
 
-    def createHeaders(self, test):
-        for headerType in ["build", "test"]:
-            if headerType == "build":
-                file_out = test.fb
-            else:
-                file_out = test.ft
-            file_out.write("#!/bin/sh -l\n")
-            if headerType == "build":
-                file_out.write("#PBS -N {}\n".format(test.b_filename))
-                file_out.write("#PBS -l walltime={}\n".format(test.build_time))
-            else:
-                file_out.write("#PBS -N {}\n".format(test.t_filename))
-            file_out.write("#PBS -l walltime={}\n".format(test.test_time))
-            file_out.write("#PBS -q {}\n".format(test.queue))
-            file_out.write("#PBS -A {}\n".format(test.account))
-            file_out.write(
-                "#PBS -l select=1:ncpus={}:mpiprocs={}\n".format(test.cpn, test.cpn)
-            )
-            file_out.write('JOBID="`echo $PBS_JOBID | cut -d. -f1`"\n\n')
-            file_out.write("cd {}\n".format(os.getcwd()))
+
+  def createHeaders(self,test):
+    for headerType in ["build","test"]:
+      if(headerType == "build"):
+        file_out = test.fb
+      else:
+        file_out = test.ft
+      file_out.write("#!/bin/sh -l\n")
+      if(headerType == "build"):
+        file_out.write("#PBS -N {}\n".format(test.b_filename))
+        file_out.write("#PBS -l walltime={}\n".format(test.build_time))
+      else:
+        file_out.write("#PBS -N {}\n".format(test.t_filename))
+      file_out.write("#PBS -l walltime={}\n".format(test.test_time))
+      file_out.write("#PBS -q {}\n".format(test.queue))
+      file_out.write("#PBS -A {}\n".format(test.account))
+      file_out.write("#PBS -l select=1:ncpus={}:mpiprocs={}\n".format(test.cpn,test.cpn))
+      file_out.write("JOBID=\"`echo $PBS_JOBID | cut -d. -f1`\"\n\n")
+      file_out.write("cd {}\n".format(os.getcwd()))
 
   def submitJob(self,test,subdir,mpiver,branch):
     # add ssh back to the head node for archiving of results to batch scripts
@@ -63,23 +61,17 @@ class pbs(scheduler):
     test.createGetResScripts(monitor_cmd_build,monitor_cmd_test)
     
 
-    def checkqueue(self, jobid):
-        if int(jobid) < 0:
-            return True
-        queue_query = "qstat -H {} | tail -n 1 | awk -F ' +' '{{print $10}}'".format(
-            jobid
-        )
-        try:
-            result = (
-                subprocess.check_output(queue_query, shell=True).strip().decode("utf-8")
-            )
-            if (
-                result == "F"
-            ):  # could check for R and Q to see if it is running or waiting
-                return True
-            else:
-                return False
-        except:
-            result = "done"
-            return True
+  def checkqueue(self,jobid):
+    if(int(jobid) < 0):
+      return True
+    queue_query = "qstat -H {} | tail -n 1 | awk -F ' +' '{{print $10}}'".format(jobid)
+    try:
+      result= subprocess.check_output(queue_query,shell=True).strip().decode('utf-8')
+      if(result == "F"): #could check for R and Q to see if it is running or waiting
+        return True
+      else:
         return False
+    except:
+      result="done"
+      return True
+    return False
