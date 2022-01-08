@@ -4,7 +4,7 @@ from scheduler import scheduler
 
 
 class slurm(scheduler):
-    def __init__(self, scheduler_type):
+  def __init__(self, scheduler_type):
         self.type = scheduler_type
 
 
@@ -36,7 +36,7 @@ class slurm(scheduler):
       file_out.write("#SBATCH --exclusive\n")
       file_out.write("export JOBID=$SLURM_JOBID\n")
 
-    def submitJob(self, test, subdir, mpiver, branch):
+  def submitJob(self, test, subdir, mpiver, branch):
         batch_build = "sbatch {}".format(test.b_filename)
         jobnum = (
             subprocess.check_output(batch_build, shell=True)
@@ -103,7 +103,7 @@ class slurm(scheduler):
             )
         test.createGetResScripts(monitor_cmd_build, monitor_cmd_test)
 
-    def checkqueue(self, jobid):
+  def checkqueue(self, jobid):
         if int(jobid) < 0:
             return True
         queue_query = (
