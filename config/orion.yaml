@@ -5,7 +5,9 @@ partition: orion
 scheduler: slurm
 corespernode: 40
 compiler: [intel,gfortran]
-branch: [develop]
+branch: [jedwards/pio_update, develop]
+nuopcbranch: develop
+
 intel:
    test_time: "4:00:00"
    versions:
