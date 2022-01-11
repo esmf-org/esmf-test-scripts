@@ -2,6 +2,7 @@ machine: discover
 account: s2326
 #account: j1100
 queue: allnccs
+git-https: True
 partition: compute
 scheduler: slurm
 corespernode: 28
