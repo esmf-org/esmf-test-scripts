@@ -1,13 +1,11 @@
 machine: cori
 account: e3sm
 queue: regular
-#partition: None
-#cluster: c4
 constraint: haswell
 scheduler: slurm
 corespernode: 32
 compiler: [intel]
-branch: [release/8.2.0]
+branch: [develop]
 #nuopcbranch: develop
 
 #gfortran:
