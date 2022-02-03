@@ -153,7 +153,7 @@ class ArchiveResults:
         mpiflavor = parts[2]
         build_type = parts[3]
         # get the full path for placment of artifacts
-        if self.mpiversion != "None":
+        if self.mpiversion not in ["None", "none", None]:
             outpath = "{}/{}/{}/{}/{}/{}/{}/{}".format(
                 self.artifacts_root,
                 dirbranch,
@@ -165,7 +165,7 @@ class ArchiveResults:
                 self.mpiversion,
             )
         else:
-            outpath = "{}/{}/{}/{}/{}/{}/{}".format(
+            outpath = "{}/{}/{}/{}/{}/{}/{}/{}".format(
                 self.artifacts_root,
                 dirbranch,
                 self.machine_name,
@@ -173,6 +173,7 @@ class ArchiveResults:
                 version,
                 build_type,
                 mpiflavor,
+                "none'",
             )
         self.outpath = outpath
         # copy/rename the stdout/stderr files to artifacts out directory
