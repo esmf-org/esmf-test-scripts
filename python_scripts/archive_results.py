@@ -103,7 +103,7 @@ class ArchiveResults:
         else:
             now = datetime.now()
             self.build_time = now.strftime("%H:%M:%S")
-        summary_file = open("{}/summary.dat".format(self.outpath), "w")
+        summary_file = open(f"{self.output}/summary.dat", "w")
         summary_file.write(
             "\n===================================================================\n"
         )
