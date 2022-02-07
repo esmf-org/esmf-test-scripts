@@ -48,13 +48,13 @@ intel:
         netcdf: netcdf/4.6.3
         mpi:
            mpiuni:
-            module: None
-	   mpt:
+           module: None
+	    mpt:
             module: mpt/2.19
-           openmpi:
+        openmpi:
             module: openmpi/3.1.4
             pythontest: True
-           intelmpi:
+        intelmpi:
             module: impi/2018.4.274
             pythontest: True
     extramodule: python
