@@ -173,7 +173,7 @@ class ArchiveResults:
                 version,
                 build_type,
                 mpiflavor,
-                "none'",
+                "none",
             )
         self.outpath = outpath
         # copy/rename the stdout/stderr files to artifacts out directory
