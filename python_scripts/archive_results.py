@@ -165,7 +165,7 @@ class ArchiveResults:
                 self.mpiversion,
             )
         else:
-            outpath = "{}/{}/{}/{}/{}/{}/{}/{}".format(
+            outpath = "{}/{}/{}/{}/{}/{}/{}".format(
                 self.artifacts_root,
                 dirbranch,
                 self.machine_name,
@@ -173,7 +173,6 @@ class ArchiveResults:
                 version,
                 build_type,
                 mpiflavor,
-                "none'",
             )
         self.outpath = outpath
         # copy/rename the stdout/stderr files to artifacts out directory
