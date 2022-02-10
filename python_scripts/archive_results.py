@@ -103,7 +103,7 @@ class ArchiveResults:
         else:
             now = datetime.now()
             self.build_time = now.strftime("%H:%M:%S")
-        summary_file = open(f"{self.output}/summary.dat", "w")
+        summary_file = open(f"{self.outpath}/summary.dat", "w")
         summary_file.write(
             "\n===================================================================\n"
         )
@@ -173,7 +173,7 @@ class ArchiveResults:
                 version,
                 build_type,
                 mpiflavor,
-                "none'",
+                "none",
             )
         self.outpath = outpath
         # copy/rename the stdout/stderr files to artifacts out directory
