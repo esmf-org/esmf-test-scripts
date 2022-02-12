@@ -1,7 +1,7 @@
 machine: chianti
 scheduler: None
 corespernode: 8
-compiler: [intel,gfortran]
+compiler: [gfortran,intel]
 branch: [develop]
 intel:
      versions: 
