@@ -206,11 +206,11 @@ class ArchiveResults:
             self.runcmd(cp_cmd)
         if not (test_stage):
             command = "grep success {}/build_{}.log".format(self.build_dir, self.jobid)
-            unit_results = "-1 -1"
-            system_results = "-1 -1"
-            example_results = "-1 -1"
-            nuopc_pass = "-1"
-            nuopc_fail = "-1"
+            unit_results = "queued queued"
+            system_results = "queued queued"
+            example_results = "queued queued"
+            nuopc_pass = "queued"
+            nuopc_fail = "queued"
             try:
                 build_result = (
                     subprocess.check_output("{}".format(command), shell=True)
