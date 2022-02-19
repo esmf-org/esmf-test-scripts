@@ -1,6 +1,8 @@
+from pathlib import Path
 import abc
 from typing import Iterable
 import yaml
+import json
 
 
 class Base(abc.ABC):
@@ -19,6 +21,9 @@ class Base(abc.ABC):
 
     def __dir__(self) -> Iterable[str]:
         return [str(k) for k in self.__dict__]
+
+    def to_json(self):
+        return json.dumps(self.__dict__)
 
 
 class JobRequest(Base):
@@ -39,6 +44,6 @@ class Version(Base):
     """the lowest leaf in the yaml file"""
 
 
-def read_yaml():
-    with open("./tests/fixtures/cheyenne.yaml") as _file:
+def read_yaml(_path: Path):
+    with open(_path) as _file:
         return JobRequest("JOB", **yaml.safe_load(_file))
