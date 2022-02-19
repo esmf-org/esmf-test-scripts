@@ -25,10 +25,8 @@ def test_to_json():
     with open(Path("./tests/fixtures/cheyenne.json")) as _file:
 
         expected = json.load(_file)
-        print(expected)
         actual = json.loads(
             _job.read_yaml(Path("./tests/fixtures/cheyenne.yaml")).to_json()
         )
-        print(actual)
 
         assert actual == expected
