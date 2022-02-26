@@ -4,7 +4,7 @@ queue: standard
 scheduler: pbs
 corespernode: 48
 compiler: [intel,gfortran]
-branch: [develop]
+branch: [develop,jedwards/pio_update2]
 headnodename: gaffney06
 intel:
      versions: 
