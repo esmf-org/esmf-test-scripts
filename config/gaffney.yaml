@@ -6,6 +6,7 @@ corespernode: 48
 compiler: [intel,gfortran]
 branch: [develop,jedwards/pio_update2]
 headnodename: gaffney06
+nuopcbranch: develop
 intel:
      versions: 
        2018.1: 

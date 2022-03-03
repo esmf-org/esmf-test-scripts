@@ -6,6 +6,7 @@ scheduler: slurm
 corespernode: 40
 compiler: [intel,gfortran,pgi]
 branch: [develop,jedwards/pio_update2]
+nuopcbranch: develop
 git-https: True
 intel:
      versions: 

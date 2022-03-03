@@ -6,6 +6,7 @@ scheduler: slurm
 corespernode: 24
 compiler: [intel]
 branch: [develop,jedwards/pio_update2]
+nuopcbranch: develop
 intel:
      build_time: "2:00:00"
      test_time: "2:30:00"

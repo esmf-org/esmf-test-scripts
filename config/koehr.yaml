@@ -5,6 +5,7 @@ scheduler: pbs
 corespernode: 48
 compiler: [intel,gfortran]
 branch: [develop,jedwards/pio_update2]
+nuopcbranch: develop
 intel:
      versions: 
        2019.4: 
