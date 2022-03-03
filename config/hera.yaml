@@ -1,11 +1,12 @@
 machine: hera
-account: da-cpu
+account: nems
 queue: batch
 partition: hera
 scheduler: slurm
 corespernode: 40
 compiler: [intel,gfortran,pgi]
 branch: [develop,jedwards/pio_update2]
+git-https: True
 intel:
      versions: 
        18.0.4: 
