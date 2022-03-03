@@ -20,7 +20,7 @@ from noscheduler import NoScheduler
 from pbs import pbs
 from slurm import slurm
 
-REPO_ESMF_TEST_ARTIFACTS = "https://github.com/esmf-org/esmf-test-artifacts-new.git"
+REPO_ESMF_TEST_ARTIFACTS = "https://github.com/esmf-org/esmf-test-artifacts.git"
 
 logger = logging.getLogger()
 logger.setLevel(logging.DEBUG)
