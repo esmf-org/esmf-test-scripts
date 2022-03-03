@@ -11,6 +11,8 @@ from noscheduler import NoScheduler
 from pbs import pbs
 from slurm import slurm
 
+REPO_ESMF_TEST_ARTIFACTS = "https://github.com/esmf-org/esmf-test-artifacts-new.git"
+
 class ESMFTest:
   def __init__(self, yaml_file, artifacts_root, workdir, dryrun):
     self.yaml_file=yaml_file
@@ -28,7 +30,7 @@ class ESMFTest:
     if(self.reclone == True):
       print("recloning")
       os.system("rm -rf {}".format(self.artifacts_root))
-      os.system("git clone https://github.com/esmf-org/esmf-test-artifacts.git")
+      os.system(f"git clone {REPO_ESMF_TEST_ARTIFACTS}")
       os.chdir("esmf-test-artifacts")
       os.system("git checkout -b {}".format(self.machine_name))
       os.chdir("..")
