@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-chdir "/home/mpotts/esmf-artifacts-merge";
+chdir "/scratch1/NCEPDEV/nems/role.esmfmaint/esmf-test-artifacts";
 system("git checkout main");
 @gitlines = split(/\n/,`git remote update 2>&1`);
 foreach(@gitlines) {
