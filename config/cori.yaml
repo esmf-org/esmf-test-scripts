@@ -5,7 +5,7 @@ constraint: haswell
 scheduler: slurm
 corespernode: 32
 compiler: [intel]
-branch: [develop]
+branch: [develop,jedwards/pio_update2]
 nuopcbranch: develop
 
 #gfortran:
