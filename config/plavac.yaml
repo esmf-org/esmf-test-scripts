@@ -4,6 +4,7 @@ scheduler: None
 corespernode: 4
 compiler: [gfortran]
 branch: [develop,jedwards/pio_update2]
+nuopcbranch: develop
 gfortran:
      versions: 
        9.3.0: 

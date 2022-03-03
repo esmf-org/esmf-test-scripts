@@ -7,6 +7,7 @@ corespernode: 36
 compiler: [gfortran,intel]
 branch: [develop,jedwards/pio_update2]
 headnodename: cheyenne6
+nuopcbranch: develop
 gfortran:
     test_time: "2:00:00"
     versions: 
