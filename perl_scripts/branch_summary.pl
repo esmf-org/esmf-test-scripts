@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-chdir "/home/mpotts/esmf-artifacts-merge";
+chdir "/scratch1/NCEPDEV/stmp2/role.esmfmaint/esmf-artifacts-merge";
 system("git checkout main");
 if(@ARGV > 0) {
   $branch_name = @ARGV[0];
