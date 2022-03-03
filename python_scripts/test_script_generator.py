@@ -20,6 +20,8 @@ from noscheduler import NoScheduler
 from pbs import pbs
 from slurm import slurm
 
+REPO_ESMF_TEST_ARTIFACTS = "https://github.com/esmf-org/esmf-test-artifacts-new.git"
+
 logger = logging.getLogger()
 logger.setLevel(logging.DEBUG)
 handler = logging.FileHandler(filename=f"{__name__}.log", encoding="utf-8", mode="w")
@@ -146,8 +148,7 @@ def main(yaml_file, artifacts_root, workdir, dryrun):
     local_config = fetch_local_config(yaml_file)
     global_config = fetch_global_config()
     config = YamlProps(**collections.ChainMap(local_config, global_config))
-
-    repo_artifacts_url = "https://github.com/esmf-org/esmf-test-artifacts.git"
+    repo_artifacts_url = REPO_ESMF_TEST_ARTIFACTS
 
     # reclone the repo if configured to
     if config.reclone:
