@@ -30,7 +30,7 @@ class ESMFTest:
     if(self.reclone == True):
       print("recloning")
       os.system("rm -rf {}".format(self.artifacts_root))
-      os.system(f"git {REPO_ESMF_TEST_ARTIFACTS}")
+      os.system("git clone -b {} {}".format(self.machine_name,REPO_ESMF_TEST_ARTIFACTS))
       os.chdir("esmf-test-artifacts")
       os.system("git checkout -b {}".format(self.machine_name))
       os.chdir("..")
