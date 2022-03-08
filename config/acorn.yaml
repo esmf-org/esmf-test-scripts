@@ -30,7 +30,7 @@ intel:
          extra_commands: 
             cmd1: "sed -i 's/^aprun/mpiexec/' scripts/mpirun.unicos"
             cmd2: "sed -i 's/lmpi++/lfmpich/' build_config/Linux.intel.default/build_rules.mk"
-     extramodule: PrgEnv-intel cray-pals craype
+     extramodule: PrgEnv-intel cray-pals craype cmake
      unloadmodule: "PrgEnv-cray PrgEnv-gnu"
 gfortran:
      versions: 
@@ -54,5 +54,5 @@ gfortran:
             var9: ESMF_CXXLINKOPTS="-fPIC -lnetcdff -lnetcdff"
          extra_commands: 
             cmd1: "sed -i 's/aprun/mpiexec/' scripts/mpirun.unicos"
-     extramodule: PrgEnv-gnu cray-pals craype
+     extramodule: PrgEnv-gnu cray-pals craype cmake
      unloadmodule: "PrgEnv-cray PrgEnv-intel"
