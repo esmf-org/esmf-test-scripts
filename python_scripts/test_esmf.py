@@ -149,6 +149,10 @@ class ESMFTest:
      
   def createScripts(self,build_type,comp,ver,mpidict,mpitypes,key,branch):
     mpiflavor = mpidict[key]
+    if mpiflavor is None:
+      for k,v in mpidict.items():
+        print(k, v)
+      raise ValueError("mpiflavor can't be none [{key}]")
     if("pythontest" in mpiflavor):
       headerList = ["build","test","python"]
     else:
