@@ -24,6 +24,7 @@ intel:
            mpi_env_vars: 
             var1: ESMF_F90COMPILER=ifort
             var2: ESMF_CXXCOMPILER=icpc 
+            var3: ESMF_CCOMPILER=cc
             var3: MPICXX_CXX=icpc 
        extra_env_vars:
             var1: ESMF_NETCDF_LIBS="-lnetcdff -lnetcdf -lhdf5_hl -lhdf5"
