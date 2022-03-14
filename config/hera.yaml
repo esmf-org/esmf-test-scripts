@@ -23,6 +23,7 @@ intel:
              module: None
          extra_commands: 
             cmd1: "tar xvfz ~/pytest-input.tar.gz"
+         extramodule: cmake
 gfortran:
      test_time: "2:00:00"
      versions: 
