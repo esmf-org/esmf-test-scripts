@@ -12,7 +12,7 @@ intel:
      versions: 
        18.0.4: 
          compiler: intel/18.0.5.274
-         netcdf: netcdf/4.7.0
+         netcdf: netcdf-hdf5parallel/4.7.4
          mpi:
            intelmpi: 
              module: impi/2018.4.274
