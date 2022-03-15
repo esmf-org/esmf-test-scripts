@@ -9,7 +9,8 @@ branch: [develop,jedwards/pio_update2]
 nuopcbranch: develop
 
 intel:
-   test_time: "4:00:00"
+   test_time: "6:00:00"
+   build_time: "6:00:00"
    versions:
      2020: 
        compiler: intel/2020.2
