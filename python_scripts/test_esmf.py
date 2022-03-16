@@ -109,6 +109,11 @@ class ESMFTest:
         for comp in self.machine_list['compiler']:
   
          for ver in self.machine_list[comp]['versions']:
+          print("machine_list: ", self.machine_list)
+          print("machine_list[comp]: ", self.machine_list[comp])
+          print("machine_list[comp]['versions']: ", self.machine_list[comp]['versions'])
+          print("machine_list[comp]['versions'][ver]: ", self.machine_list[comp]['versions'][ver])
+          print("machine_list[comp]['versions'][ver]['mpi']: ", self.machine_list[comp]['versions'][ver]['mpi'])
           mpidict = self.machine_list[comp]['versions'][ver]['mpi']
           mpitypes= mpidict.keys()
           print(self.machine_list[comp]['versions'][ver])
