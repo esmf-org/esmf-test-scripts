@@ -153,6 +153,7 @@ class ESMFTest:
          print("status from nuopc clone command {} was {}".format(nuopcclone,status))
      
   def createScripts(self,build_type,comp,ver,mpidict,mpitypes,key,branch):
+    print("Ryan Look Here: ", mpidict)
     mpiflavor = mpidict[key]
     if("pythontest" in mpiflavor):
       headerList = ["build","test","python"]
