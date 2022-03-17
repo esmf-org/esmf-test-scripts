@@ -155,7 +155,7 @@ class ESMFTest:
   def createScripts(self,build_type,comp,ver,mpidict,mpitypes,key,branch):
     print("Ryan Look Here: ", mpidict)
     mpiflavor = mpidict[key]
-    if("pythontest" in mpiflavor):
+    if(mpiflavor is not None and "pythontest" in mpiflavor):
       headerList = ["build","test","python"]
     else:
       headerList = ["build","test"]
