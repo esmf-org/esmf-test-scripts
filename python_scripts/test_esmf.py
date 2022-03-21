@@ -176,8 +176,8 @@ class ESMFTest:
 
         else:
             print(subprocess.check_output(cmd_string, shell=True))
-            self.run_command("rm -rf obj mod lib examples test *.o *.e *bat.o* *bat.e*")
             os.chdir(subdir)
+            self.run_command("rm -rf obj mod lib examples test *.o *.e *bat.o* *bat.e*")
             self.run_command(f"git checkout {branch}")
             self.run_command(f"git pull origin {branch}")
             print(subprocess.check_output(nuopc_clone, shell=True))
