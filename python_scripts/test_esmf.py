@@ -172,6 +172,7 @@ class ESMFTest:
             print("would have executed {}".format(nuopc_clone))
             print("would have cd'd to {}".format(subdir))
             os.mkdir(subdir)
+            os.chdir(subdir)
 
         else:
             subprocess.check_output(cmd_string, shell=True)
@@ -180,7 +181,7 @@ class ESMFTest:
             self.run_command(f"git checkout {branch}")
             self.run_command(f"git pull origin {branch}")
             subprocess.check_output(nuopc_clone, shell=True)
-        os.chdir(subdir)
+
 
     def create_scripts(self, build_type, comp, ver, mpidict, key):
         mpi_flavor = mpidict[key]
