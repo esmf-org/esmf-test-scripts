@@ -165,7 +165,7 @@ class ESMFTest:
         shutil.rmtree(subdir)
 
         cmd_string = f"git clone -b {branch} git@github.com:esmf-org/esmf {subdir}"
-        nuopc_clone = f"git clone -b {branch} git@github.com:esmf-org/nuopc-app-prototypes"
+        nuopc_clone = f"git clone -b {nuopc_branch} git@github.com:esmf-org/nuopc-app-prototypes"
 
         if self.dryrun:
             print("would have executed {}".format(cmd_string))
