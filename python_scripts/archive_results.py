@@ -143,6 +143,7 @@ class ArchiveResults:
         print("dir branch is: ", dir_branch)
         cwd = os.getcwd()
         print("cwd is: ", cwd)
+        print("build dir is: ", self.build_dir)
         os.chdir(self.build_dir)
         try:
             self.build_hash = (
