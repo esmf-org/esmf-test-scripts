@@ -28,8 +28,8 @@ class pbs(scheduler):
 
   def submitJob(self,test,subdir,mpiver,branch):
     # add ssh back to the head node for archiving of results to batch scripts
-#   test.runcmd("echo \"ssh {} {}/getres-build.sh\" >> {}".format(test.headnodename,os.getcwd(),test.b_filename))
-#   test.runcmd("echo \"ssh {} {}/getres-test.sh\" >> {}".format(test.headnodename,os.getcwd(),test.t_filename))
+#   test.runcmd("echo \"ssh {} {}/getres-build.sh\" >> {}".format(test.head_node_name,os.getcwd(),test.b_filename))
+#   test.runcmd("echo \"ssh {} {}/getres-test.sh\" >> {}".format(test.head_node_name,os.getcwd(),test.t_filename))
     batch_build = "qsub {}".format(test.b_filename)
     print(batch_build)
     if(test.dryrun == True):
@@ -44,7 +44,7 @@ class pbs(scheduler):
     else:
       proc = subprocess.Popen(monitor_cmd_build, shell=True, stdin=None, stdout=None, stderr=None, close_fds=True)
     # submit the second job to be dependent on the first
-#   getrescmd = "ssh {} {}/getres-test.sh".format(test.headnodename,os.getcwd())
+#   getrescmd = "ssh {} {}/getres-test.sh".format(test.head_node_name,os.getcwd())
 #   os.system("echo {} >> {}".format(getrescmd,test.t_filename))
     batch_test = "qsub -W depend=afterok:{} {}".format(jobnum,test.t_filename)
     print("Submitting test_batch with command: {}".format(batch_test))
@@ -58,7 +58,7 @@ class pbs(scheduler):
       print(monitor_cmd_test)
     else:
       proc = subprocess.Popen(monitor_cmd_test, shell=True, stdin=None, stdout=None, stderr=None, close_fds=True)
-    test.createGetResScripts(monitor_cmd_build,monitor_cmd_test)
+    test.create_get_res_scripts(monitor_cmd_build, monitor_cmd_test)
     
 
   def checkqueue(self,jobid):

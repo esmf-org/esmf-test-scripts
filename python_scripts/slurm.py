@@ -101,7 +101,7 @@ class slurm(scheduler):
                 stderr=None,
                 close_fds=True,
             )
-        test.createGetResScripts(monitor_cmd_build, monitor_cmd_test)
+        test.create_get_res_scripts(monitor_cmd_build, monitor_cmd_test)
 
   def checkqueue(self, jobid):
         if int(jobid) < 0:

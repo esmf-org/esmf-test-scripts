@@ -132,7 +132,7 @@ def create_job_card(config):
         ft = open(self.t_filename, "w")
         scheduler.createHeaders(self)
         createScripts(build_type, comp, ver, mpidict, mpitypes, key, branch)
-        scheduler.submitJob(self, subdir, self.mpiver, branch)
+        scheduler.submitJob(self, subdir, self.mpi_version, branch)
         os.chdir("..")
 
     return []

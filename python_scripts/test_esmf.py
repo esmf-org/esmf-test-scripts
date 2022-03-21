@@ -171,7 +171,6 @@ class ESMFTest:
             self.run_command(f"git pull origin {branch}")
             subprocess.check_output(nuopc_clone, shell=True)
 
-
     def create_scripts(self, build_type, comp, ver, mpidict, key):
         mpi_flavor = mpidict[key]
         if mpi_flavor is not None and "pythontest" in mpi_flavor:
