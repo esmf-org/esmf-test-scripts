@@ -2,6 +2,7 @@ import argparse
 import os
 import pathlib
 import re
+import shutil
 import subprocess
 
 import yaml
@@ -150,11 +151,9 @@ class ESMFTest:
             os.system(cmd)
 
     def update_repo(self, subdir, branch, nuopc_branch):
-        os.system("rm -rf {}".format(subdir))
-        if os.path.isdir(subdir):
-            raise IsADirectoryError(f"{subdir} was not deleted.")
+        subdir = pathlib.Path(subdir)
+        shutil.rmtree(subdir)
         os.mkdir(subdir)
-        os.chdir(subdir)
 
         cmd_string = "git clone -b {} git@github.com:esmf-org/esmf {}".format(branch, subdir)
         nuopc_clone = "git clone -b {} git@github.com:esmf-org/nuopc-app-prototypes".format(nuopc_branch)
@@ -165,11 +164,13 @@ class ESMFTest:
             print("would have cd'd to {}".format(subdir))
 
         else:
+            subprocess.check_output(cmd_string, shell=True)
             self.run_command("rm -rf obj mod lib examples test *.o *.e *bat.o* *bat.e*")
-            self.run_command("git checkout {}".format(branch))
-            self.run_command("git pull origin {}".format(branch))
-            status = subprocess.check_output(nuopc_clone, shell=True).strip().decode('utf-8')
-            print("status from nuopc clone command {} was {}".format(nuopc_clone, status))
+            os.chdir(subdir)
+            self.run_command(f"git checkout {branch}")
+            self.run_command(f"git pull origin {branch}")
+            subprocess.check_output(nuopc_clone, shell=True)
+
 
     def create_scripts(self, build_type, comp, ver, mpidict, key):
         mpi_flavor = mpidict[key]
