@@ -164,8 +164,9 @@ class ESMFTest:
         print(f"SUBDIR IS {subdir}, {branch}, {nuopc_branch}")
         try:
             shutil.rmtree(subdir)
-        except OSError:
-            return
+        except OSError as err:
+            raise OSError("another process is actively writing files") from err
+
 
         cmd_string = f"git clone -b {branch} git@github.com:esmf-org/esmf {subdir}"
         nuopc_clone = f"git clone -b {nuopc_branch} git@github.com:esmf-org/nuopc-app-prototypes"
