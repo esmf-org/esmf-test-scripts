@@ -174,8 +174,6 @@ class ESMFTest:
         else:
             logging.info("removing %s", subdir)
             shutil.rmtree(subdir)
-            logging.info("making %s", subdir)
-            os.mkdir(subdir)
             subprocess.check_output(cmd_string, shell=True)
             self.run_command("rm -rf obj mod lib examples test *.o *.e *bat.o* *bat.e*")
             os.chdir(subdir)
