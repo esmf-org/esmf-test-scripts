@@ -138,7 +138,7 @@ class ArchiveResults:
     def copy_artifacts(self, oe_filelist):
 
         build_basename = os.path.basename(self.build_dir)
-        logging.info(self.branch)
+        print(self.branch)
         dir_branch = re.sub("/", "_", self.branch)
         cwd = os.getcwd()
         os.chdir(self.build_dir)
