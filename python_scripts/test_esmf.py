@@ -341,7 +341,7 @@ class ESMFTest:
                             if "nuopc_branch" in self.machine_list:
                                 nuopcbranch = self.machine_list['nuopc_branch']
                             else:
-                                nuopcbranch = branch
+                                nuopcbranch = "develop"
                             subdir = "{}_{}_{}_{}_{}".format(comp, ver, key, build_type, branch)
                             subdir = re.sub("/", "_",
                                             subdir)  # Some branches have a slash, so replace that with underscore
