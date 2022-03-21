@@ -160,8 +160,8 @@ class ESMFTest:
             os.system(cmd)
 
     def update_repo(self, subdir, branch, nuopc_branch):
-        print(f"SUBDIR IS {subdir}")
         subdir = pathlib.Path(subdir)
+        print(f"SUBDIR IS {subdir.absolute()}")
         shutil.rmtree(subdir)
 
         cmd_string = "git clone -b {} git@github.com:esmf-org/esmf {}".format(branch, subdir)
