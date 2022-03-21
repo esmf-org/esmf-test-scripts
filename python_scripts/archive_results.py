@@ -144,11 +144,16 @@ class ArchiveResults:
         cwd = os.getcwd()
         print("cwd is: ", cwd)
         os.chdir(self.build_dir)
-        self.build_hash = (
-            subprocess.check_output("git describe --tags --abbrev=7", shell=True)
-            .strip()
-            .decode("utf-8")
-        )
+        try:
+            self.build_hash = (
+                subprocess.check_output("git describe --tags --abbrev=7", shell=True)
+                .strip()
+                .decode("utf-8")
+            )
+        except subprocess.CalledProcessError as err:
+            print(err)
+            print(self.build_dir)
+            exit(1)
         os.chdir(cwd)
         print("build_basename is {}".format(build_basename))
         parts = build_basename.split("_")
