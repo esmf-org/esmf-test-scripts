@@ -160,7 +160,7 @@ class ESMFTest:
             os.system(cmd)
 
     def update_repo(self, subdir, branch, nuopc_branch):
-        subdir = pathlib.Path(subdir.absolute())
+        subdir = pathlib.Path(subdir).absolute()
         print(f"SUBDIR IS {subdir}")
         shutil.rmtree(subdir)
 
