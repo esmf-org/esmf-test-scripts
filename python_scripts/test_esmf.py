@@ -165,7 +165,6 @@ class ESMFTest:
             print("would have cd'd to {}".format(subdir))
 
         else:
-            os.chdir(subdir)
             self.run_command("rm -rf obj mod lib examples test *.o *.e *bat.o* *bat.e*")
             self.run_command("git checkout {}".format(branch))
             self.run_command("git pull origin {}".format(branch))
