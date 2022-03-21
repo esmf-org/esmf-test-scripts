@@ -160,13 +160,13 @@ class ESMFTest:
             os.system(cmd)
 
     def update_repo(self, subdir, branch, nuopc_branch):
+        print(f"SUBDIR IS {subdir}")
         subdir = pathlib.Path(subdir)
-
+        shutil.rmtree(subdir)
 
         cmd_string = "git clone -b {} git@github.com:esmf-org/esmf {}".format(branch, subdir)
         nuopc_clone = "git clone -b {} git@github.com:esmf-org/nuopc-app-prototypes".format(nuopc_branch)
 
-        shutil.rmtree(subdir)
         if self.dryrun:
             print("would have executed {}".format(cmd_string))
             print("would have executed {}".format(nuopc_clone))
