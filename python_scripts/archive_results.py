@@ -138,9 +138,11 @@ class ArchiveResults:
     def copy_artifacts(self, oe_filelist):
 
         build_basename = os.path.basename(self.build_dir)
-        print(self.branch)
+        print("branch is: ", self.branch)
         dir_branch = re.sub("/", "_", self.branch)
+        print("dir branch is: ", dir_branch)
         cwd = os.getcwd()
+        print("cwd is: ", cwd)
         os.chdir(self.build_dir)
         self.build_hash = (
             subprocess.check_output("git describe --tags --abbrev=7", shell=True)
