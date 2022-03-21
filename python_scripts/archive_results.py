@@ -1,16 +1,15 @@
-import os
-import subprocess
 import argparse
-import sys
-import time
 import glob
-import re
+import os
 import pathlib
-from scheduler import scheduler
+import re
+import subprocess
+import time
+from datetime import datetime
+
 from noscheduler import NoScheduler
 from pbs import pbs
 from slurm import slurm
-from datetime import datetime
 
 
 class ArchiveResults:
@@ -27,6 +26,9 @@ class ArchiveResults:
         dryrun,
     ):
 
+        self.outpath = None
+        self.build_hash = None
+        self.build_time = None
         self.root_path = pathlib.Path(__file__).parent.absolute()
         self.jobid = jobid
         self.build_basename = build_basename
@@ -73,7 +75,7 @@ class ArchiveResults:
                 break
 
     def runcmd(self, cmd):
-        if self.dryrun == True:
+        if self.dryrun:
             print("would have executed {}".format(cmd))
         else:
             os.system(cmd)
@@ -135,8 +137,7 @@ class ArchiveResults:
     def copy_artifacts(self, oe_filelist):
 
         build_basename = os.path.basename(self.build_dir)
-        gitbranch = self.branch
-        dirbranch = re.sub("/", "_", self.branch)
+        dir_branch = re.sub("/", "_", self.branch)
         cwd = os.getcwd()
         os.chdir(self.build_dir)
         self.build_hash = (
@@ -156,7 +157,7 @@ class ArchiveResults:
         if self.mpiversion not in ["None", "none", None]:
             outpath = "{}/{}/{}/{}/{}/{}/{}/{}".format(
                 self.artifacts_root,
-                dirbranch,
+                dir_branch,
                 self.machine_name,
                 compiler,
                 version,
@@ -167,7 +168,7 @@ class ArchiveResults:
         else:
             outpath = "{}/{}/{}/{}/{}/{}/{}/{}".format(
                 self.artifacts_root,
-                dirbranch,
+                dir_branch,
                 self.machine_name,
                 compiler,
                 version,
@@ -196,7 +197,7 @@ class ArchiveResults:
             print("cmd is {}\n".format(cmd))
             self.runcmd(cmd)
         # print("oe filelist is {}".format(oe_filelist))
-        if oe_filelist == []:
+        if not oe_filelist:
             return
         for cfile in oe_filelist:
             nfile = os.path.basename(re.sub("_{}".format(self.jobid), "", cfile))
@@ -204,7 +205,7 @@ class ArchiveResults:
             self.runcmd(cp_cmd)
             cp_cmd = "cat {} >> {}/out/{}".format(cfile, outpath, nfile)
             self.runcmd(cp_cmd)
-        if not (test_stage):
+        if not test_stage:
             command = "grep success {}/build_{}.log".format(self.build_dir, self.jobid)
             unit_results = "-1 -1"
             system_results = "-1 -1"
@@ -212,13 +213,13 @@ class ArchiveResults:
             nuopc_pass = "-1"
             nuopc_fail = "-1"
             try:
-                build_result = (
+                (
                     subprocess.check_output("{}".format(command), shell=True)
-                    .strip()
-                    .decode("utf-8")
+                        .strip()
+                        .decode("utf-8")
                 )
             except:
-                build_result = ""
+                ""
                 example_results = "Build did not complete successfully"
                 unit_results = "Build did not complete successfully"
                 system_results = "Build did not complete successfully"
@@ -254,7 +255,7 @@ class ArchiveResults:
             git_cmd = "cd {};git checkout {};git add {}/{};git commit -a -m'update for build of {} with hash {} on {} [ci skip]';git push origin {}".format(
                 self.artifacts_root,
                 self.machine_name,
-                dirbranch,
+                dir_branch,
                 self.machine_name,
                 build_basename,
                 self.build_hash,
@@ -419,7 +420,7 @@ class ArchiveResults:
         git_cmd = "cd {};git checkout {};git add {}/{};git commit -a -m'update for test of {} with hash {} on {} [ci skip]';git push origin {}".format(
             self.artifacts_root,
             self.machine_name,
-            dirbranch,
+            dir_branch,
             self.machine_name,
             build_basename,
             self.build_hash,
