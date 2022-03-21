@@ -160,12 +160,12 @@ class ESMFTest:
             os.system(cmd)
 
     def update_repo(self, subdir, branch, nuopc_branch):
-        subdir = pathlib.Path(subdir)
-        print(f"SUBDIR IS {subdir.absolute()}")
+        subdir = pathlib.Path(subdir.absolute())
+        print(f"SUBDIR IS {subdir}")
         shutil.rmtree(subdir)
 
-        cmd_string = "git clone -b {} git@github.com:esmf-org/esmf {}".format(branch, subdir)
-        nuopc_clone = "git clone -b {} git@github.com:esmf-org/nuopc-app-prototypes".format(nuopc_branch)
+        cmd_string = f"git clone -b {branch} git@github.com:esmf-org/esmf {subdir}"
+        nuopc_clone = f"git clone -b {branch} git@github.com:esmf-org/nuopc-app-prototypes"
 
         if self.dryrun:
             print("would have executed {}".format(cmd_string))
@@ -177,10 +177,10 @@ class ESMFTest:
         else:
             print(subprocess.check_output(cmd_string, shell=True))
             os.chdir(subdir)
+            print(subprocess.check_output(nuopc_clone, shell=True))
             self.run_command("rm -rf obj mod lib examples test *.o *.e *bat.o* *bat.e*")
             self.run_command(f"git checkout {branch}")
             self.run_command(f"git pull origin {branch}")
-            print(subprocess.check_output(nuopc_clone, shell=True))
 
 
     def create_scripts(self, build_type, comp, ver, mpidict, key):
