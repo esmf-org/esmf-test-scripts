@@ -338,8 +338,8 @@ class ESMFTest:
                         else:
                             self.test_time = "1:00:00"
                         for branch in self.machine_list['branch']:
-                            if "nuopc_branch" in self.machine_list:
-                                nuopcbranch = self.machine_list['nuopc_branch']
+                            if "nuopcbranch" in self.machine_list:
+                                nuopcbranch = self.machine_list['nuopcbranch']
                             else:
                                 nuopcbranch = "develop"
                             subdir = "{}_{}_{}_{}_{}".format(comp, ver, key, build_type, branch)
