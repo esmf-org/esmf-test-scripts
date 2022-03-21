@@ -152,7 +152,7 @@ class ESMFTest:
     def update_repo(self, subdir, branch, nuopcbranch):
         os.system("rm -rf {}".format(subdir))
         if os.path.isdir(subdir):
-            return
+            raise IsADirectoryError(f"{subdir} was not deleted.")
         if self.https:
             cmd_string = "git clone -b {} https://github.com/esmf-org/esmf {}".format(branch, subdir)
             nuopc_clone = "git clone -b {} https://github.com/esmf-org/nuopc-app-prototypes".format(nuopcbranch)
@@ -163,7 +163,7 @@ class ESMFTest:
             print("would have executed {}".format(cmd_string))
             print("would have executed {}".format(nuopc_clone))
             print("would have cd'd to {}".format(subdir))
-            os.system("mkdir {}".format(subdir))
+            os.mkdir(subdir)
             os.chdir(subdir)
         else:
             os.chdir(subdir)
