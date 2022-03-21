@@ -166,20 +166,21 @@ class ESMFTest:
         cmd_string = "git clone -b {} git@github.com:esmf-org/esmf {}".format(branch, subdir)
         nuopc_clone = "git clone -b {} git@github.com:esmf-org/nuopc-app-prototypes".format(nuopc_branch)
 
+        shutil.rmtree(subdir)
         if self.dryrun:
             print("would have executed {}".format(cmd_string))
             print("would have executed {}".format(nuopc_clone))
             print("would have cd'd to {}".format(subdir))
+            os.mkdir(subdir)
 
         else:
-            logging.info("removing %s", subdir)
-            shutil.rmtree(subdir)
             subprocess.check_output(cmd_string, shell=True)
             self.run_command("rm -rf obj mod lib examples test *.o *.e *bat.o* *bat.e*")
             os.chdir(subdir)
             self.run_command(f"git checkout {branch}")
             self.run_command(f"git pull origin {branch}")
             subprocess.check_output(nuopc_clone, shell=True)
+        os.chdir(subdir)
 
     def create_scripts(self, build_type, comp, ver, mpidict, key):
         mpi_flavor = mpidict[key]
