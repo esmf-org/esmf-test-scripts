@@ -175,12 +175,12 @@ class ESMFTest:
             os.chdir(subdir)
 
         else:
-            subprocess.check_output(cmd_string, shell=True)
+            print(subprocess.check_output(cmd_string, shell=True))
             self.run_command("rm -rf obj mod lib examples test *.o *.e *bat.o* *bat.e*")
             os.chdir(subdir)
             self.run_command(f"git checkout {branch}")
             self.run_command(f"git pull origin {branch}")
-            subprocess.check_output(nuopc_clone, shell=True)
+            print(subprocess.check_output(nuopc_clone, shell=True))
 
 
     def create_scripts(self, build_type, comp, ver, mpidict, key):
