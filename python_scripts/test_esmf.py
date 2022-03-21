@@ -111,8 +111,8 @@ class ESMFTest:
             #       self.branch = self.machine_list['branch']
             #     else:
             #       self.branch = "develop"
-            if "nuopcbranch" in self.machine_list:
-                self.nuopc_branch = self.machine_list['nuopcbranch']
+            if "nuopc_branch" in self.machine_list:
+                self.nuopc_branch = self.machine_list['nuopc_branch']
             else:
                 self.nuopc_branch = "develop"
             self.cpn = self.machine_list['corespernode']
@@ -149,22 +149,21 @@ class ESMFTest:
             print("running {}\n".format(cmd))
             os.system(cmd)
 
-    def update_repo(self, subdir, branch, nuopcbranch):
+    def update_repo(self, subdir, branch, nuopc_branch):
         os.system("rm -rf {}".format(subdir))
         if os.path.isdir(subdir):
             raise IsADirectoryError(f"{subdir} was not deleted.")
-        if self.https:
-            cmd_string = "git clone -b {} https://github.com/esmf-org/esmf {}".format(branch, subdir)
-            nuopc_clone = "git clone -b {} https://github.com/esmf-org/nuopc-app-prototypes".format(nuopcbranch)
-        else:
-            cmd_string = "git clone -b {} git@github.com:esmf-org/esmf {}".format(branch, subdir)
-            nuopc_clone = "git clone -b {} git@github.com:esmf-org/nuopc-app-prototypes".format(nuopcbranch)
+        os.mkdir(subdir)
+        os.chdir(subdir)
+
+        cmd_string = "git clone -b {} git@github.com:esmf-org/esmf {}".format(branch, subdir)
+        nuopc_clone = "git clone -b {} git@github.com:esmf-org/nuopc-app-prototypes".format(nuopc_branch)
+
         if self.dryrun:
             print("would have executed {}".format(cmd_string))
             print("would have executed {}".format(nuopc_clone))
             print("would have cd'd to {}".format(subdir))
-            os.mkdir(subdir)
-            os.chdir(subdir)
+
         else:
             os.chdir(subdir)
             self.run_command("rm -rf obj mod lib examples test *.o *.e *bat.o* *bat.e*")
