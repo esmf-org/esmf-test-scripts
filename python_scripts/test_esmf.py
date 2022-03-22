@@ -33,21 +33,21 @@ class ESMFTest:
         self.t_filename = None
         self.fb = None
         self.ft = None
-        self.test_time = None
-        self.build_time = None
+        self.test_time = "1:00:00"
+        self.build_time = "1:00:00"
         self.mpi_version = None
         self.constraint = None
         self.cluster = None
-        self.script_dir = None
-        self.build_types = None
+        self.script_dir = os.getcwd()
+        self.build_types = ['O', 'g']
         self.cpn = None
-        self.nuopc_branch = None
-        self.head_node_name = None
+        self.nuopc_branch = "develop"
+        self.head_node_name = os.uname()[1]
         self.queue = None
         self.partition = None
         self.account = None
-        self.bash = None
-        self.https = None
+        self.bash = "/bin/bash"
+        self.https = True
         self.machine_name = None
         self.machine_list = None
         self.global_list = None
@@ -57,14 +57,13 @@ class ESMFTest:
         self.workdir = workdir
         self.dryrun = dryrun
 
-        print("setting dryrun to {}".format(self.dryrun))
+        logging.debug("setting dryrun to {}".format(self.dryrun))
         self.mypath = pathlib.Path(__file__).parent.absolute()
-        print("path is {}".format(self.mypath))
-        print("calling readyaml")
-        logging.info("Testing ******************************")
+        logging.debug("path is {}".format(self.mypath))
+        logging.debug("calling readyaml")
         self.read_yaml()
         if self.reclone:
-            print("recloning")
+            logging.debug("recloning")
             os.system("rm -rf {}".format(self.artifacts_root))
             os.system("git clone -b {} {}".format(self.machine_name, REPO_ESMF_TEST_ARTIFACTS))
             os.chdir("esmf-test-artifacts")
@@ -76,113 +75,86 @@ class ESMFTest:
             self.scheduler = NoScheduler("None")
         elif "pbs" == self.scheduler_type:
             self.scheduler = pbs("pbs")
-        print(self.yaml_file, self.artifacts_root, self.workdir)
         self.create_job_cards_and_submit()
 
     def read_yaml(self):
         config_path = os.path.dirname(self.yaml_file)
         global_file = os.path.join(config_path, "global.yaml")
-        print("HEY!!!! {}".format(global_file))
+        logging.debug("HEY!!!! {}".format(global_file))
         with open(global_file) as file:
             self.global_list = yaml.load(file, Loader=yaml.SafeLoader)
             if 'reclone-artifacts' in self.global_list:
                 self.reclone = self.global_list['reclone-artifacts']
             else:
                 self.reclone = False
-            print("set reclone to {}".format(self.reclone))
+            logging.debug("set reclone to {}".format(self.reclone))
         with open(self.yaml_file) as file:
             self.machine_list = yaml.load(file, Loader=yaml.SafeLoader)
             self.machine_name = self.machine_list['machine']
-            print("machine name is {}".format(self.machine_name))
-            if 'git-https' in self.machine_list:
-                self.https = True
-            else:
-                self.https = False
+            logging.debug("machine name is {}".format(self.machine_name))
             if "bash" in self.machine_list:
                 self.bash = self.machine_list['bash']
-            else:
-                self.bash = "/bin/bash"
             if "account" in self.machine_list:
                 self.account = self.machine_list['account']
-            else:
-                self.account = "None"
             if "partition" in self.machine_list:
                 self.partition = self.machine_list['partition']
-            else:
-                self.partition = "None"
             if "queue" in self.machine_list:
                 self.queue = self.machine_list['queue']
-            else:
-                self.queue = "None"
             if "head_node_name" in self.machine_list:
                 self.head_node_name = self.machine_list["head_node_name"]
-            else:
-                self.head_node_name = os.uname()[1]
-            #     if("branch" in self.machine_list):
-            #       self.branch = self.machine_list['branch']
-            #     else:
-            #       self.branch = "develop"
             if "nuopc_branch" in self.machine_list:
                 self.nuopc_branch = self.machine_list['nuopc_branch']
-            else:
-                self.nuopc_branch = "develop"
-            self.cpn = self.machine_list['corespernode']
-            self.scheduler_type = self.machine_list['scheduler']
-            self.build_types = ['O', 'g']
-            #     self.build_types = ['O']
-            self.script_dir = os.getcwd()
             if "cluster" in self.machine_list:
                 self.cluster = self.machine_list['cluster']
-            else:
-                self.cluster = "None"
             if "constraint" in self.machine_list:
                 self.constraint = self.machine_list['constraint']
-            else:
-                self.constraint = "None"
+            self.cpn = self.machine_list['corespernode']
+            self.scheduler_type = self.machine_list['scheduler']
 
             # Now traverse the tree
-            for comp in self.machine_list['compiler']:
-
-                for ver in self.machine_list[comp]['versions']:
-                    print("machine_list: ", self.machine_list)
-                    print("machine_list[comp]: ", self.machine_list[comp])
-                    print("machine_list[comp]['versions']: ", self.machine_list[comp]['versions'])
-                    print("machine_list[comp]['versions'][ver]: ", self.machine_list[comp]['versions'][ver])
-                    print("machine_list[comp]['versions'][ver]['mpi']: ",
-                          self.machine_list[comp]['versions'][ver]['mpi'])
-
-                    print(self.machine_list[comp]['versions'][ver])
+            # TODO I don't know why this is here
+            # for comp in self.machine_list['compiler']:
+            #
+            #     for ver in self.machine_list[comp]['versions']:
+            #         logging.debug("machine_list: ", self.machine_list)
+            #         logging.debug("machine_list[comp]: ", self.machine_list[comp])
+            #         logging.debug("machine_list[comp]['versions']: ", self.machine_list[comp]['versions'])
+            #         logging.debug("machine_list[comp]['versions'][ver]: ", self.machine_list[comp]['versions'][ver])
+            #         logging.debug("machine_list[comp]['versions'][ver]['mpi']: ",
+            #               self.machine_list[comp]['versions'][ver]['mpi'])
+            #
+            #         logging.debug(self.machine_list[comp]['versions'][ver])
 
     def run_command(self, cmd):
         if self.dryrun:
-            print("would have executed {}".format(cmd))
+            logging.debug("would have executed {}".format(cmd))
         else:
-            print("running {}\n".format(cmd))
+            logging.debug("running {}\n".format(cmd))
             os.system(cmd)
 
     def update_repo(self, subdir, branch, nuopc_branch):
         subdir = pathlib.Path(subdir).absolute()
-        print(f"SUBDIR IS {subdir}, {branch}, {nuopc_branch}")
+        logging.debug(f"SUBDIR IS {subdir}, {branch}, {nuopc_branch}")
         try:
             shutil.rmtree(subdir)
         except OSError:
-            print("another process is actively writing files")
+            logging.debug("another process is actively writing files")
             exit(1)
 
         cmd_string = f"git clone -b {branch} git@github.com:esmf-org/esmf {subdir}"
         nuopc_clone = f"git clone -b {nuopc_branch} git@github.com:esmf-org/nuopc-app-prototypes"
 
         if self.dryrun:
-            print("would have executed {}".format(cmd_string))
-            print("would have executed {}".format(nuopc_clone))
-            print("would have cd'd to {}".format(subdir))
+            logging.debug("would have executed {}".format(cmd_string))
+            logging.debug("would have executed {}".format(nuopc_clone))
+            logging.debug("would have cd'd to {}".format(subdir))
             os.mkdir(subdir)
             os.chdir(subdir)
 
         else:
-            print(subprocess.check_output(cmd_string, shell=True))
+            logging.debug(subprocess.check_output(cmd_string, shell=True))
             os.chdir(subdir)
-            print(subprocess.check_output(nuopc_clone, shell=True))
+            logging.debug(subprocess.check_output(nuopc_clone, shell=True))
             self.run_command("rm -rf obj mod lib examples test *.o *.e *bat.o* *bat.e*")
             self.run_command(f"git checkout {branch}")
             self.run_command(f"git pull origin {branch}")
@@ -328,10 +300,11 @@ class ESMFTest:
         for build_type in self.build_types:
             for comp in self.machine_list['compiler']:
                 for ver in self.machine_list[comp]['versions']:
-                    print("{}".format(self.machine_list[comp]['versions'][ver]['mpi']))
                     mpidict = self.machine_list[comp]['versions'][ver]['mpi']
+                    logging.debug("mpidict: ", mpidict)
                     mpitypes = mpidict.keys()
-                    print(self.machine_list[comp]['versions'][ver])
+                    logging.debug("mpitypes: ", mpitypes)
+                    logging.debug(self.machine_list[comp]['versions'][ver])
                     for key in mpitypes:
                         if 'build_time' in self.machine_list[comp]:
                             self.build_time = self.machine_list[comp]['build_time']
