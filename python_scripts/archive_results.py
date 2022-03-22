@@ -80,8 +80,8 @@ class ArchiveResults:
     def get_scheduler(self, scheduler: str):
         _map = {
             "pbs": PBS(self),
-            "Slurm": Slurm(),
-            "none": NoScheduler()
+            "Slurm": Slurm(self),
+            "none": NoScheduler(self)
         }
         return _map[scheduler]
 
