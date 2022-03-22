@@ -144,7 +144,7 @@ class ESMFTest:
         nuopc_clone = f"git clone -b {nuopc_branch} git@github.com:esmf-org/nuopc-app-prototypes"
 
         logging.debug(subprocess.check_output(cmd_string, shell=True))
-        if not self.dryrun:
+        if self.dryrun:
             os.mkdir(subdir)
         os.chdir(subdir)
         self.run_command("rm -rf obj mod lib examples test *.o *.e *bat.o* *bat.e*")
