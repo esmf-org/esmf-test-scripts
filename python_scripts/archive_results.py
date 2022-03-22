@@ -47,7 +47,7 @@ class ArchiveResults:
         self.mpiversion = mpiversion
         self.branch = branch
         self.dryrun = dryrun
-        print("dryrun is {} -- {}".format(dryrun, self.dryrun))
+        logging.debug("dryrun is {} -- {}".format(dryrun, self.dryrun))
         start_time = time.time()
         seconds = 144000
         self.build_dir = "{}/{}".format(test_root_dir, build_basename)
@@ -73,12 +73,12 @@ class ArchiveResults:
             time.sleep(30)
 
             if elapsed_time > seconds:
-                print("Finished iterating in: " + str(int(elapsed_time)) + " seconds")
+                logging.debug("Finished iterating in: " + str(int(elapsed_time)) + " seconds")
                 break
 
     def runcmd(self, cmd):
         if self.dryrun:
-            print("would have executed {}".format(cmd))
+            logging.debug("would have executed {}".format(cmd))
         else:
             os.system(cmd)
 
@@ -101,7 +101,7 @@ class ArchiveResults:
             .decode("utf-8")
         )
         esmf_os = results.split()[1]
-        print("HEY!!! esmf_os is {}".format(esmf_os))
+        logging.debug("HEY!!! esmf_os is {}".format(esmf_os))
         if len(esmfmkfile) > 0:
             self.build_time = datetime.fromtimestamp(os.path.getmtime(esmfmkfile[0]))
         else:
@@ -147,7 +147,7 @@ class ArchiveResults:
         except:
             logging.error("unable to determine current working directory: [%s], [%s]", build_basename, dir_branch)
             exit(1)
-        logging.debug("cwd is: ", cwd)
+        logging.debug("cwd = [%s]", cwd)
         os.chdir(self.build_dir)
         try:
             self.build_hash = (
@@ -156,8 +156,7 @@ class ArchiveResults:
                 .decode("utf-8")
             )
         except subprocess.CalledProcessError as err:
-            print(err)
-            print(self.build_dir)
+            logging.error("could not fetch build hash: [%s] [%s]", err, os.getcwd())
             exit(1)
         os.chdir(cwd)
         print("build_basename is {}".format(build_basename))
@@ -193,9 +192,9 @@ class ArchiveResults:
         self.outpath = outpath
         # copy/rename the stdout/stderr files to artifacts out directory
         test_stage = False
-        print("outpath is {}".format(outpath))
+        logging.debug("outpath is {}".format(outpath))
         for cfile in oe_filelist:
-            print("cfile is {}".format(cfile))
+            logging.debug("cfile is {}".format(cfile))
             if int(self.jobid) < 0:
                 test_stage = True
             if (
@@ -204,11 +203,11 @@ class ArchiveResults:
                 test_stage = True
         if not test_stage:
             # remove old files in out directory
-            print("just the build stage, so remove old files")
+            logging.debug("just the build stage, so remove old files")
             cmd = "mkdir -p {}/out; rm {}/*/*; rm {}/*.log; rm {}/summary.dat".format(
                 outpath, outpath, outpath, outpath
             )
-            print("cmd is {}\n".format(cmd))
+            logging.debug("cmd is {}\n".format(cmd))
             self.runcmd(cmd)
         # print("oe filelist is {}".format(oe_filelist))
         if not oe_filelist:
@@ -276,7 +275,7 @@ class ArchiveResults:
                 self.machine_name,
                 self.machine_name,
             )
-            print("git_cmd is {}".format(git_cmd))
+            logging.debug("git_cmd is {}".format(git_cmd))
             self.runcmd(git_cmd)
             return
         # Make directories, if they aren't already there
@@ -290,7 +289,7 @@ class ArchiveResults:
         self.runcmd(cmd)
         cmd = "mkdir -p {}/lib; rm {}/lib/*".format(outpath, outpath)
         self.runcmd(cmd)
-        print("globbing examples")
+        logging.debug("globbing examples")
 
         example_artifacts = glob.glob(
             "{}/examples/examples{}/*/*.Log".format(self.build_dir, build_type)
@@ -316,7 +315,7 @@ class ArchiveResults:
         test_artifacts = glob.glob(
             "{}/test/test{}/*/*.Log".format(self.build_dir, build_type)
         )
-        print("test_artifacts are ".format(test_artifacts))
+        logging.debug("test_artifacts are ".format(test_artifacts))
         test_artifacts.extend(
             glob.glob("{}/test/test{}/*/*.stdout".format(self.build_dir, build_type))
         )
@@ -383,7 +382,7 @@ class ArchiveResults:
         esmfmkfile = glob.glob(
             "{}/lib/lib{}/*/esmf.mk".format(self.build_dir, build_type)
         )
-        print("esmfmkfile is {}".format(esmfmkfile))
+        logging.debug("esmfmkfile is {}".format(esmfmkfile))
         self.create_summary(
             unit_results,
             system_results,
@@ -403,7 +402,7 @@ class ArchiveResults:
                 afile, outpath, os.path.basename(afile)
             )
             #   cmd = 'cp {} {}/examples'.format(afile,outpath)
-            print("cmd is {}".format(cmd))
+            logging.debug("cmd is {}".format(cmd))
             self.runcmd(cmd)
         for afile in test_artifacts:
             cmd = "echo {} > {}/test/{}".format(
@@ -412,7 +411,7 @@ class ArchiveResults:
             self.runcmd(cmd)
             cmd = "cat {} >> {}/test/{}".format(afile, outpath, os.path.basename(afile))
             #   cmd = 'cp {} {}/test".format(afile,outpath)
-            print("cmd is {}".format(cmd))
+            logging.debug("cmd is {}".format(cmd))
             self.runcmd(cmd)
         for afile in esmfmkfile:
             cmd = "echo {} > {}/lib/{}".format(
@@ -421,14 +420,14 @@ class ArchiveResults:
             self.runcmd(cmd)
             cmd = "cat {} >> {}/lib/{}".format(afile, outpath, os.path.basename(afile))
             #   cmd = 'cp {} {}/lib'.format(afile,outpath)
-            print("cmd is {}".format(cmd))
+            logging.debug("cmd is {}".format(cmd))
             self.runcmd(cmd)
         for afile in python_artifacts:
             cmd = "echo {} > {}/{}".format(timestamp, outpath, os.path.basename(afile))
             self.runcmd(cmd)
             cmd = "cat {} >> {}/{}".format(afile, outpath, os.path.basename(afile))
             #   cmd = 'cp {} {}'.format(afile,outpath)
-            print("cmd is {}".format(cmd))
+            logging.debug("cmd is {}".format(cmd))
             self.runcmd(cmd)
 
         git_cmd = "cd {};git checkout {};git add {}/{};git commit -a -m'update for test of {} with hash {} on {} [ci skip]';git push origin {}".format(
