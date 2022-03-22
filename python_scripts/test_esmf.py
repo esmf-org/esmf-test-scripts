@@ -53,10 +53,7 @@ class ESMFTest:
         self.yaml_file = yaml_file
         self.artifacts_root = artifacts_root
         self.workdir = workdir
-        self.dryrun = False
-        if dryrun.lower() == "true":
-            self.dryrun = True
-
+        self.dryrun = True if self.dryrun.lower() == "true" else False
 
         print("setting dryrun to {}".format(self.dryrun))
         self.mypath = pathlib.Path(__file__).parent.absolute()
