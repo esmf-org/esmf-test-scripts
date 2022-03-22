@@ -4,9 +4,6 @@ import subprocess
 from scheduler import Scheduler
 
 
-
-
-
 def monitor_cmd(
         _path,
         jobnum,
