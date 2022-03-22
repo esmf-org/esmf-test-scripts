@@ -136,8 +136,8 @@ class ESMFTest:
             # If rm tree fails, its because another process is writing to the directory
             # as it's trying to delete files.
             shutil.rmtree(subdir)
-        except OSError:
-            logging.error("another process is actively writing files")
+        except OSError as err:
+            logging.error("another process is actively writing files: [%s]", err)
             exit(1)
 
         cmd_string = f"git clone -b {branch} git@github.com:esmf-org/esmf {subdir}"
