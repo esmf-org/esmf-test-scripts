@@ -1,12 +1,12 @@
-class scheduler:
-    def __init__(self, scheduler_type, test):
+class Scheduler:
+    def __init__(self):
         pass
 
-    def createHeaders(self):
+    def create_headers(self):
         pass
 
-    def submitJob(self):
+    def submit_job(self):
         pass
 
-    def checkQueue(self):
+    def check_queue(self):
         pass

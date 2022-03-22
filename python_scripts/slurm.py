@@ -1,14 +1,14 @@
 import os
 import subprocess
-from scheduler import scheduler
+from scheduler import Scheduler
 
 
-class slurm(scheduler):
+class slurm(Scheduler):
   def __init__(self, scheduler_type):
         self.type = scheduler_type
 
 
-  def createHeaders(self,test):
+  def create_headers(self, test):
     for headerType in ["build","test"]:
       if(headerType == "build"):
         file_out = test.fb
@@ -36,7 +36,7 @@ class slurm(scheduler):
       file_out.write("#SBATCH --exclusive\n")
       file_out.write("export JOBID=$SLURM_JOBID\n")
 
-  def submitJob(self, test, subdir, mpiver, branch):
+  def submit_job(self, test, subdir, mpiver, branch):
         batch_build = "sbatch {}".format(test.b_filename)
         jobnum = (
             subprocess.check_output(batch_build, shell=True)

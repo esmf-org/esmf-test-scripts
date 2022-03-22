@@ -1,7 +1,7 @@
 import logging
 import os
 import subprocess
-from scheduler import scheduler
+from scheduler import Scheduler
 
 
 def checkqueue(jobid):
@@ -50,12 +50,12 @@ def job_number(batch_build, test):
     )
 
 
-class PBS(scheduler):
+class PBS(Scheduler):
     def __init__(self, scheduler_type, test):
         super().__init__(scheduler_type, test)
         self.type = scheduler_type
 
-    def createHeaders(self, test):
+    def create_headers(self, test):
         for headerType in ["build", "test"]:
             if headerType == "build":
                 file_out = test.fb
@@ -74,7 +74,7 @@ class PBS(scheduler):
             file_out.write('JOBID="`echo $PBS_JOBID | cut -d. -f1`"\n\n')
             file_out.write(f"cd {os.getcwd()}\n")
 
-    def submitJob(self, test, subdir, mpiver, branch):
+    def submit_job(self, test, subdir, mpiver, branch):
         # add ssh back to the head node for archiving of results to batch scripts
         batch_build = f"qsub {test.b_filename}"
         job_number = job_number(batch_build, test)

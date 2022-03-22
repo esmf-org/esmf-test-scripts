@@ -36,12 +36,6 @@ class ArchiveResults:
         self.jobid = jobid
         self.build_basename = build_basename
         self.machine_name = machine_name
-        if scheduler == "PBS":
-            self.scheduler = PBS("PBS")
-        elif scheduler == "slurm":
-            self.scheduler = slurm("slurm")
-        elif scheduler == "None":
-            self.scheduler = NoScheduler("slurm")
         self.test_root_dir = test_root_dir
         self.artifacts_root = artifacts_root
         self.mpiversion = mpiversion
@@ -51,6 +45,7 @@ class ArchiveResults:
         start_time = time.time()
         seconds = 144000
         self.build_dir = "{}/{}".format(test_root_dir, build_basename)
+        self.scheduler = self.get_scheduler(scheduler)
         while True:
             current_time = time.time()
             elapsed_time = current_time - start_time
@@ -81,6 +76,15 @@ class ArchiveResults:
             logging.debug("would have executed {}".format(cmd))
         else:
             os.system(cmd)
+
+    def get_scheduler(self, scheduler: str):
+        _map = {
+            "pbs": PBS("pbs", self),
+            "slurm": slurm("slurm"),
+            "none": NoScheduler("slurm") #TOOD is that value correct?
+        }
+        return _map[scheduler]
+
 
     def create_summary(
         self,
@@ -465,7 +469,7 @@ if __name__ == "__main__":
         default=False,
     )
     parser.add_argument(
-        "-s", "--scheduler", help="type of scheduler used", required=False, default=None
+        "-s", "--Scheduler", help="type of Scheduler used", required=False, default=None
     )
     parser.add_argument(
         "-t",
@@ -488,7 +492,7 @@ if __name__ == "__main__":
         args["self.jobid"],
         args["buildbasename"],
         args["machinename"],
-        args["scheduler"],
+        args["Scheduler"],
         args["testrootdir"],
         args["artifactsrootdir"],
         args["mpiversion"],
