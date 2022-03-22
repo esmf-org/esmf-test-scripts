@@ -304,7 +304,7 @@ class ESMFTest:
                     mpidict = self.machine_list[comp]['versions'][ver]['mpi']
                     logging.debug("mpidict: ", mpidict if mpidict is not None else "missing")
                     mpitypes = mpidict.keys()
-                    logging.debug("mpitypes: ", ", ".join(mpitypes))
+                    logging.debug("mpitypes: %s", " ".join(mpitypes))
                     logging.debug(self.machine_list[comp]['versions'][ver])
                     for key in mpitypes:
                         if 'build_time' in self.machine_list[comp]:
