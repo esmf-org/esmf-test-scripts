@@ -296,7 +296,6 @@ class ESMFTest:
                     logging.debug("mpidict: ", mpidict if mpidict is not " " else "missing")
                     mpitypes = mpidict.keys()
                     logging.debug("mpitypes: %s", " ".join(mpitypes))
-                    logging.debug(self.machine_list[comp]['versions'][ver])
                     for key in mpitypes:
                         if 'build_time' in self.machine_list[comp]:
                             self.build_time = self.machine_list[comp]['build_time']
