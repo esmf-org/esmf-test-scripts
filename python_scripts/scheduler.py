@@ -8,5 +8,5 @@ class Scheduler:
     def submit_job(self):
         pass
 
-    def check_queue(self):
+    def check_queue(self, jobid):
         pass
