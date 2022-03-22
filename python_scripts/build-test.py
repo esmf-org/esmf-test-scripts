@@ -278,7 +278,15 @@ def main(argv):
                                 )
                                 fb.write(modulecmd)
                                 ft.write(modulecmd)
-
+                            if "pnetcdf" in machine_list[comp]["versions"][ver]:
+                                modulecmd = "module load {} \nmodule list\n".format(
+                                    machine_list[comp]["versions"][ver][
+                                        "pnetcdf"
+                                    ]
+                                )
+                                fb.write(modulecmd)
+                                ft.write(modulecmd)
+                                                             
                             modulecmd_b = "module list >& module-build.log\n\n"
                             modulecmd_t = "module list >& module-test.log\n\n"
                             fb.write(modulecmd_b)
