@@ -8,7 +8,7 @@ import pathlib
 
 
 def create_header(
-    file_out, scheduler, filename, time, account, partition, queue, cpn, cluster, bash
+        file_out, scheduler, filename, time, account, partition, queue, cpn, cluster, bash, constraint
 ):
     if scheduler == "slurm":
         file_out.write("#!{} -l\n".format(bash))
@@ -17,6 +17,8 @@ def create_header(
             file_out.write("#SBATCH --partition={}\n".format(partition))
         if cluster != "None":
             file_out.write("#SBATCH --cluster={}\n".format(cluster))
+        if constraint != "None":
+            file_out.write("#SBATCH -C {}\n".format(constraint))
         file_out.write("#SBATCH --qos={}\n".format(queue))
         file_out.write("#SBATCH --nodes=1\n")
         file_out.write("#SBATCH --ntasks-per-node={}\n".format(cpn))
@@ -46,6 +48,7 @@ def main(argv):
     print("reading {}".format(inpfile))
     with open(inpfile) as file:
         machine_list = yaml.load(file, Loader=yaml.FullLoader)
+        print(f"machine_list {machine_list}")
         machine_name = machine_list["machine"]
         if "bash" in machine_list:
             bash = machine_list["bash"]
@@ -73,6 +76,10 @@ def main(argv):
             headnodename = os.uname()[1]
         cpn = machine_list["corespernode"]
         scheduler = machine_list["scheduler"]
+        if "constraint" in machine_list:
+            constraint = machine_list["constraint"]
+        else:
+            constraint = "None"
         if "branch" not in machine_list:
             machine_list["branch"] = "develop"
         build_types = ["O", "g"]
@@ -162,6 +169,7 @@ def main(argv):
                                 cpn,
                                 cluster,
                                 bash,
+                                constraint,
                             )
 
                             if "test_time" in machine_list[comp]:
@@ -179,6 +187,7 @@ def main(argv):
                                 cpn,
                                 cluster,
                                 bash,
+                                constraint,
                             )
                             if "unloadmodule" in machine_list[comp]:
                                 fb.write(
