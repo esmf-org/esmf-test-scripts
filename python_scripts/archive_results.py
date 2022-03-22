@@ -10,7 +10,7 @@ from datetime import datetime
 from typing import List, Any
 
 from noscheduler import NoScheduler
-from pbs import pbs
+from pbs import PBS
 from slurm import slurm
 
 
@@ -36,8 +36,8 @@ class ArchiveResults:
         self.jobid = jobid
         self.build_basename = build_basename
         self.machine_name = machine_name
-        if scheduler == "pbs":
-            self.scheduler = pbs("pbs")
+        if scheduler == "PBS":
+            self.scheduler = PBS("PBS")
         elif scheduler == "slurm":
             self.scheduler = slurm("slurm")
         elif scheduler == "None":
@@ -54,7 +54,7 @@ class ArchiveResults:
         while True:
             current_time = time.time()
             elapsed_time = current_time - start_time
-            job_done = self.scheduler.checkqueue(jobid)
+            job_done = checkqueue(jobid)
             if job_done:
                 oe_file_list = glob.glob(
                     "{}/{}/*_{}*.log".format(test_root_dir, build_basename, jobid)
@@ -107,34 +107,34 @@ class ArchiveResults:
         else:
             now = datetime.now()
             self.build_time = now.strftime("%H:%M:%S")
-        summary_file = open(f"{self.outpath}/summary.dat", "w")
-        summary_file.write(
-            "\n===================================================================\n"
-        )
-        summary_file.write(
-            "Build for = {}, mpi version {} on {} esmf_os: {}\n".format(
-                self.build_basename, self.mpiversion, self.machine_name, esmf_os
+        with open(f"{self.outpath}/summary.dat", "w") as summary_file:
+            summary_file.write(
+                "\n===================================================================\n"
             )
-        )
-        summary_file.write("Build time = {}\n".format(self.build_time))
-        summary_file.write("git hash = {}\n\n".format(self.build_hash))
-        unit_results = re.sub(" FAIL", "\tFAIL", unit_results)
-        system_results = re.sub(" FAIL", " \tFAIL", system_results)
-        example_results = re.sub(" FAIL", " \tFAIL", example_results)
-        summary_file.write("unit test results   \t{}\n".format(unit_results))
-        summary_file.write("system test results \t{}\n".format(system_results))
-        summary_file.write("example test results \t{}\n".format(example_results))
-        summary_file.write(
-            "nuopc test results \tPASS {} \tFAIL {}\n\n".format(nuopc_pass, nuopc_fail)
-        )
-        summary_file.write(
-            "\n===================================================================\n"
-        )
-        summary_file.write("\n\n{}\n\n".format(make_info))
-        summary_file.write(
-            "\n===================================================================\n"
-        )
-        summary_file.close()
+            summary_file.write(
+                "Build for = {}, mpi version {} on {} esmf_os: {}\n".format(
+                    self.build_basename, self.mpiversion, self.machine_name, esmf_os
+                )
+            )
+            summary_file.write("Build time = {}\n".format(self.build_time))
+            summary_file.write("git hash = {}\n\n".format(self.build_hash))
+            unit_results = re.sub(" FAIL", "\tFAIL", unit_results)
+            system_results = re.sub(" FAIL", " \tFAIL", system_results)
+            example_results = re.sub(" FAIL", " \tFAIL", example_results)
+            summary_file.write("unit test results   \t{}\n".format(unit_results))
+            summary_file.write("system test results \t{}\n".format(system_results))
+            summary_file.write("example test results \t{}\n".format(example_results))
+            summary_file.write(
+                "nuopc test results \tPASS {} \tFAIL {}\n\n".format(nuopc_pass, nuopc_fail)
+            )
+            summary_file.write(
+                "\n===================================================================\n"
+            )
+            summary_file.write("\n\n{}\n\n".format(make_info))
+            summary_file.write(
+                "\n===================================================================\n"
+            )
+
 
     def copy_artifacts(self, oe_filelist: List[Any]):
         logging.debug("copy_artifacts(%s)", ", ".join(oe_filelist))
