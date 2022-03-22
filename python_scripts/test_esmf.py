@@ -138,7 +138,7 @@ class ESMFTest:
         try:
             shutil.rmtree(subdir)
         except OSError:
-            logging.debug("another process is actively writing files")
+            logging.error("another process is actively writing files")
             exit(1)
 
         cmd_string = f"git clone -b {branch} git@github.com:esmf-org/esmf {subdir}"
@@ -302,7 +302,7 @@ class ESMFTest:
                 for ver in self.machine_list[comp]['versions']:
                     logging.debug("version is %s", self.machine_list[comp]['versions'][ver]['mpi'])
                     mpidict = self.machine_list[comp]['versions'][ver]['mpi']
-                    logging.debug("mpidict: ", mpidict if mpidict is not None else "missing")
+                    logging.debug("mpidict: ", mpidict if mpidict is not "" else "missing")
                     mpitypes = mpidict.keys()
                     logging.debug("mpitypes: %s", " ".join(mpitypes))
                     logging.debug(self.machine_list[comp]['versions'][ver])
