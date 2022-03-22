@@ -26,7 +26,7 @@ logging.basicConfig(
 class ESMFTest:
     scheduler_type: object
 
-    def __init__(self, yaml_file, artifacts_root, workdir, dryrun):
+    def __init__(self, yaml_file, artifacts_root, workdir, dryrun: bool):
         self.b_filename = None
         self.t_filename = None
         self.fb = None
@@ -53,7 +53,8 @@ class ESMFTest:
         self.yaml_file = yaml_file
         self.artifacts_root = artifacts_root
         self.workdir = workdir
-        self.dryrun = True if dryrun.lower() == "true" else False
+        print(dryrun)
+        exit()
 
         print("setting dryrun to {}".format(self.dryrun))
         self.mypath = pathlib.Path(__file__).parent.absolute()
