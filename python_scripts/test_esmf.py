@@ -18,8 +18,10 @@ dir_path = os.path.dirname(os.path.realpath(__file__))
 logging.basicConfig(
     level=logging.DEBUG,
     format="%(asctime)s %(name)-12s %(levelname)-8s %(message)s",
-    filename=f"{os.path.join(dir_path, 'test_esmf.log')}",
-    filemode="w",
+    handlers=[
+        logging.FileHandler("test_esmf.log"),
+        logging.StreamHandler()
+    ]
 )
 
 
@@ -59,6 +61,7 @@ class ESMFTest:
         self.mypath = pathlib.Path(__file__).parent.absolute()
         print("path is {}".format(self.mypath))
         print("calling readyaml")
+        logging.info("Testing ******************************")
         self.read_yaml()
         if self.reclone:
             print("recloning")
