@@ -14,14 +14,14 @@ import logging
 
 REPO_ESMF_TEST_ARTIFACTS = "https://github.com/esmf-org/esmf-test-artifacts.git"
 
-
 dir_path = os.path.dirname(os.path.realpath(__file__))
 logging.basicConfig(
-        level=logging.DEBUG,
-        format="%(asctime)s %(name)-12s %(levelname)-8s %(message)s",
-        filename=f"{os.path.join(dir_path, 'test_esmf.log')}",
-        filemode="w",
-    )
+    level=logging.DEBUG,
+    format="%(asctime)s %(name)-12s %(levelname)-8s %(message)s",
+    filename=f"{os.path.join(dir_path, 'test_esmf.log')}",
+    filemode="w",
+)
+
 
 class ESMFTest:
     scheduler_type: object
@@ -53,10 +53,11 @@ class ESMFTest:
         self.yaml_file = yaml_file
         self.artifacts_root = artifacts_root
         self.workdir = workdir
-        if dryrun == "True":
+        self.dryrun = False
+        if dryrun.lower() == "true":
             self.dryrun = True
-        else:
-            self.dryrun = False
+
+
         print("setting dryrun to {}".format(self.dryrun))
         self.mypath = pathlib.Path(__file__).parent.absolute()
         print("path is {}".format(self.mypath))
@@ -168,7 +169,6 @@ class ESMFTest:
             print("another process is actively writing files")
             exit(1)
 
-
         cmd_string = f"git clone -b {branch} git@github.com:esmf-org/esmf {subdir}"
         nuopc_clone = f"git clone -b {nuopc_branch} git@github.com:esmf-org/nuopc-app-prototypes"
 
@@ -186,7 +186,6 @@ class ESMFTest:
             self.run_command("rm -rf obj mod lib examples test *.o *.e *bat.o* *bat.e*")
             self.run_command(f"git checkout {branch}")
             self.run_command(f"git pull origin {branch}")
-
 
     def create_scripts(self, build_type, comp, ver, mpidict, key):
         mpi_flavor = mpidict[key]
