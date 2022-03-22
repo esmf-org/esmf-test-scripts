@@ -214,8 +214,8 @@ class ESMFTest:
                 cmd_string = "export ESMF_MPIRUN={}/src/Infrastructure/stubs/mpiuni/mpirun\n".format(os.getcwd())
                 file_out.write(cmd_string)
 
-            if "mpi_env_vars" in mpidict[key]:
-                for mpi_var in mpidict[key]['mpi_env_vars']:
+            if "mpi_env_vars" in mpi_flavor:
+                for mpi_var in mpi_flavor['mpi_env_vars']:
                     file_out.write("export {}\n".format(mpidict[key]['mpi_env_vars'][mpi_var]))
 
             if self.machine_list[comp]['versions'][ver]['netcdf'] == "None":
