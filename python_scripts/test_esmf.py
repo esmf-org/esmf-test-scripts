@@ -143,12 +143,15 @@ class ESMFTest:
         cmd_string = f"git clone -b {branch} git@github.com:esmf-org/esmf {subdir}"
         nuopc_clone = f"git clone -b {nuopc_branch} git@github.com:esmf-org/nuopc-app-prototypes"
 
-        logging.debug(subprocess.check_output(cmd_string, shell=True))
         if self.dryrun:
             os.mkdir(subdir)
-        os.chdir(subdir)
+            os.chdir(subdir)
+        else:
+            logging.debug(subprocess.check_output(cmd_string, shell=True))
+            os.chdir(subdir)
+            logging.debug(subprocess.check_output(nuopc_clone, shell=True))
+
         self.run_command("rm -rf obj mod lib examples test *.o *.e *bat.o* *bat.e*")
-        logging.debug(subprocess.check_output(nuopc_clone, shell=True))
 
     def create_scripts(self, build_type, comp, ver, mpidict, key):
         mpi_flavor = mpidict[key]
