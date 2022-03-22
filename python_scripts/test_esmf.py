@@ -189,10 +189,10 @@ class ESMFTest:
 
     def create_scripts(self, build_type, comp, ver, mpidict, key):
         mpi_flavor = mpidict[key]
+        header_list = ["build", "test"]
         if mpi_flavor is not None and "pythontest" in mpi_flavor:
-            header_list = ["build", "test", "python"]
-        else:
-            header_list = ["build", "test"]
+            header_list.append("python")
+
         for headerType in header_list:
             if headerType == "build":
                 file_out = self.fb
@@ -212,7 +212,7 @@ class ESMFTest:
             if "extramodule" in self.machine_list[comp]:
                 file_out.write("\nmodule load {}\n".format(self.machine_list[comp]['extramodule']))
 
-            if mpi_flavor['module'] in ["None", None]:
+            if mpi_flavor is None or mpi_flavor['module'] in ["None", None]:
                 mpi_flavor['module'] = ""
                 cmd_string = "export ESMF_MPIRUN={}/src/Infrastructure/stubs/mpiuni/mpirun\n".format(os.getcwd())
                 file_out.write(cmd_string)
