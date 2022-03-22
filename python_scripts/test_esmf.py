@@ -300,8 +300,9 @@ class ESMFTest:
         for build_type in self.build_types:
             for comp in self.machine_list['compiler']:
                 for ver in self.machine_list[comp]['versions']:
+                    logging.debug("version is %s", self.machine_list[comp]['versions'][ver]['mpi'])
                     mpidict = self.machine_list[comp]['versions'][ver]['mpi']
-                    logging.debug("mpidict: ", mpidict)
+                    logging.debug("mpidict: ", mpidict if mpidict is not None else "missing")
                     mpitypes = mpidict.keys()
                     logging.debug("mpitypes: ", mpitypes)
                     logging.debug(self.machine_list[comp]['versions'][ver])
