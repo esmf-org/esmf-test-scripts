@@ -1,77 +1,139 @@
+import logging
 import os
 import subprocess
 from scheduler import scheduler
 
-class pbs(scheduler):
-  def __init__(self,scheduler_type):
-     self.type = scheduler_type
 
-
-  def createHeaders(self,test):
-    for headerType in ["build","test"]:
-      if(headerType == "build"):
-        file_out = test.fb
-      else:
-        file_out = test.ft
-      file_out.write("#!/bin/sh -l\n")
-      if(headerType == "build"):
-        file_out.write("#PBS -N {}\n".format(test.b_filename))
-        file_out.write("#PBS -l walltime={}\n".format(test.build_time))
-      else:
-        file_out.write("#PBS -N {}\n".format(test.t_filename))
-      file_out.write("#PBS -l walltime={}\n".format(test.test_time))
-      file_out.write("#PBS -q {}\n".format(test.queue))
-      file_out.write("#PBS -A {}\n".format(test.account))
-      file_out.write("#PBS -l select=1:ncpus={}:mpiprocs={}\n".format(test.cpn,test.cpn))
-      file_out.write("JOBID=\"`echo $PBS_JOBID | cut -d. -f1`\"\n\n")
-      file_out.write("cd {}\n".format(os.getcwd()))
-
-  def submitJob(self,test,subdir,mpiver,branch):
-    # add ssh back to the head node for archiving of results to batch scripts
-#   test.runcmd("echo \"ssh {} {}/getres-build.sh\" >> {}".format(test.head_node_name,os.getcwd(),test.b_filename))
-#   test.runcmd("echo \"ssh {} {}/getres-test.sh\" >> {}".format(test.head_node_name,os.getcwd(),test.t_filename))
-    batch_build = "qsub {}".format(test.b_filename)
-    print(batch_build)
-    if(test.dryrun == True):
-      jobnum = 1234
-    else:
-      jobnum= subprocess.check_output(batch_build,shell=True).strip().decode('utf-8').split(".")[0]
-    print("Submitting batch_build with command: {}, jobnum is {}".format(batch_build,jobnum))
-    monitor_cmd_build = \
-                   "python3 {}/archive_results.py -j {} -b {} -m {} -s {} -t {} -a {} -M {} -B {} -d {}".format(test.mypath,jobnum,subdir,test.machine_name,self.type,test.script_dir,test.artifacts_root,mpiver,branch,test.dryrun)
-    if(test.dryrun == True):
-      print(monitor_cmd_build)
-    else:
-      proc = subprocess.Popen(monitor_cmd_build, shell=True, stdin=None, stdout=None, stderr=None, close_fds=True)
-    # submit the second job to be dependent on the first
-#   getrescmd = "ssh {} {}/getres-test.sh".format(test.head_node_name,os.getcwd())
-#   os.system("echo {} >> {}".format(getrescmd,test.t_filename))
-    batch_test = "qsub -W depend=afterok:{} {}".format(jobnum,test.t_filename)
-    print("Submitting test_batch with command: {}".format(batch_test))
-    if(test.dryrun == True):
-      jobnum = 1234
-    else:
-      jobnum= subprocess.check_output(batch_test,shell=True).strip().decode('utf-8').split(".")[0]
-    monitor_cmd_test = \
-                   "python3 {}/archive_results.py -j {} -b {} -m {} -s {} -t {} -a {} -M {} -B {} -d {}".format(test.mypath,jobnum,subdir,test.machine_name,self.type,test.script_dir,test.artifacts_root,mpiver,branch,test.dryrun)
-    if(test.dryrun == True):
-      print(monitor_cmd_test)
-    else:
-      proc = subprocess.Popen(monitor_cmd_test, shell=True, stdin=None, stdout=None, stderr=None, close_fds=True)
-    test.create_get_res_scripts(monitor_cmd_build, monitor_cmd_test)
-    
-
-  def checkqueue(self,jobid):
-    if(int(jobid) < 0):
-      return True
-    queue_query = "qstat -H {} | tail -n 1 | awk -F ' +' '{{print $10}}'".format(jobid)
-    try:
-      result= subprocess.check_output(queue_query,shell=True).strip().decode('utf-8')
-      if(result == "F"): #could check for R and Q to see if it is running or waiting
+def checkqueue(jobid):
+    if int(jobid) < 0:
         return True
-      else:
+    queue_query = f"qstat -H {jobid} | tail -n 1 | awk -F ' +' '{{print $10}}'"
+    try:
+        return (
+                subprocess.check_output(queue_query, shell=True).strip().decode("utf-8")
+                == "F"
+        )
+    except subprocess.CalledProcessError:
+        pass
+    finally:
         return False
-    except:
-      result="done"
-      return True
-    return False
+
+
+def monitor_cmd(
+        _path,
+        jobnum,
+        subdir,
+        machine_name,
+        scheduler_type,
+        script_dir,
+        artifacts_root,
+        mpiver,
+        branch,
+        dryrun,
+):
+    return (
+        f"python3 {_path}/archive_results.py -j {jobnum} -b {subdir} -m {machine_name} -s {scheduler_type} "
+        f"-t {script_dir} -a {artifacts_root} -M {mpiver} -B {branch} -d {dryrun} "
+    )
+
+
+def job_number(batch_build, test):
+    return (
+        1234
+        if not test.dryrun
+        else (
+            subprocess.check_output(batch_build, shell=True)
+                .strip()
+                .decode("utf-8")
+                .split(".")[0]
+        )
+    )
+
+
+class PBS(scheduler):
+    def __init__(self, scheduler_type, test):
+        super().__init__(scheduler_type, test)
+        self.type = scheduler_type
+
+    def createHeaders(self, test):
+        for headerType in ["build", "test"]:
+            if headerType == "build":
+                file_out = test.fb
+            else:
+                file_out = test.ft
+            file_out.write("#!/bin/sh -l\n")
+            if headerType == "build":
+                file_out.write(f"#PBS -N {test.b_filename}\n")
+                file_out.write(f"#PBS -l walltime={test.build_time}\n")
+            else:
+                file_out.write(f"#PBS -N {test.t_filename}\n")
+            file_out.write(f"#PBS -l walltime={test.test_time}\n")
+            file_out.write(f"#PBS -q {test.queue}\n")
+            file_out.write(f"#PBS -A {test.account}\n")
+            file_out.write(f"#PBS -l select=1:ncpus={test.cpn}:mpiprocs={test.cpn}\n")
+            file_out.write('JOBID="`echo $PBS_JOBID | cut -d. -f1`"\n\n')
+            file_out.write(f"cd {os.getcwd()}\n")
+
+    def submitJob(self, test, subdir, mpiver, branch):
+        # add ssh back to the head node for archiving of results to batch scripts
+        batch_build = f"qsub {test.b_filename}"
+        job_number = job_number(batch_build, test)
+        logging.debug(
+            "Submitting batch_build with command [%s], [%s]", batch_build, job_number
+        )
+        monitor_cmd_build = monitor_cmd(
+            test.mypath,
+            job_number,
+            subdir,
+            test.machine_name,
+            self.type,
+            test.script_dir,
+            test.artifacts_root,
+            mpiver,
+            branch,
+            test.dryrun,
+        )
+
+        if test.dryrun:
+            logging.debug(monitor_cmd_build)
+        else:
+            subprocess.Popen(
+                monitor_cmd_build,
+                shell=True,
+                stdin=None,
+                stdout=None,
+                stderr=None,
+                close_fds=True,
+            )
+        # submit the second job to be dependent on the first
+        #   getrescmd = "ssh {} {}/getres-test.sh".format(test.head_node_name,os.getcwd())
+        #   os.system("echo {} >> {}".format(getrescmd,test.t_filename))
+        batch_test = f"qsub -W depend=afterok:{job_number} {test.t_filename}"
+        logging.debug(f"Submitting test_batch with command: {batch_test}")
+        job_number = job_number(batch_build, test)
+
+        monitor_cmd_test = monitor_cmd(
+            test.mypath,
+            job_number,
+            subdir,
+            test.machine_name,
+            self.type,
+            test.script_dir,
+            test.artifacts_root,
+            mpiver,
+            branch,
+            test.dryrun,
+        )
+
+        if test.dryrun:
+            logging.debug(monitor_cmd_test)
+        else:
+            subprocess.Popen(
+                monitor_cmd_test,
+                shell=True,
+                stdin=None,
+                stdout=None,
+                stderr=None,
+                close_fds=True,
+            )
+        test.create_get_res_scripts(monitor_cmd_build, monitor_cmd_test)
