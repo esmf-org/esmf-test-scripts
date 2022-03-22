@@ -135,7 +135,8 @@ class ESMFTest:
         try:
             # If rm tree fails, its because another process is writing to the directory
             # as it's trying to delete files.
-            shutil.rmtree(subdir)
+            if subdir.exists():
+                shutil.rmtree(subdir)
         except OSError as err:
             logging.error("another process is actively writing files: [%s]", err)
             exit(1)
