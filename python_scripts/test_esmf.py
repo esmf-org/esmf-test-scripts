@@ -8,8 +8,8 @@ import subprocess
 import yaml
 
 from noscheduler import NoScheduler
-from pbs import pbs
-from slurm import slurm
+from pbs import PBS
+from slurm import Slurm
 import logging
 
 REPO_ESMF_TEST_ARTIFACTS = "https://github.com/esmf-org/esmf-test-artifacts.git"
@@ -65,12 +65,12 @@ class ESMFTest:
             os.chdir("esmf-test-artifacts")
             os.system("git checkout -b {}".format(self.machine_name))
             os.chdir("..")
-        if "slurm" == self.scheduler_type:
-            self.scheduler = slurm("slurm")
+        if "Slurm" == self.scheduler_type:
+            self.scheduler = Slurm("Slurm")
         elif "None" == self.scheduler_type:
             self.scheduler = NoScheduler("None")
-        elif "pbs" == self.scheduler_type:
-            self.scheduler = pbs("pbs")
+        elif "PBS" == self.scheduler_type:
+            self.scheduler = PBS("PBS")
         self.create_job_cards_and_submit()
 
     def read_yaml(self):
@@ -109,7 +109,7 @@ class ESMFTest:
             if "constraint" in self.machine_list:
                 self.constraint = self.machine_list["constraint"]
             self.cpn = self.machine_list["corespernode"]
-            self.scheduler_type = self.machine_list["scheduler"]
+            self.scheduler_type = self.machine_list["Scheduler"]
 
             # Now traverse the tree
             # TODO I don't know why this is here
@@ -383,10 +383,6 @@ class ESMFTest:
                             subdir = re.sub(
                                 "/", "_", subdir
                             )  # Some branches have a slash, so replace that with underscore
-                            if self.https:
-                                pass
-                            else:
-                                pass
                             self.update_repo(subdir, branch, nuopcbranch)
                             self.b_filename = "build-{}_{}_{}_{}.bat".format(
                                 comp, ver, key, build_type
@@ -396,9 +392,9 @@ class ESMFTest:
                             )
                             self.fb = open(self.b_filename, "w")
                             self.ft = open(self.t_filename, "w")
-                            self.scheduler.createHeaders(self)
+                            self.scheduler.create_headers(self)
                             self.create_scripts(build_type, comp, ver, mpidict, key)
-                            self.scheduler.submitJob(
+                            self.scheduler.submit_job(
                                 self, subdir, self.mpi_version, branch
                             )
                             os.chdir("..")

@@ -11,7 +11,7 @@ from typing import List, Any
 
 from noscheduler import NoScheduler
 from pbs import PBS
-from slurm import slurm
+from slurm import Slurm
 
 
 class ArchiveResults:
@@ -79,9 +79,9 @@ class ArchiveResults:
 
     def get_scheduler(self, scheduler: str):
         _map = {
-            "pbs": PBS("pbs", self),
-            "slurm": slurm("slurm"),
-            "none": NoScheduler("slurm") #TOOD is that value correct?
+            "pbs": PBS(self),
+            "Slurm": Slurm(),
+            "none": NoScheduler()
         }
         return _map[scheduler]
 
