@@ -56,11 +56,8 @@ class ESMFTest:
         self.artifacts_root = artifacts_root
         self.workdir = workdir
         self.dryrun = dryrun
-
-        logging.debug("setting dryrun to {}".format(self.dryrun))
         self.mypath = pathlib.Path(__file__).parent.absolute()
-        logging.debug("path is {}".format(self.mypath))
-        logging.debug("calling readyaml")
+        logging.debug("reading yaml configuration")
         self.read_yaml()
         if self.reclone:
             logging.debug("recloning")
@@ -80,18 +77,18 @@ class ESMFTest:
     def read_yaml(self):
         config_path = os.path.dirname(self.yaml_file)
         global_file = os.path.join(config_path, "global.yaml")
-        logging.debug("HEY!!!! {}".format(global_file))
+        logging.debug("config_path: [%s], global_file: [%s]", config_path, global_file)
         with open(global_file) as file:
             self.global_list = yaml.load(file, Loader=yaml.SafeLoader)
             if 'reclone-artifacts' in self.global_list:
                 self.reclone = self.global_list['reclone-artifacts']
             else:
                 self.reclone = False
-            logging.debug("set reclone to {}".format(self.reclone))
+            logging.debug("reclone = [%s]", self.reclone)
         with open(self.yaml_file) as file:
             self.machine_list = yaml.load(file, Loader=yaml.SafeLoader)
             self.machine_name = self.machine_list['machine']
-            logging.debug("machine name is {}".format(self.machine_name))
+            logging.debug("machine_list: [%s], machine_name: [%s]", self.machine_list, self.machine_name)
             if "bash" in self.machine_list:
                 self.bash = self.machine_list['bash']
             if "account" in self.machine_list:
@@ -127,15 +124,17 @@ class ESMFTest:
 
     def run_command(self, cmd):
         if self.dryrun:
-            logging.debug("would have executed {}".format(cmd))
+            logging.debug("*DRYRUN* running command: [%s]", cmd)
         else:
-            logging.debug("running {}\n".format(cmd))
+            logging.debug("running command: [%s]", cmd)
             os.system(cmd)
 
     def update_repo(self, subdir, branch, nuopc_branch):
         subdir = pathlib.Path(subdir).absolute()
-        logging.debug(f"SUBDIR IS {subdir}, {branch}, {nuopc_branch}")
+        logging.debug(f"subdir: [%s], branch: [%s], nuopc_branch: [%s]", subdir, branch, nuopc_branch)
         try:
+            # If rm tree fails, its because another process is writing to the directory
+            # as it's trying to delete files.
             shutil.rmtree(subdir)
         except OSError:
             logging.error("another process is actively writing files")
@@ -144,20 +143,12 @@ class ESMFTest:
         cmd_string = f"git clone -b {branch} git@github.com:esmf-org/esmf {subdir}"
         nuopc_clone = f"git clone -b {nuopc_branch} git@github.com:esmf-org/nuopc-app-prototypes"
 
-        if self.dryrun:
-            logging.debug("would have executed {}".format(cmd_string))
-            logging.debug("would have executed {}".format(nuopc_clone))
-            logging.debug("would have cd'd to {}".format(subdir))
+        logging.debug(subprocess.check_output(cmd_string, shell=True))
+        if not self.dryrun:
             os.mkdir(subdir)
-            os.chdir(subdir)
-
-        else:
-            logging.debug(subprocess.check_output(cmd_string, shell=True))
-            os.chdir(subdir)
-            logging.debug(subprocess.check_output(nuopc_clone, shell=True))
-            self.run_command("rm -rf obj mod lib examples test *.o *.e *bat.o* *bat.e*")
-            self.run_command(f"git checkout {branch}")
-            self.run_command(f"git pull origin {branch}")
+        os.chdir(subdir)
+        self.run_command("rm -rf obj mod lib examples test *.o *.e *bat.o* *bat.e*")
+        logging.debug(subprocess.check_output(nuopc_clone, shell=True))
 
     def create_scripts(self, build_type, comp, ver, mpidict, key):
         mpi_flavor = mpidict[key]
