@@ -294,25 +294,21 @@ class ESMFTest:
         for build_type in self.build_types:
             for comp in self.machine_list['compiler']:
                 for ver in self.machine_list[comp]['versions']:
-                    logging.debug("version is %s", self.machine_list[comp]['versions'][ver]['mpi'])
+                    logging.debug("version is [%s]", self.machine_list[comp]['versions'][ver]['mpi'])
                     mpidict = self.machine_list[comp]['versions'][ver]['mpi']
-                    logging.debug("mpidict: ", mpidict if mpidict is not " " else "missing")
+                    logging.debug("mpidict: [%s]", mpidict if mpidict is not " " else "missing")
                     mpitypes = mpidict.keys()
-                    logging.debug("mpitypes: %s", " ".join(mpitypes))
+                    logging.debug("mpitypes: [%s]", " ".join(mpitypes))
                     for key in mpitypes:
                         if 'build_time' in self.machine_list[comp]:
                             self.build_time = self.machine_list[comp]['build_time']
-                        else:
-                            self.build_time = "1:00:00"
+
                         if 'test_time' in self.machine_list[comp]:
                             self.test_time = self.machine_list[comp]['test_time']
-                        else:
-                            self.test_time = "1:00:00"
+
                         for branch in self.machine_list['branch']:
                             if "nuopcbranch" in self.machine_list:
                                 nuopcbranch = self.machine_list['nuopcbranch']
-                            else:
-                                nuopcbranch = "develop"
                             subdir = "{}_{}_{}_{}_{}".format(comp, ver, key, build_type, branch)
                             subdir = re.sub("/", "_",
                                             subdir)  # Some branches have a slash, so replace that with underscore
