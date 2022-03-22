@@ -325,6 +325,7 @@ class ESMFTest:
                             self.create_scripts(build_type, comp, ver, mpidict, key)
                             self.scheduler.submitJob(self, subdir, self.mpi_version, branch)
                             os.chdir("..")
+                            exit()
 
 
 if __name__ == "__main__":
