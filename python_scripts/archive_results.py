@@ -28,7 +28,6 @@ class ArchiveResults:
         dryrun,
     ):
 
-        logging.warning(os.getcwd())
         self.outpath = None
         self.build_hash = None
         self.build_time = None

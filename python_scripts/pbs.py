@@ -4,19 +4,7 @@ import subprocess
 from scheduler import Scheduler
 
 
-def check_queue(jobid):
-    if int(jobid) < 0:
-        return True
-    queue_query = f"qstat -H {jobid} | tail -n 1 | awk -F ' +' '{{print $10}}'"
-    try:
-        return (
-                subprocess.check_output(queue_query, shell=True).strip().decode("utf-8")
-                == "F"
-        )
-    except subprocess.CalledProcessError:
-        pass
-    finally:
-        return False
+
 
 
 def monitor_cmd(
@@ -66,6 +54,20 @@ class PBS(Scheduler):
         if not self.test.dryrun:
             return 1234
         return subprocess.check_output(batch_command, shell=True).strip().decode("utf-8").split(".")[0]
+
+    def check_queue(self, jobid):
+        if int(jobid) < 0:
+            return True
+        queue_query = f"qstat -H {jobid} | tail -n 1 | awk -F ' +' '{{print $10}}'"
+        try:
+            return (
+                    subprocess.check_output(queue_query, shell=True).strip().decode("utf-8")
+                    == "F"
+            )
+        except subprocess.CalledProcessError:
+            pass
+        finally:
+            return False
 
     def submit_job(self, subdir, mpiver, branch):
         # add ssh back to the head node for archiving of results to batch scripts
