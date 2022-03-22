@@ -7,6 +7,7 @@ import re
 import subprocess
 import time
 from datetime import datetime
+from typing import List, Any
 
 from noscheduler import NoScheduler
 from pbs import pbs
@@ -27,6 +28,7 @@ class ArchiveResults:
         dryrun,
     ):
 
+        logging.warning(os.getcwd())
         self.outpath = None
         self.build_hash = None
         self.build_time = None
@@ -54,20 +56,19 @@ class ArchiveResults:
             elapsed_time = current_time - start_time
             job_done = self.scheduler.checkqueue(jobid)
             if job_done:
-                oe_filelist = glob.glob(
+                oe_file_list = glob.glob(
                     "{}/{}/*_{}*.log".format(test_root_dir, build_basename, jobid)
                 )
-                oe_filelist.extend(
+                oe_file_list.extend(
                     glob.glob("{}/{}/*.bat".format(test_root_dir, build_basename))
                 )
-                oe_filelist.extend(
+                oe_file_list.extend(
                     glob.glob(
                         "{}/{}/module-*.log".format(test_root_dir, build_basename)
                     )
                 )
-                print("filelist is {}".format(oe_filelist))
-                print("oe list is {}\n".format(oe_filelist))
-                self.copy_artifacts(oe_filelist)
+                logging.debug("oe list [%s\n]", ", ".join(oe_file_list))
+                self.copy_artifacts(oe_file_list)
                 break
             time.sleep(30)
 
@@ -135,15 +136,18 @@ class ArchiveResults:
         )
         summary_file.close()
 
-    def copy_artifacts(self, oe_filelist):
-
+    def copy_artifacts(self, oe_filelist: List[Any]):
+        logging.debug("copy_artifacts(%s)", ", ".join(oe_filelist))
         build_basename = os.path.basename(self.build_dir)
-        print("branch is: ", self.branch)
+        logging.debug("branch is: ", self.branch)
         dir_branch = re.sub("/", "_", self.branch)
-        print("dir branch is: ", dir_branch)
-        cwd = os.getcwd()
-        print("cwd is: ", cwd)
-        print("build dir is: ", self.build_dir)
+        logging.debug("dir branch is: ", dir_branch)
+        try:
+            cwd = os.getcwd()
+        except:
+            logging.error("unable to determine current working directory: [%s], [%s]", build_basename, dir_branch)
+            exit(1)
+        logging.debug("cwd is: ", cwd)
         os.chdir(self.build_dir)
         try:
             self.build_hash = (
