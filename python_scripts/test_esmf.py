@@ -164,8 +164,9 @@ class ESMFTest:
         print(f"SUBDIR IS {subdir}, {branch}, {nuopc_branch}")
         try:
             shutil.rmtree(subdir)
-        except OSError as err:
-            raise OSError("another process is actively writing files") from err
+        except OSError:
+            print("another process is actively writing files")
+            exit(1)
 
 
         cmd_string = f"git clone -b {branch} git@github.com:esmf-org/esmf {subdir}"
@@ -213,7 +214,7 @@ class ESMFTest:
                 file_out.write("\nmodule load {}\n".format(self.machine_list[comp]['extramodule']))
 
             if mpi_flavor is None or mpi_flavor['module'] in ["None", None]:
-                mpi_flavor['module'] = ""
+                mpi_flavor = {'module': ""}
                 cmd_string = "export ESMF_MPIRUN={}/src/Infrastructure/stubs/mpiuni/mpirun\n".format(os.getcwd())
                 file_out.write(cmd_string)
 
