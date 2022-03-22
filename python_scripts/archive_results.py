@@ -107,7 +107,9 @@ class ArchiveResults:
         else:
             now = datetime.now()
             self.build_time = now.strftime("%H:%M:%S")
-        with open(f"{self.outpath}/summary.dat", "w") as summary_file:
+        _file_name = pathlib.Path(f"{self.outpath}/summary.dat")
+        logging.debug("writing to [%s]", _file_name)
+        with open(_file_name, "w") as summary_file:
             summary_file.write(
                 "\n===================================================================\n"
             )
