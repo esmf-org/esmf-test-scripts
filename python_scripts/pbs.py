@@ -4,7 +4,7 @@ import subprocess
 from scheduler import Scheduler
 
 
-def checkqueue(jobid):
+def check_queue(jobid):
     if int(jobid) < 0:
         return True
     queue_query = f"qstat -H {jobid} | tail -n 1 | awk -F ' +' '{{print $10}}'"
@@ -37,64 +37,57 @@ def monitor_cmd(
     )
 
 
-def job_number(batch_build, test):
-    return (
-        1234
-        if not test.dryrun
-        else (
-            subprocess.check_output(batch_build, shell=True)
-                .strip()
-                .decode("utf-8")
-                .split(".")[0]
-        )
-    )
-
-
 class PBS(Scheduler):
-    def __init__(self, scheduler_type, test):
-        super().__init__(scheduler_type, test)
-        self.type = scheduler_type
+    def __init__(self, test):
+        super().__init__()
+        self.type = "pbs"
+        self.test = test
 
-    def create_headers(self, test):
+    def create_headers(self):
         for headerType in ["build", "test"]:
             if headerType == "build":
-                file_out = test.fb
+                file_out = self.test.fb
             else:
-                file_out = test.ft
+                file_out = self.test.ft
             file_out.write("#!/bin/sh -l\n")
             if headerType == "build":
-                file_out.write(f"#PBS -N {test.b_filename}\n")
-                file_out.write(f"#PBS -l walltime={test.build_time}\n")
+                file_out.write(f"#PBS -N {self.test.b_filename}\n")
+                file_out.write(f"#PBS -l walltime={self.test.build_time}\n")
             else:
-                file_out.write(f"#PBS -N {test.t_filename}\n")
-            file_out.write(f"#PBS -l walltime={test.test_time}\n")
-            file_out.write(f"#PBS -q {test.queue}\n")
-            file_out.write(f"#PBS -A {test.account}\n")
-            file_out.write(f"#PBS -l select=1:ncpus={test.cpn}:mpiprocs={test.cpn}\n")
+                file_out.write(f"#PBS -N {self.test.t_filename}\n")
+            file_out.write(f"#PBS -l walltime={self.test.test_time}\n")
+            file_out.write(f"#PBS -q {self.test.queue}\n")
+            file_out.write(f"#PBS -A {self.test.account}\n")
+            file_out.write(f"#PBS -l select=1:ncpus={self.test.cpn}:mpiprocs={self.test.cpn}\n")
             file_out.write('JOBID="`echo $PBS_JOBID | cut -d. -f1`"\n\n')
             file_out.write(f"cd {os.getcwd()}\n")
 
-    def submit_job(self, test, subdir, mpiver, branch):
+    def job_number(self, batch_command):
+        if not self.test.dryrun:
+            return 1234
+        return subprocess.check_output(batch_command, shell=True).strip().decode("utf-8").split(".")[0]
+
+    def submit_job(self, subdir, mpiver, branch):
         # add ssh back to the head node for archiving of results to batch scripts
-        batch_build = f"qsub {test.b_filename}"
-        job_number = job_number(batch_build, test)
+        batch_build = f"qsub {self.test.b_filename}"
+        job_number = self.job_number(batch_build)
         logging.debug(
-            "Submitting batch_build with command [%s], [%s]", batch_build, job_number
+            "Submitting batch_command with command [%s], [%s]", batch_build, job_number
         )
         monitor_cmd_build = monitor_cmd(
-            test.mypath,
+            self.test.mypath,
             job_number,
             subdir,
-            test.machine_name,
+            self.test.machine_name,
             self.type,
-            test.script_dir,
-            test.artifacts_root,
+            self.test.script_dir,
+            self.test.artifacts_root,
             mpiver,
             branch,
-            test.dryrun,
+            self.test.dryrun,
         )
 
-        if test.dryrun:
+        if self.test.dryrun:
             logging.debug(monitor_cmd_build)
         else:
             subprocess.Popen(
@@ -108,24 +101,24 @@ class PBS(Scheduler):
         # submit the second job to be dependent on the first
         #   getrescmd = "ssh {} {}/getres-test.sh".format(test.head_node_name,os.getcwd())
         #   os.system("echo {} >> {}".format(getrescmd,test.t_filename))
-        batch_test = f"qsub -W depend=afterok:{job_number} {test.t_filename}"
+        batch_test = f"qsub -W depend=afterok:{job_number} {self.test.t_filename}"
         logging.debug(f"Submitting test_batch with command: {batch_test}")
-        job_number = job_number(batch_build, test)
+        job_number = self.job_number(batch_test)
 
         monitor_cmd_test = monitor_cmd(
-            test.mypath,
+            self.test.mypath,
             job_number,
             subdir,
-            test.machine_name,
+            self.test.machine_name,
             self.type,
-            test.script_dir,
-            test.artifacts_root,
+            self.test.script_dir,
+            self.test.artifacts_root,
             mpiver,
             branch,
-            test.dryrun,
+            self.test.dryrun,
         )
 
-        if test.dryrun:
+        if self.test.dryrun:
             logging.debug(monitor_cmd_test)
         else:
             subprocess.Popen(
@@ -136,4 +129,4 @@ class PBS(Scheduler):
                 stderr=None,
                 close_fds=True,
             )
-        test.create_get_res_scripts(monitor_cmd_build, monitor_cmd_test)
+        self.test.create_get_res_scripts(monitor_cmd_build, monitor_cmd_test)

@@ -49,7 +49,7 @@ class ArchiveResults:
         while True:
             current_time = time.time()
             elapsed_time = current_time - start_time
-            job_done = self.scheduler.checkqueue(jobid)
+            job_done = self.scheduler.check_queue(jobid)
             if job_done:
                 oe_file_list = glob.glob(
                     "{}/{}/*_{}*.log".format(test_root_dir, build_basename, jobid)
