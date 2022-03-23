@@ -38,3 +38,5 @@ intel:
          extra_env_vars:
              var1: ESMF_NETCDF_LIBS="-lnetcdf"
              var2: ESMF_NETCDFF_LIBS="-lnetcdff"
+             var3: PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/opt/cray/pe/hdf5/1.10.5.2/INTEL/19.0/lib/pkgconfig
+     unloadmodule: darshan
