@@ -393,7 +393,7 @@ class ESMFTest:
                             )
                             self.fb = open(self.b_filename, "w")
                             self.ft = open(self.t_filename, "w")
-                            self.scheduler.create_headers(self)
+                            self.scheduler.create_headers()
                             self.create_scripts(build_type, comp, ver, mpidict, key)
                             self.scheduler.submit_job(
                                 self, subdir, self.mpi_version, branch
