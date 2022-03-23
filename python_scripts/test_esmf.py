@@ -8,6 +8,7 @@ import subprocess
 import yaml
 
 from noscheduler import NoScheduler
+
 from pbs import PBS
 from slurm import Slurm
 import logging
@@ -65,12 +66,12 @@ class ESMFTest:
             os.chdir("esmf-test-artifacts")
             os.system("git checkout -b {}".format(self.machine_name))
             os.chdir("..")
-        if "Slurm" == self.scheduler_type:
+        if "slurm" == self.scheduler_type:
             self.scheduler = Slurm("Slurm")
-        elif "None" == self.scheduler_type:
-            self.scheduler = NoScheduler("None")
-        elif "PBS" == self.scheduler_type:
+        elif "pbs" == self.scheduler_type:
             self.scheduler = PBS("PBS")
+        else:
+            self.scheduler = NoScheduler("None")
         self.create_job_cards_and_submit()
 
     def read_yaml(self):
