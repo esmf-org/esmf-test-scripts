@@ -17,8 +17,8 @@ except ImportError:
 import yaml
 
 from noscheduler import NoScheduler
-from pbs import pbs
-from slurm import slurm
+from pbs import PBS
+from slurm import Slurm
 
 REPO_ESMF_TEST_ARTIFACTS = "https://github.com/esmf-org/esmf-test-artifacts.git"
 
@@ -99,7 +99,7 @@ def fetch_local_config(file_path):
         "branch": _safe_lookup("branch", props),
         "nuopcbranch": _safe_lookup("nuopcbranch", props),
         "cpn": _safe_lookup("corespernode", props),
-        "scheduler_type": _safe_lookup("scheduler", props),
+        "scheduler_type": _safe_lookup("Scheduler", props),
         "cluster": _safe_lookup("cluster", props),
         "machine_name": _safe_lookup("machine", props),
         "compilers": _safe_lookup("compiler", props),
@@ -130,9 +130,9 @@ def create_job_card(config):
         t_filename = "test-{}_{}_{}_{}.bat".format(comp, ver, key, build_type)
         fb = open(self.b_filename, "w")
         ft = open(self.t_filename, "w")
-        scheduler.createHeaders(self)
+        scheduler.create_headers(self)
         createScripts(build_type, comp, ver, mpidict, mpitypes, key, branch)
-        scheduler.submitJob(self, subdir, self.mpi_version, branch)
+        scheduler.submit_job(self, subdir, self.mpi_version, branch)
         os.chdir("..")
 
     return []
@@ -155,7 +155,7 @@ def main(yaml_file, artifacts_root, workdir, dryrun):
     if config.reclone:
         reclone(artifacts_root, repo_artifacts_url, config.machine_name)
 
-    # Determine scheduler type?
+    # Determine Scheduler type?
 
     # create the job card and submit
     job_card = create_job_card(config)
