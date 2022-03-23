@@ -109,7 +109,7 @@ class ESMFTest:
             if "constraint" in self.machine_list:
                 self.constraint = self.machine_list["constraint"]
             self.cpn = self.machine_list["corespernode"]
-            self.scheduler_type = self.machine_list["Scheduler"]
+            self.scheduler_type = self.machine_list["scheduler"]
 
             # Now traverse the tree
             # TODO I don't know why this is here
