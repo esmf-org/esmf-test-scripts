@@ -396,7 +396,7 @@ class ESMFTest:
                             self.scheduler.create_headers()
                             self.create_scripts(build_type, comp, ver, mpidict, key)
                             self.scheduler.submit_job(
-                                self, subdir, self.mpi_version, branch
+                                subdir, self.mpi_version, branch
                             )
                             os.chdir("..")
                             exit()
