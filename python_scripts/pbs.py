@@ -48,7 +48,7 @@ class PBS(Scheduler):
             file_out.write(f"cd {os.getcwd()}\n")
 
     def job_number(self, batch_command):
-        if not self.test.dryrun:
+        if self.test.dryrun:
             return 1234
         return subprocess.check_output(batch_command, shell=True).strip().decode("utf-8").split(".")[0]
 
@@ -60,8 +60,7 @@ class PBS(Scheduler):
             result = subprocess.check_output(queue_query, shell=True).strip().decode("utf-8").lower()
             logging.debug("job status is [%s]", result)
             logging.debug("job done is [%s]", result == 'f')
-            if result == 'f':
-                return True
+            return result == 'f'
         except subprocess.CalledProcessError as err:
             logging.debug(err)
         return False
