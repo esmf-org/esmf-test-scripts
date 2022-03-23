@@ -52,7 +52,7 @@ class PBS(Scheduler):
             return 1234
         return subprocess.check_output(batch_command, shell=True).strip().decode("utf-8").split(".")[0]
 
-    def check_queue(self, jobid):
+    def check_queue(self, jobid) -> bool:
         if int(jobid) < 0:
             return True
         queue_query = f"qstat -H {jobid} | tail -n 1 | awk -F ' +' '{{print $10}}'"
@@ -60,11 +60,10 @@ class PBS(Scheduler):
             result = subprocess.check_output(queue_query, shell=True).strip().decode("utf-8").lower()
             logging.debug("job status is [%s]", result)
             logging.debug("job done is [%s]", result == 'f')
-            return result == 'f'
-
-
-        except subprocess.CalledProcessError:
-            pass
+            if result == 'f':
+                return True
+        except subprocess.CalledProcessError as err:
+            logging.debug(err)
         finally:
             return False
 

@@ -154,10 +154,10 @@ class ArchiveResults:
         logging.debug("dir branch is: ", dir_branch)
         try:
             cwd = os.getcwd()
-        except:
+            logging.debug("cwd = [%s]", cwd)
+        except OSError:
             logging.error("unable to determine current working directory: [%s], [%s]", build_basename, dir_branch)
             exit(1)
-        logging.debug("cwd = [%s]", cwd)
         os.chdir(self.build_dir)
         try:
             self.build_hash = (
