@@ -59,6 +59,7 @@ class PBS(Scheduler):
         try:
             result = subprocess.check_output(queue_query, shell=True).strip().decode("utf-8").lower()
             logging.debug("job status is [%s]", result)
+            logging.debug("job done is [%s]", result == 'f')
             return result == 'f'
 
 
