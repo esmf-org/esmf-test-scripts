@@ -56,6 +56,7 @@ class ArchiveResults:
             elapsed_time = current_time - start_time
             job_done = self.scheduler.check_queue(jobid)
             if job_done:
+                logging.info("job completed [%s]", jobid)
                 oe_file_list = self.compile_oe_file_list(test_root_dir, build_basename, jobid)
                 self.copy_artifacts(oe_file_list)
                 logging.debug("oe list [%s\n]", ", ".join(oe_file_list))
