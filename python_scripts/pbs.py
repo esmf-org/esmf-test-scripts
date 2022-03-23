@@ -74,9 +74,8 @@ class PBS(Scheduler):
                 job_state = MAP_JOB_STATE[result.upper()]
             except KeyError as error:
                 raise KeyError(f"key not found [{result}]", result) from error
-            completed = result == 'f'
-            logging.debug("job id is [%s]: job status is [%s]: job_completed is [%s]", jobid, job_state, completed)
-            return completed
+            logging.debug("job id is [%s]: job status is [%s]: job_completed is [%s]", jobid, job_state, result == 'f')
+            return result == 'f'
         except subprocess.CalledProcessError as err:
             logging.debug(err)
         return False
