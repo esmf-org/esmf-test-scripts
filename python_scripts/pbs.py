@@ -71,7 +71,7 @@ class PBS(Scheduler):
             try:
                 job_state = MAP_JOB_STATE[result.upper()]
             except KeyError as error:
-                raise KeyError("key not found [%s]", result) from error
+                raise KeyError(f"key not found [{result}]", result) from error
 
             logging.debug("job status is [%s]", job_state)
             logging.debug("job done is [%s]", result == 'f')
