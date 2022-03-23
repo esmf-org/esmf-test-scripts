@@ -3,6 +3,16 @@ import os
 import subprocess
 from scheduler import Scheduler
 
+MAP_JOB_STATE = {
+    "E": "Job is exiting after having run.",
+    "H": "Job is held.",
+    "Q": "Job is queued, eligable to run or routed.",
+    "R": "Job is running.",
+    "T": "Job is being moved to new location.",
+    "W": "Job is waiting for its execution time",
+    "S": "Job is suspended."
+}
+
 
 def monitor_cmd(
         _path,
@@ -58,7 +68,7 @@ class PBS(Scheduler):
         queue_query = f"qstat -H {jobid} | tail -n 1 | awk -F ' +' '{{print $10}}'"
         try:
             result = subprocess.check_output(queue_query, shell=True).strip().decode("utf-8").lower()
-            logging.debug("job status is [%s]", result)
+            logging.debug("job status is [%s]", MAP_JOB_STATE[result.upper])
             logging.debug("job done is [%s]", result == 'f')
             return result == 'f'
         except subprocess.CalledProcessError as err:
