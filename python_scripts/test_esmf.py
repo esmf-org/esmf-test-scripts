@@ -67,11 +67,11 @@ class ESMFTest:
             os.system("git checkout -b {}".format(self.machine_name))
             os.chdir("..")
         if "slurm" == self.scheduler_type:
-            self.scheduler = Slurm("Slurm")
+            self.scheduler = Slurm(self)
         elif "pbs" == self.scheduler_type:
-            self.scheduler = PBS("PBS")
+            self.scheduler = PBS(self)
         else:
-            self.scheduler = NoScheduler("None")
+            self.scheduler = NoScheduler(self)
         self.create_job_cards_and_submit()
 
     def read_yaml(self):
