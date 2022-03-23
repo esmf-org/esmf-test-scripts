@@ -57,9 +57,9 @@ class PBS(Scheduler):
             return True
         queue_query = f"qstat -H {jobid} | tail -n 1 | awk -F ' +' '{{print $10}}'"
         try:
-            result = subprocess.check_output(queue_query, shell=True).strip().decode("utf-8")
+            result = subprocess.check_output(queue_query, shell=True).strip().decode("utf-8").lower()
             logging.debug("job status is [%s]", result)
-            return result.lower().strip() == 'f'
+            return result == 'f'
 
 
         except subprocess.CalledProcessError:
