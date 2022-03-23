@@ -57,25 +57,29 @@ class ArchiveResults:
             job_done = self.scheduler.check_queue(jobid)
             logging.debug("job id: [%s] done: [%s]", jobid, job_done)
             if job_done:
-                oe_file_list = glob.glob(
-                    "{}/{}/*_{}*.log".format(test_root_dir, build_basename, jobid)
-                )
-                oe_file_list.extend(
-                    glob.glob("{}/{}/*.bat".format(test_root_dir, build_basename))
-                )
-                oe_file_list.extend(
-                    glob.glob(
-                        "{}/{}/module-*.log".format(test_root_dir, build_basename)
-                    )
-                )
-                logging.debug("oe list [%s\n]", ", ".join(oe_file_list))
+                oe_file_list = self.compile_oe_file_list(test_root_dir, build_basename, jobid)
                 self.copy_artifacts(oe_file_list)
+                logging.debug("oe list [%s\n]", ", ".join(oe_file_list))
                 break
             time.sleep(30)
 
             if elapsed_time > seconds:
                 logging.debug("Finished iterating in: " + str(int(elapsed_time)) + " seconds")
                 break
+
+    def compile_oe_file_list(self, test_root_dir, build_basename, jobid) -> List[Any]:
+        oe_file_list = glob.glob(
+            "{}/{}/*_{}*.log".format(test_root_dir, build_basename, jobid)
+        )
+        oe_file_list.extend(
+            glob.glob("{}/{}/*.bat".format(test_root_dir, build_basename))
+        )
+        oe_file_list.extend(
+            glob.glob(
+                "{}/{}/module-*.log".format(test_root_dir, build_basename)
+            )
+        )
+        return oe_file_list
 
     def runcmd(self, cmd):
         if self.dryrun:
