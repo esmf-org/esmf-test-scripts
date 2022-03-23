@@ -284,6 +284,7 @@ def main(argv):
                                         "pnetcdf"
                                     ]
                                 )
+                                esmfnetcdf = esmfnetcdf+"export ESMF_PNETCDF=pnetcdf-config\n\n"
                                 fb.write(modulecmd)
                                 ft.write(modulecmd)
                                                              
