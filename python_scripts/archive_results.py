@@ -237,7 +237,7 @@ class ArchiveResults:
             cp_cmd = "cat {} >> {}/out/{}".format(cfile, self.output_path, nfile)
             self.run_command(cp_cmd)
         if not self.is_test_stage(oe_filelist):
-            command = "grep success {}/build_{}.log".format(self.build_dir, self.job_id)
+            command = f"grep success {self.build_dir}/build_{self.job_id}.log"
             unit_results = "-1 -1"
             system_results = "-1 -1"
             example_results = "-1 -1"
@@ -263,18 +263,8 @@ class ArchiveResults:
                 make_info,
                 esmfmkfile,
             )
-            git_cmd = "cd {};git checkout {};git add {}/{};git commit -a -m'update for build of {} with hash {} on {} [ci skip]';git push origin {}".format(
-                self.artifacts_root,
-                self.machine_name,
-                self.dir_branch,
-                self.machine_name,
-                self.build_basename,
-                self.build_hash,
-                self.machine_name,
-                self.machine_name,
-            )
-            logging.debug("git_cmd is {}".format(git_cmd))
-            self.run_command(git_cmd)
+            logging.debug("git_cmd is [%s]", self.git_command)
+            self.run_command(self.git_command)
             return
         # Make directories, if they aren't already there
         self.run_command(f"mkdir -p {self.output_path}/apps; rm {self.output_path}/apps/*")
@@ -429,6 +419,11 @@ class ArchiveResults:
         )
         self.run_command(git_cmd)
         return
+
+    @property
+    def git_command(self):
+        return f"cd {self.artifacts_root};git checkout {self.machine_name};git add {self.dir_branch}/{self.machine_name};git commit -a -m'update for build of {self.build_basename} with hash {self.build_hash} on {self.build_hash} [ci skip]';git push origin {self.machine_name}"
+
 
     def _esmfmkfile(self, build_type):
         esmfmkfile = glob.glob(
