@@ -399,7 +399,7 @@ class ESMFTest:
                                 subdir, self.mpi_version, branch
                             )
                             os.chdir("..")
-                            exit()
+
 
 
 if __name__ == "__main__":
