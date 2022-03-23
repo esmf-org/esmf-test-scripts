@@ -74,8 +74,7 @@ class PBS(Scheduler):
             except KeyError as error:
                 raise KeyError(f"key not found [{result}]", result) from error
 
-            logging.debug("job status is [%s]", job_state)
-            logging.debug("job done is [%s]", result == 'f')
+            logging.debug("job id is [%s]: job status is [%s]: job_completed is [%s]", jobid, job_state, result=='f')
             return result == 'f'
         except subprocess.CalledProcessError as err:
             logging.debug(err)
