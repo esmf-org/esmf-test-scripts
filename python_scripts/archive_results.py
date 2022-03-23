@@ -152,9 +152,9 @@ class ArchiveResults:
     def copy_artifacts(self, oe_filelist: List[Any]):
         logging.debug("copy_artifacts(%s)", ", ".join(oe_filelist))
         build_basename = os.path.basename(self.build_dir)
-        logging.debug("branch is: ", self.branch)
+        logging.debug("branch is: [%s]", self.branch)
         dir_branch = re.sub("/", "_", self.branch)
-        logging.debug("dir branch is: ", dir_branch)
+        logging.debug("dir branch is: [%s]", dir_branch)
         try:
             cwd = os.getcwd()
             logging.debug("cwd = [%s]", cwd)
