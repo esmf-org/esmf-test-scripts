@@ -10,7 +10,8 @@ MAP_JOB_STATE = {
     "R": "Job is running.",
     "T": "Job is being moved to new location.",
     "W": "Job is waiting for its execution time",
-    "S": "Job is suspended."
+    "S": "Job is suspended.",
+    "": "Unknown"
 }
 
 
