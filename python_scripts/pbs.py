@@ -68,7 +68,12 @@ class PBS(Scheduler):
         queue_query = f"qstat -H {jobid} | tail -n 1 | awk -F ' +' '{{print $10}}'"
         try:
             result = subprocess.check_output(queue_query, shell=True).strip().decode("utf-8").lower()
-            logging.debug("job status is [%s]", MAP_JOB_STATE[result.upper()])
+            try:
+                job_state = MAP_JOB_STATE[result.upper()]
+            except KeyError as error:
+                raise KeyError("key not found [%s]", result) from error
+
+            logging.debug("job status is [%s]", job_state)
             logging.debug("job done is [%s]", result == 'f')
             return result == 'f'
         except subprocess.CalledProcessError as err:
