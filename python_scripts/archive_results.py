@@ -45,7 +45,7 @@ class ArchiveResults:
         self.artifacts_root = artifacts_root
         self.mpiversion = mpiversion
         self.branch = branch
-        self.dryrun = dryrun
+        self.dryrun = True if (dryrun is "True" or dryrun is True) else False
         logging.debug("dryrun is {} -- {}".format(dryrun, self.dryrun))
         start_time = time.time()
         seconds = 144000
