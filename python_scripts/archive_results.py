@@ -60,6 +60,7 @@ class ArchiveResults:
                 self.copy_artifacts(oe_file_list)
                 logging.debug("oe list [%s\n]", ", ".join(oe_file_list))
                 break
+            logging.debug("sleeping [30] seconds")
             time.sleep(30)
 
             if elapsed_time > seconds:
