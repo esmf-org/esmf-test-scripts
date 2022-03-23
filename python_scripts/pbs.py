@@ -4,13 +4,13 @@ import subprocess
 from scheduler import Scheduler
 
 MAP_JOB_STATE = {
-    "E": "Job is exiting after having run.",
-    "H": "Job is held.",
-    "Q": "Job is queued, eligable to run or routed.",
-    "R": "Job is running.",
-    "T": "Job is being moved to new location.",
+    "E": "Job is exiting after having run",
+    "H": "Job is held",
+    "Q": "Job is queued, eligable to run or routed",
+    "R": "Job is running",
+    "T": "Job is being moved to new location",
     "W": "Job is waiting for its execution time",
-    "S": "Job is suspended.",
+    "S": "Job is suspended",
     "": "Unknown"
 }
 
