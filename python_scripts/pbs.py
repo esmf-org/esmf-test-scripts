@@ -64,8 +64,7 @@ class PBS(Scheduler):
                 return True
         except subprocess.CalledProcessError as err:
             logging.debug(err)
-        finally:
-            return False
+        return False
 
     def submit_job(self, subdir, mpiver, branch):
         # add ssh back to the head node for archiving of results to batch scripts
