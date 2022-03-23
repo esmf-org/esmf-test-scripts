@@ -200,7 +200,7 @@ class ESMFTest:
                     "\nmodule load {}\n".format(self.machine_list[comp]["extramodule"])
                 )
 
-            if mpi_flavor is None or mpi_flavor["module"] in ["None", None]:
+            if mpi_flavor is None or "module" not in mpi_flavor or mpi_flavor["module"] in [None, "None", "none"]:
                 mpi_flavor = {"module": ""}
                 cmd_string = "export ESMF_MPIRUN={}/src/Infrastructure/stubs/mpiuni/mpirun\n".format(
                     os.getcwd()
