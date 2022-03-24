@@ -39,10 +39,10 @@ class Slurm(Scheduler):
             file_out.write("export JOBID=$SLURM_JOBID\n")
 
     def batch_build(self):
-        return f"sbatch {self.test.b_filename}"
+        return f"sbatch {self.test.b_filename}".split(maxsplit=3)[3]
 
     def batch_test(self, job_number):
-        return f"sbatch --depend=afterok:{job_number} {self.test.t_filename}"
+        return f"sbatch --depend=afterok:{job_number} {self.test.t_filename}".split(maxsplit=3)[3]
 
     def submit_job(self, subdir, mpiver, branch):
 
