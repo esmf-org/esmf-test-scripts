@@ -81,7 +81,7 @@ class ArchiveResults:
     @property
     def is_dry_run(self):
         """returns true if the request is for a dry run"""
-        return True if (self._is_dry_run is "True" or self._is_dry_run is True) else False
+        return True if (self._is_dry_run == "True" or self._is_dry_run is True) else False
 
     @property
     def dir_branch(self):
@@ -252,7 +252,7 @@ class ArchiveResults:
                 nuopc_pass = "Build did not complete successfully"
                 nuopc_fail = "Build did not complete successfully"
 
-            make_info = self.make_info
+
             esmfmkfile = self._esmfmkfile(build_type)
             self.create_summary(
                 unit_results,
@@ -260,7 +260,7 @@ class ArchiveResults:
                 example_results,
                 nuopc_pass,
                 nuopc_fail,
-                make_info,
+                self.make_info,
                 esmfmkfile,
             )
             logging.debug("git_cmd is [%s]", self.git_command)
