@@ -417,7 +417,7 @@ class ESMFTest:
                               is_dry_run)
 
 
-if __name__ == "__main__":
+def view():
     parser = argparse.ArgumentParser(
         description="Archive collector for ESMF testing framework"
     )
@@ -447,6 +447,14 @@ if __name__ == "__main__":
         required=False,
         default=False,
     )
-    args = vars(parser.parse_args())
+    return vars(parser.parse_args())
 
-    test = ESMFTest(args["yaml"], args["artifacts"], args["workdir"], args["dryrun"])
+
+async def main():
+    args = view()
+    ESMFTest(args["yaml"], args["artifacts"], args["workdir"], args["dryrun"])
+
+
+if __name__ == "__main__":
+    main()
+
