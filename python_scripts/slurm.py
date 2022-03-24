@@ -9,7 +9,6 @@ class Slurm(Scheduler):
         super().__init__()
         self.type = "Slurm"
         self.test = test
-        self.archiver = test.archiver
 
     def create_headers(self):
         for headerType in ["build", "test"]:
