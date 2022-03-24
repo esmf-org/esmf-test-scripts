@@ -1,3 +1,5 @@
+""" DEPRECATED """
+
 import os
 
 
@@ -164,7 +166,7 @@ def write_script(header_type):
             file_out.write(cmdstring)
             file_out.write(
                 "ssh {} {}/{}/getres-int.sh\n".format(
-                    self.headnodename, self.script_dir, os.getcwd()
+                    self.head_node_name, self.script_dir, os.getcwd()
                 )
             )
             cmdstring = (
@@ -176,13 +178,13 @@ def write_script(header_type):
             file_out.write(cmdstring)
             file_out.write(
                 "ssh {} {}/{}/getres-int.sh\n".format(
-                    self.headnodename, self.script_dir, os.getcwd()
+                    self.head_node_name, self.script_dir, os.getcwd()
                 )
             )
         else:
             cmdstring = "python3 setup.py test_examples_dryrun\npython3 setup.py test_regrid_from_file_dryrun\npython3 setup.py test_regrid_from_file_dryrun\n"
             file_out.write(cmdstring)
-        #       file_out.write("ssh {} {}/{}/getres-int.sh\n".format(self.headnodename,self.script_dir,os.getcwd()))
+        #       file_out.write("ssh {} {}/{}/getres-int.sh\n".format(self.head_node_name,self.script_dir,os.getcwd()))
 
         if ("pythontest" in mpiflavor) and (header_type == "test"):
 
@@ -191,31 +193,31 @@ def write_script(header_type):
             cmdstring = "\nexport PATH=$PATH:$HOME/.local/bin\n".format(os.getcwd())
             file_out.write(cmdstring)
             cmdstring = "python3 setup.py build 2>&1 | tee python_build.log\n".format(
-                self.headnodename
+                self.head_node_name
             )
             file_out.write(cmdstring)
             cmdstring = "ssh {} {}/runpython.sh 2>&1 | tee python_build.log\n".format(
-                self.headnodename, os.getcwd()
+                self.head_node_name, os.getcwd()
             )
             file_out.write(cmdstring)
             cmdstring = "python3 setup.py test 2>&1 | tee python_test.log\n".format(
-                self.headnodename
+                self.head_node_name
             )
             file_out.write(cmdstring)
             cmdstring = "python3 setup.py test_examples 2>&1 | tee python_examples.log\n".format(
-                self.headnodename
+                self.head_node_name
             )
             file_out.write(cmdstring)
             cmdstring = "python3 setup.py test_regrid_from_file 2>&1 | tee python_regrid.log\n".format(
-                self.headnodename
+                self.head_node_name
             )
             file_out.write(cmdstring)
             file_out.close()
             mpimodule = mpiflavor["module"]
             if mpimodule == "":
-                self.mpiver = "None"
+                self.mpi_version = "None"
             else:
-                self.mpiver = mpiflavor["module"].split("/")[-1]
+                self.mpi_version = mpiflavor["module"].split("/")[-1]
 
 
 def createScripts(build_type, comp, ver, mpidict, mpitypes, key, branch):

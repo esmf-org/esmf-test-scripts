@@ -1,3 +1,5 @@
+""" DEPRECATED """
+
 import os
 import subprocess
 import datetime
@@ -9,32 +11,32 @@ import pathlib
 
 
 def checkqueue(jobid, scheduler):
-    if scheduler == "slurm":
+    if scheduler == "Slurm":
         queue_query = (
             "sacct -j {} | head -n 3 | tail -n 1 | awk -F ' ' '{{print $6}}'".format(
                 jobid
             )
         )
-    elif scheduler == "pbs":
+    elif scheduler == "PBS":
         queue_query = "qstat -H {} | tail -n 1 | awk -F ' +' '{{print $10}}'".format(
             jobid
         )
     elif scheduler == "None":
         return True
     else:
-        sys.exit("unsupported job scheduler")
+        sys.exit("unsupported job Scheduler")
     try:
         result = (
             subprocess.check_output(queue_query, shell=True).strip().decode("utf-8")
         )
-        if scheduler == "pbs":
+        if scheduler == "PBS":
             if (
                 result == "F"
             ):  # could check for R and Q to see if it is running or waiting
                 return True
             else:
                 return False
-        if scheduler == "slurm":
+        if scheduler == "Slurm":
             if (
                 (result == "COMPLETED")
                 or (result == "TIMEOUT")

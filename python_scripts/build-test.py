@@ -1,3 +1,5 @@
+""" DEPRECATED """
+
 import yaml
 import os
 import re
@@ -10,7 +12,7 @@ import pathlib
 def create_header(
     file_out, scheduler, filename, time, account, partition, queue, cpn, cluster, bash
 ):
-    if scheduler == "slurm":
+    if scheduler == "Slurm":
         file_out.write("#!{} -l\n".format(bash))
         file_out.write("#SBATCH --account={}\n".format(account))
         if partition != "None":
@@ -24,7 +26,7 @@ def create_header(
         file_out.write("#SBATCH --exclusive\n")
         file_out.write("#SBATCH --output {}_%j.o\n".format(filename))
         file_out.write("export JOBID=$SLURM_JOBID\n")
-    elif scheduler == "pbs":
+    elif scheduler == "PBS":
         file_out.write("#!{} -l\n".format(bash))
         file_out.write("#PBS -N {}\n".format(filename))
         file_out.write("#PBS -j oe\n")
@@ -67,12 +69,12 @@ def main(argv):
             queue = machine_list["queue"]
         else:
             queue = "None"
-        if "headnodename" in machine_list:
-            headnodename = machine_list["headnodename"]
+        if "head_node_name" in machine_list:
+            headnodename = machine_list["head_node_name"]
         else:
             headnodename = os.uname()[1]
         cpn = machine_list["corespernode"]
-        scheduler = machine_list["scheduler"]
+        scheduler = machine_list["Scheduler"]
         if "branch" not in machine_list:
             machine_list["branch"] = "develop"
         build_types = ["O", "g"]
@@ -91,8 +93,8 @@ def main(argv):
                     print(machine_list[comp]["versions"][ver])
                     for key in mpitypes:
                         for branch in machine_list["branch"]:
-                            if "nuopcbranch" in machine_list:
-                                nuopcbranch = machine_list["nuopcbranch"]
+                            if "nuopc_branch" in machine_list:
+                                nuopcbranch = machine_list["nuopc_branch"]
                             else:
                                 nuopcbranch = branch
                             subdir = "{}_{}_{}_{}_{}".format(
@@ -397,7 +399,7 @@ def main(argv):
                                 )
                                 ft.write(cmdstring)
 
-                            if scheduler == "pbs":
+                            if scheduler == "PBS":
                                 cmd_build = "ssh {} {}/getres-build.sh\n".format(
                                     headnodename, os.getcwd()
                                 )
@@ -415,7 +417,7 @@ def main(argv):
                             else:
                                 mpiver = mpiflavor["module"].split("/")[-1]
 
-                            if scheduler == "slurm":
+                            if scheduler == "Slurm":
                                 batch_build = "sbatch {}".format(filename)
                                 print(batch_build)
                                 jobnum = (
@@ -479,7 +481,7 @@ def main(argv):
                                     stderr=None,
                                     close_fds=True,
                                 )
-                            elif scheduler == "pbs":
+                            elif scheduler == "PBS":
                                 batch_build = "qsub {}".format(filename)
                                 print(batch_build)
                                 jobnum = (
@@ -489,7 +491,7 @@ def main(argv):
                                     .split(".")[0]
                                 )
                                 print(
-                                    "Submitting batch_build with command: {}, jobnum is {}".format(
+                                    "Submitting batch_command with command: {}, jobnum is {}".format(
                                         batch_build, jobnum
                                     )
                                 )
