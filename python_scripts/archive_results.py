@@ -1,4 +1,5 @@
 import argparse
+import asyncio
 import glob
 import itertools
 import logging
@@ -127,7 +128,7 @@ class ArchiveResults:
                 logging.debug("oe file list [%s]", ", ".join(self.oe_file_list))
                 self.copy_artifacts(self.oe_file_list)
                 break
-            time.sleep(SLEEP_TIME_IN_SECONDS)
+            asyncio.sleep(SLEEP_TIME_IN_SECONDS)
 
             if elapsed_time > timeout_in_seconds:
                 logging.debug("Finished iterating in: " + str(int(elapsed_time)) + " seconds")
