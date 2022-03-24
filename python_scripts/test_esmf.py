@@ -5,6 +5,7 @@ import pathlib
 import re
 import shutil
 import subprocess
+from typing import List, Any
 
 import yaml
 
@@ -26,6 +27,8 @@ logging.basicConfig(
 
 class ESMFTest:
     scheduler_type: object
+
+    processes: List[Any] = []
 
     def __init__(self, yaml_file, artifacts_root, workdir, dryrun: bool):
         self.b_filename = None
@@ -76,6 +79,8 @@ class ESMFTest:
 
     def start(self):
         self.create_job_cards_and_submit()
+        for p in self.processes:
+            p.join()
 
     def read_yaml(self):
         config_path = os.path.dirname(self.yaml_file)
@@ -402,13 +407,12 @@ class ESMFTest:
                             p = multiprocessing.Process(target=self.scheduler.submit_job,
                                                         args=(subdir, self.mpi_version, branch))
                             p.start()
-                            processes.append(p)
+                            self.processes.append(p)
                             self.scheduler.submit_job(
                                 subdir, self.mpi_version, branch
                             )
                             os.chdir("..")
-        for p in processes:
-            p.join()
+
 
     @staticmethod
     def archive_results(job_number, scheduler: object, build_basename: object, machine_name: object,
