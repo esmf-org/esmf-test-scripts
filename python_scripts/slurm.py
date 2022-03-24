@@ -48,9 +48,6 @@ class Slurm(Scheduler):
         except IndexError as err:
             raise IndexError(f"Could not split value: [{result}]") from err
 
-
-
-
     def run_batch_command(self, batch_command: str) -> str:
         return super().run_batch_command(batch_command).split(maxsplit=3)[3]
 
