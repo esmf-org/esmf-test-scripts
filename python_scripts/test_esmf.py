@@ -459,9 +459,9 @@ def view():
     return vars(parser.parse_args())
 
 
-async def main():
+def main():
     args = view()
-    await ESMFTest(args["yaml"], args["artifacts"], args["workdir"], args["dryrun"]).start()
+    ESMFTest(args["yaml"], args["artifacts"], args["workdir"], args["dryrun"]).start()
 
 
 if __name__ == "__main__":
