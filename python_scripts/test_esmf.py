@@ -411,7 +411,6 @@ class ESMFTest:
 
                             os.chdir("..")
 
-
     @staticmethod
     def archive_results(job_number, scheduler: object, build_basename: object, machine_name: object,
                         test_root_dir: object, artifacts_root: object,

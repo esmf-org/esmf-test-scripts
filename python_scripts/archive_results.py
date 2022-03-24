@@ -47,7 +47,7 @@ class ArchiveResults:
 
         self._scheduler = None
         self._output_path = None
-        self._build_basename = build_basename
+        self.build_basename = build_basename
         self._is_dry_run = is_dry_run
 
         self.root_path = pathlib.Path(__file__).parent.absolute()
@@ -88,11 +88,6 @@ class ArchiveResults:
     def dir_branch(self):
         """returns the formatted dir_branch path"""
         return re.sub("/", "_", self.branch)
-
-    @property
-    def build_basename(self):
-        """returns the build filename"""
-        return os.path.basename(self.build_dir)
 
     @property
     def build_attributes(self):
