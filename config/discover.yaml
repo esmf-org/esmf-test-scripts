@@ -50,7 +50,7 @@ pgi:
    test_time: "2:00:00"
    build_time: "2:00:00"
    versions:
-     2020:
+     20.4:
        compiler: comp/pgi/20.4
        netcdf: None
        mpi:
