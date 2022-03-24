@@ -38,6 +38,7 @@ def archive_results(job_number, scheduler, build_basename, machine_name, test_ro
 
 class ESMFTest:
     scheduler_type: object
+    archiver: callable
 
     def __init__(self, yaml_file, artifacts_root, workdir, dryrun: bool):
         self.b_filename = None
