@@ -44,7 +44,7 @@ class Slurm(Scheduler):
     def batch_test(self, job_number):
         return f"sbatch --depend=afterok:{job_number} {self.test.t_filename}"
 
-    async def submit_job(self, subdir, mpiver, branch):
+    def submit_job(self, subdir, mpiver, branch):
 
         if self.test.dryrun:
             logging.debug("*DRYRUN* starting archive")
