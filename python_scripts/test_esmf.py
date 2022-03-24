@@ -408,9 +408,7 @@ class ESMFTest:
                                                         args=(subdir, self.mpi_version, branch))
                             p.start()
                             self.processes.append(p)
-                            self.scheduler.submit_job(
-                                subdir, self.mpi_version, branch
-                            )
+
                             os.chdir("..")
 
 
