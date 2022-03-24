@@ -411,10 +411,10 @@ class ESMFTest:
                             os.chdir("..")
 
     @staticmethod
-    def archive_results(job_number, scheduler: object, build_basename: object, machine_name: object,
-                        test_root_dir: object, artifacts_root: object,
-                        mpi_version: object, branch: object,
-                        is_dry_run: object) -> object:
+    def archive_results(job_number, build_basename, machine_name,
+                        scheduler, test_root_dir, artifacts_root,
+                        mpi_version, branch,
+                        is_dry_run) -> ArchiveResults:
         return ArchiveResults(job_number,
                               build_basename,
                               machine_name,
