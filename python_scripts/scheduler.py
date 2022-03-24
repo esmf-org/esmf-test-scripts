@@ -7,15 +7,13 @@ class Scheduler:
         pass
 
     def create_headers(self):
-        pass
-
-    def submit_job(self):
-        pass
+        raise NotImplementedError
 
     def check_queue(self, jobid):
-        pass
+        raise NotImplementedError
 
-    def archive_results(self, job_id, scheduler, build_basename, machine_name, test_root_dir, artifacts_root,
+    @staticmethod
+    def archive_results(job_id, scheduler, build_basename, machine_name, test_root_dir, artifacts_root,
                         mpi_version, branch,
                         is_dry_run):
         ArchiveResults(job_id,
@@ -28,6 +26,7 @@ class Scheduler:
                        branch,
                        is_dry_run)
 
-    def run_batch_command(self, batch_command):
+    @staticmethod
+    def run_batch_command(batch_command):
         """runs a batch command and returns the output"""
         return subprocess.check_output(batch_command, shell=True).strip().decode("utf-8").split(".")[0]

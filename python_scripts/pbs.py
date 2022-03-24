@@ -41,8 +41,6 @@ class PBS(Scheduler):
             file_out.write('JOBID="`echo $PBS_JOBID | cut -d. -f1`"\n\n')
             file_out.write(f"cd {os.getcwd()}\n")
 
-
-
     def check_queue(self, jobid) -> bool:
         if int(jobid) < 0:
             return True
