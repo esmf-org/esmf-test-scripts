@@ -260,7 +260,6 @@ class ArchiveResults:
                 self.make_info,
                 esmfmkfile,
             )
-            logging.debug("git_cmd is [%s]", self.git_command)
             self.run_command(self.git_command)
             return
         # Make directories, if they aren't already there
