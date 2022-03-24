@@ -103,6 +103,8 @@ class ArchiveResults:
         if self._output_path is None:
             if self.mpi_version not in ["None", "none", None]:
                 self._output_path = f"{self.artifacts_root}/{self.dir_branch}/{self.machine_name}/{compiler}/{version}/{build_type}/{mpi_flavor}/{self.mpi_version} "
+            else:
+                self._output_path = f"{self.artifacts_root}/{self.dir_branch}/{self.machine_name}/{compiler}/{version}/{build_type}/{mpi_flavor}/none "
         return self._output_path
 
     @property
