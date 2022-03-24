@@ -5,6 +5,7 @@ import logging
 import os
 import pathlib
 import re
+import shutil
 import subprocess
 import time
 from datetime import datetime
@@ -120,20 +121,20 @@ class ArchiveResults:
         while True:
             current_time = time.time()
             elapsed_time = current_time - start_time
+
             if self.is_job_done:
                 logging.info("job completed [%s]", self.job_id)
-                oe_file_list = self.compile_oe_file_list()
-                logging.debug("oe file list [%s]", ", ".join(oe_file_list))
-                self.copy_artifacts(oe_file_list)
+                logging.debug("oe file list [%s]", ", ".join(self.oe_file_list))
+                self.copy_artifacts(self.oe_file_list)
                 break
-            logging.debug("sleeping [%s] seconds", SLEEP_TIME_IN_SECONDS)
             time.sleep(SLEEP_TIME_IN_SECONDS)
 
             if elapsed_time > timeout_in_seconds:
                 logging.debug("Finished iterating in: " + str(int(elapsed_time)) + " seconds")
                 break
 
-    def compile_oe_file_list(self) -> List[Any]:
+    @property
+    def oe_file_list(self) -> List[Any]:
         """returns the oe file list?"""
         log_list = glob.glob(f"{self.test_root_dir}/{self.build_basename}/*_{self.job_id}*.log")
         batch_list = glob.glob(f"{self.test_root_dir}/{self.build_basename}/*.bat")
@@ -143,7 +144,7 @@ class ArchiveResults:
 
     def run_command(self, cmd):
         if self.is_dry_run:
-            logging.debug("would have executed {}".format(cmd))
+            logging.debug(f"would have executed {cmd}")
         else:
             os.system(cmd)
 
@@ -176,31 +177,32 @@ class ArchiveResults:
             summary_file.write(SEPARATOR)
             summary_file.write(
                 "Build for = {}, mpi version {} on {} esmf_os: {}\n".format(
-                    self.build_basename, self.mpi_version, self.machine_name, self.esmf_os()
+                    self.build_basename, self.mpi_version, self.machine_name, self.esmf_os
                 )
             )
-            summary_file.write("Build time = {}\n".format(self.build_time))
-            summary_file.write("git hash = {}\n\n".format(self.build_hash))
+            summary_file.write(f"Build time = {self.build_time}\n")
+            summary_file.write(f"git hash = {self.build_hash}\n\n")
             summary_file.write(f"unit test results   \t{_clean_results(unit_results)}")
             summary_file.write(f"system test results \t{_clean_results(system_results)}")
             summary_file.write(f"example test results \t{_clean_results(example_results)}")
             summary_file.write(
-                "nuopc test results \tPASS {} \tFAIL {}\n\n".format(nuopc_pass, nuopc_fail)
+                f"nuopc test results \tPASS {nuopc_pass} \tFAIL {nuopc_fail}\n\n"
             )
             summary_file.write(SEPARATOR)
-            summary_file.write("\n\n{}\n\n".format(make_info))
+            summary_file.write(f"\n\n{make_info}\n\n")
             summary_file.write(SEPARATOR)
 
+    @property
     def esmf_os(self):
         """returns the esmf os"""
         return (
             subprocess.check_output(
-                "grep ESMF_OS: {}/*_{}.log".format(self.build_dir, self.job_id),
+                f"grep ESMF_OS: {self.build_dir}/*_{self.job_id}.log",
                 shell=True,
             ).strip().decode("utf-8")).split()[1]
 
     def copy_artifacts(self, oe_filelist: List[Any]):
-        [_, _, _, build_type] = self.build_attributes
+        _, _, _, build_type = self.build_attributes
         logging.debug("copy_artifacts(%s)", ", ".join(oe_filelist))
         logging.debug("branch is: [%s]", self.branch)
         logging.debug("dir branch is: [%s]", self.dir_branch)
@@ -219,7 +221,7 @@ class ArchiveResults:
             logging.error("could not fetch build hash: [%s] [%s]", err, os.getcwd())
             exit(1)
         os.chdir(cwd)
-        logging.debug("build_basename is {}".format(self.build_basename))
+        logging.debug(f"build_basename is {self.build_basename}")
 
         # copy/rename the stdout/stderr files to artifacts out directory
         logging.debug(f"output path = [%s]", self.output_path)
@@ -231,10 +233,10 @@ class ArchiveResults:
             self.run_command(
                 f"mkdir -p {self.output_path}/out; rm {self.output_path}/*/*; rm {self.output_path}/*.log; rm {self.output_path}/summary.dat")
         for cfile in oe_filelist:
-            nfile = os.path.basename(re.sub("_{}".format(self.job_id), "", cfile))
-            cp_cmd = "echo `date` > {}/out/{}".format(self.output_path, nfile)
+            nfile = os.path.basename(re.sub(f"_{self.job_id}", "", cfile))
+            cp_cmd = f"echo `date` > {self.output_path}/out/{nfile}"
             self.run_command(cp_cmd)
-            cp_cmd = "cat {} >> {}/out/{}".format(cfile, self.output_path, nfile)
+            cp_cmd = f"cat {cfile} >> {self.output_path}/out/{nfile}"
             self.run_command(cp_cmd)
         if not self.is_test_stage(oe_filelist):
             command = f"grep success {self.build_dir}/build_{self.job_id}.log"
@@ -244,14 +246,13 @@ class ArchiveResults:
             nuopc_pass = "-1"
             nuopc_fail = "-1"
             try:
-                subprocess.check_output("{}".format(command), shell=True).strip().decode("utf-8")
+                subprocess.check_output(f"{command}", shell=True).strip().decode("utf-8")
             except subprocess.CalledProcessError:
                 example_results = "Build did not complete successfully"
                 unit_results = "Build did not complete successfully"
                 system_results = "Build did not complete successfully"
                 nuopc_pass = "Build did not complete successfully"
                 nuopc_fail = "Build did not complete successfully"
-
 
             esmfmkfile = self._esmfmkfile(build_type)
             self.create_summary(
@@ -272,20 +273,20 @@ class ArchiveResults:
         self.run_command(f"mkdir -p {self.output_path}/lib; rm {self.output_path}/lib/*")
 
         example_artifacts = glob.glob(
-            "{}/examples/examples{}/*/*.Log".format(self.build_dir, build_type)
+            f"{self.build_dir}/examples/examples{build_type}/*/*.Log"
         )
         example_artifacts.extend(
             glob.glob(
-                "{}/examples/examples{}/*/*.stdout".format(self.build_dir, build_type)
+                f"{self.build_dir}/examples/examples{build_type}/*/*.stdout"
             )
         )
         # get information from example results file to accumulate
         ex_result_file = glob.glob(
-            "{}/examples/examples{}/*/*results".format(self.build_dir, build_type)
+            f"{self.build_dir}/examples/examples{build_type}/*/*results"
         )
         if len(ex_result_file) > 0:
             example_results = (
-                subprocess.check_output("cat {}".format(ex_result_file[0]), shell=True)
+                subprocess.check_output(f"cat {ex_result_file[0]}", shell=True)
                     .strip()
                     .decode("utf-8")
             )
@@ -297,20 +298,18 @@ class ArchiveResults:
         )
         logging.debug("test_artifacts are [%s]", test_artifacts)
         test_artifacts.extend(
-            glob.glob("{}/test/test{}/*/*.stdout".format(self.build_dir, build_type))
+            glob.glob(f"{self.build_dir}/test/test{build_type}/*/*.stdout")
         )
         try:
             unit_results = (
                 subprocess.check_output(
-                    "cat {}/test/test{}/*/unit_tests_results".format(
-                        self.build_dir, build_type
-                    ),
+                    f"cat {self.build_dir}/test/test{build_type}/*/unit_tests_results",
                     shell=True,
                 )
                     .strip()
                     .decode("utf-8")
             )
-        except:
+        except subprocess.CalledProcessError:
             unit_results = "unit tests did not complete"
         try:
             system_results = (
@@ -323,14 +322,12 @@ class ArchiveResults:
                     .strip()
                     .decode("utf-8")
             )
-        except:
+        except subprocess.CalledProcessError:
             system_results = "system tests did not complete"
         try:
             nuopc_pass = (
                 subprocess.check_output(
-                    "grep PASS: {}/nuopc_{}.log | wc -l".format(
-                        self.build_dir, self.job_id
-                    ),
+                    f"grep PASS: {self.build_dir}/nuopc_{self.job_id}.log | wc -l",
                     shell=True,
                 )
                     .strip()
@@ -338,18 +335,16 @@ class ArchiveResults:
             )
             nuopc_fail = (
                 subprocess.check_output(
-                    "grep FAIL: {}/nuopc_{}.log | wc -l".format(
-                        self.build_dir, self.job_id
-                    ),
+                    f"grep FAIL: {self.build_dir}/nuopc_{self.job_id}.log | wc -l",
                     shell=True,
                 )
                     .strip()
                     .decode("utf-8")
             )
-        except:
+        except subprocess.CalledProcessError:
             nuopc_pass = 0
             nuopc_fail = 0
-        python_artifacts = glob.glob("{}/src/addon/ESMPy/*.log".format(self.build_dir))
+        python_artifacts = glob.glob(f"{self.build_dir}/src/addon/ESMPy/*.log")
 
         cwd = os.getcwd()
         os.chdir(self.build_dir)
@@ -360,7 +355,7 @@ class ArchiveResults:
         )
         os.chdir(cwd)
         esmfmkfile = self._esmfmkfile(build_type)
-        logging.debug("esmfmkfile is {}".format(esmfmkfile))
+        logging.debug(f"esmfmkfile is {esmfmkfile}")
         self.create_summary(
             unit_results,
             system_results,
@@ -370,64 +365,44 @@ class ArchiveResults:
             make_info,
             esmfmkfile,
         )
-        timestamp = "build time -- {}".format(self.build_time)
         for afile in example_artifacts:
-            cmd = "echo {} > {}/examples/{}".format(
-                timestamp, self.output_path, os.path.basename(afile)
-            )
-            self.run_command(cmd)
-            cmd = "cat {} >> {}/examples/{}".format(
-                afile, self.output_path, os.path.basename(afile)
-            )
-            #   cmd = 'cp {} {}/examples'.format(afile,outpath)
-            logging.debug("cmd is {}".format(cmd))
-            self.run_command(cmd)
-        for afile in test_artifacts:
-            cmd = "echo {} > {}/test/{}".format(
-                timestamp, self.output_path, os.path.basename(afile)
-            )
-            self.run_command(cmd)
-            cmd = "cat {} >> {}/test/{}".format(afile, self.output_path, os.path.basename(afile))
-            #   cmd = 'cp {} {}/test".format(afile,outpath)
-            logging.debug("cmd is {}".format(cmd))
-            self.run_command(cmd)
-        for afile in esmfmkfile:
-            cmd = "echo {} > {}/lib/{}".format(
-            )
-            self.run_command(cmd)
-            cmd = "cat {} >> {}/lib/{}".format(afile, self.output_path, os.path.basename(afile))
-            #   cmd = 'cp {} {}/lib'.format(afile,outpath)
-            logging.debug("cmd is {}".format(cmd))
-            self.run_command(cmd)
-        for afile in python_artifacts:
-            cmd = "echo {} > {}/{}".format(timestamp, self.output_path, os.path.basename(afile))
-            self.run_command(cmd)
-            cmd = "cat {} >> {}/{}".format(afile, self.output_path, os.path.basename(afile))
-            #   cmd = 'cp {} {}'.format(afile,outpath)
-            logging.debug("cmd is {}".format(cmd))
-            self.run_command(cmd)
+            _path = pathlib.Path(self.output_path / "examples" / os.path.basename(afile))
+            self.copy_artifact(pathlib.Path(afile), _path)
 
-        git_cmd = "cd {};git checkout {};git add {}/{};git commit -a -m'update for test of {} with hash {} on {} [ci skip]';git push origin {}".format(
-            self.artifacts_root,
-            self.machine_name,
-            self.dir_branch,
-            self.machine_name,
-            self.build_basename,
-            self.build_hash,
-            self.machine_name,
-            self.machine_name,
-        )
-        self.run_command(git_cmd)
+        for afile in test_artifacts:
+            _path = pathlib.Path(self.output_path / "test" / os.path.basename(afile))
+            self.copy_artifact(pathlib.Path(afile), _path)
+
+        for afile in esmfmkfile:
+            _path = pathlib.Path(self.output_path / "lib" / os.path.basename(afile))
+            self.copy_artifact(pathlib.Path(afile), _path)
+
+        for afile in python_artifacts:
+            _path = pathlib.Path(self.output_path / os.path.basename(afile))
+            self.copy_artifact(pathlib.Path(afile), _path)
+
+        self.run_command(self.git_command)
         return
 
     @property
     def git_command(self):
         return f"cd {self.artifacts_root};git checkout {self.machine_name};git add {self.dir_branch}/{self.machine_name};git commit -a -m'update for build of {self.build_basename} with hash {self.build_hash} on {self.build_hash} [ci skip]';git push origin {self.machine_name}"
 
+    def copy_artifact(self, src: pathlib.Path, target: pathlib.Path):
+        """copy src to target while prepending a timestamp"""
+        shutil.copy(src, target)
+        with open(target, "w", encoding="utf-8") as _file:
+            _file.seek(0, 0)
+            _file.write(self.timestamp)
+
+    @property
+    def timestamp(self) -> str:
+        """returns formatted timestamp string"""
+        return f"build time -- {self.build_time}"
 
     def _esmfmkfile(self, build_type):
         esmfmkfile = glob.glob(
-            "{}/lib/lib{}/*/esmf.mk".format(self.build_dir, build_type)
+            f"{self.build_dir}/lib/lib{build_type}/*/esmf.mk"
         )
         return esmfmkfile
 
@@ -436,7 +411,7 @@ class ArchiveResults:
         for _path in oe_file_list:
             if int(self.job_id) < 0:
                 return True
-            if _path.find("test_{}".format(self.job_id)) != -1:  # this is just the build job, so no test artifacts yet
+            if _path.find(f"test_{self.job_id}") != -1:  # this is just the build job, so no test artifacts yet
                 return True
         return False
 

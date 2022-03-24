@@ -16,24 +16,6 @@ MAP_JOB_STATE = {
 }
 
 
-def monitor_cmd(
-        _path,
-        jobnum,
-        subdir,
-        machine_name,
-        scheduler_type,
-        script_dir,
-        artifacts_root,
-        mpiver,
-        branch,
-        dryrun,
-):
-    return (
-        f"python3 {_path}/archive_results.py -j {jobnum} -b {subdir} -m {machine_name} -s {scheduler_type} "
-        f"-t {script_dir} -a {artifacts_root} -M {mpiver} -B {branch} -d {dryrun} "
-    )
-
-
 class PBS(Scheduler):
     def __init__(self, test):
         super().__init__()
@@ -59,10 +41,7 @@ class PBS(Scheduler):
             file_out.write('JOBID="`echo $PBS_JOBID | cut -d. -f1`"\n\n')
             file_out.write(f"cd {os.getcwd()}\n")
 
-    def job_number(self, batch_command):
-        if self.test.dryrun:
-            return 1234
-        return subprocess.check_output(batch_command, shell=True).strip().decode("utf-8").split(".")[0]
+
 
     def check_queue(self, jobid) -> bool:
         if int(jobid) < 0:
@@ -80,66 +59,31 @@ class PBS(Scheduler):
             logging.debug(err)
         return False
 
+    def batch_build(self):
+        return f"qsub {self.test.b_filename}"
+
+    def batch_test(self, job_number):
+        return f"qsub -W depend=afterok:{job_number} {self.test.t_filename}"
+
     def submit_job(self, subdir, mpiver, branch):
         # add ssh back to the head node for archiving of results to batch scripts
-        batch_build = f"qsub {self.test.b_filename}"
-        job_number = self.job_number(batch_build)
-        logging.debug(
-            "Submitting batch_command with command [%s], [%s]", batch_build, job_number
-        )
-        monitor_cmd_build = monitor_cmd(
-            self.test.mypath,
-            job_number,
-            subdir,
-            self.test.machine_name,
-            self.type,
-            self.test.script_dir,
-            self.test.artifacts_root,
-            mpiver,
-            branch,
-            self.test.dryrun,
-        )
-
         if self.test.dryrun:
-            logging.debug(monitor_cmd_build)
-        else:
-            subprocess.Popen(
-                monitor_cmd_build,
-                shell=True,
-                stdin=None,
-                stdout=None,
-                stderr=None,
-                close_fds=True,
-            )
+            logging.debug("*DRYRUN* starting archive")
+            return
+
+        logging.debug("starting archive")
+        job_number = 1234 if self.test.dryrun else self.run_batch_command(self.batch_build())
+        logging.debug("Submitting batch_command with command [%s], [%s]", self.batch_build(), job_number)
+        self.archive_results(job_id=job_number, scheduler=self.type, machine_name=self.test.machine_name,
+                             build_basename=subdir, test_root_dir=self.test.script_dir, mpi_version=mpiver,
+                             branch=branch, is_dry_run=self.test.dryrun, artifacts_root=self.test.artifacts_root)
+
         # submit the second job to be dependent on the first
-        #   getrescmd = "ssh {} {}/getres-test.sh".format(test.head_node_name,os.getcwd())
-        #   os.system("echo {} >> {}".format(getrescmd,test.t_filename))
-        batch_test = f"qsub -W depend=afterok:{job_number} {self.test.t_filename}"
-        logging.debug(f"Submitting test_batch with command: {batch_test}")
-        job_number = self.job_number(batch_test)
+        logging.debug("Submitting batch_command with command [%s], [%s]", self.batch_test(job_number), job_number)
+        job_number = 1234 if self.test.dryrun else self.run_batch_command(self.batch_test(job_number))
 
-        monitor_cmd_test = monitor_cmd(
-            self.test.mypath,
-            job_number,
-            subdir,
-            self.test.machine_name,
-            self.type,
-            self.test.script_dir,
-            self.test.artifacts_root,
-            mpiver,
-            branch,
-            self.test.dryrun,
-        )
+        self.archive_results(job_id=job_number, scheduler=self.type, machine_name=self.test.machine_name,
+                             build_basename=subdir, test_root_dir=self.test.script_dir, mpi_version=mpiver,
+                             branch=branch, is_dry_run=self.test.dryrun, artifacts_root=self.test.artifacts_root)
 
-        if self.test.dryrun:
-            logging.debug(monitor_cmd_test)
-        else:
-            subprocess.Popen(
-                monitor_cmd_test,
-                shell=True,
-                stdin=None,
-                stdout=None,
-                stderr=None,
-                close_fds=True,
-            )
-        self.test.create_get_res_scripts(monitor_cmd_build, monitor_cmd_test)
+        # self.test.create_get_res_scripts(monitor_cmd_build, monitor_cmd_test)

@@ -1,3 +1,4 @@
+import logging
 import subprocess
 
 from scheduler import Scheduler
@@ -37,89 +38,46 @@ class Slurm(Scheduler):
             file_out.write("#SBATCH --exclusive\n")
             file_out.write("export JOBID=$SLURM_JOBID\n")
 
+    def batch_build(self):
+        return f"sbatch {self.test.b_filename}"
+
+    def batch_test(self, job_number):
+        return f"sbatch --depend=afterok:{job_number} {self.test.t_filename}"
+
     def submit_job(self, subdir, mpiver, branch):
-        batch_build = "sbatch {}".format(self.test.b_filename)
-        jobnum = (
-            subprocess.check_output(batch_build, shell=True)
-            .strip()
-            .decode("utf-8")
-            .split()[3]
-        )
-        monitor_cmd_build = "python3 {}/archive_results.py -j {} -b {} -m {} -s {} -t {} -a {} -M {} -B {} -d {}".format(
-            self.test.mypath,
-            jobnum,
-            subdir,
-            self.test.machine_name,
-            self.type,
-            self.test.script_dir,
-            self.test.artifacts_root,
-            mpiver,
-            branch,
-            self.test.dryrun,
-        )
-        if self.test.dryrun:
-            print(monitor_cmd_build)
-            jobnum = 1234
-        else:
-            subprocess.Popen(
-                monitor_cmd_build,
-                shell=True,
-                stdin=None,
-                stdout=None,
-                stderr=None,
-                close_fds=True,
-            )
-            # submit the second job to be dependent on the first
-            batch_test = "sbatch --depend=afterok:{} {}".format(
-                jobnum, self.test.t_filename
-            )
-            print("Submitting test_batch with command: {}".format(batch_test))
-            jobnum = (
-                subprocess.check_output(batch_test, shell=True)
-                .strip()
-                .decode("utf-8")
-                .split()[3]
-            )
 
-        monitor_cmd_test = "python3 {}/archive_results.py -j {} -b {} -m {} -s {} -t {} -a {} -M {} -B {} -d {}".format(
-            self.test.mypath,
-            jobnum,
-            subdir,
-            self.test.machine_name,
-            self.type,
-            self.test.script_dir,
-            self.test.artifacts_root,
-            mpiver,
-            branch,
-            self.test.dryrun,
-        )
         if self.test.dryrun:
-            print(monitor_cmd_test)
-        else:
-            subprocess.Popen(
-                monitor_cmd_test,
-                shell=True,
-                stdin=None,
-                stdout=None,
-                stderr=None,
-                close_fds=True,
-            )
-        self.test.create_get_res_scripts(monitor_cmd_build, monitor_cmd_test)
+            logging.debug("*DRYRUN* starting archive")
+            return
 
-    def check_queue(self, jobid):
+        logging.debug("starting archive")
+        job_number = 1234 if self.test.dryrun else self.run_batch_command(self.batch_build())
+        logging.debug("Submitting batch_command with command [%s], [%s]", self.batch_build(), job_number)
+        self.archive_results(job_id=job_number, scheduler=self.type, machine_name=self.test.machine_name,
+                             build_basename=subdir, test_root_dir=self.test.script_dir, mpi_version=mpiver,
+                             branch=branch, is_dry_run=self.test.dryrun, artifacts_root=self.test.artifacts_root)
+
+        # submit the second job to be dependent on the first
+        logging.debug("Submitting batch_command with command [%s], [%s]", self.batch_test(job_number), job_number)
+        job_number = 1234 if self.test.dryrun else self.run_batch_command(self.batch_test(job_number))
+
+        self.archive_results(job_id=job_number, scheduler=self.type, machine_name=self.test.machine_name,
+                             build_basename=subdir, test_root_dir=self.test.script_dir, mpi_version=mpiver,
+                             branch=branch, is_dry_run=self.test.dryrun, artifacts_root=self.test.artifacts_root)
+
+        # self.test.create_get_res_scripts(monitor_cmd_build, monitor_cmd_test)
+
+    def check_queue(self, jobid) -> bool:
         if int(jobid) < 0:
             return True
-        queue_query = (
-            "sacct -j {} | head -n 3 | tail -n 1 | awk -F ' ' '{{print $6}}'".format(
-                jobid
-            )
-        )
+        queue_query = f"sacct -j {jobid} | head -n 3 | tail -n 1 | awk -F ' ' '{{print $6}}'"
         try:
-            result = (
-                subprocess.check_output(queue_query, shell=True).strip().decode("utf-8")
-            )
+            result = subprocess.check_output(queue_query, shell=True).strip().decode("utf-8")
+            logging.debug("job id is [%s]: job status is [%s]: job_completed is [%s]", jobid, result,
+                          result.upper() in ["COMPLETED", "TIMEOUT", "FAILED", "CANCELLED"])
             return result.upper() in ["COMPLETED", "TIMEOUT", "FAILED", "CANCELLED"]
-        except subprocess.CalledProcessError:
-            pass
-        finally:
-            return False
+        except subprocess.CalledProcessError as err:
+            logging.debug(err)
+        return False
+
+  
