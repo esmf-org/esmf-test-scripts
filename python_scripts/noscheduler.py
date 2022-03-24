@@ -6,6 +6,7 @@ class NoScheduler(Scheduler):
         super().__init__()
         self.type = "slurm"
         self.test = test
+        self.archiver = test.archiver
 
     def submit_job(self, subdir, mpiver, branch):
         self.test.run_command("chmod +x {}".format(self.test.b_filename))

@@ -7,7 +7,7 @@ import subprocess
 
 import yaml
 
-
+from archive_results import ArchiveResults
 from pbs import PBS
 from slurm import Slurm
 from noscheduler import NoScheduler
@@ -23,6 +23,19 @@ logging.basicConfig(
 )
 
 
+def archive_results(job_number, scheduler, build_basename, machine_name, test_root_dir, artifacts_root,
+                    mpi_version, branch,
+                    is_dry_run):
+    ArchiveResults(job_number,
+                   build_basename,
+                   machine_name,
+                   scheduler,
+                   test_root_dir,
+                   artifacts_root,
+                   mpi_version,
+                   branch,
+                   is_dry_run)
+
 class ESMFTest:
     scheduler_type: object
 
@@ -31,6 +44,7 @@ class ESMFTest:
         self.t_filename = None
         self.fb = None
         self.ft = None
+        self.archiver = archive_results
         self.test_time = "1:00:00"
         self.build_time = "1:00:00"
         self.mpi_version = "None"
