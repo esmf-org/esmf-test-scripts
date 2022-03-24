@@ -42,14 +42,14 @@ class Slurm(Scheduler):
         return f"sbatch {self.test.b_filename}"
 
     def batch_test(self, job_number):
-        try:
-            result = f"sbatch --depend=afterok:{job_number} {self.test.t_filename}"
-            return result.split(maxsplit=3)[3]
-        except IndexError as err:
-            raise IndexError(f"Could not split value: [{result}]") from err
+        return f"sbatch --depend=afterok:{job_number} {self.test.t_filename}"
 
     def run_batch_command(self, batch_command: str) -> str:
-        return super().run_batch_command(batch_command).split(maxsplit=3)[3]
+        try:
+            result = super().run_batch_command(batch_command).split(maxsplit=3)[3]
+            return result
+        except IndexError as err:
+            raise IndexError(f"Could not split value: [{result}]") from err
 
     def submit_job(self, subdir, mpiver, branch):
 
