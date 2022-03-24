@@ -74,7 +74,7 @@ class ESMFTest:
             self.scheduler = PBS(self)
         else:
             self.scheduler = NoScheduler(self)
-        self.create_job_cards_and_submit()
+        await self.create_job_cards_and_submit()
 
     def read_yaml(self):
         config_path = os.path.dirname(self.yaml_file)
