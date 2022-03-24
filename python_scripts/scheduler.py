@@ -1,4 +1,4 @@
-from python_scripts.archive_results import ArchiveResults
+from archive_results import ArchiveResults
 import subprocess
 
 
