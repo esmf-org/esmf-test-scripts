@@ -355,7 +355,7 @@ class ESMFTest:
         get_res_file.close()
         os.system("chmod +x getres-test.sh")
 
-    def create_job_cards_and_submit(self):
+    async def create_job_cards_and_submit(self):
         for build_type in self.build_types:
             for comp in self.machine_list["compiler"]:
                 for ver in self.machine_list[comp]["versions"]:
@@ -396,7 +396,7 @@ class ESMFTest:
                             self.ft = open(self.t_filename, "w")
                             self.scheduler.create_headers()
                             self.create_scripts(build_type, comp, ver, mpidict, key)
-                            self.scheduler.submit_job(
+                            await self.scheduler.submit_job(
                                 subdir, self.mpi_version, branch
                             )
                             os.chdir("..")
