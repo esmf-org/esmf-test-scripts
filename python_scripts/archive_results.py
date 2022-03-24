@@ -91,6 +91,8 @@ class ArchiveResults:
 
     @property
     def build_attributes(self):
+        logging.error("build_basename: ", self.build_basename)
+        logging.error("len build_basename: ", len(self.build_basename.split("_")))
         return self.build_basename.split("_")
 
     @property
