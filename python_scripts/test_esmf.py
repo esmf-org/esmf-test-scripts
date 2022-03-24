@@ -74,6 +74,8 @@ class ESMFTest:
             self.scheduler = PBS(self)
         else:
             self.scheduler = NoScheduler(self)
+
+    async def start(self):
         await self.create_job_cards_and_submit()
 
     def read_yaml(self):
@@ -453,9 +455,8 @@ def view():
 
 async def main():
     args = view()
-    ESMFTest(args["yaml"], args["artifacts"], args["workdir"], args["dryrun"])
+    ESMFTest(args["yaml"], args["artifacts"], args["workdir"], args["dryrun"]).start()
 
 
 if __name__ == "__main__":
     asyncio.run(main())
-
