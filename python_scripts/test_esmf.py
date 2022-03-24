@@ -1,5 +1,5 @@
 import argparse
-import asyncio
+import multiprocessing
 import os
 import pathlib
 import re
@@ -26,7 +26,6 @@ logging.basicConfig(
 
 class ESMFTest:
     scheduler_type: object
-    archiver: callable
 
     def __init__(self, yaml_file, artifacts_root, workdir, dryrun: bool):
         self.b_filename = None
@@ -75,8 +74,8 @@ class ESMFTest:
         else:
             self.scheduler = NoScheduler(self)
 
-    async def start(self):
-        await self.create_job_cards_and_submit()
+    def start(self):
+        self.create_job_cards_and_submit()
 
     def read_yaml(self):
         config_path = os.path.dirname(self.yaml_file)
@@ -358,7 +357,8 @@ class ESMFTest:
         get_res_file.close()
         os.system("chmod +x getres-test.sh")
 
-    async def create_job_cards_and_submit(self):
+    def create_job_cards_and_submit(self):
+        processes = []
         for build_type in self.build_types:
             for comp in self.machine_list["compiler"]:
                 for ver in self.machine_list[comp]["versions"]:
@@ -399,10 +399,16 @@ class ESMFTest:
                             self.ft = open(self.t_filename, "w")
                             self.scheduler.create_headers()
                             self.create_scripts(build_type, comp, ver, mpidict, key)
-                            await self.scheduler.submit_job(
+                            p = multiprocessing.Process(target=self.scheduler.submit_job,
+                                                        args=(subdir, self.mpi_version, branch))
+                            p.start()
+                            processes.append(p)
+                            self.scheduler.submit_job(
                                 subdir, self.mpi_version, branch
                             )
                             os.chdir("..")
+        for p in processes:
+            p.join()
 
     @staticmethod
     def archive_results(job_number, scheduler: object, build_basename: object, machine_name: object,
@@ -459,4 +465,4 @@ async def main():
 
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    main()
