@@ -35,7 +35,7 @@ class ArchiveResults:
     def __init__(
             self,
             job_id,
-            build_basename,
+            build_basename: str,
             machine_name,
             scheduler,
             test_root_dir,
@@ -93,7 +93,7 @@ class ArchiveResults:
     def build_attributes(self):
         logging.error("build_basename: [%s]", self.build_basename)
         logging.error("len build_basename: [%s]", len(self.build_basename.split("_")))
-        return self.build_basename.split("_")
+        return self.build_basename.split("_", maxsplit=4)
 
     @property
     def output_path(self):
