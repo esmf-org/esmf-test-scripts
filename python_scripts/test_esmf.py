@@ -23,19 +23,6 @@ logging.basicConfig(
 )
 
 
-def archive_results(job_number, scheduler, build_basename, machine_name, test_root_dir, artifacts_root,
-                    mpi_version, branch,
-                    is_dry_run):
-    ArchiveResults(job_number,
-                   build_basename,
-                   machine_name,
-                   scheduler,
-                   test_root_dir,
-                   artifacts_root,
-                   mpi_version,
-                   branch,
-                   is_dry_run)
-
 class ESMFTest:
     scheduler_type: object
     archiver: callable
@@ -45,7 +32,6 @@ class ESMFTest:
         self.t_filename = None
         self.fb = None
         self.ft = None
-        self.archiver = archive_results
         self.test_time = "1:00:00"
         self.build_time = "1:00:00"
         self.mpi_version = "None"
@@ -415,6 +401,20 @@ class ESMFTest:
                             )
                             os.chdir("..")
 
+    @staticmethod
+    def archive_results(job_number, scheduler: object, build_basename: object, machine_name: object,
+                        test_root_dir: object, artifacts_root: object,
+                        mpi_version: object, branch: object,
+                        is_dry_run: object) -> object:
+        return ArchiveResults(job_number,
+                              build_basename,
+                              machine_name,
+                              scheduler,
+                              test_root_dir,
+                              artifacts_root,
+                              mpi_version,
+                              branch,
+                              is_dry_run)
 
 
 if __name__ == "__main__":
