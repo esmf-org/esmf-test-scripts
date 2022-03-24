@@ -1,4 +1,5 @@
 import argparse
+import asyncio
 import os
 import pathlib
 import re
@@ -456,5 +457,5 @@ async def main():
 
 
 if __name__ == "__main__":
-    main()
+    asyncio.run(main())
 
