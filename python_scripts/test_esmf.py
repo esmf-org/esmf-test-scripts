@@ -7,10 +7,10 @@ import subprocess
 
 import yaml
 
-from noscheduler import NoScheduler
 
 from pbs import PBS
 from slurm import Slurm
+from noscheduler import NoScheduler
 import logging
 
 REPO_ESMF_TEST_ARTIFACTS = "https://github.com/esmf-org/esmf-test-artifacts.git"
