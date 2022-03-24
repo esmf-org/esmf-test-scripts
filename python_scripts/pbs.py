@@ -72,7 +72,7 @@ class PBS(Scheduler):
         logging.debug("starting archive")
         job_number = 1234 if self.test.dryrun else self.run_batch_command(self.batch_build())
         logging.debug("Submitting batch_command with command [%s], [%s]", self.batch_build(), job_number)
-        self.archive_results(job_id=job_number, scheduler=self.type, machine_name=self.test.machine_name,
+        self.archive_results(job_number=job_number, scheduler=self.type, machine_name=self.test.machine_name,
                              build_basename=subdir, test_root_dir=self.test.script_dir, mpi_version=mpiver,
                              branch=branch, is_dry_run=self.test.dryrun, artifacts_root=self.test.artifacts_root)
 
@@ -80,7 +80,7 @@ class PBS(Scheduler):
         logging.debug("Submitting batch_command with command [%s], [%s]", self.batch_test(job_number), job_number)
         job_number = 1234 if self.test.dryrun else self.run_batch_command(self.batch_test(job_number))
 
-        self.archive_results(job_id=job_number, scheduler=self.type, machine_name=self.test.machine_name,
+        self.archive_results(job_number=job_number, scheduler=self.type, machine_name=self.test.machine_name,
                              build_basename=subdir, test_root_dir=self.test.script_dir, mpi_version=mpiver,
                              branch=branch, is_dry_run=self.test.dryrun, artifacts_root=self.test.artifacts_root)
 

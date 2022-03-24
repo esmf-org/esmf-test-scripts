@@ -13,10 +13,10 @@ class Scheduler:
         raise NotImplementedError
 
     @staticmethod
-    def archive_results(job_id, scheduler, build_basename, machine_name, test_root_dir, artifacts_root,
+    def archive_results(job_number, scheduler, build_basename, machine_name, test_root_dir, artifacts_root,
                         mpi_version, branch,
                         is_dry_run):
-        ArchiveResults(job_id,
+        ArchiveResults(job_number,
                        build_basename,
                        machine_name,
                        scheduler,
