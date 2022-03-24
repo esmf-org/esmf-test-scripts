@@ -91,8 +91,11 @@ class ArchiveResults:
 
     @property
     def build_attributes(self):
-        """[intel_18.0.4_mpiuni_O_develop]"""
-        return self.build_basename.split("_", maxsplit=4)
+        """
+        [intel_18.0.4_mpiuni_O_develop]
+        [intel_18.0.5_mpiuni_O_jedwards_pio_update2]
+        """
+        return self.build_basename.split("_", maxsplit=3)
 
     @property
     def output_path(self):
