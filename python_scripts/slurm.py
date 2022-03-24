@@ -67,13 +67,13 @@ class Slurm(Scheduler):
 
         # self.test.create_get_res_scripts(monitor_cmd_build, monitor_cmd_test)
 
-    def check_queue(self, jobid) -> bool:
-        if int(jobid) < 0:
+    def check_queue(self, job_number) -> bool:
+        if int(job_number) < 0:
             return True
-        queue_query = f"sacct -j {jobid} | head -n 3 | tail -n 1 | awk -F ' ' '{{print $6}}'"
+        queue_query = f"sacct -j {job_number} | head -n 3 | tail -n 1 | awk -F ' ' '{{print $6}}'"
         try:
             result = subprocess.check_output(queue_query, shell=True).strip().decode("utf-8")
-            logging.debug("job id is [%s]: job status is [%s]: job_completed is [%s]", jobid, result,
+            logging.debug("job id is [%s]: job status is [%s]: job_completed is [%s]", job_number, result,
                           result.upper() in ["COMPLETED", "TIMEOUT", "FAILED", "CANCELLED"])
             return result.upper() in ["COMPLETED", "TIMEOUT", "FAILED", "CANCELLED"]
         except subprocess.CalledProcessError as err:

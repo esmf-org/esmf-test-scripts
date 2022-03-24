@@ -41,17 +41,18 @@ class PBS(Scheduler):
             file_out.write('JOBID="`echo $PBS_JOBID | cut -d. -f1`"\n\n')
             file_out.write(f"cd {os.getcwd()}\n")
 
-    def check_queue(self, jobid) -> bool:
-        if int(jobid) < 0:
+    def check_queue(self, job_number) -> bool:
+        if int(job_number) < 0:
             return True
-        queue_query = f"qstat -H {jobid} | tail -n 1 | awk -F ' +' '{{print $10}}'"
+        queue_query = f"qstat -H {job_number} | tail -n 1 | awk -F ' +' '{{print $10}}'"
         try:
             result = subprocess.check_output(queue_query, shell=True).strip().decode("utf-8").lower()
             try:
                 job_state = MAP_JOB_STATE[result.upper()]
             except KeyError as error:
                 raise KeyError(f"key not found [{result}]", result) from error
-            logging.debug("job id is [%s]: job status is [%s]: job_completed is [%s]", jobid, job_state, result == 'f')
+            logging.debug("job id is [%s]: job status is [%s]: job_completed is [%s]", job_number, job_state,
+                          result == 'f')
             return result == 'f'
         except subprocess.CalledProcessError as err:
             logging.debug(err)
@@ -73,15 +74,15 @@ class PBS(Scheduler):
         job_number = 1234 if self.test.dryrun else self.run_batch_command(self.batch_build())
         logging.debug("Submitting batch_command with command [%s], [%s]", self.batch_build(), job_number)
         self.test.archive_results(job_number=job_number, scheduler=self.type, machine_name=self.test.machine_name,
-                             build_basename=subdir, test_root_dir=self.test.script_dir, mpi_version=mpiver,
-                             branch=branch, is_dry_run=self.test.dryrun, artifacts_root=self.test.artifacts_root)
+                                  build_basename=subdir, test_root_dir=self.test.script_dir, mpi_version=mpiver,
+                                  branch=branch, is_dry_run=self.test.dryrun, artifacts_root=self.test.artifacts_root)
 
         # submit the second job to be dependent on the first
         logging.debug("Submitting batch_command with command [%s], [%s]", self.batch_test(job_number), job_number)
         job_number = 1234 if self.test.dryrun else self.run_batch_command(self.batch_test(job_number))
 
         self.test.archive_results(job_number=job_number, scheduler=self.type, machine_name=self.test.machine_name,
-                             build_basename=subdir, test_root_dir=self.test.script_dir, mpi_version=mpiver,
-                             branch=branch, is_dry_run=self.test.dryrun, artifacts_root=self.test.artifacts_root)
+                                  build_basename=subdir, test_root_dir=self.test.script_dir, mpi_version=mpiver,
+                                  branch=branch, is_dry_run=self.test.dryrun, artifacts_root=self.test.artifacts_root)
 
         # self.test.create_get_res_scripts(monitor_cmd_build, monitor_cmd_test)

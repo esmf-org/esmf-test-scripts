@@ -8,7 +8,7 @@ class Scheduler:
     def create_headers(self):
         raise NotImplementedError
 
-    def check_queue(self, jobid):
+    def check_queue(self, job_number):
         raise NotImplementedError
 
     @staticmethod
