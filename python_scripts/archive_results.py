@@ -91,8 +91,7 @@ class ArchiveResults:
 
     @property
     def build_attributes(self):
-        logging.error("build_basename: [%s]", self.build_basename)
-        logging.error("len build_basename: [%s]", len(self.build_basename.split("_")))
+        """[intel_18.0.4_mpiuni_O_develop]"""
         return self.build_basename.split("_", maxsplit=4)
 
     @property
