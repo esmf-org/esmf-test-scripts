@@ -455,7 +455,7 @@ def view():
 
 async def main():
     args = view()
-    ESMFTest(args["yaml"], args["artifacts"], args["workdir"], args["dryrun"]).start()
+    await ESMFTest(args["yaml"], args["artifacts"], args["workdir"], args["dryrun"]).start()
 
 
 if __name__ == "__main__":
