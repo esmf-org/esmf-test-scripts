@@ -197,7 +197,7 @@ class ArchiveResults:
             ).strip().decode("utf-8")).split()[1]
 
     def copy_artifacts(self, oe_filelist: List[Any]):
-        _, _, _, build_type = self.build_attributes
+        [_, _, _, build_type] = self.build_attributes
         logging.debug("copy_artifacts(%s)", ", ".join(oe_filelist))
         logging.debug("branch is: [%s]", self.branch)
         logging.debug("dir branch is: [%s]", self.dir_branch)
