@@ -217,14 +217,17 @@ class ArchiveResults:
     @property
     def esmf_os(self):
         """returns the esmf os"""
-        return (
-            subprocess.check_output(
-                f"grep ESMF_OS: {self.build_dir}/*_{self.job_id}.log",
-                shell=True,
-            )
-            .strip()
-            .decode("utf-8")
-        ).split()[1]
+        try:
+            return (
+                subprocess.check_output(
+                    f"grep ESMF_OS: {self.build_dir}/*_{self.job_id}.log",
+                    shell=True,
+                )
+                .strip()
+                .decode("utf-8")
+            ).split()[1]
+        except subprocess.CalledProcessError as err:
+            logging.error("code: [%s] msg: [%s]", err.returncode, err.output)
 
     def copy_artifacts(self, oe_filelist: List[Any]):
         _, _, _, build_type = self.build_attributes
