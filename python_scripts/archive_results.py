@@ -98,7 +98,7 @@ class ArchiveResults:
         [intel_18.0.4_mpiuni_O_develop]
         [intel_18.0.5_mpiuni_O_jedwards_pio_update2]
         """
-        return self.build_basename.split("_", maxsplit=3)
+        return self.build_basename.split("_", maxsplit=4)
 
     @property
     def output_path(self):
