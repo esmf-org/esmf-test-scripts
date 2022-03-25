@@ -32,7 +32,6 @@ def _clean_results(value: str) -> str:
 
 
 class ArchiveResults:
-    running_count: int = 0
 
     def __init__(
         self,
@@ -126,7 +125,6 @@ class ArchiveResults:
             return f"error finding {self.build_dir}/module-build.log or {self.build_dir}/info.log"
 
     def start(self):
-        self.running_count += 1
         logging.debug("Is a dry run = [%s]", self.is_dry_run)
         start_time = time.time()
         timeout_in_seconds = 144000
@@ -135,12 +133,10 @@ class ArchiveResults:
             elapsed_time = current_time - start_time
 
             if self.is_job_done:
-                self.running_count -= 1
                 logging.info("job completed [%s]", self.job_id)
                 logging.debug("oe file list [%s]", ", ".join(self.oe_file_list))
                 self.copy_artifacts(self.oe_file_list)
                 break
-            logging.debug("running processes [%s]", str(self.running_count))
             time.sleep(SLEEP_TIME_IN_SECONDS)
 
             if elapsed_time > timeout_in_seconds:

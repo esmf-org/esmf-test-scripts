@@ -29,7 +29,6 @@ class ESMFTest:
     scheduler_type: object
 
     processes: List[Any] = []
-    git_processes: List[Any] =[]
 
     def __init__(self, yaml_file, artifacts_root, workdir, dryrun: bool):
         self.b_filename = None
@@ -387,12 +386,6 @@ class ESMFTest:
 
                         for branch in self.machine_list["branch"]:
                             self.process_branch(branch, build_type, comp, key, mpidict, ver)
-                            p = multiprocessing.Process(target=self.process_branch, args=(branch, build_type, comp, key, mpidict, ver))
-                            p.start()
-                            self.git_processes.append(p)
-                        for p in self.git_processes:
-                            p.join()
-
 
     def process_branch(self, branch, build_type, comp, key, mpidict, ver):
         if "nuopcbranch" in self.machine_list:
