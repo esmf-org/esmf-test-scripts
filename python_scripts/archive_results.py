@@ -82,7 +82,9 @@ class ArchiveResults:
     @property
     def is_dry_run(self):
         """returns true if the request is for a dry run"""
-        return True if (self._is_dry_run == "True" or self._is_dry_run is True) else False
+        return (
+            True if (self._is_dry_run == "True" or self._is_dry_run is True) else False
+        )
 
     @property
     def dir_branch(self):
@@ -110,8 +112,14 @@ class ArchiveResults:
     @property
     def make_info(self):
         try:
-            return subprocess.check_output(f"cat {self.build_dir}/module-build.log; cat {self.build_dir}/info.log",
-                                           shell=True).strip().decode("utf-8")
+            return (
+                subprocess.check_output(
+                    f"cat {self.build_dir}/module-build.log; cat {self.build_dir}/info.log",
+                    shell=True,
+                )
+                    .strip()
+                    .decode("utf-8")
+            )
         except subprocess.CalledProcessError:
             return f"error finding {self.build_dir}/module-build.log or {self.build_dir}/info.log"
 
@@ -131,15 +139,21 @@ class ArchiveResults:
             time.sleep(SLEEP_TIME_IN_SECONDS)
 
             if elapsed_time > timeout_in_seconds:
-                logging.debug("Finished iterating in: " + str(int(elapsed_time)) + " seconds")
+                logging.debug(
+                    "Finished iterating in: " + str(int(elapsed_time)) + " seconds"
+                )
                 break
 
     @property
     def oe_file_list(self) -> List[Any]:
         """returns the oe file list?"""
-        log_list = glob.glob(f"{self.test_root_dir}/{self.build_basename}/*_{self.job_id}*.log")
+        log_list = glob.glob(
+            f"{self.test_root_dir}/{self.build_basename}/*_{self.job_id}*.log"
+        )
         batch_list = glob.glob(f"{self.test_root_dir}/{self.build_basename}/*.bat")
-        module_lost_list = glob.glob(f"{self.test_root_dir}/{self.build_basename}/module-*.log")
+        module_lost_list = glob.glob(
+            f"{self.test_root_dir}/{self.build_basename}/module-*.log"
+        )
 
         return list(itertools.chain(log_list, batch_list, module_lost_list))
 
@@ -151,11 +165,7 @@ class ArchiveResults:
 
     def get_scheduler(self, scheduler: str):
         """returns scheduler based on scheduler type"""
-        _map = {
-            "pbs": PBS(self),
-            "Slurm": Slurm(self),
-            "none": NoScheduler(self)
-        }
+        _map = {"pbs": PBS(self), "Slurm": Slurm(self), "none": NoScheduler(self)}
         return _map[scheduler]
 
     def create_summary(
@@ -178,14 +188,21 @@ class ArchiveResults:
             summary_file.write(SEPARATOR)
             summary_file.write(
                 "Build for = {}, mpi version {} on {} esmf_os: {}\n".format(
-                    self.build_basename, self.mpi_version, self.machine_name, self.esmf_os
+                    self.build_basename,
+                    self.mpi_version,
+                    self.machine_name,
+                    self.esmf_os,
                 )
             )
             summary_file.write(f"Build time = {self.build_time}\n")
             summary_file.write(f"git hash = {self.build_hash}\n\n")
             summary_file.write(f"unit test results   \t{_clean_results(unit_results)}")
-            summary_file.write(f"system test results \t{_clean_results(system_results)}")
-            summary_file.write(f"example test results \t{_clean_results(example_results)}")
+            summary_file.write(
+                f"system test results \t{_clean_results(system_results)}"
+            )
+            summary_file.write(
+                f"example test results \t{_clean_results(example_results)}"
+            )
             summary_file.write(
                 f"nuopc test results \tPASS {nuopc_pass} \tFAIL {nuopc_fail}\n\n"
             )
@@ -200,7 +217,10 @@ class ArchiveResults:
             subprocess.check_output(
                 f"grep ESMF_OS: {self.build_dir}/*_{self.job_id}.log",
                 shell=True,
-            ).strip().decode("utf-8")).split()[1]
+            )
+                .strip()
+                .decode("utf-8")
+        ).split()[1]
 
     def copy_artifacts(self, oe_filelist: List[Any]):
         _, _, _, build_type = self.build_attributes
@@ -211,12 +231,16 @@ class ArchiveResults:
             cwd = os.getcwd()
             logging.debug("cwd = [%s]", cwd)
         except OSError:
-            logging.error("failed to get cwd: [%s], [%s]", self.build_basename, self.dir_branch)
+            logging.error(
+                "failed to get cwd: [%s], [%s]", self.build_basename, self.dir_branch
+            )
             exit(1)
         os.chdir(self.build_dir)
         try:
             self.build_hash = (
-                subprocess.check_output("git describe --tags --abbrev=7", shell=True).strip().decode("utf-8")
+                subprocess.check_output("git describe --tags --abbrev=7", shell=True)
+                    .strip()
+                    .decode("utf-8")
             )
         except subprocess.CalledProcessError as err:
             logging.error("could not fetch build hash: [%s] [%s]", err, os.getcwd())
@@ -232,7 +256,8 @@ class ArchiveResults:
             # remove old files in out directory
             logging.debug("just the build stage, so remove old files")
             self.run_command(
-                f"mkdir -p {self.output_path}/out; rm {self.output_path}/*/*; rm {self.output_path}/*.log; rm {self.output_path}/summary.dat")
+                f"mkdir -p {self.output_path}/out; rm {self.output_path}/*/*; rm {self.output_path}/*.log; rm {self.output_path}/summary.dat"
+            )
         for cfile in oe_filelist:
             nfile = os.path.basename(re.sub(f"_{self.job_id}", "", cfile))
             cp_cmd = f"echo `date` > {self.output_path}/out/{nfile}"
@@ -247,7 +272,9 @@ class ArchiveResults:
             nuopc_pass = "-1"
             nuopc_fail = "-1"
             try:
-                subprocess.check_output(f"{command}", shell=True).strip().decode("utf-8")
+                subprocess.check_output(f"{command}", shell=True).strip().decode(
+                    "utf-8"
+                )
             except subprocess.CalledProcessError:
                 example_results = "Build did not complete successfully"
                 unit_results = "Build did not complete successfully"
@@ -268,17 +295,21 @@ class ArchiveResults:
             self.run_command(self.git_command)
             return
         # Make directories, if they aren't already there
-        self.run_command(f"mkdir -p {self.output_path}/apps; rm {self.output_path}/apps/*")
-        self.run_command(f"mkdir -p {self.output_path}/test; rm {self.output_path}/test/*")
-        self.run_command(f"mkdir -p {self.output_path}/lib; rm {self.output_path}/lib/*")
+        self.run_command(
+            f"mkdir -p {self.output_path}/apps; rm {self.output_path}/apps/*"
+        )
+        self.run_command(
+            f"mkdir -p {self.output_path}/test; rm {self.output_path}/test/*"
+        )
+        self.run_command(
+            f"mkdir -p {self.output_path}/lib; rm {self.output_path}/lib/*"
+        )
 
         example_artifacts = glob.glob(
             f"{self.build_dir}/examples/examples{build_type}/*/*.Log"
         )
         example_artifacts.extend(
-            glob.glob(
-                f"{self.build_dir}/examples/examples{build_type}/*/*.stdout"
-            )
+            glob.glob(f"{self.build_dir}/examples/examples{build_type}/*/*.stdout")
         )
         # get information from example results file to accumulate
         ex_result_file = glob.glob(
@@ -293,9 +324,7 @@ class ArchiveResults:
         else:
             example_results = "No examples ran"
         # get information from test results files to accumulate
-        test_artifacts = glob.glob(
-            f"{self.build_dir}/test/test{build_type}/*/*.Log"
-        )
+        test_artifacts = glob.glob(f"{self.build_dir}/test/test{build_type}/*/*.Log")
         logging.debug("test_artifacts are [%s]", test_artifacts)
         test_artifacts.extend(
             glob.glob(f"{self.build_dir}/test/test{build_type}/*/*.stdout")
@@ -366,7 +395,9 @@ class ArchiveResults:
             esmfmkfile,
         )
         for afile in example_artifacts:
-            _path = pathlib.Path(self.output_path / "examples" / os.path.basename(afile))
+            _path = pathlib.Path(
+                self.output_path / "examples" / os.path.basename(afile)
+            )
             self.copy_artifact(pathlib.Path(afile), _path)
 
         for afile in test_artifacts:
@@ -401,9 +432,7 @@ class ArchiveResults:
         return f"build time -- {self.build_time}"
 
     def _esmfmkfile(self, build_type):
-        esmfmkfile = glob.glob(
-            f"{self.build_dir}/lib/lib{build_type}/*/esmf.mk"
-        )
+        esmfmkfile = glob.glob(f"{self.build_dir}/lib/lib{build_type}/*/esmf.mk")
         return esmfmkfile
 
     def is_test_stage(self, oe_file_list):
@@ -411,12 +440,12 @@ class ArchiveResults:
         for _path in oe_file_list:
             if int(self.job_id) < 0:
                 return True
-            if _path.find(f"test_{self.job_id}") != -1:  # this is just the build job, so no test artifacts yet
+            if _path.find(f"test_{self.job_id}") != -1:
                 return True
         return False
 
 
-if __name__ == "__main__":
+def view():
     parser = argparse.ArgumentParser(description="ESMF nightly build/test system")
     parser.add_argument(
         "-j", "--self.jobid", help="directory where builds will be mad #", required=True
@@ -452,9 +481,12 @@ if __name__ == "__main__":
     parser.add_argument("-M", "--mpiversion", help="mpi version used", required=True)
     parser.add_argument("-B", "--branch", help="branch tested", required=True)
     parser.add_argument("-d", "--dryrun", help="dryrun?", required=False, default=False)
-    args = vars(parser.parse_args())
+    return vars(parser.parse_args())
 
-    archiver = ArchiveResults(
+
+def main():
+    args = view()
+    return ArchiveResults(
         args["self.jobid"],
         args["buildbasename"],
         args["machinename"],
@@ -465,3 +497,7 @@ if __name__ == "__main__":
         args["branch"],
         args["dryrun"],
     )
+
+
+if __name__ == "__main__":
+    main()

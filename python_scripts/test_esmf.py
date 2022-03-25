@@ -29,6 +29,7 @@ class ESMFTest:
     scheduler_type: object
 
     processes: List[Any] = []
+    git_processes: List[Any] =[]
 
     def __init__(self, yaml_file, artifacts_root, workdir, dryrun: bool):
         self.b_filename = None
@@ -384,31 +385,39 @@ class ESMFTest:
                             self.test_time = self.machine_list[comp]["test_time"]
 
                         for branch in self.machine_list["branch"]:
-                            if "nuopcbranch" in self.machine_list:
-                                nuopcbranch = self.machine_list["nuopcbranch"]
-                            subdir = "{}_{}_{}_{}_{}".format(
-                                comp, ver, key, build_type, branch
-                            )
-                            subdir = re.sub(
-                                "/", "_", subdir
-                            )  # Some branches have a slash, so replace that with underscore
-                            self.update_repo(subdir, branch, nuopcbranch)
-                            self.b_filename = "build-{}_{}_{}_{}.bat".format(
-                                comp, ver, key, build_type
-                            )
-                            self.t_filename = "test-{}_{}_{}_{}.bat".format(
-                                comp, ver, key, build_type
-                            )
-                            self.fb = open(self.b_filename, "w")
-                            self.ft = open(self.t_filename, "w")
-                            self.scheduler.create_headers()
-                            self.create_scripts(build_type, comp, ver, mpidict, key)
-                            p = multiprocessing.Process(target=self.scheduler.submit_job,
-                                                        args=(subdir, self.mpi_version, branch))
+                            p = multiprocessing.Process(target=self.process_branch, args=(branch, build_type, comp, key, mpidict, ver))
                             p.start()
-                            self.processes.append(p)
+                            self.git_processes.append(p)
+                            self.process_branch(branch, build_type, comp, key, mpidict, ver)
+                        for p in self.git_processes:
+                            p.join()
 
-                            os.chdir("..")
+
+    def process_branch(self, branch, build_type, comp, key, mpidict, ver):
+        if "nuopcbranch" in self.machine_list:
+            nuopcbranch = self.machine_list["nuopcbranch"]
+        subdir = "{}_{}_{}_{}_{}".format(
+            comp, ver, key, build_type, branch
+        )
+        subdir = re.sub(
+            "/", "_", subdir
+        )  # Some branches have a slash, so replace that with underscore
+        self.update_repo(subdir, branch, nuopcbranch)
+        self.b_filename = "build-{}_{}_{}_{}.bat".format(
+            comp, ver, key, build_type
+        )
+        self.t_filename = "test-{}_{}_{}_{}.bat".format(
+            comp, ver, key, build_type
+        )
+        self.fb = open(self.b_filename, "w")
+        self.ft = open(self.t_filename, "w")
+        self.scheduler.create_headers()
+        self.create_scripts(build_type, comp, ver, mpidict, key)
+        p = multiprocessing.Process(target=self.scheduler.submit_job,
+                                    args=(subdir, self.mpi_version, branch))
+        p.start()
+        self.processes.append(p)
+        os.chdir("..")
 
     @staticmethod
     def archive_results(job_number, build_basename, machine_name,
