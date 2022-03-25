@@ -413,7 +413,7 @@ class ArchiveResults:
             self.copy_artifact(pathlib.Path(afile), _path)
 
         for afile in python_artifacts:
-            _path = pathlib.Path(self.output_path / os.path.basename(afile))
+            _path = pathlib.Path(os.path.join(self.output_path, os.path.basename(afile)))
             self.copy_artifact(pathlib.Path(afile), _path)
 
         self.run_command(self.git_command)
