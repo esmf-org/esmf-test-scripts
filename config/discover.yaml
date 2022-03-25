@@ -7,7 +7,7 @@ partition: compute
 scheduler: slurm
 corespernode: 28
 compiler: [intel,gfortran,pgi]
-branch: [develop,jedwards/pio_update2]
+branch: [develop]
 nuopcbranch: develop
 
 intel:

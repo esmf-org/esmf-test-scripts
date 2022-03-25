@@ -3,7 +3,7 @@ scheduler: None
 corespernode: 4
 modulepath: /project/esmf/stack/modulefiles
 compiler: [gfortran, intel]
-branch: [develop,jedwards/pio_update2]
+branch: [develop]
 nuopcbranch: develop
 
 intel:

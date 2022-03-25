@@ -12,7 +12,6 @@ compiler:
   - pgi
 branch:
   - develop
-  - jedwards/pio_update2
 nuopcbranch: develop
 gfortran:
   test_time: "2:00:00"

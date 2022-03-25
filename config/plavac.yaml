@@ -3,7 +3,7 @@ bash: /usr/local/bin/bash
 scheduler: None
 corespernode: 4
 compiler: [gfortran]
-branch: [develop,jedwards/pio_update2]
+branch: [develop]
 nuopcbranch: develop
 gfortran:
      versions: 
