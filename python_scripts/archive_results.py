@@ -35,16 +35,16 @@ class ArchiveResults:
     running_count: int = 0
 
     def __init__(
-            self,
-            job_id,
-            build_basename: str,
-            machine_name,
-            scheduler,
-            test_root_dir,
-            artifacts_root,
-            mpi_version,
-            branch,
-            is_dry_run,
+        self,
+        job_id,
+        build_basename: str,
+        machine_name,
+        scheduler,
+        test_root_dir,
+        artifacts_root,
+        mpi_version,
+        branch,
+        is_dry_run,
     ):
 
         self._scheduler = None
@@ -119,8 +119,8 @@ class ArchiveResults:
                     f"cat {self.build_dir}/module-build.log; cat {self.build_dir}/info.log",
                     shell=True,
                 )
-                    .strip()
-                    .decode("utf-8")
+                .strip()
+                .decode("utf-8")
             )
         except subprocess.CalledProcessError:
             return f"error finding {self.build_dir}/module-build.log or {self.build_dir}/info.log"
@@ -174,14 +174,14 @@ class ArchiveResults:
         return _map[scheduler]
 
     def create_summary(
-            self,
-            unit_results,
-            system_results,
-            example_results,
-            nuopc_pass,
-            nuopc_fail,
-            make_info,
-            esmfmkfile,
+        self,
+        unit_results,
+        system_results,
+        example_results,
+        nuopc_pass,
+        nuopc_fail,
+        make_info,
+        esmfmkfile,
     ):
         if len(esmfmkfile) > 0:
             self.build_time = datetime.fromtimestamp(os.path.getmtime(esmfmkfile[0]))
@@ -201,12 +201,14 @@ class ArchiveResults:
             )
             summary_file.write(f"Build time = {self.build_time}\n")
             summary_file.write(f"git hash = {self.build_hash}\n\n")
-            summary_file.write(f"unit test results   \t{_clean_results(unit_results)}")
             summary_file.write(
-                f"system test results \t{_clean_results(system_results)}"
+                f"unit test results   \t{_clean_results(unit_results)}\n"
             )
             summary_file.write(
-                f"example test results \t{_clean_results(example_results)}"
+                f"system test results \t{_clean_results(system_results)}\n"
+            )
+            summary_file.write(
+                f"example test results \t{_clean_results(example_results)}\n"
             )
             summary_file.write(
                 f"nuopc test results \tPASS {nuopc_pass} \tFAIL {nuopc_fail}\n\n"
@@ -223,8 +225,8 @@ class ArchiveResults:
                 f"grep ESMF_OS: {self.build_dir}/*_{self.job_id}.log",
                 shell=True,
             )
-                .strip()
-                .decode("utf-8")
+            .strip()
+            .decode("utf-8")
         ).split()[1]
 
     def copy_artifacts(self, oe_filelist: List[Any]):
@@ -244,8 +246,8 @@ class ArchiveResults:
         try:
             self.build_hash = (
                 subprocess.check_output("git describe --tags --abbrev=7", shell=True)
-                    .strip()
-                    .decode("utf-8")
+                .strip()
+                .decode("utf-8")
             )
         except subprocess.CalledProcessError as err:
             logging.error("could not fetch build hash: [%s] [%s]", err, os.getcwd())
@@ -323,8 +325,8 @@ class ArchiveResults:
         if len(ex_result_file) > 0:
             example_results = (
                 subprocess.check_output(f"cat {ex_result_file[0]}", shell=True)
-                    .strip()
-                    .decode("utf-8")
+                .strip()
+                .decode("utf-8")
             )
         else:
             example_results = "No examples ran"
@@ -340,8 +342,8 @@ class ArchiveResults:
                     f"cat {self.build_dir}/test/test{build_type}/*/unit_tests_results",
                     shell=True,
                 )
-                    .strip()
-                    .decode("utf-8")
+                .strip()
+                .decode("utf-8")
             )
         except subprocess.CalledProcessError:
             unit_results = "unit tests did not complete"
@@ -353,8 +355,8 @@ class ArchiveResults:
                     ),
                     shell=True,
                 )
-                    .strip()
-                    .decode("utf-8")
+                .strip()
+                .decode("utf-8")
             )
         except subprocess.CalledProcessError:
             system_results = "system tests did not complete"
@@ -364,16 +366,16 @@ class ArchiveResults:
                     f"grep PASS: {self.build_dir}/nuopc_{self.job_id}.log | wc -l",
                     shell=True,
                 )
-                    .strip()
-                    .decode("utf-8")
+                .strip()
+                .decode("utf-8")
             )
             nuopc_fail = (
                 subprocess.check_output(
                     f"grep FAIL: {self.build_dir}/nuopc_{self.job_id}.log | wc -l",
                     shell=True,
                 )
-                    .strip()
-                    .decode("utf-8")
+                .strip()
+                .decode("utf-8")
             )
         except subprocess.CalledProcessError:
             nuopc_pass = 0
@@ -382,7 +384,11 @@ class ArchiveResults:
 
         cwd = os.getcwd()
         os.chdir(self.build_dir)
-        make_info = subprocess.check_output("cat module-build.log; cat info.log", shell=True).strip().decode("utf-8")
+        make_info = (
+            subprocess.check_output("cat module-build.log; cat info.log", shell=True)
+            .strip()
+            .decode("utf-8")
+        )
 
         os.chdir(cwd)
         esmfmkfile = self._esmfmkfile(build_type)
