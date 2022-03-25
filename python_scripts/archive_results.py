@@ -102,7 +102,7 @@ class ArchiveResults:
 
     @property
     def output_path(self):
-        compiler, version, mpi_flavor, build_type = self.build_attributes
+        compiler, version, mpi_flavor, build_type, branch = self.build_attributes
         logging.debug("build attributes [%s]", self.build_attributes)
         if self._output_path is None:
             if self.mpi_version not in ["None", "none", None]:
@@ -230,7 +230,7 @@ class ArchiveResults:
             logging.error("code: [%s] msg: [%s]", err.returncode, err.output)
 
     def copy_artifacts(self, oe_filelist: List[Any]):
-        _, _, _, build_type = self.build_attributes
+        _, _, _, build_type, _ = self.build_attributes
         logging.debug("copy_artifacts(%s)", ", ".join(oe_filelist))
         logging.debug("branch is: [%s]", self.branch)
         logging.debug("dir branch is: [%s]", self.dir_branch)
