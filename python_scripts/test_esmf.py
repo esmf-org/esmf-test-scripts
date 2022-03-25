@@ -386,10 +386,10 @@ class ESMFTest:
                             self.test_time = self.machine_list[comp]["test_time"]
 
                         for branch in self.machine_list["branch"]:
+                            self.process_branch(branch, build_type, comp, key, mpidict, ver)
                             p = multiprocessing.Process(target=self.process_branch, args=(branch, build_type, comp, key, mpidict, ver))
                             p.start()
                             self.git_processes.append(p)
-                            self.process_branch(branch, build_type, comp, key, mpidict, ver)
                         for p in self.git_processes:
                             p.join()
 
