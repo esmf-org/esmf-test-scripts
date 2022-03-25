@@ -406,11 +406,11 @@ class ArchiveResults:
             self.copy_artifact(pathlib.Path(afile), _path)
 
         for afile in test_artifacts:
-            _path = pathlib.Path(self.output_path / "test" / os.path.basename(afile))
+            _path = pathlib.Path(os.path.join(self.output_path, "test", os.path.basename(afile)))
             self.copy_artifact(pathlib.Path(afile), _path)
 
         for afile in esmfmkfile:
-            _path = pathlib.Path(self.output_path / "lib" / os.path.basename(afile))
+            _path = pathlib.Path(os.path.join(self.output_path, "lib", os.path.basename(afile)))
             self.copy_artifact(pathlib.Path(afile), _path)
 
         for afile in python_artifacts:
