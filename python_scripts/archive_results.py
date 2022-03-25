@@ -378,7 +378,7 @@ class ArchiveResults:
         except subprocess.CalledProcessError:
             nuopc_pass = 0
             nuopc_fail = 0
-        python_artifacts = glob.glob(f"{self.build_dir}/src/addon/ESMPy/*.log")
+        python_artifacts = glob.glob(f"/{self.build_dir}/src/addon/ESMPy/*.log")
 
         cwd = os.getcwd()
         os.chdir(self.build_dir)
