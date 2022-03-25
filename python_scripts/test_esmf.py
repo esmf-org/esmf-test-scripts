@@ -167,9 +167,9 @@ class ESMFTest:
             os.mkdir(subdir)
             os.chdir(subdir)
         else:
-            logging.debug(subprocess.check_output(cmd_string, shell=True))
+            subprocess.check_output(cmd_string, shell=True)
             os.chdir(subdir)
-            logging.debug(subprocess.check_output(nuopc_clone, shell=True))
+            subprocess.check_output(nuopc_clone, shell=True)
 
         self.run_command("rm -rf obj mod lib examples test *.o *.e *bat.o* *bat.e*")
 
