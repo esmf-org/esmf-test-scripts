@@ -167,7 +167,7 @@ class ArchiveResults:
     def get_scheduler(self, scheduler: str):
         """returns scheduler based on scheduler type"""
         _map = {"pbs": PBS(self), "slurm": Slurm(self), "none": NoScheduler(self)}
-        return _map[scheduler]
+        return _map[scheduler.lower()]
 
     def create_summary(
             self,
