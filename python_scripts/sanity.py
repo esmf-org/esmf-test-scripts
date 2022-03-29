@@ -14,6 +14,7 @@ from typing import List
 
 from git import Git
 
+ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 ARTIFACTS_REPO_PATH = pathlib.Path("/home/role.esmfmaint/scratch/esmf-test-artifacts")
 OUTPUT_FILE_NAME = "README.md"
 MAIN = "main"
@@ -21,7 +22,7 @@ MAIN = "main"
 logging.basicConfig(
     level=logging.DEBUG,
     format="%(asctime)s %(name)-12s %(levelname)-8s %(message)s",
-    handlers=[logging.FileHandler("sanity.log"), logging.StreamHandler()],
+    handlers=[logging.FileHandler(os.path.join(ROOT_DIR, "sanity.log")), logging.StreamHandler()],
 )
 
 
