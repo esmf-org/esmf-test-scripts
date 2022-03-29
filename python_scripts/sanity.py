@@ -1,11 +1,11 @@
 import logging
+import os
 import pathlib
 from datetime import datetime, timedelta
 
 from git import Git
 
 ARTIFACTS_REPO_PATH = pathlib.Path("/home/role.esmfmaint/scratch/esmf-test-artifacts")
-DEV_ARTIFACTS_REPO_PATH = pathlib.Path("/home/rlong/Sandbox/esmf-test-artifacts")
 
 logging.basicConfig(
     level=logging.DEBUG,
@@ -22,16 +22,21 @@ def last_commit(repo, branch) -> datetime:
 
 
 def main():
-    logging.debug("using repo path [%s]", DEV_ARTIFACTS_REPO_PATH)
-    artifacts_repo = Git(repopath=DEV_ARTIFACTS_REPO_PATH)
+    logging.debug("using repo path [%s]", ARTIFACTS_REPO_PATH)
+    artifacts_repo = Git(repopath=ARTIFACTS_REPO_PATH)
     logging.debug("fetching artifacts repo updates")
     artifacts_repo.fetch()
-    status = [(branch, last_commit(artifacts_repo, branch)) for branch in artifacts_repo.list_all_branches()]
+
     now = datetime.now()
-    with open("alerts.txt", "w") as _file:
+    alert_path = pathlib.Path(os.path.join(ARTIFACTS_REPO_PATH, "alerts.txt"))
+    status = [(branch, last_commit(artifacts_repo, branch)) for branch in artifacts_repo.list_all_branches()]
+    with open(alert_path, "w") as _file:
         for s in status:
             if not now - timedelta(hours=24) <= s[1] <= now:
                 _file.write(f"{s[0]} has not reported in over 24 hours\n")
+            artifacts_repo.add(alert_path)
+            artifacts_repo.commit("Update alerts")
+            artifacts_repo.push(branch=s[0])
 
 
 if __name__ == "__main__":

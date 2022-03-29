@@ -172,6 +172,8 @@ class Git:
         git push <destination>
         git push <destination> <branch>
         """
+        os.chdir(self.repopath)
+        print(os.getcwd())
         cmd = ["git", "push", destination]
         if force:
             cmd.append("-f")
