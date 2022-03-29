@@ -31,7 +31,7 @@ def stale_branches(artifacts_repo: Git, hours_stale: int) -> List[str]:
     now = datetime.now()
     status = [(branch, last_commit(artifacts_repo, branch)) for branch in artifacts_repo.list_all_branches()]
     return [f"* *{s[0]}* has not reported in over 24 hours\n" for s in status if
-            not now - timedelta(hours=hours_stale) <= s[1] <= now and s[0].lower() != 'main']
+            not now - timedelta(hours=hours_stale) <= s[1] <= now and s[0].lower() != MAIN]
 
 
 def last_commit(repo, branch) -> datetime:
