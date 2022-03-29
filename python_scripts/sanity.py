@@ -45,11 +45,11 @@ def last_commit(repo, branch) -> datetime:
     return datetime.fromtimestamp(result)
 
 
-def write_report(alert_path: pathlib.Path, artifacts_repo: Git) -> None:
+def write_report(alert_path: pathlib.Path, data: List[str]) -> None:
     """fetches and writes the report data to file"""
     with open(alert_path, "w") as _file:
         _file.write("# Alerts\n")
-        _file.writelines(stale_branches(artifacts_repo, 24))
+        _file.writelines(data)
 
 
 def main():
@@ -62,10 +62,13 @@ def main():
     artifacts_repo.fetch()
 
     alert_path = pathlib.Path(os.path.join(ARTIFACTS_REPO_PATH, OUTPUT_FILE_NAME))
-    write_report(alert_path, artifacts_repo)
+
+    logging.debug("determining stale branches")
+    data = stale_branches(artifacts_repo, 24)
 
     logging.debug("checking out main branch")
     artifacts_repo.checkout(branch_name=MAIN)
+    write_report(alert_path, data)
 
     logging.debug("git adding [%s]", alert_path)
     artifacts_repo.add(alert_path)
