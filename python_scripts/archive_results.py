@@ -422,7 +422,7 @@ class ArchiveResults:
 
     @property
     def git_command(self):
-        return f"cd {self.artifacts_root};git checkout {self.machine_name};git add {self.dir_branch}/{self.machine_name};git commit -a -m'update for build of {self.build_basename} with hash {self.build_hash} on {self.machine_name} [ci skip]';git push origin {self.machine_name}"
+        return f"cd {self.artifacts_root};git checkout {self.machine_name};git add {self.dir_branch}/{self.machine_name};git commit -a -m'update for build of {self.build_basename} with hash {self.build_hash} on {self.machine_name} [ci skip]';git pull;git push origin {self.machine_name}"
 
     def copy_artifact(self, src: pathlib.Path, target: pathlib.Path):
         """copy src to target while prepending a timestamp"""
