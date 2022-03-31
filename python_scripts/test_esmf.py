@@ -161,7 +161,8 @@ class ESMFTest:
                 err,
             )
             time.sleep(60)
-            self.update_repo(subdir, branch, nuopc_branch)
+            return self.update_repo(subdir, branch, nuopc_branch)
+
 
         cmd_string = f"git clone -b {branch} git@github.com:esmf-org/esmf {subdir}"
         nuopc_clone = (
@@ -172,9 +173,12 @@ class ESMFTest:
             os.mkdir(subdir)
             os.chdir(subdir)
         else:
-            subprocess.check_output(cmd_string, shell=True)
-            os.chdir(subdir)
-            subprocess.check_output(nuopc_clone, shell=True)
+            try:
+                subprocess.check_output(cmd_string, shell=True)
+                os.chdir(subdir)
+                subprocess.check_output(nuopc_clone, shell=True)
+            except subprocess.CalledProcessError as err:
+                raise OSError(f"subprocess failed: {err}", err) from err
 
         self.run_command("rm -rf obj mod lib examples test *.o *.e *bat.o* *bat.e*")
 
