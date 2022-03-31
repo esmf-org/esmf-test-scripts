@@ -23,7 +23,7 @@ logging.basicConfig(
 
 SEPARATOR = "\n===================================================================\n"
 
-SLEEP_TIME_IN_SECONDS = 30
+SLEEP_TIME_IN_SECONDS = 60 * 3
 TIMEOUT_IN_SECONDS = 144000
 
 
@@ -32,17 +32,18 @@ def _clean_results(value: str) -> str:
 
 
 class ArchiveResults:
+
     def __init__(
-        self,
-        job_id,
-        build_basename: str,
-        machine_name,
-        scheduler,
-        test_root_dir,
-        artifacts_root,
-        mpi_version,
-        branch,
-        is_dry_run,
+            self,
+            job_id,
+            build_basename: str,
+            machine_name,
+            scheduler,
+            test_root_dir,
+            artifacts_root,
+            mpi_version,
+            branch,
+            is_dry_run,
     ):
 
         self._scheduler = None
@@ -117,8 +118,8 @@ class ArchiveResults:
                     f"cat {self.build_dir}/module-build.log; cat {self.build_dir}/info.log",
                     shell=True,
                 )
-                .strip()
-                .decode("utf-8")
+                    .strip()
+                    .decode("utf-8")
             )
         except subprocess.CalledProcessError:
             return f"error finding {self.build_dir}/module-build.log or {self.build_dir}/info.log"
@@ -169,14 +170,14 @@ class ArchiveResults:
         return _map[scheduler.lower()]
 
     def create_summary(
-        self,
-        unit_results,
-        system_results,
-        example_results,
-        nuopc_pass,
-        nuopc_fail,
-        make_info,
-        esmfmkfile,
+            self,
+            unit_results,
+            system_results,
+            example_results,
+            nuopc_pass,
+            nuopc_fail,
+            make_info,
+            esmfmkfile,
     ):
         if len(esmfmkfile) > 0:
             self.build_time = datetime.fromtimestamp(os.path.getmtime(esmfmkfile[0]))
@@ -221,8 +222,8 @@ class ArchiveResults:
                     f"grep ESMF_OS: {self.build_dir}/*_{self.job_id}.log",
                     shell=True,
                 )
-                .strip()
-                .decode("utf-8")
+                    .strip()
+                    .decode("utf-8")
             ).split()[1]
         except subprocess.CalledProcessError as err:
             logging.error("code: [%s] msg: [%s]", err.returncode, err.output)
@@ -235,17 +236,17 @@ class ArchiveResults:
         try:
             cwd = os.getcwd()
             logging.debug("cwd = [%s]", cwd)
-        except OSError as error:
-            raise OSError(
-                f"failed to get cwd: [{self.build_basename}], [{self.dir_branch}]"
-            ) from error
-
+        except OSError:
+            logging.error(
+                "failed to get cwd: [%s], [%s]", self.build_basename, self.dir_branch
+            )
+            exit(1)
         os.chdir(self.build_dir)
         try:
             self.build_hash = (
                 subprocess.check_output("git describe --tags --abbrev=7", shell=True)
-                .strip()
-                .decode("utf-8")
+                    .strip()
+                    .decode("utf-8")
             )
         except subprocess.CalledProcessError as err:
             logging.error("could not fetch build hash: [%s] [%s]", err, os.getcwd())
@@ -323,8 +324,8 @@ class ArchiveResults:
         if len(ex_result_file) > 0:
             example_results = (
                 subprocess.check_output(f"cat {ex_result_file[0]}", shell=True)
-                .strip()
-                .decode("utf-8")
+                    .strip()
+                    .decode("utf-8")
             )
         else:
             example_results = "No examples ran"
@@ -340,8 +341,8 @@ class ArchiveResults:
                     f"cat {self.build_dir}/test/test{build_type}/*/unit_tests_results",
                     shell=True,
                 )
-                .strip()
-                .decode("utf-8")
+                    .strip()
+                    .decode("utf-8")
             )
         except subprocess.CalledProcessError:
             unit_results = "unit tests did not complete"
@@ -353,8 +354,8 @@ class ArchiveResults:
                     ),
                     shell=True,
                 )
-                .strip()
-                .decode("utf-8")
+                    .strip()
+                    .decode("utf-8")
             )
         except subprocess.CalledProcessError:
             system_results = "system tests did not complete"
@@ -364,16 +365,16 @@ class ArchiveResults:
                     f"grep PASS: {self.build_dir}/nuopc_{self.job_id}.log | wc -l",
                     shell=True,
                 )
-                .strip()
-                .decode("utf-8")
+                    .strip()
+                    .decode("utf-8")
             )
             nuopc_fail = (
                 subprocess.check_output(
                     f"grep FAIL: {self.build_dir}/nuopc_{self.job_id}.log | wc -l",
                     shell=True,
                 )
-                .strip()
-                .decode("utf-8")
+                    .strip()
+                    .decode("utf-8")
             )
         except subprocess.CalledProcessError:
             nuopc_pass = 0
@@ -384,8 +385,8 @@ class ArchiveResults:
         os.chdir(self.build_dir)
         make_info = (
             subprocess.check_output("cat module-build.log; cat info.log", shell=True)
-            .strip()
-            .decode("utf-8")
+                .strip()
+                .decode("utf-8")
         )
 
         os.chdir(cwd)
@@ -401,35 +402,27 @@ class ArchiveResults:
             esmfmkfile,
         )
         for afile in example_artifacts:
-            _path = pathlib.Path(
-                os.path.join(self.output_path, "examples", os.path.basename(afile))
-            )
+            _path = pathlib.Path(os.path.join(self.output_path, "examples", os.path.basename(afile)))
             self.copy_artifact(pathlib.Path(afile), _path)
 
             for afile in test_artifacts:
-                _path = pathlib.Path(
-                    os.path.join(self.output_path, "test", os.path.basename(afile))
-                )
+                _path = pathlib.Path(os.path.join(self.output_path, "test", os.path.basename(afile)))
             self.copy_artifact(pathlib.Path(afile), _path)
 
             for afile in esmfmkfile:
-                _path = pathlib.Path(
-                    os.path.join(self.output_path, "lib", os.path.basename(afile))
-                )
+                _path = pathlib.Path(os.path.join(self.output_path, "lib", os.path.basename(afile)))
             self.copy_artifact(pathlib.Path(afile), _path)
 
             for afile in python_artifacts:
-                _path = pathlib.Path(
-                    os.path.join(self.output_path, os.path.basename(afile))
-                )
+                _path = pathlib.Path(os.path.join(self.output_path, os.path.basename(afile)))
             self.copy_artifact(pathlib.Path(afile), _path)
 
-            self.run_command(self.git_command)
+        self.run_command(self.git_command)
         return
 
     @property
     def git_command(self):
-        return f"cd {self.artifacts_root};git checkout {self.machine_name};git add {self.dir_branch}/{self.machine_name};git commit -a -m'update for build of {self.build_basename} with hash {self.build_hash} on {self.machine_name} [ci skip]';git pull;git push origin {self.machine_name}"
+        return f"cd {self.artifacts_root};git checkout {self.machine_name};git add {self.dir_branch}/{self.machine_name};git commit -a -m'update for build of {self.build_basename} with hash {self.build_hash} on {self.machine_name} [ci skip]';git push origin {self.machine_name}"
 
     def copy_artifact(self, src: pathlib.Path, target: pathlib.Path):
         """copy src to target while prepending a timestamp"""
