@@ -5,6 +5,7 @@ import pathlib
 import re
 import shutil
 import subprocess
+import time
 from typing import List, Any
 
 import yaml
@@ -155,8 +156,12 @@ class ESMFTest:
             if subdir.exists():
                 shutil.rmtree(subdir)
         except OSError as err:
-            logging.error("another process is actively writing files: [%s]", err)
-            exit(1)
+            logging.warning(
+                "another process is actively writing files, retrying in 60 seconds: [%s]",
+                err,
+            )
+            time.sleep(60)
+            self.update_repo(subdir, branch, nuopc_branch)
 
         cmd_string = f"git clone -b {branch} git@github.com:esmf-org/esmf {subdir}"
         nuopc_clone = (
@@ -208,7 +213,11 @@ class ESMFTest:
                     "\nmodule load {}\n".format(self.machine_list[comp]["extramodule"])
                 )
 
-            if mpi_flavor is None or "module" not in mpi_flavor or mpi_flavor["module"] in [None, "None", "none"]:
+            if (
+                mpi_flavor is None
+                or "module" not in mpi_flavor
+                or mpi_flavor["module"] in [None, "None", "none"]
+            ):
                 mpi_flavor = {"module": ""}
                 cmd_string = "export ESMF_MPIRUN={}/src/Infrastructure/stubs/mpiuni/mpirun\n".format(
                     os.getcwd()
@@ -385,48 +394,54 @@ class ESMFTest:
                             self.test_time = self.machine_list[comp]["test_time"]
 
                         for branch in self.machine_list["branch"]:
-                            self.process_branch(branch, build_type, comp, key, mpidict, ver)
+                            self.process_branch(
+                                branch, build_type, comp, key, mpidict, ver
+                            )
 
     def process_branch(self, branch, build_type, comp, key, mpidict, ver):
         if "nuopcbranch" in self.machine_list:
             nuopcbranch = self.machine_list["nuopcbranch"]
-        subdir = "{}_{}_{}_{}_{}".format(
-            comp, ver, key, build_type, branch
-        )
+        subdir = "{}_{}_{}_{}_{}".format(comp, ver, key, build_type, branch)
         subdir = re.sub(
             "/", "_", subdir
         )  # Some branches have a slash, so replace that with underscore
         self.update_repo(subdir, branch, nuopcbranch)
-        self.b_filename = "build-{}_{}_{}_{}.bat".format(
-            comp, ver, key, build_type
-        )
-        self.t_filename = "test-{}_{}_{}_{}.bat".format(
-            comp, ver, key, build_type
-        )
+        self.b_filename = "build-{}_{}_{}_{}.bat".format(comp, ver, key, build_type)
+        self.t_filename = "test-{}_{}_{}_{}.bat".format(comp, ver, key, build_type)
         self.fb = open(self.b_filename, "w")
         self.ft = open(self.t_filename, "w")
         self.scheduler.create_headers()
         self.create_scripts(build_type, comp, ver, mpidict, key)
-        p = multiprocessing.Process(target=self.scheduler.submit_job,
-                                    args=(subdir, self.mpi_version, branch))
+        p = multiprocessing.Process(
+            target=self.scheduler.submit_job, args=(subdir, self.mpi_version, branch)
+        )
         p.start()
         self.processes.append(p)
         os.chdir("..")
 
     @staticmethod
-    def archive_results(job_number, build_basename, machine_name,
-                        scheduler, test_root_dir, artifacts_root,
-                        mpi_version, branch,
-                        is_dry_run) -> ArchiveResults:
-        return ArchiveResults(job_number,
-                              build_basename,
-                              machine_name,
-                              scheduler,
-                              test_root_dir,
-                              artifacts_root,
-                              mpi_version,
-                              branch,
-                              is_dry_run)
+    def archive_results(
+        job_number,
+        build_basename,
+        machine_name,
+        scheduler,
+        test_root_dir,
+        artifacts_root,
+        mpi_version,
+        branch,
+        is_dry_run,
+    ) -> ArchiveResults:
+        return ArchiveResults(
+            job_number,
+            build_basename,
+            machine_name,
+            scheduler,
+            test_root_dir,
+            artifacts_root,
+            mpi_version,
+            branch,
+            is_dry_run,
+        )
 
 
 def view():
