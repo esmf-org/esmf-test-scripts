@@ -142,10 +142,10 @@ class ESMFTest:
             logging.debug("running command: [%s]", cmd)
             os.system(cmd)
 
-    def update_repo(self, subdir, branch, nuopc_branch):
+    def update_repo(self, subdir, branch, nuopc_branch, retries: int = 0):
         subdir = pathlib.Path(subdir).absolute()
         logging.debug(
-            f"subdir: [%s], branch: [%s], nuopc_branch: [%s]",
+            "subdir: [%s], branch: [%s], nuopc_branch: [%s]",
             subdir,
             branch,
             nuopc_branch,
@@ -157,12 +157,12 @@ class ESMFTest:
                 shutil.rmtree(subdir)
         except OSError as err:
             logging.warning(
-                "another process is actively writing files, retrying in 60 seconds: [%s]",
+                "another process is actively writing files, retrying in 60 seconds: [RETRIES=%s][%s]",
+                retries,
                 err,
             )
             time.sleep(60)
-            return self.update_repo(subdir, branch, nuopc_branch)
-
+            return self.update_repo(subdir, branch, nuopc_branch, retries + 1)
 
         cmd_string = f"git clone -b {branch} git@github.com:esmf-org/esmf {subdir}"
         nuopc_clone = (
