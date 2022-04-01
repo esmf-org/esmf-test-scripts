@@ -1,4 +1,5 @@
 import argparse
+import itertools
 import multiprocessing
 import os
 import pathlib
@@ -218,9 +219,9 @@ class ESMFTest:
                 )
 
             if (
-                mpi_flavor is None
-                or "module" not in mpi_flavor
-                or mpi_flavor["module"] in [None, "None", "none"]
+                    mpi_flavor is None
+                    or "module" not in mpi_flavor
+                    or mpi_flavor["module"] in [None, "None", "none"]
             ):
                 mpi_flavor = {"module": ""}
                 cmd_string = "export ESMF_MPIRUN={}/src/Infrastructure/stubs/mpiuni/mpirun\n".format(
@@ -376,31 +377,21 @@ class ESMFTest:
         os.system("chmod +x getres-test.sh")
 
     def create_job_cards_and_submit(self):
+        for build_type, comp in itertools.product(self.build_types, self.machine_list["compiler"]):
 
-        for build_type in self.build_types:
-            for comp in self.machine_list["compiler"]:
-                for ver in self.machine_list[comp]["versions"]:
-                    logging.debug(
-                        "version is [%s]",
-                        self.machine_list[comp]["versions"][ver]["mpi"],
+            if "build_time" in self.machine_list[comp]:
+                self.build_time = self.machine_list[comp]["build_time"]
+
+            if "test_time" in self.machine_list[comp]:
+                self.test_time = self.machine_list[comp]["test_time"]
+
+            for compiler_version, branch in itertools.product(self.machine_list[comp]["versions"],
+                                                              self.machine_list["branch"]):
+                mpi_dict = self.machine_list[comp]["versions"][compiler_version]["mpi"]
+                for key in mpi_dict.keys():
+                    self.process_branch(
+                        branch, build_type, comp, key, mpi_dict, compiler_version
                     )
-                    mpidict = self.machine_list[comp]["versions"][ver]["mpi"]
-                    logging.debug(
-                        "mpidict: [%s]", mpidict if mpidict != " " else "missing"
-                    )
-                    mpitypes = mpidict.keys()
-                    logging.debug("mpitypes: [%s]", " ".join(mpitypes))
-                    for key in mpitypes:
-                        if "build_time" in self.machine_list[comp]:
-                            self.build_time = self.machine_list[comp]["build_time"]
-
-                        if "test_time" in self.machine_list[comp]:
-                            self.test_time = self.machine_list[comp]["test_time"]
-
-                        for branch in self.machine_list["branch"]:
-                            self.process_branch(
-                                branch, build_type, comp, key, mpidict, ver
-                            )
 
     def process_branch(self, branch, build_type, comp, key, mpidict, ver):
         if "nuopcbranch" in self.machine_list:
@@ -425,15 +416,15 @@ class ESMFTest:
 
     @staticmethod
     def archive_results(
-        job_number,
-        build_basename,
-        machine_name,
-        scheduler,
-        test_root_dir,
-        artifacts_root,
-        mpi_version,
-        branch,
-        is_dry_run,
+            job_number,
+            build_basename,
+            machine_name,
+            scheduler,
+            test_root_dir,
+            artifacts_root,
+            mpi_version,
+            branch,
+            is_dry_run,
     ) -> ArchiveResults:
         return ArchiveResults(
             job_number,
