@@ -40,6 +40,7 @@ gfortran:
          extra_env_vars: 
            var1: ESMF_F90COMPILEOPTS="-fallow-argument-mismatch -fallow-invalid-boz"
            var2: ESMF_F90COMPILER=mpif90
+    extramodule: cmake
 intel:
     test_time: "3:00:00"
     versions:
@@ -57,4 +58,4 @@ intel:
         intelmpi:
             module: impi/2018.4.274
             pythontest: True
-    extramodule: python
+    extramodule: python cmake
