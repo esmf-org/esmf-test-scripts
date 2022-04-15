@@ -1,7 +1,7 @@
 machine: catania
 scheduler: None
 corespernode: 4
-modulepath: /project/esmf/stack/modulefiles
+modulepath: /project/esmf/stack/modulefiles/compilers
 compiler: [gfortran]
 branch: [develop]
 nuopcbranch: develop
