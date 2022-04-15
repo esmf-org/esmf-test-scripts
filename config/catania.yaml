@@ -7,25 +7,27 @@ branch: [develop]
 nuopcbranch: develop
 
 intel:
-     versions:
-       19.1.0.166:
-         extra_env_vars: 
-           var1: ESMF_MOAB=OFF
-         compiler: intel/19.1.0.166/compiler
-         netcdf: None
-         mpi:
-           mpich3:
-             module: intel/19.1.0.166/mpich3/3.4.1-custom
+  versions:
+    19.1.0.166:
+      extra_env_vars:
+        var1: ESMF_MOAB=OFF
+      compiler: intel/19.1.0.166/compiler
+      netcdf: None
+      mpi:
+        mpich3:
+          module: intel/19.1.0.166/mpich3/3.4.1-custom
 #           mpiuni:
 #             module: None
 
 gfortran:
-     versions: 
-       11.2.0: 
-         compiler: gcc/11.2.0
-         netcdf: netcdf/4.7.4
-         mpi:
-           openmpi: 
-             module: openmpi/4.1.0
-           mpiuni: 
-             module: None
+  versions:
+    11.2.0:
+      compiler: gcc/11.2.0
+      netcdf: netcdf/4.7.4
+      mpi:
+        openmpi:
+          module: openmpi/4.1.0
+        mpiuni:
+          module: None
+      extra_env_vars:
+        var1: ESMF_NETCDF=nc-config
