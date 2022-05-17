@@ -4,9 +4,10 @@ queue: medium
 partition: None
 scheduler: pbs
 corespernode: 15
-compiler: [gfortran,pgi,intel,nag]
+compiler: [gfortran]
 branch: [develop]
 nuopcbranch: develop
+
 intel:
    versions:
      19.1.0.166: 
@@ -14,7 +15,7 @@ intel:
        netcdf: tool/netcdf/4.7.4/intel/20.0.1
        mpi:
            mpiuni:
-             module: None
+             module: None            
 gfortran:
    versions:
      9.3.0: 
