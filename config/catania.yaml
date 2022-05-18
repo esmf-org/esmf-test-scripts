@@ -31,3 +31,4 @@ gfortran:
           module: None
       extra_env_vars:
         var1: ESMF_NETCDF=nc-config
+        var2: ESMF_MPILAUNCHOPTIONS=--oversubscribe
