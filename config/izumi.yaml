@@ -5,8 +5,8 @@ partition: None
 scheduler: pbs
 corespernode: 15
 compiler: [gfortran]
-branch: [develop]
-nuopcbranch: develop
+branch: [develop,release/8.3.0]
+#nuopcbranch: develop
 
 intel:
    versions:

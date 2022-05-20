@@ -5,8 +5,8 @@ partition: orion
 scheduler: slurm
 corespernode: 40
 compiler: [intel,gfortran]
-branch: [develop]
-nuopcbranch: develop
+branch: [develop,release/8.3.0]
+#nuopcbranch: develop
 
 intel:
    versions:

@@ -4,9 +4,9 @@ queue: standard
 scheduler: pbs
 corespernode: 48
 compiler: [intel,gfortran]
-branch: [develop]
 headnodename: gaffney06
-nuopcbranch: develop
+branch: [develop,release/8.3.0]
+#nuopcbranch: develop
 intel:
      versions: 
        2018.1: 
