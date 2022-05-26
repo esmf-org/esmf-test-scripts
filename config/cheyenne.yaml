@@ -65,6 +65,7 @@ nvhpc:
     22.2:
       compiler: nvhpc/22.2
       netcdf: netcdf-mpi/4.8.1
-      mpt:
-        module: mpt/2.25
+      mpi:
+        mpt:
+          module: mpt/2.25
   extramodule: python cmake
