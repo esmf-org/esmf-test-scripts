@@ -4,7 +4,7 @@ queue: regular
 partition: None
 scheduler: pbs
 corespernode: 36
-compiler: [gfortran, intel]
+compiler: [gfortran, intel, nvhpc]
 headnodename: cheyenne6
 branch: [develop,release/8.3.0]
 #nuopcbranch: develop
@@ -58,4 +58,13 @@ intel:
       intelmpi:
         module: impi/2018.4.274
         pythontest: True
+  extramodule: python cmake
+nvhpc:
+  test_time: "3:00:00"
+  versions:
+    22.2:
+      compiler: nvhpc/22.2
+      netcdf: netcdf-mpi/4.8.1
+      mpt:
+        module: mpt/2.25
   extramodule: python cmake
