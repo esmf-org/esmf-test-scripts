@@ -21,6 +21,7 @@ class ArchiveResults:
         build_basename,
         machine_name,
         scheduler,
+        pbs_node_specifier,
         test_root_dir,
         artifacts_root,
         mpiversion,
@@ -33,9 +34,11 @@ class ArchiveResults:
         self.build_basename = build_basename
         self.machine_name = machine_name
         if scheduler == "pbs":
-            self.scheduler = pbs("pbs")
+            self.scheduler = pbs(scheduler_type = "pbs",
+                                 pbs_node_specifier = pbs_node_specifier)
         elif scheduler == "pbs_tracejob":
-            self.scheduler = pbs_tracejob("pbs_tracejob")
+            self.scheduler = pbs_tracejob(scheduler_type = "pbs_tracejob",
+                                          pbs_node_specifier = pbs_node_specifier)
         elif scheduler == "slurm":
             self.scheduler = slurm("slurm")
         elif scheduler == "None":
@@ -469,6 +472,14 @@ if __name__ == "__main__":
     parser.add_argument("-M", "--mpiversion", help="mpi version used", required=True)
     parser.add_argument("-B", "--branch", help="branch tested", required=True)
     parser.add_argument("-d", "--dryrun", help="dryrun?", required=False, default=False)
+
+    parser.add_argument(
+        "--pbs-node-specifier",
+        help="Method of specifying node request for the pbs scheduler (ignored for other schedulers)",
+        choices=["default", "nodes_ppn"],
+        required=False,
+        default="default")
+
     args = vars(parser.parse_args())
 
     archiver = ArchiveResults(
@@ -476,6 +487,7 @@ if __name__ == "__main__":
         args["buildbasename"],
         args["machinename"],
         args["scheduler"],
+        args["pbs_node_specifier"],
         args["testrootdir"],
         args["artifactsrootdir"],
         args["mpiversion"],

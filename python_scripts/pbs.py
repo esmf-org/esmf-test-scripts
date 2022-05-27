@@ -46,7 +46,7 @@ class pbs(scheduler):
       jobnum= subprocess.check_output(batch_build,shell=True).strip().decode('utf-8').split(".")[0]
     print("Submitting batch_build with command: {}, jobnum is {}".format(batch_build,jobnum))
     monitor_cmd_build = \
-                   "python3 {}/archive_results.py -j {} -b {} -m {} -s {} -t {} -a {} -M {} -B {} -d {}".format(test.mypath,jobnum,subdir,test.machine_name,self.type,test.script_dir,test.artifacts_root,mpiver,branch,test.dryrun)
+                   "python3 {}/archive_results.py -j {} -b {} -m {} -s {} -t {} -a {} -M {} -B {} -d {} --pbs-node-specifier {}".format(test.mypath,jobnum,subdir,test.machine_name,self.type,test.script_dir,test.artifacts_root,mpiver,branch,test.dryrun,self._pbs_node_specifier)
     if(test.dryrun == True):
       print(monitor_cmd_build)
     else:
@@ -61,7 +61,7 @@ class pbs(scheduler):
     else:
       jobnum= subprocess.check_output(batch_test,shell=True).strip().decode('utf-8').split(".")[0]
     monitor_cmd_test = \
-                   "python3 {}/archive_results.py -j {} -b {} -m {} -s {} -t {} -a {} -M {} -B {} -d {}".format(test.mypath,jobnum,subdir,test.machine_name,self.type,test.script_dir,test.artifacts_root,mpiver,branch,test.dryrun)
+                   "python3 {}/archive_results.py -j {} -b {} -m {} -s {} -t {} -a {} -M {} -B {} -d {} --pbs-node-specifier {}".format(test.mypath,jobnum,subdir,test.machine_name,self.type,test.script_dir,test.artifacts_root,mpiver,branch,test.dryrun,self._pbs_node_specifier)
     if(test.dryrun == True):
       print(monitor_cmd_test)
     else:
