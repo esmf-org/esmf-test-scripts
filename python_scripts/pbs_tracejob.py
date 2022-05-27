@@ -1,6 +1,6 @@
 import re
 import subprocess
-import pbs
+from pbs import pbs
 
 
 class pbs_tracejob(pbs):
