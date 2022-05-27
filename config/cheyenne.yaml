@@ -64,7 +64,7 @@ nvhpc:
   versions:
     22.2:
       compiler: nvhpc/22.2
-      netcdf: netcdf-mpi/4.8.1
+      netcdf: netcdf/4.8.1
       mpi:
         mpt:
           module: mpt/2.25
