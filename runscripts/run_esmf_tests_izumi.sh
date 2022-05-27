@@ -4,4 +4,5 @@ cd /scratch/cluster/${USER}/esmf-testing/esmf-test-scripts
 git remote update
 git pull -X theirs --no-edit origin 
 cd /scratch/cluster/${USER}/esmf-testing
+module load lang/python/3.7.0
 python3 ./esmf-test-scripts/python_scripts/test_esmf.py -y  ./esmf-test-scripts/config/izumi.yaml -a /scratch/cluster/${USER}/esmf-testing/esmf-test-artifacts >& /scratch/cluster/${USER}/esmf-testing/test_esmf_izumi.log
