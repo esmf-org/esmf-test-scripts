@@ -5,9 +5,9 @@ partition: None
 scheduler: pbs
 corespernode: 36
 compiler: [gfortran, intel]
-branch: [develop]
 headnodename: cheyenne6
-nuopcbranch: develop
+branch: [develop,release/8.3.0]
+#nuopcbranch: develop
 gfortran:
   test_time: "2:00:00"
   versions:

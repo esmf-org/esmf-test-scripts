@@ -3,8 +3,8 @@ scheduler: None
 corespernode: 4
 modulepath: /project/esmf/stack/modulefiles/compilers
 compiler: [gfortran]
-branch: [develop]
-nuopcbranch: develop
+branch: [develop,release/8.3.0]
+#nuopcbranch: develop
 
 intel:
   versions:
@@ -31,3 +31,4 @@ gfortran:
           module: None
       extra_env_vars:
         var1: ESMF_NETCDF=nc-config
+        var2: ESMF_MPILAUNCHOPTIONS=--oversubscribe

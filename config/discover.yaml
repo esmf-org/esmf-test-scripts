@@ -7,8 +7,8 @@ partition: compute
 scheduler: slurm
 corespernode: 28
 compiler: [intel,gfortran,pgi]
-branch: [develop]
-nuopcbranch: develop
+branch: [develop,release/8.3.0]
+#nuopcbranch: develop
 
 intel:
    versions:
