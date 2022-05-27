@@ -40,9 +40,11 @@ class ESMFTest:
     elif(self.scheduler_type == "None"):
       self.scheduler=NoScheduler("None")
     elif(self.scheduler_type == "pbs"):
-      self.scheduler=pbs("pbs")
+      self.scheduler=pbs(scheduler_type = "pbs",
+                         pbs_node_specifier = self.pbs_node_specifier)
     elif(self.scheduler_type == "pbs_tracejob"):
-      self.scheduler=pbs_tracejob("pbs_tracejob")
+      self.scheduler=pbs_tracejob(scheduler_type = "pbs_tracejob",
+                                  pbs_node_specifier = self.pbs_node_specifier)
     print(self.yaml_file, self.artifacts_root, self.workdir)
     self.createJobCardsAndSubmit()
 
@@ -95,6 +97,10 @@ class ESMFTest:
         self.nuopcbranch = "develop"
       self.cpn = self.machine_list['corespernode']
       self.scheduler_type = self.machine_list['scheduler']
+      if("pbs_node_specifier" in self.machine_list):
+        self.pbs_node_specifier = self.machine_list['pbs_node_specifier']
+      else:
+        self.pbs_node_specifier = "default"
       self.build_types = ['O','g']
 #     self.build_types = ['O']
       self.script_dir=os.getcwd()

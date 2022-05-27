@@ -4,6 +4,7 @@ account: P93300606
 queue: medium
 partition: None
 scheduler: pbs_tracejob
+pbs_node_specifier: nodes_ppn
 corespernode: 48
 compiler: [intel, gfortran, nag]
 branch: [develop,release/8.3.0]

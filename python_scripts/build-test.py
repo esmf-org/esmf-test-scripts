@@ -8,7 +8,7 @@ import pathlib
 
 
 def create_header(
-    file_out, scheduler, filename, time, account, partition, queue, cpn, cluster, bash
+        file_out, scheduler, pbs_node_specifier, filename, time, account, partition, queue, cpn, cluster, bash
 ):
     if scheduler == "slurm":
         file_out.write("#!{} -l\n".format(bash))
@@ -30,7 +30,14 @@ def create_header(
         file_out.write("#PBS -j oe\n")
         file_out.write("#PBS -q {}\n".format(queue))
         file_out.write("#PBS -A {}\n".format(account))
-        file_out.write("#PBS -l select=1:ncpus={}:mpiprocs={}\n".format(cpn, cpn))
+
+        if pbs_node_specifier == "nodes_ppn":
+            file_out.write("#PBS -l nodes=1:ppn={}\n".format(cpn))
+        elif pbs_node_specifier == "default":
+            file_out.write("#PBS -l select=1:ncpus={}:mpiprocs={}\n".format(cpn, cpn))
+        else:
+            sys.exit("unsupported pbs_node_specifier: {}".format(pbs_node_specifier))
+
         file_out.write("#PBS -l walltime={}\n".format(time))
         file_out.write('JOBID="`echo $PBS_JOBID | cut -d. -f1`"\n\n')
         file_out.write("cd {}\n".format(os.getcwd()))
@@ -73,6 +80,10 @@ def main(argv):
             headnodename = os.uname()[1]
         cpn = machine_list["corespernode"]
         scheduler = machine_list["scheduler"]
+        if "pbs_node_specifier" in machine_list:
+            pbs_node_specifier = machine_list["pbs_node_specifier"]
+        else:
+            pbs_node_specifier = "default"
         if "branch" not in machine_list:
             machine_list["branch"] = "develop"
         build_types = ["O", "g"]
@@ -154,6 +165,7 @@ def main(argv):
                             create_header(
                                 fb,
                                 scheduler,
+                                pbs_node_specifier,
                                 filename,
                                 build_time,
                                 account,
@@ -171,6 +183,7 @@ def main(argv):
                             create_header(
                                 ft,
                                 scheduler,
+                                pbs_node_specifier,
                                 t_filename,
                                 test_time,
                                 account,

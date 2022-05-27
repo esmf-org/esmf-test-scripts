@@ -13,8 +13,8 @@ class pbs_tracejob(pbs):
 
     """
 
-    def __init__(self, scheduler_type):
-        pbs.__init__(self, scheduler_type)
+    def __init__(self, scheduler_type, pbs_node_specifier):
+        pbs.__init__(self, scheduler_type, pbs_node_specifier)
 
     def checkqueue(self, jobid):
         if int(jobid) < 0:

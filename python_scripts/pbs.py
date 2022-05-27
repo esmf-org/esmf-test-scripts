@@ -1,11 +1,12 @@
 import os
 import subprocess
+import sys
 from scheduler import scheduler
 
 class pbs(scheduler):
-  def __init__(self,scheduler_type):
+  def __init__(self, scheduler_type, pbs_node_specifier):
      self.type = scheduler_type
-
+     self._pbs_node_specifier = pbs_node_specifier
 
   def createHeaders(self,test):
     for headerType in ["build","test"]:
@@ -22,7 +23,14 @@ class pbs(scheduler):
       file_out.write("#PBS -l walltime={}\n".format(test.test_time))
       file_out.write("#PBS -q {}\n".format(test.queue))
       file_out.write("#PBS -A {}\n".format(test.account))
-      file_out.write("#PBS -l select=1:ncpus={}:mpiprocs={}\n".format(test.cpn,test.cpn))
+
+      if self._pbs_node_specifier == "nodes_ppn":
+        file_out.write("#PBS -l nodes=1:ppn={}\n".format(test.cpn))
+      elif self._pbs_node_specifier == "default":
+        file_out.write("#PBS -l select=1:ncpus={}:mpiprocs={}\n".format(test.cpn,test.cpn))
+      else:
+        sys.exit("unsupported pbs_node_specifier: {}".format(self._pbs_node_specifier))
+
       file_out.write("JOBID=\"`echo $PBS_JOBID | cut -d. -f1`\"\n\n")
       file_out.write("cd {}\n".format(os.getcwd()))
 

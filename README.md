@@ -23,6 +23,10 @@ corespernode: (number of cores per node on compute nodes)
 
 The following scheduler variables are optional--
 
+pbs_node_specifier: currently the only supported options are "nodes_ppn" and "default"
+    If not specified, assumed to be "default"
+    "default" leads to "#PBS -l select=1:ncpus={cpn}:mpiprocs={cpn}
+    "nodes_ppn" leads to "#PBS -l nodes=1:ppn={cpn}".
 cluster: (some slurm configurations require a cluster rather than a partition)
 partition: (some slurm configurations require a partition)
 
