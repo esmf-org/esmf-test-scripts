@@ -81,9 +81,9 @@ class pbs(scheduler):
 
   def checkqueue(self,jobid):
     if self._pbs_job_checker == "tracejob":
-      self._checkqueue_tracejob(jobid)
+      return self._checkqueue_tracejob(jobid)
     elif self._pbs_job_checker == "default":
-      self._checkqueue_default(jobid)
+      return self._checkqueue_default(jobid)
     else:
       sys.exit("unsupported pbs_job_checker: {}".format(self._pbs_job_checker))
 
