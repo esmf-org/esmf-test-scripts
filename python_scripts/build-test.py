@@ -24,7 +24,7 @@ def create_header(
         file_out.write("#SBATCH --exclusive\n")
         file_out.write("#SBATCH --output {}_%j.o\n".format(filename))
         file_out.write("export JOBID=$SLURM_JOBID\n")
-    elif scheduler == "pbs" or scheduler == "pbs_tracejob":
+    elif scheduler == "pbs":
         file_out.write("#!{} -l\n".format(bash))
         file_out.write("#PBS -N {}\n".format(filename))
         file_out.write("#PBS -j oe\n")
@@ -84,6 +84,10 @@ def main(argv):
             pbs_node_specifier = machine_list["pbs_node_specifier"]
         else:
             pbs_node_specifier = "default"
+        if "pbs_job_checker" in machine_list:
+            pbs_job_checker = machine_list["pbs_job_checker"]
+        else:
+            pbs_job_checker = "default"
         if "branch" not in machine_list:
             machine_list["branch"] = "develop"
         build_types = ["O", "g"]
@@ -410,7 +414,7 @@ def main(argv):
                                 )
                                 ft.write(cmdstring)
 
-                            if scheduler == "pbs" or scheduler == "pbs_tracejob":
+                            if scheduler == "pbs":
                                 cmd_build = "ssh {} {}/getres-build.sh\n".format(
                                     headnodename, os.getcwd()
                                 )
@@ -437,12 +441,13 @@ def main(argv):
                                     .decode("utf-8")
                                     .split()[3]
                                 )
-                                monitor_cmd_build = "python3 {}/get-results.py {} {} {} {} {} {} {} {}".format(
+                                monitor_cmd_build = "python3 {}/get-results.py {} {} {} {} {} {} {} {} {}".format(
                                     mypath,
                                     jobnum,
                                     subdir,
                                     machine_name,
                                     scheduler,
+                                    pbs_job_checker,
                                     script_dir,
                                     artifacts_root,
                                     mpiver,
@@ -472,12 +477,13 @@ def main(argv):
                                     .decode("utf-8")
                                     .split()[3]
                                 )
-                                monitor_cmd_test = "python3 {}/get-results.py {} {} {} {} {} {} {} {}".format(
+                                monitor_cmd_test = "python3 {}/get-results.py {} {} {} {} {} {} {} {} {}".format(
                                     mypath,
                                     jobnum,
                                     subdir,
                                     machine_name,
                                     scheduler,
+                                    pbs_job_checker,
                                     script_dir,
                                     artifacts_root,
                                     mpiver,
@@ -492,7 +498,7 @@ def main(argv):
                                     stderr=None,
                                     close_fds=True,
                                 )
-                            elif scheduler == "pbs" or scheduler == "pbs_tracejob":
+                            elif scheduler == "pbs":
                                 batch_build = "qsub {}".format(filename)
                                 print(batch_build)
                                 jobnum = (
@@ -506,12 +512,13 @@ def main(argv):
                                         batch_build, jobnum
                                     )
                                 )
-                                monitor_cmd_build = "python3 {}/get-results.py {} {} {} {} {} {} {} {}".format(
+                                monitor_cmd_build = "python3 {}/get-results.py {} {} {} {} {} {} {} {} {}".format(
                                     mypath,
                                     jobnum,
                                     subdir,
                                     machine_name,
                                     scheduler,
+                                    pbs_job_checker,
                                     script_dir,
                                     artifacts_root,
                                     mpiver,
@@ -534,12 +541,13 @@ def main(argv):
                                     .decode("utf-8")
                                     .split(".")[0]
                                 )
-                                monitor_cmd_test = "python3 {}/get-results.py {} {} {} {} {} {} {} {}".format(
+                                monitor_cmd_test = "python3 {}/get-results.py {} {} {} {} {} {} {} {} {}".format(
                                     mypath,
                                     jobnum,
                                     subdir,
                                     machine_name,
                                     scheduler,
+                                    pbs_job_checker,
                                     script_dir,
                                     artifacts_root,
                                     mpiver,
@@ -551,12 +559,13 @@ def main(argv):
                                 os.system("chmod +x {}".format(filename))
                                 jobnum = 12345
                                 os.system("./{} {}".format(filename, jobnum))
-                                monitor_cmd_build = "python3 {}/get-results.py {} {} {} {} {} {} {} {}".format(
+                                monitor_cmd_build = "python3 {}/get-results.py {} {} {} {} {} {} {} {} {}".format(
                                     mypath,
                                     jobnum,
                                     subdir,
                                     machine_name,
                                     scheduler,
+                                    pbs_job_checker,
                                     script_dir,
                                     artifacts_root,
                                     mpiver,
@@ -566,12 +575,13 @@ def main(argv):
                                 os.system("{}".format(monitor_cmd_build))
                                 os.system("chmod +x {}".format(t_filename))
                                 os.system("./{} {}".format(t_filename, jobnum))
-                                monitor_cmd_test = "python3 {}/get-results.py {} {} {} {} {} {} {} {}".format(
+                                monitor_cmd_test = "python3 {}/get-results.py {} {} {} {} {} {} {} {} {}".format(
                                     mypath,
                                     jobnum,
                                     subdir,
                                     machine_name,
                                     scheduler,
+                                    pbs_job_checker,
                                     script_dir,
                                     artifacts_root,
                                     mpiver,

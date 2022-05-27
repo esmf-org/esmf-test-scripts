@@ -8,7 +8,14 @@ import re
 import pathlib
 
 
-def checkqueue(jobid, scheduler):
+def checkqueue(jobid, scheduler, pbs_job_checker):
+    """
+    Args:
+    - jobid: job identifier to check
+    - scheduler: "slurm", "pbs" or "None"
+    - pbs_job_checker: "tracejob" or "default": method to use to check a job for pbs; ignored if not using pbs
+    """
+
     if scheduler == "slurm":
         queue_query = (
             "sacct -j {} | head -n 3 | tail -n 1 | awk -F ' ' '{{print $6}}'".format(
@@ -16,15 +23,18 @@ def checkqueue(jobid, scheduler):
             )
         )
     elif scheduler == "pbs":
-        queue_query = "qstat -H {} | tail -n 1 | awk -F ' +' '{{print $10}}'".format(
-            jobid
-        )
-    elif scheduler == "pbs_tracejob":
-        # -w 9999 tells tracejob to assume we have a terminal of width 9999 characters;
-        # this should be enough to ensure that each entry appears on a single line, rather
-        # than being split across multiple lines (which can otherwise happen for a narrow
-        # terminal window)
-        queue_query = "tracejob -q -w 9999 {} | tail -n 1".format(jobid)
+        if pbs_job_checker == "tracejob":
+            # -w 9999 tells tracejob to assume we have a terminal of width 9999 characters;
+            # this should be enough to ensure that each entry appears on a single line, rather
+            # than being split across multiple lines (which can otherwise happen for a narrow
+            # terminal window)
+            queue_query = "tracejob -q -w 9999 {} | tail -n 1".format(jobid)
+        elif pbs_job_checker == "default":
+            queue_query = "qstat -H {} | tail -n 1 | awk -F ' +' '{{print $10}}'".format(
+                jobid
+            )
+        else:
+            sys.exit("unsupported pbs_job_checker: {}".format(pbs_job_checker))
     elif scheduler == "None":
         return True
     else:
@@ -34,18 +44,22 @@ def checkqueue(jobid, scheduler):
             subprocess.check_output(queue_query, shell=True).strip().decode("utf-8")
         )
         if scheduler == "pbs":
-            if (
-                result == "F"
-            ):  # could check for R and Q to see if it is running or waiting
-                return True
+            if pbs_job_checker == "tracejob":
+                finished_re = r"S\s+dequeuing"
+                if re.search(finished_re, result):
+                    return True
+                else:
+                    return False
+            elif pbs_job_checker == "default":
+                if (
+                    result == "F"
+                ):  # could check for R and Q to see if it is running or waiting
+                    return True
+                else:
+                    return False
             else:
-                return False
-        elif scheduler == "pbs_tracejob":
-            finished_re = r"S\s+dequeuing"
-            if re.search(finished_re, result):
-                return True
-            else:
-                return False
+                sys.exit("unsupported pbs_job_checker: {}".format(pbs_job_checker))
+
         elif scheduler == "slurm":
             if (
                 (result == "COMPLETED")
@@ -301,17 +315,18 @@ def main(argv):
     build_basename = sys.argv[2]
     machine_name = sys.argv[3]
     scheduler = sys.argv[4]
-    test_root_dir = sys.argv[5]
-    artifacts_root = sys.argv[6]
-    mpiver = sys.argv[7]
-    branch = sys.argv[8]
+    pbs_job_checker = sys.argv[5]
+    test_root_dir = sys.argv[6]
+    artifacts_root = sys.argv[7]
+    mpiver = sys.argv[8]
+    branch = sys.argv[9]
     start_time = time.time()
     seconds = 14400
     build_dir = "{}/{}".format(test_root_dir, build_basename)
     while True:
         current_time = time.time()
         elapsed_time = current_time - start_time
-        job_done = checkqueue(jobid, scheduler)
+        job_done = checkqueue(jobid, scheduler, pbs_job_checker)
         if job_done:
             #     oe_filelist = glob.glob('{}/{}/*{}*'.format(test_root_dir,build_basename,jobid))
             oe_filelist = glob.glob(

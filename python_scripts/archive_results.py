@@ -9,7 +9,6 @@ import pathlib
 from scheduler import scheduler
 from noscheduler import NoScheduler
 from pbs import pbs
-from pbs_tracejob import pbs_tracejob
 from slurm import slurm
 from datetime import datetime
 
@@ -22,6 +21,7 @@ class ArchiveResults:
         machine_name,
         scheduler,
         pbs_node_specifier,
+        pbs_job_checker,
         test_root_dir,
         artifacts_root,
         mpiversion,
@@ -35,10 +35,8 @@ class ArchiveResults:
         self.machine_name = machine_name
         if scheduler == "pbs":
             self.scheduler = pbs(scheduler_type = "pbs",
-                                 pbs_node_specifier = pbs_node_specifier)
-        elif scheduler == "pbs_tracejob":
-            self.scheduler = pbs_tracejob(scheduler_type = "pbs_tracejob",
-                                          pbs_node_specifier = pbs_node_specifier)
+                                 pbs_node_specifier = pbs_node_specifier,
+                                 pbs_job_checker = pbs_job_checker)
         elif scheduler == "slurm":
             self.scheduler = slurm("slurm")
         elif scheduler == "None":
@@ -480,6 +478,13 @@ if __name__ == "__main__":
         required=False,
         default="default")
 
+    parser.add_argument(
+        "--pbs-job-checker",
+        help="Method of checking jobs for the pbs scheduler (ignored for other schedulers)",
+        choices=["default", "tracejob"],
+        required=False,
+        default="default")
+
     args = vars(parser.parse_args())
 
     archiver = ArchiveResults(
@@ -488,6 +493,7 @@ if __name__ == "__main__":
         args["machinename"],
         args["scheduler"],
         args["pbs_node_specifier"],
+        args["pbs_job_checker"],
         args["testrootdir"],
         args["artifactsrootdir"],
         args["mpiversion"],

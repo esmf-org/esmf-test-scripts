@@ -3,8 +3,9 @@ machine: izumi
 account: P93300606
 queue: medium
 partition: None
-scheduler: pbs_tracejob
+scheduler: pbs
 pbs_node_specifier: nodes_ppn
+pbs_job_checker: tracejob
 corespernode: 48
 compiler: [intel, gfortran, nag]
 branch: [develop,release/8.3.0]
