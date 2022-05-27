@@ -9,6 +9,7 @@ import argparse
 from scheduler import scheduler
 from noscheduler import NoScheduler
 from pbs import pbs
+from pbs_tracejob import pbs_tracejob
 from slurm import slurm
 
 REPO_ESMF_TEST_ARTIFACTS = "https://github.com/esmf-org/esmf-test-artifacts.git"
@@ -40,6 +41,8 @@ class ESMFTest:
       self.scheduler=NoScheduler("None")
     elif(self.scheduler_type == "pbs"):
       self.scheduler=pbs("pbs")
+    elif(self.scheduler_type == "pbs_tracejob"):
+      self.scheduler=pbs_tracejob("pbs_tracejob")
     print(self.yaml_file, self.artifacts_root, self.workdir)
     self.createJobCardsAndSubmit()
 

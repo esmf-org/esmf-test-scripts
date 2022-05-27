@@ -14,7 +14,8 @@ YAML file structure and options
 Each platform should have a yaml file that specifies both the PBS/Slurm configuration and account information and the selection of compilers,
 netcdf, and MPI modules that will comprise the build parameters to be tested. Currently, the following scheduler variables are required--
 
-scheduler: (pbs or slurm)
+scheduler: (pbs, pbs_tracejob or slurm)
+    (pbs_tracejob is essentially the same as pbs, but uses tracejob rather than qstat -H to determine when a job is complete, for systems that don't support qstat -H)
 machine: (name of the platform/hostname)
 account: (the account that will be charged for the run)
 queue: (name of queue or QOS to use)

@@ -2,7 +2,7 @@ machine: izumi
 account: P93300606
 queue: medium
 partition: None
-scheduler: pbs
+scheduler: pbs_tracejob
 corespernode: 15
 compiler: [gfortran]
 branch: [develop]

@@ -9,6 +9,7 @@ import pathlib
 from scheduler import scheduler
 from noscheduler import NoScheduler
 from pbs import pbs
+from pbs_tracejob import pbs_tracejob
 from slurm import slurm
 from datetime import datetime
 
@@ -33,6 +34,8 @@ class ArchiveResults:
         self.machine_name = machine_name
         if scheduler == "pbs":
             self.scheduler = pbs("pbs")
+        elif scheduler == "pbs_tracejob":
+            self.scheduler = pbs_tracejob("pbs_tracejob")
         elif scheduler == "slurm":
             self.scheduler = slurm("slurm")
         elif scheduler == "None":

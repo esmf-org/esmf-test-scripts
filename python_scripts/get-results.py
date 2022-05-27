@@ -19,6 +19,12 @@ def checkqueue(jobid, scheduler):
         queue_query = "qstat -H {} | tail -n 1 | awk -F ' +' '{{print $10}}'".format(
             jobid
         )
+    elif scheduler == "pbs_tracejob":
+        # -w 9999 tells tracejob to assume we have a terminal of width 9999 characters;
+        # this should be enough to ensure that each entry appears on a single line, rather
+        # than being split across multiple lines (which can otherwise happen for a narrow
+        # terminal window)
+        queue_query = "tracejob -q -w 9999 {} | tail -n 1".format(jobid)
     elif scheduler == "None":
         return True
     else:
@@ -34,7 +40,13 @@ def checkqueue(jobid, scheduler):
                 return True
             else:
                 return False
-        if scheduler == "slurm":
+        elif scheduler == "pbs_tracejob":
+            finished_re = r"S\s+dequeuing"
+            if re.search(finished_re, result):
+                return True
+            else:
+                return False
+        elif scheduler == "slurm":
             if (
                 (result == "COMPLETED")
                 or (result == "TIMEOUT")

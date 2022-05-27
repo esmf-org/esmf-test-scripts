@@ -24,7 +24,7 @@ def create_header(
         file_out.write("#SBATCH --exclusive\n")
         file_out.write("#SBATCH --output {}_%j.o\n".format(filename))
         file_out.write("export JOBID=$SLURM_JOBID\n")
-    elif scheduler == "pbs":
+    elif scheduler == "pbs" or scheduler == "pbs_tracejob":
         file_out.write("#!{} -l\n".format(bash))
         file_out.write("#PBS -N {}\n".format(filename))
         file_out.write("#PBS -j oe\n")
@@ -397,7 +397,7 @@ def main(argv):
                                 )
                                 ft.write(cmdstring)
 
-                            if scheduler == "pbs":
+                            if scheduler == "pbs" or scheduler == "pbs_tracejob":
                                 cmd_build = "ssh {} {}/getres-build.sh\n".format(
                                     headnodename, os.getcwd()
                                 )
@@ -479,7 +479,7 @@ def main(argv):
                                     stderr=None,
                                     close_fds=True,
                                 )
-                            elif scheduler == "pbs":
+                            elif scheduler == "pbs" or scheduler == "pbs_tracejob":
                                 batch_build = "qsub {}".format(filename)
                                 print(batch_build)
                                 jobnum = (
