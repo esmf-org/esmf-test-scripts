@@ -19,7 +19,7 @@ scheduler: (pbs, pbs_tracejob or slurm)
 machine: (name of the platform/hostname)
 account: (the account that will be charged for the run)
 queue: (name of queue or QOS to use)
-cpn: (number of cores per node on compute nodes)
+corespernode: (number of cores per node on compute nodes)
 
 The following scheduler variables are optional--
 
