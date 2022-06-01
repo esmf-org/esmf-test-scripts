@@ -6,7 +6,7 @@ scheduler: pbs
 corespernode: 36
 compiler: [gfortran, intel, nvhpc]
 headnodename: cheyenne6
-branch: [develop,release/8.3.0]
+branch: [develop, release/8.3.0]
 #nuopcbranch: develop
 gfortran:
   test_time: "2:00:00"
@@ -38,8 +38,7 @@ gfortran:
         mpt:
           module: mpt/2.23
       extra_env_vars:
-        var1: ESMF_F90COMPILEOPTS="-fallow-argument-mismatch -fallow-invalid-boz"
-        var2: ESMF_F90COMPILER=mpif90
+        var1: ESMF_F90COMPILER=mpif90
   extramodule: cmake
 intel:
   test_time: "3:00:00"
@@ -49,15 +48,15 @@ intel:
       netcdf: netcdf/4.6.3
       mpi:
         mpiuni:
-        module: None
-      mpt:
-        module: mpt/2.19
-      openmpi:
-        module: openmpi/3.1.4
-        pythontest: True
-      intelmpi:
-        module: impi/2018.4.274
-        pythontest: True
+          module: None
+        mpt:
+          module: mpt/2.19
+        openmpi:
+          module: openmpi/3.1.4
+          pythontest: True
+        intelmpi:
+          module: impi/2018.4.274
+          pythontest: True
   extramodule: python cmake
 nvhpc:
   test_time: "3:00:00"
