@@ -1,8 +1,8 @@
 #!/bin/bash -l
 
-#cd /scratch1/NCEPDEV/nems/role.esmfmaint/esmf-test-scripts
-#git remote update
-#git pull -X theirs --no-edit 
+cd /scratch1/NCEPDEV/nems/role.esmfmaint/esmf-test-scripts
+git remote update
+git pull -X theirs --no-edit 
 export NS=/scratch1/NCEPDEV/nems/role.esmfmaint
 module load intelpython
 cd /scratch1/NCEPDEV/stmp2/role.esmfmaint
