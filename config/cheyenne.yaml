@@ -41,6 +41,7 @@ gfortran:
         var1: ESMF_F90COMPILER=mpif90
   extramodule: cmake
 intel:
+  build_time: "2:00:00"
   test_time: "3:00:00"
   versions:
     18.0.5:
