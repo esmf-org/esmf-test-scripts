@@ -6,7 +6,7 @@ cluster: c4
 scheduler: slurm
 corespernode: 24
 compiler: [gfortran,intel]
-branch: [develop,v8.3.0]
+branch: [develop]
 #nuopcbranch: develop
 gfortran:
      test_time: "3:00:00"

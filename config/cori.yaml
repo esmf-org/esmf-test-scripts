@@ -5,7 +5,7 @@ constraint: haswell
 scheduler: slurm
 corespernode: 32
 compiler: [intel]
-branch: [develop,v8.3.0]
+branch: [develop]
 #nuopcbranch: develop
 
 #gfortran:
