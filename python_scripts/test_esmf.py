@@ -30,7 +30,7 @@ class ESMFTest:
     if(self.reclone == True):
       print("recloning")
       os.system("rm -rf {}".format(self.artifacts_root))
-      os.system("git clone -b {} {}".format(self.machine_name,REPO_ESMF_TEST_ARTIFACTS))
+      os.system("git clone {}".format(REPO_ESMF_TEST_ARTIFACTS))
       os.chdir("esmf-test-artifacts")
       os.system("git checkout -b {}".format(self.machine_name))
       os.chdir("..")
@@ -46,7 +46,6 @@ class ESMFTest:
   def readYAML(self):
     config_path = os.path.dirname(self.yaml_file)
     global_file = os.path.join(config_path,"global.yaml")
-    print("HEY!!!! {}".format(global_file))
     with open(global_file) as file:
       self.global_list = yaml.load(file, Loader=yaml.SafeLoader)
       if("reclone-artifacts" in self.global_list):
@@ -153,7 +152,6 @@ class ESMFTest:
          print("status from nuopc clone command {} was {}".format(nuopcclone,status))
      
   def createScripts(self,build_type,comp,ver,mpidict,mpitypes,key,branch):
-    print("Ryan Look Here: ", mpidict)
     mpiflavor = mpidict[key]
     if(mpiflavor is not None and "pythontest" in mpiflavor):
       headerList = ["build","test","python"]
