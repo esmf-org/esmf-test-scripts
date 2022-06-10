@@ -33,6 +33,7 @@ class ESMFTest:
       os.system("git clone {}".format(REPO_ESMF_TEST_ARTIFACTS))
       os.chdir("esmf-test-artifacts")
       os.system("git checkout -b {}".format(self.machine_name))
+      os.system("git branch --set-upstream-to origin/{}".format(self.machine_name))
       os.chdir("..")
     if(self.scheduler_type == "slurm"):
       self.scheduler=slurm("slurm")
