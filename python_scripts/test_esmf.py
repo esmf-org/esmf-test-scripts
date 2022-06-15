@@ -25,16 +25,23 @@ class ESMFTest:
     print("setting dryrun to {}".format(self.dryrun))
     self.mypath=pathlib.Path(__file__).parent.absolute()
     print("path is {}".format(self.mypath))
-    print("calling readyaml")
     self.readYAML()
     if(self.reclone == True):
-      print("recloning")
+      print("Deleting and re-cloning artifacts repository")
       os.system("rm -rf {}".format(self.artifacts_root))
       os.system("git clone {}".format(REPO_ESMF_TEST_ARTIFACTS))
       os.chdir("esmf-test-artifacts")
       os.system("git fetch origin")
-      os.system("git checkout -B {}".format(self.machine_name))
-      os.system("git push --set-upstream origin {}".format(self.machine_name))
+      branchlist = subprocess.check_output('git branch -a', shell=True)
+      branchlist = branchlist.decode("utf-8")
+      print("Remote branches:\n{}".format(branchlist))
+      if "remotes/origin/{}".format(self.machine_name) in branchlist:
+        print("Tracking existing remote branch {}".format(self.machine_name))
+        os.system("git checkout -b {} -t origin/{}".format(self.machine_name, self.machine_name))
+      else:
+        print("Remote branch {} not found.  Creating new branch.".format(self.machine_name))
+        os.system("git checkout -b {}".format(self.machine_name))
+        os.system("git push --set-upstream origin {}".format(self.machine_name))                  
       os.chdir("..")
     if(self.scheduler_type == "slurm"):
       self.scheduler=slurm("slurm")
@@ -53,12 +60,11 @@ class ESMFTest:
       if("reclone-artifacts" in self.global_list):
         self.reclone = self.global_list['reclone-artifacts']
       else:
-        self.reclone = False
-      print("set reclone to {}".format(self.reclone))
+        self.reclone = False      
     with open(self.yaml_file) as file:
       self.machine_list = yaml.load(file, Loader=yaml.SafeLoader)
       self.machine_name = self.machine_list['machine']
-      print("machine name is {}".format(self.machine_name))
+      #print("machine name is {}".format(self.machine_name))
       if("git-https" in self.machine_list):
         self.https = True
       else: 
@@ -104,23 +110,6 @@ class ESMFTest:
         self.constraint=self.machine_list['constraint']
       else:
         self.constraint="None"
-
-      # Now traverse the tree
-      for build_type in self.build_types:
-        for comp in self.machine_list['compiler']:
-  
-         for ver in self.machine_list[comp]['versions']:
-          print("machine_list: ", self.machine_list)
-          print("machine_list[comp]: ", self.machine_list[comp])
-          print("machine_list[comp]['versions']: ", self.machine_list[comp]['versions'])
-          print("machine_list[comp]['versions'][ver]: ", self.machine_list[comp]['versions'][ver])
-          print("machine_list[comp]['versions'][ver]['mpi']: ", self.machine_list[comp]['versions'][ver]['mpi'])
-          mpidict = self.machine_list[comp]['versions'][ver]['mpi']
-          mpitypes= mpidict.keys()
-          print(self.machine_list[comp]['versions'][ver])
-#         for key in mpitypes:
-#           subdir="{}_{}_{}_{}".format(comp,ver,key,build_type)
-#           print("{}".format(subdir))
 
   def runcmd(self,cmd):
     if(self.dryrun == True):
