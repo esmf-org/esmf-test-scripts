@@ -1,6 +1,5 @@
 machine: izumi
-# izumi doesn't actually use an account, but provide this placeholder
-account: P93300606
+account: UNUSED
 queue: medium
 partition: None
 scheduler: pbs
@@ -8,7 +7,7 @@ pbs_node_specifier: nodes_ppn
 pbs_job_checker: tracejob
 corespernode: 48
 compiler: [intel, gfortran, nag]
-branch: [develop,release/8.3.0]
+branch: [develop]
 #nuopcbranch: develop
 
 intel:
