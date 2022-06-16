@@ -18,10 +18,20 @@ scheduler: (pbs or slurm)
 machine: (name of the platform/hostname)
 account: (the account that will be charged for the run)
 queue: (name of queue or QOS to use)
-cpn: (number of cores per node on compute nodes)
+corespernode: (number of cores per node on compute nodes)
 
 The following scheduler variables are optional--
 
+pbs_node_specifier: Method of specifying node request for pbs (ignored for other schedulers)
+    Currently the only supported options are "nodes_ppn" and "default"
+    If not specified, assumed to be "default"
+    "default" leads to "#PBS -l select=1:ncpus={cpn}:mpiprocs={cpn}
+    "nodes_ppn" leads to "#PBS -l nodes=1:ppn={cpn}".
+pbs_job_checker: Method of checking whether a job is complete for pbs (ignored for other schedulers)
+    Currently the only supported options are "tracejob" and "default"
+    If not specified, assumed to be "default"
+    "default" uses "qstat -H"
+    "tracejob" uses "tracejob"; this is for systems that don't support "qstat -H"
 cluster: (some slurm configurations require a cluster rather than a partition)
 partition: (some slurm configurations require a partition)
 

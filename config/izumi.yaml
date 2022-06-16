@@ -1,42 +1,52 @@
 machine: izumi
+# izumi doesn't actually use an account, but provide this placeholder
 account: P93300606
 queue: medium
 partition: None
 scheduler: pbs
-corespernode: 15
-compiler: [gfortran]
-branch: [develop]
+pbs_node_specifier: nodes_ppn
+pbs_job_checker: tracejob
+corespernode: 48
+compiler: [intel, gfortran, nag]
+branch: [develop,release/8.3.0]
 #nuopcbranch: develop
 
 intel:
-   versions:
-     19.1.0.166: 
-       compiler: compiler/intel/20.0.1
-       netcdf: tool/netcdf/4.7.4/intel/20.0.1
-       mpi:
-           mpiuni:
-             module: None            
+  test_time: "2:00:00"
+  versions:
+    20.0.1:
+      compiler: compiler/intel/20.0.1
+      netcdf: tool/netcdf/4.7.4/intel/20.0.1
+      mpi:
+        mvapich2:
+          module: mpi/2.3.3/intel/20.0.1
+
 gfortran:
-   versions:
-     9.3.0: 
-       compiler: compiler/gnu/9.3.0
-       netcdf: tool/netcdf/4.7.4/gnu/9.3.0
-       mpi:
-           mpiuni:
-             module: None
+  test_time: "2:00:00"
+  versions:
+    9.3.0: 
+      compiler: compiler/gnu/9.3.0
+      netcdf: tool/netcdf/4.7.4/gnu/9.3.0
+      mpi:
+        mvapich2:
+          module: mpi/2.3.3/gnu/9.3.0
+
 nag:
-   versions:
-     7.0: 
-       compiler: compiler/nag/7.0
-       netcdf: tool/netcdf/c4.7.4-f4.5.2/nag-gnu/7.0-9.3.0
-       mpi:
-           mpiuni:
-             module: None
+  test_time: "2:00:00"
+  versions:
+    6.2:
+      compiler: compiler/nag/6.2-8.1.0
+      netcdf: tool/netcdf/c4.6.1-f4.4.4/nag-gnu/6.2-8.1.0
+      mpi:
+        mvapich2:
+          module: mpi/2.3.3/nag/6.2
+
 pgi:
-   versions:
-     20.1: 
-       compiler: compiler/pgi/20.1 
-       netcdf: tool/netcdf/4.7.4/pgi/20.1
-       mpi:
-           mpiuni:
-             module: None
+  test_time: "2:00:00"
+  versions:
+    20.1:
+      compiler: compiler/pgi/20.1
+      netcdf: tool/netcdf/4.7.4/pgi/20.1
+      mpi:
+        mpiuni:
+          module: None
