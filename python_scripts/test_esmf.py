@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import yaml
 import os
 import re
@@ -336,11 +338,11 @@ class ESMFTest:
 
     
 if __name__ == "__main__":
-  parser = argparse.ArgumentParser(description='Archive collector for ESMF testing framework')
-  parser.add_argument('-w','--workdir', help='directory where builds will be mad #', required=False,default=os.getcwd())
-  parser.add_argument('-y','--yaml', help='Yaml file defining builds and testing parameters', required=True)
-  parser.add_argument('-a','--artifacts', help='directory where artifacts will be placed', required=True)
-  parser.add_argument('-d','--dryrun', help='directory where artifacts will be placed', required=False,default=False)
+  parser = argparse.ArgumentParser(description='A tool to facilitate automated and manual testing of ESMF')
+  parser.add_argument('-w','--workdir', help='directory where builds will be made', required=False,default=os.getcwd())
+  parser.add_argument('-y','--yaml', help='YAML file defining builds and testing parameters', required=True)
+  parser.add_argument('-a','--artifacts', help='directory where test artifacts will be placed', required=True)
+  parser.add_argument('-d','--dryrun', help='show commands without actually running them', required=False,default=False)
   args = vars(parser.parse_args())
 
   test = ESMFTest(args['yaml'],args['artifacts'],args['workdir'],args['dryrun'])  
