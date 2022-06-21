@@ -8,53 +8,150 @@ import subprocess
 import sys
 import pathlib
 import argparse
+import logging
 from scheduler import scheduler
 from noscheduler import NoScheduler
 from pbs import pbs
 from slurm import slurm
 
-REPO_ESMF_TEST_ARTIFACTS = "git@github.com:esmf-org/esmf-test-artifacts.git"
+logging.basicConfig(format='%(levelname)s: %(message)s', level=logging.DEBUG)
 
 class ESMFTest:
-  def __init__(self, yaml_file, artifacts_root, workdir, dryrun):
-    self.yaml_file=yaml_file
-    self.artifacts_root=artifacts_root
-    self.workdir=workdir
-    if(dryrun == "True"):
-      self.dryrun = True
-    else:
-      self.dryrun = False
-    print("setting dryrun to {}".format(self.dryrun))
-    self.mypath=pathlib.Path(__file__).parent.absolute()
-    print("path is {}".format(self.mypath))
+
+  def __init__(self, test_root, yaml_file, dryrun, check, configs):
+
+    if not os.path.isdir(test_root):
+      logging.error(f"Directory not found: {test_root}\nTesting root should be an existing directory.")      
+      return   
+    self.test_root = os.path.abspath(test_root)
+
+    if not os.path.isfile(yaml_file):
+      logging.error(f"YAML file not found: {yaml_file}")
+      return
+    self.yaml_file = os.path.abspath(yaml_file)
+
+    self.artifacts_root = os.path.abspath(os.path.join(self.test_root, "esmf-test-artifacts"))
+    
+    logging.debug(f"Test root: {self.test_root}")
+    logging.debug(f"Config file: {self.yaml_file}")
+    logging.debug(f"Artifacts root: {self.artifacts_root}")
+
+    self.dryrun = dryrun
+    self.mypath = pathlib.Path(__file__).parent.absolute()
+    logging.debug(f"Script path is {self.mypath}")
+   
     self.readYAML()
-    if(self.reclone == True):
-      print("Deleting and re-cloning artifacts repository")
-      os.system("rm -rf {}".format(self.artifacts_root))
-      os.system("git clone {}".format(REPO_ESMF_TEST_ARTIFACTS))
-      os.chdir("esmf-test-artifacts")
-      os.system("git fetch origin")
-      branchlist = subprocess.check_output('git branch -a', shell=True)
-      branchlist = branchlist.decode("utf-8")
-      print("Remote branches:\n{}".format(branchlist))
-      if "remotes/origin/{}".format(self.machine_name) in branchlist:
-        print("Tracking existing remote branch {}".format(self.machine_name))
-        os.system("git checkout -b {} -t origin/{}".format(self.machine_name, self.machine_name))
-      else:
-        print("Remote branch {} not found.  Creating new branch.".format(self.machine_name))
-        os.system("git checkout -b {}".format(self.machine_name))
-        os.system("git push --set-upstream origin {}".format(self.machine_name))                  
-      os.chdir("..")
-    if(self.scheduler_type == "slurm"):
-      self.scheduler=slurm("slurm")
-    elif(self.scheduler_type == "None"):
-      self.scheduler=NoScheduler("None")
-    elif(self.scheduler_type == "pbs"):
-      self.scheduler=pbs(scheduler_type = "pbs",
-                         pbs_node_specifier = self.pbs_node_specifier,
-                         pbs_job_checker = self.pbs_job_checker)
-    print(self.yaml_file, self.artifacts_root, self.workdir)
+
+    if configs:
+      self.print_configs()
+      return
+    
+    if self.https:
+      self.url_artifacts = "https://github.com/rsdunlapiv/esmf-test-artifacts.git"
+      self.url_esmf = "https://github.com/esmf-org/esmf"
+      self.url_nuopc = "https://github.com/esmf-org/nuopc-app-prototypes"
+    else:
+      self.url_artifacts = "git@github.com:rsdunlapiv/esmf-test-artifacts.git"
+      self.url_esmf = "git@github.com:esmf-org/esmf"
+      self.url_nuopc = "git@github.com:esmf-org/nuopc-app-prototypes"
+           
+    if check:
+      self.check()
+      return
+
+    if self.reclone:
+      self.reclone_artifacts(self.url_artifacts)
+
+    if self.scheduler_type == "slurm":
+      self.scheduler = slurm("slurm")
+    elif self.scheduler_type == "None":
+      self.scheduler = NoScheduler("None")
+    elif self.scheduler_type == "pbs":
+      self.scheduler = pbs(scheduler_type = "pbs",
+                           pbs_node_specifier = self.pbs_node_specifier,
+                           pbs_job_checker = self.pbs_job_checker)
+    
+    return
     self.createJobCardsAndSubmit()
+
+  def check(self):
+    """
+    Run some local checks to make sure configuration is working.
+    """
+    logging.info("Running checks")
+    self.chdir(f"{self.test_root}")
+    self.runcmd(f"mkdir -p .check")
+    self.chdir(".check")
+
+    logging.info("Check: Can I clone artifacts repo?")
+    self.clone_repo(self.url_artifacts, localname="esmf-test-artifacts")
+    self.chdir("esmf-test-artifacts")
+    o = self.runcmd("git status")
+    if "Your branch is up to date" in o:
+      logging.info("...PASS")
+    self.chdir("..")
+    
+    logging.info("Check: Can I clone ESMF repo?")
+    self.clone_repo(self.url_esmf, localname="esmf")
+    self.chdir("esmf")
+    o = self.runcmd("git status")
+    if "Your branch is up to date" in o:
+      logging.info("...PASS")
+    self.chdir("..")
+        
+    self.chdir("..")
+    self.runcmd("rm -rf .check")
+    logging.info("Checks complete")
+    
+    
+  def clone_repo(self, url, branch=None, localname=""):
+    """
+    Clone a repository into the current working directory.
+      url - repo to clone
+      branch - initial branch to checkout
+      localname - subdirectory used 
+    """
+    self.runcmd(f"rm -rf {localname}")
+    if branch is not None:
+      self.runcmd(f"git clone -b {branch} {url} {localname}")  
+      self.chdir(f"{localname}")                  
+      self.runcmd(f"git checkout {branch}")
+      self.runcmd(f"git pull origin {branch}")
+      self.chdir("..")  
+    else:
+      self.runcmd(f"git clone {url} {localname}")    
+
+  def reclone_artifacts(self, url):
+    logging.info(f"Deleting and re-cloning artifacts repository: {url}")
+    self.clone_repo(url, localname=ARTIFACTS_REPO_LOCAL_NAME)
+    self.chdir(ARTIFACTS_REPO_LOCAL_NAME)
+    
+    branchlist = self.runcmd('git branch -a')
+    logging.debug(f"Remote branches:\n{branchlist}")
+    
+    if f"remotes/origin/{self.machine_name}" in branchlist:
+      logging.info(f"Tracking existing remote branch {self.machine_name}")
+      self.runcmd(f"git checkout -b {self.machine_name} -t origin/{self.machine_name}")
+    else:
+      logging.info(f"Remote branch {self.machine_name} not found.  Creating new branch.")
+      self.runcmd(f"git checkout -b {self.machine_name}")
+      self.runcmd(f"git push --set-upstream origin {self.machine_name}")                  
+    self.chdir("..")
+    
+    
+  def runcmd(self, cmd):
+    logging.debug(f"CMD: {cmd}")
+    out = ""
+    if not self.dryrun:
+      out = subprocess.check_output(cmd, shell=True).strip().decode("utf-8")
+    else:
+      print(cmd)
+    return out
+
+  def chdir(self, toDir):
+    logging.debug(f"CHDIR: {toDir}")
+    if not self.dryrun:
+      os.chdir(toDir)
 
   def readYAML(self):
     config_path = os.path.dirname(self.yaml_file)
@@ -93,10 +190,6 @@ class ESMFTest:
         self.headnodename = self.machine_list["headnodename"]
       else:
         self.headnodename = os.uname()[1]
-#     if("branch" in self.machine_list):
-#       self.branch = self.machine_list['branch']
-#     else: 
-#       self.branch = "develop"
       if("nuopcbranch" in self.machine_list):
         self.nuopcbranch = self.machine_list['nuopcbranch']
       else: 
@@ -112,8 +205,8 @@ class ESMFTest:
       else:
         self.pbs_job_checker = "default"
       self.build_types = ['O','g']
-#     self.build_types = ['O']
-      self.script_dir=os.getcwd()
+      #self.build_types = ['O']
+      self.script_dir = os.getcwd()
       if("cluster" in self.machine_list):
         self.cluster=self.machine_list['cluster']
       else:
@@ -123,37 +216,7 @@ class ESMFTest:
       else:
         self.constraint="None"
 
-  def runcmd(self,cmd):
-    if(self.dryrun == True):
-       print("would have executed {}".format(cmd))
-    else:
-       print("running {}\n".format(cmd))
-       os.system(cmd)
-
-  def updateRepo(self,subdir,branch,nuopcbranch):
-     os.system("rm -rf {}".format(subdir))
-     if(not(os.path.isdir(subdir))):
-       if(self.https == True):
-         cmdstring = "git clone -b {} https://github.com/esmf-org/esmf {}".format(branch,subdir)
-         nuopcclone = "git clone -b {} https://github.com/esmf-org/nuopc-app-prototypes".format(nuopcbranch)
-       else:
-         cmdstring = "git clone -b {} git@github.com:esmf-org/esmf {}".format(branch,subdir)
-         nuopcclone = "git clone -b {} git@github.com:esmf-org/nuopc-app-prototypes".format(nuopcbranch)
-       if(self.dryrun == True):
-         print("would have executed {}".format(cmdstring))
-         print("would have executed {}".format(nuopcclone))
-         print("would have cd'd to {}".format(subdir))
-         os.system("mkdir {}".format(subdir))
-         os.chdir(subdir)
-       else:
-         status= subprocess.check_output(cmdstring,shell=True).strip().decode('utf-8')
-         os.chdir(subdir)
-         self.runcmd("rm -rf obj mod lib examples test *.o *.e *bat.o* *bat.e*")
-         self.runcmd("git checkout {}".format(branch))
-         self.runcmd("git pull origin {}".format(branch))
-         status= subprocess.check_output(nuopcclone,shell=True).strip().decode('utf-8')
-         print("status from nuopc clone command {} was {}".format(nuopcclone,status))
-     
+       
   def createScripts(self,build_type,comp,ver,mpidict,mpitypes,key,branch):
     mpiflavor = mpidict[key]
     if(mpiflavor is not None and "pythontest" in mpiflavor):
@@ -296,14 +359,26 @@ class ESMFTest:
     get_res_file.close()
     os.system("chmod +x getres-test.sh")      
 
+  def print_configs(self):
+    print(f"Configurations in {self.yaml_file}:")
+    config_num = 1
+    compilers = self.machine_list['configs']
+    for compiler in compilers:
+      versions = compilers[compiler]['versions']
+      for version in versions:
+        mpis = versions[version]['mpi']
+        netcdf = versions[version]['netcdf']
+        for mpi in mpis:
+          for build_type in self.build_types:
+            print(f"  [{config_num}] {compiler} {version} / {mpi} / {netcdf} / {build_type}")
+            config_num += 1
+
   def createJobCardsAndSubmit(self):
       for build_type in self.build_types:
         for comp in self.machine_list['compiler']:
          for ver in self.machine_list[comp]['versions']:
-            print("{}".format(self.machine_list[comp]['versions'][ver]['mpi']))
             mpidict = self.machine_list[comp]['versions'][ver]['mpi']
-            mpitypes= mpidict.keys()
-            print(self.machine_list[comp]['versions'][ver])
+            mpitypes = mpidict.keys()
             for key in mpitypes:
               if('build_time' in self.machine_list[comp]):
                 self.build_time = self.machine_list[comp]['build_time']
@@ -320,30 +395,40 @@ class ESMFTest:
                   nuopcbranch = branch
                 subdir="{}_{}_{}_{}_{}".format(comp,ver,key,build_type,branch)
                 subdir = re.sub("/","_",subdir) #Some branches have a slash, so replace that with underscore
-                if(self.https == True):
-                  cmdstring = "git clone -b {} https://github.com/esmf-org/esmf {}".format(branch,subdir)
-                  nuopcclone = "git clone -b {} https://github.com/esmf-org/nuopc-app-prototypes".format(nuopcbranch)
+
+                xif self.https:
+                  esmfurl = "https://github.com/esmf-org/esmf"
+                  nuopcurl = "https://github.com/esmf-org/nuopc-app-prototypes"
                 else:
-                  cmdstring = "git clone -b {} git@github.com:esmf-org/esmf {}".format(branch,subdir)
-                  nuopcclone = "git clone -b {} git@github.com:esmf-org/nuopc-app-prototypes".format(nuopcbranch)
-                self.updateRepo(subdir,branch,nuopcbranch)
+                  esmfurl = "git@github.com:esmf-org/esmf"
+                  nuopcurl = "git@github.com:esmf-org/nuopc-app-prototypes"
+                  
+                self.clone_repo(esmfurl, branch, subdir)
+                self.chdir(subdir)
+                self.clone_repo(nuopcurl, nuopcbranch, "nuopc-app-prototypes")
+
                 self.b_filename = 'build-{}_{}_{}_{}.bat'.format(comp,ver,key,build_type)
                 self.t_filename = 'test-{}_{}_{}_{}.bat'.format(comp,ver,key,build_type)
                 self.fb = open(self.b_filename, "w")
                 self.ft = open(self.t_filename, "w")
                 self.scheduler.createHeaders(self)
                 self.createScripts(build_type,comp,ver,mpidict,mpitypes,key,branch)
-                self.scheduler.submitJob(self,subdir,self.mpiver,branch)
-                os.chdir("..")
+                #self.scheduler.submitJob(self,subdir,self.mpiver,branch)
+                self.chdir("..")
 
     
 if __name__ == "__main__":
   parser = argparse.ArgumentParser(description='A tool to facilitate automated and manual testing of ESMF')
-  parser.add_argument('-w','--workdir', help='directory where builds will be made', required=False,default=os.getcwd())
+  parser.add_argument('-r','--root', help='Test system root directory', required=True)
   parser.add_argument('-y','--yaml', help='YAML file defining builds and testing parameters', required=True)
-  parser.add_argument('-a','--artifacts', help='directory where test artifacts will be placed', required=True)
-  parser.add_argument('-d','--dryrun', help='show commands without actually running them', required=False,default=False)
+  parser.add_argument('-d','--dryrun', help='Show commands without actually running them', required=False, action='store_true')
+  parser.add_argument('-c','--check', help='Run some checks', required=False, action='store_true')
+  parser.add_argument('-o','--configs', help='Print list of test configurations', required=False, action='store_true')
+  
   args = vars(parser.parse_args())
 
-  test = ESMFTest(args['yaml'],args['artifacts'],args['workdir'],args['dryrun'])  
+  #try:
+  test = ESMFTest(args['root'], args['yaml'], args['dryrun'], args['check'], args['configs'])
+  #except Exception as e:
+  #  print(f"Error invoking test script:\n{e}")
     
