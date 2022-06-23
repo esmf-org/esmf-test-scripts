@@ -1,22 +1,21 @@
-import os
-from scheduler import scheduler
+from scheduler import Scheduler
 
 
-class NoScheduler(scheduler):
-    def __init__(self, scheduler_type):
-        self.type = scheduler_type
+class NoScheduler(Scheduler):
+    def __init__(self):
+        super().__init__("None")
 
-    def submitJob(self, test, subdir, mpiver, branch):
+    def submit_job(self, test, subdir, mpiver, branch):
         test.runcmd("chmod +x {}".format(test.b_filename))
         jobnum = 12345
         test.runcmd("./{} {}".format(test.b_filename, jobnum))
         monitor_cmd_build = "python3 {}/archive_results.py -j {} -b {} -m {} -s {} -t {} -a {} -M {} -B {} -d {}".format(
-            test.mypath,
+            test.scripts_path,
             jobnum,
             subdir,
             test.machine_name,
             self.type,
-            test.script_dir,
+            test.test_root,
             test.artifacts_root,
             mpiver,
             branch,
@@ -27,12 +26,12 @@ class NoScheduler(scheduler):
         test.runcmd("chmod +x {}".format(test.t_filename))
         test.runcmd("./{} {}".format(test.t_filename, jobnum))
         monitor_cmd_test = "python3 {}/archive_results.py -j {} -b {} -m {} -s {} -t {} -a {} -M {} -B {} -d {}".format(
-            test.mypath,
+            test.scripts_path,
             jobnum,
             subdir,
             test.machine_name,
             self.type,
-            test.script_dir,
+            test.test_root,
             test.artifacts_root,
             mpiver,
             branch,
@@ -41,7 +40,7 @@ class NoScheduler(scheduler):
         test.runcmd("{}".format(monitor_cmd_test))
         test.createGetResScripts(monitor_cmd_build, monitor_cmd_test)
 
-    def createHeaders(self, test):
+    def create_headers(self, test):
         for headerType in ["build", "test"]:
             if headerType == "build":
                 file_out = test.fb
@@ -52,5 +51,5 @@ class NoScheduler(scheduler):
             file_out.write("#!{} -l\n".format(test.bash))
             file_out.write("export JOBID={}\n".format(jobid))
 
-    def checkqueue(self, jobid):
+    def check_queue(self, jobid):
         return True

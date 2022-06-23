@@ -1,0 +1,16 @@
+machine: rockylaptop
+scheduler: None
+corespernode: 4
+compiler: [gfortran]
+branch: [develop]
+nuopcbranch: [develop]
+
+configs:
+  gfortran:
+    versions:
+      10.3.0:
+        compiler: gfortran-10.3.0
+        netcdf: netcdf-4.7.4
+        mpi:
+          openmpi:
+            module: openmpi-4.1.0

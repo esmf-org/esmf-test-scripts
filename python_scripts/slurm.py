@@ -1,42 +1,38 @@
-import os
 import subprocess
-from scheduler import scheduler
+from scheduler import Scheduler
+from io import StringIO
 
 
-class slurm(scheduler):
-  def __init__(self, scheduler_type):
-        self.type = scheduler_type
+class Slurm(Scheduler):
 
+    def __init__(self, config):
+        super().__init__("slurm", config)
+        self.partition = config.get("partition", None)
+        self.cluster = config.get("cluster", None)
+        self.constraint = config.get("constraint", None)
 
-  def createHeaders(self,test):
-    for headerType in ["build","test"]:
-      if(headerType == "build"):
-        file_out = test.fb
-      else:
-        file_out = test.ft
-      file_out.write("#!/bin/sh -l\n")
-      file_out.write("#SBATCH --account={}\n".format(test.account))
-      if(headerType == "build"):
-        file_out.write("#SBATCH -o {}_%j.o\n".format(test.b_filename))
-        file_out.write("#SBATCH -e {}_%j.e\n".format(test.b_filename))
-        file_out.write("#SBATCH --time={}\n".format(test.build_time))
-      else:
-        file_out.write("#SBATCH -o {}_%j.o\n".format(test.t_filename))
-        file_out.write("#SBATCH -e {}_%j.e\n".format(test.t_filename))
-        file_out.write("#SBATCH --time={}\n".format(test.test_time))
-      if(test.partition != "None"):
-        file_out.write("#SBATCH --partition={}\n".format(test.partition))
-      if(test.cluster != "None"):
-        file_out.write("#SBATCH --cluster={}\n".format(test.cluster))
-      if(test.constraint != "None"):
-        file_out.write("#SBATCH -C {}\n".format(test.constraint))
-      file_out.write("#SBATCH --qos={}\n".format(test.queue))
-      file_out.write("#SBATCH --nodes=1\n")
-      file_out.write("#SBATCH --ntasks-per-node={}\n".format(test.cpn))
-      file_out.write("#SBATCH --exclusive\n")
-      file_out.write("export JOBID=$SLURM_JOBID\n")
+    def create_headers(self, script_file, timeout):
+        with StringIO() as out:
+            out.write("#!/bin/sh -l\n")
+            out.write(f"#SBATCH --account={self.account}\n")
+            out.write(f"#SBATCH -o {script_file}_%j.o\n")
+            out.write(f"#SBATCH -e {script_file}_%j.e\n")
+            out.write(f"#SBATCH --time={timeout}\n")
+            if self.partition is not None:
+                out.write(f"#SBATCH --partition={self.partition}\n")
+            if self.cluster is not None:
+                out.write(f"#SBATCH --cluster={self.cluster}\n")
+            if self.constraint is not None:
+                out.write(f"#SBATCH -C {self.constraint}\n")
+            out.write(f"#SBATCH --qos={self.queue}\n")
+            out.write(f"#SBATCH --nodes=1\n")
+            out.write(f"#SBATCH --ntasks-per-node={self.tasks_per_node}\n")
+            out.write(f"#SBATCH --exclusive\n")
+            out.write(f"export JOBID=$SLURM_JOBID\n")
+            out.write("\n\n")
+            return out.getvalue()
 
-  def submitJob(self, test, subdir, mpiver, branch):
+    def submit_job(self, test, subdir, mpiver, branch):
         batch_build = "sbatch {}".format(test.b_filename)
         jobnum = (
             subprocess.check_output(batch_build, shell=True)
@@ -45,12 +41,12 @@ class slurm(scheduler):
             .split()[3]
         )
         monitor_cmd_build = "python3 {}/archive_results.py -j {} -b {} -m {} -s {} -t {} -a {} -M {} -B {} -d {}".format(
-            test.mypath,
+            test.scripts_path,
             jobnum,
             subdir,
             test.machine_name,
             self.type,
-            test.script_dir,
+            test.test_root,
             test.artifacts_root,
             mpiver,
             branch,
@@ -84,7 +80,7 @@ class slurm(scheduler):
             subdir,
             test.machine_name,
             self.type,
-            test.script_dir,
+            test.test_root,
             test.artifacts_root,
             mpiver,
             branch,
@@ -103,7 +99,7 @@ class slurm(scheduler):
             )
         test.createGetResScripts(monitor_cmd_build, monitor_cmd_test)
 
-  def checkqueue(self, jobid):
+    def check_queue(self, jobid):
         if int(jobid) < 0:
             return True
         queue_query = (
@@ -116,10 +112,10 @@ class slurm(scheduler):
                 subprocess.check_output(queue_query, shell=True).strip().decode("utf-8")
             )
             if (
-                (result == "COMPLETED")
-                or (result == "TIMEOUT")
-                or (result == "FAILED")
-                or (result == "CANCELLED")
+                    (result == "COMPLETED")
+                    or (result == "TIMEOUT")
+                    or (result == "FAILED")
+                    or (result == "CANCELLED")
             ):  # could check for R and Q to see if it is running or waiting
                 return True
             else:

@@ -1,79 +1,80 @@
----
-account: nems
-machine: hera
-git-https: true
-partition: hera
-queue: batch
-scheduler: slurm
-corespernode: 40
-compiler:
-  - gfortran
-  - intel
-  - pgi
+machine:
+  name: hera
+  git_https: false #true
+  scheduler:
+    type: slurm
+    queue: batch
+    partition: hera
+    account: nems
+    tasks_per_node: 40
+
+compiler: [gfortran, intel, pgi]
 branch: [develop]
-#nuopcbranch: develop
-gfortran:
-  test_time: "2:00:00"
-  versions:
-    9.2.0a:
-      compiler: gnu/9.2.0
-      extra_commands:
-        cmd1: "tar xvfz ~/pytest-input.tar.gz"
-      mpi:
-        mpiuni:
-          module: None
-      netcdf: netcdf/4.7.2
-    9.2.0b:
-      compiler: gnu/9.2.0
-      extra_commands:
-        cmd1: "tar xvfz ~/pytest-input.tar.gz"
-      mpi:
-#        intelmpi:
-#          module: impi/2020
-#          mpi_env_vars:
-#            var1: ESMF_MPIRUN=mpirun.srun
-#          pythontest: true
-        openmpi:
-          module: openmpi/3.1.4
-          mpi_env_vars:
-            var1: ESMF_MPIRUN=mpirun.srun
-          pythontest: true
-      netcdf: None
-  extramodule: cmake
-intel:
-  versions:
-    18.0.5a:
-      compiler: intel/18.0.5.274
-      extra_commands:
-        cmd1: "tar xvfz ~/pytest-input.tar.gz"
-      mpi:
-        mpiuni:
-          module: None
-      netcdf: netcdf/4.6.1
-    18.0.5b:
-      compiler: intel/18.0.5.274
-      extra_commands:
-        cmd1: "tar xvfz ~/pytest-input.tar.gz"
-      mpi:
-        intelmpi:
-          module: impi/2018.4.274
-          mpi_env_vars:
-            var1: ESMF_MPIRUN=mpirun.srun
-          pythontest: true
-      netcdf: netcdf-hdf5parallel/4.7.4
-  extramodule: cmake
-pgi:
-  build_time: "2:00:00"
-  test_time:  "4:00:00"
-  versions:
-    19.10:
-      compiler: pgi/19.10
-      mpi:
-        mpiuni:
-          module: None
-        intelmpi:
-          module: impi/2019.0.5
-          mpi_env_vars:
-            var1: ESMF_MPIRUN=mpirun.srun
-      netcdf: None
-  extramodule: cmake
+#nuopc_branch: [develop]
+
+matrix:
+  gfortran:
+    test_time: "2:00:00"
+    versions:
+      9.2.0a:
+        compiler: gnu/9.2.0
+        extra_commands:
+          cmd1: "tar xvfz ~/pytest-input.tar.gz"
+        mpi:
+          mpiuni:
+            module: None
+        netcdf: netcdf/4.7.2
+      9.2.0b:
+        compiler: gnu/9.2.0
+        extra_commands:
+          cmd1: "tar xvfz ~/pytest-input.tar.gz"
+        mpi:
+  #        intelmpi:
+  #          module: impi/2020
+  #          mpi_env_vars:
+  #            var1: ESMF_MPIRUN=mpirun.srun
+  #          pythontest: true
+          openmpi:
+            module: openmpi/3.1.4
+            mpi_env_vars:
+              var1: ESMF_MPIRUN=mpirun.srun
+            pythontest: true
+        netcdf: None
+    extra_module: cmake
+  intel:
+    versions:
+      18.0.5a:
+        compiler: intel/18.0.5.274
+        extra_commands:
+          cmd1: "tar xvfz ~/pytest-input.tar.gz"
+        mpi:
+          mpiuni:
+            module: None
+        netcdf: netcdf/4.6.1
+      18.0.5b:
+        compiler: intel/18.0.5.274
+        extra_commands:
+          cmd1: "tar xvfz ~/pytest-input.tar.gz"
+        mpi:
+          intelmpi:
+            module: impi/2018.4.274
+            mpi_env_vars:
+              var1: ESMF_MPIRUN=mpirun.srun
+            pythontest: true
+        netcdf: netcdf-hdf5parallel/4.7.4
+    extra_module: cmake
+  pgi:
+    build_time: "2:00:00"
+    test_time:  "4:00:00"
+    versions:
+      19.10:
+        compiler: pgi/19.10
+        mpi:
+          mpiuni:
+            module: None
+          intelmpi:
+            module: impi/2019.0.5
+            mpi_env_vars:
+              var1: ESMF_MPIRUN=mpirun.srun
+        netcdf: None
+    extra_module: cmake

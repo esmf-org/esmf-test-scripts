@@ -2,10 +2,10 @@ import os
 import re
 import subprocess
 import sys
-from scheduler import scheduler
+from scheduler import Scheduler
 
-class pbs(scheduler):
-  def __init__(self, scheduler_type, pbs_node_specifier, pbs_job_checker):
+class PBS(Scheduler):
+  def __init__(self, pbs_node_specifier, pbs_job_checker):
     """
     Args:
     - scheduler_type: should be "pbs"
@@ -15,11 +15,11 @@ class pbs(scheduler):
         tracejob output is likely to be more fragile than parsing qstat -H, so this should be
         used with caution.
     """
-    self.type = scheduler_type
+    super().__init__("pbs")
     self._pbs_node_specifier = pbs_node_specifier
     self._pbs_job_checker = pbs_job_checker
 
-  def createHeaders(self,test):
+  def create_headers(self,test):
     for headerType in ["build","test"]:
       if(headerType == "build"):
         file_out = test.fb
@@ -45,7 +45,7 @@ class pbs(scheduler):
       file_out.write("JOBID=\"`echo $PBS_JOBID | cut -d. -f1`\"\n\n")
       file_out.write("cd {}\n".format(os.getcwd()))
 
-  def submitJob(self,test,subdir,mpiver,branch):
+  def submit_job(self,test,subdir,mpiver,branch):
     # add ssh back to the head node for archiving of results to batch scripts
 #   test.runcmd("echo \"ssh {} {}/getres-build.sh\" >> {}".format(test.headnodename,os.getcwd(),test.b_filename))
 #   test.runcmd("echo \"ssh {} {}/getres-test.sh\" >> {}".format(test.headnodename,os.getcwd(),test.t_filename))
@@ -57,7 +57,7 @@ class pbs(scheduler):
       jobnum= subprocess.check_output(batch_build,shell=True).strip().decode('utf-8').split(".")[0]
     print("Submitting batch_build with command: {}, jobnum is {}".format(batch_build,jobnum))
     monitor_cmd_build = \
-                   "python3 {}/archive_results.py -j {} -b {} -m {} -s {} -t {} -a {} -M {} -B {} -d {} --pbs-node-specifier {} --pbs-job-checker {}".format(test.mypath,jobnum,subdir,test.machine_name,self.type,test.script_dir,test.artifacts_root,mpiver,branch,test.dryrun,self._pbs_node_specifier,self._pbs_job_checker)
+                   "python3 {}/archive_results.py -j {} -b {} -m {} -s {} -t {} -a {} -M {} -B {} -d {} --pbs-node-specifier {} --pbs-job-checker {}".format(test.scripts_path,jobnum,subdir,test.machine_name,self.type,test.test_root,test.artifacts_root,mpiver,branch,test.dryrun,self._pbs_node_specifier,self._pbs_job_checker)
     if(test.dryrun == True):
       print(monitor_cmd_build)
     else:
@@ -72,7 +72,7 @@ class pbs(scheduler):
     else:
       jobnum= subprocess.check_output(batch_test,shell=True).strip().decode('utf-8').split(".")[0]
     monitor_cmd_test = \
-                   "python3 {}/archive_results.py -j {} -b {} -m {} -s {} -t {} -a {} -M {} -B {} -d {} --pbs-node-specifier {} --pbs-job-checker {}".format(test.mypath,jobnum,subdir,test.machine_name,self.type,test.script_dir,test.artifacts_root,mpiver,branch,test.dryrun,self._pbs_node_specifier,self._pbs_job_checker)
+                   "python3 {}/archive_results.py -j {} -b {} -m {} -s {} -t {} -a {} -M {} -B {} -d {} --pbs-node-specifier {} --pbs-job-checker {}".format(test.scripts_path,jobnum,subdir,test.machine_name,self.type,test.test_root,test.artifacts_root,mpiver,branch,test.dryrun,self._pbs_node_specifier,self._pbs_job_checker)
     if(test.dryrun == True):
       print(monitor_cmd_test)
     else:
@@ -80,7 +80,7 @@ class pbs(scheduler):
     test.createGetResScripts(monitor_cmd_build,monitor_cmd_test)
     
 
-  def checkqueue(self,jobid):
+  def check_queue(self,jobid):
     if self._pbs_job_checker == "tracejob":
       return self._checkqueue_tracejob(jobid)
     elif self._pbs_job_checker == "default":
