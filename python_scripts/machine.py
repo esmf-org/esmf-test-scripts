@@ -6,19 +6,12 @@ class Machine:
 
     def __init__(self, config):
         self.name = config["name"]
-        self.git_https = False
-        self.bash = "/bin/bash"
-        self.head_node_name = os.uname()[1]
-        self.cores_per_node = 1
-
-        if "git_https" in config:
-            self.git_https = config["git_https"]
-        if "bash" in config:
-            self.bash = config["bash"]
-        if "head_node_name" in config:
-            self.head_node_name = config["head_node_name"]
-
-        self.scheduler = Scheduler.make_scheduler(config["scheduler"])
+        self.git_https = config.get("git_https", False)
+        self.bash = config.get("bash", "/bin/bash")
+        self.head_node_name = config.get("head_node_name", os.uname()[1])
+        self.module_path = config.get("module_path", None)
+        self.cores_per_node = config.get("cores_per_node", 1)
+        self.scheduler = Scheduler.make_scheduler(config["scheduler"], self)
 
     def print(self):
         """
@@ -30,5 +23,7 @@ class Machine:
         print(f" Git-Https: {self.git_https}")
         print(f" Bash: {self.bash}")
         print(f" Head node: {self.head_node_name}")
+        print(f" Module path: {self.module_path}")
+        print(f" Cores per node: {self.cores_per_node}")
         print(f" Scheduler: {self.scheduler.sched_type}")
 

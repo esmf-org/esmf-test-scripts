@@ -1,11 +1,15 @@
-machine: rockylaptop
-scheduler: None
-corespernode: 4
-compiler: [gfortran]
-branch: [develop]
-nuopcbranch: [develop]
+machine:
+  name: rockylaptop
+  cores_per_node: 4
+  scheduler: None
 
-configs:
+test:
+  esmf_branch: [develop]
+  nuopc_branch: [develop]
+#  filter:
+#    compiler: [gfortran]
+
+matrix:
   gfortran:
     versions:
       10.3.0:

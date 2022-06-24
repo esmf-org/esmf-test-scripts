@@ -7,11 +7,12 @@ class Matrix:
     different compiler / mpi / netcdf / bopt combinations.
     """
 
-    def __init__(self, config, bopts):
+    def __init__(self, config, bopts, module_path=None):
         """
         Initialize test case matrix from the YAML configuration.
           - config: the "matrix" portion of the YAML
           - bopts: list of build opts (e.g., ['O', 'g']) to generate
+          - module_path: if "module use <module_path>" is required on this machine
         """
 
         self.environments = []
@@ -37,6 +38,7 @@ class Matrix:
                         env.bopt = bopt
                         env.test_time = test_time
                         env.build_time = build_time
+                        env.module_path = module_path
 
                         if mpi_module != "":
                             env.mpi_version = mpi_module.split('/')[-1]
@@ -63,5 +65,5 @@ class Matrix:
         """
         print("Matrix of test environments:")
         print("===========================================")
-        for i, c in enumerate(self.environments, start=1):
-            print(f"  [{i}] {c.compiler} {c.compiler_version} / {c.mpi} / {c.netcdf_module} / {c.bopt}")
+        for i, e in enumerate(self.environments, start=1):
+            print(f"  [{i}] {e.label()}")

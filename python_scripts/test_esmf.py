@@ -7,7 +7,7 @@ import argparse
 import logging
 from machine import Machine
 from matrix import Matrix
-from cmd import CMD
+import cmd
 
 logging.basicConfig(format='%(levelname)s: %(message)s', level=logging.DEBUG)
 
@@ -42,18 +42,21 @@ class ESMFTest:
         self.reclone = False
         self.bopts = ["O", "g"]
 
-        self.cmd = CMD(dry_run)
+        cmd.set_dry_run(dry_run)
 
         # load machine configuration from YAML
         with open(self.yaml_file) as file:
             _yaml = yaml.load(file, Loader=yaml.SafeLoader)
             self.machine = Machine(_yaml["machine"])
             if self.machine.name != machine_name:
-                raise Exception("Machine name in YAML must match machine name passed as command line argument.")
+                raise RuntimeError("Machine name in YAML must match machine name passed as command line argument.")
                 return
-            self.matrix = Matrix(_yaml["matrix"], bopts=self.bopts)
-            self.branch = _yaml["branch"]
-            self.nuopc_branch = _yaml.get("nuopc_branch", None)
+            self.matrix = Matrix(_yaml["matrix"], bopts=self.bopts, module_path=self.machine.module_path)
+            if "test" not in _yaml:
+                raise RuntimeError("YAML must have a 'test' section.")
+            self.esmf_branch = _yaml["test"]["esmf_branch"]
+            self.nuopc_branch = _yaml["test"].get("nuopc_branch", None)
+            self.yaml_filter = _yaml["test"].get("filter", None)
 
         # load global settings from YAML
         global_file = os.path.join(self.scripts_path.parent, "config/global.yaml")
@@ -72,9 +75,16 @@ class ESMFTest:
                 self.repos["esmf"] = _repos["esmf"]["git"]
                 self.repos["nuopc"] = _repos["nuopc"]["git"]
 
-        self.filter = filter
+        self.filter = None
         if filter is not None:
             logging.debug(f"Filter applied to test matrix: {filter}")
+            self.filter = []
+            try:
+                for _n in filter.split(","):
+                    self.filter.append(int(_n.strip()))
+            except ValueError:
+                raise RuntimeError("Invalid format for --filter argument.")
+                return
 
         self.no_artifacts = no_artifacts
         if no_artifacts:
@@ -85,175 +95,48 @@ class ESMFTest:
         Run some local checks to make sure configuration is working.
         """
         logging.info("Running checks")
-        self.cmd.chdir(f"{self.test_root}")
-        self.cmd.runcmd(f"mkdir -p .check")
-        self.cmd.chdir(".check")
+        cmd.chdir(f"{self.test_root}")
+        cmd.runcmd(f"mkdir -p .check")
+        cmd.chdir(".check")
 
         logging.info("Check: Can I clone artifacts repo?")
-        self.clone_repo(self.repos["artifacts"], localname="esmf-test-artifacts")
+        self.clone_repo(self.repos["artifacts"], local_name="esmf-test-artifacts")
 
-        self.cmd.chdir("esmf-test-artifacts")
-        o = self.cmd.runcmd("git status")
+        cmd.chdir("esmf-test-artifacts")
+        o = cmd.runcmd("git status")
         if "Your branch is up to date" in o:
             logging.info("...PASS")
-        self.cmd.chdir("..")
+        cmd.chdir("..")
 
         logging.info("Check: Can I clone ESMF repo?")
-        self.clone_repo(self.repos["esmf"], localname="esmf")
-        self.cmd.chdir("esmf")
+        self.clone_repo(self.repos["esmf"], local_name="esmf")
+        cmd.chdir("esmf")
         o = self.cmd.runcmd("git status")
         if "Your branch is up to date" in o:
             logging.info("...PASS")
-        self.cmd.chdir("..")
+        cmd.chdir("..")
 
-        self.cmd.chdir("..")
-        self.cmd.runcmd("rm -rf .check")
+        cmd.chdir("..")
+        cmd.runcmd("rm -rf .check")
         logging.info("Checks complete")
 
     def reclone_artifacts(self):
         url = self.repos["artifacts"]
         logging.info(f"Deleting and re-cloning artifacts repository: {url}")
-        self.cmd.clone_repo(url, localname="esmf-test-artifacts")
-        self.cmd.chdir("esmf-test-artifacts")
+        cmd.clone_repo(url, local_name="esmf-test-artifacts")
+        cmd.chdir("esmf-test-artifacts")
 
-        branch_list = self.cmd.runcmd('git branch -a')
+        branch_list = cmd.runcmd('git branch -a')
         logging.debug(f"Remote branches:\n{branch_list}")
 
         if f"remotes/origin/{self.machine.name}" in branch_list:
             logging.info(f"Tracking existing remote branch {self.machine.name}")
-            self.cmd.runcmd(f"git checkout -b {self.machine.name} -t origin/{self.machine.name}")
+            cmd.runcmd(f"git checkout -b {self.machine.name} -t origin/{self.machine.name}")
         else:
             logging.info(f"Remote branch {self.machine.name} not found.  Creating new branch.")
-            self.cmd.runcmd(f"git checkout -b {self.machine.name}")
-            self.cmd.runcmd(f"git push --set-upstream origin {self.machine.name}")
-        self.cmd.chdir("..")
-
-    def createScripts(self, config):
-
-        #    headerList = ["build", "test", "python"]
-
-        headerList = ["build", "test"]
-        for headerType in headerList:
-            if headerType == "build":
-                file_out = self.fb
-            elif headerType == "test":
-                file_out = self.ft
-            else:
-                raise Exception("Unknown header type")
-            # else:
-            #    pythonscript = open("runpython.sh", "w")
-            #    file_out = pythonscript
-            #    file_out.write("#!{} -l\n".format(self.bash))
-            #    file_out.write("cd {}\n".format(os.getcwd()))
-            #    file_out.write("export ESMFMKFILE=`find $PWD/DEFAULTINSTALLDIR -iname esmf.mk`\n\n")
-            #    file_out.write("cd {}/src/addon/ESMPy\n".format(os.getcwd()))
-
-            if "unload_module" in config:
-                file_out.write("\nmodule unload {}\n".format(config['unload_module']))
-            if "modulepath" in self.yaml:
-                modulepath = self.yaml['modulepath']
-                file_out.write("\nmodule use {}\n".format(modulepath))
-            if "extra_module" in config:
-                file_out.write("\nmodule load {}\n".format(config['extra_module']))
-
-            if config['mpi_module'] == "None":
-                # mpiflavor['module'] = ""
-                cmdstring = "export ESMF_MPIRUN={}/src/Infrastructure/stubs/mpiuni/mpirun\n".format(os.getcwd())
-                file_out.write(cmdstring)
-
-            if "mpi_env_vars" in config:
-                for mpi_var in config["mpi_env_vars"]:
-                    file_out.write("export {}\n".format(config['mpi_env_vars'][mpi_var]))
-
-            if config["netcdf_module"] == "None":
-                modulecmd = "module load {} {} \n\n".format(config["compiler_module"], config['mpi_module'])
-                esmfnetcdf = "\n"
-                file_out.write(modulecmd)
-            else:
-                modulecmd = "module load {} {} {}\n".format(config["compiler_module"],
-                                                            config['mpi_module'], config["netcdf_module"])
-
-                esmfnetcdf = "export ESMF_NETCDF=nc-config\n\n"
-                file_out.write(modulecmd)
-
-            if "hdf5_module" in config:
-                modulecmd = "module load {} \n".format(config["hdf5_module"])
-                file_out.write(modulecmd)
-            if "netcdf-fortran_module" in config:
-                modulecmd = "module load {} \n".format(config['netcdf-fortran_module'])
-                file_out.write(modulecmd)
-
-            if headerType == "build":
-                file_out.write("module list >& module-build.log\n\n")
-            elif headerType == "test":
-                file_out.write("module list >& module-test.log\n\n")
-
-            file_out.write("set -x\n")
-            file_out.write(esmfnetcdf)
-
-            if "extra_env_vars" in config:
-                for var in config["extra_env_vars"]:
-                    file_out.write("export {}\n".format(config["extra_env_vars"][var]))
-
-            if "extra_commands" in config:
-                for cmd in config["extra_commands"]:
-                    file_out.write("{}\n".format(config['extra_commands'][cmd]))
-
-            cmdstring = "export ESMF_DIR={}\n".format(os.getcwd())
-            file_out.write(cmdstring)
-
-            cmdstring = "export ESMF_COMPILER={}\n".format(config["compiler"])
-            file_out.write(cmdstring)
-
-            cmdstring = "export ESMF_COMM={}\n".format(config["mpi"])
-            file_out.write(cmdstring)
-
-            cmdstring = "export ESMF_BOPT='{}'\n".format(config["bopt"])
-            file_out.write(cmdstring)
-
-            cmdstring = "export ESMF_TESTEXHAUSTIVE='ON'\n"
-            file_out.write(cmdstring)
-
-            cmdstring = "export ESMF_TESTWITHTHREADS='ON'\n"
-            file_out.write(cmdstring)
-
-            if headerType == "build":
-                cmdstring = "make -j {} 2>&1| tee build_$JOBID.log\n\n".format(self.cpn)
-                file_out.write(cmdstring)
-            elif headerType == "test":
-                cmdstring = "make info 2>&1| tee info.log \nmake install 2>&1| tee install_$JOBID.log \nmake all_tests 2>&1| tee test_$JOBID.log \n"
-                file_out.write(cmdstring)
-                #       file_out.write("ssh {} {}/{}/getres-int.sh\n".format(self.headnodename,self.script_dir,os.getcwd()))
-                cmdstring = "export ESMFMKFILE=`find $PWD/DEFAULTINSTALLDIR -iname esmf.mk`\n"
-                file_out.write(cmdstring)
-                if config["mpi_module"] != "None":
-                    # chmod +x runpython.sh\n
-                    cmdstring = "cd nuopc-app-prototypes\n./testProtos.sh 2>&1| tee ../nuopc_$JOBID.log \n\n"
-                    file_out.write(cmdstring)
-            #         file_out.write("ssh {} {}/{}/getres-int.sh\n".format(self.headnodename,self.script_dir,os.getcwd()))
-            # else:
-            #    cmdstring = "python3 setup.py test_examples_dryrun\npython3 setup.py test_regrid_from_file_dryrun\n"
-            #    file_out.write(cmdstring)
-            #       file_out.write("ssh {} {}/{}/getres-int.sh\n".format(self.headnodename,self.script_dir,os.getcwd()))
-
-            # if (("pythontest" in mpiflavor) and (headerType == "test")):
-            #    cmdstring = "\ncd ../src/addon/ESMPy\n"
-            #    file_out.write(cmdstring)
-            #    cmdstring = "\nexport PATH=$PATH:$HOME/.local/bin\n".format(os.getcwd())
-            #    file_out.write(cmdstring)
-            #    cmdstring = "python3 setup.py build 2>&1 | tee python_build.log\n".format(self.headnodename)
-            #    file_out.write(cmdstring)
-            #    cmdstring = "ssh {} {}/runpython.sh 2>&1 | tee python_build.log\n".format(self.headnodename,
-            #                                                                              os.getcwd())
-            #    file_out.write(cmdstring)
-            #    cmdstring = "python3 setup.py test 2>&1 | tee python_test.log\n".format(self.headnodename)
-            #    file_out.write(cmdstring)
-            #    cmdstring = "python3 setup.py test_examples 2>&1 | tee python_examples.log\n".format(self.headnodename)
-            #    file_out.write(cmdstring)
-            #    cmdstring = "python3 setup.py test_regrid_from_file 2>&1 | tee python_regrid.log\n".format(
-            #        self.headnodename)
-            #    file_out.write(cmdstring)
-            file_out.close()
+            cmd.runcmd(f"git checkout -b {self.machine.name}")
+            cmd.runcmd(f"git push --set-upstream origin {self.machine.name}")
+        cmd.chdir("..")
 
     def createGetResScripts(self, monitor_cmd_build, monitor_cmd_test):
         # write these out no matter what, so we can run them manually, if necessary
@@ -261,28 +144,41 @@ class ESMFTest:
         get_res_file.write("#!{} -l\n".format(self.bash))
         get_res_file.write("{} >& build-res.log &\n".format(monitor_cmd_build))
         get_res_file.close()
-        self.cmd.runcmd("chmod +x getres-build.sh")
+        cmd.runcmd("chmod +x getres-build.sh")
 
         get_res_file = open("getres-test.sh", "w")
         get_res_file.write("#!{} -l\n".format(self.bash))
         get_res_file.write("{} >& test-res.log &\n".format(monitor_cmd_test))
         get_res_file.close()
-        self.cmd.runcmd("chmod +x getres-test.sh")
+        cmd.runcmd("chmod +x getres-test.sh")
 
     def start(self):
-
         if self.reclone:
             self.reclone_artifacts()
 
-        for e in self.matrix.environments:
-            for branch_index, esmf_branch in enumerate(self.branch):
+        for _e_index, _e in enumerate(self.matrix.environments, start=1):
+            for _branch_index, _esmf_branch in enumerate(self.esmf_branch):
+
+                if self.filter is not None:
+                    if _e_index not in self.filter:
+                        logging.debug(f"Skipping test environment [{_e_index}] due to command line filter: {_e.label()}")
+                        continue
+
+                if self.yaml_filter is not None:
+                    if "compiler" in self.yaml_filter:
+                        if _e.compiler not in self.yaml_filter["compiler"]:
+                            logging.debug(f"Skipping test environment [{_e_index}] due to YAML filter: {_e.label()}")
+                            continue
+
                 # TODO: deal with filtering
                 if self.nuopc_branch is not None:
-                    nuopc_branch = self.nuopc_branch[branch_index]
+                    _nuopc_branch = self.nuopc_branch[_branch_index]
                 else:
-                    nuopc_branch = esmf_branch
-                case = e.generate_case(self.test_root, self.repos, esmf_branch, nuopc_branch, self.machine.scheduler)
-                case.set_up(self.cmd)
+                    _nuopc_branch = _esmf_branch
+                case = _e.generate_case(self.test_root, self.repos, _esmf_branch, _nuopc_branch, self.machine.scheduler)
+                case.set_up()
+                if not self.no_submit:
+                    case.submit()
 
 
 def go(args):

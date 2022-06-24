@@ -19,10 +19,14 @@ class Environment:
         self.extra_module = None
         self.mpi_env_vars = None
         self.hdf5 = None
-        self.hdf_module = None
+        self.hdf5_module = None
         self.netcdf_fortran_module = None
         self.extra_commands = None
         self.extra_env_vars = None
+        self.module_path = None
+
+    def label(self):
+        return f"{self.compiler} {self.compiler_version} / {self.mpi} / {self.netcdf_module} / {self.bopt}"
 
     def generate_case(self, root_dir, repos, esmf_branch, nuopc_branch, scheduler):
         """

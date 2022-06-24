@@ -1,7 +1,8 @@
 import os
 import re
+from io import StringIO
 from environment import Environment
-from cmd import CMD
+import cmd
 
 
 class Case:
@@ -14,7 +15,7 @@ class Case:
     def __init__(self, env: Environment, root_dir, repos, esmf_branch, nuopc_branch, scheduler):
         self.env = env
         self.root_dir = root_dir
-        self.repos = repos   # map of repository locations
+        self.repos = repos  # map of repository locations
         self.scheduler = scheduler
         self.esmf_branch = esmf_branch
         self.nuopc_branch = nuopc_branch
@@ -29,7 +30,7 @@ class Case:
         self.build_script = os.path.join(self.full_path, f"build-{self.subdir}.bat")
         self.test_script = os.path.join(self.full_path, f"test-{self.subdir}.bat")
 
-    def set_up(self, cmd: CMD):
+    def set_up(self):
         """
         Clone repositories needed for testing, e.g., ESMF and nuopc-app-prototypes.
         Generate test scripts to submit.
@@ -37,27 +38,122 @@ class Case:
         cmd.chdir(self.root_dir)
         cmd.runcmd(f"rm -rf {self.full_path}")
         cmd.runcmd(f"mkdir -p {self.full_path}")
+        cmd.chdir(self.full_path)
 
         # generate build script
-        #self.createScripts(config)
-
         with open(self.build_script, "w") as _file:
-            _file.write(self.scheduler.create_headers(script_file=self.build_script, timeout=self.env.build_time))
+            _file.write(self._create_build_script())
 
-        # generate test scripts
+        # generate test script
         with open(self.test_script, "w") as _file:
-            _file.write(self.scheduler.create_headers(script_file=self.test_script, timeout=self.env.test_time))
-
+            _file.write(self._create_test_script())
 
         # clone repositories
-        #cmd.clone_repo(url=self.repos["esmf"], localname="esmf", branch=esmf_branch)
-        #cmd.clone_repo(url=self.repos["nuopc"], localname="nuopc-app-prototypes", branch=nuopc_branch)
+        cmd.clone_repo(url=self.repos["esmf"], local_name="esmf", branch=self.esmf_branch)
+        cmd.clone_repo(url=self.repos["nuopc"], local_name="nuopc-app-prototypes", branch=self.nuopc_branch)
 
     def submit(self):
         """
         Submit the jobs to run this test case.
         """
-        #        if not self.no_submit:
-            # TODO:  deal with mpiver here, which was computed in createScript
-          #  self.scheduler.submitJob(self, subdir, self.mpiver, branch)
-        pass
+        build_job_num = self.scheduler.submit_job(script_file=self.build_script)
+
+        test_job_num = self.scheduler.submit_job(script_file=self.test_script, after=build_job_num)
+
+        # monitor_cmd_build = "python3 {}/archive_results.py -j {} -b {} -m {} -s {} -t {} -a {} -M {} -B {} -d {}".format(
+        #    test.scripts_path,
+        #    jobnum,
+        #    subdir,
+        #    test.machine_name,
+        #    self.type,
+        #    test.test_root,
+        #    test.artifacts_root,
+        #    mpiver,
+        #    branch,
+        #    test.dryrun,
+
+        #    proc = subprocess.Popen(
+        #        monitor_cmd_build,
+        #        shell=True,
+        #        stdin=None,
+        #        stdout=None,
+        #        stderr=None,
+        #        close_fds=True,
+        #    )
+
+    def _create_modules_fragment(self):
+        """
+        Create the module load section used at the top of both the build and test scripts.
+        """
+        e = self.env
+        with StringIO() as out:
+            if e.unload_module is not None:
+                out.write(f"module unload {e.unload_module}\n")
+            if e.module_path is not None:
+                out.write(f"module use {e.module_path}\n")
+            if e.extra_module is not None:
+                out.write(f"module load {e.extra_module}\n")
+            if e.mpi_env_vars is not None:
+                for _var in e.mpi_env_vars:
+                    out.write(f"export {_var}\n")
+            if e.mpi_module.lower() == "none":
+                _mpi_module = ""
+            else:
+                _mpi_module = e.mpi_module
+            out.write(f"module load {e.compiler_module} {_mpi_module}\n")
+            if e.netcdf_module.lower() != "none":
+                out.write(f"module load {e.netcdf_module}\n")
+
+            if e.hdf5_module is not None:
+                out.write(f"module load {e.hdf5_module}\n")
+            if e.netcdf_fortran_module is not None:
+                out.write(f"module load {e.netcdf_fortran_module} \n")
+
+            out.write("\nset -x\n")
+            if e.extra_env_vars is not None:
+                for _var in e.extra_env_vars:
+                    out.write(f"export {_var}\n")
+            if e.extra_commands is not None:
+                for _cmd in e.extra_commands:
+                    out.write(f"{_cmd}\n")
+
+            _esmf_path = os.path.join(self.full_path, "esmf")
+            out.write(f"export ESMF_DIR={_esmf_path}\n")
+            out.write(f"export ESMF_COMPILER={e.compiler}\n")
+            out.write(f"export ESMF_COMM={e.mpi}\n")
+            if e.netcdf_module.lower() != "none":
+                out.write("export ESMF_NETCDF=nc-config\n")
+            out.write(f"export ESMF_BOPT='{e.bopt}'\n")
+            out.write(f"export ESMF_TESTEXHAUSTIVE='ON'\n")
+            out.write(f"export ESMF_TESTWITHTHREADS='ON'\n")
+            if e.mpi_module.lower() == "none":
+                _esmf_path = os.path.join(self.full_path, "esmf/src/Infrastructure/stubs/mpiuni/mpirun")
+                out.write(f"export ESMF_MPIRUN={_esmf_path}\n")
+
+            return out.getvalue()
+
+    def _create_build_script(self):
+        """
+        Create the script that will build ESMF.
+        """
+        with StringIO() as out:
+            out.write(self.scheduler.create_headers(script_file=self.build_script, timeout=self.env.build_time))
+            out.write(self._create_modules_fragment())
+            out.write(f"module list >& module-build.log\n")
+            out.write(f"make -j {self.scheduler.tasks_per_node} 2>&1| tee build_$JOBID.log\n")
+            return out.getvalue()
+
+    def _create_test_script(self):
+        """
+        Create the script that will run all of the ESMF tests and the NUOPC app tests.
+        """
+        with StringIO() as out:
+            out.write(self.scheduler.create_headers(script_file=self.test_script, timeout=self.env.test_time))
+            out.write(self._create_modules_fragment())
+            out.write(f"module list >& module-test.log\n")
+            out.write(f"make info 2>&1| tee info.log\nmake install 2>&1| tee install_$JOBID.log\n" +
+                      "make all_tests 2>&1| tee test_$JOBID.log")
+            if self.env.mpi_module.lower() != "none":
+                out.write(f"export ESMFMKFILE=`find $PWD/DEFAULTINSTALLDIR -iname esmf.mk`\n")
+                out.write("cd nuopc-app-prototypes\n./testProtos.sh 2>&1| tee ../nuopc_$JOBID.log\n")
+            return out.getvalue()

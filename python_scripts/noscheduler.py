@@ -1,11 +1,24 @@
 from scheduler import Scheduler
+from io import StringIO
+import cmd
 
 
 class NoScheduler(Scheduler):
-    def __init__(self):
-        super().__init__("None")
+    def __init__(self, machine):
+        super().__init__("None", machine=machine, config={})
 
-    def submit_job(self, test, subdir, mpiver, branch):
+    def create_headers(self, script_file, timeout):
+        with StringIO() as out:
+            out.write(f"#!{self.machine.bash} -l\n")
+            out.write("export JOBID=NO_BATCH\n")
+            return out.getvalue()
+
+    def submit_job(self, script_file, after=None):
+        cmd.runcmd(f"chmod +x {script_file}")
+        cmd.runcmd(f"{script_file}")
+        return -1
+
+    def submit_job_old(self, test, subdir, mpiver, branch):
         test.runcmd("chmod +x {}".format(test.b_filename))
         jobnum = 12345
         test.runcmd("./{} {}".format(test.b_filename, jobnum))
@@ -40,16 +53,7 @@ class NoScheduler(Scheduler):
         test.runcmd("{}".format(monitor_cmd_test))
         test.createGetResScripts(monitor_cmd_build, monitor_cmd_test)
 
-    def create_headers(self, test):
-        for headerType in ["build", "test"]:
-            if headerType == "build":
-                file_out = test.fb
-                jobid = 12345
-            else:
-                file_out = test.ft
-                jobid = 12346
-            file_out.write("#!{} -l\n".format(test.bash))
-            file_out.write("export JOBID={}\n".format(jobid))
+
 
     def check_queue(self, jobid):
         return True

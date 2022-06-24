@@ -1,16 +1,19 @@
-machine: izumi
-account: UNUSED
-queue: medium
-partition: None
-scheduler: pbs
-pbs_node_specifier: nodes_ppn
-pbs_job_checker: tracejob
-corespernode: 48
-compiler: [intel]
-branch: [develop]
-#nuopcbranch: develop
+machine:
+  name: izumi
+  cores_per_node: 48
+  scheduler:
+    type: pbs
+    account: UNUSED
+    queue: medium
+    pbs_node_specifier: nodes_ppn
+    pbs_job_checker: tracejob
 
-configs:
+test:
+  esmf_branch: [develop]
+  filter:
+    compiler: [intel]
+
+matrix:
 
   intel:
     test_time: "3:00:00"

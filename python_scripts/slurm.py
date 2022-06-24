@@ -1,12 +1,14 @@
 import subprocess
 from scheduler import Scheduler
 from io import StringIO
+import cmd
+from machine import Machine
 
 
 class Slurm(Scheduler):
 
-    def __init__(self, config):
-        super().__init__("slurm", config)
+    def __init__(self, machine: Machine, config: dict):
+        super().__init__("slurm", machine=machine, config=config)
         self.partition = config.get("partition", None)
         self.cluster = config.get("cluster", None)
         self.constraint = config.get("constraint", None)
@@ -32,7 +34,22 @@ class Slurm(Scheduler):
             out.write("\n\n")
             return out.getvalue()
 
-    def submit_job(self, test, subdir, mpiver, branch):
+    @staticmethod
+    def submit_job(self, script_file, after=None):
+        """
+        Submit a job to the batch system and return the job number.
+         - script_file: absolute path to the script file to submit
+         - after: optional job number that this job depends on
+        """
+        _after = ""
+        if after is not None:
+            _after = f"--depend=afterok:{after}"
+
+        _submit_cmd = f"sbatch {after} {script_file}"
+        _job_num = cmd.runcmd(_submit_cmd).split()[3]
+        return _job_num
+
+    def submit_job_old(self, test, subdir, mpiver, branch):
         batch_build = "sbatch {}".format(test.b_filename)
         jobnum = (
             subprocess.check_output(batch_build, shell=True)

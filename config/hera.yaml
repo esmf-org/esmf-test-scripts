@@ -8,9 +8,9 @@ machine:
     account: nems
     tasks_per_node: 40
 
-compiler: [gfortran, intel, pgi]
-branch: [develop]
-#nuopc_branch: [develop]
+test:
+  esmf_branch: [develop]
+  #nuopc_branch: [develop]
 
 matrix:
   gfortran:
@@ -19,7 +19,7 @@ matrix:
       9.2.0a:
         compiler: gnu/9.2.0
         extra_commands:
-          cmd1: "tar xvfz ~/pytest-input.tar.gz"
+         - "tar xvfz ~/pytest-input.tar.gz"
         mpi:
           mpiuni:
             module: None
@@ -27,7 +27,7 @@ matrix:
       9.2.0b:
         compiler: gnu/9.2.0
         extra_commands:
-          cmd1: "tar xvfz ~/pytest-input.tar.gz"
+          - "tar xvfz ~/pytest-input.tar.gz"
         mpi:
   #        intelmpi:
   #          module: impi/2020
@@ -37,7 +37,7 @@ matrix:
           openmpi:
             module: openmpi/3.1.4
             mpi_env_vars:
-              var1: ESMF_MPIRUN=mpirun.srun
+              - ESMF_MPIRUN=mpirun.srun
             pythontest: true
         netcdf: None
     extra_module: cmake
@@ -46,7 +46,7 @@ matrix:
       18.0.5a:
         compiler: intel/18.0.5.274
         extra_commands:
-          cmd1: "tar xvfz ~/pytest-input.tar.gz"
+          - "tar xvfz ~/pytest-input.tar.gz"
         mpi:
           mpiuni:
             module: None
@@ -54,12 +54,12 @@ matrix:
       18.0.5b:
         compiler: intel/18.0.5.274
         extra_commands:
-          cmd1: "tar xvfz ~/pytest-input.tar.gz"
+          - "tar xvfz ~/pytest-input.tar.gz"
         mpi:
           intelmpi:
             module: impi/2018.4.274
             mpi_env_vars:
-              var1: ESMF_MPIRUN=mpirun.srun
+              - ESMF_MPIRUN=mpirun.srun
             pythontest: true
         netcdf: netcdf-hdf5parallel/4.7.4
     extra_module: cmake
@@ -75,6 +75,6 @@ matrix:
           intelmpi:
             module: impi/2019.0.5
             mpi_env_vars:
-              var1: ESMF_MPIRUN=mpirun.srun
+              - ESMF_MPIRUN=mpirun.srun
         netcdf: None
     extra_module: cmake
