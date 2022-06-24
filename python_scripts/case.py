@@ -160,7 +160,7 @@ class Case:
             out.write(f"cd {self.esmf_clone_path}\n")
 
             #TODO: remove below after debugging
-            out.write(f"make info 2>&1| tee ../info.log\n
+            out.write(f"make info 2>&1| tee ../info.log\n")
             out.write(f"echo 'FAKE TEST JOB COMPLETE' >> ../test_$JOBID.log\n")
 
             #out.write(f"make info 2>&1| tee ../info.log\nmake install 2>&1| tee ../install_$JOBID.log\n" +
