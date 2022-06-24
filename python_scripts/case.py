@@ -140,7 +140,8 @@ class Case:
         with StringIO() as out:
             out.write(self.scheduler.create_headers(script_file=self.build_script, timeout=self.env.build_time))
             out.write(self._create_modules_fragment())
-            out.write(f"module list >& module-build.log\n")
+            _module_file = os.path.join(self.base_path, "module-build.log")
+            out.write(f"module list >& {_module_file}\n")
             out.write(f"cd {self.esmf_clone_path}\n")
             out.write(f"make -j {self.scheduler.tasks_per_node} 2>&1| tee ../build_$JOBID.log\n")
             return out.getvalue()
@@ -152,7 +153,8 @@ class Case:
         with StringIO() as out:
             out.write(self.scheduler.create_headers(script_file=self.test_script, timeout=self.env.test_time))
             out.write(self._create_modules_fragment())
-            out.write(f"module list >& module-test.log\n")
+            _module_file = os.path.join(self.base_path, "module-test.log")
+            out.write(f"module list >& {_module_file}\n")
             out.write(f"cd {self.esmf_clone_path}\n")
             out.write(f"make info 2>&1| tee ../info.log\nmake install 2>&1| tee ../install_$JOBID.log\n" +
                       "make all_tests 2>&1| tee ../test_$JOBID.log\n")
