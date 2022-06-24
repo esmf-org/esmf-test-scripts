@@ -121,6 +121,7 @@ class ESMFTest:
     def reclone_artifacts(self):
         url = self.repos["artifacts"]
         logging.info(f"Deleting and re-cloning artifacts repository: {url}")
+        cmd.chdir(self.test_root)
         cmd.clone_repo(url, local_name="esmf-test-artifacts")
         cmd.chdir("esmf-test-artifacts")
 
@@ -176,6 +177,7 @@ class ESMFTest:
                     _nuopc_branch = _esmf_branch
 
                 # generate, set up, and submit the test combination
+                logging.info(f"Setting up test case {_e.label()} for ESMF branch {_esmf_branch}")
                 case = _e.generate_case(self.test_root, self.repos, _esmf_branch, _nuopc_branch, self.machine.scheduler)
                 case.set_up()
                 if not self.no_submit:
