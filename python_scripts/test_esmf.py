@@ -12,7 +12,7 @@ import cmd
 
 class ESMFTest:
 
-    def __init__(self, test_root, machine_name, yaml_file, dry_run, no_submit, no_artifacts, filter):
+    def __init__(self, test_root, machine_name, yaml_file, dry_run, no_submit, no_artifacts, filter, only_resubmit):
 
         self.scripts_path = pathlib.Path(__file__).parent.absolute()
         logging.debug(f"Scripts path: {self.scripts_path}")
@@ -37,6 +37,7 @@ class ESMFTest:
 
         self.dry_run = dry_run
         self.no_submit = no_submit
+        self.only_resubmit = only_resubmit
         self.reclone = False
         self.bopts = ["O", "g"]
 
@@ -177,9 +178,13 @@ class ESMFTest:
                     _nuopc_branch = _esmf_branch
 
                 # generate, set up, and submit the test combination
-                logging.info(f"Setting up test case {_e.label()} for ESMF branch {_esmf_branch}")
+                logging.info(f"Setting up test case: [{_e.label()}] / ESMF branch: [{_esmf_branch}]")
                 case = _e.generate_case(self.test_root, self.repos, _esmf_branch, _nuopc_branch, self.machine.scheduler)
-                case.set_up()
+
+                if not self.only_resubmit:
+                    case.set_up()
+                else:
+                    logging.info(f"\t---> Resubmitting existing case")
                 if not self.no_submit:
                     case.submit(no_artifacts=self.no_artifacts)
 
@@ -189,7 +194,7 @@ def go(args):
     Entry point to run the test system.
     """
     test = ESMFTest(args["root"], args["machine"], args["yaml"],
-                    args["dry_run"], args["no_submit"], args["no_artifacts"], args["filter"])
+                    args["dry_run"], args["no_submit"], args["no_artifacts"], args["filter"], args["only_resubmit"])
 
     if args["check"]:
         test.check()
@@ -225,6 +230,8 @@ if __name__ == "__main__":
                         required=False,
                         action='store_true')
     parser.add_argument('--no-submit', help="Create test directories and batch scripts but do not submit any jobs",
+                        required=False, action='store_true')
+    parser.add_argument('--only-resubmit', help="Assume test directories and scripts are already present and only resubmit build/test jobs",
                         required=False, action='store_true')
     parser.add_argument('--no-artifacts', help="Do not copy or push test artifacts.",
                         required=False, action='store_true')
