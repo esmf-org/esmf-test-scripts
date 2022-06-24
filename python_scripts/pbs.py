@@ -86,7 +86,7 @@ class PBS(Scheduler):
             print(monitor_cmd_test)
         else:
             proc = subprocess.Popen(monitor_cmd_test, shell=True, stdin=None, stdout=None, stderr=None, close_fds=True)
-        test.createGetResScripts(monitor_cmd_build, monitor_cmd_test)
+        #test.createGetResScripts(monitor_cmd_build, monitor_cmd_test)
 
     def check_queue(self, jobid):
         if self._pbs_job_checker == "tracejob":

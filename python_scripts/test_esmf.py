@@ -138,19 +138,19 @@ class ESMFTest:
             cmd.runcmd(f"git push --set-upstream origin {self.machine.name}")
         cmd.chdir("..")
 
-    def createGetResScripts(self, monitor_cmd_build, monitor_cmd_test):
-        # write these out no matter what, so we can run them manually, if necessary
-        get_res_file = open("getres-build.sh", "w")
-        get_res_file.write("#!{} -l\n".format(self.bash))
-        get_res_file.write("{} >& build-res.log &\n".format(monitor_cmd_build))
-        get_res_file.close()
-        cmd.runcmd("chmod +x getres-build.sh")
-
-        get_res_file = open("getres-test.sh", "w")
-        get_res_file.write("#!{} -l\n".format(self.bash))
-        get_res_file.write("{} >& test-res.log &\n".format(monitor_cmd_test))
-        get_res_file.close()
-        cmd.runcmd("chmod +x getres-test.sh")
+    # def createGetResScripts(self, monitor_cmd_build, monitor_cmd_test):
+    #     # write these out no matter what, so we can run them manually, if necessary
+    #     get_res_file = open("getres-build.sh", "w")
+    #     get_res_file.write("#!{} -l\n".format(self.bash))
+    #     get_res_file.write("{} >& build-res.log &\n".format(monitor_cmd_build))
+    #     get_res_file.close()
+    #     cmd.runcmd("chmod +x getres-build.sh")
+    #
+    #     get_res_file = open("getres-test.sh", "w")
+    #     get_res_file.write("#!{} -l\n".format(self.bash))
+    #     get_res_file.write("{} >& test-res.log &\n".format(monitor_cmd_test))
+    #     get_res_file.close()
+    #     cmd.runcmd("chmod +x getres-test.sh")
 
     def start(self):
         if self.reclone:
@@ -159,26 +159,29 @@ class ESMFTest:
         for _e_index, _e in enumerate(self.matrix.environments, start=1):
             for _branch_index, _esmf_branch in enumerate(self.esmf_branch):
 
+                # apply filter from command line --filter option
                 if self.filter is not None:
                     if _e_index not in self.filter:
                         logging.debug(f"Skipping test environment [{_e_index}] due to command line filter: {_e.label()}")
                         continue
 
+                # apply filter from YAML file
                 if self.yaml_filter is not None:
                     if "compiler" in self.yaml_filter:
                         if _e.compiler not in self.yaml_filter["compiler"]:
                             logging.debug(f"Skipping test environment [{_e_index}] due to YAML filter: {_e.label()}")
                             continue
 
-                # TODO: deal with filtering
                 if self.nuopc_branch is not None:
                     _nuopc_branch = self.nuopc_branch[_branch_index]
                 else:
                     _nuopc_branch = _esmf_branch
+
+                # generate, set up, and submit the test combination
                 case = _e.generate_case(self.test_root, self.repos, _esmf_branch, _nuopc_branch, self.machine.scheduler)
                 case.set_up()
                 if not self.no_submit:
-                    case.submit()
+                    case.submit(no_artifacts=self.no_artifacts)
 
 
 def go(args):

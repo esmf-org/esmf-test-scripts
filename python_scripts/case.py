@@ -1,3 +1,4 @@
+import logging
 import os
 import re
 from io import StringIO
@@ -26,9 +27,10 @@ class Case:
                                               self.env.bopt,
                                               esmf_branch)
         self.subdir = re.sub("/", "_", self.subdir)  # Some branches have a slash, so replace that with underscore
-        self.full_path = os.path.join(self.root_dir, self.subdir)
-        self.build_script = os.path.join(self.full_path, f"build-{self.subdir}.bat")
-        self.test_script = os.path.join(self.full_path, f"test-{self.subdir}.bat")
+        self.base_path = os.path.join(self.root_dir, self.subdir)
+        self.esmf_clone_path = os.path.join(self.base_path, "esmf")
+        self.build_script = os.path.join(self.base_path, f"build-{self.subdir}.bat")
+        self.test_script = os.path.join(self.base_path, f"test-{self.subdir}.bat")
 
     def set_up(self):
         """
@@ -36,9 +38,9 @@ class Case:
         Generate test scripts to submit.
         """
         cmd.chdir(self.root_dir)
-        cmd.runcmd(f"rm -rf {self.full_path}")
-        cmd.runcmd(f"mkdir -p {self.full_path}")
-        cmd.chdir(self.full_path)
+        cmd.runcmd(f"rm -rf {self.base_path}")
+        cmd.runcmd(f"mkdir -p {self.base_path}")
+        cmd.chdir(self.base_path)
 
         # generate build script
         with open(self.build_script, "w") as _file:
@@ -52,13 +54,22 @@ class Case:
         cmd.clone_repo(url=self.repos["esmf"], local_name="esmf", branch=self.esmf_branch)
         cmd.clone_repo(url=self.repos["nuopc"], local_name="nuopc-app-prototypes", branch=self.nuopc_branch)
 
-    def submit(self):
+    def submit(self, no_artifacts=False):
         """
         Submit the jobs to run this test case.
+          - no_artifacts: whether to skip copying and pushing the test artifacts
         """
         build_job_num = self.scheduler.submit_job(script_file=self.build_script)
+        logging.debug(f"Submitted build job: {build_job_num}")
+
+        if not no_artifacts:
+            logging.debug("ARTIFACTS COLLECTION NOT SUPPORTED - BUILD")
 
         test_job_num = self.scheduler.submit_job(script_file=self.test_script, after=build_job_num)
+        logging.debug(f"Submitted test job: {test_job_num}")
+
+        if not no_artifacts:
+            logging.debug("ARTIFACTS COLLECTION NOT SUPPORTED - TEST")
 
         # monitor_cmd_build = "python3 {}/archive_results.py -j {} -b {} -m {} -s {} -t {} -a {} -M {} -B {} -d {}".format(
         #    test.scripts_path,
@@ -71,15 +82,6 @@ class Case:
         #    mpiver,
         #    branch,
         #    test.dryrun,
-
-        #    proc = subprocess.Popen(
-        #        monitor_cmd_build,
-        #        shell=True,
-        #        stdin=None,
-        #        stdout=None,
-        #        stderr=None,
-        #        close_fds=True,
-        #    )
 
     def _create_modules_fragment(self):
         """
@@ -117,8 +119,7 @@ class Case:
                 for _cmd in e.extra_commands:
                     out.write(f"{_cmd}\n")
 
-            _esmf_path = os.path.join(self.full_path, "esmf")
-            out.write(f"export ESMF_DIR={_esmf_path}\n")
+            out.write(f"export ESMF_DIR={self.esmf_clone_path}\n")
             out.write(f"export ESMF_COMPILER={e.compiler}\n")
             out.write(f"export ESMF_COMM={e.mpi}\n")
             if e.netcdf_module.lower() != "none":
@@ -127,7 +128,7 @@ class Case:
             out.write(f"export ESMF_TESTEXHAUSTIVE='ON'\n")
             out.write(f"export ESMF_TESTWITHTHREADS='ON'\n")
             if e.mpi_module.lower() == "none":
-                _esmf_path = os.path.join(self.full_path, "esmf/src/Infrastructure/stubs/mpiuni/mpirun")
+                _esmf_path = os.path.join(self.esmf_clone_path, "src/Infrastructure/stubs/mpiuni/mpirun")
                 out.write(f"export ESMF_MPIRUN={_esmf_path}\n")
 
             return out.getvalue()
@@ -140,7 +141,8 @@ class Case:
             out.write(self.scheduler.create_headers(script_file=self.build_script, timeout=self.env.build_time))
             out.write(self._create_modules_fragment())
             out.write(f"module list >& module-build.log\n")
-            out.write(f"make -j {self.scheduler.tasks_per_node} 2>&1| tee build_$JOBID.log\n")
+            out.write(f"cd {self.esmf_clone_path}\n")
+            out.write(f"make -j {self.scheduler.tasks_per_node} 2>&1| tee ../build_$JOBID.log\n")
             return out.getvalue()
 
     def _create_test_script(self):
@@ -151,9 +153,10 @@ class Case:
             out.write(self.scheduler.create_headers(script_file=self.test_script, timeout=self.env.test_time))
             out.write(self._create_modules_fragment())
             out.write(f"module list >& module-test.log\n")
-            out.write(f"make info 2>&1| tee info.log\nmake install 2>&1| tee install_$JOBID.log\n" +
-                      "make all_tests 2>&1| tee test_$JOBID.log")
+            out.write(f"cd {self.esmf_clone_path}\n")
+            out.write(f"make info 2>&1| tee ../info.log\nmake install 2>&1| tee ../install_$JOBID.log\n" +
+                      "make all_tests 2>&1| tee ../test_$JOBID.log\n")
             if self.env.mpi_module.lower() != "none":
                 out.write(f"export ESMFMKFILE=`find $PWD/DEFAULTINSTALLDIR -iname esmf.mk`\n")
-                out.write("cd nuopc-app-prototypes\n./testProtos.sh 2>&1| tee ../nuopc_$JOBID.log\n")
+                out.write("cd ../nuopc-app-prototypes\n./testProtos.sh 2>&1| tee ../nuopc_$JOBID.log\n")
             return out.getvalue()
