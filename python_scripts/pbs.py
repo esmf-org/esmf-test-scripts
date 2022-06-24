@@ -37,7 +37,7 @@ class PBS(Scheduler):
             return out.getvalue()
 
     @staticmethod
-    def submit_job(self, script_file, after=None):
+    def submit_job(script_file, after=None):
         """
         Submit a job to the batch system and return the job number.
          - script_file: absolute path to the script file to submit
@@ -46,7 +46,7 @@ class PBS(Scheduler):
         _after = ""
         if after is not None:
             _after = f"-W depend=afterok:{after}"
-        _submit_cmd = f"qsub {after} {script_file}"
+        _submit_cmd = f"qsub {_after} {script_file}"
         _job_num = cmd.runcmd(_submit_cmd).split(".")[0]
         return _job_num
 
