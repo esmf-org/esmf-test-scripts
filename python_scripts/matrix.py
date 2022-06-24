@@ -63,7 +63,8 @@ class Matrix:
         """
         Print out an enumerated list of test environments in the test matrix.
         """
-        print("Matrix of test environments:")
+        print("\nMatrix of test environments:")
         print("===========================================")
         for i, e in enumerate(self.environments, start=1):
             print(f"  [{i}] {e.label()}")
+        print("\n")

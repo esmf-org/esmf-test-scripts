@@ -9,8 +9,6 @@ from machine import Machine
 from matrix import Matrix
 import cmd
 
-logging.basicConfig(format='%(levelname)s: %(message)s', level=logging.DEBUG)
-
 
 class ESMFTest:
 
@@ -217,6 +215,7 @@ if __name__ == "__main__":
     parser.add_argument('-d', '--dry-run', help='Show commands without actually running them', required=False,
                         action='store_true')
     parser.add_argument('--check', help='Run some checks', required=False, action='store_true')
+    parser.add_argument('--debug', help='Output debug messages', required=False, action='store_true')
     parser.add_argument('--show-machine', help='Print out machine attributes and exit',
                         required=False,
                         action='store_true')
@@ -239,5 +238,10 @@ if __name__ == "__main__":
     if args["machine"] is None and args["yaml"] is None:
         logging.error("Either --machine or --yaml must be specified")
         exit(1)
+
+    _log_level = logging.INFO
+    if args["debug"]:
+        _log_level = logging.DEBUG
+    logging.basicConfig(format='%(levelname)s: %(message)s', level=_log_level)
 
     go(args)
