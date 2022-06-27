@@ -21,7 +21,9 @@ def runcmd(cmd, ignore_error=False, stderr=False):
         try:
             out = subprocess.check_output(cmd, shell=True, stderr=_stderr).strip().decode("utf-8")
         except subprocess.CalledProcessError as cpe:
-            if not ignore_error:
+            if ignore_error:
+                return cpe.output.strip().decode("utf-8")
+            else:
                 raise cpe
     else:
         print(cmd)

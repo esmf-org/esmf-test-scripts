@@ -101,7 +101,7 @@ class PBS(Scheduler):
 
         # see if qstat -H is available
         _cmd = f"qstat -H {jobid}"
-        _out = cmd.runcmd(_cmd, stderr=True)
+        _out = cmd.runcmd(_cmd, stderr=True, ignore_error=True)
         if "invalid option" not in _out:
             _queue_query = "qstat -H {} | tail -n 1 | awk -F ' +' '{{print $10}}'".format(jobid)
             try:
