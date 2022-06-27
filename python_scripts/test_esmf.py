@@ -7,6 +7,7 @@ import argparse
 import logging
 from machine import Machine
 from matrix import Matrix
+from case import Case
 import cmd
 
 
@@ -14,13 +15,13 @@ class ESMFTest:
 
     def __init__(self, test_root, machine_name, yaml_file, dry_run, no_submit, no_artifacts, filter, only_resubmit):
 
-        self.scripts_path = pathlib.Path(__file__).parent.absolute()
-        logging.debug(f"Scripts path: {self.scripts_path}")
+        self.scripts_root = pathlib.Path(__file__).parent.absolute()
+        logging.debug(f"Scripts path: {self.scripts_root}")
 
         if yaml_file is not None:
             self.yaml_file = os.path.abspath(yaml_file)
         else:
-            self.yaml_file = os.path.join(self.scripts_path.parent, f"config/{machine_name}.yaml")
+            self.yaml_file = os.path.join(self.scripts_root.parent, f"config/{machine_name}.yaml")
         if not os.path.isfile(self.yaml_file):
             logging.error(f"YAML file not found: {self.yaml_file}")
             return
@@ -57,8 +58,8 @@ class ESMFTest:
             self.nuopc_branch = _yaml["test"].get("nuopc_branch", None)
             self.yaml_filter = _yaml["test"].get("filter", None)
 
-        # load global settings from YAML
-        global_file = os.path.join(self.scripts_path.parent, "config/global.yaml")
+        # load global settings sfrom YAML
+        global_file = os.path.join(self.scripts_root.parent, "config/global.yaml")
         with open(global_file) as file:
             _yaml = yaml.load(file, Loader=yaml.SafeLoader)
             if "reclone-artifacts" in _yaml:
@@ -179,7 +180,8 @@ class ESMFTest:
 
                 # generate, set up, and submit the test combination
                 logging.info(f"Setting up test case: [{_e.label()}] / ESMF branch: [{_esmf_branch}]")
-                case = _e.generate_case(self.test_root, self.repos, _esmf_branch, _nuopc_branch, self.machine.scheduler)
+                case = Case(_e, self.scripts_root, self.test_root, self.artifacts_root, self.repos,
+                            _esmf_branch, _nuopc_branch, self.machine)
 
                 if not self.only_resubmit:
                     case.set_up()

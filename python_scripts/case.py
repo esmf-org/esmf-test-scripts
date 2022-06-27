@@ -2,6 +2,7 @@ import logging
 import os
 import re
 from io import StringIO
+from machine import Machine
 from environment import Environment
 import cmd
 
@@ -13,14 +14,16 @@ class Case:
       and a particular branch of ESMF to test.
     """
 
-    def __init__(self, env: Environment, root_dir, repos, esmf_branch, nuopc_branch, scheduler):
+    def __init__(self, env: Environment, scripts_root, root_dir, artifacts_root, repos, esmf_branch, nuopc_branch,
+                 machine: Machine):
         self.env = env
+        self.scripts_root = scripts_root
         self.root_dir = root_dir
+        self.artifacts_root = artifacts_root
         self.repos = repos  # map of repository locations
-        self.scheduler = scheduler
+        self.machine = machine
         self.esmf_branch = esmf_branch
         self.nuopc_branch = nuopc_branch
-
         self.subdir = "{}_{}_{}_{}_{}".format(self.env.compiler,
                                               self.env.compiler_version,
                                               self.env.mpi,
@@ -29,11 +32,13 @@ class Case:
         self.subdir = re.sub("/", "_", self.subdir)  # Some branches have a slash, so replace that with underscore
         self.base_path = os.path.join(self.root_dir, self.subdir)
         self.esmf_clone_path = os.path.join(self.base_path, "esmf")
-        self.build_script = os.path.join(self.base_path, f"build-{self.subdir}.bat")
-        self.test_script = os.path.join(self.base_path, f"test-{self.subdir}.bat")
+        self.build_script = os.path.join(self.base_path, "build.bat")
+        self.test_script = os.path.join(self.base_path, "test.bat")
+        self.collect_script = os.path.join(self.base_path, "collect_artifacts.sh")
 
     def set_up(self):
         """
+        Set up test directory for this case.
         Clone repositories needed for testing, e.g., ESMF and nuopc-app-prototypes.
         Generate test scripts to submit.
         """
@@ -45,6 +50,11 @@ class Case:
         # generate build script
         with open(self.build_script, "w") as _file:
             _file.write(self._create_build_script())
+
+        # generate build artifacts collection script
+        with open(self.collect_script, "w") as _file:
+            _file.write(self._create_collect_artifacts_script())
+        cmd.runcmd(f"chmod u+x {self.collect_script}")
 
         # generate test script
         with open(self.test_script, "w") as _file:
@@ -59,29 +69,18 @@ class Case:
         Submit the jobs to run this test case.
           - no_artifacts: whether to skip copying and pushing the test artifacts
         """
-        build_job_num = self.scheduler.submit_job(script_file=self.build_script)
+        build_job_num = self.machine.scheduler.submit_job(script_file=self.build_script)
         logging.debug(f"Submitted build job: {build_job_num}")
 
         if not no_artifacts:
-            logging.debug("ARTIFACTS COLLECTION NOT SUPPORTED - BUILD")
+            logging.debug("Build phase monitor")
+            cmd.start_process(f"{self.collect_script}")
 
-        test_job_num = self.scheduler.submit_job(script_file=self.test_script, after=build_job_num)
+        test_job_num = self.machine.scheduler.submit_job(script_file=self.test_script, after=build_job_num)
         logging.debug(f"Submitted test job: {test_job_num}")
 
         if not no_artifacts:
             logging.debug("ARTIFACTS COLLECTION NOT SUPPORTED - TEST")
-
-        # monitor_cmd_build = "python3 {}/archive_results.py -j {} -b {} -m {} -s {} -t {} -a {} -M {} -B {} -d {}".format(
-        #    test.scripts_path,
-        #    jobnum,
-        #    subdir,
-        #    test.machine_name,
-        #    self.type,
-        #    test.test_root,
-        #    test.artifacts_root,
-        #    mpiver,
-        #    branch,
-        #    test.dryrun,
 
     def _create_modules_fragment(self):
         """
@@ -138,34 +137,62 @@ class Case:
         Create the script that will build ESMF.
         """
         with StringIO() as out:
-            out.write(self.scheduler.create_headers(script_file=self.build_script, timeout=self.env.build_time))
+            out.write(self.machine.scheduler.create_headers(script_file=self.build_script, timeout=self.env.build_time))
             out.write(self._create_modules_fragment())
             _module_file = os.path.join(self.base_path, "module-build.log")
             out.write(f"module list >& {_module_file}\n")
             out.write(f"cd {self.esmf_clone_path}\n")
-            #TODO: fix below after debugging
-            #out.write(f"make -j {self.scheduler.tasks_per_node} 2>&1| tee ../build_$JOBID.log\n")
-            out.write(f"echo 'FAKE BUILD JOB COMPLETE' >> ../build_$JOBID.log\n")
+            out.write(f"make info 2>&1| tee ../info.log\n")
+            out.write(f"make -j {self.machine.scheduler.tasks_per_node} 2>&1| tee ../build.log\n")
+
+            # TODO: remove fake ones below
+            #out.write(f"echo `date` > ../info.log\n")
+            #out.write(f"echo 'FAKE INFO JOB COMPLETE' >> ../info.log\n")
+            #out.write(f"echo `date` > ../build.log\n")
+            #out.write(f"echo 'FAKE BUILD JOB COMPLETE' >> ../build.log\n")
             return out.getvalue()
 
     def _create_test_script(self):
         """
-        Create the script that will run all of the ESMF tests and the NUOPC app tests.
+        Create the script that will run the ESMF tests and the NUOPC app tests.
         """
         with StringIO() as out:
-            out.write(self.scheduler.create_headers(script_file=self.test_script, timeout=self.env.test_time))
+            out.write(self.machine.scheduler.create_headers(script_file=self.test_script, timeout=self.env.test_time))
             out.write(self._create_modules_fragment())
             _module_file = os.path.join(self.base_path, "module-test.log")
             out.write(f"module list >& {_module_file}\n")
             out.write(f"cd {self.esmf_clone_path}\n")
 
-            #TODO: remove below after debugging
-            out.write(f"make info 2>&1| tee ../info.log\n")
-            out.write(f"echo 'FAKE TEST JOB COMPLETE' >> ../test_$JOBID.log\n")
+            # TODO: remove below after debugging
+            #out.write(f"echo 'FAKE TEST JOB COMPLETE' >> ../test.log\n")
 
-            #out.write(f"make info 2>&1| tee ../info.log\nmake install 2>&1| tee ../install_$JOBID.log\n" +
-            #          "make all_tests 2>&1| tee ../test_$JOBID.log\n")
+            out.write(f"make install 2>&1| tee ../install.log\n")
+            out.write(f"make all_tests 2>&1| tee ../test.log\n")
             #if self.env.mpi_module.lower() != "none":
             #    out.write(f"export ESMFMKFILE=`find $PWD/DEFAULTINSTALLDIR -iname esmf.mk`\n")
-            #    out.write("cd ../nuopc-app-prototypes\n./testProtos.sh 2>&1| tee ../nuopc_$JOBID.log\n")
+            #    out.write("cd ../nuopc-app-prototypes\n")
+            #    out.write("./testProtos.sh 2>&1| tee ../nuopc.log\n")
+            return out.getvalue()
+
+    def _create_collect_artifacts_script(self):
+        """
+        Create the script that will collect the artifacts during the build phase.
+        """
+
+        _artifacts_base_dir = os.path.join(self.artifacts_root,
+                                           re.sub("/", "_", self.esmf_branch),
+                                           self.env.compiler,
+                                           self.env.compiler_version,
+                                           self.env.bopt,
+                                           self.env.mpi,
+                                           self.env.mpi_version)
+        _collect_script_path = os.path.join(self.scripts_root, "collect_artifacts.py")
+
+        with StringIO() as out:
+            out.write("#!/bin/sh -l\n")
+            out.write(f"{_collect_script_path} \\\n")
+            out.write(f" --test-dir {self.base_path} \\\n")
+            out.write(f" --artifacts-dir {_artifacts_base_dir} \\\n")
+            out.write(f" --artifacts-branch {self.machine.name} \\\n")
+            out.write(f" --scheduler-type {self.machine.scheduler.sched_type}\n")  # how to get scheduler options??
             return out.getvalue()

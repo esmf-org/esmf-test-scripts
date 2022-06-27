@@ -27,11 +27,3 @@ class Environment:
 
     def label(self):
         return f"{self.compiler} {self.compiler_version} / {self.mpi} / {self.netcdf_module} / {self.bopt}"
-
-    def generate_case(self, root_dir, repos, esmf_branch, nuopc_branch, scheduler):
-        """
-        Generate a test case for this environment using the given branch of ESMF.
-        """
-        from case import Case
-        case = Case(self, root_dir, repos, esmf_branch, nuopc_branch, scheduler)
-        return case
