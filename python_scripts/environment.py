@@ -26,4 +26,4 @@ class Environment:
         self.module_path = None
 
     def label(self):
-        return f"{self.compiler} {self.compiler_version} / {self.mpi} / {self.netcdf_module} / {self.bopt}"
+        return f"{self.compiler} {self.compiler_version} / {self.mpi} {self.mpi_version} / {self.netcdf_module} / {self.bopt}"

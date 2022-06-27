@@ -31,7 +31,7 @@ class Matrix:
                         env = Environment()
                         env.compiler = compiler
                         env.compiler_module = compiler_module
-                        env.compiler_version = compiler_version
+                        env.compiler_version = str(compiler_version)
                         env.mpi = mpi
                         env.mpi_module = mpi_module
                         env.netcdf_module = netcdf_module
@@ -41,7 +41,7 @@ class Matrix:
                         env.module_path = module_path
 
                         if mpi_module != "":
-                            env.mpi_version = mpi_module.split('/')[-1]
+                            env.mpi_version = str(mpi_module.split('/')[-1])
                         if "unload_module" in versions[compiler_version]:
                             env.unload_module = versions[compiler_version]["unload_module"]
                         if "extra_module" in versions[compiler_version]:
