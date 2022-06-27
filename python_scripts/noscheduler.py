@@ -53,7 +53,6 @@ class NoScheduler(Scheduler):
         test.runcmd("{}".format(monitor_cmd_test))
         test.createGetResScripts(monitor_cmd_build, monitor_cmd_test)
 
-
-
-    def check_queue(self, jobid):
+    @staticmethod
+    def check_queue(jobid):
         return True

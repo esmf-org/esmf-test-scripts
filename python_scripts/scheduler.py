@@ -19,8 +19,24 @@ class Scheduler:
     def submit_job(self, script_file, after):
         pass
 
-    def check_queue(self):
+    @staticmethod
+    def check_queue(jobid):
         pass
+
+    @staticmethod
+    def scheduler_class(sched_type: str):
+        from slurm import Slurm
+        from noscheduler import NoScheduler
+        from pbs import PBS
+
+        if sched_type.lower() == "none":
+            return NoScheduler
+        elif sched_type.lower() == "slurm":
+            return Slurm
+        elif sched_type.lower() == "pbs":
+            return PBS
+        else:
+            raise Exception(f"Unknown scheduler type: {type}")
 
     @staticmethod
     def make_scheduler(config, machine):
@@ -29,6 +45,8 @@ class Scheduler:
         from pbs import PBS
 
         if type(config) == str and config.lower() == "none":
+            return NoScheduler(machine)
+        elif config["type"].lower() == "none":
             return NoScheduler(machine)
         elif config["type"].lower() == "slurm":
             return Slurm(machine, config)

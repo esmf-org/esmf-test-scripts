@@ -10,12 +10,16 @@ def set_dry_run(dry_run: bool):
     is_dry_run = dry_run
 
 
-def runcmd(cmd, ignore_error=False):
+def runcmd(cmd, ignore_error=False, stderr=False):
     logging.debug(f"cmd.runcmd: {cmd}")
     out = ""
     if not is_dry_run:
+        if stderr:
+            _stderr = subprocess.STDOUT
+        else:
+            _stderr = None
         try:
-            out = subprocess.check_output(cmd, shell=True).strip().decode("utf-8")
+            out = subprocess.check_output(cmd, shell=True, stderr=_stderr).strip().decode("utf-8")
         except subprocess.CalledProcessError as cpe:
             if not ignore_error:
                 raise cpe
@@ -25,7 +29,7 @@ def runcmd(cmd, ignore_error=False):
 
 
 def runcmd_no_err(cmd):
-    return runcmd(cmd, True)
+    return runcmd(cmd, ignore_error=True)
 
 
 def chdir(to_dir):

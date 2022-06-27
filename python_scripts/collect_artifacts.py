@@ -4,13 +4,28 @@ import argparse
 import glob
 import os
 import logging
+import time
 from datetime import datetime
+from scheduler import Scheduler
 
 import cmd
 
 
 def _wait_for_job(jobid):
-    pass
+
+    _start_time = time.time()
+    _timeout = 24 * 60 * 60  # 24 hours
+    logging.debug(f"Waiting for job {jobid} to complete.")
+    _job_done = False
+    while (time.time() - _start_time) < _timeout:
+        logging.debug(f"  --> Checking queue")
+        _job_done = _scheduler.check_queue(jobid)
+        if _job_done:
+            logging.debug(f"  --> Job {jobid} complete")
+            break
+        time.sleep(30)
+
+    return _job_done
 
     # start_time = time.time()
     # seconds = 144000
@@ -103,6 +118,8 @@ if __name__ == "__main__":
     parser.add_argument("--test-dir", help="Root test directory", required=True)
     parser.add_argument("--artifacts-dir", help="Path to test artifacts directory for this case", required=True)
     parser.add_argument("--artifacts-branch", help="Local git branch to checkout for artifacts", required=True)
+    parser.add_argument("--scheduler-type", help="Type of scheduler to use for checking job status", required=True)
+    parser.add_argument("--jobid", help="Wait for job to be completed", required=True)
     parser.add_argument("--debug", help="Output debug messages", required=False, action="store_true")
 
     args = vars(parser.parse_args())
@@ -115,8 +132,15 @@ if __name__ == "__main__":
     _test_dir = args["test_dir"]
     _artifacts_dir = args["artifacts_dir"]
     _artifacts_branch = args["artifacts_branch"]
+    _scheduler = Scheduler.scheduler_class(args["scheduler_type"])
+    _jobid = int(args["jobid"])
+
+    if _jobid > 0:
+        _wait_for_job(_jobid)
 
     _clean_artifacts()
+    _commit_and_push_artifacts("clear artifacts")
+
     _copy_build_artifacts()
     _copy_test_artifacts()
-    # _commit_and_push_artifacts("build push")
+    _commit_and_push_artifacts("build/test artifacts")

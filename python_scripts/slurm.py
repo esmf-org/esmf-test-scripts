@@ -116,7 +116,8 @@ class Slurm(Scheduler):
             )
         test.createGetResScripts(monitor_cmd_build, monitor_cmd_test)
 
-    def check_queue(self, jobid):
+    @staticmethod
+    def check_queue(jobid):
         if int(jobid) < 0:
             return True
         queue_query = (

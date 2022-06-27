@@ -88,44 +88,67 @@ class PBS(Scheduler):
             proc = subprocess.Popen(monitor_cmd_test, shell=True, stdin=None, stdout=None, stderr=None, close_fds=True)
         #test.createGetResScripts(monitor_cmd_build, monitor_cmd_test)
 
-    def check_queue(self, jobid):
-        if self._pbs_job_checker == "tracejob":
-            return self._check_queue_tracejob(jobid)
+    #def check_queue(self, jobid):
+    #    if self._pbs_job_checker == "tracejob":
+    #        return self._check_queue_tracejob(jobid)
+    #    else:
+    #        return self._check_queue_default(jobid)
+
+    @staticmethod
+    def check_queue(jobid):
+        if int(jobid) < 0:
+            return True
+
+        # see if qstat -H is available
+        _cmd = f"qstat -H {jobid}"
+        _out = cmd.runcmd(_cmd, stderr=True)
+        if "invalid option" not in _out:
+            _queue_query = "qstat -H {} | tail -n 1 | awk -F ' +' '{{print $10}}'".format(jobid)
+            try:
+                result = cmd.runcmd(_queue_query)
+                if result == "F":  # could check for R and Q to see if it is running or waiting
+                    return True
+                else:
+                    return False
+            except Exception as e:
+                logging.debug(f"Exception checking queue (default): {e}")
+                return True
         else:
-            return self._check_queue_default(jobid)
-
-    @staticmethod
-    def _check_queue_default(jobid):
-        if int(jobid) < 0:
-            return True
-        _queue_query = "qstat -H {} | tail -n 1 | awk -F ' +' '{{print $10}}'".format(jobid)
-        try:
-            result = cmd.runcmd(_queue_query)
-            if result == "F":  # could check for R and Q to see if it is running or waiting
+            # try tracejob instead
+            #
+            # -w 9999 tells tracejob to assume we have a terminal of width 9999 characters;
+            # this should be enough to ensure that each entry appears on a single line, rather
+            # than being split across multiple lines (which can otherwise happen for a narrow
+            # terminal window)
+            _queue_query = "tracejob -q -w 9999 {} | tail -n 1".format(jobid)
+            try:
+                result = cmd.runcmd(_queue_query)
+                finished_re = r"S\s+dequeuing"
+                if re.search(finished_re, result):
+                    return True
+                else:
+                    return False
+            except Exception as e:
+                logging.debug(f"Exception checking queue (tracejob): {e}")
                 return True
-            else:
-                return False
-        except Exception as e:
-            logging.debug(f"Exception checking queue (default): {e}")
-            return True
 
-    @staticmethod
-    def _check_queue_tracejob(jobid):
-        if int(jobid) < 0:
-            return True
-
-        # -w 9999 tells tracejob to assume we have a terminal of width 9999 characters;
-        # this should be enough to ensure that each entry appears on a single line, rather
-        # than being split across multiple lines (which can otherwise happen for a narrow
-        # terminal window)
-        _queue_query = "tracejob -q -w 9999 {} | tail -n 1".format(jobid)
-        try:
-            result = cmd.runcmd(_queue_query)
-            finished_re = r"S\s+dequeuing"
-            if re.search(finished_re, result):
-                return True
-            else:
-                return False
-        except Exception as e:
-            logging.debug(f"Exception checking queue (tracejob): {e}")
-            return True
+    # @staticmethod
+    # def _check_queue_tracejob(jobid):
+    #     if int(jobid) < 0:
+    #         return True
+    #
+    #     # -w 9999 tells tracejob to assume we have a terminal of width 9999 characters;
+    #     # this should be enough to ensure that each entry appears on a single line, rather
+    #     # than being split across multiple lines (which can otherwise happen for a narrow
+    #     # terminal window)
+    #     _queue_query = "tracejob -q -w 9999 {} | tail -n 1".format(jobid)
+    #     try:
+    #         result = cmd.runcmd(_queue_query)
+    #         finished_re = r"S\s+dequeuing"
+    #         if re.search(finished_re, result):
+    #             return True
+    #         else:
+    #             return False
+    #     except Exception as e:
+    #         logging.debug(f"Exception checking queue (tracejob): {e}")
+    #         return True

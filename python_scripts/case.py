@@ -143,7 +143,7 @@ class Case:
             out.write(f"module list >& {_module_file}\n")
             out.write(f"cd {self.esmf_clone_path}\n")
             out.write(f"make info 2>&1| tee ../info.log\n")
-            out.write(f"make -j {self.machine.scheduler.tasks_per_node} 2>&1| tee ../build.log\n")
+            #out.write(f"make -j {self.machine.scheduler.tasks_per_node} 2>&1| tee ../build.log\n")
 
             # TODO: remove fake ones below
             #out.write(f"echo `date` > ../info.log\n")
@@ -194,5 +194,7 @@ class Case:
             out.write(f" --test-dir {self.base_path} \\\n")
             out.write(f" --artifacts-dir {_artifacts_base_dir} \\\n")
             out.write(f" --artifacts-branch {self.machine.name} \\\n")
-            out.write(f" --scheduler-type {self.machine.scheduler.sched_type}\n")  # how to get scheduler options??
+            out.write(f" --scheduler-type {self.machine.scheduler.sched_type} \\\n")
+            out.write(f" --debug \\\n")
+            out.write(" --jobid ${1:-0}\n")
             return out.getvalue()
