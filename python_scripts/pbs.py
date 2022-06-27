@@ -3,6 +3,7 @@ import logging
 from io import StringIO
 from scheduler import Scheduler
 import cmd
+import os.path
 
 
 class PBS(Scheduler):
@@ -16,7 +17,7 @@ class PBS(Scheduler):
     def create_headers(self, script_file, timeout):
         with StringIO() as out:
             out.write("#!/bin/sh -l\n")
-            out.write(f"#PBS -N {script_file}\n")
+            out.write(f"#PBS -N {os.path.basename(script_file)}\n")
             out.write(f"#PBS -l walltime={timeout}\n")
             out.write(f"#PBS -q {self.queue}\n")
             out.write(f"#PBS -A {self.account}\n")

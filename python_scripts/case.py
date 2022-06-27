@@ -170,7 +170,7 @@ class Case:
             # TODO: remove below after debugging
             #out.write(f"echo 'FAKE TEST JOB COMPLETE' >> ../test.log\n")
 
-            out.write(f"make info 2>&1 tee ../test.log\n")
+            out.write(f"make info 2>&1| tee ../test.log\n")
             #out.write(f"make install 2>&1| tee ../install.log\n")
             #out.write(f"make all_tests 2>&1| tee ../test.log\n")
             #if self.env.mpi_module.lower() != "none":
