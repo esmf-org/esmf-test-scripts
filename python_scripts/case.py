@@ -69,6 +69,8 @@ class Case:
         Submit the jobs to run this test case.
           - no_artifacts: whether to skip copying and pushing the test artifacts
         """
+        cmd.chdir(self.base_path)
+
         build_job_num = self.machine.scheduler.submit_job(script_file=self.build_script)
         logging.debug(f"Submitted build job: {build_job_num}")
 
