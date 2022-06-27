@@ -75,14 +75,16 @@ class Case:
         logging.debug(f"Submitted build job: {build_job_num}")
 
         if not no_artifacts:
-            logging.debug("Build phase monitor")
-            cmd.start_process(f"{self.collect_script}")
+            logging.debug("Starting artifacts monitor for build phase")
+            cmd.start_process(f"{self.collect_script} {build_job_num}")
 
         test_job_num = self.machine.scheduler.submit_job(script_file=self.test_script, after=build_job_num)
         logging.debug(f"Submitted test job: {test_job_num}")
 
         if not no_artifacts:
-            logging.debug("ARTIFACTS COLLECTION NOT SUPPORTED - TEST")
+            logging.debug("Starting artifacts monitor for test phase")
+            cmd.start_process(f"{self.collect_script} {test_job_num}")
+            
 
     def _create_modules_fragment(self):
         """
@@ -168,8 +170,9 @@ class Case:
             # TODO: remove below after debugging
             #out.write(f"echo 'FAKE TEST JOB COMPLETE' >> ../test.log\n")
 
-            out.write(f"make install 2>&1| tee ../install.log\n")
-            out.write(f"make all_tests 2>&1| tee ../test.log\n")
+            out.write(f"make info 2>&1 tee ../test.log\n")
+            #out.write(f"make install 2>&1| tee ../install.log\n")
+            #out.write(f"make all_tests 2>&1| tee ../test.log\n")
             #if self.env.mpi_module.lower() != "none":
             #    out.write(f"export ESMFMKFILE=`find $PWD/DEFAULTINSTALLDIR -iname esmf.mk`\n")
             #    out.write("cd ../nuopc-app-prototypes\n")

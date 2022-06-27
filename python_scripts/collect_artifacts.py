@@ -18,7 +18,7 @@ def _wait_for_job(jobid):
     logging.debug(f"Waiting for job {jobid} to complete.")
     _job_done = False
     while (time.time() - _start_time) < _timeout:
-        logging.debug(f"  --> Checking queue")
+        logging.debug(f"  --> Checking queue for status of job {jobid}")
         _job_done = _scheduler.check_queue(jobid)
         if _job_done:
             logging.debug(f"  --> Job {jobid} complete")
@@ -27,15 +27,6 @@ def _wait_for_job(jobid):
 
     return _job_done
 
-    # start_time = time.time()
-    # seconds = 144000
-    # while True:
-    #    current_time = time.time()
-    #    elapsed_time = current_time - start_time
-    #    job_done = self.scheduler.checkqueue(jobid)
-    #    if job_done:
-    #        break
-    #    time.sleep(30)
 
 
 def _clean_artifacts():
@@ -127,7 +118,7 @@ if __name__ == "__main__":
     _log_level = logging.INFO
     if args["debug"]:
         _log_level = logging.DEBUG
-    logging.basicConfig(format='%(levelname)s: %(message)s', level=_log_level)
+    logging.basicConfig(format='collect_artifacts.py: %(message)s', level=_log_level)
 
     _test_dir = args["test_dir"]
     _artifacts_dir = args["artifacts_dir"]
