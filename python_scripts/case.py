@@ -147,7 +147,7 @@ class Case:
             out.write(f"module list >& {_module_file}\n")
             out.write(f"cd {self.esmf_clone_path}\n")
             out.write(f"make info 2>&1| tee ../info.log\n")
-            #out.write(f"make -j {self.machine.scheduler.tasks_per_node} 2>&1| tee ../build.log\n")
+            out.write(f"make -j {self.machine.scheduler.tasks_per_node} 2>&1| tee ../build.log\n")
 
             # TODO: remove fake ones below
             #out.write(f"echo `date` > ../info.log\n")
@@ -170,9 +170,9 @@ class Case:
             # TODO: remove below after debugging
             #out.write(f"echo 'FAKE TEST JOB COMPLETE' >> ../test.log\n")
 
-            out.write(f"make info 2>&1| tee ../test.log\n")
-            #out.write(f"make install 2>&1| tee ../install.log\n")
-            #out.write(f"make all_tests 2>&1| tee ../test.log\n")
+            #out.write(f"make info 2>&1| tee ../test.log\n")
+            out.write(f"make install 2>&1| tee ../install.log\n")
+            out.write(f"make all_tests 2>&1| tee ../test.log\n")
             #if self.env.mpi_module.lower() != "none":
             #    out.write(f"export ESMFMKFILE=`find $PWD/DEFAULTINSTALLDIR -iname esmf.mk`\n")
             #    out.write("cd ../nuopc-app-prototypes\n")

@@ -7,7 +7,7 @@ import logging
 import time
 from datetime import datetime
 from scheduler import Scheduler
-
+import subprocess
 import cmd
 
 
@@ -92,12 +92,15 @@ def _get_build_timestamp():
 
 def _commit_and_push_artifacts(commit_msg):
     cmd.chdir(f"{_artifacts_dir}")
-    cmd.runcmd(f"git checkout {_artifacts_branch}")
-    cmd.runcmd(f"git add *")
-    # git commit returns non-zero error code if there is nothing to commit
-    cmd.runcmd_no_err(f"git commit -a -m '{commit_msg}'")
-    cmd.runcmd(f"git push origin {_artifacts_branch}")
-
+    
+    try:
+        cmd.runcmd(f"git checkout {_artifacts_branch}")
+        cmd.runcmd(f"git add *")
+        # git commit returns non-zero error code if there is nothing to commit
+        cmd.runcmd_no_err(f"git commit -a -m '{commit_msg}'")
+        cmd.runcmd(f"git push origin {_artifacts_branch}")
+    except subprocess.CalledProcessError as cpe:
+        logging.info(f"Error committing or pushing artifacts: {cpe}")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=
