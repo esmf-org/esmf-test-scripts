@@ -1,3 +1,4 @@
+import os
 import subprocess
 from scheduler import Scheduler
 from io import StringIO
@@ -121,25 +122,13 @@ class Slurm(Scheduler):
     def check_queue(jobid):
         if int(jobid) < 0:
             return True
-        queue_query = (
-            "sacct -j {} | head -n 3 | tail -n 1 | awk -F ' ' '{{print $6}}'".format(
-                jobid
-            )
-        )
+        _queue_query = f"sacct -j {jobid} | head -n 3 | tail -n 1 | awk -F ' ' '{{print $6}}'"
         try:
-            result = (
-                subprocess.check_output(queue_query, shell=True).strip().decode("utf-8")
-            )
-            if (
-                    (result == "COMPLETED")
-                    or (result == "TIMEOUT")
-                    or (result == "FAILED")
-                    or (result == "CANCELLED")
-            ):  # could check for R and Q to see if it is running or waiting
+            result = cmd.runcmd(_queue_query)
+            if (result == "COMPLETED") or (result == "TIMEOUT") or (result == "FAILED") or (result == "CANCELLED"):
                 return True
             else:
                 return False
         except:
-            result = "done"
             return True
         return False

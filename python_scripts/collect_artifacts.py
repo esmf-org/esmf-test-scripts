@@ -12,7 +12,6 @@ import cmd
 
 
 def _wait_for_job(jobid):
-
     _start_time = time.time()
     _timeout = 24 * 60 * 60  # 24 hours
     logging.debug(f"Waiting for job {jobid} to complete.")
@@ -26,7 +25,6 @@ def _wait_for_job(jobid):
         time.sleep(30)
 
     return _job_done
-
 
 
 def _clean_artifacts():
@@ -50,6 +48,7 @@ def _copy_test_artifacts():
     cmd.runcmd_no_err(f"cp test.bat {_artifacts_out_dir}")
     cmd.runcmd_no_err(f"cp module-test.log {_artifacts_out_dir}")
     cmd.runcmd_no_err(f"cp test.log {_artifacts_out_dir}")
+    cmd.runcmd_no_err(f"cp summary.dat {_artifacts_dir}")
 
     _ts = _get_build_timestamp()
 
@@ -87,12 +86,43 @@ def _get_build_timestamp():
     if len(_mkfile_path) == 1:
         return "Build timestamp from esmf.mk: " + str(datetime.fromtimestamp(os.path.getmtime(_mkfile_path[0])))
     else:
-        return "Collection timestamp: " + datetime.now().strftime("%H:%M:%S")
+        return "Collection timestamp: " + datetime.now().strftime("%b %d %Y %H:%M:%S")
+
+
+def _get_esmf_git_hash():
+    cmd.chdir(os.path.join(_test_dir, "esmf"))
+    return cmd.runcmd("git describe --tags --abbrev=7")
+
+
+def _create_summary():
+    _summary_file = os.path.join(_test_dir, "summary.dat")
+    _info_file = os.path.join(_test_dir, "info.log")
+    _info = cmd.runcmd(f"cat {_info_file}", ignore_error=True)
+    _module_file = os.path.join(_test_dir, "module-build.log")
+    _module = cmd.runcmd(f"cat {_module_file}", ignore_error=True)
+
+    with open(_summary_file, "w") as _file:
+        _file.write(f"")
+        _file.write(f"ESMF hash: {_get_esmf_git_hash()}\n")
+        _file.write(f"{_get_build_timestamp()}\n")
+        _file.write(f"Test dir: {_test_dir}\n")
+        _file.write(f"Machine: {_artifacts_branch}\n")
+        if _jobid > 0:
+            _file.write(f"Job: {_jobid}\n")
+        _file.write("\n")
+        _file.write("unit tests:\t\tPASS\t\tFAIL\n")
+        _file.write("system tests:\t\tPASS\t\tFAIL\n")
+        _file.write("example tests:\t\tPASS\t\tFAIL\n")
+        _file.write("nuopc tests:\t\tPASS\t\tFAIL\n")
+
+        _file.write(f"\n\nmodule-build.log\n================================\n")
+        _file.write(f"{_module}\n")
+        _file.write(f"\n\ninfo.log\n")
+        _file.write(f"{_info}\n")
 
 
 def _commit_and_push_artifacts(commit_msg):
     cmd.chdir(f"{_artifacts_dir}")
-    
     try:
         cmd.runcmd(f"git checkout {_artifacts_branch}")
         cmd.runcmd(f"git add *")
@@ -101,6 +131,7 @@ def _commit_and_push_artifacts(commit_msg):
         cmd.runcmd(f"git push origin {_artifacts_branch}")
     except subprocess.CalledProcessError as cpe:
         logging.info(f"Error committing or pushing artifacts: {cpe}")
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=
@@ -135,6 +166,7 @@ if __name__ == "__main__":
     _clean_artifacts()
     _commit_and_push_artifacts("clear artifacts")
 
+    _create_summary()
     _copy_build_artifacts()
     _copy_test_artifacts()
     _commit_and_push_artifacts("build/test artifacts")
