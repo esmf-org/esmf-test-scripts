@@ -48,6 +48,7 @@ def _copy_test_artifacts():
     cmd.runcmd_no_err(f"cp test.bat {_artifacts_out_dir}")
     cmd.runcmd_no_err(f"cp module-test.log {_artifacts_out_dir}")
     cmd.runcmd_no_err(f"cp test.log {_artifacts_out_dir}")
+    cmd.runcmd_no_err(f"cp nuopc.log {_artifacts_out_dir}")
     cmd.runcmd_no_err(f"cp summary.dat {_artifacts_dir}")
 
     _ts = _get_build_timestamp()
@@ -97,9 +98,43 @@ def _get_esmf_git_hash():
 def _create_summary():
     _summary_file = os.path.join(_test_dir, "summary.dat")
     _info_file = os.path.join(_test_dir, "info.log")
-    _info = cmd.runcmd(f"cat {_info_file}", ignore_error=True)
+    _info = cmd.runcmd_no_err(f"cat {_info_file}")
     _module_file = os.path.join(_test_dir, "module-build.log")
-    _module = cmd.runcmd(f"cat {_module_file}", ignore_error=True)
+    _module = cmd.runcmd_no_err(f"cat {_module_file}")
+
+    # build results
+    _build_log = os.path.join(_test_dir, "build.log")
+    _build_pass_out = cmd.runcmd_no_err(f"tail -n 10 {_build_log}")
+    if "ESMF library built successfully" in _build_pass_out:
+        _build_result = "PASS"
+    else:
+        _build_result = "FAIL"
+
+    # unit test results
+    _unit_results = "NONE"
+    _unit_res_path = glob.glob(f"{_test_dir}/esmf/test/test*/*/unit_tests_results")
+    if len(_unit_res_path) == 1:
+        _unit_results = cmd.runcmd_no_err(f"cat {_unit_res_path[0]}")
+
+    # system test results
+    _sys_results = "NONE"
+    _sys_res_path = glob.glob(f"{_test_dir}/esmf/test/test*/*/system_tests_results")
+    if len(_sys_res_path) == 1:
+        _sys_results = cmd.runcmd_no_err(f"cat {_sys_res_path[0]}")
+
+    # examples results
+    _examples_results = "NONE"
+    _examples_res_path = glob.glob(f"{_test_dir}/esmf/examples/examples*/*/examples_results")
+    if len(_examples_res_path) == 1:
+        _examples_results = cmd.runcmd_no_err(f"cat {_examples_res_path[0]}")
+
+    # nuopc results
+    _nuopc_log = os.path.join(_test_dir, "nuopc.log")
+    _nuopc_results = "NONE"
+    if os.path.isfile(_nuopc_log):
+        _nuopc_pass = cmd.runcmd_no_err(f"grep PASS: {_nuopc_log} | wc -l")
+        _nuopc_fail = cmd.runcmd_no_err(f"grep FAIL: {_nuopc_log} | wc -l")
+        _nuopc_results = f"PASS {_nuopc_pass} FAIL {_nuopc_fail}"
 
     with open(_summary_file, "w") as _file:
         _file.write(f"")
@@ -110,14 +145,15 @@ def _create_summary():
         if _jobid > 0:
             _file.write(f"Job: {_jobid}\n")
         _file.write("\n")
-        _file.write("unit tests:\t\tPASS\t\tFAIL\n")
-        _file.write("system tests:\t\tPASS\t\tFAIL\n")
-        _file.write("example tests:\t\tPASS\t\tFAIL\n")
-        _file.write("nuopc tests:\t\tPASS\t\tFAIL\n")
-
+        _file.write("RESULTS:\n================================\n")
+        _file.write(f"build:\t\t\t{_build_result}\n")
+        _file.write(f"unit tests:\t\t{_unit_results}\n")
+        _file.write(f"system tests:\t\t{_sys_results}\n")
+        _file.write(f"example tests:\t\t{_examples_results}\n")
+        _file.write(f"nuopc tests:\t\t{_nuopc_results}\n")
         _file.write(f"\n\nmodule-build.log\n================================\n")
         _file.write(f"{_module}\n")
-        _file.write(f"\n\ninfo.log\n")
+        _file.write(f"\n\ninfo.log\n================================\n")
         _file.write(f"{_info}\n")
 
 
