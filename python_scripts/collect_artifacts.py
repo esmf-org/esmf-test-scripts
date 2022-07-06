@@ -180,7 +180,7 @@ if __name__ == "__main__":
     parser.add_argument("--artifacts-dir", help="Path to test artifacts directory for this case", required=True)
     parser.add_argument("--artifacts-branch", help="Local git branch to checkout for artifacts", required=True)
     parser.add_argument("--scheduler-type", help="Type of scheduler to use for checking job status", required=True)
-    parser.add_argument("--jobid", help="Wait for job to be completed", required=True)
+    parser.add_argument("--jobid", help="Wait for job to be completed (or 0 for no job dependency)", required=True)
     parser.add_argument("--debug", help="Output debug messages", required=False, action="store_true")
 
     args = vars(parser.parse_args())

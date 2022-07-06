@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
+import datetime
 
 import yaml
 import os
 import pathlib
 import argparse
 import logging
+from datetime import datetime
 from machine import Machine
 from matrix import Matrix
 from case import Case
@@ -100,21 +102,41 @@ class ESMFTest:
         cmd.chdir(".check")
 
         logging.info("Check: Can I clone artifacts repo?")
-        self.clone_repo(self.repos["artifacts"], local_name="esmf-test-artifacts")
+        cmd.clone_repo(self.repos["artifacts"], local_name="esmf-test-artifacts")
 
         cmd.chdir("esmf-test-artifacts")
         o = cmd.runcmd("git status")
         if "Your branch is up to date" in o:
             logging.info("...PASS")
+
+        logging.info("Check:  Can I push to artifacts repo?")
+        cmd.runcmd(f"echo '{datetime.now().strftime('%b %d %Y %H:%M:%S')}' > .ignore")
+        cmd.runcmd("git add .ignore")
+        cmd.runcmd("git commit .ignore -m 'this commit used only for testing'")
+        o = cmd.runcmd("git push", stderr=True)
+        if "main -> main" in o:
+            logging.info(f"...PASS")
+
         cmd.chdir("..")
 
         logging.info("Check: Can I clone ESMF repo?")
-        self.clone_repo(self.repos["esmf"], local_name="esmf")
+        cmd.clone_repo(self.repos["esmf"], local_name="esmf")
         cmd.chdir("esmf")
-        o = self.cmd.runcmd("git status")
+        o = cmd.runcmd("git status")
         if "Your branch is up to date" in o:
             logging.info("...PASS")
         cmd.chdir("..")
+
+        logging.info("Check:  Can I submit a job to the batch system?")
+        _batch_file = os.path.join(self.test_root, "batch_test.bat")
+        with open(_batch_file, "w") as _file:
+            _file.write(self.machine.scheduler.create_headers(script_file=_batch_file, timeout="10:00"))
+            _file.write("\n")
+            _file.write(f"cd {self.test_root}\n")
+            _file.write(f"echo 'please ignore me - just a test'\n")
+        _jobid = self.machine.scheduler.submit_job(_batch_file)
+        if int(_jobid) >= 0:
+            logging.info("...PASS")
 
         cmd.chdir("..")
         cmd.runcmd("rm -rf .check")
@@ -138,20 +160,6 @@ class ESMFTest:
             cmd.runcmd(f"git checkout -b {self.machine.name}")
             cmd.runcmd(f"git push --set-upstream origin {self.machine.name}")
         cmd.chdir("..")
-
-    # def createGetResScripts(self, monitor_cmd_build, monitor_cmd_test):
-    #     # write these out no matter what, so we can run them manually, if necessary
-    #     get_res_file = open("getres-build.sh", "w")
-    #     get_res_file.write("#!{} -l\n".format(self.bash))
-    #     get_res_file.write("{} >& build-res.log &\n".format(monitor_cmd_build))
-    #     get_res_file.close()
-    #     cmd.runcmd("chmod +x getres-build.sh")
-    #
-    #     get_res_file = open("getres-test.sh", "w")
-    #     get_res_file.write("#!{} -l\n".format(self.bash))
-    #     get_res_file.write("{} >& test-res.log &\n".format(monitor_cmd_test))
-    #     get_res_file.close()
-    #     cmd.runcmd("chmod +x getres-test.sh")
 
     def start(self):
         if self.reclone:

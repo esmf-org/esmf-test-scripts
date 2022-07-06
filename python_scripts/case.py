@@ -84,7 +84,6 @@ class Case:
         if not no_artifacts:
             logging.debug("Starting artifacts monitor for test phase")
             cmd.start_process(f"{self.collect_script} {test_job_num}")
-            
 
     def _create_modules_fragment(self):
         """
@@ -150,10 +149,10 @@ class Case:
             out.write(f"make -j {self.machine.scheduler.tasks_per_node} 2>&1| tee ../build.log\n")
 
             # TODO: remove fake ones below
-            #out.write(f"echo `date` > ../info.log\n")
-            #out.write(f"echo 'FAKE INFO JOB COMPLETE' >> ../info.log\n")
-            #out.write(f"echo `date` > ../build.log\n")
-            #out.write(f"echo 'FAKE BUILD JOB COMPLETE' >> ../build.log\n")
+            # out.write(f"echo `date` > ../info.log\n")
+            # out.write(f"echo 'FAKE INFO JOB COMPLETE' >> ../info.log\n")
+            # out.write(f"echo `date` > ../build.log\n")
+            # out.write(f"echo 'FAKE BUILD JOB COMPLETE' >> ../build.log\n")
             return out.getvalue()
 
     def _create_test_script(self):
@@ -168,12 +167,12 @@ class Case:
             out.write(f"cd {self.esmf_clone_path}\n")
 
             # TODO: remove below after debugging
-            #out.write(f"echo 'FAKE TEST JOB COMPLETE' >> ../test.log\n")
+            # out.write(f"echo 'FAKE TEST JOB COMPLETE' >> ../test.log\n")
 
-            #out.write(f"make info 2>&1| tee ../test.log\n")
+            # out.write(f"make info 2>&1| tee ../test.log\n")
             out.write(f"make install 2>&1| tee ../install.log\n")
             out.write(f"make all_tests 2>&1| tee ../test.log\n")
-            #if self.env.mpi_module.lower() != "none":
+            # if self.env.mpi_module.lower() != "none":
             #    out.write(f"export ESMFMKFILE=`find $PWD/DEFAULTINSTALLDIR -iname esmf.mk`\n")
             #    out.write("cd ../nuopc-app-prototypes\n")
             #    out.write("./testProtos.sh 2>&1| tee ../nuopc.log\n")
