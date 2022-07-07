@@ -198,6 +198,7 @@ class Case:
             out.write(f" --artifacts-dir {_artifacts_base_dir} \\\n")
             out.write(f" --artifacts-branch {self.machine.name} \\\n")
             out.write(f" --scheduler-type {self.machine.scheduler.sched_type} \\\n")
-            out.write(f" --debug \\\n")
+            if logging.root.isEnabledFor(logging.DEBUG):
+                out.write(f" --debug \\\n")
             out.write(" --jobid ${1:-0}\n")
             return out.getvalue()
