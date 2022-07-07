@@ -95,6 +95,11 @@ def _get_esmf_git_hash():
     return cmd.runcmd("git describe --tags --abbrev=7")
 
 
+def _get_esmf_branch():
+    cmd.chdir(os.path.join(_test_dir, "esmf"))
+    return cmd.runcmd("git branch --show-current")
+
+
 def _create_summary():
     _summary_file = os.path.join(_test_dir, "summary.dat")
     _info_file = os.path.join(_test_dir, "info.log")
@@ -199,10 +204,15 @@ if __name__ == "__main__":
     if _jobid > 0:
         _wait_for_job(_jobid)
 
+    _esmf_branch = _get_esmf_branch()
+    _esmf_hash = _get_esmf_git_hash()
+    _dir_name = os.path.basename(_test_dir)
+    _commit_msg_fragment = f"dir={_dir_name} branch={_esmf_branch} hash={_esmf_hash}"
+
     _clean_artifacts()
-    _commit_and_push_artifacts("clear artifacts")
+    _commit_and_push_artifacts(f"clear artifacts: {_commit_msg_fragment}")
 
     _create_summary()
     _copy_build_artifacts()
     _copy_test_artifacts()
-    _commit_and_push_artifacts("build/test artifacts")
+    _commit_and_push_artifacts(f"build/test artifacts: {_commit_msg_fragment}")
