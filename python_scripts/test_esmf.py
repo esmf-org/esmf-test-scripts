@@ -188,12 +188,16 @@ class ESMFTest:
                 case = Case(_e, self.scripts_root, self.test_root, self.artifacts_root, self.repos,
                             _esmf_branch, _nuopc_branch, self.machine)
 
-                if not self.only_resubmit:
-                    case.set_up()
-                else:
-                    logging.info(f"\t---> Resubmitting existing case")
-                if not self.no_submit:
-                    case.submit(no_artifacts=self.no_artifacts)
+                try:
+                    if not self.only_resubmit:
+                        case.set_up()
+                    else:
+                        logging.info(f"\t---> Resubmitting existing case")
+                    if not self.no_submit:
+                        case.submit(no_artifacts=self.no_artifacts)
+                except Exception as e:
+                    logging.info(f"Error setting up or submitting test case: {_e.label()} / {_esmf_branch}")
+                    logging.info(f"{e}")
 
 
 def go(args):

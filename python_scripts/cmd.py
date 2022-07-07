@@ -43,10 +43,12 @@ def clone_repo(url, local_name, branch=None):
     """
     runcmd(f"rm -rf {local_name}")
     if branch is not None:
-        runcmd(f"git clone -b {branch} {url} {local_name}")
+        runcmd(f"git clone -b {branch} {url} {local_name}", stderr=True)
         chdir(f"{local_name}")
-        runcmd(f"git checkout {branch}")
-        runcmd(f"git pull origin {branch} --ff-only")
+        runcmd(f"git checkout {branch}", stderr=True)
+        runcmd(f"git pull origin {branch} --ff-only", stderr=True)
         chdir("..")
     else:
-        runcmd(f"git clone {url} {local_name}")
+        runcmd(f"git clone {url} {local_name}", stderr=True)
+
+
