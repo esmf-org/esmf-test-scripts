@@ -1,5 +1,5 @@
 
-class Environment:
+class Combination:
     """
     And individual test case (configuration).
     """

@@ -3,20 +3,20 @@ import os
 import re
 from io import StringIO
 from machine import Machine
-from environment import Environment
+from combination import Combination
 import cmd
 
 
 class Case:
     """
     A particular test case that can be run.
-    A test case is associated with an environment (compiler, mpi, etc.)
+    A test case is associated with a combination (compiler, mpi, etc.)
       and a particular branch of ESMF to test.
     """
 
-    def __init__(self, env: Environment, scripts_root, root_dir, artifacts_root, repos, esmf_branch, nuopc_branch,
+    def __init__(self, combo: Combination, scripts_root, root_dir, artifacts_root, repos, esmf_branch, nuopc_branch,
                  machine: Machine):
-        self.env = env
+        self.combo = combo
         self.scripts_root = scripts_root
         self.root_dir = root_dir
         self.artifacts_root = artifacts_root
@@ -24,10 +24,10 @@ class Case:
         self.machine = machine
         self.esmf_branch = esmf_branch
         self.nuopc_branch = nuopc_branch
-        self.subdir = "{}_{}_{}_{}_{}".format(self.env.compiler,
-                                              self.env.compiler_version,
-                                              self.env.mpi,
-                                              self.env.bopt,
+        self.subdir = "{}_{}_{}_{}_{}".format(self.combo.compiler,
+                                              self.combo.compiler_version,
+                                              self.combo.mpi,
+                                              self.combo.bopt,
                                               esmf_branch)
         self.subdir = re.sub("/", "_", self.subdir)  # Some branches have a slash, so replace that with underscore
         self.base_path = os.path.join(self.root_dir, self.subdir)
@@ -89,7 +89,7 @@ class Case:
         """
         Create the module load section used at the top of both the build and test scripts.
         """
-        e = self.env
+        e = self.combo
         with StringIO() as out:
             if e.unload_module is not None:
                 out.write(f"module unload {e.unload_module}\n")
@@ -140,7 +140,7 @@ class Case:
         Create the script that will build ESMF.
         """
         with StringIO() as out:
-            out.write(self.machine.scheduler.create_headers(script_file=self.build_script, timeout=self.env.build_time))
+            out.write(self.machine.scheduler.create_headers(script_file=self.build_script, timeout=self.combo.build_time))
             out.write(self._create_modules_fragment())
             _module_file = os.path.join(self.base_path, "module-build.log")
             out.write(f"module list >& {_module_file}\n")
@@ -160,7 +160,7 @@ class Case:
         Create the script that will run the ESMF tests and the NUOPC app tests.
         """
         with StringIO() as out:
-            out.write(self.machine.scheduler.create_headers(script_file=self.test_script, timeout=self.env.test_time))
+            out.write(self.machine.scheduler.create_headers(script_file=self.test_script, timeout=self.combo.test_time))
             out.write(self._create_modules_fragment())
             _module_file = os.path.join(self.base_path, "module-test.log")
             out.write(f"module list >& {_module_file}\n")
@@ -172,7 +172,7 @@ class Case:
             # out.write(f"make info 2>&1| tee ../test.log\n")
             out.write(f"make install 2>&1| tee ../install.log\n")
             out.write(f"make all_tests 2>&1| tee ../test.log\n")
-            # if self.env.mpi_module.lower() != "none":
+            # if self.combo.mpi_module.lower() != "none":
             #    out.write(f"export ESMFMKFILE=`find $PWD/DEFAULTINSTALLDIR -iname esmf.mk`\n")
             #    out.write("cd ../nuopc-app-prototypes\n")
             #    out.write("./testProtos.sh 2>&1| tee ../nuopc.log\n")
@@ -185,11 +185,11 @@ class Case:
 
         _artifacts_base_dir = os.path.join(self.artifacts_root,
                                            re.sub("/", "_", self.esmf_branch),
-                                           self.env.compiler,
-                                           self.env.compiler_version,
-                                           self.env.bopt,
-                                           self.env.mpi,
-                                           self.env.mpi_version)
+                                           self.combo.compiler,
+                                           self.combo.compiler_version,
+                                           self.combo.bopt,
+                                           self.combo.mpi,
+                                           self.combo.mpi_version)
         _collect_script_path = os.path.join(self.scripts_root, "collect_artifacts.py")
 
         with StringIO() as out:

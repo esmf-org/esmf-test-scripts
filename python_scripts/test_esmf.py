@@ -15,7 +15,7 @@ import cmd
 
 class ESMFTest:
 
-    def __init__(self, test_root, machine_name, yaml_file, dry_run, no_submit, no_artifacts, filter, only_resubmit):
+    def __init__(self, test_root, machine_name, yaml_file, no_submit, no_artifacts, filter, only_resubmit):
 
         self.scripts_root = pathlib.Path(__file__).parent.absolute()
         logging.debug(f"Scripts path: {self.scripts_root}")
@@ -38,13 +38,10 @@ class ESMFTest:
         self.artifacts_root = os.path.abspath(os.path.join(self.test_root, "esmf-test-artifacts"))
         logging.debug(f"Artifacts root: {self.artifacts_root}")
 
-        self.dry_run = dry_run
         self.no_submit = no_submit
         self.only_resubmit = only_resubmit
         self.reclone = False
         self.bopts = ["O", "g"]
-
-        cmd.set_dry_run(dry_run)
 
         # load machine configuration from YAML
         with open(self.yaml_file) as file:
@@ -165,20 +162,20 @@ class ESMFTest:
         if self.reclone:
             self.reclone_artifacts()
 
-        for _e_index, _e in enumerate(self.matrix.environments, start=1):
+        for _e_index, _e in enumerate(self.matrix.combinations, start=1):
             for _branch_index, _esmf_branch in enumerate(self.esmf_branch):
 
                 # apply filter from command line --filter option
                 if self.filter is not None:
                     if _e_index not in self.filter:
-                        logging.debug(f"Skipping test environment [{_e_index}] due to command line filter: {_e.label()}")
+                        logging.debug(f"Skipping test combination [{_e_index}] due to command line filter: {_e.label()}")
                         continue
 
                 # apply filter from YAML file
                 if self.yaml_filter is not None:
                     if "compiler" in self.yaml_filter:
                         if _e.compiler not in self.yaml_filter["compiler"]:
-                            logging.debug(f"Skipping test environment [{_e_index}] due to YAML filter: {_e.label()}")
+                            logging.debug(f"Skipping test combination [{_e_index}] due to YAML filter: {_e.label()}")
                             continue
 
                 if self.nuopc_branch is not None:
@@ -204,7 +201,7 @@ def go(args):
     Entry point to run the test system.
     """
     test = ESMFTest(args["root"], args["machine"], args["yaml"],
-                    args["dry_run"], args["no_submit"], args["no_artifacts"], args["filter"], args["only_resubmit"])
+                    args["no_submit"], args["no_artifacts"], args["filter"], args["only_resubmit"])
 
     if args["check"]:
         test.check()
@@ -214,7 +211,7 @@ def go(args):
         test.machine.print()
         return
 
-    if args["show_matrix"]:
+    if args["list"]:
         test.matrix.print()
         return
 
@@ -229,14 +226,12 @@ if __name__ == "__main__":
                         required=False)
     parser.add_argument('-y', '--yaml', help='Explicit path to YAML config file.  Overrides --machine if present.',
                         required=False)
-    parser.add_argument('-d', '--dry-run', help='Show commands without actually running them', required=False,
-                        action='store_true')
     parser.add_argument('--check', help='Run some checks', required=False, action='store_true')
     parser.add_argument('--debug', help='Output debug messages', required=False, action='store_true')
     parser.add_argument('--show-machine', help='Print out machine attributes and exit',
                         required=False,
                         action='store_true')
-    parser.add_argument('--show-matrix', help='Print out the test matrix (set of configurations) and exit',
+    parser.add_argument('-l', '--list', help='List the test combinations in the YAML for this machine and exit',
                         required=False,
                         action='store_true')
     parser.add_argument('--no-submit', help="Create test directories and batch scripts but do not submit any jobs",
@@ -247,8 +242,9 @@ if __name__ == "__main__":
                         required=False, action='store_true')
     parser.add_argument('--filter',
                         help="""
-                              Limit cases to test from the test matrix.  Use --show-matrix to get a list of cases.
-                              The format is a comma separated list, e.g. --filter 1,5,6,11 
+                              Limit combinations to test.  Use -l (or --list) to get a list of combinations with indexes.
+                              The format is a comma separated list, e.g. --filter 1,5,6,11 will only include combinations
+                              1, 5, 6, and 11 in the testing.
                              """,
                         required=False)
 

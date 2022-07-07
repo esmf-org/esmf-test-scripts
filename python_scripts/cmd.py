@@ -2,31 +2,21 @@ import logging
 import subprocess
 import os
 
-is_dry_run = False
-
-
-def set_dry_run(dry_run: bool):
-    global is_dry_run
-    is_dry_run = dry_run
-
 
 def runcmd(cmd, ignore_error=False, stderr=False):
     logging.debug(f"cmd.runcmd: {cmd}")
     out = ""
-    if not is_dry_run:
-        if stderr:
-            _stderr = subprocess.STDOUT
-        else:
-            _stderr = None
-        try:
-            out = subprocess.check_output(cmd, shell=True, stderr=_stderr).strip().decode("utf-8")
-        except subprocess.CalledProcessError as cpe:
-            if ignore_error:
-                return cpe.output.strip().decode("utf-8")
-            else:
-                raise cpe
+    if stderr:
+        _stderr = subprocess.STDOUT
     else:
-        print(cmd)
+        _stderr = None
+    try:
+        out = subprocess.check_output(cmd, shell=True, stderr=_stderr).strip().decode("utf-8")
+    except subprocess.CalledProcessError as cpe:
+        if ignore_error:
+            return cpe.output.strip().decode("utf-8")
+        else:
+            raise cpe
     return out
 
 
@@ -36,19 +26,12 @@ def runcmd_no_err(cmd):
 
 def chdir(to_dir):
     logging.debug(f"cmd.chdir: {to_dir}")
-    if not is_dry_run:
-        os.chdir(to_dir)
-    else:
-        print(f"cd {to_dir}")
+    os.chdir(to_dir)
 
 
 def start_process(cmd):
     logging.debug(f"cmd.start_process: {cmd}")
-    if not is_dry_run:
-        return subprocess.Popen(cmd, shell=True, stdin=None, stdout=None, stderr=None, close_fds=True)
-    else:
-        print(f"{cmd}")
-        return None
+    return subprocess.Popen(cmd, shell=True, stdin=None, stdout=None, stderr=None, close_fds=True)
 
 
 def clone_repo(url, local_name, branch=None):
