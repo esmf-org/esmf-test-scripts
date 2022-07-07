@@ -169,13 +169,12 @@ class Case:
             # TODO: remove below after debugging
             # out.write(f"echo 'FAKE TEST JOB COMPLETE' >> ../test.log\n")
 
-            # out.write(f"make info 2>&1| tee ../test.log\n")
             out.write(f"make install 2>&1| tee ../install.log\n")
             out.write(f"make all_tests 2>&1| tee ../test.log\n")
-            # if self.combo.mpi_module.lower() != "none":
-            #    out.write(f"export ESMFMKFILE=`find $PWD/DEFAULTINSTALLDIR -iname esmf.mk`\n")
-            #    out.write("cd ../nuopc-app-prototypes\n")
-            #    out.write("./testProtos.sh 2>&1| tee ../nuopc.log\n")
+            if self.combo.mpi_module.lower() != "none":
+                out.write(f"export ESMFMKFILE=`find $PWD/DEFAULTINSTALLDIR -iname esmf.mk`\n")
+                out.write("cd ../nuopc-app-prototypes\n")
+                out.write("./testProtos.sh 2>&1| tee ../nuopc.log\n")
             return out.getvalue()
 
     def _create_collect_artifacts_script(self):
