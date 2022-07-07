@@ -16,7 +16,7 @@ class NoScheduler(Scheduler):
     def submit_job(self, script_file, after=None):
         cmd.runcmd(f"chmod +x {script_file}")
         cmd.runcmd(f"{script_file}")
-        return -1
+        return 0
 
     @staticmethod
     def check_queue(jobid):
