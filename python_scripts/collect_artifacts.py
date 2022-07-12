@@ -210,9 +210,9 @@ if __name__ == "__main__":
     _commit_msg_fragment = f"dir={_dir_name} branch={_esmf_branch} hash={_esmf_hash}"
 
     _clean_artifacts()
-    _commit_and_push_artifacts(f"clear artifacts: {_commit_msg_fragment}")
+    _commit_and_push_artifacts(f"action=clear {_commit_msg_fragment}")
 
     _create_summary()
     _copy_build_artifacts()
     _copy_test_artifacts()
-    _commit_and_push_artifacts(f"build/test artifacts: {_commit_msg_fragment}")
+    _commit_and_push_artifacts(f"action=collect {_commit_msg_fragment}")
