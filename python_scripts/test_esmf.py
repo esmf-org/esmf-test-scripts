@@ -2,13 +2,12 @@
 import datetime
 import queue
 import threading
-
 import yaml
 import os
 import pathlib
 import argparse
 import logging
-from datetime import datetime
+import time
 from machine import Machine
 from matrix import Matrix
 from case import Case
@@ -171,22 +170,19 @@ class ESMFTest:
         # thread for submitting test cases
         # this allows us to throttle the total number of outstanding tests so as not to overwhelm login nodes
         def _remove_completed_cases():
-            logging.debug(f"Start remove thread: stop_at = {stop_at}")
+            logging.debug(f"Start remove thread")
             while True:
                 lock.acquire(blocking=True)
                 for _case in active_cases:
                     if _case.finished():
                         logging.debug(f"Removing completed case: {_case}")
                         active_cases.remove(_case)
-                        #stop_at -= 1
-                        #if stop_at <= 0:
-                        #    break
                 lock.release()
-                datetime.time.sleep(10)
+                time.sleep(10)
 
         def _submit_case(_case: Case):
             while True:
-                lock.acquire(block=True)
+                lock.acquire(blocking=True)
                 if len(active_cases) < MAX_OUTSTANDING:
                     logging.debug(f"Appending active case: {_case}")
                     _case.submit(no_artifacts=self.no_artifacts)
@@ -195,7 +191,7 @@ class ESMFTest:
                     break
                 else:
                     lock.release()
-                    datetime.time.sleep(10)
+                    time.sleep(10)
 
         case_list = []
         for _e_index, _e in enumerate(self.matrix.combinations, start=1):
@@ -234,15 +230,13 @@ class ESMFTest:
         if not self.no_submit:
 
             # start thread to listen for completed cases
-            _rthread = threading.Thread(target=_remove_completed_cases,
-                                        daemon=True,
-                                        args=(len(case_list)-MAX_OUTSTANDING))
+            _rthread = threading.Thread(target=_remove_completed_cases, daemon=True)
             _rthread.start()
 
             for _c in case_list:
-                logging.debug(f"Submitting case: [{_e.label()}] / ESMF branch: [{case.esmf_branch}]")
+                logging.debug(f"Submitting case: [{_e.label()}] / ESMF branch: [{_c.esmf_branch}]")
                 _submit_case(_c)  # may bock
-                logging.debug(f"Done submitting case: [{_e.label()}] / ESMF branch: [{case.esmf_branch}]")
+                logging.debug(f"Done submitting case: [{_e.label()}] / ESMF branch: [{_c.esmf_branch}]")
 
 
 
