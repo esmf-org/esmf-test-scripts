@@ -35,6 +35,8 @@ class Case:
         self.build_script = os.path.join(self.base_path, "build.bat")
         self.test_script = os.path.join(self.base_path, "test.bat")
         self.collect_script = os.path.join(self.base_path, "collect_artifacts.sh")
+        self.build_job_num = 0
+        self.test_job_num = 0
 
     def set_up(self):
         """
@@ -71,19 +73,25 @@ class Case:
         """
         cmd.chdir(self.base_path)
 
-        build_job_num = self.machine.scheduler.submit_job(script_file=self.build_script)
-        logging.debug(f"Submitted build job: {build_job_num}")
+        self.build_job_num = self.machine.scheduler.submit_job(script_file=self.build_script)
+        logging.debug(f"Submitted build job: {self.build_job_num}")
 
         if not no_artifacts:
             logging.debug("Starting artifacts monitor for build phase")
-            cmd.start_process(f"{self.collect_script} {build_job_num}")
+            cmd.start_process(f"{self.collect_script} {self.build_job_num}")
 
-        test_job_num = self.machine.scheduler.submit_job(script_file=self.test_script, after=build_job_num)
-        logging.debug(f"Submitted test job: {test_job_num}")
+        self.test_job_num = self.machine.scheduler.submit_job(script_file=self.test_script, after=self.build_job_num)
+        logging.debug(f"Submitted test job: {self.test_job_num}")
 
         if not no_artifacts:
             logging.debug("Starting artifacts monitor for test phase")
-            cmd.start_process(f"{self.collect_script} {test_job_num}")
+            cmd.start_process(f"{self.collect_script} {self.test_job_num}")
+
+    def finished(self):
+        """
+        Query whether all the jobs have finished for this case.
+        """
+        return self.machine.scheduler.check_queue(self.test_job_num)
 
     def _create_modules_fragment(self):
         """

@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 import datetime
+import queue
+import threading
 
 import yaml
 import os
@@ -162,13 +164,48 @@ class ESMFTest:
         if self.reclone:
             self.reclone_artifacts()
 
+        lock = threading.Lock()
+        active_cases = []
+        MAX_OUTSTANDING = 3
+
+        # thread for submitting test cases
+        # this allows us to throttle the total number of outstanding tests so as not to overwhelm login nodes
+        def _remove_completed_cases():
+            logging.debug(f"Start remove thread: stop_at = {stop_at}")
+            while True:
+                lock.acquire(blocking=True)
+                for _case in active_cases:
+                    if _case.finished():
+                        logging.debug(f"Removing completed case: {_case}")
+                        active_cases.remove(_case)
+                        #stop_at -= 1
+                        #if stop_at <= 0:
+                        #    break
+                lock.release()
+                datetime.time.sleep(10)
+
+        def _submit_case(_case: Case):
+            while True:
+                lock.acquire(block=True)
+                if len(active_cases) < MAX_OUTSTANDING:
+                    logging.debug(f"Appending active case: {_case}")
+                    _case.submit(no_artifacts=self.no_artifacts)
+                    active_cases.append(_case)
+                    lock.release()
+                    break
+                else:
+                    lock.release()
+                    datetime.time.sleep(10)
+
+        case_list = []
         for _e_index, _e in enumerate(self.matrix.combinations, start=1):
             for _branch_index, _esmf_branch in enumerate(self.esmf_branch):
 
                 # apply filter from command line --filter option
                 if self.filter is not None:
                     if _e_index not in self.filter:
-                        logging.debug(f"Skipping test combination [{_e_index}] due to command line filter: {_e.label()}")
+                        logging.debug(
+                            f"Skipping test combination [{_e_index}] due to command line filter: {_e.label()}")
                         continue
 
                 # apply filter from YAML file
@@ -184,20 +221,29 @@ class ESMFTest:
                     _nuopc_branch = _esmf_branch
 
                 # generate, set up, and submit the test combination
-                logging.info(f"Setting up test case: [{_e.label()}] / ESMF branch: [{_esmf_branch}]")
                 case = Case(_e, self.scripts_root, self.test_root, self.artifacts_root, self.repos,
                             _esmf_branch, _nuopc_branch, self.machine)
 
-                try:
-                    if not self.only_resubmit:
-                        case.set_up()
-                    else:
-                        logging.info(f"\t---> Resubmitting existing case")
-                    if not self.no_submit:
-                        case.submit(no_artifacts=self.no_artifacts)
-                except Exception as e:
-                    logging.info(f"Error setting up or submitting test case: {_e.label()} / {_esmf_branch}")
-                    logging.info(f"{e}")
+                case_list.append(case)
+                if not self.only_resubmit:
+                    logging.info(f"Setting up test case: [{_e.label()}] / ESMF branch: [{case.esmf_branch}]")
+                    case.set_up()
+                #else:
+                #    logging.info(f"Resubmitting existing case: [{_e.label()}] / ESMF branch: [{case.esmf_branch}]")
+
+        if not self.no_submit:
+
+            # start thread to listen for completed cases
+            _rthread = threading.Thread(target=_remove_completed_cases,
+                                        daemon=True,
+                                        args=(len(case_list)-MAX_OUTSTANDING))
+            _rthread.start()
+
+            for _c in case_list:
+                logging.debug(f"Submitting case: [{_e.label()}] / ESMF branch: [{case.esmf_branch}]")
+                _submit_case(_c)  # may bock
+                logging.debug(f"Done submitting case: [{_e.label()}] / ESMF branch: [{case.esmf_branch}]")
+
 
 
 def go(args):
@@ -240,7 +286,8 @@ if __name__ == "__main__":
                         action='store_true')
     parser.add_argument('--no-submit', help="Create test directories and batch scripts but do not submit any jobs",
                         required=False, action='store_true')
-    parser.add_argument('--only-resubmit', help="Assume test directories and scripts are already present and only resubmit build/test jobs",
+    parser.add_argument('--only-resubmit',
+                        help="Assume test directories and scripts are already present and only resubmit build/test jobs",
                         required=False, action='store_true')
     parser.add_argument('--no-artifacts', help="Do not copy or push test artifacts.",
                         required=False, action='store_true')

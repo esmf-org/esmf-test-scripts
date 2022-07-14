@@ -277,15 +277,17 @@ if __name__ == "__main__":
     dbconn = sqlite3.connect(f"{os.path.join(_db_path, 'esmf_test_summary.sqlite3')}")
     dbconn.row_factory = sqlite3.Row
 
-    # _init_database()
+    #_init_database()
 
-    # _mach_list = _get_machine_list(_repo_path)
-    # for _m in _mach_list:
+    #_mach_list = _get_machine_list(_repo_path)
+    #for _m in _mach_list:
+    #    _get_commits(_repo_path, _m)
+
     # _get_commits(_repo_path, "cheyenne")
     # _get_commits(_repo_path, "catania")
 
     _print_tested_hashes()
 
-    _print_summary_for_esmf_hash('v8.4.0b03-6-gd94fc0f')
+    _print_summary_for_esmf_hash('v8.4.0b01-2-gf0d4ab2')
 
     dbconn.close()
