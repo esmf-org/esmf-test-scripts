@@ -38,6 +38,12 @@ class Case:
         self.build_job_num = 0
         self.test_job_num = 0
 
+    def label(self):
+        """
+        Returns a string representation of this object.
+        """
+        return "[" + self.combo.label() + " / " + self.esmf_branch + "]"
+
     def set_up(self):
         """
         Set up test directory for this case.
@@ -148,7 +154,8 @@ class Case:
         Create the script that will build ESMF.
         """
         with StringIO() as out:
-            out.write(self.machine.scheduler.create_headers(script_file=self.build_script, timeout=self.combo.build_time))
+            out.write(
+                self.machine.scheduler.create_headers(script_file=self.build_script, timeout=self.combo.build_time))
             out.write(self._create_modules_fragment())
             _module_file = os.path.join(self.base_path, "module-build.log")
             out.write(f"module list >& {_module_file}\n")

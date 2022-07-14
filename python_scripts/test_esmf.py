@@ -222,7 +222,8 @@ class ESMFTest:
 
                 case_list.append(case)
                 if not self.only_resubmit:
-                    logging.info(f"Setting up test case: [{_e.label()}] / ESMF branch: [{case.esmf_branch}]")
+                    logging.info(f"Setting up test case: {case.label()}")
+                    # TODO:  add retry capability in case set up fails
                     case.set_up()
                 #else:
                 #    logging.info(f"Resubmitting existing case: [{_e.label()}] / ESMF branch: [{case.esmf_branch}]")
@@ -234,9 +235,9 @@ class ESMFTest:
             _rthread.start()
 
             for _c in case_list:
-                logging.debug(f"Submitting case: [{_e.label()}] / ESMF branch: [{_c.esmf_branch}]")
+                logging.debug(f"Submitting case: {_c.label()}")
                 _submit_case(_c)  # may bock
-                logging.debug(f"Done submitting case: [{_e.label()}] / ESMF branch: [{_c.esmf_branch}]")
+                logging.debug(f"Done submitting case: {_c.label()}")
 
 
 
