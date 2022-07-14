@@ -16,7 +16,7 @@ import cmd
 
 class ESMFTest:
 
-    def __init__(self, test_root, machine_name, yaml_file, no_submit, no_artifacts, filter, only_resubmit):
+    def __init__(self, test_root, machine_name, yaml_file, no_submit, no_artifacts, filter, only_resubmit, throttle):
 
         self.scripts_root = pathlib.Path(__file__).parent.absolute()
         logging.debug(f"Scripts path: {self.scripts_root}")
@@ -43,6 +43,11 @@ class ESMFTest:
         self.only_resubmit = only_resubmit
         self.reclone = False
         self.bopts = ["O", "g"]
+        self.throttle = 999
+        if throttle is not None:
+            self.throttle = int(throttle)
+            logging.debug(f"Throttling max number of active cases to: {self.throttle}")
+
 
         # load machine configuration from YAML
         with open(self.yaml_file) as file:
@@ -165,26 +170,25 @@ class ESMFTest:
 
         lock = threading.Lock()
         active_cases = []
-        MAX_OUTSTANDING = 3
 
-        # thread for submitting test cases
-        # this allows us to throttle the total number of outstanding tests so as not to overwhelm login nodes
+        # will be run in a thread to monitor and remove completed test cases
         def _remove_completed_cases():
-            logging.debug(f"Start remove thread")
+            logging.debug(f"Start thread to monitor completed cases")
             while True:
                 lock.acquire(blocking=True)
                 for _case in active_cases:
                     if _case.finished():
-                        logging.debug(f"Removing completed case: {_case}")
+                        logging.debug(f"Removing completed case: {_case.label()}")
                         active_cases.remove(_case)
                 lock.release()
-                time.sleep(10)
+                time.sleep(60)
 
+        # add a case to the active list of cases, if we are under the throttle limit
         def _submit_case(_case: Case):
             while True:
                 lock.acquire(blocking=True)
-                if len(active_cases) < MAX_OUTSTANDING:
-                    logging.debug(f"Appending active case: {_case}")
+                if len(active_cases) < self.throttle:
+                    logging.info(f"Submitting case: {_case.label()}")
                     _case.submit(no_artifacts=self.no_artifacts)
                     active_cases.append(_case)
                     lock.release()
@@ -225,20 +229,15 @@ class ESMFTest:
                     logging.info(f"Setting up test case: {case.label()}")
                     # TODO:  add retry capability in case set up fails
                     case.set_up()
-                #else:
-                #    logging.info(f"Resubmitting existing case: [{_e.label()}] / ESMF branch: [{case.esmf_branch}]")
 
         if not self.no_submit:
-
             # start thread to listen for completed cases
             _rthread = threading.Thread(target=_remove_completed_cases, daemon=True)
             _rthread.start()
-
             for _c in case_list:
                 logging.debug(f"Submitting case: {_c.label()}")
                 _submit_case(_c)  # may bock
                 logging.debug(f"Done submitting case: {_c.label()}")
-
 
 
 def go(args):
@@ -246,7 +245,7 @@ def go(args):
     Entry point to run the test system.
     """
     test = ESMFTest(args["root"], args["machine"], args["yaml"],
-                    args["no_submit"], args["no_artifacts"], args["filter"], args["only_resubmit"])
+                    args["no_submit"], args["no_artifacts"], args["filter"], args["only_resubmit"], args["throttle"])
 
     if args["check"]:
         test.check()
@@ -291,6 +290,13 @@ if __name__ == "__main__":
                               Limit combinations to test.  Use -l (or --list) to get a list of combinations with indexes.
                               The format is a comma separated list, e.g. --filter 1,5,6,11 will only include combinations
                               1, 5, 6, and 11 in the testing.
+                             """,
+                        required=False)
+    parser.add_argument('--throttle', metavar='N',
+                        help="""
+                             Limit the number of maximum number of active tests cases submitted to N.
+                             This option is provided to limit CPU intensity on login nodes.  The script will block 
+                             until all jobs have been submitted.  The default is no throttling (all cases submitted).
                              """,
                         required=False)
 
