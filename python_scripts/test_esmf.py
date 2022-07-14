@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import datetime
 import queue
+import subprocess
 import threading
 import yaml
 import os
@@ -43,11 +44,11 @@ class ESMFTest:
         self.only_resubmit = only_resubmit
         self.reclone = False
         self.bopts = ["O", "g"]
+        self.retries = 3   # how many times to retry setting up a test case
         self.throttle = 999
         if throttle is not None:
             self.throttle = int(throttle)
             logging.debug(f"Throttling max number of active cases to: {self.throttle}")
-
 
         # load machine configuration from YAML
         with open(self.yaml_file) as file:
@@ -188,8 +189,8 @@ class ESMFTest:
             while True:
                 lock.acquire(blocking=True)
                 if len(active_cases) < self.throttle:
-                    logging.info(f"Submitting case: {_case.label()}")
                     _case.submit(no_artifacts=self.no_artifacts)
+                    logging.info(f"Submitted case: {_case.label()}")
                     active_cases.append(_case)
                     lock.release()
                     break
@@ -228,7 +229,12 @@ class ESMFTest:
                 if not self.only_resubmit:
                     logging.info(f"Setting up test case: {case.label()}")
                     # TODO:  add retry capability in case set up fails
-                    case.set_up()
+                    for i in range(self.retries):
+                        try:
+                            case.set_up()
+                            break
+                        except subprocess.CalledProcessError as cpe:
+                            logging.error(f"Error setting up case {cpe}.  Retry attempt {i}.")
 
         if not self.no_submit:
             # start thread to listen for completed cases
