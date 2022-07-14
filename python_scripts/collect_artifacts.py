@@ -52,6 +52,8 @@ def _copy_test_artifacts():
     cmd.runcmd_no_err(f"cp summary.dat {_artifacts_dir}")
 
     _ts = _get_build_timestamp()
+    if _ts is None:
+        _ts = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
     _out_dir = os.path.join(_artifacts_dir, "examples")
     cmd.runcmd(f"mkdir -p {_out_dir}")
@@ -85,9 +87,9 @@ def _copy_test_artifacts():
 def _get_build_timestamp():
     _mkfile_path = glob.glob(f"{_test_dir}/esmf/lib/lib*/*/esmf.mk")
     if len(_mkfile_path) == 1:
-        return "Build timestamp from esmf.mk: " + str(datetime.fromtimestamp(os.path.getmtime(_mkfile_path[0])))
+        return datetime.fromtimestamp(os.path.getmtime(_mkfile_path[0])).strftime("%Y-%m-%d %H:%M:%S")
     else:
-        return "Collection timestamp: " + datetime.now().strftime("%b %d %Y %H:%M:%S")
+        return None
 
 
 def _get_esmf_git_hash():
@@ -144,7 +146,8 @@ def _create_summary():
     with open(_summary_file, "w") as _file:
         _file.write(f"")
         _file.write(f"ESMF hash: {_get_esmf_git_hash()}\n")
-        _file.write(f"{_get_build_timestamp()}\n")
+        _file.write(f"Collection timestamp: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
+        _file.write(f"Build timestamp: {_get_build_timestamp()}\n")
         _file.write(f"Test dir: {_test_dir}\n")
         _file.write(f"Machine: {_artifacts_branch}\n")
         if _jobid > 0:
