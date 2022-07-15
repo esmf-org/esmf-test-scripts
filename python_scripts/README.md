@@ -68,7 +68,7 @@ Matrix of test combinations:
   [20] nvhpc 22.2 / mpt 2.25 / netcdf/4.8.1 / g
 ```
 
-### Example: Submit test jobs for all the combinations in the test matrix
+### Example: Submit build/test jobs for all the combinations in the test matrix
 ```
 ./test_esmf.py -r ~/esmfdev/esmf-testing-scratch -m cheyenne
 ```
@@ -83,8 +83,15 @@ Matrix of test combinations:
 This option is handy to generate all the job scripts, but allow you to manually submit them.
 ```
 ./test_esmf.py -r ~/esmfdev/esmf-testing-scratch -m cheyenne --no-submit
-
 ```
+
+### Example: Submit the build/test jobs but don't push any test artifacts.
+By default, test artifacts are pushed to a git repository defined in ../config/global.yaml. The `--no-artifacts`
+option will submit all the build/test jobs, but just leave the results in place for you to examine.
+```
+./test_esmf.py -r ~/esmfdev/esmf-testing-scratch -m cheyenne --no-artifacts
+```
+
 
 
 
