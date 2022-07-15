@@ -1,1 +1,74 @@
 ## ESMF Automated Testing Framework
+
+A set of Python scripts to facilitate testing of ESMF across many platforms.
+Includes options for running the tests, collecting results, and summarizing them.
+
+## Run test suite and collect artifacts (test_esmf.py)
+
+The test_esmf.py script is used to submit jobs for building and testing ESMF across different HPC platforms.
+
+### Supported Arguments
+
+```
+./test_esmf.py --help
+usage: test_esmf.py [-h] -r ROOT [-m MACHINE] [-y YAML] [--check] [--debug] [--show-machine] [-l] [--no-submit] [--only-resubmit] [--no-artifacts]
+                    [--filter FILTER] [--throttle N]
+
+A tool to facilitate automated and manual testing of ESMF
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -r ROOT, --root ROOT  Root directory to use for testing (scratch space)
+  -m MACHINE, --machine MACHINE
+                        Name of this machine. Used to find a config YAML file under ./configs/<machine>.yaml
+  -y YAML, --yaml YAML  Explicit path to YAML config file. Overrides --machine if present.
+  --check               Run some checks
+  --debug               Output debug messages
+  --show-machine        Print out machine attributes and exit
+  -l, --list            List the test combinations in the YAML for this machine and exit
+  --no-submit           Create test directories and batch scripts but do not submit any jobs
+  --only-resubmit       Assume test directories and scripts are already present and only resubmit build/test jobs
+  --no-artifacts        Do not copy or push test artifacts.
+  --filter FILTER       Limit combinations to test. Use -l (or --list) to get a list of combinations with indexes. The format is a comma separated list,
+                        e.g. --filter 1,5,6,11 will only include combinations 1, 5, 6, and 11 in the testing.
+  --throttle N          Limit the number of maximum number of active tests cases submitted to N. This option is provided to limit CPU intensity on login
+                        nodes. The script will block until all jobs have been submitted. The default is no throttling (all cases submitted).
+```
+
+### Example: List all test combinations for a machine
+
+  - The `-m cheyenne` will instruct the script to look the config file `../config/cheyenne.yaml`.
+  - The `-r` should point to large scratch space to use for testing.
+  - The `-l` or `--list` prints an enumerated list of test combos.
+
+```
+ ./test_esmf.py -r ~/esmfdev/esmf-testing-scratch -m cheyenne -l
+
+Matrix of test combinations:
+===========================================
+  [1] gfortran 7.4.0 / openmpi 4.0.3 / netcdf/4.7.3 / O
+  [2] gfortran 7.4.0 / openmpi 4.0.3 / netcdf/4.7.3 / g
+  [3] gfortran 9.1.0 / openmpi 4.0.5 / netcdf/4.7.3 / O
+  [4] gfortran 9.1.0 / openmpi 4.0.5 / netcdf/4.7.3 / g
+  [5] gfortran 9.1.0 / mpt 2.22 / netcdf/4.7.3 / O
+  [6] gfortran 9.1.0 / mpt 2.22 / netcdf/4.7.3 / g
+  [7] gfortran 10.1.0 / openmpi 4.0.5 / netcdf/4.7.4 / O
+  [8] gfortran 10.1.0 / openmpi 4.0.5 / netcdf/4.7.4 / g
+  [9] gfortran 10.1.0 / mpt 2.23 / netcdf/4.7.4 / O
+  [10] gfortran 10.1.0 / mpt 2.23 / netcdf/4.7.4 / g
+  [11] intel 18.0.5 / mpiuni None / netcdf/4.6.3 / O
+  [12] intel 18.0.5 / mpiuni None / netcdf/4.6.3 / g
+  [13] intel 18.0.5 / mpt 2.19 / netcdf/4.6.3 / O
+  [14] intel 18.0.5 / mpt 2.19 / netcdf/4.6.3 / g
+  [15] intel 18.0.5 / openmpi 3.1.4 / netcdf/4.6.3 / O
+  [16] intel 18.0.5 / openmpi 3.1.4 / netcdf/4.6.3 / g
+  [17] intel 18.0.5 / intelmpi 2018.4.274 / netcdf/4.6.3 / O
+  [18] intel 18.0.5 / intelmpi 2018.4.274 / netcdf/4.6.3 / g
+  [19] nvhpc 22.2 / mpt 2.25 / netcdf/4.8.1 / O
+  [20] nvhpc 22.2 / mpt 2.25 / netcdf/4.8.1 / g
+```
+
+
+
+## Summarize results (summarize_artifacts.py)
+
