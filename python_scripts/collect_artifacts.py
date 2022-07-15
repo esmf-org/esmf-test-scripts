@@ -168,7 +168,9 @@ def _create_summary():
 def _commit_and_push_artifacts(commit_msg):
     cmd.chdir(f"{_artifacts_dir}")
     try:
+        cmd.runcmd(f"git fetch origin {_artifacts_branch}")
         cmd.runcmd(f"git checkout {_artifacts_branch}")
+        cmd.runcmd(f"git reset origin/{_artifacts_branch}")
         cmd.runcmd(f"git add *")
         # git commit returns non-zero error code if there is nothing to commit
         cmd.runcmd_no_err(f"git commit -a -m '{commit_msg}'")
