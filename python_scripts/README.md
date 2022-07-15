@@ -92,6 +92,15 @@ option will submit all the build/test jobs, but just leave the results in place 
 ./test_esmf.py -r ~/esmfdev/esmf-testing-scratch -m cheyenne --no-artifacts
 ```
 
+### Example: Only re-submit from existing test directories
+By default, existing test directories will be cleaned out and recreated.  This option will leave the existing
+directories untouched, and just resubmit the build/test jobs.  This is handy if you need to make some manual
+changes, e.g., such as a code change in ESMF, and want to resubmit the jobs.
+
+```
+# only resubmit combination 9 (from --list)
+./test_esmf.py -r ~/esmfdev/esmf-testing-scratch -m cheyenne --only-resubmit --filter 9
+```
 
 
 
