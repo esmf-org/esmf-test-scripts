@@ -73,38 +73,52 @@ Matrix of test combinations:
   [20] nvhpc 22.2 / mpt 2.25 / netcdf/4.8.1 / g
 ```
 
-### Example: Submit build/test jobs for all the combinations in the test matrix
+### Example: Run some checks to make sure the scripts are working and machine config file is valid
 ```
-./test_esmf.py -r ~/esmfdev/esmf-testing-scratch -m cheyenne
+./test_esmf.py -r /path/to/scratch -m cheyenne --check
+INFO: Running checks
+INFO: Check: Can I clone artifacts repo?
+INFO: ...PASS
+INFO: Check:  Can I push to artifacts repo?
+INFO: ...PASS
+INFO: Check: Can I clone ESMF repo?
+INFO: ...PASS
+INFO: Check:  Can I submit a job to the batch system?
+INFO: ...PASS
+```
+
+### Example: Submit build/test jobs for all the combinations in the test matrix
+ - Each combination in the matrix will have its own subdirectory under `/path/to/scratch`
+```
+./test_esmf.py -r /path/to/scratch -m cheyenne
 ```
 
 ### Example: Only submit jobs for some combinations
  - The `--filter 1,8,10` submits jobs only for combinations 1, 8 and 10 from the test matrix (from --list option).
 ```
-./test_esmf.py -r ~/esmfdev/esmf-testing-scratch -m cheyenne --filter 1,8,10
+./test_esmf.py -r /path/to/scratch -m cheyenne --filter 1,8,10
 ```
 
 ### Example: Create the test directories but don't submit any jobs.
 This option is handy to generate all the job scripts, but allow you to manually submit them.
 ```
-./test_esmf.py -r ~/esmfdev/esmf-testing-scratch -m cheyenne --no-submit
+./test_esmf.py -r /path/to/scratch -m cheyenne --no-submit
 ```
 
 ### Example: Submit the build/test jobs but don't push any test artifacts.
 By default, test artifacts are pushed to a git repository defined in ../config/global.yaml. The `--no-artifacts`
 option will submit all the build/test jobs, but just leave the results in place for you to examine.
 ```
-./test_esmf.py -r ~/esmfdev/esmf-testing-scratch -m cheyenne --no-artifacts
+./test_esmf.py -r /path/to/scratch -m cheyenne --no-artifacts
 ```
 
 ### Example: Only re-submit from existing test directories
 By default, existing test directories will be cleaned out and recreated.  This option will leave the existing
 directories untouched, and just resubmit the build/test jobs.  This is handy if you need to make some manual
 changes, e.g., such as a code change in ESMF, and want to resubmit the jobs.
-
+- The command below will only resubmit the build/test jobs combination 9 in the test matrix
 ```
-# only resubmit combination 9 (from --list)
-./test_esmf.py -r ~/esmfdev/esmf-testing-scratch -m cheyenne --only-resubmit --filter 9
+./test_esmf.py -r /path/to/scratch -m cheyenne --only-resubmit --filter 9
 ```
 
 ### Example: Limit number of active job submissions
@@ -114,7 +128,18 @@ on the HPC login nodes, raising alarms for sys admins.
   The script will block in this case until all jobs have been submitted.
 - The default behavior is to submit all the jobs for the full test matrix.
 ```
-./test_esmf.py -r ~/esmfdev/esmf-testing-scratch -m cheyenne --throttle 4
+./test_esmf.py -r /path/to/scratch -m cheyenne --throttle 4
+```
+
+
+### Example: Manually push test artifacts
+If you use the `--no-artifacts` option, then the test results will be left in each combination's
+test directory.  If you decide you want to push those test artifacts, you can run the `collect_artifacts.sh`
+script manually.
+```
+# go into specific combination directory and run collection script
+cd /path/to/scratch/gfortran_10.3.0_openmpi_g_develop
+./collect_artifacts.sh
 ```
 
 
