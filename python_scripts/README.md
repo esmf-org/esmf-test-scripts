@@ -44,7 +44,7 @@ optional arguments:
 
   - The `-m cheyenne` will instruct the script to look for the config file `../config/cheyenne.yaml`.
   - The `-r` should point to large scratch space to use for testing.
-  - The `-l` or `--list` prints the *test matrix* - an enumerated list of test combos.
+  - The `-l` or `--list` prints the *test matrix* - an enumerated list of test combos from the machine's YAML file.
 
 ```
  ./test_esmf.py -r ~/esmfdev/esmf-testing-scratch -m cheyenne -l
