@@ -5,9 +5,14 @@ Includes options for running the tests, collecting results, and summarizing them
 
 ## Run test suite and collect artifacts (test_esmf.py)
 
-The test_esmf.py script is used to submit jobs for building and testing ESMF across different HPC platforms.
+The `test_esmf.py` script is used to create test directories and submit jobs for building/testing ESMF on HPC platforms.
 
-### Supported Arguments
+### Prerequisites
+
+ - Python 3
+ - [PyYAML](https://pyyaml.org/)  (pip install pyyaml)
+
+### Usage
 
 ```
 ./test_esmf.py --help
@@ -37,7 +42,7 @@ optional arguments:
 
 ### Example: List all test combinations for a machine
 
-  - The `-m cheyenne` will instruct the script to look the config file `../config/cheyenne.yaml`.
+  - The `-m cheyenne` will instruct the script to look for the config file `../config/cheyenne.yaml`.
   - The `-r` should point to large scratch space to use for testing.
   - The `-l` or `--list` prints the *test matrix* - an enumerated list of test combos.
 
@@ -100,6 +105,16 @@ changes, e.g., such as a code change in ESMF, and want to resubmit the jobs.
 ```
 # only resubmit combination 9 (from --list)
 ./test_esmf.py -r ~/esmfdev/esmf-testing-scratch -m cheyenne --only-resubmit --filter 9
+```
+
+### Example: Limit number of active job submissions
+If the test matrix is large, then the number of cases may lead to high CPU utilization
+on the HPC login nodes, raising alarms for sys admins.
+- The `--throttle 4` option below will make sure there is at most 4 active test cases at one time. 
+  The script will block in this case until all jobs have been submitted.
+- The default behavior is to submit all the jobs for the full test matrix.
+```
+./test_esmf.py -r ~/esmfdev/esmf-testing-scratch -m cheyenne --throttle 4
 ```
 
 
