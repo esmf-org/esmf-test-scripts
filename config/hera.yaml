@@ -10,8 +10,8 @@ compiler:
   - gfortran
   - intel
   - pgi
-branch: [develop]
-#nuopcbranch: develop
+branch: [develop,feature/named-alias]
+nuopcbranch: develop
 gfortran:
   test_time: "2:00:00"
   versions:

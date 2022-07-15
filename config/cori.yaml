@@ -5,8 +5,8 @@ constraint: haswell
 scheduler: slurm
 corespernode: 32
 compiler: [intel]
-branch: [develop]
-#nuopcbranch: develop
+branch: [develop,feature/named-alias]
+nuopcbranch: develop
 
 #gfortran:
 #     test_time: "3:00:00"

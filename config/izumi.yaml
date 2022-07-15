@@ -7,8 +7,8 @@ pbs_node_specifier: nodes_ppn
 pbs_job_checker: tracejob
 corespernode: 48
 compiler: [intel, gfortran, nag]
-branch: [develop]
-#nuopcbranch: develop
+branch: [develop,feature/named-alias]
+nuopcbranch: develop
 
 intel:
   test_time: "3:00:00"

@@ -5,8 +5,8 @@ scheduler: pbs
 corespernode: 48
 compiler: [intel,gfortran]
 headnodename: gaffney06
-branch: [develop]
-#nuopcbranch: develop
+branch: [develop,feature/named-alias]
+nuopcbranch: develop
 intel:
      versions: 
        2018.1: 

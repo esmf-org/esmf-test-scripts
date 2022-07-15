@@ -3,8 +3,8 @@ bash: /usr/local/bin/bash
 scheduler: None
 corespernode: 4
 compiler: [gfortran]
-branch: [develop]
-#nuopcbranch: develop
+branch: [develop,feature/named-alias]
+nuopcbranch: develop
 gfortran:
      versions: 
        9.3.0: 

@@ -3,8 +3,8 @@ scheduler: None
 corespernode: 4
 modulepath: /project/esmf/stack/modulefiles/compilers
 compiler: [gfortran]
-branch: [develop]
-#nuopcbranch: develop
+branch: [develop,feature/named-alias]
+nuopcbranch: develop
 
 intel:
   versions:
