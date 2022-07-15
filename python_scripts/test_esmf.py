@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
-import datetime
-import queue
+from datetime import datetime
 import subprocess
 import threading
 import yaml
@@ -26,14 +25,14 @@ class ESMFTest:
             self.yaml_file = os.path.abspath(yaml_file)
         else:
             self.yaml_file = os.path.join(self.scripts_root.parent, f"config/{machine_name}.yaml")
+
         if not os.path.isfile(self.yaml_file):
-            logging.error(f"YAML file not found: {self.yaml_file}")
-            return
+            raise RuntimeError(f"YAML file not found: {self.yaml_file}")
         logging.debug(f"Config file: {self.yaml_file}")
 
         if not os.path.isdir(test_root):
-            logging.error(f"Directory not found: {test_root}\nTesting root should be an existing directory.")
-            return
+            raise RuntimeError(f"Directory not found: {test_root}\nTesting root should be an existing directory.")
+
         self.test_root = os.path.abspath(test_root)
         logging.debug(f"Test root: {self.test_root}")
 
@@ -168,6 +167,9 @@ class ESMFTest:
     def start(self):
         if self.reclone:
             self.reclone_artifacts()
+
+        if not self.no_artifacts and not os.path.isdir(self.artifacts_root):
+            raise RuntimeError(f"No test artifacts repo found at {self.artifacts_root}.")
 
         lock = threading.Lock()
         active_cases = []
