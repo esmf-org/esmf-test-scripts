@@ -39,7 +39,7 @@ optional arguments:
 
   - The `-m cheyenne` will instruct the script to look the config file `../config/cheyenne.yaml`.
   - The `-r` should point to large scratch space to use for testing.
-  - The `-l` or `--list` prints an enumerated list of test combos.
+  - The `-l` or `--list` prints the *test matrix* - an enumerated list of test combos.
 
 ```
  ./test_esmf.py -r ~/esmfdev/esmf-testing-scratch -m cheyenne -l
@@ -66,6 +66,24 @@ Matrix of test combinations:
   [18] intel 18.0.5 / intelmpi 2018.4.274 / netcdf/4.6.3 / g
   [19] nvhpc 22.2 / mpt 2.25 / netcdf/4.8.1 / O
   [20] nvhpc 22.2 / mpt 2.25 / netcdf/4.8.1 / g
+```
+
+### Example: Submit test jobs for all the combinations in the test matrix
+```
+./test_esmf.py -r ~/esmfdev/esmf-testing-scratch -m cheyenne
+```
+
+### Example: Only submit jobs for some combinations
+ - The `--filter 1,8,10` submits jobs only for combinations 1, 8 and 10 from the test matrix (from --list option).
+```
+./test_esmf.py -r ~/esmfdev/esmf-testing-scratch -m cheyenne --filter 1,8,10
+```
+
+### Example: Create the test directories but don't submit any jobs.
+This option is handy to generate all the job scripts, but allow you to manually submit them.
+```
+./test_esmf.py -r ~/esmfdev/esmf-testing-scratch -m cheyenne --no-submit
+
 ```
 
 
