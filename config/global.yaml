@@ -7,5 +7,5 @@ repos:
     https: https://github.com/esmf-org/nuopc-app-prototypes
     git: git@github.com:esmf-org/nuopc-app-prototypes.git
   artifacts:
-    https: https://github.com/rsdunlapiv/esmf-test-artifacts.git
-    git: git@github.com:rsdunlapiv/esmf-test-artifacts.git
+    https: https://github.com/esmf-org/temp-artifacts.git
+    git: git@github.com:esmf-org/temp-artifacts.git

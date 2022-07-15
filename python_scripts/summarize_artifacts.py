@@ -102,15 +102,6 @@ def _insert_result(result: ResultRecord):
     return cur.lastrowid
 
 
-def _retrieve_combo(combo: ComboRecord):
-    cur = dbconn.cursor()
-    cur.execute("""
-        SELECT id FROM combination
-        WHERE machine=? AND compiler=? AND compiler_ver=? AND mpi=? AND mpi_ver=? AND netcdf=?
-        """)
-    logging.debug(f"all: {cur.fetchall()}")
-
-
 def _retrieve_tested_hashes():
     cur = dbconn.cursor()
     cur.execute(
@@ -128,6 +119,9 @@ def _retrieve_tested_hashes():
 
 def _retrieve_summary_for_esmf_hash(esmf_hash):
     cur = dbconn.cursor()
+
+    # this additional WHERE clause can be used to show only the *latest* result if there are multiple instances
+    # AND build_ts = (SELECT max(build_ts) FROM result as r WHERE r.combination_id = result.combination_id AND r.esmf_hash=result.esmf_hash)
     cur.execute(
         """
         SELECT machine, compiler, compiler_ver, mpi, mpi_ver, bopt, netcdf, 
@@ -144,8 +138,8 @@ def _retrieve_summary_for_esmf_hash(esmf_hash):
 
 
 def _print_summary_for_esmf_hash(esmf_hash):
-    _cfmt = "{:<14} {:<18} {:<18} {:<5} {:<12} {:<14} {:<8} {:<10} {:<10} {:<10} {:<10}"
-    print(f"\nESMF HASH: {esmf_hash}")
+    _cfmt = "{:<14} {:<20} {:<20} {:<5} {:<12} {:<14} {:<8} {:<10} {:<10} {:<10} {:<10}"
+    print(f"\n\nESMF HASH: {esmf_hash}")
     print("=" * 140)
     print(_cfmt.format('Machine', 'Compiler', 'MPI', 'BOPT', 'NetCDF', 'Collected', 'Build', 'UTests', 'STests', 'ETests', 'NUOPC'))
     print("=" * 140)
@@ -174,9 +168,10 @@ def _print_tested_hashes():
 
 
 def _get_machine_list(repo):
-    logging.info(f"Getting list of machines: {repo}")
+    logging.debug(f"Getting list of machines: {repo}")
     cmd.chdir(repo)
-    branch_list = cmd.runcmd('git branch -a')
+    cmd.runcmd("git fetch --prune")
+    branch_list = cmd.runcmd("git branch -a")
     logging.debug(f"Remote branches:\n{branch_list}")
     regex = re.compile(r"remotes/origin/(\w+)")
     machines = filter(lambda s: s not in ["HEAD", "main"],
@@ -184,10 +179,10 @@ def _get_machine_list(repo):
     return list(machines)
 
 
-def _get_commits(repo, machine_branch):
-    logging.info(f"Getting history for branch: {machine_branch}")
+def _load_artifact_commits(repo, machine_branch):
+    logging.info(f"Loading artifacts from branch: {machine_branch}")
     cmd.chdir(repo)
-    cmd.runcmd(f"git checkout {machine_branch}")
+    cmd.runcmd(f"git checkout {machine_branch}", stderr=True)
     cmd.runcmd(f"git fetch origin {machine_branch}")
     cmd.runcmd(f"git reset --hard origin/{machine_branch}")
     _log_out = cmd.runcmd(f"git log --format='%H %aI %s' -n 100")
@@ -222,23 +217,23 @@ def _extract(regex, string, default=None):
 
 def _collect_summary_stats(commit, machine_branch):
     _hash = commit["hash"]
-    logging.info(f"Get summary stats for artifacts commit: {_hash}")
-    cmd.runcmd(f"git checkout {_hash}")
+    logging.info(f"Load from artifacts commit: {_hash}")
+    cmd.runcmd(f"git checkout {_hash}", stderr=True)
     _file_list = cmd.runcmd(f"git show {_hash} --oneline --name-only")
     _m = re.search(
         r"(?P<branch>\S+)/(?P<compiler>\S+)/(?P<compiler_ver>\S+)/(?P<bopt>\S+)/(?P<mpi>\S+)/(?P<mpi_ver>\S+)/summary\.dat",
         _file_list)
     if _m is not None:
         _summary_file = _m.group(0)
+        _summary_text = cmd.runcmd(f"cat {_summary_file}")
 
+        _netcdf = _extract(r"NetCDF library version: netCDF (.+)\n", _summary_text, "None")
         _combo = ComboRecord._make((None, machine_branch, _m["compiler"], _m["compiler_ver"],
-                                    _m["bopt"], _m["mpi"], _m["mpi_ver"], "netcdf"))
+                                    _m["bopt"], _m["mpi"], _m["mpi_ver"], _netcdf))
         _combo_id = _insert_combo(_combo)
 
-        _summary_text = cmd.runcmd(f"cat {_summary_file}")
-        # logging.debug(_summary_text)
         _esmf_hash = _extract(r"ESMF hash: (\S+)", _summary_text)
-        _build_ts = _extract(r"Build timestamp from esmf\.mk:\s+(.+)\n", _summary_text)
+        _build_ts = _extract(r"Build timestamp:\s+(.+)\n", _summary_text)
         _build_pass = _extract(r"build:\s+(\S+)", _summary_text)
         _unit = _extract(r"unit tests:\s+PASS\s+(\S+)\s+FAIL\s+(\S+)", _summary_text, (None, None))
         _system = _extract(r"system tests:\s+PASS\s+(\S+)\s+FAIL\s+(\S+)", _summary_text, (None, None))
@@ -259,10 +254,33 @@ if __name__ == "__main__":
         Directory to store internal results database. If the DB exists in this directory it
         will be updated with the most recent results. Otherwise, a new one will be created.  
         """, required=True)
+    parser.add_argument('-l', '--list', help="""
+            Only list the tested tags/hashes and exit.  
+            """, required=False, action='store_true')
+    parser.add_argument('-t', '--tag', help="""
+        Generate test summary for the given tag (or hash) of ESMF.
+        Without this, results will include all tested tags/hashes. 
+        """, required=False)
+    parser.add_argument('-o', '--output-format', metavar="FORMAT", help="""
+        'stdout' prints to the screen (default option).
+        'md' outputs markdown tables, one tag/hash per file.         
+        """, default="stdout", required=False)
+    parser.add_argument('--no-update', help="""
+        By default, the latest test artifacts are pulled in. This option skips that step
+        and only queries the test results already stored in the internal database.
+        """, required=False, action="store_true")
+    parser.add_argument('--debug', help="""
+        Turn on verbose debugging output.
+        """, required=False, action="store_true")
 
     args = vars(parser.parse_args())
 
-    logging.basicConfig(format='%(levelname)s: %(message)s', level=logging.DEBUG)
+    if args["debug"]:
+        _log_level = logging.DEBUG
+    else:
+        _log_level = logging.INFO
+    logging.basicConfig(format='%(levelname)s: %(message)s', level=_log_level)
+
     _repo_path = args["artifacts_repo"]
     _db_path = args["database_root"]
 
@@ -275,19 +293,27 @@ if __name__ == "__main__":
         exit(1)
 
     dbconn = sqlite3.connect(f"{os.path.join(_db_path, 'esmf_test_summary.sqlite3')}")
+    # dbconn = sqlite3.connect(":memory:")
     dbconn.row_factory = sqlite3.Row
 
-    #_init_database()
-
-    #_mach_list = _get_machine_list(_repo_path)
-    #for _m in _mach_list:
-    #    _get_commits(_repo_path, _m)
+    if not args["no_update"]:
+        _init_database()
+        _mach_list = _get_machine_list(_repo_path)
+        for _m in _mach_list:
+            _load_artifact_commits(_repo_path, _m)
 
     # _get_commits(_repo_path, "cheyenne")
     # _get_commits(_repo_path, "catania")
 
-    _print_tested_hashes()
+    if args["list"]:
+        _print_tested_hashes()
+        exit(0)
 
-    _print_summary_for_esmf_hash('v8.4.0b01-2-gf0d4ab2')
+    if args["output_format"] == "stdout":
+        if args["tag"] is not None:
+            _print_summary_for_esmf_hash(args["tag"])
+        else:
+            for _t in _retrieve_tested_hashes():
+                _print_summary_for_esmf_hash(_t["esmf_hash"])
 
     dbconn.close()
