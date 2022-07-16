@@ -98,8 +98,11 @@ def _get_esmf_git_hash():
 
 
 def _get_esmf_branch():
+    # TODO: address this issue on hera
+    # subprocess.CalledProcessError: Command 'git branch --show-current' returned non-zero exit status 129.
+    # error: unknown option `show-current'
     cmd.chdir(os.path.join(_test_dir, "esmf"))
-    return cmd.runcmd("git branch --show-current")
+    return cmd.runcmd("git rev-parse --abbrev-ref HEAD")
 
 
 def _create_summary():
