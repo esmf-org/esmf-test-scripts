@@ -340,6 +340,9 @@ if __name__ == "__main__":
         'stdout' prints to the screen (default option).
         'html' outputs a web site       
         """, default="stdout", required=False)
+    parser.add_argument('--output-dir', metavar="FORMAT", help="""
+            Path to output directory.      
+            """, default="./", required=False)
     parser.add_argument('--no-update', help="""
         By default, the latest test artifacts are pulled in. This option skips that step
         and only queries the test results already stored in the internal database.
@@ -384,6 +387,9 @@ if __name__ == "__main__":
         _print_tested_hashes()
         exit(0)
 
+    if not os.path.isdir(args["output_dir"]):
+        cmd.runcmd(f"mkdir -p {args['output_dir']}")
+
     if args["output_format"] == "stdout":
         if args["tag"] is not None:
             _print_summary_for_esmf_hash(args["tag"])
@@ -393,6 +399,7 @@ if __name__ == "__main__":
     elif args["output_format"] == "html":
         for _t in _retrieve_tested_hashes():
             _hash = _t["esmf_hash"]
-            _format_html(_retrieve_summary_for_esmf_hash(_hash), filename=f"{_hash}.html")
+            _filename = os.path.join(args["output_dir"], _hash + ".html")
+            _format_html(_retrieve_summary_for_esmf_hash(_hash), filename=_filename)
 
     dbconn.close()
