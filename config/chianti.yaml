@@ -2,8 +2,8 @@ machine: chianti
 scheduler: None
 corespernode: 8
 compiler: [gfortran,intel]
-branch: [develop,feature/named-alias]
-nuopcbranch: develop
+branch: [develop]
+#nuopcbranch: develop
 intel:
      versions: 
        2021.2:

@@ -4,8 +4,8 @@ queue: standard
 scheduler: pbs
 corespernode: 44
 compiler: [gfortran]
-branch: [develop,feature/named-alias]
-nuopcbranch: develop
+branch: [develop]
+#nuopcbranch: develop
 intel:
      versions: 
        2017.5: 

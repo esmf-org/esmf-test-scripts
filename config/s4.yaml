@@ -5,8 +5,8 @@ partition: s4
 scheduler: slurm
 corespernode: 24
 compiler: [intel]
-branch: [develop,feature/named-alias]
-nuopcbranch: develop
+branch: [develop]
+#nuopcbranch: develop
 intel:
      build_time: "2:00:00"
      test_time: "2:30:00"
