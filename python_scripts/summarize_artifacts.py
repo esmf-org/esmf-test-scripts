@@ -229,7 +229,7 @@ def _format_html(rows, filename):
             </div>
             </html>
             """)
-    logging.info(f"Generated file: {filename}")
+    logging.info(f"Generated file: {os.path.abspath(filename)}")
 
 
 def _print_tested_hashes():
