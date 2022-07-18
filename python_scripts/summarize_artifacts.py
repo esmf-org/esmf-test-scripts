@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import argparse
+import io
 import os.path
 from collections import namedtuple
 from datetime import datetime
@@ -141,12 +142,14 @@ def _print_summary_for_esmf_hash(esmf_hash):
     _cfmt = "{:<14} {:<20} {:<20} {:<5} {:<12} {:<14} {:<8} {:<10} {:<10} {:<10} {:<10}"
     print(f"\n\nESMF HASH: {esmf_hash}")
     print("=" * 140)
-    print(_cfmt.format('Machine', 'Compiler', 'MPI', 'BOPT', 'NetCDF', 'Collected', 'Build', 'UTests', 'STests', 'ETests', 'NUOPC'))
+    print(
+        _cfmt.format('Machine', 'Compiler', 'MPI', 'BOPT', 'NetCDF', 'Collected', 'Build', 'UTests', 'STests', 'ETests',
+                     'NUOPC'))
     print("=" * 140)
     for i, r in enumerate(_retrieve_summary_for_esmf_hash(esmf_hash), start=1):
         print(_cfmt.format(r["machine"],
-                           r["compiler"]+"/"+r["compiler_ver"],
-                           r["mpi"]+"/"+r["mpi_ver"],
+                           r["compiler"] + "/" + r["compiler_ver"],
+                           r["mpi"] + "/" + r["mpi_ver"],
                            r["bopt"],
                            r["netcdf"],
                            r["collect_ts"],
@@ -155,6 +158,78 @@ def _print_summary_for_esmf_hash(esmf_hash):
                            str(r["system_pass"]) + "/" + str(r["system_fail"]),
                            str(r["example_pass"]) + "/" + str(r["example_fail"]),
                            str(r["nuopc_pass"]) + "/" + str(r["nuopc_fail"])))
+
+
+def _format_html(rows, filename):
+    with open(filename, "w") as _out:
+        _out.write(
+            """
+            <html>
+            <head>
+                <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+                <!-- link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css" -->
+                <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css">
+                <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/dataTables.foundation.min.css">
+                <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+                
+                <!-- UIkit CSS -->
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.15.1/dist/css/uikit.min.css" />
+
+                <!-- UIkit JS -->
+                <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.1/dist/js/uikit.min.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.1/dist/js/uikit-icons.min.js"></script>
+                
+                <script>
+                    $(document).ready(function () {
+                        $('#results').DataTable({
+                            paging: false
+                        });
+                    });
+                </script>
+            </head>
+            
+            <div class="uk-container uk-container-center uk-margin-top uk-margin-large-bottom">
+
+            <table id="results" class="display" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Machine</th>
+                    <th>Compiler</th>
+                    <th>MPI</th>
+                    <th>BOPT</th>
+                    <th>NetCDF</th>
+                    <th>Collected</th>
+                    <th>Build</th>
+                    <th>UTests</th>
+                    <th>STests</th>
+                    <th>ETests</th>
+                    <th>NUOPC</th>
+                </tr>
+            </thead>
+            <tbody>
+            """)
+        for _r in rows:
+            _out.write(f"""
+             <tr>   
+                <td>{_r['machine']}</td>
+                <td>{_r['compiler']} / {_r['compiler_ver']}</td>
+                <td>{_r['mpi']} / {_r['mpi_ver']}</td>  
+                <td>{_r['bopt']}</td>
+                <td>{_r['netcdf']}</td>
+                <td>{_r['collect_ts']}</td>
+                <td>{_r['build']}</td>
+                <td>{str(_r["unit_pass"])}/{str(_r["unit_fail"])}</td>
+                <td>{str(_r["system_pass"])}/{str(_r["system_fail"])}</td>
+                <td>{str(_r["example_pass"])}/{str(_r["example_fail"])}</td>
+                <td>{str(_r["nuopc_pass"])}/{str(_r["nuopc_fail"])}</td>
+             </tr>""")
+        _out.write("""
+            </tbody>
+            </table>
+            </div>
+            </html>
+            """)
+    logging.info(f"Generated file: {filename}")
 
 
 def _print_tested_hashes():
@@ -196,7 +271,7 @@ def _load_artifact_commits(repo, machine_branch):
                         "dir": _extract(r"dir=(\S+)", _log_entry),
                         # TODO: change hash to esmf_hash in commit message
                         "esmf_hash": _extract(r"hash=(\S+)", _log_entry),  # hash of ESMF tested
-                        "esmf_branch": _extract(r"branch=(\S+)", _log_entry)  # branch of ESMF tested
+                        "esmf_branch": _extract(r"branch=(\S+)", _log_entry, "None")  # branch of ESMF tested
                         }
         # logging.debug(f"_commit_dict = {_commit_dict}")
 
@@ -263,7 +338,7 @@ if __name__ == "__main__":
         """, required=False)
     parser.add_argument('-o', '--output-format', metavar="FORMAT", help="""
         'stdout' prints to the screen (default option).
-        'md' outputs markdown tables, one tag/hash per file.         
+        'html' outputs a web site       
         """, default="stdout", required=False)
     parser.add_argument('--no-update', help="""
         By default, the latest test artifacts are pulled in. This option skips that step
@@ -315,5 +390,9 @@ if __name__ == "__main__":
         else:
             for _t in _retrieve_tested_hashes():
                 _print_summary_for_esmf_hash(_t["esmf_hash"])
+    elif args["output_format"] == "html":
+        for _t in _retrieve_tested_hashes():
+            _hash = _t["esmf_hash"]
+            _format_html(_retrieve_summary_for_esmf_hash(_hash), filename=f"{_hash}.html")
 
     dbconn.close()
