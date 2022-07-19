@@ -30,6 +30,7 @@ class Case:
                                               self.combo.bopt,
                                               esmf_branch)
         self.subdir = re.sub("/", "_", self.subdir)  # Some branches have a slash, so replace that with underscore
+        self.subdir = re.sub(":", "_", self.subdir)  # Branch name might include forked repo, i.e., fork:branch
         self.base_path = os.path.join(self.root_dir, self.subdir)
         self.esmf_clone_path = os.path.join(self.base_path, "esmf")
         self.build_script = os.path.join(self.base_path, "build.bat")
@@ -68,8 +69,18 @@ class Case:
         with open(self.test_script, "w") as _file:
             _file.write(self._create_test_script())
 
+        # determine if a fork of ESMF is used
+        if ":" in self.esmf_branch:
+            _split = self.esmf_branch.split(":")
+            _fork = re.sub("esmf-org", _split[0].strip(), self.repos["esmf"])
+            _branch = _split[1]
+            logging.debug(f"Pulling from fork of ESMF: {_fork}:{_branch}")
+        else:
+            _fork = self.repos["esmf"]
+            _branch = self.esmf_branch
+
         # clone repositories
-        cmd.clone_repo(url=self.repos["esmf"], local_name="esmf", branch=self.esmf_branch)
+        cmd.clone_repo(url=_fork, local_name="esmf", branch=_branch)
         cmd.clone_repo(url=self.repos["nuopc"], local_name="nuopc-app-prototypes", branch=self.nuopc_branch)
 
     def submit(self, no_artifacts=False):
