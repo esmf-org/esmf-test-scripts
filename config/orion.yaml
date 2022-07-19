@@ -1,5 +1,6 @@
 machine:
   name: orion
+  git_https: true
   cores_per_node: 40
   scheduler:
     type: slurm
