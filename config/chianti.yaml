@@ -1,29 +1,32 @@
-machine: chianti
-scheduler: None
-corespernode: 8
-compiler: [gfortran,intel]
-branch: [develop]
-#nuopcbranch: develop
-intel:
-     versions: 
-       2021.2:
-         compiler: intel-oneapi-compilers/2021.2.0-gcc-9.3.0
-         netcdf: netcdf-c/4.8.0-intel-2021.2.0
-         netcdf-fortran: netcdf-fortran/4.5.3-intel-2021.2.0
-         mpi:
-           intelmpi: 
-             module: intel-oneapi-mpi/2021.2.0-gcc-9.3.0
-gfortran:
-     versions: 
-       9.3.0: 
-         compiler: gcc/9.3.0-gcc-7.5.0
-         netcdf: netcdf-c/4.8.0-gcc-9.3.0-openmpi
-         netcdf-fortran: netcdf-fortran/4.5.3-gcc-9.3.0-openmpi  
-         hdf5: hdf5/1.10.7-gcc-9.3.0-openmpi 
-         mpi:
-           openmpi: 
-             module: openmpi/4.0.5-gcc-9.3.0  
-         extra_env_vars: 
-            var1: ESMF_NETCDF=nc-config
-            var2: ESMF_NFCONFIG=nf-config
-     extramodule: python
+machine:
+  name: chianti
+  cores_per_node: 8
+  scheduler: None
+
+test:
+  esmf_branch: [develop]
+
+matrix:
+  intel:
+       versions:
+         2021.2:
+           compiler: intel-oneapi-compilers/2021.2.0-gcc-9.3.0
+           netcdf: netcdf-c/4.8.0-intel-2021.2.0
+           netcdf-fortran: netcdf-fortran/4.5.3-intel-2021.2.0
+           mpi:
+             intelmpi:
+               module: intel-oneapi-mpi/2021.2.0-gcc-9.3.0
+  gfortran:
+       versions:
+         9.3.0:
+           compiler: gcc/9.3.0-gcc-7.5.0
+           netcdf: netcdf-c/4.8.0-gcc-9.3.0-openmpi
+           netcdf-fortran: netcdf-fortran/4.5.3-gcc-9.3.0-openmpi
+           hdf5: hdf5/1.10.7-gcc-9.3.0-openmpi
+           mpi:
+             openmpi:
+               module: openmpi/4.0.5-gcc-9.3.0
+           extra_env_vars:
+              - ESMF_NETCDF=nc-config
+              - ESMF_NFCONFIG=nf-config
+       extra_module: python
