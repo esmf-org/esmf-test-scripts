@@ -210,7 +210,7 @@ class Case:
         """
 
         _artifacts_base_dir = os.path.join(self.artifacts_root,
-                                           re.sub("/", "_", self.esmf_branch),
+                                           re.sub("/", "_", re.sub(":", "_", self.esmf_branch)),
                                            self.combo.compiler,
                                            self.combo.compiler_version,
                                            self.combo.bopt,
@@ -219,7 +219,7 @@ class Case:
         _collect_script_path = os.path.join(self.scripts_root, "collect_artifacts.py")
 
         with StringIO() as out:
-            out.write("#!/bin/sh -l\n")
+            out.write("#!/bin/sh\n")
             out.write(f"{_collect_script_path} \\\n")
             out.write(f" --test-dir {self.base_path} \\\n")
             out.write(f" --artifacts-dir {_artifacts_base_dir} \\\n")
