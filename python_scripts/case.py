@@ -160,6 +160,7 @@ class Case:
             _module_file = os.path.join(self.base_path, "module-build.log")
             out.write(f"module list >& {_module_file}\n")
             out.write(f"cd {self.esmf_clone_path}\n")
+            out.write(f"set -o pipefail\n")
             out.write(f"make info 2>&1| tee ../info.log\n")
             out.write(f"make -j {self.machine.scheduler.tasks_per_node} 2>&1| tee ../build.log\n")
 
