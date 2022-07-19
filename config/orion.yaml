@@ -1,66 +1,63 @@
-machine: orion
-account: da-cpu
-queue: batch
-partition: orion
-scheduler: slurm
-corespernode: 40
-compiler: [intel,gfortran]
-branch: [develop]
-#nuopcbranch: develop
+machine:
+  name: orion
+  cores_per_node: 40
+  scheduler:
+    type: slurm
+    account: da-cpu
+    partition: orion
+    queue: batch
 
-intel:
-   versions:
-     2020.2:
-       compiler: intel/2020.2
-       netcdf: netcdf/4.7.4
-       mpi:
-         intelmpi:
-           module: impi/2020.2
-           pythontest: True
-           mpi_env_vars:
-             var1: ESMF_MPIRUN=mpirun.srun
-             var2: ESMPY_MPIRUN=srun
-       extra_commands:
-          cmd1: "tar xvfz ~/pytest-input.tar.gz"
-   extramodule: "intelpython3 cmake"
-gfortran:
-   versions:
-     8.3.0:
-       compiler: gcc/8.3.0
-       netcdf: netcdf/4.7.4
-       mpi:
-         openmpi:
-           module: openmpi/4.0.2
-           pythontest: True
-           mpi_env_vars:
-             var1: ESMF_MPIRUN=mpirun.srun
-             var2: ESMPY_MPIRUN=srun
-         mpiuni:
-           module: None
-       extra_commands:
-          cmd1: "tar xvfz ~/pytest-input.tar.gz"
-       extra_env_vars:
-         var1: LD_PRELOAD=/apps/gcc-8/gcc-8.3.0/lib64/libstdc++.so
-   extramodule: "intelpython3 cmake"
-#    10.2.0:
-#      module: gcc/10.2.0
-#      netcdf: netcdf/4.7.4
-#      mpi:
-#          openmpi: openmpi/4.0.4
-pgi:
-   build_time: "2:00:00"
-   test_time: "2:30:00"
-   versions:
-     2019:
-       compiler: pgi/2019
-       netcdf: netcdf/4.7.4
-       mpi:
-         openmpi:
-           module: openmpi/4.0.2
-           mpi_env_vars:
-             var1: ESMF_MPIRUN=mpirun.srun
-             var2: ESMPY_MPIRUN=srun
-       extra_env_vars:
-         var1: ESMF_F90COMPILER=mpif90
-         var2: ESMF_CXXCOMPILER=mpicxx
-   extramodule: cmake
+test:
+  esmf_branch: [develop]
+
+matrix:
+  intel:
+     versions:
+       2020.2:
+         compiler: intel/2020.2
+         netcdf: netcdf/4.7.4
+         mpi:
+           intelmpi:
+             module: impi/2020.2
+             mpi_env_vars:
+               - ESMF_MPIRUN=mpirun.srun
+               - ESMPY_MPIRUN=srun
+     extra_module: "intelpython3 cmake"
+  gfortran:
+     versions:
+       8.3.0:
+         compiler: gcc/8.3.0
+         netcdf: netcdf/4.7.4
+         mpi:
+           openmpi:
+             module: openmpi/4.0.2
+             mpi_env_vars:
+               - ESMF_MPIRUN=mpirun.srun
+               - ESMPY_MPIRUN=srun
+           mpiuni:
+             module: None
+         extra_env_vars:
+             - LD_PRELOAD=/apps/gcc-8/gcc-8.3.0/lib64/libstdc++.so
+     extra_module: "intelpython3 cmake"
+  #    10.2.0:
+  #      module: gcc/10.2.0
+  #      netcdf: netcdf/4.7.4
+  #      mpi:
+  #          openmpi: openmpi/4.0.4
+  pgi:
+     build_time: "2:00:00"
+     test_time: "2:30:00"
+     versions:
+       2019:
+         compiler: pgi/2019
+         netcdf: netcdf/4.7.4
+         mpi:
+           openmpi:
+             module: openmpi/4.0.2
+             mpi_env_vars:
+               - ESMF_MPIRUN=mpirun.srun
+               - ESMPY_MPIRUN=srun
+         extra_env_vars:
+           - ESMF_F90COMPILER=mpif90
+           - ESMF_CXXCOMPILER=mpicxx
+     extra_module: cmake
