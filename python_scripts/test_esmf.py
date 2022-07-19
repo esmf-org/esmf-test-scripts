@@ -123,7 +123,7 @@ class ESMFTest:
         cmd.chdir("..")
 
         logging.info("Check: Can I clone ESMF repo?")
-        cmd.clone_repo(self.repos["esmf"], local_name="esmf")
+        cmd.clone_repo(self.repos["esmf"], branch="develop", local_name="esmf")
         cmd.chdir("esmf")
         o = cmd.runcmd("git status")
         if "Your branch is up to date" in o:
