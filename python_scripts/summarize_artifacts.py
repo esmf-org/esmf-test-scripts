@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
 
 import argparse
-import io
 import os.path
+import pathlib
 from collections import namedtuple
 from datetime import datetime
-
 import cmd
 import logging
 import re
 import sqlite3
+from jinja2 import Environment, FileSystemLoader
 
 ComboRecord = namedtuple('ComboRecord', 'id, machine, compiler, compiler_ver, bopt, mpi, mpi_ver, netcdf')
 ResultRecord = namedtuple('ResultRecord',
@@ -103,6 +103,17 @@ def _insert_result(result: ResultRecord):
     return cur.lastrowid
 
 
+def _retrieve_all_combinations():
+    cur = dbconn.cursor()
+    cur.execute(
+        """
+        SELECT *
+        FROM combination
+        ORDER BY machine, compiler, compiler_ver, mpi, mpi_ver
+        """)
+    return cur.fetchall()
+
+
 def _retrieve_tested_hashes():
     cur = dbconn.cursor()
     cur.execute(
@@ -115,6 +126,26 @@ def _retrieve_tested_hashes():
         GROUP BY esmf_branch, esmf_hash
         ORDER BY esmf_hash DESC
         """)
+    return cur.fetchall()
+
+
+def _retrieve_summary_by_combo(combo_id):
+    cur = dbconn.cursor()
+
+    cur.execute(
+        """
+        SELECT machine, compiler, compiler_ver, mpi, mpi_ver, bopt, netcdf, 
+            STRFTIME('%m-%d %H:%M', collect_ts) as collect_ts, 
+            STRFTIME('%m-%d %H:%M', build_ts) as build_ts,
+            (SELECT MAX(build_ts) FROM result as r WHERE r.combination_id = result.combination_id AND r.esmf_hash=result.esmf_hash) as latest_build_ts,
+            build, unit_pass, unit_fail, system_pass, system_fail, example_pass, example_fail, nuopc_pass, 
+            nuopc_fail, esmf_hash, esmf_branch
+        FROM result INNER JOIN combination ON result.combination_id = combination.id
+        WHERE combination_id = ?
+            AND (latest_build_ts = build_ts OR (build_ts IS NULL AND latest_build_ts IS NULL))
+        GROUP BY build_ts
+        ORDER BY esmf_hash DESC
+        """, (combo_id,))
     return cur.fetchall()
 
 
@@ -158,6 +189,34 @@ def _print_summary_for_esmf_hash(esmf_hash):
                            str(r["system_pass"]) + "/" + str(r["system_fail"]),
                            str(r["example_pass"]) + "/" + str(r["example_fail"]),
                            str(r["nuopc_pass"]) + "/" + str(r["nuopc_fail"])))
+
+
+def _format_summary_html(filename):
+
+    _hashes = _retrieve_tested_hashes()
+    _combos = _retrieve_all_combinations()
+
+    _result_rows = []
+    for _c in _combos:
+        _results = _retrieve_summary_by_combo(_c["id"])
+        _rindex = 0
+        _row = []
+        for _h in _hashes:
+            if _rindex < len(_results) and _results[_rindex]["esmf_hash"] == _h["esmf_hash"]:
+               _row.append(_results[_rindex])
+               _rindex += 1
+            else:
+                _row.append({})
+        _result_rows.append(_row)
+
+    env = Environment(
+        loader=FileSystemLoader(os.path.join(pathlib.Path(__file__).parent.absolute(), "templates"))
+    )
+    template = env.get_template("summary.html")
+    with open(filename, "w") as _out:
+        _out.write(template.render(hashes=_hashes,
+                                   combos=_combos,
+                                   result_rows=_result_rows))
 
 
 def _format_html(rows, filename):
@@ -260,7 +319,9 @@ def _load_artifact_commits(repo, machine_branch):
     cmd.runcmd(f"git checkout {machine_branch}", stderr=True)
     cmd.runcmd(f"git fetch origin {machine_branch}")
     cmd.runcmd(f"git reset --hard origin/{machine_branch}")
-    _log_out = cmd.runcmd(f"git log --format='%H %aI %s' -n 100")
+    # TODO: provide a parameter to limit the number of commits to consider
+    # currently this is hard-coded to 9999
+    _log_out = cmd.runcmd(f"git log --format='%H %aI %s' -n 9999")
     _log_list = _log_out.splitlines()
 
     for _log_entry in _log_list:
@@ -309,11 +370,20 @@ def _collect_summary_stats(commit, machine_branch):
 
         _esmf_hash = _extract(r"ESMF hash: (\S+)", _summary_text)
         _build_ts = _extract(r"Build timestamp:\s+(.+)\n", _summary_text)
+        try:
+            datetime.strptime(_build_ts, '%Y-%m-%d %H:%M:%S')
+        except ValueError:
+            logging.debug(f"Setting date to null: {_build_ts}")
+            _build_ts = None
+
         _build_pass = _extract(r"build:\s+(\S+)", _summary_text)
         _unit = _extract(r"unit tests:\s+PASS\s+(\S+)\s+FAIL\s+(\S+)", _summary_text, (None, None))
         _system = _extract(r"system tests:\s+PASS\s+(\S+)\s+FAIL\s+(\S+)", _summary_text, (None, None))
         _example = _extract(r"example tests:\s+PASS\s+(\S+)\s+FAIL\s+(\S+)", _summary_text, (None, None))
         _nuopc = _extract(r"nuopc tests:\s+PASS\s+(\S+)\s+FAIL\s+(\S+)", _summary_text, (None, None))
+
+        #if _build_ts == "None":
+        #    logging.debug(f"{commit}")
 
         _result = ResultRecord._make((_hash, commit["ts"], _combo_id, commit["esmf_branch"],
                                       _esmf_hash, 'S', _build_pass, _build_ts, _unit[0], _unit[1],
@@ -401,5 +471,8 @@ if __name__ == "__main__":
             _hash = _t["esmf_hash"]
             _filename = os.path.join(args["output_dir"], _hash + ".html")
             _format_html(_retrieve_summary_for_esmf_hash(_hash), filename=_filename)
+
+        _filename = os.path.join(args["output_dir"], "index.html")
+        _format_summary_html(_filename)
 
     dbconn.close()
