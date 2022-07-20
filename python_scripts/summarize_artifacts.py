@@ -155,7 +155,7 @@ def _retrieve_summary_by_combo(branch, combo_id):
 
     cur.execute(
         """
-        SELECT machine, compiler, compiler_ver, mpi, mpi_ver, bopt, netcdf, 
+        SELECT hash, machine, compiler, compiler_ver, mpi, mpi_ver, bopt, netcdf, 
             STRFTIME('%m-%d %H:%M', collect_ts) as collect_ts, 
             STRFTIME('%m-%d %H:%M', build_ts) as build_ts,
             (SELECT MAX(build_ts) FROM result as r WHERE r.combination_id = result.combination_id AND r.esmf_hash=result.esmf_hash) as latest_build_ts,
@@ -233,7 +233,8 @@ def _format_summary_html(branch, filename):
 
     template = template_env.get_template("summary.html")
     with open(filename, "w") as _out:
-        _out.write(template.render(hashes=_hashes,
+        _out.write(template.render(branch=branch,
+                                   hashes=_hashes,
                                    combos=_combos,
                                    result_rows=_result_rows))
     logging.info(f"Generated file: {os.path.abspath(filename)}")

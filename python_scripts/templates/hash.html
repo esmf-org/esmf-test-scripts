@@ -1,6 +1,5 @@
-
-{% macro link(row, text) -%}
-<a href="https://github.com/esmf-org/temp-artifacts/tree/{{row.hash}}/{{row.esmf_branch}}/{{row.compiler}}/{{row.compiler_ver}}/{{row.bopt}}/{{row.mpi}}/{{row.mpi_ver }}">{{text}}</a>
+{% macro link(row) -%}
+<a href="https://github.com/esmf-org/temp-artifacts/tree/{{row.hash}}/{{row.esmf_branch}}/{{row.compiler}}/{{row.compiler_ver}}/{{row.bopt}}/{{row.mpi}}/{{row.mpi_ver }}" target="_blank" >{{row.hash[0:7]}}</a>
 {%- endmacro %}
 
 <html>
@@ -63,8 +62,7 @@
       <td>{{r.system_pass}}/{{r.system_fail}}</td>
       <td>{{r.example_pass}}/{{r.example_fail}}</td>
       <td>{{r.nuopc_pass}}/{{r.nuopc_fail}}</td>
-      <td>{{link(r, "artifacts")}}</td>
-      <!-- <td><a href="https://github.com/esmf-org/temp-artifacts/tree/4978f4f03a63265346c6f78ee3347d9414cb79fb/v8.4.0b04/gfortran/9.1.0/O/openmpi/4.0.5">artifacts</a></td> -->
+      <td>{{link(r)}}</td>
     </tr>
     {% endfor %}
     </tbody>
