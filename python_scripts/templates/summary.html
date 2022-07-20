@@ -14,12 +14,11 @@
                   paging: false
               });
           });
-
   </script>
 </head>
 
 <body>
-<div class="container-fluid table-responsive">
+<div class="container">
   <table id="results" class="table table-bordered table-hover text-nowrap">
     <thead class="table-light">
     <tr>
@@ -34,9 +33,11 @@
       <th>Version</th>
       <th>BOPT</th>
       <th>NetCDF</th>
+      {# for n in range(3) #}
       {% for h in hashes %}
       <th>{{h.esmf_hash}}</th>
       {% endfor %}
+      {# endfor #}
     </tr>
     </thead>
     <tbody>
@@ -49,6 +50,7 @@
         <td>{{c.mpi_ver}}</td>
         <td>{{c.bopt}}</td>
         <td>{{c.netcdf}}</td>
+        {# for n in range(3) #}
         {% set comboloop = loop %}
         {% for r in result_rows[comboloop.index0] %}
         {% if r.build == "FAIL" %}
@@ -58,6 +60,7 @@
         {% endif %}
         <td class="{{cls}}" data-bs-toggle="tooltip" title="{{r.esmf_hash}}"></td>
         {% endfor %}
+        {# endfor #}
     {% endfor %}
     </tbody>
   </table>

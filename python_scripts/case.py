@@ -28,9 +28,8 @@ class Case:
                                               self.combo.compiler_version,
                                               self.combo.mpi,
                                               self.combo.bopt,
-                                              esmf_branch)
+                                              re.sub(":", "_", esmf_branch))
         self.subdir = re.sub("/", "_", self.subdir)  # Some branches have a slash, so replace that with underscore
-        self.subdir = re.sub(":", "_", self.subdir)  # Branch name might include forked repo, i.e., fork:branch
         self.base_path = os.path.join(self.root_dir, self.subdir)
         self.esmf_clone_path = os.path.join(self.base_path, "esmf")
         self.build_script = os.path.join(self.base_path, "build.bat")

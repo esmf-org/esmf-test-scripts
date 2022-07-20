@@ -11,6 +11,8 @@ import re
 import sqlite3
 from jinja2 import Environment, FileSystemLoader
 
+template_env = Environment(loader=FileSystemLoader(os.path.join(pathlib.Path(__file__).parent.absolute(), "templates")))
+
 ComboRecord = namedtuple('ComboRecord', 'id, machine, compiler, compiler_ver, bopt, mpi, mpi_ver, netcdf')
 ResultRecord = namedtuple('ResultRecord',
                           'hash, collect_ts, combination_id, esmf_branch, esmf_hash, status, build, build_ts, '
@@ -114,22 +116,41 @@ def _retrieve_all_combinations():
     return cur.fetchall()
 
 
-def _retrieve_tested_hashes():
+def _retrieve_tested_hashes(branch=None):
+
+    if branch is not None:
+        _where = "WHERE esmf_branch = ?"
+        _params = (branch,)
+    else:
+        _where = ""
+        _params = ()
+
     cur = dbconn.cursor()
     cur.execute(
-        """
+        f"""
         SELECT 
             esmf_branch, esmf_hash, 
             COUNT(DISTINCT combination_id) AS combo_count, 
             replace(group_concat(DISTINCT machine || '/' || compiler), ',', ', ') AS machines
         FROM result INNER JOIN combination ON result.combination_id = combination.id
+        {_where}
         GROUP BY esmf_branch, esmf_hash
         ORDER BY esmf_hash DESC
+        """, _params)
+    return cur.fetchall()
+
+
+def _retrieve_tested_branches():
+    cur = dbconn.cursor()
+    cur.execute(
+        """
+        SELECT DISTINCT esmf_branch FROM result
+        ORDER BY esmf_branch
         """)
     return cur.fetchall()
 
 
-def _retrieve_summary_by_combo(combo_id):
+def _retrieve_summary_by_combo(branch, combo_id):
     cur = dbconn.cursor()
 
     cur.execute(
@@ -142,10 +163,11 @@ def _retrieve_summary_by_combo(combo_id):
             nuopc_fail, esmf_hash, esmf_branch
         FROM result INNER JOIN combination ON result.combination_id = combination.id
         WHERE combination_id = ?
+            AND esmf_branch = ?
             AND (latest_build_ts = build_ts OR (build_ts IS NULL AND latest_build_ts IS NULL))
         GROUP BY build_ts
         ORDER BY esmf_hash DESC
-        """, (combo_id,))
+        """, (combo_id,branch))
     return cur.fetchall()
 
 
@@ -156,7 +178,7 @@ def _retrieve_summary_for_esmf_hash(esmf_hash):
     # AND build_ts = (SELECT max(build_ts) FROM result as r WHERE r.combination_id = result.combination_id AND r.esmf_hash=result.esmf_hash)
     cur.execute(
         """
-        SELECT machine, compiler, compiler_ver, mpi, mpi_ver, bopt, netcdf, 
+        SELECT hash, machine, compiler, compiler_ver, mpi, mpi_ver, bopt, netcdf, 
             STRFTIME('%m-%d %H:%M', collect_ts) as collect_ts, 
             STRFTIME('%m-%d %H:%M', build_ts) as build_ts,
             build, unit_pass, unit_fail, system_pass, system_fail, example_pass, example_fail, nuopc_pass, 
@@ -166,6 +188,7 @@ def _retrieve_summary_for_esmf_hash(esmf_hash):
         GROUP BY build_ts
         ORDER BY machine, compiler, compiler_ver, mpi, mpi_ver
         """, (esmf_hash,))
+
     return cur.fetchall()
 
 
@@ -191,103 +214,44 @@ def _print_summary_for_esmf_hash(esmf_hash):
                            str(r["nuopc_pass"]) + "/" + str(r["nuopc_fail"])))
 
 
-def _format_summary_html(filename):
-
-    _hashes = _retrieve_tested_hashes()
+def _format_summary_html(branch, filename):
+    _hashes = _retrieve_tested_hashes(branch=branch)
     _combos = _retrieve_all_combinations()
 
     _result_rows = []
     for _c in _combos:
-        _results = _retrieve_summary_by_combo(_c["id"])
+        _results = _retrieve_summary_by_combo(branch=branch, combo_id=_c["id"])
         _rindex = 0
         _row = []
         for _h in _hashes:
             if _rindex < len(_results) and _results[_rindex]["esmf_hash"] == _h["esmf_hash"]:
-               _row.append(_results[_rindex])
-               _rindex += 1
+                _row.append(_results[_rindex])
+                _rindex += 1
             else:
                 _row.append({})
         _result_rows.append(_row)
 
-    env = Environment(
-        loader=FileSystemLoader(os.path.join(pathlib.Path(__file__).parent.absolute(), "templates"))
-    )
-    template = env.get_template("summary.html")
+    template = template_env.get_template("summary.html")
     with open(filename, "w") as _out:
         _out.write(template.render(hashes=_hashes,
                                    combos=_combos,
                                    result_rows=_result_rows))
+    logging.info(f"Generated file: {os.path.abspath(filename)}")
 
 
-def _format_html(rows, filename):
+def _format_hash_html(_hash, _branch, filename):
+    _result_rows = _retrieve_summary_for_esmf_hash(_hash)
+    template = template_env.get_template("hash.html")
     with open(filename, "w") as _out:
-        _out.write(
-            """
-            <html>
-            <head>
-                <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-                <!-- link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css" -->
-                <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css">
-                <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/dataTables.foundation.min.css">
-                <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
-                
-                <!-- UIkit CSS -->
-                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.15.1/dist/css/uikit.min.css" />
+        _out.write(template.render(hash=_hash, branch=_branch, result_rows=_result_rows))
+    logging.info(f"Generated file: {os.path.abspath(filename)}")
 
-                <!-- UIkit JS -->
-                <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.1/dist/js/uikit.min.js"></script>
-                <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.1/dist/js/uikit-icons.min.js"></script>
-                
-                <script>
-                    $(document).ready(function () {
-                        $('#results').DataTable({
-                            paging: false
-                        });
-                    });
-                </script>
-            </head>
-            
-            <div class="uk-container uk-container-center uk-margin-top uk-margin-large-bottom">
 
-            <table id="results" class="display" style="width:100%">
-            <thead>
-                <tr>
-                    <th>Machine</th>
-                    <th>Compiler</th>
-                    <th>MPI</th>
-                    <th>BOPT</th>
-                    <th>NetCDF</th>
-                    <th>Collected</th>
-                    <th>Build</th>
-                    <th>UTests</th>
-                    <th>STests</th>
-                    <th>ETests</th>
-                    <th>NUOPC</th>
-                </tr>
-            </thead>
-            <tbody>
-            """)
-        for _r in rows:
-            _out.write(f"""
-             <tr>   
-                <td>{_r['machine']}</td>
-                <td>{_r['compiler']} / {_r['compiler_ver']}</td>
-                <td>{_r['mpi']} / {_r['mpi_ver']}</td>  
-                <td>{_r['bopt']}</td>
-                <td>{_r['netcdf']}</td>
-                <td>{_r['collect_ts']}</td>
-                <td>{_r['build']}</td>
-                <td>{str(_r["unit_pass"])}/{str(_r["unit_fail"])}</td>
-                <td>{str(_r["system_pass"])}/{str(_r["system_fail"])}</td>
-                <td>{str(_r["example_pass"])}/{str(_r["example_fail"])}</td>
-                <td>{str(_r["nuopc_pass"])}/{str(_r["nuopc_fail"])}</td>
-             </tr>""")
-        _out.write("""
-            </tbody>
-            </table>
-            </div>
-            </html>
-            """)
+def _format_branch_list_html(filename):
+    _branches = _retrieve_tested_branches()
+    template = template_env.get_template("branches.html")
+    with open(filename, "w") as _out:
+        _out.write(template.render(branches=_branches))
     logging.info(f"Generated file: {os.path.abspath(filename)}")
 
 
@@ -330,7 +294,6 @@ def _load_artifact_commits(repo, machine_branch):
                         "ts": _log_entry[41:66],  # timestamp of artifacts commit
                         "action": _extract(r"action=(\S+)", _log_entry),
                         "dir": _extract(r"dir=(\S+)", _log_entry),
-                        # TODO: change hash to esmf_hash in commit message
                         "esmf_hash": _extract(r"hash=(\S+)", _log_entry),  # hash of ESMF tested
                         "esmf_branch": _extract(r"branch=(\S+)", _log_entry, "None")  # branch of ESMF tested
                         }
@@ -382,7 +345,7 @@ def _collect_summary_stats(commit, machine_branch):
         _example = _extract(r"example tests:\s+PASS\s+(\S+)\s+FAIL\s+(\S+)", _summary_text, (None, None))
         _nuopc = _extract(r"nuopc tests:\s+PASS\s+(\S+)\s+FAIL\s+(\S+)", _summary_text, (None, None))
 
-        #if _build_ts == "None":
+        # if _build_ts == "None":
         #    logging.debug(f"{commit}")
 
         _result = ResultRecord._make((_hash, commit["ts"], _combo_id, commit["esmf_branch"],
@@ -460,19 +423,26 @@ if __name__ == "__main__":
     if not os.path.isdir(args["output_dir"]):
         cmd.runcmd(f"mkdir -p {args['output_dir']}")
 
-    if args["output_format"] == "stdout":
-        if args["tag"] is not None:
-            _print_summary_for_esmf_hash(args["tag"])
-        else:
-            for _t in _retrieve_tested_hashes():
-                _print_summary_for_esmf_hash(_t["esmf_hash"])
-    elif args["output_format"] == "html":
-        for _t in _retrieve_tested_hashes():
-            _hash = _t["esmf_hash"]
-            _filename = os.path.join(args["output_dir"], _hash + ".html")
-            _format_html(_retrieve_summary_for_esmf_hash(_hash), filename=_filename)
+    #if args["output_format"] == "stdout":
+    #    if args["tag"] is not None:
+    #        _print_summary_for_esmf_hash(args["tag"])
+    #    else:
+    #        for _t in _retrieve_tested_hashes():
+    #            _print_summary_for_esmf_hash(_t["esmf_hash"])
 
-        _filename = os.path.join(args["output_dir"], "index.html")
-        _format_summary_html(_filename)
+    if args["output_format"] == "html":
+        _branches = _retrieve_tested_branches()
+        for _b in _branches:
+            _branch = _b["esmf_branch"]
+            for _t in _retrieve_tested_hashes(branch=_branch):
+                _hash = _t["esmf_hash"]
+                _outdir = os.path.join(args['output_dir'], _branch)
+                cmd.runcmd(f"mkdir -p {_outdir}")
+                _filename = os.path.join(_outdir, _hash + ".html")
+                _format_hash_html(_hash, _branch, filename=_filename)
+
+            _filename = os.path.join(_outdir, "index.html")
+            _format_summary_html(branch=_branch, filename=_filename)
+        _format_branch_list_html(filename=os.path.join(args["output_dir"], "index.html"))
 
     dbconn.close()

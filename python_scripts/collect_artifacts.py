@@ -97,12 +97,12 @@ def _get_esmf_git_hash():
     return cmd.runcmd("git describe --tags --abbrev=7")
 
 
-def _get_esmf_branch():
-    # TODO: address this issue on hera
-    # subprocess.CalledProcessError: Command 'git branch --show-current' returned non-zero exit status 129.
-    # error: unknown option `show-current'
-    cmd.chdir(os.path.join(_test_dir, "esmf"))
-    return cmd.runcmd("git rev-parse --abbrev-ref HEAD")
+#def _get_esmf_branch():
+#    # TODO: address this issue on hera
+#    # subprocess.CalledProcessError: Command 'git branch --show-current' returned non-zero exit status 129.
+#    # error: unknown option `show-current'
+#    cmd.chdir(os.path.join(_test_dir, "esmf"))
+#    return cmd.runcmd("git rev-parse --abbrev-ref HEAD")
 
 
 def _create_summary():
@@ -204,7 +204,7 @@ if __name__ == "__main__":
     logging.basicConfig(format='collect_artifacts.py: %(message)s', level=_log_level)
 
     _test_dir = args["test_dir"]
-    _artifacts_dir = args["artifacts_dir"]
+    _artifacts_dir : str = args["artifacts_dir"]
     _artifacts_branch = args["artifacts_branch"]
     _scheduler = Scheduler.scheduler_class(args["scheduler_type"])
     _jobid = int(args["jobid"])
@@ -212,7 +212,8 @@ if __name__ == "__main__":
     if _jobid > 0:
         _wait_for_job(_jobid)
 
-    _esmf_branch = _get_esmf_branch()
+    # find branch embedded in artifact directory structure
+    _esmf_branch = _artifacts_dir.split(os.path.sep)[-6]
     _esmf_hash = _get_esmf_git_hash()
     _dir_name = os.path.basename(_test_dir)
     _commit_msg_fragment = f"dir={_dir_name} branch={_esmf_branch} hash={_esmf_hash}"
