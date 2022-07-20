@@ -1,6 +1,4 @@
-{% macro link(row) -%}
-<a href="https://github.com/esmf-org/temp-artifacts/tree/{{row.hash}}/{{row.esmf_branch}}/{{row.compiler}}/{{row.compiler_ver}}/{{row.bopt}}/{{row.mpi}}/{{row.mpi_ver }}" target="_blank" >{{row.hash[0:7]}}</a>
-{%- endmacro %}
+{% import 'macros.j2' as macros %}
 
 <html>
 <head>
@@ -27,7 +25,7 @@
 
 <body>
 <div class="p-3 text-left bg-light">
-    <h3 class="mb-2">Results for ESMF hash: {{hash}} (branch: {{branch}})</h3>
+    <h3 class="mb-2">Results for ESMF hash: {{hash}} (branch: <a href="index.html">{{branch}}</a>)</h3>
 </div>
 
 <div class="container table-responsive">
@@ -58,11 +56,11 @@
       <td>{{r.netcdf}}</td>
       <td>{{r.collect_ts}}</td>
       <td>{{r.build}}</td>
-      <td>{{r.unit_pass}}/{{r.unit_fail}}</td>
-      <td>{{r.system_pass}}/{{r.system_fail}}</td>
-      <td>{{r.example_pass}}/{{r.example_fail}}</td>
-      <td>{{r.nuopc_pass}}/{{r.nuopc_fail}}</td>
-      <td>{{link(r)}}</td>
+      <td class="{{macros.result_cls_pf(r.unit_pass, r.unit_fail)}}">{{r.unit_pass}}/{{r.unit_fail}}</td>
+      <td class="{{macros.result_cls_pf(r.system_pass, r.system_fail)}}">{{r.system_pass}}/{{r.system_fail}}</td>
+      <td class="{{macros.result_cls_pf(r.example_pass, r.example_fail)}}">{{r.example_pass}}/{{r.example_fail}}</td>
+      <td class="{{macros.result_cls_pf(r.nuopc_pass, r.nuopc_fail)}}">{{r.nuopc_pass}}/{{r.nuopc_fail}}</td>
+      <td>{{macros.hash_link(r)}}</td>
     </tr>
     {% endfor %}
     </tbody>

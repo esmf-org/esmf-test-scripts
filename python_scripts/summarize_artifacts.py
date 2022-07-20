@@ -370,10 +370,10 @@ if __name__ == "__main__":
         Generate test summary for the given tag (or hash) of ESMF.
         Without this, results will include all tested tags/hashes. 
         """, required=False)
-    parser.add_argument('-o', '--output-format', metavar="FORMAT", help="""
-        'stdout' prints to the screen (default option).
-        'html' outputs a web site       
-        """, default="stdout", required=False)
+    #parser.add_argument('-o', '--output-format', metavar="FORMAT", help="""
+    #    'stdout' prints to the screen (default option).
+    #    'html' outputs a web site
+    #    """, default="stdout", required=False)
     parser.add_argument('--output-dir', metavar="FORMAT", help="""
             Path to output directory.      
             """, default="./", required=False)
@@ -423,6 +423,8 @@ if __name__ == "__main__":
 
     if not os.path.isdir(args["output_dir"]):
         cmd.runcmd(f"mkdir -p {args['output_dir']}")
+    else:
+        cmd.runcmd(f"rm -rf {args['output_dir']}/*")
 
     #if args["output_format"] == "stdout":
     #    if args["tag"] is not None:
@@ -431,19 +433,20 @@ if __name__ == "__main__":
     #        for _t in _retrieve_tested_hashes():
     #            _print_summary_for_esmf_hash(_t["esmf_hash"])
 
-    if args["output_format"] == "html":
-        _branches = _retrieve_tested_branches()
-        for _b in _branches:
-            _branch = _b["esmf_branch"]
-            for _t in _retrieve_tested_hashes(branch=_branch):
-                _hash = _t["esmf_hash"]
-                _outdir = os.path.join(args['output_dir'], _branch)
-                cmd.runcmd(f"mkdir -p {_outdir}")
-                _filename = os.path.join(_outdir, _hash + ".html")
-                _format_hash_html(_hash, _branch, filename=_filename)
+    #if args["output_format"] == "html":
 
-            _filename = os.path.join(_outdir, "index.html")
-            _format_summary_html(branch=_branch, filename=_filename)
-        _format_branch_list_html(filename=os.path.join(args["output_dir"], "index.html"))
+    _branches = _retrieve_tested_branches()
+    for _b in _branches:
+        _branch = _b["esmf_branch"]
+        for _t in _retrieve_tested_hashes(branch=_branch):
+            _hash = _t["esmf_hash"]
+            _outdir = os.path.join(args['output_dir'], _branch)
+            cmd.runcmd(f"mkdir -p {_outdir}")
+            _filename = os.path.join(_outdir, _hash + ".html")
+            _format_hash_html(_hash, _branch, filename=_filename)
+
+        _filename = os.path.join(_outdir, "index.html")
+        _format_summary_html(branch=_branch, filename=_filename)
+    _format_branch_list_html(filename=os.path.join(args["output_dir"], "index.html"))
 
     dbconn.close()
