@@ -50,7 +50,6 @@ def _copy_test_artifacts():
     cmd.runcmd_no_err(f"cp module-test.log {_artifacts_out_dir}")
     cmd.runcmd_no_err(f"cp test.log {_artifacts_out_dir}")
     cmd.runcmd_no_err(f"cp nuopc.log {_artifacts_out_dir}")
-    cmd.runcmd_no_err(f"cp summary.dat {_artifacts_dir}")
 
     _ts = _get_build_timestamp()
     if _ts is None:
@@ -98,7 +97,7 @@ def _get_esmf_git_hash():
     return cmd.runcmd("git describe --tags --abbrev=7")
 
 
-#def _get_esmf_branch():
+# def _get_esmf_branch():
 #    # TODO: address this issue on hera
 #    # subprocess.CalledProcessError: Command 'git branch --show-current' returned non-zero exit status 129.
 #    # error: unknown option `show-current'
@@ -183,6 +182,13 @@ def _commit_and_push_artifacts(commit_msg):
         logging.info(f"Error committing or pushing artifacts: {cpe}")
 
 
+def _get_artifacts_root(artifacts_dir):
+    # remove last 6 folders
+    for i in range(6):
+        artifacts_dir = os.path.split(artifacts_dir)[0]
+    return artifacts_dir
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=
                                      """
@@ -197,7 +203,7 @@ if __name__ == "__main__":
     parser.add_argument("--jobid", help="Wait for job to be completed (or 0 for no job dependency)", required=True)
     parser.add_argument("--phase", help="""
         Determines which artifacts to copy.  Options are 'build' or 'test' or 'all'.  Defaults to 'all' if not specified.""",
-        default="all", required=False)
+                        default="all", required=False)
     parser.add_argument("--debug", help="Output debug messages", required=False, action="store_true")
 
     args = vars(parser.parse_args())
@@ -208,7 +214,9 @@ if __name__ == "__main__":
     logging.basicConfig(format='collect_artifacts.py: %(message)s', level=_log_level)
 
     _test_dir = args["test_dir"]
-    _artifacts_dir : str = args["artifacts_dir"]
+    _artifacts_dir: str = args["artifacts_dir"]
+    _artifacts_root = _get_artifacts_root(_artifacts_dir)
+    logging.debug(f"Artifacts root: {_artifacts_root}")
     _artifacts_branch = args["artifacts_branch"]
     _scheduler = Scheduler.scheduler_class(args["scheduler_type"])
     _jobid = int(args["jobid"])
@@ -222,14 +230,22 @@ if __name__ == "__main__":
     _dir_name = os.path.basename(_test_dir)
     _commit_msg_fragment = f"dir={_dir_name} branch={_esmf_branch} hash={_esmf_hash}"
 
+    _lockfile = os.path.join(_artifacts_root, ".lockfile")
+
+    # use a lockfile to limit concurrent changes to the artifacts repository
+    # after some number of retries, continue even without the lock
+    cmd.acquire_lock(_lockfile)
+
     _clean_artifacts()
-    _commit_and_push_artifacts(f"action=clear {_commit_msg_fragment}")
-
+    _commit_and_push_artifacts(commit_msg=f"action=clear {_commit_msg_fragment}")
     _create_summary()
-
     if args["phase"] in ["all", "build"]:
         _copy_build_artifacts()
     if args["phase"] in ["all", "test"]:
+        # always copy build artifacts since we clear all the artifacts each time
+        _copy_build_artifacts()
         _copy_test_artifacts()
 
-    _commit_and_push_artifacts(f"action=collect {_commit_msg_fragment}")
+    _commit_and_push_artifacts(commit_msg=f"action=collect {_commit_msg_fragment}")
+
+    cmd.release_lock(_lockfile)

@@ -1,6 +1,7 @@
 import logging
 import subprocess
 import os
+import time
 
 
 def runcmd(cmd, ignore_error=False, stderr=False):
@@ -18,6 +19,30 @@ def runcmd(cmd, ignore_error=False, stderr=False):
         else:
             raise cpe
     return out
+
+
+def acquire_lock(lockfile, retries=20):
+    for retry in range(retries):
+        logging.debug(f"Acquire {lockfile}")
+        try:
+            with open(lockfile, "x") as _:
+                pass
+            logging.debug(f"Created {lockfile}")
+            return True
+        except FileExistsError:
+            logging.debug(f"File exists {lockfile}")
+        time.sleep(10)
+    return False
+
+
+def release_lock(lockfile):
+    logging.debug(f"Release {lockfile}")
+    if os.path.isfile(lockfile):
+        os.remove(lockfile)
+        logging.debug(f"Deleted {lockfile}")
+        return True
+    else:
+        return False
 
 
 def runcmd_no_err(cmd):
@@ -50,5 +75,3 @@ def clone_repo(url, local_name, branch=None):
         chdir("..")
     else:
         runcmd(f"git clone {url} {local_name}", stderr=True)
-
-
