@@ -94,14 +94,14 @@ class Case:
 
         if not no_artifacts:
             logging.debug("Starting artifacts monitor for build phase")
-            cmd.start_process(f"{self.collect_script} {self.build_job_num}")
+            cmd.start_process(f"{self.collect_script} {self.build_job_num} build")
 
         self.test_job_num = self.machine.scheduler.submit_job(script_file=self.test_script, after=self.build_job_num)
         logging.debug(f"Submitted test job: {self.test_job_num}")
 
         if not no_artifacts:
             logging.debug("Starting artifacts monitor for test phase")
-            cmd.start_process(f"{self.collect_script} {self.test_job_num}")
+            cmd.start_process(f"{self.collect_script} {self.test_job_num} test")
 
     def finished(self):
         """
@@ -226,5 +226,6 @@ class Case:
             out.write(f" --scheduler-type {self.machine.scheduler.sched_type} \\\n")
             if logging.root.isEnabledFor(logging.DEBUG):
                 out.write(f" --debug \\\n")
-            out.write(" --jobid ${1:-0}\n")
+            out.write(" --jobid ${1:-0} \\\n")
+            out.write(" --phase ${2:-all}\n")
             return out.getvalue()

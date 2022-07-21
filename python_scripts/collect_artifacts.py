@@ -194,6 +194,9 @@ if __name__ == "__main__":
     parser.add_argument("--artifacts-branch", help="Local git branch to checkout for artifacts", required=True)
     parser.add_argument("--scheduler-type", help="Type of scheduler to use for checking job status", required=True)
     parser.add_argument("--jobid", help="Wait for job to be completed (or 0 for no job dependency)", required=True)
+    parser.add_argument("--phase", help="""
+        Determines which artifacts to copy.  Options are 'build' or 'test' or 'all'.  Defaults to 'all' if not specified.""",
+        default="all", required=False)
     parser.add_argument("--debug", help="Output debug messages", required=False, action="store_true")
 
     args = vars(parser.parse_args())
@@ -222,6 +225,10 @@ if __name__ == "__main__":
     _commit_and_push_artifacts(f"action=clear {_commit_msg_fragment}")
 
     _create_summary()
-    _copy_build_artifacts()
-    _copy_test_artifacts()
+
+    if args["phase"] in ["all", "build"]:
+        _copy_build_artifacts()
+    if args["phase"] in ["all", "test"]:
+        _copy_test_artifacts()
+
     _commit_and_push_artifacts(f"action=collect {_commit_msg_fragment}")
