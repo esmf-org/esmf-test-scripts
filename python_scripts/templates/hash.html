@@ -25,13 +25,14 @@
 
 <body>
 <div class="p-3 text-left bg-light">
-    <h3 class="mb-2">Results for ESMF hash: {{hash}} (branch: <a href="index.html">{{branch}}</a>)</h3>
+    <h3 class="mb-2">Results for ESMF hash: {{hash}} (branch: <a href="index.html">{{branch}}</a>)</h3><p><a href="../index.html">Top</a></p>
 </div>
 
-<div class="container table-responsive">
+<div class="container">
   <table id="results" class="table table-bordered table-hover">
     <thead class="table-light">
     <tr>
+      <th>Combo No.</th>
       <th>Machine</th>
       <th>Compiler</th>
       <th>MPI</th>
@@ -49,6 +50,7 @@
     <tbody>
     {% for r in result_rows %}
     <tr>
+      <td><a href="../  combos/{{r.combination_id}}.html">{{r.combination_id}}</a></td>
       <td>{{r.machine}}</td>
       <td>{{r.compiler}}/{{r.compiler_ver}}</td>
       <td>{{r.mpi}}/{{r.mpi_ver}}</td>

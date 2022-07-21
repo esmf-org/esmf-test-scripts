@@ -181,11 +181,9 @@ def _retrieve_summary_by_combo(combo_id, branch=None):
 def _retrieve_summary_for_esmf_hash(esmf_hash):
     cur = dbconn.cursor()
 
-    # this additional WHERE clause can be used to show only the *latest* result if there are multiple instances
-    # AND build_ts = (SELECT max(build_ts) FROM result as r WHERE r.combination_id = result.combination_id AND r.esmf_hash=result.esmf_hash)
     cur.execute(
         """
-        SELECT hash, machine, compiler, compiler_ver, mpi, mpi_ver, bopt, netcdf, 
+        SELECT combination_id, hash, machine, compiler, compiler_ver, mpi, mpi_ver, bopt, netcdf, 
             STRFTIME('%m-%d %H:%M', collect_ts) as collect_ts, 
             STRFTIME('%m-%d %H:%M', build_ts) as build_ts,
             build, unit_pass, unit_fail, system_pass, system_fail, example_pass, example_fail, nuopc_pass, 
