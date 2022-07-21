@@ -40,6 +40,7 @@ def _copy_build_artifacts():
     cmd.runcmd_no_err(f"cp module-build.log {_artifacts_out_dir}")
     cmd.runcmd_no_err(f"cp info.log {_artifacts_out_dir}")
     cmd.runcmd_no_err(f"cp build.log {_artifacts_out_dir}")
+    cmd.runcmd_no_err(f"cp summary.dat {_artifacts_dir}")
 
 
 def _copy_test_artifacts():
