@@ -1,0 +1,94 @@
+{% import 'macros.j2' as macros %}
+
+{% macro result_cell(r) -%}
+<td class="{{macros.result_cls(r)}} text-center" data-bs-toggle="popover" data-bs-html="true" data-bs-trigger="hover" data-placement="right" data-bs-content="{{result_detail(r)}}">
+{% if r.hash -%}{{macros.hash_link(r)}}{% endif %}
+</td>
+{%- endmacro %}
+
+{% macro result_detail(r) -%}
+<ul>
+  <li>Build: {{r.build}}</li>
+  <li>UTests: {{r.unit_pass}}/{{r.unit_fail}}</li>
+  <li>STests: {{r.system_pass}}/{{r.system_fail}}</li>
+  <li>ETests: {{r.example_pass}}/{{r.example_fail}}</li>
+  <li>NUOPC: {{r.nuopc_pass}}/{{r.nuopc_fail}}</li>
+  <li>Collected time: {{r.collect_ts}}</li>
+  <li>Build time: {{r.build_ts}}</li>
+</ul>
+{%- endmacro %}
+
+<html>
+<head>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <!-- Bootstrap 5 Styling -->
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css"/>
+
+  <script>
+      $(document).ready(function () {
+          $('#results').DataTable({
+              paging: false
+          });
+          $('[data-bs-toggle="popover"]').popover();
+      });
+  </script>
+</head>
+
+<body>
+<div class="p-3 text-left bg-light">
+    <h3 class="mb-2">Results for ESMF branch: {{branch}}</h3><p><a href="../index.html">Top</a></p>
+</div>
+
+<div class="container">
+  <table id="results" class="table table-bordered table-hover text-nowrap">
+    <thead class="table-light">
+    <tr>
+      <th colspan="7" class="text-center">Combination</th>
+      <th colspan="{{(hashes|length)}}" class="text-center">ESMF Tested Hash</th>
+    </tr>
+    <tr>
+      <th>Combo No.</th>
+      <th>Machine</th>
+      <th>Compiler</th>
+      <th>Version</th>
+      <th>MPI</th>
+      <th>Version</th>
+      <th>BOPT</th>
+      <th>NetCDF</th>
+      {# for n in range(3) #}
+      {% for h in hashes %}
+      <th><a href="{{h.esmf_hash}}.html">{{h.esmf_hash}}</a></th>
+      {% endfor %}
+      {# endfor #}
+    </tr>
+    </thead>
+    <tbody>
+    {% for c in combos %}
+      <tr>
+        <td><a href="../combos/{{c.id}}.html">{{c.id}}</a></td>
+        <td>{{c.machine}}</td>
+        <td>{{c.compiler}}</td>
+        <td>{{c.compiler_ver}}</td>
+        <td>{{c.mpi}}</td>
+        <td>{{c.mpi_ver}}</td>
+        <td>{{c.bopt}}</td>
+        <td>{{c.netcdf}}</td>
+        {# for n in range(3) #}
+        {% set comboloop = loop %}
+        {% for r in result_rows[comboloop.index0] %}
+        {{ result_cell(r) }}
+        {% endfor %}
+        {# endfor #}
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+</body>
+
+</html>

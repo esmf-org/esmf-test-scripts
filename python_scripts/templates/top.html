@@ -1,0 +1,79 @@
+<html>
+<head>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+          integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script type="text/javascript" charset="utf8"
+          src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+
+  <!-- Bootstrap 5 Styling -->
+  <script type="text/javascript" charset="utf8"
+          src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+  <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css"/>
+
+  <script>
+          $(document).ready(function () {
+              $('#branches').DataTable({
+                  paging: false
+              });
+          });
+          $(document).ready(function () {
+              $('#combos').DataTable({
+                  paging: false
+              });
+          });
+  </script>
+</head>
+
+<body>
+<div class="container mt-2">
+  <table id="branches" class="table table-bordered table-hover">
+    <thead class="table-light">
+    <tr>
+      <th class="text-center">Tested ESMF Branches</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for b in branches %}
+    <tr>
+      <td><a href="{{b.esmf_branch}}/index.html">{{b.esmf_branch}}</a></td>
+    </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  <br/>
+  <table id="combos"  class="table table-bordered table-hover">
+    <thead class="table-light">
+    <tr>
+      <th class="text-center" colspan="8">Combinations</th>
+    </tr>
+    <tr>
+      <th>No.</th>
+      <th>Machine</th>
+      <th>Compiler</th>
+      <th>Version</th>
+      <th>MPI</th>
+      <th>Version</th>
+      <th>BOPT</th>
+      <th>NetCDF</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for c in combos %}
+    <tr>
+      <td><a href="combos/{{c.id}}.html">{{c.id}}</a></td>
+      <td>{{c.machine}}</td>
+      <td>{{c.compiler}}</td>
+      <td>{{c.compiler_ver}}</td>
+      <td>{{c.mpi}}</td>
+      <td>{{c.mpi_ver}}</td>
+      <td>{{c.bopt}}</td>
+      <td>{{c.netcdf}}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+</body>
+</html>

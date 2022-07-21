@@ -42,47 +42,38 @@
 
 <body>
 <div class="p-3 text-left bg-light">
-    <h3 class="mb-2">Results for ESMF branch: {{branch}}</h3><p><a href="../index.html">Branch list</a></p>
+    <h3 class="mb-2">Results for combination: {{combo_label}}</h3><p><a href="../index.html">Top</a></p>
 </div>
 
 <div class="container">
   <table id="results" class="table table-bordered table-hover text-nowrap">
     <thead class="table-light">
     <tr>
-      <th colspan="7" class="text-center">Combination</th>
-      <th colspan="{{(hashes|length)}}" class="text-center">ESMF Tested Hash</th>
-    </tr>
-    <tr>
-      <th>Machine</th>
-      <th>Compiler</th>
-      <th>Version</th>
-      <th>MPI</th>
-      <th>Version</th>
-      <th>BOPT</th>
-      <th>NetCDF</th>
-      {# for n in range(3) #}
-      {% for h in hashes %}
-      <th><a href="{{h.esmf_hash}}.html">{{h.esmf_hash}}</a></th>
-      {% endfor %}
-      {# endfor #}
+      <th>ESMF Hash</th>
+      <th>ESMF Branch</th>
+      <th>Collect Time</th>
+      <th>Build Time</th>
+      <th>Build</th>
+      <th>UTests</th>
+      <th>STests</th>
+      <th>ETests</th>
+      <th>NUOPC</th>
+      <th>Artifacts</th>
     </tr>
     </thead>
     <tbody>
-    {% for c in combos %}
+    {% for r in result_rows %}
       <tr>
-        <td>{{c.machine}}</td>
-        <td>{{c.compiler}}</td>
-        <td>{{c.compiler_ver}}</td>
-        <td>{{c.mpi}}</td>
-        <td>{{c.mpi_ver}}</td>
-        <td>{{c.bopt}}</td>
-        <td>{{c.netcdf}}</td>
-        {# for n in range(3) #}
-        {% set comboloop = loop %}
-        {% for r in result_rows[comboloop.index0] %}
-        {{ result_cell(r) }}
-        {% endfor %}
-        {# endfor #}
+        <td>{{r.esmf_hash}}</td>
+        <td>{{r.esmf_branch}}</td>
+        <td>{{r.collect_ts}}</td>
+        <td>{{r.build_ts}}</td>
+        <td>{{r.build}}</td>
+        <td class="{{macros.result_cls_pf(r.unit_pass, r.unit_fail)}}">{{r.unit_pass}}/{{r.unit_fail}}</td>
+        <td class="{{macros.result_cls_pf(r.system_pass, r.system_fail)}}">{{r.system_pass}}/{{r.system_fail}}</td>
+        <td class="{{macros.result_cls_pf(r.example_pass, r.example_fail)}}">{{r.example_pass}}/{{r.example_fail}}</td>
+        <td class="{{macros.result_cls_pf(r.nuopc_pass, r.nuopc_fail)}}">{{r.nuopc_pass}}/{{r.nuopc_fail}}</td>
+        <td>{{macros.hash_link(r)}}</td>
     {% endfor %}
     </tbody>
   </table>

@@ -150,11 +150,18 @@ def _retrieve_tested_branches():
     return cur.fetchall()
 
 
-def _retrieve_summary_by_combo(branch, combo_id):
+def _retrieve_summary_by_combo(combo_id, branch=None):
     cur = dbconn.cursor()
 
+    if branch is not None:
+        _where = "AND esmf_branch = ?"
+        _params = (combo_id, branch)
+    else:
+        _where = ""
+        _params = (combo_id,)
+
     cur.execute(
-        """
+        f"""
         SELECT hash, machine, compiler, compiler_ver, mpi, mpi_ver, bopt, netcdf, 
             STRFTIME('%m-%d %H:%M', collect_ts) as collect_ts, 
             STRFTIME('%m-%d %H:%M', build_ts) as build_ts,
@@ -163,11 +170,11 @@ def _retrieve_summary_by_combo(branch, combo_id):
             nuopc_fail, esmf_hash, esmf_branch
         FROM result INNER JOIN combination ON result.combination_id = combination.id
         WHERE combination_id = ?
-            AND esmf_branch = ?
+            {_where}
             AND (latest_build_ts = build_ts OR (build_ts IS NULL AND latest_build_ts IS NULL))
         GROUP BY build_ts
         ORDER BY esmf_hash DESC
-        """, (combo_id,branch))
+        """, _params)
     return cur.fetchall()
 
 
@@ -214,13 +221,13 @@ def _print_summary_for_esmf_hash(esmf_hash):
                            str(r["nuopc_pass"]) + "/" + str(r["nuopc_fail"])))
 
 
-def _format_summary_html(branch, filename):
+def _format_branch_summary_html(branch, filename):
     _hashes = _retrieve_tested_hashes(branch=branch)
     _combos = _retrieve_all_combinations()
 
     _result_rows = []
     for _c in _combos:
-        _results = _retrieve_summary_by_combo(branch=branch, combo_id=_c["id"])
+        _results = _retrieve_summary_by_combo(combo_id=_c["id"], branch=branch)
         _rindex = 0
         _row = []
         for _h in _hashes:
@@ -231,12 +238,22 @@ def _format_summary_html(branch, filename):
                 _row.append({})
         _result_rows.append(_row)
 
-    template = template_env.get_template("summary.html")
+    template = template_env.get_template("branch.html")
     with open(filename, "w") as _out:
         _out.write(template.render(branch=branch,
                                    hashes=_hashes,
                                    combos=_combos,
                                    result_rows=_result_rows))
+    logging.info(f"Generated file: {os.path.abspath(filename)}")
+
+
+def _format_combo_summary_html(combo, filename):
+    _combo_id = combo["id"]
+    _combo_label = f"{combo['machine']}/{combo['compiler']}/{combo['compiler_ver']}/{combo['mpi']}/{combo['mpi_ver']}/{combo['bopt']}/{combo['netcdf']}"
+    _result_rows = _retrieve_summary_by_combo(combo_id=_combo_id)
+    template = template_env.get_template("combo.html")
+    with open(filename, "w") as _out:
+        _out.write(template.render(combo_label=_combo_label, result_rows=_result_rows))
     logging.info(f"Generated file: {os.path.abspath(filename)}")
 
 
@@ -250,9 +267,10 @@ def _format_hash_html(_hash, _branch, filename):
 
 def _format_branch_list_html(filename):
     _branches = _retrieve_tested_branches()
-    template = template_env.get_template("branches.html")
+    _combos = _retrieve_all_combinations()
+    template = template_env.get_template("top.html")
     with open(filename, "w") as _out:
-        _out.write(template.render(branches=_branches))
+        _out.write(template.render(branches=_branches, combos=_combos))
     logging.info(f"Generated file: {os.path.abspath(filename)}")
 
 
@@ -425,6 +443,7 @@ if __name__ == "__main__":
         cmd.runcmd(f"mkdir -p {args['output_dir']}")
     else:
         cmd.runcmd(f"rm -rf {args['output_dir']}/*")
+    cmd.runcmd(f"mkdir -p {args['output_dir']}/combos")
 
     #if args["output_format"] == "stdout":
     #    if args["tag"] is not None:
@@ -446,7 +465,14 @@ if __name__ == "__main__":
             _format_hash_html(_hash, _branch, filename=_filename)
 
         _filename = os.path.join(_outdir, "index.html")
-        _format_summary_html(branch=_branch, filename=_filename)
+        _format_branch_summary_html(branch=_branch, filename=_filename)
+
+    _combos = _retrieve_all_combinations()
+    for _c in _combos:
+        _outdir = os.path.join(args['output_dir'], "combos")
+        _filename = os.path.join(_outdir, str(_c["id"]) + ".html")
+        _format_combo_summary_html(combo=_c, filename=_filename)
+
     _format_branch_list_html(filename=os.path.join(args["output_dir"], "index.html"))
 
     dbconn.close()
