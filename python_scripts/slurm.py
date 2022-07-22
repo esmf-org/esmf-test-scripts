@@ -3,6 +3,8 @@ import subprocess
 from scheduler import Scheduler
 from io import StringIO
 import cmd
+import time
+import logging
 from machine import Machine
 
 
@@ -47,6 +49,7 @@ class Slurm(Scheduler):
 
         _submit_cmd = f"sbatch {_after} {script_file}"
         _job_num = cmd.runcmd(_submit_cmd).split()[3]
+        time.sleep(10)
         return _job_num
 
     @staticmethod
@@ -56,10 +59,12 @@ class Slurm(Scheduler):
         _queue_query = f"sacct -j {jobid} | head -n 3 | tail -n 1 | awk -F ' ' '{{print $6}}'"
         try:
             result = cmd.runcmd(_queue_query)
+            logging.debug(f"result of sacct is: {result}")
             if (result == "COMPLETED") or (result == "TIMEOUT") or (result == "FAILED") or (result == "CANCELLED"):
                 return True
             else:
                 return False
-        except:
+        except Exception as e:
+            logging.debug(f"exception to try sacct is: {e}")
             return True
         return False
