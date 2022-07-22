@@ -1,5 +1,5 @@
 {% macro hash_link(row) -%}
-<a href="https://github.com/esmf-org/temp-artifacts/tree/{{row.hash}}/{{row.esmf_branch}}/{{row.compiler}}/{{row.compiler_ver}}/{{row.bopt}}/{{row.mpi}}/{{row.mpi_ver }}" target="_blank">{{row.hash[0:7]}}</a>
+<a href="{{artifacts_base_url}}/tree/{{row.hash}}/{{row.esmf_branch}}/{{row.compiler}}/{{row.compiler_ver}}/{{row.bopt}}/{{row.mpi}}/{{row.mpi_ver }}" target="_blank">{{row.hash[0:7]}}</a>
 {%- endmacro %}
 
 {% macro result_cls(r) -%}

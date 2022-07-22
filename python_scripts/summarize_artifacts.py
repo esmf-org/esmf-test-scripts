@@ -4,7 +4,7 @@ import argparse
 import os.path
 import pathlib
 from collections import namedtuple
-from datetime import datetime, timezone
+from datetime import datetime
 from zoneinfo import ZoneInfo
 import cmd
 import logging
@@ -13,7 +13,6 @@ import sqlite3
 from jinja2 import Environment, FileSystemLoader
 
 template_env = Environment(loader=FileSystemLoader(os.path.join(pathlib.Path(__file__).parent.absolute(), "templates")))
-template_env.globals["now"] = datetime.now(ZoneInfo("US/Mountain")).strftime("%Y-%M-%d %H:%M:%S %Z")
 
 ComboRecord = namedtuple('ComboRecord', 'id, machine, compiler, compiler_ver, bopt, mpi, mpi_ver, netcdf')
 ResultRecord = namedtuple('ResultRecord',
@@ -119,7 +118,6 @@ def _retrieve_all_combinations():
 
 
 def _retrieve_tested_hashes(branch=None):
-
     if branch is not None:
         _where = "WHERE esmf_branch = ?"
         _params = (branch,)
@@ -296,6 +294,18 @@ def _get_machine_list(repo):
     return list(machines)
 
 
+def _get_artifacts_base_url(repo):
+    logging.debug(f"Getting base URL of artifacts")
+    cmd.chdir(repo)
+    _out = cmd.runcmd("git remote -v")
+    _url = _extract(r"origin\s+(\S+)", _out)
+    if "https" in _url:
+        _parts = _extract(r"https://github.com/([^/]+)/(\S+)\.git", _url)
+    else:
+        _parts = _extract(r"git@github.com:([^/]+)/(\S+)\.git", _url)
+    return f"https://github.com/{_parts[0]}/{_parts[1]}"
+
+
 def _load_artifact_commits(repo, machine_branch):
     logging.info(f"Loading artifacts from branch: {machine_branch}")
     cmd.chdir(repo)
@@ -388,7 +398,7 @@ if __name__ == "__main__":
         Generate test summary for the given tag (or hash) of ESMF.
         Without this, results will include all tested tags/hashes. 
         """, required=False)
-    #parser.add_argument('-o', '--output-format', metavar="FORMAT", help="""
+    # parser.add_argument('-o', '--output-format', metavar="FORMAT", help="""
     #    'stdout' prints to the screen (default option).
     #    'html' outputs a web site
     #    """, default="stdout", required=False)
@@ -432,9 +442,6 @@ if __name__ == "__main__":
         for _m in _mach_list:
             _load_artifact_commits(_repo_path, _m)
 
-    # _get_commits(_repo_path, "cheyenne")
-    # _get_commits(_repo_path, "catania")
-
     if args["list"]:
         _print_tested_hashes()
         exit(0)
@@ -445,14 +452,20 @@ if __name__ == "__main__":
         cmd.runcmd(f"rm -rf {args['output_dir']}/*")
     cmd.runcmd(f"mkdir -p {args['output_dir']}/combos")
 
-    #if args["output_format"] == "stdout":
+    # if args["output_format"] == "stdout":
     #    if args["tag"] is not None:
     #        _print_summary_for_esmf_hash(args["tag"])
     #    else:
     #        for _t in _retrieve_tested_hashes():
     #            _print_summary_for_esmf_hash(_t["esmf_hash"])
 
-    #if args["output_format"] == "html":
+    # if args["output_format"] == "html":
+
+    template_env.globals["now"] = datetime.now(ZoneInfo("US/Mountain")).strftime("%Y-%M-%d %H:%M:%S %Z")
+
+    _artifacts_base_url = _get_artifacts_base_url(_repo_path)
+    logging.debug(f"Artifacts base URL: {_artifacts_base_url}")
+    template_env.globals["artifacts_base_url"] = _artifacts_base_url
 
     _branches = _retrieve_tested_branches()
     for _b in _branches:

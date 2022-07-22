@@ -1,5 +1,3 @@
-import os
-import subprocess
 from scheduler import Scheduler
 from io import StringIO
 import cmd
@@ -49,6 +47,9 @@ class Slurm(Scheduler):
 
         _submit_cmd = f"sbatch {_after} {script_file}"
         _job_num = cmd.runcmd(_submit_cmd).split()[3]
+        # Note:  This pause was needed because we found that it took some time
+        # for jobs to make it into the queue, and on some systems the check_queue
+        # was immediately returning true.
         time.sleep(10)
         return _job_num
 
@@ -59,12 +60,11 @@ class Slurm(Scheduler):
         _queue_query = f"sacct -j {jobid} | head -n 3 | tail -n 1 | awk -F ' ' '{{print $6}}'"
         try:
             result = cmd.runcmd(_queue_query)
-            logging.debug(f"result of sacct is: {result}")
             if (result == "COMPLETED") or (result == "TIMEOUT") or (result == "FAILED") or (result == "CANCELLED"):
                 return True
             else:
                 return False
         except Exception as e:
-            logging.debug(f"exception to try sacct is: {e}")
+            logging.debug(f"Exception checking queue for job {jobid}: {e}")
             return True
-        return False
+
