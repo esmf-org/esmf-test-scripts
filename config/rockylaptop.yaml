@@ -4,7 +4,7 @@ machine:
   scheduler: None
 
 test:
-  esmf_branch: [develop, newalarm]
+  esmf_branch: [develop]
 #  nuopc_branch: [develop]
 #  filter:
 #    compiler: [gfortran]
