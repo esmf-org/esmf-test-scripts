@@ -1,12 +1,12 @@
 machine:
   name: discover
   cores_per_node: 28
+  git_https: True
   scheduler:
     type: slurm
     account: s2326
     #account: j1100
     queue: allnccs
-    git-https: True
     partition: compute
 
 test:
