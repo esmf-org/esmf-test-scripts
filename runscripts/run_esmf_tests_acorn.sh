@@ -5,6 +5,5 @@ cd $NS/esmf-test-scripts
 git remote update
 git pull -X theirs --no-edit origin
 cd $ptmp
-python3 $NS/esmf-test-scripts/python_scripts/test_esmf.py -y  $NS/esmf-test-scripts/config/acorn.yaml -a  $ptmp/esmf-test-artifacts 
-
+/lfs/h1/emc/nceplibs/noscrub/Mark.Potts/esmf-test-scripts/python_scripts/test_esmf.py -r $ptmp -m acorn 
 
