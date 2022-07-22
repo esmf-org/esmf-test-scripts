@@ -1,349 +1,322 @@
 #!/usr/bin/env python3
-
+from datetime import datetime
+import subprocess
+import threading
 import yaml
 import os
-import re
-import time
-import subprocess
-import sys
 import pathlib
 import argparse
-from scheduler import scheduler
-from noscheduler import NoScheduler
-from pbs import pbs
-from slurm import slurm
+import logging
+import time
+from machine import Machine
+from matrix import Matrix
+from case import Case
+import cmd
 
-REPO_ESMF_TEST_ARTIFACTS = "git@github.com:esmf-org/esmf-test-artifacts.git"
 
 class ESMFTest:
-  def __init__(self, yaml_file, artifacts_root, workdir, dryrun):
-    self.yaml_file=yaml_file
-    self.artifacts_root=artifacts_root
-    self.workdir=workdir
-    if(dryrun == "True"):
-      self.dryrun = True
-    else:
-      self.dryrun = False
-    print("setting dryrun to {}".format(self.dryrun))
-    self.mypath=pathlib.Path(__file__).parent.absolute()
-    print("path is {}".format(self.mypath))
-    self.readYAML()
-    if(self.reclone == True):
-      print("Deleting and re-cloning artifacts repository")
-      os.system("rm -rf {}".format(self.artifacts_root))
-      os.system("git clone {}".format(REPO_ESMF_TEST_ARTIFACTS))
-      os.chdir("esmf-test-artifacts")
-      os.system("git fetch origin")
-      branchlist = subprocess.check_output('git branch -a', shell=True)
-      branchlist = branchlist.decode("utf-8")
-      print("Remote branches:\n{}".format(branchlist))
-      if "remotes/origin/{}".format(self.machine_name) in branchlist:
-        print("Tracking existing remote branch {}".format(self.machine_name))
-        os.system("git checkout -b {} -t origin/{}".format(self.machine_name, self.machine_name))
-      else:
-        print("Remote branch {} not found.  Creating new branch.".format(self.machine_name))
-        os.system("git checkout -b {}".format(self.machine_name))
-        os.system("git push --set-upstream origin {}".format(self.machine_name))                  
-      os.chdir("..")
-    if(self.scheduler_type == "slurm"):
-      self.scheduler=slurm("slurm")
-    elif(self.scheduler_type == "None"):
-      self.scheduler=NoScheduler("None")
-    elif(self.scheduler_type == "pbs"):
-      self.scheduler=pbs(scheduler_type = "pbs",
-                         pbs_node_specifier = self.pbs_node_specifier,
-                         pbs_job_checker = self.pbs_job_checker)
-    print(self.yaml_file, self.artifacts_root, self.workdir)
-    self.createJobCardsAndSubmit()
 
-  def readYAML(self):
-    config_path = os.path.dirname(self.yaml_file)
-    global_file = os.path.join(config_path,"global.yaml")
-    with open(global_file) as file:
-      self.global_list = yaml.load(file, Loader=yaml.SafeLoader)
-      if("reclone-artifacts" in self.global_list):
-        self.reclone = self.global_list['reclone-artifacts']
-      else:
-        self.reclone = False      
-    with open(self.yaml_file) as file:
-      self.machine_list = yaml.load(file, Loader=yaml.SafeLoader)
-      self.machine_name = self.machine_list['machine']
-      #print("machine name is {}".format(self.machine_name))
-      if("git-https" in self.machine_list):
-        self.https = True
-      else: 
-        self.https = False
-      if("bash" in self.machine_list):
-        self.bash = self.machine_list['bash']
-      else: 
-        self.bash = "/bin/bash"
-      if("account" in self.machine_list):
-        self.account = self.machine_list['account']
-      else: 
-        self.account = "None"
-      if("partition" in self.machine_list):
-        self.partition = self.machine_list['partition']
-      else: 
-        self.partition = "None"
-      if("queue" in self.machine_list):
-        self.queue = self.machine_list['queue']
-      else: 
-        self.queue = "None"
-      if("headnodename" in self.machine_list):
-        self.headnodename = self.machine_list["headnodename"]
-      else:
-        self.headnodename = os.uname()[1]
-#     if("branch" in self.machine_list):
-#       self.branch = self.machine_list['branch']
-#     else: 
-#       self.branch = "develop"
-      if("nuopcbranch" in self.machine_list):
-        self.nuopcbranch = self.machine_list['nuopcbranch']
-      else: 
-        self.nuopcbranch = "develop"
-      self.cpn = self.machine_list['corespernode']
-      self.scheduler_type = self.machine_list['scheduler']
-      if("pbs_node_specifier" in self.machine_list):
-        self.pbs_node_specifier = self.machine_list['pbs_node_specifier']
-      else:
-        self.pbs_node_specifier = "default"
-      if("pbs_job_checker" in self.machine_list):
-        self.pbs_job_checker = self.machine_list['pbs_job_checker']
-      else:
-        self.pbs_job_checker = "default"
-      self.build_types = ['O','g']
-#     self.build_types = ['O']
-      self.script_dir=os.getcwd()
-      if("cluster" in self.machine_list):
-        self.cluster=self.machine_list['cluster']
-      else:
-        self.cluster="None"
-      if("constraint" in self.machine_list):
-        self.constraint=self.machine_list['constraint']
-      else:
-        self.constraint="None"
+    def __init__(self, test_root, machine_name, yaml_file, no_submit, no_artifacts, filter, only_resubmit, throttle):
 
-  def runcmd(self,cmd):
-    if(self.dryrun == True):
-       print("would have executed {}".format(cmd))
-    else:
-       print("running {}\n".format(cmd))
-       os.system(cmd)
+        self.scripts_root = pathlib.Path(__file__).parent.absolute()
+        logging.debug(f"Scripts path: {self.scripts_root}")
 
-  def updateRepo(self,subdir,branch,nuopcbranch):
-     os.system("rm -rf {}".format(subdir))
-     if(not(os.path.isdir(subdir))):
-       if(self.https == True):
-         cmdstring = "git clone -b {} https://github.com/esmf-org/esmf {}".format(branch,subdir)
-         nuopcclone = "git clone -b {} https://github.com/esmf-org/nuopc-app-prototypes".format(nuopcbranch)
-       else:
-         cmdstring = "git clone -b {} git@github.com:esmf-org/esmf {}".format(branch,subdir)
-         nuopcclone = "git clone -b {} git@github.com:esmf-org/nuopc-app-prototypes".format(nuopcbranch)
-       if(self.dryrun == True):
-         print("would have executed {}".format(cmdstring))
-         print("would have executed {}".format(nuopcclone))
-         print("would have cd'd to {}".format(subdir))
-         os.system("mkdir {}".format(subdir))
-         os.chdir(subdir)
-       else:
-         status= subprocess.check_output(cmdstring,shell=True).strip().decode('utf-8')
-         os.chdir(subdir)
-         self.runcmd("rm -rf obj mod lib examples test *.o *.e *bat.o* *bat.e*")
-         self.runcmd("git checkout {}".format(branch))
-         self.runcmd("git pull origin {}".format(branch))
-         status= subprocess.check_output(nuopcclone,shell=True).strip().decode('utf-8')
-         print("status from nuopc clone command {} was {}".format(nuopcclone,status))
-     
-  def createScripts(self,build_type,comp,ver,mpidict,mpitypes,key,branch):
-    mpiflavor = mpidict[key]
-    if(mpiflavor is not None and "pythontest" in mpiflavor):
-      headerList = ["build","test","python"]
-    else:
-      headerList = ["build","test"]
-    for headerType in headerList: 
-      if(headerType == "build"):
-        file_out = self.fb
-      elif(headerType == "test"):
-        file_out = self.ft
-      else:
-        pythonscript = open("runpython.sh", "w")
-        file_out = pythonscript
-        file_out.write("#!{} -l\n".format(self.bash))
-        file_out.write("cd {}\n".format(os.getcwd()))
-        file_out.write("export ESMFMKFILE=`find $PWD/DEFAULTINSTALLDIR -iname esmf.mk`\n\n")
-        file_out.write("cd {}/src/addon/ESMPy\n".format(os.getcwd()))
-      if("unloadmodule" in self.machine_list[comp]):
-        file_out.write("\nmodule unload {}\n".format(self.machine_list[comp]['unloadmodule']))
-      if("modulepath" in self.machine_list):
-        modulepath = self.machine_list['modulepath']
-        file_out.write("\nmodule use {}\n".format(self.machine_list['modulepath']))
-      if("extramodule" in self.machine_list[comp]):
-        file_out.write("\nmodule load {}\n".format(self.machine_list[comp]['extramodule']))
+        if yaml_file is not None:
+            self.yaml_file = os.path.abspath(yaml_file)
+        else:
+            self.yaml_file = os.path.join(self.scripts_root.parent, f"config/{machine_name}.yaml")
 
-      if(mpiflavor['module'] == "None"):
-        mpiflavor['module'] = ""
-        cmdstring = "export ESMF_MPIRUN={}/src/Infrastructure/stubs/mpiuni/mpirun\n".format(os.getcwd())
-        file_out.write(cmdstring)
+        if not os.path.isfile(self.yaml_file):
+            raise RuntimeError(f"YAML file not found: {self.yaml_file}")
+        logging.debug(f"Config file: {self.yaml_file}")
 
-      if("mpi_env_vars" in mpidict[key]):
-        for mpi_var in mpidict[key]['mpi_env_vars']:
-          file_out.write("export {}\n".format(mpidict[key]['mpi_env_vars'][mpi_var]))
+        if not os.path.isdir(test_root):
+            raise RuntimeError(f"Directory not found: {test_root}\nTesting root should be an existing directory.")
 
-      if(self.machine_list[comp]['versions'][ver]['netcdf'] == "None" ):
-        modulecmd = "module load {} {} \n\n".format(self.machine_list[comp]['versions'][ver]['compiler'],mpiflavor['module'])
-        esmfnetcdf = "\n"
-        file_out.write(modulecmd)
-      else:
-        modulecmd = "module load {} {} {}\n".format(self.machine_list[comp]['versions'][ver]['compiler'],mpiflavor['module'],self.machine_list[comp]['versions'][ver]['netcdf'])
-        esmfnetcdf = "export ESMF_NETCDF=nc-config\n\n"
-        file_out.write(modulecmd)
+        self.test_root = os.path.abspath(test_root)
+        logging.debug(f"Test root: {self.test_root}")
 
-      if("hdf5" in self.machine_list[comp]['versions'][ver]):
-        modulecmd = "module load {} \n".format(self.machine_list[comp]['versions'][ver]['hdf5'])
-        file_out.write(modulecmd)
-      if("netcdf-fortran" in self.machine_list[comp]['versions'][ver]):
-        modulecmd = "module load {} \n".format(self.machine_list[comp]['versions'][ver]['netcdf-fortran'])
-        file_out.write(modulecmd)
+        self.artifacts_root = os.path.abspath(os.path.join(self.test_root, "esmf-test-artifacts"))
+        logging.debug(f"Artifacts root: {self.artifacts_root}")
 
-      if(headerType == "build"):
-        file_out.write("module list >& module-build.log\n\n")
-      elif(headerType == "test"):
-        file_out.write("module list >& module-test.log\n\n")
+        self.no_submit = no_submit
+        self.only_resubmit = only_resubmit
+        self.reclone = False
+        self.bopts = ["O", "g"]
+        self.retries = 3   # how many times to retry setting up a test case
+        self.throttle = 999
+        if throttle is not None:
+            self.throttle = int(throttle)
+            logging.debug(f"Throttling max number of active cases to: {self.throttle}")
 
-      file_out.write("set -x\n") 
-      file_out.write(esmfnetcdf)
+        # load machine configuration from YAML
+        with open(self.yaml_file) as file:
+            _yaml = yaml.load(file, Loader=yaml.SafeLoader)
+            self.machine = Machine(_yaml["machine"])
+            if self.machine.name != machine_name:
+                raise RuntimeError("Machine name in YAML must match machine name passed as command line argument.")
+                return
+            self.matrix = Matrix(_yaml["matrix"], bopts=self.bopts, module_path=self.machine.module_path)
+            if "test" not in _yaml:
+                raise RuntimeError("YAML must have a 'test' section.")
+            self.esmf_branch = _yaml["test"]["esmf_branch"]
+            self.nuopc_branch = _yaml["test"].get("nuopc_branch", None)
+            self.yaml_filter = _yaml["test"].get("filter", None)
 
-      if('extra_env_vars' in self.machine_list[comp]['versions'][ver]):
-          for var in self.machine_list[comp]['versions'][ver]['extra_env_vars']:
-            file_out.write("export {}\n".format(self.machine_list[comp]['versions'][ver]['extra_env_vars'][var]))
+        # load global settings sfrom YAML
+        global_file = os.path.join(self.scripts_root.parent, "config/global.yaml")
+        with open(global_file) as file:
+            _yaml = yaml.load(file, Loader=yaml.SafeLoader)
+            if "reclone-artifacts" in _yaml:
+                self.reclone = _yaml['reclone-artifacts']
+            self.repos = {}
+            _repos = _yaml["repos"]
+            if self.machine.git_https:
+                self.repos["artifacts"] = _repos["artifacts"]["https"]
+                self.repos["esmf"] = _repos["esmf"]["https"]
+                self.repos["nuopc"] = _repos["nuopc"]["https"]
+            else:
+                self.repos["artifacts"] = _repos["artifacts"]["git"]
+                self.repos["esmf"] = _repos["esmf"]["git"]
+                self.repos["nuopc"] = _repos["nuopc"]["git"]
 
-      if('extra_commands' in self.machine_list[comp]['versions'][ver]):
-          for cmd in self.machine_list[comp]['versions'][ver]['extra_commands']:
-            file_out.write("{}\n".format(self.machine_list[comp]['versions'][ver]['extra_commands'][cmd]))
+        self.filter = None
+        if filter is not None:
+            logging.debug(f"Filter applied to test matrix: {filter}")
+            self.filter = []
+            try:
+                for _n in filter.split(","):
+                    self.filter.append(int(_n.strip()))
+            except ValueError:
+                raise RuntimeError("Invalid format for --filter argument.")
+                return
 
-      cmdstring = "export ESMF_DIR={}\n".format(os.getcwd())
-      file_out.write(cmdstring)
+        self.no_artifacts = no_artifacts
+        if no_artifacts:
+            logging.debug("Test artifacts will NOT be copied or pushed")
 
-      cmdstring = "export ESMF_COMPILER={}\n".format(comp)
-      file_out.write(cmdstring)
+    def check(self):
+        """
+        Run some local checks to make sure configuration is working.
+        """
+        logging.info("Running checks")
+        cmd.chdir(f"{self.test_root}")
+        cmd.runcmd(f"mkdir -p .check")
+        cmd.chdir(".check")
 
-      cmdstring="export ESMF_COMM={}\n".format(key)
-      file_out.write(cmdstring)
+        logging.info("Check: Can I clone artifacts repo?")
+        cmd.clone_repo(self.repos["artifacts"], local_name="esmf-test-artifacts")
 
-      cmdstring="export ESMF_BOPT='{}'\n".format(build_type)
-      file_out.write(cmdstring)
+        cmd.chdir("esmf-test-artifacts")
+        o = cmd.runcmd("git status")
+        if "Your branch is up to date" in o:
+            logging.info("...PASS")
 
-      cmdstring="export ESMF_TESTEXHAUSTIVE='ON'\n"
-      file_out.write(cmdstring)
+        logging.info("Check:  Can I push to artifacts repo?")
+        cmd.runcmd(f"echo '{datetime.now().strftime('%b %d %Y %H:%M:%S')}' > .ignore")
+        cmd.runcmd("git add .ignore")
+        cmd.runcmd("git commit .ignore -m 'this commit used only for testing'")
+        o = cmd.runcmd("git push", stderr=True)
+        if "main -> main" in o:
+            logging.info(f"...PASS")
 
-      cmdstring="export ESMF_TESTWITHTHREADS='ON'\n"
-      file_out.write(cmdstring)
+        cmd.chdir("..")
 
-      if(headerType == "build"):
+        logging.info("Check: Can I clone ESMF repo?")
+        cmd.clone_repo(self.repos["esmf"], branch="develop", local_name="esmf")
+        cmd.chdir("esmf")
+        o = cmd.runcmd("git status")
+        if "Your branch is up to date" in o:
+            logging.info("...PASS")
+        cmd.chdir("..")
 
-        cmdstring = "make -j {} 2>&1| tee build_$JOBID.log\n\n".format(self.cpn)
-        file_out.write(cmdstring)
-      elif(headerType == "test"):
-        cmdstring = "make info 2>&1| tee info.log \nmake install 2>&1| tee install_$JOBID.log \nmake all_tests 2>&1| tee test_$JOBID.log \n"
-        file_out.write(cmdstring)
-#       file_out.write("ssh {} {}/{}/getres-int.sh\n".format(self.headnodename,self.script_dir,os.getcwd()))
-        cmdstring = "export ESMFMKFILE=`find $PWD/DEFAULTINSTALLDIR -iname esmf.mk`\n"
-        file_out.write(cmdstring)
-        if(mpiflavor['module'] != "None"):
-          cmdstring = "chmod +x runpython.sh\ncd nuopc-app-prototypes\n./testProtos.sh 2>&1| tee ../nuopc_$JOBID.log \n\n"
-          file_out.write(cmdstring)
-#         file_out.write("ssh {} {}/{}/getres-int.sh\n".format(self.headnodename,self.script_dir,os.getcwd()))
-      else:
-        cmdstring = "python3 setup.py test_examples_dryrun\npython3 setup.py test_regrid_from_file_dryrun\n"
-        file_out.write(cmdstring)
-#       file_out.write("ssh {} {}/{}/getres-int.sh\n".format(self.headnodename,self.script_dir,os.getcwd()))
+        logging.info("Check:  Can I submit a job to the batch system?")
+        _batch_file = os.path.join(self.test_root, "batch_test.bat")
+        with open(_batch_file, "w") as _file:
+            _file.write(self.machine.scheduler.create_headers(script_file=_batch_file, timeout="10:00"))
+            _file.write("\n")
+            _file.write(f"cd {self.test_root}\n")
+            _file.write(f"echo 'please ignore me - just a test'\n")
+        _jobid = self.machine.scheduler.submit_job(_batch_file)
+        if int(_jobid) >= 0:
+            logging.info("...PASS")
 
+        cmd.chdir("..")
+        cmd.runcmd("rm -rf .check")
+        logging.info("Checks complete")
 
-      if(("pythontest" in mpiflavor) and (headerType == "test")):
+    def reclone_artifacts(self):
+        url = self.repos["artifacts"]
+        logging.info(f"Deleting and re-cloning artifacts repository: {url}")
+        cmd.chdir(self.test_root)
+        cmd.clone_repo(url, local_name="esmf-test-artifacts")
+        cmd.chdir("esmf-test-artifacts")
 
-           cmdstring = "\ncd ../src/addon/ESMPy\n"
-           file_out.write(cmdstring)
-           cmdstring = "\nexport PATH=$PATH:$HOME/.local/bin\n".format(os.getcwd())
-           file_out.write(cmdstring)
-           cmdstring = "python3 setup.py build 2>&1 | tee python_build.log\n".format(self.headnodename)
-           file_out.write(cmdstring)
-           cmdstring = "ssh {} {}/runpython.sh 2>&1 | tee python_build.log\n".format(self.headnodename,os.getcwd())
-           file_out.write(cmdstring)
-           cmdstring = "python3 setup.py test 2>&1 | tee python_test.log\n".format(self.headnodename)
-           file_out.write(cmdstring)
-           cmdstring = "python3 setup.py test_examples 2>&1 | tee python_examples.log\n".format(self.headnodename)
-           file_out.write(cmdstring)
-           cmdstring = "python3 setup.py test_regrid_from_file 2>&1 | tee python_regrid.log\n".format(self.headnodename)
-           file_out.write(cmdstring)
-      file_out.close()
-      mpimodule = mpiflavor['module']
-      if(mpimodule == ""):
-        self.mpiver = "None"
-      else:
-        self.mpiver = mpiflavor['module'].split('/')[-1]
+        branch_list = cmd.runcmd('git branch -a')
+        logging.debug(f"Remote branches:\n{branch_list}")
 
-  def createGetResScripts(self,monitor_cmd_build,monitor_cmd_test):
-    # write these out no matter what, so we can run them manually, if necessary
-    get_res_file = open("getres-build.sh", "w")
-    get_res_file.write("#!{} -l\n".format(self.bash))
-    get_res_file.write("{} >& build-res.log &\n".format(monitor_cmd_build))
-    get_res_file.close() 
-    os.system("chmod +x getres-build.sh")      
+        if f"remotes/origin/{self.machine.name}" in branch_list:
+            logging.info(f"Tracking existing remote branch {self.machine.name}")
+            cmd.runcmd(f"git checkout -b {self.machine.name} -t origin/{self.machine.name}")
+        else:
+            logging.info(f"Remote branch {self.machine.name} not found.  Creating new branch.")
+            cmd.runcmd(f"git checkout -b {self.machine.name}")
+            cmd.runcmd(f"git push --set-upstream origin {self.machine.name}")
+        cmd.chdir("..")
 
-    get_res_file = open("getres-test.sh", "w")
-    get_res_file.write("#!{} -l\n".format(self.bash))
-    get_res_file.write("{} >& test-res.log &\n".format(monitor_cmd_test))
-    get_res_file.close()
-    os.system("chmod +x getres-test.sh")      
+    def start(self):
+        if self.reclone:
+            self.reclone_artifacts()
 
-  def createJobCardsAndSubmit(self):
-      for build_type in self.build_types:
-        for comp in self.machine_list['compiler']:
-         for ver in self.machine_list[comp]['versions']:
-            print("{}".format(self.machine_list[comp]['versions'][ver]['mpi']))
-            mpidict = self.machine_list[comp]['versions'][ver]['mpi']
-            mpitypes= mpidict.keys()
-            print(self.machine_list[comp]['versions'][ver])
-            for key in mpitypes:
-              if('build_time' in self.machine_list[comp]):
-                self.build_time = self.machine_list[comp]['build_time']
-              else:
-                self.build_time = "1:00:00"
-              if('test_time' in self.machine_list[comp]):
-                self.test_time = self.machine_list[comp]['test_time']
-              else:
-                self.test_time = "1:00:00"
-              for branch in self.machine_list['branch']:
-                if("nuopcbranch" in self.machine_list):
-                  nuopcbranch = self.machine_list['nuopcbranch']
-                else: 
-                  nuopcbranch = branch
-                subdir="{}_{}_{}_{}_{}".format(comp,ver,key,build_type,branch)
-                subdir = re.sub("/","_",subdir) #Some branches have a slash, so replace that with underscore
-                if(self.https == True):
-                  cmdstring = "git clone -b {} https://github.com/esmf-org/esmf {}".format(branch,subdir)
-                  nuopcclone = "git clone -b {} https://github.com/esmf-org/nuopc-app-prototypes".format(nuopcbranch)
+        if not self.no_artifacts and not os.path.isdir(self.artifacts_root):
+            raise RuntimeError(f"No test artifacts repo found at {self.artifacts_root}.")
+
+        lock = threading.Lock()
+        active_cases = []
+
+        # will be run in a thread to monitor and remove completed test cases
+        def _remove_completed_cases():
+            logging.debug(f"Start thread to monitor completed cases")
+            while True:
+                lock.acquire(blocking=True)
+                for _case in active_cases:
+                    if _case.finished():
+                        logging.debug(f"Removing completed case: {_case.label()}")
+                        active_cases.remove(_case)
+                lock.release()
+                time.sleep(60)
+
+        # add a case to the active list of cases, if we are under the throttle limit
+        def _submit_case(_case: Case):
+            while True:
+                lock.acquire(blocking=True)
+                if len(active_cases) < self.throttle:
+                    _case.submit(no_artifacts=self.no_artifacts)
+                    logging.info(f"Submitted case: {_case.label()}")
+                    active_cases.append(_case)
+                    lock.release()
+                    break
                 else:
-                  cmdstring = "git clone -b {} git@github.com:esmf-org/esmf {}".format(branch,subdir)
-                  nuopcclone = "git clone -b {} git@github.com:esmf-org/nuopc-app-prototypes".format(nuopcbranch)
-                self.updateRepo(subdir,branch,nuopcbranch)
-                self.b_filename = 'build-{}_{}_{}_{}.bat'.format(comp,ver,key,build_type)
-                self.t_filename = 'test-{}_{}_{}_{}.bat'.format(comp,ver,key,build_type)
-                self.fb = open(self.b_filename, "w")
-                self.ft = open(self.t_filename, "w")
-                self.scheduler.createHeaders(self)
-                self.createScripts(build_type,comp,ver,mpidict,mpitypes,key,branch)
-                self.scheduler.submitJob(self,subdir,self.mpiver,branch)
-                os.chdir("..")
+                    lock.release()
+                    time.sleep(10)
 
-    
+        case_list = []
+        for _e_index, _e in enumerate(self.matrix.combinations, start=1):
+            for _branch_index, _esmf_branch in enumerate(self.esmf_branch):
+
+                # apply filter from command line --filter option
+                if self.filter is not None:
+                    if _e_index not in self.filter:
+                        logging.debug(
+                            f"Skipping test combination [{_e_index}] due to command line filter: {_e.label()}")
+                        continue
+
+                # apply filter from YAML file
+                if self.yaml_filter is not None:
+                    if "compiler" in self.yaml_filter:
+                        if _e.compiler not in self.yaml_filter["compiler"]:
+                            logging.debug(f"Skipping test combination [{_e_index}] due to YAML filter: {_e.label()}")
+                            continue
+
+                if self.nuopc_branch is not None:
+                    _nuopc_branch = self.nuopc_branch[_branch_index]
+                else:
+                    _nuopc_branch = _esmf_branch
+
+                # generate, set up, and submit the test combination
+                case = Case(_e, self.scripts_root, self.test_root, self.artifacts_root, self.repos,
+                            _esmf_branch, _nuopc_branch, self.machine)
+
+                case_list.append(case)
+                if not self.only_resubmit:
+                    logging.info(f"Setting up test case: {case.label()}")
+                    # TODO:  add retry capability in case set up fails
+                    for i in range(self.retries):
+                        try:
+                            case.set_up()
+                            break
+                        except subprocess.CalledProcessError as cpe:
+                            logging.error(f"Error setting up case {cpe}.  Retry attempt {i}.")
+
+        if not self.no_submit:
+            # start thread to listen for completed cases
+            _rthread = threading.Thread(target=_remove_completed_cases, daemon=True)
+            _rthread.start()
+            for _c in case_list:
+                logging.debug(f"Submitting case: {_c.label()}")
+                _submit_case(_c)  # may bock
+                logging.debug(f"Done submitting case: {_c.label()}")
+
+
+def go(args):
+    """
+    Entry point to run the test system.
+    """
+    test = ESMFTest(args["root"], args["machine"], args["yaml"],
+                    args["no_submit"], args["no_artifacts"], args["filter"], args["only_resubmit"], args["throttle"])
+
+    if args["check"]:
+        test.check()
+        return
+
+    if args["show_machine"]:
+        test.machine.print()
+        return
+
+    if args["list"]:
+        test.matrix.print()
+        return
+
+    test.start()
+
+
 if __name__ == "__main__":
-  parser = argparse.ArgumentParser(description='A tool to facilitate automated and manual testing of ESMF')
-  parser.add_argument('-w','--workdir', help='directory where builds will be made', required=False,default=os.getcwd())
-  parser.add_argument('-y','--yaml', help='YAML file defining builds and testing parameters', required=True)
-  parser.add_argument('-a','--artifacts', help='directory where test artifacts will be placed', required=True)
-  parser.add_argument('-d','--dryrun', help='show commands without actually running them', required=False,default=False)
-  args = vars(parser.parse_args())
+    parser = argparse.ArgumentParser(description='A tool to facilitate automated and manual testing of ESMF')
+    parser.add_argument('-r', '--root', help='Root directory to use for testing (scratch space)', required=True)
+    parser.add_argument('-m', '--machine',
+                        help="Name of this machine. Used to find a config YAML file under ./configs/<machine>.yaml",
+                        required=False)
+    parser.add_argument('-y', '--yaml', help='Explicit path to YAML config file.  Overrides --machine if present.',
+                        required=False)
+    parser.add_argument('--check', help='Run some checks', required=False, action='store_true')
+    parser.add_argument('--debug', help='Output debug messages', required=False, action='store_true')
+    parser.add_argument('--show-machine', help='Print out machine attributes and exit',
+                        required=False,
+                        action='store_true')
+    parser.add_argument('-l', '--list', help='List the test combinations in the YAML for this machine and exit',
+                        required=False,
+                        action='store_true')
+    parser.add_argument('--no-submit', help="Create test directories and batch scripts but do not submit any jobs",
+                        required=False, action='store_true')
+    parser.add_argument('--only-resubmit',
+                        help="Assume test directories and scripts are already present and only resubmit build/test jobs",
+                        required=False, action='store_true')
+    parser.add_argument('--no-artifacts', help="Do not copy or push test artifacts.",
+                        required=False, action='store_true')
+    parser.add_argument('--filter',
+                        help="""
+                              Limit combinations to test.  Use -l (or --list) to get a list of combinations with indexes.
+                              The format is a comma separated list, e.g. --filter 1,5,6,11 will only include combinations
+                              1, 5, 6, and 11 in the testing.
+                             """,
+                        required=False)
+    parser.add_argument('--throttle', metavar='N',
+                        help="""
+                             Limit the number of maximum number of active tests cases submitted to N.
+                             This option is provided to limit CPU intensity on login nodes.  The script will block 
+                             until all jobs have been submitted.  The default is no throttling (all cases submitted).
+                             """,
+                        required=False)
 
-  test = ESMFTest(args['yaml'],args['artifacts'],args['workdir'],args['dryrun'])  
-    
+    args = vars(parser.parse_args())
+
+    if args["machine"] is None and args["yaml"] is None:
+        logging.error("Either --machine or --yaml must be specified")
+        exit(1)
+
+    _log_level = logging.INFO
+    if args["debug"]:
+        _log_level = logging.DEBUG
+    logging.basicConfig(format='%(levelname)s: %(message)s', level=_log_level)
+
+    go(args)

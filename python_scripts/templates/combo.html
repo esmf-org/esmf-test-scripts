@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% macro result_cell(r) -%}
+<td class="{{macros.result_cls(r)}} text-center" data-bs-toggle="popover" data-bs-html="true" data-bs-trigger="hover" data-placement="right" data-bs-content="{{result_detail(r)}}">
+{% if r.hash -%}{{macros.hash_link(r)}}{% endif %}
+</td>
+{%- endmacro %}
+
+{% macro result_detail(r) -%}
+<ul>
+  <li>Build: {{r.build}}</li>
+  <li>UTests: {{r.unit_pass}}/{{r.unit_fail}}</li>
+  <li>STests: {{r.system_pass}}/{{r.system_fail}}</li>
+  <li>ETests: {{r.example_pass}}/{{r.example_fail}}</li>
+  <li>NUOPC: {{r.nuopc_pass}}/{{r.nuopc_fail}}</li>
+  <li>Collected time: {{r.collect_ts}}</li>
+  <li>Build time: {{r.build_ts}}</li>
+</ul>
+{%- endmacro %}
+
+{% block head %}
+    {{ super() }}
+    <script>
+      $(document).ready(function () {
+          $('#results').DataTable({
+              paging: false
+          });
+          $('[data-bs-toggle="popover"]').popover();
+      });
+  </script>
+{% endblock %}
+
+{% block header %}
+<h3 class="mb-2">Combination: {{combo_label}}</h3><p><a href="../index.html">Top</a></p>
+{% endblock %}
+
+{% block content %}
+  <table id="results" class="table table-bordered table-hover text-nowrap">
+    <thead class="table-light">
+    <tr>
+      <th>ESMF Hash</th>
+      <th>ESMF Branch</th>
+      <th>Collect Time</th>
+      <th>Build Time</th>
+      <th>Build</th>
+      <th>UTests</th>
+      <th>STests</th>
+      <th>ETests</th>
+      <th>NUOPC</th>
+      <th>Artifacts</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for r in result_rows %}
+      <tr>
+        <td>{{r.esmf_hash}}</td>
+        <td>{{r.esmf_branch}}</td>
+        <td>{{r.collect_ts}}</td>
+        <td>{{r.build_ts}}</td>
+        <td class="{{macros.result_cls_build(r.build)}}">{{r.build}}</td>
+        <td class="{{macros.result_cls_pf(r.unit_pass, r.unit_fail)}}">{{r.unit_pass}}/{{r.unit_fail}}</td>
+        <td class="{{macros.result_cls_pf(r.system_pass, r.system_fail)}}">{{r.system_pass}}/{{r.system_fail}}</td>
+        <td class="{{macros.result_cls_pf(r.example_pass, r.example_fail)}}">{{r.example_pass}}/{{r.example_fail}}</td>
+        <td class="{{macros.result_cls_pf(r.nuopc_pass, r.nuopc_fail)}}">{{r.nuopc_pass}}/{{r.nuopc_fail}}</td>
+        <td>{{macros.hash_link(r)}}</td>
+    {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

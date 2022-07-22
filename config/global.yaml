@@ -1,1 +1,11 @@
 reclone-artifacts: True
+repos:
+  esmf:
+    https: https://github.com/esmf-org/esmf
+    git: git@github.com:esmf-org/esmf.git
+  nuopc:
+    https: https://github.com/esmf-org/nuopc-app-prototypes
+    git: git@github.com:esmf-org/nuopc-app-prototypes.git
+  artifacts:
+    https: https://github.com/esmf-org/temp-artifacts.git
+    git: git@github.com:esmf-org/temp-artifacts.git
