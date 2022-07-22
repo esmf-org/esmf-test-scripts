@@ -4,7 +4,8 @@ import argparse
 import os.path
 import pathlib
 from collections import namedtuple
-from datetime import datetime
+from datetime import datetime, timezone
+from zoneinfo import ZoneInfo
 import cmd
 import logging
 import re
@@ -12,6 +13,7 @@ import sqlite3
 from jinja2 import Environment, FileSystemLoader
 
 template_env = Environment(loader=FileSystemLoader(os.path.join(pathlib.Path(__file__).parent.absolute(), "templates")))
+template_env.globals["now"] = datetime.now(ZoneInfo("US/Mountain")).strftime("%Y-%M-%d %H:%M:%S %Z")
 
 ComboRecord = namedtuple('ComboRecord', 'id, machine, compiler, compiler_ver, bopt, mpi, mpi_ver, netcdf')
 ResultRecord = namedtuple('ResultRecord',
@@ -297,7 +299,7 @@ def _get_machine_list(repo):
 def _load_artifact_commits(repo, machine_branch):
     logging.info(f"Loading artifacts from branch: {machine_branch}")
     cmd.chdir(repo)
-    cmd.runcmd(f"git checkout {machine_branch}", stderr=True)
+    cmd.runcmd(f"git checkout --force {machine_branch}", stderr=True)
     cmd.runcmd(f"git fetch origin {machine_branch}")
     cmd.runcmd(f"git reset --hard origin/{machine_branch}")
     # TODO: provide a parameter to limit the number of commits to consider

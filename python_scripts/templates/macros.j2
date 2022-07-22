@@ -24,3 +24,20 @@ table-success
 table-danger
 {% endif -%}
 {%- endmacro %}
+
+{% macro result_cls_build(build) -%}
+{% if build == "PASS" -%}
+table-success
+{% else -%}
+table-danger
+{% endif -%}
+{%- endmacro %}
+
+{% macro footer() %}
+  <br/>
+  <footer>
+    <div class="text-center p-2" style="background-color: rgba(0, 0, 0, 0.05);">
+      This page was generated at {{now}}.
+    </div>
+  </footer>
+{% endmacro %}

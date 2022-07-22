@@ -1,34 +1,21 @@
-{% import 'macros.j2' as macros %}
+{% extends "base.html" %}
 
-<html>
-<head>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-          integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-  <script type="text/javascript" charset="utf8"
-          src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+{% block head %}
+    {{ super() }}
+    <script>
+        $(document).ready(function () {
+            $('#results').DataTable({
+                paging: false
+            });
+        });
+    </script>
+{% endblock %}
 
-  <!-- Bootstrap 5 Styling -->
-  <script type="text/javascript" charset="utf8"
-          src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
-  <link rel="stylesheet" type="text/css"
-        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css"/>
-  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css"/>
+{% block header %}
+    <h3 class="mb-2">ESMF Hash: {{hash}} (branch: <a href="index.html">{{branch}}</a>)</h3><p><a href="../index.html">Top</a></p>
+{% endblock %}
 
-  <script>
-          $(document).ready(function () {
-              $('#results').DataTable({
-                  paging: false
-              });
-          });
-  </script>
-</head>
-
-<body>
-<div class="p-3 text-left bg-light">
-    <h3 class="mb-2">Results for ESMF hash: {{hash}} (branch: <a href="index.html">{{branch}}</a>)</h3><p><a href="../index.html">Top</a></p>
-</div>
-
-<div class="container">
+{% block content %}
   <table id="results" class="table table-bordered table-hover">
     <thead class="table-light">
     <tr>
@@ -57,7 +44,7 @@
       <td>{{r.bopt}}</td>
       <td>{{r.netcdf}}</td>
       <td>{{r.collect_ts}}</td>
-      <td>{{r.build}}</td>
+      <td class="{{macros.result_cls_build(r.build)}}">{{r.build}}</td>
       <td class="{{macros.result_cls_pf(r.unit_pass, r.unit_fail)}}">{{r.unit_pass}}/{{r.unit_fail}}</td>
       <td class="{{macros.result_cls_pf(r.system_pass, r.system_fail)}}">{{r.system_pass}}/{{r.system_fail}}</td>
       <td class="{{macros.result_cls_pf(r.example_pass, r.example_fail)}}">{{r.example_pass}}/{{r.example_fail}}</td>
@@ -67,6 +54,4 @@
     {% endfor %}
     </tbody>
   </table>
-</div>
-</body>
-</html>
+{% endblock %}
