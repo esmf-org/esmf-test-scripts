@@ -461,7 +461,7 @@ if __name__ == "__main__":
 
     # if args["output_format"] == "html":
 
-    template_env.globals["now"] = datetime.now(ZoneInfo("US/Mountain")).strftime("%Y-%M-%d %H:%M:%S %Z")
+    template_env.globals["now"] = datetime.now(ZoneInfo("US/Mountain")).strftime("%Y-%m-%d %H:%M:%S %Z")
 
     _artifacts_base_url = _get_artifacts_base_url(_repo_path)
     logging.debug(f"Artifacts base URL: {_artifacts_base_url}")
