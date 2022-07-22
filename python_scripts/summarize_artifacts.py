@@ -300,7 +300,7 @@ def _get_artifacts_base_url(repo):
     _out = cmd.runcmd("git remote -v")
     logging.debug(f"\tRemotes: {_out}")
     _url = _extract(r"origin\s+(\S+)", _out)
-    logging.debug(f"\tURL: {_out}")
+    logging.debug(f"\tURL: {_url}")
     if "https" in _url:
         _parts = _extract(r"https://github.com/([^/]+)/(\S+)\.git", _url)
     else:
