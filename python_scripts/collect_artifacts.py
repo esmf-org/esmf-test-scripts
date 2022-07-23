@@ -234,18 +234,19 @@ if __name__ == "__main__":
 
     # use a lockfile to limit concurrent changes to the artifacts repository
     # after some number of retries, continue even without the lock
-    cmd.acquire_lock(_lockfile)
+    if cmd.acquire_lock(_lockfile):
+        _clean_artifacts()
+        _commit_and_push_artifacts(commit_msg=f"action=clear {_commit_msg_fragment}")
+        _create_summary()
+        if args["phase"] in ["all", "build"]:
+            _copy_build_artifacts()
+        if args["phase"] in ["all", "test"]:
+            # always copy build artifacts since we clear all the artifacts each time
+            _copy_build_artifacts()
+            _copy_test_artifacts()
 
-    _clean_artifacts()
-    _commit_and_push_artifacts(commit_msg=f"action=clear {_commit_msg_fragment}")
-    _create_summary()
-    if args["phase"] in ["all", "build"]:
-        _copy_build_artifacts()
-    if args["phase"] in ["all", "test"]:
-        # always copy build artifacts since we clear all the artifacts each time
-        _copy_build_artifacts()
-        _copy_test_artifacts()
-
-    _commit_and_push_artifacts(commit_msg=f"action=collect {_commit_msg_fragment}")
+        _commit_and_push_artifacts(commit_msg=f"action=collect {_commit_msg_fragment}")
+    else:
+        logging.info(f"FAILED TO COMMIT artifacts: {_commit_msg_fragment} {args['phase']}")
 
     cmd.release_lock(_lockfile)

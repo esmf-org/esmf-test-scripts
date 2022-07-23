@@ -21,14 +21,21 @@ def runcmd(cmd, ignore_error=False, stderr=False):
     return out
 
 
-def acquire_lock(lockfile, retries=20):
+def acquire_lock(lockfile, retries=30):
     for retry in range(retries):
-        logging.debug(f"Acquire {lockfile}")
+        logging.debug(f"Attempt to acquire {lockfile}")
         try:
-            with open(lockfile, "x") as _:
-                pass
-            logging.debug(f"Created {lockfile}")
-            return True
+            _checksum = str(time.time())
+            with open(lockfile, "x") as _f:
+                _f.write(_checksum)
+            logging.debug(f"Created {lockfile} with checksum {_checksum}")
+            time.sleep(10)
+            with open(lockfile, "r") as _f:
+                _verify = _f.readline()
+            logging.debug(f"Read {lockfile} verify checksum {_verify}")
+            if _checksum.strip() == _verify.strip():
+                logging.debug(f"Acquired {lockfile}")
+                return True
         except FileExistsError:
             logging.debug(f"File exists {lockfile}")
         time.sleep(10)
