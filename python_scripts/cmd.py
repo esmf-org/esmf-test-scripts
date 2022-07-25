@@ -28,8 +28,10 @@ def acquire_lock(lockfile, retries=30):
             _checksum = str(time.time())
             with open(lockfile, "x") as _f:
                 _f.write(_checksum)
+                _f.flush()
+                os.fsync(_f.fileno())
             logging.debug(f"Created {lockfile} with checksum {_checksum}")
-            time.sleep(10)
+            time.sleep(5)
             with open(lockfile, "r") as _f:
                 _verify = _f.readline()
             logging.debug(f"Read {lockfile} verify checksum {_verify}")

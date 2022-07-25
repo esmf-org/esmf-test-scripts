@@ -233,7 +233,6 @@ if __name__ == "__main__":
     _lockfile = os.path.join(_artifacts_root, ".lockfile")
 
     # use a lockfile to limit concurrent changes to the artifacts repository
-    # after some number of retries, continue even without the lock
     if cmd.acquire_lock(_lockfile):
         _clean_artifacts()
         _commit_and_push_artifacts(commit_msg=f"action=clear {_commit_msg_fragment}")
