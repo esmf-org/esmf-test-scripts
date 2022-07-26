@@ -92,6 +92,14 @@ def _get_build_timestamp():
         return None
 
 
+def _get_clone_timestamp():
+    _path = glob.glob(f"{_test_dir}/esmf/makefile")
+    if len(_path) == 1:
+        return datetime.fromtimestamp(os.path.getmtime(_path[0])).strftime("%Y-%m-%d %H:%M:%S")
+    else:
+        return None
+
+
 def _get_esmf_git_hash():
     cmd.chdir(os.path.join(_test_dir, "esmf"))
     return cmd.runcmd("git describe --tags --abbrev=7")
@@ -151,6 +159,7 @@ def _create_summary():
         _file.write(f"ESMF hash: {_get_esmf_git_hash()}\n")
         _file.write(f"Collection timestamp: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
         _file.write(f"Build timestamp: {_get_build_timestamp()}\n")
+        _file.write(f"Clone timestamp: {_get_clone_timestamp()}\n")
         _file.write(f"Test dir: {_test_dir}\n")
         _file.write(f"Machine: {_artifacts_branch}\n")
         if _jobid > 0:
@@ -220,6 +229,7 @@ if __name__ == "__main__":
     _artifacts_branch = args["artifacts_branch"]
     _scheduler = Scheduler.scheduler_class(args["scheduler_type"])
     _jobid = int(args["jobid"])
+    _phase = args["phase"]
 
     if _jobid > 0:
         _wait_for_job(_jobid)
@@ -228,7 +238,7 @@ if __name__ == "__main__":
     _esmf_branch = _artifacts_dir.split(os.path.sep)[-6]
     _esmf_hash = _get_esmf_git_hash()
     _dir_name = os.path.basename(_test_dir)
-    _commit_msg_fragment = f"dir={_dir_name} branch={_esmf_branch} hash={_esmf_hash}"
+    _commit_msg_fragment = f"dir={_dir_name} branch={_esmf_branch} hash={_esmf_hash} phase={_phase}"
 
     _lockfile = os.path.join(_artifacts_root, ".lockfile")
 
@@ -246,6 +256,6 @@ if __name__ == "__main__":
 
         _commit_and_push_artifacts(commit_msg=f"action=collect {_commit_msg_fragment}")
     else:
-        logging.info(f"FAILED TO COMMIT artifacts: {_commit_msg_fragment} {args['phase']}")
+        logging.info(f"FAILED TO COMMIT artifacts due to not acquiring lock: {_commit_msg_fragment} {_phase}")
 
     cmd.release_lock(_lockfile)
