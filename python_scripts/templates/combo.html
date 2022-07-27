@@ -40,8 +40,9 @@
     <tr>
       <th>ESMF Hash</th>
       <th>ESMF Branch</th>
-      <th>Collect Time</th>
+      <th>Clone Time</th>
       <th>Build Time</th>
+      <th>Collect Time</th>
       <th>Build</th>
       <th>UTests</th>
       <th>STests</th>
@@ -55,8 +56,9 @@
       <tr>
         <td>{{r.esmf_hash}}</td>
         <td>{{r.esmf_branch}}</td>
-        <td>{{r.collect_ts}}</td>
+        <td>{{r.clone_ts}}</td>
         <td>{{r.build_ts}}</td>
+        <td>{{r.collect_ts}}</td>
         <td class="{{macros.result_cls_build(r.build)}}">{{r.build}}</td>
         <td class="{{macros.result_cls_pf(r.unit_pass, r.unit_fail)}}">{{r.unit_pass}}/{{r.unit_fail}}</td>
         <td class="{{macros.result_cls_pf(r.system_pass, r.system_fail)}}">{{r.system_pass}}/{{r.system_fail}}</td>

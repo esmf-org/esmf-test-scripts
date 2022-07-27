@@ -16,7 +16,7 @@ template_env = Environment(loader=FileSystemLoader(os.path.join(pathlib.Path(__f
 
 ComboRecord = namedtuple('ComboRecord', 'id, machine, compiler, compiler_ver, bopt, mpi, mpi_ver, netcdf')
 ResultRecord = namedtuple('ResultRecord',
-                          'hash, collect_ts, combination_id, esmf_branch, esmf_hash, status, build, build_ts, '
+                          'hash, collect_ts, combination_id, esmf_branch, esmf_hash, phase, clone_ts, build, build_ts, '
                           'unit_pass, unit_fail, system_pass, system_fail, example_pass, example_fail, nuopc_pass, '
                           'nuopc_fail')
 
@@ -48,7 +48,8 @@ def _init_database():
             combination_id integer NOT NULL,
             esmf_branch text NOT NULL,
             esmf_hash text NOT NULL,
-            status text NOT NULL,
+            phase text,
+            clone_ts datetime,
             build text,
             build_ts datatime,
             unit_pass integer,
@@ -95,10 +96,10 @@ def _insert_result(result: ResultRecord):
     cur = dbconn.cursor()
     cur.execute(
         """
-        INSERT INTO result (hash, collect_ts, combination_id, esmf_branch, esmf_hash, status, build, build_ts, 
+        INSERT INTO result (hash, collect_ts, combination_id, esmf_branch, esmf_hash, phase, clone_ts, build, build_ts, 
                             unit_pass, unit_fail, system_pass, system_fail, example_pass, example_fail, nuopc_pass,
                             nuopc_fail)
-        VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+        VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
         """,
         result)
     dbconn.commit()
@@ -150,31 +151,53 @@ def _retrieve_tested_branches():
     return cur.fetchall()
 
 
-def _retrieve_summary_by_combo(combo_id, branch=None):
+def _retrieve_summary_by_combo(combo_id):
+    """
+
+    """
     cur = dbconn.cursor()
 
-    if branch is not None:
-        _where = "AND esmf_branch = ?"
-        _params = (combo_id, branch)
-    else:
-        _where = ""
-        _params = (combo_id,)
-
     cur.execute(
-        f"""
+        """
         SELECT hash, machine, compiler, compiler_ver, mpi, mpi_ver, bopt, netcdf, 
             STRFTIME('%m-%d %H:%M', collect_ts) as collect_ts, 
             STRFTIME('%m-%d %H:%M', build_ts) as build_ts,
-            (SELECT MAX(build_ts) FROM result as r WHERE r.combination_id = result.combination_id AND r.esmf_hash=result.esmf_hash) as latest_build_ts,
+            STRFTIME('%m-%d %H:%M', clone_ts) as clone_ts,            
             build, unit_pass, unit_fail, system_pass, system_fail, example_pass, example_fail, nuopc_pass, 
             nuopc_fail, esmf_hash, esmf_branch
         FROM result INNER JOIN combination ON result.combination_id = combination.id
         WHERE combination_id = ?
-            {_where}
-            AND (latest_build_ts = build_ts OR (build_ts IS NULL AND latest_build_ts IS NULL))
-        GROUP BY build_ts
+        GROUP BY IFNULL(clone_ts, STRFTIME('%m-%d-%Y', collect_ts))
         ORDER BY esmf_hash DESC
-        """, _params)
+        """, (combo_id,))
+    return cur.fetchall()
+
+
+def _retrieve_summary_by_branch(combo_id, branch):
+    """
+    Retrieves only the most recent result for each combination/hash. This is needed
+    in cases where the same ESMF hash is tested multiple times on a platform, such
+    as two nights in a row.
+    """
+    cur = dbconn.cursor()
+
+    cur.execute(
+        """
+        SELECT hash, machine, compiler, compiler_ver, mpi, mpi_ver, bopt, netcdf, 
+            STRFTIME('%m-%d %H:%M', collect_ts) as collect_ts, 
+            STRFTIME('%m-%d %H:%M', build_ts) as build_ts,
+            build, unit_pass, unit_fail, system_pass, system_fail, example_pass, example_fail, nuopc_pass, 
+            nuopc_fail, esmf_hash, esmf_branch
+        FROM result INNER JOIN combination ON result.combination_id = combination.id
+        WHERE combination_id = ?
+            AND esmf_branch = ?
+            AND result.collect_ts = (SELECT MAX(collect_ts) 
+                    FROM result AS R 
+                    WHERE R.esmf_hash = result.esmf_hash 
+                        AND R.esmf_branch = result.esmf_branch 
+                        AND result.combination_id = R.combination_id)                    
+        ORDER BY esmf_hash DESC
+        """, (combo_id, branch))
     return cur.fetchall()
 
 
@@ -186,11 +209,13 @@ def _retrieve_summary_for_esmf_hash(esmf_hash):
         SELECT combination_id, hash, machine, compiler, compiler_ver, mpi, mpi_ver, bopt, netcdf, 
             STRFTIME('%m-%d %H:%M', collect_ts) as collect_ts, 
             STRFTIME('%m-%d %H:%M', build_ts) as build_ts,
-            build, unit_pass, unit_fail, system_pass, system_fail, example_pass, example_fail, nuopc_pass, 
+            STRFTIME('%m-%d %H:%M', clone_ts) as clone_ts,
+            IFNULL(STRFTIME('%m-%d %H:%M', clone_ts), STRFTIME('%m-%d %H:%M', collect_ts)) as cc_ts,					
+            phase, build, unit_pass, unit_fail, system_pass, system_fail, example_pass, example_fail, nuopc_pass, 
             nuopc_fail, esmf_hash, esmf_branch
         FROM result INNER JOIN combination ON result.combination_id = combination.id
         WHERE esmf_hash = ?
-        GROUP BY build_ts
+        GROUP BY cc_ts
         ORDER BY machine, compiler, compiler_ver, mpi, mpi_ver
         """, (esmf_hash,))
 
@@ -225,7 +250,7 @@ def _format_branch_summary_html(branch, filename):
 
     _result_rows = []
     for _c in _combos:
-        _results = _retrieve_summary_by_combo(combo_id=_c["id"], branch=branch)
+        _results = _retrieve_summary_by_branch(combo_id=_c["id"], branch=branch)
         _rindex = 0
         _row = []
         for _h in _hashes:
@@ -324,7 +349,8 @@ def _load_artifact_commits(repo, machine_branch):
                         "action": _extract(r"action=(\S+)", _log_entry),
                         "dir": _extract(r"dir=(\S+)", _log_entry),
                         "esmf_hash": _extract(r"hash=(\S+)", _log_entry),  # hash of ESMF tested
-                        "esmf_branch": _extract(r"branch=(\S+)", _log_entry, "None")  # branch of ESMF tested
+                        "esmf_branch": _extract(r"branch=(\S+)", _log_entry, "None"),  # branch of ESMF tested
+                        "phase": _extract(r"phase=(\S+)", _log_entry, "None")
                         }
         # logging.debug(f"_commit_dict = {_commit_dict}")
 
@@ -361,12 +387,19 @@ def _collect_summary_stats(commit, machine_branch):
         _combo_id = _insert_combo(_combo)
 
         _esmf_hash = _extract(r"ESMF hash: (\S+)", _summary_text)
-        _build_ts = _extract(r"Build timestamp:\s+(.+)\n", _summary_text)
+        _build_ts = _extract(r"Build timestamp:\s+(.+)\n", _summary_text, "None")
         try:
             datetime.strptime(_build_ts, '%Y-%m-%d %H:%M:%S')
         except ValueError:
-            logging.debug(f"Setting date to null: {_build_ts}")
+            logging.debug(f"Setting build_ts to null: {_build_ts}")
             _build_ts = None
+
+        _clone_ts = _extract(r"Clone timestamp:\s+(.+)\n", _summary_text, "None")
+        try:
+            datetime.strptime(_clone_ts, '%Y-%m-%d %H:%M:%S')
+        except ValueError:
+            logging.debug(f"Setting clone_ts to null: {_clone_ts}")
+            _clone_ts = None
 
         _build_pass = _extract(r"build:\s+(\S+)", _summary_text)
         _unit = _extract(r"unit tests:\s+PASS\s+(\S+)\s+FAIL\s+(\S+)", _summary_text, (None, None))
@@ -378,7 +411,8 @@ def _collect_summary_stats(commit, machine_branch):
         #    logging.debug(f"{commit}")
 
         _result = ResultRecord._make((_hash, commit["ts"], _combo_id, commit["esmf_branch"],
-                                      _esmf_hash, 'S', _build_pass, _build_ts, _unit[0], _unit[1],
+                                      _esmf_hash, commit["phase"], _clone_ts, _build_pass, _build_ts, _unit[0],
+                                      _unit[1],
                                       _system[0], _system[1], _example[0], _example[1], _nuopc[0], _nuopc[1]))
         # logging.debug(f"RESULT: {_result}")
         _insert_result(_result)
