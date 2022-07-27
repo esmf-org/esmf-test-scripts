@@ -111,7 +111,8 @@ def _retrieve_all_combinations():
     cur = dbconn.cursor()
     cur.execute(
         """
-        SELECT *
+        SELECT combination.*,
+           (SELECT STRFTIME('%m-%d %H:%M', MAX(collect_ts)) FROM result WHERE result.combination_id = combination.id) AS last_reported
         FROM combination
         ORDER BY machine, compiler, compiler_ver, mpi, mpi_ver
         """)
@@ -186,6 +187,7 @@ def _retrieve_summary_by_branch(combo_id, branch):
         SELECT hash, machine, compiler, compiler_ver, mpi, mpi_ver, bopt, netcdf, 
             STRFTIME('%m-%d %H:%M', collect_ts) as collect_ts, 
             STRFTIME('%m-%d %H:%M', build_ts) as build_ts,
+            STRFTIME('%m-%d %H:%M', clone_ts) as clone_ts,
             build, unit_pass, unit_fail, system_pass, system_fail, example_pass, example_fail, nuopc_pass, 
             nuopc_fail, esmf_hash, esmf_branch
         FROM result INNER JOIN combination ON result.combination_id = combination.id
