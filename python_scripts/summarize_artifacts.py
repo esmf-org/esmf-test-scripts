@@ -190,7 +190,7 @@ def _retrieve_summary_by_branch(combo_id, branch):
             STRFTIME('%m-%d %H:%M', build_ts) as build_ts,
             STRFTIME('%m-%d %H:%M', clone_ts) as clone_ts,
             build, unit_pass, unit_fail, system_pass, system_fail, example_pass, example_fail, nuopc_pass, 
-            nuopc_fail, esmf_hash, esmf_branch
+            nuopc_fail, esmf_hash, esmf_branch, phase
         FROM result INNER JOIN combination ON result.combination_id = combination.id
         WHERE combination_id = ?
             AND esmf_branch = ?
@@ -470,11 +470,17 @@ if __name__ == "__main__":
     # dbconn = sqlite3.connect(":memory:")
     dbconn.row_factory = sqlite3.Row
 
+    #import cProfile
+    #pr = cProfile.Profile()
+    #pr.enable()
     if not args["no_update"]:
         _init_database()
         _mach_list = _get_machine_list(_repo_path)
         for _m in _mach_list:
             _load_artifact_commits(_repo_path, _m)
+    #pr.disable()
+    #pr.print_stats(sort="cumulative")
+
 
     if args["list"]:
         _print_tested_hashes()
