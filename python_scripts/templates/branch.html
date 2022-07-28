@@ -39,12 +39,13 @@
   <table id="results" class="table table-bordered table-hover text-nowrap">
     <thead class="table-light">
     <tr>
-      <th colspan="8" class="text-center">Combination</th>
+      <th colspan="9" class="text-center">Combination</th>
       <th colspan="{{(hashes|length)}}" class="text-center">ESMF Tested Hash</th>
     </tr>
     <tr>
       <th>Combo No.</th>
       <th>Machine</th>
+      <th>OS</th>
       <th>Compiler</th>
       <th>Version</th>
       <th>MPI</th>
@@ -63,6 +64,7 @@
       <tr>
         <td><a href="../combos/{{c.id}}.html">{{c.id}}</a></td>
         <td>{{c.machine}}</td>
+        <td>{{c.os}}</td>
         <td>{{c.compiler}}</td>
         <td>{{c.compiler_ver}}</td>
         <td>{{c.mpi}}</td>

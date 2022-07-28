@@ -14,7 +14,7 @@ from jinja2 import Environment, FileSystemLoader
 
 template_env = Environment(loader=FileSystemLoader(os.path.join(pathlib.Path(__file__).parent.absolute(), "templates")))
 
-ComboRecord = namedtuple('ComboRecord', 'id, machine, compiler, compiler_ver, bopt, mpi, mpi_ver, netcdf')
+ComboRecord = namedtuple('ComboRecord', 'id, machine, os, compiler, compiler_ver, bopt, mpi, mpi_ver, netcdf')
 ResultRecord = namedtuple('ResultRecord',
                           'hash, collect_ts, combination_id, esmf_branch, esmf_hash, phase, clone_ts, build, build_ts, '
                           'unit_pass, unit_fail, system_pass, system_fail, example_pass, example_fail, nuopc_pass, '
@@ -31,13 +31,14 @@ def _init_database():
         CREATE TABLE combination (
             id integer PRIMARY KEY,
             machine text NOT NULL,
+            os text NOT NULL,
             compiler text NOT NULL,
             compiler_ver text NOT NULL,
             bopt text NOT NULL,
             mpi text NOT NULL,
             mpi_ver text NOT NULL,
             netcdf next NOT NULL,
-            UNIQUE (machine, compiler, compiler_ver, bopt, mpi, mpi_ver, netcdf)
+            UNIQUE (machine, os, compiler, compiler_ver, bopt, mpi, mpi_ver, netcdf)
         );    
         """)
 
@@ -47,7 +48,7 @@ def _init_database():
             collect_ts datetime NOT NULL,            
             combination_id integer NOT NULL,
             esmf_branch text NOT NULL,
-            esmf_hash text NOT NULL,
+            esmf_hash text NOT NULL,            
             phase text,
             clone_ts datetime,
             build text,
@@ -73,7 +74,7 @@ def _insert_combo(combo: ComboRecord):
     cur.execute(
         """
         SELECT id FROM combination 
-        WHERE machine=? AND compiler=? and compiler_ver=? AND bopt=? AND mpi=? AND mpi_ver=? AND netcdf=?
+        WHERE machine=? AND os=? AND compiler=? AND compiler_ver=? AND bopt=? AND mpi=? AND mpi_ver=? AND netcdf=?
         """,
         combo[1:])
     _row = cur.fetchone()
@@ -83,8 +84,8 @@ def _insert_combo(combo: ComboRecord):
     else:
         cur.execute(
             """
-            INSERT OR IGNORE INTO combination (machine, compiler, compiler_ver, bopt, mpi, mpi_ver, netcdf)
-            VALUES (?,?,?,?,?,?,?)
+            INSERT OR IGNORE INTO combination (machine, os, compiler, compiler_ver, bopt, mpi, mpi_ver, netcdf)
+            VALUES (?,?,?,?,?,?,?,?)
             """,
             combo[1:])
         dbconn.commit()
@@ -111,7 +112,7 @@ def _retrieve_all_combinations():
     cur = dbconn.cursor()
     cur.execute(
         """
-        SELECT combination.*,
+        SELECT combination.*,           
            (SELECT STRFTIME('%m-%d %H:%M', MAX(collect_ts)) FROM result WHERE result.combination_id = combination.id) AS last_reported
         FROM combination
         ORDER BY machine, compiler, compiler_ver, mpi, mpi_ver
@@ -208,7 +209,7 @@ def _retrieve_summary_for_esmf_hash(esmf_hash):
 
     cur.execute(
         """
-        SELECT combination_id, hash, machine, compiler, compiler_ver, mpi, mpi_ver, bopt, netcdf, 
+        SELECT combination_id, hash, machine, os,   compiler, compiler_ver, mpi, mpi_ver, bopt, netcdf, 
             STRFTIME('%m-%d %H:%M', collect_ts) as collect_ts, 
             STRFTIME('%m-%d %H:%M', build_ts) as build_ts,
             STRFTIME('%m-%d %H:%M', clone_ts) as clone_ts,
@@ -274,7 +275,7 @@ def _format_branch_summary_html(branch, filename):
 
 def _format_combo_summary_html(combo, filename):
     _combo_id = combo["id"]
-    _combo_label = f"{combo['machine']}/{combo['compiler']}/{combo['compiler_ver']}/{combo['mpi']}/{combo['mpi_ver']}/{combo['bopt']}/{combo['netcdf']}"
+    _combo_label = f"{combo['machine']}/{combo['OS']}/{combo['compiler']}/{combo['compiler_ver']}/{combo['mpi']}/{combo['mpi_ver']}/{combo['bopt']}/{combo['netcdf']}"
     _result_rows = _retrieve_summary_by_combo(combo_id=_combo_id)
     template = template_env.get_template("combo.html")
     with open(filename, "w") as _out:
@@ -383,8 +384,9 @@ def _collect_summary_stats(commit, machine_branch):
         _summary_file = _m.group(0)
         _summary_text = cmd.runcmd(f"cat {_summary_file}")
 
+        _os = _extract(r"ESMF_OS:\s+(\S+)", _summary_text, "None")
         _netcdf = _extract(r"NetCDF library version: netCDF (.+)\n", _summary_text, "None")
-        _combo = ComboRecord._make((None, machine_branch, _m["compiler"], _m["compiler_ver"],
+        _combo = ComboRecord._make((None, machine_branch, _os, _m["compiler"], _m["compiler_ver"],
                                     _m["bopt"], _m["mpi"], _m["mpi_ver"], _netcdf))
         _combo_id = _insert_combo(_combo)
 
@@ -409,13 +411,9 @@ def _collect_summary_stats(commit, machine_branch):
         _example = _extract(r"example tests:\s+PASS\s+(\S+)\s+FAIL\s+(\S+)", _summary_text, (None, None))
         _nuopc = _extract(r"nuopc tests:\s+PASS\s+(\S+)\s+FAIL\s+(\S+)", _summary_text, (None, None))
 
-        # if _build_ts == "None":
-        #    logging.debug(f"{commit}")
-
         _result = ResultRecord._make((_hash, commit["ts"], _combo_id, commit["esmf_branch"],
                                       _esmf_hash, commit["phase"], _clone_ts, _build_pass, _build_ts, _unit[0],
-                                      _unit[1],
-                                      _system[0], _system[1], _example[0], _example[1], _nuopc[0], _nuopc[1]))
+                                      _unit[1], _system[0], _system[1], _example[0], _example[1], _nuopc[0], _nuopc[1]))
         # logging.debug(f"RESULT: {_result}")
         _insert_result(_result)
 
