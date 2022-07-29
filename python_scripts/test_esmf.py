@@ -16,7 +16,7 @@ import cmd
 
 class ESMFTest:
 
-    def __init__(self, test_root, machine_name, yaml_file, no_submit, no_artifacts, filter, only_resubmit, throttle):
+    def __init__(self, test_root, machine_name, yaml_file, branch, no_submit, no_artifacts, filter, only_resubmit, throttle):
 
         self.scripts_root = pathlib.Path(__file__).parent.absolute()
         logging.debug(f"Scripts path: {self.scripts_root}")
@@ -62,6 +62,10 @@ class ESMFTest:
             self.esmf_branch = _yaml["test"]["esmf_branch"]
             self.nuopc_branch = _yaml["test"].get("nuopc_branch", None)
             self.yaml_filter = _yaml["test"].get("filter", None)
+
+        if branch is not None:
+            self.esmf_branch = [b.strip() for b in branch.split(",")]
+            logging.debug(f"Using branches from command line: {self.esmf_branch}")
 
         # load global settings sfrom YAML
         global_file = os.path.join(self.scripts_root.parent, "config/global.yaml")
@@ -221,7 +225,10 @@ class ESMFTest:
                 if self.nuopc_branch is not None:
                     _nuopc_branch = self.nuopc_branch[_branch_index]
                 else:
-                    _nuopc_branch = _esmf_branch
+                    # Previously, this was defaulted to _esmf_branch, but in most cases
+                    # a separate nuopc-app-prototype branch is not required, so we will
+                    # default to "develop" and will only change if explicitly listed in the YAML
+                    _nuopc_branch = "develop"
 
                 # generate, set up, and submit the test combination
                 case = Case(_e, self.scripts_root, self.test_root, self.artifacts_root, self.repos,
@@ -230,7 +237,6 @@ class ESMFTest:
                 case_list.append(case)
                 if not self.only_resubmit:
                     logging.info(f"Setting up test case: {case.label()}")
-                    # TODO:  add retry capability in case set up fails
                     for i in range(self.retries):
                         try:
                             case.set_up()
@@ -252,7 +258,7 @@ def go(args):
     """
     Entry point to run the test system.
     """
-    test = ESMFTest(args["root"], args["machine"], args["yaml"],
+    test = ESMFTest(args["root"], args["machine"], args["yaml"], args["branch"],
                     args["no_submit"], args["no_artifacts"], args["filter"], args["only_resubmit"], args["throttle"])
 
     if args["check"]:
@@ -286,6 +292,11 @@ if __name__ == "__main__":
     parser.add_argument('-l', '--list', help='List the test combinations in the YAML for this machine and exit',
                         required=False,
                         action='store_true')
+    parser.add_argument('--branch', help="""
+                                Ignore branches in the YAML and use these branches instead.
+                                Accepts a comma separated list, e.g., --branch develop,feature/X,fork:feature_Z
+                                """,
+                        required=False)
     parser.add_argument('--no-submit', help="Create test directories and batch scripts but do not submit any jobs",
                         required=False, action='store_true')
     parser.add_argument('--only-resubmit',
