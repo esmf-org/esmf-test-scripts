@@ -5,7 +5,6 @@ import os.path
 import pathlib
 from collections import namedtuple
 from datetime import datetime
-from functools import reduce
 from zoneinfo import ZoneInfo
 import cmd
 import logging
