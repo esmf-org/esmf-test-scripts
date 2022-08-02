@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% macro result_cell(r) -%}
-<td class="{{macros.result_cls(r)}} text-center" data-bs-toggle="popover" data-bs-html="true" data-bs-trigger="hover" data-placement="right" data-bs-content="{{result_detail(r)}}">
+<td class="{{macros.result_cls(r)}} text-center" data-bs-toggle="popover" data-bs-html="true" data-bs-trigger="hover" data-bs-placement="auto" data-bs-content="{{result_detail(r)}}">
 {% if r.hash -%}{{macros.hash_link(r, macros.fail_count(r))}}{% endif %}
 </td>
 {%- endmacro %}
