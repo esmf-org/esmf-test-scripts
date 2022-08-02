@@ -1,0 +1,5 @@
+exclude:
+  esmf_hash:
+    - v8.4.0b07-*
+#  esmf_branch:
+#    - develop

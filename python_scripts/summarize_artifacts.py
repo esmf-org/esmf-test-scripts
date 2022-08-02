@@ -11,6 +11,7 @@ import logging
 import re
 import sqlite3
 from jinja2 import Environment, FileSystemLoader
+import yaml
 
 template_env = Environment(loader=FileSystemLoader(os.path.join(pathlib.Path(__file__).parent.absolute(), "templates")))
 
@@ -357,7 +358,20 @@ def _load_artifact_commits(repo, machine_branch):
                         }
         # logging.debug(f"_commit_dict = {_commit_dict}")
 
-        if _commit_dict["action"] == "collect":
+        skip = False
+        for p in _exclude_esmf_hashes:
+            if _commit_dict["esmf_hash"] is not None and p.fullmatch(_commit_dict["esmf_hash"]) is not None:
+                logging.debug(f"Skipping excluded ESMF hash: {_commit_dict['esmf_hash']}")
+                skip = True
+                break
+
+        for p in _exclude_esmf_branches:
+            if _commit_dict["esmf_branch"] is not None and p.fullmatch(_commit_dict["esmf_branch"]) is not None:
+                logging.debug(f"Skipping excluded ESMF branch: {_commit_dict['esmf_branch']}")
+                skip = True
+                break
+
+        if not skip and _commit_dict["action"] == "collect":
             _collect_summary_stats(_commit_dict, machine_branch)
 
 
@@ -425,6 +439,9 @@ if __name__ == "__main__":
         Directory to store internal results database. If the DB exists in this directory it
         will be updated with the most recent results. Otherwise, a new one will be created.  
         """, required=True)
+    parser.add_argument('-c', '--config', help="""
+            Path to optional configuration YAML file to customize summarizer output.  
+            """, required=False)
     parser.add_argument('-l', '--list', help="""
             Only list the tested tags/hashes and exit.  
             """, required=False, action='store_true')
@@ -436,7 +453,7 @@ if __name__ == "__main__":
     #    'stdout' prints to the screen (default option).
     #    'html' outputs a web site
     #    """, default="stdout", required=False)
-    parser.add_argument('--output-dir', metavar="FORMAT", help="""
+    parser.add_argument('--output-dir', metavar="DIR", help="""
             Path to output directory.      
             """, default="./", required=False)
     parser.add_argument('--no-update', help="""
@@ -466,23 +483,46 @@ if __name__ == "__main__":
         logging.error(f"Database directory must already exist: {_db_path}")
         exit(1)
 
+    _exclude_esmf_hashes = []
+    _exclude_esmf_branches = []
+
+    # optionally read in configuration from YAML
+    if args["config"] is not None:
+        _config_file = os.path.abspath(args["config"])
+        if not os.path.isfile(_config_file):
+            logging.error(f"Configuration file not found: {_config_file}")
+        else:
+            logging.info(f"Using configuration file: {_config_file}")
+            with open(_config_file) as file:
+                _yaml = yaml.load(file, Loader=yaml.SafeLoader)
+                if "exclude" in _yaml:
+                    if _yaml["exclude"].get("esmf_hash") is not None:
+                        # convert to regex
+                        _exclude_esmf_hashes = list(map(
+                            lambda h: re.compile(h.replace(".", r"\.").replace("*", ".*")),
+                            _yaml["exclude"]["esmf_hash"]))
+                        logging.debug(f"Exclude ESMF hashes: {_exclude_esmf_hashes}")
+                    if _yaml["exclude"].get("esmf_branch") is not None:
+                        _exclude_esmf_branches = list(map(
+                            lambda h: re.compile(h.replace(".", r"\.").replace("*", ".*")),
+                            _yaml["exclude"]["esmf_branch"]))
+                        logging.debug(f"Exclude ESMF branches: {_exclude_esmf_branches}")
+
     dbconn = sqlite3.connect(f"{os.path.join(_db_path, 'esmf_test_summary.sqlite3')}")
     # dbconn = sqlite3.connect(":memory:")
     dbconn.row_factory = sqlite3.Row
 
-    #import cProfile
-    #pr = cProfile.Profile()
-    #pr.enable()
+    # import cProfile
+    # pr = cProfile.Profile()
+    # pr.enable()
     if not args["no_update"]:
         _init_database()
         _mach_list = _get_machine_list(_repo_path)
         for _m in _mach_list:
+            # if _m == "hera":
             _load_artifact_commits(_repo_path, _m)
-    #pr.disable()
-    #pr.print_stats(sort="cumulative")
-
-
-
+    # pr.disable()
+    # pr.print_stats(sort="cumulative")
 
     if args["list"]:
         _print_tested_hashes()
