@@ -8,7 +8,7 @@ machine:
     queue: dev
 
 test:
-  esmf_branch: [develop,fix/cygwin]
+  esmf_branch: [ develop ]
 
 matrix:
   intel:

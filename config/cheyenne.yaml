@@ -9,7 +9,7 @@ machine:
     partition: None
 
 test:
-  esmf_branch: [develop,fix/cygwin]
+  esmf_branch: [develop]
 
 matrix:
   gfortran:
