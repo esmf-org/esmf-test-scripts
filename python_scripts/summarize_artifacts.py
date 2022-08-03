@@ -214,12 +214,12 @@ def _retrieve_summary_for_esmf_hash(esmf_hash):
             STRFTIME('%m-%d %H:%M', collect_ts) as collect_ts, 
             STRFTIME('%m-%d %H:%M', build_ts) as build_ts,
             STRFTIME('%m-%d %H:%M', clone_ts) as clone_ts,
-            IFNULL(STRFTIME('%m-%d %H:%M:%S', clone_ts), STRFTIME('%m-%d %H:%M:%S', collect_ts)) as cc_ts,					
+            IFNULL(STRFTIME('%m-%d %H:%M:%S', clone_ts), STRFTIME('%m-%d %H:%M:%S', collect_ts)) || '_' || combination_id as cc_ts,
             phase, build, unit_pass, unit_fail, system_pass, system_fail, example_pass, example_fail, nuopc_pass, 
             nuopc_fail, esmf_hash, esmf_branch
         FROM result INNER JOIN combination ON result.combination_id = combination.id
         WHERE esmf_hash = ?
-        GROUP BY combination_id, cc_ts
+        GROUP BY cc_ts
         ORDER BY machine, compiler, compiler_ver, mpi, mpi_ver
         """, (esmf_hash,))
 
