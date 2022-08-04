@@ -16,8 +16,10 @@ The `test_esmf.py` script is used to create test directories and submit jobs for
 
 ```
 ./test_esmf.py --help
-usage: test_esmf.py [-h] -r ROOT [-m MACHINE] [-y YAML] [--check] [--debug] [--show-machine] [-l] [--no-submit] [--only-resubmit] [--no-artifacts]
-                    [--filter FILTER] [--throttle N]
+usage: test_esmf.py [-h] -r ROOT [-m MACHINE] [-y YAML] [--check] [--debug]
+                    [--show-machine] [-l] [--branch BRANCH] [--no-submit]
+                    [--only-resubmit] [--no-artifacts] [--filter FILTER]
+                    [--throttle N]
 
 A tool to facilitate automated and manual testing of ESMF
 
@@ -25,19 +27,32 @@ optional arguments:
   -h, --help            show this help message and exit
   -r ROOT, --root ROOT  Root directory to use for testing (scratch space)
   -m MACHINE, --machine MACHINE
-                        Name of this machine. Used to find a config YAML file under ./configs/<machine>.yaml
-  -y YAML, --yaml YAML  Explicit path to YAML config file. Overrides --machine if present.
+                        Name of this machine. Used to find a config YAML file
+                        under ./configs/<machine>.yaml
+  -y YAML, --yaml YAML  Explicit path to YAML config file. Overrides --machine
+                        if present.
   --check               Run some checks
   --debug               Output debug messages
   --show-machine        Print out machine attributes and exit
-  -l, --list            List the test combinations in the YAML for this machine and exit
-  --no-submit           Create test directories and batch scripts but do not submit any jobs
-  --only-resubmit       Assume test directories and scripts are already present and only resubmit build/test jobs
+  -l, --list            List the test combinations in the YAML for this
+                        machine and exit
+  --branch BRANCH       Ignore branches in the YAML and use these branches
+                        instead. Accepts a comma separated list, e.g.,
+                        --branch develop,feature/X,fork:feature_Z
+  --no-submit           Create test directories and batch scripts but do not
+                        submit any jobs
+  --only-resubmit       Assume test directories and scripts are already
+                        present and only resubmit build/test jobs
   --no-artifacts        Do not copy or push test artifacts.
-  --filter FILTER       Limit combinations to test. Use -l (or --list) to get a list of combinations with indexes. The format is a comma separated list,
-                        e.g. --filter 1,5,6,11 will only include combinations 1, 5, 6, and 11 in the testing.
-  --throttle N          Limit the number of maximum number of active tests cases submitted to N. This option is provided to limit CPU intensity on login
-                        nodes. The script will block until all jobs have been submitted. The default is no throttling (all cases submitted).
+  --filter FILTER       Limit combinations to test. Use -l (or --list) to get
+                        a list of combinations with indexes. The format is a
+                        comma separated list, e.g. --filter 1,5,6,11 will only
+                        include combinations 1, 5, 6, and 11 in the testing.
+  --throttle N          Limit the number of maximum number of active tests
+                        cases submitted to N. This option is provided to limit
+                        CPU intensity on login nodes. The script will block
+                        until all jobs have been submitted. The default is no
+                        throttling (all cases submitted).
 ```
 
 ### Example: List all test combinations for a machine
@@ -91,6 +106,13 @@ INFO: ...PASS
  - Each combination in the matrix will have its own subdirectory under `/path/to/scratch`
 ```
 ./test_esmf.py -r /path/to/scratch -m cheyenne
+```
+
+### Example: Override ESMF branch to test
+ - The --branch option will ignore the branches in the YAML file and use the command line branch(es) intead.
+   This is helpful for manual testing of an ESMF branch.
+```
+./test_esmf.py -r /path/to/scratch -m cheyenne --branch feature/mybranch1,feature/mybranch2
 ```
 
 ### Example: Only submit jobs for some combinations
