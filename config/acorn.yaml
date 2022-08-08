@@ -28,23 +28,18 @@ matrix:
           - ESMF_NETCDF=nc-config
         extra_commands:
           - "sed -i 's/^aprun/mpiexec/' scripts/mpirun.unicos"
-          - "sed -i 's/lmpi++/lfmpich/' build_config/Linux.intel.default/build_rules.mk"
         extra_module: PrgEnv-intel cray-pals craype cmake
         unload_module: "PrgEnv-cray PrgEnv-gnu"
   gfortran:
     versions:
       10.3.0:
         compiler: gcc/10.3.0
-        netcdf: netcdf
-        hdf5: hdf5
+        netcdf: None
         mpi:
           mpi:
             module: cray-mpich/8.1.7
         extra_env_vars:
           - ESMF_MPIRUN=mpirun.unicos
-          - ESMF_F90COMPILEOPTS="-fallow-argument-mismatch -fallow-invalid-boz"
-          - ESMF_CXXLINKOPTS="-fPIC -lnetcdff -lnetcdff"
-          - ESMF_NETCDF=nc-config
         extra_commands:
           - "sed -i 's/aprun/mpiexec/' scripts/mpirun.unicos"
         extra_module: PrgEnv-gnu cray-pals craype cmake
