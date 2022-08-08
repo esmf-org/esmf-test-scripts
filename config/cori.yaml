@@ -14,34 +14,34 @@ test:
 
 matrix:
   #gfortran:
-  #     test_time: "3:00:00"
-  #     versions: 
-  #         8.3.0: 
-  #         compiler: gcc/8.3.0
-  #         netcdf: cray-netcdf/4.6.3.2
-  #         mpi:
-  #           mpiuni: 
-  #             module: None
-  #           mpi: 
-  #             module: cray-mpich/7.7.11
-  #         extra_env_vars: 
-  #           - ESMF_NETCDF_LIBS="-lnetcdff -lnetcdf"
-  #     extramodule: PrgEnv-gnu
-  #     unloadmodule: PrgEnv-intel
+  #  test_time: "3:00:00"
+  #  versions:
+  #    8.3.0:
+  #      compiler: gcc/8.3.0
+  #      netcdf: cray-netcdf/4.6.3.2
+  #      mpi:
+  #        mpiuni: 
+  #          module: None
+  #        mpi: 
+  #          module: cray-mpich/7.7.11
+  #      extra_env_vars: 
+  #        - ESMF_NETCDF_LIBS="-lnetcdff -lnetcdf"
+  #      extra_module: PrgEnv-gnu
+  #      unload_module: PrgEnv-intel
 
   intel:
-     test_time: "3:00:00"
-     versions: 
-       19.1.2: 
-         compiler: intel/19.1.2.254          
-         netcdf: cray-netcdf/4.6.3.2
-         mpi:
-           mpiuni: 
-             module: None
-           mpi: 
-             module: cray-mpich/7.7.19
-         extra_env_vars:
-             - ESMF_NETCDF_LIBS="-lnetcdf"
-             - ESMF_NETCDFF_LIBS="-lnetcdff"
-             - PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/opt/cray/pe/hdf5/1.10.5.2/INTEL/19.0/lib/pkgconfig
-     unload_module: darshan
+    test_time: "3:00:00"
+    versions: 
+      19.1.2: 
+        compiler: intel/19.1.2.254
+        netcdf: cray-netcdf/4.6.3.2
+        mpi:
+          mpiuni:
+            module: None
+          mpi: 
+            module: cray-mpich/7.7.19
+        extra_env_vars:
+          - ESMF_NETCDF_LIBS="-lnetcdf"
+          - ESMF_NETCDFF_LIBS="-lnetcdff"
+          - PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/opt/cray/pe/hdf5/1.10.5.2/INTEL/19.0/lib/pkgconfig
+        unload_module: darshan
