@@ -9,8 +9,8 @@ machine:
     tasks_per_node: 40
 
 test:
-  esmf_branch: [develop,feature/large-messages,patch/8.3.1]
-  nuopc_branch: [develop,v8.3.0,v8.3.0]
+  esmf_branch: [develop,patch/8.3.1]
+  nuopc_branch: [develop,v8.3.0]
 
 matrix:
   gfortran:

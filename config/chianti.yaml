@@ -4,7 +4,7 @@ machine:
   scheduler: None
 
 test:
-  esmf_branch: [develop,feature/large-messages]
+  esmf_branch: [develop,patch/8.3.1]
   nuopc_branch: [develop,v8.3.0]
 
 matrix:
