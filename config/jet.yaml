@@ -36,13 +36,9 @@ matrix:
     versions:
       9.2.0:
         compiler: gnu/9.2.0
-        netcdf: netcdf/4.7.2
-        hdf5: hdf5/1.10.5
         mpi:
           openmpi:
             module: openmpi/3.1.4
-            mpi_env_vars:
-              - ESMF_NETCDF_LIBS="-lnetcdff -lnetcdf -lhdf5_hl -lhdf5"
         extra_module: cmake
 
   pgi:
