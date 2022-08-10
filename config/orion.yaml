@@ -13,6 +13,7 @@ test:
 
 matrix:
   intel:
+    test_time: "4:00:00"
     versions:
       2020.2:
         compiler: intel/2020.2
@@ -47,7 +48,7 @@ matrix:
   #          openmpi: openmpi/4.0.4
   pgi:
     build_time: "2:00:00"
-    test_time: "2:30:00"
+    test_time: "4:00:00"
     versions:
       2019:
         compiler: pgi/2019
