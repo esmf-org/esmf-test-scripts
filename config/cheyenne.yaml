@@ -9,7 +9,8 @@ machine:
     partition: None
 
 test:
-  esmf_branch: [develop]
+  esmf_branch: [develop,patch/8.3.1]
+  nuopc_branch: [develop,v8.3.0]
 
 matrix:
   gfortran:
@@ -37,7 +38,6 @@ matrix:
             module: openmpi/4.0.5
           mpt:
             module: mpt/2.23
-    extra_module: cmake
   intel:
     build_time: "2:00:00"
     test_time: "3:00:00"
@@ -54,7 +54,6 @@ matrix:
             module: openmpi/3.1.4
           intelmpi:
             module: impi/2018.4.274
-    extra_module: python cmake
   nvhpc:
     test_time: "3:00:00"
     versions:
@@ -64,4 +63,3 @@ matrix:
         mpi:
           mpt:
             module: mpt/2.25
-    extra_module: python cmake

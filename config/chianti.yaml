@@ -4,7 +4,8 @@ machine:
   scheduler: None
 
 test:
-  esmf_branch: [develop]
+  esmf_branch: [develop,patch/8.3.1]
+  nuopc_branch: [develop,v8.3.0]
 
 matrix:
   intel:
@@ -29,4 +30,4 @@ matrix:
            extra_env_vars:
               - ESMF_NETCDF=nc-config
               - ESMF_NFCONFIG=nf-config
-       extra_module: python
+           extra_module: python

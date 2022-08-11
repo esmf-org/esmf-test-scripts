@@ -46,8 +46,8 @@ class Matrix:
                             combo.unload_module = versions[compiler_version]["unload_module"]
                         if "extra_module" in versions[compiler_version]:
                             combo.extra_module = versions[compiler_version]["extra_module"]
-                        if "mpi_env_vars" in mpi:
-                            combo.mpi_env_vars = mpi["mpi_env_vars"]
+                        if "mpi_env_vars" in mpis[mpi]:
+                            combo.mpi_env_vars = mpis[mpi]["mpi_env_vars"]
                         if "hdf5" in versions[compiler_version]:
                             combo.hdf5_module = versions[compiler_version]["hdf5"]
                         if "netcdf-fortran" in versions[compiler_version]:
