@@ -22,6 +22,15 @@ ResultRecord = namedtuple('ResultRecord',
                           'nuopc_fail')
 
 
+def _db_is_initialized():
+    cur = dbconn.cursor()
+    cur.execute(
+        """
+        SELECT name FROM sqlite_master WHERE type='table' AND name='combination'
+        """)
+    return cur.fetchone() is not None
+
+
 def _init_database():
     cur = dbconn.cursor()
 
@@ -70,6 +79,7 @@ def _init_database():
     dbconn.commit()
 
 
+
 def _insert_combo(combo: ComboRecord):
     cur = dbconn.cursor()
     cur.execute(
@@ -107,6 +117,15 @@ def _insert_result(result: ResultRecord):
     dbconn.commit()
     # logging.debug(f" INSERTED ID = {cur.lastrowid}")
     return cur.lastrowid
+
+
+def _hash_exists(artifacts_hash):
+    cur = dbconn.cursor()
+    cur.execute(
+        """
+        SELECT hash FROM result WHERE hash = ?
+        """, (artifacts_hash,))
+    return cur.fetchone() is not None
 
 
 def _retrieve_all_combinations():
@@ -358,6 +377,10 @@ def _load_artifact_commits(repo, machine_branch):
                         }
         # logging.debug(f"_commit_dict = {_commit_dict}")
 
+        if _hash_exists(_commit_dict["hash"]):
+            logging.debug(f"Skipping existing artifacts commit: {_commit_dict['hash']}")
+            continue
+
         skip = False
         for p in _exclude_esmf_hashes:
             if _commit_dict["esmf_hash"] is not None and p.fullmatch(_commit_dict["esmf_hash"]) is not None:
@@ -436,9 +459,9 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='A tool to summarize ESMF test artifacts')
     parser.add_argument('-a', '--artifacts-repo', help='Location of artifacts', required=True)
     parser.add_argument('-d', '--database-root', help="""
-        Directory to store internal results database. If the DB exists in this directory it
-        will be updated with the most recent results. Otherwise, a new one will be created.  
-        """, required=True)
+            Directory to store internal results database. If the DB exists in this directory it
+            will be updated with the most recent results. Otherwise, a new one will be created.  
+            """, required=True)
     parser.add_argument('-c', '--config', help="""
             Path to optional configuration YAML file to customize summarizer output.  
             """, required=False)
@@ -446,9 +469,9 @@ if __name__ == "__main__":
             Only list the tested tags/hashes and exit.  
             """, required=False, action='store_true')
     parser.add_argument('-t', '--tag', help="""
-        Generate test summary for the given tag (or hash) of ESMF.
-        Without this, results will include all tested tags/hashes. 
-        """, required=False)
+            Generate test summary for the given tag (or hash) of ESMF.
+            Without this, results will include all tested tags/hashes. 
+            """, required=False)
     # parser.add_argument('-o', '--output-format', metavar="FORMAT", help="""
     #    'stdout' prints to the screen (default option).
     #    'html' outputs a web site
@@ -457,12 +480,17 @@ if __name__ == "__main__":
             Path to output directory.      
             """, default="./", required=False)
     parser.add_argument('--no-update', help="""
-        By default, the latest test artifacts are pulled in. This option skips that step
-        and only queries the test results already stored in the internal database.
-        """, required=False, action="store_true")
+            By default, the latest test artifacts are pulled in. This option skips that step
+            and only queries the test results already stored in the internal database.
+            """, required=False, action="store_true")
+    parser.add_argument('--refresh', help="""
+            Delete the internal database and re-process the full artifacts history.  If not
+            provided, the default behavior is to only process commits to the artifacts repository
+            that do not already exist in the database.
+            """, required=False, action="store_true")
     parser.add_argument('--debug', help="""
-        Turn on verbose debugging output.
-        """, required=False, action="store_true")
+            Turn on verbose debugging output.
+            """, required=False, action="store_true")
 
     args = vars(parser.parse_args())
 
@@ -515,11 +543,13 @@ if __name__ == "__main__":
     # import cProfile
     # pr = cProfile.Profile()
     # pr.enable()
-    if not args["no_update"]:
+    if args["refresh"] or not _db_is_initialized():
+        logging.debug("Initializing database")
         _init_database()
+
+    if not args["no_update"]:
         _mach_list = _get_machine_list(_repo_path)
         for _m in _mach_list:
-            # if _m == "hera":
             _load_artifact_commits(_repo_path, _m)
     # pr.disable()
     # pr.print_stats(sort="cumulative")
