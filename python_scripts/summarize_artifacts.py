@@ -513,6 +513,7 @@ if __name__ == "__main__":
 
     _exclude_esmf_hashes = []
     _exclude_esmf_branches = []
+    _exclude_machines = []
 
     # optionally read in configuration from YAML
     if args["config"] is not None:
@@ -535,6 +536,11 @@ if __name__ == "__main__":
                             lambda h: re.compile(h.replace(".", r"\.").replace("*", ".*")),
                             _yaml["exclude"]["esmf_branch"]))
                         logging.debug(f"Exclude ESMF branches: {_exclude_esmf_branches}")
+                    if _yaml["exclude"].get("machine") is not None:
+                        _exclude_machines = list(map(
+                            lambda h: re.compile(h.replace(".", r"\.").replace("*", ".*")),
+                            _yaml["exclude"]["machine"]))
+                        logging.debug(f"Exclude machines: {_exclude_machines}")
 
     dbconn = sqlite3.connect(f"{os.path.join(_db_path, 'esmf_test_summary.sqlite3')}")
     # dbconn = sqlite3.connect(":memory:")
@@ -550,7 +556,14 @@ if __name__ == "__main__":
     if not args["no_update"]:
         _mach_list = _get_machine_list(_repo_path)
         for _m in _mach_list:
-            _load_artifact_commits(_repo_path, _m)
+            skip = False
+            for p in _exclude_machines:
+                if p.fullmatch(_m) is not None:
+                    logging.debug(f"Skipping excluded machine: {_m}")
+                    skip = True
+                    break
+            if not skip:
+                _load_artifact_commits(_repo_path, _m)
     # pr.disable()
     # pr.print_stats(sort="cumulative")
 
