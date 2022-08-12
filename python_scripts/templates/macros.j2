@@ -1,0 +1,48 @@
+{% macro hash_link(row, text=None) -%}
+<a href="{{artifacts_base_url}}/tree/{{row.hash}}/{{row.esmf_branch}}/{{row.compiler}}/{{row.compiler_ver}}/{{row.bopt}}/{{row.mpi}}/{{row.mpi_ver }}" target="_blank">
+{% if text is none %}
+{{row.hash[0:7]}}
+{% else %}
+{{text}}
+{% endif %}
+</a>
+{%- endmacro %}
+
+{% macro fail_count(r) -%}
+{{ (r.unit_fail if r.unit_fail is not none else 0) +
+   (r.system_fail if r.system_fail is not none else 0) +
+   (r.example_fail if r.example_fail is not none else 0) +
+   (r.nuopc_fail if r.nuopc_fail is not none else 0) }}
+{%- endmacro %}
+
+{% macro result_cls(r) -%}
+{% if r.build == "FAIL" -%}
+table-danger
+{% elif r.build == "PASS" -%}
+  {% if r.unit_pass and r.unit_pass > 0 and r.unit_fail == 0
+    and r.system_pass and r.system_pass > 0 and r.system_fail == 0
+    and r.example_pass and r.example_pass > 0 and r.example_fail == 0
+    and ((r.nuopc_pass and r.nuopc_pass > 0 and r.nuopc_fail == 0) or r.mpi=='mpiuni') -%}
+  table-success
+  {% else -%}
+  table-warning
+  {% endif -%}
+{%- endif %}
+{%- endmacro %}
+
+{% macro result_cls_pf(pass, fail, ignore=False) -%}
+{% if (pass and pass > 0 and fail == 0) or ignore -%}
+table-success
+{% else -%}
+table-danger
+{% endif -%}
+{%- endmacro %}
+
+{% macro result_cls_build(build) -%}
+{% if build == "PASS" -%}
+table-success
+{% else -%}
+table-danger
+{% endif -%}
+{%- endmacro %}
+

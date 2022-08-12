@@ -1,0 +1,22 @@
+machine:
+  name: rockylaptop
+  cores_per_node: 4
+  scheduler: None
+
+test:
+  esmf_branch: [develop]
+#  nuopc_branch: [develop]
+#  filter:
+#    compiler: [gfortran]
+
+matrix:
+  gfortran:
+    versions:
+      10.3.0:
+        extra_commands:
+          - "export PATH=/home/rocky/esmfdev/cmake-3.22.1-install/bin:$PATH"
+        compiler: gfortran-10.3.0
+        netcdf: netcdf-4.7.4
+        mpi:
+          openmpi:
+            module: openmpi-4.1.0

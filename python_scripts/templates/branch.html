@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% macro result_cell(r) -%}
+<td class="{{macros.result_cls(r)}} text-center" data-bs-toggle="popover" data-bs-html="true" data-bs-trigger="hover" data-bs-placement="auto" data-bs-content="{{result_detail(r)}}">
+{% if r.hash -%}{{macros.hash_link(r, macros.fail_count(r))}}{% endif %}
+</td>
+{%- endmacro %}
+
+{% macro result_detail(r) -%}
+<ul>
+  <li>Build: {{r.build}}</li>
+  <li>UTests: {{r.unit_pass}}/{{r.unit_fail}}</li>
+  <li>STests: {{r.system_pass}}/{{r.system_fail}}</li>
+  <li>ETests: {{r.example_pass}}/{{r.example_fail}}</li>
+  <li>NUOPC: {{r.nuopc_pass}}/{{r.nuopc_fail}}</li>
+  <li>Clone Time: {{r.clone_ts}}</li>
+  <li>Build time: {{r.build_ts}}</li>
+  <li>Collect time: {{r.collect_ts}}</li>
+  <li>Phase: {{r.phase}}</li>
+</ul>
+{%- endmacro %}
+
+{% block head %}
+    {{ super() }}
+    <script>
+        $(document).ready(function () {
+            $('#results').DataTable({
+                paging: false
+            });
+            $('[data-bs-toggle="popover"]').popover();
+        });
+    </script>
+{% endblock %}
+
+{% block header %}
+    <h3 class="mb-2">ESMF Branch: {{branch}}</h3><p><a href="../index.html">Top</a></p>
+{% endblock %}
+
+{% block content %}
+  <table id="results" class="table table-bordered table-hover text-nowrap">
+    <thead class="table-light">
+    <tr>
+      <th colspan="9" class="text-center">Combination</th>
+      <th colspan="{{(hashes|length)}}" class="text-center">ESMF Tested Hash</th>
+    </tr>
+    <tr>
+      <th>Combo No.</th>
+      <th>Machine</th>
+      <th>OS</th>
+      <th>Compiler</th>
+      <th>Version</th>
+      <th>MPI</th>
+      <th>Version</th>
+      <th>BOPT</th>
+      <th>NetCDF</th>
+      {# for n in range(3) #}
+      {% for h in hashes %}
+      <th><a href="{{h.esmf_hash}}.html">{{h.esmf_hash}}</a></th>
+      {% endfor %}
+      {# endfor #}
+    </tr>
+    </thead>
+    <tbody>
+    {% for c in combos %}
+      <tr>
+        <td><a href="../combos/{{c.id}}.html">{{c.id}}</a></td>
+        <td>{{c.machine}}</td>
+        <td>{{c.os}}</td>
+        <td>{{c.compiler}}</td>
+        <td>{{c.compiler_ver}}</td>
+        <td>{{c.mpi}}</td>
+        <td>{{c.mpi_ver}}</td>
+        <td>{{c.bopt}}</td>
+        <td>{{c.netcdf}}</td>
+        {# for n in range(3) #}
+        {% set comboloop = loop %}
+        {% for r in result_rows[comboloop.index0] %}
+        {{ result_cell(r) }}
+        {% endfor %}
+        {# endfor #}
+    {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

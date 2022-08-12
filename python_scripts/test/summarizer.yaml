@@ -1,0 +1,20 @@
+exclude:
+  machine:
+    - acorn
+    - hera
+    - jet
+    - orion
+    - catania
+    - cori
+    - chianti
+    - discover
+    - gaea
+    - rockylaptop
+  esmf_hash:
+    - v8.4.0b08*
+    - v8.4.0b07-*
+    - v8.3.1b01-*
+    - v8.3.0b17-30-*
+    - v8.3.0b17-27-*
+#  esmf_branch:
+#    - develop
