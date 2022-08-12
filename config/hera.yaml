@@ -52,7 +52,6 @@ matrix:
             module: impi/2018.4.274
             mpi_env_vars:
               - ESMF_MPIRUN=mpirun.srun
-            pythontest: true
         netcdf: netcdf-hdf5parallel/4.7.4
         extra_module: cmake
   pgi:
