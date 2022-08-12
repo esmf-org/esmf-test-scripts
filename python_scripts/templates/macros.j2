@@ -19,7 +19,9 @@
 {% if r.build == "FAIL" -%}
 table-danger
 {% elif r.build == "PASS" -%}
-  {% if r.unit_pass and r.unit_pass > 0 and r.unit_fail == 0
+  {% if r.phase == "build" -%}
+  pending
+  {% elif r.unit_pass and r.unit_pass > 0 and r.unit_fail == 0
     and r.system_pass and r.system_pass > 0 and r.system_fail == 0
     and r.example_pass and r.example_pass > 0 and r.example_fail == 0
     and ((r.nuopc_pass and r.nuopc_pass > 0 and r.nuopc_fail == 0) or r.mpi=='mpiuni') -%}

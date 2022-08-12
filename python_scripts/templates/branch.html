@@ -53,11 +53,9 @@
       <th>Version</th>
       <th>BOPT</th>
       <th>NetCDF</th>
-      {# for n in range(3) #}
       {% for h in hashes %}
       <th><a href="{{h.esmf_hash}}.html">{{h.esmf_hash}}</a></th>
       {% endfor %}
-      {# endfor #}
     </tr>
     </thead>
     <tbody>
@@ -72,12 +70,10 @@
         <td>{{c.mpi_ver}}</td>
         <td>{{c.bopt}}</td>
         <td>{{c.netcdf}}</td>
-        {# for n in range(3) #}
         {% set comboloop = loop %}
         {% for r in result_rows[comboloop.index0] %}
         {{ result_cell(r) }}
         {% endfor %}
-        {# endfor #}
     {% endfor %}
     </tbody>
   </table>
