@@ -1,3 +1,8 @@
+##
+## This file is only for local testing of the summarizer itself.
+## To modify the results of the live test summary tables, modify the file:
+## https://github.com/esmf-org/esmf-test-summary/blob/main/summarizer.yaml
+##
 exclude:
   machine:
     - acorn
