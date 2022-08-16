@@ -6,7 +6,6 @@
 exclude:
   machine:
     - acorn
-    - hera
     - jet
     - orion
     - catania

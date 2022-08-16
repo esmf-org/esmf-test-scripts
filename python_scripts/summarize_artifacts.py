@@ -79,7 +79,6 @@ def _init_database():
     dbconn.commit()
 
 
-
 def _insert_combo(combo: ComboRecord):
     cur = dbconn.cursor()
     cur.execute(
@@ -132,7 +131,8 @@ def _retrieve_all_combinations():
     cur = dbconn.cursor()
     cur.execute(
         """
-        SELECT combination.*,           
+        SELECT combination.*,
+           machine || '_' || os || '_' || compiler || '_' || compiler_ver || '_' || mpi || '_' || mpi_ver || '_' || netcdf || '_' || bopt AS combo_link,     
            (SELECT STRFTIME('%m-%d %H:%M', MAX(collect_ts)) FROM result WHERE result.combination_id = combination.id) AS last_reported
         FROM combination
         ORDER BY machine, compiler, compiler_ver, mpi, mpi_ver
@@ -230,6 +230,7 @@ def _retrieve_summary_for_esmf_hash(esmf_hash):
     cur.execute(
         """
         SELECT combination_id, hash, machine, os,   compiler, compiler_ver, mpi, mpi_ver, bopt, netcdf, 
+            machine || '_' || os || '_' || compiler || '_' || compiler_ver || '_' || mpi || '_' || mpi_ver || '_' || netcdf || '_' || bopt AS combo_link,
             STRFTIME('%m-%d %H:%M', collect_ts) as collect_ts, 
             STRFTIME('%m-%d %H:%M', build_ts) as build_ts,
             STRFTIME('%m-%d %H:%M', clone_ts) as clone_ts,
@@ -607,8 +608,8 @@ if __name__ == "__main__":
 
     _combos = _retrieve_all_combinations()
     for _c in _combos:
-        _outdir = os.path.join(args['output_dir'], "combos")
-        _filename = os.path.join(_outdir, str(_c["id"]) + ".html")
+        _outdir = os.path.join(args["output_dir"], "combos")
+        _filename = os.path.join(_outdir, str(_c["combo_link"]) + ".html")
         _format_combo_summary_html(combo=_c, filename=_filename)
 
     _format_branch_list_html(filename=os.path.join(args["output_dir"], "index.html"))

@@ -40,7 +40,7 @@
     <tbody>
     {% for r in result_rows %}
     <tr>
-      <td><a href="../combos/{{r.combination_id}}.html">{{r.combination_id}}</a></td>
+      <td><a href="../combos/{{ r.combo_link }}.html">{{r.combination_id}}</a></td>
       <td>{{r.machine}}</td>
       <td>{{r.os}}</td>
       <td>{{r.compiler}}/{{r.compiler_ver}}</td>
