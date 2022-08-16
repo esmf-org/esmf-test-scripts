@@ -25,7 +25,8 @@
     <script>
         $(document).ready(function () {
             $('#results').DataTable({
-                paging: false
+                paging: false,
+                order: [[1, 'asc'], [3, 'asc'], [4, 'asc'], [5, 'asc'], [6, 'asc']],
             });
             $('[data-bs-toggle="popover"]').popover();
         });

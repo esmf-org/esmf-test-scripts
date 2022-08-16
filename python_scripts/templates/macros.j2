@@ -9,10 +9,14 @@
 {%- endmacro %}
 
 {% macro fail_count(r) -%}
+{% if r.phase == "build" -%}
+?
+{% else -%}
 {{ (r.unit_fail if r.unit_fail is not none else 0) +
    (r.system_fail if r.system_fail is not none else 0) +
    (r.example_fail if r.example_fail is not none else 0) +
    (r.nuopc_fail if r.nuopc_fail is not none else 0) }}
+{% endif -%}
 {%- endmacro %}
 
 {% macro result_cls(r) -%}
@@ -20,7 +24,7 @@
 table-danger
 {% elif r.build == "PASS" -%}
   {% if r.phase == "build" -%}
-  pending
+  table-primary
   {% elif r.unit_pass and r.unit_pass > 0 and r.unit_fail == 0
     and r.system_pass and r.system_pass > 0 and r.system_fail == 0
     and r.example_pass and r.example_pass > 0 and r.example_fail == 0
