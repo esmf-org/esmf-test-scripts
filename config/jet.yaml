@@ -9,7 +9,7 @@ machine:
 
 test:
   esmf_branch: [develop,patch/8.3.1]
-  nuopc_branch: [develop,v8.3.0]
+  nuopc_branch: [develop,patch/8.3.1]
 
 matrix:
   intel:
@@ -36,6 +36,7 @@ matrix:
     versions:
       9.2.0:
         compiler: gnu/9.2.0
+        netcdf: None
         mpi:
           openmpi:
             module: openmpi/3.1.4
