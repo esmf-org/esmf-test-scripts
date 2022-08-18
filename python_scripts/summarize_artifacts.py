@@ -140,6 +140,21 @@ def _retrieve_all_combinations():
     return cur.fetchall()
 
 
+# regular expression to match long form of git tags
+re_git_tag = re.compile(r"([^-]+-)(\d+)(-g.+)")
+
+
+# pads long form git tags with zeros to facilitate correct sorting
+# e.g., v8.4.0b09-6-gb967350 --> v8.4.0b09-0006-gb967350
+def _padded_tag(row):
+    _m = re_git_tag.fullmatch(row["esmf_hash"])
+    if _m is not None:
+        _tag = _m.group(1) + f"{int(_m.group(2)):04d}" + _m.group(3)
+        return _tag
+    else:
+        return row["esmf_hash"]
+
+
 def _retrieve_tested_hashes(branch=None):
     if branch is not None:
         _where = "WHERE esmf_branch = ?"
@@ -160,7 +175,10 @@ def _retrieve_tested_hashes(branch=None):
         GROUP BY esmf_branch, esmf_hash
         ORDER BY esmf_hash DESC
         """, _params)
-    return cur.fetchall()
+
+    _rows = cur.fetchall()
+    _rows.sort(key=_padded_tag, reverse=True)
+    return _rows
 
 
 def _retrieve_tested_branches():
@@ -221,7 +239,10 @@ def _retrieve_summary_by_branch(combo_id, branch):
                         AND result.combination_id = R.combination_id)                    
         ORDER BY esmf_hash DESC
         """, (combo_id, branch))
-    return cur.fetchall()
+
+    _rows = cur.fetchall()
+    _rows.sort(key=_padded_tag, reverse=True)
+    return _rows
 
 
 def _retrieve_summary_for_esmf_hash(esmf_hash):
