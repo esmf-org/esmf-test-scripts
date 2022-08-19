@@ -42,7 +42,6 @@ class ESMFTest:
         self.no_submit = no_submit
         self.only_resubmit = only_resubmit
         self.reclone = False
-        self.bopts = ["O", "g"]
         self.retries = 3   # how many times to retry setting up a test case
         self.throttle = 999
         if throttle is not None:
@@ -56,7 +55,7 @@ class ESMFTest:
             if self.machine.name != machine_name:
                 raise RuntimeError("Machine name in YAML must match machine name passed as command line argument.")
                 return
-            self.matrix = Matrix(_yaml["matrix"], bopts=self.bopts, module_path=self.machine.module_path)
+            self.matrix = Matrix(_yaml["matrix"], module_path=self.machine.module_path)
             if "test" not in _yaml:
                 raise RuntimeError("YAML must have a 'test' section.")
             self.esmf_branch = _yaml["test"]["esmf_branch"]
