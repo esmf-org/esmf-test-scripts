@@ -29,6 +29,11 @@
                 order: [[1, 'asc'], [3, 'asc'], [4, 'asc'], [5, 'asc'], [6, 'asc']],
             });
             $('[data-bs-toggle="popover"]').popover();
+
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+              return new bootstrap.Tooltip(tooltipTriggerEl)
+            });
         });
     </script>
 {% endblock %}
@@ -55,7 +60,13 @@
       <th>BOPT</th>
       <th>NetCDF</th>
       {% for h in hashes %}
-      <th><a href="{{h.esmf_hash}}.html">{{h.esmf_hash}}</a></th>
+      <th>
+        <a href="{{h.esmf_hash}}.html"
+             {%- if h.esmf_hash in esmf_commit_msgs -%}
+              data-bs-toggle="popover" data-bs-html="true" data-bs-trigger="hover" data-bs-placement="auto" data-bs-content="{{esmf_commit_msgs[h.esmf_hash]}}"
+             {% endif %}>{{h.esmf_hash}}
+        </a>
+      </th>
       {% endfor %}
     </tr>
     </thead>

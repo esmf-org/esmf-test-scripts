@@ -290,7 +290,13 @@ def _print_summary_for_esmf_hash(esmf_hash):
 
 
 def _format_branch_summary_html(branch, filename):
+
     _hashes = _retrieve_tested_hashes(branch=branch)
+    _esmf_commit_msgs = {}
+    if _esmf_repo is not None:
+        for _h in _hashes:
+            _esmf_commit_msgs[_h["esmf_hash"]] = _get_esmf_commit_message(_h["esmf_hash"])
+
     _combos = _retrieve_all_combinations()
 
     _result_rows = []
@@ -310,6 +316,7 @@ def _format_branch_summary_html(branch, filename):
     with open(filename, "w") as _out:
         _out.write(template.render(branch=branch,
                                    hashes=_hashes,
+                                   esmf_commit_msgs=_esmf_commit_msgs,
                                    combos=_combos,
                                    result_rows=_result_rows))
     logging.info(f"Generated file: {os.path.abspath(filename)}")
@@ -328,8 +335,9 @@ def _format_combo_summary_html(combo, filename):
 def _format_hash_html(_hash, _branch, filename):
     _result_rows = _retrieve_summary_for_esmf_hash(_hash)
     template = template_env.get_template("hash.html")
+    _esmf_commit_msg = _get_esmf_commit_message(_hash)
     with open(filename, "w") as _out:
-        _out.write(template.render(hash=_hash, branch=_branch, result_rows=_result_rows))
+        _out.write(template.render(hash=_hash, branch=_branch, esmf_commit_msg=_esmf_commit_msg, result_rows=_result_rows))
     logging.info(f"Generated file: {os.path.abspath(filename)}")
 
 
@@ -374,6 +382,14 @@ def _get_artifacts_base_url(repo):
     else:
         _parts = _extract(r"git@github.com:([^/]+)/(\S+)\.git", _url)
     return f"https://github.com/{_parts[0]}/{_parts[1]}"
+
+
+def _get_esmf_commit_message(_hash):
+    if _esmf_repo is not None:
+        cmd.chdir(_esmf_repo)
+        logging.debug(f"Getting commit message for hash {_hash}")
+        return cmd.runcmd(f"git show --format='%s (%an, %ad)' --no-patch {_hash}")
+    return None
 
 
 def _load_artifact_commits(repo, machine_branch):
@@ -484,16 +500,20 @@ if __name__ == "__main__":
             Directory to store internal results database. If the DB exists in this directory it
             will be updated with the most recent results. Otherwise, a new one will be created.  
             """, required=True)
+    parser.add_argument('-e', '--esmf-repo', help="""
+            Path to clone of the ESMF repository. If provided, summary tables will be annotated 
+            with commit messages, authors, and dates from each hash.
+            """, required=False)
     parser.add_argument('-c', '--config', help="""
             Path to optional configuration YAML file to customize summarizer output.  
             """, required=False)
     parser.add_argument('-l', '--list', help="""
             Only list the tested tags/hashes and exit.  
             """, required=False, action='store_true')
-    parser.add_argument('-t', '--tag', help="""
-            Generate test summary for the given tag (or hash) of ESMF.
-            Without this, results will include all tested tags/hashes. 
-            """, required=False)
+    #parser.add_argument('-t', '--tag', help="""
+    #        Generate test summary for the given tag (or hash) of ESMF.
+    #        Without this, results will include all tested tags/hashes.
+    #        """, required=False)
     # parser.add_argument('-o', '--output-format', metavar="FORMAT", help="""
     #    'stdout' prints to the screen (default option).
     #    'html' outputs a web site
@@ -613,6 +633,16 @@ if __name__ == "__main__":
     _artifacts_base_url = _get_artifacts_base_url(_repo_path)
     logging.debug(f"Artifacts base URL: {_artifacts_base_url}")
     template_env.globals["artifacts_base_url"] = _artifacts_base_url
+
+    _esmf_repo = None
+    if args["esmf_repo"]:
+        if not os.path.isdir(args["esmf_repo"]):
+            logging.error(f"ESMF repository not found at: {args['esmf_repo']}")
+        else:
+            _esmf_repo = args["esmf_repo"]
+            logging.info(f"Fetching ESMF repository: {args['esmf_repo']}")
+            cmd.chdir(_esmf_repo)
+            cmd.runcmd("git fetch")
 
     _branches = _retrieve_tested_branches()
     for _b in _branches:

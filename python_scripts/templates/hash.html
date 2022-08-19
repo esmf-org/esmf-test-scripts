@@ -12,7 +12,9 @@
 {% endblock %}
 
 {% block header %}
-    <h3 class="mb-2">ESMF Hash: {{hash}} (branch: <a href="index.html">{{branch}}</a>)</h3><p><a href="../index.html">Top</a></p>
+    <h3 class="mb-2">ESMF Hash: {{hash}} (branch: <a href="index.html">{{branch}}</a>)</h3>
+    {% if esmf_commit_msg %}<p>{{esmf_commit_msg}}</p> {% endif %}
+    <p><a href="../index.html">Top</a></p>
 {% endblock %}
 
 {% block content %}
