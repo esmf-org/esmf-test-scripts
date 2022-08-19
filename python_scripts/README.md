@@ -3,6 +3,19 @@
 A set of Python scripts to facilitate testing of ESMF across many platforms.
 Includes options for running the tests, collecting results, and summarizing them.
 
+
+## Adding a new machine to nightly testing
+
+The steps are as follows:
+  1.  Clone this repository on the machine.
+  2.  Add a config YAML file in this repo under `esmf-test-scripts/config/<machine>.yaml`.
+      The recommended approach is to copy an existing YAML config file and modify as needed.
+  3.  Run the `test_esmf.py --check` option (see below) using your YAML file.
+  4.  Run some manual ESMF tests using the `--filter` option (see below).
+  5.  When all is good, add a run script under `esmf-test-scripts/runscripts/`
+      (again, start with an existing one as a template) and put this script under a cron job.
+
+
 ## Run test suite and collect artifacts (test_esmf.py)
 
 The `test_esmf.py` script is used to create test directories and submit jobs for building/testing ESMF on HPC platforms.
