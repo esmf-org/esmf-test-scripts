@@ -168,3 +168,78 @@ cd /path/to/scratch/gfortran_10.3.0_openmpi_g_develop
 
 ## Summarize results (summarize_artifacts.py)
 
+The summarizer script is used to generate a set of HTML tables for easily viewing the status
+of a large number of test results coming in from many platforms.
+
+**Note: This script is run automatically so most developers typically do not need to run
+this manually, unless developing the summarizer script itself.**
+
+  - Test results are available at:  http://earthsystemmodeling.org/esmf-test-summary/
+  - This site is backed by the repo: https://github.com/esmf-org/esmf-test-summary/
+
+### Usage
+
+```
+./summarizer_artifacts.py --help
+
+usage: summarize_artifacts.py [-h] -a ARTIFACTS_REPO -d DATABASE_ROOT
+                              [-e ESMF_REPO] [-c CONFIG] [-l]
+                              [--output-dir DIR] [--no-update] [--refresh]
+                              [--debug]
+
+A tool to summarize ESMF test artifacts
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -a ARTIFACTS_REPO, --artifacts-repo ARTIFACTS_REPO
+                        Location of artifacts
+  -d DATABASE_ROOT, --database-root DATABASE_ROOT
+                        Directory to store internal results database. If the
+                        DB exists in this directory it will be updated with
+                        the most recent results. Otherwise, a new one will be
+                        created.
+  -e ESMF_REPO, --esmf-repo ESMF_REPO
+                        Path to clone of the ESMF repository. If provided,
+                        summary tables will be annotated with commit messages,
+                        authors, and dates from each hash.
+  -c CONFIG, --config CONFIG
+                        Path to optional configuration YAML file to customize
+                        summarizer output.
+  -l, --list            Only list the tested tags/hashes and exit.
+  --output-dir DIR      Path to output directory.
+  --no-update           By default, the latest test artifacts are pulled in.
+                        This option skips that step and only queries the test
+                        results already stored in the internal database.
+  --refresh             Delete the internal database and re-process the full
+                        artifacts history. If not provided, the default
+                        behavior is to only process commits to the artifacts
+                        repository that do not already exist in the database.
+  --debug               Turn on verbose debugging output.
+
+```
+
+### Filtering Summary Tables
+
+A configuration file can be provided that allows you to filter the results shown in the
+summary table by machine, ESMF hash, and/or ESMF branch.  This is helpful to reduce 
+clutter in the test summary tables as older branches are merged and are no longer relevant.
+
+The production summarizer.yaml file is located in the root directory of the
+[esmf-test-summary](https://github.com/esmf-org/esmf-test-summary/) repository on GitHub.
+
+The format of the summary config file is:
+
+```yaml
+exclude:
+  esmf_hash:
+    - v8.4.0b09-*
+    - v8.4.0b08*
+    - v8.4.0b07-*
+  machine:
+    - hera
+    - cheyenne
+  esmf_branch:
+    - feature/already_merged
+    - feature/major_upgrade
+```
+
