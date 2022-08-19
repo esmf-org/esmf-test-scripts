@@ -75,6 +75,16 @@ def _copy_test_artifacts():
         cmd.runcmd(f"echo '{_ts}' > {_out}")
         cmd.runcmd(f"cat {_f} >> {_out}")
 
+    _out_dir = os.path.join(_artifacts_dir, "nuopc")
+    cmd.runcmd(f"mkdir -p {_out_dir}")
+
+    _artifacts_list = glob.glob(f"{_test_dir}/nuopc-app-prototypes/NUOPC-PROTO-RESULTS/*.Log")
+    _artifacts_list.extend(glob.glob(f"{_test_dir}/nuopc-app-prototypes/NUOPC-PROTO-RESULTS/*.stdout"))
+    for _f in _artifacts_list:
+        _out = os.path.join(_out_dir, os.path.basename(_f))
+        cmd.runcmd(f"echo '{_ts}' > {_out}")
+        cmd.runcmd(f"cat {_f} >> {_out}")
+
     _out_dir = os.path.join(_artifacts_dir, "lib")
     cmd.runcmd(f"mkdir -p {_out_dir}")
 
