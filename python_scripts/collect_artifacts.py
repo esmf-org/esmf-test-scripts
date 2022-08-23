@@ -192,11 +192,11 @@ def _create_summary():
     _esmpy_test_result = "NONE"
     if os.path.isfile(_esmpy_test_log):
         _esmpy_out = cmd.runcmd_no_err(f"tail -n 1 {_esmpy_test_log}")
-        _esmpy_pass = _extract(r"(\d+) passed", _esmpy_out, "NONE")
-        _esmpy_fail = _extract(r"(\d+) failed", _esmpy_out, "NONE")
-        _esmpy_skip = _extract(r"(\d+) skipped", _esmpy_out, "NONE")
-        _esmpy_xfail = _extract(r"(\d+) xfailed", _esmpy_out, "NONE")
-        _esmpy_warn = _extract(r"(\d+) warnings", _esmpy_out, "NONE")
+        _esmpy_pass = _extract(r"(\d+) passed", _esmpy_out, "0")
+        _esmpy_fail = _extract(r"(\d+) failed", _esmpy_out, "0")
+        _esmpy_skip = _extract(r"(\d+) skipped", _esmpy_out, "0")
+        _esmpy_xfail = _extract(r"(\d+) xfailed", _esmpy_out, "0")
+        _esmpy_warn = _extract(r"(\d+) warnings", _esmpy_out, "0")
         _esmpy_test_result = f"PASS {_esmpy_pass} FAIL {_esmpy_fail} SKIP {_esmpy_skip} XFAIL {_esmpy_xfail} WARN {_esmpy_warn}"
 
     with open(_summary_file, "w") as _file:
