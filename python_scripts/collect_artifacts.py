@@ -50,6 +50,8 @@ def _copy_test_artifacts():
     cmd.runcmd_no_err(f"cp module-test.log {_artifacts_out_dir}")
     cmd.runcmd_no_err(f"cp test.log {_artifacts_out_dir}")
     cmd.runcmd_no_err(f"cp nuopc.log {_artifacts_out_dir}")
+    cmd.runcmd_no_err(f"cp esmpy-install.log {_artifacts_out_dir}")
+    cmd.runcmd_no_err(f"cp esmpy-test.log {_artifacts_out_dir}")
 
     _ts = _get_build_timestamp()
     if _ts is None:
