@@ -7,14 +7,14 @@ class Matrix:
     different compiler / mpi / netcdf / bopt combinations.
     """
 
-    def __init__(self, config, bopts, module_path=None):
+    def __init__(self, config, module_path=None):
         """
         Initialize test case matrix from the YAML configuration.
           - config: the "matrix" portion of the YAML
-          - bopts: list of build opts (e.g., ['O', 'g']) to generate
           - module_path: if "module use <module_path>" is required on this machine
         """
 
+        bopts = ["O", "g"]
         self.combinations = []
 
         for compiler in config:
@@ -56,6 +56,8 @@ class Matrix:
                             combo.extra_commands = versions[compiler_version]["extra_commands"]
                         if "extra_env_vars" in versions[compiler_version]:
                             combo.extra_env_vars = versions[compiler_version]["extra_env_vars"]
+                        if "esmpy" in versions[compiler_version]:
+                            combo.python_module = versions[compiler_version]["esmpy"]["python"]
 
                         self.combinations.append(combo)
 

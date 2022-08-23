@@ -20,3 +20,5 @@ matrix:
         mpi:
           openmpi:
             module: openmpi-4.1.0
+        esmpy:
+          python: python/3.7.9

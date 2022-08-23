@@ -4,11 +4,23 @@ import argparse
 import glob
 import os
 import logging
+import re
 import time
 from datetime import datetime
 from scheduler import Scheduler
 import subprocess
 import cmd
+
+
+def _extract(regex, string, default=None):
+    _match = re.search(regex, string)
+    if _match is not None:
+        if len(_match.groups()) == 1:
+            return _match.group(1)
+        else:
+            return _match.groups()
+    else:
+        return default
 
 
 def _wait_for_job(jobid):
@@ -50,6 +62,8 @@ def _copy_test_artifacts():
     cmd.runcmd_no_err(f"cp module-test.log {_artifacts_out_dir}")
     cmd.runcmd_no_err(f"cp test.log {_artifacts_out_dir}")
     cmd.runcmd_no_err(f"cp nuopc.log {_artifacts_out_dir}")
+    cmd.runcmd_no_err(f"cp esmpy-install.log {_artifacts_out_dir}")
+    cmd.runcmd_no_err(f"cp esmpy-test.log {_artifacts_out_dir}")
 
     _ts = _get_build_timestamp()
     if _ts is None:
@@ -164,6 +178,27 @@ def _create_summary():
         _nuopc_fail = cmd.runcmd_no_err(f"grep FAIL: {_nuopc_log} | wc -l")
         _nuopc_results = f"PASS {_nuopc_pass} FAIL {_nuopc_fail}"
 
+    # ESMPy results
+    _esmpy_install_log = os.path.join(_test_dir, "esmpy-install.log")
+    _esmpy_install_result = "NONE"
+    if os.path.isfile(_esmpy_install_log):
+        _esmpy_out = cmd.runcmd_no_err(f"tail -n 20 {_esmpy_install_log}")
+        if "Successfully installed ESMPy" in _esmpy_out:
+            _esmpy_install_result = "PASS"
+        else:
+            _esmpy_install_result = "FAIL"
+
+    _esmpy_test_log = os.path.join(_test_dir, "esmpy-test.log")
+    _esmpy_test_result = "NONE"
+    if os.path.isfile(_esmpy_test_log):
+        _esmpy_out = cmd.runcmd_no_err(f"tail -n 1 {_esmpy_test_log}")
+        _esmpy_pass = _extract(r"(\d+) passed", _esmpy_out, "0")
+        _esmpy_fail = _extract(r"(\d+) failed", _esmpy_out, "0")
+        _esmpy_skip = _extract(r"(\d+) skipped", _esmpy_out, "0")
+        _esmpy_xfail = _extract(r"(\d+) xfailed", _esmpy_out, "0")
+        _esmpy_warn = _extract(r"(\d+) warnings", _esmpy_out, "0")
+        _esmpy_test_result = f"PASS {_esmpy_pass} FAIL {_esmpy_fail} SKIP {_esmpy_skip} XFAIL {_esmpy_xfail} WARN {_esmpy_warn}"
+
     with open(_summary_file, "w") as _file:
         _file.write(f"")
         _file.write(f"ESMF hash: {_get_esmf_git_hash()}\n")
@@ -181,6 +216,8 @@ def _create_summary():
         _file.write(f"system tests:\t\t{_sys_results}\n")
         _file.write(f"example tests:\t\t{_examples_results}\n")
         _file.write(f"nuopc tests:\t\t{_nuopc_results}\n")
+        _file.write(f"esmpy install:\t\t{_esmpy_install_result}\n")
+        _file.write(f"esmpy tests:\t\t{_esmpy_test_result}\n")
         _file.write(f"\n\nmodule-build.log\n================================\n")
         _file.write(f"{_module}\n")
         _file.write(f"\n\ninfo.log\n================================\n")
