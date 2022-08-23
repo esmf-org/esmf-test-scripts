@@ -35,6 +35,7 @@ class Case:
         self.build_script = os.path.join(self.base_path, "build.bat")
         self.test_script = os.path.join(self.base_path, "test.bat")
         self.collect_script = os.path.join(self.base_path, "collect_artifacts.sh")
+        self.esmpy_install_script = os.path.join(self.base_path, "esmpy_install.bat")
         self.build_job_num = 0
         self.test_job_num = 0
 
@@ -67,6 +68,11 @@ class Case:
         # generate test script
         with open(self.test_script, "w") as _file:
             _file.write(self._create_test_script())
+
+        # conditionally generate ESMPy install scripts
+        if self.combo.python_module is not None:
+            with open(self.esmpy_install_script, "w") as _file:
+                _file.write(self._create_esmpy_install_script())
 
         # determine if a fork of ESMF is used
         if ":" in self.esmf_branch:
@@ -131,11 +137,12 @@ class Case:
             out.write(f"module load {e.compiler_module} {_mpi_module}\n")
             if e.netcdf_module.lower() != "none":
                 out.write(f"module load {e.netcdf_module}\n")
-
             if e.hdf5_module is not None:
                 out.write(f"module load {e.hdf5_module}\n")
             if e.netcdf_fortran_module is not None:
-                out.write(f"module load {e.netcdf_fortran_module} \n")
+                out.write(f"module load {e.netcdf_fortran_module}\n")
+            if e.python_module is not None:
+                out.write(f"module load {e.python_module}\n")
 
             out.write("\nset -x\n")
             if e.extra_env_vars is not None:
@@ -201,17 +208,47 @@ class Case:
             if self.combo.mpi_module.lower() != "none":
                 out.write("cd ../nuopc-app-prototypes\n")
                 out.write("./testProtos.sh 2>&1| tee ../nuopc.log\n")
-            if self.combo.esmpy:
-                out.write(f"cd {self.esmf_clone_path}/src/addon/ESMPy\n")
-                out.write(f"pip install . 2>&1| tee {self.base_path}/esmpy_install.log\n")
-                out.write(f"nose2 -v 2>&1| tee {self.base_path}/esmpy_test.log\n")
+            if self.combo.python_module:
+                out.write(f"ssh {self.machine.head_node_name} {self.esmpy_install_script}\n")
+                out.write(f"cd {self.base_path}\n")
+                out.write(f". esmpy_venv/bin/activate\n")
+                _esmpy_path = os.path.join(self.esmf_clone_path, "src", "addon", "ESMPy")
+                out.write(f"cd {_esmpy_path}\n")
+                _esmpy_test_log = os.path.join(self.base_path, "esmpy-test.log")
+                out.write(f"python3 -m pytest 2>&1| tee {_esmpy_test_log}\n")
+                out.write(f"deactivate\n")
+
+            return out.getvalue()
+
+    def _create_esmpy_install_script(self):
+        """
+        Create the script that installs ESMPy. This may be called by the head node
+        since pip install will want to access the internet.
+        """
+
+        with StringIO() as out:
+            out.write("#!/bin/sh\n")
+            out.write(self._create_modules_fragment())
+            out.write(f"cd {self.esmf_clone_path}\n")
+            out.write(f"export ESMFMKFILE=`find $PWD/DEFAULTINSTALLDIR -iname esmf.mk`\n")
+
+            out.write(f"cd {self.base_path}\n")
+            out.write(f"rm -rf esmpy_venv\n")
+            out.write(f"python3 -m venv esmpy_venv\n")
+            out.write(f". esmpy_venv/bin/activate\n")
+
+            _esmpy_path = os.path.join(self.esmf_clone_path, "src", "addon", "ESMPy")
+            out.write(f"cd {_esmpy_path}\n")
+            _esmpy_install_log = os.path.join(self.base_path, "esmpy-install.log")
+            out.write(f"python3 -m pip install . 2>&1| tee {_esmpy_install_log}\n")
+            out.write(f"deactivate\n")
+
             return out.getvalue()
 
     def _create_collect_artifacts_script(self):
         """
         Create the script that will collect the artifacts during the build phase.
         """
-
         _artifacts_base_dir = os.path.join(self.artifacts_root,
                                            re.sub("/", "_", re.sub(":", "_", self.esmf_branch)),
                                            self.combo.compiler,

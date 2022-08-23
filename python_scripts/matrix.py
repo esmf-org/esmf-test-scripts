@@ -57,7 +57,7 @@ class Matrix:
                         if "extra_env_vars" in versions[compiler_version]:
                             combo.extra_env_vars = versions[compiler_version]["extra_env_vars"]
                         if "esmpy" in versions[compiler_version]:
-                            combo.esmpy = versions[compiler_version]["esmpy"]
+                            combo.python_module = versions[compiler_version]["esmpy"]["python"]
 
                         self.combinations.append(combo)
 
