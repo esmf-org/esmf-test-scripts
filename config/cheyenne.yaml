@@ -61,5 +61,13 @@ matrix:
         compiler: nvhpc/22.2
         netcdf: netcdf/4.8.1
         mpi:
+          mpiuni:
+            module: None
           mpt:
             module: mpt/2.25
+      21.11:
+        compiler: nvhpc/21.11
+        netcdf: netcdf/4.8.1
+        mpi:
+          openmpi:
+            module: openmpi/4.1.1
