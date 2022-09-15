@@ -215,7 +215,7 @@ class Case:
                 _esmpy_path = os.path.join(self.esmf_clone_path, "src", "addon", "ESMPy")
                 out.write(f"cd {_esmpy_path}\n")
                 _esmpy_test_log = os.path.join(self.base_path, "esmpy-test.log")
-                out.write(f"python3 -m pytest 2>&1| tee {_esmpy_test_log}\n")
+                out.write(f"make test 2>&1| tee {_esmpy_test_log}\n")
                 out.write(f"deactivate\n")
 
             return out.getvalue()
