@@ -38,6 +38,8 @@ matrix:
             module: openmpi/4.0.5
           mpt:
             module: mpt/2.23
+        esmpy:
+          python: conda/latest
   intel:
     build_time: "2:00:00"
     test_time: "3:00:00"
