@@ -1,10 +1,10 @@
 {% macro hash_link(row, text=None) -%}
 <a href="{{artifacts_base_url}}/tree/{{row.hash}}/{{row.esmf_branch}}/{{row.compiler}}/{{row.compiler_ver}}/{{row.bopt}}/{{row.mpi}}/{{row.mpi_ver }}" target="_blank">
-{% if text is none %}
+{%- if text is none -%}
 {{row.hash[0:7]}}
-{% else %}
+{%- else -%}
 {{text}}
-{% endif %}
+{%- endif -%}
 </a>
 {%- endmacro %}
 

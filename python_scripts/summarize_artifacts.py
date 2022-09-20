@@ -199,15 +199,18 @@ def _retrieve_summary_by_combo(combo_id):
 
     cur.execute(
         """
-        SELECT hash, machine, compiler, compiler_ver, mpi, mpi_ver, bopt, netcdf, 
-            STRFTIME('%m-%d %H:%M', collect_ts) as collect_ts, 
+        SELECT machine, compiler, compiler_ver, mpi, mpi_ver, bopt, netcdf,             
             STRFTIME('%m-%d %H:%M', build_ts) as build_ts,
             STRFTIME('%m-%d %H:%M', clone_ts) as clone_ts,            
-            build, unit_pass, unit_fail, system_pass, system_fail, example_pass, example_fail, nuopc_pass, 
-            nuopc_fail, esmf_hash, esmf_branch
+            esmf_hash, esmf_branch,
+			(SELECT hash FROM result R 
+				WHERE R.combination_id = combination.id AND R.clone_ts = result.clone_ts AND R.esmf_hash = result.esmf_hash 
+				ORDER BY R.collect_ts DESC LIMIT 1) as hash,
+			MAX(build) as build, MAX(unit_pass) as unit_pass, MAX(unit_fail) as unit_fail, MAX(system_pass) as system_pass, MAX(system_fail) as system_fail, 
+			MAX(example_pass) as example_pass, MAX(example_fail) as example_fail, MAX(nuopc_pass) as nuopc_pass, MAX(nuopc_fail) as nuopc_fail
         FROM result INNER JOIN combination ON result.combination_id = combination.id
         WHERE combination_id = ?
-        GROUP BY IFNULL(clone_ts, STRFTIME('%m-%d-%Y', collect_ts))
+        GROUP BY machine, compiler, compiler_ver, mpi, mpi_ver, bopt, netcdf, esmf_hash, esmf_branch, build_ts, clone_ts
         ORDER BY esmf_hash DESC
         """, (combo_id,))
     return cur.fetchall()
@@ -250,17 +253,19 @@ def _retrieve_summary_for_esmf_hash(esmf_hash):
 
     cur.execute(
         """
-        SELECT combination_id, hash, machine, os,   compiler, compiler_ver, mpi, mpi_ver, bopt, netcdf, 
+        SELECT combination_id, machine, os, compiler, compiler_ver, mpi, mpi_ver, bopt, netcdf, 
             machine || '_' || os || '_' || compiler || '_' || compiler_ver || '_' || mpi || '_' || mpi_ver || '_' || netcdf || '_' || bopt AS combo_link,
-            STRFTIME('%m-%d %H:%M', collect_ts) as collect_ts, 
+			esmf_hash, esmf_branch,
             STRFTIME('%m-%d %H:%M', build_ts) as build_ts,
             STRFTIME('%m-%d %H:%M', clone_ts) as clone_ts,
-            IFNULL(STRFTIME('%m-%d %H:%M:%S', clone_ts), STRFTIME('%m-%d %H:%M:%S', collect_ts)) || '_' || combination_id as cc_ts,
-            phase, build, unit_pass, unit_fail, system_pass, system_fail, example_pass, example_fail, nuopc_pass, 
-            nuopc_fail, esmf_hash, esmf_branch
+			(SELECT hash FROM result R 
+				WHERE R.combination_id = combination.id AND R.clone_ts = result.clone_ts AND R.esmf_hash = result.esmf_hash 
+				ORDER BY R.collect_ts DESC LIMIT 1) as hash,
+			MAX(build) as build, MAX(unit_pass) as unit_pass, MAX(unit_fail) as unit_fail, MAX(system_pass) as system_pass, MAX(system_fail) as system_fail, 
+			MAX(example_pass) as example_pass, MAX(example_fail) as example_fail, MAX(nuopc_pass) as nuopc_pass, MAX(nuopc_fail) as nuopc_fail
         FROM result INNER JOIN combination ON result.combination_id = combination.id
         WHERE esmf_hash = ?
-        GROUP BY cc_ts
+        GROUP BY combination_id, machine, os, compiler, compiler_ver, mpi, mpi_ver, bopt, netcdf, combo_link, esmf_hash, esmf_branch, build_ts, clone_ts
         ORDER BY machine, compiler, compiler_ver, mpi, mpi_ver
         """, (esmf_hash,))
 
@@ -290,7 +295,6 @@ def _print_summary_for_esmf_hash(esmf_hash):
 
 
 def _format_branch_summary_html(branch, filename):
-
     _hashes = _retrieve_tested_hashes(branch=branch)
     _esmf_commit_msgs = {}
     if _esmf_repo is not None:
@@ -337,7 +341,16 @@ def _format_hash_html(_hash, _branch, filename):
     template = template_env.get_template("hash.html")
     _esmf_commit_msg = _get_esmf_commit_message(_hash)
     with open(filename, "w") as _out:
-        _out.write(template.render(hash=_hash, branch=_branch, esmf_commit_msg=_esmf_commit_msg, result_rows=_result_rows))
+        _out.write(
+            template.render(hash=_hash, branch=_branch, esmf_commit_msg=_esmf_commit_msg, result_rows=_result_rows))
+    logging.info(f"Generated file: {os.path.abspath(filename)}")
+
+
+def _format_hash_md(_hash, _branch, filename):
+    _result_rows = _retrieve_summary_for_esmf_hash(_hash)
+    template = template_env.get_template("release.md")
+    with open(filename, "w") as _out:
+        _out.write(template.render(hash=_hash, branch=_branch, result_rows=_result_rows))
     logging.info(f"Generated file: {os.path.abspath(filename)}")
 
 
@@ -510,7 +523,7 @@ if __name__ == "__main__":
     parser.add_argument('-l', '--list', help="""
             Only list the tested tags/hashes and exit.  
             """, required=False, action='store_true')
-    #parser.add_argument('-t', '--tag', help="""
+    # parser.add_argument('-t', '--tag', help="""
     #        Generate test summary for the given tag (or hash) of ESMF.
     #        Without this, results will include all tested tags/hashes.
     #        """, required=False)
@@ -653,6 +666,8 @@ if __name__ == "__main__":
             cmd.runcmd(f"mkdir -p {_outdir}")
             _filename = os.path.join(_outdir, _hash + ".html")
             _format_hash_html(_hash, _branch, filename=_filename)
+            _filename = os.path.join(_outdir, _hash + ".md")
+            _format_hash_md(_hash, _branch, filename=_filename)
 
         _filename = os.path.join(_outdir, "index.html")
         _format_branch_summary_html(branch=_branch, filename=_filename)

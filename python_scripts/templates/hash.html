@@ -12,9 +12,9 @@
 {% endblock %}
 
 {% block header %}
-    <h3 class="mb-2">ESMF Hash: {{hash}} (branch: <a href="index.html">{{branch}}</a>)</h3>
+<h3 class="mb-2">ESMF Hash: {{hash}} (branch: <a href="index.html">{{branch}}</a>)</h3>
     {% if esmf_commit_msg %}<p>{{esmf_commit_msg}}</p> {% endif %}
-    <p><a href="../index.html">Top</a></p>
+    <p><a href="{{hash}}.md">Markdown</a>   <a href="../index.html">Top</a></p>
 {% endblock %}
 
 {% block content %}
@@ -30,7 +30,6 @@
       <th>NetCDF</th>
       <th>Cloned Time</th>
       <th>Build Time</th>
-      <th>Collect Time</th>
       <th>Build</th>
       <th>UTests</th>
       <th>STests</th>
@@ -51,7 +50,6 @@
       <td>{{r.netcdf}}</td>
       <td>{{r.clone_ts}}</td>
       <td>{{r.build_ts}}</td>
-      <td>{{r.collect_ts}}</td>
       <td class="{{macros.result_cls_build(r.build)}}">{{r.build}}</td>
       <td class="{{macros.result_cls_pf(r.unit_pass, r.unit_fail)}}">{{r.unit_pass}}/{{r.unit_fail}}</td>
       <td class="{{macros.result_cls_pf(r.system_pass, r.system_fail)}}">{{r.system_pass}}/{{r.system_fail}}</td>
