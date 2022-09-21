@@ -212,7 +212,7 @@ class Case:
                 out.write(f"ssh {self.machine.head_node_name} {self.esmpy_install_script}\n")
                 out.write(f"cd {self.base_path}\n")
                 out.write(f". esmpy_venv/bin/activate\n")
-                _esmpy_path = os.path.join(self.esmf_clone_path, "src", "addon", "ESMPy")
+                _esmpy_path = os.path.join(self.esmf_clone_path, "src", "addon", "esmpy")
                 out.write(f"cd {_esmpy_path}\n")
                 _esmpy_test_log = os.path.join(self.base_path, "esmpy-test.log")
                 out.write(f"make test 2>&1| tee {_esmpy_test_log}\n")
@@ -237,10 +237,12 @@ class Case:
             out.write(f"python3 -m venv esmpy_venv\n")
             out.write(f". esmpy_venv/bin/activate\n")
 
-            _esmpy_path = os.path.join(self.esmf_clone_path, "src", "addon", "ESMPy")
+            _esmpy_path = os.path.join(self.esmf_clone_path, "src", "addon", "esmpy")
             out.write(f"cd {_esmpy_path}\n")
             _esmpy_install_log = os.path.join(self.base_path, "esmpy-install.log")
             out.write(f"python3 -m pip install . 2>&1| tee {_esmpy_install_log}\n")
+            _esmpy_download_log = os.path.join(self.base_path, "esmpy-download.log")
+            out.write(f"make download 2>&1| tee {_esmpy_download_log}\n")
             out.write(f"deactivate\n")
 
             return out.getvalue()
