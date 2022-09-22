@@ -73,6 +73,7 @@ class Case:
         if self.combo.python_module is not None:
             with open(self.esmpy_install_script, "w") as _file:
                 _file.write(self._create_esmpy_install_script())
+            cmd.runcmd(f"chmod u+x {self.esmpy_install_script}")
 
         # determine if a fork of ESMF is used
         if ":" in self.esmf_branch:
