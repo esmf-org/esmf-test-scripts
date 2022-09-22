@@ -9,8 +9,8 @@ machine:
     tasks_per_node: 40
 
 test:
-  esmf_branch: [develop,v8.3.1]
-  nuopc_branch: [develop,v8.3.1]
+  esmf_branch: [develop]
+  nuopc_branch: [develop]
 
 matrix:
   gfortran:
@@ -28,7 +28,7 @@ matrix:
   #        intelmpi:
   #          module: impi/2020
   #          mpi_env_vars:
-  #            var1: ESMF_MPIRUN=mpirun.srun
+  #            - ESMF_MPIRUN=mpirun.srun
           openmpi:
             module: openmpi/3.1.4
             mpi_env_vars:

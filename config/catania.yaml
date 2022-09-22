@@ -6,8 +6,8 @@ machine:
     type: None
 
 test:
-  esmf_branch: [develop,v8.3.1]
-  nuopc_branch: [develop,v8.3.1]
+  esmf_branch: [develop]
+  nuopc_branch: [fix/catania]
 
 matrix:
  
@@ -32,7 +32,7 @@ matrix:
         mpi:
           openmpi:
             module: openmpi/4.1.0
+            mpi_env_vars:
+              - ESMF_MPILAUNCHOPTIONS=--oversubscribe
           mpiuni:
             module: None
-        extra_env_vars:
-          - ESMF_MPILAUNCHOPTIONS=--oversubscribe
