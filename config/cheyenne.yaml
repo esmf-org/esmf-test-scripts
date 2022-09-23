@@ -39,7 +39,7 @@ matrix:
           mpt:
             module: mpt/2.23
         extra_env_vars:
-          - ESMPY_DATA_DIR="/glade/work/dunlap/esmf-test-data"
+          - ESMPY_DATA_DIR="/glade/work/dunlap/esmf-test-data/grids"
         esmpy:
           python: python/3.7.9
 
