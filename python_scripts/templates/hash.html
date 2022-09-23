@@ -35,6 +35,8 @@
       <th>STests</th>
       <th>ETests</th>
       <th>NUOPC</th>
+      <th>esmpy Install</th>
+      <th>esmpy Tests</th>
       <th>Artifacts</th>
     </tr>
     </thead>
@@ -55,6 +57,8 @@
       <td class="{{macros.result_cls_pf(r.system_pass, r.system_fail)}}">{{r.system_pass}}/{{r.system_fail}}</td>
       <td class="{{macros.result_cls_pf(r.example_pass, r.example_fail)}}">{{r.example_pass}}/{{r.example_fail}}</td>
       <td class="{{macros.result_cls_pf(r.nuopc_pass, r.nuopc_fail, r.mpi=='mpiuni')}}">{{r.nuopc_pass}}/{{r.nuopc_fail}}</td>
+      <td class="{{macros.result_cls_build(r.esmpy_install)}}">{{r.esmpy_install}}</td>
+      <td class="{{macros.result_cls_pf(r.esmpy_pass, r.esmpy_fail)}}">{{r.esmpy_pass}}/{{r.esmpy_fail}}</td>
       <td>{{macros.hash_link(r)}}</td>
     </tr>
     {% endfor %}

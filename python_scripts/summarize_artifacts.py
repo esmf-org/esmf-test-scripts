@@ -19,7 +19,7 @@ ComboRecord = namedtuple('ComboRecord', 'id, machine, os, compiler, compiler_ver
 ResultRecord = namedtuple('ResultRecord',
                           'hash, collect_ts, combination_id, esmf_branch, esmf_hash, phase, clone_ts, build, build_ts, '
                           'unit_pass, unit_fail, system_pass, system_fail, example_pass, example_fail, nuopc_pass, '
-                          'nuopc_fail')
+                          'nuopc_fail, esmpy_install, esmpy_pass, esmpy_fail')
 
 
 def _db_is_initialized():
@@ -71,6 +71,9 @@ def _init_database():
             example_fail integer,
             nuopc_pass integer,
             nuopc_fail integer,
+            esmpy_install text,
+            esmpy_pass integer,
+            esmpy_fail integer,
             FOREIGN KEY (combination_id) REFERENCES combination (id),
             UNIQUE (collect_ts, combination_id, esmf_hash)
         );
@@ -109,8 +112,8 @@ def _insert_result(result: ResultRecord):
         """
         INSERT INTO result (hash, collect_ts, combination_id, esmf_branch, esmf_hash, phase, clone_ts, build, build_ts, 
                             unit_pass, unit_fail, system_pass, system_fail, example_pass, example_fail, nuopc_pass,
-                            nuopc_fail)
-        VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+                            nuopc_fail, esmpy_install, esmpy_pass, esmpy_fail)
+        VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
         """,
         result)
     dbconn.commit()
@@ -207,7 +210,8 @@ def _retrieve_summary_by_combo(combo_id):
 				WHERE R.combination_id = combination.id AND R.clone_ts = result.clone_ts AND R.esmf_hash = result.esmf_hash 
 				ORDER BY R.collect_ts DESC LIMIT 1) as hash,
 			MAX(build) as build, MAX(unit_pass) as unit_pass, MAX(unit_fail) as unit_fail, MAX(system_pass) as system_pass, MAX(system_fail) as system_fail, 
-			MAX(example_pass) as example_pass, MAX(example_fail) as example_fail, MAX(nuopc_pass) as nuopc_pass, MAX(nuopc_fail) as nuopc_fail
+			MAX(example_pass) as example_pass, MAX(example_fail) as example_fail, MAX(nuopc_pass) as nuopc_pass, MAX(nuopc_fail) as nuopc_fail,
+			MAX(esmpy_install) as esmpy_install, MAX(esmpy_pass) as esmpy_pass, MAX(esmpy_fail) as esmpy_fail
         FROM result INNER JOIN combination ON result.combination_id = combination.id
         WHERE combination_id = ?
         GROUP BY machine, compiler, compiler_ver, mpi, mpi_ver, bopt, netcdf, esmf_hash, esmf_branch, build_ts, clone_ts
@@ -231,7 +235,7 @@ def _retrieve_summary_by_branch(combo_id, branch):
             STRFTIME('%m-%d %H:%M', build_ts) as build_ts,
             STRFTIME('%m-%d %H:%M', clone_ts) as clone_ts,
             build, unit_pass, unit_fail, system_pass, system_fail, example_pass, example_fail, nuopc_pass, 
-            nuopc_fail, esmf_hash, esmf_branch, phase
+            nuopc_fail, esmpy_install, esmpy_pass, esmpy_fail, esmf_hash, esmf_branch, phase
         FROM result INNER JOIN combination ON result.combination_id = combination.id
         WHERE combination_id = ?
             AND esmf_branch = ?
@@ -262,7 +266,8 @@ def _retrieve_summary_for_esmf_hash(esmf_hash):
 				WHERE R.combination_id = combination.id AND R.clone_ts = result.clone_ts AND R.esmf_hash = result.esmf_hash 
 				ORDER BY R.collect_ts DESC LIMIT 1) as hash,
 			MAX(build) as build, MAX(unit_pass) as unit_pass, MAX(unit_fail) as unit_fail, MAX(system_pass) as system_pass, MAX(system_fail) as system_fail, 
-			MAX(example_pass) as example_pass, MAX(example_fail) as example_fail, MAX(nuopc_pass) as nuopc_pass, MAX(nuopc_fail) as nuopc_fail
+			MAX(example_pass) as example_pass, MAX(example_fail) as example_fail, MAX(nuopc_pass) as nuopc_pass, MAX(nuopc_fail) as nuopc_fail,
+			MAX(esmpy_install) as esmpy_install, MAX(esmpy_pass) as esmpy_pass, MAX(esmpy_fail) as esmpy_fail
         FROM result INNER JOIN combination ON result.combination_id = combination.id
         WHERE esmf_hash = ?
         GROUP BY combination_id, machine, os, compiler, compiler_ver, mpi, mpi_ver, bopt, netcdf, combo_link, esmf_hash, esmf_branch, build_ts, clone_ts
@@ -498,10 +503,13 @@ def _collect_summary_stats(commit, machine_branch):
         _system = _extract(r"system tests:\s+PASS\s+(\S+)\s+FAIL\s+(\S+)", _summary_text, (None, None))
         _example = _extract(r"example tests:\s+PASS\s+(\S+)\s+FAIL\s+(\S+)", _summary_text, (None, None))
         _nuopc = _extract(r"nuopc tests:\s+PASS\s+(\S+)\s+FAIL\s+(\S+)", _summary_text, (None, None))
+        _esmpy_install = _extract(r"esmpy install:\s+(\S+)", _summary_text)
+        _esmpy = _extract(r"esmpy tests:\s+PASS\s+(\S+)\s+FAIL\s+(\S+)", _summary_text, (None, None))
 
         _result = ResultRecord._make((_hash, commit["ts"], _combo_id, commit["esmf_branch"],
                                       _esmf_hash, commit["phase"], _clone_ts, _build_pass, _build_ts, _unit[0],
-                                      _unit[1], _system[0], _system[1], _example[0], _example[1], _nuopc[0], _nuopc[1]))
+                                      _unit[1], _system[0], _system[1], _example[0], _example[1], _nuopc[0], _nuopc[1],
+                                      _esmpy_install, _esmpy[0], _esmpy[1]))
         # logging.debug(f"RESULT: {_result}")
         _insert_result(_result)
 
