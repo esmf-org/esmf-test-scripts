@@ -99,6 +99,16 @@ def _copy_test_artifacts():
         cmd.runcmd(f"echo '{_ts}' > {_out}")
         cmd.runcmd(f"cat {_f} >> {_out}")
 
+    _out_dir = os.path.join(_artifacts_dir, "esmpy")
+    cmd.runcmd(f"mkdir -p {_out_dir}")
+
+    _artifacts_list = glob.glob(f"{_test_dir}/esmf/src/addon/esmpy/*.test")
+    _artifacts_list.extend(glob.glob(f"{_test_dir}/esmf/src/addon/esmpy/*.ESMF_LogFile"))
+    for _f in _artifacts_list:
+        _out = os.path.join(_out_dir, os.path.basename(_f))
+        cmd.runcmd(f"echo '{_ts}' > {_out}")
+        cmd.runcmd(f"cat {_f} >> {_out}")
+
     _out_dir = os.path.join(_artifacts_dir, "lib")
     cmd.runcmd(f"mkdir -p {_out_dir}")
 
@@ -178,26 +188,31 @@ def _create_summary():
         _nuopc_fail = cmd.runcmd_no_err(f"grep FAIL: {_nuopc_log} | wc -l")
         _nuopc_results = f"PASS {_nuopc_pass} FAIL {_nuopc_fail}"
 
-    # ESMPy results
+    # esmpy results
     _esmpy_install_log = os.path.join(_test_dir, "esmpy-install.log")
     _esmpy_install_result = "NONE"
     if os.path.isfile(_esmpy_install_log):
-        _esmpy_out = cmd.runcmd_no_err(f"tail -n 20 {_esmpy_install_log}")
-        if "Successfully installed ESMPy" in _esmpy_out:
+        _esmpy_out = cmd.runcmd_no_err(f"grep 'Successfully installed.*esmpy' {_esmpy_install_log}")
+        if "Successfully" in _esmpy_out:
             _esmpy_install_result = "PASS"
         else:
             _esmpy_install_result = "FAIL"
 
-    _esmpy_test_log = os.path.join(_test_dir, "esmpy-test.log")
+    _esmpy_test_logs = glob.glob(f"{_test_dir}/esmf/src/addon/esmpy/*.test")
     _esmpy_test_result = "NONE"
-    if os.path.isfile(_esmpy_test_log):
-        _esmpy_out = cmd.runcmd_no_err(f"tail -n 1 {_esmpy_test_log}")
-        _esmpy_pass = _extract(r"(\d+) passed", _esmpy_out, "0")
-        _esmpy_fail = _extract(r"(\d+) failed", _esmpy_out, "0")
-        _esmpy_skip = _extract(r"(\d+) skipped", _esmpy_out, "0")
-        _esmpy_xfail = _extract(r"(\d+) xfailed", _esmpy_out, "0")
-        _esmpy_warn = _extract(r"(\d+) warnings", _esmpy_out, "0")
-        _esmpy_test_result = f"PASS {_esmpy_pass} FAIL {_esmpy_fail} SKIP {_esmpy_skip} XFAIL {_esmpy_xfail} WARN {_esmpy_warn}"
+    if len(_esmpy_test_logs) > 0:
+        _esmpy_pass = 0
+        _esmpy_fail = 0
+        for _f in _esmpy_test_logs:
+            _esmpy_out = cmd.runcmd_no_err(f"tail -n 1 {_f}")
+            _esmpy_pass_str = _extract(r'"passed": (\d+)', _esmpy_out, "0")
+            _esmpy_fail_str = _extract(r'"failed": (\d+)', _esmpy_out, "0")
+            try:
+                _esmpy_pass = _esmpy_pass + int(_esmpy_pass_str)
+                _esmpy_fail = _esmpy_fail + int(_esmpy_fail_str)
+            except Exception as e:
+                logging.debug(f"Failed to parse esmpy test counts: {e}")
+        _esmpy_test_result = f"PASS {_esmpy_pass} FAIL {_esmpy_fail}"
 
     with open(_summary_file, "w") as _file:
         _file.write(f"")
