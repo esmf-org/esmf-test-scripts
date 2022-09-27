@@ -10,7 +10,7 @@ machine:
     partition: compute
 
 test:
-  esmf_branch: [develop]
+  esmf_branch: [develop,update_json]
   nuopc_branch: [develop]
 
 matrix:

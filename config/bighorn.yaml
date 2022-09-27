@@ -3,7 +3,7 @@ scheduler: None
 corespernode: 8
 modulepath: /project/esmf/modulefiles
 compiler: [gfortran,intel,nag,pgi]
-branch: [develop]
+branch: [develop,update_json]
 #nuopcbranch: develop
 gfortran:
      versions:
