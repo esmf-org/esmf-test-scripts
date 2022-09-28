@@ -9,7 +9,7 @@ machine:
 
 test:
   esmf_branch: [develop,update_json]
-  nuopc_branch: [develop]
+  nuopc_branch: [develop,update_json]
 
 matrix:
   gfortran:

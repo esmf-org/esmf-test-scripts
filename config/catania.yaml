@@ -7,7 +7,7 @@ machine:
 
 test:
   esmf_branch: [develop,update_json]
-  nuopc_branch: [fix/catania]
+  nuopc_branch: [fix/catania,fix/catania]
 
 matrix:
  
