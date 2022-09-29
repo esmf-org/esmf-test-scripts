@@ -4,15 +4,31 @@ A set of Python scripts to facilitate testing of ESMF across many platforms.
 Includes options for running the tests, collecting results, and summarizing them.
 
 
-## Adding a new machine to nightly testing
+## Adding a machine to nightly testing
 
 The steps are as follows:
-  1.  Clone this repository on the machine.
-  2.  Add a config YAML file in this repo under `esmf-test-scripts/config/<machine>.yaml`.
+  1.  Create some scratch space to be the test root.  Assume this is $ESMF_TEST_ROOT.
+  2.  Clone the test scripts and test artifacts repos into $ESMF_TEST_ROOT. Make sure your GitHub SSH keys are set up to allow pushes.
+  
+  ```bash
+   cd $ESMF_TEST_ROOT
+   git clone git@github.com:esmf-org/esmf-test-scripts.git
+   git clone git@github.com:esmf-org/esmf-test-artifacts.git
+  ``` 
+  3.  If this is an entirely new machine that has never been tested with ESMF, create a new config YAML 
+      file under `esmf-test-scripts/config/<machine>.yaml`.
       The recommended approach is to copy an existing YAML config file and modify as needed.
-  3.  Run the `test_esmf.py --check` option (see below) using your YAML file.
-  4.  Run some manual ESMF tests using the `--filter` option (see below).
-  5.  When all is good, add a run script under `esmf-test-scripts/runscripts/`
+  4.  Ensure you have a recent Python 3 module loaded.
+  4.  Run --check option to verify your YAML file is working:
+  
+  ```bash
+   cd $ESMF_TEST_ROOT/esmf-test-scripts/python_scripts
+   ./test_esmf.py -r $ESMF_TEST_ROOT -m <machine_name> --check
+  ```
+  
+  5.  Run some manual ESMF tests using the [`--list`](#example-list-all-test-combinations-for-a-machine) 
+      and [`--filter`](#example-only-submit-jobs-for-some-combinations) options.
+  6.  When all is good, add a run script under `esmf-test-scripts/runscripts/`
       (again, start with an existing one as a template) and put this script under a cron job.
 
 
