@@ -11,7 +11,7 @@ machine:
 
 test:
   esmf_branch: [develop,update_json]
-  nuopc_branch: [develop,update_json]
+  nuopc_branch: [develop,develop]
 
 matrix:
   intel:
