@@ -18,8 +18,8 @@ The steps are as follows:
   3.  If this is an entirely new machine that has never been tested with ESMF, create a new config YAML 
       file under `esmf-test-scripts/config/<machine>.yaml`.
       The recommended approach is to copy an existing YAML config file and modify as needed.
-  4.  Ensure you have a recent Python 3 module loaded.
-  4.  Run --check option to verify your YAML file is working:
+  4.  Ensure you have a recent Python 3 module loaded and have the pyyaml dependency installed.
+  4.  Run `--check` option to verify your YAML file is working:
   
   ```bash
    cd $ESMF_TEST_ROOT/esmf-test-scripts/python_scripts
