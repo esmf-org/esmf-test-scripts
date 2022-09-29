@@ -8,7 +8,7 @@ machine:
     queue: normal
 
 test:
-  esmf_branch: [develop,update_json]
+  esmf_branch: [develop,update/pio2.5.9]
   nuopc_branch: [develop,develop]
 
 matrix:
