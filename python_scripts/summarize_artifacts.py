@@ -406,7 +406,7 @@ def _get_esmf_commit_message(_hash):
     if _esmf_repo is not None:
         cmd.chdir(_esmf_repo)
         logging.debug(f"Getting commit message for hash {_hash}")
-        return cmd.runcmd(f"git show --format='%s (%an, %ad)' --no-patch {_hash}")
+        return cmd.runcmd_no_err(f"git show --format='%s (%an, %ad)' --no-patch {_hash}")
     return None
 
 
