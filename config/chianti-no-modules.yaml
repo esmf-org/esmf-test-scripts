@@ -4,8 +4,8 @@ machine:
   scheduler: None
 
 test:
-  esmf_branch: [develop]
-  nuopc_branch: [develop]
+  esmf_branch: [develop,update/pio2.5.9]
+  nuopc_branch: [develop,develop]
 
 matrix:
   intel:

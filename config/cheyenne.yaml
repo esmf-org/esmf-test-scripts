@@ -9,8 +9,8 @@ machine:
     partition: None
 
 test:
-  esmf_branch: [develop]
-  nuopc_branch: [develop]
+  esmf_branch: [develop,update/pio2.5.9]
+  nuopc_branch: [develop,develop]
 
 matrix:
   gfortran:
@@ -59,6 +59,11 @@ matrix:
             module: openmpi/3.1.4
           intelmpi:
             module: impi/2018.4.274
+        extra_env_vars:
+          - ESMPY_DATA_DIR="/glade/work/dunlap/esmf-test-data/grids"
+        esmpy:
+          python: python/3.7.9
+
   nvhpc:
     test_time: "3:00:00"
     versions:
