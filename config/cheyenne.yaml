@@ -19,12 +19,14 @@ matrix:
       7.4.0:
         compiler: gnu/7.4.0
         netcdf: netcdf/4.7.3
+        extra_module: python/3.7.9
         mpi:
           openmpi:
             module: openmpi/4.0.3
       9.1.0:
         compiler: gnu/9.1.0
         netcdf: netcdf/4.7.3
+        extra_module: python/3.7.9
         mpi:
           openmpi:
             module: openmpi/4.0.5
@@ -70,6 +72,7 @@ matrix:
       22.2:
         compiler: nvhpc/22.2
         netcdf: netcdf/4.8.1
+        extra_module: python/3.7.9
         mpi:
           mpiuni:
             module: None
@@ -78,6 +81,7 @@ matrix:
       21.11:
         compiler: nvhpc/21.11
         netcdf: netcdf/4.8.1
+        extra_module: python/3.7.9
         mpi:
           openmpi:
             module: openmpi/4.1.1
