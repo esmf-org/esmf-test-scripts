@@ -10,4 +10,4 @@ git pull -X theirs --no-edit origin
 module load python/3.7.9
 python3 $NS/esmf-test-scripts/python_scripts/test_esmf.py -m cheyenne -r $NS --throttle 8 >& $NS/cheyenne.log
 
-kill $SSH_AGENT_PID
+#kill $SSH_AGENT_PID
