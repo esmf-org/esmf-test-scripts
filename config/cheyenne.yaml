@@ -9,8 +9,8 @@ machine:
     partition: None
 
 test:
-  esmf_branch: [develop]
-  nuopc_branch: [develop]
+  esmf_branch: [develop,fix_clang]
+  nuopc_branch: [develop,develop]
 
 matrix:
   gfortran:

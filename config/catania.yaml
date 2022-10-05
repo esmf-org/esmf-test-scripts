@@ -6,8 +6,8 @@ machine:
     type: None
 
 test:
-  esmf_branch: [develop]
-  nuopc_branch: [fix/catania]
+  esmf_branch: [develop,fix_clang]
+  nuopc_branch: [fix/catania,fix/catania]
 
 matrix:
  
