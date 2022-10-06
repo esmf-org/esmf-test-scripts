@@ -1,0 +1,22 @@
+machine:
+  name: green
+  cores_per_node: 8
+  scheduler: None
+
+test:
+  esmf_branch: [fix_clang]
+  nuopc_branch: [develop]
+
+matrix:
+  gfortranclang:
+    versions:
+      12.2.0_14.0.0:
+        compiler: gfortran-12.2.0_clang-14.0.0
+        netcdf: netcdf-4.9.0
+        mpi:
+          openmpi:
+            module: 4.1.4
+          mpiuni:
+            module: None
+        esmpy:
+          python: python-3.10.7
