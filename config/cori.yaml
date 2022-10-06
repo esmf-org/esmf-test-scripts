@@ -30,7 +30,7 @@ matrix:
   #      unload_module: PrgEnv-intel
 
   intel:
-    test_time: "3:00:00"
+    test_time: "1:00:00"
     versions: 
       19.1.2: 
         compiler: intel/19.1.2.254
