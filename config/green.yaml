@@ -18,5 +18,3 @@ matrix:
             module: 4.1.4
           mpiuni:
             module: None
-        esmpy:
-          python: python-3.10.7
