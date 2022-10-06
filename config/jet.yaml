@@ -8,8 +8,8 @@ machine:
     partition: xjet
 
 test:
-  esmf_branch: [develop,fix_clang]
-  nuopc_branch: [develop,develop]
+  esmf_branch: [develop]
+  nuopc_branch: [develop]
 
 matrix:
   intel:
