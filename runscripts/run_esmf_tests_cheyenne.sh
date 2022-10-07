@@ -1,5 +1,9 @@
 #!/bin/bash -l
 
+date
+
+hostname -f
+
 eval `ssh-agent`
 ssh-add /glade/u/home/theurich/.ssh/id_ed25519
 
@@ -11,3 +15,5 @@ module load python/3.7.9
 python3 $NS/esmf-test-scripts/python_scripts/test_esmf.py -m cheyenne -r $NS --throttle 8 >& $NS/cheyenne.log
 
 #kill $SSH_AGENT_PID
+
+date
