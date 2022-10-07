@@ -59,6 +59,7 @@ def _copy_test_artifacts():
     cmd.chdir(f"{_test_dir}")
     _artifacts_out_dir = os.path.join(_artifacts_dir, "out")
     cmd.runcmd_no_err(f"cp test.bat {_artifacts_out_dir}")
+    cmd.runcmd_no_err(f"cp install.log {_artifacts_out_dir}")
     cmd.runcmd_no_err(f"cp module-test.log {_artifacts_out_dir}")
     cmd.runcmd_no_err(f"cp test.log {_artifacts_out_dir}")
     cmd.runcmd_no_err(f"cp nuopc.log {_artifacts_out_dir}")
