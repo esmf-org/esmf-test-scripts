@@ -31,6 +31,29 @@ The steps are as follows:
   6.  When all is good, add a run script under `esmf-test-scripts/runscripts/`
       (again, start with an existing one as a template) and put this script under a cron job.
 
+## Archiving and creating a new esmf-test-artifacts repository
+
+The esmf-test-artifacts repository must be regularly archived and replaced with a new one. This is
+primarily to keep the repository at a reasonable size (say, under 8GB or so). We typically replace
+the esmf-test-artifacts repository after a release of ESMF. The existing artifacts repository is
+renamed with an archive date (e.g., esmf-test-artifacts-2022-10). The supported platform tables
+that are included with ESMF releases point into the archived artifacts to allow users to reference
+details of the tested configurations for the release.
+
+Use the following steps to start with a fresh esmf-test-artifacts:
+
+  1. In GitHub, rename the `esmf-test-artifacts` respository to `esmf-test-artifacts-YYYY-MM`. Restricting pushes
+     and making the repository read-only is recommended.
+  2. Create a new `esmf-test-artifacts` repository with a single "main" branch and a README.md.
+  3. Update the `esmf-test-scripts/config/global.yaml` file and set `reclone-artifacts: True`. This will cause
+     each test platform to delete their local `esmf-test-artifacts` and reclone the new one. After all platforms
+     have done this, set `reclone-artifacts: False`.
+  4. Each test platform will automatically create the needed branch of the `esmf-test-artifacts` repository
+     and start pushing artifacts to the new branch.
+  5. Manually start the [ESMF summarizer](https://github.com/esmf-org/esmf-test-summary/actions/workflows/generate-esmf-summaries.yml) 
+     and select the `Rebuild database` option. This will clear out the old results and create a fresh database from the
+     new `esmf-test-artifacts` repository.
+
 
 ## Run test suite and collect artifacts (test_esmf.py)
 
