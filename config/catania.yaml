@@ -7,7 +7,7 @@ machine:
 
 test:
   esmf_branch: [develop,release/8.4.0]
-  nuopc_branch: [fix/catania,release/8.4.0]
+  nuopc_branch: [workaround/darwin-threaded-hang,release/8.4.0]
 
 matrix:
  
