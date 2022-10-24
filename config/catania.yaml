@@ -6,8 +6,8 @@ machine:
     type: None
 
 test:
-  esmf_branch: [develop,release/8.4.0]
-  nuopc_branch: [workaround/darwin-threaded-hang,release/8.4.0]
+  esmf_branch: [develop,v8.4.0]
+  nuopc_branch: [workaround/darwin-threaded-hang,v8.4.0]
 
 matrix:
  
