@@ -4,6 +4,8 @@ date
 
 hostname -f
 
+pkill -u theurich ssh-agent
+
 eval `ssh-agent`
 ssh-add /global/homes/t/theurich/.ssh/id_ed25519
 
