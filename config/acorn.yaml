@@ -8,8 +8,8 @@ machine:
     queue: dev
 
 test:
-  esmf_branch: [develop]
-  nuopc_branch: [develop]
+  esmf_branch: []
+  nuopc_branch: []
 
 matrix:
   intel:
