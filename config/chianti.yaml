@@ -5,7 +5,7 @@ machine:
 
 test:
   esmf_branch: [develop]
-  nuopc_branch: [develop]
+  nuopc_branch: [workaround/darwin-threaded-hang]
 
 matrix:
   intel:
