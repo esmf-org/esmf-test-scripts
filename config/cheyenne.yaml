@@ -78,10 +78,10 @@ matrix:
             module: None
           mpt:
             module: mpt/2.25
-      22.5:
-        compiler: nvhpc/22.5
+      21.11:
+        compiler: nvhpc/21.11
         netcdf: netcdf/4.8.1
         extra_module: python/3.7.9
         mpi:
           openmpi:
-            module: openmpi/4.1.4
+            module: openmpi/4.1.1
