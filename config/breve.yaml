@@ -1,0 +1,38 @@
+machine:
+  name: breve
+  cores_per_node: 4
+  scheduler: None
+
+test:
+  esmf_branch: [develop,fix/clang]
+  nuopc_branch: [develop,develop]
+#  filter:
+#    compiler: [gfortran]
+
+matrix:
+  aocc:
+    versions:
+      3.2.0:
+        compiler: AOCC/3.2.0
+        netcdf: None
+        mpi:
+          mpiuni:
+            module: None
+
+  gfortranclang:
+    versions:
+      7.5.0_13.0.0:
+        compiler: AOCC/3.2.0
+        netcdf: None
+        mpi:
+          mpiuni:
+            module: None
+
+  gfortran:
+    versions:
+      7.4.0:
+        compiler: GCC/7.4.0/GCC
+        netcdf: GCC/7.4.0/netcdf/4.7.4p
+        mpi:
+          mpich:
+            module: GCC/7.4.0/mpich/3.3.1
