@@ -52,4 +52,6 @@ matrix:
             module: impi/2022.3.0
             mpi_env_vars:
               - ESMF_MPIRUN=mpirun.srun
+              - ESMF_C=mpinvcc
+              - I_MPI_CC=nvc
         extra_module: cmake
