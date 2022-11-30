@@ -8,8 +8,8 @@ machine:
     partition: xjet
 
 test:
-  esmf_branch: [develop,fix/clang]
-  nuopc_branch: [develop,develop]
+  esmf_branch: [develop]
+  nuopc_branch: [develop]
 
 matrix:
   intel:
@@ -52,6 +52,7 @@ matrix:
             module: impi/2022.3.0
             mpi_env_vars:
               - ESMF_MPIRUN=mpirun.srun
-              - ESMF_C=mpinvcc
-              - I_MPI_CC=nvc
+              - ESMF_F90=mpinvf90
+              - ESMF_CXX=mpinvc++
+              - ESMF_C=mpinvc
         extra_module: cmake
