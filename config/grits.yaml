@@ -1,0 +1,20 @@
+machine:
+  name: grits
+  cores_per_node: 8
+  scheduler: None
+
+test:
+  esmf_branch: [fix/clang]
+  nuopc_branch: [workaround/darwin-threaded-hang]
+
+matrix:
+  gfortranclang:
+    versions:
+      12.2.0_14.0.0:
+        compiler: gfortran-12.2.0_clang-13.1.6
+        netcdf: netcdf-4.9.0
+        mpi:
+          mpich:
+            module: 4.0.2
+          mpiuni:
+            module: None
