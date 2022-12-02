@@ -15,7 +15,5 @@ git remote update
 git pull -X theirs --no-edit origin
 $NS/esmf-test-scripts/python_scripts/test_esmf.py -m cori -r $NS >& $NS/cori.log
 
-#kill $SSH_AGENT_PID
-
 date
 
