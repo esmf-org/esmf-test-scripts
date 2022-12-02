@@ -1,10 +1,7 @@
 #!/bin/bash -l
 
-# Remember auto testing location
-esmftestroot=$ESMF_TEST_ROOT
-
-# Get rid of previously set ESMF environment variables, so they don't interfer
-unsetenv ESMF_*
+# Set ESMF auto testing root directory
+esmftestroot=/Users/oehmke/ESMF_AutoTest
 
 # Update
 cd ${esmftestroot}/esmf-test-scripts
