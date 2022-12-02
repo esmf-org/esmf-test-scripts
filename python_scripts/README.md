@@ -28,7 +28,16 @@ The steps are as follows:
   
   5.  Run some manual ESMF tests using the [`--list`](#example-list-all-test-combinations-for-a-machine) 
       and [`--filter`](#example-only-submit-jobs-for-some-combinations) options.
-  6.  When all is good, add a run script under `esmf-test-scripts/runscripts/`
+  
+  6.  Once local testing looks good it is time to add a machine specific branch to the esmf-test-artifacts repository.
+  
+  ```bash
+  cd esmf-test-artifacts
+  git checkout -b <machine_name>
+  git push -u origin <machine_name>
+  ```
+         
+  7.  When all is good, add a run script under `esmf-test-scripts/runscripts/`
       (again, start with an existing one as a template) and put this script under a cron job.
 
 ## Archiving and creating a new esmf-test-artifacts repository
