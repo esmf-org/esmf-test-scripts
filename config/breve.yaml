@@ -36,3 +36,9 @@ matrix:
         mpi:
           mpich:
             module: GCC/7.4.0/mpich/3.3.1
+      11.2.0:
+        compiler: GCC/11.2.0/GCC
+        netcdf: GCC/11.2.0/netcdf/4.7.4-mpich4.0.0
+        mpi:
+          mpich:
+            module: GCC/11.2.0/mpich/4.0.0
