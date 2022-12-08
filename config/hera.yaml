@@ -9,8 +9,8 @@ machine:
     tasks_per_node: 40
 
 test:
-  esmf_branch: [develop]
-  nuopc_branch: [develop]
+  esmf_branch: [develop,fix/nag]
+  nuopc_branch: [develop,develop]
 
 matrix:
   gfortran:
