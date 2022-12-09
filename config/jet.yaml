@@ -15,7 +15,7 @@ matrix:
   intel:
     test_time: "2:00:00"
     versions:
-      2020.2:
+      19.1.2:
         compiler: intel/2020.2
         netcdf: netcdf/4.7.0
         mpi:
