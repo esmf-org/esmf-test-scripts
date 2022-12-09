@@ -44,23 +44,3 @@ matrix:
            mpiuni:
              module: None
          extra_module: CMake/3.24.3
-       6.2:
-         compiler: compiler/nag/6.2
-         netcdf: tool/netcdf/4.6.1/nag
-         mpi:
-           mvapich2:
-             module: mpi/nag/mvapich2-2.3rc2
-           openmpi:
-             module: mpi/nag/openmpi-3.1.0 
-           mpiuni:
-             module: None
-         extra_module: CMake/3.24.3
-  pgi:
-     versions:
-       19.9:
-         compiler: compiler/pgi/19.9
-         netcdf: tool/netcdf/4.6.1/pgi
-         mpi:
-           mpiuni:
-             module: None
-         extra_module: CMake/3.24.3
