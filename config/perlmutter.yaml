@@ -1,0 +1,45 @@
+machine:
+  name: perlmutter
+  cores_per_node: 128
+  scheduler:
+    type: slurm
+    account: e3sm
+    queue: regular
+    constraint: cpu
+
+test:
+  esmf_branch: [develop]
+  nuopc_branch: [develop]
+#  filter:
+#    compiler: [aocc]
+
+matrix:
+  gfortran:
+    test_time: "2:00:00"
+    versions:
+      11.2.0:
+        compiler: gcc/11.2.0
+        netcdf: cray-hdf5/1.12.1.5 cray-netcdf/4.8.1.5
+        mpi:
+          mpiuni: 
+            module: None
+          mpi: 
+            module: cray-mpich/8.1.17
+        extra_env_vars: 
+          - ESMF_NETCDF_LIBS="-lnetcdff -lnetcdf"
+        extra_module: PrgEnv-gnu cpu
+
+  aocc:
+    test_time: "2:00:00"
+    versions:
+      3.2.0:
+        compiler: aocc/3.2.0
+        netcdf: cray-hdf5/1.12.1.5 cray-netcdf/4.8.1.5
+        mpi:
+          mpiuni: 
+            module: None
+          mpi: 
+            module: cray-mpich/8.1.15
+        extra_env_vars: 
+          - ESMF_NETCDF_LIBS="-lnetcdff -lnetcdf"
+        extra_module: PrgEnv-aocc cpu
