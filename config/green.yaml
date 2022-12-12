@@ -4,8 +4,8 @@ machine:
   scheduler: None
 
 test:
-  esmf_branch: [develop]
-  nuopc_branch: [workaround/darwin-threaded-hang]
+  esmf_branch: [develop, fix_darwin_clang_c_linker]
+  nuopc_branch: [workaround/darwin-threaded-hang, workaround/darwin-threaded-hang]
 
 matrix:
   gfortranclang:
