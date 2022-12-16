@@ -8,8 +8,8 @@ machine:
     queue: normal
 
 test:
-  esmf_branch: [develop,feature/reuse-RH]
-  nuopc_branch: [develop,develop]
+  esmf_branch: [develop]
+  nuopc_branch: [develop]
 #  filter:
 #    compiler: [intel]
 
