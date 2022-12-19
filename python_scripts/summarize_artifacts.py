@@ -475,7 +475,7 @@ def _collect_summary_stats(commit, machine_branch):
         _file_list)
     if _m is not None:
         _summary_file = _m.group(0)
-        _summary_text = cmd.runcmd(f"cat {_summary_file}", ignore_error=True)
+        _summary_text = cmd.runcmd(f"cat {_summary_file}")
 
         _os = _extract(r"ESMF_OS:\s+(\S+)", _summary_text, "None")
         _netcdf = _extract(r"NetCDF library version: netCDF (.+)\n", _summary_text, "None")
