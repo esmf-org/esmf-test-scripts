@@ -14,7 +14,7 @@ class Matrix:
           - module_path: if "module use <module_path>" is required on this machine
         """
 
-        bopts = ["O", "g"]
+        bopts_default = ["O", "g"]
         self.combinations = []
 
         for compiler in config:
@@ -27,6 +27,10 @@ class Matrix:
                 netcdf_module = versions[compiler_version]['netcdf']
                 for mpi in mpis:
                     mpi_module = mpis[mpi]['module']
+                    if 'bopt' in mpis[mpi]:
+                        bopts = mpis[mpi]['bopt']
+                    else:
+                        bopts = bopts_default
                     for bopt in bopts:
                         combo = Combination()
                         combo.compiler = compiler
