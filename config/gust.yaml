@@ -1,0 +1,30 @@
+machine:
+  name: gust
+  cores_per_node: 128
+  scheduler:
+    type: pbs
+    account: p93300606
+    queue: main
+    partition: None
+
+test:
+  esmf_branch: [develop]
+  nuopc_branch: [develop]
+
+matrix:
+  intel:
+    build_time: "2:00:00"
+    test_time: "3:00:00"
+    versions:
+      2021.6:
+        compiler: intel/2021.6
+        netcdf: netcdf/4.8.1
+        mpi:
+          mpiuni:
+            module: None
+          mpi:
+            module: cray-mpich/8.1.19
+            mpi_env_vars:
+              - ESMF_MPIRUN=mpirun
+        extra_env_vars:
+          - ESMF_OS=Unicos
