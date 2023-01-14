@@ -293,7 +293,7 @@ if __name__ == "__main__":
     logging.debug(f"Artifacts root: {_artifacts_root}")
     _artifacts_branch = args["artifacts_branch"]
     _scheduler = Scheduler.scheduler_class(args["scheduler_type"])
-    _jobid = int(args["jobid"])
+    _jobid = int(args["jobid"].split(".")[0])
     _phase = args["phase"]
 
     if _jobid > 0:
