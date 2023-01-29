@@ -103,7 +103,7 @@ class Case:
             logging.debug("Starting artifacts monitor for build phase")
             cmd.start_process(f"{self.collect_script} {self.build_job_num} build")
 
-        self.test_job_num = self.machine.scheduler.submit_job(script_file=self.test_script, after=self.build_job_num).split(".")[0]
+        self.test_job_num = self.machine.scheduler.submit_job(script_file=self.test_script, after=self.build_job_num)
         logging.debug(f"Submitted test job: {self.test_job_num}")
 
         if not no_artifacts:

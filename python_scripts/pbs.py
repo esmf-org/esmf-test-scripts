@@ -39,8 +39,11 @@ class PBS(Scheduler):
         _after = ""
         if after is not None:
             _after = f"-W depend=afterok:{after}"
-        _submit_cmd = f"qsub {_after} {script_file}"
-        _job_num = cmd.runcmd(_submit_cmd)
+            _submit_cmd = f"qsub {_after} {script_file}"
+            _job_num = cmd.runcmd(_submit_cmd).split(".")[0]
+        else:
+            _submit_cmd = f"qsub {_after} {script_file}"
+            _job_num = cmd.runcmd(_submit_cmd)
         return _job_num
 
     @staticmethod
