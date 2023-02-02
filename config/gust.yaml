@@ -17,13 +17,13 @@ matrix:
     test_time: "3:00:00"
     versions:
       2021.6:
-        compiler: intel/2021.6.0
-        netcdf: netcdf/4.8.1
+        compiler: intel/2021.7.1
+        netcdf: netcdf/4.9.0
         mpi:
           mpiuni:
             module: None
           mpi:
-            module: cray-mpich/8.1.19
+            module: cray-mpich/8.1.21
             mpi_env_vars:
               - ESMF_MPIRUN=mpiexec
 #      2022.1-classic:
@@ -47,17 +47,32 @@ matrix:
 #            mpi_env_vars:
 #              - ESMF_MPIRUN=mpiexec
 
-  cce:
+  nvhpc:
     build_time: "2:00:00"
     test_time: "3:00:00"
     versions:
-      14.0.3:
-        compiler: cce/14.0.3
-        netcdf: netcdf/4.8.1
+      23.1:
+        compiler: nvhpc/23.1
+        netcdf: netcdf/4.9.0
         mpi:
           mpiuni:
             module: None
           mpi:
-            module: cray-mpich/8.1.19
+            module: cray-mpich/8.1.21
+            mpi_env_vars:
+              - ESMF_MPIRUN=mpiexec
+
+  cce:
+    build_time: "2:00:00"
+    test_time: "3:00:00"
+    versions:
+      15.0.0:
+        compiler: cce/15.0.0
+        netcdf: netcdf/4.9.0
+        mpi:
+          mpiuni:
+            module: None
+          mpi:
+            module: cray-mpich/8.1.21
             mpi_env_vars:
               - ESMF_MPIRUN=mpiexec
