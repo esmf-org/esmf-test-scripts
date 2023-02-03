@@ -30,7 +30,7 @@ matrix:
         extra_module: PrgEnv-gnu cpu
 
   aocc:
-    test_time: "2:00:00"
+    test_time: "4:00:00"
     versions:
       3.2.0:
         compiler: aocc/3.2.0
