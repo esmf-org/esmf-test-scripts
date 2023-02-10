@@ -26,6 +26,7 @@ matrix:
             module: cray-mpich/8.1.21
             mpi_env_vars:
               - ESMF_MPIRUN=mpiexec
+        unload_module: cray-libsci
 #      2022.1-classic:
 #        compiler: ncarenv/22.08b intel/2022.1.0
 #        netcdf: netcdf/4.8.1
