@@ -8,8 +8,8 @@ machine:
     partition: None
 
 test:
-  esmf_branch: [develop]
-  nuopc_branch: [develop]
+  esmf_branch: [develop,patch/8.4.1]
+  nuopc_branch: [develop,develop]
 
 matrix:
   intel:
