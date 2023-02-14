@@ -8,8 +8,8 @@ machine:
     partition: None
 
 test:
-  esmf_branch: [develop]
-  nuopc_branch: [develop]
+  esmf_branch: [develop,patch/8.4.1]
+  nuopc_branch: [develop,develop]
 
 matrix:
   intel:
@@ -27,26 +27,17 @@ matrix:
             mpi_env_vars:
               - ESMF_MPIRUN=mpiexec
         unload_module: cray-libsci
-#      2022.1-classic:
-#        compiler: ncarenv/22.08b intel/2022.1.0
-#        netcdf: netcdf/4.8.1
-#        mpi:
-#          mpiuni:
-#            module: None
-#          mpi:
-#            module: cray-mpich/8.1.18
-#            mpi_env_vars:
-#              - ESMF_MPIRUN=mpiexec
-#      2022.2-oneAPI:
-#        compiler: ncarenv/22.12 oneapi/2022.2.1
-#        netcdf: netcdf/4.9.0
-#        mpi:
-#          mpiuni:
-#            module: None
-#          mpi:
-#            module: cray-mpich/8.1.21
-#            mpi_env_vars:
-#              - ESMF_MPIRUN=mpiexec
+      2023.0-oneAPI:
+        compiler: oneapi/2023.0.0
+        netcdf: netcdf/4.9.0
+        mpi:
+          mpiuni:
+            module: None
+          mpi:
+            module: cray-mpich/8.1.21
+            mpi_env_vars:
+              - ESMF_MPIRUN=mpiexec
+        unload_module: cray-libsci
 
   nvhpc:
     build_time: "2:00:00"
