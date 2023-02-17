@@ -1,6 +1,6 @@
 machine:
   name: cori
-  cores_per_node: 32    
+  cores_per_node: 32
   scheduler:
     type: slurm
     account: e3sm
@@ -9,8 +9,8 @@ machine:
 
 
 test:
-  esmf_branch: [develop]
-  nuopc_branch: [develop]
+  esmf_branch: [develop,patch/8.4.1]
+  nuopc_branch: [develop,v8.4.0]
 
 matrix:
   #gfortran:
