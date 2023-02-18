@@ -13,7 +13,7 @@ The steps are as follows:
   ```bash
    cd $ESMF_TEST_ROOT
    git clone git@github.com:esmf-org/esmf-test-scripts.git
-   git clone git@github.com:esmf-org/esmf-test-artifacts.git
+   git clone -c feature.manyFiles=true  git@github.com:esmf-org/esmf-test-artifacts.git
   ``` 
   3.  If this is an entirely new machine that has never been tested with ESMF, create a new config YAML 
       file under `esmf-test-scripts/config/<machine>.yaml`.
