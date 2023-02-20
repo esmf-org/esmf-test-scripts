@@ -381,9 +381,7 @@ def _print_tested_hashes():
 def _get_machine_list(repo):
     logging.debug(f"Getting list of machines: {repo}")
     cmd.chdir(repo)
-    branch_list = cmd.runcmd("git branch -a")
-    logging.debug(f"Remote branches:\n{branch_list}")
-    cmd.runcmd("git fetch --prune --depth=10")
+    cmd.runcmd("git fetch --prune")
     branch_list = cmd.runcmd("git branch -a")
     logging.debug(f"Remote branches:\n{branch_list}")
     regex = re.compile(r"remotes/origin/(\w+)")
@@ -416,7 +414,7 @@ def _load_artifact_commits(repo, machine_branch):
     logging.info(f"Loading artifacts from branch: {machine_branch}")
     cmd.chdir(repo)
     cmd.runcmd(f"git checkout --force {machine_branch}", stderr=True)
-    cmd.runcmd(f"git fetch --depth=10 origin {machine_branch}")
+    cmd.runcmd(f"git fetch origin {machine_branch}")
     cmd.runcmd(f"git reset --hard origin/{machine_branch}")
     # TODO: provide a parameter to limit the number of commits to consider
     # currently this is hard-coded to 9999
