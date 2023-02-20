@@ -381,6 +381,8 @@ def _print_tested_hashes():
 def _get_machine_list(repo):
     logging.debug(f"Getting list of machines: {repo}")
     cmd.chdir(repo)
+    branch_list = cmd.runcmd("git branch -a")
+    logging.debug(f"Remote branches:\n{branch_list}")
     cmd.runcmd("git fetch --prune --depth=10")
     branch_list = cmd.runcmd("git branch -a")
     logging.debug(f"Remote branches:\n{branch_list}")
