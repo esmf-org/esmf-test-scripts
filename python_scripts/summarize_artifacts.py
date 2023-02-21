@@ -381,7 +381,7 @@ def _print_tested_hashes():
 def _get_machine_list(repo):
     logging.debug(f"Getting list of machines: {repo}")
     cmd.chdir(repo)
-    cmd.runcmd("git fetch --prune")
+    cmd.runcmd("git fetch --progress --prune")
     branch_list = cmd.runcmd("git branch -a")
     logging.debug(f"Remote branches:\n{branch_list}")
     regex = re.compile(r"remotes/origin/(\w+)")
@@ -413,8 +413,8 @@ def _get_esmf_commit_message(_hash):
 def _load_artifact_commits(repo, machine_branch):
     logging.info(f"Loading artifacts from branch: {machine_branch}")
     cmd.chdir(repo)
-    cmd.runcmd(f"git checkout --force {machine_branch}", stderr=True)
-    cmd.runcmd(f"git fetch origin {machine_branch}")
+    cmd.runcmd(f"git checkout --progress --force {machine_branch}", stderr=True)
+    cmd.runcmd(f"git fetch --progress origin {machine_branch}")
     cmd.runcmd(f"git reset --hard origin/{machine_branch}")
     # TODO: provide a parameter to limit the number of commits to consider
     # currently this is hard-coded to 9999
@@ -468,7 +468,7 @@ def _extract(regex, string, default=None):
 def _collect_summary_stats(commit, machine_branch):
     _hash = commit["hash"]
     logging.info(f"Load from artifacts commit: {_hash}")
-    cmd.runcmd(f"git checkout {_hash}", stderr=True)
+    cmd.runcmd(f"git checkout --progress {_hash}", stderr=True)
     _file_list = cmd.runcmd(f"git show {_hash} --oneline --name-only")
     _m = re.search(
         r"(?P<branch>\S+)/(?P<compiler>\S+)/(?P<compiler_ver>\S+)/(?P<bopt>\S+)/(?P<mpi>\S+)/(?P<mpi_ver>\S+)/summary\.dat",
@@ -663,7 +663,7 @@ if __name__ == "__main__":
             _esmf_repo = args["esmf_repo"]
             logging.info(f"Fetching ESMF repository: {args['esmf_repo']}")
             cmd.chdir(_esmf_repo)
-            cmd.runcmd("git fetch")
+            cmd.runcmd("git fetch --progress ")
 
     _branches = _retrieve_tested_branches()
     for _b in _branches:
