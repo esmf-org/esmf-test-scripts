@@ -252,6 +252,11 @@ class ESMFTest:
                 _submit_case(_c)  # may bock
                 logging.debug(f"Done submitting case: {_c.label()}")
 
+        for _c in case_list:
+            logging.debug(f"Waiting for collect_build_process for case: {_c.label()}")
+            _c.collect_build_process.wait()
+            logging.debug(f"Waiting for collect_test_process for case: {_c.label()}")
+            _c.collect_test_process.wait()
 
 def go(args):
     """

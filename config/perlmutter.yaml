@@ -1,5 +1,6 @@
 machine:
   name: perlmutter
+  lustre: True
   cores_per_node: 128
   scheduler:
     type: slurm

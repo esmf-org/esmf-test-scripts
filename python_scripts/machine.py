@@ -7,6 +7,7 @@ class Machine:
     def __init__(self, config):
         self.name = config["name"]
         self.git_https = config.get("git_https", False)
+        self.lustre = config.get("lustre", False)
         self.bash = config.get("bash", "/bin/bash")
         self.head_node_name = config.get("head_node_name", os.uname()[1])
         self.module_path = config.get("module_path", None)
@@ -21,6 +22,7 @@ class Machine:
         print("============================")
         print(f" Name: {self.name}")
         print(f" Git-Https: {self.git_https}")
+        print(f" Lustre: {self.lustre}")
         print(f" Bash: {self.bash}")
         print(f" Head node: {self.head_node_name}")
         print(f" Module path: {self.module_path}")
