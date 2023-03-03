@@ -8,8 +8,8 @@ machine:
     queue: normal
 
 test:
-  esmf_branch: [develop,patch/8.4.1]
-  nuopc_branch: [develop,v8.4.0]
+  esmf_branch: [develop,v8.4.1]
+  nuopc_branch: [develop,v8.4.1]
 
 matrix:
   gfortran:
