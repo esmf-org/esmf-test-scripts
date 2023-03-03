@@ -8,6 +8,7 @@ class Machine:
         self.name = config["name"]
         self.git_https = config.get("git_https", False)
         self.lustre = config.get("lustre", False)
+        self.wait_to_collect = config.get("wait_to_collect", False)
         self.bash = config.get("bash", "/bin/bash")
         self.head_node_name = config.get("head_node_name", os.uname()[1])
         self.module_path = config.get("module_path", None)
