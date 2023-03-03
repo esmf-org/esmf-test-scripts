@@ -1,5 +1,6 @@
 machine:
   name: gaeaC5
+  lustre: True
   cores_per_node: 128
   scheduler:
     type: slurm
