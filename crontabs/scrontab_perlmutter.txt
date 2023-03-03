@@ -1,0 +1,8 @@
+#SCRON --account=e3sm
+#SCRON --time=3:00:00
+#SCRON --qos=cron
+#SCRON -o /global/cfs/cdirs/e3sm/theurich/ESMF-Nightly-Testing/perlmutter-scron.log
+#SCRON --open-mode=append
+
+# Perlmutter cron timezone is UTC!!!
+30 07 * * * /global/cfs/cdirs/e3sm/theurich/ESMF-Nightly-Testing/esmf-test-scripts/runscripts/run_esmf_tests_perlmutter.sh 2>&1 > /global/cfs/cdirs/e3sm/theurich/ESMF-Nightly-Testing/perlmutter-cron.log
