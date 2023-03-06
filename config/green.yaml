@@ -16,7 +16,7 @@ matrix:
         mpi:
           openmpi:
             module: 4.1.4
-            bopt: [g]
-          # mpiuni:
-          #   module: None
-          #   bopt: [g]
+            bopt: [O,g]
+          mpiuni:
+            module: None
+            bopt: [O,g]
