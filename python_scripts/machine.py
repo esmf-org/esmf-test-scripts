@@ -24,6 +24,7 @@ class Machine:
         print(f" Name: {self.name}")
         print(f" Git-Https: {self.git_https}")
         print(f" Lustre: {self.lustre}")
+        print(f" Wait_to_collect: {self.wait_to_collect}")
         print(f" Bash: {self.bash}")
         print(f" Head node: {self.head_node_name}")
         print(f" Module path: {self.module_path}")
