@@ -252,6 +252,14 @@ class ESMFTest:
                 _submit_case(_c)  # may bock
                 logging.debug(f"Done submitting case: {_c.label()}")
 
+        if self.machine.wait_to_collect:
+            # this machine requires that the parent process waits for result collection processes
+            for _c in case_list:
+                logging.info(f"Waiting for collect_build_process for case: {_c.label()}")
+                _c.collect_build_process.wait()
+            for _c in case_list:
+                logging.info(f"Waiting for collect_test_process for case: {_c.label()}")
+                _c.collect_test_process.wait()
 
 def go(args):
     """

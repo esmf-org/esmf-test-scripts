@@ -1,5 +1,7 @@
 machine:
   name: perlmutter
+  lustre: True
+  wait_to_collect: True
   cores_per_node: 128
   scheduler:
     type: slurm
@@ -11,7 +13,7 @@ test:
   esmf_branch: [develop]
   nuopc_branch: [develop]
 #  filter:
-#    compiler: [aocc]
+#    compiler: [gfortran]
 
 matrix:
   gfortran:

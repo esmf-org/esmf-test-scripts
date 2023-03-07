@@ -38,6 +38,8 @@ class Case:
         self.esmpy_install_script = os.path.join(self.base_path, "esmpy_install.bat")
         self.build_job_num = 0
         self.test_job_num = 0
+        self.collect_build_process = 0
+        self.collect_test_process = 0
 
     def label(self):
         """
@@ -52,6 +54,8 @@ class Case:
         Generate test scripts to submit.
         """
         cmd.chdir(self.root_dir)
+        if self.machine.lustre and os.path.isfile(self.base_path):
+            cmd.runcmd(f"lfs find {self.base_path} -t f -print0 | xargs -0 munlink")
         cmd.runcmd(f"rm -rf {self.base_path}")
         cmd.runcmd(f"mkdir -p {self.base_path}")
         cmd.chdir(self.base_path)
@@ -101,14 +105,14 @@ class Case:
 
         if not no_artifacts:
             logging.debug("Starting artifacts monitor for build phase")
-            cmd.start_process(f"{self.collect_script} {self.build_job_num} build")
+            self.collect_build_process = cmd.start_process(f"{self.collect_script} {self.build_job_num} build")
 
         self.test_job_num = self.machine.scheduler.submit_job(script_file=self.test_script, after=self.build_job_num)
         logging.debug(f"Submitted test job: {self.test_job_num}")
 
         if not no_artifacts:
             logging.debug("Starting artifacts monitor for test phase")
-            cmd.start_process(f"{self.collect_script} {self.test_job_num} test")
+            self.collect_test_process = cmd.start_process(f"{self.collect_script} {self.test_job_num} test")
 
     def finished(self):
         """

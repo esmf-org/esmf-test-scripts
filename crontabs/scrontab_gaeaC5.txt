@@ -1,0 +1,9 @@
+#SCRON --account=esrl_bmcs
+#SCRON --time=6:00:00
+#SCRON --qos=normal
+#SCRON --partition=cron_c5
+#SCRON -o /lustre/f2/dev/ncep/Gerhard.Theurich/ESMF-Nightly-Testing-C5/gaeaC5-scron.log
+#SCRON --open-mode=append
+
+# Gaea cron timezone is UTC!!!
+05 07 * * * /lustre/f2/dev/ncep/Gerhard.Theurich/ESMF-Nightly-Testing-C5/esmf-test-scripts/runscripts/run_esmf_tests_gaeaC5.sh 2>&1 > /lustre/f2/dev/ncep/Gerhard.Theurich/ESMF-Nightly-Testing-C5/gaeaC5-cron.log

@@ -1,5 +1,7 @@
 machine:
   name: gaeaC5
+  lustre: True
+  wait_to_collect: True
   cores_per_node: 128
   scheduler:
     type: slurm
