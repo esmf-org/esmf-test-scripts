@@ -16,25 +16,36 @@ matrix:
     build_time: "2:00:00"
     test_time: "3:00:00"
     versions:
-      2021.7.1:
-        compiler: intel/2021.7.1
-        netcdf: netcdf/4.9.0
+      2023.0:
+        compiler: intel/2023.0
+        netcdf: netcdf/4.9.1
         mpi:
           mpiuni:
             module: None
           mpi:
-            module: cray-mpich/8.1.21
+            module: cray-mpich/8.1.25
+            mpi_env_vars:
+              - ESMF_MPIRUN=mpiexec
+        unload_module: cray-libsci
+      2023.0-classic:
+        compiler: intel-classic/2023.0.0
+        netcdf: netcdf/4.9.1
+        mpi:
+          mpiuni:
+            module: None
+          mpi:
+            module: cray-mpich/8.1.25
             mpi_env_vars:
               - ESMF_MPIRUN=mpiexec
         unload_module: cray-libsci
       2023.0-oneAPI:
-        compiler: oneapi/2023.0.0
-        netcdf: netcdf/4.9.0
+        compiler: intel-oneapi/2023.0.0
+        netcdf: netcdf/4.9.1
         mpi:
           mpiuni:
             module: None
           mpi:
-            module: cray-mpich/8.1.21
+            module: cray-mpich/8.1.25
             mpi_env_vars:
               - ESMF_MPIRUN=mpiexec
         unload_module: cray-libsci
@@ -45,12 +56,12 @@ matrix:
     versions:
       23.1:
         compiler: nvhpc/23.1
-        netcdf: netcdf/4.9.0
+        netcdf: netcdf/4.9.1
         mpi:
           mpiuni:
             module: None
           mpi:
-            module: cray-mpich/8.1.21
+            module: cray-mpich/8.1.25
             mpi_env_vars:
               - ESMF_MPIRUN=mpiexec
 
@@ -59,12 +70,12 @@ matrix:
     test_time: "3:00:00"
     versions:
       15.0.0:
-        compiler: cce/15.0.0
-        netcdf: netcdf/4.9.0
+        compiler: cce/15.0.1
+        netcdf: netcdf/4.9.1
         mpi:
           mpiuni:
             module: None
           mpi:
-            module: cray-mpich/8.1.21
+            module: cray-mpich/8.1.25
             mpi_env_vars:
               - ESMF_MPIRUN=mpiexec
