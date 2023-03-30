@@ -10,6 +10,8 @@ machine:
 test:
   esmf_branch: [develop]
   nuopc_branch: [develop]
+#  filter:
+#    compiler: [intel]
 
 matrix:
   intel:
@@ -26,7 +28,6 @@ matrix:
             module: cray-mpich/8.1.25
             mpi_env_vars:
               - ESMF_MPIRUN=mpiexec
-        unload_module: cray-libsci
       2023.0.0-classic:
         compiler: intel-classic/2023.0.0
         netcdf: netcdf/4.9.1
@@ -37,7 +38,6 @@ matrix:
             module: cray-mpich/8.1.25
             mpi_env_vars:
               - ESMF_MPIRUN=mpiexec
-        unload_module: cray-libsci
       2023.0.0-oneAPI:
         compiler: intel-oneapi/2023.0.0
         netcdf: netcdf/4.9.1
@@ -48,7 +48,6 @@ matrix:
             module: cray-mpich/8.1.25
             mpi_env_vars:
               - ESMF_MPIRUN=mpiexec
-        unload_module: cray-libsci
 
   nvhpc:
     build_time: "2:00:00"
