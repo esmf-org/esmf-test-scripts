@@ -16,8 +16,8 @@ matrix:
     build_time: "2:00:00"
     test_time: "3:00:00"
     versions:
-      2023.0:
-        compiler: intel/2023.0
+      2023.0.0:
+        compiler: intel/2023.0.0
         netcdf: netcdf/4.9.1
         mpi:
           mpiuni:
@@ -27,7 +27,7 @@ matrix:
             mpi_env_vars:
               - ESMF_MPIRUN=mpiexec
         unload_module: cray-libsci
-      2023.0-classic:
+      2023.0.0-classic:
         compiler: intel-classic/2023.0.0
         netcdf: netcdf/4.9.1
         mpi:
@@ -38,7 +38,7 @@ matrix:
             mpi_env_vars:
               - ESMF_MPIRUN=mpiexec
         unload_module: cray-libsci
-      2023.0-oneAPI:
+      2023.0.0-oneAPI:
         compiler: intel-oneapi/2023.0.0
         netcdf: netcdf/4.9.1
         mpi:
@@ -69,7 +69,7 @@ matrix:
     build_time: "2:00:00"
     test_time: "3:00:00"
     versions:
-      15.0.0:
+      15.0.1:
         compiler: cce/15.0.1
         netcdf: netcdf/4.9.1
         mpi:
