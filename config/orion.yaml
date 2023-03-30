@@ -1,6 +1,7 @@
 machine:
   name: orion
   cores_per_node: 40
+  git_https: True
   scheduler:
     type: slurm
     account: da-cpu
