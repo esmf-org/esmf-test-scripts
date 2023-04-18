@@ -19,14 +19,14 @@ matrix:
   gfortran:
        test_time: "2:00:00"
        versions:
-         11.2.0:
-           compiler: gcc/11.2.0
-           netcdf: cray-hdf5/1.12.1.3 cray-netcdf/4.8.1.3
+         12.2.0:
+           compiler: gcc/12.2.0
+           netcdf: cray-hdf5/1.12.2.3 cray-netcdf/4.9.0.3
            mpi:
              mpiuni:
                module: None
              mpi:
-               module: cray-mpich/8.1.16
+               module: cray-mpich/8.1.25
            extra_env_vars:
              - ESMF_NETCDF_LIBS="-lnetcdff -lnetcdf"
            extra_module: PrgEnv-gnu git
@@ -34,42 +34,42 @@ matrix:
   intel:
        test_time: "2:00:00"
        versions:
-         2022.0-classic:
-           compiler: intel-classic/2022.0.2
-           netcdf: cray-hdf5/1.12.1.3 cray-netcdf/4.8.1.3
+         2022.2.1-classic:
+           compiler: intel-classic/2022.2.1
+           netcdf: cray-hdf5/1.12.2.3 cray-netcdf/4.9.0.3
            mpi:
              mpiuni:
                module: None
              mpi:
-               module: cray-mpich/8.1.16
+               module: cray-mpich/8.1.25
            extra_env_vars:
              - ESMF_NETCDF_INCLUDE="$CRAY_NETCDF_PREFIX/include"
              - ESMF_NETCDF_LIBPATH="$CRAY_NETCDF_PREFIX/lib"
              - ESMF_NETCDF_LIBS="-lnetcdff -lnetcdf"
            extra_module: PrgEnv-intel git
            unload_module: darshan-runtime
-         2022.0:
-           compiler: intel/2022.0.2
-           netcdf: cray-hdf5/1.12.1.3 cray-netcdf/4.8.1.3
+         2022.2.1:
+           compiler: intel/2022.2.1
+           netcdf: cray-hdf5/1.12.2.3 cray-netcdf/4.9.0.3
            mpi:
              mpiuni:
                module: None
              mpi:
-               module: cray-mpich/8.1.16
+               module: cray-mpich/8.1.25
            extra_env_vars:
              - ESMF_NETCDF_INCLUDE="$CRAY_NETCDF_PREFIX/include"
              - ESMF_NETCDF_LIBPATH="$CRAY_NETCDF_PREFIX/lib"
              - ESMF_NETCDF_LIBS="-lnetcdff -lnetcdf"
            extra_module: PrgEnv-intel git
            unload_module: darshan-runtime
-         2022.0-oneAPI:
-           compiler: intel-oneapi/2022.0.2
-           netcdf: cray-hdf5/1.12.1.3 cray-netcdf/4.8.1.3
+         2022.2.1-oneAPI:
+           compiler: intel-oneapi/2022.2.1
+           netcdf: cray-hdf5/1.12.2.3 cray-netcdf/4.9.0.3
            mpi:
              mpiuni:
                module: None
              mpi:
-               module: cray-mpich/8.1.16
+               module: cray-mpich/8.1.25
            extra_env_vars:
              - ESMF_NETCDF_INCLUDE="$CRAY_NETCDF_PREFIX/include"
              - ESMF_NETCDF_LIBPATH="$CRAY_NETCDF_PREFIX/lib"
