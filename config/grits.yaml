@@ -11,10 +11,10 @@ matrix:
   gfortranclang:
     versions:
       12.2.0_14.0.0:
-        compiler: gfortran-12.2.0_clang-13.1.6
-        netcdf: netcdf-4.9.0
+        compiler: gfortran-12.2.0_clang-14.0.0
+        netcdf: netcdf-4.9.2
         mpi:
           mpich:
-            module: 4.0.2
+            module: 4.1.1
           mpiuni:
             module: None
