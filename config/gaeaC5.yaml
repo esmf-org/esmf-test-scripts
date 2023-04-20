@@ -10,7 +10,7 @@ machine:
     queue: normal
 
 test:
-  esmf_branch: [develop]
+  esmf_branch: [patch/8.4.2]
   nuopc_branch: [develop]
 #  filter:
 #    compiler: [intel]
