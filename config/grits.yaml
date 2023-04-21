@@ -14,7 +14,7 @@ matrix:
         compiler: gfortran-12.2.0_clang-14.0.0
         netcdf: netcdf-4.9.2
         mpi:
-          mpich:
-            module: 4.1.1
+#          mpich:
+#            module: 4.1.1
           mpiuni:
             module: None
