@@ -8,8 +8,8 @@ machine:
     partition: None
 
 test:
-  esmf_branch: [patch/8.4.2]
-  nuopc_branch: [v8.4.1]
+  esmf_branch: [v8.4.2]
+  nuopc_branch: [v8.4.2]
 #  filter:
 #    compiler: [intel]
 
