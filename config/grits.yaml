@@ -4,7 +4,7 @@ machine:
   scheduler: None
 
 test:
-  esmf_branch: [patch/8.4.2]
+  esmf_branch: [v8.4.2]
   nuopc_branch: [workaround/darwin-threaded-hang]
 
 matrix:

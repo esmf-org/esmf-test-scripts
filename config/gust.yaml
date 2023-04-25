@@ -8,8 +8,8 @@ machine:
     partition: None
 
 test:
-  esmf_branch: [develop,feature/hconfig]
-  nuopc_branch: [develop,develop]
+  esmf_branch: [v8.4.2]
+  nuopc_branch: [v8.4.2]
 #  filter:
 #    compiler: [intel]
 
