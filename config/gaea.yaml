@@ -3,7 +3,7 @@ machine:
   cores_per_node: 24
   scheduler:
     type: slurm
-    cluster: c4
+    cluster: c3
     account: nggps_emc
     queue: normal
 
