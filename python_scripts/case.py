@@ -132,18 +132,15 @@ class Case:
                 out.write(f"module use {e.module_path}\n")
             if e.extra_module is not None:
                 out.write(f"module load {e.extra_module}\n")
-            if e.mpi_env_vars is not None:
-                for _var in e.mpi_env_vars:
-                    out.write(f"export {_var}\n")
             if e.mpi_module.lower() == "none":
                 _mpi_module = ""
             else:
                 _mpi_module = e.mpi_module
             out.write(f"module load {e.compiler_module} {_mpi_module}\n")
-            if e.netcdf_module.lower() != "none":
-                out.write(f"module load {e.netcdf_module}\n")
             if e.hdf5_module is not None:
                 out.write(f"module load {e.hdf5_module}\n")
+            if e.netcdf_module.lower() != "none":
+                out.write(f"module load {e.netcdf_module}\n")
             if e.netcdf_fortran_module is not None:
                 out.write(f"module load {e.netcdf_fortran_module}\n")
             if e.python_module is not None:
@@ -156,6 +153,9 @@ class Case:
             if e.extra_commands is not None:
                 for _cmd in e.extra_commands:
                     out.write(f"{_cmd}\n")
+            if e.mpi_env_vars is not None:
+                for _var in e.mpi_env_vars:
+                    out.write(f"export {_var}\n")
 
             out.write(f"export ESMF_DIR={self.esmf_clone_path}\n")
             out.write(f"export ESMF_COMPILER={e.compiler}\n")

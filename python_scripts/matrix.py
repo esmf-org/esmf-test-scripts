@@ -24,7 +24,8 @@ class Matrix:
             for compiler_version in versions:
                 compiler_module = versions[compiler_version]['compiler']
                 mpis = versions[compiler_version]['mpi']
-                netcdf_module = versions[compiler_version]['netcdf']
+                if "netcdf" in versions[compiler_version]:
+                    netcdf_module = versions[compiler_version]['netcdf']
                 for mpi in mpis:
                     mpi_module = mpis[mpi]['module']
                     if 'bopt' in mpis[mpi]:
@@ -52,6 +53,8 @@ class Matrix:
                             combo.extra_module = versions[compiler_version]["extra_module"]
                         if "mpi_env_vars" in mpis[mpi]:
                             combo.mpi_env_vars = mpis[mpi]["mpi_env_vars"]
+                        if "mpi_netcdf" in mpis[mpi]:
+                            combo.netcdf_module = mpis[mpi]["mpi_netcdf"]
                         if "hdf5" in versions[compiler_version]:
                             combo.hdf5_module = versions[compiler_version]["hdf5"]
                         if "netcdf-fortran" in versions[compiler_version]:
