@@ -10,7 +10,7 @@ machine:
     queue: normal
 
 test:
-  esmf_branch: [fix/mesh_distgrid_usage]
+  esmf_branch: [develop]
   nuopc_branch: [develop]
 #  filter:
 #    compiler: [intel]
