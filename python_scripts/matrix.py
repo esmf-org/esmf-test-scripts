@@ -25,7 +25,7 @@ class Matrix:
                 compiler_module = versions[compiler_version]['compiler']
                 mpis = versions[compiler_version]['mpi']
                 if "netcdf" in versions[compiler_version]:
-                    netcdf_module = versions[compiler_version]['netcdf']
+                    combo.netcdf_module = versions[compiler_version]['netcdf']
                 for mpi in mpis:
                     mpi_module = mpis[mpi]['module']
                     if 'bopt' in mpis[mpi]:
@@ -39,7 +39,6 @@ class Matrix:
                         combo.compiler_version = str(compiler_version)
                         combo.mpi = mpi
                         combo.mpi_module = mpi_module
-                        combo.netcdf_module = netcdf_module
                         combo.bopt = bopt
                         combo.test_time = test_time
                         combo.build_time = build_time
