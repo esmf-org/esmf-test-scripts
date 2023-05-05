@@ -41,6 +41,7 @@ class Matrix:
                         combo.test_time = test_time
                         combo.build_time = build_time
                         combo.module_path = module_path
+                        combo.netcdf_module = "None"
 
                         if mpi_module != "":
                             combo.mpi_version = str(mpi_module.split('/')[-1])
