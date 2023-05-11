@@ -439,23 +439,40 @@ def _load_artifact_commits(repo, machine_branch):
 
         skip = False
 
-        for p in _exclude_artifact_hashes:
-            if _commit_dict["hash"] is not None and p.fullmatch(_commit_dict["hash"]) is not None:
-                logging.debug(f"Skipping excluded Artifact hash: {_commit_dict['esmf_hash']}")
-                skip = True
-                break
+        if not skip:
+            for p in _exclude_artifact_hashes:
+                if _commit_dict["hash"] is not None and p.fullmatch(_commit_dict["hash"]) is not None:
+                    logging.debug(f"Skipping excluded Artifact hash: {_commit_dict['esmf_hash']}")
+                    skip = True
+                    break
 
-        for p in _exclude_esmf_hashes:
-            if _commit_dict["esmf_hash"] is not None and p.fullmatch(_commit_dict["esmf_hash"]) is not None:
-                logging.debug(f"Skipping excluded ESMF hash: {_commit_dict['esmf_hash']}")
-                skip = True
-                break
+        if not skip:
+            for p in _exclude_esmf_hashes:
+                if _commit_dict["esmf_hash"] is not None and p.fullmatch(_commit_dict["esmf_hash"]) is not None:
+                    include = False
+                    for pp in _include_esmf_hashes:
+                        if pp.fullmatch(_commit_dict["esmf_hash"]) is not None:
+                            logging.debug(f"Force include ESMF hash: {_commit_dict['esmf_hash']}")
+                            include = True
+                            break
+                    if not include:
+                        logging.debug(f"Skipping excluded ESMF hash: {_commit_dict['esmf_hash']}")
+                        skip = True
+                        break
 
-        for p in _exclude_esmf_branches:
-            if _commit_dict["esmf_branch"] is not None and p.fullmatch(_commit_dict["esmf_branch"]) is not None:
-                logging.debug(f"Skipping excluded ESMF branch: {_commit_dict['esmf_branch']}")
-                skip = True
-                break
+        if not skip:
+            for p in _exclude_esmf_branches:
+                if _commit_dict["esmf_branch"] is not None and p.fullmatch(_commit_dict["esmf_branch"]) is not None:
+                    include = False
+                    for pp in _include_esmf_branches:
+                        if pp.fullmatch(_commit_dict["esmf_branch"]) is not None:
+                            logging.debug(f"Force include ESMF branch: {_commit_dict['esmf_branch']}")
+                            include = True
+                            break
+                    if not include:
+                        logging.debug(f"Skipping excluded ESMF branch: {_commit_dict['esmf_branch']}")
+                        skip = True
+                        break
 
         if not skip and _commit_dict["action"] == "collect":
             _collect_summary_stats(_commit_dict, machine_branch)
@@ -581,6 +598,9 @@ if __name__ == "__main__":
         logging.error(f"Database directory must already exist: {_db_path}")
         exit(1)
 
+    _include_esmf_hashes = []
+    _include_esmf_branches = []
+
     _exclude_artifact_hashes = []
     _exclude_esmf_hashes = []
     _exclude_esmf_branches = []
@@ -595,6 +615,19 @@ if __name__ == "__main__":
             logging.info(f"Using configuration file: {_config_file}")
             with open(_config_file) as file:
                 _yaml = yaml.load(file, Loader=yaml.SafeLoader)
+                if "include" in _yaml:
+                    if _yaml["include"].get("esmf_hash") is not None:
+                        # convert to regex
+                        _include_esmf_hashes = list(map(
+                            lambda h: re.compile(h.replace(".", r"\.").replace("*", ".*")),
+                            _yaml["include"]["esmf_hash"]))
+                        logging.debug(f"Include ESMF hashes: {_include_esmf_hashes}")
+                    if _yaml["include"].get("esmf_branch") is not None:
+                        # convert to regex
+                        _include_esmf_branches = list(map(
+                            lambda h: re.compile(h.replace(".", r"\.").replace("*", ".*")),
+                            _yaml["include"]["esmf_branch"]))
+                        logging.debug(f"Include ESMF branches: {_include_esmf_branches}")
                 if "exclude" in _yaml:
                     if _yaml["exclude"].get("artifact_hash") is not None:
                         # convert to regex
