@@ -437,42 +437,44 @@ def _load_artifact_commits(repo, machine_branch):
             logging.debug(f"Skipping existing artifacts commit: {_commit_dict['hash']}")
             continue
 
+        include = False
+
+        if not include:
+            for p in _include_esmf_hashes:
+                if _commit_dict["esmf_hash"] is not None and p.fullmatch(_commit_dict["esmf_hash"]) is not None:
+                    logging.debug(f"Force include ESMF hash: {_commit_dict['esmf_hash']}")
+                    include = True
+                    break
+
+        if not include:
+            for p in _include_esmf_branches:
+                if _commit_dict["esmf_branch"] is not None and p.fullmatch(_commit_dict["esmf_branch"]) is not None:
+                    logging.debug(f"Force include ESMF branch: {_commit_dict['esmf_branch']}")
+                    include = True
+                    break
+
         skip = False
 
-        if not skip:
+        if not include and not skip:
             for p in _exclude_artifact_hashes:
                 if _commit_dict["hash"] is not None and p.fullmatch(_commit_dict["hash"]) is not None:
                     logging.debug(f"Skipping excluded Artifact hash: {_commit_dict['esmf_hash']}")
                     skip = True
                     break
 
-        if not skip:
+        if not include and not skip:
             for p in _exclude_esmf_hashes:
                 if _commit_dict["esmf_hash"] is not None and p.fullmatch(_commit_dict["esmf_hash"]) is not None:
-                    include = False
-                    for pp in _include_esmf_hashes:
-                        if pp.fullmatch(_commit_dict["esmf_hash"]) is not None:
-                            logging.debug(f"Force include ESMF hash: {_commit_dict['esmf_hash']}")
-                            include = True
-                            break
-                    if not include:
-                        logging.debug(f"Skipping excluded ESMF hash: {_commit_dict['esmf_hash']}")
-                        skip = True
-                        break
+                    logging.debug(f"Skipping excluded ESMF hash: {_commit_dict['esmf_hash']}")
+                    skip = True
+                    break
 
-        if not skip:
+        if not include and not skip:
             for p in _exclude_esmf_branches:
                 if _commit_dict["esmf_branch"] is not None and p.fullmatch(_commit_dict["esmf_branch"]) is not None:
-                    include = False
-                    for pp in _include_esmf_branches:
-                        if pp.fullmatch(_commit_dict["esmf_branch"]) is not None:
-                            logging.debug(f"Force include ESMF branch: {_commit_dict['esmf_branch']}")
-                            include = True
-                            break
-                    if not include:
-                        logging.debug(f"Skipping excluded ESMF branch: {_commit_dict['esmf_branch']}")
-                        skip = True
-                        break
+                    logging.debug(f"Skipping excluded ESMF branch: {_commit_dict['esmf_branch']}")
+                    skip = True
+                    break
 
         if not skip and _commit_dict["action"] == "collect":
             _collect_summary_stats(_commit_dict, machine_branch)
