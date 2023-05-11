@@ -438,6 +438,13 @@ def _load_artifact_commits(repo, machine_branch):
             continue
 
         skip = False
+
+        for p in _exclude_artifact_hashes:
+            if _commit_dict["hash"] is not None and p.fullmatch(_commit_dict["hash"]) is not None:
+                logging.debug(f"Skipping excluded Artifact hash: {_commit_dict['esmf_hash']}")
+                skip = True
+                break
+
         for p in _exclude_esmf_hashes:
             if _commit_dict["esmf_hash"] is not None and p.fullmatch(_commit_dict["esmf_hash"]) is not None:
                 logging.debug(f"Skipping excluded ESMF hash: {_commit_dict['esmf_hash']}")
@@ -574,6 +581,7 @@ if __name__ == "__main__":
         logging.error(f"Database directory must already exist: {_db_path}")
         exit(1)
 
+    _exclude_artifact_hashes = []
     _exclude_esmf_hashes = []
     _exclude_esmf_branches = []
     _exclude_machines = []
@@ -588,6 +596,12 @@ if __name__ == "__main__":
             with open(_config_file) as file:
                 _yaml = yaml.load(file, Loader=yaml.SafeLoader)
                 if "exclude" in _yaml:
+                    if _yaml["exclude"].get("artifact_hash") is not None:
+                        # convert to regex
+                        _exclude_artifact_hashes = list(map(
+                            lambda h: re.compile(h.replace(".", r"\.").replace("*", ".*")),
+                            _yaml["exclude"]["artifact_hash"]))
+                        logging.debug(f"Exclude Artifact hashes: {_exclude_artifact_hashes}")
                     if _yaml["exclude"].get("esmf_hash") is not None:
                         # convert to regex
                         _exclude_esmf_hashes = list(map(
