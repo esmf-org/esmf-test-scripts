@@ -6,7 +6,7 @@ machine:
     type: None
 
 test:
-  esmf_branch: [fix/profile_summary_at_scale]
+  esmf_branch: [develop]
   nuopc_branch: [workaround/darwin-threaded-hang]
 
 matrix:

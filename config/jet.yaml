@@ -8,7 +8,7 @@ machine:
     partition: xjet
 
 test:
-  esmf_branch: [fix/profile_summary_at_scale]
+  esmf_branch: [develop]
   nuopc_branch: [develop]
 
 matrix:
