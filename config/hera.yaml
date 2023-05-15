@@ -9,7 +9,7 @@ machine:
     tasks_per_node: 40
 
 test:
-  esmf_branch: [feature/fill_nan]
+  esmf_branch: [fix/profile_summary_at_scale]
   nuopc_branch: [develop]
 #  filter:
 #    compiler: [intel]

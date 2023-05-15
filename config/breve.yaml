@@ -4,7 +4,7 @@ machine:
   scheduler: None
 
 test:
-  esmf_branch: [feature/fill_nan]
+  esmf_branch: [fix/profile_summary_at_scale]
   nuopc_branch: [develop]
 #  filter:
 #    compiler: [gfortran]

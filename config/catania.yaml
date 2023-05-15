@@ -6,7 +6,7 @@ machine:
     type: None
 
 test:
-  esmf_branch: [feature/fill_nan]
+  esmf_branch: [fix/profile_summary_at_scale]
   nuopc_branch: [workaround/darwin-threaded-hang]
 
 matrix:
