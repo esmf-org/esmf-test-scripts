@@ -44,8 +44,8 @@ matrix:
               - ESMF_MPIRUN=mpirun.srun
             mpi_netcdf: netcdf-hdf5parallel/4.7.4
         extra_module: cmake
-      2022.3.0:
-        compiler: intel/2022.3.0
+      2023.1.0:
+        compiler: intel/2023.1.0
         mpi:
           mpiuni:
             module: None
@@ -57,12 +57,12 @@ matrix:
             module: impi/2022.3.0
             mpi_env_vars:
               - ESMF_MPIRUN=mpirun.srun
-              - I_MPI_CXX=/apps/oneapi/compiler/2022.2.0/linux/bin/icpx
-              - I_MPI_CC=/apps/oneapi/compiler/2022.2.0/linux/bin/icx
+              - I_MPI_CXX=icpx
+              - I_MPI_CC=icx
             mpi_netcdf: netcdf-hdf5parallel/4.7.4
-        extra_module: cmake
-      2022.3.0-classic:
-        compiler: intel/2022.3.0
+        extra_module: gnu cmake
+      2023.1.0-classic:
+        compiler: intel/2023.1.0
         mpi:
           mpiuni:
             module: None
@@ -72,9 +72,9 @@ matrix:
             mpi_env_vars:
               - ESMF_MPIRUN=mpirun.srun
             mpi_netcdf: netcdf-hdf5parallel/4.7.4
-        extra_module: cmake
-      2022.3.0-oneAPI:
-        compiler: intel/2022.3.0
+        extra_module: gnu cmake
+      2023.1.0-oneAPI:
+        compiler: intel/2023.1.0
         mpi:
           mpiuni:
             module: None
@@ -87,11 +87,11 @@ matrix:
             module: impi/2022.3.0
             mpi_env_vars:
               - ESMF_MPIRUN=mpirun.srun
-              - I_MPI_F90=/apps/oneapi/compiler/2022.2.0/linux/bin/ifx
-              - I_MPI_CXX=/apps/oneapi/compiler/2022.2.0/linux/bin/icpx
-              - I_MPI_CC=/apps/oneapi/compiler/2022.2.0/linux/bin/icx
+              - I_MPI_F90=ifx
+              - I_MPI_CXX=icpx
+              - I_MPI_CC=icx
             mpi_netcdf: netcdf-hdf5parallel/4.7.4
-        extra_module: cmake
+        extra_module: gnu cmake
   pgi:
     build_time: "2:00:00"
     test_time:  "2:00:00"
