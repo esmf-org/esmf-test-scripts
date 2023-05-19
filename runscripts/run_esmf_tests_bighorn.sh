@@ -6,7 +6,7 @@ hostname -f
 
 pkill -u theurich ssh-agent
 
-eval `ssh-agent`
+eval `ssh-agent -s`
 ssh-add /home/theurich/.ssh/id_ed25519
 
 export NS=/project/esmf/theurich/ESMF-Nightly-Testing
