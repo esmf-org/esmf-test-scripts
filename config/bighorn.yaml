@@ -19,15 +19,6 @@ matrix:
            mpiuni:
              module: None
          extra_module: CMake/3.24.3
-       8.1.0:
-         compiler: compiler/gnu/8.1.0
-         netcdf: tool/netcdf/4.6.1/gcc-8.1.0
-         mpi:
-           mpich3:
-             module: mpich/3.2.1-gnu8.1.0
-           openmpi:
-             module: openmpi/3.1.1-gnu8.1.0
-         extra_module: CMake/3.24.3
   intel:
      versions:
        19.1.0: 
