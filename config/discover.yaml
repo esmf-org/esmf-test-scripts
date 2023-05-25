@@ -10,8 +10,8 @@ machine:
     partition: compute
 
 test:
-  esmf_branch: [feature/use_yaml]
-  nuopc_branch: [feature/use_yaml]
+  esmf_branch: [develop]
+  nuopc_branch: [develop]
 
 matrix:
   intel:

@@ -4,8 +4,8 @@ machine:
   scheduler: None
 
 test:
-  esmf_branch: [feature/use_yaml]
-  nuopc_branch: [feature/use_yaml]
+  esmf_branch: [develop]
+  nuopc_branch: [develop]
 #  filter:
 #    compiler: [nag]
 
