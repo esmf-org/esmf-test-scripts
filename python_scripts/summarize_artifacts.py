@@ -617,7 +617,7 @@ if __name__ == "__main__":
             logging.info(f"Using configuration file: {_config_file}")
             with open(_config_file) as file:
                 _yaml = yaml.load(file, Loader=yaml.SafeLoader)
-                if "include" in _yaml:
+                if "include" in _yaml and _yaml["include"] is not None:
                     if _yaml["include"].get("esmf_hash") is not None:
                         # convert to regex
                         _include_esmf_hashes = list(map(
@@ -630,7 +630,7 @@ if __name__ == "__main__":
                             lambda h: re.compile(h.replace(".", r"\.").replace("*", ".*")),
                             _yaml["include"]["esmf_branch"]))
                         logging.debug(f"Include ESMF branches: {_include_esmf_branches}")
-                if "exclude" in _yaml:
+                if "exclude" in _yaml and _yaml["exclude"] is not None:
                     if _yaml["exclude"].get("artifact_hash") is not None:
                         # convert to regex
                         _exclude_artifact_hashes = list(map(
