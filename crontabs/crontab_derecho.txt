@@ -1,0 +1,1 @@
+15 1 * * * /glade/derecho/scratch/theurich/ESMF-Nightly-Testing/esmf-test-scripts/runscripts/run_esmf_tests_derecho.sh 2>&1 > /glade/derecho/scratch/theurich/ESMF-Nightly-Testing/derecho-cron.log

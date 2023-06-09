@@ -1,0 +1,80 @@
+machine:
+  name: derecho
+  cores_per_node: 128
+  scheduler:
+    type: pbs
+    account: ACGD0008
+    queue: main
+    partition: None
+
+test:
+  esmf_branch: [develop]
+  nuopc_branch: [develop]
+#  filter:
+#    compiler: [intel]
+
+matrix:
+  intel:
+    build_time: "2:00:00"
+    test_time: "2:00:00"
+    versions:
+      2023.0.0:
+        compiler: intel/2023.0.0
+        netcdf: netcdf/4.9.1
+        mpi:
+          mpiuni:
+            module: None
+          mpi:
+            module: cray-mpich/8.1.25
+            mpi_env_vars:
+              - ESMF_MPIRUN=mpiexec
+      2023.0.0-classic:
+        compiler: intel-classic/2023.0.0
+        netcdf: netcdf/4.9.1
+        mpi:
+          mpiuni:
+            module: None
+          mpi:
+            module: cray-mpich/8.1.25
+            mpi_env_vars:
+              - ESMF_MPIRUN=mpiexec
+      2023.0.0-oneAPI:
+        compiler: intel-oneapi/2023.0.0
+        netcdf: netcdf/4.9.1
+        mpi:
+          mpiuni:
+            module: None
+          mpi:
+            module: cray-mpich/8.1.25
+            mpi_env_vars:
+              - ESMF_MPIRUN=mpiexec
+
+  nvhpc:
+    build_time: "2:00:00"
+    test_time: "2:00:00"
+    versions:
+      23.1:
+        compiler: nvhpc/23.1
+        netcdf: netcdf/4.9.1
+        mpi:
+          mpiuni:
+            module: None
+          mpi:
+            module: cray-mpich/8.1.25
+            mpi_env_vars:
+              - ESMF_MPIRUN=mpiexec
+
+  cce:
+    build_time: "2:00:00"
+    test_time: "2:00:00"
+    versions:
+      15.0.1:
+        compiler: cce/15.0.1
+        netcdf: netcdf/4.9.1
+        mpi:
+          mpiuni:
+            module: None
+          mpi:
+            module: cray-mpich/8.1.25
+            mpi_env_vars:
+              - ESMF_MPIRUN=mpiexec
