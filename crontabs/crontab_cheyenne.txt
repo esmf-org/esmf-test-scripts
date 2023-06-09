@@ -1,1 +1,1 @@
-10 1 * * * /glade/u/home/theurich/ESMF-Nightly-Testing/esmf-test-scripts/runscripts/run_esmf_tests_cheyenne.sh 2>&1 > /glade/u/home/theurich/ESMF-Nightly-Testing/cheyenne-cron.log
+10 1 * * * /glade/scratch/theurich/ESMF-Nightly-Testing/esmf-test-scripts/runscripts/run_esmf_tests_cheyenne.sh 2>&1 > /glade/scratch/theurich/ESMF-Nightly-Testing/cheyenne-cron.log
