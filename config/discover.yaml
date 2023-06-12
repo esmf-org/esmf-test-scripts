@@ -10,7 +10,7 @@ machine:
     partition: compute
 
 test:
-  esmf_branch: [develop]
+  esmf_branch: [feature/bopt_g_flags]
   nuopc_branch: [develop]
 
 matrix:
