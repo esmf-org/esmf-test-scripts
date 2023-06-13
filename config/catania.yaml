@@ -6,7 +6,7 @@ machine:
     type: None
 
 test:
-  esmf_branch: [feature/bopt_g_flags]
+  esmf_branch: [develop]
   nuopc_branch: [workaround/darwin-threaded-hang]
 
 matrix:

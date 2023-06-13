@@ -9,7 +9,7 @@ machine:
     tasks_per_node: 40
 
 test:
-  esmf_branch: [feature/bopt_g_flags]
+  esmf_branch: [develop]
   nuopc_branch: [develop]
 #  filter:
 #    compiler: [intel]

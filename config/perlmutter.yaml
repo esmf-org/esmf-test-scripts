@@ -10,7 +10,7 @@ machine:
     constraint: cpu
 
 test:
-  esmf_branch: [feature/bopt_g_flags]
+  esmf_branch: [develop]
   nuopc_branch: [develop]
 #  filter:
 #    compiler: [gfortran]
