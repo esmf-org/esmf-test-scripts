@@ -6,8 +6,8 @@ machine:
     type: None
 
 test:
-  esmf_branch: [develop]
-  nuopc_branch: [workaround/darwin-threaded-hang]
+  esmf_branch: [feature/esmx_cmake_gjt]
+  nuopc_branch: [feature/esmx_cmake_gjt]
 
 matrix:
  
