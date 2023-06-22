@@ -4,8 +4,8 @@ machine:
   scheduler: None
 
 test:
-  esmf_branch: [develop]
-  nuopc_branch: [develop]
+  esmf_branch: [feature/esmx_cmake_gjt]
+  nuopc_branch: [feature/esmx_cmake_gjt]
 #  filter:
 #    compiler: [nag]
 

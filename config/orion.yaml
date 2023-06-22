@@ -9,8 +9,8 @@ machine:
     queue: batch
 
 test:
-  esmf_branch: [develop]
-  nuopc_branch: [develop]
+  esmf_branch: [feature/esmx_cmake_gjt]
+  nuopc_branch: [feature/esmx_cmake_gjt]
 
 matrix:
   intel:
@@ -19,17 +19,18 @@ matrix:
       2020.2:
         compiler: intel/2020.2
         netcdf: netcdf/4.7.4
+        extra_module: cmake intelpython3
         mpi:
           intelmpi:
             module: impi/2020.2
             mpi_env_vars:
               - ESMF_MPIRUN=mpirun.srun
-        extra_module: "cmake intelpython3"
   gfortran:
     versions:
       8.3.0:
         compiler: gcc/8.3.0
         netcdf: netcdf/4.7.4
+        extra_module: cmake intelpython3
         mpi:
           openmpi:
             module: openmpi/4.0.2
@@ -39,7 +40,6 @@ matrix:
             module: None
         extra_env_vars:
           - LD_PRELOAD=/apps/gcc-8/gcc-8.3.0/lib64/libstdc++.so
-        extra_module: "cmake intelpython3"
   #    10.2.0:
   #      module: gcc/10.2.0
   #      netcdf: netcdf/4.7.4
@@ -52,6 +52,7 @@ matrix:
       2019:
         compiler: pgi/2019
         netcdf: netcdf/4.7.4
+        extra_module: cmake intelpython3
         mpi:
           openmpi:
             module: openmpi/4.0.2
@@ -60,4 +61,3 @@ matrix:
         extra_env_vars:
           - ESMF_F90COMPILER=mpif90
           - ESMF_CXXCOMPILER=mpicxx
-        extra_module: "cmake intelpython3"

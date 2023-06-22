@@ -4,8 +4,8 @@ machine:
   scheduler: None
 
 test:
-  esmf_branch: [develop]
-  nuopc_branch: [develop]
+  esmf_branch: [feature/esmx_cmake_gjt]
+  nuopc_branch: [feature/esmx_cmake_gjt]
 #  filter:
 #    compiler: [gfortran]
 
@@ -15,6 +15,7 @@ matrix:
       3.2.0:
         compiler: AOCC/3.2.0
         netcdf: None
+        extra_module: CMake/3.24.3
         mpi:
           mpiuni:
             module: None
@@ -24,6 +25,7 @@ matrix:
       7.5.0_13.0.0:
         compiler: AOCC/3.2.0
         netcdf: None
+        extra_module: CMake/3.24.3
         mpi:
           mpiuni:
             module: None
@@ -33,12 +35,14 @@ matrix:
       7.4.0:
         compiler: GCC/7.4.0/GCC
         netcdf: GCC/7.4.0/netcdf/4.7.4p
+        extra_module: CMake/3.24.3
         mpi:
           mpich:
             module: GCC/7.4.0/mpich/3.3.1
       11.2.0:
         compiler: GCC/11.2.0/GCC
         netcdf: GCC/11.2.0/netcdf/4.7.4-mpich4.0.0
+        extra_module: CMake/3.24.3
         mpi:
           mpich:
             module: GCC/11.2.0/mpich/4.0.0

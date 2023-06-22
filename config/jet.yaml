@@ -8,8 +8,8 @@ machine:
     partition: xjet
 
 test:
-  esmf_branch: [develop]
-  nuopc_branch: [develop]
+  esmf_branch: [feature/esmx_cmake_gjt]
+  nuopc_branch: [feature/esmx_cmake_gjt]
 
 matrix:
   intel:
