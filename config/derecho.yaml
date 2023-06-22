@@ -8,8 +8,8 @@ machine:
     partition: None
 
 test:
-  esmf_branch: [develop]
-  nuopc_branch: [develop]
+  esmf_branch: [feature/esmx_cmake_gjt]
+  nuopc_branch: [feature/esmx_cmake_gjt]
 #  filter:
 #    compiler: [intel]
 
@@ -21,6 +21,7 @@ matrix:
       2023.0.0:
         compiler: intel/2023.0.0
         netcdf: netcdf/4.9.1
+        extra_module: cmake
         mpi:
           mpiuni:
             module: None
@@ -31,6 +32,7 @@ matrix:
       2023.0.0-classic:
         compiler: intel-classic/2023.0.0
         netcdf: netcdf/4.9.1
+        extra_module: cmake
         mpi:
           mpiuni:
             module: None
@@ -41,6 +43,7 @@ matrix:
       2023.0.0-oneAPI:
         compiler: intel-oneapi/2023.0.0
         netcdf: netcdf/4.9.1
+        extra_module: cmake
         mpi:
           mpiuni:
             module: None
@@ -56,6 +59,7 @@ matrix:
       23.1:
         compiler: nvhpc/23.1
         netcdf: netcdf/4.9.1
+        extra_module: cmake
         mpi:
           mpiuni:
             module: None
@@ -71,6 +75,7 @@ matrix:
       15.0.1:
         compiler: cce/15.0.1
         netcdf: netcdf/4.9.1
+        extra_module: cmake
         mpi:
           mpiuni:
             module: None
