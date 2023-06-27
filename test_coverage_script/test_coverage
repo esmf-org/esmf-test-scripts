@@ -279,10 +279,15 @@ for i in $test_c_funcs;do
         # remove all commented out calls
         #grep -v "//" $LOGDIR/ESMC_Methods_Tests.html >> $LOGDIR/ESMC_Methods_Tests.html
         find src/system_tests -name "*STest.C" -type f -exec  grep  -H "$i *(" {} >  $LOGDIR/Methods_Tests \;
+        find src/system_tests -name "*STest.c" -type f -exec  grep  -H "$i *(" {} >>  $LOGDIR/Methods_Tests \;
         find src/system_tests  -name "*.C" -type f -exec  grep  -H "$i *(" {} >>  $LOGDIR/Methods_Tests \;
+        find src/system_tests  -name "*.c" -type f -exec  grep  -H "$i *(" {} >>  $LOGDIR/Methods_Tests \;
         find src -name "*UTest.C" -type f -exec  grep  -H "$i *(" {} >>  $LOGDIR/Methods_Tests \;
+        find src -name "*UTest.c" -type f -exec  grep  -H "$i *(" {} >>  $LOGDIR/Methods_Tests \;
         find src -name "*EX.C" -type f -exec  grep  -H "$i *(" {} >>  $LOGDIR/Methods_Tests \;
+        find src -name "*EX.c" -type f -exec  grep  -H "$i *(" {} >>  $LOGDIR/Methods_Tests \;
         find src -name "*Ex.C" -type f -exec  grep  -H "$i *(" {} >>  $LOGDIR/Methods_Tests \;
+        find src -name "*Ex.c" -type f -exec  grep  -H "$i *(" {} >>  $LOGDIR/Methods_Tests \;
         # get all commented out lines and get those with Operator in them
         #grep ": *\/\/" $LOGDIR/Methods_Tests > Commented_lines
         #echo $i > tmp_file
