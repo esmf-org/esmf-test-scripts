@@ -32,7 +32,9 @@ grep  -v "\!BOPI" fortran_functions > temp
 grep -A4 "\!BOP" temp > functions
 grep "ROUTINE"  functions > new_functions
 echo "Finished getting the fortran routines."
-awk '{print $3}' new_functions | sort -u > fortran_routines
+awk '{print $3}' new_functions | sort -u > temp
+sed 's/<NodeType>/\&lt;NodeType\&gt;/g' temp > functions
+sed 's/<TypeSpec>/\&lt;TypeSpec\&gt;/g' functions > fortran_routines
 
 
 
