@@ -226,7 +226,15 @@ for i in $fortran_funcs;do
         if grep Assignment tmp_file
         then
                 grep "Assignment" Commented_lines > Operator_lines
-         fi
+        fi
+        if grep "<TypeSpec>" tmp_file
+        then
+                grep "<TypeSpec>" Commented_lines > Operator_lines
+        fi
+        if grep "<NodeType>" tmp_file
+        then
+                grep "<NodeType>" Commented_lines > Operator_lines
+        fi
 
         # remove all commented out calls (! after the ":"
         grep -v ": *!" $LOGDIR/Methods_Tests >> $LOGDIR/ESMF_Methods_Tests.html
