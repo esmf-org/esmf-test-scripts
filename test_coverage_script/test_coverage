@@ -272,11 +272,11 @@ echo "" >> $LOGDIR/ESMF_Testing_Metrics.html
 echo "" >> $LOGDIR/ESMF_Testing_Metrics.html
 echo "$fortranCount <a href=./ESMF_Methods.html>ESMF Fortran methods implemented</a>." >> $LOGDIR/ESMF_Testing_Metrics.html
 echo "" >> $LOGDIR/ESMF_Testing_Metrics.html
-echo "$unit_test <a href=./ESMF_Methods_Tests.html>fully or partially tested in regression tests</a>." >> $LOGDIR/ESMF_Testing_Metrics.html
+echo "$unit_test <a href=./ESMF_Methods_Tests.html>fully or partially tested (with regression test references)</a>." >> $LOGDIR/ESMF_Testing_Metrics.html
 echo "" >> $LOGDIR/ESMF_Testing_Metrics.html
-echo "$percent_tested% </a href=./ESMF_Methods_Tested.html>fully or partially tested</a>." >> $LOGDIR/ESMF_Testing_Metrics.html
+echo "$percent_tested% <a href=./ESMF_Methods_Tested.html>fully or partially tested</a>." >> $LOGDIR/ESMF_Testing_Metrics.html
 echo "" >> $LOGDIR/ESMF_Testing_Metrics.html
-echo "$percent_nottested% </a href=./ESMF_Methods_Not_Tested.html>not tested</a>." >> $LOGDIR/ESMF_Testing_Metrics.html
+echo "$percent_nottested% <a href=./ESMF_Methods_Not_Tested.html>not tested</a>." >> $LOGDIR/ESMF_Testing_Metrics.html
 
 echo " finished calculating percentage "
 
@@ -343,12 +343,15 @@ echo "" >> $LOGDIR/ESMF_Testing_Metrics.html
 C_Count=`expr $C_Count + 0`
 percent_tested=`expr $unit_test '*' 100`
 percent_tested=`expr $percent_tested '/' $C_Count`
+percent_nottested=`expr 100 '-' $percent_tested`
 echo "" >> $LOGDIR/ESMF_Testing_Metrics.html
-echo "$C_Count ESMC C methods implemented." >> $LOGDIR/ESMF_Testing_Metrics.html
+echo "$C_Count <a href=./ESMC_Methods.html>ESMC C methods implemented</a>." >> $LOGDIR/ESMF_Testing_Metrics.html
 echo "" >> $LOGDIR/ESMF_Testing_Metrics.html
-echo "$unit_test fully or partially tested." >> $LOGDIR/ESMF_Testing_Metrics.html
+echo "$unit_test <a href=./ESMC_Methods_Tests.html>fully or partially tested (with regression test references)</a>." >> $LOGDIR/ESMF_Testing_Metrics.html
 echo "" >> $LOGDIR/ESMF_Testing_Metrics.html
-echo "$percent_tested% fully or partially tested." >> $LOGDIR/ESMF_Testing_Metrics.html
+echo "$percent_tested% <a href=./ESMC_Methods_Tested.html>fully or partially tested</a>." >> $LOGDIR/ESMF_Testing_Metrics.html
+echo "" >> $LOGDIR/ESMF_Testing_Metrics.html
+echo "$percent_nottested% <a href=./ESMC_Methods_Not_Tested.html>not tested</a>." >> $LOGDIR/ESMF_Testing_Metrics.html
 
 echo " finished calculating percentage "
 
@@ -364,6 +367,9 @@ echo "</span><br></span> </font></font></pre></body></html>" >> $LOGDIR/ESMC_Met
 echo "</span><br></span> </font></font></pre></body></html>" >> $LOGDIR/ESMC_Methods_Not_Tested.html
 echo "</span><br></span> </font></font></pre></body></html>" >> $LOGDIR/ESMC_Methods_Tested.html
 echo "</span><br></span> </font></font></pre></body></html>" >> $LOGDIR/ESMC_Methods_Tests.html
+
+# clean-up
+rm -f $LOGDIR/Methods_Tests
 
 # Final post processing, dealing with character representation under HTML
 sed 's/<NodeType>/\&lt;NodeType\&gt;/g' $LOGDIR/ESMF_Methods.html > temp
