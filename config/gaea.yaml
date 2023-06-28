@@ -8,8 +8,8 @@ machine:
     queue: normal
 
 test:
-  esmf_branch: [feature/esmx_cmake_gjt]
-  nuopc_branch: [feature/esmx_cmake_gjt]
+  esmf_branch: [develop]
+  nuopc_branch: [develop]
 #  filter:
 #    compiler: [intel]
 
