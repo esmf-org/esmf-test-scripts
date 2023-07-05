@@ -13,6 +13,8 @@ test:
   nuopc_branch: [develop]
 #  filter:
 #    compiler: [gfortran]
+#    version: [13.1.0]
+#    mpi: [openmpi]
 
 matrix:
   gfortran:
@@ -43,6 +45,19 @@ matrix:
             module: openmpi/4.0.5
           mpt:
             module: mpt/2.23
+        extra_env_vars:
+          - ESMPY_DATA_DIR="/glade/work/theurich/esmf-test-data/grids"
+        esmpy:
+          python: python/3.7.9
+      13.1.0:
+        compiler: gnu/13.1.0
+        netcdf: netcdf/4.9.1
+        extra_module: cmake/3.22.0
+        mpi:
+          openmpi:
+            module: openmpi/4.1.4
+          mpt:
+            module: mpt/2.25
         extra_env_vars:
           - ESMPY_DATA_DIR="/glade/work/theurich/esmf-test-data/grids"
         esmpy:
