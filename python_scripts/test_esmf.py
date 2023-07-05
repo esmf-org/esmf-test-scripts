@@ -216,10 +216,26 @@ class ESMFTest:
 
                 # apply filter from YAML file
                 if self.yaml_filter is not None:
+                    execCompiler=True
                     if "compiler" in self.yaml_filter:
-                        if _e.compiler not in self.yaml_filter["compiler"]:
-                            logging.debug(f"Skipping test combination [{_e_index}] due to YAML filter: {_e.label()}")
-                            continue
+                        execCompiler=False
+                        if _e.compiler in self.yaml_filter["compiler"]:
+                            logging.debug(f"Executing test combination [{_e_index}] due to YAML compiler filter: {_e.label()}")
+                            execCompiler=True
+                    execVersion=True
+                    if "version" in self.yaml_filter:
+                        execVersion=False
+                        if _e.compiler_version in self.yaml_filter["version"]:
+                            logging.debug(f"Executing test combination [{_e_index}] due to YAML version filter: {_e.label()}")
+                            execVersion=True
+                    execMPI=True
+                    if "mpi" in self.yaml_filter:
+                        execMPI=False
+                        if _e.mpi in self.yaml_filter["mpi"]:
+                            logging.debug(f"Executing test combination [{_e_index}] due to YAML mpi filter: {_e.label()}")
+                            execMPI=True
+                    if not (execCompiler and execVersion and execMPI):
+                        continue
 
                 if self.nuopc_branch is not None:
                     _nuopc_branch = self.nuopc_branch[_branch_index]
