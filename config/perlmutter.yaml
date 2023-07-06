@@ -12,16 +12,16 @@ machine:
 test:
   esmf_branch: [develop]
   nuopc_branch: [develop]
-#  filter:
-#    compiler: [gfortran]
+  filter:
+    compiler: [gfortran]
 
 matrix:
   gfortran:
-    test_time: "3:00:00"
+    test_time: "4:00:00"
     versions:
       11.2.0:
         compiler: gcc/11.2.0
-        netcdf: cray-hdf5/1.12.2.1 cray-netcdf/4.9.0.1
+        netcdf: cray-hdf5-parallel cray-netcdf-hdf5parallel
         extra_module: PrgEnv-gnu cpu cmake
         mpi:
           mpiuni: 
