@@ -9,8 +9,8 @@ machine:
     tasks_per_node: 40
 
 test:
-  esmf_branch: [fix/nuopc-attributes]
-  nuopc_branch: [fix/nuopc-attributes]
+  esmf_branch: [develop]
+  nuopc_branch: [develop]
 #  filter:
 #    compiler: [intel]
 

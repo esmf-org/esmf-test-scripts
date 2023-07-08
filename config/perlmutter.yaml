@@ -10,8 +10,8 @@ machine:
     constraint: cpu
 
 test:
-  esmf_branch: [fix/nuopc-attributes]
-  nuopc_branch: [fix/nuopc-attributes]
+  esmf_branch: [develop]
+  nuopc_branch: [develop]
   filter:
     compiler: [gfortran,intel]
 
