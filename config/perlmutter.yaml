@@ -12,8 +12,8 @@ machine:
 test:
   esmf_branch: [develop]
   nuopc_branch: [develop]
-  filter:
-    compiler: [gfortran,intel]
+#  filter:
+#    compiler: [gfortran,intel]
 
 matrix:
   gfortran:
