@@ -1,0 +1,1 @@
+10 1 * * * /scratch/cluster/theurich/ESMF-Nightly-Testing/esmf-test-scripts/runscripts/run_esmf_tests_izumi.sh 2>&1 > /scratch/cluster/theurich/ESMF-Nightly-Testing/izumi-cron.log
