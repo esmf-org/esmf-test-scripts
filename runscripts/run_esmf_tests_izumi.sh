@@ -1,8 +1,19 @@
 #!/bin/bash -l
 
-cd /scratch/cluster/${USER}/esmf-testing/esmf-test-scripts
+date
+
+hostname -f
+
+pkill -u theurich ssh-agent
+
+eval `ssh-agent -s`
+ssh-add /home/theurich/.ssh/id_ed25519
+
+export NS=/scratch/cluster/theurich/ESMF-Nightly-Testing
+cd $NS/esmf-test-scripts
 git remote update
-git pull -X theirs --no-edit origin 
-cd /scratch/cluster/${USER}/esmf-testing
+git pull -X theirs --no-edit
 module load lang/python/3.7.0
-python3 ./esmf-test-scripts/python_scripts/test_esmf.py -y  ./esmf-test-scripts/config/izumi.yaml -a /scratch/cluster/${USER}/esmf-testing/esmf-test-artifacts >& /scratch/cluster/${USER}/esmf-testing/test_esmf_izumi.log
+python3 $NS/esmf-test-scripts/python_scripts/test_esmf.py -m izumi -r $NS >& $NS/izumi.log
+
+date
