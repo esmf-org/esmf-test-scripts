@@ -32,7 +32,7 @@ matrix:
   gfortran:
     test_time: "3:00:00"
     versions:
-      9.3.0: 
+      9.3.0:
         compiler: compiler/gnu/9.3.0
         netcdf: tool/netcdf/4.7.4/gnu/9.3.0
         mpi:
