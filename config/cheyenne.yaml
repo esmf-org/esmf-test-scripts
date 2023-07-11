@@ -56,6 +56,8 @@ matrix:
         mpi:
           openmpi:
             module: openmpi/4.1.4
+            mpi_env_vars:
+              - ESMF_PTHREADS=OFF
           mpt:
             module: mpt/2.25
         extra_env_vars:
