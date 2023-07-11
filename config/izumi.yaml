@@ -11,6 +11,7 @@ test:
   esmf_branch: [develop]
   nuopc_branch: [develop]
   filter:
+    compiler: [intel, gfortran, nag]
     mpi: [mpiuni]
 
 matrix:
@@ -55,14 +56,20 @@ matrix:
             module: mpi/2.3.3/nag/7.0
           openmpi:
             module: openmpi/4.0.3/nag/7.0
+        extra_env_vars:
+          - ESMF_NETCDFF_LIBS=/usr/local/netcdf-c-4.7.4-f-4.5.2-gcc-g++-9.3.0-nag-7.0/lib/libnetcdff.a
 
   nvhpc:
     test_time: "3:00:00"
     versions:
       22.11:
+        compiler: None
         netcdf: tool/netcdf/4.9.0/hpc-sdk
         mpi:
           mpiuni:
             module: compiler/nvhpc-nompi/22.11
           openmpi:
             module: compiler/nvhpc/22.11
+        extra_env_vars:
+          - ESMF_NETCDF_INCLUDE="$NETCDF_PATH/include"
+          - ESMF_NETCDF_LIBPATH="$NETCDF_PATH/lib"
