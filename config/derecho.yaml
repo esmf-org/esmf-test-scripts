@@ -56,9 +56,9 @@ matrix:
     build_time: "2:00:00"
     test_time: "2:00:00"
     versions:
-      23.1:
-        compiler: nvhpc/23.1
-        netcdf: netcdf/4.9.1
+      23.5:
+        compiler: nvhpc/23.5
+        netcdf: netcdf/4.9.2
         extra_module: cmake
         mpi:
           mpiuni:
