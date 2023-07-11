@@ -9,6 +9,8 @@ pkill -u theurich ssh-agent
 eval `ssh-agent -s`
 ssh-add /home/theurich/.ssh/id_ed25519
 
+export PATH=/usr/local/bin:$PATH
+
 export NS=/scratch/cluster/theurich/ESMF-Nightly-Testing
 cd $NS/esmf-test-scripts
 git remote update
