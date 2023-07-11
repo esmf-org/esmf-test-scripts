@@ -34,8 +34,8 @@ matrix:
   intel:
        test_time: "2:00:00"
        versions:
-         2022.2.1-classic:
-           compiler: intel-classic/2022.2.1
+         2023.1.0-classic:
+           compiler: intel-classic/2023.1.0
            netcdf: cray-hdf5/1.12.2.3 cray-netcdf/4.9.0.3
            mpi:
              mpiuni:
@@ -48,8 +48,8 @@ matrix:
              - ESMF_NETCDF_LIBS="-lnetcdff -lnetcdf"
            extra_module: PrgEnv-intel git cmake
            unload_module: darshan-runtime
-         2022.2.1:
-           compiler: intel/2022.2.1
+         2023.1.0:
+           compiler: intel/2023.1.0
            netcdf: cray-hdf5/1.12.2.3 cray-netcdf/4.9.0.3
            mpi:
              mpiuni:
@@ -62,8 +62,8 @@ matrix:
              - ESMF_NETCDF_LIBS="-lnetcdff -lnetcdf"
            extra_module: PrgEnv-intel git cmake
            unload_module: darshan-runtime
-         2022.2.1-oneAPI:
-           compiler: intel-oneapi/2022.2.1
+         2023.1.0-oneAPI:
+           compiler: intel-oneapi/2023.1.0
            netcdf: cray-hdf5/1.12.2.3 cray-netcdf/4.9.0.3
            mpi:
              mpiuni:
