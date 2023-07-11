@@ -23,7 +23,7 @@ matrix:
             module: impi/2020.2
             mpi_env_vars:
               - ESMF_MPIRUN=mpirun.srun
-        extra_module: cmake
+        extra_module: cmake/3.26.4
 
   gfortran:
     test_time: "2:00:00"
@@ -36,7 +36,7 @@ matrix:
             module: openmpi/3.1.4
             mpi_env_vars:
               - ESMF_MPIRUN=mpirun.srun
-        extra_module: cmake
+        extra_module: cmake/3.26.4
 
   nvhpc:
     test_time: "1:30:00"
@@ -52,4 +52,4 @@ matrix:
             module: nvhpc/23.3
             mpi_env_vars:
               - ESMF_MPIRUN=mpirun.srun
-        extra_module: cmake
+        extra_module: cmake/3.26.4
