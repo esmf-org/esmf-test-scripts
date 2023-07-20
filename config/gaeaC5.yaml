@@ -1,6 +1,7 @@
 machine:
   name: gaeaC5
   lustre: True
+  rsync: /tmp
   wait_to_collect: True
   cores_per_node: 128
   scheduler:
@@ -27,6 +28,7 @@ matrix:
                module: None
              mpi:
                module: cray-mpich/8.1.25
+               mpi_env_vars: [ESMF_MPILAUNCHOPTIONS=--exact]
            extra_env_vars:
              - ESMF_NETCDF_LIBS="-lnetcdff -lnetcdf"
            extra_module: PrgEnv-gnu git cmake
@@ -42,6 +44,7 @@ matrix:
                module: None
              mpi:
                module: cray-mpich/8.1.25
+               mpi_env_vars: [ESMF_MPILAUNCHOPTIONS=--exact]
            extra_env_vars:
              - ESMF_NETCDF_INCLUDE="$CRAY_NETCDF_PREFIX/include"
              - ESMF_NETCDF_LIBPATH="$CRAY_NETCDF_PREFIX/lib"
@@ -56,6 +59,7 @@ matrix:
                module: None
              mpi:
                module: cray-mpich/8.1.25
+               mpi_env_vars: [ESMF_MPILAUNCHOPTIONS=--exact]
            extra_env_vars:
              - ESMF_NETCDF_INCLUDE="$CRAY_NETCDF_PREFIX/include"
              - ESMF_NETCDF_LIBPATH="$CRAY_NETCDF_PREFIX/lib"
@@ -70,6 +74,7 @@ matrix:
                module: None
              mpi:
                module: cray-mpich/8.1.25
+               mpi_env_vars: [ESMF_MPILAUNCHOPTIONS=--exact]
            extra_env_vars:
              - ESMF_NETCDF_INCLUDE="$CRAY_NETCDF_PREFIX/include"
              - ESMF_NETCDF_LIBPATH="$CRAY_NETCDF_PREFIX/lib"
