@@ -1,7 +1,7 @@
 machine:
   name: perlmutter
   lustre: True
-  rsync: /tmp
+#  rsync: /tmp
   wait_to_collect: True
   cores_per_node: 128
   scheduler:
