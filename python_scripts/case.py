@@ -31,6 +31,11 @@ class Case:
                                               re.sub(":", "_", esmf_branch))
         self.subdir = re.sub("/", "_", self.subdir)  # Some branches have a slash, so replace that with underscore
         self.base_path = os.path.join(self.root_dir, self.subdir)
+        self.temp_path = os.path.join(self.root_dir, self.subdir)
+        self.rsync = False
+        if self.machine.rsync:
+            self.rsync = True
+            self.temp_path = os.path.join(self.machine.rsync, self.subdir)
         self.esmf_clone_path = os.path.join(self.base_path, "esmf")
         self.build_script = os.path.join(self.base_path, "build.bat")
         self.test_script = os.path.join(self.base_path, "test.bat")
@@ -181,16 +186,20 @@ class Case:
             out.write(self._create_modules_fragment())
             _module_file = os.path.join(self.base_path, "module-build.log")
             out.write(f"module list >& {_module_file}\n")
-            out.write(f"cd {self.esmf_clone_path}\n")
+            out.write(f"export WORK_ROOT={self.base_path}\n")
+            out.write(f"export TEMP_ROOT={self.temp_path}\n")
+            if self.rsync:
+                out.write(f"rsync -a $WORK_ROOT/esmf $TEMP_ROOT\n")
+            out.write(f"cd $TEMP_ROOT/esmf\n")
+            out.write(f"export ESMF_DIR=`pwd`\n")
             out.write(f"set -o pipefail\n")
-            out.write(f"make info 2>&1| tee ../info.log\n")
-            out.write(f"make -j {self.machine.scheduler.tasks_per_node} 2>&1| tee ../build.log\n")
+            out.write(f"make info 2>&1| tee $WORK_ROOT/info.log\n")
+            out.write(f"make -j {self.machine.scheduler.tasks_per_node} 2>&1| tee $WORK_ROOT/build.log\n")
+            if self.rsync:
+                out.write(f"cd\n")
+                out.write(f"rsync -a $TEMP_ROOT/esmf $WORK_ROOT\n")
+                out.write(f"rm -rf $TEMP_ROOT\n")
 
-            # TODO: remove fake ones below
-            # out.write(f"echo `date` > ../info.log\n")
-            # out.write(f"echo 'FAKE INFO JOB COMPLETE' >> ../info.log\n")
-            # out.write(f"echo `date` > ../build.log\n")
-            # out.write(f"echo 'FAKE BUILD JOB COMPLETE' >> ../build.log\n")
             return out.getvalue()
 
     def _create_test_script(self):
@@ -202,17 +211,24 @@ class Case:
             out.write(self._create_modules_fragment())
             _module_file = os.path.join(self.base_path, "module-test.log")
             out.write(f"module list >& {_module_file}\n")
-            out.write(f"cd {self.esmf_clone_path}\n")
-
-            # TODO: remove below after debugging
-            # out.write(f"echo 'FAKE TEST JOB COMPLETE' >> ../test.log\n")
-
-            out.write(f"make install 2>&1| tee ../install.log\n")
-            out.write(f"make all_tests 2>&1| tee ../test.log\n")
+            out.write(f"export WORK_ROOT={self.base_path}\n")
+            out.write(f"export TEMP_ROOT={self.temp_path}\n")
+            if self.rsync:
+                out.write(f"rsync -a $WORK_ROOT/esmf $TEMP_ROOT\n")
+                out.write(f"rsync -a $WORK_ROOT/nuopc-app-prototypes $TEMP_ROOT\n")
+            out.write(f"cd $TEMP_ROOT/esmf\n")
+            out.write(f"export ESMF_DIR=`pwd`\n")
+            out.write(f"make install 2>&1| tee $WORK_ROOT/install.log\n")
+            out.write(f"make all_tests 2>&1| tee $WORK_ROOT/test.log\n")
             out.write(f"export ESMFMKFILE=`find $PWD/DEFAULTINSTALLDIR -iname esmf.mk`\n")
             if self.combo.mpi_module.lower() != "none":
                 out.write("cd ../nuopc-app-prototypes\n")
-                out.write("./testProtos.sh 2>&1| tee ../nuopc.log\n")
+                out.write("./testProtos.sh 2>&1| tee $WORK_ROOT/nuopc.log\n")
+            if self.rsync:
+                out.write(f"cd\n")
+                out.write(f"rsync -a $TEMP_ROOT/esmf $WORK_ROOT\n")
+                out.write(f"rsync -a $TEMP_ROOT/nuopc-app-prototypes $WORK_ROOT\n")
+                out.write(f"rm -rf $TEMP_ROOT\n")
             if self.combo.python_module:
                 out.write(f"ssh {self.machine.head_node_name} {self.esmpy_install_script}\n")
                 out.write(f"cd {self.base_path}\n")

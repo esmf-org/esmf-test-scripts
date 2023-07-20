@@ -8,6 +8,7 @@ class Machine:
         self.name = config["name"]
         self.git_https = config.get("git_https", False)
         self.lustre = config.get("lustre", False)
+        self.rsync = config.get("rsync", None)
         self.wait_to_collect = config.get("wait_to_collect", False)
         self.bash = config.get("bash", "/bin/bash")
         self.head_node_name = config.get("head_node_name", os.uname()[1])
@@ -24,6 +25,7 @@ class Machine:
         print(f" Name: {self.name}")
         print(f" Git-Https: {self.git_https}")
         print(f" Lustre: {self.lustre}")
+        print(f" Rsync: {self.rsync}")
         print(f" Wait_to_collect: {self.wait_to_collect}")
         print(f" Bash: {self.bash}")
         print(f" Head node: {self.head_node_name}")

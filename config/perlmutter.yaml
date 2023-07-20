@@ -1,6 +1,7 @@
 machine:
   name: perlmutter
   lustre: True
+  rsync: /tmp
   wait_to_collect: True
   cores_per_node: 128
   scheduler:
@@ -29,6 +30,7 @@ matrix:
             module: None
           mpi:
             module: cray-mpich/8.1.22
+            mpi_env_vars: [ESMF_MPILAUNCHOPTIONS=--exact]
         extra_env_vars:
           - ESMF_NETCDF_LIBS="-lnetcdff -lnetcdf"
 
@@ -45,6 +47,7 @@ matrix:
             module: None
           mpi:
             module: cray-mpich/8.1.25
+            mpi_env_vars: [ESMF_MPILAUNCHOPTIONS=--exact]
         extra_env_vars:
           - ESMF_NETCDF_LIBS="-lnetcdff -lnetcdf"
       2023.1.0:
@@ -56,6 +59,7 @@ matrix:
             module: None
           mpi:
             module: cray-mpich/8.1.25
+            mpi_env_vars: [ESMF_MPILAUNCHOPTIONS=--exact]
         extra_env_vars:
           - ESMF_NETCDF_LIBS="-lnetcdff -lnetcdf"
       2023.1.0-oneAPI:
@@ -67,6 +71,7 @@ matrix:
             module: None
           mpi:
             module: cray-mpich/8.1.25
+            mpi_env_vars: [ESMF_MPILAUNCHOPTIONS=--exact]
         extra_env_vars:
           - ESMF_NETCDF_LIBS="-lnetcdff -lnetcdf"
 
@@ -83,5 +88,6 @@ matrix:
             module: None
           mpi:
             module: cray-mpich/8.1.22
+            mpi_env_vars: [ESMF_MPILAUNCHOPTIONS=--exact]
         extra_env_vars:
           - ESMF_NETCDF_LIBS="-lnetcdff -lnetcdf"
