@@ -1,5 +1,6 @@
 machine:
   name: gust
+  rsync: /tmp
   cores_per_node: 128
   scheduler:
     type: pbs
