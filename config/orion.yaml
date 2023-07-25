@@ -9,8 +9,8 @@ machine:
     queue: batch
 
 test:
-  esmf_branch: [release/8.5.0]
-  nuopc_branch: [release/8.5.0]
+  esmf_branch: [v8.5.0]
+  nuopc_branch: [v8.5.0]
 
 matrix:
   intel:
