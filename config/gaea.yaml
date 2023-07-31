@@ -29,7 +29,7 @@ matrix:
              - ESMF_NETCDF_INCLUDE="$CRAY_NETCDF_PREFIX/include"
              - ESMF_NETCDF_LIBPATH="$CRAY_NETCDF_PREFIX/lib"
              - ESMF_NETCDF_LIBS="-lnetcdff -lnetcdf"
-           extra_module: PrgEnv-gnu
+           extra_module: PrgEnv-gnu cmake
            unload_module: PrgEnv-intel darshan
   intel:
        test_time: "3:00:00"
@@ -46,4 +46,5 @@ matrix:
              - ESMF_NETCDF_INCLUDE="$CRAY_NETCDF_PREFIX/include"
              - ESMF_NETCDF_LIBPATH="$CRAY_NETCDF_PREFIX/lib"
              - ESMF_NETCDF_LIBS="-lnetcdff -lnetcdf"
+           extra_module: cmake
            unload_module: darshan
