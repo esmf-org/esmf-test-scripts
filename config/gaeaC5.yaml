@@ -11,7 +11,7 @@ machine:
     queue: normal
 
 test:
-  esmf_branch: [develop]
+  esmf_branch: [fix/darshan]
   nuopc_branch: [develop]
 #  filter:
 #    compiler: [intel]
@@ -32,7 +32,7 @@ matrix:
            extra_env_vars:
              - ESMF_NETCDF_LIBS="-lnetcdff -lnetcdf"
            extra_module: PrgEnv-gnu git cmake
-           unload_module: darshan-runtime PrgEnv-intel cray-mpich
+           unload_module: PrgEnv-intel cray-mpich
   intel:
        test_time: "2:00:00"
        versions:
@@ -50,7 +50,6 @@ matrix:
              - ESMF_NETCDF_LIBPATH="$CRAY_NETCDF_PREFIX/lib"
              - ESMF_NETCDF_LIBS="-lnetcdff -lnetcdf"
            extra_module: PrgEnv-intel git cmake
-           unload_module: darshan-runtime
          2023.1.0:
            compiler: intel/2023.1.0
            netcdf: cray-hdf5/1.12.2.3 cray-netcdf/4.9.0.3
@@ -65,7 +64,6 @@ matrix:
              - ESMF_NETCDF_LIBPATH="$CRAY_NETCDF_PREFIX/lib"
              - ESMF_NETCDF_LIBS="-lnetcdff -lnetcdf"
            extra_module: PrgEnv-intel git cmake
-           unload_module: darshan-runtime
          2023.1.0-oneAPI:
            compiler: intel-oneapi/2023.1.0
            netcdf: cray-hdf5/1.12.2.3 cray-netcdf/4.9.0.3
@@ -80,4 +78,3 @@ matrix:
              - ESMF_NETCDF_LIBPATH="$CRAY_NETCDF_PREFIX/lib"
              - ESMF_NETCDF_LIBS="-lnetcdff -lnetcdf"
            extra_module: PrgEnv-intel git cmake
-           unload_module: darshan-runtime
