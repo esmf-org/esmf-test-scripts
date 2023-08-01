@@ -6,7 +6,7 @@ machine:
     type: None
 
 test:
-  esmf_branch: [fix/darshan]
+  esmf_branch: [fix/darshan-trace]
   nuopc_branch: [develop]
 
 matrix:

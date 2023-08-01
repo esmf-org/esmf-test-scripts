@@ -8,7 +8,7 @@ machine:
     queue: windfall
 
 test:
-  esmf_branch: [develop]
+  esmf_branch: [fix/darshan-trace]
   nuopc_branch: [develop]
 #  filter:
 #    compiler: [intel]
@@ -30,7 +30,7 @@ matrix:
              - ESMF_NETCDF_LIBPATH="$CRAY_NETCDF_PREFIX/lib"
              - ESMF_NETCDF_LIBS="-lnetcdff -lnetcdf"
            extra_module: PrgEnv-gnu cmake
-           unload_module: PrgEnv-intel darshan
+           unload_module: PrgEnv-intel
   intel:
        test_time: "3:00:00"
        versions:
@@ -47,4 +47,3 @@ matrix:
              - ESMF_NETCDF_LIBPATH="$CRAY_NETCDF_PREFIX/lib"
              - ESMF_NETCDF_LIBS="-lnetcdff -lnetcdf"
            extra_module: cmake
-           unload_module: darshan
