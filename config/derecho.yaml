@@ -8,7 +8,7 @@ machine:
     partition: None
 
 test:
-  esmf_branch: [fix/darshan-trace]
+  esmf_branch: [develop]
   nuopc_branch: [develop]
 #  filter:
 #    compiler: [intel]
