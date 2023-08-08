@@ -3,7 +3,7 @@ machine:
   cores_per_node: 128
   scheduler:
     type: pbs
-    account: ACGD0008
+    account: p93300606
     queue: main
     partition: None
 
