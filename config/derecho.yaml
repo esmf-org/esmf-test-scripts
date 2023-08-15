@@ -20,7 +20,7 @@ matrix:
     versions:
       2023.0.0:
         compiler: intel/2023.0.0
-        netcdf: netcdf/4.9.1
+        netcdf: netcdf/4.9.2
         extra_module: cmake
         mpi:
           mpiuni:
@@ -31,7 +31,7 @@ matrix:
               - ESMF_MPIRUN=mpiexec
       2023.0.0-classic:
         compiler: intel-classic/2023.0.0
-        netcdf: netcdf/4.9.1
+        netcdf: netcdf/4.9.2
         extra_module: cmake
         mpi:
           mpiuni:
@@ -42,7 +42,7 @@ matrix:
               - ESMF_MPIRUN=mpiexec
       2023.0.0-oneAPI:
         compiler: intel-oneapi/2023.0.0
-        netcdf: netcdf/4.9.1
+        netcdf: netcdf/4.9.2
         extra_module: cmake
         mpi:
           mpiuni:
@@ -74,7 +74,7 @@ matrix:
     versions:
       15.0.1:
         compiler: cce/15.0.1
-        netcdf: netcdf/4.9.1
+        netcdf: netcdf/4.9.2
         extra_module: cmake
         mpi:
           mpiuni:
