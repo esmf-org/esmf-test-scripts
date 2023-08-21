@@ -6,8 +6,8 @@ machine:
 test:
   esmf_branch: [develop]
   nuopc_branch: [develop]
-#  filter:
-#    compiler: [gfortran]
+  filter:
+    compiler: [gfortranclang, gfortran]
 
 matrix:
   aocc:
