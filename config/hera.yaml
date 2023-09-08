@@ -9,7 +9,7 @@ machine:
     tasks_per_node: 40
 
 test:
-  esmf_branch: [feature/array_slicing_shared]
+  esmf_branch: [develop]
   nuopc_branch: [develop]
 #  filter:
 #    compiler: [intel]
