@@ -10,7 +10,7 @@ machine:
     partition: compute
 
 test:
-  esmf_branch: [develop]
+  esmf_branch: [feature/array_slicing_shared]
   nuopc_branch: [develop]
 
 matrix:
