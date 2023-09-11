@@ -49,7 +49,7 @@ matrix:
           mpiuni:
             module: None
           openmpi:
-            module: nvhpc/23.3
+            module: None
             mpi_env_vars:
-              - ESMF_MPIRUN=mpirun.srun
+              - ESMF_MPIRUN=mpirun
         extra_module: cmake/3.26.4
