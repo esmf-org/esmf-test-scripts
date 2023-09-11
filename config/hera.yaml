@@ -104,6 +104,6 @@ matrix:
           openmpi:
             module: None
             mpi_env_vars:
-              - ESMF_MPIRUN=mpirun.srun
+              - ESMF_MPIRUN=mpirun
         netcdf: None
         extra_module: cmake/3.26.4

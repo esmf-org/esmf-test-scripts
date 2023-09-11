@@ -171,8 +171,9 @@ class Case:
             out.write(f"export ESMF_TESTEXHAUSTIVE='ON'\n")
             out.write(f"export ESMF_TESTWITHTHREADS='ON'\n")
             if e.mpi_module.lower() == "none":
-                _esmf_path = os.path.join(self.esmf_clone_path, "src/Infrastructure/stubs/mpiuni/mpirun")
-                out.write(f"export ESMF_MPIRUN={_esmf_path}\n")
+                if e.mpi_env_vars is None or not any(filter(lambda x: "MPIRUN=" in x, e.mpi_env_vars)):
+                    _esmf_path = os.path.join(self.esmf_clone_path, "src/Infrastructure/stubs/mpiuni/mpirun")
+                    out.write(f"export ESMF_MPIRUN={_esmf_path}\n")
 
             return out.getvalue()
 
