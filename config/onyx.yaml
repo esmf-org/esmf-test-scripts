@@ -7,7 +7,7 @@ machine:
     queue: standard
 
 test:
-  esmf_branch: [develop]
+  esmf_branch: [jedwards/update_pio_to_262]
   nuopc_branch: [develop]
 
 matrix:
