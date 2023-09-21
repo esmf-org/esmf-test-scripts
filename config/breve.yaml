@@ -12,8 +12,8 @@ test:
 matrix:
   aocc:
     versions:
-      3.2.0:
-        compiler: AOCC/3.2.0
+      4.1.0:
+        compiler: AOCC/4.1.0
         netcdf: None
         extra_module: CMake/3.24.3
         mpi:
@@ -23,7 +23,7 @@ matrix:
   gfortranclang:
     versions:
       7.5.0_13.0.0:
-        compiler: AOCC/3.2.0
+        compiler: AOCC/4.1.0
         netcdf: None
         extra_module: CMake/3.24.3
         mpi:
