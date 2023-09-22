@@ -7,7 +7,7 @@ test:
   esmf_branch: [develop]
   nuopc_branch: [develop]
 #  filter:
-#    compiler: [gfortran]
+#    compiler: [aocc]
 
 matrix:
   aocc:
@@ -22,7 +22,7 @@ matrix:
 
   gfortranclang:
     versions:
-      7.5.0_13.0.0:
+      7.5.0_16.0.3:
         compiler: AOCC/4.1.0
         netcdf: None
         extra_module: CMake/3.24.3
