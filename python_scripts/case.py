@@ -96,7 +96,8 @@ class Case:
 
         # clone repositories
         cmd.clone_repo(url=_fork, local_name="esmf", branch=_branch)
-        cmd.clone_repo(url=self.repos["nuopc"], local_name="nuopc-app-prototypes", branch=self.nuopc_branch)
+        if self.combo.mpi.lower() != "mpiuni":
+            cmd.clone_repo(url=self.repos["nuopc"], local_name="nuopc-app-prototypes", branch=self.nuopc_branch)
 
     def submit(self, no_artifacts=False):
         """
