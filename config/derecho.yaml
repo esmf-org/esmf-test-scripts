@@ -14,6 +14,24 @@ test:
 #    compiler: [intel]
 
 matrix:
+
+  gfortran:
+    build_time: "2:00:00"
+    test_time: "2:00:00"
+    versions:
+      12.2.0:
+        compiler: gcc/12/2/0
+        netcdf: netcdf/4.9.2
+        extra_module: cmake parallelio/2.5.10
+        mpi:
+          mpi:
+            module: cray-mpich/8.1.25
+            mpi_env_vars:
+              - ESMF_MPIRUN=mpiexec
+              - ESMF_PIO=external
+              - ESMF_PIO_INCLUDE="$PIO/include"
+              - ESMF_PIO_LIBPATH="$PIO/lib"
+
   intel:
     build_time: "2:00:00"
     test_time: "2:00:00"
