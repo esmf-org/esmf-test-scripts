@@ -19,8 +19,8 @@ matrix:
     build_time: "2:00:00"
     test_time: "2:00:00"
     versions:
-      12.2.0:
-        compiler: gcc/12/2/0
+      12.2.0_pio2.5.10:
+        compiler: gcc/12.2.0
         netcdf: netcdf/4.9.2
         extra_module: cmake parallelio/2.5.10
         mpi:
