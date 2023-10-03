@@ -154,6 +154,8 @@ class ESMFTest:
         cmd.chdir(self.test_root)
         cmd.clone_repo(url, local_name="esmf-test-artifacts")
         cmd.chdir("esmf-test-artifacts")
+        cmd.runcmd(f'git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"')
+        cmd.runcmd(f"git fetch origin")
 
         branch_list = cmd.runcmd('git branch -a')
         logging.debug(f"Remote branches:\n{branch_list}")
