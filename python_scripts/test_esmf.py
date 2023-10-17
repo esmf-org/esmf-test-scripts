@@ -227,7 +227,8 @@ class ESMFTest:
                     execVersion=True
                     if "version" in self.yaml_filter:
                         execVersion=False
-                        if _e.compiler_version in self.yaml_filter["version"]:
+                        version_list = [str(element) for element in self.yaml_filter["version"]]
+                        if _e.compiler_version in version_list:
                             logging.debug(f"Executing test combination [{_e_index}] due to YAML version filter: {_e.label()}")
                             execVersion=True
                     execMPI=True
