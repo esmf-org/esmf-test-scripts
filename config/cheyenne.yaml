@@ -12,8 +12,8 @@ test:
   esmf_branch: [develop]
   nuopc_branch: [develop]
 #  filter:
-#    compiler: [gfortran]
-#    version: [13.1.0]
+#    compiler: [nvhpc]
+#    version: [22.2]
 #    mpi: [openmpi]
 
 matrix:
@@ -99,10 +99,3 @@ matrix:
             module: None
           mpt:
             module: mpt/2.25
-      21.11:
-        compiler: nvhpc/21.11
-        netcdf: netcdf/4.8.1
-        extra_module: python/3.7.9 cmake/3.22.0
-        mpi:
-          openmpi:
-            module: openmpi/4.1.1
