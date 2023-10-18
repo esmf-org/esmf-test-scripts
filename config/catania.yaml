@@ -6,7 +6,7 @@ machine:
     type: None
 
 test:
-  esmf_branch: [develop]
+  esmf_branch: [feature/devList]
   nuopc_branch: [develop]
 
 matrix:
