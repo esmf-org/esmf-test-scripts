@@ -4,7 +4,7 @@ machine:
   scheduler: None
 
 test:
-  esmf_branch: [feature/trace_preload_linked]
+  esmf_branch: [develop]
   nuopc_branch: [develop]
 
 matrix:
