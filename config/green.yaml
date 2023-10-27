@@ -4,7 +4,7 @@ machine:
   scheduler: None
 
 test:
-  esmf_branch: [develop]
+  esmf_branch: [force_performance_failure]
   nuopc_branch: [develop]
 
 matrix:
@@ -17,6 +17,6 @@ matrix:
           openmpi:
             module: 4.1.4
             bopt: [O,g]
-          mpiuni:
-            module: None
-            bopt: [O,g]
+          # mpiuni:
+          #   module: None
+          #   bopt: [O,g]
