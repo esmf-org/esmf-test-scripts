@@ -8,8 +8,8 @@ machine:
     pbs_node_specifier: nodes_ppn
 
 test:
-  esmf_branch: [develop]
-  nuopc_branch: [develop]
+  esmf_branch: [release/8.6.0,develop]
+  nuopc_branch: [release/8.6.0,develop]
   filter:
     compiler: [intel, gfortran, nag]
     mpi: [mpiuni]
