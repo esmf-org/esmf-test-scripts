@@ -11,8 +11,8 @@ machine:
     constraint: cpu
 
 test:
-  esmf_branch: [release/8.6.0]
-  nuopc_branch: [release/8.6.0]
+  esmf_branch: [develop]
+  nuopc_branch: [develop]
   filter:
     compiler: [gfortran,intel]
 
