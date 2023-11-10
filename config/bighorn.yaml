@@ -4,8 +4,8 @@ machine:
   scheduler: None
 
 test:
-  esmf_branch: [release/8.6.0,develop]
-  nuopc_branch: [release/8.6.0,develop]
+  esmf_branch: [v8.6.0,develop]
+  nuopc_branch: [v8.6.0,develop]
 #  filter:
 #    compiler: [nag]
 
