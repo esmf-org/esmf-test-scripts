@@ -9,8 +9,8 @@ machine:
     tasks_per_node: 40
 
 test:
-  esmf_branch: [v8.6.0]
-  nuopc_branch: [v8.6.0]
+  esmf_branch: [develop]
+  nuopc_branch: [develop]
 #  filter:
 #    compiler: [nvhpc]
 
