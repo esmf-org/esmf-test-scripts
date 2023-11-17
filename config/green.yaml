@@ -4,7 +4,7 @@ machine:
   scheduler: None
 
 test:
-  esmf_branch: [develop]
+  esmf_branch: [allow_no_performance_tests_force_fails]
   nuopc_branch: [develop]
 
 matrix:
