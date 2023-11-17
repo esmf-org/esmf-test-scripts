@@ -20,3 +20,5 @@ matrix:
           # mpiuni:
           #   module: None
           #   bopt: [g]
+        extra_env_vars:
+          - ESMF_TESTPERFORMANCE=OFF
