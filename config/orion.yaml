@@ -45,19 +45,19 @@ matrix:
   #      netcdf: netcdf/4.7.4
   #      mpi:
   #          openmpi: openmpi/4.0.4
-  pgi:
-    build_time: "2:00:00"
-    test_time: "4:00:00"
-    versions:
-      2019:
-        compiler: pgi/2019
-        netcdf: netcdf/4.7.4
-        extra_module: cmake intelpython3
-        mpi:
-          openmpi:
-            module: openmpi/4.0.2
-            mpi_env_vars:
-              - ESMF_MPIRUN=mpirun.srun
-        extra_env_vars:
-          - ESMF_F90COMPILER=mpif90
-          - ESMF_CXXCOMPILER=mpicxx
+  #pgi:
+  #  build_time: "2:00:00"
+  #  test_time: "4:00:00"
+  #  versions:
+  #    2019:
+  #      compiler: pgi/2019
+  #      netcdf: netcdf/4.7.4
+  #      extra_module: cmake intelpython3
+  #      mpi:
+  #        openmpi:
+  #          module: openmpi/4.0.2
+  #          mpi_env_vars:
+  #            - ESMF_MPIRUN=mpirun.srun
+  #      extra_env_vars:
+  #        - ESMF_F90COMPILER=mpif90
+  #        - ESMF_CXXCOMPILER=mpicxx
