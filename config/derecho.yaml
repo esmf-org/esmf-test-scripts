@@ -9,7 +9,7 @@ machine:
 
 test:
   esmf_branch: [develop, hconfig_change_equal]
-  nuopc_branch: [develop]
+  nuopc_branch: [develop, hconfig_change_equal]
 #  filter:
 #    compiler: [intel]
 
