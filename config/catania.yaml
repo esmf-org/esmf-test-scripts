@@ -6,8 +6,8 @@ machine:
     type: None
 
 test:
-  esmf_branch: [develop, hconfig_change_equal]
-  nuopc_branch: [develop, hconfig_change_equal]
+  esmf_branch: [develop]
+  nuopc_branch: [develop]
 
 matrix:
  
