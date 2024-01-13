@@ -6,8 +6,8 @@ machine:
     type: None
 
 test:
-  esmf_branch: [develop TC_397]
-  nuopc_branch: [develop TC_397]
+  esmf_branch: [develop, TC_397]
+  nuopc_branch: [develop, TC_397]
 
 matrix:
  
