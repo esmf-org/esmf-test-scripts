@@ -6,7 +6,7 @@ machine:
     type: None
 
 test:
-  esmf_branch: [fix/darwin_gfortranclang_openmpi_preload]
+  esmf_branch: [develop]
   nuopc_branch: [develop]
 
 matrix:
