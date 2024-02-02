@@ -8,8 +8,8 @@ machine:
     partition: None
 
 test:
-  esmf_branch: [develop, bugfix/esmf_config, fix/darwin_gfortranclang_openmpi_preload]
-  nuopc_branch: [develop, bugfix/esmf_config, develop]
+  esmf_branch: [develop, bugfix/esmf_config]
+  nuopc_branch: [develop, bugfix/esmf_config]
 
 #  filter:
 #    compiler: [intel]

@@ -6,8 +6,8 @@ machine:
     type: None
 
 test:
-  esmf_branch: [develop,fix/darwin_gfortranclang_openmpi_preload]
-  nuopc_branch: [develop,develop]
+  esmf_branch: [develop]
+  nuopc_branch: [develop]
 
 matrix:
  
