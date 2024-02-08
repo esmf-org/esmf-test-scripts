@@ -23,7 +23,7 @@ matrix:
       12.2.0_pio2.5.10:
         compiler: gcc/12.2.0
         netcdf: netcdf/4.9.2
-        extra_module: cmake parallelio/2.5.10
+        extra_module: ncarenv/23.06 cmake parallelio/2.5.10
         mpi:
           mpi:
             module: cray-mpich/8.1.25
@@ -40,7 +40,7 @@ matrix:
       2023.0.0:
         compiler: intel/2023.0.0
         netcdf: netcdf/4.9.2
-        extra_module: cmake
+        extra_module: ncarenv/23.06 cmake
         mpi:
           mpiuni:
             module: None
@@ -51,7 +51,7 @@ matrix:
       2023.0.0-classic:
         compiler: intel-classic/2023.0.0
         netcdf: netcdf/4.9.2
-        extra_module: cmake
+        extra_module: ncarenv/23.06 cmake
         mpi:
           mpiuni:
             module: None
@@ -62,7 +62,7 @@ matrix:
       2023.0.0-oneAPI:
         compiler: intel-oneapi/2023.0.0
         netcdf: netcdf/4.9.2
-        extra_module: cmake
+        extra_module: ncarenv/23.06 cmake
         mpi:
           mpiuni:
             module: None
@@ -78,7 +78,7 @@ matrix:
       23.5:
         compiler: nvhpc/23.5
         netcdf: netcdf/4.9.2
-        extra_module: cmake
+        extra_module: ncarenv/23.06 cmake
         mpi:
           mpiuni:
             module: None
@@ -94,7 +94,7 @@ matrix:
       15.0.1:
         compiler: cce/15.0.1
         netcdf: netcdf/4.9.2
-        extra_module: cmake
+        extra_module: ncarenv/23.06 cmake
         mpi:
           mpiuni:
             module: None
