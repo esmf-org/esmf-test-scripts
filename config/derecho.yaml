@@ -37,37 +37,37 @@ matrix:
     build_time: "2:00:00"
     test_time: "2:00:00"
     versions:
-      2023.0.0:
-        compiler: intel/2023.0.0
+      2023.2.1:
+        compiler: intel/2023.2.1
         netcdf: netcdf/4.9.2
-        extra_module: ncarenv/23.06 cmake
+        extra_module: ncarenv/23.09 cmake
         mpi:
           mpiuni:
             module: None
           mpi:
-            module: cray-mpich/8.1.25
+            module: cray-mpich/8.1.27
             mpi_env_vars:
               - ESMF_MPIRUN=mpiexec
-      2023.0.0-classic:
-        compiler: intel-classic/2023.0.0
+      2023.2.1-classic:
+        compiler: intel-classic/2023.2.1
         netcdf: netcdf/4.9.2
-        extra_module: ncarenv/23.06 cmake
+        extra_module: ncarenv/23.09 cmake
         mpi:
           mpiuni:
             module: None
           mpi:
-            module: cray-mpich/8.1.25
+            module: cray-mpich/8.1.27
             mpi_env_vars:
               - ESMF_MPIRUN=mpiexec
-      2023.0.0-oneAPI:
-        compiler: intel-oneapi/2023.0.0
+      2023.2.1-oneAPI:
+        compiler: intel-oneapi/2023.2.1
         netcdf: netcdf/4.9.2
-        extra_module: ncarenv/23.06 cmake
+        extra_module: ncarenv/23.09 cmake
         mpi:
           mpiuni:
             module: None
           mpi:
-            module: cray-mpich/8.1.25
+            module: cray-mpich/8.1.27
             mpi_env_vars:
               - ESMF_MPIRUN=mpiexec
 
