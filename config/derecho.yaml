@@ -8,11 +8,11 @@ machine:
     partition: None
 
 test:
-  esmf_branch: [develop, bugfix/esmf_config]
-  nuopc_branch: [develop, bugfix/esmf_config]
+  esmf_branch: [develop]
+  nuopc_branch: [develop]
 
 #  filter:
-#    compiler: [intel]
+#    compiler: [gfortran]
 
 matrix:
 
@@ -23,10 +23,22 @@ matrix:
       12.2.0_pio2.5.10:
         compiler: gcc/12.2.0
         netcdf: netcdf/4.9.2
-        extra_module: ncarenv/23.06 cmake parallelio/2.5.10
+        extra_module: ncarenv/23.06 gcc/12.2.0 cray-mpich/8.1.25 cmake parallelio/2.5.10
         mpi:
           mpi:
             module: cray-mpich/8.1.25
+            mpi_env_vars:
+              - ESMF_MPIRUN=mpiexec
+              - ESMF_PIO=external
+              - ESMF_PIO_INCLUDE="$PIO/include"
+              - ESMF_PIO_LIBPATH="$PIO/lib"
+      12.2.0_pio2.6.2:
+        compiler: gcc/12.2.0
+        netcdf: netcdf/4.9.2
+        extra_module: ncarenv/23.09 cmake parallelio/2.6.2
+        mpi:
+          mpi:
+            module: cray-mpich/8.1.27
             mpi_env_vars:
               - ESMF_MPIRUN=mpiexec
               - ESMF_PIO=external
@@ -75,15 +87,15 @@ matrix:
     build_time: "2:00:00"
     test_time: "2:00:00"
     versions:
-      23.5:
-        compiler: nvhpc/23.5
+      23.7:
+        compiler: nvhpc/23.7
         netcdf: netcdf/4.9.2
-        extra_module: ncarenv/23.06 cmake
+        extra_module: ncarenv/23.09 cmake
         mpi:
           mpiuni:
             module: None
           mpi:
-            module: cray-mpich/8.1.25
+            module: cray-mpich/8.1.27
             mpi_env_vars:
               - ESMF_MPIRUN=mpiexec
 
