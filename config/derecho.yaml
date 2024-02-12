@@ -44,6 +44,10 @@ matrix:
               - ESMF_PIO=external
               - ESMF_PIO_INCLUDE="$PIO/include"
               - ESMF_PIO_LIBPATH="$PIO/lib"
+        extra_env_vars:
+          - ESMPY_DATA_DIR="/glade/work/theurich/esmf-test-data/grids"
+        esmpy:
+          python: conda/latest
 
   intel:
     build_time: "2:00:00"
@@ -60,6 +64,10 @@ matrix:
             module: cray-mpich/8.1.27
             mpi_env_vars:
               - ESMF_MPIRUN=mpiexec
+        extra_env_vars:
+          - ESMPY_DATA_DIR="/glade/work/theurich/esmf-test-data/grids"
+        esmpy:
+          python: conda/latest
       2023.2.1-classic:
         compiler: intel-classic/2023.2.1
         netcdf: netcdf/4.9.2
