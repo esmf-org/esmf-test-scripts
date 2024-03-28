@@ -1,5 +1,5 @@
 astroid==2.8.0
-black==21.9b0
+black==24.3.0
 click==8.0.1
 flake8==3.9.2
 importlib-metadata==4.8.1
