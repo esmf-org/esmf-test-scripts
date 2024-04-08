@@ -5,76 +5,62 @@ machine:
     type: slurm
     queue: batch
     partition: hera
-    account: nems
+    account: esmf
     tasks_per_node: 40
 
 test:
   esmf_branch: [develop]
   nuopc_branch: [develop]
 #  filter:
-#    compiler: [nvhpc]
+#    compiler: [gfortran]
 
 matrix:
   gfortran:
     test_time: "2:00:00"
     versions:
-      9.2.0:
-        compiler: gnu/9.2.0
+      13.2.0:
+        compiler: gnu/13.2.0
         mpi:
           mpiuni:
             module: None
-            mpi_netcdf: netcdf/4.7.2
           openmpi:
-            module: openmpi/3.1.4
+            module: openmpi/4.1.6
             mpi_env_vars:
               - ESMF_MPIRUN=mpirun.srun
-        extra_module: cmake/3.26.4
+        extra_module: cmake/3.28.1
   intel:
     test_time:  "2:00:00"
     versions:
-      18.0.5:
-        compiler: intel/18.0.5.274
-        mpi:
-          mpiuni:
-            module: None
-            mpi_netcdf: netcdf/4.6.1
-          intelmpi:
-            module: impi/2018.4.274
-            mpi_env_vars:
-              - ESMF_MPIRUN=mpirun.srun
-            mpi_netcdf: netcdf-hdf5parallel/4.7.4
-        extra_module: cmake/3.26.4
-      2023.1.0:
-        compiler: intel/2023.1.0
+      2023.2.0:
+        compiler: intel/2023.2.0
+        netcdf: netcdf/4.7.0
         mpi:
           mpiuni:
             module: None
             mpi_env_vars:
               - ESMF_CXX=icpx
               - ESMF_C=icx
-            mpi_netcdf: netcdf/4.6.1
           intelmpi:
-            module: impi/2022.3.0
+            module: impi/2023.2.0
             mpi_env_vars:
               - ESMF_MPIRUN=mpirun.srun
               - I_MPI_CXX=icpx
               - I_MPI_CC=icx
-            mpi_netcdf: netcdf-hdf5parallel/4.7.4
-        extra_module: gnu cmake/3.26.4
-      2023.1.0-classic:
-        compiler: intel/2023.1.0
-        mpi:
-          mpiuni:
-            module: None
-            mpi_netcdf: netcdf/4.6.1
-          intelmpi:
-            module: impi/2022.3.0
-            mpi_env_vars:
-              - ESMF_MPIRUN=mpirun.srun
-            mpi_netcdf: netcdf-hdf5parallel/4.7.4
-        extra_module: gnu cmake/3.26.4
-      2023.1.0-oneAPI:
-        compiler: intel/2023.1.0
+        extra_module: gnu cmake/3.28.1
+#      2023.2.0-classic:
+#        compiler: intel/2023.2.0
+#        netcdf: netcdf/4.7.0
+#        mpi:
+#          mpiuni:
+#            module: None
+#          intelmpi:
+#            module: impi/2023.2.0
+#            mpi_env_vars:
+#              - ESMF_MPIRUN=mpirun.srun
+#        extra_module: gnu cmake/3.28.1
+      2023.2.0-oneAPI:
+        compiler: intel/2023.2.0
+        netcdf: netcdf/4.7.0
         mpi:
           mpiuni:
             module: None
@@ -82,22 +68,20 @@ matrix:
               - ESMF_F90=ifx
               - ESMF_CXX=icpx
               - ESMF_C=icx
-            mpi_netcdf: netcdf/4.6.1
           intelmpi:
-            module: impi/2022.3.0
+            module: impi/2023.2.0
             mpi_env_vars:
               - ESMF_MPIRUN=mpirun.srun
               - I_MPI_F90=ifx
               - I_MPI_CXX=icpx
               - I_MPI_CC=icx
-            mpi_netcdf: netcdf-hdf5parallel/4.7.4
-        extra_module: gnu cmake/3.26.4
+        extra_module: gnu cmake/3.28.1
   nvhpc:
     build_time: "2:00:00"
     test_time:  "2:00:00"
     versions:
-      23.3:
-        compiler: nvhpc/23.3
+      24.1:
+        compiler: nvhpc/24.1
         mpi:
           mpiuni:
             module: None
@@ -106,4 +90,4 @@ matrix:
             mpi_env_vars:
               - ESMF_MPIRUN=mpirun
         netcdf: None
-        extra_module: cmake/3.26.4
+        extra_module: cmake/3.28.1
