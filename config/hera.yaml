@@ -5,7 +5,7 @@ machine:
     type: slurm
     queue: batch
     partition: hera
-    account: esmf
+    account: nems
     tasks_per_node: 40
 
 test:
