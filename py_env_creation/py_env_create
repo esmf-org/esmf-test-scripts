@@ -5,10 +5,7 @@
 # Simple bash script to setup the python environment for the user so they can run the CTSM
 # python tools using "conda".
 #
-dir=${0%/*}
-if [ "$dir" = "$0" ];then
-  dir="."
-fi
+py_env_dir=`dirname $0`
 
 # Check if conda is in your path
 conda --help >& condahelp.txt
@@ -24,9 +21,6 @@ if [ $error != 0 ]; then
 fi
 rm condahelp.txt
 ctsm_python=ctsm_pylib
-
-
-condadir="$dir/python"
 
 domain=`domainname`
 condafile="conda_env_ctsm_py.txt"
@@ -45,7 +39,7 @@ usage() {
   echo "     Run with verbose mode for the install so you see the progress bar"
   echo "[-f|--file <file>]  "
   echo "     Conda environment file to use (can be a text format or YAML format)"
-  echo "     Assumed to be under the directory: $condadir"
+  echo "     Assumed to be under the directory: $py_env_dir"
   echo "     Default is: $condafile"
   echo "[--option <option>]  "
   echo "     Option(s) to pass to 'conda install' step"
@@ -80,14 +74,14 @@ while [ $# -gt 0 ]; do
    shift
 done
 
-if [ ! -f $condadir/$condafile ]; then
-   echo "$condadir/$condafile does NOT exist"
+if [ ! -f $py_env_dir/$condafile ]; then
+   echo "$py_env_dir/$condafile does NOT exist"
    echo "Use the --file option with a valid filename"
    exit -1
 fi
 
 echo "Use conda to install the python environment needed to run the CTSM python tools in the conda environment: $ctsm_python"
-echo "Using the file: $condadir/$condafile"
+echo "Using the file: $py_env_dir/$condafile"
 
 # Check if the environment already exists, if it does continue, if not create it
 conda list -n $ctsm_python >& /dev/null
@@ -108,12 +102,12 @@ verbosity="-q"
 if [ "$verbose" == "Yes" ]; then
   verbosity="-v"
 fi
-cmd="conda install --yes $verbosity -c conda-forge -n $ctsm_python --file $condadir/$condafile $option"
+cmd="conda install --yes $verbosity -c conda-forge -n $ctsm_python --file $py_env_dir/$condafile $option"
 echo "$cmd"
 $cmd
 if [ $? != 0 ]; then
    echo "Trouble installing the $ctsm_python python environment"
-   echo "There must be a problem in the $condadir/$condafile conda specification environment file"
+   echo "There must be a problem in the $py_env_dir/$condafile conda specification environment file"
    echo "Change the file and try again"
    exit -2
 fi
