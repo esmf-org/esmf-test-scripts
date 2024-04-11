@@ -14,10 +14,9 @@ if [ $error != 0 ]; then
    echo "conda is NOT in your path for the bash shell; install it, add it with modules or whatever is required on your system to get it in your path"
    exit -1
 fi
-env_name=ctsm_pylib
+env_name=esmf-test-scripts-conda-env
 
-domain=`domainname`
-condafile="conda_env_ctsm_py.txt"
+condafile="environment.yml"
 #----------------------------------------------------------------------
 # Usage subroutine
 usage() {
