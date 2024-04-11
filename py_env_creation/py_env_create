@@ -1,9 +1,6 @@
 #!/bin/bash
 #
-# py_env_create -- setup the python environment in order to use CTSM python tools
-#
-# Simple bash script to setup the python environment for the user so they can run the CTSM
-# python tools using "conda".
+# py_env_create -- setup the python environment in order to run ESMPy testing
 #
 py_env_dir=`dirname $0`
 
@@ -15,8 +12,11 @@ if [ $error != 0 ]; then
    exit -1
 fi
 env_name=esmf-test-scripts-conda-env
+env_name_with_possible_path=$env_name
+env_name_flag="-n $env_name"
 
 condafile="environment.yml"
+
 #----------------------------------------------------------------------
 # Usage subroutine
 usage() {
@@ -34,6 +34,8 @@ usage() {
   echo "     Conda environment file to use (can be a text format or YAML format)"
   echo "     Assumed to be under the directory: $py_env_dir"
   echo "     Default is: $condafile"
+  echo "[-p|--path <path>] "
+  echo "     Creates conda environment in the given path instead of the default location"
   echo "[--option <option>]  "
   echo "     Option(s) to pass to 'conda install' step"
   echo "***********************************************************************"
@@ -41,6 +43,7 @@ usage() {
 
 verbose="No"
 option=""
+path_to_env=""
 while [ $# -gt 0 ]; do
    case $1 in
        -h|--help )
@@ -52,6 +55,12 @@ while [ $# -gt 0 ]; do
            ;;
        -f|--file )
            condafile=$2
+           shift
+           ;;
+       -p|--path )
+           path_to_env=${2}
+           env_name_with_possible_path=${path_to_env}/${env_name}
+           env_name_flag="--prefix ${path_to_env}/${env_name}"
            shift
            ;;
        --option )
@@ -73,38 +82,38 @@ if [ ! -f $py_env_dir/$condafile ]; then
    exit -1
 fi
 
-echo "Use conda to install the python environment needed to run the CTSM python tools in the conda environment: $env_name"
+echo "Using conda to install the python environment needed to run the ESMPy testing in the conda environment: $env_name_with_possible_path"
 echo "Using the file: $py_env_dir/$condafile"
 
 # Check if the environment already exists, if it does continue, if not create it
-conda list -n $env_name >& /dev/null
+conda list ${env_name_flag} >& /dev/null
 if [ $? != 0 ]; then
-   echo "Create $env_name"
-   cmd="conda create --force -n $env_name -q"
+   echo "Create $env_name_with_possible_path"
+   cmd="conda create --force ${env_name_flag} -q"
    echo "$cmd"
    $cmd
    if [ $? != 0 ]; then
-      echo "Error creating conda environment $env_name"
+      echo "Error creating conda environment $env_name_with_possible_path"
       exit -1
    fi
 else
-   echo "$env_name environment already exists"
+   echo "$env_name_with_possible_path environment already exists"
 fi
-echo "Install $env_name this can take a long time, be patient...."
+echo "Install $env_name_with_possible_path this can take a long time, be patient...."
 verbosity="-q"
 if [ "$verbose" == "Yes" ]; then
   verbosity="-v"
 fi
-cmd="conda install --yes $verbosity -c conda-forge -n $env_name --file $py_env_dir/$condafile $option"
+cmd="conda install --yes $verbosity -c conda-forge ${env_name_flag} --file $py_env_dir/$condafile $option"
 echo "$cmd"
 $cmd
 if [ $? != 0 ]; then
-   echo "Trouble installing the $env_name python environment"
+   echo "Trouble installing the $env_name_with_possible_path python environment"
    echo "There must be a problem in the $py_env_dir/$condafile conda specification environment file"
    echo "Change the file and try again"
    exit -2
 fi
-echo "Successfully installed the $env_name python environment"
+echo "Successfully installed the $env_name_with_possible_path python environment"
 echo
 echo "activate the environment by doing the following..."
-echo "conda activate $env_name"
+echo "conda activate $env_name_with_possible_path"
