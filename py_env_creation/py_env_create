@@ -89,7 +89,7 @@ echo "Using the file: $py_env_dir/$condafile"
 conda list ${env_name_flag} >& /dev/null
 if [ $? != 0 ]; then
    echo "Create $env_name_with_possible_path"
-   cmd="conda create --force ${env_name_flag} -q"
+   cmd="conda create --yes --force ${env_name_flag} -q"
    echo "$cmd"
    $cmd
    if [ $? != 0 ]; then
