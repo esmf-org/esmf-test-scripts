@@ -22,3 +22,6 @@ matrix:
           #   bopt: [g]
         extra_env_vars:
           - ESMF_TESTPERFORMANCE=OFF
+          - ESMPY_DATA_DIR="/Users/sacks/projects/scratch/esmf-testing/esmf-test-data/grids"
+        esmpy:
+          python: python/3.11
