@@ -1,0 +1,5 @@
+The files in this directory are used for setting up a python environment that can be used
+for running the ESMPy tests.
+
+This creates an environment called esmf-test-scripts-conda-env in the directory where the
+tests are being run.
