@@ -27,4 +27,5 @@ matrix:
           - ESMF_TESTPERFORMANCE=OFF
           - ESMPY_DATA_DIR="/Users/sacks/projects/scratch/esmf-testing/esmf-test-data/grids"
         esmpy:
-          python: python/3.11
+          # This python version corresponds to the suffix in environment-python3.11.yml; this needs to be coordinated with the green run script
+          python: python3.11
