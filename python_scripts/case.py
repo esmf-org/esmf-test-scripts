@@ -232,7 +232,10 @@ class Case:
                 out.write(f"rsync -a $TEMP_ROOT/nuopc-app-prototypes $WORK_ROOT\n")
                 out.write(f"rm -rf $TEMP_ROOT\n")
             if self.combo.python_module:
-                out.write(f"ssh {self.machine.head_node_name} {self.esmpy_install_script}\n")
+                if self.machine.head_node_name:
+                    out.write(f"ssh {self.machine.head_node_name} {self.esmpy_install_script}\n")
+                else:
+                    out.write(f"{self.esmpy_install_script}\n")
                 out.write(f"cd {self.base_path}\n")
                 out.write(f". esmpy_venv/bin/activate\n")
                 _esmpy_path = os.path.join(self.esmf_clone_path, "src", "addon", "esmpy")

@@ -2,6 +2,9 @@ machine:
   name: green
   cores_per_node: 8
   scheduler: None
+  # Since we don't submit to compute nodes on this machine, there is no notion of a head node
+  # (this bypasses the ssh'ing to the head node in doing the ESMPy installation)
+  head_node_name: null
 
 test:
   esmf_branch: [develop]
