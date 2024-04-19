@@ -253,7 +253,7 @@ class Case:
         """
 
         with StringIO() as out:
-            out.write("#!/bin/sh\n")
+            out.write(f"#!{self.machine.bash} -l\n")
             out.write(self._create_modules_fragment())
             out.write(f"cd {self.esmf_clone_path}\n")
             out.write(f"export ESMFMKFILE=`find $PWD/DEFAULTINSTALLDIR -iname esmf.mk`\n")
@@ -289,7 +289,7 @@ class Case:
         _collect_script_path = os.path.join(self.scripts_root, "collect_artifacts.py")
 
         with StringIO() as out:
-            out.write("#!/bin/sh\n")
+            out.write(f"#!{self.machine.bash} -l\n")
             out.write(f"{_collect_script_path} \\\n")
             out.write(f" --test-dir {self.base_path} \\\n")
             out.write(f" --artifacts-dir {_artifacts_base_dir} \\\n")

@@ -17,7 +17,7 @@ class PBS(Scheduler):
 
     def create_headers(self, script_file, timeout):
         with StringIO() as out:
-            out.write("#!/bin/sh -l\n")
+            out.write(f"#!{self.machine.bash} -l\n")
             out.write(f"#PBS -N {os.path.basename(script_file)}\n")
             out.write(f"#PBS -l walltime={timeout}\n")
             out.write(f"#PBS -q {self.queue}\n")
