@@ -261,7 +261,8 @@ class Case:
             out.write(f"cd {self.base_path}\n")
             out.write(f"conda activate {self._get_conda_env()}\n")
             out.write(f"rm -rf esmpy_venv\n")
-            out.write(f"python3 -m venv esmpy_venv\n")
+            # Use --system-site-packages in the following to inherit packages from the conda environment
+            out.write(f"python3 -m venv --system-site-packages esmpy_venv\n")
             out.write(f". esmpy_venv/bin/activate\n")
 
             _esmpy_path = os.path.join(self.esmf_clone_path, "src", "addon", "esmpy")
