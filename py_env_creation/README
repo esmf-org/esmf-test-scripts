@@ -1,0 +1,4 @@
+The files in this directory are used for setting up a python environment that can be used
+for running the ESMPy tests.
+
+This can be used manually or invoked by the run scripts.

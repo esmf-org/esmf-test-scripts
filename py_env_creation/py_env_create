@@ -1,0 +1,126 @@
+#!/bin/bash
+#
+# py_env_create -- setup the python environment in order to run ESMPy testing
+#
+py_env_dir=`dirname $0`
+
+# Check if conda is in your path
+type conda >/dev/null 2>&1
+error=$?
+if [ $error != 0 ]; then
+   echo "conda is NOT in your path for the bash shell; install it, add it with modules or whatever is required on your system to get it in your path"
+   exit -1
+fi
+
+condafile="environment.yml"
+
+#----------------------------------------------------------------------
+# Usage subroutine
+usage() {
+  echo ""
+  echo "***********************************************************************"
+  echo "usage:"
+  echo "./py_env_create"
+  echo ""
+  echo "valid arguments: "
+  echo "[-h|--help]  "
+  echo "     Displays this help message"
+  echo "[-v|--verbose]  "
+  echo "     Run with verbose mode for the install so you see the progress bar"
+  echo "[-f|--file <file>]  "
+  echo "     Conda environment file to use (can be a text format or YAML format)"
+  echo "     Assumed to be under the directory: $py_env_dir"
+  echo "     Default is: $condafile"
+  echo "[-p|--path <path>] "
+  echo "     Creates conda environment in the given path instead of the default location"
+  echo "[--option <option>]  "
+  echo "     Option(s) to pass to 'conda install' step"
+  echo "***********************************************************************"
+}
+
+verbose="No"
+option=""
+path_to_env=""
+while [ $# -gt 0 ]; do
+   case $1 in
+       -h|--help )
+           usage
+           exit 0
+           ;;
+       -v|--verbose )
+           verbose="Yes"
+           ;;
+       -f|--file )
+           condafile=$2
+           shift
+           ;;
+       -p|--path )
+           path_to_env=${2}
+           shift
+           ;;
+       --option )
+           option=$2
+           shift
+           ;;
+       * )
+           echo "ERROR:: invalid argument sent in: $2"
+           usage
+           exit 1
+           ;;
+   esac
+   shift
+done
+
+# Strip the trailing ".yml" from the condafile to get the suffix for the environment that we'll create
+# e.g., for condafile "environment-python3.11.yml", the environment name will be "esmf-test-scripts-environment-python3.11"
+env_name_suffix=${condafile%.yml}
+env_name="esmf-test-scripts-${env_name_suffix}"
+if [ -z "$path_to_env" ]; then
+   env_name_with_possible_path=$env_name
+   env_name_flag="-n $env_name"
+else
+   env_name_with_possible_path=${path_to_env}/${env_name}
+   env_name_flag="--prefix ${path_to_env}/${env_name}"
+fi
+
+if [ ! -f $py_env_dir/$condafile ]; then
+   echo "$py_env_dir/$condafile does NOT exist"
+   echo "Use the --file option with a valid filename"
+   exit -1
+fi
+
+echo "Using conda to install the python environment needed to run the ESMPy testing in the conda environment: $env_name_with_possible_path"
+echo "Using the file: $py_env_dir/$condafile"
+
+# Check if the environment already exists, if it does continue, if not create it
+conda list ${env_name_flag} >& /dev/null
+if [ $? != 0 ]; then
+   echo "Create $env_name_with_possible_path"
+   cmd="conda create --yes --force ${env_name_flag} -q"
+   echo "$cmd"
+   $cmd
+   if [ $? != 0 ]; then
+      echo "Error creating conda environment $env_name_with_possible_path"
+      exit -1
+   fi
+else
+   echo "$env_name_with_possible_path environment already exists"
+fi
+echo "Install $env_name_with_possible_path this can take a long time, be patient...."
+verbosity="-q"
+if [ "$verbose" == "Yes" ]; then
+  verbosity="-v"
+fi
+cmd="conda install --yes $verbosity -c conda-forge ${env_name_flag} --file $py_env_dir/$condafile $option"
+echo "$cmd"
+$cmd
+if [ $? != 0 ]; then
+   echo "Trouble installing the $env_name_with_possible_path python environment"
+   echo "There must be a problem in the $py_env_dir/$condafile conda specification environment file"
+   echo "Change the file and try again"
+   exit -2
+fi
+echo "Successfully installed the $env_name_with_possible_path python environment"
+echo
+echo "activate the environment by doing the following..."
+echo "conda activate $env_name_with_possible_path"

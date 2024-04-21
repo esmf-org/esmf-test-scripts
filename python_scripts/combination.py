@@ -24,7 +24,7 @@ class Combination:
         self.extra_commands = None
         self.extra_env_vars = None
         self.module_path = None
-        self.python_module = None
+        self.python_conda_env = None
 
     def label(self):
         return f"{self.compiler} {self.compiler_version} / {self.mpi} {self.mpi_version} / {self.netcdf_module} / {self.bopt}"
