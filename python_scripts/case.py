@@ -41,6 +41,8 @@ class Case:
         self.test_script = os.path.join(self.base_path, "test.bat")
         self.collect_script = os.path.join(self.base_path, "collect_artifacts.sh")
         self.esmpy_install_script = os.path.join(self.base_path, "esmpy_install.bat")
+        self.py_env_create_path = os.path.join(os.path.dirname(self.scripts_root),
+                                               "py_env_creation", "py_env_create")
         self.build_job_num = 0
         self.test_job_num = 0
         self.collect_build_process = 0
@@ -258,6 +260,10 @@ class Case:
             out.write(f"cd {self.esmf_clone_path}\n")
             out.write(f"export ESMFMKFILE=`find $PWD/DEFAULTINSTALLDIR -iname esmf.mk`\n")
 
+            # Call script to create or update the specified conda environment
+            out.write(f"{self.py_env_create_path} --path {self._get_conda_env_path()} "
+                      f"--file environment-{self.combo.python_conda_env}.yml\n")
+
             out.write(f"cd {self.base_path}\n")
             out.write(f"conda activate {self._get_conda_env()}\n")
             out.write(f"rm -rf esmpy_venv\n")
@@ -302,12 +308,17 @@ class Case:
             out.write(" --phase ${2:-all}\n")
             return out.getvalue()
 
+    def _get_conda_env_path(self):
+        """
+        Return a string specifying the path in which conda environments will be created
+        """
+        return os.path.join(self.root_dir, "conda_environments")
+
     def _get_conda_env(self):
         """
         Return a string specifying the conda environment to load
 
         Only valid if self.combo.python_conda_env is specified
         """
-        # The location of this environment is coordinated with the calls to py_env_create in relevant run scripts
-        return os.path.join(self.root_dir, "conda_environments",
+        return os.path.join(self._get_conda_env_path(),
                             f"esmf-test-scripts-environment-{self.combo.python_conda_env}")

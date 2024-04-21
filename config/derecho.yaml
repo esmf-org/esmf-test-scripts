@@ -48,6 +48,7 @@ matrix:
         extra_env_vars:
           - ESMPY_DATA_DIR="/glade/work/theurich/esmf-test-data/grids"
         esmpy:
+          # This python version corresponds to the suffix in environment-python3.11.yml
           python: python3.11
 
   intel:
@@ -68,6 +69,7 @@ matrix:
         extra_env_vars:
           - ESMPY_DATA_DIR="/glade/work/theurich/esmf-test-data/grids"
         esmpy:
+          # This python version corresponds to the suffix in environment-python3.11.yml
           python: python3.11
       2023.2.1-classic:
         compiler: intel-classic/2023.2.1
