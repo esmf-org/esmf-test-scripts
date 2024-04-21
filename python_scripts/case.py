@@ -79,7 +79,7 @@ class Case:
             _file.write(self._create_test_script())
 
         # conditionally generate ESMPy install scripts
-        if self.combo.python_module is not None:
+        if self.combo.python_conda_env is not None:
             with open(self.esmpy_install_script, "w") as _file:
                 _file.write(self._create_esmpy_install_script())
             cmd.runcmd(f"chmod u+x {self.esmpy_install_script}")
@@ -149,8 +149,6 @@ class Case:
                 out.write(f"module load {e.netcdf_module}\n")
             if e.netcdf_fortran_module is not None:
                 out.write(f"module load {e.netcdf_fortran_module}\n")
-            if e.python_module is not None:
-                out.write(f"module load {e.python_module}\n")
 
             out.write("\nset -x\n")
             if e.extra_env_vars is not None:
@@ -231,15 +229,20 @@ class Case:
                 out.write(f"rsync -a $TEMP_ROOT/esmf $WORK_ROOT\n")
                 out.write(f"rsync -a $TEMP_ROOT/nuopc-app-prototypes $WORK_ROOT\n")
                 out.write(f"rm -rf $TEMP_ROOT\n")
-            if self.combo.python_module:
-                out.write(f"ssh {self.machine.head_node_name} {self.esmpy_install_script}\n")
+            if self.combo.python_conda_env:
+                if self.machine.head_node_name:
+                    out.write(f"ssh {self.machine.head_node_name} {self.esmpy_install_script}\n")
+                else:
+                    out.write(f"{self.esmpy_install_script}\n")
                 out.write(f"cd {self.base_path}\n")
+                out.write(f"conda activate {self._get_conda_env()}\n")
                 out.write(f". esmpy_venv/bin/activate\n")
                 _esmpy_path = os.path.join(self.esmf_clone_path, "src", "addon", "esmpy")
                 out.write(f"cd {_esmpy_path}\n")
                 _esmpy_test_log = os.path.join(self.base_path, "esmpy-test.log")
                 out.write(f"make test 2>&1| tee {_esmpy_test_log}\n")
                 out.write(f"deactivate\n")
+                out.write(f"conda deactivate\n")
 
             return out.getvalue()
 
@@ -250,14 +253,16 @@ class Case:
         """
 
         with StringIO() as out:
-            out.write("#!/bin/sh\n")
+            out.write(f"#!{self.machine.bash} -l\n")
             out.write(self._create_modules_fragment())
             out.write(f"cd {self.esmf_clone_path}\n")
             out.write(f"export ESMFMKFILE=`find $PWD/DEFAULTINSTALLDIR -iname esmf.mk`\n")
 
             out.write(f"cd {self.base_path}\n")
+            out.write(f"conda activate {self._get_conda_env()}\n")
             out.write(f"rm -rf esmpy_venv\n")
-            out.write(f"python3 -m venv esmpy_venv\n")
+            # Use --system-site-packages in the following to inherit packages from the conda environment
+            out.write(f"python3 -m venv --system-site-packages esmpy_venv\n")
             out.write(f". esmpy_venv/bin/activate\n")
 
             _esmpy_path = os.path.join(self.esmf_clone_path, "src", "addon", "esmpy")
@@ -267,6 +272,7 @@ class Case:
             _esmpy_download_log = os.path.join(self.base_path, "esmpy-download.log")
             out.write(f"make download 2>&1| tee {_esmpy_download_log}\n")
             out.write(f"deactivate\n")
+            out.write("conda deactivate\n")
 
             return out.getvalue()
 
@@ -284,7 +290,7 @@ class Case:
         _collect_script_path = os.path.join(self.scripts_root, "collect_artifacts.py")
 
         with StringIO() as out:
-            out.write("#!/bin/sh\n")
+            out.write(f"#!{self.machine.bash} -l\n")
             out.write(f"{_collect_script_path} \\\n")
             out.write(f" --test-dir {self.base_path} \\\n")
             out.write(f" --artifacts-dir {_artifacts_base_dir} \\\n")
@@ -295,3 +301,13 @@ class Case:
             out.write(" --jobid ${1:-0} \\\n")
             out.write(" --phase ${2:-all}\n")
             return out.getvalue()
+
+    def _get_conda_env(self):
+        """
+        Return a string specifying the conda environment to load
+
+        Only valid if self.combo.python_conda_env is specified
+        """
+        # The location of this environment is coordinated with the calls to py_env_create in relevant run scripts
+        return os.path.join(self.root_dir, "conda_environments",
+                            f"esmf-test-scripts-environment-{self.combo.python_conda_env}")

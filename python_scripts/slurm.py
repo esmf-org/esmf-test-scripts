@@ -16,7 +16,7 @@ class Slurm(Scheduler):
 
     def create_headers(self, script_file, timeout):
         with StringIO() as out:
-            out.write("#!/bin/sh -l\n")
+            out.write(f"#!{self.machine.bash} -l\n")
             out.write(f"#SBATCH --account={self.account}\n")
             out.write(f"#SBATCH -o {script_file}_%j.o\n")
             out.write(f"#SBATCH -e {script_file}_%j.e\n")

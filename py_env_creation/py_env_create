@@ -11,9 +11,6 @@ if [ $error != 0 ]; then
    echo "conda is NOT in your path for the bash shell; install it, add it with modules or whatever is required on your system to get it in your path"
    exit -1
 fi
-env_name=esmf-test-scripts-conda-env
-env_name_with_possible_path=$env_name
-env_name_flag="-n $env_name"
 
 condafile="environment.yml"
 
@@ -59,8 +56,6 @@ while [ $# -gt 0 ]; do
            ;;
        -p|--path )
            path_to_env=${2}
-           env_name_with_possible_path=${path_to_env}/${env_name}
-           env_name_flag="--prefix ${path_to_env}/${env_name}"
            shift
            ;;
        --option )
@@ -75,6 +70,18 @@ while [ $# -gt 0 ]; do
    esac
    shift
 done
+
+# Strip the trailing ".yml" from the condafile to get the suffix for the environment that we'll create
+# e.g., for condafile "environment-python3.11.yml", the environment name will be "esmf-test-scripts-environment-python3.11"
+env_name_suffix=${condafile%.yml}
+env_name="esmf-test-scripts-${env_name_suffix}"
+if [ -z "$path_to_env" ]; then
+   env_name_with_possible_path=$env_name
+   env_name_flag="-n $env_name"
+else
+   env_name_with_possible_path=${path_to_env}/${env_name}
+   env_name_flag="--prefix ${path_to_env}/${env_name}"
+fi
 
 if [ ! -f $py_env_dir/$condafile ]; then
    echo "$py_env_dir/$condafile does NOT exist"
