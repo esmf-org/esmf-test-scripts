@@ -13,8 +13,9 @@ git remote update
 git pull -X theirs --no-edit origin
 
 # The following is needed for ESMPy testing
+# Note that the choice of environment file needs to be coordinated with the version listed in derecho.yaml
 module load conda/latest
-conda activate npl
+./py_env_creation/py_env_create --path ${NS}/conda_environments --file environment-python3.11.yml
 
 python3 $NS/esmf-test-scripts/python_scripts/test_esmf.py -m derecho -r $NS --throttle 8 >& $NS/derecho.log
 
