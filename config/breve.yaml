@@ -4,7 +4,7 @@ machine:
   scheduler: None
 
 test:
-  esmf_branch: [develop]
+  esmf_branch: [v8.6.1]
   nuopc_branch: [develop]
 #  filter:
 #    compiler: [aocc]
