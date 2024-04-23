@@ -5,7 +5,7 @@ machine:
 
 test:
   esmf_branch: [v8.6.1]
-  nuopc_branch: [develop]
+  nuopc_branch: [v8.6.1]
 #  filter:
 #    compiler: [aocc]
 
