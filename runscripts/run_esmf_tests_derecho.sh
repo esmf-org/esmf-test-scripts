@@ -5,9 +5,9 @@ date
 hostname -f
 
 eval `ssh-agent`
-ssh-add /glade/u/home/theurich/.ssh/id_ed25519
+ssh-add /glade/u/home/sacks/.ssh/id_rsa
 
-export NS=/glade/derecho/scratch/theurich/ESMF-Nightly-Testing
+export NS=/glade/derecho/scratch/sacks/esmf-testing
 cd $NS/esmf-test-scripts
 git remote update
 git pull -X theirs --no-edit origin
