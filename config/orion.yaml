@@ -26,6 +26,7 @@ matrix:
             mpi_env_vars:
               - ESMF_MPIRUN=mpirun.srun
   gfortran:
+    test_time: "2:00:00"
     versions:
       8.3.0:
         compiler: gcc/8.3.0
