@@ -42,6 +42,98 @@ The steps are as follows:
   7.  When all is good, add a run script under `esmf-test-scripts/runscripts/`
       (again, start with an existing one as a template) and put this script under a cron job.
 
+## Enabling ESMPy testing on a machine
+
+### One-time setup needed for a given user's account on the machine
+
+To avoid needing to re-download the ESMPy test data every time the ESMPy testing is run, we typically set up an `ESMPY_DATA_DIR`. This can be done either by doing a `git clone` of the `esmf-test-data` repository (which is simple, but leads to an unnecessarily large amount of disk usage) or by doing a manual run of the ESMPy testing while setting `ESMPY_DATA_NEW_DIR` and then running `make download`.
+
+The following commands can be used to set up an `ESMPY_DATA_DIR`; this needs to be done after building ESMF from source; replace the capitalized paths (`FILL/IN/PATH/TO/...`) with appropriate paths:
+
+```bash
+export ESMFMKFILE=/FILL/IN/PATH/TO/LOCATION/FROM/BUILD/OF/esmf.mk
+export ESMPY_DATA_NEW_DIR=/FILL/IN/PATH/TO/DESIRED/LOCATION/OF/esmf-test-data/grids
+mkdir -p $ESMPY_DATA_NEW_DIR
+cd /FILL/IN/PATH/TO/ESMF/src/addon/esmpy
+python -m venv esmpy_venv
+. esmpy_venv/bin/activate
+pip install .
+make download
+deactivate
+rm -r esmpy_venv
+```
+
+### Additions needed in the given machine's config file
+
+A few pieces need to be added to enable ESMPy testing on a machine:
+
+1. `head_node_name` needs to be specified under the machine block (this is needed because the ESMPy testing ssh's to the head node to do the ESMPy installation).
+
+2. Under any combo where ESMPy testing will be run, add `ESMPY_DATA_DIR` under the `extra_env_vars` section, pointing to the directory set up above.
+
+3. Under any combo where ESMPy testing will be run, add an `esmpy` section with a single element specifying the python version to be used. This needs to correspond to one of the supported versions in a yml file in the `py_env_creation` directory (e.g., for `environment-python3.11.yml`, specify `python: python3.11`).
+
+4. If the use of conda requires loading a module, then add this to the modules loaded for the given combo.
+
+For example, here were the diffs to add python testing to two combos on derecho:
+
+```diff
+diff --git a/config/derecho.yaml b/config/derecho.yaml
+index 77ccf68..048346d 100644
+--- a/config/derecho.yaml
++++ b/config/derecho.yaml
+@@ -1,6 +1,7 @@
+ machine:
+   name: derecho
+   cores_per_node: 128
++  head_node_name: derecho6
+   scheduler:
+     type: pbs
+     account: p93300606
+@@ -35,7 +36,7 @@ matrix:
+       12.2.0_pio2.6.2:
+         compiler: gcc/12.2.0
+         netcdf: netcdf/4.9.2
+-        extra_module: ncarenv/23.09 cmake parallelio/2.6.2
++        extra_module: ncarenv/23.09 cmake parallelio/2.6.2 conda/latest
+         mpi:
+           mpi:
+             module: cray-mpich/8.1.27
+@@ -44,6 +45,11 @@ matrix:
+               - ESMF_PIO=external
+               - ESMF_PIO_INCLUDE="$PIO/include"
+               - ESMF_PIO_LIBPATH="$PIO/lib"
++        extra_env_vars:
++          - ESMPY_DATA_DIR="/glade/work/theurich/esmf-test-data/grids"
++        esmpy:
++          # This python version corresponds to the suffix in environment-python3.11.yml
++          python: python3.11
+
+   intel:
+     build_time: "2:00:00"
+@@ -52,7 +58,7 @@ matrix:
+       2023.2.1:
+         compiler: intel/2023.2.1
+         netcdf: netcdf/4.9.2
+-        extra_module: ncarenv/23.09 cmake
++        extra_module: ncarenv/23.09 cmake conda/latest
+         mpi:
+           mpiuni:
+             module: None
+@@ -60,6 +66,11 @@ matrix:
+             module: cray-mpich/8.1.27
+             mpi_env_vars:
+               - ESMF_MPIRUN=mpiexec
++        extra_env_vars:
++          - ESMPY_DATA_DIR="/glade/work/theurich/esmf-test-data/grids"
++        esmpy:
++          # This python version corresponds to the suffix in environment-python3.11.yml
++          python: python3.11
+       2023.2.1-classic:
+         compiler: intel-classic/2023.2.1
+         netcdf: netcdf/4.9.2
+```
+
 ## Archiving and creating a new esmf-test-artifacts repository
 
 The esmf-test-artifacts repository must be regularly archived and replaced with a new one. This is
