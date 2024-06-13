@@ -44,7 +44,7 @@ The steps are as follows:
 
 ## Enabling ESMPy testing on a machine
 
-### One-time setup needed for a given user's account on the machine
+### One-time setup needed for a machine
 
 To avoid needing to re-download the ESMPy test data every time the ESMPy testing is run, we typically set up an `ESMPY_DATA_DIR`. This can be done either by doing a `git clone` of the `esmf-test-data` repository (which is simple, but leads to an unnecessarily large amount of disk usage) or by doing a manual run of the ESMPy testing while setting `ESMPY_DATA_NEW_DIR` and then running `make download`.
 
@@ -62,6 +62,8 @@ make download
 deactivate
 rm -r esmpy_venv
 ```
+
+(The contents of this `ESMPY_DATA_DIR` may need to be updated periodically if the test inputs change, but this should generally only be needed infrequently.)
 
 ### Additions needed in the given machine's config file
 
