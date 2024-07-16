@@ -13,9 +13,9 @@ The steps are as follows:
   ```bash
    cd $ESMF_TEST_ROOT
    git clone git@github.com:esmf-org/esmf-test-scripts.git
-   git clone -c feature.manyFiles=true  git@github.com:esmf-org/esmf-test-artifacts.git
-   - or altnatively, when artfacts repo gets very large -
-   git clone --progress --filter=blob:none -c feature.manyFiles=true git@github.com:esmf-org/esmf-test-artifacts.git
+   git clone -c feature.manyFiles=true git@github.com:esmf-org/esmf-test-artifacts.git --branch main --single-branch
+   - or if a specific `machine branch` already exists -
+   git clone -c feature.manyFiles=true git@github.com:esmf-org/esmf-test-artifacts.git --branch <machine branch> --single-branch
   ``` 
   3.  If this is an entirely new machine that has never been tested with ESMF, create a new config YAML 
       file under `esmf-test-scripts/config/<machine>.yaml`.
