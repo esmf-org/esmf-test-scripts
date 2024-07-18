@@ -11,7 +11,7 @@ machine:
     constraint: cpu
 
 test:
-  esmf_branch: [develop]
+  esmf_branch: [feature/smm_store_search]
   nuopc_branch: [develop]
   filter:
     compiler: [gfortran,intel]
