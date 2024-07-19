@@ -10,7 +10,7 @@ machine:
     partition: compute
 
 test:
-  esmf_branch: [feature/smm_store_search]
+  esmf_branch: [develop]
   nuopc_branch: [develop]
 
 matrix:

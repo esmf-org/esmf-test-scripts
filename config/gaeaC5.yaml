@@ -11,7 +11,7 @@ machine:
     queue: normal
 
 test:
-  esmf_branch: [feature/smm_store_search]
+  esmf_branch: [develop]
   nuopc_branch: [develop]
 #  filter:
 #    compiler: [intel]

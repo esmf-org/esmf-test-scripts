@@ -9,7 +9,7 @@ machine:
     tasks_per_node: 40
 
 test:
-  esmf_branch: [feature/smm_store_search]
+  esmf_branch: [develop]
   nuopc_branch: [develop]
 #  filter:
 #    compiler: [gfortran]
