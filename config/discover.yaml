@@ -10,7 +10,7 @@ machine:
     partition: compute
 
 test:
-  esmf_branch: [develop]
+  esmf_branch: [feature/hconfig-extras]
   nuopc_branch: [develop]
 
 matrix:

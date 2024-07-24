@@ -7,7 +7,7 @@ machine:
   head_node_name: null
 
 test:
-  esmf_branch: [develop]
+  esmf_branch: [feature/hconfig-extras]
   nuopc_branch: [develop]
 
 matrix:
