@@ -7,7 +7,7 @@ machine:
   head_node_name: null
 
 test:
-  esmf_branch: [feature/numa]
+  esmf_branch: [develop]
   nuopc_branch: [develop]
 
 matrix:

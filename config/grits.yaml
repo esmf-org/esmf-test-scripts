@@ -4,7 +4,7 @@ machine:
   scheduler: None
 
 test:
-  esmf_branch: [feature/numa]
+  esmf_branch: [develop]
   nuopc_branch: [develop]
 
 matrix:
