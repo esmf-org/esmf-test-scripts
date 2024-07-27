@@ -8,7 +8,7 @@ machine:
     partition: xjet
 
 test:
-  esmf_branch: [feature/hconfig-extras]
+  esmf_branch: [develop]
   nuopc_branch: [develop]
 
 matrix:

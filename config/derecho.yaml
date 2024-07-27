@@ -9,7 +9,7 @@ machine:
     partition: None
 
 test:
-  esmf_branch: [feature/hconfig-extras]
+  esmf_branch: [develop]
   nuopc_branch: [develop]
 
 #  filter:
