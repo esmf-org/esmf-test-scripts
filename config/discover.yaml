@@ -10,8 +10,8 @@ machine:
     partition: compute
 
 test:
-  esmf_branch: [nrl/work-esmx]
-  nuopc_branch: [nrl/work-esmx]
+  esmf_branch: [develop]
+  nuopc_branch: [develop]
 
 matrix:
   intel:
