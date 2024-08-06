@@ -26,6 +26,7 @@ matrix:
         extra_env_vars:
           - ESMF_TESTPERFORMANCE=OFF
           - ESMPY_DATA_DIR="/Users/sacks/projects/scratch/esmf-testing/esmf-test-data/grids"
+          - ESMF_TEST_NUOPC_JULIA=ON
         esmpy:
           # This python version corresponds to the suffix in environment-python3.11.yml
           python: python3.11
