@@ -16,10 +16,10 @@ matrix:
   intel:
     test_time: "4:00:00"
     versions:
-      2020.2:
-        compiler: intel/2020.2
-        netcdf: netcdf/4.7.4
-        extra_module: cmake intelpython3
+      2020.2.1:
+        compiler: intel-oneapi-compilers/2022.2.1
+        netcdf: netcdf-c/4.9.2
+        extra_module: cmake python/3.10.8
         mpi:
           intelmpi:
             module: impi/2020.2
@@ -28,37 +28,16 @@ matrix:
   gfortran:
     test_time: "2:00:00"
     versions:
-      8.3.0:
-        compiler: gcc/8.3.0
-        netcdf: netcdf/4.7.4
-        extra_module: cmake intelpython3
+      12.2.0:
+        compiler: gcc/12.2.0
+        netcdf: netcdf-c/4.9.2
+        extra_module: cmake python/3.10.8
         mpi:
           openmpi:
-            module: openmpi/4.0.2
+            module: openmpi/4.1.4
             mpi_env_vars:
               - ESMF_MPIRUN=mpirun.srun
           mpiuni:
             module: None
         extra_env_vars:
-          - LD_PRELOAD=/apps/gcc-8/gcc-8.3.0/lib64/libstdc++.so
-  #    10.2.0:
-  #      module: gcc/10.2.0
-  #      netcdf: netcdf/4.7.4
-  #      mpi:
-  #          openmpi: openmpi/4.0.4
-  #pgi:
-  #  build_time: "2:00:00"
-  #  test_time: "4:00:00"
-  #  versions:
-  #    2019:
-  #      compiler: pgi/2019
-  #      netcdf: netcdf/4.7.4
-  #      extra_module: cmake intelpython3
-  #      mpi:
-  #        openmpi:
-  #          module: openmpi/4.0.2
-  #          mpi_env_vars:
-  #            - ESMF_MPIRUN=mpirun.srun
-  #      extra_env_vars:
-  #        - ESMF_F90COMPILER=mpif90
-  #        - ESMF_CXXCOMPILER=mpicxx
+          - LD_PRELOAD=/apps/gcc-12/gcc-12.2.0/lib64/libstdc++.so
