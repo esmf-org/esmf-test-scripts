@@ -39,5 +39,4 @@ matrix:
               - ESMF_MPIRUN=mpirun.srun
           mpiuni:
             module: None
-        extra_env_vars:
-          - LD_PRELOAD=/apps/gcc-12/gcc-12.2.0/lib64/libstdc++.so
+            
