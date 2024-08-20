@@ -18,8 +18,7 @@ matrix:
     versions:
       2020.2.1:
         compiler: intel-oneapi-compilers/2022.2.1
-        netcdf: netcdf-c/4.9.2
-        netcdf-fortran: netcdf-fortran/4.6.0
+        netcdf: netcdf-c/4.9.2 netcdf-fortran/4.6.0
         extra_module: cmake python/3.10.8
         mpi:
           intelmpi:
@@ -31,8 +30,7 @@ matrix:
     versions:
       12.2.0:
         compiler: gcc/12.2.0
-        netcdf: netcdf-c/4.9.2
-        netcdf-fortran: netcdf-fortran/4.6.0
+        netcdf: netcdf-c/4.9.2 netcdf-fortran/4.6.0
         extra_module: cmake python/3.10.8
         mpi:
           openmpi:
