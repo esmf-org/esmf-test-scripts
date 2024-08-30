@@ -7,7 +7,7 @@ machine:
   scheduler:
     type: slurm
     account: e3sm
-    queue: regular
+    queue: overrun
     constraint: cpu
 
 test:
