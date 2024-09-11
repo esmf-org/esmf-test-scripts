@@ -46,7 +46,7 @@ matrix:
               - ESMF_MPIRUN=mpirun.srun
               - I_MPI_CXX=icpx
               - I_MPI_CC=icx
-        extra_module: gnu cmake/3.28.1
+        extra_module: gnu/13.2.0 cmake/3.28.1
 #      2023.2.0-classic:
 #        compiler: intel/2023.2.0
 #        netcdf: netcdf/4.7.0
@@ -57,7 +57,7 @@ matrix:
 #            module: impi/2023.2.0
 #            mpi_env_vars:
 #              - ESMF_MPIRUN=mpirun.srun
-#        extra_module: gnu cmake/3.28.1
+#        extra_module: gnu/13.2.0 cmake/3.28.1
       2023.2.0-oneAPI:
         compiler: intel/2023.2.0
         netcdf: netcdf/4.7.0
@@ -75,7 +75,7 @@ matrix:
               - I_MPI_F90=ifx
               - I_MPI_CXX=icpx
               - I_MPI_CC=icx
-        extra_module: gnu cmake/3.28.1
+        extra_module: gnu/13.2.0 cmake/3.28.1
   nvhpc:
     build_time: "2:00:00"
     test_time:  "2:00:00"
