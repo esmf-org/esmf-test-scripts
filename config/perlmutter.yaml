@@ -11,10 +11,11 @@ machine:
     constraint: cpu
 
 test:
-  esmf_branch: [develop]
-  nuopc_branch: [develop]
-  filter:
-    compiler: [gfortran,intel]
+  esmf_branch: [release/8.7.0]
+  nuopc_branch: [release/8.7.0]
+
+filter:
+  compiler: [gfortran,intel]
 
 matrix:
   gfortran:
