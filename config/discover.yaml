@@ -22,7 +22,7 @@ matrix:
         compiler: comp/intel/2021.6.0
         #netcdf: netcdf4/4.9.2-ser
         netcdf: None
-        extra_module: cmake/3.30.3 comp/gcc/11.6.0
+        extra_module: cmake/3.30.3 comp/gcc/11.4.0
         mpi:
           intelmpi:
             module: mpi/impi/2021.13
