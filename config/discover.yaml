@@ -53,6 +53,12 @@ matrix:
         netcdf: None
         extra_module: cmake/3.30.3 comp/gcc/12.3.0
         mpi:
+          mpiuni:
+            module: None
+            mpi_env_vars:
+              - ESMF_CXX=icpx
+              - ESMF_CC=icx
+              - ESMF_F90=ifx
           intelmpi:
             module: mpi/impi/2021.13
             mpi_env_vars:
