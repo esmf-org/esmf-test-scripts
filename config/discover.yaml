@@ -20,7 +20,6 @@ matrix:
     versions:
       2021.6.0:
         compiler: comp/intel/2021.6.0
-        #netcdf: netcdf4/4.9.2-ser
         netcdf: None
         extra_module: cmake/3.30.3 comp/gcc/11.4.0
         mpi:
@@ -34,8 +33,7 @@ matrix:
           - I_MPI_FABRICS=shm:ofi
       2021.13.0:
         compiler: comp/intel/2024.2.0
-        #netcdf: netcdf4/4.9.2-ser
-        netcdf: None
+        netcdf: other/esmf-netcdf/ifort_2021.13.0-intelmpi_2021.13.0
         extra_module: cmake/3.30.3 comp/gcc/12.3.0
         mpi:
           intelmpi:
@@ -49,7 +47,6 @@ matrix:
           - I_MPI_FABRICS=shm:ofi
       2024.2.0:
         compiler: comp/intel/2024.2.0
-        #netcdf: netcdf4/4.9.2-ser
         netcdf: None
         extra_module: cmake/3.30.3 comp/gcc/12.3.0
         mpi:
@@ -73,10 +70,15 @@ matrix:
     versions:
       13.2.0:
         compiler: comp/gcc/13.2.0
-        netcdf: None
+        netcdf: other/esmf-netcdf/gfortran_13.2.0-openmpi_4.1.6
         extra_module: cmake/3.30.3
         mpi:
           openmpi:
             module: mpi/openmpi/4.1.6/gcc-13.2.0
+      14.2.0:
+        compiler: comp/gcc/14.2.0
+        netcdf: None
+        extra_module: cmake/3.30.3
+        mpi:
           mpiuni:
             module: none
