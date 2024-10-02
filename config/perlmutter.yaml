@@ -13,9 +13,8 @@ machine:
 test:
   esmf_branch: [release/8.7.0]
   nuopc_branch: [release/8.7.0]
-
-filter:
-  compiler: [gfortran,intel]
+  filter:
+    compiler: [gfortran,intel]
 
 matrix:
   gfortran:
