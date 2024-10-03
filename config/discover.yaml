@@ -82,3 +82,13 @@ matrix:
         mpi:
           mpiuni:
             module: none
+  nag:
+    test_time: "2:00:00"
+    versions:
+      7.2.15:
+        compiler: comp/nag/7.2-7215
+        netcdf: None
+        extra_module: cmake/3.30.3 comp/gcc/12.3.0
+        mpi:
+          openmpi:
+            module: mpi/openmpi/4.1.6/nag_7.2.7215-gcc_12.3.0
