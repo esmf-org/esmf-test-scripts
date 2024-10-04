@@ -4,8 +4,8 @@ machine:
   scheduler: None
 
 test:
-  esmf_branch: [v8.7.0, develop]
-  nuopc_branch: [v8.7.0, develop]
+  esmf_branch: [v8.7.0]
+  nuopc_branch: [v8.7.0]
 
 matrix:
   gfortranclang:
