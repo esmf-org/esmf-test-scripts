@@ -54,7 +54,7 @@ matrix:
             module: None
             mpi_env_vars:
               - ESMF_CXX=icpx
-              - ESMF_CC=icx
+              - ESMF_C=icx
               - ESMF_F90=ifx
           intelmpi:
             module: mpi/impi/2021.13
