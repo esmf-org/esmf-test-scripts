@@ -7,8 +7,8 @@ machine:
   head_node_name: null
 
 test:
-  esmf_branch: [v8.7.0, develop]
-  nuopc_branch: [v8.7.0, develop]
+  esmf_branch: [develop]
+  nuopc_branch: [develop]
 
 matrix:
   gfortranclang:
