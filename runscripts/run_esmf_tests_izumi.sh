@@ -11,7 +11,7 @@ ssh-add /home/theurich/.ssh/id_ed25519
 
 export PATH=/usr/local/bin:$PATH
 
-export NS=/scratch/cluster/theurich/ESMF-Nightly-Testing
+export NS=/project/esmf/ESMF-Nightly-Testing-Izumi
 cd $NS/esmf-test-scripts
 git remote update
 git pull -X theirs --no-edit
