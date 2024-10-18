@@ -9,7 +9,7 @@ pkill -u theurich ssh-agent
 eval `ssh-agent -s`
 ssh-add /home/theurich/.ssh/id_ed25519
 
-export NS=/project/esmf/theurich/ESMF-Nightly-Testing
+export NS=/project/esmf/ESMF-Nightly-Testing-Bighorn
 cd $NS/esmf-test-scripts
 git remote update
 git pull -X theirs --no-edit

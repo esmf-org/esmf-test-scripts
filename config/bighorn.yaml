@@ -7,8 +7,8 @@ test:
   esmf_branch: [develop]
   nuopc_branch: [develop]
 
-#  filter:
-#    compiler: [nag]
+  filter:
+    compiler: [gfortran, nag]
 
 matrix:
   gfortran:

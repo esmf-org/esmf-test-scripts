@@ -1,1 +1,1 @@
-15 0 * * * /project/esmf/theurich/ESMF-Nightly-Testing/esmf-test-scripts/runscripts/run_esmf_tests_bighorn.sh 2>&1 > /project/esmf/theurich/ESMF-Nightly-Testing/bighorn-cron.log
+15 0 * * * /project/esmf/ESMF-Nightly-Testing-Bighorn/esmf-test-scripts/runscripts/run_esmf_tests_bighorn.sh 2>&1 > /project/esmf/ESMF-Nightly-Testing-Bighorn/bighorn-cron.log
