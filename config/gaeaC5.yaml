@@ -22,7 +22,7 @@ matrix:
        versions:
          12.3.0:
            compiler: gcc-native/12.3
-           netcdf: cray-hdf5/1.12.2.9 cray-parallel-netcdf/1.12.3.9
+           netcdf: cray-hdf5/1.12.2.9 cray-netcdf/4.9.0.9
            mpi:
              mpiuni:
                module: None
@@ -38,7 +38,7 @@ matrix:
        versions:
          2023.2.0-classic:
            compiler: intel-classic/2023.2.0
-           netcdf: cray-hdf5/1.12.2.9 cray-parallel-netcdf/1.12.3.9
+           netcdf: cray-hdf5/1.12.2.9 cray-netcdf/4.9.0.9
            mpi:
              mpiuni:
                module: None
@@ -52,7 +52,7 @@ matrix:
            extra_module: PrgEnv-intel git cmake
          2023.2.0:
            compiler: intel/2023.2.0
-           netcdf: cray-hdf5/1.12.2.9 cray-parallel-netcdf/1.12.3.9
+           netcdf: cray-hdf5/1.12.2.9 cray-netcdf/4.9.0.9
            mpi:
              mpiuni:
                module: None
@@ -66,7 +66,7 @@ matrix:
            extra_module: PrgEnv-intel git cmake
          2023.2.0-oneAPI:
            compiler: intel-oneapi/2023.2.0
-           netcdf: cray-hdf5/1.12.2.9 cray-parallel-netcdf/1.12.3.9
+           netcdf: cray-hdf5/1.12.2.9 cray-netcdf/4.9.0.9
            mpi:
              mpiuni:
                module: None
