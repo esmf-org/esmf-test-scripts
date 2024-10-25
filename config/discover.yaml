@@ -92,3 +92,13 @@ matrix:
         mpi:
           openmpi:
             module: mpi/openmpi/4.1.6/nag_7.2.7215-gcc_12.3.0
+  llvm:
+    test_time: "2:00:00"
+    versions:
+      20.0.0git69774:
+        compiler: comp/llvm-flang/2024-10-01
+        netcdf: None
+        extra_module: cmake/3.30.3
+        mpi:
+          mpich:
+            module: mpi/mpich/4.2.2/llvm-flang-2024-10-01
