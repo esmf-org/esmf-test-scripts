@@ -21,15 +21,15 @@ matrix:
     build_time: "2:00:00"
     test_time: "4:00:00"
     versions:
-      11.2.0:
-        compiler: gcc/11.2.0
+      12.3.0:
+        compiler: gcc-native/12.3
         netcdf: cray-hdf5-parallel cray-netcdf-hdf5parallel
         extra_module: PrgEnv-gnu cpu cmake/3.24.3
         mpi:
           mpiuni:
             module: None
           mpi:
-            module: cray-mpich/8.1.22
+            module: cray-mpich/8.1.28
             mpi_env_vars: [ESMF_MPILAUNCHOPTIONS=--exact]
         extra_env_vars:
           - ESMF_NETCDF_LIBS="-lnetcdff -lnetcdf"
