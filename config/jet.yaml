@@ -3,13 +3,15 @@ machine:
   cores_per_node: 24
   scheduler:
     type: slurm
-    account: hfv3gfs
+    account: esmf
     queue: batch
     partition: xjet
 
 test:
   esmf_branch: [develop]
   nuopc_branch: [develop]
+  filter:
+    compiler: [gfortran]
 
 matrix:
   intel:
@@ -23,20 +25,20 @@ matrix:
             module: impi/2020.2
             mpi_env_vars:
               - ESMF_MPIRUN=mpirun.srun
-        extra_module: cmake/3.26.4
+        extra_module: cmake/3.28.1
 
   gfortran:
     test_time: "2:00:00"
     versions:
-      9.2.0:
-        compiler: gnu/9.2.0
+      13.2.0:
+        compiler: gnu/13.2.0
         netcdf: None
         mpi:
           openmpi:
-            module: openmpi/3.1.4
+            module: openmpi/4.1.6
             mpi_env_vars:
               - ESMF_MPIRUN=mpirun.srun
-        extra_module: cmake/3.26.4
+        extra_module: cmake/3.28.1
 
   nvhpc:
     test_time: "1:30:00"
@@ -52,4 +54,4 @@ matrix:
             module: None
             mpi_env_vars:
               - ESMF_MPIRUN=mpirun
-        extra_module: cmake/3.26.4
+        extra_module: cmake/3.28.1
