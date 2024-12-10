@@ -14,11 +14,12 @@ class Case:
       and a particular branch of ESMF to test.
     """
 
-    def __init__(self, combo: Combination, scripts_root, root_dir, artifacts_root, repos, esmf_branch, nuopc_branch,
+    def __init__(self, combo: Combination, scripts_root, root_dir, storage_root, artifacts_root, repos, esmf_branch, nuopc_branch,
                  machine: Machine):
         self.combo = combo
         self.scripts_root = scripts_root
         self.root_dir = root_dir
+        self.storage_root = storage_root
         self.artifacts_root = artifacts_root
         self.repos = repos  # map of repository locations
         self.machine = machine
@@ -312,7 +313,7 @@ class Case:
         """
         Return a string specifying the path in which conda environments will be created
         """
-        return os.path.join(self.root_dir, "conda_environments")
+        return os.path.join(self.storage_root, "conda_environments")
 
     def _get_conda_env(self):
         """

@@ -16,7 +16,7 @@ import cmd
 
 class ESMFTest:
 
-    def __init__(self, test_root, machine_name, yaml_file, branch, no_submit, no_artifacts, filter, only_resubmit, throttle):
+    def __init__(self, test_root, storage_root, machine_name, yaml_file, branch, no_submit, no_artifacts, filter, only_resubmit, throttle):
 
         self.scripts_root = pathlib.Path(__file__).parent.absolute()
         logging.debug(f"Scripts path: {self.scripts_root}")
@@ -35,6 +35,14 @@ class ESMFTest:
 
         self.test_root = os.path.abspath(test_root)
         logging.debug(f"Test root: {self.test_root}")
+
+        if storage_root is None:
+            self.storage_root = self.test_root
+        else:
+            if not os.path.isdir(storage_root):
+                raise RuntimeError(f"Directory not found: {storage_root}\nStorage root should be an existing directory.")
+            self.storage_root = os.path.abspath(storage_root)
+        logging.debug(f"Storage root: {self.storage_root}")
 
         self.artifacts_root = os.path.abspath(os.path.join(self.test_root, "esmf-test-artifacts"))
         logging.debug(f"Artifacts root: {self.artifacts_root}")
@@ -249,7 +257,7 @@ class ESMFTest:
                     _nuopc_branch = "develop"
 
                 # generate, set up, and submit the test combination
-                case = Case(_e, self.scripts_root, self.test_root, self.artifacts_root, self.repos,
+                case = Case(_e, self.scripts_root, self.test_root, self.storage_root, self.artifacts_root, self.repos,
                             _esmf_branch, _nuopc_branch, self.machine)
 
                 case_list.append(case)
@@ -284,7 +292,7 @@ def go(args):
     """
     Entry point to run the test system.
     """
-    test = ESMFTest(args["root"], args["machine"], args["yaml"], args["branch"],
+    test = ESMFTest(args["root"], args["storage_root"], args["machine"], args["yaml"], args["branch"],
                     args["no_submit"], args["no_artifacts"], args["filter"], args["only_resubmit"], args["throttle"])
 
     if args["check"]:
@@ -305,6 +313,8 @@ def go(args):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='A tool to facilitate automated and manual testing of ESMF')
     parser.add_argument('-r', '--root', help='Root directory to use for testing (scratch space)', required=True)
+    parser.add_argument('-s', '--storage-root', help='Directory to use for non-scrubbed storage space; defaults to root directory if not set',
+                        required=False)
     parser.add_argument('-m', '--machine',
                         help="Name of this machine. Used to find a config YAML file under ./configs/<machine>.yaml",
                         required=False)

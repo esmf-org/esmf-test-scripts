@@ -9,12 +9,13 @@ ssh-add /glade/u/home/sacks/.ssh/id_rsa
 
 export NS=/glade/derecho/scratch/sacks/esmf-testing
 # Put esmf-test-scripts in a non-scrubbed location:
-export TESTSCRIPTS=/glade/work/sacks/esmf-testing/esmf-test-scripts
+export WORKSPACE=/glade/work/sacks/esmf-testing
+export TESTSCRIPTS=${WORKSPACE}/esmf-test-scripts
 cd $TESTSCRIPTS
 git remote update
 git pull -X theirs --no-edit origin
 
-python3 $TESTSCRIPTS/python_scripts/test_esmf.py -m derecho -r $NS --throttle 8 >& $NS/derecho.log
+python3 $TESTSCRIPTS/python_scripts/test_esmf.py -m derecho -r $NS -s $WORKSPACE --throttle 8 >& $NS/derecho.log
 
 #kill $SSH_AGENT_PID
 
