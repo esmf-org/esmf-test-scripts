@@ -2,3 +2,8 @@ The files in this directory are used for setting up a python environment that ca
 for running the ESMPy tests.
 
 This can be used manually or invoked by the run scripts.
+
+When changing the python and numpy versions that we test / support, changes here should be
+kept in sync with:
+- The minimum versions listed in ESMPy's pyproject.toml
+- The minimum versions listed in ESMPy's install.rst
