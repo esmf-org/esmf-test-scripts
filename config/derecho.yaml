@@ -48,8 +48,9 @@ matrix:
         extra_env_vars:
           - ESMPY_DATA_DIR="/glade/derecho/scratch/sacks/esmf-testing/esmf-test-data/grids"
         esmpy:
-          # This python version corresponds to the suffix in environment-python3.11.yml
-          python: python3.11
+          # This python version corresponds to the suffix in environment-python3.8-numpy1.19.yml
+          # This gives test coverage of the minimum supported python and numpy versions
+          python: python3.8-numpy1.19
 
   intel:
     build_time: "2:00:00"
@@ -70,8 +71,9 @@ matrix:
           - ESMPY_DATA_DIR="/glade/derecho/scratch/sacks/esmf-testing/esmf-test-data/grids"
           - ESMF_TEST_NUOPC_JULIA=ON
         esmpy:
-          # This python version corresponds to the suffix in environment-python3.11.yml
-          python: python3.11
+          # This python version corresponds to the suffix in environment-python3.13-numpy2.1.yml
+          # This gives test coverage of the latest supported python and numpy versions
+          python: python3.13-numpy2.1
       2023.2.1-classic:
         compiler: intel-classic/2023.2.1
         netcdf: netcdf/4.9.2

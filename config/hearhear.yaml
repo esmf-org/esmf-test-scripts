@@ -38,8 +38,8 @@ matrix:
         extra_env_vars:
           - ESMPY_DATA_DIR="/Users/sacks/scratch/esmf-testing/esmf-test-data/grids"
         esmpy:
-          # This python version corresponds to the suffix in environment-python3.11.yml
-          python: python3.11
+          # This python version corresponds to the suffix in environment-python3.11-numpy1.26.yml
+          python: python3.11-numpy1.26
 
   gfortran:
     versions:
@@ -59,5 +59,5 @@ matrix:
         extra_env_vars:
           - ESMPY_DATA_DIR="/Users/sacks/scratch/esmf-testing/esmf-test-data/grids"
         esmpy:
-          # This python version corresponds to the suffix in environment-python3.11.yml
-          python: python3.11  
+          # This python version corresponds to the suffix in environment-python3.11-numpy1.26.yml
+          python: python3.11-numpy1.26  
