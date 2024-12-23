@@ -11,8 +11,8 @@ machine:
   module_path: /discover/swdev/gmao_SIteam/modulefiles-SLES15
 
 test:
-  esmf_branch: [release/8.8.0]
-  nuopc_branch: [release/8.8.0]
+  esmf_branch: [develop]
+  nuopc_branch: [develop]
 
 matrix:
   intel:
