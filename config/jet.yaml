@@ -8,8 +8,8 @@ machine:
     partition: xjet
 
 test:
-  esmf_branch: [develop]
-  nuopc_branch: [develop]
+  esmf_branch: [v8.8.0]
+  nuopc_branch: [v8.8.0]
   filter:
     compiler: [gfortran]
 
