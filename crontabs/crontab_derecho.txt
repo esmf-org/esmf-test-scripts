@@ -1,1 +1,6 @@
-15 1 * * * /glade/derecho/scratch/sacks/esmf-testing/esmf-test-scripts/runscripts/run_esmf_tests_derecho.sh 2>&1 > /glade/derecho/scratch/sacks/esmf-testing/derecho-cron.log
+# This crontab should be installed on cron.hpc.ucar.edu. Note that it ssh's back to
+# derecho to actually run the job, since very little software is available on the cron
+# server; and note that the cron server is set up so that this ssh back to derecho can be
+# done without authentication. For more information, see
+# https://ncar-hpc-docs.readthedocs.io/en/latest/compute-systems/additional-resources/cron/
+15 1 * * * ssh derecho "/glade/derecho/scratch/sacks/esmf-testing/esmf-test-scripts/runscripts/run_esmf_tests_derecho.sh 2>&1 > /glade/derecho/scratch/sacks/esmf-testing/derecho-cron.log"
