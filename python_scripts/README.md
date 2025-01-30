@@ -150,7 +150,7 @@ Use the following steps to start with a fresh esmf-test-artifacts:
   1. In GitHub, rename the `esmf-test-artifacts` respository to `esmf-test-artifacts-YYYY-MM`. This is the first field under Settings/General.
   2. Also under Settings/General, all the way down in the "Danger Zone", select "Archive this repository". This will make the repo read-only, which is recommended.
   3. Create a new `esmf-test-artifacts` repository with a single "main" branch and a README.md.
-  4. Under Settings/Collaborators-and-teams, in section "Manage access", explicitly add `mark-a-potts` with role "maintain"! Without this, Mark's scripts cannot push to the new artifacts repo!
+  4. Under Settings/Collaborators-and-teams, in section "Manage access", explicitly add `mark-a-potts` and `mathomp4` with role "maintain"! Without this, Mark's and Matt's scripts cannot push to the new artifacts repo!
   5.  Under Settings/Collaborators-and-teams, in section "Manage access", explicitly add `mathomp4` with role "write". Without this, Matt's scripts cannot push to the new artifacts repo!
   6. Update the `esmf-test-scripts/config/global.yaml` file and set `reclone-artifacts: True`. This will cause
      each test platform to delete their local `esmf-test-artifacts` and reclone the new one. After all platforms
