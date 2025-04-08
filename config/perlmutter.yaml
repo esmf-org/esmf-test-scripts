@@ -38,18 +38,6 @@ matrix:
     build_time: "2:00:00"
     test_time: "4:00:00"
     versions:
-      2023.1.0-classic:
-        compiler: intel-classic/2023.1.0
-        netcdf: cray-hdf5-parallel cray-netcdf-hdf5parallel
-        extra_module: PrgEnv-intel cpu cmake/3.24.3
-        mpi:
-          mpiuni:
-            module: None
-          mpi:
-            module: cray-mpich/8.1.25
-            mpi_env_vars: [ESMF_MPILAUNCHOPTIONS=--exact]
-        extra_env_vars:
-          - ESMF_NETCDF_LIBS="-lnetcdff -lnetcdf"
       2023.1.0:
         compiler: intel/2023.1.0
         netcdf: cray-hdf5-parallel cray-netcdf-hdf5parallel
