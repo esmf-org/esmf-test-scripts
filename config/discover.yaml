@@ -45,6 +45,13 @@ matrix:
         extra_env_vars:
           - I_MPI_OFI_PROVIDER=psm3
           - I_MPI_FABRICS=shm:ofi
+      2021.13.0-mvapich:
+        compiler: comp/intel/2024.2.0
+        netcdf: None
+        extra_module: cmake/3.30.3 comp/gcc/12.3.0
+        mpi:
+          mvapich:
+            module: mpi/mvapich/4.0/ifort-2021.13.0
       2024.2.0:
         compiler: comp/intel/2024.2.0
         netcdf: None
