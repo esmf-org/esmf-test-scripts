@@ -49,7 +49,7 @@ matrix:
              - ESMF_NETCDF_INCLUDE="$CRAY_NETCDF_PREFIX/include"
              - ESMF_NETCDF_LIBPATH="$CRAY_NETCDF_PREFIX/lib"
              - ESMF_NETCDF_LIBS="-lnetcdff -lnetcdf"
-           extra_module: PrgEnv-intel git cmake
+           extra_module: PrgEnv-intel git cmake cray-libsci/24.07.0
          2023.2.0:
            compiler: intel/2023.2.0
            netcdf: cray-hdf5/1.12.2.9 cray-netcdf/4.9.0.9
@@ -63,7 +63,7 @@ matrix:
              - ESMF_NETCDF_INCLUDE="$CRAY_NETCDF_PREFIX/include"
              - ESMF_NETCDF_LIBPATH="$CRAY_NETCDF_PREFIX/lib"
              - ESMF_NETCDF_LIBS="-lnetcdff -lnetcdf"
-           extra_module: PrgEnv-intel git cmake
+           extra_module: PrgEnv-intel git cmake cray-libsci/24.07.0
          2023.2.0-oneAPI:
            compiler: intel-oneapi/2023.2.0
            netcdf: cray-hdf5/1.12.2.9 cray-netcdf/4.9.0.9
@@ -77,4 +77,4 @@ matrix:
              - ESMF_NETCDF_INCLUDE="$CRAY_NETCDF_PREFIX/include"
              - ESMF_NETCDF_LIBPATH="$CRAY_NETCDF_PREFIX/lib"
              - ESMF_NETCDF_LIBS="-lnetcdff -lnetcdf"
-           extra_module: PrgEnv-intel git cmake
+           extra_module: PrgEnv-intel git cmake cray-libsci/24.07.0
