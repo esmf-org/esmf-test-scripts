@@ -11,8 +11,8 @@ machine:
     queue: normal
 
 test:
-  esmf_branch: [v8.8.1]
-  nuopc_branch: [v8.8.0b11]
+  esmf_branch: [patch/8.8.1]
+  nuopc_branch: [patch/8.8.1]
 #  filter:
 #    compiler: [intel]
 
