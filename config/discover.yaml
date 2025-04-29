@@ -11,7 +11,7 @@ machine:
   module_path: /discover/swdev/gmao_SIteam/modulefiles-SLES15
 
 test:
-  esmf_branch: [feature/internal-state-cleanup]
+  esmf_branch: [develop]
   nuopc_branch: [develop]
 
 matrix:
