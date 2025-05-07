@@ -9,7 +9,7 @@ machine:
     partition: None
 
 test:
-  esmf_branch: [feature/internal-state-cleanup]
+  esmf_branch: [develop]
   nuopc_branch: [develop]
 
 #  filter:
