@@ -1,1 +1,2 @@
-10 1 * * * /mnt/lfs5/BMC/esmf/ESMF-Nightly-Testing/esmf-test-scripts/runscripts/run_esmf_tests_jet.sh 2>&1 > /mnt/lfs5/BMC/esmf/ESMF-Nightly-Testing/jet-cron.log
+# Jet cron timezone is UTC!!!
+10 07 * * * /mnt/lfs5/BMC/esmf/ESMF-Nightly-Testing/esmf-test-scripts/runscripts/run_esmf_tests_jet.sh 2>&1 > /mnt/lfs5/BMC/esmf/ESMF-Nightly-Testing/jet-cron.log
