@@ -13,8 +13,8 @@ machine:
 test:
   esmf_branch: [develop]
   nuopc_branch: [develop]
-#  filter:
-#    compiler: [intel]
+  filter:
+    compiler: [intel,cce]
 
 matrix:
   gfortran:
@@ -49,32 +49,48 @@ matrix:
              - ESMF_NETCDF_INCLUDE="$CRAY_NETCDF_PREFIX/include"
              - ESMF_NETCDF_LIBPATH="$CRAY_NETCDF_PREFIX/lib"
              - ESMF_NETCDF_LIBS="-lnetcdff -lnetcdf"
-           extra_module: PrgEnv-intel git cmake cray-libsci
-         2023.2.0:
-           compiler: intel/2023.2.0
-           netcdf: cray-hdf5/1.12.2.9 cray-netcdf/4.9.0.9
+           extra_module: PrgEnv-intel git cmake cray-libsci/24.07.0
+         2025.0.0:
+           compiler: intel/2025.0
+           netcdf: cray-hdf5/1.14.3.5 cray-netcdf/4.9.0.17
            mpi:
              mpiuni:
                module: None
              mpi:
-               module: cray-mpich/8.1.28
+               module: cray-mpich/8.1.32
                mpi_env_vars: [ESMF_MPILAUNCHOPTIONS=--exact]
            extra_env_vars:
              - ESMF_NETCDF_INCLUDE="$CRAY_NETCDF_PREFIX/include"
              - ESMF_NETCDF_LIBPATH="$CRAY_NETCDF_PREFIX/lib"
              - ESMF_NETCDF_LIBS="-lnetcdff -lnetcdf"
            extra_module: PrgEnv-intel git cmake cray-libsci
-         2023.2.0-oneAPI:
-           compiler: intel-oneapi/2023.2.0
-           netcdf: cray-hdf5/1.12.2.9 cray-netcdf/4.9.0.9
+         2025.0.0-oneAPI:
+           compiler: intel-oneapi/2025.0
+           netcdf: cray-hdf5/1.14.3.5 cray-netcdf/4.9.0.17
            mpi:
              mpiuni:
                module: None
              mpi:
-               module: cray-mpich/8.1.28
+               module: cray-mpich/8.1.32
                mpi_env_vars: [ESMF_MPILAUNCHOPTIONS=--exact]
            extra_env_vars:
              - ESMF_NETCDF_INCLUDE="$CRAY_NETCDF_PREFIX/include"
              - ESMF_NETCDF_LIBPATH="$CRAY_NETCDF_PREFIX/lib"
              - ESMF_NETCDF_LIBS="-lnetcdff -lnetcdf"
            extra_module: PrgEnv-intel git cmake cray-libsci
+  cce:
+       test_time: "2:00:00"
+       versions:
+         19.0.0:
+           compiler: cce/19.0.0
+           netcdf: cray-hdf5/1.12.2.11 cray-netcdf/4.9.0.11
+           mpi:
+             mpiuni:
+               module: None
+             mpi:
+               module: cray-mpich/8.1.32
+               mpi_env_vars: [ESMF_MPILAUNCHOPTIONS=--exact]
+           extra_env_vars:
+             - ESMF_NETCDF_LIBS="-lnetcdff -lnetcdf"
+           extra_module: PrgEnv-cray git cmake
+           unload_module: PrgEnv-intel cray-mpich
