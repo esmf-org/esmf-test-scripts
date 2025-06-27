@@ -13,8 +13,8 @@ machine:
 test:
   esmf_branch: [develop]
   nuopc_branch: [develop]
-  filter:
-    compiler: [intel,cce]
+#  filter:
+#    compiler: [intel,cce]
 
 matrix:
   gfortran:
