@@ -79,8 +79,8 @@ def _copy_test_artifacts():
     _artifacts_list.extend(glob.glob(f"{_test_dir}/esmf/examples/examples*/*/*.stdout"))
     for _f in _artifacts_list:
         _out = os.path.join(_out_dir, os.path.basename(_f))
-        cmd.runcmd(f"echo '{_ts}' > {_out}")
-        cmd.runcmd(f"cat {_f} >> {_out}")
+        cmd.runcmd(f"echo '{_ts}' > \"{_out}\"")
+        cmd.runcmd(f"cat \"{_f}\" >> \"{_out}\"")
 
     _out_dir = os.path.join(_artifacts_dir, "test")
     cmd.runcmd(f"mkdir -p {_out_dir}")
@@ -89,8 +89,8 @@ def _copy_test_artifacts():
     _artifacts_list.extend(glob.glob(f"{_test_dir}/esmf/test/test*/*/*.stdout"))
     for _f in _artifacts_list:
         _out = os.path.join(_out_dir, os.path.basename(_f))
-        cmd.runcmd(f"echo '{_ts}' > {_out}")
-        cmd.runcmd(f"cat {_f} >> {_out}")
+        cmd.runcmd(f"echo '{_ts}' > \"{_out}\"")
+        cmd.runcmd(f"cat \"{_f}\" >> \"{_out}\"")
 
     _out_dir = os.path.join(_artifacts_dir, "nuopc")
     cmd.runcmd(f"mkdir -p {_out_dir}")
@@ -99,8 +99,8 @@ def _copy_test_artifacts():
     _artifacts_list.extend(glob.glob(f"{_test_dir}/nuopc-app-prototypes/NUOPC-PROTO-RESULTS/*.stdout"))
     for _f in _artifacts_list:
         _out = os.path.join(_out_dir, os.path.basename(_f))
-        cmd.runcmd(f"echo '{_ts}' > {_out}")
-        cmd.runcmd(f"cat {_f} >> {_out}")
+        cmd.runcmd(f"echo '{_ts}' > \"{_out}\"")
+        cmd.runcmd(f"cat \"{_f}\" >> \"{_out}\"")
 
     _out_dir = os.path.join(_artifacts_dir, "esmpy")
     cmd.runcmd(f"mkdir -p {_out_dir}")
@@ -109,8 +109,8 @@ def _copy_test_artifacts():
     _artifacts_list.extend(glob.glob(f"{_test_dir}/esmf/src/addon/esmpy/*.ESMF_LogFile"))
     for _f in _artifacts_list:
         _out = os.path.join(_out_dir, os.path.basename(_f))
-        cmd.runcmd(f"echo '{_ts}' > {_out}")
-        cmd.runcmd(f"cat {_f} >> {_out}")
+        cmd.runcmd(f"echo '{_ts}' > \"{_out}\"")
+        cmd.runcmd(f"cat \"{_f}\" >> \"{_out}\"")
 
     _out_dir = os.path.join(_artifacts_dir, "lib")
     cmd.runcmd(f"mkdir -p {_out_dir}")
