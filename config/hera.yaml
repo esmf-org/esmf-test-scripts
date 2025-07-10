@@ -17,7 +17,7 @@ test:
 
 matrix:
   gfortran:
-    build_time: "2:00:00"     
+    build_time: "2:00:00"
     test_time: "2:00:00"
     versions:
       13.2.0:
