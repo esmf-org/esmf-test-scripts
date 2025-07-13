@@ -4,8 +4,8 @@ machine:
   scheduler: None
 
 test:
-  esmf_branch: [develop,release/8.9.0]
-  nuopc_branch: [develop,release/8.9.0]
+  esmf_branch: [develop]
+  nuopc_branch: [develop]
 
   filter:
     compiler: [gfortran, nag]
