@@ -28,6 +28,12 @@ matrix:
           - ESMF_TEST_NUOPC_JULIA=ON
         esmpy_env_vars:
           - ESMPY_DATA_DIR="/Users/sacks/projects/scratch/esmf-testing/esmf-test-data/grids"
+          # This is needed so that we use the correct hdf5 library (the system-level
+          # library, as opposed to the hdf5 library in the conda environment when the
+          # netCDF4 python package is included in the conda environment). Note that
+          # DYLD_LIBRARY_PATH begins unset on green, so we simply set the path rather than
+          # appending with something like "${DYLD_LIBRARY_PATH}:/opt/homebrew/lib".
+          - DYLD_LIBRARY_PATH="/opt/homebrew/lib"
         esmpy:
           # This python version corresponds to the suffix in environment-python3.11-numpy1.26.yml
           python: python3.11-numpy1.26
