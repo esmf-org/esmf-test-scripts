@@ -63,6 +63,8 @@ class Matrix:
                             combo.extra_commands = versions[compiler_version]["extra_commands"]
                         if "extra_env_vars" in versions[compiler_version]:
                             combo.extra_env_vars = versions[compiler_version]["extra_env_vars"]
+                        if "esmpy_env_vars" in versions[compiler_version]:
+                            combo.esmpy_env_vars = versions[compiler_version]["esmpy_env_vars"]
                         if "esmpy" in versions[compiler_version]:
                             combo.python_conda_env = versions[compiler_version]["esmpy"]["python"]
 

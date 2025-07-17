@@ -24,6 +24,7 @@ class Combination:
         self.extra_commands = None
         self.extra_env_vars = None
         self.module_path = None
+        self.esmpy_env_vars = None
         self.python_conda_env = None
 
     def label(self):

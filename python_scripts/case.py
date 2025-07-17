@@ -129,6 +129,15 @@ class Case:
         """
         return self.machine.scheduler.check_queue(self.test_job_num)
 
+    @staticmethod
+    def _write_env_vars(env_vars, out):
+        """
+        Write export commands for all environment variables in the given list
+        """
+        if env_vars is not None:
+            for var in env_vars:
+                out.write(f"export {var}\n")
+
     def _create_modules_fragment(self):
         """
         Create the module load section used at the top of both the build and test scripts.
@@ -154,15 +163,11 @@ class Case:
                 out.write(f"module load {e.netcdf_fortran_module}\n")
 
             out.write("\nset -x\n")
-            if e.extra_env_vars is not None:
-                for _var in e.extra_env_vars:
-                    out.write(f"export {_var}\n")
+            self._write_env_vars(e.extra_env_vars, out)
             if e.extra_commands is not None:
                 for _cmd in e.extra_commands:
                     out.write(f"{_cmd}\n")
-            if e.mpi_env_vars is not None:
-                for _var in e.mpi_env_vars:
-                    out.write(f"export {_var}\n")
+            self._write_env_vars(e.mpi_env_vars, out)
 
             out.write(f"export ESMF_DIR={self.esmf_clone_path}\n")
             out.write(f"export ESMF_COMPILER={e.compiler}\n")
@@ -258,6 +263,7 @@ class Case:
         with StringIO() as out:
             out.write(f"#!{self.machine.bash} -l\n")
             out.write(self._create_modules_fragment())
+            self._write_env_vars(self.combo.esmpy_env_vars, out)
             out.write(f"cd {self.esmf_clone_path}\n")
             out.write(f"export ESMFMKFILE=`find $PWD/DEFAULTINSTALLDIR -iname esmf.mk`\n")
 

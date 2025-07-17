@@ -71,7 +71,7 @@ A few pieces need to be added to enable ESMPy testing on a machine:
 
 1. `head_node_name` needs to be specified under the machine block (this is needed because the ESMPy testing ssh's to the head node to do the ESMPy installation).
 
-2. Under any combo where ESMPy testing will be run, add `ESMPY_DATA_DIR` under the `extra_env_vars` section, pointing to the directory set up above.
+2. Under any combo where ESMPy testing will be run, add `ESMPY_DATA_DIR` under the `esmpy_env_vars` section, pointing to the directory set up above.
 
 3. Under any combo where ESMPy testing will be run, add an `esmpy` section with a single element specifying the python version to be used. This needs to correspond to one of the supported versions in a yml file in the `py_env_creation` directory (e.g., for `environment-python3.11.yml`, specify `python: python3.11`).
 
@@ -105,7 +105,7 @@ index 77ccf68..048346d 100644
                - ESMF_PIO=external
                - ESMF_PIO_INCLUDE="$PIO/include"
                - ESMF_PIO_LIBPATH="$PIO/lib"
-+        extra_env_vars:
++        esmpy_env_vars:
 +          - ESMPY_DATA_DIR="/glade/work/theurich/esmf-test-data/grids"
 +        esmpy:
 +          # This python version corresponds to the suffix in environment-python3.11.yml
@@ -126,7 +126,7 @@ index 77ccf68..048346d 100644
              module: cray-mpich/8.1.27
              mpi_env_vars:
                - ESMF_MPIRUN=mpiexec
-+        extra_env_vars:
++        esmpy_env_vars:
 +          - ESMPY_DATA_DIR="/glade/work/theurich/esmf-test-data/grids"
 +        esmpy:
 +          # This python version corresponds to the suffix in environment-python3.11.yml

@@ -25,8 +25,9 @@ matrix:
             bopt: [g]
         extra_env_vars:
           - ESMF_TESTPERFORMANCE=OFF
-          - ESMPY_DATA_DIR="/Users/sacks/projects/scratch/esmf-testing/esmf-test-data/grids"
           - ESMF_TEST_NUOPC_JULIA=ON
+        esmpy_env_vars:
+          - ESMPY_DATA_DIR="/Users/sacks/projects/scratch/esmf-testing/esmf-test-data/grids"
         esmpy:
           # This python version corresponds to the suffix in environment-python3.11-numpy1.26.yml
           python: python3.11-numpy1.26
