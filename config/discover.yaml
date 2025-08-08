@@ -52,8 +52,8 @@ matrix:
         mpi:
           mvapich:
             module: mpi/mvapich/4.0/ifort-2021.13.0
-      2024.2.0:
-        compiler: comp/intel/2024.2.0
+      2025.1.1:
+        compiler: comp/intel/2025.1.1
         netcdf: None
         extra_module: cmake/3.30.3 comp/gcc/12.3.0
         mpi:
@@ -64,7 +64,7 @@ matrix:
               - ESMF_C=icx
               - ESMF_F90=ifx
           intelmpi:
-            module: mpi/impi/2021.13
+            module: mpi/impi/2021.15
             mpi_env_vars:
               - I_MPI_CXX=icpx
               - I_MPI_CC=icx
@@ -102,10 +102,10 @@ matrix:
   llvm:
     test_time: "2:00:00"
     versions:
-      21.0.0git06721:
-        compiler: comp/llvm-flang/2025-04-01
+      22.0.0git4aa77:
+        compiler: comp/llvm-flang/2025-07-29
         netcdf: None
         extra_module: cmake/3.30.3
         mpi:
           mpich:
-            module: mpi/mpich/4.3.0/llvm-flang-2025-04-01
+            module: mpi/mpich/4.3.1/llvm-flang-2025-07-29
