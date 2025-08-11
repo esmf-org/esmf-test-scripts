@@ -9,8 +9,8 @@ machine:
     tasks_per_node: 40
 
 test:
-  esmf_branch: [develop,release/8.9.0]
-  nuopc_branch: [develop,release/8.9.0]
+  esmf_branch: [develop,v8.9.0]
+  nuopc_branch: [develop,v8.9.0]
 
 #  filter:
 #    compiler: [gfortran]
