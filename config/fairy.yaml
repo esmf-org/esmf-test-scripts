@@ -19,4 +19,8 @@ matrix:
           openmpi:
             module: openmpi/5.0.8
             netcdf: netcdf-c/4.9.2 netcdf-fortran/4.6.2
-
+        extra_env_vars:
+          - ESMPY_DATA_DIR="/usr/local/esmf/esmf-testing/esmf-test-data/grids"
+        esmpy:
+          # This python version corresponds to the suffix in environment-python3.11-numpy1.26.yml
+          python: python3.11-numpy1.26
