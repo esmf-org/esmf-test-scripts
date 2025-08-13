@@ -24,7 +24,5 @@ spack load netcdf-c/fwi4w4n
 spack load netcdf-fortran/etm2w4u
 spack load cmake/tw2cvya
 
-# Wrap the python script in a call from an AppleScript to get the cron job to run faster
-# (From https://stackoverflow.com/questions/74793041/why-does-selenium-python-script-run-really-slow-in-cron-compared-to-vscode)
-# In previous testing on a different Mac, this led to about a 2.5x speedup in test time
-osascript -e "tell application \"Terminal\" to do script \"cd ${esmftestroot} && python3 ./esmf-test-scripts/python_scripts/test_esmf.py -m fairy -r ${esmftestroot} >& ${esmftestroot}/test_esmf_fairy.log\""
+cd ${esmftestroot}
+python3 ./esmf-test-scripts/python_scripts/test_esmf.py -m fairy -r ${esmftestroot} >& ${esmftestroot}/test_esmf_fairy.log &
