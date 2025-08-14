@@ -1,0 +1,28 @@
+#!/bin/bash -l
+
+esmftestroot=/usr/local/esmf/esmf-testing
+cd ${esmftestroot}/esmf-test-scripts
+git remote update
+git pull -X theirs --no-edit
+
+cd ${esmftestroot}
+
+# Modules haven't been set up on fairy. However, we can use "spack load" in place of
+# "module load" to accomplish the same thing. To enable this translation, create a
+# function mapping "module" commands to "spack" commands.
+module() {
+   if [[ "$1" == "list" ]]; then
+      # It may or may not be correct to add the extra arguments ("${@:2}"), but for now it
+      # doesn't matter since the "module list" commands don't currently have any extra
+      # arguments
+      spack find --loaded "${@:2}"
+   else
+      # This simple mapping won't work for all commands, but it works for the simple
+      # "module load" commands we need it for.
+      spack "$@"
+   fi
+}
+export -f module
+
+cd ${esmftestroot}
+python3 ./esmf-test-scripts/python_scripts/test_esmf.py -m fairy -r ${esmftestroot} >& ${esmftestroot}/test_esmf_fairy.log &
