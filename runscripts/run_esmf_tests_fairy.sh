@@ -7,22 +7,22 @@ git pull -X theirs --no-edit
 
 cd ${esmftestroot}
 
-# TODO: For now we load a single environment via spack loads. Eventually replace this with either:
-# (1) Use of modules
-# (2) Spack loads triggered by the config file, by extending the esmf test scripts to be
-#     able to handle spack loads as an alternative to module loads
-#
-# I identified the appropriate hashes via `spack find -l -d`. For example, I found the
-# netcdf-c that depends on this openmpi by doing `spack find -l -d netcdf` and searching
-# for the hash `baycfop` (i.e., the hash of this openmpi).
-#
-# (Note that this cmake is independent of compiler, etc., so we can use this same one for
-# all test configurations.)
-spack load gcc/kykcamd
-spack load openmpi/baycfop
-spack load netcdf-c/fwi4w4n
-spack load netcdf-fortran/etm2w4u
-spack load cmake/tw2cvya
+# Modules haven't been set up on fairy. However, we can use "spack load" in place of
+# "module load" to accomplish the same thing. To enable this translation, create a
+# function mapping "module" commands to "spack" commands.
+module() {
+   if [[ "$1" == "list" ]]; then
+      # It may or may not be correct to add the extra arguments ("${@:2}"), but for now it
+      # doesn't matter since the "module list" commands don't currently have any extra
+      # arguments
+      spack find --loaded "${@:2}"
+   else
+      # This simple mapping won't work for all commands, but it works for the simple
+      # "module load" commands we need it for.
+      spack "$@"
+   fi
+}
+export -f module
 
 cd ${esmftestroot}
 python3 ./esmf-test-scripts/python_scripts/test_esmf.py -m fairy -r ${esmftestroot} >& ${esmftestroot}/test_esmf_fairy.log &

@@ -14,11 +14,12 @@ matrix:
   gfortran:
     versions:
       14.2.0:
-        compiler: gcc/14.2.0
+        compiler: gcc/kykcamd
+        extra_module: cmake/tw2cvya
         mpi:
           openmpi:
-            module: openmpi/5.0.8
-            netcdf: netcdf-c/4.9.2 netcdf-fortran/4.6.2
+            module: openmpi/baycfop
+            netcdf: netcdf-c/fwi4w4n netcdf-fortran/etm2w4u
         extra_env_vars:
           - ESMPY_DATA_DIR="/usr/local/esmf/esmf-testing/esmf-test-data/grids"
         esmpy:
