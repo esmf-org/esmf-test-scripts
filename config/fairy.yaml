@@ -1,5 +1,11 @@
 machine:
   name: fairy
+  # Rationale for setting wait_to_collect=True: We run this job via Mac's launchd; launchd
+  # terminates child processes when the parent completes, so we need to tell the parent to
+  # wait for the collect script to finish. (An alternative could be to change the launchd
+  # setting AbandonProcessGroup to have it keep child processes alive when the parent
+  # exits, but that might risk leaving zombie processes in some circumstances.)
+  wait_to_collect: True
   cores_per_node: 8
   scheduler: None
   # Since we don't submit to compute nodes on this machine, there is no notion of a head node
