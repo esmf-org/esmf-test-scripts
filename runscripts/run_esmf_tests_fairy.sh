@@ -24,5 +24,9 @@ module() {
 }
 export -f module
 
-cd ${esmftestroot}
-python3 ./esmf-test-scripts/python_scripts/test_esmf.py -m fairy -r ${esmftestroot} >& ${esmftestroot}/test_esmf_fairy.log &
+# Wrap the python script in a call from an AppleScript to get the cron job to run faster
+# (From https://stackoverflow.com/questions/74793041/why-does-selenium-python-script-run-really-slow-in-cron-compared-to-vscode)
+# (Without a GUI attached, we can't use the "tell application \"Terminal\"" approach from
+# that post, but we can still execute a shell script directly via osascript.)
+osascript -e 'do shell script "cd ${esmftestroot} && python3 ./esmf-test-scripts/python_scripts/test_esmf.py -m fairy -r ${esmftestroot} >& ${esmftestroot}/test_esmf_fairy.log"'
+
