@@ -1,0 +1,62 @@
+machine:
+  name: fairy
+  # Rationale for setting wait_to_collect=True: We run this job via Mac's launchd; launchd
+  # terminates child processes when the parent completes, so we need to tell the parent to
+  # wait for the collect script to finish. (An alternative could be to change the launchd
+  # setting AbandonProcessGroup to have it keep child processes alive when the parent
+  # exits, but that might risk leaving zombie processes in some circumstances.)
+  wait_to_collect: True
+  cores_per_node: 8
+  scheduler: None
+  # Since we don't submit to compute nodes on this machine, there is no notion of a head node
+  # (this bypasses the ssh'ing to the head node in doing the ESMPy installation)
+  head_node_name: null
+
+test:
+  esmf_branch: [develop]
+  nuopc_branch: [develop]
+
+matrix:
+
+  gfortranclang:
+    versions:
+      14.2.0_17.0.0:
+        # clang is available at the system level, so just need to load gcc for the sake of gfortran
+        compiler: gcc/kykcamd
+        extra_module: cmake/tw2cvya
+        mpi:
+          openmpi:
+            module: openmpi/jeyhxfm
+            mpi_netcdf: netcdf-c/qop7dbw netcdf-fortran/yg4rpof
+          mpich:
+            module: mpich/hzpi4g4
+            mpi_netcdf: netcdf-c/ldj2txz netcdf-fortran/ye4ptq7
+          mpiuni:
+            module: None
+            mpi_netcdf: netcdf-c/wmtjeqb netcdf-fortran/vnbwfbw
+        extra_env_vars:
+          - ESMPY_DATA_DIR="/usr/local/esmf/esmf-testing/esmf-test-data/grids"
+        esmpy:
+          # This python version corresponds to the suffix in environment-python3.11-numpy1.26.yml
+          python: python3.11-numpy1.26
+
+  gfortran:
+    versions:
+      14.2.0:
+        compiler: gcc/kykcamd
+        extra_module: cmake/tw2cvya
+        mpi:
+          openmpi:
+            module: openmpi/baycfop
+            mpi_netcdf: netcdf-c/fwi4w4n netcdf-fortran/etm2w4u
+          mpich:
+            module: mpich/a552zrn
+            mpi_netcdf: netcdf-c/kjkr6dd netcdf-fortran/kcbfb7v
+          mpiuni:
+            module: None
+            mpi_netcdf: netcdf-c/gn7eliu netcdf-fortran/cjo2h4h
+        extra_env_vars:
+          - ESMPY_DATA_DIR="/usr/local/esmf/esmf-testing/esmf-test-data/grids"
+        esmpy:
+          # This python version corresponds to the suffix in environment-python3.11-numpy1.26.yml
+          python: python3.11-numpy1.26
