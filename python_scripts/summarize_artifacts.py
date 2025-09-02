@@ -15,7 +15,7 @@ import yaml
 
 template_env = Environment(loader=FileSystemLoader(os.path.join(pathlib.Path(__file__).parent.absolute(), "templates")))
 
-ComboRecord = namedtuple('ComboRecord', 'id, machine, os, compiler, compiler_ver, bopt, mpi, mpi_ver, netcdf')
+ComboRecord = namedtuple('ComboRecord', 'id, machine, os, arch, compiler, compiler_ver, bopt, mpi, mpi_ver, netcdf')
 ResultRecord = namedtuple('ResultRecord',
                           'hash, collect_ts, combination_id, esmf_branch, esmf_hash, phase, clone_ts, build, build_ts, '
                           'unit_pass, unit_fail, system_pass, system_fail, example_pass, example_fail, nuopc_pass, '
@@ -42,13 +42,14 @@ def _init_database():
             id integer PRIMARY KEY,
             machine text NOT NULL,
             os text NOT NULL,
+            arch text NOT NULL,
             compiler text NOT NULL,
             compiler_ver text NOT NULL,
             bopt text NOT NULL,
             mpi text NOT NULL,
             mpi_ver text NOT NULL,
             netcdf next NOT NULL,
-            UNIQUE (machine, os, compiler, compiler_ver, bopt, mpi, mpi_ver, netcdf)
+            UNIQUE (machine, os, arch, compiler, compiler_ver, bopt, mpi, mpi_ver, netcdf)
         );    
         """)
 
@@ -87,7 +88,7 @@ def _insert_combo(combo: ComboRecord):
     cur.execute(
         """
         SELECT id FROM combination 
-        WHERE machine=? AND os=? AND compiler=? AND compiler_ver=? AND bopt=? AND mpi=? AND mpi_ver=? AND netcdf=?
+        WHERE machine=? AND os=? AND arch=? AND compiler=? AND compiler_ver=? AND bopt=? AND mpi=? AND mpi_ver=? AND netcdf=?
         """,
         combo[1:])
     _row = cur.fetchone()
@@ -97,8 +98,8 @@ def _insert_combo(combo: ComboRecord):
     else:
         cur.execute(
             """
-            INSERT OR IGNORE INTO combination (machine, os, compiler, compiler_ver, bopt, mpi, mpi_ver, netcdf)
-            VALUES (?,?,?,?,?,?,?,?)
+            INSERT OR IGNORE INTO combination (machine, os, arch, compiler, compiler_ver, bopt, mpi, mpi_ver, netcdf)
+            VALUES (?,?,?,?,?,?,?,?,?)
             """,
             combo[1:])
         dbconn.commit()
@@ -135,7 +136,7 @@ def _retrieve_all_combinations():
     cur.execute(
         """
         SELECT combination.*,
-           machine || '_' || os || '_' || compiler || '_' || compiler_ver || '_' || mpi || '_' || mpi_ver || '_' || netcdf || '_' || bopt AS combo_link,     
+           machine || '_' || os || '_' || arch || '_' || compiler || '_' || compiler_ver || '_' || mpi || '_' || mpi_ver || '_' || netcdf || '_' || bopt AS combo_link,     
            (SELECT STRFTIME('%m-%d %H:%M', MAX(collect_ts)) FROM result WHERE result.combination_id = combination.id) AS last_reported
         FROM combination
         ORDER BY machine, compiler, compiler_ver, mpi, mpi_ver
@@ -257,8 +258,8 @@ def _retrieve_summary_for_esmf_hash(esmf_hash):
 
     cur.execute(
         """
-        SELECT combination_id, machine, os, compiler, compiler_ver, mpi, mpi_ver, bopt, netcdf, 
-            machine || '_' || os || '_' || compiler || '_' || compiler_ver || '_' || mpi || '_' || mpi_ver || '_' || netcdf || '_' || bopt AS combo_link,
+        SELECT combination_id, machine, os, arch, compiler, compiler_ver, mpi, mpi_ver, bopt, netcdf, 
+            machine || '_' || os || '_' || arch || '_' || compiler || '_' || compiler_ver || '_' || mpi || '_' || mpi_ver || '_' || netcdf || '_' || bopt AS combo_link,
 			esmf_hash, esmf_branch,
             STRFTIME('%m-%d %H:%M', build_ts) as build_ts,
             STRFTIME('%m-%d %H:%M', clone_ts) as clone_ts,
@@ -270,7 +271,7 @@ def _retrieve_summary_for_esmf_hash(esmf_hash):
 			MAX(esmpy_install) as esmpy_install, MAX(esmpy_pass) as esmpy_pass, MAX(esmpy_fail) as esmpy_fail
         FROM result INNER JOIN combination ON result.combination_id = combination.id
         WHERE esmf_hash = ?
-        GROUP BY combination_id, machine, os, compiler, compiler_ver, mpi, mpi_ver, bopt, netcdf, combo_link, esmf_hash, esmf_branch, build_ts, clone_ts
+        GROUP BY combination_id, machine, os, arch, compiler, compiler_ver, mpi, mpi_ver, bopt, netcdf, combo_link, esmf_hash, esmf_branch, build_ts, clone_ts
         ORDER BY machine, compiler, compiler_ver, mpi, mpi_ver
         """, (esmf_hash,))
 
@@ -333,7 +334,7 @@ def _format_branch_summary_html(branch, filename):
 
 def _format_combo_summary_html(combo, filename):
     _combo_id = combo["id"]
-    _combo_label = f"{combo['machine']}/{combo['OS']}/{combo['compiler']}/{combo['compiler_ver']}/{combo['mpi']}/{combo['mpi_ver']}/{combo['bopt']}/{combo['netcdf']}"
+    _combo_label = f"{combo['machine']}/{combo['OS']}/{combo['arch']}/{combo['compiler']}/{combo['compiler_ver']}/{combo['mpi']}/{combo['mpi_ver']}/{combo['bopt']}/{combo['netcdf']}"
     _result_rows = _retrieve_summary_by_combo(combo_id=_combo_id)
     template = template_env.get_template("combo.html")
     with open(filename, "w") as _out:
@@ -504,8 +505,9 @@ def _collect_summary_stats(commit, machine_branch):
         _summary_text = cmd.runcmd(f"cat {_summary_file}")
 
         _os = _extract(r"ESMF_OS:\s+(\S+)", _summary_text, "None")
+        _arch = _extract(r"ESMF_MACHINE:\s+(\S+)", _summary_text, "None")
         _netcdf = _extract(r"NetCDF library version: netCDF (.+)\n", _summary_text, "None")
-        _combo = ComboRecord._make((None, machine_branch, _os, _m["compiler"], _m["compiler_ver"],
+        _combo = ComboRecord._make((None, machine_branch, _os, _arch, _m["compiler"], _m["compiler_ver"],
                                     _m["bopt"], _m["mpi"], _m["mpi_ver"], _netcdf))
         _combo_id = _insert_combo(_combo)
 
