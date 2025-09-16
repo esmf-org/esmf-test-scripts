@@ -89,6 +89,13 @@ matrix:
         mpi:
           mpiuni:
             module: none
+      15.2.0:
+        compiler: comp/gcc/15.2.0
+        netcdf: None
+        extra_module: cmake/3.30.3
+        mpi:
+          openmpi:
+            module: mpi/openmpi/4.1.8/gcc-15.2.0
   nag:
     test_time: "2:00:00"
     versions:
@@ -102,10 +109,10 @@ matrix:
   llvm:
     test_time: "2:00:00"
     versions:
-      22.0.0git4aa77:
-        compiler: comp/llvm-flang/2025-07-29
+      21.1.1:
+        compiler: comp/llvm-flang/21.1.1
         netcdf: None
         extra_module: cmake/3.30.3
         mpi:
           mpich:
-            module: mpi/mpich/4.3.1/llvm-flang-2025-07-29
+            module: mpi/mpich/4.3.1/llvm-flang-21.1.1
