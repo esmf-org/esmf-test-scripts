@@ -91,7 +91,7 @@ matrix:
             module: none
       15.2.0:
         compiler: comp/gcc/15.2.0
-        netcdf: None
+        netcdf: other/esmf-netcdf/gfortran_15.2.0-openmpi_4.1.6
         extra_module: cmake/3.30.3
         mpi:
           openmpi:
