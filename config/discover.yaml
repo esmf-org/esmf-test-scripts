@@ -84,7 +84,7 @@ matrix:
             module: mpi/openmpi/4.1.6/gcc-13.2.0
       14.2.0:
         compiler: comp/gcc/14.2.0
-        netcdf: None
+        netcdf: other/esmf-netcdf/gfortran_14.2.0-openmpi_4.1.6
         extra_module: cmake/3.30.3
         mpi:
           mpiuni:
