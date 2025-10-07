@@ -95,7 +95,7 @@ matrix:
         extra_module: cmake/3.30.3
         mpi:
           openmpi:
-            module: mpi/openmpi/4.1.8/gcc-15.2.0
+            module: mpi/openmpi/4.1.6/gcc-15.2.0
   nag:
     test_time: "2:00:00"
     versions:
