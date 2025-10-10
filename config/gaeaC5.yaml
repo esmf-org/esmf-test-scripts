@@ -17,6 +17,38 @@ test:
 #    compiler: [intel,cce]
 
 matrix:
+  aocc:
+       test_time: "2:00:00"
+       versions:
+         5.0.0:
+           compiler: aocc/5.0.0
+           netcdf: cray-hdf5/1.12.2.11 cray-netcdf/4.9.0.11
+           mpi:
+             mpiuni:
+               module: None
+             mpi:
+               module: cray-mpich/8.1.32
+               mpi_env_vars: [ESMF_MPILAUNCHOPTIONS=--exact]
+           extra_env_vars:
+             - ESMF_NETCDF_LIBS="-lnetcdff -lnetcdf"
+           extra_module: PrgEnv-aocc git cmake
+           unload_module: PrgEnv-intel cray-mpich
+  cce:
+       test_time: "2:00:00"
+       versions:
+         19.0.0:
+           compiler: cce/19.0.0
+           netcdf: cray-hdf5/1.12.2.11 cray-netcdf/4.9.0.11
+           mpi:
+             mpiuni:
+               module: None
+             mpi:
+               module: cray-mpich/8.1.32
+               mpi_env_vars: [ESMF_MPILAUNCHOPTIONS=--exact]
+           extra_env_vars:
+             - ESMF_NETCDF_LIBS="-lnetcdff -lnetcdf"
+           extra_module: PrgEnv-cray git cmake
+           unload_module: PrgEnv-intel cray-mpich
   gfortran:
        test_time: "2:00:00"
        versions:
@@ -78,11 +110,11 @@ matrix:
              - ESMF_NETCDF_LIBPATH="$CRAY_NETCDF_PREFIX/lib"
              - ESMF_NETCDF_LIBS="-lnetcdff -lnetcdf"
            extra_module: PrgEnv-intel git cmake cray-libsci
-  cce:
+  nvhpc:
        test_time: "2:00:00"
        versions:
-         19.0.0:
-           compiler: cce/19.0.0
+         25.5:
+           compiler: nvidia/25.5
            netcdf: cray-hdf5/1.12.2.11 cray-netcdf/4.9.0.11
            mpi:
              mpiuni:
@@ -92,5 +124,5 @@ matrix:
                mpi_env_vars: [ESMF_MPILAUNCHOPTIONS=--exact]
            extra_env_vars:
              - ESMF_NETCDF_LIBS="-lnetcdff -lnetcdf"
-           extra_module: PrgEnv-cray git cmake
+           extra_module: PrgEnv-nvidia git cmake
            unload_module: PrgEnv-intel cray-mpich
