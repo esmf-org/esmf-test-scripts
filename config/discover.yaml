@@ -52,8 +52,8 @@ matrix:
         mpi:
           mvapich:
             module: mpi/mvapich/4.0/ifort-2021.13.0
-      2025.1.1:
-        compiler: comp/intel/2025.1.1
+      2025.3.0:
+        compiler: comp/intel/2025.3.0
         netcdf: None
         extra_module: cmake/3.30.3 comp/gcc/12.3.0
         mpi:
@@ -64,7 +64,7 @@ matrix:
               - ESMF_C=icx
               - ESMF_F90=ifx
           intelmpi:
-            module: mpi/impi/2021.15
+            module: mpi/impi/2021.17
             mpi_env_vars:
               - I_MPI_CXX=icpx
               - I_MPI_CC=icx
