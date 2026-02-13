@@ -36,14 +36,14 @@ matrix:
   cce:
        test_time: "2:00:00"
        versions:
-         19.0.0:
-           compiler: cce/19.0.0
-           netcdf: cray-hdf5/1.12.2.11 cray-netcdf/4.9.0.11
+         20.0.2:
+           compiler: cce/20.0.2
+           netcdf: cray-hdf5/1.14.3.7 cray-netcdf/4.9.2.1
            mpi:
              mpiuni:
                module: None
              mpi:
-               module: cray-mpich/8.1.32
+               module: cray-mpich/9.0.1
                mpi_env_vars: [ESMF_MPILAUNCHOPTIONS=--exact]
            extra_env_vars:
              - ESMF_NETCDF_LIBS="-lnetcdff -lnetcdf"
