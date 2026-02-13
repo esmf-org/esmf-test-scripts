@@ -12,13 +12,18 @@ test:
 matrix:
   aocc:
     versions:
-      4.1.0:
-        compiler: AOCC/4.1.0
+      5.1.0:
+        compiler: AOCC/5.1.0
         netcdf: None
         extra_module: CMake/3.24.3
         mpi:
           mpiuni:
             module: None
+        extra_env_vars:
+          - ESMF_F90LINKOPTS="-Wl,--allow-shlib-undefined -Wl,--dynamic-linker=/opt/GLIBC2.42/usr/lib64/ld-linux-x86-64.so.2 -Wl,-rpath=/opt/GLIBC2.42/usr/lib64:/opt/aocc/aocc-compiler-5.1.0/lib -lm"
+          - ESMF_CXXLINKOPTS="-Wl,--allow-shlib-undefined -Wl,--dynamic-linker=/opt/GLIBC2.42/usr/lib64/ld-linux-x86-64.so.2 -Wl,-rpath=/opt/GLIBC2.42/usr/lib64:/opt/aocc/aocc-compiler-5.1.0/lib -lm"
+          - ESMF_CLINKOPTS="-Wl,--allow-shlib-undefined -Wl,--dynamic-linker=/opt/GLIBC2.42/usr/lib64/ld-linux-x86-64.so.2 -Wl,-rpath=/opt/GLIBC2.42/usr/lib64:/opt/aocc/aocc-compiler-5.1.0/lib -lm"
+          - ESMF_TRACE_LIB_BUILD=OFF
 
   gfortranclang:
     versions:
