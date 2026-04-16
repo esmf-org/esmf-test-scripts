@@ -13,7 +13,7 @@ test:
   nuopc_branch: [develop]
 
 #  filter:
-#    compiler: [gfortran]
+#    compiler: [intel]
 
 matrix:
 
@@ -21,22 +21,10 @@ matrix:
     build_time: "2:00:00"
     test_time: "2:00:00"
     versions:
-      12.2.0_pio2.5.10:
-        compiler: gcc/12.2.0
-        netcdf: netcdf/4.9.2
-        extra_module: ncarenv/23.06 gcc/12.2.0 cray-mpich/8.1.25 cmake parallelio/2.5.10
-        mpi:
-          mpi:
-            module: cray-mpich/8.1.25
-            mpi_env_vars:
-              - ESMF_MPIRUN=mpiexec
-              - ESMF_PIO=external
-              - ESMF_PIO_INCLUDE="$PIO/include"
-              - ESMF_PIO_LIBPATH="$PIO/lib"
       12.2.0_pio2.6.2:
         compiler: gcc/12.2.0
         netcdf: netcdf/4.9.2
-        extra_module: ncarenv/23.09 cmake parallelio/2.6.2 conda/latest
+        extra_module: ncarenv/23.09 gcc/12.2.0 ncarcompilers cmake cray-mpich/8.1.27 parallelio/2.6.2 conda/latest
         mpi:
           mpi:
             module: cray-mpich/8.1.27
@@ -56,15 +44,13 @@ matrix:
     build_time: "2:00:00"
     test_time: "2:00:00"
     versions:
-      2023.2.1:
-        compiler: intel/2023.2.1
-        netcdf: netcdf/4.9.2
-        extra_module: ncarenv/23.09 cmake conda/latest julia/1.10.2
+      2024.2.1:
+        compiler: intel/2024.2.1
+        netcdf: netcdf/4.9.3
+        extra_module: ncarenv/24.12 intel/2024.2.1 ncarcompilers cmake conda/latest julia
         mpi:
-          mpiuni:
-            module: None
           mpi:
-            module: cray-mpich/8.1.27
+            module: cray-mpich/8.1.29
             mpi_env_vars:
               - ESMF_MPIRUN=mpiexec
         extra_env_vars:
@@ -74,26 +60,13 @@ matrix:
           # This python version corresponds to the suffix in environment-python3.13-numpy2.1.yml
           # This gives test coverage of the latest supported python and numpy versions
           python: python3.13-numpy2.1
-      2023.2.1-classic:
-        compiler: intel-classic/2023.2.1
-        netcdf: netcdf/4.9.2
-        extra_module: ncarenv/23.09 cmake
+      2024.2.1-oneAPI:
+        compiler: intel-oneapi/2024.2.1
+        netcdf: netcdf/4.9.3
+        extra_module: ncarenv/24.12 intel-oneapi/2024.2.1 ncarcompilers cmake
         mpi:
-          mpiuni:
-            module: None
           mpi:
-            module: cray-mpich/8.1.27
-            mpi_env_vars:
-              - ESMF_MPIRUN=mpiexec
-      2023.2.1-oneAPI:
-        compiler: intel-oneapi/2023.2.1
-        netcdf: netcdf/4.9.2
-        extra_module: ncarenv/23.09 cmake
-        mpi:
-          mpiuni:
-            module: None
-          mpi:
-            module: cray-mpich/8.1.27
+            module: cray-mpich/8.1.29
             mpi_env_vars:
               - ESMF_MPIRUN=mpiexec
 
@@ -101,30 +74,14 @@ matrix:
     build_time: "2:00:00"
     test_time: "2:00:00"
     versions:
-      23.7:
-        compiler: nvhpc/23.7
-        netcdf: netcdf/4.9.2
-        extra_module: ncarenv/23.09 cmake
+      26.1:
+        compiler: nvhpc/26.1
+        netcdf: netcdf/4.9.3
+        extra_module: ncarenv/25.10 ncarcompilers cmake
         mpi:
           mpiuni:
             module: None
           mpi:
-            module: cray-mpich/8.1.27
-            mpi_env_vars:
-              - ESMF_MPIRUN=mpiexec
-
-  cce:
-    build_time: "2:00:00"
-    test_time: "2:00:00"
-    versions:
-      15.0.1:
-        compiler: cce/15.0.1
-        netcdf: netcdf/4.9.2
-        extra_module: ncarenv/23.06 cmake
-        mpi:
-          mpiuni:
-            module: None
-          mpi:
-            module: cray-mpich/8.1.25
+            module: cray-mpich/8.1.32
             mpi_env_vars:
               - ESMF_MPIRUN=mpiexec
