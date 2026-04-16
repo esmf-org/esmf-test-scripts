@@ -140,7 +140,8 @@ class Case:
             if e.module_path is not None:
                 out.write(f"module use {e.module_path}\n")
             if e.extra_module is not None:
-                out.write(f"module load {e.extra_module}\n")
+                for module in e.extra_module.split():
+                    out.write(f"module load {module}\n")
             if e.mpi_module.lower() == "none":
                 _mpi_module = ""
             else:
