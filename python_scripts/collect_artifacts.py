@@ -208,11 +208,20 @@ def _create_summary():
         _esmpy_fail = 0
         for _f in _esmpy_test_logs:
             _esmpy_out = cmd.runcmd_no_err(f"tail -n 1 {_f}")
-            _esmpy_pass_str = _extract(r'"passed": (\d+)', _esmpy_out, "0")
-            _esmpy_fail_str = _extract(r'"failed": (\d+)', _esmpy_out, "0")
+            if '"summary":' in _esmpy_out:
+                _esmpy_pass_str = _extract(r'"passed": (\d+)', _esmpy_out, "0")
+                _esmpy_xfail_str = _extract(r'"xfailed": (\d+)', _esmpy_out, "0")
+                _esmpy_fail_str = _extract(r'"failed": (\d+)', _esmpy_out, "0")
+                _esmpy_xpass_str = _extract(r'"xpassed": (\d+)', _esmpy_out, "0")
+            else:
+                logging.debug(f"Failed to find json summary at the end of {_f}")
+                _esmpy_pass_str = "0"
+                _esmpy_xfail_str = "0"
+                _esmpy_fail_str = "1"
+                _esmpy_xpass_str = "0"
             try:
-                _esmpy_pass = _esmpy_pass + int(_esmpy_pass_str)
-                _esmpy_fail = _esmpy_fail + int(_esmpy_fail_str)
+                _esmpy_pass = _esmpy_pass + int(_esmpy_pass_str) + int(_esmpy_xfail_str)
+                _esmpy_fail = _esmpy_fail + int(_esmpy_fail_str) + int(_esmpy_xpass_str)
             except Exception as e:
                 logging.debug(f"Failed to parse esmpy test counts: {e}")
         _esmpy_test_result = f"PASS {_esmpy_pass} FAIL {_esmpy_fail}"
