@@ -1,1 +1,1 @@
-0 7 * * * /scratch3/NCEPDEV/stmp/Gerhard.Theurich/ESMF-Nightly-Testing-Hera/esmf-test-scripts/runscripts/run_esmf_tests_hera.sh 2>&1 > /scratch3/NCEPDEV/stmp/Gerhard.Theurich/ESMF-Nightly-Testing-Hera/hera-cron.log
+00 07 * * * /scratch3/NCEPDEV/nems/Gerhard.Theurich/ESMF-Nightly-Testing-Hera/esmf-test-scripts/runscripts/run_esmf_tests_hera.sh 2>&1 > /scratch3/NCEPDEV/stmp/Gerhard.Theurich/ESMF-Nightly-Testing-Hera/hera-cron.log
