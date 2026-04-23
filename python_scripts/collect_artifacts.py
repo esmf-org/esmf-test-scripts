@@ -106,6 +106,7 @@ def _copy_test_artifacts():
     cmd.runcmd(f"mkdir -p {_out_dir}")
 
     _artifacts_list = glob.glob(f"{_test_dir}/esmf/src/addon/esmpy/*.test")
+    _artifacts_list.extend(glob.glob(f"{_test_dir}/esmf/src/addon/esmpy/*-summary.json"))
     _artifacts_list.extend(glob.glob(f"{_test_dir}/esmf/src/addon/esmpy/*.ESMF_LogFile"))
     for _f in _artifacts_list:
         _out = os.path.join(_out_dir, os.path.basename(_f))
@@ -207,14 +208,19 @@ def _create_summary():
         _esmpy_pass = 0
         _esmpy_fail = 0
         for _f in _esmpy_test_logs:
-            _esmpy_out = cmd.runcmd_no_err(f"tail -n 1 {_f}")
+            _jsonsf = re.sub(r"\.test$", "-summary.json", _f)
+            if not os.path.isfile(_jsonsf):
+                logging.debug(f"Summary file not found for esmpy test log {_f}")
+                _esmpy_out = ""
+            else:
+                _esmpy_out = cmd.runcmd_no_err(f"tail -n 1 {_jsonsf}")
             if '"summary":' in _esmpy_out:
                 _esmpy_pass_str = _extract(r'"passed": (\d+)', _esmpy_out, "0")
                 _esmpy_xfail_str = _extract(r'"xfailed": (\d+)', _esmpy_out, "0")
                 _esmpy_fail_str = _extract(r'"failed": (\d+)', _esmpy_out, "0")
                 _esmpy_xpass_str = _extract(r'"xpassed": (\d+)', _esmpy_out, "0")
             else:
-                logging.debug(f"Failed to find json summary at the end of {_f}")
+                logging.debug(f"Failed to find json summary at the end of {_jsonsf}")
                 _esmpy_pass_str = "0"
                 _esmpy_xfail_str = "0"
                 _esmpy_fail_str = "1"
