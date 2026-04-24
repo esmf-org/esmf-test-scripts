@@ -18,6 +18,25 @@ test:
 
 matrix:
 
+  nagclang:
+    versions:
+      7.2.44_17.0.0:
+        # nag and clang are available at the system level, no need to load from module
+        compiler: None
+        extra_module: cmake
+        mpi:
+          mpiuni:
+            module: None
+            mpi_netcdf: netcdf-c/hth7a6z netcdf-fortran/oboy4y3
+          openmpi:
+            module: openmpi/fjdj7gt
+            mpi_netcdf: netcdf-c/d5o6huw netcdf-fortran/7erikgt
+        extra_env_vars:
+          - ESMPY_DATA_DIR="/usr/local/esmf/esmf-testing/esmf-test-data/grids"
+        esmpy:
+          # This python version corresponds to the suffix in environment-python3.11-numpy1.26.yml
+          python: python3.11-numpy1.26
+
   gfortranclang:
     versions:
       14.2.0_17.0.0:
