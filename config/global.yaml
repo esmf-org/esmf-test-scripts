@@ -1,4 +1,4 @@
-reclone-artifacts: True
+reclone-artifacts: False
 repos:
   esmf:
     https: https://github.com/esmf-org/esmf
