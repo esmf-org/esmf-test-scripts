@@ -225,6 +225,7 @@ class Case:
             out.write(f"make install 2>&1| tee $WORK_ROOT/install.log\n")
             out.write(f"make all_tests 2>&1| tee $WORK_ROOT/test.log\n")
             out.write(f"export ESMFMKFILE=`find $PWD/DEFAULTINSTALLDIR -iname esmf.mk`\n")
+            out.write(f"export CMAKE_PREFIX_PATH=$(dirname $ESMFMKFILE)/cmake/ESMF:${{CMAKE_PREFIX_PATH}}\n")
             if self.combo.mpi.lower() != "mpiuni":
                 out.write("cd ../nuopc-app-prototypes\n")
                 out.write("./testProtos.sh 2>&1| tee $WORK_ROOT/nuopc.log\n")
