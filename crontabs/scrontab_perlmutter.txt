@@ -1,6 +1,7 @@
 #SCRON --account=e3sm
 #SCRON --time=10:00:00
 #SCRON --qos=cron
+#SCRON --job-name=esmf_test
 #SCRON -o /global/cfs/cdirs/e3sm/theurich/ESMF-Nightly-Testing/perlmutter-scron.log
 #SCRON --open-mode=append
 

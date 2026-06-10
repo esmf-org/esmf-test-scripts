@@ -2,6 +2,7 @@
 #SCRON --time=6:00:00
 #SCRON --qos=normal
 #SCRON --partition=cron_c5
+#SCRON --job-name=esmf_c5_test
 #SCRON -o /gpfs/f5/nggps_emc/world-shared/Gerhard.Theurich/ESMF-Nightly-Testing-C5/gaeaC5-scron.log
 #SCRON --open-mode=append
 
@@ -14,6 +15,7 @@
 #SCRON --time=6:00:00
 #SCRON --qos=normal
 #SCRON --partition=cron_c6
+#SCRON --job-name=esmf_c6_test
 #SCRON -o /gpfs/f6/c6_test_eval/world-shared/Gerhard.Theurich/ESMF-Nightly-Testing-C6/gaeaC6-scron.log
 #SCRON --open-mode=append
 
