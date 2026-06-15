@@ -16,6 +16,9 @@ test:
   esmf_branch: [develop]
   nuopc_branch: [develop]
 
+#  filter:
+#    compiler: [nag]
+
 matrix:
 
   nagclang:
@@ -36,7 +39,25 @@ matrix:
         esmpy:
           # This python version corresponds to the suffix in environment-python3.11-numpy1.26.yml
           python: python3.11-numpy1.26
-
+  nag:
+    versions:
+      7.2.44:
+        # nag is available at the system level, so just need to load gcc for the sake of gcc/g++
+        compiler: gcc/kykcamd
+        extra_module: cmake
+        mpi:
+          mpiuni:
+            module: None
+            mpi_netcdf: netcdf-c/igrwluw netcdf-fortran/tkdn4yz
+          openmpi:
+            module: openmpi/a7f5nwa
+            mpi_netcdf: netcdf-c/pywk6et netcdf-fortran/busq63s
+        extra_env_vars:
+          - FC=nagfor
+          - ESMPY_DATA_DIR="/usr/local/esmf/esmf-testing/esmf-test-data/grids"
+        esmpy:
+          # This python version corresponds to the suffix in environment-python3.11-numpy1.26.yml
+          python: python3.11-numpy1.26
   gfortranclang:
     versions:
       14.2.0_17.0.0:
