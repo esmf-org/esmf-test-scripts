@@ -13,7 +13,7 @@ machine:
   head_node_name: null
 
 test:
-  esmf_branch: [feature/refresh-bmauer-c_dynmask_interface]
+  esmf_branch: [develop]
   nuopc_branch: [develop]
 
 #  filter:
