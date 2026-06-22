@@ -1,0 +1,25 @@
+machine:
+  name: alderaan
+  cores_per_node: 6
+  scheduler: None
+  module_path: /Users/mathomp4/modulefiles/Core
+
+test:
+  esmf_branch: [feature/darwin-work]
+  #esmf_branch: [develop]
+  nuopc_branch: [feature/darwin-work]
+  #nuopc_branch: [develop]
+
+matrix:
+  llvm:
+    versions:
+      22.1:
+        extra_commands:
+          - "export PATH=/home/mathomp4/.homebrew/brew/bin:$PATH"
+        compiler: appleclang-flang/22
+        netcdf: None
+        mpi:
+          openmpi:
+            module: openmpi/5.0.10
+        esmpy:
+          python: GEOSpyD/26.3.2-0/3.14
