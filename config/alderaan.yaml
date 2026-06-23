@@ -21,6 +21,7 @@ matrix:
         mpi:
           openmpi:
             module: openmpi/5.0.10
+            bopt: [g]
         extra_env_vars:
           - ESMF_TRACE_LIB_BUILD=OFF
           - ESMPY_DATA_DIR="/Users/mathomp4/ESMF_Testing/esmf-test-data/grids"
