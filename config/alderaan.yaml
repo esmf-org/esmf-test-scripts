@@ -3,10 +3,10 @@ machine:
   cores_per_node: 6
   scheduler: None
   module_path: /Users/mathomp4/modulefiles/Core
+  git_https: True
 
 test:
-  esmf_branch: [feature/darwin-work]
-  #esmf_branch: [develop]
+  esmf_branch: [develop]
   nuopc_branch: [develop]
 
 matrix:
