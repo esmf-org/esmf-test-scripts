@@ -7,8 +7,7 @@ machine:
 test:
   esmf_branch: [feature/darwin-work]
   #esmf_branch: [develop]
-  nuopc_branch: [feature/darwin-work]
-  #nuopc_branch: [develop]
+  nuopc_branch: [develop]
 
 matrix:
   llvm:
@@ -23,3 +22,5 @@ matrix:
             module: openmpi/5.0.10
         esmpy:
           python: GEOSpyD/26.3.2-0/3.14
+        extra_env_vars:
+          - ESMF_TRACE_LIB_BUILD=OFF
