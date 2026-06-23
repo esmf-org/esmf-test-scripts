@@ -6,7 +6,8 @@ machine:
   git_https: True
 
 test:
-  esmf_branch: [develop]
+  #esmf_branch: [develop]
+  esmf_branch: [feature/darwin-work]
   nuopc_branch: [develop]
 
 matrix:
