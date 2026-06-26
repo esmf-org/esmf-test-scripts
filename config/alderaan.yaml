@@ -25,4 +25,5 @@ matrix:
         extra_env_vars:
           - ESMF_TRACE_LIB_BUILD=OFF
           - ESMPY_DATA_DIR="/Users/mathomp4/ESMF_Testing/esmf-test-data/grids"
+          - BREWPATH="/home/mathomp4/.homebrew/brew"
 
