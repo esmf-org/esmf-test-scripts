@@ -24,6 +24,10 @@ matrix:
         mpi:
           mpiuni:
             module: None
+            mpi_env_vars:
+              - ESMF_CXX=icpc
+              - ESMF_C=icc
+              - ESMF_F90=ifort
           mvapich2:
             module: mpi/2.3.3/intel/20.0.1
           openmpi:
