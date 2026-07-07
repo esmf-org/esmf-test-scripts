@@ -9,6 +9,9 @@ test:
   #esmf_branch: [develop]
   esmf_branch: [feature/darwin-work]
   nuopc_branch: [develop]
+  filter:
+    compiler: [llvm]
+    mpi:      [mpiuni]
 
 matrix:
   llvm:
@@ -19,6 +22,9 @@ matrix:
         compiler: appleclang-flang/22
         netcdf: None
         mpi:
+          mpiuni:
+            module: None
+            bopt: [g]
           openmpi:
             module: openmpi/5.0.10
             bopt: [g]
