@@ -6,12 +6,11 @@ machine:
   git_https: True
 
 test:
-  #esmf_branch: [develop]
-  esmf_branch: [feature/darwin-work]
+  esmf_branch: [develop]
   nuopc_branch: [develop]
-  filter:
-    compiler: [llvm]
-    mpi:      [mpiuni]
+#  filter:
+#    compiler: [llvm]
+#    mpi:      [mpiuni]
 
 matrix:
   llvm:
@@ -24,10 +23,8 @@ matrix:
         mpi:
           mpiuni:
             module: None
-            bopt: [g]
           openmpi:
             module: openmpi/5.0.10
-            bopt: [g]
         extra_env_vars:
           - ESMF_TRACE_LIB_BUILD=OFF
           - ESMPY_DATA_DIR="/Users/mathomp4/ESMF_Testing/esmf-test-data/grids"
