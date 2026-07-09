@@ -8,9 +8,9 @@ machine:
 test:
   esmf_branch: [develop]
   nuopc_branch: [develop]
-#  filter:
-#    compiler: [llvm]
-#    mpi:      [mpiuni]
+  filter:
+    compiler: [llvm]
+    mpi:      [openmpi]
 
 matrix:
   llvm:
