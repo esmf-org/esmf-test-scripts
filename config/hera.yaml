@@ -79,7 +79,7 @@ matrix:
           - FC=ifx
   nvhpc:
     build_time: "2:00:00"
-    test_time:  "2:00:00"
+    test_time:  "3:00:00"
     versions:
       24.1:
         compiler: nvhpc/24.1
