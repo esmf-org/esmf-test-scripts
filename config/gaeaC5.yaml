@@ -98,7 +98,7 @@ matrix:
            extra_module: PrgEnv-intel git cmake cray-libsci/24.07.0
          2025.0.0:
            compiler: intel/2025.0
-           netcdf: cray-hdf5/1.14.3.5 cray-netcdf/4.9.0.17
+           netcdf: cray-hdf5/1.12.2.11 cray-netcdf/4.9.0.11
            mpi:
              mpiuni:
                module: None
