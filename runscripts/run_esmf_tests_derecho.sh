@@ -5,11 +5,11 @@ date
 hostname -f
 
 eval `ssh-agent`
-ssh-add /glade/u/home/sacks/.ssh/id_rsa
+ssh-add /glade/u/home/oehmke/.ssh/id_rsa
 
-export NS=/glade/derecho/scratch/sacks/esmf-testing
+export NS=/glade/derecho/scratch/oehmke/ESMF_TEST_RUN
 # Put esmf-test-scripts in a non-scrubbed location:
-export WORKSPACE=/glade/work/sacks/esmf-testing
+export WORKSPACE=/glade/work/oehmke/ESMF_TESTING
 export TESTSCRIPTS=${WORKSPACE}/esmf-test-scripts
 cd $TESTSCRIPTS
 git remote update
