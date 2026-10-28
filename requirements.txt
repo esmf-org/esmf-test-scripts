@@ -11,7 +11,7 @@ pathspec==0.9.0
 platformdirs==2.4.0
 pycodestyle==2.7.0
 pyflakes==2.3.1
-pylint==2.11.1
+pylint==4.0.9
 PyYAML==5.4.1
 regex==2021.9.30
 rope==0.20.1
